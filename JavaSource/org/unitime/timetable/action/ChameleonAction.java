@@ -741,24 +741,7 @@ operator|.
 name|getPuid
 argument_list|()
 decl_stmt|;
-while|while
-condition|(
-name|puid
-operator|.
-name|startsWith
-argument_list|(
-literal|"0"
-argument_list|)
-condition|)
-name|puid
-operator|=
-name|puid
-operator|.
-name|substring
-argument_list|(
-literal|1
-argument_list|)
-expr_stmt|;
+comment|//while (puid.startsWith("0")) puid = puid.substring(1);
 name|u
 operator|.
 name|setId
