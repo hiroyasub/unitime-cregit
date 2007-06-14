@@ -220,7 +220,7 @@ name|append
 argument_list|(
 name|this
 operator|.
-name|preferenceText
+name|preferenceAbbv
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -246,6 +246,16 @@ name|String
 name|preferenceText
 parameter_list|()
 function_decl|;
+specifier|public
+name|String
+name|preferenceAbbv
+parameter_list|()
+block|{
+return|return
+name|preferenceText
+argument_list|()
+return|;
+block|}
 comment|/* (non-Javadoc) 	 * @see java.lang.Comparable#compareTo(java.lang.Object) 	 */
 specifier|public
 name|int

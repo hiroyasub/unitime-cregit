@@ -751,6 +751,16 @@ argument_list|)
 expr_stmt|;
 name|rg
 operator|.
+name|setAbbv
+argument_list|(
+name|roomGroupEditForm
+operator|.
+name|getAbbv
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|rg
+operator|.
 name|setSession
 argument_list|(
 name|Session

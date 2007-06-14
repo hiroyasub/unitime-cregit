@@ -1515,7 +1515,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|3
+literal|4
 argument_list|,
 literal|"Global Room Features"
 argument_list|,
@@ -1526,6 +1526,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|""
 block|,
@@ -1541,12 +1543,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -1561,7 +1567,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|3
+literal|4
 argument_list|,
 literal|"Department Room Features"
 argument_list|,
@@ -1572,6 +1578,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|"Department"
 block|,
@@ -1587,12 +1595,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -1992,6 +2004,11 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+name|gr
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 literal|""
 block|,
 operator|(
@@ -2020,6 +2037,11 @@ block|{
 name|gr
 operator|.
 name|getLabel
+argument_list|()
+block|,
+name|gr
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 literal|""
@@ -2283,6 +2305,11 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+name|drf
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 operator|(
 name|isOwner
 condition|?
@@ -2327,6 +2354,11 @@ block|{
 name|drf
 operator|.
 name|getLabel
+argument_list|()
+block|,
+name|drf
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 name|ownerName
@@ -2717,7 +2749,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|3
+literal|4
 argument_list|,
 literal|"Global Room Features"
 argument_list|,
@@ -2728,6 +2760,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|""
 block|,
@@ -2743,12 +2777,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -2775,6 +2813,8 @@ index|[]
 block|{
 literal|"Name"
 block|,
+literal|"Abbreviation"
+block|,
 literal|"Department "
 block|,
 literal|"Rooms"
@@ -2789,12 +2829,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -3173,6 +3217,11 @@ operator|.
 name|getLabel
 argument_list|()
 block|,
+name|gr
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 literal|""
 block|,
 name|assignedRoom
@@ -3188,6 +3237,11 @@ block|{
 name|gr
 operator|.
 name|getLabel
+argument_list|()
+block|,
+name|gr
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 literal|""
@@ -3413,6 +3467,11 @@ operator|.
 name|getLabel
 argument_list|()
 block|,
+name|drf
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 name|ownerName
 block|,
 name|assignedRoom
@@ -3428,6 +3487,11 @@ block|{
 name|drf
 operator|.
 name|getLabel
+argument_list|()
+block|,
+name|drf
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 name|ownerName

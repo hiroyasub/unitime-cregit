@@ -504,6 +504,27 @@ literal|null
 operator|)
 return|;
 block|}
+specifier|public
+name|String
+name|htmlLabel
+parameter_list|()
+block|{
+return|return
+literal|"<span "
+operator|+
+literal|"title='"
+operator|+
+name|getLabel
+argument_list|()
+operator|+
+literal|" (global)'>"
+operator|+
+name|getLabel
+argument_list|()
+operator|+
+literal|"</span>"
+return|;
+block|}
 block|}
 end_class
 

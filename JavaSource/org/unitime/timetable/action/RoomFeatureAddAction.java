@@ -819,6 +819,16 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|rf
+operator|.
+name|setAbbv
+argument_list|(
+name|roomFeatureEditForm
+operator|.
+name|getAbbv
+argument_list|()
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|tx

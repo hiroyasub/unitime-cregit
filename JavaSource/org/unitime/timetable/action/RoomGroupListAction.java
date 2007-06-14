@@ -1568,7 +1568,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 literal|"Global Room Groups"
 argument_list|,
@@ -1579,6 +1579,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|"Default"
 block|,
@@ -1591,6 +1593,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"middle"
@@ -1611,6 +1615,8 @@ block|,
 literal|true
 block|,
 literal|true
+block|,
+literal|true
 block|}
 argument_list|)
 decl_stmt|;
@@ -1620,7 +1626,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 literal|"Department Room Groups"
 argument_list|,
@@ -1631,6 +1637,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|"Department"
 block|,
@@ -1650,12 +1658,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -1926,6 +1938,11 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+name|rg
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 operator|(
 name|rg
 operator|.
@@ -2012,6 +2029,11 @@ block|{
 name|rg
 operator|.
 name|getName
+argument_list|()
+block|,
+name|rg
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 operator|new
@@ -2296,6 +2318,11 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+name|rg
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 operator|(
 name|isOwner
 condition|?
@@ -2386,6 +2413,11 @@ block|{
 name|rg
 operator|.
 name|getName
+argument_list|()
+block|,
+name|rg
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 name|ownerName
@@ -2945,7 +2977,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 literal|"Global Room Groups"
 argument_list|,
@@ -2956,6 +2988,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|"Default "
 block|,
@@ -2968,6 +3002,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"middle"
@@ -2988,6 +3024,8 @@ block|,
 literal|true
 block|,
 literal|true
+block|,
+literal|true
 block|}
 argument_list|)
 decl_stmt|;
@@ -2997,7 +3035,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 literal|"Department Room Groups"
 argument_list|,
@@ -3008,6 +3046,8 @@ name|String
 index|[]
 block|{
 literal|"Name"
+block|,
+literal|"Abbreviation"
 block|,
 literal|"Department "
 block|,
@@ -3027,12 +3067,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -3296,6 +3340,11 @@ operator|.
 name|getName
 argument_list|()
 block|,
+name|rg
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 operator|(
 name|rg
 operator|.
@@ -3339,6 +3388,11 @@ block|{
 name|rg
 operator|.
 name|getName
+argument_list|()
+block|,
+name|rg
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 operator|new
@@ -3585,6 +3639,11 @@ operator|.
 name|getName
 argument_list|()
 block|,
+name|rg
+operator|.
+name|getAbbv
+argument_list|()
+block|,
 name|ownerName
 block|,
 name|assignedRoom
@@ -3616,6 +3675,11 @@ block|{
 name|rg
 operator|.
 name|getName
+argument_list|()
+block|,
+name|rg
+operator|.
+name|getAbbv
 argument_list|()
 block|,
 name|ownerName
