@@ -1429,6 +1429,31 @@ argument_list|,
 literal|"false"
 argument_list|)
 expr_stmt|;
+name|String
+name|idgen
+init|=
+name|getProperty
+argument_list|(
+name|properties
+argument_list|,
+literal|"tmtbl.uniqueid.generator"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|idgen
+operator|!=
+literal|null
+condition|)
+name|setProperty
+argument_list|(
+name|document
+argument_list|,
+literal|"tmtbl.uniqueid.generator"
+argument_list|,
+name|idgen
+argument_list|)
+expr_stmt|;
 comment|/*// JDBC Pool              setProperty(document, "connection.pool_size", "5");             setProperty(document, "connection.release_mode", "on_close");             */
 comment|/*// C3P0 Pool             setProperty(document, "hibernate.c3p0.min_size", "0");             setProperty(document, "hibernate.c3p0.max_size", "5");             setProperty(document, "hibernate.c3p0.timeout", "1800");             setProperty(document, "hibernate.c3p0.max_statements", "50");             setProperty(document, "hibernate.c3p0.validate", "true");             */
 comment|// Apache DBCP Pool
