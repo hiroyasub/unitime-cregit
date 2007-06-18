@@ -1938,10 +1938,33 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+operator|(
+name|isAdmin
+condition|?
+literal|""
+else|:
+literal|"<font color=gray>"
+operator|)
+operator|+
 name|rg
 operator|.
 name|getAbbv
 argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|" "
+argument_list|,
+literal|"&nbsp;"
+argument_list|)
+operator|+
+operator|(
+name|isAdmin
+condition|?
+literal|""
+else|:
+literal|"</font>"
+operator|)
 block|,
 operator|(
 name|rg
@@ -2318,10 +2341,33 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+operator|(
+name|isOwner
+condition|?
+literal|""
+else|:
+literal|"<font color=gray>"
+operator|)
+operator|+
 name|rg
 operator|.
 name|getAbbv
 argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|" "
+argument_list|,
+literal|"&nbsp;"
+argument_list|)
+operator|+
+operator|(
+name|isOwner
+condition|?
+literal|""
+else|:
+literal|"</font>"
+operator|)
 block|,
 operator|(
 name|isOwner
