@@ -205,7 +205,7 @@ name|timetable
 operator|.
 name|dataexchange
 operator|.
-name|CourseDemandImportDAO
+name|DepartmentImportDAO
 import|;
 end_import
 
@@ -219,7 +219,7 @@ name|timetable
 operator|.
 name|dataexchange
 operator|.
-name|DepartmentImportDAO
+name|LastLikeCourseDemandImport
 import|;
 end_import
 
@@ -718,10 +718,10 @@ argument_list|)
 condition|)
 block|{
 operator|new
-name|CourseDemandImportDAO
+name|LastLikeCourseDemandImport
 argument_list|()
 operator|.
-name|loadFromXML
+name|loadXml
 argument_list|(
 name|fileName
 argument_list|)
