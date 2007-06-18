@@ -1783,7 +1783,7 @@ name|cfgName
 operator|==
 literal|null
 condition|?
-literal|"/hibernate.cfg.xml"
+literal|"hibernate.cfg.xml"
 else|:
 name|cfgName
 argument_list|)
