@@ -546,6 +546,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|dept
+operator|==
+literal|null
+condition|)
+return|return;
+if|if
+condition|(
 name|oldDept
 operator|!=
 literal|null
