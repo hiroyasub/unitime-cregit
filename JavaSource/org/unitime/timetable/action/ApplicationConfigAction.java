@@ -1081,6 +1081,13 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
+name|webTable
+operator|.
+name|enableHR
+argument_list|(
+literal|"#EFEFEF"
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|ApplicationConfigDAO
