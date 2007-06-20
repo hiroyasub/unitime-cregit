@@ -260,8 +260,10 @@ argument_list|(
 name|user
 argument_list|)
 operator|.
-name|getBuildings
-argument_list|()
+name|getBldgsFast
+argument_list|(
+literal|null
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
