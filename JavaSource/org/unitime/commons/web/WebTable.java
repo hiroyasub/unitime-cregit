@@ -1190,11 +1190,11 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|" class=\"WebTableHeader\"><i>"
+literal|" class=\"WebTableHeader\">"
 operator|+
 name|header
 operator|+
-literal|"</i></td>"
+literal|"</td>"
 argument_list|)
 expr_stmt|;
 block|}
