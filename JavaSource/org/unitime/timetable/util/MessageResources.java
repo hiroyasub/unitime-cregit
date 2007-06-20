@@ -426,7 +426,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.properties.dynamicReload"
+literal|"tmtbl.properties.dynamic_reload"
 argument_list|,
 literal|null
 argument_list|)
@@ -456,7 +456,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.properties.dynamicReloadInterval"
+literal|"tmtbl.properties.dynamic_reload_interval"
 argument_list|)
 argument_list|,
 literal|15000

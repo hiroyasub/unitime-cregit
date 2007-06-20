@@ -733,7 +733,7 @@ specifier|final
 name|String
 name|CFG_APP_ACCESS_LEVEL
 init|=
-literal|"systemAccessLevel"
+literal|"tmtbl.access_level"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -741,7 +741,7 @@ specifier|final
 name|String
 name|CFG_SYSTEM_MESSAGE
 init|=
-literal|"systemMessage"
+literal|"tmtbl.system_message"
 decl_stmt|;
 comment|/** Configuration Values */
 specifier|public

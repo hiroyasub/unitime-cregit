@@ -335,7 +335,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.loginUrl"
+literal|"tmtbl.login_url"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -376,7 +376,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.loginUrl"
+literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=1"
@@ -448,7 +448,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.loginUrl"
+literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=2"
@@ -609,7 +609,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.loginUrl"
+literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=3"

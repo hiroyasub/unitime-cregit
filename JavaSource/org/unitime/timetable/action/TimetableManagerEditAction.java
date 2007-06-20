@@ -937,7 +937,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.manager.externalId.lookup.enabled"
+literal|"tmtbl.manager.external_id.lookup.enabled"
 argument_list|)
 decl_stmt|;
 if|if
@@ -1871,7 +1871,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.manager.externalId.lookup.class"
+literal|"tmtbl.manager.external_id.lookup.class"
 argument_list|)
 decl_stmt|;
 name|ExternalUidLookup
@@ -2565,7 +2565,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.manager.externalId.lookup.enabled"
+literal|"tmtbl.manager.external_id.lookup.enabled"
 argument_list|)
 decl_stmt|;
 if|if
