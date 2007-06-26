@@ -1155,9 +1155,6 @@ name|roomListForm
 operator|.
 name|setCanAdd
 argument_list|(
-operator|!
-name|hasExternalRooms
-operator|&&
 name|user
 operator|.
 name|getRole
@@ -1171,6 +1168,7 @@ name|ADMIN_ROLE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//&& !hasExternalRooms
 name|roomListForm
 operator|.
 name|setCanAddNonUniv
@@ -1217,10 +1215,10 @@ name|roomListForm
 operator|.
 name|setCanAdd
 argument_list|(
-operator|!
-name|hasExternalRooms
+literal|true
 argument_list|)
 expr_stmt|;
+comment|// !hasExternalRooms
 name|roomListForm
 operator|.
 name|setCanAddNonUniv
