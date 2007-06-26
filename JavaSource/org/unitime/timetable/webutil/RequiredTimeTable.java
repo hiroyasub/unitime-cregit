@@ -1957,6 +1957,13 @@ index|[
 name|i
 index|]
 argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"'"
+argument_list|,
+literal|"&#39;"
+argument_list|)
 operator|+
 literal|"'"
 argument_list|)
