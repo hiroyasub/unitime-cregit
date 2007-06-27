@@ -170,6 +170,13 @@ parameter_list|()
 block|{
 try|try
 block|{
+name|sLog
+operator|.
+name|info
+argument_list|(
+literal|"Solver passivation thread started."
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 literal|true
