@@ -201,6 +201,22 @@ name|model
 operator|.
 name|comparators
 operator|.
+name|ClassComparator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|comparators
+operator|.
 name|SchedulingSubpartComparator
 import|;
 end_import
@@ -884,9 +900,25 @@ name|BLANK_PREF_VALUE
 argument_list|)
 condition|)
 return|return;
-name|List
+name|TreeSet
 name|classes
 init|=
+operator|new
+name|TreeSet
+argument_list|(
+operator|new
+name|ClassComparator
+argument_list|(
+name|ClassComparator
+operator|.
+name|COMPARE_BY_HIERARCHY
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|classes
+operator|.
+name|addAll
+argument_list|(
 operator|new
 name|Class_DAO
 argument_list|()
@@ -898,9 +930,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c from Class_ c "
 operator|+
-literal|"where c.schedulingSubpart.uniqueId=:schedulingSubpartId "
-operator|+
-literal|"order by c.uniqueId"
+literal|"where c.schedulingSubpart.uniqueId=:schedulingSubpartId"
 argument_list|)
 operator|.
 name|setFetchSize
@@ -927,7 +957,8 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|print
 argument_list|(
 name|out
