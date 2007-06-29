@@ -289,7 +289,7 @@ name|timetable
 operator|.
 name|dataexchange
 operator|.
-name|StudentImportDAO
+name|StudentImport
 import|;
 end_import
 
@@ -672,10 +672,10 @@ argument_list|)
 condition|)
 block|{
 operator|new
-name|StudentImportDAO
+name|StudentImport
 argument_list|()
 operator|.
-name|loadFromXML
+name|loadXml
 argument_list|(
 name|fileName
 argument_list|)
