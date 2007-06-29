@@ -334,7 +334,6 @@ argument_list|(
 literal|"externalId"
 argument_list|)
 decl_stmt|;
-comment|//	            System.out.println("Loading " + externalId);
 name|Student
 name|student
 init|=
