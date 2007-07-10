@@ -57,6 +57,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URLDecoder
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|text
 operator|.
 name|SimpleDateFormat
@@ -172,13 +182,6 @@ name|pfc
 init|=
 literal|null
 decl_stmt|;
-specifier|private
-specifier|static
-name|PFCListenerShutdownHook
-name|hook
-init|=
-literal|null
-decl_stmt|;
 comment|/** 	 * Sets the properties  	 */
 static|static
 block|{
@@ -234,23 +237,6 @@ operator|.
 name|start
 argument_list|()
 expr_stmt|;
-comment|// Add shutdown hook to terminate threads gracefully
-name|hook
-operator|=
-operator|new
-name|PFCListenerShutdownHook
-argument_list|()
-expr_stmt|;
-name|Runtime
-operator|.
-name|getRuntime
-argument_list|()
-operator|.
-name|addShutdownHook
-argument_list|(
-name|hook
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 comment|/** 	 * Load properties  	 */
@@ -291,7 +277,17 @@ name|info
 argument_list|(
 literal|"Reading "
 operator|+
+name|URLDecoder
+operator|.
+name|decode
+argument_list|(
 name|appPropertiesUrl
+operator|.
+name|getPath
+argument_list|()
+argument_list|,
+literal|"UTF-8"
+argument_list|)
 operator|+
 literal|" ..."
 argument_list|)
@@ -384,7 +380,17 @@ name|info
 argument_list|(
 literal|"Reading "
 operator|+
+name|URLDecoder
+operator|.
+name|decode
+argument_list|(
 name|custPropertiesUrl
+operator|.
+name|getPath
+argument_list|()
+argument_list|,
+literal|"UTF-8"
+argument_list|)
 operator|+
 literal|" ..."
 argument_list|)
@@ -1213,49 +1219,6 @@ return|return
 name|file
 return|;
 block|}
-specifier|private
-specifier|static
-class|class
-name|PFCListenerShutdownHook
-extends|extends
-name|Thread
-block|{
-specifier|public
-name|void
-name|run
-parameter_list|()
-block|{
-name|Debug
-operator|.
-name|info
-argument_list|(
-literal|"Executing Property File Change Listener Shut Down Hook ..."
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|pfc
-operator|!=
-literal|null
-operator|&&
-name|pfc
-operator|.
-name|isAlive
-argument_list|()
-operator|&&
-operator|!
-name|pfc
-operator|.
-name|isInterrupted
-argument_list|()
-condition|)
-name|pfc
-operator|.
-name|interrupt
-argument_list|()
-expr_stmt|;
-block|}
-block|}
 comment|/** 	 * Stop Property File Change Listener Thread  	 */
 specifier|public
 specifier|static
@@ -1280,38 +1243,20 @@ operator|.
 name|isInterrupted
 argument_list|()
 condition|)
+block|{
+name|Debug
+operator|.
+name|info
+argument_list|(
+literal|"Stopping Property File Change Listener Thread ..."
+argument_list|)
+expr_stmt|;
 name|pfc
 operator|.
 name|interrupt
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-name|hook
-operator|!=
-literal|null
-operator|&&
-name|hook
-operator|.
-name|isAlive
-argument_list|()
-operator|&&
-operator|!
-name|hook
-operator|.
-name|isInterrupted
-argument_list|()
-condition|)
-name|Runtime
-operator|.
-name|getRuntime
-argument_list|()
-operator|.
-name|removeShutdownHook
-argument_list|(
-name|hook
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 comment|/**      * Thread to check if property file has changed      * and reload the properties on the fly. Interval = 1 minute      */
 specifier|static
@@ -1398,13 +1343,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|Debug
-operator|.
-name|info
-argument_list|(
-literal|"Exiting Property File Change Listener Thread ..."
-argument_list|)
-expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
