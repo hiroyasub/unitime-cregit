@@ -262,11 +262,6 @@ operator|.
 name|stopInfoCacheCleanup
 argument_list|()
 expr_stmt|;
-name|logMessage
-argument_list|(
-literal|" - Stopping Property File Change Listener ... "
-argument_list|)
-expr_stmt|;
 name|ApplicationProperties
 operator|.
 name|stopListener
