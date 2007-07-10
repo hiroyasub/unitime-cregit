@@ -1756,18 +1756,13 @@ name|clsOwner
 condition|?
 literal|"&nbsp;"
 else|:
-name|getResvString
-argument_list|(
-name|resv
-operator|.
-name|getRequested
-argument_list|()
-argument_list|,
 name|resv
 operator|.
 name|getReserved
 argument_list|()
-argument_list|)
+operator|.
+name|toString
+argument_list|()
 block|,
 literal|"&nbsp;"
 block|,
@@ -2194,17 +2189,6 @@ literal|"&nbsp;"
 block|,
 literal|"<DIV class='rowTotal'>"
 operator|+
-name|getResvString
-argument_list|(
-operator|new
-name|Integer
-argument_list|(
-name|corTotals
-index|[
-literal|3
-index|]
-argument_list|)
-argument_list|,
 operator|new
 name|Integer
 argument_list|(
@@ -2212,7 +2196,6 @@ name|corTotals
 index|[
 literal|0
 index|]
-argument_list|)
 argument_list|)
 operator|+
 literal|"</DIV>"
