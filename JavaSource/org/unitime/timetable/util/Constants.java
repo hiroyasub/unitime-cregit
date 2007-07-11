@@ -617,6 +617,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|SETTINGS_MENU_EXPAND
+init|=
+literal|"expandMenuItems"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|SETTINGS_INHERIT_INSTRUCTOR_PREF
 init|=
 literal|"inheritInstrPref"
