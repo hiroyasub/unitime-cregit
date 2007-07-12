@@ -593,6 +593,13 @@ name|intValue
 argument_list|()
 condition|)
 block|{
+name|Debug
+operator|.
+name|debug
+argument_list|(
+literal|"Removing course from instructional offering"
+argument_list|)
+expr_stmt|;
 name|s
 operator|.
 name|remove

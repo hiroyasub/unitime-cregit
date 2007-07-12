@@ -1742,6 +1742,14 @@ argument_list|(
 name|ar2
 argument_list|)
 expr_stmt|;
+comment|// Delete academic area reservations
+name|Debug
+operator|.
+name|debug
+argument_list|(
+literal|"Removing academic area reservation from course offering"
+argument_list|)
+expr_stmt|;
 name|hibSession
 operator|.
 name|delete
@@ -1756,6 +1764,13 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+name|co1
+operator|.
+name|setAcadAreaReservations
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 comment|/*	                 	                hibSession.saveOrUpdate(io1); 	                hibSession.flush(); */
 comment|// Remove from original inst offr
 name|Set
@@ -1813,67 +1828,17 @@ operator|.
 name|getSubjectArea
 argument_list|()
 decl_stmt|;
-name|Set
-name|saCrses
-init|=
 name|sa
 operator|.
 name|getCourseOfferings
 argument_list|()
-decl_stmt|;
-for|for
-control|(
-name|Iterator
-name|j
-init|=
-name|saCrses
 operator|.
-name|iterator
-argument_list|()
-init|;
-name|j
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|CourseOffering
-name|co4
-init|=
-operator|(
-name|CourseOffering
-operator|)
-name|j
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|co4
-operator|.
-name|equals
+name|remove
 argument_list|(
 name|co1
 argument_list|)
-condition|)
-block|{
-name|Debug
-operator|.
-name|debug
-argument_list|(
-literal|"Removing course offering from subject area list"
-argument_list|)
 expr_stmt|;
-name|j
-operator|.
-name|remove
-argument_list|()
-expr_stmt|;
-break|break;
-block|}
-block|}
+comment|/* 		                    Set saCrses = sa.getCourseOfferings(); 			                for (Iterator j=saCrses.iterator(); j.hasNext(); ) { 			                    CourseOffering co4 = (CourseOffering) j.next(); 			                    if (co4.equals(co1)) { 			                        Debug.debug("Removing course offering from subject area list"); 			                        j.remove(); 			                        break; 			                    } 			                } 			                */
 name|hibSession
 operator|.
 name|saveOrUpdate
@@ -1881,19 +1846,9 @@ argument_list|(
 name|sa
 argument_list|)
 expr_stmt|;
-name|hibSession
-operator|.
-name|refresh
-argument_list|(
-name|sa
-argument_list|)
-expr_stmt|;
+comment|//hibSession.refresh(sa);
 comment|// Remove from collection
-name|i
-operator|.
-name|remove
-argument_list|()
-expr_stmt|;
+comment|//i.remove();
 block|}
 block|}
 comment|// Delete old course offering
@@ -1977,6 +1932,13 @@ operator|==
 literal|1
 condition|)
 block|{
+name|Debug
+operator|.
+name|debug
+argument_list|(
+literal|"Removing course offering from course offering reservations"
+argument_list|)
+expr_stmt|;
 name|iterR
 operator|.
 name|remove
