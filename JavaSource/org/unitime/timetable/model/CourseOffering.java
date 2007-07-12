@@ -963,6 +963,16 @@ argument_list|(
 name|co
 argument_list|)
 expr_stmt|;
+name|cdao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|refresh
+argument_list|(
+name|subjArea
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
