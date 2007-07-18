@@ -187,20 +187,6 @@ name|TimetableManager
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|util
-operator|.
-name|Constants
-import|;
-end_import
-
 begin_comment
 comment|/**   * MyEclipse Struts  * Creation date: 05-05-2006  *   * XDoclet definition:  * @struts.form name="nonUnivLocationForm"  */
 end_comment
@@ -396,11 +382,21 @@ name|ignoreRoomCheck
 operator|=
 literal|false
 expr_stmt|;
+try|try
+block|{
 name|setDeptSize
 argument_list|(
 name|request
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+block|}
 block|}
 comment|/** 	 *  	 * @param request 	 */
 specifier|private
@@ -410,6 +406,8 @@ parameter_list|(
 name|HttpServletRequest
 name|request
 parameter_list|)
+throws|throws
+name|Exception
 block|{
 name|deptSize
 operator|=
@@ -431,17 +429,15 @@ decl_stmt|;
 name|Long
 name|sessionId
 init|=
-operator|(
-name|Long
-operator|)
-name|user
+name|Session
 operator|.
-name|getAttribute
+name|getCurrentAcadSession
 argument_list|(
-name|Constants
-operator|.
-name|SESSION_ID_ATTR_NAME
+name|user
 argument_list|)
+operator|.
+name|getSessionId
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
