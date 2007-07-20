@@ -29,7 +29,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileReader
+name|FileInputStream
 import|;
 end_import
 
@@ -514,17 +514,17 @@ operator|+
 literal|" ..."
 argument_list|)
 expr_stmt|;
-name|FileReader
-name|reader
+name|FileInputStream
+name|fis
 init|=
 literal|null
 decl_stmt|;
 try|try
 block|{
-name|reader
+name|fis
 operator|=
 operator|new
-name|FileReader
+name|FileInputStream
 argument_list|(
 name|customProperties
 argument_list|)
@@ -533,7 +533,7 @@ name|props
 operator|.
 name|load
 argument_list|(
-name|reader
+name|fis
 argument_list|)
 expr_stmt|;
 name|custPropertiesLastModified
@@ -552,11 +552,11 @@ finally|finally
 block|{
 if|if
 condition|(
-name|reader
+name|fis
 operator|!=
 literal|null
 condition|)
-name|reader
+name|fis
 operator|.
 name|close
 argument_list|()
