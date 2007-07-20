@@ -1006,7 +1006,14 @@ name|classLoader
 operator|.
 name|getResource
 argument_list|(
+name|properties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.custom.properties"
+argument_list|,
 literal|"custom.properties"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1046,7 +1053,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"Solver.Properties"
+literal|"tmtbl.custom.properties"
 argument_list|)
 operator|!=
 literal|null
@@ -1071,7 +1078,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"Solver.Properties"
+literal|"tmtbl.custom.properties"
 argument_list|)
 operator|+
 literal|" ..."
@@ -1093,7 +1100,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"Solver.Properties"
+literal|"tmtbl.custom.properties"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1130,7 +1137,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"Solver.Properties"
+literal|"tmtbl.custom.properties"
 argument_list|)
 operator|+
 literal|", message: "
