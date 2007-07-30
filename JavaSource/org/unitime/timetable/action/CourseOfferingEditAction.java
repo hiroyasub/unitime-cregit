@@ -735,7 +735,7 @@ operator|.
 name|toString
 argument_list|()
 else|:
-literal|"-"
+literal|null
 argument_list|)
 expr_stmt|;
 name|request
