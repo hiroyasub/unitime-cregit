@@ -1595,7 +1595,7 @@ expr_stmt|;
 comment|//after all classes have been loaded into the form tell the form to determine whether each class can be moved up or down.
 name|frm
 operator|.
-name|initalizeSubpartSubtotals
+name|initalizeSubpartSubtotalsAndDisplayFlags
 argument_list|()
 expr_stmt|;
 name|frm
@@ -1943,7 +1943,7 @@ expr_stmt|;
 comment|//after all classes have been loaded into the form tell the form to determine whether each class can be moved up or down.
 name|frm
 operator|.
-name|initalizeSubpartSubtotals
+name|initalizeSubpartSubtotalsAndDisplayFlags
 argument_list|()
 expr_stmt|;
 name|frm
