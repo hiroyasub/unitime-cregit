@@ -707,6 +707,15 @@ argument_list|(
 literal|"button.deleteIo"
 argument_list|)
 argument_list|)
+operator|&&
+name|request
+operator|.
+name|getAttribute
+argument_list|(
+literal|"cfgDelete"
+argument_list|)
+operator|==
+literal|null
 condition|)
 block|{
 name|doDelete

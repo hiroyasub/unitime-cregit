@@ -2458,6 +2458,15 @@ name|getInstrOfferingId
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"cfgDelete"
+argument_list|,
+literal|"1"
+argument_list|)
+expr_stmt|;
 return|return
 name|mapping
 operator|.
