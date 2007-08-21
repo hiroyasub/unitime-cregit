@@ -761,7 +761,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Name"
+literal|"Class"
 block|,
 literal|"Instructor"
 block|,
@@ -1214,7 +1214,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Name"
+literal|"Class"
 block|,
 literal|"Instructor"
 block|,
