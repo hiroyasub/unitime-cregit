@@ -719,7 +719,7 @@ name|int
 name|iWeek
 init|=
 operator|-
-literal|1
+literal|100
 decl_stmt|;
 specifier|private
 name|boolean
@@ -968,7 +968,7 @@ operator|new
 name|Long
 argument_list|(
 operator|-
-literal|1
+literal|100
 argument_list|)
 argument_list|,
 literal|"All weeks"
@@ -1112,7 +1112,7 @@ condition|)
 name|iWeek
 operator|=
 operator|-
-literal|1
+literal|100
 expr_stmt|;
 return|return
 name|weeks
@@ -3240,8 +3240,9 @@ expr_stmt|;
 if|if
 condition|(
 name|iWeek
-operator|<
-literal|0
+operator|==
+operator|-
+literal|100
 operator|&&
 name|cell
 operator|.
@@ -4108,8 +4109,9 @@ expr_stmt|;
 if|if
 condition|(
 name|iWeek
-operator|<
-literal|0
+operator|==
+operator|-
+literal|100
 operator|&&
 name|cell
 operator|.
@@ -4903,8 +4905,9 @@ expr_stmt|;
 if|if
 condition|(
 name|iWeek
-operator|<
-literal|0
+operator|==
+operator|-
+literal|100
 operator|&&
 name|cell
 operator|.
@@ -5197,8 +5200,9 @@ init|=
 operator|(
 name|getWeek
 argument_list|()
-operator|<
-literal|0
+operator|==
+operator|-
+literal|100
 condition|?
 operator|-
 literal|1
