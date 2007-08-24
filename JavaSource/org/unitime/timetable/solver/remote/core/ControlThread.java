@@ -39,6 +39,16 @@ name|Hashtable
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -754,6 +764,31 @@ name|sSolverPauseIcon
 argument_list|)
 expr_stmt|;
 block|}
+name|Properties
+name|webServerProperties
+init|=
+literal|null
+decl_stmt|;
+try|try
+block|{
+name|webServerProperties
+operator|=
+operator|(
+name|Properties
+operator|)
+name|query
+argument_list|(
+literal|"properties"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+block|}
 name|RemoteSolverServer
 operator|.
 name|initServer
@@ -767,6 +802,8 @@ name|query
 argument_list|(
 literal|"url"
 argument_list|)
+argument_list|,
+name|webServerProperties
 argument_list|)
 expr_stmt|;
 if|if
