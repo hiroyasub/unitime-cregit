@@ -3873,7 +3873,7 @@ literal|false
 argument_list|,
 name|Element
 operator|.
-name|ALIGN_CENTER
+name|ALIGN_LEFT
 argument_list|,
 name|color
 argument_list|,
@@ -3931,7 +3931,7 @@ literal|false
 argument_list|,
 name|Element
 operator|.
-name|ALIGN_CENTER
+name|ALIGN_LEFT
 argument_list|,
 name|color
 argument_list|,
@@ -4019,7 +4019,7 @@ name|setHorizontalAlignment
 argument_list|(
 name|Element
 operator|.
-name|ALIGN_CENTER
+name|ALIGN_LEFT
 argument_list|)
 expr_stmt|;
 block|}
