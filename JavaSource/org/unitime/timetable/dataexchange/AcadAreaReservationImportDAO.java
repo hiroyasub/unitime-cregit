@@ -509,19 +509,7 @@ name|area
 operator|==
 literal|null
 condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Academic Area "
-operator|+
-name|academicArea
-operator|+
-literal|" not found."
-argument_list|)
-throw|;
-block|}
+continue|continue;
 name|String
 name|priority
 init|=
@@ -568,6 +556,13 @@ argument_list|,
 name|course
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|offer
+operator|==
+literal|null
+condition|)
+continue|continue;
 name|reservation
 operator|.
 name|setOwner
