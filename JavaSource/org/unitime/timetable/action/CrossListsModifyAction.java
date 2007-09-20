@@ -3738,6 +3738,19 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+comment|// Only change departmental class managing dept and not externally managed
+if|if
+condition|(
+operator|!
+name|cls
+operator|.
+name|getManagingDept
+argument_list|()
+operator|.
+name|isExternalManager
+argument_list|()
+condition|)
+block|{
 name|cls
 operator|.
 name|setManagingDept
@@ -3752,6 +3765,7 @@ argument_list|(
 name|cls
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
