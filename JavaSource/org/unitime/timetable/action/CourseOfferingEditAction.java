@@ -2136,10 +2136,7 @@ decl_stmt|;
 name|Long
 name|subjectAreaId
 init|=
-name|io
-operator|.
-name|getControllingCourseOffering
-argument_list|()
+name|co
 operator|.
 name|getSubjectArea
 argument_list|()
@@ -2147,6 +2144,7 @@ operator|.
 name|getUniqueId
 argument_list|()
 decl_stmt|;
+comment|//io.getControllingCourseOffering().getSubjectArea().getUniqueId();
 name|frm
 operator|.
 name|setDemandCourseOfferingId
