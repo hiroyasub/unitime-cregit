@@ -389,6 +389,10 @@ name|departmentListForm
 operator|.
 name|setDepartments
 argument_list|(
+name|Department
+operator|.
+name|findAll
+argument_list|(
 name|Session
 operator|.
 name|getCurrentAcadSession
@@ -396,8 +400,9 @@ argument_list|(
 name|user
 argument_list|)
 operator|.
-name|getDepartments
+name|getUniqueId
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
