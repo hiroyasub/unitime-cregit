@@ -2180,23 +2180,10 @@ comment|// Get default room group
 name|RoomGroup
 name|rg
 init|=
-operator|(
 name|RoomGroup
-operator|)
-name|hibSession
 operator|.
-name|createQuery
-argument_list|(
-literal|"from RoomGroup as rg where rg.global = true and rg.defaultGroup= true"
-argument_list|)
-operator|.
-name|list
+name|getGlobalDefaultRoomGroup
 argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
 decl_stmt|;
 name|Transaction
 name|tx
@@ -3674,6 +3661,10 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|)
+operator|&&
+name|rg
+operator|!=
+literal|null
 condition|)
 block|{
 name|rgp

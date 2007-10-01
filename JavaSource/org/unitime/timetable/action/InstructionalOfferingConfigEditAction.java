@@ -7069,6 +7069,10 @@ argument_list|()
 operator|.
 name|booleanValue
 argument_list|()
+operator|&&
+name|rg
+operator|!=
+literal|null
 condition|)
 block|{
 comment|// Add default room group pref of classroom
@@ -7768,6 +7772,10 @@ argument_list|()
 operator|.
 name|booleanValue
 argument_list|()
+operator|&&
+name|rg
+operator|!=
+literal|null
 condition|)
 block|{
 comment|// Add default room group pref of classroom
