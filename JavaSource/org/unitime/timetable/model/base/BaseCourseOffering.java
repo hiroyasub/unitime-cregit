@@ -440,6 +440,14 @@ operator|.
 name|Set
 name|acadAreaReservations
 decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+name|courseReservations
+decl_stmt|;
 comment|/** 	 * Return the unique identifier of this class      * @hibernate.id      *  generator-class="org.unitime.commons.hibernate.id.UniqueIdGenerator"      *  column="UNIQUEID"      */
 specifier|public
 name|java
@@ -1056,6 +1064,40 @@ operator|.
 name|acadAreaReservations
 operator|=
 name|acadAreaReservations
+expr_stmt|;
+block|}
+comment|/**     * Return the value associated with the column: courseReservations     */
+specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+name|getCourseReservations
+parameter_list|()
+block|{
+return|return
+name|courseReservations
+return|;
+block|}
+comment|/**     * Set the value related to the column: courseReservations     * @param courseReservations the courseReservations value     */
+specifier|public
+name|void
+name|setCourseReservations
+parameter_list|(
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+name|courseReservations
+parameter_list|)
+block|{
+name|this
+operator|.
+name|courseReservations
+operator|=
+name|courseReservations
 expr_stmt|;
 block|}
 specifier|public
