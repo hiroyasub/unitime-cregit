@@ -4451,19 +4451,17 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete StudentEnrollment x where x in "
-operator|+
-literal|" ( select s from StudentEnrollment s where s.solution.uniqueId=:solutionId ) "
+literal|"delete StudentEnrollment x where x.solution.uniqueId=:solutionId "
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
 argument_list|()
 operator|.
-name|intValue
+name|longValue
 argument_list|()
 argument_list|)
 operator|.
@@ -4474,19 +4472,17 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete JointEnrollment x where x in "
-operator|+
-literal|" ( select j from JointEnrollment j where j.solution.uniqueId=:solutionId ) "
+literal|"delete JointEnrollment x where x.solution.uniqueId=:solutionId "
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
 argument_list|()
 operator|.
-name|intValue
+name|longValue
 argument_list|()
 argument_list|)
 operator|.
@@ -4524,9 +4520,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete Assignment x where x in "
-operator|+
-literal|" ( select a from Assignment a where a.solution.uniqueId=:solutionId ) "
+literal|"delete Assignment x where x.solution.uniqueId=:solutionId "
 argument_list|)
 operator|.
 name|setInteger
