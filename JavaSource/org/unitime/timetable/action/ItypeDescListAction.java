@@ -384,15 +384,9 @@ name|webTable
 operator|.
 name|addLine
 argument_list|(
-literal|"onclick=\"document.location.href='itypeDescEdit.do?op=edit&id="
-operator|+
-name|itypeDesc
-operator|.
-name|getItype
-argument_list|()
-operator|+
-literal|"';\""
+literal|null
 argument_list|,
+comment|//"onclick=\"document.location.href='itypeDescEdit.do?op=edit&id=" + itypeDesc.getItype() + "';\"",
 operator|new
 name|String
 index|[]
