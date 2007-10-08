@@ -2293,6 +2293,7 @@ return|;
 block|}
 comment|/**      * Return best matching time pattern for the given time pattern      * @param sessionId id of academic session from which the returned time pattern should be      * @param pattern given time pattern (from different academic session)      * @return      */
 specifier|public
+specifier|static
 name|TimePattern
 name|getMatchingTimePattern
 parameter_list|(
@@ -2693,6 +2694,7 @@ return|;
 block|}
 comment|/**      * Return best matching time preference for the given time preference      * @param sessionId id of academic session from which the returned time preference should be      * @param timePref given time preference (from different academic session)      * @return      */
 specifier|public
+specifier|static
 name|TimePref
 name|getMatchingTimePreference
 parameter_list|(
