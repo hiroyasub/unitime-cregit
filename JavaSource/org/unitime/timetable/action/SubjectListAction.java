@@ -417,6 +417,10 @@ name|subjectListForm
 operator|.
 name|setSubjects
 argument_list|(
+name|SubjectArea
+operator|.
+name|getSubjectAreaList
+argument_list|(
 name|Session
 operator|.
 name|getCurrentAcadSession
@@ -424,8 +428,9 @@ argument_list|(
 name|user
 argument_list|)
 operator|.
-name|getSubjectAreas
+name|getUniqueId
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
