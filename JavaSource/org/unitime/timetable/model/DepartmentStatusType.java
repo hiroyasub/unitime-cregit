@@ -675,6 +675,32 @@ name|sApplyDepartment
 argument_list|)
 return|;
 block|}
+comment|/** Status is active when someone can edit, timetable or commit*/
+specifier|public
+name|boolean
+name|isActive
+parameter_list|()
+block|{
+return|return
+name|canTimetable
+argument_list|()
+operator|||
+name|canCommit
+argument_list|()
+operator|||
+name|canManagerEdit
+argument_list|()
+operator|||
+name|canOwnerEdit
+argument_list|()
+operator|||
+name|canManagerLimitedEdit
+argument_list|()
+operator|||
+name|canOwnerLimitedEdit
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
