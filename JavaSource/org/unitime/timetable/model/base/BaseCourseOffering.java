@@ -199,13 +199,6 @@ name|java
 operator|.
 name|lang
 operator|.
-name|String
-name|permId
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
 name|Integer
 name|nbrExpectedStudents
 parameter_list|,
@@ -243,13 +236,6 @@ operator|.
 name|setIsControl
 argument_list|(
 name|isControl
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|setPermId
-argument_list|(
-name|permId
 argument_list|)
 expr_stmt|;
 name|this

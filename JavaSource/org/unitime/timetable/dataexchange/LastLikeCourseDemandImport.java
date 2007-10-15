@@ -808,6 +808,15 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|offer
+operator|.
+name|getPermId
+argument_list|()
+operator|!=
+literal|null
+condition|)
 name|courseOfferings
 operator|.
 name|put
