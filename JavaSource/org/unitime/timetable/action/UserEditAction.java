@@ -964,7 +964,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"External Id"
+literal|"External ID"
 block|,
 literal|"User Name"
 block|,
