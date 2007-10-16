@@ -668,13 +668,6 @@ name|equals
 argument_list|(
 name|op
 argument_list|)
-operator|||
-literal|"Export"
-operator|.
-name|equals
-argument_list|(
-name|op
-argument_list|)
 condition|)
 block|{
 comment|// Validate input
@@ -2385,7 +2378,7 @@ name|WebTable
 argument_list|(
 literal|4
 argument_list|,
-literal|"Solver Settings"
+literal|"Solver Configurations"
 argument_list|,
 literal|"solverSettings.do?ord=%%"
 argument_list|,
@@ -2393,9 +2386,9 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Name"
+literal|"Reference"
 block|,
-literal|"Description"
+literal|"Name"
 block|,
 literal|"Appearance"
 block|}
