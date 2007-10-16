@@ -113,22 +113,6 @@ name|User
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|dao
-operator|.
-name|UserDAO
-import|;
-end_import
-
 begin_comment
 comment|/**   *   * @author Tomas Muller  *   */
 end_comment
@@ -224,13 +208,9 @@ name|getOp
 argument_list|()
 argument_list|)
 operator|&&
-operator|(
-operator|new
-name|UserDAO
-argument_list|()
-operator|)
+name|User
 operator|.
-name|get
+name|findByExternalId
 argument_list|(
 name|getExternalId
 argument_list|()
