@@ -453,7 +453,7 @@ index|[]
 block|{
 literal|"Roles"
 block|,
-literal|"External Id"
+literal|"External ID"
 block|,
 literal|"Name"
 block|,
@@ -474,7 +474,7 @@ index|[]
 block|{
 literal|"Roles"
 block|,
-literal|"External Id"
+literal|"External ID"
 block|,
 literal|"Name"
 block|,
