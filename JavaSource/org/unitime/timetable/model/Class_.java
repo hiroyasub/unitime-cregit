@@ -4259,64 +4259,6 @@ name|effectiveDatePattern
 argument_list|()
 return|;
 block|}
-comment|// This code should no longer be needed but I am keeping it here as a reference.
-comment|//    public void setFacilityGroupUpdateSubpartIfNeeded(FacilityGroup group, org.hibernate.Session hibSession) {
-comment|//    	if (group.equals(getFacilityGroup())) return; //same group -> no change
-comment|//
-comment|//    	if (getFacilityGroup()==null) {
-comment|//    		super.setFacilityGroup(group); return;
-comment|//    	}
-comment|//
-comment|//    	super.setFacilityGroup(group);
-comment|//    	getPreferences().clear(); //clear my preferences
-comment|//
-comment|//    	deleteAllDistributionPreferences(hibSession);
-comment|//
-comment|//    	SchedulingSubpart subpart = getSchedulingSubpart();
-comment|//    	if (subpart==null) return;
-comment|//
-comment|//    	Department mgrDept = getSchedulingSubpart().getManagingDept();
-comment|//    	if (mgrDept==null) return;
-comment|//
-comment|//    	boolean clearSubpart = false;
-comment|//
-comment|//    	if (mgrDept.isExternalManager().booleanValue()) { //LLR/LAB
-comment|//    		//FIXME: ?? not sure what to do with this
-comment|//    		if (group.getReference().equals(Constants.FACILITY_GROUP_DEPT))
-comment|//    			clearSubpart = true; //change to departmental
-comment|//    	} else if (!group.getReference().equals(Constants.FACILITY_GROUP_DEPT)) { //deputy -> LLR/LAB
-comment|//    		boolean allClassesSameFacility = true;
-comment|//    		for (Iterator i=subpart.getClasses().iterator();i.hasNext();) {
-comment|//    			Class_ c = (Class_)i.next();
-comment|//    			if (!c.getFacilityGroup().equals(group)) {
-comment|//    				allClassesSameFacility = false; break;
-comment|//    			}
-comment|//    		}
-comment|//    		if (allClassesSameFacility)
-comment|//    			clearSubpart = true; //all classes are now LLR / LAB -> subpart owner change to LLR / LAB
-comment|//    	}
-comment|//
-comment|//    	if (clearSubpart) {
-comment|//    		subpart.deleteAllDistributionPreferences(hibSession);
-comment|//
-comment|//    		//onwer of subpar changed -> clear subpart preferences, but keep time pattern
-comment|//    		for (Iterator i=getSchedulingSubpart().getPreferences().iterator();i.hasNext();) {
-comment|//    			Preference p = (Preference)i.next();
-comment|//    			if (p instanceof TimePref) {
-comment|//    				TimePref tp = (TimePref)p;
-comment|//    				TimePatternModel m = tp.getTimePatternModel();
-comment|//    				if (!group.getReference().equals(Constants.FACILITY_GROUP_DEPT))
-comment|//    					m.weakenHardPreferences();
-comment|//    				tp.setTimePatternModel(m);
-comment|//    				hibSession.saveOrUpdate(tp);
-comment|//    			} else {
-comment|//    				i.remove();
-comment|//    				hibSession.delete(p);
-comment|//    			}
-comment|//    		}
-comment|//    		hibSession.saveOrUpdate(getSchedulingSubpart());
-comment|//    	}
-comment|//    }
 specifier|public
 name|boolean
 name|canUseHardTimePreferences
