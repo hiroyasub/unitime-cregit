@@ -765,7 +765,7 @@ operator|.
 name|getItype
 argument_list|()
 operator|.
-name|getSmas_abbv
+name|getAbbv
 argument_list|()
 decl_stmt|;
 name|String

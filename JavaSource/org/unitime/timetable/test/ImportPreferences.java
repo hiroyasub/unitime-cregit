@@ -6559,12 +6559,12 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select i from ItypeDesc i where i.smas_abbv=:smas_abbv"
+literal|"select i from ItypeDesc i where i.abbv=:abbv"
 argument_list|)
 operator|.
 name|setString
 argument_list|(
-literal|"smas_abbv"
+literal|"abbv"
 argument_list|,
 name|element
 operator|.

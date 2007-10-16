@@ -299,7 +299,7 @@ literal|null
 else|:
 name|itype
 operator|.
-name|getSmas_abbv
+name|getAbbv
 argument_list|()
 operator|)
 return|;

@@ -279,7 +279,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|6
+literal|5
 argument_list|,
 literal|"Instructional Types"
 argument_list|,
@@ -295,8 +295,6 @@ literal|"DESCRIPTION"
 block|,
 literal|"SIS_REF"
 block|,
-literal|"SMAS_ABBV"
-block|,
 literal|"BASIC"
 block|}
 argument_list|,
@@ -304,8 +302,6 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"left"
-block|,
 literal|"left"
 block|,
 literal|"left"
@@ -412,11 +408,6 @@ block|,
 name|itypeDesc
 operator|.
 name|getSis_ref
-argument_list|()
-block|,
-name|itypeDesc
-operator|.
-name|getSmas_abbv
 argument_list|()
 block|,
 name|itypeDesc

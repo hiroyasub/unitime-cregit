@@ -1633,7 +1633,7 @@ literal|"setting up subpart: "
 operator|+
 name|itype
 operator|.
-name|getSmas_abbv
+name|getAbbv
 argument_list|()
 operator|+
 literal|", Level: "
