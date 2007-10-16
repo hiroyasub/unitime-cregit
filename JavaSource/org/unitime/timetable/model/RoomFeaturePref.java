@@ -316,7 +316,6 @@ name|PreferenceGroup
 name|group
 parameter_list|)
 block|{
-comment|//FIXME: user (schedule deputy/llr manager/lab manager) features cannot be set on a class with different facility group than (DEPT/LLR/LAB)
 return|return
 literal|true
 return|;
