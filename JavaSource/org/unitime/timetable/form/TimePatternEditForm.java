@@ -944,7 +944,7 @@ argument_list|)
 expr_stmt|;
 name|iOp
 operator|=
-literal|"Add New"
+literal|"Save"
 expr_stmt|;
 name|iVisible
 operator|=
