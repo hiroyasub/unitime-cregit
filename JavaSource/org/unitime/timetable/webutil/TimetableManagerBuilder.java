@@ -1608,6 +1608,24 @@ argument_list|)
 operator|+
 literal|"'>"
 operator|+
+name|lastChange
+operator|.
+name|getSourceTitle
+argument_list|(
+name|request
+argument_list|)
+operator|+
+literal|" ("
+operator|+
+name|lastChange
+operator|.
+name|getOperationTitle
+argument_list|(
+name|request
+argument_list|)
+operator|+
+literal|") on "
+operator|+
 name|ChangeLog
 operator|.
 name|sDFdate
@@ -1619,16 +1637,6 @@ operator|.
 name|getTimeStamp
 argument_list|()
 argument_list|)
-operator|+
-literal|" by "
-operator|+
-name|lastChange
-operator|.
-name|getManager
-argument_list|()
-operator|.
-name|getShortName
-argument_list|()
 operator|+
 literal|"</span>"
 operator|)
@@ -1643,6 +1651,24 @@ literal|null
 condition|?
 literal|""
 else|:
+name|lastChange
+operator|.
+name|getSourceTitle
+argument_list|(
+name|request
+argument_list|)
+operator|+
+literal|" ("
+operator|+
+name|lastChange
+operator|.
+name|getOperationTitle
+argument_list|(
+name|request
+argument_list|)
+operator|+
+literal|") on "
+operator|+
 name|ChangeLog
 operator|.
 name|sDFdate
@@ -1654,16 +1680,6 @@ operator|.
 name|getTimeStamp
 argument_list|()
 argument_list|)
-operator|+
-literal|" by "
-operator|+
-name|lastChange
-operator|.
-name|getManager
-argument_list|()
-operator|.
-name|getShortName
-argument_list|()
 operator|)
 expr_stmt|;
 name|lastChangeCmp
