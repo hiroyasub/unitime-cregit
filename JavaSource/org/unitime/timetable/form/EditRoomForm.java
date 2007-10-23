@@ -943,7 +943,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*         if(room&& coordX==null || coordX.equalsIgnoreCase("") || coordY==null || coordY.equalsIgnoreCase("")) {             errors.add("Coordinations",                      new ActionMessage("errors.required", "Coordinations") );         }         */
+comment|/*         if(room&& coordX==null || coordX.equalsIgnoreCase("") || coordY==null || coordY.equalsIgnoreCase("")) {             errors.add("Coordinates",                      new ActionMessage("errors.required", "Coordinates") );         }         */
 return|return
 name|errors
 return|;
