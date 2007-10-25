@@ -238,6 +238,13 @@ name|this
 operator|.
 name|isFractionalIncrementsAllowed
 argument_list|()
+operator|==
+literal|null
+operator|||
+name|this
+operator|.
+name|isFractionalIncrementsAllowed
+argument_list|()
 operator|.
 name|booleanValue
 argument_list|()

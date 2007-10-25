@@ -63,6 +63,13 @@ name|PROP_GROUPING
 init|=
 literal|"grouping"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_UNIQUE_ID_ROLLED_FORWARD_FROM
+init|=
+literal|"uniqueIdRolledForwardFrom"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseDistributionPref
@@ -151,6 +158,14 @@ operator|.
 name|Integer
 name|grouping
 decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Long
+name|uniqueIdRolledForwardFrom
+decl_stmt|;
 comment|// many to one
 specifier|private
 name|org
@@ -205,6 +220,40 @@ operator|.
 name|grouping
 operator|=
 name|grouping
+expr_stmt|;
+block|}
+comment|/** 	 * Return the value associated with the column: UID_ROLLED_FWD_FROM 	 */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Long
+name|getUniqueIdRolledForwardFrom
+parameter_list|()
+block|{
+return|return
+name|uniqueIdRolledForwardFrom
+return|;
+block|}
+comment|/** 	 * Set the value related to the column: UID_ROLLED_FWD_FROM 	 * @param uniqueIdRolledForwardFrom the UID_ROLLED_FWD_FROM value 	 */
+specifier|public
+name|void
+name|setUniqueIdRolledForwardFrom
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Long
+name|uniqueIdRolledForwardFrom
+parameter_list|)
+block|{
+name|this
+operator|.
+name|uniqueIdRolledForwardFrom
+operator|=
+name|uniqueIdRolledForwardFrom
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: DIST_TYPE_ID 	 */

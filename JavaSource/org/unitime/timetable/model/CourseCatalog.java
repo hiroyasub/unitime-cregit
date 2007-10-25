@@ -245,7 +245,7 @@ block|}
 name|String
 name|query
 init|=
-literal|"select distinct cc.* from CourseCatalog cc"
+literal|"select distinct cc from CourseCatalog cc"
 decl_stmt|;
 name|query
 operator|+=
@@ -261,7 +261,7 @@ literal|"    and cc.courseNumber=:courseNbr"
 expr_stmt|;
 name|query
 operator|+=
-literal|"    and (cc.previousSubject is null or cc.previousSubject = cc.subject"
+literal|"    and (cc.previousSubject is null or cc.previousSubject = cc.subject)"
 expr_stmt|;
 name|query
 operator|+=
@@ -283,6 +283,18 @@ name|getPermId
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|courseOffering
+operator|.
+name|getPermId
+argument_list|()
+argument_list|)
+operator|>
+literal|0
 condition|)
 block|{
 name|query

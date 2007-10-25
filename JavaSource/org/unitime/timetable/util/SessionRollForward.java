@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.0 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2007, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/**  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
 end_comment
 
 begin_package
@@ -14,6 +14,16 @@ operator|.
 name|util
 package|;
 end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
 
 begin_import
 import|import
@@ -187,6 +197,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ClassInstructor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|Class_
 import|;
 end_import
@@ -258,6 +282,20 @@ operator|.
 name|model
 operator|.
 name|Designator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|DistributionObject
 import|;
 end_import
 
@@ -356,6 +394,20 @@ operator|.
 name|model
 operator|.
 name|GlobalRoomFeature
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|InstructionalOffering
 import|;
 end_import
 
@@ -625,6 +677,22 @@ name|model
 operator|.
 name|dao
 operator|.
+name|Class_DAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
 name|CourseCatalogDAO
 import|;
 end_import
@@ -674,6 +742,22 @@ operator|.
 name|dao
 operator|.
 name|DepartmentalInstructorDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|DistributionPrefDAO
 import|;
 end_import
 
@@ -770,6 +854,22 @@ operator|.
 name|dao
 operator|.
 name|GlobalRoomFeatureDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|InstructionalOfferingDAO
 import|;
 end_import
 
@@ -2868,6 +2968,11 @@ argument_list|,
 name|toRoom
 argument_list|,
 name|toSession
+argument_list|,
+name|toExternalRoom
+operator|.
+name|getRoomDepartments
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -3073,6 +3178,281 @@ operator|)
 return|;
 block|}
 specifier|private
+name|boolean
+name|isControllingExternalDept
+parameter_list|(
+name|ExternalRoomDepartment
+name|externalRoomDept
+parameter_list|,
+name|Set
+name|deptList
+parameter_list|)
+block|{
+name|String
+name|asgn
+init|=
+literal|"assigned"
+decl_stmt|;
+name|String
+name|sched
+init|=
+literal|"scheduling"
+decl_stmt|;
+if|if
+condition|(
+name|externalRoomDept
+operator|==
+literal|null
+operator|||
+name|deptList
+operator|==
+literal|null
+operator|||
+name|deptList
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+return|return
+operator|(
+literal|false
+operator|)
+return|;
+block|}
+if|if
+condition|(
+name|deptList
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|1
+condition|)
+block|{
+if|if
+condition|(
+name|deptList
+operator|.
+name|contains
+argument_list|(
+name|externalRoomDept
+argument_list|)
+condition|)
+block|{
+return|return
+operator|(
+literal|true
+operator|)
+return|;
+block|}
+else|else
+block|{
+return|return
+operator|(
+literal|false
+operator|)
+return|;
+block|}
+block|}
+else|else
+block|{
+name|boolean
+name|isControl
+init|=
+literal|true
+decl_stmt|;
+name|ExternalRoomDepartment
+name|erd
+init|=
+literal|null
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|erdIt
+init|=
+name|deptList
+operator|.
+name|iterator
+argument_list|()
+init|;
+operator|(
+name|erdIt
+operator|.
+name|hasNext
+argument_list|()
+operator|&&
+name|isControl
+operator|)
+condition|;
+control|)
+block|{
+name|erd
+operator|=
+operator|(
+name|ExternalRoomDepartment
+operator|)
+name|erdIt
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|erd
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|erd
+operator|.
+name|equals
+argument_list|(
+name|externalRoomDept
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|erd
+operator|.
+name|getDepartmentCode
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|externalRoomDept
+operator|.
+name|getDepartmentCode
+argument_list|()
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|externalRoomDept
+operator|.
+name|getAssignmentType
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|asgn
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|erd
+operator|.
+name|getAssignmentType
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|asgn
+argument_list|)
+operator|&&
+name|erd
+operator|.
+name|getPercent
+argument_list|()
+operator|.
+name|compareTo
+argument_list|(
+name|externalRoomDept
+operator|.
+name|getPercent
+argument_list|()
+argument_list|)
+operator|>=
+literal|0
+condition|)
+block|{
+name|isControl
+operator|=
+literal|false
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|erd
+operator|.
+name|getAssignmentType
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|sched
+argument_list|)
+condition|)
+block|{
+name|isControl
+operator|=
+literal|false
+expr_stmt|;
+block|}
+block|}
+if|else if
+condition|(
+name|externalRoomDept
+operator|.
+name|getAssignmentType
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|sched
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|erd
+operator|.
+name|getAssignmentType
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|sched
+argument_list|)
+operator|&&
+name|erd
+operator|.
+name|getPercent
+argument_list|()
+operator|.
+name|compareTo
+argument_list|(
+name|externalRoomDept
+operator|.
+name|getPercent
+argument_list|()
+argument_list|)
+operator|>=
+literal|0
+condition|)
+block|{
+name|isControl
+operator|=
+literal|false
+expr_stmt|;
+block|}
+block|}
+block|}
+block|}
+block|}
+return|return
+operator|(
+name|isControl
+operator|)
+return|;
+block|}
+block|}
+specifier|private
 name|RoomDept
 name|rollForwardRoomDept
 parameter_list|(
@@ -3084,6 +3464,9 @@ name|toRoom
 parameter_list|,
 name|Session
 name|toSession
+parameter_list|,
+name|Set
+name|externalRoomDepts
 parameter_list|)
 block|{
 name|Department
@@ -3143,7 +3526,12 @@ argument_list|(
 operator|new
 name|Boolean
 argument_list|(
-literal|false
+name|isControllingExternalDept
+argument_list|(
+name|toExternalRoomDept
+argument_list|,
+name|externalRoomDepts
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4521,6 +4909,11 @@ argument_list|,
 name|r
 argument_list|,
 name|toSession
+argument_list|,
+name|er
+operator|.
+name|getRoomDepartments
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -5257,6 +5650,13 @@ name|fromDepartment
 operator|.
 name|clone
 argument_list|()
+expr_stmt|;
+name|toDepartment
+operator|.
+name|setStatusType
+argument_list|(
+literal|null
+argument_list|)
 expr_stmt|;
 name|toDepartment
 operator|.
@@ -7228,6 +7628,24 @@ operator|.
 name|getManagingDept
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|toDepartment
+operator|==
+literal|null
+condition|)
+block|{
+name|toDepartment
+operator|=
+name|toClass_
+operator|.
+name|getSchedulingSubpart
+argument_list|()
+operator|.
+name|getControllingDept
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 return|return
 operator|(
@@ -7260,15 +7678,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|fromPrefGroup
 operator|.
 name|getBuildingPreferences
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|BuildingPref
@@ -7405,15 +7822,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|fromPrefGroup
 operator|.
 name|getRoomPreferences
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|RoomPref
@@ -7870,15 +8286,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|fromPrefGroup
 operator|.
 name|getRoomFeaturePreferences
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|RoomFeaturePref
@@ -8149,15 +8564,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|fromPrefGroup
 operator|.
 name|getRoomGroupPreferences
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|RoomGroupPref
@@ -8408,6 +8822,9 @@ name|fromPrefGroup
 parameter_list|,
 name|PreferenceGroup
 name|toPrefGroup
+parameter_list|,
+name|Session
+name|toSession
 parameter_list|)
 block|{
 if|if
@@ -8419,15 +8836,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|fromPrefGroup
 operator|.
 name|getTimePreferences
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|TimePref
@@ -8470,61 +8886,41 @@ operator|.
 name|next
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|fromTimePref
+operator|.
+name|getTimePattern
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
 name|toTimePref
 operator|=
-operator|new
+operator|(
 name|TimePref
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
+operator|)
 name|fromTimePref
 operator|.
-name|getPreference
+name|clone
 argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-name|toTimePref
-operator|.
-name|setPreference
-argument_list|(
-name|fromTimePref
-operator|.
-name|getPreference
-argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
-name|toTimePref
-operator|.
-name|setPrefLevel
-argument_list|(
-name|fromTimePref
-operator|.
-name|getPrefLevel
-argument_list|()
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|fromTimePref
-operator|.
-name|getTimePattern
-argument_list|()
-operator|!=
-literal|null
-condition|)
+else|else
 block|{
 name|toTimePref
+operator|=
+name|TimePattern
 operator|.
-name|setTimePattern
+name|getMatchingTimePreference
 argument_list|(
-name|fromTimePref
+name|toSession
 operator|.
-name|getTimePattern
+name|getUniqueId
 argument_list|()
+argument_list|,
+name|fromTimePref
 argument_list|)
 expr_stmt|;
 block|}
@@ -8540,6 +8936,256 @@ operator|.
 name|addTopreferences
 argument_list|(
 name|toTimePref
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|protected
+name|void
+name|rollForwardDistributionPrefs
+parameter_list|(
+name|PreferenceGroup
+name|fromPrefGroup
+parameter_list|,
+name|PreferenceGroup
+name|toPrefGroup
+parameter_list|,
+name|Session
+name|toSession
+parameter_list|)
+block|{
+if|if
+condition|(
+name|fromPrefGroup
+operator|.
+name|getDistributionObjects
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|fromPrefGroup
+operator|.
+name|getDistributionObjects
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|DistributionObject
+name|fromDistObj
+init|=
+literal|null
+decl_stmt|;
+name|DistributionObject
+name|toDistObj
+init|=
+literal|null
+decl_stmt|;
+name|DistributionPref
+name|fromDistributionPref
+init|=
+literal|null
+decl_stmt|;
+name|DistributionPref
+name|toDistributionPref
+init|=
+literal|null
+decl_stmt|;
+name|DistributionPrefDAO
+name|dpDao
+init|=
+operator|new
+name|DistributionPrefDAO
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|it
+init|=
+name|fromPrefGroup
+operator|.
+name|getDistributionObjects
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|it
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|fromDistObj
+operator|=
+operator|(
+name|DistributionObject
+operator|)
+name|it
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+name|toDistObj
+operator|=
+operator|new
+name|DistributionObject
+argument_list|()
+expr_stmt|;
+name|fromDistributionPref
+operator|=
+name|fromDistObj
+operator|.
+name|getDistributionPref
+argument_list|()
+expr_stmt|;
+name|toDistributionPref
+operator|=
+name|DistributionPref
+operator|.
+name|findByIdRolledForwardFrom
+argument_list|(
+name|fromDistributionPref
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|toDistributionPref
+operator|==
+literal|null
+condition|)
+block|{
+name|toDistributionPref
+operator|=
+operator|new
+name|DistributionPref
+argument_list|()
+expr_stmt|;
+name|toDistributionPref
+operator|.
+name|setDistributionType
+argument_list|(
+name|fromDistributionPref
+operator|.
+name|getDistributionType
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toDistributionPref
+operator|.
+name|setGrouping
+argument_list|(
+name|fromDistributionPref
+operator|.
+name|getGrouping
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toDistributionPref
+operator|.
+name|setPrefLevel
+argument_list|(
+name|fromDistributionPref
+operator|.
+name|getPrefLevel
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toDistributionPref
+operator|.
+name|setUniqueIdRolledForwardFrom
+argument_list|(
+name|fromDistributionPref
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Department
+name|toDept
+init|=
+name|Department
+operator|.
+name|findByDeptCode
+argument_list|(
+operator|(
+operator|(
+name|Department
+operator|)
+name|fromDistributionPref
+operator|.
+name|getOwner
+argument_list|()
+operator|)
+operator|.
+name|getDeptCode
+argument_list|()
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|toDistributionPref
+operator|.
+name|setOwner
+argument_list|(
+name|toDept
+argument_list|)
+expr_stmt|;
+name|toDept
+operator|.
+name|addTopreferences
+argument_list|(
+name|toDistributionPref
+argument_list|)
+expr_stmt|;
+block|}
+name|toDistObj
+operator|.
+name|setDistributionPref
+argument_list|(
+name|toDistributionPref
+argument_list|)
+expr_stmt|;
+name|toDistObj
+operator|.
+name|setPrefGroup
+argument_list|(
+name|toPrefGroup
+argument_list|)
+expr_stmt|;
+name|toDistObj
+operator|.
+name|setSequenceNumber
+argument_list|(
+name|fromDistObj
+operator|.
+name|getSequenceNumber
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toPrefGroup
+operator|.
+name|addTodistributionObjects
+argument_list|(
+name|toDistObj
+argument_list|)
+expr_stmt|;
+name|dpDao
+operator|.
+name|saveOrUpdate
+argument_list|(
+name|toDistributionPref
 argument_list|)
 expr_stmt|;
 block|}
@@ -8920,6 +9566,8 @@ argument_list|(
 name|fromInstructor
 argument_list|,
 name|toInstructor
+argument_list|,
+name|toSession
 argument_list|)
 expr_stmt|;
 name|rollInstructorDistributionPrefs
@@ -9179,6 +9827,25 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|//	public void rollCourseOfferingsForwardFromMsf(ActionMessages errors, RollForwardSessionForm rollForwardSessionForm) {
+comment|//		Session toSession = Session.getSessionById(rollForwardSessionForm.getSessionToRollForwardTo());
+comment|//		Session fromSession = Session.getSessionById(rollForwardSessionForm.getSessionToRollCourseOfferingsForwardFrom());
+comment|//		if (toSession.getSubjectAreas() != null) {
+comment|//			SubjectArea subjectArea = null;
+comment|//			edu.purdue.smas.custom.util.PopulateSessionFromMsf pop = new edu.purdue.smas.custom.util.PopulateSessionFromMsf();
+comment|////			InstructionalOfferingRollForward instrOffrRollFwd = new InstructionalOfferingRollForward();
+comment|//			SubjectArea.loadSubjectAreas(toSession.getUniqueId());
+comment|//			for (Iterator saIt = toSession.getSubjectAreas().iterator(); saIt.hasNext();){
+comment|//				subjectArea = (SubjectArea) saIt.next();
+comment|////				if (subjectArea.getSubjectAreaAbbreviation().compareTo("MGMT") == 0){
+comment|//				SubjectArea.loadSubjectAreas(toSession.getUniqueId());
+comment|//				pop.populateSubjectArea(subjectArea, toSession, fromSession);
+comment|////				}
+comment|////				instrOffrRollFwd.rollForwardInstructionalOfferingsForASubjectArea(subjectArea.getSubjectAreaAbbreviation(), fromSession, toSession);
+comment|//
+comment|//			}
+comment|//		}
+comment|//	}
 specifier|public
 name|void
 name|rollCourseOfferingsForward
@@ -9216,6 +9883,64 @@ name|getSessionToRollCourseOfferingsForwardFrom
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|ArrayList
+name|subjects
+init|=
+operator|new
+name|ArrayList
+argument_list|()
+decl_stmt|;
+name|SubjectAreaDAO
+name|saDao
+init|=
+operator|new
+name|SubjectAreaDAO
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardSubjectAreaIds
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|subjects
+operator|.
+name|add
+argument_list|(
+name|saDao
+operator|.
+name|get
+argument_list|(
+name|Long
+operator|.
+name|parseLong
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardSubjectAreaIds
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|toSession
@@ -9238,25 +9963,12 @@ operator|new
 name|InstructionalOfferingRollForward
 argument_list|()
 decl_stmt|;
-name|SubjectArea
-operator|.
-name|loadSubjectAreas
-argument_list|(
-name|toSession
-operator|.
-name|getUniqueId
-argument_list|()
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|Iterator
 name|saIt
 init|=
-name|fromSession
-operator|.
-name|getSubjectAreas
-argument_list|()
+name|subjects
 operator|.
 name|iterator
 argument_list|()
@@ -9277,6 +9989,16 @@ name|saIt
 operator|.
 name|next
 argument_list|()
+expr_stmt|;
+name|SubjectArea
+operator|.
+name|loadSubjectAreas
+argument_list|(
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
 expr_stmt|;
 name|instrOffrRollFwd
 operator|.
@@ -9625,6 +10347,19 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|session
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+operator|(
+literal|false
+operator|)
+return|;
+block|}
+if|if
+condition|(
 operator|!
 name|getSessionHasCourseCatalogList
 argument_list|()
@@ -9642,18 +10377,14 @@ operator|new
 name|CourseCatalogDAO
 argument_list|()
 decl_stmt|;
-name|int
-name|cnt
+name|List
+name|l
 init|=
-operator|(
-operator|(
-name|Long
-operator|)
 name|ccDao
 operator|.
 name|getQuery
 argument_list|(
-literal|"select count(*) from CourseCatalog cc where cc.session.uniqueId ="
+literal|"select count(cc) from CourseCatalog cc where cc.session.uniqueId ="
 operator|+
 name|session
 operator|.
@@ -9666,6 +10397,32 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+decl_stmt|;
+name|int
+name|cnt
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|l
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|l
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|cnt
+operator|=
+operator|(
+operator|(
+name|Long
+operator|)
+name|l
 operator|.
 name|get
 argument_list|(
@@ -9675,7 +10432,8 @@ operator|)
 operator|.
 name|intValue
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|getSessionHasCourseCatalogList
 argument_list|()
 operator|.
@@ -9766,18 +10524,14 @@ operator|new
 name|ExternalBuildingDAO
 argument_list|()
 decl_stmt|;
-name|int
-name|cnt
+name|List
+name|l
 init|=
-operator|(
-operator|(
-name|Long
-operator|)
 name|ebDao
 operator|.
 name|getQuery
 argument_list|(
-literal|"select count(*) from ExternalBuilding eb where eb.session.uniqueId ="
+literal|"select count(eb) from ExternalBuilding eb where eb.session.uniqueId ="
 operator|+
 name|session
 operator|.
@@ -9790,6 +10544,32 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+decl_stmt|;
+name|int
+name|cnt
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|l
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|l
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|cnt
+operator|=
+operator|(
+operator|(
+name|Long
+operator|)
+name|l
 operator|.
 name|get
 argument_list|(
@@ -9799,7 +10579,8 @@ operator|)
 operator|.
 name|intValue
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|getSessionHasExternalBuildingList
 argument_list|()
 operator|.
@@ -9890,18 +10671,14 @@ operator|new
 name|ExternalRoomDAO
 argument_list|()
 decl_stmt|;
-name|int
-name|cnt
+name|List
+name|l
 init|=
-operator|(
-operator|(
-name|Long
-operator|)
 name|erDao
 operator|.
 name|getQuery
 argument_list|(
-literal|"select count(*) from ExternalRoom er where er.building.session.uniqueId ="
+literal|"select count(er) from ExternalRoom er where er.building.session.uniqueId ="
 operator|+
 name|session
 operator|.
@@ -9914,6 +10691,32 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+decl_stmt|;
+name|int
+name|cnt
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|l
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|l
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|cnt
+operator|=
+operator|(
+operator|(
+name|Long
+operator|)
+name|l
 operator|.
 name|get
 argument_list|(
@@ -9923,7 +10726,8 @@ operator|)
 operator|.
 name|intValue
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|getSessionHasExternalRoomList
 argument_list|()
 operator|.
@@ -10014,18 +10818,14 @@ operator|new
 name|ExternalRoomDepartmentDAO
 argument_list|()
 decl_stmt|;
-name|int
-name|cnt
+name|List
+name|l
 init|=
-operator|(
-operator|(
-name|Long
-operator|)
 name|erdDao
 operator|.
 name|getQuery
 argument_list|(
-literal|"select count(*) from ExternalRoomDepartment erd where erd.room.building.session.uniqueId ="
+literal|"select count(erd) from ExternalRoomDepartment erd where erd.room.building.session.uniqueId ="
 operator|+
 name|session
 operator|.
@@ -10038,6 +10838,32 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+decl_stmt|;
+name|int
+name|cnt
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|l
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|l
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|cnt
+operator|=
+operator|(
+operator|(
+name|Long
+operator|)
+name|l
 operator|.
 name|get
 argument_list|(
@@ -10047,7 +10873,8 @@ operator|)
 operator|.
 name|intValue
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|getSessionHasExternalRoomDeptList
 argument_list|()
 operator|.
@@ -10138,18 +10965,14 @@ operator|new
 name|ExternalRoomFeatureDAO
 argument_list|()
 decl_stmt|;
-name|int
-name|cnt
+name|List
+name|l
 init|=
-operator|(
-operator|(
-name|Long
-operator|)
 name|erfDao
 operator|.
 name|getQuery
 argument_list|(
-literal|"select count(*) from ExternalRoomFeature erf where erf.room.building.session.uniqueId ="
+literal|"select count(erf) from ExternalRoomFeature erf where erf.room.building.session.uniqueId ="
 operator|+
 name|session
 operator|.
@@ -10162,6 +10985,32 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+decl_stmt|;
+name|int
+name|cnt
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|l
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|l
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|cnt
+operator|=
+operator|(
+operator|(
+name|Long
+operator|)
+name|l
 operator|.
 name|get
 argument_list|(
@@ -10171,7 +11020,8 @@ operator|)
 operator|.
 name|intValue
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 name|getSessionHasExternalRoomFeatureList
 argument_list|()
 operator|.
@@ -10445,6 +11295,1333 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|public
+name|void
+name|rollClassPreferencesForward
+parameter_list|(
+name|ActionMessages
+name|errors
+parameter_list|,
+name|RollForwardSessionForm
+name|rollForwardSessionForm
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|Session
+name|toSession
+init|=
+name|Session
+operator|.
+name|getSessionById
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getSessionToRollForwardTo
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|ArrayList
+name|subjects
+init|=
+operator|new
+name|ArrayList
+argument_list|()
+decl_stmt|;
+name|SubjectAreaDAO
+name|saDao
+init|=
+operator|new
+name|SubjectAreaDAO
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardClassPrefsSubjectIds
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|subjects
+operator|.
+name|add
+argument_list|(
+name|saDao
+operator|.
+name|get
+argument_list|(
+name|Long
+operator|.
+name|parseLong
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardClassPrefsSubjectIds
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|toSession
+operator|.
+name|getSubjectAreas
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|SubjectArea
+name|subjectArea
+init|=
+literal|null
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|saIt
+init|=
+name|subjects
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|saIt
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|subjectArea
+operator|=
+operator|(
+name|SubjectArea
+operator|)
+name|saIt
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+name|SubjectArea
+operator|.
+name|loadSubjectAreas
+argument_list|(
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|rollForwardClassPreferencesForASubjectArea
+argument_list|(
+name|subjectArea
+operator|.
+name|getSubjectAreaAbbreviation
+argument_list|()
+argument_list|,
+name|toSession
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|private
+name|void
+name|rollForwardClassPreferencesForASubjectArea
+parameter_list|(
+name|String
+name|subjectAreaAbbreviation
+parameter_list|,
+name|Session
+name|toSession
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|List
+name|classes
+init|=
+name|Class_
+operator|.
+name|findAllForControllingSubjectArea
+argument_list|(
+name|subjectAreaAbbreviation
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|Class_
+name|toClass
+init|=
+literal|null
+decl_stmt|;
+name|Class_
+name|fromClass
+init|=
+literal|null
+decl_stmt|;
+name|Class_DAO
+name|cDao
+init|=
+operator|new
+name|Class_DAO
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|classes
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|classes
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+for|for
+control|(
+name|Iterator
+name|cIt
+init|=
+name|classes
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|cIt
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|toClass
+operator|=
+operator|(
+name|Class_
+operator|)
+name|cIt
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|toClass
+operator|.
+name|getUniqueIdRolledForwardFrom
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|fromClass
+operator|=
+name|cDao
+operator|.
+name|get
+argument_list|(
+name|toClass
+operator|.
+name|getUniqueIdRolledForwardFrom
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|fromClass
+operator|!=
+literal|null
+condition|)
+block|{
+name|rollForwardTimePrefs
+argument_list|(
+name|fromClass
+argument_list|,
+name|toClass
+argument_list|,
+name|toSession
+argument_list|)
+expr_stmt|;
+name|rollForwardBuildingPrefs
+argument_list|(
+name|fromClass
+argument_list|,
+name|toClass
+argument_list|,
+name|toSession
+argument_list|)
+expr_stmt|;
+name|rollForwardRoomPrefs
+argument_list|(
+name|fromClass
+argument_list|,
+name|toClass
+argument_list|,
+name|toSession
+argument_list|)
+expr_stmt|;
+name|rollForwardRoomGroupPrefs
+argument_list|(
+name|fromClass
+argument_list|,
+name|toClass
+argument_list|)
+expr_stmt|;
+name|rollForwardRoomFeaturePrefs
+argument_list|(
+name|fromClass
+argument_list|,
+name|toClass
+argument_list|)
+expr_stmt|;
+name|rollForwardDistributionPrefs
+argument_list|(
+name|fromClass
+argument_list|,
+name|toClass
+argument_list|,
+name|toSession
+argument_list|)
+expr_stmt|;
+name|cDao
+operator|.
+name|update
+argument_list|(
+name|toClass
+argument_list|)
+expr_stmt|;
+name|cDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|evict
+argument_list|(
+name|fromClass
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|cDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|evict
+argument_list|(
+name|toClass
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|public
+name|void
+name|rollClassInstructorsForward
+parameter_list|(
+name|ActionMessages
+name|errors
+parameter_list|,
+name|RollForwardSessionForm
+name|rollForwardSessionForm
+parameter_list|)
+block|{
+name|Session
+name|toSession
+init|=
+name|Session
+operator|.
+name|getSessionById
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getSessionToRollForwardTo
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|ArrayList
+name|subjects
+init|=
+operator|new
+name|ArrayList
+argument_list|()
+decl_stmt|;
+name|SubjectAreaDAO
+name|saDao
+init|=
+operator|new
+name|SubjectAreaDAO
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardClassInstrSubjectIds
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|subjects
+operator|.
+name|add
+argument_list|(
+name|saDao
+operator|.
+name|get
+argument_list|(
+name|Long
+operator|.
+name|parseLong
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardClassInstrSubjectIds
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|toSession
+operator|.
+name|getSubjectAreas
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|SubjectArea
+name|subjectArea
+init|=
+literal|null
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|saIt
+init|=
+name|subjects
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|saIt
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|subjectArea
+operator|=
+operator|(
+name|SubjectArea
+operator|)
+name|saIt
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+name|SubjectArea
+operator|.
+name|loadSubjectAreas
+argument_list|(
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|rollForwardClassInstructorsForASubjectArea
+argument_list|(
+name|subjectArea
+operator|.
+name|getSubjectAreaAbbreviation
+argument_list|()
+argument_list|,
+name|toSession
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|private
+name|void
+name|rollForwardClassInstructorsForASubjectArea
+parameter_list|(
+name|String
+name|subjectAreaAbbreviation
+parameter_list|,
+name|Session
+name|toSession
+parameter_list|)
+block|{
+name|List
+name|classes
+init|=
+name|Class_
+operator|.
+name|findAllForControllingSubjectArea
+argument_list|(
+name|subjectAreaAbbreviation
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|classes
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|classes
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|Class_
+name|toClass
+init|=
+literal|null
+decl_stmt|;
+name|Class_
+name|fromClass
+init|=
+literal|null
+decl_stmt|;
+name|Class_DAO
+name|cDao
+init|=
+operator|new
+name|Class_DAO
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|cIt
+init|=
+name|classes
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|cIt
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|toClass
+operator|=
+operator|(
+name|Class_
+operator|)
+name|cIt
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|toClass
+operator|.
+name|getUniqueIdRolledForwardFrom
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|fromClass
+operator|=
+name|cDao
+operator|.
+name|get
+argument_list|(
+name|toClass
+operator|.
+name|getUniqueIdRolledForwardFrom
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|fromClass
+operator|!=
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|fromClass
+operator|.
+name|getClassInstructors
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|fromClass
+operator|.
+name|getClassInstructors
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|ClassInstructor
+name|fromClassInstr
+init|=
+literal|null
+decl_stmt|;
+name|ClassInstructor
+name|toClassInstr
+init|=
+literal|null
+decl_stmt|;
+name|DepartmentalInstructor
+name|toDeptInstr
+init|=
+literal|null
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|ciIt
+init|=
+name|fromClass
+operator|.
+name|getClassInstructors
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|ciIt
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|fromClassInstr
+operator|=
+operator|(
+name|ClassInstructor
+operator|)
+name|ciIt
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+name|toDeptInstr
+operator|=
+name|fromClassInstr
+operator|.
+name|getInstructor
+argument_list|()
+operator|.
+name|findThisInstructorInSession
+argument_list|(
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|toDeptInstr
+operator|!=
+literal|null
+condition|)
+block|{
+name|toClassInstr
+operator|=
+operator|new
+name|ClassInstructor
+argument_list|()
+expr_stmt|;
+name|toClassInstr
+operator|.
+name|setClassInstructing
+argument_list|(
+name|toClass
+argument_list|)
+expr_stmt|;
+name|toClassInstr
+operator|.
+name|setInstructor
+argument_list|(
+name|toDeptInstr
+argument_list|)
+expr_stmt|;
+name|toClassInstr
+operator|.
+name|setLead
+argument_list|(
+name|fromClassInstr
+operator|.
+name|isLead
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toClassInstr
+operator|.
+name|setPercentShare
+argument_list|(
+name|fromClassInstr
+operator|.
+name|getPercentShare
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toClass
+operator|.
+name|addToclassInstructors
+argument_list|(
+name|toClassInstr
+argument_list|)
+expr_stmt|;
+name|toDeptInstr
+operator|.
+name|addToclasses
+argument_list|(
+name|toClassInstr
+argument_list|)
+expr_stmt|;
+name|cDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|update
+argument_list|(
+name|toDeptInstr
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|cDao
+operator|.
+name|update
+argument_list|(
+name|toClass
+argument_list|)
+expr_stmt|;
+block|}
+name|cDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|evict
+argument_list|(
+name|fromClass
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|cDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|evict
+argument_list|(
+name|toClass
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|private
+name|void
+name|cloneCourses
+parameter_list|(
+name|String
+index|[]
+name|courses
+parameter_list|,
+name|String
+name|courseToCloneFrom
+parameter_list|,
+name|RollForwardSessionForm
+name|rollForwardSessionForm
+parameter_list|)
+block|{
+name|Session
+name|session
+init|=
+name|Session
+operator|.
+name|getSessionById
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getSessionToRollForwardTo
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|InstructionalOfferingDAO
+name|ioDao
+init|=
+name|InstructionalOfferingDAO
+operator|.
+name|getInstance
+argument_list|()
+decl_stmt|;
+name|String
+name|cloneSubj
+init|=
+name|courseToCloneFrom
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+literal|4
+argument_list|)
+operator|.
+name|trim
+argument_list|()
+decl_stmt|;
+name|String
+name|cloneCrs
+init|=
+name|courseToCloneFrom
+operator|.
+name|substring
+argument_list|(
+literal|4
+argument_list|,
+literal|8
+argument_list|)
+operator|.
+name|trim
+argument_list|()
+decl_stmt|;
+name|String
+name|crs
+init|=
+literal|null
+decl_stmt|;
+name|String
+name|subj
+init|=
+literal|null
+decl_stmt|;
+name|String
+name|crsNbr
+init|=
+literal|null
+decl_stmt|;
+name|InstructionalOffering
+name|io
+init|=
+literal|null
+decl_stmt|;
+name|InstructionalOffering
+name|cloneFromIo
+init|=
+literal|null
+decl_stmt|;
+name|String
+name|query
+init|=
+literal|"select io from InstructionalOffering io inner join io.courseOfferings co "
+operator|+
+literal|" where io.session.uniqueId=:sessionId "
+operator|+
+literal|" and co.subjectArea.subjectAreaAbbreviation=:subject"
+operator|+
+literal|" and co.courseNbr=:crsNbr"
+decl_stmt|;
+name|List
+name|l
+init|=
+name|ioDao
+operator|.
+name|getQuery
+argument_list|(
+name|query
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"subject"
+argument_list|,
+name|cloneSubj
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"crsNbr"
+argument_list|,
+name|cloneCrs
+argument_list|)
+operator|.
+name|list
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|l
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|1
+condition|)
+block|{
+name|cloneFromIo
+operator|=
+operator|(
+name|InstructionalOffering
+operator|)
+name|l
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|courses
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|crs
+operator|=
+name|courses
+index|[
+name|i
+index|]
+expr_stmt|;
+name|subj
+operator|=
+name|crs
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+literal|4
+argument_list|)
+operator|.
+name|trim
+argument_list|()
+expr_stmt|;
+name|crsNbr
+operator|=
+name|crs
+operator|.
+name|substring
+argument_list|(
+literal|4
+argument_list|,
+literal|8
+argument_list|)
+operator|.
+name|trim
+argument_list|()
+expr_stmt|;
+name|l
+operator|=
+name|ioDao
+operator|.
+name|getQuery
+argument_list|(
+name|query
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"subject"
+argument_list|,
+name|subj
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"crsNbr"
+argument_list|,
+name|crsNbr
+argument_list|)
+operator|.
+name|list
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|l
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|1
+condition|)
+block|{
+name|io
+operator|=
+operator|(
+name|InstructionalOffering
+operator|)
+name|l
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+name|io
+operator|.
+name|cloneOfferingConfigurationFrom
+argument_list|(
+name|cloneFromIo
+argument_list|)
+expr_stmt|;
+try|try
+block|{
+name|ioDao
+operator|.
+name|saveOrUpdate
+argument_list|(
+name|io
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// do nothing
+block|}
+name|ioDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
+name|ioDao
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+block|}
+block|}
+specifier|public
+name|void
+name|cloneCourseToCourses
+parameter_list|(
+name|RollForwardSessionForm
+name|rollForwardSessionForm
+parameter_list|)
+block|{
+name|Session
+name|session
+init|=
+name|Session
+operator|.
+name|getSessionById
+argument_list|(
+name|rollForwardSessionForm
+operator|.
+name|getSessionToRollForwardTo
+argument_list|()
+argument_list|)
+decl_stmt|;
+comment|//		//set 1 - "VCS 565D"
+comment|//		String[] courses = {
+comment|//				"CPB 584 ",
+comment|//				"CPB 585 ",
+comment|//				"CPB 586 ",
+comment|//				"CPB 586Y",
+comment|//				"CPB 586Z",
+comment|//				"CPB 587 ",
+comment|//				"CPB 588 ",
+comment|//				"CPB 589 ",
+comment|//				"CPB 589Y",
+comment|//				"V M 510 ",
+comment|//				"V M 578 ",
+comment|//				"VCS 560 ",
+comment|//				"VCS 561 ",
+comment|//				"VCS 562 ",
+comment|//				"VCS 563 ",
+comment|//				"VCS 563Y",
+comment|//				"VCS 565 ",
+comment|//				"VCS 565E",
+comment|//				"VCS 565F",
+comment|//				"VCS 565G",
+comment|//				"VCS 565M",
+comment|//				"VCS 565N",
+comment|//				"VCS 566 ",
+comment|//				"VCS 567 ",
+comment|//				"VCS 567A",
+comment|//				"VCS 567Y",
+comment|//				"VCS 568 ",
+comment|//				"VCS 571 ",
+comment|//				"VCS 571D",
+comment|//				"VCS 571M",
+comment|//				"VCS 571N",
+comment|//				"VCS 571O",
+comment|//				"VCS 571P",
+comment|//				"VCS 571R",
+comment|//				"VCS 571S",
+comment|//				"VCS 571V",
+comment|//				"VCS 571W",
+comment|//				"VCS 571Y",
+comment|//				"VCS 571Z",
+comment|//				"VCS 572Y",
+comment|//				"VCS 575 ",
+comment|//				"VCS 575D",
+comment|//				"VCS 575Y",
+comment|//				"VCS 575Z",
+comment|//				"VCS 576Y",
+comment|//				"VCS 576Z",
+comment|//				"VCS 577Y",
+comment|//				"VCS 577Z",
+comment|//				"VCS 578Y",
+comment|//				"VCS 578Z",
+comment|//				"VCS 579V",
+comment|//				"VCS 579W",
+comment|//				"VCS 579Y",
+comment|//				"VCS 579Z",
+comment|//				"VCS 580Y",
+comment|//				"VCS 580Z",
+comment|//				"VCS 582 ",
+comment|//				"VCS 583 ",
+comment|//				"VCS 585 ",
+comment|//				"VCS 585E",
+comment|//				"VCS 585F",
+comment|//				"VCS 588Y",
+comment|//				"VCS 591 ",
+comment|//				"VCS 591E",
+comment|//				"VCS 591F",
+comment|//				"VCS 591M",
+comment|//				"VCS 591N",
+comment|//				"VCS 591S",
+comment|//				"VCS 591T",
+comment|//				"VCS 594 ",
+comment|//				"VCS 594Y",
+comment|//				"VCS 594Z"
+comment|//		};
+comment|//		cloneCourses(courses, "VCS 565D", session);
+comment|//		//set 2 - LYNN G409 - "VCS 565E"
+comment|//		String[] courses2 = {
+comment|//				"VCS 575E",
+comment|//				"VCS 575F",
+comment|//				"VCS 575G",
+comment|//				"VCS 575M",
+comment|//				"VCS 575N"
+comment|//		};
+comment|//		cloneCourses(courses2, "VCS 565E", session);
+comment|//		//set 3 - LYNN 1240 - "VCS 562 "
+comment|//		String[] courses3 = {
+comment|//				"VCS 572 ",
+comment|//				"VCS 582G",
+comment|//				"VCS 582O",
+comment|//				"VCS 582S"
+comment|//		};
+comment|//		cloneCourses(courses3, "VCS 562 ", session);
+comment|//		//set 4 - LYNN G269 - "VCS 561 "
+comment|//		String[] courses4 = {
+comment|//				"VCS 581 "
+comment|//		};
+comment|//		cloneCourses(courses4, "VCS 561 ", session);
+comment|//		//set 5 - LYNN G397 - "VCS 566 "
+comment|//		String[] courses5 = {
+comment|//				"VCS 576 ",
+comment|//				"VCS 577 ",
+comment|//				"VCS 578 ",
+comment|//				"VCS 579 ",
+comment|//				"VCS 580 ",
+comment|//				"VCS 588 "
+comment|//		};
+comment|//		cloneCourses(courses5, "VCS 566 ", session);
+comment|//		//set 6 - LYNN G490A - "VCS 585F"
+comment|//		String[] courses6 = {
+comment|//				"VCS 586 ",
+comment|//				"VCS 586Y"
+comment|//		};
+comment|//		cloneCourses(courses6, "VCS 585F", session);
+comment|//		// Pharmacy Courses
+comment|//		String[] courses = {
+comment|//				"CLPH585B",
+comment|//				"CLPH585C",
+comment|//				"CLPH585D",
+comment|//				"CLPH585E",
+comment|//				"CLPH585N",
+comment|//				"CLPH585R",
+comment|//				"CLPH585S",
+comment|//				"CLPH585T",
+comment|//				"CLPH585U",
+comment|//				"CLPH588A",
+comment|//				"CLPH588B",
+comment|//				"CLPH588C",
+comment|//				"CLPH588D",
+comment|//				"CLPH588E",
+comment|//				"CLPH588N",
+comment|//				"CLPH588R",
+comment|//				"CLPH588S",
+comment|//				"CLPH588T",
+comment|//				"CLPH588U",
+comment|//				"CLPH589A",
+comment|//				"CLPH589B",
+comment|//				"CLPH589C",
+comment|//				"CLPH589D",
+comment|//				"CLPH589E",
+comment|//				"CLPH589N",
+comment|//				"CLPH589R",
+comment|//				"CLPH589S",
+comment|//				"CLPH589T",
+comment|//				"CLPH589U",
+comment|//				"PHPR498A",
+comment|//				"PHPR498B",
+comment|//				"PHPR498C",
+comment|//				"PHPR498D",
+comment|//				"PHPR498E",
+comment|//				"PHPR498N",
+comment|//				"PHPR498R",
+comment|//				"PHPR498S",
+comment|//				"PHPR498T",
+comment|//				"PHPR498U",
+comment|//				"PHPR499A",
+comment|//				"PHPR499B",
+comment|//				"PHPR499C",
+comment|//				"PHPR499D",
+comment|//				"PHPR499E",
+comment|//				"PHPR499N",
+comment|//				"PHPR499R",
+comment|//				"PHPR499S",
+comment|//				"PHPR499T",
+comment|//				"PHPR499U",
+comment|//				"NUPH595A",
+comment|//				"NUPH595B",
+comment|//				"NUPH595C",
+comment|//				"NUPH595D",
+comment|//				"NUPH595E"
+comment|//		};
+comment|//		cloneCourses(courses, "CLPH585A", rollForwardSessionForm);
+comment|// PPE Courses
+comment|//		String[] courses = {
+comment|//				"PPE 151 ",
+comment|//				"PPE 303 ",
+comment|//				"PPE 312 ",
+comment|//				"PPE 313 ",
+comment|//				"PPE 322 ",
+comment|//				"PPE 323 ",
+comment|//				"PPE 331 ",
+comment|//				"PPE 332 ",
+comment|//				"PPE 333 ",
+comment|//				"PPE 442 "
+comment|//		};
+comment|//		cloneCourses(courses, "PPE 441 ", rollForwardSessionForm);
+comment|//		// PPT Courses
+comment|//		String[] courses2 = {
+comment|//				"PPT 151 ",
+comment|//				"PPT 303 ",
+comment|//				"PPT 312 ",
+comment|//				"PPT 313 ",
+comment|//				"PPT 322 ",
+comment|//				"PPT 323 ",
+comment|//				"PPT 331 ",
+comment|//				"PPT 332 ",
+comment|//				"PPT 333 ",
+comment|//				"PPT 442 "
+comment|//		};
+comment|//		cloneCourses(courses2, "PPT 441 ", rollForwardSessionForm);
 block|}
 block|}
 end_class

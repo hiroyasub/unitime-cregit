@@ -103,7 +103,7 @@ specifier|static
 name|String
 name|PROP_UNIQUE_ID_ROLLED_FORWARD_FROM
 init|=
-literal|"UniqueIdRolledForwardFrom"
+literal|"uniqueIdRolledForwardFrom"
 decl_stmt|;
 comment|// constructors
 specifier|public

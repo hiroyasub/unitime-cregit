@@ -409,6 +409,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|d1
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|d
 operator|.
