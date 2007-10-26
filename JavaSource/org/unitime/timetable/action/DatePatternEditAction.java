@@ -5605,6 +5605,11 @@ name|contains
 argument_list|(
 name|pattern
 argument_list|)
+operator|||
+name|pattern
+operator|.
+name|isDefault
+argument_list|()
 decl_stmt|;
 name|webTable
 operator|.
