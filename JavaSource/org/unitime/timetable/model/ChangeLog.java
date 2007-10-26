@@ -423,6 +423,8 @@ block|,
 name|MANAGER_EDIT
 block|,
 name|SUBJECT_AREA_EDIT
+block|,
+name|BUILDING_EDIT
 block|}
 specifier|public
 specifier|static

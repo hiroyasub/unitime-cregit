@@ -195,6 +195,22 @@ name|unitime
 operator|.
 name|commons
 operator|.
+name|hibernate
+operator|.
+name|util
+operator|.
+name|HibernateUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|commons
+operator|.
 name|web
 operator|.
 name|Web
@@ -612,6 +628,8 @@ name|myForm
 operator|.
 name|saveOrUpdate
 argument_list|(
+name|request
+argument_list|,
 name|hibSession
 argument_list|,
 name|session
@@ -846,12 +864,19 @@ name|myForm
 operator|.
 name|delete
 argument_list|(
+name|request
+argument_list|,
 name|hibSession
 argument_list|)
 expr_stmt|;
 name|tx
 operator|.
 name|commit
+argument_list|()
+expr_stmt|;
+name|HibernateUtil
+operator|.
+name|clearCache
 argument_list|()
 expr_stmt|;
 block|}
@@ -924,7 +949,7 @@ literal|"Abbreviation"
 block|,
 literal|"Name"
 block|,
-literal|"External Id"
+literal|"External ID"
 block|,
 literal|"X-Coordinate"
 block|,
@@ -1022,7 +1047,7 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|"@@ITALIC N/A"
+literal|"@@ITALIC N/A @@END_ITALIC "
 else|:
 name|b
 operator|.
@@ -1032,6 +1057,23 @@ operator|.
 name|toString
 argument_list|()
 block|,
+operator|(
+name|b
+operator|.
+name|getCoordinateX
+argument_list|()
+operator|==
+literal|null
+operator|||
+name|b
+operator|.
+name|getCoordinateX
+argument_list|()
+operator|<
+literal|0
+condition|?
+literal|""
+else|:
 name|df5
 operator|.
 name|format
@@ -1041,7 +1083,25 @@ operator|.
 name|getCoordinateX
 argument_list|()
 argument_list|)
+operator|)
 block|,
+operator|(
+name|b
+operator|.
+name|getCoordinateY
+argument_list|()
+operator|==
+literal|null
+operator|||
+name|b
+operator|.
+name|getCoordinateY
+argument_list|()
+operator|<
+literal|0
+condition|?
+literal|""
+else|:
 name|df5
 operator|.
 name|format
@@ -1051,6 +1111,7 @@ operator|.
 name|getCoordinateY
 argument_list|()
 argument_list|)
+operator|)
 block|,                             }
 argument_list|,
 operator|new
@@ -1067,6 +1128,15 @@ operator|.
 name|getName
 argument_list|()
 block|,
+name|b
+operator|.
+name|getExternalUniqueId
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|b
 operator|.
 name|getExternalUniqueId
