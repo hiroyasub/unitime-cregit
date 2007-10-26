@@ -31,22 +31,6 @@ name|BaseCourseOfferingReservation
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|dao
-operator|.
-name|CourseOfferingReservationDAO
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
