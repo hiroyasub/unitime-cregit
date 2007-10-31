@@ -413,6 +413,18 @@ name|d1
 operator|!=
 literal|null
 operator|&&
+operator|(
+name|d
+operator|==
+literal|null
+operator|||
+name|d
+operator|.
+name|getUniqueId
+argument_list|()
+operator|==
+literal|null
+operator|||
 operator|!
 name|d
 operator|.
@@ -426,6 +438,7 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|)
+operator|)
 condition|)
 block|{
 name|allSame
