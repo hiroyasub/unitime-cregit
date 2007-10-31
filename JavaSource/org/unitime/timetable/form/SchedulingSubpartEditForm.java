@@ -180,6 +180,10 @@ specifier|private
 name|Boolean
 name|subpartCreditEditAllowed
 decl_stmt|;
+specifier|private
+name|boolean
+name|itypeBasic
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -301,6 +305,10 @@ argument_list|(
 literal|"true"
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|itypeBasic
+operator|=
+literal|false
 expr_stmt|;
 name|instructionalType
 operator|=
@@ -882,6 +890,30 @@ operator|.
 name|subpartCreditEditAllowed
 operator|=
 name|subpartCreditEditAllowed
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getItypeBasic
+parameter_list|()
+block|{
+return|return
+name|itypeBasic
+return|;
+block|}
+specifier|public
+name|void
+name|setItypeBasic
+parameter_list|(
+name|boolean
+name|itypeBasic
+parameter_list|)
+block|{
+name|this
+operator|.
+name|itypeBasic
+operator|=
+name|itypeBasic
 expr_stmt|;
 block|}
 block|}

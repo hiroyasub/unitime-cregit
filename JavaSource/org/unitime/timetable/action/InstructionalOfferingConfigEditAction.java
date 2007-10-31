@@ -959,6 +959,8 @@ operator|.
 name|setupItypes
 argument_list|(
 name|request
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|LookupTables

@@ -675,9 +675,10 @@ name|setupItypes
 parameter_list|(
 name|HttpServletRequest
 name|request
+parameter_list|,
+name|boolean
+name|basic
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|request
 operator|.
@@ -691,7 +692,7 @@ name|ItypeDesc
 operator|.
 name|findAll
 argument_list|(
-literal|true
+name|basic
 argument_list|)
 argument_list|)
 expr_stmt|;

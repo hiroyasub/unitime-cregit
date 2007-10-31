@@ -134,8 +134,6 @@ parameter_list|(
 name|boolean
 name|basic
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 operator|new
