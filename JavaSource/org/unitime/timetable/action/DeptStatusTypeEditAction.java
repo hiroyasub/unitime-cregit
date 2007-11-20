@@ -383,6 +383,38 @@ operator|)
 decl_stmt|;
 if|if
 condition|(
+name|request
+operator|.
+name|getParameter
+argument_list|(
+literal|"op2"
+argument_list|)
+operator|!=
+literal|null
+operator|&&
+name|request
+operator|.
+name|getParameter
+argument_list|(
+literal|"op2"
+argument_list|)
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+name|op
+operator|=
+name|request
+operator|.
+name|getParameter
+argument_list|(
+literal|"op2"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|op
 operator|==
 literal|null
@@ -395,13 +427,6 @@ argument_list|(
 name|mapping
 argument_list|,
 name|request
-argument_list|)
-expr_stmt|;
-name|myForm
-operator|.
-name|setOp
-argument_list|(
-literal|"Add New"
 argument_list|)
 expr_stmt|;
 block|}
@@ -434,7 +459,7 @@ decl_stmt|;
 comment|// Reset Form
 if|if
 condition|(
-literal|"Clear"
+literal|"Back"
 operator|.
 name|equals
 argument_list|(
@@ -451,11 +476,22 @@ argument_list|,
 name|request
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+literal|"Add Status Type"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+condition|)
+block|{
 name|myForm
 operator|.
-name|setOp
+name|load
 argument_list|(
-literal|"Add New"
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -469,7 +505,7 @@ argument_list|(
 name|op
 argument_list|)
 operator|||
-literal|"Add New"
+literal|"Save"
 operator|.
 name|equals
 argument_list|(
@@ -505,13 +541,6 @@ argument_list|(
 name|request
 argument_list|,
 name|errors
-argument_list|)
-expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
 argument_list|)
 expr_stmt|;
 block|}
@@ -607,9 +636,11 @@ throw|;
 block|}
 name|myForm
 operator|.
-name|setOp
+name|reset
 argument_list|(
-literal|"Update"
+name|mapping
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}
@@ -683,14 +714,6 @@ argument_list|,
 name|errors
 argument_list|)
 expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
-argument_list|)
-return|;
 block|}
 else|else
 block|{
@@ -743,14 +766,6 @@ argument_list|,
 name|errors
 argument_list|)
 expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
-argument_list|)
-return|;
 block|}
 else|else
 block|{
@@ -864,13 +879,6 @@ argument_list|(
 name|mapping
 argument_list|,
 name|request
-argument_list|)
-expr_stmt|;
-name|myForm
-operator|.
-name|setOp
-argument_list|(
-literal|"Add New"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1232,12 +1240,27 @@ expr_stmt|;
 block|}
 name|myForm
 operator|.
-name|setOp
+name|reset
 argument_list|(
-literal|"Update"
+name|mapping
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+literal|"List"
+operator|.
+name|equals
+argument_list|(
+name|myForm
+operator|.
+name|getOp
+argument_list|()
+argument_list|)
+condition|)
+block|{
 comment|// Read all existing settings and store in request
 name|getDeptStatusList
 argument_list|(
@@ -1251,7 +1274,28 @@ name|mapping
 operator|.
 name|findForward
 argument_list|(
-literal|"display"
+literal|"list"
+argument_list|)
+return|;
+block|}
+return|return
+name|mapping
+operator|.
+name|findForward
+argument_list|(
+literal|"Save"
+operator|.
+name|equals
+argument_list|(
+name|myForm
+operator|.
+name|getOp
+argument_list|()
+argument_list|)
+condition|?
+literal|"add"
+else|:
+literal|"edit"
 argument_list|)
 return|;
 block|}
@@ -1304,7 +1348,7 @@ argument_list|(
 literal|"ord"
 argument_list|)
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 comment|// Create web table instance
@@ -1314,9 +1358,9 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|4
+literal|5
 argument_list|,
-literal|"Department/Session Statuses"
+literal|null
 argument_list|,
 literal|"deptStatusTypeEdit.do?ord=%%"
 argument_list|,
@@ -1324,6 +1368,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|""
+block|,
 literal|"Reference"
 block|,
 literal|"Label"
@@ -1337,6 +1383,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -1788,6 +1836,70 @@ operator|+=
 literal|"commit"
 expr_stmt|;
 block|}
+name|String
+name|ops
+init|=
+literal|""
+decl_stmt|;
+if|if
+condition|(
+name|s
+operator|.
+name|getOrd
+argument_list|()
+operator|.
+name|intValue
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|ops
+operator|+=
+literal|"<img src='images/arrow_u.gif' border='0' align='absmiddle' title='Move Up' "
+operator|+
+literal|"onclick=\"deptStatusTypeEditForm.op2.value='Move Up';deptStatusTypeEditForm.uniqueId.value='"
+operator|+
+name|s
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"';deptStatusTypeEditForm.submit(); event.cancelBubble=true;\">"
+expr_stmt|;
+block|}
+else|else
+name|ops
+operator|+=
+literal|"<img src='images/blank.gif' border='0' align='absmiddle'>"
+expr_stmt|;
+if|if
+condition|(
+name|i
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|ops
+operator|+=
+literal|"<img src='images/arrow_d.gif' border='0' align='absmiddle' title='Move Down' "
+operator|+
+literal|"onclick=\"deptStatusTypeEditForm.op2.value='Move Down';deptStatusTypeEditForm.uniqueId.value='"
+operator|+
+name|s
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"';deptStatusTypeEditForm.submit(); event.cancelBubble=true;\">"
+expr_stmt|;
+block|}
+else|else
+name|ops
+operator|+=
+literal|"<img src='images/blank.gif' border='0' align='absmiddle'>"
+expr_stmt|;
 name|webTable
 operator|.
 name|addLine
@@ -1798,6 +1910,8 @@ operator|new
 name|String
 index|[]
 block|{
+name|ops
+block|,
 name|s
 operator|.
 name|getReference
@@ -1811,12 +1925,17 @@ block|,
 name|apply
 block|,
 name|rights
-block|}
+block|,         		}
 argument_list|,
 operator|new
 name|Comparable
 index|[]
 block|{
+name|s
+operator|.
+name|getOrd
+argument_list|()
+block|,
 name|s
 operator|.
 name|getOrd
@@ -1836,7 +1955,7 @@ name|s
 operator|.
 name|getStatus
 argument_list|()
-block|}
+block|,                              		}
 argument_list|)
 expr_stmt|;
 block|}

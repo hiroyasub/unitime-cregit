@@ -460,7 +460,7 @@ parameter_list|)
 block|{
 name|iOp
 operator|=
-literal|null
+literal|"List"
 expr_stmt|;
 name|iUniqueId
 operator|=
@@ -1246,7 +1246,7 @@ argument_list|)
 expr_stmt|;
 name|setOp
 argument_list|(
-literal|"Add New"
+literal|"Save"
 argument_list|)
 expr_stmt|;
 block|}
