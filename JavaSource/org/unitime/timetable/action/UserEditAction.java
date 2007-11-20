@@ -397,13 +397,6 @@ argument_list|,
 name|request
 argument_list|)
 expr_stmt|;
-name|myForm
-operator|.
-name|setOp
-argument_list|(
-literal|"Add New"
-argument_list|)
-expr_stmt|;
 block|}
 name|User
 name|user
@@ -434,7 +427,7 @@ decl_stmt|;
 comment|// Reset Form
 if|if
 condition|(
-literal|"Clear"
+literal|"Back"
 operator|.
 name|equals
 argument_list|(
@@ -451,11 +444,22 @@ argument_list|,
 name|request
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+literal|"Add User"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+condition|)
+block|{
 name|myForm
 operator|.
-name|setOp
+name|load
 argument_list|(
-literal|"Add New"
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -469,7 +473,7 @@ argument_list|(
 name|op
 argument_list|)
 operator|||
-literal|"Add New"
+literal|"Save"
 operator|.
 name|equals
 argument_list|(
@@ -505,13 +509,6 @@ argument_list|(
 name|request
 argument_list|,
 name|errors
-argument_list|)
-expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
 argument_list|)
 expr_stmt|;
 block|}
@@ -607,9 +604,11 @@ throw|;
 block|}
 name|myForm
 operator|.
-name|setOp
+name|reset
 argument_list|(
-literal|"Update"
+name|mapping
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}
@@ -681,14 +680,6 @@ argument_list|,
 name|errors
 argument_list|)
 expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
-argument_list|)
-return|;
 block|}
 else|else
 block|{
@@ -747,14 +738,6 @@ argument_list|,
 name|errors
 argument_list|)
 expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
-argument_list|)
-return|;
 block|}
 else|else
 block|{
@@ -870,14 +853,20 @@ argument_list|,
 name|request
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+literal|"List"
+operator|.
+name|equals
+argument_list|(
 name|myForm
 operator|.
-name|setOp
-argument_list|(
-literal|"Add New"
+name|getOp
+argument_list|()
 argument_list|)
-expr_stmt|;
-block|}
+condition|)
+block|{
 comment|// Read all existing settings and store in request
 name|getUserList
 argument_list|(
@@ -891,7 +880,28 @@ name|mapping
 operator|.
 name|findForward
 argument_list|(
-literal|"display"
+literal|"list"
+argument_list|)
+return|;
+block|}
+return|return
+name|mapping
+operator|.
+name|findForward
+argument_list|(
+literal|"Save"
+operator|.
+name|equals
+argument_list|(
+name|myForm
+operator|.
+name|getOp
+argument_list|()
+argument_list|)
+condition|?
+literal|"add"
+else|:
+literal|"edit"
 argument_list|)
 return|;
 block|}
@@ -956,7 +966,7 @@ name|WebTable
 argument_list|(
 literal|4
 argument_list|,
-literal|"Users"
+literal|null
 argument_list|,
 literal|"userEdit.do?ord=%%"
 argument_list|,
