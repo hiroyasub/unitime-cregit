@@ -161,6 +161,22 @@ name|TableRow
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|_RootDAO
+import|;
+end_import
+
 begin_comment
 comment|/**  * Displays hibernate statistics in html format  * @author Heston Fernandes  */
 end_comment
@@ -170,39 +186,35 @@ specifier|public
 class|class
 name|StatsProvider
 block|{
-comment|/**      * Log summary stats with INFO level      * @param sessionFactory Hibernate Session Factory      */
 specifier|public
-name|void
-name|logSummary
+specifier|static
+name|String
+name|getStatsHtml
 parameter_list|(
-name|SessionFactory
-name|sessionFactory
+name|boolean
+name|summaryOnly
 parameter_list|)
 block|{
-try|try
-block|{
-comment|// Get statistics
-name|Statistics
-name|stats
-init|=
-name|getStats
-argument_list|(
-name|sessionFactory
-argument_list|)
-decl_stmt|;
-name|stats
-operator|.
-name|logSummary
+return|return
+operator|new
+name|StatsProvider
 argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-block|}
+operator|.
+name|getStatsHtml
+argument_list|(
+operator|new
+name|_RootDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|getSessionFactory
+argument_list|()
+argument_list|,
+name|summaryOnly
+argument_list|)
+return|;
 block|}
 comment|/**      * Format statistics in HTML      * @param sessionFactory Hibernate Session Factory      * @param summaryOnly true - Display only summary info      * @return HTML String      */
 specifier|public
@@ -229,11 +241,25 @@ comment|// Get statistics
 name|Statistics
 name|stats
 init|=
-name|getStats
-argument_list|(
 name|sessionFactory
-argument_list|)
+operator|.
+name|getStatistics
+argument_list|()
 decl_stmt|;
+comment|// Checks statistics enabled
+if|if
+condition|(
+operator|!
+name|stats
+operator|.
+name|isStatisticsEnabled
+argument_list|()
+condition|)
+block|{
+return|return
+literal|"<font color='red'><b>Hibernate statistics is not enabled.</b></font>"
+return|;
+block|}
 comment|// Row Color for even numbered rows
 name|String
 name|evenRowColor
@@ -4446,60 +4472,6 @@ name|hibStats
 operator|.
 name|toString
 argument_list|()
-return|;
-block|}
-comment|/**      * Get Hibernate Statistics object      * @param sessionFactory Hibernate Session Factory      * @return Hibernate Statistics object      * @throws Exception      */
-specifier|private
-name|Statistics
-name|getStats
-parameter_list|(
-name|SessionFactory
-name|sessionFactory
-parameter_list|)
-throws|throws
-name|Exception
-block|{
-comment|// Check valid session factory
-if|if
-condition|(
-name|sessionFactory
-operator|==
-literal|null
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Session Factory null"
-argument_list|)
-throw|;
-comment|// Get statistics
-name|Statistics
-name|stats
-init|=
-name|sessionFactory
-operator|.
-name|getStatistics
-argument_list|()
-decl_stmt|;
-comment|// Checks statistics enabled
-if|if
-condition|(
-operator|!
-name|stats
-operator|.
-name|isStatisticsEnabled
-argument_list|()
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Statistics not enabled"
-argument_list|)
-throw|;
-return|return
-name|stats
 return|;
 block|}
 comment|/**      * Generate header cell      * @param content Content of cell      * @param rowSpan Row Span      * @param colSpan Column Span      * @return TableHeaderCell Object      */
