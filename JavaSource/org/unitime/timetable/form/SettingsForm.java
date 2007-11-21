@@ -207,7 +207,7 @@ name|op
 operator|.
 name|equals
 argument_list|(
-literal|"Add New"
+literal|"Save"
 argument_list|)
 operator|&&
 name|setting
@@ -357,7 +357,7 @@ parameter_list|)
 block|{
 name|op
 operator|=
-literal|null
+literal|"List"
 expr_stmt|;
 name|uniqueId
 operator|=
