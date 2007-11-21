@@ -193,7 +193,7 @@ parameter_list|)
 block|{
 name|op
 operator|=
-literal|null
+literal|"list"
 expr_stmt|;
 name|key
 operator|=
