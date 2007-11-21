@@ -579,7 +579,7 @@ name|myForm
 operator|.
 name|setOp
 argument_list|(
-literal|"Add New"
+literal|"Add Solver Configuration"
 argument_list|)
 expr_stmt|;
 name|op
@@ -595,7 +595,7 @@ block|}
 comment|// Reset Form
 if|if
 condition|(
-literal|"Cancel"
+literal|"Back"
 operator|.
 name|equals
 argument_list|(
@@ -616,7 +616,7 @@ name|myForm
 operator|.
 name|setOp
 argument_list|(
-literal|"Add New"
+literal|"Add Solver Configuration"
 argument_list|)
 expr_stmt|;
 name|myForm
@@ -627,7 +627,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"Add New"
+literal|"Add Solver Configuration"
 operator|.
 name|equals
 argument_list|(
@@ -639,7 +639,7 @@ name|myForm
 operator|.
 name|setOp
 argument_list|(
-literal|"Create"
+literal|"Save"
 argument_list|)
 expr_stmt|;
 name|myForm
@@ -662,7 +662,7 @@ argument_list|(
 name|op
 argument_list|)
 operator|||
-literal|"Create"
+literal|"Save"
 operator|.
 name|equals
 argument_list|(
@@ -702,13 +702,6 @@ argument_list|(
 name|request
 argument_list|,
 name|errors
-argument_list|)
-expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showSolverSettings"
 argument_list|)
 expr_stmt|;
 block|}
@@ -783,7 +776,7 @@ name|op
 operator|.
 name|equals
 argument_list|(
-literal|"Create"
+literal|"Save"
 argument_list|)
 condition|)
 name|setting
@@ -1180,7 +1173,7 @@ name|myForm
 operator|.
 name|setOp
 argument_list|(
-literal|"Add New"
+literal|"Add Solver Configuration"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1252,13 +1245,6 @@ argument_list|(
 name|request
 argument_list|,
 name|errors
-argument_list|)
-expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showSolverSettings"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1360,13 +1346,6 @@ argument_list|(
 name|request
 argument_list|,
 name|errors
-argument_list|)
-expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showSolverSettings"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1666,13 +1645,6 @@ argument_list|,
 name|errors
 argument_list|)
 expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showSolverSettings"
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -1742,13 +1714,6 @@ argument_list|(
 name|request
 argument_list|,
 name|errors
-argument_list|)
-expr_stmt|;
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showSolverSettings"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2310,10 +2275,23 @@ name|myForm
 operator|.
 name|setOp
 argument_list|(
-literal|"Add New"
+literal|"Add Solver Configuration"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+literal|"Add Solver Configuration"
+operator|.
+name|equals
+argument_list|(
+name|myForm
+operator|.
+name|getOp
+argument_list|()
+argument_list|)
+condition|)
+block|{
 comment|// Read all existing settings and store in request
 if|if
 condition|(
@@ -2329,7 +2307,28 @@ name|mapping
 operator|.
 name|findForward
 argument_list|(
-literal|"showSolverSettings"
+literal|"list"
+argument_list|)
+return|;
+block|}
+return|return
+name|mapping
+operator|.
+name|findForward
+argument_list|(
+literal|"Save"
+operator|.
+name|equals
+argument_list|(
+name|myForm
+operator|.
+name|getOp
+argument_list|()
+argument_list|)
+condition|?
+literal|"add"
+else|:
+literal|"edit"
 argument_list|)
 return|;
 block|}
@@ -2378,7 +2377,7 @@ name|WebTable
 argument_list|(
 literal|4
 argument_list|,
-literal|"Solver Configurations"
+literal|null
 argument_list|,
 literal|"solverSettings.do?ord=%%"
 argument_list|,
