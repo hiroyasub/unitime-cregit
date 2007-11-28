@@ -243,6 +243,20 @@ name|ItypeDescDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|LookupTables
+import|;
+end_import
+
 begin_comment
 comment|/**   * @author Tomas Muller  */
 end_comment
@@ -825,6 +839,15 @@ literal|"back"
 argument_list|)
 return|;
 block|}
+name|LookupTables
+operator|.
+name|setupItypes
+argument_list|(
+name|request
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 return|return
 name|mapping
 operator|.
