@@ -1723,6 +1723,9 @@ name|setSF
 parameter_list|(
 name|SessionFactory
 name|fact
+parameter_list|,
+name|Configuration
+name|cfg
 parameter_list|)
 block|{
 name|_BaseRootDAO
@@ -1730,6 +1733,12 @@ operator|.
 name|sessionFactory
 operator|=
 name|fact
+expr_stmt|;
+name|_BaseRootDAO
+operator|.
+name|configuration
+operator|=
+name|cfg
 expr_stmt|;
 block|}
 specifier|protected
@@ -1747,6 +1756,8 @@ operator|.
 name|setSF
 argument_list|(
 name|sSessionFactory
+argument_list|,
+name|cfg
 argument_list|)
 expr_stmt|;
 name|sLog
@@ -1755,6 +1766,11 @@ name|debug
 argument_list|(
 literal|"  -- session factory set to _BaseRootDAO"
 argument_list|)
+expr_stmt|;
+name|DatabaseUpdate
+operator|.
+name|update
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public

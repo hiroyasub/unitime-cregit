@@ -175,6 +175,22 @@ name|hibernate
 operator|.
 name|util
 operator|.
+name|DatabaseUpdate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|commons
+operator|.
+name|hibernate
+operator|.
+name|util
+operator|.
 name|HibernateUtil
 import|;
 end_import
@@ -366,6 +382,11 @@ operator|.
 name|configuration
 operator|=
 name|configuration
+expr_stmt|;
+name|DatabaseUpdate
+operator|.
+name|update
+argument_list|()
 expr_stmt|;
 block|}
 comment|/** 	 * Set the session factory 	 */
