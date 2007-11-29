@@ -397,6 +397,65 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+name|flush
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|getHibSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"update CourseOffering c set c.demand="
+operator|+
+literal|"(select count(distinct d.student) from LastLikeCourseDemand d where "
+operator|+
+literal|"(c.subjectArea=d.subjectArea and c.courseNbr=d.courseNbr)) where "
+operator|+
+literal|"c.permId is null and c.subjectArea.uniqueId in (select sa.uniqueId from SubjectArea sa where sa.session.uniqueId=:sessionId)"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
+expr_stmt|;
+name|getHibSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"update CourseOffering c set c.demand="
+operator|+
+literal|"(select count(distinct d.student) from LastLikeCourseDemand d where "
+operator|+
+literal|"d.student.session=c.subjectArea.session and c.permId=d.coursePermId) where "
+operator|+
+literal|"c.permId is not null and c.subjectArea.uniqueId in (select sa.uniqueId from SubjectArea sa where sa.session.uniqueId=:sessionId)"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
+expr_stmt|;
 name|commitTransaction
 argument_list|()
 expr_stmt|;
