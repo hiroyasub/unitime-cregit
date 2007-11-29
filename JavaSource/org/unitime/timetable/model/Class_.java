@@ -6324,6 +6324,19 @@ init|=
 operator|(
 name|float
 operator|)
+operator|(
+name|offering
+operator|.
+name|getInstructionalOffering
+argument_list|()
+operator|.
+name|getDemand
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
 name|offering
 operator|.
 name|getInstructionalOffering
@@ -6334,6 +6347,7 @@ argument_list|()
 operator|.
 name|intValue
 argument_list|()
+operator|)
 decl_stmt|;
 name|float
 name|nrLastLikeStudentsThisOffering

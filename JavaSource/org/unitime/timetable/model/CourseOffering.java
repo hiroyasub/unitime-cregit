@@ -799,6 +799,17 @@ argument_list|)
 expr_stmt|;
 name|co
 operator|.
+name|setDemand
+argument_list|(
+operator|new
+name|Integer
+argument_list|(
+literal|0
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|co
+operator|.
 name|setNbrExpectedStudents
 argument_list|(
 operator|new
