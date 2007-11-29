@@ -447,7 +447,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.invalid"
 argument_list|,
-literal|"Key : "
+literal|"Name : "
 operator|+
 name|id
 argument_list|)
@@ -498,7 +498,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.invalid"
 argument_list|,
-literal|"Key : "
+literal|"Name : "
 operator|+
 name|id
 argument_list|)
@@ -916,7 +916,7 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"A property with this key already exists."
+literal|"A property with this name already exists."
 argument_list|)
 throw|;
 name|ApplicationConfig
@@ -1153,7 +1153,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Key"
+literal|"Name"
 block|,
 literal|"Value"
 block|,
