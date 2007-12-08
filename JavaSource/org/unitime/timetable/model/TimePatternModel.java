@@ -5336,7 +5336,7 @@ name|model
 argument_list|,
 literal|true
 argument_list|,
-name|sMixAlgMinMax
+name|sMixAlgFullCover
 argument_list|)
 expr_stmt|;
 block|}
