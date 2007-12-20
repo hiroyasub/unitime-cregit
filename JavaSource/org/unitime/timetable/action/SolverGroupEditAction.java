@@ -2709,6 +2709,9 @@ operator|new
 name|String
 index|[]
 block|{
+operator|(
+name|html
+condition|?
 literal|"<a name='"
 operator|+
 name|group
@@ -2740,6 +2743,12 @@ argument_list|()
 operator|)
 operator|+
 literal|"</a>"
+else|:
+name|group
+operator|.
+name|getAbbv
+argument_list|()
+operator|)
 block|,
 operator|(
 name|html
