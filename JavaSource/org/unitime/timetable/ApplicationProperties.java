@@ -1134,7 +1134,7 @@ name|File
 argument_list|(
 name|dir
 argument_list|,
-literal|"uploaded_files"
+literal|"data"
 argument_list|)
 expr_stmt|;
 name|dir
@@ -1144,7 +1144,7 @@ name|File
 argument_list|(
 name|dir
 argument_list|,
-literal|"timetabling"
+literal|"unitime"
 argument_list|)
 expr_stmt|;
 name|dir
