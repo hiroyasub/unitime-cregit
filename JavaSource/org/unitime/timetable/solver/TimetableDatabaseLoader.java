@@ -11667,7 +11667,7 @@ name|ClassComparator
 argument_list|(
 name|ClassComparator
 operator|.
-name|COMPARE_BY_ID
+name|COMPARE_BY_HIERARCHY
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11905,7 +11905,7 @@ name|ClassComparator
 argument_list|(
 name|ClassComparator
 operator|.
-name|COMPARE_BY_ID
+name|COMPARE_BY_HIERARCHY
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12282,7 +12282,7 @@ name|ClassComparator
 argument_list|(
 name|ClassComparator
 operator|.
-name|COMPARE_BY_ID
+name|COMPARE_BY_HIERARCHY
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12701,7 +12701,7 @@ name|ClassComparator
 argument_list|(
 name|ClassComparator
 operator|.
-name|COMPARE_BY_ID
+name|COMPARE_BY_HIERARCHY
 argument_list|)
 argument_list|)
 expr_stmt|;
