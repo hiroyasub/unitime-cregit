@@ -613,6 +613,20 @@ name|cpsolver
 operator|.
 name|studentsct
 operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|net
+operator|.
+name|sf
+operator|.
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
 name|model
 operator|.
 name|AcademicAreaCode
@@ -829,6 +843,12 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
+name|boolean
+name|iLoadStudentInfo
+init|=
+literal|false
+decl_stmt|;
+specifier|private
 name|String
 name|iInitiative
 init|=
@@ -904,6 +924,20 @@ argument_list|(
 literal|"Load.IncludeUseCommittedAssignments"
 argument_list|,
 name|iIncludeUseCommittedAssignments
+argument_list|)
+expr_stmt|;
+name|iLoadStudentInfo
+operator|=
+name|model
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"Load.LoadStudentInfo"
+argument_list|,
+name|iLoadStudentInfo
 argument_list|)
 expr_stmt|;
 name|iMakeupAssignmentsFromRequiredPrefs
@@ -3088,6 +3122,10 @@ name|longValue
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|iLoadStudentInfo
+condition|)
 name|loadStudentInfo
 argument_list|(
 name|student
@@ -3737,212 +3775,6 @@ return|return
 name|student
 return|;
 block|}
-specifier|public
-specifier|static
-name|double
-name|getLastLikeStudentWeight
-parameter_list|(
-name|Course
-name|course
-parameter_list|,
-name|int
-name|real
-parameter_list|,
-name|int
-name|lastLike
-parameter_list|)
-block|{
-name|int
-name|projected
-init|=
-name|course
-operator|.
-name|getProjected
-argument_list|()
-decl_stmt|;
-name|int
-name|limit
-init|=
-name|course
-operator|.
-name|getLimit
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|course
-operator|.
-name|getLimit
-argument_list|()
-operator|<
-literal|0
-condition|)
-block|{
-name|sLog
-operator|.
-name|debug
-argument_list|(
-literal|"  -- Course "
-operator|+
-name|course
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" is unlimited."
-argument_list|)
-expr_stmt|;
-return|return
-literal|1.0
-return|;
-block|}
-if|if
-condition|(
-name|projected
-operator|<=
-literal|0
-condition|)
-block|{
-name|sLog
-operator|.
-name|warn
-argument_list|(
-literal|"  -- No projected demand for course "
-operator|+
-name|course
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|", using course limit ("
-operator|+
-name|limit
-operator|+
-literal|")"
-argument_list|)
-expr_stmt|;
-name|projected
-operator|=
-name|limit
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|limit
-operator|<
-name|projected
-condition|)
-block|{
-name|sLog
-operator|.
-name|warn
-argument_list|(
-literal|"  -- Projected number of students is over course limit for course "
-operator|+
-name|course
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" ("
-operator|+
-name|Math
-operator|.
-name|round
-argument_list|(
-name|projected
-argument_list|)
-operator|+
-literal|">"
-operator|+
-name|limit
-operator|+
-literal|")"
-argument_list|)
-expr_stmt|;
-name|projected
-operator|=
-name|limit
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|lastLike
-operator|==
-literal|0
-condition|)
-block|{
-name|sLog
-operator|.
-name|warn
-argument_list|(
-literal|"  -- No last like info for course "
-operator|+
-name|course
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-literal|1.0
-return|;
-block|}
-name|double
-name|weight
-init|=
-operator|(
-operator|(
-name|double
-operator|)
-name|Math
-operator|.
-name|max
-argument_list|(
-literal|0
-argument_list|,
-name|projected
-operator|-
-name|real
-argument_list|)
-operator|)
-operator|/
-name|lastLike
-decl_stmt|;
-name|sLog
-operator|.
-name|debug
-argument_list|(
-literal|"  -- last like student weight for "
-operator|+
-name|course
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" is "
-operator|+
-name|weight
-operator|+
-literal|" (lastLike="
-operator|+
-name|lastLike
-operator|+
-literal|", real="
-operator|+
-name|real
-operator|+
-literal|", projected="
-operator|+
-name|projected
-operator|+
-literal|")"
-argument_list|)
-expr_stmt|;
-return|return
-name|weight
-return|;
-block|}
 specifier|private
 name|void
 name|fixWeights
@@ -4262,6 +4094,8 @@ name|courseRequest
 operator|.
 name|setWeight
 argument_list|(
+name|Test
+operator|.
 name|getLastLikeStudentWeight
 argument_list|(
 name|course
@@ -4379,8 +4213,8 @@ operator|.
 name|Student
 name|s
 parameter_list|,
-name|CourseOffering
-name|co
+name|Long
+name|courseOfferingId
 parameter_list|,
 name|Hashtable
 name|studentTable
@@ -4436,10 +4270,7 @@ argument_list|()
 operator|+
 literal|") for "
 operator|+
-name|co
-operator|.
-name|getCourseName
-argument_list|()
+name|courseOfferingId
 argument_list|)
 expr_stmt|;
 name|Student
@@ -4481,6 +4312,10 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|iLoadStudentInfo
+condition|)
 name|loadStudentInfo
 argument_list|(
 name|student
@@ -4529,10 +4364,7 @@ name|courseTable
 operator|.
 name|get
 argument_list|(
-name|co
-operator|.
-name|getUniqueId
-argument_list|()
+name|courseOfferingId
 argument_list|)
 decl_stmt|;
 if|if
@@ -4548,10 +4380,7 @@ name|warn
 argument_list|(
 literal|"  -- course "
 operator|+
-name|co
-operator|.
-name|getCourseName
-argument_list|()
+name|courseOfferingId
 operator|+
 literal|" not loaded"
 argument_list|)
@@ -5708,13 +5537,17 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select d, s, c from LastLikeCourseDemand d inner join d.student s, CourseOffering c left join c.demandOffering cx "
+literal|"select d, c.uniqueId from LastLikeCourseDemand d left join fetch d.student s, CourseOffering c left join c.demandOffering cx "
 operator|+
-literal|"where d.subjectArea.session.uniqueId=:sessionId and "
+literal|"where d.subjectArea.session.uniqueId=:sessionId and c.subjectArea.session.uniqueId=:sessionId and "
 operator|+
-literal|"((d.subjectArea=c.subjectArea and d.courseNbr=c.courseNbr ) or "
+literal|"((c.permId=null and d.subjectArea=c.subjectArea and d.courseNbr=c.courseNbr ) or "
 operator|+
-literal|" (d.subjectArea=cx.subjectArea and d.courseNbr=cx.courseNbr)) "
+literal|" (c.permId!=null and c.permId=d.coursePermId) or "
+operator|+
+literal|" (cx.permId=null and d.subjectArea=cx.subjectArea and d.courseNbr=cx.courseNbr) or "
+operator|+
+literal|" (cx.permId!=null and cx.permId=d.coursePermId)) "
 operator|+
 literal|"order by s.uniqueId, d.priority, d.uniqueId"
 argument_list|)
@@ -5732,7 +5565,10 @@ name|longValue
 argument_list|()
 argument_list|)
 operator|.
-name|iterate
+name|list
+argument_list|()
+operator|.
+name|iterator
 argument_list|()
 init|;
 name|i
@@ -5788,20 +5624,20 @@ name|model
 operator|.
 name|Student
 operator|)
-name|o
-index|[
-literal|1
-index|]
+name|d
+operator|.
+name|getStudent
+argument_list|()
 decl_stmt|;
-name|CourseOffering
-name|co
+name|Long
+name|courseOfferingId
 init|=
 operator|(
-name|CourseOffering
+name|Long
 operator|)
 name|o
 index|[
-literal|2
+literal|1
 index|]
 decl_stmt|;
 if|if
@@ -5832,7 +5668,7 @@ name|d
 argument_list|,
 name|s
 argument_list|,
-name|co
+name|courseOfferingId
 argument_list|,
 name|lastLikeStudentTable
 argument_list|,
