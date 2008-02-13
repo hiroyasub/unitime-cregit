@@ -682,6 +682,16 @@ name|isEditableBy
 argument_list|(
 name|user
 argument_list|)
+operator|||
+name|sa
+operator|.
+name|getDepartment
+argument_list|()
+operator|.
+name|isLimitedEditableBy
+argument_list|(
+name|user
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|String

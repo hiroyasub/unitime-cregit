@@ -945,6 +945,13 @@ name|isEditableBy
 argument_list|(
 name|user
 argument_list|)
+operator|||
+name|d
+operator|.
+name|isLimitedEditableBy
+argument_list|(
+name|user
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|BackTracker
@@ -1040,6 +1047,13 @@ argument_list|(
 name|d
 operator|.
 name|isEditableBy
+argument_list|(
+name|user
+argument_list|)
+operator|||
+name|d
+operator|.
+name|isLimitedEditableBy
 argument_list|(
 name|user
 argument_list|)
