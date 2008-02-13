@@ -8800,6 +8800,16 @@ name|isViewableBy
 argument_list|(
 name|user
 argument_list|)
+argument_list|,
+name|ioc
+operator|.
+name|getControllingCourseOffering
+argument_list|()
+operator|.
+name|isLimitedEditableBy
+argument_list|(
+name|user
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
