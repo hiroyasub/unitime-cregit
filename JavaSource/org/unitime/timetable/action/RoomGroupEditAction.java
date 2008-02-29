@@ -1234,6 +1234,14 @@ literal|"right"
 block|,
 literal|"false"
 block|}
+block|,
+block|{
+literal|"Exam Capacity"
+block|,
+literal|"right"
+block|,
+literal|"false"
+block|}
 block|}
 decl_stmt|;
 name|String

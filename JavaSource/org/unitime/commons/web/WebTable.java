@@ -2549,6 +2549,15 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|Vector
+name|getLines
+parameter_list|()
+block|{
+return|return
+name|iLines
+return|;
+block|}
 block|}
 end_class
 

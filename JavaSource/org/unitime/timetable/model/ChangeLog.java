@@ -425,6 +425,12 @@ block|,
 name|SUBJECT_AREA_EDIT
 block|,
 name|BUILDING_EDIT
+block|,
+name|EXAM_PERIOD_EDIT
+block|,
+name|ROOM_EXAM_PERIOD_REF_EDIT
+block|,
+name|EXAM_EDIT
 block|}
 specifier|public
 specifier|static

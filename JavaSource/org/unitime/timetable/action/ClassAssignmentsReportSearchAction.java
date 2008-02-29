@@ -1352,6 +1352,13 @@ argument_list|(
 name|httpSession
 argument_list|)
 argument_list|,
+name|WebSolver
+operator|.
+name|getExamSolver
+argument_list|(
+name|httpSession
+argument_list|)
+argument_list|,
 name|classListForm
 argument_list|,
 name|user

@@ -6155,6 +6155,16 @@ argument_list|)
 expr_stmt|;
 name|sce
 operator|.
+name|setCourseOffering
+argument_list|(
+name|crq
+operator|.
+name|getCourseOffering
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|sce
+operator|.
 name|setTimestamp
 argument_list|(
 operator|new

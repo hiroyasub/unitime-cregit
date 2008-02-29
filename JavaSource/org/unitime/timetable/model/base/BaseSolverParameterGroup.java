@@ -67,6 +67,13 @@ name|PROP_ORDER
 init|=
 literal|"order"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_PARAM_TYPE
+init|=
+literal|"type"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseSolverParameterGroup
@@ -146,6 +153,14 @@ name|lang
 operator|.
 name|Integer
 name|order
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|type
 decl_stmt|;
 comment|// collections
 specifier|private
@@ -298,6 +313,38 @@ operator|.
 name|order
 operator|=
 name|order
+expr_stmt|;
+block|}
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|getType
+parameter_list|()
+block|{
+return|return
+name|type
+return|;
+block|}
+specifier|public
+name|void
+name|setType
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|type
+parameter_list|)
+block|{
+name|this
+operator|.
+name|type
+operator|=
+name|type
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: parameters 	 */

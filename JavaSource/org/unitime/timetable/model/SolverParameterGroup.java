@@ -106,6 +106,22 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|sTypeCourse
+init|=
+literal|0
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|sTypeExam
+init|=
+literal|1
+decl_stmt|;
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public
 name|SolverParameterGroup

@@ -3499,11 +3499,11 @@ throw|;
 if|if
 condition|(
 operator|(
+name|min
+operator|%
 name|Constants
 operator|.
 name|SLOT_LENGTH_MIN
-operator|%
-literal|5
 operator|)
 operator|!=
 literal|0

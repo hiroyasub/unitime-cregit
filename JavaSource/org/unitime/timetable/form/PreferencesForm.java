@@ -320,6 +320,10 @@ specifier|protected
 name|boolean
 name|editable
 decl_stmt|;
+specifier|private
+name|boolean
+name|hasNotAvailable
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Preference */
 specifier|protected
@@ -1111,6 +1115,10 @@ operator|=
 literal|true
 expr_stmt|;
 name|editable
+operator|=
+literal|false
+expr_stmt|;
+name|hasNotAvailable
 operator|=
 literal|false
 expr_stmt|;
@@ -2694,6 +2702,30 @@ operator|.
 name|editable
 operator|=
 name|editable
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getHasNotAvailable
+parameter_list|()
+block|{
+return|return
+name|hasNotAvailable
+return|;
+block|}
+specifier|public
+name|void
+name|setHasNotAvailable
+parameter_list|(
+name|boolean
+name|hasNotAvailable
+parameter_list|)
+block|{
+name|this
+operator|.
+name|hasNotAvailable
+operator|=
+name|hasNotAvailable
 expr_stmt|;
 block|}
 block|}

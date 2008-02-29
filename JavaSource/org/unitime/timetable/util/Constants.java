@@ -281,7 +281,7 @@ specifier|static
 name|String
 name|VERSION
 init|=
-literal|"3.0"
+literal|"3.1"
 decl_stmt|;
 comment|/** release date */
 specifier|public
@@ -1968,6 +1968,13 @@ operator|.
 name|removeAttribute
 argument_list|(
 literal|"SolverProxy"
+argument_list|)
+expr_stmt|;
+name|webSession
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"ExamSolverProxy"
 argument_list|)
 expr_stmt|;
 name|webSession

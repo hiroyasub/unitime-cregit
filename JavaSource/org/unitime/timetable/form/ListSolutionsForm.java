@@ -737,6 +737,18 @@ name|Roles
 operator|.
 name|VIEW_ALL_ROLE
 argument_list|)
+operator|||
+name|user
+operator|.
+name|getCurrentRole
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|Roles
+operator|.
+name|EXAM_MGR_ROLE
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1450,6 +1462,83 @@ name|sInfoKeys
 operator|.
 name|add
 argument_list|(
+literal|"Direct Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"More Than 2 A Day Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Back-To-Back Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Distance Back-To-Back Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Period Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Exam Rotation Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Room Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Room Split Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Room Size Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Not-Original Room Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Distribution Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
 literal|"Perturbation penalty"
 argument_list|)
 expr_stmt|;
@@ -1458,6 +1547,13 @@ operator|.
 name|add
 argument_list|(
 literal|"Perturbation variables"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Perturbations: Total penalty"
 argument_list|)
 expr_stmt|;
 name|sInfoKeys

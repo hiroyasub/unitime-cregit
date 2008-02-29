@@ -201,6 +201,8 @@ return|return
 name|findAll
 argument_list|(
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -211,6 +213,9 @@ name|findAll
 parameter_list|(
 name|boolean
 name|instructorPrefOnly
+parameter_list|,
+name|boolean
+name|examPref
 parameter_list|)
 throws|throws
 name|HibernateException
@@ -230,12 +235,14 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select t from DistributionType t"
+literal|"select t from DistributionType t where t.examPref="
+operator|+
+name|examPref
 operator|+
 operator|(
 name|instructorPrefOnly
 condition|?
-literal|" where t.instructorPref=true"
+literal|" and t.instructorPref=true"
 else|:
 literal|""
 operator|)
@@ -261,6 +268,9 @@ name|request
 parameter_list|,
 name|boolean
 name|instructorPrefOnly
+parameter_list|,
+name|boolean
+name|examPref
 parameter_list|)
 throws|throws
 name|Exception
@@ -309,6 +319,8 @@ return|return
 name|findAll
 argument_list|(
 name|instructorPrefOnly
+argument_list|,
+name|examPref
 argument_list|)
 return|;
 name|TreeSet
@@ -326,6 +338,8 @@ init|=
 name|findAll
 argument_list|(
 name|instructorPrefOnly
+argument_list|,
+name|examPref
 argument_list|)
 operator|.
 name|iterator
@@ -460,6 +474,9 @@ name|dept
 parameter_list|,
 name|boolean
 name|instructorPrefOnly
+parameter_list|,
+name|boolean
+name|examPref
 parameter_list|)
 throws|throws
 name|Exception
@@ -474,6 +491,8 @@ return|return
 name|findAll
 argument_list|(
 name|instructorPrefOnly
+argument_list|,
+name|examPref
 argument_list|)
 return|;
 name|TreeSet
@@ -491,6 +510,8 @@ init|=
 name|findAll
 argument_list|(
 name|instructorPrefOnly
+argument_list|,
+name|examPref
 argument_list|)
 operator|.
 name|iterator

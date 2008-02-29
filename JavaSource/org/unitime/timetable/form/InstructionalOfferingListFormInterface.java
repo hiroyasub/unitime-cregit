@@ -116,6 +116,16 @@ name|getTitle
 parameter_list|()
 function_decl|;
 specifier|public
+name|Boolean
+name|getExams
+parameter_list|()
+function_decl|;
+specifier|public
+name|Boolean
+name|getCanSeeExams
+parameter_list|()
+function_decl|;
+specifier|public
 name|String
 name|getSortBy
 parameter_list|()

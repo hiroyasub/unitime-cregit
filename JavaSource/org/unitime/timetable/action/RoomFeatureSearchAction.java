@@ -457,6 +457,18 @@ name|Roles
 operator|.
 name|VIEW_ALL_ROLE
 argument_list|)
+operator|||
+name|user
+operator|.
+name|getCurrentRole
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|Roles
+operator|.
+name|EXAM_MGR_ROLE
+argument_list|)
 condition|)
 block|{
 comment|//set departments

@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -28,6 +38,22 @@ operator|.
 name|base
 operator|.
 name|BaseStudentClassEnrollment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|StudentClassEnrollmentDAO
 import|;
 end_import
 
@@ -127,6 +153,41 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
+specifier|public
+specifier|static
+name|List
+name|findAll
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|)
+block|{
+return|return
+operator|new
+name|StudentClassEnrollmentDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select e from StudentClassEnrollment e where "
+operator|+
+literal|"e.student.session.uniqueId=:sessionId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
+argument_list|)
+operator|.
+name|list
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

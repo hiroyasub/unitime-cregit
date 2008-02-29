@@ -193,6 +193,13 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
+name|EXAM_MGR_ROLE
+init|=
+literal|"Exam Mgr"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
 name|USER_ROLES_ATTR_NAME
 init|=
 literal|"userRoles"
@@ -237,6 +244,10 @@ block|,
 name|Roles
 operator|.
 name|VIEW_ALL_ROLE
+block|,
+name|Roles
+operator|.
+name|EXAM_MGR_ROLE
 block|}
 decl_stmt|;
 comment|/**      * Retrieve admin roles      * @return String Array of admin roles (defined in Roles class)       * @see Roles      */

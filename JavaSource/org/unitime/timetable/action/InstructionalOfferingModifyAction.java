@@ -4061,6 +4061,15 @@ name|getPreferences
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|c
+operator|.
+name|deleteAllDependentObjects
+argument_list|(
+name|hibSession
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
 name|hibSession
 operator|.
 name|delete

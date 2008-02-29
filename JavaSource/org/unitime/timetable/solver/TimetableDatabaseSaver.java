@@ -3213,6 +3213,16 @@ argument_list|)
 expr_stmt|;
 name|assignment
 operator|.
+name|setClassId
+argument_list|(
+name|clazz
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assignment
+operator|.
 name|setClassName
 argument_list|(
 name|lecture

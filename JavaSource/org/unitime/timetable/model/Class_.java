@@ -7800,6 +7800,15 @@ argument_list|(
 name|hibSession
 argument_list|)
 expr_stmt|;
+name|Exam
+operator|.
+name|deleteFromExams
+argument_list|(
+name|hibSession
+argument_list|,
+name|this
+argument_list|)
+expr_stmt|;
 comment|// Add more collection deletes if needed
 if|if
 condition|(

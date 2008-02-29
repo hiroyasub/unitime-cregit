@@ -98,6 +98,13 @@ name|PROP_INSTRUCTOR_PREF
 init|=
 literal|"instructorPref"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXAM_PREF
+init|=
+literal|"examPref"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseDistributionType
@@ -196,6 +203,14 @@ name|lang
 operator|.
 name|Boolean
 name|instructorPref
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Boolean
+name|examPref
 decl_stmt|;
 comment|// collections
 specifier|private
@@ -400,6 +415,38 @@ operator|.
 name|instructorPref
 operator|=
 name|instructorPref
+expr_stmt|;
+block|}
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Boolean
+name|isExamPref
+parameter_list|()
+block|{
+return|return
+name|examPref
+return|;
+block|}
+specifier|public
+name|void
+name|setExamPref
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Boolean
+name|examPref
+parameter_list|)
+block|{
+name|this
+operator|.
+name|examPref
+operator|=
+name|examPref
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: departments 	 */

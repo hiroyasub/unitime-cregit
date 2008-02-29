@@ -129,6 +129,8 @@ block|{
 literal|"Timetables"
 block|,
 literal|"Solver"
+block|,
+literal|"Examination Solver"
 block|}
 decl_stmt|;
 specifier|public
@@ -151,6 +153,17 @@ operator|new
 name|Integer
 argument_list|(
 literal|1
+argument_list|)
+decl_stmt|;
+specifier|public
+specifier|static
+name|Integer
+name|APPEARANCE_EXAM_SOLVER
+init|=
+operator|new
+name|Integer
+argument_list|(
+literal|2
 argument_list|)
 decl_stmt|;
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
