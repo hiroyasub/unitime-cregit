@@ -2282,6 +2282,16 @@ name|getMaxNbrRooms
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setExamType
+argument_list|(
+name|exam
+operator|.
+name|getExamType
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|TreeSet
 name|instructors
 init|=

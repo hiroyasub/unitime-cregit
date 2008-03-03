@@ -271,6 +271,38 @@ block|,
 literal|"Exam"
 block|}
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|sExamTypeFinal
+init|=
+literal|0
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|sExamTypeEvening
+init|=
+literal|1
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sExamTypes
+index|[]
+init|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"Final"
+block|,
+literal|"Evening"
+block|}
+decl_stmt|;
 specifier|protected
 name|boolean
 name|canUserEdit
@@ -1095,6 +1127,9 @@ name|findAll
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 return|return
@@ -1107,7 +1142,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x from Exam x where x.session.uniqueId=:sessionId"
+literal|"select x from Exam x where x.session.uniqueId=:sessionId and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -1115,6 +1150,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -1133,6 +1175,9 @@ name|findExamsOfSubjectArea
 parameter_list|(
 name|Long
 name|subjectAreaId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 return|return
@@ -1147,7 +1192,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct x from Exam x inner join x.owners o where "
 operator|+
-literal|"o.course.subjectArea.uniqueId=:subjectAreaId"
+literal|"o.course.subjectArea.uniqueId=:subjectAreaId and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -1155,6 +1200,13 @@ argument_list|(
 literal|"subjectAreaId"
 argument_list|,
 name|subjectAreaId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -1173,6 +1225,9 @@ name|findExamsOfCourseOffering
 parameter_list|(
 name|Long
 name|courseOfferingId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 return|return
@@ -1187,7 +1242,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct x from Exam x inner join x.owners o where "
 operator|+
-literal|"o.course.uniqueId=:courseOfferingId"
+literal|"o.course.uniqueId=:courseOfferingId and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -1195,6 +1250,13 @@ argument_list|(
 literal|"courseOfferingId"
 argument_list|,
 name|courseOfferingId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -1216,6 +1278,9 @@ name|subjectAreaId
 parameter_list|,
 name|String
 name|courseNbr
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 if|if
@@ -1238,6 +1303,8 @@ return|return
 name|findExamsOfSubjectArea
 argument_list|(
 name|subjectAreaId
+argument_list|,
+name|examType
 argument_list|)
 return|;
 return|return
@@ -1252,7 +1319,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct x from Exam x inner join x.owners o where "
 operator|+
-literal|"o.course.subjectArea.uniqueId=:subjectAreaId and "
+literal|"o.course.subjectArea.uniqueId=:subjectAreaId and x.examType=:examType and "
 operator|+
 operator|(
 name|courseNbr
@@ -1292,6 +1359,13 @@ literal|"\\*"
 argument_list|,
 literal|"%"
 argument_list|)
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -2875,6 +2949,68 @@ name|hasTimetable
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|Integer
+name|examType
+parameter_list|)
+block|{
+if|if
+condition|(
+name|examType
+operator|==
+literal|null
+condition|)
+return|return
+name|hasTimetable
+argument_list|(
+name|sessionId
+argument_list|)
+return|;
+return|return
+operator|(
+operator|(
+name|Number
+operator|)
+operator|new
+name|ExamDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select count(x) from Exam x "
+operator|+
+literal|"where x.session.uniqueId=:sessionId and "
+operator|+
+literal|"x.assignedPeriod!=null and x.examType=:examType"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+operator|)
+operator|.
+name|longValue
+argument_list|()
+operator|>
+literal|0
+return|;
+block|}
+specifier|public
+specifier|static
+name|boolean
+name|hasTimetable
+parameter_list|(
+name|Long
+name|sessionId
 parameter_list|)
 block|{
 return|return
@@ -2917,6 +3053,55 @@ return|;
 block|}
 specifier|public
 specifier|static
+name|boolean
+name|hasEveningExams
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|)
+block|{
+return|return
+operator|(
+operator|(
+name|Number
+operator|)
+operator|new
+name|ExamDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select count(p) from ExamPeriod p "
+operator|+
+literal|"where p.session.uniqueId=:sessionId and "
+operator|+
+literal|"p.examType = "
+operator|+
+name|sExamTypeEvening
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+operator|)
+operator|.
+name|longValue
+argument_list|()
+operator|>
+literal|0
+return|;
+block|}
+specifier|public
+specifier|static
 name|Collection
 argument_list|<
 name|ExamAssignmentInfo
@@ -2925,6 +3110,9 @@ name|findAssignedExams
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 name|Vector
@@ -2954,7 +3142,7 @@ name|createQuery
 argument_list|(
 literal|"select x from Exam x where "
 operator|+
-literal|"x.session.uniqueId=:sessionId and x.assignedPeriod!=null"
+literal|"x.session.uniqueId=:sessionId and x.assignedPeriod!=null and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -2962,6 +3150,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -3026,6 +3221,9 @@ name|findUnassignedExams
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 name|Vector
@@ -3055,7 +3253,7 @@ name|createQuery
 argument_list|(
 literal|"select x from Exam x where "
 operator|+
-literal|"x.session.uniqueId=:sessionId and x.assignedPeriod=null"
+literal|"x.session.uniqueId=:sessionId and x.assignedPeriod=null and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -3063,6 +3261,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -3130,6 +3335,9 @@ name|sessionId
 parameter_list|,
 name|Long
 name|subjectAreaId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 if|if
@@ -3146,6 +3354,8 @@ return|return
 name|findAssignedExams
 argument_list|(
 name|sessionId
+argument_list|,
+name|examType
 argument_list|)
 return|;
 name|Vector
@@ -3177,6 +3387,8 @@ literal|"select distinct x from Exam x inner join x.owners o where "
 operator|+
 literal|"o.course.subjectArea.uniqueId=:subjectAreaId and "
 operator|+
+literal|"x.examType=:examType and "
+operator|+
 literal|"x.session.uniqueId=:sessionId and x.assignedPeriod!=null"
 argument_list|)
 operator|.
@@ -3185,6 +3397,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setLong
@@ -3259,6 +3478,9 @@ name|sessionId
 parameter_list|,
 name|Long
 name|subjectAreaId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 if|if
@@ -3275,6 +3497,8 @@ return|return
 name|findUnassignedExams
 argument_list|(
 name|sessionId
+argument_list|,
+name|examType
 argument_list|)
 return|;
 name|Vector
@@ -3306,6 +3530,8 @@ literal|"select distinct x from Exam x inner join x.owners o where "
 operator|+
 literal|"o.course.subjectArea.uniqueId=:subjectAreaId and "
 operator|+
+literal|"x.examType=:examType and "
+operator|+
 literal|"x.session.uniqueId=:sessionId and x.assignedPeriod=null"
 argument_list|)
 operator|.
@@ -3314,6 +3540,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setLong
@@ -3385,6 +3618,9 @@ name|findAssignedExamsOfLocation
 parameter_list|(
 name|Long
 name|locationId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 throws|throws
 name|Exception
@@ -3416,7 +3652,9 @@ name|createQuery
 argument_list|(
 literal|"select distinct x from Exam x inner join x.assignedRooms r where "
 operator|+
-literal|"r.uniqueId=:locationId and x.assignedPeriod!=null"
+literal|"r.uniqueId=:locationId and x.assignedPeriod!=null and "
+operator|+
+literal|"x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -3424,6 +3662,13 @@ argument_list|(
 literal|"locationId"
 argument_list|,
 name|locationId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
@@ -3488,6 +3733,9 @@ name|findAssignedExamsOfInstructor
 parameter_list|(
 name|Long
 name|instructorId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 throws|throws
 name|Exception
@@ -3519,7 +3767,9 @@ name|createQuery
 argument_list|(
 literal|"select distinct x from Exam x inner join x.instructors i where "
 operator|+
-literal|"i.uniqueId=:instructorId and x.assignedPeriod!=null"
+literal|"i.uniqueId=:instructorId and x.assignedPeriod!=null and "
+operator|+
+literal|"x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -3527,6 +3777,13 @@ argument_list|(
 literal|"instructorId"
 argument_list|,
 name|instructorId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable

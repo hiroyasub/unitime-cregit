@@ -683,6 +683,18 @@ argument_list|(
 literal|"id"
 argument_list|)
 argument_list|,
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
+name|request
+operator|.
+name|getParameter
+argument_list|(
+literal|"examType"
+argument_list|)
+argument_list|)
+argument_list|,
 name|out
 argument_list|)
 expr_stmt|;
@@ -1490,6 +1502,9 @@ parameter_list|(
 name|String
 name|courseOfferingId
 parameter_list|,
+name|Integer
+name|examType
+parameter_list|,
 name|ServletOutputStream
 name|out
 parameter_list|)
@@ -1535,6 +1550,8 @@ name|valueOf
 argument_list|(
 name|courseOfferingId
 argument_list|)
+argument_list|,
+name|examType
 argument_list|)
 argument_list|)
 decl_stmt|;

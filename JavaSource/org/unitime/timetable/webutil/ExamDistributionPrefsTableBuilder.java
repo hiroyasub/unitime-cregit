@@ -444,6 +444,9 @@ name|subjectAreaId
 parameter_list|,
 name|String
 name|courseNbr
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 throws|throws
 name|Exception
@@ -532,7 +535,7 @@ operator|)
 operator|+
 literal|"dp.distributionType.examPref = true and "
 operator|+
-literal|"do.prefGroup = x and x.session.uniqueId=:sessionId"
+literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -543,6 +546,13 @@ name|session
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 decl_stmt|;
 if|if
@@ -631,6 +641,9 @@ name|subjectAreaId
 parameter_list|,
 name|String
 name|courseNbr
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 throws|throws
 name|Exception
@@ -719,7 +732,7 @@ operator|)
 operator|+
 literal|"dp.distributionType.examPref = true and "
 operator|+
-literal|"do.prefGroup = x and x.session.uniqueId=:sessionId"
+literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -730,6 +743,13 @@ name|session
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 decl_stmt|;
 if|if
@@ -801,6 +821,8 @@ argument_list|(
 name|request
 argument_list|,
 name|distPrefs
+argument_list|,
+name|examType
 argument_list|)
 return|;
 block|}
@@ -1551,6 +1573,9 @@ name|request
 parameter_list|,
 name|Collection
 name|distPrefs
+parameter_list|,
+name|int
+name|examType
 parameter_list|)
 block|{
 name|String
@@ -1608,7 +1633,14 @@ name|PdfWebTable
 argument_list|(
 literal|4
 argument_list|,
-literal|"Examination Distribution Preferences"
+name|Exam
+operator|.
+name|sExamTypes
+index|[
+name|examType
+index|]
+operator|+
+literal|" Examination Distribution Preferences"
 argument_list|,
 literal|null
 argument_list|,

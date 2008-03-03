@@ -1392,6 +1392,9 @@ name|setupExaminationPeriods
 parameter_list|(
 name|HttpServletRequest
 name|request
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 throws|throws
 name|Exception
@@ -1409,6 +1412,8 @@ operator|.
 name|findAll
 argument_list|(
 name|request
+argument_list|,
+name|examType
 argument_list|)
 argument_list|)
 expr_stmt|;

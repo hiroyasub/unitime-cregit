@@ -228,6 +228,12 @@ name|iPeriod
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|Integer
+name|iExamType
+init|=
+literal|null
+decl_stmt|;
 specifier|public
 specifier|static
 name|SimpleDateFormat
@@ -244,6 +250,9 @@ name|PeriodPreferenceModel
 parameter_list|(
 name|Session
 name|session
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 name|this
@@ -251,6 +260,8 @@ argument_list|(
 name|session
 argument_list|,
 literal|null
+argument_list|,
+name|examType
 argument_list|)
 expr_stmt|;
 block|}
@@ -262,6 +273,9 @@ name|session
 parameter_list|,
 name|ExamAssignment
 name|assignment
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 name|iPeriod
@@ -296,7 +310,13 @@ name|session
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|,
+name|examType
 argument_list|)
+expr_stmt|;
+name|iExamType
+operator|=
+name|examType
 expr_stmt|;
 for|for
 control|(

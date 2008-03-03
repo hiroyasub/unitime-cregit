@@ -2540,6 +2540,9 @@ name|findAllExamInstructors
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|Integer
+name|examType
 parameter_list|)
 block|{
 return|return
@@ -2554,7 +2557,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i from Exam x inner join x.instructors i where x.session.uniqueId=:sessionId"
+literal|"select distinct i from Exam x inner join x.instructors i where x.session.uniqueId=:sessionId and x.examType=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -2562,6 +2565,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
 argument_list|)
 operator|.
 name|setCacheable
