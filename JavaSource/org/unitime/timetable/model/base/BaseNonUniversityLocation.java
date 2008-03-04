@@ -105,6 +105,13 @@ name|java
 operator|.
 name|lang
 operator|.
+name|Long
+name|permanentId
+parameter_list|,
+name|java
+operator|.
+name|lang
+operator|.
 name|Integer
 name|capacity
 parameter_list|,
@@ -140,6 +147,8 @@ block|{
 name|super
 argument_list|(
 name|uniqueId
+argument_list|,
+name|permanentId
 argument_list|,
 name|capacity
 argument_list|,

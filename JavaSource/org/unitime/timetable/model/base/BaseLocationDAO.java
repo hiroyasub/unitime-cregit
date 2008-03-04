@@ -41,18 +41,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|hibernate
-operator|.
-name|criterion
-operator|.
-name|Order
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -62,6 +50,18 @@ operator|.
 name|dao
 operator|.
 name|LocationDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|hibernate
+operator|.
+name|criterion
+operator|.
+name|Order
 import|;
 end_import
 
