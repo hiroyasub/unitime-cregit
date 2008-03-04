@@ -973,6 +973,12 @@ expr_stmt|;
 name|loadDistributions
 argument_list|()
 expr_stmt|;
+name|getModel
+argument_list|()
+operator|.
+name|init
+argument_list|()
+expr_stmt|;
 name|assignInitial
 argument_list|()
 expr_stmt|;
@@ -4088,7 +4094,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and "
+literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -4106,6 +4112,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|iSessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|iExamType
 argument_list|)
 operator|.
 name|list
@@ -4133,7 +4146,7 @@ literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
 literal|"inner join c.schedulingSubpart.instrOfferingConfig ioc "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and "
+literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -4151,6 +4164,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|iSessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|iExamType
 argument_list|)
 operator|.
 name|list
@@ -4176,7 +4196,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering co "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and "
+literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -4194,6 +4214,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|iSessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|iExamType
 argument_list|)
 operator|.
 name|list
@@ -4219,7 +4246,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering.instructionalOffering io "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and "
+literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -4237,6 +4264,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|iSessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|iExamType
 argument_list|)
 operator|.
 name|list
