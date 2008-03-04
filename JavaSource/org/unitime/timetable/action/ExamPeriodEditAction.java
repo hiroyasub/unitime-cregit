@@ -1220,6 +1220,13 @@ name|findForward
 argument_list|(
 name|myForm
 operator|.
+name|getAutoSetup
+argument_list|()
+condition|?
+literal|"evening"
+else|:
+name|myForm
+operator|.
 name|getUniqueId
 argument_list|()
 operator|.
