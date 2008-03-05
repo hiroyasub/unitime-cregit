@@ -713,7 +713,7 @@ literal|"assignedExams.ord"
 argument_list|)
 argument_list|)
 argument_list|,
-literal|10
+literal|9
 argument_list|,
 name|assignedExams
 operator|.
@@ -826,7 +826,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|10
+literal|9
 argument_list|,
 literal|"Assigned Examinations"
 argument_list|,
