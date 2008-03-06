@@ -1914,7 +1914,7 @@ condition|(
 operator|!
 name|ea
 operator|.
-name|getRoomIds
+name|getRooms
 argument_list|()
 operator|.
 name|isEmpty
@@ -1928,7 +1928,7 @@ operator|+
 operator|(
 name|ea
 operator|.
-name|getRoomIds
+name|getRooms
 argument_list|()
 operator|.
 name|size
@@ -1961,7 +1961,7 @@ if|if
 condition|(
 name|ea
 operator|.
-name|hasConflicts
+name|getHasConflicts
 argument_list|()
 condition|)
 block|{
