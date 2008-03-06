@@ -1162,7 +1162,6 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
-empty_stmt|;
 name|sLog
 operator|.
 name|warn
