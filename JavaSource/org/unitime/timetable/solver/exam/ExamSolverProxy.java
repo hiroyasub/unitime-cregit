@@ -487,6 +487,14 @@ name|periodId
 parameter_list|)
 function_decl|;
 specifier|public
+name|String
+name|assign
+parameter_list|(
+name|ExamAssignmentInfo
+name|assignment
+parameter_list|)
+function_decl|;
+specifier|public
 name|int
 name|getExamType
 parameter_list|()
