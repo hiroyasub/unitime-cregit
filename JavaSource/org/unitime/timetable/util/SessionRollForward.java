@@ -2322,6 +2322,13 @@ name|getScheduledRoomType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|LocationPermIdGenerator
+operator|.
+name|setPermanentId
+argument_list|(
+name|toRoom
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -4763,6 +4770,13 @@ operator|.
 name|setSession
 argument_list|(
 name|toSession
+argument_list|)
+expr_stmt|;
+name|LocationPermIdGenerator
+operator|.
+name|setPermanentId
+argument_list|(
+name|r
 argument_list|)
 expr_stmt|;
 if|if

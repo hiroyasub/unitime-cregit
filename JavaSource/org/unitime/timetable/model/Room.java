@@ -391,6 +391,14 @@ name|getSession
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|r
+operator|.
+name|setPermanentId
+argument_list|(
+name|getPermanentId
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|r
 return|;

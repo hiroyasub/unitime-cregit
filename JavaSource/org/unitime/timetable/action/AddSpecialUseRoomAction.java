@@ -531,6 +531,20 @@ name|Constants
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|LocationPermIdGenerator
+import|;
+end_import
+
 begin_comment
 comment|/**   * MyEclipse Struts  * Creation date: 05-05-2006  *   * XDoclet definition:  * @struts.action path="/addSpecialUseRoom" name="specialUseRoomForm" input="/admin/addSpecialUseRoom.jsp" scope="request" validate="true"  */
 end_comment
@@ -2030,6 +2044,13 @@ argument_list|(
 operator|new
 name|HashSet
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|LocationPermIdGenerator
+operator|.
+name|setPermanentId
+argument_list|(
+name|room
 argument_list|)
 expr_stmt|;
 name|hibSession

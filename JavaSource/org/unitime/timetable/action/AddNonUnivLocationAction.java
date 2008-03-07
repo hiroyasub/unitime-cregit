@@ -407,6 +407,20 @@ name|Constants
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|LocationPermIdGenerator
+import|;
+end_import
+
 begin_comment
 comment|/**   * MyEclipse Struts  * Creation date: 05-05-2006  *   * XDoclet definition:  * @struts.action path="/addNonUnivLocation" name="nonUnivLocationForm" input="/admin/addNonUnivLocation.jsp" scope="request" validate="true"  */
 end_comment
@@ -1081,6 +1095,13 @@ operator|.
 name|setExamCapacity
 argument_list|(
 literal|0
+argument_list|)
+expr_stmt|;
+name|LocationPermIdGenerator
+operator|.
+name|setPermanentId
+argument_list|(
+name|nonUniv
 argument_list|)
 expr_stmt|;
 name|hibSession
