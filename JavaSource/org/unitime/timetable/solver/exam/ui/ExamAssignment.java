@@ -959,7 +959,7 @@ name|iRooms
 operator|.
 name|addAll
 argument_list|(
-name|iRooms
+name|rooms
 argument_list|)
 expr_stmt|;
 comment|//TODO: distribution preference

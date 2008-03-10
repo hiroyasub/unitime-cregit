@@ -699,7 +699,7 @@ literal|"assignedExams.ord"
 argument_list|)
 argument_list|)
 argument_list|,
-literal|9
+literal|10
 argument_list|,
 name|assignedExams
 operator|.
@@ -798,7 +798,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|9
+literal|10
 argument_list|,
 literal|"Assigned Examinations"
 argument_list|,
@@ -833,6 +833,12 @@ literal|"Students"
 block|,
 literal|"Instructor"
 block|,
+literal|"Violated"
+operator|+
+name|nl
+operator|+
+literal|"Distributions"
+block|,
 literal|"Direct"
 block|,
 literal|">2 A Day"
@@ -856,6 +862,8 @@ literal|"right"
 block|,
 literal|"left"
 block|,
+literal|"left"
+block|,
 literal|"right"
 block|,
 literal|"right"
@@ -876,6 +884,8 @@ block|,
 literal|true
 block|,
 literal|false
+block|,
+literal|true
 block|,
 literal|true
 block|,
@@ -1226,6 +1236,24 @@ argument_list|(
 literal|", "
 argument_list|)
 block|,
+operator|(
+name|html
+condition|?
+name|exam
+operator|.
+name|getDistributionConflictsHtml
+argument_list|(
+literal|", "
+argument_list|)
+else|:
+name|exam
+operator|.
+name|getDistributionConflictsList
+argument_list|(
+literal|", "
+argument_list|)
+operator|)
+block|,
 name|dcStr
 block|,
 name|m2dStr
@@ -1266,6 +1294,13 @@ operator|.
 name|getInstructorName
 argument_list|(
 literal|":"
+argument_list|)
+block|,
+name|exam
+operator|.
+name|getDistributionConflictsList
+argument_list|(
+literal|", "
 argument_list|)
 block|,
 name|dc
