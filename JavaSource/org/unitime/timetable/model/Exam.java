@@ -1718,6 +1718,9 @@ argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|,
+name|getExamType
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -3151,6 +3154,55 @@ operator|+
 literal|"p.examType = "
 operator|+
 name|sExamTypeEvening
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+operator|)
+operator|.
+name|longValue
+argument_list|()
+operator|>
+literal|0
+return|;
+block|}
+specifier|public
+specifier|static
+name|boolean
+name|hasFinalExams
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|)
+block|{
+return|return
+operator|(
+operator|(
+name|Number
+operator|)
+operator|new
+name|ExamDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select count(p) from ExamPeriod p "
+operator|+
+literal|"where p.session.uniqueId=:sessionId and "
+operator|+
+literal|"p.examType = "
+operator|+
+name|sExamTypeFinal
 argument_list|)
 operator|.
 name|setLong

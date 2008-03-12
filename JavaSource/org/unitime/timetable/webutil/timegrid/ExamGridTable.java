@@ -1042,6 +1042,11 @@ name|iForm
 operator|.
 name|getSessionId
 argument_list|()
+argument_list|,
+name|iForm
+operator|.
+name|getExamType
+argument_list|()
 argument_list|)
 operator|.
 name|iterator
@@ -8946,7 +8951,12 @@ name|id
 argument_list|)
 operator|.
 name|getExamPreferences
+argument_list|(
+name|iForm
+operator|.
+name|getExamType
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
