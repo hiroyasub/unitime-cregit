@@ -4277,6 +4277,16 @@ name|int
 name|examType
 parameter_list|)
 block|{
+if|if
+condition|(
+name|getExamType
+argument_list|()
+operator|==
+literal|null
+condition|)
+return|return
+literal|false
+return|;
 switch|switch
 condition|(
 name|examType
