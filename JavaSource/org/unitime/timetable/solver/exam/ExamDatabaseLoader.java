@@ -1319,17 +1319,7 @@ name|findAllExamLocations
 argument_list|(
 name|iSessionId
 argument_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Exam
-operator|.
-name|sExamTypeFinal
+name|iExamType
 argument_list|)
 expr_stmt|;
 name|iProgress
@@ -4316,9 +4306,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select d from DistributionPref d where "
+literal|"select distinct d from DistributionPref d inner join d.distributionObjects o, Exam x where "
 operator|+
 literal|"d.distributionType.examPref=true and "
+operator|+
+literal|"o.prefGroup=x and x.session.uniqueId=:sessionId and x.examType=:examType and "
 operator|+
 literal|"d.owner.uniqueId=:sessionId"
 argument_list|)
@@ -4328,6 +4320,13 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|iSessionId
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|iExamType
 argument_list|)
 operator|.
 name|list
