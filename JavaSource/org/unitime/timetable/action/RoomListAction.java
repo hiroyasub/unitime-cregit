@@ -2337,7 +2337,17 @@ else|:
 literal|"Period Preferences"
 operator|)
 block|,
+operator|(
+name|examType
+operator|==
+name|Exam
+operator|.
+name|sExamTypeEvening
+condition|?
+literal|"left"
+else|:
 literal|"center"
+operator|)
 block|,
 literal|"false"
 block|}
@@ -2924,7 +2934,17 @@ else|:
 literal|"Period Preferences"
 operator|)
 block|,
+operator|(
+name|examType
+operator|==
+name|Exam
+operator|.
+name|sExamTypeEvening
+condition|?
+literal|"left"
+else|:
 literal|"center"
+operator|)
 block|,
 literal|"false"
 block|}
@@ -4271,6 +4291,13 @@ name|epx
 operator|.
 name|toString
 argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|", "
+argument_list|,
+literal|"<br>"
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -5356,6 +5383,11 @@ operator|.
 name|booleanValue
 argument_list|()
 operator|&&
+operator|(
+name|examType
+operator|<
+literal|0
+operator|||
 operator|!
 name|depts
 operator|.
@@ -5366,6 +5398,7 @@ operator|.
 name|getDepartment
 argument_list|()
 argument_list|)
+operator|)
 condition|)
 continue|continue;
 if|if
@@ -5599,6 +5632,12 @@ name|htmlLabel
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|examType
+operator|<
+literal|0
+condition|)
 for|for
 control|(
 name|Iterator
@@ -9662,6 +9701,11 @@ operator|.
 name|booleanValue
 argument_list|()
 operator|&&
+operator|(
+name|examType
+operator|<
+literal|0
+operator|||
 operator|!
 name|depts
 operator|.
@@ -9672,6 +9716,7 @@ operator|.
 name|getDepartment
 argument_list|()
 argument_list|)
+operator|)
 condition|)
 continue|continue;
 if|if
@@ -9924,6 +9969,12 @@ name|getLabel
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|examType
+operator|<
+literal|0
+condition|)
 for|for
 control|(
 name|Iterator
