@@ -1490,6 +1490,34 @@ name|sInfoKeys
 operator|.
 name|add
 argument_list|(
+literal|"Instructor Direct Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Instructor More Than 2 A Day Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Instructor Back-To-Back Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Instructor Distance Back-To-Back Conflicts"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
 literal|"Period Penalty"
 argument_list|)
 expr_stmt|;

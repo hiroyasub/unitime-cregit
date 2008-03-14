@@ -1572,7 +1572,12 @@ name|rooms
 operator|==
 literal|null
 condition|)
-continue|continue;
+name|rooms
+operator|=
+operator|new
+name|HashSet
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!

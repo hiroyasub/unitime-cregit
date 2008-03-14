@@ -982,7 +982,7 @@ literal|9
 argument_list|,
 literal|"Not-assigned Examinations"
 argument_list|,
-literal|"assignedExams.do?ord=%%"
+literal|"unassignedExams.do?ord=%%"
 argument_list|,
 operator|new
 name|String
