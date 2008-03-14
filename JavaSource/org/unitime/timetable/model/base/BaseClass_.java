@@ -133,6 +133,13 @@ name|PROP_UNIQUE_ID_ROLLED_FORWARD_FROM
 init|=
 literal|"uniqueIdRolledForwardFrom"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXTERNAL_UNIQUE_ID
+init|=
+literal|"externalUniqueId"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseClass_
@@ -256,6 +263,14 @@ name|lang
 operator|.
 name|Long
 name|uniqueIdRolledForwardFrom
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|externalUniqueId
 decl_stmt|;
 comment|// one to one
 specifier|private
@@ -788,6 +803,40 @@ operator|.
 name|uniqueIdRolledForwardFrom
 operator|=
 name|uniqueIdRolledForwardFrom
+expr_stmt|;
+block|}
+comment|/** 	 * Return the value associated with the column: EXTERNAL_UID 	 */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|getExternalUniqueId
+parameter_list|()
+block|{
+return|return
+name|externalUniqueId
+return|;
+block|}
+comment|/** 	 * Set the value related to the column: EXTERNAL_UID 	 * @param externalUniqueId the EXTERNAL_UID value 	 */
+specifier|public
+name|void
+name|setExternalUniqueId
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|externalUniqueId
+parameter_list|)
+block|{
+name|this
+operator|.
+name|externalUniqueId
+operator|=
+name|externalUniqueId
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: sectioningInfo 	 */

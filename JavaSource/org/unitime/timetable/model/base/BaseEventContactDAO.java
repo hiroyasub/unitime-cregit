@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.0 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2007, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*   * UniTime 3.1 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2008, UniTime.org  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.  */
 end_comment
 
 begin_package
@@ -49,7 +49,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|InstructionalOfferingDAO
+name|EventContactDAO
 import|;
 end_import
 
@@ -73,7 +73,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseInstructionalOfferingDAO
+name|BaseEventContactDAO
 extends|extends
 name|org
 operator|.
@@ -90,13 +90,13 @@ block|{
 comment|// query name references
 specifier|public
 specifier|static
-name|InstructionalOfferingDAO
+name|EventContactDAO
 name|instance
 decl_stmt|;
 comment|/** 	 * Return a singleton of the DAO 	 */
 specifier|public
 specifier|static
-name|InstructionalOfferingDAO
+name|EventContactDAO
 name|getInstance
 parameter_list|()
 block|{
@@ -109,7 +109,7 @@ condition|)
 name|instance
 operator|=
 operator|new
-name|InstructionalOfferingDAO
+name|EventContactDAO
 argument_list|()
 expr_stmt|;
 return|return
@@ -130,7 +130,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 operator|.
 name|class
 return|;
@@ -141,10 +141,15 @@ name|getDefaultOrder
 parameter_list|()
 block|{
 return|return
-literal|null
+name|Order
+operator|.
+name|asc
+argument_list|(
+literal|"lastName"
+argument_list|)
 return|;
 block|}
-comment|/** 	 * Cast the object as a org.unitime.timetable.model.InstructionalOffering 	 */
+comment|/** 	 * Cast the object as a org.unitime.timetable.model.EventContact 	 */
 specifier|public
 name|org
 operator|.
@@ -154,7 +159,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|cast
 parameter_list|(
 name|Object
@@ -171,7 +176,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 operator|)
 name|object
 return|;
@@ -185,7 +190,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|get
 parameter_list|(
 name|java
@@ -206,7 +211,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 operator|)
 name|get
 argument_list|(
@@ -226,7 +231,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|get
 parameter_list|(
 name|java
@@ -250,7 +255,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 operator|)
 name|get
 argument_list|(
@@ -272,7 +277,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|load
 parameter_list|(
 name|java
@@ -293,7 +298,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 operator|)
 name|load
 argument_list|(
@@ -313,7 +318,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|load
 parameter_list|(
 name|java
@@ -337,7 +342,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 operator|)
 name|load
 argument_list|(
@@ -359,7 +364,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|loadInitialize
 parameter_list|(
 name|java
@@ -381,7 +386,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|EventContact
 name|obj
 init|=
 name|load
@@ -414,7 +419,7 @@ return|return
 name|obj
 return|;
 block|}
-comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * @param instructionalOffering a transient instance of a persistent class  	 * @return the class identifier 	 */
+comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * @param eventContact a transient instance of a persistent class  	 * @return the class identifier 	 */
 specifier|public
 name|java
 operator|.
@@ -431,8 +436,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|)
 block|{
 return|return
@@ -447,11 +452,11 @@ name|super
 operator|.
 name|save
 argument_list|(
-name|instructionalOffering
+name|eventContact
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * Use the Session given. 	 * @param instructionalOffering a transient instance of a persistent class 	 * @param s the Session 	 * @return the class identifier 	 */
+comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * Use the Session given. 	 * @param eventContact a transient instance of a persistent class 	 * @param s the Session 	 * @return the class identifier 	 */
 specifier|public
 name|java
 operator|.
@@ -468,8 +473,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|,
 name|Session
 name|s
@@ -488,13 +493,13 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|,
 name|s
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the 	 * identifier property mapping.  	 * @param instructionalOffering a transient instance containing new or updated state  	 */
+comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the 	 * identifier property mapping.  	 * @param eventContact a transient instance containing new or updated state  	 */
 specifier|public
 name|void
 name|saveOrUpdate
@@ -507,8 +512,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|)
 block|{
 name|saveOrUpdate
@@ -516,11 +521,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default the 	 * instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the identifier 	 * property mapping.  	 * Use the Session given. 	 * @param instructionalOffering a transient instance containing new or updated state. 	 * @param s the Session. 	 */
+comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default the 	 * instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the identifier 	 * property mapping.  	 * Use the Session given. 	 * @param eventContact a transient instance containing new or updated state. 	 * @param s the Session. 	 */
 specifier|public
 name|void
 name|saveOrUpdate
@@ -533,8 +538,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|,
 name|Session
 name|s
@@ -545,13 +550,13 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * @param instructionalOffering a transient instance containing updated state 	 */
+comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * @param eventContact a transient instance containing updated state 	 */
 specifier|public
 name|void
 name|update
@@ -564,8 +569,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|)
 block|{
 name|update
@@ -573,11 +578,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * Use the Session given. 	 * @param instructionalOffering a transient instance containing updated state 	 * @param the Session 	 */
+comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * Use the Session given. 	 * @param eventContact a transient instance containing updated state 	 * @param the Session 	 */
 specifier|public
 name|void
 name|update
@@ -590,8 +595,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|,
 name|Session
 name|s
@@ -602,7 +607,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|,
 name|s
 argument_list|)
@@ -665,7 +670,7 @@ name|s
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * @param instructionalOffering the instance to be removed 	 */
+comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * @param eventContact the instance to be removed 	 */
 specifier|public
 name|void
 name|delete
@@ -678,8 +683,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|)
 block|{
 name|delete
@@ -687,11 +692,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * Use the Session given. 	 * @param instructionalOffering the instance to be removed 	 * @param s the Session 	 */
+comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * Use the Session given. 	 * @param eventContact the instance to be removed 	 * @param s the Session 	 */
 specifier|public
 name|void
 name|delete
@@ -704,8 +709,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|,
 name|Session
 name|s
@@ -716,7 +721,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|,
 name|s
 argument_list|)
@@ -735,8 +740,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
-name|instructionalOffering
+name|EventContact
+name|eventContact
 parameter_list|,
 name|Session
 name|s
@@ -747,7 +752,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|instructionalOffering
+name|eventContact
 argument_list|,
 name|s
 argument_list|)

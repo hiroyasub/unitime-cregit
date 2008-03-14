@@ -482,6 +482,7 @@ operator|=
 name|sessionEndDateTime
 expr_stmt|;
 block|}
+comment|/** 	 * Return the value associated with the column: EXAM_BEGIN_DATE 	 */
 specifier|public
 name|java
 operator|.
@@ -495,6 +496,7 @@ return|return
 name|examBeginDate
 return|;
 block|}
+comment|/** 	 * Set the value related to the column: EXAM_BEGIN_DATE 	 * @param examBeginDate the EXAM_BEGIN_DATE value 	 */
 specifier|public
 name|void
 name|setExamBeginDate
