@@ -96,6 +96,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|sChangeSaved
+init|=
+literal|"Saved"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 index|[]
 name|sChanges
 init|=
@@ -106,6 +114,8 @@ block|{
 name|sChangeInitial
 block|,
 name|sChangeBest
+block|,
+name|sChangeSaved
 block|}
 decl_stmt|;
 specifier|private
