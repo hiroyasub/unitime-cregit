@@ -2508,14 +2508,14 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|": "
+literal|" to period "
 operator|+
 name|exam
 operator|.
@@ -2525,7 +2525,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" is not allowed."
+literal|": period not allowed."
 argument_list|)
 expr_stmt|;
 name|fail
@@ -2551,14 +2551,14 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable to assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|": "
+literal|" to period "
 operator|+
 name|exam
 operator|.
@@ -2568,7 +2568,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" is prohibited."
+literal|": period prohibited."
 argument_list|)
 expr_stmt|;
 name|fail
@@ -2654,21 +2654,21 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable to assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|": "
+literal|" to room "
 operator|+
 name|location
 operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" is no longer an examination room."
+literal|": not an examination room."
 argument_list|)
 expr_stmt|;
 name|fail
@@ -2695,21 +2695,21 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable to assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|": location "
+literal|" to room "
 operator|+
 name|location
 operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" is no longer valid for this exam."
+literal|": room not valid for this exam."
 argument_list|)
 expr_stmt|;
 name|fail
@@ -2747,12 +2747,31 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable to assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
+operator|+
+literal|" to room"
+operator|+
+operator|(
+name|rooms
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|1
+condition|?
+literal|"s"
+else|:
+literal|""
+operator|)
+operator|+
+literal|" "
+operator|+
+name|rooms
 operator|+
 literal|": number of assigned rooms exceeds the current limit ("
 operator|+
@@ -2805,14 +2824,24 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable to assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|": location "
+literal|" to period "
+operator|+
+name|exam
+operator|.
+name|getAssignedPeriod
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" and room "
 operator|+
 name|rooms
 operator|.
@@ -2822,17 +2851,7 @@ operator|.
 name|next
 argument_list|()
 operator|+
-literal|" cannot be used at "
-operator|+
-name|exam
-operator|.
-name|getAssignedPeriod
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"."
+literal|": room cannot be used at given period."
 argument_list|)
 expr_stmt|;
 else|else
@@ -2840,18 +2859,14 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load assignment of "
+literal|"Unable to assign exam "
 operator|+
 name|getExamLabel
 argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|": one or more locations "
-operator|+
-name|rooms
-operator|+
-literal|" cannot be used at "
+literal|" to period "
 operator|+
 name|exam
 operator|.
@@ -2861,7 +2876,11 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"."
+literal|" and one or more rooms "
+operator|+
+name|rooms
+operator|+
+literal|": room cannot be used at given period."
 argument_list|)
 expr_stmt|;
 name|fail
