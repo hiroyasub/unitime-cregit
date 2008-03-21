@@ -517,6 +517,11 @@ name|getExamType
 parameter_list|()
 function_decl|;
 specifier|public
+name|Long
+name|getSessionId
+parameter_list|()
+function_decl|;
+specifier|public
 name|Collection
 argument_list|<
 name|ExamAssignmentInfo
