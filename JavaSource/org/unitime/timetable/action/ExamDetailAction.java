@@ -1389,7 +1389,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 literal|null
 argument_list|,
