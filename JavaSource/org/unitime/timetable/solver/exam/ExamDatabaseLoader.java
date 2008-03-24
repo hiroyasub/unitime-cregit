@@ -4144,7 +4144,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x.uniqueId, e.student.uniqueId from "
+literal|"select x.uniqueId, o.uniqueId, e.student.uniqueId from "
 operator|+
 literal|"Exam x inner join x.owners o, "
 operator|+
@@ -4194,7 +4194,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x.uniqueId, e.student.uniqueId from "
+literal|"select x.uniqueId, o.uniqueId, e.student.uniqueId from "
 operator|+
 literal|"Exam x inner join x.owners o, "
 operator|+
@@ -4246,7 +4246,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x.uniqueId, e.student.uniqueId from "
+literal|"select x.uniqueId, o.uniqueId, e.student.uniqueId from "
 operator|+
 literal|"Exam x inner join x.owners o, "
 operator|+
@@ -4296,7 +4296,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x.uniqueId, e.student.uniqueId from "
+literal|"select x.uniqueId, o.uniqueId, e.student.uniqueId from "
 operator|+
 literal|"Exam x inner join x.owners o, "
 operator|+
@@ -4417,7 +4417,7 @@ literal|0
 index|]
 decl_stmt|;
 name|Long
-name|studentId
+name|ownerId
 init|=
 operator|(
 name|Long
@@ -4425,6 +4425,17 @@ operator|)
 name|o
 index|[
 literal|1
+index|]
+decl_stmt|;
+name|Long
+name|studentId
+init|=
+operator|(
+name|Long
+operator|)
+name|o
+index|[
+literal|2
 index|]
 decl_stmt|;
 name|ExamStudent
@@ -4559,6 +4570,60 @@ argument_list|(
 name|exam
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|Enumeration
+name|e
+init|=
+name|exam
+operator|.
+name|getCourseSections
+argument_list|()
+operator|.
+name|elements
+argument_list|()
+init|;
+name|e
+operator|.
+name|hasMoreElements
+argument_list|()
+condition|;
+control|)
+block|{
+name|ExamCourseSection
+name|ecs
+init|=
+operator|(
+name|ExamCourseSection
+operator|)
+name|e
+operator|.
+name|nextElement
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|ownerId
+operator|.
+name|equals
+argument_list|(
+name|ecs
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+condition|)
+name|ecs
+operator|.
+name|getStudents
+argument_list|()
+operator|.
+name|add
+argument_list|(
+name|student
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 specifier|protected
