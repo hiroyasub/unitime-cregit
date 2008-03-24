@@ -160,9 +160,33 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|sStudentConflicts
+name|sIndividualStudentConflicts
 init|=
-literal|"Student Conflicts"
+literal|"Individual Student Conflicts"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualDirectStudentConflicts
+init|=
+literal|"Individual Direct Student Conflicts"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualBackToBackStudentConflicts
+init|=
+literal|"Individual Back-To-Back Student Conflicts"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualMore2ADayStudentConflicts
+init|=
+literal|"Individual More Than 2 Exams A Day Student Conflicts"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -192,9 +216,33 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|sInstructorConflicts
+name|sIndividualInstructorConflicts
 init|=
-literal|"Instructor Conflicts"
+literal|"Individual Instructor Conflicts"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualDirectInstructorConflicts
+init|=
+literal|"Individual Direct Instructor Conflicts"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualBackToBackInstructorConflicts
+init|=
+literal|"Individual Back-To-Back Instructor Conflicts"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualMore2ADayInstructorConflicts
+init|=
+literal|"Individual More Than 2 Exams A Day Instructor Conflicts"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -214,9 +262,35 @@ name|sNrExamsADay
 block|,
 name|sRoomSplits
 block|,
-comment|// sViolatedDistributions,
-comment|// sDirectStudentConflicts, sMore2ADayStudentConflicts, sBackToBackStudentConflicts, sStudentConflicts,
-comment|// sDirectInstructorConflicts, sMore2ADayInstructorConflicts, sBackToBackInstructorConflicts, sInstructorConflicts
+name|sViolatedDistributions
+block|,
+name|sDirectStudentConflicts
+block|,
+name|sMore2ADayStudentConflicts
+block|,
+name|sBackToBackStudentConflicts
+block|,
+name|sIndividualStudentConflicts
+block|,
+name|sIndividualDirectStudentConflicts
+block|,
+name|sIndividualMore2ADayStudentConflicts
+block|,
+name|sIndividualBackToBackStudentConflicts
+block|,
+name|sDirectInstructorConflicts
+block|,
+name|sMore2ADayInstructorConflicts
+block|,
+name|sBackToBackInstructorConflicts
+block|,
+name|sIndividualInstructorConflicts
+block|,
+name|sIndividualDirectInstructorConflicts
+block|,
+name|sIndividualBackToBackInstructorConflicts
+block|,
+name|sIndividualMore2ADayInstructorConflicts
 block|}
 decl_stmt|;
 specifier|private
