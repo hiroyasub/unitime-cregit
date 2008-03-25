@@ -7523,7 +7523,6 @@ init|=
 literal|1
 decl_stmt|;
 specifier|protected
-specifier|transient
 name|Vector
 argument_list|<
 name|Long
@@ -8087,7 +8086,6 @@ init|=
 literal|false
 decl_stmt|;
 specifier|protected
-specifier|transient
 name|Vector
 argument_list|<
 name|Long
@@ -8444,7 +8442,6 @@ init|=
 literal|1
 decl_stmt|;
 specifier|protected
-specifier|transient
 name|Vector
 argument_list|<
 name|Long
