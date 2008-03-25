@@ -1461,6 +1461,8 @@ literal|"\\*"
 argument_list|,
 literal|".*"
 argument_list|)
+operator|+
+literal|"\\s"
 decl_stmt|;
 if|if
 condition|(
@@ -1474,7 +1476,11 @@ argument_list|)
 operator|.
 name|matcher
 argument_list|(
+literal|" "
+operator|+
 name|n
+operator|+
+literal|" "
 argument_list|)
 operator|.
 name|find
