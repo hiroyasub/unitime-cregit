@@ -283,6 +283,18 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|(
+name|nameLastNameFirst
+argument_list|()
+operator|)
+return|;
+block|}
 block|}
 end_class
 

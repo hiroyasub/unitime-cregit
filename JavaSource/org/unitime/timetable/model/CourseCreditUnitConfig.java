@@ -746,6 +746,18 @@ name|Object
 name|clone
 parameter_list|()
 function_decl|;
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|(
+name|creditText
+argument_list|()
+operator|)
+return|;
+block|}
 block|}
 end_class
 
