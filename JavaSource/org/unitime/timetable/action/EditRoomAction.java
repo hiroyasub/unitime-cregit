@@ -1138,6 +1138,16 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|location
+operator|.
+name|getExamCapacity
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|editRoomForm
 operator|.
 name|setExamCapacity
@@ -1151,6 +1161,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|editRoomForm
 operator|.
 name|setExamEnabled
