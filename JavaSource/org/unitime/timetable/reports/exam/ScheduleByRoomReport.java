@@ -765,7 +765,8 @@ name|iCoursePrinted
 operator|=
 name|iITypePrinted
 operator|=
-literal|true
+operator|!
+name|iNewPage
 expr_stmt|;
 name|lastSection
 operator|=
@@ -911,7 +912,8 @@ argument_list|)
 expr_stmt|;
 name|iPeriodPrinted
 operator|=
-literal|true
+operator|!
+name|iNewPage
 expr_stmt|;
 comment|//println("");
 block|}

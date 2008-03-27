@@ -2236,6 +2236,8 @@ operator|.
 name|WEEK_OF_YEAR
 argument_list|,
 name|week
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|SimpleDateFormat
@@ -8814,7 +8816,7 @@ name|PreferenceLevel
 operator|.
 name|prolog2color
 argument_list|(
-literal|"1"
+literal|"2"
 argument_list|)
 else|:
 literal|"gray"
@@ -8837,7 +8839,7 @@ name|PreferenceLevel
 operator|.
 name|prolog2color
 argument_list|(
-literal|"2"
+literal|"1"
 argument_list|)
 else|:
 literal|"gray"

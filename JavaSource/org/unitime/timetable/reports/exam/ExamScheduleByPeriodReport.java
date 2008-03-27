@@ -825,7 +825,8 @@ argument_list|)
 expr_stmt|;
 name|iPeriodPrinted
 operator|=
-literal|true
+operator|!
+name|iNewPage
 expr_stmt|;
 block|}
 block|}

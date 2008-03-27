@@ -1895,6 +1895,13 @@ condition|(
 name|ea
 operator|!=
 literal|null
+operator|&&
+name|ea
+operator|.
+name|getPeriod
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|String

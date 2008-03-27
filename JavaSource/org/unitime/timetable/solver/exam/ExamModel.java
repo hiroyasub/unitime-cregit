@@ -591,7 +591,7 @@ name|addElement
 argument_list|(
 name|unavailability
 operator|.
-name|getName
+name|getType
 argument_list|()
 argument_list|)
 operator|.

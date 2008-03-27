@@ -2907,6 +2907,13 @@ name|exam
 operator|.
 name|getExamType
 argument_list|()
+operator|&&
+name|exam
+operator|.
+name|getAssignedPeriod
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|computeUnavailablility
