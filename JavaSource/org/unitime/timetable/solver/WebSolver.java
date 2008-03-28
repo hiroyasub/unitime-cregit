@@ -2062,6 +2062,15 @@ argument_list|(
 literal|"net.sf.cpsolver.ifs.extension.ConflictStatistics"
 argument_list|)
 expr_stmt|;
+name|properties
+operator|.
+name|setProperty
+argument_list|(
+literal|"ConflictStatistics.Print"
+argument_list|,
+literal|"true"
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
