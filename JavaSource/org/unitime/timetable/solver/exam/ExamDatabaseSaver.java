@@ -335,7 +335,7 @@ name|exam
 operator|.
 name|model
 operator|.
-name|ExamRoom
+name|ExamRoomPlacement
 import|;
 end_import
 
@@ -958,7 +958,7 @@ name|j
 init|=
 name|placement
 operator|.
-name|getRooms
+name|getRoomPlacements
 argument_list|()
 operator|.
 name|iterator
@@ -971,11 +971,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|ExamRoom
+name|ExamRoomPlacement
 name|room
 init|=
 operator|(
-name|ExamRoom
+name|ExamRoomPlacement
 operator|)
 name|j
 operator|.
