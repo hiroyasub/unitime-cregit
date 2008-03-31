@@ -3352,6 +3352,9 @@ operator|.
 name|equals
 argument_list|(
 name|p
+operator|.
+name|getPeriod
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -3444,12 +3447,12 @@ argument_list|)
 operator|&&
 name|placement
 operator|.
-name|getRoomPlacements
-argument_list|()
-operator|.
 name|contains
 argument_list|(
 name|r
+operator|.
+name|getRoom
+argument_list|()
 argument_list|)
 condition|)
 block|{
