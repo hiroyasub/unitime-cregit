@@ -117,20 +117,6 @@ name|Constants
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|util
-operator|.
-name|DateUtils
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
