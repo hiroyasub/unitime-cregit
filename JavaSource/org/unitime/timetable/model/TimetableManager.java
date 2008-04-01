@@ -1598,6 +1598,22 @@ argument_list|()
 return|;
 block|}
 block|}
+comment|//needs to be implemented
+specifier|public
+name|boolean
+name|canSeeEvents
+parameter_list|(
+name|Session
+name|session
+parameter_list|,
+name|User
+name|user
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
 specifier|public
 name|Collection
 name|getClasses
