@@ -1007,7 +1007,7 @@ name|nl
 operator|+
 literal|"Type"
 block|,
-literal|"Students"
+literal|"Size"
 block|,
 literal|"Max"
 operator|+

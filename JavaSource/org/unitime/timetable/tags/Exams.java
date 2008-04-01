@@ -835,7 +835,7 @@ literal|"Length"
 block|,
 literal|"Seating<br>Type"
 block|,
-literal|"Students"
+literal|"Size"
 block|,
 literal|"Max<br>Rooms"
 block|,
@@ -1624,7 +1624,7 @@ name|nrStudents
 init|=
 name|exam
 operator|.
-name|countStudents
+name|getSize
 argument_list|()
 decl_stmt|;
 if|if

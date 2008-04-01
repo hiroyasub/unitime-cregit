@@ -853,7 +853,7 @@ operator|=
 name|getExam
 argument_list|()
 operator|.
-name|countStudents
+name|getSize
 argument_list|()
 expr_stmt|;
 return|return
@@ -1590,7 +1590,7 @@ operator|=
 name|getOwner
 argument_list|()
 operator|.
-name|countStudents
+name|getSize
 argument_list|()
 expr_stmt|;
 return|return
