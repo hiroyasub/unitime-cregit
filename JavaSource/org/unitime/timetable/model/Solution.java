@@ -826,31 +826,64 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
-name|deleteObjects
-argument_list|(
+for|for
+control|(
+name|Iterator
+name|i
+init|=
+name|getAssignments
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|i
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|Assignment
+name|a
+init|=
+operator|(
+name|Assignment
+operator|)
+name|i
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|a
+operator|.
+name|getEvent
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|hibSession
-argument_list|,
-literal|"Event"
-argument_list|,
-literal|"select e.uniqueId from Event e inner join e.relatedCourses r, Assignment a where "
-operator|+
-literal|"r.ownerId=a.clazz.uniqueId and r.ownerType="
-operator|+
-name|ExamOwner
 operator|.
-name|sOwnerTypeClass
-operator|+
-literal|" and e.eventType.reference='"
-operator|+
-name|EventType
+name|delete
+argument_list|(
+name|a
 operator|.
-name|sEventTypeClass
-operator|+
-literal|"' and "
-operator|+
-literal|"a.solution.uniqueId=:solutionId"
+name|getEvent
+argument_list|()
 argument_list|)
 expr_stmt|;
+name|a
+operator|.
+name|setEvent
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|removeDivSecNumbers
 argument_list|(
 name|hibSession
@@ -2433,6 +2466,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|EventType
+name|eventType
+init|=
+name|EventType
+operator|.
+name|findByReference
+argument_list|(
+name|EventType
+operator|.
+name|sEventTypeClass
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -2469,6 +2514,8 @@ name|a
 operator|.
 name|generateCommittedEvent
 argument_list|(
+name|eventType
+argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
@@ -2486,11 +2533,25 @@ argument_list|(
 name|contact
 argument_list|)
 expr_stmt|;
+name|a
+operator|.
+name|setEvent
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
 name|hibSession
 operator|.
 name|save
 argument_list|(
 name|event
+argument_list|)
+expr_stmt|;
+name|hibSession
+operator|.
+name|update
+argument_list|(
+name|a
 argument_list|)
 expr_stmt|;
 block|}
@@ -4692,23 +4753,7 @@ name|hibSession
 argument_list|,
 literal|"Event"
 argument_list|,
-literal|"select e.uniqueId from Event e inner join e.relatedCourses r, Assignment a where "
-operator|+
-literal|"r.ownerId=a.clazz.uniqueId and r.ownerType="
-operator|+
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
-operator|+
-literal|" and e.eventType.reference='"
-operator|+
-name|EventType
-operator|.
-name|sEventTypeClass
-operator|+
-literal|"' and "
-operator|+
-literal|"a.solution.uniqueId=:solutionId"
+literal|"select a.event.uniqueId from Assignment a where a.solution.uniqueId=:solutionId"
 argument_list|)
 expr_stmt|;
 name|deleteObjects
@@ -4885,23 +4930,7 @@ name|hibSession
 argument_list|,
 literal|"Event"
 argument_list|,
-literal|"select e.uniqueId from Event e inner join e.relatedCourses r, Assignment a where "
-operator|+
-literal|"r.ownerId=a.clazz.uniqueId and r.ownerType="
-operator|+
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
-operator|+
-literal|" and e.eventType.reference='"
-operator|+
-name|EventType
-operator|.
-name|sEventTypeClass
-operator|+
-literal|"' and "
-operator|+
-literal|"a.solution.uniqueId=:solutionId"
+literal|"select a.event.uniqueId from Assignment a where a.solution.uniqueId=:solutionId"
 argument_list|)
 expr_stmt|;
 name|deleteObjects
