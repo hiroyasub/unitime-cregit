@@ -5699,7 +5699,7 @@ else|:
 literal|"Examinations"
 operator|)
 block|,
-literal|"Students"
+literal|"Size"
 block|,
 operator|(
 name|form
