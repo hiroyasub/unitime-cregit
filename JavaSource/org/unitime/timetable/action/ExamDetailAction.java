@@ -1389,7 +1389,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|5
+literal|6
 argument_list|,
 literal|null
 argument_list|,
@@ -1405,6 +1405,8 @@ literal|"Manager"
 block|,
 literal|"Students"
 block|,
+literal|"Limit"
+block|,
 literal|"Assignment"
 block|}
 argument_list|,
@@ -1418,7 +1420,9 @@ literal|"center"
 block|,
 literal|"left"
 block|,
-literal|"center"
+literal|"right"
+block|,
+literal|"right"
 block|,
 literal|"left"
 block|}
@@ -1427,6 +1431,8 @@ operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -1496,6 +1502,18 @@ argument_list|(
 name|owner
 operator|.
 name|countStudents
+argument_list|()
+argument_list|)
+decl_stmt|,
+name|limit
+init|=
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|owner
+operator|.
+name|getLimit
 argument_list|()
 argument_list|)
 decl_stmt|,
@@ -1814,6 +1832,8 @@ block|,
 name|manager
 block|,
 name|students
+block|,
+name|limit
 block|,
 name|assignment
 block|}
