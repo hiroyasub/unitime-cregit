@@ -687,21 +687,6 @@ operator|.
 name|getValue
 argument_list|()
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Parameter "
-operator|+
-name|parm
-operator|+
-literal|" is "
-operator|+
-name|val
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|val
