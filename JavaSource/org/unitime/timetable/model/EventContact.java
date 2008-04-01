@@ -31,6 +31,22 @@ name|BaseEventContact
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|EventContactDAO
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -110,6 +126,42 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
+specifier|public
+specifier|static
+name|EventContact
+name|findByExternalUniqueId
+parameter_list|(
+name|String
+name|externalUniqueId
+parameter_list|)
+block|{
+return|return
+operator|(
+name|EventContact
+operator|)
+operator|new
+name|EventContactDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select c from EventContact c where c.externalUniqueId=:externalUniqueId"
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"externalUniqueId"
+argument_list|,
+name|externalUniqueId
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
