@@ -4441,6 +4441,7 @@ case|:
 return|return
 operator|(
 operator|(
+operator|(
 name|InstructionalOffering
 operator|)
 name|owner
@@ -4448,6 +4449,21 @@ operator|)
 operator|.
 name|getLimit
 argument_list|()
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
+operator|(
+operator|(
+name|InstructionalOffering
+operator|)
+name|owner
+operator|)
+operator|.
+name|getLimit
+argument_list|()
+operator|)
 return|;
 default|default :
 throw|throw
