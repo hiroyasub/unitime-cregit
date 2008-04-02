@@ -1195,6 +1195,13 @@ operator|-
 literal|1
 condition|)
 block|{
+if|if
+condition|(
+name|maxCap
+operator|!=
+name|minCap
+condition|)
+block|{
 name|cell
 operator|.
 name|addContent
@@ -1208,6 +1215,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|cell
 operator|.
 name|addContent
@@ -1215,6 +1223,8 @@ argument_list|(
 name|minCap
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 name|this
 operator|.
