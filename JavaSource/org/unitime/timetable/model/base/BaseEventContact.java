@@ -136,14 +136,14 @@ operator|.
 name|lang
 operator|.
 name|String
-name|firstName
+name|emailAddress
 parameter_list|,
 name|java
 operator|.
 name|lang
 operator|.
 name|String
-name|lastName
+name|phone
 parameter_list|)
 block|{
 name|this
@@ -155,16 +155,16 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|setFirstName
+name|setEmailAddress
 argument_list|(
-name|firstName
+name|emailAddress
 argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|setLastName
+name|setPhone
 argument_list|(
-name|lastName
+name|phone
 argument_list|)
 expr_stmt|;
 name|initialize
@@ -285,7 +285,7 @@ operator|.
 name|MIN_VALUE
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: EXTERNAL_UID 	 */
+comment|/** 	 * Return the value associated with the column: EXTERNAL_ID 	 */
 specifier|public
 name|java
 operator|.
@@ -299,7 +299,7 @@ return|return
 name|externalUniqueId
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: EXTERNAL_UID 	 * @param externalUniqueId the EXTERNAL_UID value 	 */
+comment|/** 	 * Set the value related to the column: EXTERNAL_ID 	 * @param externalUniqueId the EXTERNAL_ID value 	 */
 specifier|public
 name|void
 name|setExternalUniqueId
@@ -319,7 +319,7 @@ operator|=
 name|externalUniqueId
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: EMAIL_ADDRESS 	 */
+comment|/** 	 * Return the value associated with the column: EMAIL 	 */
 specifier|public
 name|java
 operator|.
@@ -333,7 +333,7 @@ return|return
 name|emailAddress
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: EMAIL_ADDRESS 	 * @param emailAddress the EMAIL_ADDRESS value 	 */
+comment|/** 	 * Set the value related to the column: EMAIL 	 * @param emailAddress the EMAIL value 	 */
 specifier|public
 name|void
 name|setEmailAddress
@@ -387,7 +387,7 @@ operator|=
 name|phone
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: FIRST_NAME 	 */
+comment|/** 	 * Return the value associated with the column: FIRSTNAME 	 */
 specifier|public
 name|java
 operator|.
@@ -401,7 +401,7 @@ return|return
 name|firstName
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: FIRST_NAME 	 * @param firstName the FIRST_NAME value 	 */
+comment|/** 	 * Set the value related to the column: FIRSTNAME 	 * @param firstName the FIRSTNAME value 	 */
 specifier|public
 name|void
 name|setFirstName
@@ -421,7 +421,7 @@ operator|=
 name|firstName
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: MIDDLE_NAME 	 */
+comment|/** 	 * Return the value associated with the column: MIDDLENAME 	 */
 specifier|public
 name|java
 operator|.
@@ -435,7 +435,7 @@ return|return
 name|middleName
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: MIDDLE_NAME 	 * @param middleName the MIDDLE_NAME value 	 */
+comment|/** 	 * Set the value related to the column: MIDDLENAME 	 * @param middleName the MIDDLENAME value 	 */
 specifier|public
 name|void
 name|setMiddleName
@@ -455,7 +455,7 @@ operator|=
 name|middleName
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: LAST_NAME 	 */
+comment|/** 	 * Return the value associated with the column: LASTNAME 	 */
 specifier|public
 name|java
 operator|.
@@ -469,7 +469,7 @@ return|return
 name|lastName
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: LAST_NAME 	 * @param lastName the LAST_NAME value 	 */
+comment|/** 	 * Set the value related to the column: LASTNAME 	 * @param lastName the LASTNAME value 	 */
 specifier|public
 name|void
 name|setLastName
