@@ -1878,6 +1878,16 @@ condition|(
 name|examAssignment
 operator|!=
 literal|null
+operator|&&
+name|examAssignment
+operator|.
+name|getExamType
+argument_list|()
+operator|==
+name|exam
+operator|.
+name|getExamType
+argument_list|()
 condition|)
 block|{
 name|ea
