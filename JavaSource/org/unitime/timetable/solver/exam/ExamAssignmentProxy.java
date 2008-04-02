@@ -104,6 +104,16 @@ name|long
 name|examId
 parameter_list|)
 function_decl|;
+specifier|public
+name|int
+name|getExamType
+parameter_list|()
+function_decl|;
+specifier|public
+name|Long
+name|getSessionId
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
