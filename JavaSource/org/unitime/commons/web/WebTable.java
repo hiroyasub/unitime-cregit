@@ -1786,6 +1786,14 @@ literal|">&nbsp;</td>"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|i
+operator|<
+name|lastLine
+operator|.
+name|length
+condition|)
 name|lastLine
 index|[
 name|i
