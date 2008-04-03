@@ -3463,6 +3463,28 @@ name|uniqueResult
 argument_list|()
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|(
+name|preferenceText
+argument_list|(
+literal|true
+argument_list|,
+literal|false
+argument_list|,
+literal|" "
+argument_list|,
+literal|", "
+argument_list|,
+literal|""
+argument_list|)
+operator|)
+return|;
+block|}
 block|}
 end_class
 
