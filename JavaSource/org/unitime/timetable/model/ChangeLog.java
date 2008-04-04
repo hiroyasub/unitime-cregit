@@ -362,6 +362,10 @@ block|,
 name|CLEAR_PREF
 block|,
 name|CLEAR_ALL_PREF
+block|,
+name|ASSIGN
+block|,
+name|UNASSIGN
 block|}
 specifier|public
 specifier|static
@@ -433,6 +437,8 @@ block|,
 name|EXAM_EDIT
 block|,
 name|DATA_IMPORT
+block|,
+name|EXAM_INFO
 block|}
 specifier|public
 specifier|static
