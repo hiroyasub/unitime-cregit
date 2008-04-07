@@ -8290,6 +8290,22 @@ argument_list|)
 return|;
 block|}
 block|}
+specifier|protected
+name|void
+name|autoConfigure
+parameter_list|()
+block|{
+name|super
+operator|.
+name|autoConfigure
+argument_list|()
+expr_stmt|;
+name|setPerturbationsCounter
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

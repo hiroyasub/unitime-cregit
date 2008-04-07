@@ -1567,6 +1567,13 @@ name|sInfoKeys
 operator|.
 name|add
 argument_list|(
+literal|"Perturbation Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
 literal|"Perturbation penalty"
 argument_list|)
 expr_stmt|;
