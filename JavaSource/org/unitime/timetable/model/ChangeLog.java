@@ -436,7 +436,9 @@ name|ROOM_EXAM_PERIOD_REF_EDIT
 block|,
 name|EXAM_EDIT
 block|,
-name|DATA_IMPORT
+name|DATA_IMPORT_OFFERINGS
+block|,
+name|DATA_IMPORT_STUDENT_ENROLLMENTS
 block|,
 name|EXAM_INFO
 block|}
