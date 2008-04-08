@@ -487,6 +487,11 @@ name|headerPrinted
 init|=
 literal|false
 decl_stmt|;
+name|int
+name|nrCols
+init|=
+literal|6
+decl_stmt|;
 name|Hashtable
 name|totalADay
 init|=
@@ -510,7 +515,7 @@ argument_list|()
 condition|;
 name|dIdx
 operator|+=
-literal|7
+name|nrCols
 control|)
 block|{
 for|for
@@ -645,7 +650,7 @@ name|idx
 operator|>=
 name|dIdx
 operator|+
-literal|7
+name|nrCols
 condition|)
 continue|continue;
 name|String
@@ -1245,7 +1250,7 @@ name|idx
 operator|>=
 name|dIdx
 operator|+
-literal|7
+name|nrCols
 condition|)
 continue|continue;
 name|line1
