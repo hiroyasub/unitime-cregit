@@ -1,10 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.0 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2007, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
-end_comment
-
-begin_comment
-comment|/*  * UniTime 3.0 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2007, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.1 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2008, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
 end_comment
 
 begin_package
@@ -84,6 +80,13 @@ name|String
 name|PROP_CAPACITY
 init|=
 literal|"capacity"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXAM_CAPACITY
+init|=
+literal|"examCapacity"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -319,6 +322,14 @@ name|lang
 operator|.
 name|Integer
 name|capacity
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|examCapacity
 decl_stmt|;
 specifier|private
 name|java
@@ -592,6 +603,40 @@ operator|.
 name|capacity
 operator|=
 name|capacity
+expr_stmt|;
+block|}
+comment|/** 	 * Return the value associated with the column: EXAM_CAPACITY 	 */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|getExamCapacity
+parameter_list|()
+block|{
+return|return
+name|examCapacity
+return|;
+block|}
+comment|/** 	 * Set the value related to the column: EXAM_CAPACITY 	 * @param examCapacity the EXAM_CAPACITY value 	 */
+specifier|public
+name|void
+name|setExamCapacity
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|examCapacity
+parameter_list|)
+block|{
+name|this
+operator|.
+name|examCapacity
+operator|=
+name|examCapacity
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: CLASSIFICATION 	 */
