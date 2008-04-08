@@ -2224,6 +2224,16 @@ argument_list|)
 expr_stmt|;
 name|toRoom
 operator|.
+name|setExamCapacity
+argument_list|(
+name|toExternalRoom
+operator|.
+name|getExamCapacity
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toRoom
+operator|.
 name|setClassification
 argument_list|(
 name|toExternalRoom
@@ -4670,6 +4680,16 @@ argument_list|(
 name|er
 operator|.
 name|getCapacity
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|r
+operator|.
+name|setExamCapacity
+argument_list|(
+name|er
+operator|.
+name|getExamCapacity
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -10203,16 +10223,16 @@ comment|//		Session toSession = Session.getSessionById(rollForwardSessionForm.ge
 comment|//		Session fromSession = Session.getSessionById(rollForwardSessionForm.getSessionToRollCourseOfferingsForwardFrom());
 comment|//		if (toSession.getSubjectAreas() != null) {
 comment|//			SubjectArea subjectArea = null;
-comment|//			edu.purdue.smas.custom.util.PopulateSessionFromMsf pop = new edu.purdue.smas.custom.util.PopulateSessionFromMsf();
-comment|////			InstructionalOfferingRollForward instrOffrRollFwd = new InstructionalOfferingRollForward();
+comment|////			edu.purdue.smas.custom.util.PopulateSessionFromMsf pop = new edu.purdue.smas.custom.util.PopulateSessionFromMsf();
+comment|//			InstructionalOfferingRollForward instrOffrRollFwd = new InstructionalOfferingRollForward();
 comment|//			SubjectArea.loadSubjectAreas(toSession.getUniqueId());
 comment|//			for (Iterator saIt = toSession.getSubjectAreas().iterator(); saIt.hasNext();){
 comment|//				subjectArea = (SubjectArea) saIt.next();
-comment|////				if (subjectArea.getSubjectAreaAbbreviation().compareTo("MGMT") == 0){
-comment|//				SubjectArea.loadSubjectAreas(toSession.getUniqueId());
-comment|//				pop.populateSubjectArea(subjectArea, toSession, fromSession);
+comment|////				if (subjectArea.getSubjectAreaAbbreviation().compareTo("CHM")>= 0){
+comment|////				SubjectArea.loadSubjectAreas(toSession.getUniqueId());
+comment|////				pop.populateSubjectArea(subjectArea, toSession, fromSession);
 comment|////				}
-comment|////				instrOffrRollFwd.rollForwardInstructionalOfferingsForASubjectArea(subjectArea.getSubjectAreaAbbreviation(), fromSession, toSession);
+comment|//				instrOffrRollFwd.rollForwardInstructionalOfferingsForASubjectArea(subjectArea.getSubjectAreaAbbreviation(), fromSession, toSession);
 comment|//
 comment|//			}
 comment|//		}
@@ -10544,6 +10564,25 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|//	public void loadCoursesNoLongerInCourseCatalogForTerm(ActionMessages errors,
+comment|//			RollForwardSessionForm rollForwardSessionForm){
+comment|//		Session toSession = Session.getSessionById(rollForwardSessionForm.getSessionToRollForwardTo());
+comment|//		Session fromSession = Session.getSessionById(rollForwardSessionForm.getSessionToRollCourseOfferingsForwardFrom());
+comment|//		ArrayList subjects = new ArrayList();
+comment|//		SubjectAreaDAO saDao = new SubjectAreaDAO();
+comment|//		for (int i = 0; i<	rollForwardSessionForm.getRollForwardSubjectAreaIds().length; i++){
+comment|//			subjects.add(saDao.get(Long.parseLong(rollForwardSessionForm.getRollForwardSubjectAreaIds()[i])));
+comment|//		}
+comment|//		if (toSession.getSubjectAreas() != null) {
+comment|//			SubjectArea subjectArea = null;
+comment|//			InstructionalOfferingRollForward instrOffrRollFwd = new InstructionalOfferingRollForward();
+comment|//			for (Iterator saIt = subjects.iterator(); saIt.hasNext();){
+comment|//				subjectArea = (SubjectArea) saIt.next();
+comment|//				SubjectArea.loadSubjectAreas(toSession.getUniqueId());
+comment|//				instrOffrRollFwd.rollForwardExpiredInstructionalOfferingsForASubjectArea(subjectArea.getSubjectAreaAbbreviation(), fromSession, toSession);
+comment|//			}
+comment|//		}
+comment|//	}
 specifier|private
 specifier|static
 name|String
@@ -13123,34 +13162,18 @@ comment|//				"NUPH595D",
 comment|//				"NUPH595E"
 comment|//		};
 comment|//		cloneCourses(courses, "CLPH585A", rollForwardSessionForm);
-comment|// PPE Courses
+comment|//		// PPE Courses
 comment|//		String[] courses = {
-comment|//				"PPE 151 ",
-comment|//				"PPE 303 ",
-comment|//				"PPE 312 ",
-comment|//				"PPE 313 ",
-comment|//				"PPE 322 ",
-comment|//				"PPE 323 ",
-comment|//				"PPE 331 ",
-comment|//				"PPE 332 ",
-comment|//				"PPE 333 ",
-comment|//				"PPE 442 "
+comment|//				"PPE 305 ",
+comment|//				"PPE 353 "
 comment|//		};
-comment|//		cloneCourses(courses, "PPE 441 ", rollForwardSessionForm);
+comment|//		cloneCourses(courses, "PPE 151 ", rollForwardSessionForm);
 comment|//		// PPT Courses
 comment|//		String[] courses2 = {
-comment|//				"PPT 151 ",
-comment|//				"PPT 303 ",
-comment|//				"PPT 312 ",
-comment|//				"PPT 313 ",
-comment|//				"PPT 322 ",
-comment|//				"PPT 323 ",
-comment|//				"PPT 331 ",
-comment|//				"PPT 332 ",
-comment|//				"PPT 333 ",
-comment|//				"PPT 442 "
+comment|//				"PPT 305 ",
+comment|//				"PPT 353 "
 comment|//		};
-comment|//		cloneCourses(courses2, "PPT 441 ", rollForwardSessionForm);
+comment|//		cloneCourses(courses2, "PPT 151 ", rollForwardSessionForm);
 block|}
 block|}
 end_class
