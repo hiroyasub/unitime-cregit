@@ -1829,7 +1829,7 @@ name|addChange
 argument_list|(
 name|period
 argument_list|,
-name|getExamAssignment
+name|getExamOldAssignment
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1976,7 +1976,7 @@ control|)
 block|{
 if|if
 condition|(
-name|getExamAssignment
+name|getExamOldAssignment
 argument_list|()
 operator|.
 name|getPeriodId
@@ -2278,7 +2278,7 @@ name|addChange
 argument_list|(
 name|assignment
 argument_list|,
-name|getExamAssignment
+name|getExamOldAssignment
 argument_list|()
 argument_list|)
 expr_stmt|;
