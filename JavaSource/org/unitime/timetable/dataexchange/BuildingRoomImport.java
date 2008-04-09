@@ -202,6 +202,33 @@ literal|"No session found for the given campus, year, and term."
 argument_list|)
 throw|;
 block|}
+comment|/*               * Remove all buildings and rooms for the given session and reload them using the xml               */
+name|getHibSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"delete ExternalBuilding eb where eb.session.uniqueId=:sessionId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
+expr_stmt|;
+name|flush
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Iterator
