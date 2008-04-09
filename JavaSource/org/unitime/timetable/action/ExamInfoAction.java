@@ -185,20 +185,6 @@ name|ExamInfoModel
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|webutil
-operator|.
-name|BackTracker
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -814,39 +800,7 @@ literal|"Close"
 argument_list|)
 expr_stmt|;
 block|}
-name|BackTracker
-operator|.
-name|markForBack
-argument_list|(
-name|request
-argument_list|,
-literal|"examInfo.do?examId="
-operator|+
-name|model
-operator|.
-name|getExam
-argument_list|()
-operator|.
-name|getExamId
-argument_list|()
-argument_list|,
-literal|"Exam Info ("
-operator|+
-name|model
-operator|.
-name|getExam
-argument_list|()
-operator|.
-name|getExamName
-argument_list|()
-operator|+
-literal|")"
-argument_list|,
-literal|true
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
+comment|/*         BackTracker.markForBack(                 request,                 "examInfo.do?examId=" + model.getExam().getExamId(),                 "Exam Info ("+ model.getExam().getExamName() +")",                 true, false);         */
 return|return
 name|mapping
 operator|.
