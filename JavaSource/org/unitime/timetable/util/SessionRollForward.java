@@ -3073,7 +3073,6 @@ expr_stmt|;
 block|}
 block|}
 specifier|private
-specifier|static
 name|void
 name|rollForwardRoomDept
 parameter_list|(
