@@ -440,6 +440,12 @@ name|DATA_IMPORT_OFFERINGS
 block|,
 name|DATA_IMPORT_STUDENT_ENROLLMENTS
 block|,
+name|DATA_IMPORT_SUBJECT_AREAS
+block|,
+name|DATA_IMPORT_DEPARTMENTS
+block|,
+name|DATA_IMPORT_EXT_BUILDING_ROOM
+block|,
 name|EXAM_INFO
 block|}
 specifier|public

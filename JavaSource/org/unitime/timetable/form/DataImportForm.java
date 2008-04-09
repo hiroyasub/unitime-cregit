@@ -562,6 +562,8 @@ operator|.
 name|loadFromXML
 argument_list|(
 name|root
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}
@@ -608,6 +610,8 @@ operator|.
 name|loadFromXML
 argument_list|(
 name|root
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}
@@ -815,6 +819,8 @@ operator|.
 name|loadXml
 argument_list|(
 name|root
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}
