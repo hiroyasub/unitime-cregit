@@ -19019,29 +19019,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-specifier|private
-name|TimetableManager
-name|findDefaultManager
-parameter_list|()
-block|{
-return|return
-operator|(
-operator|(
-name|TimetableManager
-operator|)
-name|getHibSession
-argument_list|()
-operator|.
-name|createQuery
-argument_list|(
-literal|"from TimetableManager as m where m.uniqueId = (select min(tm.uniqueId) from TimetableManager as tm inner join tm.managerRoles as mr inner join mr.role as r where r.reference = 'Administrator')"
-argument_list|)
-operator|.
-name|uniqueResult
-argument_list|()
-operator|)
-return|;
-block|}
 block|}
 end_class
 
