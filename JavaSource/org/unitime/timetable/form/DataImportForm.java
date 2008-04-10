@@ -293,7 +293,7 @@ name|timetable
 operator|.
 name|dataexchange
 operator|.
-name|StaffImportDAO
+name|StaffImport
 import|;
 end_import
 
@@ -698,12 +698,14 @@ argument_list|)
 condition|)
 block|{
 operator|new
-name|StaffImportDAO
+name|StaffImport
 argument_list|()
 operator|.
-name|loadFromXML
+name|loadXml
 argument_list|(
 name|root
+argument_list|,
+name|request
 argument_list|)
 expr_stmt|;
 block|}

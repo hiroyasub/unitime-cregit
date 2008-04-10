@@ -446,6 +446,8 @@ name|DATA_IMPORT_DEPARTMENTS
 block|,
 name|DATA_IMPORT_EXT_BUILDING_ROOM
 block|,
+name|DATA_IMPORT_STAFF
+block|,
 name|EXAM_INFO
 block|}
 specifier|public
