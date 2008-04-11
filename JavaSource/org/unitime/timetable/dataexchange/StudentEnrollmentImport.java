@@ -469,7 +469,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete StudentClassEnrollment sce where sce.student.session.uniqueId=:sessionId"
+literal|"delete StudentClassEnrollment sce where sce.student.uniqueId in (select s.uniqueId from Student s where s.session.uniqueId=:sessionId)"
 argument_list|)
 operator|.
 name|setLong
@@ -479,6 +479,9 @@ argument_list|,
 name|session
 operator|.
 name|getUniqueId
+argument_list|()
+operator|.
+name|longValue
 argument_list|()
 argument_list|)
 operator|.
@@ -555,6 +558,12 @@ operator|==
 literal|null
 condition|)
 block|{
+name|student
+operator|=
+operator|new
+name|Student
+argument_list|()
+expr_stmt|;
 name|student
 operator|.
 name|setSession
