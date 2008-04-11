@@ -2527,6 +2527,14 @@ name|getPositionType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|newDepartmentalInstructor
+operator|.
+name|setEmail
+argument_list|(
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|newDepartmentalInstructor
