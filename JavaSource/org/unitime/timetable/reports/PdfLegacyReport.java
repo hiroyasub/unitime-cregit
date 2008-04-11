@@ -352,6 +352,13 @@ operator|+
 name|Constants
 operator|.
 name|BLD_NUMBER
+operator|.
+name|replaceAll
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
 operator|+
 literal|", www.unitime.org"
 argument_list|)
@@ -373,6 +380,13 @@ operator|+
 name|Constants
 operator|.
 name|BLD_NUMBER
+operator|.
+name|replaceAll
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
 operator|+
 literal|", www.unitime.org"
 argument_list|)
@@ -996,7 +1010,18 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.pdf.examreport.author"
 argument_list|,
-literal|"UniTime 3.0"
+literal|"UniTime 3.0."
+operator|+
+name|Constants
+operator|.
+name|BLD_NUMBER
+operator|.
+name|replaceAll
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
 argument_list|)
 argument_list|,
 name|ApplicationProperties
