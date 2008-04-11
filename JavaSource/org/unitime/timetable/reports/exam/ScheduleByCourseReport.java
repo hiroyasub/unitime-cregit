@@ -417,9 +417,9 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr InsTyp Sect   Meeting Times                         Enrl    Date And Time                   Room"
+literal|"Subj Crsnbr InsTyp Sect   Meeting Times                         Enrl    Date And Time                   Room        Cap ExCap "
 block|,
-literal|"---- ------ ------ ---- -------------------------------------- -----  -------------------------------- ------------------------------"
+literal|"---- ------ ------ ---- -------------------------------------- -----  -------------------------------- ---------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -891,15 +891,7 @@ literal|null
 condition|?
 literal|""
 else|:
-name|section
-operator|.
-name|getExamAssignment
-argument_list|()
-operator|.
-name|getRoomsName
-argument_list|(
-literal|", "
-argument_list|)
+name|iNoRoom
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1086,10 +1078,43 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+name|rpad
+argument_list|(
 name|room
 operator|.
 name|getName
 argument_list|()
+argument_list|,
+literal|10
+argument_list|)
+operator|+
+literal|" "
+operator|+
+name|lpad
+argument_list|(
+literal|""
+operator|+
+name|room
+operator|.
+name|getCapacity
+argument_list|()
+argument_list|,
+literal|5
+argument_list|)
+operator|+
+literal|" "
+operator|+
+name|lpad
+argument_list|(
+literal|""
+operator|+
+name|room
+operator|.
+name|getExamCapacity
+argument_list|()
+argument_list|,
+literal|5
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|firstRoom

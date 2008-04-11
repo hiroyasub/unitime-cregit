@@ -262,7 +262,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Bldg Room Stations AltSta Period Date And Time                          Subj Crsnbr InsTyp Sect  Enrl"
+literal|"Bldg Room Capacity  ExCap Period Date And Time                          Subj Crsnbr InsTyp Sect  Enrl"
 block|,
 literal|"---- ---- -------- ------ ------ -------------------------------------- ---- ------ ------ ---- -----"
 block|}

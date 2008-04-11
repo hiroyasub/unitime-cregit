@@ -705,18 +705,18 @@ name|mpad
 argument_list|(
 name|dayStr
 argument_list|,
-literal|17
+literal|20
 argument_list|)
 operator|+
-literal|"   "
+literal|"  "
 expr_stmt|;
 name|header2
 operator|+=
-literal|"Exam         Enrl   "
+literal|"Exam            Enrl  "
 expr_stmt|;
 name|header3
 operator|+=
-literal|"============ ====   "
+literal|"=============== ====  "
 expr_stmt|;
 name|ExamPeriod
 name|period
@@ -870,6 +870,34 @@ operator|==
 literal|null
 condition|)
 continue|continue;
+name|int
+name|linesThisSections
+init|=
+literal|6
+decl_stmt|;
+for|for
+control|(
+name|ExamSectionInfo
+name|section
+range|:
+name|sections
+control|)
+if|if
+condition|(
+name|iLimit
+operator|<
+literal|0
+operator|||
+name|section
+operator|.
+name|getNrStudents
+argument_list|()
+operator|>=
+name|iLimit
+condition|)
+name|linesThisSections
+operator|++
+expr_stmt|;
 name|nextLines
 operator|=
 name|Math
@@ -878,12 +906,7 @@ name|max
 argument_list|(
 name|nextLines
 argument_list|,
-literal|6
-operator|+
-name|sections
-operator|.
-name|size
-argument_list|()
+name|linesThisSections
 argument_list|)
 expr_stmt|;
 block|}
@@ -1179,7 +1202,7 @@ name|lpad
 argument_list|(
 literal|"0"
 argument_list|,
-literal|17
+literal|20
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1229,6 +1252,11 @@ name|total
 init|=
 literal|0
 decl_stmt|;
+name|int
+name|totalListed
+init|=
+literal|0
+decl_stmt|;
 for|for
 control|(
 name|ExamSectionInfo
@@ -1238,6 +1266,27 @@ name|sections
 control|)
 block|{
 name|total
+operator|+=
+name|section
+operator|.
+name|getNrStudents
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|iLimit
+operator|>=
+literal|0
+operator|&&
+name|section
+operator|.
+name|getNrStudents
+argument_list|()
+operator|<
+name|iLimit
+condition|)
+continue|continue;
+name|totalListed
 operator|+=
 name|section
 operator|.
@@ -1255,7 +1304,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|12
+literal|15
 argument_list|)
 operator|+
 literal|" "
@@ -1277,6 +1326,42 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|totalListed
+operator|!=
+name|total
+condition|)
+name|linesThisPeriod
+operator|.
+name|insertElementAt
+argument_list|(
+name|mpad
+argument_list|(
+literal|"("
+operator|+
+name|totalListed
+operator|+
+literal|")"
+argument_list|,
+literal|13
+argument_list|)
+operator|+
+literal|" "
+operator|+
+name|lpad
+argument_list|(
+literal|""
+operator|+
+name|total
+argument_list|,
+literal|6
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+else|else
 name|linesThisPeriod
 operator|.
 name|insertElementAt
@@ -1287,7 +1372,7 @@ literal|""
 operator|+
 name|total
 argument_list|,
-literal|17
+literal|20
 argument_list|)
 argument_list|,
 literal|0
@@ -1436,7 +1521,7 @@ name|rpad
 argument_list|(
 literal|""
 argument_list|,
-literal|17
+literal|20
 argument_list|)
 expr_stmt|;
 if|if
@@ -1448,7 +1533,7 @@ argument_list|()
 condition|)
 name|line
 operator|+=
-literal|"   "
+literal|"  "
 expr_stmt|;
 block|}
 name|println
@@ -1577,14 +1662,14 @@ argument_list|(
 name|day
 argument_list|)
 argument_list|,
-literal|17
+literal|20
 argument_list|)
 operator|+
-literal|"   "
+literal|"  "
 expr_stmt|;
 name|line2
 operator|+=
-literal|"============ ====   "
+literal|"=============== ====  "
 expr_stmt|;
 name|line3
 operator|+=
@@ -1611,10 +1696,10 @@ operator|.
 name|toString
 argument_list|()
 argument_list|,
-literal|17
+literal|20
 argument_list|)
 operator|+
-literal|"   "
+literal|"  "
 expr_stmt|;
 block|}
 name|println
