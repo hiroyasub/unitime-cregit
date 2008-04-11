@@ -997,7 +997,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from Meeting m where m.meetingDate=:meetingDate and m.startPeriod<= :stopPeriod and m.stopPeriod>= :startPeriod and m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId"
+literal|"from Meeting m where m.meetingDate=:meetingDate and m.startPeriod< :stopPeriod and m.stopPeriod> :startPeriod and m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId"
 argument_list|)
 operator|.
 name|setDate
@@ -1067,7 +1067,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(m) from Meeting m where m.meetingDate=:meetingDate and m.startPeriod<= :stopPeriod and m.stopPeriod>= :startPeriod and m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId"
+literal|"select count(m) from Meeting m where m.meetingDate=:meetingDate and m.startPeriod< :stopPeriod and m.stopPeriod> :startPeriod and m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId"
 argument_list|)
 operator|.
 name|setDate
