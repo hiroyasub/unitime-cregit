@@ -1598,6 +1598,16 @@ expr_stmt|;
 block|}
 name|frm
 operator|.
+name|setEmail
+argument_list|(
+name|inst
+operator|.
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|frm
+operator|.
 name|setDeptName
 argument_list|(
 name|inst

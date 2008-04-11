@@ -2787,6 +2787,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setEmail
+argument_list|(
+name|inst
+operator|.
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|String
 name|puid
 init|=

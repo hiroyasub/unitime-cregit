@@ -1657,6 +1657,16 @@ name|getLastName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|inst
+operator|.
+name|setEmail
+argument_list|(
+name|staff
+operator|.
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|HttpSession
 name|httpSession
 init|=

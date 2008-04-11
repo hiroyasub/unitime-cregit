@@ -1769,6 +1769,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|frm
+operator|.
+name|setEmail
+argument_list|(
+name|inst
+operator|.
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|inst
