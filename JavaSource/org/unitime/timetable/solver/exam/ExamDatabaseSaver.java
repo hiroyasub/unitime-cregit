@@ -3088,7 +3088,7 @@ name|event
 operator|.
 name|setEventName
 argument_list|(
-name|exam
+name|examVar
 operator|.
 name|getName
 argument_list|()
