@@ -9961,9 +9961,6 @@ expr_stmt|;
 block|}
 block|}
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|removeCourses
 init|=
 operator|new
@@ -14356,9 +14353,6 @@ literal|0
 argument_list|)
 decl_stmt|;
 name|Set
-argument_list|<
-name|?
-argument_list|>
 name|origMeetings
 init|=
 operator|new
