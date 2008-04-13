@@ -107,18 +107,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|hibernate
-operator|.
-name|mapping
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|commons
@@ -1202,6 +1190,16 @@ name|cell
 operator|.
 name|addContent
 argument_list|(
+literal|"<a name='A"
+operator|+
+name|e
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"'>"
+operator|+
+operator|(
 name|e
 operator|.
 name|getEventName
@@ -1219,6 +1217,9 @@ name|getEventName
 argument_list|()
 operator|+
 literal|"</b>"
+operator|)
+operator|+
+literal|"</a>"
 argument_list|)
 expr_stmt|;
 name|this
