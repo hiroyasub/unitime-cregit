@@ -1513,6 +1513,15 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|e
+operator|.
+name|getMainContact
+argument_list|()
+operator|!=
+literal|null
+condition|)
 name|cell
 operator|.
 name|addContent

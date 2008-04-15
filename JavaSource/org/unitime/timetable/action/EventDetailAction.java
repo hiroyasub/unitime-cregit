@@ -685,6 +685,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|event
+operator|.
+name|getMainContact
+argument_list|()
+operator|!=
+literal|null
+condition|)
 name|myForm
 operator|.
 name|setMainContact
