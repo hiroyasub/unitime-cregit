@@ -3791,6 +3791,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|exam
+operator|.
+name|generateDefaultPreferences
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 operator|new
 name|ExamDAO
 argument_list|()
