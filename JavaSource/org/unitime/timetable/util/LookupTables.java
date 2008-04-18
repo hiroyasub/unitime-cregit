@@ -1892,6 +1892,12 @@ condition|(
 name|deptUids
 operator|!=
 literal|null
+operator|&&
+name|deptUids
+operator|.
+name|length
+operator|>
+literal|0
 condition|)
 block|{
 name|query
