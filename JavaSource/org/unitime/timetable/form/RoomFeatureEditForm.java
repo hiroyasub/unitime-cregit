@@ -1383,6 +1383,13 @@ name|sessionId
 argument_list|)
 decl_stmt|;
 return|return
+operator|(
+name|dept
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|dept
 operator|.
 name|getDeptCode
@@ -1394,6 +1401,7 @@ name|dept
 operator|.
 name|getName
 argument_list|()
+operator|)
 return|;
 block|}
 block|}
