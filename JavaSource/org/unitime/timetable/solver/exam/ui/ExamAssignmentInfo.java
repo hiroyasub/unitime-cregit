@@ -8800,6 +8800,13 @@ operator|.
 name|getTime
 argument_list|()
 expr_stmt|;
+name|iOtherEventDate
+operator|=
+name|unavailability
+operator|.
+name|getDate
+argument_list|()
+expr_stmt|;
 name|iOtherEventRoom
 operator|=
 name|unavailability
