@@ -17778,13 +17778,6 @@ name|getDepartment
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|c
-operator|.
-name|setSchedulingSubpart
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
 name|existingClasses
 operator|.
 name|remove
