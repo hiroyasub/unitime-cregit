@@ -819,8 +819,8 @@ name|roomGroupListForm
 argument_list|)
 expr_stmt|;
 comment|//set request attribute for department
-name|Long
-name|sessionId
+name|Session
+name|session
 init|=
 name|Session
 operator|.
@@ -828,6 +828,11 @@ name|getCurrentAcadSession
 argument_list|(
 name|user
 argument_list|)
+decl_stmt|;
+name|Long
+name|sessionId
+init|=
+name|session
 operator|.
 name|getSessionId
 argument_list|()
@@ -859,6 +864,7 @@ operator|.
 name|ADMIN_ROLE
 argument_list|)
 operator|||
+operator|(
 name|user
 operator|.
 name|getRole
@@ -870,6 +876,15 @@ name|Roles
 operator|.
 name|EXAM_MGR_ROLE
 argument_list|)
+operator|&&
+name|session
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|canExamTimetable
+argument_list|()
+operator|)
 condition|)
 name|roomGroupListForm
 operator|.
@@ -1173,8 +1188,8 @@ argument_list|(
 name|webSession
 argument_list|)
 decl_stmt|;
-name|Long
-name|sessionId
+name|Session
+name|session
 init|=
 name|org
 operator|.
@@ -1190,6 +1205,11 @@ name|getCurrentAcadSession
 argument_list|(
 name|user
 argument_list|)
+decl_stmt|;
+name|Long
+name|sessionId
+init|=
+name|session
 operator|.
 name|getSessionId
 argument_list|()
@@ -1245,6 +1265,7 @@ operator|.
 name|ADMIN_ROLE
 argument_list|)
 operator|||
+operator|(
 name|user
 operator|.
 name|getRole
@@ -1256,6 +1277,15 @@ name|Roles
 operator|.
 name|EXAM_MGR_ROLE
 argument_list|)
+operator|&&
+name|session
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|canExamTimetable
+argument_list|()
+operator|)
 decl_stmt|;
 name|boolean
 name|showAll

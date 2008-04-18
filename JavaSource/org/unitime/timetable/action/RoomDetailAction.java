@@ -1160,6 +1160,7 @@ operator|.
 name|isAdmin
 argument_list|()
 operator|||
+operator|(
 name|Roles
 operator|.
 name|EXAM_MGR_ROLE
@@ -1171,6 +1172,15 @@ operator|.
 name|getRole
 argument_list|()
 argument_list|)
+operator|&&
+name|s
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|canExamTimetable
+argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 for|for
