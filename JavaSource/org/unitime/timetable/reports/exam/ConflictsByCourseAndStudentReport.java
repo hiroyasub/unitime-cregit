@@ -1399,14 +1399,12 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-name|rpad
+name|getMeetingTime
 argument_list|(
 name|conflict
 operator|.
 name|getOtherEventTime
 argument_list|()
-argument_list|,
-literal|38
 argument_list|)
 argument_list|)
 expr_stmt|;

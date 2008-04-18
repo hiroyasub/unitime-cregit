@@ -1125,10 +1125,13 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+name|getMeetingTime
+argument_list|(
 name|conflict
 operator|.
 name|getOtherEventTime
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iSubjectPrinted
