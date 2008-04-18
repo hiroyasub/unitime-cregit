@@ -41,18 +41,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|hibernate
-operator|.
-name|criterion
-operator|.
-name|Order
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -62,6 +50,18 @@ operator|.
 name|dao
 operator|.
 name|ExamDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|hibernate
+operator|.
+name|criterion
+operator|.
+name|Order
 import|;
 end_import
 
@@ -414,7 +414,7 @@ return|return
 name|obj
 return|;
 block|}
-comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * @param Exam a transient instance of a persistent class  	 * @return the class identifier 	 */
+comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * @param exam a transient instance of a persistent class  	 * @return the class identifier 	 */
 specifier|public
 name|java
 operator|.
@@ -432,7 +432,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|)
 block|{
 return|return
@@ -447,11 +447,11 @@ name|super
 operator|.
 name|save
 argument_list|(
-name|Exam
+name|exam
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * Use the Session given. 	 * @param Exam a transient instance of a persistent class 	 * @param s the Session 	 * @return the class identifier 	 */
+comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * Use the Session given. 	 * @param exam a transient instance of a persistent class 	 * @param s the Session 	 * @return the class identifier 	 */
 specifier|public
 name|java
 operator|.
@@ -469,7 +469,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|,
 name|Session
 name|s
@@ -488,13 +488,13 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|,
 name|s
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the 	 * identifier property mapping.  	 * @param Exam a transient instance containing new or updated state  	 */
+comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the 	 * identifier property mapping.  	 * @param exam a transient instance containing new or updated state  	 */
 specifier|public
 name|void
 name|saveOrUpdate
@@ -508,7 +508,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|)
 block|{
 name|saveOrUpdate
@@ -516,11 +516,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default the 	 * instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the identifier 	 * property mapping.  	 * Use the Session given. 	 * @param Exam a transient instance containing new or updated state. 	 * @param s the Session. 	 */
+comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default the 	 * instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the identifier 	 * property mapping.  	 * Use the Session given. 	 * @param exam a transient instance containing new or updated state. 	 * @param s the Session. 	 */
 specifier|public
 name|void
 name|saveOrUpdate
@@ -534,7 +534,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|,
 name|Session
 name|s
@@ -545,13 +545,13 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * @param Exam a transient instance containing updated state 	 */
+comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * @param exam a transient instance containing updated state 	 */
 specifier|public
 name|void
 name|update
@@ -565,7 +565,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|)
 block|{
 name|update
@@ -573,11 +573,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * Use the Session given. 	 * @param Exam a transient instance containing updated state 	 * @param the Session 	 */
+comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * Use the Session given. 	 * @param exam a transient instance containing updated state 	 * @param the Session 	 */
 specifier|public
 name|void
 name|update
@@ -591,7 +591,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|,
 name|Session
 name|s
@@ -602,7 +602,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|,
 name|s
 argument_list|)
@@ -665,7 +665,7 @@ name|s
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * @param Exam the instance to be removed 	 */
+comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * @param exam the instance to be removed 	 */
 specifier|public
 name|void
 name|delete
@@ -679,7 +679,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|)
 block|{
 name|delete
@@ -687,11 +687,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * Use the Session given. 	 * @param Exam the instance to be removed 	 * @param s the Session 	 */
+comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * Use the Session given. 	 * @param exam the instance to be removed 	 * @param s the Session 	 */
 specifier|public
 name|void
 name|delete
@@ -705,7 +705,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|,
 name|Session
 name|s
@@ -716,7 +716,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|,
 name|s
 argument_list|)
@@ -736,7 +736,7 @@ operator|.
 name|model
 operator|.
 name|Exam
-name|Exam
+name|exam
 parameter_list|,
 name|Session
 name|s
@@ -747,7 +747,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|Exam
+name|exam
 argument_list|,
 name|s
 argument_list|)
