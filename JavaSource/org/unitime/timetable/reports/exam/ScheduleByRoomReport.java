@@ -262,9 +262,29 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Bldg Room Capacity  ExCap Period Date And Time                          Subj Crsnbr InsTyp Sect  Enrl"
+literal|"Bldg  Room  Capacity  ExCap Period Date And Time                          Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect  Enrl"
 block|,
-literal|"---- ---- -------- ------ ------ -------------------------------------- ---- ------ ------ ---- -----"
+literal|"----- ----- -------- ------ ------ -------------------------------------- ---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -560,7 +580,7 @@ operator|.
 name|getBuildingAbbv
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -576,7 +596,7 @@ operator|.
 name|getRoomNumber
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -669,10 +689,10 @@ name|iStudentPrinted
 condition|?
 literal|""
 else|:
+name|formatPeriod
+argument_list|(
 name|period
-operator|.
-name|getName
-argument_list|()
+argument_list|)
 argument_list|,
 literal|38
 argument_list|)
@@ -711,6 +731,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|iITypePrinted
@@ -726,6 +749,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -800,7 +826,7 @@ operator|.
 name|getBuildingAbbv
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -816,7 +842,7 @@ operator|.
 name|getRoomNumber
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -832,8 +858,10 @@ operator|.
 name|getLabel
 argument_list|()
 argument_list|,
-literal|9
+literal|11
 argument_list|)
+operator|+
+literal|" "
 operator|)
 operator|+
 name|lpad
@@ -901,10 +929,10 @@ literal|" "
 operator|+
 name|rpad
 argument_list|(
+name|formatPeriod
+argument_list|(
 name|period
-operator|.
-name|getName
-argument_list|()
+argument_list|)
 argument_list|,
 literal|38
 argument_list|)

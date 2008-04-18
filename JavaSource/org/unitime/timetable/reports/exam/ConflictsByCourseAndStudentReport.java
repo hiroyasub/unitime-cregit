@@ -651,9 +651,49 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr InsTyp Sect Date And Time                Name       Type   Subj Crsnbr InsTyp Sect Time"
+literal|"Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Date And Time                Name       Type   Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Time"
 block|,
-literal|"---- ------ ------ ---- ---------------------------- ---------- ------ ---- ------ ------ ---- ---------------------"
+literal|"---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------------- ---------- ------ ---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -991,6 +1031,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|iCoursePrinted
@@ -1006,6 +1049,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1031,7 +1077,7 @@ literal|""
 else|:
 name|exam
 operator|.
-name|getPeriodName
+name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
 literal|28
@@ -1094,6 +1140,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|other
@@ -1105,6 +1154,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1123,10 +1175,8 @@ operator|.
 name|getExamAssignment
 argument_list|()
 operator|.
-name|getTime
-argument_list|(
-literal|false
-argument_list|)
+name|getTimeFixedLength
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iSubjectPrinted
@@ -1183,6 +1233,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|iCoursePrinted
@@ -1198,6 +1251,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1223,7 +1279,7 @@ literal|""
 else|:
 name|exam
 operator|.
-name|getPeriodName
+name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
 literal|28
@@ -1304,6 +1360,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|conflict
@@ -1321,6 +1380,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1339,13 +1401,6 @@ literal|" "
 operator|+
 name|rpad
 argument_list|(
-name|conflict
-operator|.
-name|getOtherEventDate
-argument_list|()
-operator|+
-literal|" "
-operator|+
 name|conflict
 operator|.
 name|getOtherEventTime
@@ -1468,6 +1523,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|iCoursePrinted
@@ -1483,6 +1541,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1508,7 +1569,7 @@ literal|""
 else|:
 name|exam
 operator|.
-name|getPeriodName
+name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
 literal|28
@@ -1571,6 +1632,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|other
@@ -1582,6 +1646,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1600,10 +1667,8 @@ operator|.
 name|getExamAssignment
 argument_list|()
 operator|.
-name|getTime
-argument_list|(
-literal|false
-argument_list|)
+name|getTimeFixedLength
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iSubjectPrinted
@@ -1712,6 +1777,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|iCoursePrinted
@@ -1727,6 +1795,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1752,7 +1823,7 @@ literal|""
 else|:
 name|exam
 operator|.
-name|getPeriodName
+name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
 literal|28
@@ -1815,6 +1886,9 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iItype
+condition|?
 name|rpad
 argument_list|(
 name|other
@@ -1826,6 +1900,9 @@ literal|6
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -1844,10 +1921,8 @@ operator|.
 name|getExamAssignment
 argument_list|()
 operator|.
-name|getTime
-argument_list|(
-literal|false
-argument_list|)
+name|getTimeFixedLength
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iSubjectPrinted
