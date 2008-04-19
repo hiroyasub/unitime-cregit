@@ -323,6 +323,13 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|request
+operator|!=
+literal|null
+condition|)
+block|{
 name|HttpSession
 name|httpSession
 init|=
@@ -403,6 +410,7 @@ argument_list|(
 name|user
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|loadFromXML
 argument_list|(
