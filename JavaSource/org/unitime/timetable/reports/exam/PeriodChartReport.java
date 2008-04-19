@@ -1229,13 +1229,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|nextLines
-operator|==
-literal|0
-condition|)
-continue|continue;
-if|if
-condition|(
 name|iTotals
 condition|)
 block|{
@@ -1468,6 +1461,13 @@ block|}
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|nextLines
+operator|==
+literal|0
+condition|)
+continue|continue;
 name|setCont
 argument_list|(
 name|firstDay
