@@ -564,7 +564,7 @@ name|super
 argument_list|(
 name|file
 argument_list|,
-literal|"EXAMINATION REQUESTS"
+literal|"EXAMINATION VERIFICATION REPORT"
 argument_list|,
 name|session
 argument_list|,
@@ -1934,7 +1934,7 @@ name|hasSectionExam
 condition|)
 name|message
 operator|=
-literal|"Has course exam"
+literal|"Has other exam"
 expr_stmt|;
 if|if
 condition|(
@@ -3462,6 +3462,30 @@ name|cmp
 init|=
 name|co1
 operator|.
+name|getSubjectAreaAbbv
+argument_list|()
+operator|.
+name|compareTo
+argument_list|(
+name|co2
+operator|.
+name|getSubjectAreaAbbv
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|cmp
+operator|!=
+literal|0
+condition|)
+return|return
+name|cmp
+return|;
+name|cmp
+operator|=
+name|co1
+operator|.
 name|getCourseNbr
 argument_list|()
 operator|.
@@ -3472,7 +3496,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|cmp
@@ -3666,6 +3690,14 @@ name|co
 operator|.
 name|getSubjectArea
 argument_list|()
+expr_stmt|;
+name|setFooter
+argument_list|(
+name|subject
+operator|.
+name|getSubjectAreaAbbreviation
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
@@ -5664,6 +5696,14 @@ name|hasSubpartExam
 operator|=
 literal|true
 expr_stmt|;
+if|if
+condition|(
+name|allSectionsHaveExam
+condition|)
+name|hasCourseExam
+operator|=
+literal|true
+expr_stmt|;
 for|for
 control|(
 name|Class_
@@ -5827,8 +5867,6 @@ argument_list|(
 name|same
 argument_list|,
 name|hasCourseExam
-operator|||
-name|hasSubpartExam
 argument_list|,
 name|hasSectionExam
 argument_list|,
