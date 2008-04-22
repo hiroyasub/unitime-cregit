@@ -13973,6 +13973,13 @@ argument_list|(
 name|distObj
 argument_list|)
 expr_stmt|;
+name|c
+operator|.
+name|addTodistributionObjects
+argument_list|(
+name|distObj
+argument_list|)
+expr_stmt|;
 block|}
 name|getHibSession
 argument_list|()
