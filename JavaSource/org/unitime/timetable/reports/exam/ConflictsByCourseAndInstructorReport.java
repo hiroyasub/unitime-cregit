@@ -329,6 +329,9 @@ decl_stmt|;
 specifier|public
 name|ConflictsByCourseAndInstructorReport
 parameter_list|(
+name|int
+name|mode
+parameter_list|,
 name|File
 name|file
 parameter_list|,
@@ -354,6 +357,8 @@ name|DocumentException
 block|{
 name|super
 argument_list|(
+name|mode
+argument_list|,
 name|file
 argument_list|,
 literal|"CONFLICTS BY COURSE AND INSTRUCTOR"

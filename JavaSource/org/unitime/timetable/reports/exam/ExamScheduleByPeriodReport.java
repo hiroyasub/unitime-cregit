@@ -209,6 +209,9 @@ decl_stmt|;
 specifier|public
 name|ExamScheduleByPeriodReport
 parameter_list|(
+name|int
+name|mode
+parameter_list|,
 name|File
 name|file
 parameter_list|,
@@ -234,6 +237,8 @@ name|DocumentException
 block|{
 name|super
 argument_list|(
+name|mode
+argument_list|,
 name|file
 argument_list|,
 literal|"SCHEDULE BY PERIOD"
