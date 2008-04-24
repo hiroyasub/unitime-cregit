@@ -512,7 +512,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name       Type   Subj Crsnbr "
+literal|"Sect Date And Time                Name                       Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -534,7 +534,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ---------- ------ ---- ------ "
+literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -873,7 +873,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -1073,7 +1073,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -1159,6 +1159,26 @@ operator|)
 operator|+
 name|lpad
 argument_list|(
+name|iUseClassSuffix
+operator|&&
+name|conflict
+operator|.
+name|getOtherClass
+argument_list|()
+operator|.
+name|getClassSuffix
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|conflict
+operator|.
+name|getOtherClass
+argument_list|()
+operator|.
+name|getClassSuffix
+argument_list|()
+else|:
 name|conflict
 operator|.
 name|getOtherClass
@@ -1362,7 +1382,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -1620,7 +1640,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "

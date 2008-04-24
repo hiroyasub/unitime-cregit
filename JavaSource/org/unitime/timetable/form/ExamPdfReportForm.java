@@ -263,6 +263,22 @@ name|reports
 operator|.
 name|exam
 operator|.
+name|InstructorExamReport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|reports
+operator|.
+name|exam
+operator|.
 name|PeriodChartReport
 import|;
 end_import
@@ -590,6 +606,17 @@ argument_list|(
 literal|"Abbreviated Schedule (Exams)"
 argument_list|,
 name|AbbvExamScheduleByCourseReport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|sRegisteredReports
+operator|.
+name|put
+argument_list|(
+literal|"Instructor Schedule"
+argument_list|,
+name|InstructorExamReport
 operator|.
 name|class
 argument_list|)

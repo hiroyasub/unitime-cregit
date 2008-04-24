@@ -1045,6 +1045,10 @@ argument_list|)
 else|:
 name|rpad
 argument_list|(
+name|sameSubj
+condition|?
+literal|""
+else|:
 name|section
 operator|.
 name|getSubject
@@ -1057,6 +1061,10 @@ literal|" "
 operator|+
 name|rpad
 argument_list|(
+name|sameCrs
+condition|?
+literal|""
+else|:
 name|section
 operator|.
 name|getCourseNbr
@@ -1069,6 +1077,10 @@ literal|" "
 operator|+
 name|rpad
 argument_list|(
+name|sameSct
+condition|?
+literal|""
+else|:
 name|section
 operator|.
 name|getSection
@@ -1168,6 +1180,9 @@ name|getName
 argument_list|()
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|lx
+operator|++
 expr_stmt|;
 block|}
 block|}
