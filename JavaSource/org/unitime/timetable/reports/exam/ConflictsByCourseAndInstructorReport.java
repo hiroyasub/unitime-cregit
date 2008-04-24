@@ -1084,7 +1084,7 @@ name|iPeriodPrinted
 condition|?
 literal|""
 else|:
-literal|"DIRECT"
+literal|"CLASS"
 argument_list|,
 literal|6
 argument_list|)
