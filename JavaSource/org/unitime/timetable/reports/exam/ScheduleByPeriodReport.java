@@ -887,7 +887,7 @@ operator|.
 name|size
 argument_list|()
 operator|>
-name|sNrLines
+name|iNrLines
 condition|)
 name|newPage
 argument_list|()

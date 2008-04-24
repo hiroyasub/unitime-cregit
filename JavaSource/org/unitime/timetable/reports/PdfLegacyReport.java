@@ -177,16 +177,14 @@ class|class
 name|PdfLegacyReport
 block|{
 specifier|protected
-specifier|static
 name|int
-name|sNrChars
+name|iNrChars
 init|=
 literal|133
 decl_stmt|;
 specifier|protected
-specifier|static
 name|int
-name|sNrLines
+name|iNrLines
 init|=
 literal|50
 decl_stmt|;
@@ -385,7 +383,7 @@ name|mode
 operator|==
 name|sModeLedger
 condition|)
-name|sNrLines
+name|iNrLines
 operator|=
 literal|116
 expr_stmt|;
@@ -634,7 +632,7 @@ name|rep
 argument_list|(
 name|ch
 argument_list|,
-name|sNrChars
+name|iNrChars
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1060,7 +1058,7 @@ argument_list|,
 name|s
 argument_list|,
 operator|(
-name|sNrChars
+name|iNrChars
 operator|-
 name|s
 operator|.
@@ -1090,7 +1088,7 @@ name|line
 argument_list|,
 name|s
 argument_list|,
-name|sNrChars
+name|iNrChars
 operator|-
 name|s
 operator|.
@@ -1167,7 +1165,7 @@ name|iSession
 argument_list|,
 literal|' '
 argument_list|,
-name|sNrChars
+name|iNrChars
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1382,7 +1380,7 @@ while|while
 condition|(
 name|iLineNo
 operator|<
-name|sNrLines
+name|iNrLines
 condition|)
 block|{
 name|out
@@ -1409,7 +1407,7 @@ while|while
 condition|(
 name|iLineNo
 operator|<
-name|sNrLines
+name|iNrLines
 condition|)
 block|{
 name|out
@@ -1482,7 +1480,7 @@ if|if
 condition|(
 name|iLineNo
 operator|>=
-name|sNrLines
+name|iNrLines
 condition|)
 name|newPage
 argument_list|()

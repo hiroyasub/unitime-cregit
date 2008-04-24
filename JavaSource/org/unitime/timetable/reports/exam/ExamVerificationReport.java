@@ -2382,7 +2382,7 @@ argument_list|()
 operator|+
 literal|2
 operator|>
-name|sNrLines
+name|iNrLines
 condition|)
 name|newPage
 argument_list|()
@@ -3629,7 +3629,7 @@ argument_list|()
 operator|+
 name|nrLines
 operator|>
-name|sNrLines
+name|iNrLines
 condition|)
 name|newPage
 argument_list|()

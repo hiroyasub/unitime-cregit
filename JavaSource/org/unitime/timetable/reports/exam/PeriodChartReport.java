@@ -1214,7 +1214,7 @@ argument_list|()
 operator|+
 name|nextLines
 operator|<=
-name|sNrLines
+name|iNrLines
 condition|)
 block|{
 name|println
@@ -2096,7 +2096,7 @@ argument_list|()
 operator|+
 literal|5
 operator|>
-name|sNrLines
+name|iNrLines
 condition|)
 block|{
 name|newPage

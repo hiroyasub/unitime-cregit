@@ -261,7 +261,7 @@ decl_stmt|;
 name|int
 name|n
 init|=
-name|sNrLines
+name|iNrLines
 operator|-
 literal|2
 decl_stmt|;
