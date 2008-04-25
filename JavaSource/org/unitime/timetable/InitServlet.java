@@ -103,6 +103,20 @@ name|SolverRegisterService
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|RoomAvailability
+import|;
+end_import
+
 begin_comment
 comment|/**  * Application Initialization Servlet  * @version 1.0  * @author Heston Fernandes  */
 end_comment
@@ -185,6 +199,30 @@ operator|.
 name|addShutdownHook
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|RoomAvailability
+operator|.
+name|getInstance
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|logMessage
+argument_list|(
+literal|" - Initializing Room Availability Service ... "
+argument_list|)
+expr_stmt|;
+name|RoomAvailability
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|startService
+argument_list|()
+expr_stmt|;
+block|}
 name|logMessage
 argument_list|(
 literal|"******* Timetabling Application : Initializing DONE *******"
@@ -267,6 +305,30 @@ operator|.
 name|stopListener
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|RoomAvailability
+operator|.
+name|getInstance
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|logMessage
+argument_list|(
+literal|" - Stopping Room Availability Service ... "
+argument_list|)
+expr_stmt|;
+name|RoomAvailability
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|stopService
+argument_list|()
+expr_stmt|;
+block|}
 name|logMessage
 argument_list|(
 literal|"******* Timetabling Application : Shut down DONE *******"
