@@ -2423,29 +2423,9 @@ literal|"false"
 block|}
 block|,
 block|{
-operator|(
-name|examType
-operator|==
-name|Exam
-operator|.
-name|sExamTypeEvening
-condition|?
-literal|"Not Available"
-else|:
 literal|"Period Preferences"
-operator|)
 block|,
-operator|(
-name|examType
-operator|==
-name|Exam
-operator|.
-name|sExamTypeEvening
-condition|?
-literal|"left"
-else|:
 literal|"center"
-operator|)
 block|,
 literal|"false"
 block|}
@@ -3020,29 +3000,9 @@ literal|"false"
 block|}
 block|,
 block|{
-operator|(
-name|examType
-operator|==
-name|Exam
-operator|.
-name|sExamTypeEvening
-condition|?
-literal|"Not Available"
-else|:
 literal|"Period Preferences"
-operator|)
 block|,
-operator|(
-name|examType
-operator|==
-name|Exam
-operator|.
-name|sExamTypeEvening
-condition|?
-literal|"left"
-else|:
 literal|"center"
-operator|)
 block|,
 literal|"false"
 block|}
@@ -4388,7 +4348,9 @@ operator|=
 name|epx
 operator|.
 name|toString
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 operator|.
 name|replaceAll
 argument_list|(
