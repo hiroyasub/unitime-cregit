@@ -118,6 +118,17 @@ literal|"Course Activity"
 argument_list|)
 decl_stmt|;
 specifier|public
+name|String
+name|getTimeStamp
+parameter_list|(
+name|Date
+name|startTime
+parameter_list|,
+name|Date
+name|endTime
+parameter_list|)
+function_decl|;
+specifier|public
 name|Collection
 argument_list|<
 name|TimeBlock
@@ -156,6 +167,9 @@ name|startTime
 parameter_list|,
 name|Date
 name|endTime
+parameter_list|,
+name|boolean
+name|waitForSync
 parameter_list|)
 function_decl|;
 specifier|public
