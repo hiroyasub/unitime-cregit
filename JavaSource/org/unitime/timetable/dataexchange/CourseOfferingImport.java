@@ -5628,27 +5628,21 @@ operator|)
 operator|!=
 literal|0
 condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Invalid time '"
-operator|+
-name|timeString
-operator|+
-literal|"' -- minute ("
-operator|+
+block|{
 name|min
-operator|+
-literal|") must be divisible by "
-operator|+
+operator|=
+name|min
+operator|-
+operator|(
+name|min
+operator|%
 name|Constants
 operator|.
 name|SLOT_LENGTH_MIN
-operator|+
-literal|"."
-argument_list|)
-throw|;
+operator|)
+expr_stmt|;
+comment|//throw new Exception("Invalid time '"+timeString+"' -- minute ("+min+") must be divisible by "+Constants.SLOT_LENGTH_MIN+".");
+block|}
 name|slot
 operator|=
 operator|(
