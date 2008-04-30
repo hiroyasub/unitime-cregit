@@ -462,7 +462,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"Save To Best"
+literal|"Store To Best"
 operator|.
 name|equals
 argument_list|(
@@ -511,14 +511,6 @@ name|startsWith
 argument_list|(
 literal|"Save"
 argument_list|)
-operator|&&
-operator|!
-name|op
-operator|.
-name|equals
-argument_list|(
-literal|"Save To Best"
-argument_list|)
 condition|)
 block|{
 if|if
@@ -548,11 +540,6 @@ argument_list|(
 literal|"Solver is working, stop it first."
 argument_list|)
 throw|;
-name|solver
-operator|.
-name|restoreBest
-argument_list|()
-expr_stmt|;
 name|solver
 operator|.
 name|save
