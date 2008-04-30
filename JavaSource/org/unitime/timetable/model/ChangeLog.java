@@ -449,6 +449,8 @@ block|,
 name|DATA_IMPORT_STAFF
 block|,
 name|EXAM_INFO
+block|,
+name|EXAM_SOLVER
 block|}
 specifier|public
 specifier|static
