@@ -1163,7 +1163,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|printHeader
 parameter_list|()
@@ -1435,7 +1435,7 @@ name|iPageNo
 operator|++
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|lastPage
 parameter_list|()

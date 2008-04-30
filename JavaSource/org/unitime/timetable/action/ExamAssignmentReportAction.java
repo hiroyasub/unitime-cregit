@@ -3043,7 +3043,7 @@ operator|new
 name|MultiComparable
 argument_list|(
 operator|-
-name|exam
+name|section
 operator|.
 name|getNrStudents
 argument_list|()
@@ -3091,6 +3091,16 @@ block|,
 operator|new
 name|MultiComparable
 argument_list|(
+name|exam
+operator|.
+name|getPeriod
+argument_list|()
+operator|==
+literal|null
+condition|?
+operator|-
+literal|1
+else|:
 name|exam
 operator|.
 name|getPeriod

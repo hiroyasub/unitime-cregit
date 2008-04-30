@@ -807,6 +807,12 @@ name|title
 argument_list|,
 operator|(
 name|examType
+operator|<
+literal|0
+condition|?
+literal|""
+else|:
+name|examType
 operator|==
 name|Exam
 operator|.
