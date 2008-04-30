@@ -45,6 +45,24 @@ name|Logger
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|remote
+operator|.
+name|core
+operator|.
+name|RemoteSolverServer
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -167,6 +185,20 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+block|}
+specifier|public
+name|boolean
+name|isRemote
+parameter_list|()
+block|{
+return|return
+name|RemoteSolverServer
+operator|.
+name|getServerThread
+argument_list|()
+operator|!=
+literal|null
+return|;
 block|}
 block|}
 end_class

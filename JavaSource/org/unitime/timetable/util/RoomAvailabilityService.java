@@ -3106,6 +3106,7 @@ return|;
 block|}
 block|}
 specifier|public
+specifier|static
 class|class
 name|EventTimeBlock
 implements|implements
