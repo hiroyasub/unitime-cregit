@@ -2516,12 +2516,23 @@ name|text
 operator|.
 name|setText
 argument_list|(
+operator|(
+name|myForm
+operator|.
+name|getMessage
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|myForm
 operator|.
 name|getMessage
 argument_list|()
 operator|+
 literal|"\r\n\r\n"
+operator|)
 operator|+
 literal|"For an up-to-date report, please visit "
 operator|+
@@ -3079,12 +3090,23 @@ name|text
 operator|.
 name|setText
 argument_list|(
+operator|(
+name|myForm
+operator|.
+name|getMessage
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|myForm
 operator|.
 name|getMessage
 argument_list|()
 operator|+
 literal|"\r\n\r\n"
+operator|)
 operator|+
 literal|"For an up-to-date report, please visit "
 operator|+
