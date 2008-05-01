@@ -930,33 +930,21 @@ argument_list|)
 expr_stmt|;
 block|}
 name|SimpleDateFormat
-name|dateFormat
+name|iDateFormat
 init|=
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MMM dd, yyyy"
+literal|"EEE MM/dd, yyyy"
 argument_list|,
 name|Locale
 operator|.
 name|US
 argument_list|)
 decl_stmt|;
+comment|//SimpleDateFormat dateFormatDay = new SimpleDateFormat("EEE", Locale.US);
 name|SimpleDateFormat
-name|dateFormatDay
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"EEE"
-argument_list|,
-name|Locale
-operator|.
-name|US
-argument_list|)
-decl_stmt|;
-name|SimpleDateFormat
-name|df2
+name|iDateFormat2
 init|=
 operator|new
 name|SimpleDateFormat
@@ -1130,7 +1118,7 @@ literal|null
 condition|?
 literal|""
 else|:
-name|df2
+name|iDateFormat2
 operator|.
 name|format
 argument_list|(
@@ -1145,7 +1133,7 @@ name|myForm
 operator|.
 name|addMeeting
 argument_list|(
-name|dateFormat
+name|iDateFormat
 operator|.
 name|format
 argument_list|(
@@ -1154,22 +1142,6 @@ operator|.
 name|getMeetingDate
 argument_list|()
 argument_list|)
-operator|+
-literal|"&nbsp;&nbsp;"
-operator|+
-literal|"<font color='gray'><i>("
-operator|+
-name|dateFormatDay
-operator|.
-name|format
-argument_list|(
-name|meeting
-operator|.
-name|getMeetingDate
-argument_list|()
-argument_list|)
-operator|+
-literal|")</i></font>"
 argument_list|,
 operator|(
 name|startHour
