@@ -1116,9 +1116,8 @@ argument_list|(
 literal|"Given period is two short."
 argument_list|)
 throw|;
-name|String
 name|iPeriodPref
-init|=
+operator|=
 name|period
 operator|.
 name|getPrefLevel
@@ -1126,7 +1125,7 @@ argument_list|()
 operator|.
 name|getPrefProlog
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 name|boolean
 name|reqPeriod
 init|=
