@@ -4657,7 +4657,7 @@ literal|"m.eventType.reference=:eventType and r.ownerType=:classType and "
 operator|+
 literal|"e.student=f.student and f.clazz.uniqueId = r.ownerId and "
 operator|+
-literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length :travelTime and "
+literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
 literal|"p.session=co.subjectArea.session and p.session.examBeginDate+p.dateOffset = m.meetingDate"
 argument_list|)
