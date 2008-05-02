@@ -1923,9 +1923,6 @@ operator|.
 name|printReport
 argument_list|(
 name|student
-operator|.
-name|getUniqueId
-argument_list|()
 argument_list|,
 name|sections
 argument_list|)
