@@ -432,8 +432,6 @@ name|BUILDING_EDIT
 block|,
 name|EXAM_PERIOD_EDIT
 block|,
-name|ROOM_EXAM_PERIOD_REF_EDIT
-block|,
 name|EXAM_EDIT
 block|,
 name|DATA_IMPORT_OFFERINGS
