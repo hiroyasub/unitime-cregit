@@ -4344,8 +4344,10 @@ literal|null
 operator|||
 name|email
 operator|.
-name|isEmpty
+name|length
 argument_list|()
+operator|==
+literal|0
 condition|)
 block|{
 name|sLog
@@ -4729,8 +4731,10 @@ literal|null
 operator|||
 name|email
 operator|.
-name|isEmpty
+name|length
 argument_list|()
+operator|==
+literal|0
 condition|)
 block|{
 name|sLog
