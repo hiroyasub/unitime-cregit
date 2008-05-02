@@ -1373,7 +1373,7 @@ literal|0
 condition|)
 name|ret
 operator|+=
-literal|"<i>Select bellow ...</i>"
+literal|"<i>Select below ...</i>"
 expr_stmt|;
 name|ret
 operator|+=
