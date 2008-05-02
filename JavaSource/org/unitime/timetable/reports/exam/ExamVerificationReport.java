@@ -614,6 +614,12 @@ name|iSkipHoles
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+name|boolean
+name|iHasAssignment
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|ExamVerificationReport
 parameter_list|(
@@ -660,6 +666,31 @@ argument_list|,
 name|exams
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|ExamAssignmentInfo
+name|exam
+range|:
+name|exams
+control|)
+block|{
+if|if
+condition|(
+name|exam
+operator|.
+name|getPeriod
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|iHasAssignment
+operator|=
+literal|true
+expr_stmt|;
+break|break;
+block|}
+block|}
 block|}
 specifier|public
 name|TreeSet
@@ -2160,7 +2191,7 @@ return|;
 name|String
 name|message
 init|=
-literal|"** NO SECTION EXAM **"
+literal|"** NO EXAM **"
 decl_stmt|;
 if|if
 condition|(
@@ -2227,7 +2258,7 @@ condition|)
 block|{
 name|message
 operator|=
-literal|"Class not meeting"
+literal|"Class not organized"
 expr_stmt|;
 block|}
 if|else if
@@ -2406,7 +2437,7 @@ block|{
 name|String
 name|message
 init|=
-literal|"** NO SECTION EXAM **"
+literal|"** NO EXAM **"
 decl_stmt|;
 if|if
 condition|(
@@ -2479,7 +2510,7 @@ condition|)
 block|{
 name|message
 operator|=
-literal|"Class not meeting"
+literal|"Class not organized"
 expr_stmt|;
 block|}
 if|else if
@@ -2592,35 +2623,7 @@ operator|.
 name|getSchedulePrintNote
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|title
-operator|!=
-literal|null
-operator|&&
-name|title
-operator|.
-name|equals
-argument_list|(
-name|same
-operator|.
-name|firstElement
-argument_list|()
-operator|.
-name|getSchedulingSubpart
-argument_list|()
-operator|.
-name|getControllingCourseOffering
-argument_list|()
-operator|.
-name|getTitle
-argument_list|()
-argument_list|)
-condition|)
-name|title
-operator|=
-literal|null
-expr_stmt|;
+comment|/*             if (title!=null&& title.equals(same.firstElement().getSchedulingSubpart().getControllingCourseOffering().getTitle()))                 title = null;                 */
 name|boolean
 name|hasTitle
 init|=
@@ -2655,7 +2658,13 @@ name|length
 argument_list|()
 operator|<=
 operator|(
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 operator|-
 name|formatSection
 argument_list|(
@@ -2725,7 +2734,13 @@ name|length
 argument_list|()
 operator|<=
 operator|(
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 operator|-
 name|formatSection
 argument_list|(
@@ -2872,11 +2887,20 @@ else|:
 literal|""
 operator|)
 argument_list|,
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iDispLimits
+condition|?
 name|lpad
 argument_list|(
 name|maxLimit
@@ -2930,6 +2954,9 @@ literal|9
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 literal|"         "
 operator|+
@@ -3023,7 +3050,11 @@ name|add
 argument_list|(
 name|rpad
 argument_list|(
+name|iHasAssignment
+condition|?
 literal|" Exam not assigned"
+else|:
+literal|" Section exam"
 argument_list|,
 literal|26
 argument_list|)
@@ -3983,35 +4014,7 @@ operator|.
 name|getSchedulePrintNote
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|title
-operator|!=
-literal|null
-operator|&&
-name|title
-operator|.
-name|equals
-argument_list|(
-name|same
-operator|.
-name|firstElement
-argument_list|()
-operator|.
-name|getSchedulingSubpart
-argument_list|()
-operator|.
-name|getControllingCourseOffering
-argument_list|()
-operator|.
-name|getTitle
-argument_list|()
-argument_list|)
-condition|)
-name|title
-operator|=
-literal|null
-expr_stmt|;
+comment|/*             if (title!=null&& title.equals(same.firstElement().getSchedulingSubpart().getControllingCourseOffering().getTitle()))                 title = null;                 */
 name|boolean
 name|hasTitle
 init|=
@@ -4049,7 +4052,13 @@ name|length
 argument_list|()
 operator|<=
 operator|(
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 operator|-
 name|formatSection
 argument_list|(
@@ -4104,7 +4113,13 @@ operator|.
 name|length
 argument_list|()
 operator|<=
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 decl_stmt|;
 name|boolean
 name|titleSeparateLine
@@ -4148,7 +4163,13 @@ name|length
 argument_list|()
 operator|<=
 operator|(
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 operator|-
 name|formatSection
 argument_list|(
@@ -4206,7 +4227,13 @@ operator|.
 name|length
 argument_list|()
 operator|<=
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 decl_stmt|;
 name|boolean
 name|mwThirdLine
@@ -4231,7 +4258,13 @@ operator|.
 name|length
 argument_list|()
 operator|<=
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 decl_stmt|;
 name|boolean
 name|mwSeparateLine
@@ -4488,11 +4521,20 @@ else|:
 literal|""
 operator|)
 argument_list|,
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iDispLimits
+condition|?
 name|lpad
 argument_list|(
 name|iPeriodPrinted
@@ -4558,6 +4600,9 @@ literal|9
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
@@ -4875,11 +4920,41 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Course      Title                                            Alt  Len                                                  "
+literal|"Course      Title                       "
+operator|+
+operator|(
+name|iDispLimits
+condition|?
+literal|"                    "
+else|:
+literal|"                    "
+operator|)
+operator|+
+literal|" Alt  Len                                                  "
 block|,
-literal|"   InsType    Sections                   Limit     Enrollmnt Seat ght Date& Time               Room         Cap ExCap Exam with"
+literal|"   InsType    Sections                  "
+operator|+
+operator|(
+name|iDispLimits
+condition|?
+literal|" Limit     Enrollmnt"
+else|:
+literal|"                    "
+operator|)
+operator|+
+literal|" Seat ght Date& Time               Room         Cap ExCap Exam with"
 block|,
-literal|"----------- ---------------------------- --------- --------- ---- --- ------------------------- ----------- ---- ----- --------------"
+literal|"----------- ----------------------------"
+operator|+
+operator|(
+name|iDispLimits
+condition|?
+literal|" --------- ---------"
+else|:
+literal|"--------------------"
+operator|)
+operator|+
+literal|" ---- --- ------------------------- ----------- ---- ----- --------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -5334,11 +5409,20 @@ operator|.
 name|getTitle
 argument_list|()
 argument_list|,
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iDispLimits
+condition|?
 name|lpad
 argument_list|(
 name|courseLimit
@@ -5382,13 +5466,16 @@ literal|9
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 literal|"         "
 operator|+
 operator|(
 name|hasCourseExam
 condition|?
-literal|"** NO COURSE EXAM**"
+literal|"** NO EXAM**"
 else|:
 literal|""
 operator|)
@@ -5440,7 +5527,11 @@ name|add
 argument_list|(
 name|rpad
 argument_list|(
+name|iHasAssignment
+condition|?
 literal|" Exam not assigned"
+else|:
+literal|" Course Exam"
 argument_list|,
 literal|26
 argument_list|)
@@ -6514,11 +6605,20 @@ operator|.
 name|getTitle
 argument_list|()
 argument_list|,
+operator|(
+name|iDispLimits
+condition|?
 literal|28
+else|:
+literal|48
+operator|)
 argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iDispLimits
+condition|?
 name|lpad
 argument_list|(
 name|idx
@@ -6576,6 +6676,9 @@ literal|9
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|lpad
 argument_list|(
