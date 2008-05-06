@@ -687,16 +687,17 @@ name|put
 argument_list|(
 name|sStronglyPreferred
 argument_list|,
-literal|"#14a028"
+literal|"#0f821e"
 argument_list|)
 expr_stmt|;
+comment|//14a028
 name|sHexPref2color
 operator|.
 name|put
 argument_list|(
 name|sPreferred
 argument_list|,
-literal|"#0f821e"
+literal|"#32c814"
 argument_list|)
 expr_stmt|;
 comment|//6ec814, 96f028
