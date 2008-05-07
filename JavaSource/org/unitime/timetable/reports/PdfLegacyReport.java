@@ -483,7 +483,13 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.pdf.examreport.author"
 argument_list|,
-literal|"UniTime 3.0."
+literal|"UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
 operator|+
 name|Constants
 operator|.
@@ -511,7 +517,13 @@ name|iDoc
 operator|.
 name|addCreator
 argument_list|(
-literal|"UniTime 3.0."
+literal|"UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
 operator|+
 name|Constants
 operator|.
@@ -1182,7 +1194,13 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.pdf.examreport.author"
 argument_list|,
-literal|"UniTime 3.0."
+literal|"UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
 operator|+
 name|Constants
 operator|.
