@@ -4558,6 +4558,7 @@ literal|0
 operator|)
 argument_list|)
 expr_stmt|;
+break|break;
 case|case
 name|Exam
 operator|.
