@@ -1725,7 +1725,7 @@ name|setProperty
 argument_list|(
 literal|"Data.Initiative"
 argument_list|,
-literal|"puWestLafayetteTrdtn"
+literal|"woebegon"
 argument_list|)
 expr_stmt|;
 name|cfg
