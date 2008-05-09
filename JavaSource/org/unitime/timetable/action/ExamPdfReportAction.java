@@ -1334,7 +1334,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:
@@ -3254,7 +3254,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:
@@ -3708,7 +3708,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:
@@ -4082,7 +4082,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:
@@ -4493,7 +4493,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:
@@ -4700,7 +4700,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:
@@ -4741,7 +4741,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:

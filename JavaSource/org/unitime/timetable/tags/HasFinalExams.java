@@ -66,7 +66,7 @@ specifier|public
 class|class
 name|HasFinalExams
 extends|extends
-name|HasEveningExams
+name|HasMidtermExams
 block|{
 specifier|public
 name|boolean

@@ -214,7 +214,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Event
+name|CourseEvent
 name|event
 parameter_list|,
 name|org

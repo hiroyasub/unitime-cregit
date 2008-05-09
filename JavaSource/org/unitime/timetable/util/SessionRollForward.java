@@ -9973,7 +9973,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|rollEveningExamsForward
+name|rollMidtermExamsForward
 parameter_list|(
 name|ActionMessages
 name|errors
@@ -10006,7 +10006,7 @@ name|toSession
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 decl_stmt|;
 for|for
@@ -10081,7 +10081,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.rollForward"
 argument_list|,
-literal|"Evening Exam"
+literal|"Midterm Exam"
 argument_list|,
 literal|"previous session"
 argument_list|,
@@ -10090,7 +10090,7 @@ operator|.
 name|getLabel
 argument_list|()
 argument_list|,
-literal|"Failed to roll all evening exams forward."
+literal|"Failed to roll all midterm exams forward."
 argument_list|)
 argument_list|)
 expr_stmt|;

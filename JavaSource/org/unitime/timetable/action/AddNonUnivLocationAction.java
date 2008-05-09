@@ -1114,7 +1114,7 @@ name|setExamEnabled
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|,
 name|Boolean
 operator|.

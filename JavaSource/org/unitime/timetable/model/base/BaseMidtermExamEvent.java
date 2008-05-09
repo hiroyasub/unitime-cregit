@@ -1,8 +1,4 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
-begin_comment
-comment|/*   * UniTime 3.1 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2008, UniTime.org  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.  */
-end_comment
-
 begin_package
 package|package
 name|org
@@ -28,14 +24,14 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is an object that contains data related to the EVENT_TYPE table.  * Do not modify this class because it will be overwritten if the configuration file  * related to this class is modified.  *  * @hibernate.class  *  table="EVENT_TYPE"  */
+comment|/**  * This is an object that contains data related to the EVENT table.  * Do not modify this class because it will be overwritten if the configuration file  * related to this class is modified.  *  * @hibernate.class  *  table="EVENT"  */
 end_comment
 
 begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseEventType
+name|BaseMidtermExamEvent
 extends|extends
 name|org
 operator|.
@@ -45,7 +41,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|RefTableEntry
+name|ExamEvent
 implements|implements
 name|Serializable
 block|{
@@ -54,11 +50,11 @@ specifier|static
 name|String
 name|REF
 init|=
-literal|"EventType"
+literal|"MidtermExamEvent"
 decl_stmt|;
 comment|// constructors
 specifier|public
-name|BaseEventType
+name|BaseMidtermExamEvent
 parameter_list|()
 block|{
 name|initialize
@@ -67,7 +63,7 @@ expr_stmt|;
 block|}
 comment|/** 	 * Constructor for primary key 	 */
 specifier|public
-name|BaseEventType
+name|BaseMidtermExamEvent
 parameter_list|(
 name|java
 operator|.
@@ -85,7 +81,7 @@ expr_stmt|;
 block|}
 comment|/** 	 * Constructor for required fields 	 */
 specifier|public
-name|BaseEventType
+name|BaseMidtermExamEvent
 parameter_list|(
 name|java
 operator|.
@@ -98,15 +94,24 @@ name|java
 operator|.
 name|lang
 operator|.
-name|String
-name|reference
+name|Integer
+name|minCapacity
+parameter_list|,
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|maxCapacity
 parameter_list|)
 block|{
 name|super
 argument_list|(
 name|uniqueId
 argument_list|,
-name|reference
+name|minCapacity
+argument_list|,
+name|maxCapacity
 argument_list|)
 expr_stmt|;
 block|}
@@ -149,7 +154,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|EventType
+name|MidtermExamEvent
 operator|)
 condition|)
 return|return
@@ -165,8 +170,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|EventType
-name|eventType
+name|MidtermExamEvent
+name|midtermExamEvent
 init|=
 operator|(
 name|org
@@ -177,7 +182,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|EventType
+name|MidtermExamEvent
 operator|)
 name|obj
 decl_stmt|;
@@ -192,7 +197,7 @@ argument_list|()
 operator|||
 literal|null
 operator|==
-name|eventType
+name|midtermExamEvent
 operator|.
 name|getUniqueId
 argument_list|()
@@ -210,7 +215,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|eventType
+name|midtermExamEvent
 operator|.
 name|getUniqueId
 argument_list|()

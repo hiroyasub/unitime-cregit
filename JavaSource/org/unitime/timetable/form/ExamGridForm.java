@@ -392,7 +392,7 @@ literal|false
 decl_stmt|;
 specifier|private
 name|boolean
-name|iHasEveningExams
+name|iHasMidtermExams
 init|=
 literal|false
 decl_stmt|;
@@ -845,11 +845,11 @@ block|{
 block|}
 try|try
 block|{
-name|iHasEveningExams
+name|iHasMidtermExams
 operator|=
 name|Exam
 operator|.
-name|hasEveningExams
+name|hasMidtermExams
 argument_list|(
 name|Session
 operator|.
@@ -2560,10 +2560,10 @@ name|i
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 operator|&&
 operator|!
-name|iHasEveningExams
+name|iHasMidtermExams
 condition|)
 continue|continue;
 name|ret

@@ -239,7 +239,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 import|;
 end_import
 
@@ -1272,14 +1272,14 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|)
 block|{
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 name|epx
 init|=
 operator|new
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 argument_list|(
 name|exam
 operator|.
@@ -1882,14 +1882,14 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|)
 block|{
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 name|epx
 init|=
 operator|new
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 argument_list|(
 name|exam
 operator|.

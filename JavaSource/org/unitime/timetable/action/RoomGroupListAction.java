@@ -1858,7 +1858,7 @@ name|examType
 operator|=
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 expr_stmt|;
 name|boolean
 name|haveGlobalRoomGroup
@@ -3552,7 +3552,7 @@ name|examType
 operator|=
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 expr_stmt|;
 name|boolean
 name|haveGlobalRoomGroup

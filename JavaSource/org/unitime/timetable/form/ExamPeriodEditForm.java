@@ -1822,7 +1822,7 @@ name|request
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 decl_stmt|;
 name|Integer
@@ -2224,7 +2224,7 @@ name|setExamType
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 name|ep
@@ -2299,7 +2299,7 @@ name|setExamType
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 name|ep
@@ -3028,7 +3028,7 @@ argument_list|()
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 decl_stmt|;
 for|for
@@ -3624,7 +3624,7 @@ literal|","
 operator|+
 literal|"['1','0'],"
 operator|+
-literal|"['Evening exams offered','Evening exams not offered'],"
+literal|"['Midterm exams offered','Midterm exams not offered'],"
 operator|+
 literal|"['rgb(240,240,50)','rgb(240,240,240)'],"
 operator|+

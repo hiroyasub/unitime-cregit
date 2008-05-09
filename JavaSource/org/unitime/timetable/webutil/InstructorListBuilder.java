@@ -1704,7 +1704,7 @@ name|examName
 init|=
 name|exam
 operator|.
-name|getName
+name|getLabel
 argument_list|()
 decl_stmt|;
 name|String
@@ -1721,7 +1721,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|)
 block|{
 name|examsStr
@@ -1730,7 +1730,7 @@ literal|"<span title='"
 operator|+
 name|examName
 operator|+
-literal|" Evening Exam'>"
+literal|" Midterm Exam'>"
 operator|+
 name|examName
 operator|+
@@ -3350,7 +3350,7 @@ name|examName
 init|=
 name|exam
 operator|.
-name|getName
+name|getLabel
 argument_list|()
 decl_stmt|;
 name|String
@@ -3367,7 +3367,7 @@ argument_list|()
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|)
 block|{
 name|examsStr

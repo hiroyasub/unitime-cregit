@@ -5527,7 +5527,7 @@ name|sExamTypeFinal
 else|:
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 operator|)
 decl_stmt|;
 name|int
@@ -5710,7 +5710,7 @@ name|examType
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|?
 literal|"evn"
 else|:

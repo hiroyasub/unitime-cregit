@@ -321,7 +321,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 import|;
 end_import
 
@@ -1186,7 +1186,7 @@ name|isExamEnabled
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1352,7 +1352,7 @@ if|if
 condition|(
 name|Exam
 operator|.
-name|hasEveningExams
+name|hasMidtermExams
 argument_list|(
 name|location
 operator|.
@@ -1364,11 +1364,11 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 name|epx
 init|=
 operator|new
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 argument_list|(
 name|location
 operator|.
@@ -1420,7 +1420,7 @@ argument_list|()
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 name|px
@@ -2449,7 +2449,7 @@ name|setExamEnabled
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|,
 name|editRoomForm
 operator|.
@@ -2727,7 +2727,7 @@ if|if
 condition|(
 name|Exam
 operator|.
-name|hasEveningExams
+name|hasMidtermExams
 argument_list|(
 name|location
 operator|.
@@ -2744,15 +2744,15 @@ name|isExamEnabled
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 condition|)
 block|{
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 name|epx
 init|=
 operator|new
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 argument_list|(
 name|location
 operator|.
@@ -2812,7 +2812,7 @@ argument_list|()
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 decl_stmt|;
 name|RequiredTimeTable
@@ -2855,7 +2855,7 @@ name|clearExamPreferences
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 block|}
@@ -3279,7 +3279,7 @@ name|setExamEnabled
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|,
 name|editRoomForm
 operator|.

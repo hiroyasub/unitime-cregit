@@ -1837,9 +1837,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select m from Meeting m where "
-operator|+
-literal|"m.eventType.reference=:eventType and "
+literal|"select m from ClassEvent e inner join e.meetings m where "
 operator|+
 literal|"m.meetingDate=:startDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot"
 argument_list|)
@@ -1870,15 +1868,6 @@ name|getEndSlot
 argument_list|()
 operator|+
 name|nrTravelSlots
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
 argument_list|)
 operator|.
 name|setCacheable
@@ -1930,13 +1919,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select m from Meeting m inner join m.event.relatedCourses r where "
-operator|+
-literal|"m.eventType.reference=:eventType and "
+literal|"select m from ClassEvent e inner join e.meetings m where "
 operator|+
 literal|"m.meetingDate=:startDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and "
 operator|+
-literal|"r.ownerType=:classType and r.ownerId=:classId"
+literal|"e.clazz.uniqueId=:classId"
 argument_list|)
 operator|.
 name|setDate
@@ -1965,24 +1952,6 @@ name|getEndSlot
 argument_list|()
 operator|+
 name|nrTravelSlots
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"classType"
-argument_list|,
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
 argument_list|)
 operator|.
 name|setLong

@@ -632,7 +632,7 @@ name|examType
 operator|=
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 expr_stmt|;
 end_if_stmt
 

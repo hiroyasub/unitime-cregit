@@ -526,7 +526,7 @@ name|setExamType
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 block|}
@@ -635,7 +635,7 @@ name|setExamType
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 block|}
@@ -867,13 +867,13 @@ name|examType
 operator|==
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 condition|)
 name|myForm
 operator|.
 name|setName
 argument_list|(
-literal|"Evening Examination Rooms"
+literal|"Midterm Examination Rooms"
 argument_list|)
 expr_stmt|;
 else|else

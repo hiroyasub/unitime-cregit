@@ -749,7 +749,7 @@ literal|0
 operator|&&
 name|rollForwardSessionForm
 operator|.
-name|getRollForwardEveningExams
+name|getRollForwardMidtermExams
 argument_list|()
 operator|.
 name|booleanValue
@@ -758,7 +758,7 @@ condition|)
 block|{
 name|sessionRollForward
 operator|.
-name|rollEveningExamsForward
+name|rollMidtermExamsForward
 argument_list|(
 name|errors
 argument_list|,

@@ -434,7 +434,7 @@ name|sessionToRollExamConfigurationForwardFrom
 decl_stmt|;
 specifier|private
 name|Boolean
-name|rollForwardEveningExams
+name|rollForwardMidtermExams
 decl_stmt|;
 specifier|private
 name|Boolean
@@ -1166,7 +1166,7 @@ name|errors
 argument_list|,
 name|s
 argument_list|,
-literal|"Evening Exams"
+literal|"Midterm Exams"
 argument_list|,
 name|eDao
 operator|.
@@ -1186,7 +1186,7 @@ literal|" and e.examType = "
 operator|+
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 operator|.
 name|list
@@ -1457,7 +1457,7 @@ name|sessionToRollExamConfigurationForwardFrom
 operator|=
 literal|null
 expr_stmt|;
-name|rollForwardEveningExams
+name|rollForwardMidtermExams
 operator|=
 operator|new
 name|Boolean
@@ -2294,26 +2294,26 @@ expr_stmt|;
 block|}
 specifier|public
 name|Boolean
-name|getRollForwardEveningExams
+name|getRollForwardMidtermExams
 parameter_list|()
 block|{
 return|return
-name|rollForwardEveningExams
+name|rollForwardMidtermExams
 return|;
 block|}
 specifier|public
 name|void
-name|setRollForwardEveningExams
+name|setRollForwardMidtermExams
 parameter_list|(
 name|Boolean
-name|rollForwardEveningExams
+name|rollForwardMidtermExams
 parameter_list|)
 block|{
 name|this
 operator|.
-name|rollForwardEveningExams
+name|rollForwardMidtermExams
 operator|=
-name|rollForwardEveningExams
+name|rollForwardMidtermExams
 expr_stmt|;
 block|}
 specifier|public

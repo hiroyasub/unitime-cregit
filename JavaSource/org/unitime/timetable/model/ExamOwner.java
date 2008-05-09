@@ -4148,13 +4148,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select e.student.uniqueId, m from Meeting m inner join m.event.relatedCourses r, StudentClassEnrollment f, StudentClassEnrollment e inner join e.clazz c, ExamPeriod p "
+literal|"select e.student.uniqueId, m from ClassEvent ce inner join ce.meetings m inner join ce.clazz.studentEnrollments f, StudentClassEnrollment e inner join e.clazz c, ExamPeriod p "
 operator|+
-literal|"where c.uniqueId = :examOwnerId and "
-operator|+
-literal|"m.eventType.reference=:eventType and r.ownerType=:classType and "
-operator|+
-literal|"e.student=f.student and f.clazz.uniqueId = r.ownerId and "
+literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -4167,24 +4163,6 @@ literal|"examOwnerId"
 argument_list|,
 name|getOwnerId
 argument_list|()
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"classType"
-argument_list|,
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
 argument_list|)
 operator|.
 name|setInteger
@@ -4315,13 +4293,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select e.student.uniqueId, m from Meeting m inner join m.event.relatedCourses r, StudentClassEnrollment f, StudentClassEnrollment e inner join e.clazz c, ExamPeriod p "
+literal|"select e.student.uniqueId, m from ClassEvent ce inner join ce.meetings m inner join ce.clazz.studentEnrollments f, StudentClassEnrollment e inner join e.clazz c, ExamPeriod p "
 operator|+
-literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId and "
-operator|+
-literal|"m.eventType.reference=:eventType and r.ownerType=:classType and "
-operator|+
-literal|"e.student=f.student and f.clazz.uniqueId = r.ownerId and "
+literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -4334,24 +4308,6 @@ literal|"examOwnerId"
 argument_list|,
 name|getOwnerId
 argument_list|()
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"classType"
-argument_list|,
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
 argument_list|)
 operator|.
 name|setInteger
@@ -4482,13 +4438,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select e.student.uniqueId, m from Meeting m inner join m.event.relatedCourses r, StudentClassEnrollment f, StudentClassEnrollment e inner join e.courseOffering co, ExamPeriod p "
+literal|"select e.student.uniqueId, m from ClassEvent ce inner join ce.meetings m inner join ce.clazz.studentEnrollments f, StudentClassEnrollment e inner join e.courseOffering co, ExamPeriod p "
 operator|+
-literal|"where co.uniqueId = :examOwnerId and "
-operator|+
-literal|"m.eventType.reference=:eventType and r.ownerType=:classType and "
-operator|+
-literal|"e.student=f.student and f.clazz.uniqueId = r.ownerId and "
+literal|"where co.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -4501,24 +4453,6 @@ literal|"examOwnerId"
 argument_list|,
 name|getOwnerId
 argument_list|()
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"classType"
-argument_list|,
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
 argument_list|)
 operator|.
 name|setInteger
@@ -4649,13 +4583,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select e.student.uniqueId, m from Meeting m inner join m.event.relatedCourses r, StudentClassEnrollment f, StudentClassEnrollment e inner join e.courseOffering co, ExamPeriod p "
+literal|"select e.student.uniqueId, m from ClassEvent ce inner join ce.meetings m inner join ce.clazz.studentEnrollments f, StudentClassEnrollment e inner join e.courseOffering co, ExamPeriod p "
 operator|+
-literal|"where co.instructionalOffering.uniqueId = :examOwnerId and "
-operator|+
-literal|"m.eventType.reference=:eventType and r.ownerType=:classType and "
-operator|+
-literal|"e.student=f.student and f.clazz.uniqueId = r.ownerId and "
+literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -4668,24 +4598,6 @@ literal|"examOwnerId"
 argument_list|,
 name|getOwnerId
 argument_list|()
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"classType"
-argument_list|,
-name|ExamOwner
-operator|.
-name|sOwnerTypeClass
 argument_list|)
 operator|.
 name|setInteger
@@ -5741,7 +5653,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Basic codes      * s ... subject area      * c ... course number      * i ... itype abbv      * n ... section number      * x ... configuration name      * Additional codes      * d ... department abbv      * a ... class suffix (div-sec number)      * y ... itype suffix (a, b etc.)      * e ... class external id      * f ... course external id      * o ... offering external id      * t ... exam type suffix (tmtbl.exam.name.type.final and tmtbl.exam.name.type.evening)      * I ... itype code      * p ... itype parent abbv      * P ... itype parent code      * _ ... space      */
+comment|/**      * Basic codes      * s ... subject area      * c ... course number      * i ... itype abbv      * n ... section number      * x ... configuration name      * Additional codes      * d ... department abbv      * a ... class suffix (div-sec number)      * y ... itype suffix (a, b etc.)      * e ... class external id      * f ... course external id      * o ... offering external id      * t ... exam type suffix (tmtbl.exam.name.type.Final and tmtbl.exam.name.type.Midterm)      * I ... itype code      * p ... itype parent abbv      * P ... itype parent code      * _ ... space      */
 specifier|protected
 name|String
 name|genName

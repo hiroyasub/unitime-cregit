@@ -258,18 +258,6 @@ operator|.
 name|ExamPeriod
 name|assignedPeriod
 decl_stmt|;
-specifier|private
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Event
-name|event
-decl_stmt|;
 comment|// collections
 specifier|private
 name|java
@@ -691,48 +679,6 @@ operator|.
 name|assignedPeriod
 operator|=
 name|assignedPeriod
-expr_stmt|;
-block|}
-comment|/** 	 * Return the value associated with the column: EVENT_ID 	 */
-specifier|public
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Event
-name|getEvent
-parameter_list|()
-block|{
-return|return
-name|event
-return|;
-block|}
-comment|/** 	 * Set the value related to the column: EVENT_ID 	 * @param event the EVENT_ID value 	 */
-specifier|public
-name|void
-name|setEvent
-parameter_list|(
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Event
-name|event
-parameter_list|)
-block|{
-name|this
-operator|.
-name|event
-operator|=
-name|event
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: owners 	 */

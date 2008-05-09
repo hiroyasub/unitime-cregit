@@ -182,7 +182,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 block|{
 specifier|private
 name|TreeSet
@@ -302,7 +302,7 @@ literal|"EEE MM/dd"
 argument_list|)
 decl_stmt|;
 specifier|public
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 parameter_list|(
 name|Session
 name|session
@@ -317,7 +317,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|EveningPeriodPreferenceModel
+name|MidtermPeriodPreferenceModel
 parameter_list|(
 name|Session
 name|session
@@ -365,7 +365,7 @@ argument_list|()
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 for|for
@@ -1372,7 +1372,7 @@ name|clearExamPreferences
 argument_list|(
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 expr_stmt|;
 for|for

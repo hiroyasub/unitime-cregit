@@ -578,7 +578,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"Evening Periods"
+literal|"Midterm Periods"
 operator|.
 name|equals
 argument_list|(
@@ -608,7 +608,7 @@ name|sExamTypes
 index|[
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 index|]
 argument_list|)
 expr_stmt|;
@@ -1223,7 +1223,7 @@ operator|.
 name|getAutoSetup
 argument_list|()
 condition|?
-literal|"evening"
+literal|"midterm"
 else|:
 name|myForm
 operator|.

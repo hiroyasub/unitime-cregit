@@ -263,6 +263,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ClassEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|ClassInstructor
 import|;
 end_import
@@ -320,20 +334,6 @@ operator|.
 name|model
 operator|.
 name|Event
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|EventType
 import|;
 end_import
 
@@ -1179,7 +1179,7 @@ name|model
 operator|.
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 operator|==
 name|iExamType
 condition|)
@@ -2322,7 +2322,7 @@ name|model
 operator|.
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 operator|&&
 name|minSize
 operator|>
@@ -5203,22 +5203,13 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct e, p.uniqueId, m from Event e inner join e.meetings m, ExamPeriod p where "
+literal|"select distinct e, p.uniqueId, m from ClassEvent e inner join e.meetings m, ExamPeriod p where "
 operator|+
-literal|"m.eventType.reference=:eventType and p.session.uniqueId=:sessionId and p.examType=:examType and "
+literal|"p.session.uniqueId=:sessionId and p.examType=:examType and "
 operator|+
 literal|"p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
 literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventType"
-argument_list|,
-name|EventType
-operator|.
-name|sEventTypeClass
 argument_list|)
 operator|.
 name|setInteger
@@ -5268,10 +5259,7 @@ name|Hashtable
 argument_list|<
 name|Event
 argument_list|,
-name|Set
-argument_list|<
-name|Long
-argument_list|>
+name|List
 argument_list|>
 name|students
 init|=
@@ -5346,11 +5334,11 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|Event
+name|ClassEvent
 name|event
 init|=
 operator|(
-name|Event
+name|ClassEvent
 operator|)
 name|o
 index|[
@@ -5391,10 +5379,7 @@ operator|==
 literal|null
 condition|)
 continue|continue;
-name|Set
-argument_list|<
-name|Long
-argument_list|>
+name|List
 name|studentsThisEvent
 init|=
 name|students
@@ -5611,10 +5596,19 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|Long
-name|studentId
-range|:
+name|Iterator
+name|j
+init|=
 name|studentsThisEvent
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|j
+operator|.
+name|hasNext
+argument_list|()
+condition|;
 control|)
 block|{
 name|ExamStudent
@@ -5627,7 +5621,13 @@ name|iStudents
 operator|.
 name|get
 argument_list|(
-name|studentId
+operator|(
+name|Long
+operator|)
+name|j
+operator|.
+name|next
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -6979,7 +6979,7 @@ name|sFinalExamType
 else|:
 name|RoomAvailabilityInterface
 operator|.
-name|sEveningExamType
+name|sMidtermExamType
 operator|)
 block|}
 argument_list|)

@@ -1774,7 +1774,7 @@ name|examType
 operator|=
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 expr_stmt|;
 if|if
 condition|(
@@ -3370,7 +3370,7 @@ name|examType
 operator|=
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 expr_stmt|;
 name|boolean
 name|splitRows

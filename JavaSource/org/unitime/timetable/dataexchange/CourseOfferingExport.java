@@ -880,7 +880,7 @@ literal|"all"
 argument_list|)
 argument_list|)
 operator|||
-literal|"evening"
+literal|"midterm"
 operator|.
 name|equals
 argument_list|(
@@ -914,7 +914,7 @@ argument_list|()
 argument_list|,
 name|Exam
 operator|.
-name|sExamTypeEvening
+name|sExamTypeMidterm
 argument_list|)
 argument_list|)
 operator|.
@@ -4014,7 +4014,7 @@ name|sExamTypeFinal
 condition|?
 literal|"final"
 else|:
-literal|"evening"
+literal|"midterm"
 argument_list|)
 expr_stmt|;
 name|Element

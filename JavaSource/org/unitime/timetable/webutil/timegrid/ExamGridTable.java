@@ -9189,7 +9189,7 @@ name|sFinalExamType
 else|:
 name|RoomAvailabilityInterface
 operator|.
-name|sEveningExamType
+name|sMidtermExamType
 operator|)
 block|}
 argument_list|)

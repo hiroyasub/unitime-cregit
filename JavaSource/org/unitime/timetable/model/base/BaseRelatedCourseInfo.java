@@ -111,7 +111,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Event
+name|CourseEvent
 name|event
 parameter_list|,
 name|org
@@ -229,7 +229,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Event
+name|CourseEvent
 name|event
 decl_stmt|;
 specifier|private
@@ -364,7 +364,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Event
+name|CourseEvent
 name|getEvent
 parameter_list|()
 block|{
@@ -385,7 +385,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Event
+name|CourseEvent
 name|event
 parameter_list|)
 block|{
