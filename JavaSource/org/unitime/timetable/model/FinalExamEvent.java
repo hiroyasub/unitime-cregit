@@ -107,15 +107,12 @@ expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
-name|String
-name|getEventTypeLabel
+name|int
+name|getEventType
 parameter_list|()
 block|{
 return|return
-name|sEventTypes
-index|[
 name|sEventTypeFinalExam
-index|]
 return|;
 block|}
 block|}

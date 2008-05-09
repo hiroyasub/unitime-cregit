@@ -333,15 +333,12 @@ name|instructors
 return|;
 block|}
 specifier|public
-name|String
-name|getEventTypeLabel
+name|int
+name|getEventType
 parameter_list|()
 block|{
 return|return
-name|sEventTypes
-index|[
 name|sEventTypeClass
-index|]
 return|;
 block|}
 block|}

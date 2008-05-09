@@ -159,6 +159,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|Event
 extends|extends
@@ -304,52 +305,42 @@ literal|"Special Event"
 block|}
 decl_stmt|;
 specifier|public
+specifier|abstract
+name|int
+name|getEventType
+parameter_list|()
+function_decl|;
+specifier|public
 name|String
 name|getEventTypeLabel
 parameter_list|()
 block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"Method not implemented."
-argument_list|)
-throw|;
+return|return
+name|sEventTypes
+index|[
+name|getEventType
+argument_list|()
+index|]
+return|;
 block|}
 specifier|public
+specifier|abstract
 name|Set
 argument_list|<
 name|Student
 argument_list|>
 name|getStudents
 parameter_list|()
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"Method not implemented."
-argument_list|)
-throw|;
-block|}
-comment|/*     public Set<Long> getStudentIds() {         HashSet<Long> students = new HashSet();         for (Iterator<?> i=getRelatedCourses().iterator();i.hasNext();)             students.addAll(((RelatedCourseInfo)i.next()).getStudentIds());         return students;     }     */
+function_decl|;
 specifier|public
+specifier|abstract
 name|Set
 argument_list|<
 name|DepartmentalInstructor
 argument_list|>
 name|getInstructors
 parameter_list|()
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"Method not implemented."
-argument_list|)
-throw|;
-block|}
-comment|/*     public int countStudents() {         int nrStudents = 0;         for (Iterator i=getRelatedCourses().iterator();i.hasNext();)             nrStudents += ((RelatedCourseInfo)i.next()).countStudents();         return nrStudents;             }     */
+function_decl|;
 specifier|public
 specifier|static
 name|void
