@@ -1730,7 +1730,7 @@ literal|"<span title='"
 operator|+
 name|examName
 operator|+
-literal|" Midterm Exam'>"
+literal|" Midterm Examination'>"
 operator|+
 name|examName
 operator|+
@@ -1745,7 +1745,7 @@ literal|"<span style='font-weight:bold;' title='"
 operator|+
 name|examName
 operator|+
-literal|" Final Exam'>"
+literal|" Final Examination'>"
 operator|+
 name|examName
 operator|+
