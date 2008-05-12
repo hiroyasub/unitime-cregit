@@ -996,7 +996,7 @@ operator|.
 name|getStatusType
 argument_list|()
 operator|.
-name|canExamView
+name|canNoRoleReport
 argument_list|()
 operator|||
 operator|!
@@ -1173,7 +1173,7 @@ operator|.
 name|getStatusType
 argument_list|()
 operator|.
-name|canExamView
+name|canNoRoleReport
 argument_list|()
 operator|||
 operator|!
