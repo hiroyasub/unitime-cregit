@@ -832,6 +832,11 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+name|e
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|tx
@@ -1138,6 +1143,8 @@ name|myForm
 operator|.
 name|delete
 argument_list|(
+name|request
+argument_list|,
 name|hibSession
 argument_list|)
 expr_stmt|;
@@ -1153,6 +1160,11 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+name|e
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|tx
