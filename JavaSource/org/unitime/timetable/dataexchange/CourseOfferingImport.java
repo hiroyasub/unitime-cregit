@@ -14382,6 +14382,13 @@ argument_list|()
 decl_stmt|;
 name|newEvent
 operator|.
+name|setClazz
+argument_list|(
+name|c
+argument_list|)
+expr_stmt|;
+name|newEvent
+operator|.
 name|setMaxCapacity
 argument_list|(
 name|c
