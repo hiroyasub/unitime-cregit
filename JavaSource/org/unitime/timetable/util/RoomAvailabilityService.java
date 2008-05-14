@@ -1121,6 +1121,15 @@ init|(
 name|cache
 init|)
 block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Activate: waiting for update of "
+operator|+
+name|time
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|cache
@@ -1860,7 +1869,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-specifier|synchronized
 name|void
 name|update
 parameter_list|(
@@ -1939,12 +1947,12 @@ argument_list|)
 expr_stmt|;
 name|sleep
 argument_list|(
-literal|500
+literal|5000
 argument_list|)
 expr_stmt|;
 name|waited
 operator|+=
-literal|500
+literal|5000
 expr_stmt|;
 if|if
 condition|(
@@ -1981,11 +1989,7 @@ name|sLog
 operator|.
 name|debug
 argument_list|(
-literal|"Reading response "
-operator|+
-name|iResponseFile
-operator|+
-literal|"..."
+literal|"Reading response..."
 argument_list|)
 expr_stmt|;
 synchronized|synchronized
