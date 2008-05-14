@@ -809,6 +809,23 @@ condition|(
 name|iItype
 condition|)
 block|{
+if|if
+condition|(
+name|iExternal
+condition|)
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subj CrsNr ExtID Sct Date    Time          | Subj CrsNr ExtID Sct Date    Time          | Subj CrsNr ExtID Sct Date    Time         "
+block|,
+literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- -------------"
+block|}
+argument_list|)
+expr_stmt|;
+else|else
 name|setHeader
 argument_list|(
 operator|new
@@ -1839,6 +1856,23 @@ condition|(
 name|iItype
 condition|)
 block|{
+if|if
+condition|(
+name|iExternal
+condition|)
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subj CrsNr ExtID Sct Date    Time          Bldg  Room  Bldg  Room | Subj CrsNr ExtID Sct Date    Time          Bldg  Room  Bldg  Room"
+block|,
+literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---- ----- ----- --- ------- ------------- ----- ----- ----- ----"
+block|}
+argument_list|)
+expr_stmt|;
+else|else
 name|setHeader
 argument_list|(
 operator|new

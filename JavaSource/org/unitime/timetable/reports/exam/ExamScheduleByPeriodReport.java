@@ -271,6 +271,10 @@ operator|+
 operator|(
 name|iItype
 condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
 literal|"InsTyp "
 else|:
 literal|""
