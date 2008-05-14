@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -102,6 +112,17 @@ name|getAssignmentInfo
 parameter_list|(
 name|long
 name|examId
+parameter_list|)
+function_decl|;
+specifier|public
+name|TreeSet
+argument_list|<
+name|ExamAssignment
+argument_list|>
+name|getExamsOfRoom
+parameter_list|(
+name|long
+name|locationId
 parameter_list|)
 function_decl|;
 specifier|public
