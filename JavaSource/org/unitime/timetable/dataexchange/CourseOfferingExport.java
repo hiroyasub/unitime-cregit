@@ -1303,16 +1303,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|info
-argument_list|(
-literal|"  -- "
-operator|+
-name|io
-operator|.
-name|getCourseName
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|exportInstructionalOffering
 argument_list|(
 name|root
