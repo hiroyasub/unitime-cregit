@@ -1337,7 +1337,15 @@ return|;
 name|String
 name|n
 init|=
+operator|(
 name|name
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+name|name
+operator|)
 operator|.
 name|toUpperCase
 argument_list|()
