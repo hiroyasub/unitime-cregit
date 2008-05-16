@@ -244,6 +244,22 @@ name|sIndividualMore2ADayInstructorConflicts
 init|=
 literal|"Individual More Than 2 Exams A Day Instructor Conflicts"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualStudentSchedule
+init|=
+literal|"Individual Student Schedule"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|sIndividualInstructorSchedule
+init|=
+literal|"Individual Instructor Schedule"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -270,6 +286,8 @@ name|sMore2ADayStudentConflicts
 block|,
 name|sBackToBackStudentConflicts
 block|,
+name|sIndividualStudentSchedule
+block|,
 name|sIndividualStudentConflicts
 block|,
 name|sIndividualDirectStudentConflicts
@@ -283,6 +301,8 @@ block|,
 name|sMore2ADayInstructorConflicts
 block|,
 name|sBackToBackInstructorConflicts
+block|,
+name|sIndividualInstructorSchedule
 block|,
 name|sIndividualInstructorConflicts
 block|,
