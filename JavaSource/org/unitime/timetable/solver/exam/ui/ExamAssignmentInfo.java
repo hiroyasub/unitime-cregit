@@ -4331,7 +4331,7 @@ name|containsAll
 argument_list|(
 name|r
 argument_list|)
-operator|||
+operator|&&
 operator|!
 name|r
 operator|.
