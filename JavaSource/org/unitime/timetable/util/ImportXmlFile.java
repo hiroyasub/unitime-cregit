@@ -119,9 +119,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|dataexchange
 operator|.
-name|DataImportForm
+name|DataExchangeHelper
 import|;
 end_import
 
@@ -207,11 +207,13 @@ argument_list|(
 name|fis
 argument_list|)
 decl_stmt|;
-name|DataImportForm
+name|DataExchangeHelper
 operator|.
 name|importDocument
 argument_list|(
 name|document
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|)

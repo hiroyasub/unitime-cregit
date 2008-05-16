@@ -153,9 +153,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|dataexchange
 operator|.
-name|DataImportForm
+name|DataExchangeHelper
 import|;
 end_import
 
@@ -370,11 +370,13 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
-name|DataImportForm
+name|DataExchangeHelper
 operator|.
 name|importDocument
 argument_list|(
 name|document
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|)
