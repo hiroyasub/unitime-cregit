@@ -876,17 +876,6 @@ name|int
 name|getLimit
 parameter_list|()
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"GET "
-operator|+
-name|iLimit
-argument_list|)
-expr_stmt|;
 return|return
 name|iLimit
 return|;
@@ -899,17 +888,6 @@ name|int
 name|limit
 parameter_list|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"SET "
-operator|+
-name|limit
-argument_list|)
-expr_stmt|;
 name|iLimit
 operator|=
 name|limit
