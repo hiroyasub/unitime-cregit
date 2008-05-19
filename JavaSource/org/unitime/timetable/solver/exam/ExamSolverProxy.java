@@ -272,6 +272,11 @@ name|save
 parameter_list|()
 function_decl|;
 specifier|public
+name|Date
+name|getLastUsed
+parameter_list|()
+function_decl|;
+specifier|public
 name|void
 name|start
 parameter_list|()
@@ -396,6 +401,9 @@ name|backup
 parameter_list|(
 name|File
 name|folder
+parameter_list|,
+name|String
+name|ownerId
 parameter_list|)
 function_decl|;
 specifier|public
@@ -404,6 +412,9 @@ name|restore
 parameter_list|(
 name|File
 name|folder
+parameter_list|,
+name|String
+name|ownerId
 parameter_list|)
 function_decl|;
 specifier|public
@@ -412,6 +423,9 @@ name|restore
 parameter_list|(
 name|File
 name|folder
+parameter_list|,
+name|String
+name|ownerId
 parameter_list|,
 name|boolean
 name|removeFiles

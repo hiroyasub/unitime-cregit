@@ -1997,6 +1997,13 @@ name|webSession
 operator|.
 name|removeAttribute
 argument_list|(
+literal|"ManageSolver.examPuid"
+argument_list|)
+expr_stmt|;
+name|webSession
+operator|.
+name|removeAttribute
+argument_list|(
 literal|"Solver.selectedSolutionId"
 argument_list|)
 expr_stmt|;
