@@ -1546,6 +1546,13 @@ name|sInfoKeys
 operator|.
 name|add
 argument_list|(
+literal|"Room Split Distance Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
 literal|"Room Size Penalty"
 argument_list|)
 expr_stmt|;
@@ -1561,6 +1568,13 @@ operator|.
 name|add
 argument_list|(
 literal|"Distribution Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Large Exams Penalty"
 argument_list|)
 expr_stmt|;
 name|sInfoKeys
