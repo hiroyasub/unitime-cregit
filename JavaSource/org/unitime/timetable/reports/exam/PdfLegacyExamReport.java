@@ -1093,9 +1093,23 @@ name|Exam
 operator|.
 name|sExamTypeFinal
 condition|?
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.report.final"
+argument_list|,
 literal|"FINAL"
+argument_list|)
 else|:
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.report.midterm"
+argument_list|,
 literal|"MIDTERM"
+argument_list|)
 operator|)
 operator|+
 literal|" EXAMINATIONS"
