@@ -4154,7 +4154,7 @@ literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session=co.subjectArea.session and p.session.examBeginDate+p.dateOffset = m.meetingDate"
+literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4299,7 +4299,7 @@ literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId a
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session=co.subjectArea.session and p.session.examBeginDate+p.dateOffset = m.meetingDate"
+literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4444,7 +4444,7 @@ literal|"where co.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session=co.subjectArea.session and p.session.examBeginDate+p.dateOffset = m.meetingDate"
+literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4589,7 +4589,7 @@ literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session=co.subjectArea.session and p.session.examBeginDate+p.dateOffset = m.meetingDate"
+literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
