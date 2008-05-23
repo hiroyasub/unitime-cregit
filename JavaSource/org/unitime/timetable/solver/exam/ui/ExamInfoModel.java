@@ -1568,6 +1568,11 @@ name|iExam
 operator|.
 name|getNrStudents
 argument_list|()
+operator|/
+name|iExam
+operator|.
+name|getMaxRooms
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
