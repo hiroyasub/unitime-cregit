@@ -1420,6 +1420,16 @@ name|iItype
 condition|?
 name|rpad
 argument_list|(
+name|iExternal
+condition|?
+name|conflict
+operator|.
+name|getOtherClass
+argument_list|()
+operator|.
+name|getExternalUniqueId
+argument_list|()
+else|:
 name|conflict
 operator|.
 name|getOtherClass
