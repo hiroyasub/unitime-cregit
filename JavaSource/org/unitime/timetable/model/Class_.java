@@ -8583,7 +8583,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from ClassEvent where clazz.uniqueId=:classId"
+literal|"select e from ClassEvent e left join fetch e.meetings m where e.clazz.uniqueId=:classId"
 argument_list|)
 operator|.
 name|setLong
