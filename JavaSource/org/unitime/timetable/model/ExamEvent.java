@@ -149,6 +149,19 @@ name|getInstructors
 argument_list|()
 return|;
 block|}
+specifier|public
+name|Session
+name|getSession
+parameter_list|()
+block|{
+return|return
+name|getExam
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
