@@ -292,7 +292,7 @@ name|sLog
 operator|.
 name|debug
 argument_list|(
-literal|"  Sorting sections ..."
+literal|"  Sorting sections..."
 argument_list|)
 expr_stmt|;
 name|Hashtable
@@ -454,6 +454,13 @@ else|:
 literal|""
 operator|)
 block|}
+argument_list|)
+expr_stmt|;
+name|sLog
+operator|.
+name|debug
+argument_list|(
+literal|"  Printing report..."
 argument_list|)
 expr_stmt|;
 name|printHeader

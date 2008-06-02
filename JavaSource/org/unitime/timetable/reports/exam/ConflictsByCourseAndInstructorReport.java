@@ -177,24 +177,6 @@ name|exam
 operator|.
 name|ui
 operator|.
-name|ExamInfo
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|solver
-operator|.
-name|exam
-operator|.
-name|ui
-operator|.
 name|ExamAssignmentInfo
 operator|.
 name|BackToBackConflict
@@ -384,7 +366,7 @@ name|sLog
 operator|.
 name|debug
 argument_list|(
-literal|"  Sorting sections ..."
+literal|"  Sorting sections..."
 argument_list|)
 expr_stmt|;
 name|Hashtable
@@ -404,13 +386,23 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|ExamInfo
+name|ExamAssignmentInfo
 name|exam
 range|:
 name|getExams
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|exam
+operator|.
+name|getPeriod
+argument_list|()
+operator|==
+literal|null
+condition|)
+continue|continue;
 for|for
 control|(
 name|ExamSectionInfo
@@ -496,6 +488,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|sLog
+operator|.
+name|debug
+argument_list|(
+literal|"  Printing report..."
+argument_list|)
+expr_stmt|;
 name|setHeader
 argument_list|(
 operator|new
