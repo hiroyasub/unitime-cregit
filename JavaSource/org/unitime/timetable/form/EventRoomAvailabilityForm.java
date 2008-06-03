@@ -177,20 +177,6 @@ name|MeetingDAO
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|webutil
-operator|.
-name|EventModel
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -198,10 +184,6 @@ name|EventRoomAvailabilityForm
 extends|extends
 name|ActionForm
 block|{
-specifier|private
-name|EventModel
-name|iModel
-decl_stmt|;
 specifier|private
 name|Long
 name|iSessionId
