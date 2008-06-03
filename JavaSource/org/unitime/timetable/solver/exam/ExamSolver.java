@@ -6487,7 +6487,7 @@ name|ExamPlacement
 operator|)
 name|exam
 operator|.
-name|getInitialAssignment
+name|getBestAssignment
 argument_list|()
 argument_list|)
 block|,
