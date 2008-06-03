@@ -37,18 +37,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|http
-operator|.
-name|HttpSession
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -125,18 +113,6 @@ name|unitime
 operator|.
 name|commons
 operator|.
-name|User
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
 name|web
 operator|.
 name|Web
@@ -156,6 +132,10 @@ operator|.
 name|EventAddForm
 import|;
 end_import
+
+begin_comment
+comment|/**  * @author Zuzana Mullerova  */
+end_comment
 
 begin_class
 specifier|public
@@ -184,6 +164,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+comment|//Collect initial info - form& model
 name|EventAddForm
 name|myForm
 init|=
@@ -192,6 +173,32 @@ name|EventAddForm
 operator|)
 name|form
 decl_stmt|;
+comment|/*        EventModel model = (EventModel)request.getSession().getAttribute("Event.model");         if (model==null) {             model = new EventModel();             request.getSession().setAttribute("Event.model", model);         } */
+comment|//		myForm.load(request.getSession());
+comment|//Verification of user being logged in
+if|if
+condition|(
+operator|!
+name|Web
+operator|.
+name|isLoggedIn
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|Exception
+argument_list|(
+literal|"Access Denied."
+argument_list|)
+throw|;
+block|}
+comment|//Operations
 name|String
 name|op
 init|=
@@ -232,6 +239,7 @@ argument_list|(
 literal|"op2"
 argument_list|)
 expr_stmt|;
+comment|// if a different session is selected, display calendar for this new session
 if|if
 condition|(
 name|op
@@ -310,6 +318,16 @@ name|getMeetingDates
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|myForm
+operator|.
+name|save
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 if|if
@@ -351,46 +369,38 @@ name|errors
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*else {         		System.out.println("Event dates:"+myForm.getMeetingDates());         	}*/
-block|}
-comment|//        System.out.println(">>> "+op+"<<<");
-name|HttpSession
-name|webSession
-init|=
+else|else
+block|{
+name|myForm
+operator|.
+name|save
+argument_list|(
 name|request
 operator|.
 name|getSession
 argument_list|()
-decl_stmt|;
-name|User
-name|user
-init|=
-name|Web
+argument_list|)
+expr_stmt|;
+name|response
 operator|.
-name|getUser
+name|sendRedirect
 argument_list|(
-name|webSession
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|Web
+name|response
 operator|.
-name|isLoggedIn
+name|encodeURL
 argument_list|(
-name|webSession
+literal|"eventRoomAvailability.do"
 argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
 argument_list|)
-throw|;
+expr_stmt|;
+comment|//        		return mapping.findForward("showEventRoomAvailability");
 block|}
+block|}
+comment|//test:        System.out.println(">>> "+op+"<<<");
+comment|//set the model
+comment|//        myForm.setModel(model);
+comment|//        model.apply(request, myForm);
+comment|//Display the page
 return|return
 name|mapping
 operator|.
