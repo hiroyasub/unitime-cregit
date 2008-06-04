@@ -2462,6 +2462,13 @@ argument_list|(
 name|clazz
 argument_list|)
 expr_stmt|;
+name|clazz
+operator|.
+name|setEvent
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
 block|}
 name|event
 operator|.

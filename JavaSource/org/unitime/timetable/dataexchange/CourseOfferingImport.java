@@ -14387,6 +14387,13 @@ argument_list|(
 name|c
 argument_list|)
 expr_stmt|;
+name|c
+operator|.
+name|setEvent
+argument_list|(
+name|newEvent
+argument_list|)
+expr_stmt|;
 name|newEvent
 operator|.
 name|setMaxCapacity
