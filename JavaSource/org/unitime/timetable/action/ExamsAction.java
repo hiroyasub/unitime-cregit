@@ -1038,7 +1038,42 @@ name|PdfWebTable
 argument_list|(
 literal|7
 argument_list|,
-literal|"Examinations"
+name|form
+operator|.
+name|getSessionLabel
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|form
+operator|.
+name|getExamTypeLabel
+argument_list|()
+operator|+
+literal|" examinations"
+operator|+
+operator|(
+literal|"--ALL--"
+operator|.
+name|equals
+argument_list|(
+name|form
+operator|.
+name|getSubjectArea
+argument_list|()
+argument_list|)
+condition|?
+literal|""
+else|:
+literal|" ("
+operator|+
+name|form
+operator|.
+name|getSubjectArea
+argument_list|()
+operator|+
+literal|")"
+operator|)
 argument_list|,
 literal|"exams.do?ord=%%"
 argument_list|,
@@ -1065,7 +1100,14 @@ literal|"false"
 argument_list|)
 argument_list|)
 condition|?
-literal|"ExtnId"
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.report.external.name"
+argument_list|,
+literal|"External Id"
+argument_list|)
 else|:
 literal|"InstTp"
 operator|)
