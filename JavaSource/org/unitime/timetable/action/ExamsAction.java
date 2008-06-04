@@ -463,14 +463,14 @@ if|if
 condition|(
 name|myForm
 operator|.
-name|getUser
+name|getUsername
 argument_list|()
 operator|!=
 literal|null
 operator|&&
 name|myForm
 operator|.
-name|getUser
+name|getUsername
 argument_list|()
 operator|.
 name|length
@@ -506,7 +506,7 @@ name|UserPasswordHandler
 argument_list|(
 name|myForm
 operator|.
-name|getUser
+name|getUsername
 argument_list|()
 argument_list|,
 name|myForm
@@ -714,10 +714,7 @@ name|myForm
 operator|.
 name|setMessage
 argument_list|(
-name|le
-operator|.
-name|getMessage
-argument_list|()
+literal|"Authentication failed"
 argument_list|)
 expr_stmt|;
 block|}

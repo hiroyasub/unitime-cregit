@@ -857,7 +857,7 @@ return|;
 block|}
 specifier|public
 name|String
-name|getUser
+name|getUsername
 parameter_list|()
 block|{
 return|return
@@ -866,7 +866,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|setUser
+name|setUsername
 parameter_list|(
 name|String
 name|user
