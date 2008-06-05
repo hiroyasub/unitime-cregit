@@ -1986,7 +1986,7 @@ operator|.
 name|getExamId
 argument_list|()
 operator|+
-literal|"','exams','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"','exams','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 argument_list|,
 operator|new
 name|String
