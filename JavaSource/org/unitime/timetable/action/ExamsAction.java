@@ -1109,7 +1109,7 @@ argument_list|,
 literal|"External Id"
 argument_list|)
 else|:
-literal|"InstTp"
+literal|"Instruction Type"
 operator|)
 block|,
 literal|"Section"
