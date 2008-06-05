@@ -742,6 +742,11 @@ name|op
 argument_list|)
 condition|)
 block|{
+synchronized|synchronized
+init|(
+name|model
+init|)
+block|{
 if|if
 condition|(
 name|request
@@ -850,6 +855,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 if|if
 condition|(
 literal|"Assign"
@@ -859,6 +865,11 @@ argument_list|(
 name|op
 argument_list|)
 condition|)
+block|{
+synchronized|synchronized
+init|(
+name|model
+init|)
 block|{
 name|String
 name|message
@@ -902,6 +913,7 @@ argument_list|(
 name|message
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
