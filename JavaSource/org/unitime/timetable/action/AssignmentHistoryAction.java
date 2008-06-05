@@ -1713,7 +1713,7 @@ literal|"onClick=\"window.open('suggestions.do?hist="
 operator|+
 name|idx
 operator|+
-literal|"&op=ShowHistory','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=ShowHistory','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 else|:
 literal|null
 operator|)
@@ -1856,7 +1856,7 @@ literal|"onClick=\"window.open('suggestions.do?hist="
 operator|+
 name|idx
 operator|+
-literal|"&op=ShowHistory','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=ShowHistory','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 else|:
 literal|null
 operator|)

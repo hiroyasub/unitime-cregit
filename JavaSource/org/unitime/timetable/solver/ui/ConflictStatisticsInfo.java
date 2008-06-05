@@ -5819,7 +5819,7 @@ operator|.
 name|getId
 argument_list|()
 operator|+
-literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 expr_stmt|;
 name|menu_item
 argument_list|(
@@ -6069,7 +6069,7 @@ operator|.
 name|getStartSlot
 argument_list|()
 operator|+
-literal|"&op=Try&reset=1','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Try&reset=1','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 expr_stmt|;
 name|menu_item
 argument_list|(
@@ -6569,7 +6569,7 @@ operator|.
 name|getStartSlot
 argument_list|()
 operator|+
-literal|"&op=Try&reset=1','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Try&reset=1','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 expr_stmt|;
 name|leaf_item
 argument_list|(

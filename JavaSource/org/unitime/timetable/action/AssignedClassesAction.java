@@ -1666,7 +1666,7 @@ operator|.
 name|getClassId
 argument_list|()
 operator|+
-literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 argument_list|,
 operator|new
 name|String
@@ -2573,7 +2573,7 @@ operator|.
 name|getClassId
 argument_list|()
 operator|+
-literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 argument_list|,
 operator|new
 name|String
@@ -2682,7 +2682,7 @@ operator|.
 name|getClassId
 argument_list|()
 operator|+
-literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 argument_list|,
 operator|new
 name|String

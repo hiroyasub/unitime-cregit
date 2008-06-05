@@ -1870,7 +1870,7 @@ literal|"onClick=\"window.open('suggestions.do?"
 operator|+
 name|link
 operator|+
-literal|"&op=Try','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Try','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 else|:
 literal|null
 operator|)
@@ -1947,7 +1947,7 @@ literal|"onClick=\"window.open('suggestions.do?"
 operator|+
 name|link
 operator|+
-literal|"&op=Try','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\""
+literal|"&op=Try','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\""
 else|:
 literal|null
 operator|)

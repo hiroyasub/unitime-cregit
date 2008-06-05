@@ -4503,7 +4503,7 @@ literal|"<a class='noFancyLinks' onMouseOver=\"this.style.cursor='hand';this.sty
 operator|+
 name|iClassId
 operator|+
-literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no');\"><font color='"
+literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();\"><font color='"
 operator|+
 name|PreferenceLevel
 operator|.
