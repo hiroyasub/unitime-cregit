@@ -1430,7 +1430,14 @@ name|getProperty
 argument_list|(
 literal|"cschedule"
 argument_list|,
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.report.cschedule"
+argument_list|,
 literal|"true"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
