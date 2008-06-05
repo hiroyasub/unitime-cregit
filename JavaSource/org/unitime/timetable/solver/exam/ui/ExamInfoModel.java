@@ -3160,7 +3160,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examInfo.do?op=Select&period="
+literal|"onClick=\"displayLoading();document.location='examInfo.do?op=Select&period="
 operator|+
 name|period
 operator|.
@@ -5598,7 +5598,7 @@ literal|"var sCap = -1;"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"var sRooms = ':"
+literal|"var sRooms = '"
 expr_stmt|;
 if|if
 condition|(
@@ -5624,6 +5624,8 @@ control|)
 block|{
 name|ret
 operator|+=
+literal|":"
+operator|+
 name|room
 operator|.
 name|getLocationId
@@ -5831,7 +5833,7 @@ operator|.
 name|getNrStudents
 argument_list|()
 operator|+
-literal|") document.location='examInfo.do?op=Select&room='+sRooms;"
+literal|") {displayLoading(); document.location='examInfo.do?op=Select&room='+sRooms;}"
 expr_stmt|;
 name|ret
 operator|+=
