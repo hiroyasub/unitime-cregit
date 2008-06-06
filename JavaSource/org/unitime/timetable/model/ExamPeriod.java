@@ -824,12 +824,8 @@ block|{
 name|int
 name|min
 init|=
-operator|(
 name|getStartSlot
 argument_list|()
-operator|+
-name|length
-operator|)
 operator|*
 name|Constants
 operator|.
@@ -838,6 +834,8 @@ operator|+
 name|Constants
 operator|.
 name|FIRST_SLOT_TIME_MIN
+operator|+
+name|length
 decl_stmt|;
 name|int
 name|endHour
