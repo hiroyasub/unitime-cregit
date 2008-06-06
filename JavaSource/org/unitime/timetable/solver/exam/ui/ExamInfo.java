@@ -408,12 +408,10 @@ name|iNrStudents
 operator|=
 name|exam
 operator|.
-name|getStudents
-argument_list|()
-operator|.
-name|size
+name|getSize
 argument_list|()
 expr_stmt|;
+comment|//Students().size();
 name|iSeatingType
 operator|=
 operator|(
