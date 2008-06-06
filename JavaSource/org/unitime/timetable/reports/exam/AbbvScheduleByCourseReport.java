@@ -546,9 +546,6 @@ name|section
 operator|.
 name|getExamAssignment
 argument_list|()
-operator|.
-name|getPeriod
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -624,9 +621,6 @@ argument_list|(
 name|section
 operator|.
 name|getExamAssignment
-argument_list|()
-operator|.
-name|getPeriod
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1132,9 +1126,6 @@ name|section
 operator|.
 name|getExamAssignment
 argument_list|()
-operator|.
-name|getPeriod
-argument_list|()
 argument_list|)
 operator|+
 literal|" "
@@ -1219,9 +1210,6 @@ argument_list|(
 name|section
 operator|.
 name|getExamAssignment
-argument_list|()
-operator|.
-name|getPeriod
 argument_list|()
 argument_list|)
 operator|+
@@ -1409,9 +1397,6 @@ name|section
 operator|.
 name|getExamAssignment
 argument_list|()
-operator|.
-name|getPeriod
-argument_list|()
 argument_list|)
 operator|+
 literal|" "
@@ -1527,9 +1512,6 @@ argument_list|(
 name|section
 operator|.
 name|getExamAssignment
-argument_list|()
-operator|.
-name|getPeriod
 argument_list|()
 argument_list|)
 operator|+

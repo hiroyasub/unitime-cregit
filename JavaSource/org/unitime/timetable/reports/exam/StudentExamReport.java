@@ -3726,6 +3726,8 @@ operator|+
 operator|(
 name|iItype
 condition|?
+name|rpad
+argument_list|(
 name|iExternal
 condition|?
 name|conflict
@@ -3736,8 +3738,6 @@ operator|.
 name|getExternalUniqueId
 argument_list|()
 else|:
-name|rpad
-argument_list|(
 name|conflict
 operator|.
 name|getOtherClass

@@ -1147,6 +1147,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|iPeriodPrinted
+operator|&&
 name|p
 operator|.
 name|hasNext
@@ -1158,6 +1160,10 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|iPeriodPrinted
+condition|)
 name|lastPage
 argument_list|()
 expr_stmt|;

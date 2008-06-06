@@ -2210,6 +2210,10 @@ condition|(
 name|lastChange
 operator|!=
 literal|null
+operator|&&
+name|iSince
+operator|!=
+literal|null
 condition|)
 name|println
 argument_list|(
@@ -4580,6 +4584,8 @@ operator|+
 operator|(
 name|iItype
 condition|?
+name|rpad
+argument_list|(
 name|iExternal
 condition|?
 name|conflict
@@ -4590,8 +4596,6 @@ operator|.
 name|getExternalUniqueId
 argument_list|()
 else|:
-name|rpad
-argument_list|(
 name|conflict
 operator|.
 name|getOtherClass
@@ -5472,146 +5476,14 @@ expr_stmt|;
 block|}
 block|}
 block|}
-if|if
-condition|(
-name|headerPrinted
-operator|&&
-operator|!
-name|iNewPage
-condition|)
-name|println
-argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
 name|setHeader
 argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|getLineNumber
-argument_list|()
-operator|+
-literal|5
-operator|>=
-name|iNrLines
-condition|)
-name|newPage
-argument_list|()
-expr_stmt|;
-else|else
-name|println
-argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
-name|setHeader
-argument_list|(
-operator|new
-name|String
-index|[]
-block|{
-literal|"Subj Crsnbr "
-operator|+
-operator|(
-name|iItype
-condition|?
-name|iExternal
-condition|?
-literal|"ExtnID "
-else|:
-literal|"InsTyp "
-else|:
-literal|""
-operator|)
-operator|+
-literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
-operator|+
-operator|(
-name|iItype
-condition|?
-name|iExternal
-condition|?
-literal|"ExtnID "
-else|:
-literal|"InsTyp "
-else|:
-literal|""
-operator|)
-operator|+
-literal|"Sect Time                 "
-block|,
-literal|"---- ------ "
-operator|+
-operator|(
-name|iItype
-condition|?
-literal|"------ "
-else|:
-literal|""
-operator|)
-operator|+
-literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
-operator|+
-operator|(
-name|iItype
-condition|?
-literal|"------ "
-else|:
-literal|""
-operator|)
-operator|+
-literal|"---- ---------------------"
-block|}
-argument_list|)
-expr_stmt|;
-name|println
-argument_list|(
-name|mpad
-argument_list|(
-literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
-argument_list|,
-name|iNrChars
-argument_list|)
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|getHeader
-argument_list|()
-operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-name|println
-argument_list|(
-name|getHeader
-argument_list|()
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-name|setCont
-argument_list|(
-name|instructor
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"  STUDENT CONFLICTS"
-argument_list|)
+name|headerPrinted
+operator|=
+literal|false
 expr_stmt|;
 name|lastSubject
 operator|=
@@ -5842,6 +5714,151 @@ name|studentId
 argument_list|)
 condition|)
 continue|continue;
+if|if
+condition|(
+operator|!
+name|headerPrinted
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|iNewPage
+condition|)
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|getLineNumber
+argument_list|()
+operator|+
+literal|5
+operator|>=
+name|iNrLines
+condition|)
+name|newPage
+argument_list|()
+expr_stmt|;
+else|else
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Time                 "
+block|,
+literal|"---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------"
+block|}
+argument_list|)
+expr_stmt|;
+name|println
+argument_list|(
+name|mpad
+argument_list|(
+literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+argument_list|,
+name|iNrChars
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|getHeader
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+name|println
+argument_list|(
+name|getHeader
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|setCont
+argument_list|(
+name|instructor
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"  STUDENT CONFLICTS"
+argument_list|)
+expr_stmt|;
+name|headerPrinted
+operator|=
+literal|true
+expr_stmt|;
+block|}
 name|println
 argument_list|(
 name|rpad
@@ -6052,6 +6069,151 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|headerPrinted
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|iNewPage
+condition|)
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|getLineNumber
+argument_list|()
+operator|+
+literal|5
+operator|>=
+name|iNrLines
+condition|)
+name|newPage
+argument_list|()
+expr_stmt|;
+else|else
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Time                 "
+block|,
+literal|"---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------"
+block|}
+argument_list|)
+expr_stmt|;
+name|println
+argument_list|(
+name|mpad
+argument_list|(
+literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+argument_list|,
+name|iNrChars
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|getHeader
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+name|println
+argument_list|(
+name|getHeader
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|setCont
+argument_list|(
+name|instructor
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"  STUDENT CONFLICTS"
+argument_list|)
+expr_stmt|;
+name|headerPrinted
+operator|=
+literal|true
+expr_stmt|;
+block|}
 name|println
 argument_list|(
 name|rpad
@@ -6214,6 +6376,8 @@ operator|+
 operator|(
 name|iItype
 condition|?
+name|rpad
+argument_list|(
 name|iExternal
 condition|?
 name|conflict
@@ -6224,8 +6388,6 @@ operator|.
 name|getExternalUniqueId
 argument_list|()
 else|:
-name|rpad
-argument_list|(
 name|conflict
 operator|.
 name|getOtherClass
@@ -6378,6 +6540,151 @@ name|studentId
 argument_list|)
 condition|)
 continue|continue;
+if|if
+condition|(
+operator|!
+name|headerPrinted
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|iNewPage
+condition|)
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|getLineNumber
+argument_list|()
+operator|+
+literal|5
+operator|>=
+name|iNrLines
+condition|)
+name|newPage
+argument_list|()
+expr_stmt|;
+else|else
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Time                 "
+block|,
+literal|"---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------"
+block|}
+argument_list|)
+expr_stmt|;
+name|println
+argument_list|(
+name|mpad
+argument_list|(
+literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+argument_list|,
+name|iNrChars
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|getHeader
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+name|println
+argument_list|(
+name|getHeader
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|setCont
+argument_list|(
+name|instructor
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"  STUDENT CONFLICTS"
+argument_list|)
+expr_stmt|;
+name|headerPrinted
+operator|=
+literal|true
+expr_stmt|;
+block|}
 name|println
 argument_list|(
 name|rpad
@@ -6640,6 +6947,151 @@ name|studentId
 argument_list|)
 condition|)
 continue|continue;
+if|if
+condition|(
+operator|!
+name|headerPrinted
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|iNewPage
+condition|)
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|getLineNumber
+argument_list|()
+operator|+
+literal|5
+operator|>=
+name|iNrLines
+condition|)
+name|newPage
+argument_list|()
+expr_stmt|;
+else|else
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+operator|+
+operator|(
+name|iItype
+condition|?
+name|iExternal
+condition|?
+literal|"ExtnID "
+else|:
+literal|"InsTyp "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"Sect Time                 "
+block|,
+literal|"---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+operator|+
+operator|(
+name|iItype
+condition|?
+literal|"------ "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"---- ---------------------"
+block|}
+argument_list|)
+expr_stmt|;
+name|println
+argument_list|(
+name|mpad
+argument_list|(
+literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+argument_list|,
+name|iNrChars
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|getHeader
+argument_list|()
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+name|println
+argument_list|(
+name|getHeader
+argument_list|()
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|setCont
+argument_list|(
+name|instructor
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"  STUDENT CONFLICTS"
+argument_list|)
+expr_stmt|;
+name|headerPrinted
+operator|=
+literal|true
+expr_stmt|;
+block|}
 name|println
 argument_list|(
 name|rpad
