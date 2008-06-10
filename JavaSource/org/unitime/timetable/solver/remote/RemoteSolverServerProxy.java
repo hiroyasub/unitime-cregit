@@ -675,6 +675,11 @@ try|try
 block|{
 name|iConnection
 operator|.
+name|unregister
+argument_list|()
+expr_stmt|;
+name|iConnection
+operator|.
 name|stopConnection
 argument_list|()
 expr_stmt|;
