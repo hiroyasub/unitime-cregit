@@ -3528,6 +3528,13 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setInteger
+argument_list|(
+literal|"examType"
+argument_list|,
+name|examType
+argument_list|)
+operator|.
 name|uniqueResult
 argument_list|()
 operator|)
