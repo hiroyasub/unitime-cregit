@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -267,24 +271,8 @@ specifier|private
 name|int
 name|iStopTime
 decl_stmt|;
-specifier|private
-name|String
-name|iLocationType
-decl_stmt|;
-specifier|private
-name|Vector
-argument_list|<
-name|String
-argument_list|>
-name|iLocationTypes
-init|=
-operator|new
-name|Vector
-argument_list|<
-name|String
-argument_list|>
-argument_list|()
-decl_stmt|;
+comment|//	private String iLocationType;
+comment|//	private Vector<String> iLocationTypes = new Vector<String>();
 specifier|private
 name|Long
 name|iBuildingId
@@ -628,10 +616,7 @@ name|iStopTime
 operator|=
 literal|210
 expr_stmt|;
-name|iLocationType
-operator|=
-literal|null
-expr_stmt|;
+comment|//		iLocationType = null;
 name|iMeetingDates
 operator|.
 name|clear
@@ -703,33 +688,8 @@ argument_list|(
 literal|"Event.StopTime"
 argument_list|)
 expr_stmt|;
-name|iLocationType
-operator|=
-operator|(
-name|String
-operator|)
-name|session
-operator|.
-name|getAttribute
-argument_list|(
-literal|"Event.LocationType"
-argument_list|)
-expr_stmt|;
-name|iLocationTypes
-operator|=
-operator|(
-name|Vector
-argument_list|<
-name|String
-argument_list|>
-operator|)
-name|session
-operator|.
-name|getAttribute
-argument_list|(
-literal|"Event.LocationTypes"
-argument_list|)
-expr_stmt|;
+comment|//		iLocationType = (String) session.getAttribute("Event.LocationType");
+comment|//		iLocationTypes = (Vector<String>) session.getAttribute("Event.LocationTypes");
 name|iMeetingDates
 operator|=
 operator|(
@@ -839,24 +799,8 @@ argument_list|,
 name|iStopTime
 argument_list|)
 expr_stmt|;
-name|session
-operator|.
-name|setAttribute
-argument_list|(
-literal|"Event.LocationType"
-argument_list|,
-name|iLocationType
-argument_list|)
-expr_stmt|;
-name|session
-operator|.
-name|setAttribute
-argument_list|(
-literal|"Event.LocationTypes"
-argument_list|,
-name|iLocationTypes
-argument_list|)
-expr_stmt|;
+comment|//		session.setAttribute("Event.LocationType", iLocationType);
+comment|//		session.setAttribute("Event.LocationTypes", iLocationTypes);
 name|session
 operator|.
 name|setAttribute
@@ -1729,28 +1673,8 @@ return|return
 name|ltypes
 return|;
 block|}
-specifier|public
-name|String
-name|getLocationType
-parameter_list|()
-block|{
-return|return
-name|iLocationType
-return|;
-block|}
-specifier|public
-name|void
-name|setLocationType
-parameter_list|(
-name|String
-name|locationType
-parameter_list|)
-block|{
-name|iLocationType
-operator|=
-name|locationType
-expr_stmt|;
-block|}
+comment|//	public String getLocationType() {return iLocationType; }
+comment|//    public void setLocationType(String locationType) {iLocationType = locationType;}
 comment|//the index i goes in five minute increments, but displayed are 15 minute increments
 specifier|public
 name|Vector

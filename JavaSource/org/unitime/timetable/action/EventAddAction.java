@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime.org, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -174,7 +178,6 @@ operator|)
 name|form
 decl_stmt|;
 comment|/*        EventModel model = (EventModel)request.getSession().getAttribute("Event.model");         if (model==null) {             model = new EventModel();             request.getSession().setAttribute("Event.model", model);         } */
-comment|//		myForm.load(request.getSession());
 comment|//Verification of user being logged in
 if|if
 condition|(
@@ -200,7 +203,7 @@ throw|;
 block|}
 comment|//Operations
 name|String
-name|op
+name|iOp
 init|=
 name|myForm
 operator|.
@@ -230,7 +233,7 @@ argument_list|()
 operator|>
 literal|0
 condition|)
-name|op
+name|iOp
 operator|=
 name|request
 operator|.
@@ -239,10 +242,41 @@ argument_list|(
 literal|"op2"
 argument_list|)
 expr_stmt|;
-comment|// if a different session is selected, display calendar for this new session
+comment|// if user is returning from the Event Room Availability screen,
+comment|// load the parameters he/she entered before
 if|if
 condition|(
-name|op
+literal|"eventRoomAvailability"
+operator|.
+name|equals
+argument_list|(
+name|request
+operator|.
+name|getAttribute
+argument_list|(
+literal|"back"
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|myForm
+operator|.
+name|load
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|iOp
+operator|=
+literal|null
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|iOp
 operator|!=
 literal|null
 operator|&&
@@ -251,7 +285,7 @@ literal|"SessionChanged"
 operator|.
 name|equals
 argument_list|(
-name|op
+name|iOp
 argument_list|)
 condition|)
 block|{
@@ -269,7 +303,7 @@ literal|"Show Scheduled Events"
 operator|.
 name|equals
 argument_list|(
-name|op
+name|iOp
 argument_list|)
 condition|)
 block|{
@@ -336,7 +370,7 @@ literal|"Show Availability"
 operator|.
 name|equals
 argument_list|(
-name|op
+name|iOp
 argument_list|)
 condition|)
 block|{
@@ -381,20 +415,34 @@ name|getSession
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|response
+return|return
+name|mapping
 operator|.
-name|sendRedirect
+name|findForward
 argument_list|(
-name|response
-operator|.
-name|encodeURL
-argument_list|(
-literal|"eventRoomAvailability.do"
+literal|"showEventRoomAvailability"
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|//        		return mapping.findForward("showEventRoomAvailability");
+return|;
 block|}
+block|}
+if|if
+condition|(
+literal|"Back"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+condition|)
+block|{
+return|return
+name|mapping
+operator|.
+name|findForward
+argument_list|(
+literal|"back"
+argument_list|)
+return|;
 block|}
 comment|//test:        System.out.println(">>> "+op+"<<<");
 comment|//set the model
