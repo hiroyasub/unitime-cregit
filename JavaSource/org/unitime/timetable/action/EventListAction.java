@@ -191,6 +191,10 @@ name|BackTracker
 import|;
 end_import
 
+begin_comment
+comment|/**  * @author Zuzana Mullerova  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -385,6 +389,25 @@ name|getSession
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+literal|"Add Event"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+condition|)
+block|{
+return|return
+name|mapping
+operator|.
+name|findForward
+argument_list|(
+literal|"addEvent"
+argument_list|)
+return|;
+block|}
 if|if
 condition|(
 name|request
