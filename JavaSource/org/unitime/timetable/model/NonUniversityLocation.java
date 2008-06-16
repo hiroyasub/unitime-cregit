@@ -392,6 +392,15 @@ name|newNonUniversityLocation
 operator|)
 return|;
 block|}
+specifier|public
+name|String
+name|getRoomTypeLabel
+parameter_list|()
+block|{
+return|return
+literal|"Non University Locations"
+return|;
+block|}
 block|}
 end_class
 

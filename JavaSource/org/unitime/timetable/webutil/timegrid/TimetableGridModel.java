@@ -107,7 +107,7 @@ init|=
 literal|0
 decl_stmt|;
 specifier|private
-name|Integer
+name|Long
 name|iType
 init|=
 literal|null
@@ -514,7 +514,7 @@ specifier|public
 name|void
 name|setType
 parameter_list|(
-name|Integer
+name|Long
 name|type
 parameter_list|)
 block|{
@@ -849,7 +849,7 @@ name|iSize
 return|;
 block|}
 specifier|public
-name|Integer
+name|Long
 name|getType
 parameter_list|()
 block|{

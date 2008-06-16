@@ -80,9 +80,9 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_SCHEDULED_ROOM_TYPE
+name|PROP_ROOM_TYPE
 init|=
-literal|"scheduledRoomType"
+literal|"roomType"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -229,14 +229,6 @@ operator|.
 name|lang
 operator|.
 name|String
-name|scheduledRoomType
-decl_stmt|;
-specifier|private
-name|java
-operator|.
-name|lang
-operator|.
-name|String
 name|classification
 decl_stmt|;
 comment|// many to one
@@ -251,6 +243,18 @@ name|model
 operator|.
 name|Building
 name|building
+decl_stmt|;
+specifier|private
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|RoomType
+name|roomType
 decl_stmt|;
 comment|/** 	 * Return the value associated with the column: buildingAbbv 	 */
 specifier|public
@@ -354,38 +358,46 @@ operator|=
 name|externalUniqueId
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: SCHEDULED_ROOM_TYPE 	 */
+comment|/** 	 * Return the value associated with the column: ROOM_TYPE 	 */
 specifier|public
-name|java
+name|org
 operator|.
-name|lang
+name|unitime
 operator|.
-name|String
-name|getScheduledRoomType
+name|timetable
+operator|.
+name|model
+operator|.
+name|RoomType
+name|getRoomType
 parameter_list|()
 block|{
 return|return
-name|scheduledRoomType
+name|roomType
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: SCHEDULED_ROOM_TYPE 	 * @param scheduledRoomType the SCHEDULED_ROOM_TYPE value 	 */
+comment|/** 	 * Set the value related to the column: ROOM_TYPE 	 * @param scheduledRoomType the ROOM_TYPE value 	 */
 specifier|public
 name|void
-name|setScheduledRoomType
+name|setRoomType
 parameter_list|(
-name|java
+name|org
 operator|.
-name|lang
+name|unitime
 operator|.
-name|String
-name|scheduledRoomType
+name|timetable
+operator|.
+name|model
+operator|.
+name|RoomType
+name|roomType
 parameter_list|)
 block|{
 name|this
 operator|.
-name|scheduledRoomType
+name|roomType
 operator|=
-name|scheduledRoomType
+name|roomType
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: CLASSIFICATION 	 */

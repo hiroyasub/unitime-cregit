@@ -746,7 +746,7 @@ parameter_list|,
 name|int
 name|nrWeeks
 parameter_list|,
-name|Integer
+name|Long
 name|roomType
 parameter_list|)
 throws|throws

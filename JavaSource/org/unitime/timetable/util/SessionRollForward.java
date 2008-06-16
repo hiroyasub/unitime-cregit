@@ -2454,11 +2454,11 @@ argument_list|)
 expr_stmt|;
 name|toRoom
 operator|.
-name|setScheduledRoomType
+name|setRoomType
 argument_list|(
 name|toExternalRoom
 operator|.
-name|getScheduledRoomType
+name|getRoomType
 argument_list|()
 argument_list|)
 expr_stmt|;

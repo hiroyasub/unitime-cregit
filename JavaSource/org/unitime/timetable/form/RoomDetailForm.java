@@ -134,7 +134,7 @@ name|Integer
 name|coordinateY
 decl_stmt|;
 specifier|private
-name|String
+name|Long
 name|type
 decl_stmt|;
 specifier|private
@@ -514,7 +514,7 @@ name|patterns
 expr_stmt|;
 block|}
 specifier|public
-name|String
+name|Long
 name|getType
 parameter_list|()
 block|{
@@ -526,7 +526,7 @@ specifier|public
 name|void
 name|setType
 parameter_list|(
-name|String
+name|Long
 name|type
 parameter_list|)
 block|{

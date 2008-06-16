@@ -1948,9 +1948,12 @@ argument_list|)
 expr_stmt|;
 name|room
 operator|.
-name|setScheduledRoomType
+name|setRoomType
 argument_list|(
-literal|"specialUse"
+name|extRoom
+operator|.
+name|getRoomType
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|room

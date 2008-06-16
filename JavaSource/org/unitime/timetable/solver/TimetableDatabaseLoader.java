@@ -9329,9 +9329,23 @@ operator|.
 name|setType
 argument_list|(
 name|location
+operator|instanceof
+name|Room
+condition|?
+operator|(
+operator|(
+name|Room
+operator|)
+name|location
+operator|)
 operator|.
-name|getSchedulingRoomTypeInteger
+name|getRoomType
 argument_list|()
+operator|.
+name|getUniqueId
+argument_list|()
+else|:
+literal|null
 argument_list|)
 expr_stmt|;
 comment|//loadRoomAvailability(location, rc, hibSession);
@@ -9502,13 +9516,16 @@ operator|==
 literal|null
 condition|?
 operator|new
-name|Integer
+name|Long
 argument_list|(
-name|Integer
+name|Long
 operator|.
 name|MAX_VALUE
 argument_list|)
 else|:
+operator|new
+name|Long
+argument_list|(
 name|instructor
 operator|.
 name|getPositionType
@@ -9516,6 +9533,7 @@ argument_list|()
 operator|.
 name|getSortOrder
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|//loadInstructorAvailability(instructor, ic, hibSession);
