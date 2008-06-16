@@ -117,6 +117,18 @@ name|unitime
 operator|.
 name|commons
 operator|.
+name|User
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|commons
+operator|.
 name|web
 operator|.
 name|Web
@@ -134,6 +146,20 @@ operator|.
 name|form
 operator|.
 name|EventAddForm
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|TimetableManager
 import|;
 end_import
 
@@ -168,7 +194,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|//Collect initial info - form& model
+comment|//Collect initial info
 name|EventAddForm
 name|myForm
 init|=
@@ -176,6 +202,19 @@ operator|(
 name|EventAddForm
 operator|)
 name|form
+decl_stmt|;
+name|User
+name|user
+init|=
+name|Web
+operator|.
+name|getUser
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
 decl_stmt|;
 comment|/*        EventModel model = (EventModel)request.getSession().getAttribute("Event.model");         if (model==null) {             model = new EventModel();             request.getSession().setAttribute("Event.model", model);         } */
 comment|//Verification of user being logged in
@@ -296,6 +335,86 @@ argument_list|(
 name|request
 argument_list|)
 expr_stmt|;
+block|}
+comment|//		if ("EventTypeChanged".equals(iOp)) {
+comment|//
+comment|//		}
+if|if
+condition|(
+literal|"Add Object"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+condition|)
+block|{
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|myForm
+operator|.
+name|PREF_ROWS_ADDED
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|myForm
+operator|.
+name|addRelatedCourseInfo
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"hash"
+argument_list|,
+literal|"objects"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+literal|"Delete"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|myForm
+operator|.
+name|getSelected
+argument_list|()
+operator|>=
+literal|0
+condition|)
+block|{
+name|myForm
+operator|.
+name|deleteRelatedCourseInfo
+argument_list|(
+name|myForm
+operator|.
+name|getSelected
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -444,6 +563,18 @@ literal|"back"
 argument_list|)
 return|;
 block|}
+name|myForm
+operator|.
+name|setSubjectAreas
+argument_list|(
+name|TimetableManager
+operator|.
+name|getSubjectAreas
+argument_list|(
+name|user
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|//test:        System.out.println(">>> "+op+"<<<");
 comment|//set the model
 comment|//        myForm.setModel(model);
