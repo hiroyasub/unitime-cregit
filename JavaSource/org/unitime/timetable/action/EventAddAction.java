@@ -216,7 +216,6 @@ name|getSession
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|/*        EventModel model = (EventModel)request.getSession().getAttribute("Event.model");         if (model==null) {             model = new EventModel();             request.getSession().setAttribute("Event.model", model);         } */
 comment|//Verification of user being logged in
 if|if
 condition|(
@@ -336,9 +335,6 @@ name|request
 argument_list|)
 expr_stmt|;
 block|}
-comment|//		if ("EventTypeChanged".equals(iOp)) {
-comment|//
-comment|//		}
 if|if
 condition|(
 literal|"Add Object"
@@ -575,10 +571,6 @@ name|user
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//test:        System.out.println(">>> "+op+"<<<");
-comment|//set the model
-comment|//        myForm.setModel(model);
-comment|//        model.apply(request, myForm);
 comment|//Display the page
 return|return
 name|mapping
