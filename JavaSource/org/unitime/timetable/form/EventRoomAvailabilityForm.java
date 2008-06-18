@@ -71,6 +71,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Hashtable
 import|;
 end_import
@@ -1762,7 +1772,7 @@ init|=
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"EEE, MMM dd"
+literal|"EEE, MMM d"
 argument_list|)
 decl_stmt|;
 name|SimpleDateFormat
@@ -1832,10 +1842,15 @@ argument_list|,
 name|iStudentIds
 argument_list|)
 decl_stmt|;
-name|int
-name|totalConflicts
+name|HashSet
+argument_list|<
+name|Long
+argument_list|>
+name|studentsInConflict
 init|=
-literal|0
+operator|new
+name|HashSet
+argument_list|()
 decl_stmt|;
 name|String
 name|conflictsTitle
@@ -2030,15 +2045,15 @@ range|:
 name|conflictEntries
 control|)
 block|{
-name|totalConflicts
-operator|+=
+name|studentsInConflict
+operator|.
+name|addAll
+argument_list|(
 name|entry
 operator|.
 name|getValue
 argument_list|()
-operator|.
-name|size
-argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2094,7 +2109,7 @@ expr_stmt|;
 block|}
 name|ret
 operator|+=
-literal|"<tr><td align='left' title=\""
+literal|"<tr><td align='center' title=\""
 operator|+
 name|conflictsTitle
 operator|+
@@ -2110,13 +2125,18 @@ operator|+
 literal|"</b>"
 operator|+
 operator|(
-name|totalConflicts
-operator|>
-literal|0
+operator|!
+name|studentsInConflict
+operator|.
+name|isEmpty
+argument_list|()
 condition|?
 literal|"<br><i>("
 operator|+
-name|totalConflicts
+name|studentsInConflict
+operator|.
+name|size
+argument_list|()
 operator|+
 literal|" conflicts)</i>"
 else|:
