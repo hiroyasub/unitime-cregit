@@ -1556,6 +1556,16 @@ argument_list|)
 expr_stmt|;
 comment|/*             for (Iterator<ExamAssignmentInfo> i=iChange.getAssignments().iterator();i.hasNext();) {                 ExamAssignmentInfo a = i.next();                 if (!a.isValid()) i.remove();             }             */
 block|}
+if|if
+condition|(
+name|iExam
+operator|.
+name|getMaxRooms
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
 name|iForm
 operator|.
 name|setMinRoomSize
@@ -1600,6 +1610,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|iForm
 operator|.
 name|setRoomFilter
