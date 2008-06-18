@@ -972,6 +972,14 @@ name|REQUEST_WARN
 init|=
 literal|"RqWarn"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|REQUEST_MSSG
+init|=
+literal|"RqMsg"
+decl_stmt|;
 comment|/** Exam timetabling: required minimal travel time between an exam and an event for not to overlap (in the number of time slots) */
 specifier|public
 specifier|static
