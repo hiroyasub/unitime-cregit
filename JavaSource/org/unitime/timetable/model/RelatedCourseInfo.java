@@ -159,6 +159,11 @@ class|class
 name|RelatedCourseInfo
 extends|extends
 name|BaseRelatedCourseInfo
+implements|implements
+name|Comparable
+argument_list|<
+name|RelatedCourseInfo
+argument_list|>
 block|{
 specifier|private
 specifier|static
