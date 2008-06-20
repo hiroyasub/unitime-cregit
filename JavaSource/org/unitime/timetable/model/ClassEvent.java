@@ -17,6 +17,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashSet
 import|;
 end_import
@@ -28,16 +38,6 @@ operator|.
 name|util
 operator|.
 name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -223,7 +223,10 @@ name|students
 return|;
 block|}
 specifier|public
-name|List
+name|Collection
+argument_list|<
+name|Long
+argument_list|>
 name|getStudentIds
 parameter_list|()
 block|{
