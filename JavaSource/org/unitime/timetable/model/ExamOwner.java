@@ -71,6 +71,22 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|commons
+operator|.
+name|hibernate
+operator|.
+name|util
+operator|.
+name|HibernateUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -202,20 +218,6 @@ operator|.
 name|dao
 operator|.
 name|InstructionalOfferingDAO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|util
-operator|.
-name|Constants
 import|;
 end_import
 
@@ -4154,7 +4156,16 @@ literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
+name|HibernateUtil
+operator|.
+name|addDate
+argument_list|(
+literal|"p.session.examBeginDate"
+argument_list|,
+literal|"p.dateOffset"
+argument_list|)
+operator|+
+literal|" = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4169,9 +4180,19 @@ name|setInteger
 argument_list|(
 literal|"travelTime"
 argument_list|,
-name|Constants
+name|Integer
 operator|.
-name|EXAM_TRAVEL_TIME_SLOTS
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.eventConflicts.travelTime.classEvent"
+argument_list|,
+literal|"6"
+argument_list|)
+argument_list|)
 argument_list|)
 operator|.
 name|setLong
@@ -4299,7 +4320,16 @@ literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId a
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
+name|HibernateUtil
+operator|.
+name|addDate
+argument_list|(
+literal|"p.session.examBeginDate"
+argument_list|,
+literal|"p.dateOffset"
+argument_list|)
+operator|+
+literal|" = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4314,9 +4344,19 @@ name|setInteger
 argument_list|(
 literal|"travelTime"
 argument_list|,
-name|Constants
+name|Integer
 operator|.
-name|EXAM_TRAVEL_TIME_SLOTS
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.eventConflicts.travelTime.classEvent"
+argument_list|,
+literal|"6"
+argument_list|)
+argument_list|)
 argument_list|)
 operator|.
 name|setLong
@@ -4444,7 +4484,16 @@ literal|"where co.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
+name|HibernateUtil
+operator|.
+name|addDate
+argument_list|(
+literal|"p.session.examBeginDate"
+argument_list|,
+literal|"p.dateOffset"
+argument_list|)
+operator|+
+literal|" = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4459,9 +4508,19 @@ name|setInteger
 argument_list|(
 literal|"travelTime"
 argument_list|,
-name|Constants
+name|Integer
 operator|.
-name|EXAM_TRAVEL_TIME_SLOTS
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.eventConflicts.travelTime.classEvent"
+argument_list|,
+literal|"6"
+argument_list|)
+argument_list|)
 argument_list|)
 operator|.
 name|setLong
@@ -4589,7 +4648,16 @@ literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.
 operator|+
 literal|"p.uniqueId=:periodId and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
-literal|"p.session.examBeginDate+p.dateOffset = m.meetingDate"
+name|HibernateUtil
+operator|.
+name|addDate
+argument_list|(
+literal|"p.session.examBeginDate"
+argument_list|,
+literal|"p.dateOffset"
+argument_list|)
+operator|+
+literal|" = m.meetingDate"
 argument_list|)
 operator|.
 name|setLong
@@ -4604,9 +4672,19 @@ name|setInteger
 argument_list|(
 literal|"travelTime"
 argument_list|,
-name|Constants
+name|Integer
 operator|.
-name|EXAM_TRAVEL_TIME_SLOTS
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exam.eventConflicts.travelTime.classEvent"
+argument_list|,
+literal|"6"
+argument_list|)
+argument_list|)
 argument_list|)
 operator|.
 name|setLong
