@@ -980,15 +980,6 @@ name|REQUEST_MSSG
 init|=
 literal|"RqMsg"
 decl_stmt|;
-comment|/** Exam timetabling: required minimal travel time between an exam and an event for not to overlap (in the number of time slots) */
-specifier|public
-specifier|static
-specifier|final
-name|int
-name|EXAM_TRAVEL_TIME_SLOTS
-init|=
-literal|6
-decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Check if string is a positive integer greater or equal to than 0      * @param str String to be converted to integer      * @param defaultValue Default value returned if conversion fails      * @return integer if success, default value if fails      */
 specifier|public
