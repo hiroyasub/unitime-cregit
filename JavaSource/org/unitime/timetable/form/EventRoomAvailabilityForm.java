@@ -374,6 +374,16 @@ specifier|private
 name|boolean
 name|iLookAtNearLocations
 decl_stmt|;
+specifier|private
+name|Long
+name|iEventId
+decl_stmt|;
+comment|//if adding meetings to an existing event
+specifier|private
+name|boolean
+name|iIsAddMeetings
+decl_stmt|;
+comment|//if adding meetings to an existing event
 comment|//data calculated
 specifier|private
 name|Hashtable
@@ -720,6 +730,34 @@ name|getAttribute
 argument_list|(
 literal|"Event.StudentIds"
 argument_list|)
+expr_stmt|;
+name|iIsAddMeetings
+operator|=
+operator|(
+name|Boolean
+operator|)
+operator|(
+name|session
+operator|.
+name|getAttribute
+argument_list|(
+literal|"Event.IsAddMeetings"
+argument_list|)
+operator|)
+expr_stmt|;
+name|iEventId
+operator|=
+operator|(
+name|Long
+operator|)
+operator|(
+name|session
+operator|.
+name|getAttribute
+argument_list|(
+literal|"Event.EventId"
+argument_list|)
+operator|)
 expr_stmt|;
 block|}
 comment|// collect date/location combinations selected by the user in this screen
@@ -2711,6 +2749,15 @@ name|getTimeString
 argument_list|(
 name|iStopTime
 argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|getIsAddMeetings
+parameter_list|()
+block|{
+return|return
+name|iIsAddMeetings
 return|;
 block|}
 comment|// a class for storing selected date/location combinations
