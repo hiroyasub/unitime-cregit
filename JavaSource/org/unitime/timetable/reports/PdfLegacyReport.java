@@ -79,18 +79,6 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
 name|util
 operator|.
 name|Constants
@@ -477,12 +465,6 @@ name|iDoc
 operator|.
 name|addAuthor
 argument_list|(
-name|ApplicationProperties
-operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.pdf.examreport.author"
-argument_list|,
 literal|"UniTime "
 operator|+
 name|Constants
@@ -503,7 +485,6 @@ literal|"?"
 argument_list|)
 operator|+
 literal|", www.unitime.org"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|iDoc
@@ -1188,12 +1169,6 @@ name|renderEnd
 argument_list|(
 name|renderMiddle
 argument_list|(
-name|ApplicationProperties
-operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.pdf.examreport.author"
-argument_list|,
 literal|"UniTime "
 operator|+
 name|Constants
@@ -1212,16 +1187,8 @@ literal|"@build.number@"
 argument_list|,
 literal|"?"
 argument_list|)
-argument_list|)
-argument_list|,
-name|ApplicationProperties
-operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.pdf.examreport.title"
 argument_list|,
 name|iTitle
-argument_list|)
 argument_list|)
 argument_list|,
 name|iTitle2
