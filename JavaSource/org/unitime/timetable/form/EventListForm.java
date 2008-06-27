@@ -249,21 +249,7 @@ argument_list|()
 operator|==
 literal|0
 condition|)
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"eventDateFrom"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.required"
-argument_list|,
-literal|"Date (From)"
-argument_list|)
-argument_list|)
-expr_stmt|;
+empty_stmt|;
 if|else if
 condition|(
 operator|!
