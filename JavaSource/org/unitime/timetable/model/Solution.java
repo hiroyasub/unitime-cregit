@@ -8771,6 +8771,53 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
+specifier|static
+name|boolean
+name|hasTimetable
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|)
+block|{
+return|return
+operator|(
+operator|(
+name|Number
+operator|)
+operator|new
+name|SolutionDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select count(s) from Solution s "
+operator|+
+literal|"where s.owner.session.uniqueId=:sessionId and "
+operator|+
+literal|"s.commited = true"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+operator|)
+operator|.
+name|longValue
+argument_list|()
+operator|>
+literal|0
+return|;
+block|}
 block|}
 end_class
 
