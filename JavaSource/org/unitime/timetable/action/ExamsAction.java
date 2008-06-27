@@ -700,11 +700,9 @@ name|session
 operator|.
 name|setAttribute
 argument_list|(
-literal|"loginFromExams"
+literal|"loginPage"
 argument_list|,
-name|Boolean
-operator|.
-name|TRUE
+literal|"exams"
 argument_list|)
 expr_stmt|;
 return|return
