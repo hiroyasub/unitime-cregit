@@ -1811,6 +1811,17 @@ argument_list|()
 operator|==
 name|SolverParameterGroup
 operator|.
+name|sTypeStudent
+condition|?
+literal|"student"
+else|:
+name|group
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|SolverParameterGroup
+operator|.
 name|sTypeCourse
 condition|?
 literal|"course"

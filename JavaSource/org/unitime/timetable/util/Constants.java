@@ -1989,6 +1989,13 @@ name|webSession
 operator|.
 name|removeAttribute
 argument_list|(
+literal|"StudentSolverProxy"
+argument_list|)
+expr_stmt|;
+name|webSession
+operator|.
+name|removeAttribute
+argument_list|(
 literal|"ManageSolver.puid"
 argument_list|)
 expr_stmt|;
@@ -1997,6 +2004,13 @@ operator|.
 name|removeAttribute
 argument_list|(
 literal|"ManageSolver.examPuid"
+argument_list|)
+expr_stmt|;
+name|webSession
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"ManageSolver.sectionPuid"
 argument_list|)
 expr_stmt|;
 name|webSession

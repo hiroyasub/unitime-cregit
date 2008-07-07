@@ -122,6 +122,14 @@ name|sTypeExam
 init|=
 literal|1
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|sTypeStudent
+init|=
+literal|2
+decl_stmt|;
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public
 name|SolverParameterGroup

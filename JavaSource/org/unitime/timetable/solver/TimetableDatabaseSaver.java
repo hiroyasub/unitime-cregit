@@ -1843,11 +1843,6 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|tx
-operator|.
-name|rollback
-argument_list|()
-expr_stmt|;
 name|iProgress
 operator|.
 name|fatal
@@ -1873,6 +1868,11 @@ argument_list|()
 argument_list|,
 name|e
 argument_list|)
+expr_stmt|;
+name|tx
+operator|.
+name|rollback
+argument_list|()
 expr_stmt|;
 block|}
 finally|finally
