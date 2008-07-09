@@ -2401,13 +2401,6 @@ name|getEmailAddress
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|contact
-operator|.
-name|setPhone
-argument_list|(
-literal|"unknown"
-argument_list|)
-expr_stmt|;
 name|hibSession
 operator|.
 name|save
