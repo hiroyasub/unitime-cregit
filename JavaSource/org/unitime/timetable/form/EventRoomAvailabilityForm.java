@@ -384,6 +384,11 @@ name|boolean
 name|iIsAddMeetings
 decl_stmt|;
 comment|//if adding meetings to an existing event
+specifier|private
+name|Long
+index|[]
+name|iRoomFeatures
+decl_stmt|;
 comment|//data calculated
 specifier|private
 name|Hashtable
@@ -648,6 +653,19 @@ operator|.
 name|booleanValue
 argument_list|()
 expr_stmt|;
+name|iRoomFeatures
+operator|=
+operator|(
+name|Long
+index|[]
+operator|)
+name|session
+operator|.
+name|getAttribute
+argument_list|(
+literal|"Event.RoomFeatures"
+argument_list|)
+expr_stmt|;
 name|iLocations
 operator|=
 name|getPossibleLocations
@@ -910,6 +928,72 @@ decl_stmt|;
 name|String
 name|query
 decl_stmt|;
+name|String
+name|a
+init|=
+literal|""
+decl_stmt|,
+name|b
+init|=
+literal|""
+decl_stmt|;
+if|if
+condition|(
+name|iRoomFeatures
+operator|!=
+literal|null
+operator|&&
+name|iRoomFeatures
+operator|.
+name|length
+operator|>
+literal|0
+condition|)
+block|{
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|iRoomFeatures
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|a
+operator|+=
+literal|", GlobalRoomFeature f"
+operator|+
+name|i
+expr_stmt|;
+name|b
+operator|+=
+literal|" and f"
+operator|+
+name|i
+operator|+
+literal|".uniqueId="
+operator|+
+name|iRoomFeatures
+index|[
+name|i
+index|]
+operator|+
+literal|" and f"
+operator|+
+name|i
+operator|+
+literal|" in elements(r.features)"
+expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|iLookAtNearLocations
@@ -917,7 +1001,11 @@ condition|)
 block|{
 name|query
 operator|=
-literal|"select r from Room r, Building b where b.uniqueId = :buildingId and "
+literal|"select r from Room r, Building b"
+operator|+
+name|a
+operator|+
+literal|" where b.uniqueId = :buildingId and "
 operator|+
 literal|"(r.building=b or ((((r.coordinateX - b.coordinateX)*(r.coordinateX - b.coordinateX)) +"
 operator|+
@@ -930,7 +1018,11 @@ else|else
 block|{
 name|query
 operator|=
-literal|"select r from Room r where r.building.uniqueId = :buildingId"
+literal|"select r from Room r"
+operator|+
+name|a
+operator|+
+literal|" where r.building.uniqueId = :buildingId"
 expr_stmt|;
 block|}
 if|if
@@ -984,6 +1076,10 @@ operator|+=
 literal|" and r.roomNumber like (:roomNumber)"
 expr_stmt|;
 block|}
+name|query
+operator|+=
+name|b
+expr_stmt|;
 name|Query
 name|hibQuery
 init|=
@@ -1737,7 +1833,7 @@ argument_list|)
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<tr><td></td>"
+literal|"<tr align='middle'><td></td>"
 expr_stmt|;
 name|String
 name|jsLocations
@@ -1754,21 +1850,35 @@ control|)
 block|{
 name|ret
 operator|+=
-literal|"<th onClick=\"tAll('"
+literal|"<td onClick=\"tAll('"
 operator|+
 name|location
 operator|.
 name|getPermanentId
 argument_list|()
 operator|+
-literal|"',false);\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">"
+literal|"',false);\" "
+operator|+
+literal|"onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">"
+operator|+
+literal|"<b>"
 operator|+
 name|location
 operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|"</th>"
+literal|"</b><br>("
+operator|+
+name|location
+operator|.
+name|getCapacity
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+operator|+
+literal|")</td>"
 expr_stmt|;
 name|jsLocations
 operator|+=

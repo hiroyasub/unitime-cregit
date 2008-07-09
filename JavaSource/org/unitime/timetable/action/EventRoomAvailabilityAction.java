@@ -357,7 +357,7 @@ block|}
 comment|//return to event list
 if|if
 condition|(
-literal|"Back"
+literal|"Change Request"
 operator|.
 name|equals
 argument_list|(
@@ -399,7 +399,7 @@ return|;
 block|}
 if|if
 condition|(
-literal|"Proceed To Checkout"
+literal|"Continue"
 operator|.
 name|equals
 argument_list|(

@@ -379,6 +379,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|RoomFeature
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|SchedulingSubpart
 import|;
 end_import
@@ -612,7 +626,7 @@ import|;
 end_import
 
 begin_comment
-comment|/*  * A large part of this file reuses code from the ExamEditForm.java  */
+comment|/**  * @author Zuzana Mullerova  */
 end_comment
 
 begin_class
@@ -678,6 +692,13 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|iLookAtNearLocations
+decl_stmt|;
+specifier|private
+name|Long
+index|[]
+name|iRoomFeatures
+init|=
+literal|null
 decl_stmt|;
 comment|//if adding meetings to an existing event
 specifier|private
@@ -803,30 +824,6 @@ argument_list|(
 literal|"errors.generic"
 argument_list|,
 literal|"No event dates are selected."
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|iBuildingId
-operator|==
-operator|-
-literal|1
-condition|)
-block|{
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"building"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.generic"
-argument_list|,
-literal|"No building has been selected."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1049,6 +1046,30 @@ expr_stmt|;
 block|}
 block|}
 if|if
+condition|(
+name|iBuildingId
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|errors
+operator|.
+name|add
+argument_list|(
+literal|"building"
+argument_list|,
+operator|new
+name|ActionMessage
+argument_list|(
+literal|"errors.generic"
+argument_list|,
+literal|"No building has been selected."
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
 condition|(
 name|getPossibleLocations
 argument_list|()
@@ -1512,6 +1533,19 @@ name|getEventTypeLabel
 argument_list|()
 expr_stmt|;
 block|}
+name|iRoomFeatures
+operator|=
+operator|(
+name|Long
+index|[]
+operator|)
+name|session
+operator|.
+name|getAttribute
+argument_list|(
+literal|"Event.RoomFeatures"
+argument_list|)
+expr_stmt|;
 block|}
 comment|// save event parameters to session attribute Event
 specifier|public
@@ -1688,6 +1722,15 @@ argument_list|(
 literal|"Event.IsAddMeetings"
 argument_list|,
 name|iIsAddMeetings
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|setAttribute
+argument_list|(
+literal|"Event.RoomFeatures"
+argument_list|,
+name|iRoomFeatures
 argument_list|)
 expr_stmt|;
 block|}
@@ -2890,6 +2933,45 @@ name|look
 expr_stmt|;
 block|}
 specifier|public
+name|Collection
+argument_list|<
+name|RoomFeature
+argument_list|>
+name|getAllRoomFeatures
+parameter_list|()
+block|{
+return|return
+name|RoomFeature
+operator|.
+name|getAllGlobalRoomFeatures
+argument_list|()
+return|;
+block|}
+specifier|public
+name|Long
+index|[]
+name|getRoomFeatures
+parameter_list|()
+block|{
+return|return
+name|iRoomFeatures
+return|;
+block|}
+specifier|public
+name|void
+name|setRoomFeatures
+parameter_list|(
+name|Long
+index|[]
+name|rfs
+parameter_list|)
+block|{
+name|iRoomFeatures
+operator|=
+name|rfs
+expr_stmt|;
+block|}
+specifier|public
 name|void
 name|cleanSessionAttributes
 parameter_list|(
@@ -3014,6 +3096,55 @@ operator|.
 name|removeAttribute
 argument_list|(
 literal|"Event.IsAddMeetings"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.Name"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.mcEmail"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.mcFName"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.mcLName"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.mcPhone"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.AdditionalInfo"
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.RoomFeatures"
 argument_list|)
 expr_stmt|;
 block|}
@@ -5251,6 +5382,72 @@ decl_stmt|;
 name|String
 name|query
 decl_stmt|;
+name|String
+name|a
+init|=
+literal|""
+decl_stmt|,
+name|b
+init|=
+literal|""
+decl_stmt|;
+if|if
+condition|(
+name|iRoomFeatures
+operator|!=
+literal|null
+operator|&&
+name|iRoomFeatures
+operator|.
+name|length
+operator|>
+literal|0
+condition|)
+block|{
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|iRoomFeatures
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|a
+operator|+=
+literal|", GlobalRoomFeature f"
+operator|+
+name|i
+expr_stmt|;
+name|b
+operator|+=
+literal|" and f"
+operator|+
+name|i
+operator|+
+literal|".uniqueId="
+operator|+
+name|iRoomFeatures
+index|[
+name|i
+index|]
+operator|+
+literal|" and f"
+operator|+
+name|i
+operator|+
+literal|" in elements(r.features)"
+expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|iLookAtNearLocations
@@ -5258,7 +5455,11 @@ condition|)
 block|{
 name|query
 operator|=
-literal|"select r from Room r, Building b where b.uniqueId = :buildingId and "
+literal|"select r from Room r, Building b"
+operator|+
+name|a
+operator|+
+literal|" where b.uniqueId = :buildingId and "
 operator|+
 literal|"(r.building=b or ((((r.coordinateX - b.coordinateX)*(r.coordinateX - b.coordinateX)) +"
 operator|+
@@ -5271,7 +5472,11 @@ else|else
 block|{
 name|query
 operator|=
-literal|"select r from Room r where r.building.uniqueId = :buildingId"
+literal|"select r from Room r"
+operator|+
+name|a
+operator|+
+literal|" where r.building.uniqueId = :buildingId"
 expr_stmt|;
 block|}
 if|if
@@ -5325,6 +5530,10 @@ operator|+=
 literal|" and r.roomNumber like (:roomNumber)"
 expr_stmt|;
 block|}
+name|query
+operator|+=
+name|b
+expr_stmt|;
 name|Query
 name|hibQuery
 init|=

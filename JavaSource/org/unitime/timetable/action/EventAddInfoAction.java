@@ -233,7 +233,7 @@ condition|)
 block|{
 if|if
 condition|(
-literal|"Back"
+literal|"Change Selection"
 operator|.
 name|equals
 argument_list|(
