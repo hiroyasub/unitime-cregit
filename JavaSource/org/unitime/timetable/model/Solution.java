@@ -4919,11 +4919,14 @@ expr_stmt|;
 block|}
 name|hibSession
 operator|.
+name|flush
+argument_list|()
+expr_stmt|;
+name|hibSession
+operator|.
 name|createQuery
 argument_list|(
-literal|"delete StudentEnrollment x where x in "
-operator|+
-literal|" ( select s from StudentEnrollment s where s.solution.uniqueId=:solutionId ) "
+literal|"delete StudentEnrollment x where x.solution.uniqueId=:solutionId "
 argument_list|)
 operator|.
 name|setInteger
@@ -4944,9 +4947,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete JointEnrollment x where x in "
-operator|+
-literal|" ( select j from JointEnrollment j where j.solution.uniqueId=:solutionId ) "
+literal|"delete JointEnrollment x where x.solution.uniqueId=:solutionId ) "
 argument_list|)
 operator|.
 name|setInteger
@@ -4994,9 +4995,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete Assignment x where x in "
-operator|+
-literal|" ( select a from Assignment a where a.solution.uniqueId=:solutionId ) "
+literal|"delete Assignment x where x.solution.uniqueId=:solutionId ) "
 argument_list|)
 operator|.
 name|setInteger
@@ -8705,7 +8704,7 @@ literal|"select c.uniqueId from "
 operator|+
 literal|"Class_ c, Solution s where s.uniqueId=:solutionId and "
 operator|+
-literal|"c.managingDept.uniqueId in (s.owner.departments.uniqueId)"
+literal|"c.managingDept.uniqueId in elements (s.owner.departments)"
 argument_list|)
 operator|.
 name|setLong
