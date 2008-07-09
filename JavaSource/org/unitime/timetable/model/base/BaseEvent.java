@@ -63,6 +63,13 @@ name|PROP_MAX_CAPACITY
 init|=
 literal|"maxCapacity"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EMAIL
+init|=
+literal|"email"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseEvent
@@ -194,6 +201,14 @@ operator|.
 name|Integer
 name|maxCapacity
 decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|email
+decl_stmt|;
 comment|// many to one
 specifier|private
 name|org
@@ -206,6 +221,18 @@ name|model
 operator|.
 name|EventContact
 name|mainContact
+decl_stmt|;
+specifier|private
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|SponsoringOrganization
+name|sponsoringOrganization
 decl_stmt|;
 comment|// collections
 specifier|private
@@ -376,6 +403,40 @@ operator|=
 name|maxCapacity
 expr_stmt|;
 block|}
+comment|/**      * Return the value associated with the column: EMAIL      */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|getEmail
+parameter_list|()
+block|{
+return|return
+name|email
+return|;
+block|}
+comment|/**      * Set the value related to the column: EMAIL      * @param email the EMAIL value      */
+specifier|public
+name|void
+name|setEmail
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|email
+parameter_list|)
+block|{
+name|this
+operator|.
+name|email
+operator|=
+name|email
+expr_stmt|;
+block|}
 comment|/** 	 * Return the value associated with the column: main_contact_id 	 */
 specifier|public
 name|org
@@ -416,6 +477,48 @@ operator|.
 name|mainContact
 operator|=
 name|mainContact
+expr_stmt|;
+block|}
+comment|/**      * Return the value associated with the column: sponsor_org_id      */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|SponsoringOrganization
+name|getSponsoringOrganization
+parameter_list|()
+block|{
+return|return
+name|sponsoringOrganization
+return|;
+block|}
+comment|/**      * Set the value related to the column: sponsor_org_id      * @param sponsoringOrganization the sponsor_org_id value      */
+specifier|public
+name|void
+name|setSponsoringOrganization
+parameter_list|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|SponsoringOrganization
+name|sponsoringOrganization
+parameter_list|)
+block|{
+name|this
+operator|.
+name|sponsoringOrganization
+operator|=
+name|sponsoringOrganization
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: additionalContacts 	 */
