@@ -3147,6 +3147,13 @@ argument_list|(
 literal|"Event.RoomFeatures"
 argument_list|)
 expr_stmt|;
+name|session
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"Event.AdditionalEmails"
+argument_list|)
+expr_stmt|;
 block|}
 comment|// Methods related to course events with conflict checking
 specifier|public

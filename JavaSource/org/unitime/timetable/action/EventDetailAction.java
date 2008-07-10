@@ -1038,6 +1038,16 @@ argument_list|(
 literal|"N/A yet"
 argument_list|)
 expr_stmt|;
+name|myForm
+operator|.
+name|setAdditionalEmails
+argument_list|(
+name|event
+operator|.
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 literal|"Course Event"
