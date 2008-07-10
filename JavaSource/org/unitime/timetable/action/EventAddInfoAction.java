@@ -315,9 +315,6 @@ operator|.
 name|submit
 argument_list|(
 name|request
-operator|.
-name|getSession
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|myForm
@@ -398,9 +395,6 @@ operator|.
 name|update
 argument_list|(
 name|request
-operator|.
-name|getSession
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|myForm
