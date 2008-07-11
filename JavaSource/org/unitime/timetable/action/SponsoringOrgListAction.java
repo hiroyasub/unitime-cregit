@@ -109,6 +109,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|commons
+operator|.
+name|web
+operator|.
+name|Web
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|form
@@ -167,6 +181,25 @@ operator|.
 name|getSession
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|Web
+operator|.
+name|isLoggedIn
+argument_list|(
+name|session
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|Exception
+argument_list|(
+literal|"Access Denied."
+argument_list|)
+throw|;
+block|}
 if|if
 condition|(
 literal|"Add Organization"
