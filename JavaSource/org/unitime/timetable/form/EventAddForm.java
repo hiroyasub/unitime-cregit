@@ -1068,7 +1068,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"No building has been selected."
+literal|"No building is selected."
 argument_list|)
 argument_list|)
 expr_stmt|;

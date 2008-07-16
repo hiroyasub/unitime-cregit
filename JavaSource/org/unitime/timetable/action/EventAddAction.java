@@ -757,26 +757,8 @@ operator|.
 name|getOwnerObject
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|clazz
-operator|.
-name|isViewableBy
-argument_list|(
-name|user
-argument_list|)
-condition|)
-name|onclick
-operator|=
-literal|"onClick=\"document.location='classDetail.do?cid="
-operator|+
-name|clazz
-operator|.
-name|getUniqueId
-argument_list|()
-operator|+
-literal|"';\""
-expr_stmt|;
+comment|//    if (clazz.isViewableBy(user))
+comment|//        onclick = "onClick=\"document.location='classDetail.do?cid="+clazz.getUniqueId()+"';\"";
 name|name
 operator|=
 name|rci
@@ -839,30 +821,8 @@ operator|.
 name|getOwnerObject
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|config
-operator|.
-name|isViewableBy
-argument_list|(
-name|user
-argument_list|)
-condition|)
-name|onclick
-operator|=
-literal|"onClick=\"document.location='instructionalOfferingDetail.do?io="
-operator|+
-name|config
-operator|.
-name|getInstructionalOffering
-argument_list|()
-operator|.
-name|getUniqueId
-argument_list|()
-operator|+
-literal|"';\""
-expr_stmt|;
-empty_stmt|;
+comment|//   if (config.isViewableBy(user))
+comment|//       onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+config.getInstructionalOffering().getUniqueId()+"';\"";;
 name|name
 operator|=
 name|rci
@@ -902,27 +862,8 @@ operator|.
 name|getOwnerObject
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|offering
-operator|.
-name|isViewableBy
-argument_list|(
-name|user
-argument_list|)
-condition|)
-name|onclick
-operator|=
-literal|"onClick=\"document.location='instructionalOfferingDetail.do?io="
-operator|+
-name|offering
-operator|.
-name|getUniqueId
-argument_list|()
-operator|+
-literal|"';\""
-expr_stmt|;
-empty_stmt|;
+comment|//  if (offering.isViewableBy(user))
+comment|//      onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+offering.getUniqueId()+"';\"";;
 name|name
 operator|=
 name|rci
@@ -962,30 +903,8 @@ operator|.
 name|getOwnerObject
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|course
-operator|.
-name|isViewableBy
-argument_list|(
-name|user
-argument_list|)
-condition|)
-name|onclick
-operator|=
-literal|"onClick=\"document.location='instructionalOfferingDetail.do?io="
-operator|+
-name|course
-operator|.
-name|getInstructionalOffering
-argument_list|()
-operator|.
-name|getUniqueId
-argument_list|()
-operator|+
-literal|"';\""
-expr_stmt|;
-empty_stmt|;
+comment|//    if (course.isViewableBy(user))
+comment|//        onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+course.getInstructionalOffering().getUniqueId()+"';\"";;
 name|name
 operator|=
 name|rci
