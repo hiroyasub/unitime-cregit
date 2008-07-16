@@ -4432,6 +4432,21 @@ name|list
 argument_list|()
 return|;
 block|}
+specifier|public
+specifier|abstract
+name|RoomType
+name|getRoomType
+parameter_list|()
+function_decl|;
+specifier|public
+specifier|abstract
+name|void
+name|setRoomType
+parameter_list|(
+name|RoomType
+name|roomType
+parameter_list|)
+function_decl|;
 block|}
 end_class
 

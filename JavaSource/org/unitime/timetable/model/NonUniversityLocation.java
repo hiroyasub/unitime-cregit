@@ -398,7 +398,11 @@ name|getRoomTypeLabel
 parameter_list|()
 block|{
 return|return
-literal|"Non University Locations"
+name|getRoomType
+argument_list|()
+operator|.
+name|getLabel
+argument_list|()
 return|;
 block|}
 block|}

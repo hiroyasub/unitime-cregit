@@ -63,6 +63,13 @@ name|PROP_NAME
 init|=
 literal|"name"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_ROOM_TYPE
+init|=
+literal|"roomType"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseNonUniversityLocation
@@ -179,6 +186,19 @@ operator|.
 name|String
 name|name
 decl_stmt|;
+comment|// many to one
+specifier|private
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|RoomType
+name|roomType
+decl_stmt|;
 comment|/** 	 * Return the value associated with the column: NAME 	 */
 specifier|public
 name|java
@@ -211,6 +231,48 @@ operator|.
 name|name
 operator|=
 name|name
+expr_stmt|;
+block|}
+comment|/**      * Return the value associated with the column: ROOM_TYPE      */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|RoomType
+name|getRoomType
+parameter_list|()
+block|{
+return|return
+name|roomType
+return|;
+block|}
+comment|/**      * Set the value related to the column: ROOM_TYPE      * @param scheduledRoomType the ROOM_TYPE value      */
+specifier|public
+name|void
+name|setRoomType
+parameter_list|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|RoomType
+name|roomType
+parameter_list|)
+block|{
+name|this
+operator|.
+name|roomType
+operator|=
+name|roomType
 expr_stmt|;
 block|}
 specifier|public

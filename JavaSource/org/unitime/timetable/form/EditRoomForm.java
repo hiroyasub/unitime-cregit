@@ -1187,7 +1187,9 @@ return|return
 name|RoomType
 operator|.
 name|findAll
-argument_list|()
+argument_list|(
+name|room
+argument_list|)
 return|;
 block|}
 block|}
