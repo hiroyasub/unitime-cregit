@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -107,6 +111,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|struts
+operator|.
+name|action
+operator|.
+name|ActionMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|hibernate
 operator|.
 name|Session
@@ -166,6 +184,10 @@ operator|.
 name|_RootDAO
 import|;
 end_import
+
+begin_comment
+comment|/**  * @author Zuzana Mullerova  */
+end_comment
 
 begin_class
 specifier|public
@@ -246,6 +268,35 @@ name|op
 argument_list|)
 condition|)
 block|{
+name|ActionMessages
+name|errors
+init|=
+name|myForm
+operator|.
+name|validate
+argument_list|(
+name|mapping
+argument_list|,
+name|request
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|errors
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+name|saveErrors
+argument_list|(
+name|request
+argument_list|,
+name|errors
+argument_list|)
+expr_stmt|;
+else|else
+block|{
 name|Transaction
 name|tx
 init|=
@@ -324,7 +375,7 @@ name|spor
 argument_list|)
 expr_stmt|;
 comment|// save sponsoring org
-comment|/*				ChangeLog.addChange( 	                    hibSession, 	                    request, 	                    iEvent, 	                    ChangeLog.Source.EVENT_EDIT, 	                    ChangeLog.Operation.UPDATE, 	                    null,null); */
+comment|/*				ChangeLog.addChange( 		                    hibSession, 		                    request, 		                    iEvent, 		                    ChangeLog.Source.EVENT_EDIT, 		                    ChangeLog.Operation.UPDATE, 		                    null,null); 	*/
 name|tx
 operator|.
 name|commit
@@ -361,6 +412,7 @@ literal|"list"
 argument_list|)
 return|;
 block|}
+block|}
 if|if
 condition|(
 literal|"Update"
@@ -370,6 +422,35 @@ argument_list|(
 name|op
 argument_list|)
 condition|)
+block|{
+name|ActionMessages
+name|errors
+init|=
+name|myForm
+operator|.
+name|validate
+argument_list|(
+name|mapping
+argument_list|,
+name|request
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|errors
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+name|saveErrors
+argument_list|(
+name|request
+argument_list|,
+name|errors
+argument_list|)
+expr_stmt|;
+else|else
 block|{
 name|Transaction
 name|tx
@@ -450,7 +531,7 @@ name|spor
 argument_list|)
 expr_stmt|;
 comment|// save sponsoring org
-comment|/*				ChangeLog.addChange( 	                    hibSession, 	                    request, 	                    iEvent, 	                    ChangeLog.Source.EVENT_EDIT, 	                    ChangeLog.Operation.UPDATE, 	                    null,null); */
+comment|/*				ChangeLog.addChange( 		                    hibSession, 		                    request, 		                    iEvent, 		                    ChangeLog.Source.EVENT_EDIT, 		                    ChangeLog.Operation.UPDATE, 		                    null,null); 	*/
 name|tx
 operator|.
 name|commit
@@ -491,6 +572,7 @@ argument_list|(
 literal|"list"
 argument_list|)
 return|;
+block|}
 block|}
 if|if
 condition|(
@@ -577,6 +659,27 @@ name|e
 throw|;
 block|}
 block|}
+if|if
+condition|(
+literal|"add"
+operator|.
+name|equals
+argument_list|(
+name|myForm
+operator|.
+name|getScreen
+argument_list|()
+argument_list|)
+condition|)
+return|return
+name|mapping
+operator|.
+name|findForward
+argument_list|(
+literal|"add"
+argument_list|)
+return|;
+else|else
 return|return
 name|mapping
 operator|.
