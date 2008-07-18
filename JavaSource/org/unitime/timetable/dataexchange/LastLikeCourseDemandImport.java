@@ -301,9 +301,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"delete LastLikeCourseDemand ll where ll.student.uniqueId in "
+literal|"delete LastLikeCourseDemand ll where ll.subjectArea.uniqueId in "
 operator|+
-literal|"(select s.uniqueId from Student s where s.session.uniqueId=:sessionId)"
+literal|"(select s.uniqueId from SubjectArea s where s.session.uniqueId=:sessionId)"
 argument_list|)
 operator|.
 name|setLong
