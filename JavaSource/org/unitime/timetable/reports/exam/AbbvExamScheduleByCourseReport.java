@@ -2316,7 +2316,7 @@ argument_list|,
 literal|66
 argument_list|)
 operator|+
-literal|"|"
+literal|"| "
 operator|+
 name|b
 argument_list|)
