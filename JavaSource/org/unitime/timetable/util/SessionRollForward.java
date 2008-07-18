@@ -505,6 +505,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|LastLikeCourseDemand
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|Location
 import|;
 end_import
@@ -688,6 +702,20 @@ operator|.
 name|model
 operator|.
 name|SolverGroup
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
 import|;
 end_import
 
@@ -984,6 +1012,22 @@ operator|.
 name|dao
 operator|.
 name|InstructionalOfferingDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|LastLikeCourseDemandDAO
 import|;
 end_import
 
@@ -13726,14 +13770,17 @@ block|}
 block|}
 specifier|public
 name|void
-name|cloneCourseToCourses
+name|rollStudentsForward
 parameter_list|(
+name|ActionMessages
+name|errors
+parameter_list|,
 name|RollForwardSessionForm
 name|rollForwardSessionForm
 parameter_list|)
 block|{
 name|Session
-name|session
+name|toSession
 init|=
 name|Session
 operator|.
@@ -13745,190 +13792,299 @@ name|getSessionToRollForwardTo
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|//		//set 1 - "VCS 565D"
-comment|//		String[] courses = {
-comment|//				"CPB 584 ",
-comment|//				"CPB 585 ",
-comment|//				"CPB 586 ",
-comment|//				"CPB 586Y",
-comment|//				"CPB 586Z",
-comment|//				"CPB 587 ",
-comment|//				"CPB 588 ",
-comment|//				"CPB 589 ",
-comment|//				"CPB 589Y",
-comment|//				"V M 510 ",
-comment|//				"V M 578 ",
-comment|//				"VCS 560 ",
-comment|//				"VCS 561 ",
-comment|//				"VCS 562 ",
-comment|//				"VCS 563 ",
-comment|//				"VCS 563Y",
-comment|//				"VCS 565 ",
-comment|//				"VCS 565E",
-comment|//				"VCS 565F",
-comment|//				"VCS 565G",
-comment|//				"VCS 565M",
-comment|//				"VCS 565N",
-comment|//				"VCS 566 ",
-comment|//				"VCS 567 ",
-comment|//				"VCS 567A",
-comment|//				"VCS 567Y",
-comment|//				"VCS 568 ",
-comment|//				"VCS 571 ",
-comment|//				"VCS 571D",
-comment|//				"VCS 571M",
-comment|//				"VCS 571N",
-comment|//				"VCS 571O",
-comment|//				"VCS 571P",
-comment|//				"VCS 571R",
-comment|//				"VCS 571S",
-comment|//				"VCS 571V",
-comment|//				"VCS 571W",
-comment|//				"VCS 571Y",
-comment|//				"VCS 571Z",
-comment|//				"VCS 572Y",
-comment|//				"VCS 575 ",
-comment|//				"VCS 575D",
-comment|//				"VCS 575Y",
-comment|//				"VCS 575Z",
-comment|//				"VCS 576Y",
-comment|//				"VCS 576Z",
-comment|//				"VCS 577Y",
-comment|//				"VCS 577Z",
-comment|//				"VCS 578Y",
-comment|//				"VCS 578Z",
-comment|//				"VCS 579V",
-comment|//				"VCS 579W",
-comment|//				"VCS 579Y",
-comment|//				"VCS 579Z",
-comment|//				"VCS 580Y",
-comment|//				"VCS 580Z",
-comment|//				"VCS 582 ",
-comment|//				"VCS 583 ",
-comment|//				"VCS 585 ",
-comment|//				"VCS 585E",
-comment|//				"VCS 585F",
-comment|//				"VCS 588Y",
-comment|//				"VCS 591 ",
-comment|//				"VCS 591E",
-comment|//				"VCS 591F",
-comment|//				"VCS 591M",
-comment|//				"VCS 591N",
-comment|//				"VCS 591S",
-comment|//				"VCS 591T",
-comment|//				"VCS 594 ",
-comment|//				"VCS 594Y",
-comment|//				"VCS 594Z"
-comment|//		};
-comment|//		cloneCourses(courses, "VCS 565D", session);
-comment|//		//set 2 - LYNN G409 - "VCS 565E"
-comment|//		String[] courses2 = {
-comment|//				"VCS 575E",
-comment|//				"VCS 575F",
-comment|//				"VCS 575G",
-comment|//				"VCS 575M",
-comment|//				"VCS 575N"
-comment|//		};
-comment|//		cloneCourses(courses2, "VCS 565E", session);
-comment|//		//set 3 - LYNN 1240 - "VCS 562 "
-comment|//		String[] courses3 = {
-comment|//				"VCS 572 ",
-comment|//				"VCS 582G",
-comment|//				"VCS 582O",
-comment|//				"VCS 582S"
-comment|//		};
-comment|//		cloneCourses(courses3, "VCS 562 ", session);
-comment|//		//set 4 - LYNN G269 - "VCS 561 "
-comment|//		String[] courses4 = {
-comment|//				"VCS 581 "
-comment|//		};
-comment|//		cloneCourses(courses4, "VCS 561 ", session);
-comment|//		//set 5 - LYNN G397 - "VCS 566 "
-comment|//		String[] courses5 = {
-comment|//				"VCS 576 ",
-comment|//				"VCS 577 ",
-comment|//				"VCS 578 ",
-comment|//				"VCS 579 ",
-comment|//				"VCS 580 ",
-comment|//				"VCS 588 "
-comment|//		};
-comment|//		cloneCourses(courses5, "VCS 566 ", session);
-comment|//		//set 6 - LYNN G490A - "VCS 585F"
-comment|//		String[] courses6 = {
-comment|//				"VCS 586 ",
-comment|//				"VCS 586Y"
-comment|//		};
-comment|//		cloneCourses(courses6, "VCS 585F", session);
-comment|//		// Pharmacy Courses
-comment|//		String[] courses = {
-comment|//				"CLPH585B",
-comment|//				"CLPH585C",
-comment|//				"CLPH585D",
-comment|//				"CLPH585E",
-comment|//				"CLPH585N",
-comment|//				"CLPH585R",
-comment|//				"CLPH585S",
-comment|//				"CLPH585T",
-comment|//				"CLPH585U",
-comment|//				"CLPH588A",
-comment|//				"CLPH588B",
-comment|//				"CLPH588C",
-comment|//				"CLPH588D",
-comment|//				"CLPH588E",
-comment|//				"CLPH588N",
-comment|//				"CLPH588R",
-comment|//				"CLPH588S",
-comment|//				"CLPH588T",
-comment|//				"CLPH588U",
-comment|//				"CLPH589A",
-comment|//				"CLPH589B",
-comment|//				"CLPH589C",
-comment|//				"CLPH589D",
-comment|//				"CLPH589E",
-comment|//				"CLPH589N",
-comment|//				"CLPH589R",
-comment|//				"CLPH589S",
-comment|//				"CLPH589T",
-comment|//				"CLPH589U",
-comment|//				"PHPR498A",
-comment|//				"PHPR498B",
-comment|//				"PHPR498C",
-comment|//				"PHPR498D",
-comment|//				"PHPR498E",
-comment|//				"PHPR498N",
-comment|//				"PHPR498R",
-comment|//				"PHPR498S",
-comment|//				"PHPR498T",
-comment|//				"PHPR498U",
-comment|//				"PHPR499A",
-comment|//				"PHPR499B",
-comment|//				"PHPR499C",
-comment|//				"PHPR499D",
-comment|//				"PHPR499E",
-comment|//				"PHPR499N",
-comment|//				"PHPR499R",
-comment|//				"PHPR499S",
-comment|//				"PHPR499T",
-comment|//				"PHPR499U",
-comment|//				"NUPH595A",
-comment|//				"NUPH595B",
-comment|//				"NUPH595C",
-comment|//				"NUPH595D",
-comment|//				"NUPH595E"
-comment|//		};
-comment|//		cloneCourses(courses, "CLPH585A", rollForwardSessionForm);
-comment|//		// PPE Courses
-comment|//		String[] courses = {
-comment|//				"PPE 305 ",
-comment|//				"PPE 353 "
-comment|//		};
-comment|//		cloneCourses(courses, "PPE 151 ", rollForwardSessionForm);
-comment|//		// PPT Courses
-comment|//		String[] courses2 = {
-comment|//				"PPT 305 ",
-comment|//				"PPT 353 "
-comment|//		};
-comment|//		cloneCourses(courses2, "PPT 151 ", rollForwardSessionForm);
+name|String
+index|[]
+name|query
+init|=
+literal|null
+decl_stmt|;
+switch|switch
+condition|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardStudentsMode
+argument_list|()
+operator|.
+name|intValue
+argument_list|()
+condition|)
+block|{
+case|case
+literal|0
+case|:
+comment|// Last-like Course Demands
+name|query
+operator|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"select distinct d.student, co, d.priority from LastLikeCourseDemand d, CourseOffering co, CourseOffering last "
+operator|+
+literal|"where co.subjectArea.session.uniqueId=:toSessionId and co.uniqueIdRolledForwardFrom=last.uniqueId and "
+operator|+
+literal|"((d.coursePermId is null and d.subjectArea.uniqueId = last.subjectArea.uniqueId and d.courseNbr=last.courseNbr) or "
+operator|+
+literal|"(d.coursePermId is not null and d.coursePermId=last.permId))"
+block|}
+expr_stmt|;
+break|break;
+case|case
+literal|1
+case|:
+comment|// Student Class Enrollments
+name|query
+operator|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"select distinct e.student, co, e.courseRequest.courseDemand.priority from StudentClassEnrollment e, CourseOffering co "
+operator|+
+literal|"where co.subjectArea.session.uniqueId=:toSessionId and co.uniqueIdRolledForwardFrom=e.courseOffering.uniqueId"
+block|,
+literal|"select distinct e.student, co, -1 from StudentClassEnrollment e, CourseOffering co "
+operator|+
+literal|"where co.subjectArea.session.uniqueId=:toSessionId and co.uniqueIdRolledForwardFrom=e.courseOffering.uniqueId and "
+operator|+
+literal|"e.courseRequest is null"
+block|}
+expr_stmt|;
+break|break;
+case|case
+literal|2
+case|:
+comment|// Course Requests
+name|query
+operator|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"select r.courseDemand.student, co, r.courseDemand.priority from CourseRequest r, CourseOffering co "
+operator|+
+literal|"where co.subjectArea.session.uniqueId=:toSessionId and co.uniqueIdRolledForwardFrom=r.courseOffering.uniqueId and "
+operator|+
+literal|"r.order=0 and r.courseDemand.alternative=false"
+block|}
+expr_stmt|;
+block|}
+name|org
+operator|.
+name|hibernate
+operator|.
+name|Session
+name|hibSession
+init|=
+name|LastLikeCourseDemandDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+decl_stmt|;
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"delete LastLikeCourseDemand d where d.subjectArea.uniqueId in "
+operator|+
+literal|"(select s.uniqueId from SubjectArea s where s.session.uniqueId=:toSessionId)"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"toSessionId"
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|int
+name|total
+init|=
+literal|0
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|query
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+for|for
+control|(
+name|Iterator
+name|j
+init|=
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+name|query
+index|[
+name|i
+index|]
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"toSessionId"
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|list
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|j
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|Object
+index|[]
+name|o
+init|=
+operator|(
+name|Object
+index|[]
+operator|)
+name|j
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+name|Student
+name|s
+init|=
+operator|(
+name|Student
+operator|)
+name|o
+index|[
+literal|0
+index|]
+decl_stmt|;
+name|CourseOffering
+name|co
+init|=
+operator|(
+name|CourseOffering
+operator|)
+name|o
+index|[
+literal|1
+index|]
+decl_stmt|;
+name|Number
+name|priority
+init|=
+operator|(
+name|Number
+operator|)
+name|o
+index|[
+literal|2
+index|]
+decl_stmt|;
+name|LastLikeCourseDemand
+name|d
+init|=
+operator|new
+name|LastLikeCourseDemand
+argument_list|()
+decl_stmt|;
+name|d
+operator|.
+name|setPriority
+argument_list|(
+name|priority
+operator|.
+name|intValue
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|d
+operator|.
+name|setSubjectArea
+argument_list|(
+name|co
+operator|.
+name|getSubjectArea
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|d
+operator|.
+name|setCourseNbr
+argument_list|(
+name|co
+operator|.
+name|getCourseNbr
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|d
+operator|.
+name|setCoursePermId
+argument_list|(
+name|co
+operator|.
+name|getPermId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|d
+operator|.
+name|setStudent
+argument_list|(
+name|s
+argument_list|)
+expr_stmt|;
+name|hibSession
+operator|.
+name|saveOrUpdate
+argument_list|(
+name|d
+argument_list|)
+expr_stmt|;
+name|total
+operator|++
+expr_stmt|;
+block|}
+block|}
+name|hibSession
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
+name|hibSession
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
