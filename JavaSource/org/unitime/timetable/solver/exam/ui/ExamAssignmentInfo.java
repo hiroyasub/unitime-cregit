@@ -9706,13 +9706,12 @@ argument_list|()
 operator|==
 literal|null
 operator|||
-operator|(
+operator|!
 operator|(
 name|getOtherEvent
 argument_list|()
 operator|instanceof
 name|ClassEvent
-operator|)
 operator|)
 condition|?
 literal|null
