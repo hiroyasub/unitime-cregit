@@ -848,7 +848,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|10
+literal|11
 argument_list|,
 literal|"Assigned Examinations"
 argument_list|,
@@ -891,6 +891,8 @@ literal|"Distributions"
 block|,
 literal|"Direct"
 block|,
+literal|"Student N/A"
+block|,
 literal|">2 A Day"
 block|,
 literal|"Back-To-Back"
@@ -919,6 +921,8 @@ block|,
 literal|"right"
 block|,
 literal|"right"
+block|,
+literal|"right"
 block|}
 argument_list|,
 operator|new
@@ -938,6 +942,8 @@ block|,
 literal|true
 block|,
 literal|true
+block|,
+literal|false
 block|,
 literal|false
 block|,
@@ -972,6 +978,18 @@ operator|.
 name|getNrDirectConflicts
 argument_list|()
 decl_stmt|;
+name|int
+name|edc
+init|=
+name|exam
+operator|.
+name|getNrNotAvailableDirectConflicts
+argument_list|()
+decl_stmt|;
+name|dc
+operator|-=
+name|edc
+expr_stmt|;
 name|String
 name|dcStr
 init|=
@@ -1004,6 +1022,41 @@ operator|.
 name|valueOf
 argument_list|(
 name|dc
+argument_list|)
+operator|)
+decl_stmt|;
+name|String
+name|edcStr
+init|=
+operator|(
+name|edc
+operator|<=
+literal|0
+condition|?
+literal|""
+else|:
+name|html
+condition|?
+literal|"<font color='"
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+literal|"P"
+argument_list|)
+operator|+
+literal|"'>"
+operator|+
+name|edc
+operator|+
+literal|"</font>"
+else|:
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|edc
 argument_list|)
 operator|)
 decl_stmt|;
@@ -1306,6 +1359,8 @@ operator|)
 block|,
 name|dcStr
 block|,
+name|edcStr
+block|,
 name|m2dStr
 block|,
 name|btbStr
@@ -1354,6 +1409,8 @@ literal|", "
 argument_list|)
 block|,
 name|dc
+block|,
+name|edc
 block|,
 name|m2d
 block|,
