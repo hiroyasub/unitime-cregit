@@ -294,6 +294,14 @@ name|getExamType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|l
+operator|.
+name|setRoomType
+argument_list|(
+name|getRoomType
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|l
 return|;
