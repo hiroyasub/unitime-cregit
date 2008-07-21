@@ -1582,6 +1582,7 @@ name|cell
 operator|.
 name|addContent
 argument_list|(
+operator|(
 name|e
 operator|.
 name|getMainContact
@@ -1605,7 +1606,9 @@ argument_list|()
 operator|+
 literal|", "
 operator|)
+operator|)
 operator|+
+operator|(
 name|e
 operator|.
 name|getMainContact
@@ -1625,6 +1628,7 @@ argument_list|()
 operator|.
 name|getFirstName
 argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 return|return
