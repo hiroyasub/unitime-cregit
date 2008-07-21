@@ -327,6 +327,20 @@ name|EventDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Constants
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Zuzana Mullerova  */
 end_comment
@@ -1004,7 +1018,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|myForm
+name|Constants
 operator|.
 name|PREF_ROWS_ADDED
 condition|;

@@ -285,6 +285,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|Roles
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|dao
 operator|.
 name|LocationDAO
@@ -388,6 +402,20 @@ specifier|private
 name|Long
 index|[]
 name|iRoomFeatures
+decl_stmt|;
+specifier|private
+name|Long
+index|[]
+name|iRoomTypes
+init|=
+literal|null
+decl_stmt|;
+specifier|private
+name|Long
+index|[]
+name|iRoomGroups
+init|=
+literal|null
 decl_stmt|;
 comment|//data calculated
 specifier|private
@@ -653,6 +681,32 @@ operator|.
 name|booleanValue
 argument_list|()
 expr_stmt|;
+name|iRoomTypes
+operator|=
+operator|(
+name|Long
+index|[]
+operator|)
+name|session
+operator|.
+name|getAttribute
+argument_list|(
+literal|"Event.RoomTypes"
+argument_list|)
+expr_stmt|;
+name|iRoomGroups
+operator|=
+operator|(
+name|Long
+index|[]
+operator|)
+name|session
+operator|.
+name|getAttribute
+argument_list|(
+literal|"Event.RoomGroups"
+argument_list|)
+expr_stmt|;
 name|iRoomFeatures
 operator|=
 operator|(
@@ -902,7 +956,7 @@ name|iDateLocations
 argument_list|)
 expr_stmt|;
 block|}
-comment|// apply parameters from the Add Event screen to get possible locations for the event
+comment|// get possible locations for the event based on entered criteria
 specifier|public
 name|Hashtable
 argument_list|<
@@ -996,16 +1050,161 @@ block|}
 block|}
 if|if
 condition|(
+name|iRoomGroups
+operator|!=
+literal|null
+operator|&&
+name|iRoomGroups
+operator|.
+name|length
+operator|>
+literal|0
+condition|)
+block|{
+name|b
+operator|+=
+literal|" and ("
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|iRoomGroups
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|i
+operator|>
+literal|0
+condition|)
+name|b
+operator|+=
+literal|" or"
+expr_stmt|;
+name|a
+operator|+=
+literal|", RoomGroup g"
+operator|+
+name|i
+expr_stmt|;
+name|b
+operator|+=
+literal|" (g"
+operator|+
+name|i
+operator|+
+literal|".uniqueId="
+operator|+
+name|iRoomGroups
+index|[
+name|i
+index|]
+operator|+
+literal|" and g"
+operator|+
+name|i
+operator|+
+literal|" in elements(r.roomGroups))"
+expr_stmt|;
+block|}
+name|b
+operator|+=
+literal|")"
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|iRoomTypes
+operator|!=
+literal|null
+operator|&&
+name|iRoomTypes
+operator|.
+name|length
+operator|>
+literal|0
+condition|)
+block|{
+name|b
+operator|+=
+literal|" and r.roomType.uniqueId in ("
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|iRoomTypes
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|i
+operator|>
+literal|0
+condition|)
+name|b
+operator|+=
+literal|","
+expr_stmt|;
+name|b
+operator|+=
+name|iRoomTypes
+index|[
+name|i
+index|]
+expr_stmt|;
+block|}
+name|b
+operator|+=
+literal|")"
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|iBuildingId
+operator|!=
+literal|0
+condition|)
+block|{
+if|if
+condition|(
 name|iLookAtNearLocations
 condition|)
 block|{
 name|query
 operator|=
-literal|"select r from Room r, Building b"
+literal|"select r from Room r "
+operator|+
+literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr, "
+operator|+
+literal|"Building b"
 operator|+
 name|a
 operator|+
 literal|" where b.uniqueId = :buildingId and "
+operator|+
+literal|"rd.control=true and mr.role.reference=:eventMgr and "
 operator|+
 literal|"(r.building=b or ((((r.coordinateX - b.coordinateX)*(r.coordinateX - b.coordinateX)) +"
 operator|+
@@ -1018,11 +1217,27 @@ else|else
 block|{
 name|query
 operator|=
-literal|"select r from Room r"
+literal|"select r from Room r "
+operator|+
+literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr"
 operator|+
 name|a
 operator|+
-literal|" where r.building.uniqueId = :buildingId"
+literal|" where r.building.uniqueId=:buildingId and rd.control=true and mr.role.reference=:eventMgr"
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|query
+operator|=
+literal|"select r from NonUniversityLocation r "
+operator|+
+literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr"
+operator|+
+name|a
+operator|+
+literal|" where rd.control=true and mr.role.reference=:eventMgr"
 expr_stmt|;
 block|}
 if|if
@@ -1032,8 +1247,11 @@ operator|!=
 literal|null
 operator|&&
 name|iMinCapacity
-operator|!=
-literal|""
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|query
@@ -1048,8 +1266,11 @@ operator|!=
 literal|null
 operator|&&
 name|iMaxCapacity
-operator|!=
-literal|""
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|query
@@ -1073,7 +1294,15 @@ condition|)
 block|{
 name|query
 operator|+=
+operator|(
+name|iBuildingId
+operator|==
+literal|0
+condition|?
+literal|" and r.name like (:roomNumber)"
+else|:
 literal|" and r.roomNumber like (:roomNumber)"
+operator|)
 expr_stmt|;
 block|}
 name|query
@@ -1095,6 +1324,12 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|iBuildingId
+operator|!=
+literal|0
+condition|)
 name|hibQuery
 operator|.
 name|setLong
@@ -1104,6 +1339,17 @@ argument_list|,
 name|iBuildingId
 argument_list|)
 expr_stmt|;
+name|hibQuery
+operator|.
+name|setString
+argument_list|(
+literal|"eventMgr"
+argument_list|,
+name|Roles
+operator|.
+name|EVENT_MGR_ROLE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|iMinCapacity
@@ -1111,8 +1357,11 @@ operator|!=
 literal|null
 operator|&&
 name|iMinCapacity
-operator|!=
-literal|""
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|hibQuery
@@ -1137,8 +1386,11 @@ operator|!=
 literal|null
 operator|&&
 name|iMaxCapacity
-operator|!=
-literal|""
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|hibQuery
