@@ -2268,6 +2268,13 @@ operator|new
 name|SpecialEvent
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|iSponsoringOrgId
+operator|!=
+literal|null
+condition|)
+block|{
 name|System
 operator|.
 name|out
@@ -2299,6 +2306,7 @@ argument_list|(
 name|spor
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|event
 operator|.
