@@ -2102,6 +2102,14 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|PREF_ROWS_ADDED
+init|=
+literal|2
+decl_stmt|;
 block|}
 end_class
 

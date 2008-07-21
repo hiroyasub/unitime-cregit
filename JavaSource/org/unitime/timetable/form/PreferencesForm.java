@@ -240,13 +240,6 @@ name|PreferencesForm
 extends|extends
 name|ActionForm
 block|{
-specifier|public
-specifier|final
-name|int
-name|PREF_ROWS_ADDED
-init|=
-literal|2
-decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 specifier|protected
 name|String
@@ -2468,6 +2461,8 @@ literal|0
 init|;
 name|i
 operator|<
+name|Constants
+operator|.
 name|PREF_ROWS_ADDED
 condition|;
 name|i
