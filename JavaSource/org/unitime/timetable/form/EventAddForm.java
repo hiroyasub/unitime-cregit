@@ -3168,9 +3168,13 @@ literal|5
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|i
 operator|/
 literal|144
+operator|)
+operator|%
+literal|2
 operator|==
 literal|0
 condition|)
