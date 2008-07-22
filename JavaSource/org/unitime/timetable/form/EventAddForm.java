@@ -913,7 +913,7 @@ decl_stmt|;
 if|if
 condition|(
 name|iStartTime
-operator|>
+operator|>=
 name|iStopTime
 condition|)
 name|errors
