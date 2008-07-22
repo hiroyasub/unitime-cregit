@@ -1620,9 +1620,9 @@ name|query
 init|=
 literal|"Select m from Meeting m where "
 operator|+
-literal|"m.startPeriod<=:stopTime and 	"
+literal|"m.startPeriod<:stopTime and 	"
 operator|+
-literal|"m.stopPeriod>=:startTime and "
+literal|"m.stopPeriod>:startTime and "
 operator|+
 literal|"m.locationPermanentId in ("
 operator|+
