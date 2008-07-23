@@ -1042,6 +1042,13 @@ name|approvedMeeting
 argument_list|)
 expr_stmt|;
 block|}
+name|myForm
+operator|.
+name|setSelectedMeetings
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 name|tx
 operator|.
 name|commit
@@ -1923,6 +1930,11 @@ name|canDelete
 init|=
 literal|false
 decl_stmt|;
+name|boolean
+name|isPast
+init|=
+literal|true
+decl_stmt|;
 if|if
 condition|(
 name|meeting
@@ -1938,6 +1950,10 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
+name|isPast
+operator|=
+literal|false
+expr_stmt|;
 if|if
 condition|(
 name|user
@@ -2119,6 +2135,8 @@ argument_list|,
 name|locationCapacity
 argument_list|,
 name|approvedDate
+argument_list|,
+name|isPast
 argument_list|,
 name|canEdit
 argument_list|,
