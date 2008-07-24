@@ -4093,6 +4093,13 @@ literal|".pdf"
 operator|)
 argument_list|)
 expr_stmt|;
+name|body
+operator|.
+name|addBodyPart
+argument_list|(
+name|attachement
+argument_list|)
+expr_stmt|;
 name|mail
 operator|.
 name|setSentDate
@@ -4600,6 +4607,13 @@ literal|".txt"
 else|:
 literal|".pdf"
 operator|)
+argument_list|)
+expr_stmt|;
+name|body
+operator|.
+name|addBodyPart
+argument_list|(
+name|attachement
 argument_list|)
 expr_stmt|;
 name|mail
