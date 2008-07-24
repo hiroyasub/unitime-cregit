@@ -2404,6 +2404,13 @@ name|border
 init|=
 literal|"["
 decl_stmt|;
+name|Date
+name|now
+init|=
+operator|new
+name|Date
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|int
@@ -2489,6 +2496,18 @@ block|}
 name|pattern
 operator|+=
 operator|(
+name|today
+operator|.
+name|getTime
+argument_list|()
+operator|.
+name|before
+argument_list|(
+name|now
+argument_list|)
+condition|?
+literal|"'@'"
+else|:
 name|iMeetingDates
 operator|.
 name|contains
@@ -2567,11 +2586,11 @@ name|pattern
 operator|+
 literal|","
 operator|+
-literal|"['1','0'],"
+literal|"['1','0','@'],"
 operator|+
-literal|"['Selected','Not Selected'],"
+literal|"['Selected','Not Selected','Past'],"
 operator|+
-literal|"['rgb(240,240,50)','rgb(240,240,240)'],"
+literal|"['rgb(240,240,50)','rgb(240,240,240)','rgb(150,150,150)'],"
 operator|+
 literal|"'1',"
 operator|+
