@@ -4436,16 +4436,7 @@ operator|.
 name|flush
 argument_list|()
 expr_stmt|;
-name|bDao
-operator|.
-name|getSession
-argument_list|()
-operator|.
-name|evict
-argument_list|(
-name|toBldg
-argument_list|)
-expr_stmt|;
+comment|//bDao.getSession().evict(toBldg); -- commented out to prevent NonUniqueObjectException
 name|bDao
 operator|.
 name|getSession
