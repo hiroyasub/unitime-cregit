@@ -885,6 +885,18 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|getDatesTable
+parameter_list|()
+block|{
+return|return
+name|getDatesTable
+argument_list|(
+literal|false
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 

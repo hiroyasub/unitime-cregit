@@ -2268,11 +2268,26 @@ operator|=
 name|dates
 expr_stmt|;
 block|}
-comment|// display calendar for event dates
 specifier|public
 name|String
 name|getDatesTable
 parameter_list|()
+block|{
+return|return
+name|getDatesTable
+argument_list|(
+literal|true
+argument_list|)
+return|;
+block|}
+comment|// display calendar for event dates
+specifier|public
+name|String
+name|getDatesTable
+parameter_list|(
+name|boolean
+name|disblePast
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2496,6 +2511,8 @@ block|}
 name|pattern
 operator|+=
 operator|(
+name|disblePast
+operator|&&
 name|today
 operator|.
 name|getTime
