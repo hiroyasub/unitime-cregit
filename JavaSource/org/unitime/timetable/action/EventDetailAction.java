@@ -3245,13 +3245,13 @@ block|}
 block|}
 else|else
 block|{
-name|myForm
-operator|.
-name|setEventName
+throw|throw
+operator|new
+name|Exception
 argument_list|(
 literal|"There is no event with this ID"
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
 block|}
 name|BackTracker
