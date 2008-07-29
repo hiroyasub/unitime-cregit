@@ -199,6 +199,14 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
+name|int
+name|sEventNoteTypeDeletion
+init|=
+literal|4
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
 name|String
 index|[]
 name|sEventNoteTypeBgColor
@@ -214,6 +222,8 @@ block|,
 literal|"#D7FFD7"
 block|,
 literal|"#FFD7D7"
+block|,
+literal|"#FFFFFF"
 block|}
 decl_stmt|;
 specifier|public
@@ -234,6 +244,8 @@ block|,
 literal|"Approve"
 block|,
 literal|"Reject"
+block|,
+literal|"Delete"
 block|}
 decl_stmt|;
 specifier|public
