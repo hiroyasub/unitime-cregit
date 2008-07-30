@@ -254,12 +254,12 @@ name|role
 parameter_list|)
 block|{
 return|return
-name|getRole
-argument_list|()
+name|role
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|role
+name|getRole
+argument_list|()
 argument_list|)
 return|;
 block|}

@@ -1119,8 +1119,6 @@ parameter_list|(
 name|User
 name|user
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Object
 name|sessionId
@@ -1153,18 +1151,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Current Academic Session cannot be determined for user"
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 else|else
-block|{
-name|Session
-name|s
-init|=
+return|return
 name|Session
 operator|.
 name|getSessionById
@@ -1178,11 +1169,7 @@ name|toString
 argument_list|()
 argument_list|)
 argument_list|)
-decl_stmt|;
-return|return
-name|s
 return|;
-block|}
 block|}
 comment|/** 	 * @return Returns the term. 	 */
 specifier|public

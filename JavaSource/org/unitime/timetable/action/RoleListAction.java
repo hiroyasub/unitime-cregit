@@ -478,6 +478,15 @@ name|mapping
 operator|.
 name|findForward
 argument_list|(
+name|TimetableManager
+operator|.
+name|canSeeEvents
+argument_list|(
+name|user
+argument_list|)
+condition|?
+literal|"success"
+else|:
 literal|"norole"
 argument_list|)
 return|;
