@@ -6578,6 +6578,10 @@ condition|(
 name|iLookAtNearLocations
 operator|&&
 name|iBuildingId
+operator|!=
+literal|null
+operator|&&
+name|iBuildingId
 operator|>=
 literal|0
 condition|)
@@ -6617,6 +6621,10 @@ literal|" where rd.control=true and mr.role.reference=:eventMgr"
 expr_stmt|;
 if|if
 condition|(
+name|iBuildingId
+operator|!=
+literal|null
+operator|&&
 name|iBuildingId
 operator|>=
 literal|0
@@ -6706,6 +6714,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|iBuildingId
+operator|!=
+literal|null
+operator|&&
 name|iBuildingId
 operator|>=
 literal|0
@@ -6876,6 +6888,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|iBuildingId
+operator|==
+literal|null
+operator|||
 name|iBuildingId
 operator|<
 literal|0
