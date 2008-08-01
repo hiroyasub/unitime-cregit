@@ -383,7 +383,10 @@ block|}
 specifier|public
 name|String
 name|toHtmlString
-parameter_list|()
+parameter_list|(
+name|boolean
+name|includeUser
+parameter_list|)
 block|{
 return|return
 literal|"<tr style=\"background-color:"
@@ -424,6 +427,9 @@ argument_list|)
 operator|+
 literal|"</td>"
 operator|+
+operator|(
+name|includeUser
+condition|?
 literal|"<td>"
 operator|+
 operator|(
@@ -447,6 +453,9 @@ argument_list|()
 operator|)
 operator|+
 literal|"</td>"
+else|:
+literal|""
+operator|)
 operator|+
 literal|"<td>"
 operator|+

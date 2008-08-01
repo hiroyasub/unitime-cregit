@@ -812,7 +812,16 @@ name|mapping
 operator|.
 name|findForward
 argument_list|(
+name|myForm
+operator|.
+name|getStartTime
+argument_list|()
+operator|>=
+literal|0
+condition|?
 literal|"eventList"
+else|:
+literal|"eventGrid"
 argument_list|)
 return|;
 block|}
