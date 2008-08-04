@@ -1205,13 +1205,13 @@ specifier|private
 name|boolean
 name|iCanEditMeeting
 init|=
-literal|true
+literal|false
 decl_stmt|;
 specifier|private
 name|boolean
 name|iCanDeleteMeeting
 init|=
-literal|true
+literal|false
 decl_stmt|;
 specifier|private
 name|TreeSet
