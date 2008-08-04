@@ -827,6 +827,29 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+literal|"Edit Event"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+condition|)
+block|{
+name|response
+operator|.
+name|sendRedirect
+argument_list|(
+literal|"eventEdit.do?id="
+operator|+
+name|myForm
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 comment|//return to event list
 if|if
 condition|(
