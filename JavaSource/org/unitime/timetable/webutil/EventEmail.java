@@ -593,6 +593,13 @@ argument_list|(
 name|mailSession
 argument_list|)
 decl_stmt|;
+name|mail
+operator|.
+name|setFrom
+argument_list|(
+name|from
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|iAction
@@ -648,7 +655,7 @@ operator|.
 name|getEventName
 argument_list|()
 operator|+
-literal|" approved."
+literal|" rejected."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -710,8 +717,57 @@ block|}
 name|String
 name|message
 init|=
-literal|"<table border='0' width='800' align='center' cellspacing='10'>"
+literal|"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">"
 decl_stmt|;
+name|message
+operator|+=
+literal|"<html><head>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"<title>"
+operator|+
+name|mail
+operator|.
+name|getSubject
+argument_list|()
+operator|+
+literal|"</title>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"<meta http-equiv='Content-Type' content='text/html; charset=windows-1250'>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"<meta name='Author' content='UniTime LLC'>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"<style type='text/css'>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"<!--"
+operator|+
+literal|"A:link     { color: blue; text-decoration: none; }"
+operator|+
+literal|"A:visited  { color: blue; text-decoration: none; }"
+operator|+
+literal|"A:active   { color: blue; text-decoration: none; }"
+operator|+
+literal|"A:hover    { color: blue; text-decoration: none; }"
+operator|+
+literal|"-->"
+expr_stmt|;
+name|message
+operator|+=
+literal|"</style></head><body bgcolor='#ffffff' style='font-size: 10pt; font-family: arial;'>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"<table border='0' width='800' align='center' cellspacing='10'>"
+expr_stmt|;
 name|message
 operator|+=
 literal|"<tr><td colspan='2' style='border-bottom: 2px #2020FF solid;'><font size='+2'>"
@@ -1315,7 +1371,7 @@ literal|"<tr><td colspan='2'>"
 expr_stmt|;
 name|message
 operator|+=
-literal|"<table border='0' width='100%' cellspacing='0' cellpadding='3'>"
+literal|"<table border='0' width='100%'>"
 expr_stmt|;
 name|message
 operator|+=
@@ -1605,7 +1661,7 @@ literal|"</td></tr><tr><td colspan='2'>"
 expr_stmt|;
 name|message
 operator|+=
-literal|"<table border='0' width='100%'>"
+literal|"<table border='0' width='100%' cellspacing='0' cellpadding='3'>"
 expr_stmt|;
 name|message
 operator|+=
@@ -1731,6 +1787,10 @@ operator|+=
 literal|"</table></td></tr>"
 expr_stmt|;
 block|}
+name|message
+operator|+=
+literal|"<tr><td colspan='2'>&nbsp;</td></tr>"
+expr_stmt|;
 name|message
 operator|+=
 literal|"<tr><td colspan='2' style='border-top: 1px #2020FF solid;' align='center'>"
