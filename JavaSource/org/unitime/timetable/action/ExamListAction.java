@@ -747,6 +747,24 @@ argument_list|(
 literal|"Access Denied."
 argument_list|)
 throw|;
+name|myForm
+operator|.
+name|setCanAddExam
+argument_list|(
+name|manager
+operator|!=
+literal|null
+operator|&&
+name|manager
+operator|.
+name|canEditExams
+argument_list|(
+name|session
+argument_list|,
+name|user
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|// Read operation to be performed
 name|String
 name|op
