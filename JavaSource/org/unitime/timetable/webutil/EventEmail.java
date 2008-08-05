@@ -411,6 +411,26 @@ parameter_list|)
 block|{
 try|try
 block|{
+if|if
+condition|(
+operator|!
+literal|"true"
+operator|.
+name|equals
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.event.confirmationEmail"
+argument_list|,
+literal|"true"
+argument_list|)
+argument_list|)
+condition|)
+return|return
+literal|"Conformation emails are disabled."
+return|;
 name|InternetAddress
 name|from
 init|=

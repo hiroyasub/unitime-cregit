@@ -2054,23 +2054,7 @@ name|iPos
 operator|=
 name|pos
 expr_stmt|;
-if|if
-condition|(
-name|iPhone
-operator|!=
-literal|null
-condition|)
-name|iPhone
-operator|=
-name|iPhone
-operator|.
-name|replaceAll
-argument_list|(
-literal|"\\+? ?\\-?\\(?\\)?"
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
+comment|//if (iPhone!=null) iPhone = iPhone.replaceAll("\\+? ?\\-?\\(?\\)?","");
 block|}
 specifier|private
 name|Person
@@ -2223,23 +2207,7 @@ name|iPos
 operator|=
 name|pos
 expr_stmt|;
-if|if
-condition|(
-name|iPhone
-operator|!=
-literal|null
-condition|)
-name|iPhone
-operator|=
-name|iPhone
-operator|.
-name|replaceAll
-argument_list|(
-literal|"\\+? ?\\-?\\(?\\)?"
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
+comment|//if (iPhone!=null) iPhone = iPhone.replaceAll("\\+? ?\\-?\\(?\\)?","");
 block|}
 specifier|public
 name|Person
