@@ -1268,6 +1268,52 @@ return|;
 block|}
 if|if
 condition|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.personal.reports.externalIdFormat"
+argument_list|)
+operator|!=
+literal|null
+condition|)
+block|{
+try|try
+block|{
+name|externalId
+operator|=
+operator|new
+name|DecimalFormat
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.personal.reports.externalIdFormat"
+argument_list|)
+argument_list|)
+operator|.
+name|format
+argument_list|(
+name|Long
+operator|.
+name|valueOf
+argument_list|(
+name|externalId
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|NumberFormatException
+name|e
+parameter_list|)
+block|{
+block|}
+block|}
+if|if
+condition|(
 literal|"Log Out"
 operator|.
 name|equals
@@ -1811,7 +1857,22 @@ name|sLog
 operator|.
 name|info
 argument_list|(
-literal|"No matching instructor or student found, forwarding back."
+literal|"No matching instructor or student found for "
+operator|+
+name|user
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|externalId
+operator|+
+literal|"), forwarding back ("
+operator|+
+name|back
+operator|+
+literal|")."
 argument_list|)
 expr_stmt|;
 return|return
