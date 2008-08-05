@@ -845,6 +845,12 @@ argument_list|()
 operator|||
 name|canOwnerLimitedEdit
 argument_list|()
+operator|||
+name|canExamEdit
+argument_list|()
+operator|||
+name|canExamTimetable
+argument_list|()
 return|;
 block|}
 block|}
