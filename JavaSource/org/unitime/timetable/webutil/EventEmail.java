@@ -1037,7 +1037,7 @@ name|sActionCreate
 case|:
 name|message
 operator|+=
-literal|"Following meetings were created by you or in your behalf"
+literal|"Following meetings were created by you or on your behalf"
 expr_stmt|;
 break|break;
 case|case
@@ -1078,7 +1078,7 @@ name|sActionAddMeeting
 case|:
 name|message
 operator|+=
-literal|"Following meetings were added by you or in your behalf"
+literal|"Following meetings were added by you or on your behalf"
 expr_stmt|;
 break|break;
 case|case
@@ -1086,7 +1086,7 @@ name|sActionDelete
 case|:
 name|message
 operator|+=
-literal|"Following meetings were deleted by you or in your behalf"
+literal|"Following meetings were deleted by you or on your behalf"
 expr_stmt|;
 break|break;
 block|}
