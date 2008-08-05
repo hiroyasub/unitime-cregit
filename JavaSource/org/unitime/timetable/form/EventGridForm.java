@@ -193,7 +193,7 @@ specifier|static
 name|String
 name|sModeWaiting
 init|=
-literal|"All Events Waiting Approval"
+literal|"All Events Awaiting Approval"
 decl_stmt|;
 specifier|public
 specifier|static

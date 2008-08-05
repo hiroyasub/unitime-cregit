@@ -1350,7 +1350,7 @@ argument_list|(
 operator|new
 name|ComboBoxLookup
 argument_list|(
-literal|"Events Waiting My Approval"
+literal|"Events Awaiting My Approval"
 argument_list|,
 name|String
 operator|.
@@ -1411,7 +1411,7 @@ argument_list|(
 operator|new
 name|ComboBoxLookup
 argument_list|(
-literal|"All Events Waiting Approval"
+literal|"All Events Awaiting Approval"
 argument_list|,
 name|String
 operator|.
