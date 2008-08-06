@@ -7702,6 +7702,13 @@ name|meeting
 operator|.
 name|getLocation
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|meeting
+operator|.
+name|getLocation
+argument_list|()
 operator|.
 name|isExamEnabled
 argument_list|(
