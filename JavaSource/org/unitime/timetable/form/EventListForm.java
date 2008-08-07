@@ -588,6 +588,10 @@ name|end
 operator|!=
 literal|null
 operator|&&
+name|start
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|start
 operator|.
