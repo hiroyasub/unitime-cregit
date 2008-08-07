@@ -1654,7 +1654,7 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|""
+literal|"&nbsp;"
 else|:
 literal|"<b>"
 operator|+
@@ -2000,7 +2000,7 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|""
+literal|"&nbsp;"
 else|:
 operator|(
 name|e
@@ -2038,6 +2038,14 @@ argument_list|()
 operator|)
 argument_list|)
 expr_stmt|;
+else|else
+name|cell
+operator|.
+name|addContent
+argument_list|(
+literal|"&nbsp;"
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|cell
@@ -2069,7 +2077,7 @@ name|cell
 operator|.
 name|addContent
 argument_list|(
-literal|""
+literal|"&nbsp;"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2103,7 +2111,7 @@ name|cell
 operator|.
 name|addContent
 argument_list|(
-literal|""
+literal|"&nbsp;"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2543,7 +2551,7 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|""
+literal|"&nbsp;"
 else|:
 name|m
 operator|.
@@ -4472,18 +4480,21 @@ name|s
 operator|.
 name|nextToken
 argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
 decl_stmt|;
 name|query
 operator|+=
-literal|" and (e.mainContact.firstName like '%"
+literal|" and (upper(e.mainContact.firstName) like '%"
 operator|+
 name|token
 operator|+
-literal|"%' or e.mainContact.middleName like '%"
+literal|"%' or upper(e.mainContact.middleName) like '%"
 operator|+
 name|token
 operator|+
-literal|"%' or e.mainContact.lastName like '%"
+literal|"%' or upper(e.mainContact.lastName) like '%"
 operator|+
 name|token
 operator|+
@@ -5785,18 +5796,21 @@ name|s
 operator|.
 name|nextToken
 argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
 decl_stmt|;
 name|query
 operator|+=
-literal|" and (e.mainContact.firstName like '%"
+literal|" and (upper(e.mainContact.firstName) like '%"
 operator|+
 name|token
 operator|+
-literal|"%' or e.mainContact.middleName like '%"
+literal|"%' or upper(e.mainContact.middleName) like '%"
 operator|+
 name|token
 operator|+
-literal|"%' or e.mainContact.lastName like '%"
+literal|"%' or upper(e.mainContact.lastName) like '%"
 operator|+
 name|token
 operator|+
