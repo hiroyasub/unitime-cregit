@@ -487,7 +487,7 @@ name|Roles
 operator|.
 name|EVENT_MGR_ROLE
 operator|.
-name|endsWith
+name|equals
 argument_list|(
 name|user
 operator|.
