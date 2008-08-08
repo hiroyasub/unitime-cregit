@@ -1624,6 +1624,18 @@ operator|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|getMeetings
+argument_list|()
+operator|.
+name|first
+argument_list|()
+operator|.
+name|isAllDay
+argument_list|()
+condition|?
+literal|"All Day"
+else|:
 name|getMeetings
 argument_list|()
 operator|.
@@ -1643,6 +1655,7 @@ argument_list|()
 operator|.
 name|stopTime
 argument_list|()
+operator|)
 operator|+
 operator|(
 name|getMeetings
@@ -1745,6 +1758,18 @@ operator|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|getMeetings
+argument_list|()
+operator|.
+name|first
+argument_list|()
+operator|.
+name|isAllDay
+argument_list|()
+condition|?
+literal|"All Day"
+else|:
 name|getMeetings
 argument_list|()
 operator|.
@@ -1753,6 +1778,7 @@ argument_list|()
 operator|.
 name|startTime
 argument_list|()
+operator|)
 operator|+
 operator|(
 name|getMeetings
