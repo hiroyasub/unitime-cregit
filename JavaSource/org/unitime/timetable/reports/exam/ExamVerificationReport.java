@@ -2849,7 +2849,27 @@ argument_list|)
 operator|+
 literal|"  Meets with "
 operator|+
+operator|(
 name|cmw
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|109
+condition|?
+name|cmw
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+literal|106
+argument_list|)
+operator|+
+literal|"..."
+else|:
+name|cmw
+operator|)
 argument_list|)
 expr_stmt|;
 name|iITypePrinted
@@ -4554,7 +4574,27 @@ argument_list|)
 operator|+
 literal|"  Meets with "
 operator|+
+operator|(
 name|cmw
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|109
+condition|?
+name|cmw
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+literal|106
+argument_list|)
+operator|+
+literal|"..."
+else|:
+name|cmw
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5384,7 +5424,7 @@ else|:
 literal|"                    "
 operator|)
 operator|+
-literal|" Seat ght Date& Time               Room         Cap ExCap Exam with"
+literal|" Seat gth Date& Time               Room         Cap ExCap Exam with"
 block|,
 literal|"----------- ----------------------------"
 operator|+
