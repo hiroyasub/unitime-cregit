@@ -419,7 +419,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-literal|"Change"
+literal|"Show Availability"
 operator|.
 name|equals
 argument_list|(
