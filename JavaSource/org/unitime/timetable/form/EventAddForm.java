@@ -1586,6 +1586,26 @@ name|iMaxRooms
 operator|=
 literal|"10"
 expr_stmt|;
+name|iBuildingId
+operator|=
+literal|null
+expr_stmt|;
+name|iRoomTypes
+operator|=
+literal|null
+expr_stmt|;
+name|iRoomFeatures
+operator|=
+literal|null
+expr_stmt|;
+name|iRoomGroups
+operator|=
+literal|null
+expr_stmt|;
+name|iRoomNumber
+operator|=
+literal|null
+expr_stmt|;
 block|}
 comment|// load event info from session attribute Event
 specifier|public
