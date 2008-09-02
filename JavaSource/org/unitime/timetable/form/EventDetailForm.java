@@ -265,7 +265,7 @@ name|Long
 name|iSelected
 decl_stmt|;
 specifier|private
-name|Long
+name|String
 name|iSelectedStandardNote
 decl_stmt|;
 specifier|private
@@ -936,7 +936,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Long
+name|String
 name|getSelectedStandardNote
 parameter_list|()
 block|{
@@ -948,7 +948,7 @@ specifier|public
 name|void
 name|setSelectedStandardNote
 parameter_list|(
-name|Long
+name|String
 name|selected
 parameter_list|)
 block|{

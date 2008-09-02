@@ -143,7 +143,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select sen from StandardEventNote sen order by sen.note"
+literal|"select sen from StandardEventNote sen order by sen.reference"
 argument_list|)
 operator|.
 name|setCacheable
@@ -152,6 +152,21 @@ literal|true
 argument_list|)
 operator|.
 name|list
+argument_list|()
+return|;
+block|}
+specifier|public
+name|String
+name|getLabel
+parameter_list|()
+block|{
+return|return
+name|getReference
+argument_list|()
+operator|+
+literal|": "
+operator|+
+name|getNote
 argument_list|()
 return|;
 block|}
