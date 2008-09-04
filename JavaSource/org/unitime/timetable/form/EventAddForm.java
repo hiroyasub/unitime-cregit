@@ -6680,6 +6680,10 @@ expr_stmt|;
 block|}
 name|query
 operator|+=
+literal|" and r.session.uniqueId=:sessionId"
+expr_stmt|;
+name|query
+operator|+=
 name|b
 expr_stmt|;
 name|Query
@@ -6819,6 +6823,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|hibQuery
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|iSessionId
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Iterator
@@ -6956,6 +6969,10 @@ name|query
 operator|+=
 name|b
 expr_stmt|;
+name|query
+operator|+=
+literal|" and r.session.uniqueId=:sessionId"
+expr_stmt|;
 name|hibQuery
 operator|=
 operator|new
@@ -7073,6 +7090,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|hibQuery
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|iSessionId
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Iterator
