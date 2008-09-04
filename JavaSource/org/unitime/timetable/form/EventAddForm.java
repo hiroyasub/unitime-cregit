@@ -6546,6 +6546,23 @@ operator|>=
 literal|0
 condition|)
 block|{
+name|int
+name|d
+init|=
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.events.nearByDistance"
+argument_list|,
+literal|"67"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|query
 operator|=
 literal|"select r from Room r "
@@ -6564,7 +6581,15 @@ literal|"(r.building=b or ((((r.coordinateX - b.coordinateX)*(r.coordinateX - b.
 operator|+
 literal|"((r.coordinateY - b.coordinateY)*(r.coordinateY - b.coordinateY)))"
 operator|+
-literal|"< 67*67))"
+literal|"< "
+operator|+
+operator|(
+name|d
+operator|*
+name|d
+operator|)
+operator|+
+literal|"))"
 expr_stmt|;
 block|}
 else|else
@@ -6650,7 +6675,7 @@ condition|)
 block|{
 name|query
 operator|+=
-literal|" and r.roomNumber like (:roomNumber)"
+literal|" and upper(r.roomNumber) like (:roomNumber)"
 expr_stmt|;
 block|}
 name|query
@@ -6788,6 +6813,9 @@ literal|"\\*"
 argument_list|,
 literal|"%"
 argument_list|)
+operator|.
+name|toUpperCase
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6921,7 +6949,7 @@ condition|)
 block|{
 name|query
 operator|+=
-literal|" and r.name like (:roomNumber)"
+literal|" and upper(r.name) like (:roomNumber)"
 expr_stmt|;
 block|}
 name|query
@@ -7039,6 +7067,9 @@ literal|"\\*"
 argument_list|,
 literal|"%"
 argument_list|)
+operator|.
+name|toUpperCase
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
