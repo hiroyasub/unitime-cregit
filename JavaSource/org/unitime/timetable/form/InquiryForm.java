@@ -206,6 +206,10 @@ name|puid
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|iNoRole
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -243,6 +247,27 @@ block|,
 literal|"LLR/LAB data entry is done"
 block|,
 literal|"Other"
+block|}
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+index|[]
+name|sTypeMsgsNoRole
+init|=
+operator|new
+name|String
+index|[]
+block|{
+name|Constants
+operator|.
+name|BLANK_OPTION_LABEL
+block|,
+literal|"Ask a question"
+block|,
+literal|"Report an error"
+block|,
+literal|"Make a suggestion"
 block|}
 decl_stmt|;
 specifier|public
@@ -607,7 +632,13 @@ literal|0
 init|;
 name|i
 operator|<
+operator|(
+name|iNoRole
+condition|?
+name|sTypeMsgsNoRole
+else|:
 name|sTypeMsgs
+operator|)
 operator|.
 name|length
 condition|;
@@ -627,7 +658,13 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|,
+operator|(
+name|iNoRole
+condition|?
+name|sTypeMsgsNoRole
+else|:
 name|sTypeMsgs
+operator|)
 index|[
 name|i
 index|]
@@ -739,6 +776,28 @@ operator|.
 name|puid
 operator|=
 name|puid
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getNoRole
+parameter_list|()
+block|{
+return|return
+name|iNoRole
+return|;
+block|}
+specifier|public
+name|void
+name|setNoRole
+parameter_list|(
+name|boolean
+name|noRole
+parameter_list|)
+block|{
+name|iNoRole
+operator|=
+name|noRole
 expr_stmt|;
 block|}
 specifier|public
