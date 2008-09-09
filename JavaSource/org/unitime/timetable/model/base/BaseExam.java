@@ -119,6 +119,13 @@ name|PROP_UNIQUE_ID_ROLLED_FORWARD_FROM
 init|=
 literal|"uniqueIdRolledForwardFrom"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXAM_SIZE
+init|=
+literal|"examSize"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseExam
@@ -184,6 +191,14 @@ name|lang
 operator|.
 name|Integer
 name|length
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|examSize
 decl_stmt|;
 specifier|private
 name|java
@@ -391,6 +406,40 @@ operator|.
 name|length
 operator|=
 name|length
+expr_stmt|;
+block|}
+comment|/**      * Return the value associated with the column: EXAM_SIZE      */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|getExamSize
+parameter_list|()
+block|{
+return|return
+name|examSize
+return|;
+block|}
+comment|/**      * Set the value related to the column: EXAM_SIZE      * @param length the EXAM_SIZE value      */
+specifier|public
+name|void
+name|setExamSize
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|examSize
+parameter_list|)
+block|{
+name|this
+operator|.
+name|examSize
+operator|=
+name|examSize
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: MAX_NBR_ROOMS 	 */
