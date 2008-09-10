@@ -25,20 +25,20 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseCurriculaDAO
+name|BaseCurriculumDAO
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|CurriculaDAO
+name|CurriculumDAO
 extends|extends
-name|BaseCurriculaDAO
+name|BaseCurriculumDAO
 block|{
 comment|/** 	 * Default constructor.  Can be used in place of getInstance() 	 */
 specifier|public
-name|CurriculaDAO
+name|CurriculumDAO
 parameter_list|()
 block|{
 block|}

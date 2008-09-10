@@ -43,20 +43,20 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseCurriculaCourse
+name|BaseCurriculumCourse
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|CurriculaCourse
+name|CurriculumCourse
 extends|extends
-name|BaseCurriculaCourse
+name|BaseCurriculumCourse
 implements|implements
 name|Comparable
 argument_list|<
-name|CurriculaCourse
+name|CurriculumCourse
 argument_list|>
 block|{
 specifier|private
@@ -69,7 +69,7 @@ literal|1L
 decl_stmt|;
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public
-name|CurriculaCourse
+name|CurriculumCourse
 parameter_list|()
 block|{
 name|super
@@ -78,7 +78,7 @@ expr_stmt|;
 block|}
 comment|/** 	 * Constructor for primary key 	 */
 specifier|public
-name|CurriculaCourse
+name|CurriculumCourse
 parameter_list|(
 name|java
 operator|.
@@ -96,7 +96,7 @@ expr_stmt|;
 block|}
 comment|/** 	 * Constructor for required fields 	 */
 specifier|public
-name|CurriculaCourse
+name|CurriculumCourse
 parameter_list|(
 name|java
 operator|.
@@ -113,7 +113,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaClassification
+name|CurriculumClassification
 name|classification
 parameter_list|,
 name|org
@@ -161,7 +161,7 @@ specifier|public
 name|int
 name|compareTo
 parameter_list|(
-name|CurriculaCourse
+name|CurriculumCourse
 name|c
 parameter_list|)
 block|{
@@ -230,19 +230,19 @@ argument_list|)
 return|;
 for|for
 control|(
-name|CurriculaClassification
+name|CurriculumClassification
 name|cc1
 range|:
 operator|new
 name|TreeSet
 argument_list|<
-name|CurriculaClassification
+name|CurriculumClassification
 argument_list|>
 argument_list|(
 name|getClassification
 argument_list|()
 operator|.
-name|getCurricula
+name|getCurriculum
 argument_list|()
 operator|.
 name|getClassifications
@@ -250,7 +250,7 @@ argument_list|()
 argument_list|)
 control|)
 block|{
-name|CurriculaClassification
+name|CurriculumClassification
 name|cc2
 init|=
 literal|null
@@ -265,7 +265,7 @@ operator|.
 name|getClassification
 argument_list|()
 operator|.
-name|getCurricula
+name|getCurriculum
 argument_list|()
 operator|.
 name|getClassifications
@@ -281,11 +281,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaClassification
+name|CurriculumClassification
 name|cc
 init|=
 operator|(
-name|CurriculaClassification
+name|CurriculumClassification
 operator|)
 name|i
 operator|.
@@ -380,11 +380,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaCourse
+name|CurriculumCourse
 name|x
 init|=
 operator|(
-name|CurriculaCourse
+name|CurriculumCourse
 operator|)
 name|i
 operator|.
@@ -441,11 +441,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaCourse
+name|CurriculumCourse
 name|x
 init|=
 operator|(
-name|CurriculaCourse
+name|CurriculumCourse
 operator|)
 name|i
 operator|.

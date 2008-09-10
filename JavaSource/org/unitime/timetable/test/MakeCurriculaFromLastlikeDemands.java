@@ -219,7 +219,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Curricula
+name|Curriculum
 import|;
 end_import
 
@@ -233,7 +233,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaClassification
+name|CurriculumClassification
 import|;
 end_import
 
@@ -247,7 +247,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|CurriculumCourse
 import|;
 end_import
 
@@ -377,7 +377,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.curricula.lldemands.shareLimit"
+literal|"tmtbl.curriculum.lldemands.shareLimit"
 argument_list|,
 literal|"0.05"
 argument_list|)
@@ -391,7 +391,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.curricula.lldemands.enrlLimit"
+literal|"tmtbl.curriculum.lldemands.enrlLimit"
 argument_list|,
 literal|"20"
 argument_list|)
@@ -419,7 +419,7 @@ argument_list|>
 argument_list|>
 argument_list|>
 argument_list|>
-name|loadLastLikeCurriculas
+name|loadLastLikeCurricula
 parameter_list|(
 name|org
 operator|.
@@ -448,7 +448,7 @@ argument_list|>
 argument_list|>
 argument_list|>
 argument_list|>
-name|curriculas
+name|curricula
 init|=
 operator|new
 name|Hashtable
@@ -581,7 +581,7 @@ argument_list|>
 argument_list|>
 name|clasf
 init|=
-name|curriculas
+name|curricula
 operator|.
 name|get
 argument_list|(
@@ -604,7 +604,7 @@ operator|new
 name|Hashtable
 argument_list|()
 expr_stmt|;
-name|curriculas
+name|curricula
 operator|.
 name|put
 argument_list|(
@@ -709,7 +709,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|curriculas
+name|curricula
 return|;
 block|}
 specifier|private
@@ -718,7 +718,7 @@ name|sortCourses
 parameter_list|(
 name|Set
 argument_list|<
-name|CurriculaCourse
+name|CurriculumCourse
 argument_list|>
 name|courses
 parameter_list|)
@@ -730,13 +730,13 @@ literal|0
 decl_stmt|;
 for|for
 control|(
-name|CurriculaCourse
+name|CurriculumCourse
 name|c
 range|:
 operator|new
 name|TreeSet
 argument_list|<
-name|CurriculaCourse
+name|CurriculumCourse
 argument_list|>
 argument_list|(
 name|courses
@@ -757,7 +757,7 @@ name|sortClassifications
 parameter_list|(
 name|Set
 argument_list|<
-name|CurriculaClassification
+name|CurriculumClassification
 argument_list|>
 name|classf
 parameter_list|)
@@ -769,13 +769,13 @@ literal|0
 decl_stmt|;
 for|for
 control|(
-name|CurriculaClassification
+name|CurriculumClassification
 name|c
 range|:
 operator|new
 name|TreeSet
 argument_list|<
-name|CurriculaClassification
+name|CurriculumClassification
 argument_list|>
 argument_list|(
 name|classf
@@ -821,9 +821,9 @@ argument_list|>
 argument_list|>
 argument_list|>
 argument_list|>
-name|curriculas
+name|curricula
 init|=
-name|loadLastLikeCurriculas
+name|loadLastLikeCurricula
 argument_list|(
 name|hibSession
 argument_list|)
@@ -832,9 +832,9 @@ name|Hashtable
 argument_list|<
 name|AcademicArea
 argument_list|,
-name|Curricula
+name|Curriculum
 argument_list|>
-name|remainingCurriculas
+name|remainingCurricula
 init|=
 operator|new
 name|Hashtable
@@ -849,7 +849,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Curricula c where c.academicArea!=null and c.department.session=:sessionId"
+literal|"select c from Curriculum c where c.academicArea!=null and c.department.session=:sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -869,18 +869,18 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Curricula
+name|Curriculum
 name|c
 init|=
 operator|(
-name|Curricula
+name|Curriculum
 operator|)
 name|i
 operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|remainingCurriculas
+name|remainingCurricula
 operator|.
 name|put
 argument_list|(
@@ -918,16 +918,16 @@ argument_list|>
 argument_list|>
 name|e1
 range|:
-name|curriculas
+name|curricula
 operator|.
 name|entrySet
 argument_list|()
 control|)
 block|{
-name|Curricula
-name|curricula
+name|Curriculum
+name|curriculum
 init|=
-name|remainingCurriculas
+name|remainingCurricula
 operator|.
 name|get
 argument_list|(
@@ -941,7 +941,7 @@ name|sLog
 operator|.
 name|info
 argument_list|(
-literal|"Updating curricula "
+literal|"Updating curriculum "
 operator|+
 name|e1
 operator|.
@@ -978,7 +978,7 @@ name|Hashtable
 argument_list|<
 name|AcademicClassification
 argument_list|,
-name|CurriculaClassification
+name|CurriculumClassification
 argument_list|>
 name|remainingClassifications
 init|=
@@ -988,18 +988,18 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|curricula
+name|curriculum
 operator|==
 literal|null
 condition|)
 block|{
-name|curricula
+name|curriculum
 operator|=
 operator|new
-name|Curricula
+name|Curriculum
 argument_list|()
 expr_stmt|;
-name|curricula
+name|curriculum
 operator|.
 name|setAcademicArea
 argument_list|(
@@ -1009,7 +1009,7 @@ name|getKey
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|curricula
+name|curriculum
 operator|.
 name|setAbbv
 argument_list|(
@@ -1022,7 +1022,7 @@ name|getAcademicAreaAbbreviation
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|curricula
+name|curriculum
 operator|.
 name|setName
 argument_list|(
@@ -1053,7 +1053,7 @@ name|getShortTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|curricula
+name|curriculum
 operator|.
 name|setClassifications
 argument_list|(
@@ -1071,11 +1071,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|remainingCurriculas
+name|remainingCurricula
 operator|.
 name|remove
 argument_list|(
-name|curricula
+name|curriculum
 operator|.
 name|getAcademicArea
 argument_list|()
@@ -1086,7 +1086,7 @@ control|(
 name|Iterator
 name|i
 init|=
-name|curricula
+name|curriculum
 operator|.
 name|getClassifications
 argument_list|()
@@ -1101,11 +1101,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaClassification
+name|CurriculumClassification
 name|cc
 init|=
 operator|(
-name|CurriculaClassification
+name|CurriculumClassification
 operator|)
 name|i
 operator|.
@@ -1155,7 +1155,7 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|CurriculaClassification
+name|CurriculumClassification
 name|clasf
 init|=
 literal|null
@@ -1165,7 +1165,7 @@ control|(
 name|Iterator
 name|i
 init|=
-name|curricula
+name|curriculum
 operator|.
 name|getClassifications
 argument_list|()
@@ -1180,11 +1180,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaClassification
+name|CurriculumClassification
 name|cc
 init|=
 operator|(
-name|CurriculaClassification
+name|CurriculumClassification
 operator|)
 name|i
 operator|.
@@ -1218,7 +1218,7 @@ name|Hashtable
 argument_list|<
 name|CourseOffering
 argument_list|,
-name|CurriculaCourse
+name|CurriculumCourse
 argument_list|>
 name|remainingCourses
 init|=
@@ -1236,17 +1236,17 @@ block|{
 name|clasf
 operator|=
 operator|new
-name|CurriculaClassification
+name|CurriculumClassification
 argument_list|()
 expr_stmt|;
 name|clasf
 operator|.
-name|setCurricula
+name|setCurriculum
 argument_list|(
-name|curricula
+name|curriculum
 argument_list|)
 expr_stmt|;
-name|curricula
+name|curriculum
 operator|.
 name|getClassifications
 argument_list|()
@@ -1311,11 +1311,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaCourse
+name|CurriculumCourse
 name|c
 init|=
 operator|(
-name|CurriculaCourse
+name|CurriculumCourse
 operator|)
 name|i
 operator|.
@@ -1456,7 +1456,7 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|CurriculaCourse
+name|CurriculumCourse
 name|course
 init|=
 literal|null
@@ -1481,11 +1481,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaCourse
+name|CurriculumCourse
 name|c
 init|=
 operator|(
-name|CurriculaCourse
+name|CurriculumCourse
 operator|)
 name|i
 operator|.
@@ -1564,7 +1564,7 @@ continue|continue;
 name|course
 operator|=
 operator|new
-name|CurriculaCourse
+name|CurriculumCourse
 argument_list|()
 expr_stmt|;
 name|course
@@ -1684,7 +1684,7 @@ block|}
 block|}
 name|sortClassifications
 argument_list|(
-name|curricula
+name|curriculum
 operator|.
 name|getClassifications
 argument_list|()
@@ -1695,7 +1695,7 @@ control|(
 name|Iterator
 name|i
 init|=
-name|curricula
+name|curriculum
 operator|.
 name|getClassifications
 argument_list|()
@@ -1710,11 +1710,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|CurriculaClassification
+name|CurriculumClassification
 name|clasf
 init|=
 operator|(
-name|CurriculaClassification
+name|CurriculumClassification
 operator|)
 name|i
 operator|.
@@ -1795,7 +1795,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|curricula
+name|curriculum
 operator|.
 name|setDepartment
 argument_list|(
@@ -1807,7 +1807,7 @@ name|hibSession
 operator|.
 name|saveOrUpdate
 argument_list|(
-name|curricula
+name|curriculum
 argument_list|)
 expr_stmt|;
 block|}

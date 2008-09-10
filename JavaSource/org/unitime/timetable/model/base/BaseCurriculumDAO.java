@@ -45,7 +45,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|CurriculaCourseDAO
+name|CurriculumDAO
 import|;
 end_import
 
@@ -69,7 +69,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseCurriculaCourseDAO
+name|BaseCurriculumDAO
 extends|extends
 name|org
 operator|.
@@ -86,13 +86,13 @@ block|{
 comment|// query name references
 specifier|public
 specifier|static
-name|CurriculaCourseDAO
+name|CurriculumDAO
 name|instance
 decl_stmt|;
 comment|/** 	 * Return a singleton of the DAO 	 */
 specifier|public
 specifier|static
-name|CurriculaCourseDAO
+name|CurriculumDAO
 name|getInstance
 parameter_list|()
 block|{
@@ -105,7 +105,7 @@ condition|)
 name|instance
 operator|=
 operator|new
-name|CurriculaCourseDAO
+name|CurriculumDAO
 argument_list|()
 expr_stmt|;
 return|return
@@ -126,7 +126,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 operator|.
 name|class
 return|;
@@ -137,10 +137,15 @@ name|getDefaultOrder
 parameter_list|()
 block|{
 return|return
-literal|null
+name|Order
+operator|.
+name|asc
+argument_list|(
+literal|"name"
+argument_list|)
 return|;
 block|}
-comment|/** 	 * Cast the object as a org.unitime.timetable.model.CurriculaCourse 	 */
+comment|/** 	 * Cast the object as a org.unitime.timetable.model.Curriculum 	 */
 specifier|public
 name|org
 operator|.
@@ -150,7 +155,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|cast
 parameter_list|(
 name|Object
@@ -167,7 +172,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 operator|)
 name|object
 return|;
@@ -181,7 +186,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|get
 parameter_list|(
 name|java
@@ -202,7 +207,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 operator|)
 name|get
 argument_list|(
@@ -222,7 +227,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|get
 parameter_list|(
 name|java
@@ -246,7 +251,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 operator|)
 name|get
 argument_list|(
@@ -268,7 +273,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|load
 parameter_list|(
 name|java
@@ -289,7 +294,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 operator|)
 name|load
 argument_list|(
@@ -309,7 +314,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|load
 parameter_list|(
 name|java
@@ -333,7 +338,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 operator|)
 name|load
 argument_list|(
@@ -355,7 +360,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|loadInitialize
 parameter_list|(
 name|java
@@ -377,7 +382,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
+name|Curriculum
 name|obj
 init|=
 name|load
@@ -410,7 +415,7 @@ return|return
 name|obj
 return|;
 block|}
-comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * @param curriculaCourse a transient instance of a persistent class  	 * @return the class identifier 	 */
+comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * @param curriculum a transient instance of a persistent class  	 * @return the class identifier 	 */
 specifier|public
 name|java
 operator|.
@@ -427,8 +432,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|)
 block|{
 return|return
@@ -443,11 +448,11 @@ name|super
 operator|.
 name|save
 argument_list|(
-name|curriculaCourse
+name|curriculum
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * Use the Session given. 	 * @param curriculaCourse a transient instance of a persistent class 	 * @param s the Session 	 * @return the class identifier 	 */
+comment|/** 	 * Persist the given transient instance, first assigning a generated identifier. (Or using the current value 	 * of the identifier property if the assigned generator is used.)  	 * Use the Session given. 	 * @param curriculum a transient instance of a persistent class 	 * @param s the Session 	 * @return the class identifier 	 */
 specifier|public
 name|java
 operator|.
@@ -464,8 +469,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|,
 name|Session
 name|s
@@ -484,13 +489,13 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|,
 name|s
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the 	 * identifier property mapping.  	 * @param curriculaCourse a transient instance containing new or updated state  	 */
+comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default 	 * the instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the 	 * identifier property mapping.  	 * @param curriculum a transient instance containing new or updated state  	 */
 specifier|public
 name|void
 name|saveOrUpdate
@@ -503,8 +508,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|)
 block|{
 name|saveOrUpdate
@@ -512,11 +517,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default the 	 * instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the identifier 	 * property mapping.  	 * Use the Session given. 	 * @param curriculaCourse a transient instance containing new or updated state. 	 * @param s the Session. 	 */
+comment|/** 	 * Either save() or update() the given instance, depending upon the value of its identifier property. By default the 	 * instance is always saved. This behaviour may be adjusted by specifying an unsaved-value attribute of the identifier 	 * property mapping.  	 * Use the Session given. 	 * @param curriculum a transient instance containing new or updated state. 	 * @param s the Session. 	 */
 specifier|public
 name|void
 name|saveOrUpdate
@@ -529,8 +534,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|,
 name|Session
 name|s
@@ -541,13 +546,13 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * @param curriculaCourse a transient instance containing updated state 	 */
+comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * @param curriculum a transient instance containing updated state 	 */
 specifier|public
 name|void
 name|update
@@ -560,8 +565,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|)
 block|{
 name|update
@@ -569,11 +574,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * Use the Session given. 	 * @param curriculaCourse a transient instance containing updated state 	 * @param the Session 	 */
+comment|/** 	 * Update the persistent state associated with the given identifier. An exception is thrown if there is a persistent 	 * instance with the same identifier in the current session. 	 * Use the Session given. 	 * @param curriculum a transient instance containing updated state 	 * @param the Session 	 */
 specifier|public
 name|void
 name|update
@@ -586,8 +591,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|,
 name|Session
 name|s
@@ -598,7 +603,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|,
 name|s
 argument_list|)
@@ -661,7 +666,7 @@ name|s
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * @param curriculaCourse the instance to be removed 	 */
+comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * @param curriculum the instance to be removed 	 */
 specifier|public
 name|void
 name|delete
@@ -674,8 +679,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|)
 block|{
 name|delete
@@ -683,11 +688,11 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * Use the Session given. 	 * @param curriculaCourse the instance to be removed 	 * @param s the Session 	 */
+comment|/** 	 * Remove a persistent instance from the datastore. The argument may be an instance associated with the receiving 	 * Session or a transient instance with an identifier associated with existing persistent state.  	 * Use the Session given. 	 * @param curriculum the instance to be removed 	 * @param s the Session 	 */
 specifier|public
 name|void
 name|delete
@@ -700,8 +705,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|,
 name|Session
 name|s
@@ -712,7 +717,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|,
 name|s
 argument_list|)
@@ -731,8 +736,8 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CurriculaCourse
-name|curriculaCourse
+name|Curriculum
+name|curriculum
 parameter_list|,
 name|Session
 name|s
@@ -743,7 +748,7 @@ argument_list|(
 operator|(
 name|Object
 operator|)
-name|curriculaCourse
+name|curriculum
 argument_list|,
 name|s
 argument_list|)
