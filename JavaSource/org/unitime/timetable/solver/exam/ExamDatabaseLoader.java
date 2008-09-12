@@ -7199,10 +7199,7 @@ name|capacity
 operator|<
 name|exam
 operator|.
-name|getStudents
-argument_list|()
-operator|.
-name|size
+name|getSize
 argument_list|()
 condition|)
 block|{
