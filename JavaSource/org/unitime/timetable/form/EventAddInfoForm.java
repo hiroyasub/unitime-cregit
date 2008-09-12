@@ -1067,7 +1067,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Additional e-mails are too long. Please, limit the field to no more than 1000 characters."
+literal|"Additional emails are too long. Please, limit the field to no more than 1000 characters."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1891,7 +1891,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// search database for a contact with this e-mail
+comment|// search database for a contact with this email
 comment|// if not in db, create a new contact
 comment|// update information from non-empty fields
 name|EventContact
@@ -2188,7 +2188,7 @@ argument_list|(
 name|mainContact
 argument_list|)
 expr_stmt|;
-comment|// add additional e-mails
+comment|// add additional emails
 if|if
 condition|(
 name|iAdditionalEmails

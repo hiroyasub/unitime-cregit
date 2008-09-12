@@ -171,7 +171,7 @@ index|[]
 block|{
 literal|"Name"
 block|,
-literal|"E-mail"
+literal|"Email"
 block|}
 argument_list|,
 operator|new

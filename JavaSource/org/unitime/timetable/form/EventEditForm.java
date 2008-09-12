@@ -842,7 +842,7 @@ argument_list|(
 name|mainContact
 argument_list|)
 expr_stmt|;
-comment|// add additional e-mails
+comment|// add additional emails
 if|if
 condition|(
 name|getAdditionalEmails
