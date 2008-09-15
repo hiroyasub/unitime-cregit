@@ -126,6 +126,13 @@ name|PROP_EXAM_SIZE
 init|=
 literal|"examSize"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_PRINT_OFFSET
+init|=
+literal|"printOffset"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseExam
@@ -199,6 +206,14 @@ name|lang
 operator|.
 name|Integer
 name|examSize
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|printOffset
 decl_stmt|;
 specifier|private
 name|java
@@ -440,6 +455,40 @@ operator|.
 name|examSize
 operator|=
 name|examSize
+expr_stmt|;
+block|}
+comment|/**      * Return the value associated with the column: PRINT_OFFSET      */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|getPrintOffset
+parameter_list|()
+block|{
+return|return
+name|printOffset
+return|;
+block|}
+comment|/**      * Set the value related to the column: PRINT_OFFSET      * @param length the PRINT_OFFSET value      */
+specifier|public
+name|void
+name|setPrintOffset
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|printOffset
+parameter_list|)
+block|{
+name|this
+operator|.
+name|printOffset
+operator|=
+name|printOffset
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: MAX_NBR_ROOMS 	 */

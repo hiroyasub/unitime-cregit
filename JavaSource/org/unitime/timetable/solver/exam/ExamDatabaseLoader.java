@@ -2530,6 +2530,16 @@ name|getExamSize
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|x
+operator|.
+name|setPrintOffset
+argument_list|(
+name|exam
+operator|.
+name|getPrintOffset
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|considerLimit

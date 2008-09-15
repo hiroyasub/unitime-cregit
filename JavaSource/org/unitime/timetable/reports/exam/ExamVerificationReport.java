@@ -3075,6 +3075,11 @@ name|exam
 operator|.
 name|getLength
 argument_list|()
+argument_list|,
+name|exam
+operator|.
+name|getPrintOffset
+argument_list|()
 argument_list|)
 argument_list|,
 literal|25
@@ -6147,6 +6152,11 @@ argument_list|,
 name|exam
 operator|.
 name|getLength
+argument_list|()
+argument_list|,
+name|exam
+operator|.
+name|getPrintOffset
 argument_list|()
 argument_list|)
 argument_list|,
