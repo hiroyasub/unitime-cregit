@@ -434,7 +434,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(r) from "
+literal|"select count(distinct r.permanentId) from "
 operator|+
 operator|(
 name|isRoom
@@ -554,7 +554,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(r) from "
+literal|"select count(distinct r.permanentId) from "
 operator|+
 operator|(
 name|isRoom
