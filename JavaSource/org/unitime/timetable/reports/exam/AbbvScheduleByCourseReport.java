@@ -302,13 +302,46 @@ operator|new
 name|Vector
 argument_list|()
 decl_stmt|;
+name|String
+name|separator
+init|=
+literal|null
+decl_stmt|;
+name|int
+name|split
+init|=
+literal|9
+decl_stmt|;
 name|int
 name|n
 init|=
 name|iNrLines
 operator|-
 literal|2
+operator|-
+operator|(
+operator|(
+name|iNrLines
+operator|-
+literal|2
+operator|)
+operator|/
+operator|(
+name|split
+operator|+
+literal|1
+operator|)
+operator|)
 decl_stmt|;
+name|sLog
+operator|.
+name|debug
+argument_list|(
+literal|"n="
+operator|+
+name|n
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -356,6 +389,18 @@ operator|(
 name|lx
 operator|%
 name|n
+operator|)
+operator|!=
+literal|0
+operator|&&
+operator|(
+operator|(
+name|lx
+operator|%
+name|n
+operator|)
+operator|%
+name|split
 operator|)
 operator|!=
 literal|0
@@ -636,6 +681,7 @@ if|if
 condition|(
 name|iExternal
 condition|)
+block|{
 name|setHeader
 argument_list|(
 operator|new
@@ -648,7 +694,13 @@ literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- -----
 block|}
 argument_list|)
 expr_stmt|;
+name|separator
+operator|=
+literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- -------------"
+expr_stmt|;
+block|}
 else|else
+block|{
 name|setHeader
 argument_list|(
 operator|new
@@ -661,6 +713,11 @@ literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- -----
 block|}
 argument_list|)
 expr_stmt|;
+name|separator
+operator|=
+literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- -------------"
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -675,6 +732,10 @@ block|,
 literal|"  ---- ----- ---  --------- --------------- | ---- ----- ---  --------- --------------- | ---- ----- ---  --------- ---------------"
 block|}
 argument_list|)
+expr_stmt|;
+name|separator
+operator|=
+literal|"  ---- ----- ---  --------- --------------- | ---- ----- ---  --------- --------------- | ---- ----- ---  --------- ---------------"
 expr_stmt|;
 block|}
 name|printHeader
@@ -868,6 +929,23 @@ operator|+
 name|c
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|(
+name|i
+operator|%
+name|split
+operator|)
+operator|==
+name|split
+operator|-
+literal|1
+condition|)
+name|println
+argument_list|(
+name|separator
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -914,6 +992,18 @@ operator|(
 name|lx
 operator|%
 name|n
+operator|)
+operator|!=
+literal|0
+operator|&&
+operator|(
+operator|(
+name|lx
+operator|%
+name|n
+operator|)
+operator|%
+name|split
 operator|)
 operator|!=
 literal|0
@@ -1604,6 +1694,7 @@ if|if
 condition|(
 name|iExternal
 condition|)
+block|{
 name|setHeader
 argument_list|(
 operator|new
@@ -1616,7 +1707,13 @@ literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---
 block|}
 argument_list|)
 expr_stmt|;
+name|separator
+operator|=
+literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---- ----- ----- --- ------- ------------- ----- ----- ----- ----"
+expr_stmt|;
+block|}
 else|else
+block|{
 name|setHeader
 argument_list|(
 operator|new
@@ -1629,6 +1726,11 @@ literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---
 block|}
 argument_list|)
 expr_stmt|;
+name|separator
+operator|=
+literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---- ----- ----- --- ------- ------------- ----- ----- ----- ----"
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -1643,6 +1745,10 @@ block|,
 literal|"---- ----- ---  --------- --------------- ----- ----- ----- ----- | ---- ----- ---  --------- --------------- ----- ----- ----- -----"
 block|}
 argument_list|)
+expr_stmt|;
+name|separator
+operator|=
+literal|"---- ----- ---  --------- --------------- ----- ----- ----- ----- | ---- ----- ---  --------- --------------- ----- ----- ----- -----"
 expr_stmt|;
 block|}
 name|printHeader
@@ -1762,6 +1868,23 @@ operator|+
 literal|"| "
 operator|+
 name|b
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|i
+operator|%
+name|split
+operator|)
+operator|==
+name|split
+operator|-
+literal|1
+condition|)
+name|println
+argument_list|(
+name|separator
 argument_list|)
 expr_stmt|;
 block|}
