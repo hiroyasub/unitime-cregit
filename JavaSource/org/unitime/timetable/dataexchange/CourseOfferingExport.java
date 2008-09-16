@@ -5196,11 +5196,13 @@ name|format
 argument_list|(
 name|exam
 operator|.
+name|getStartTime
+argument_list|(
+name|exam
+operator|.
 name|getAssignedPeriod
 argument_list|()
-operator|.
-name|getStartTime
-argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
