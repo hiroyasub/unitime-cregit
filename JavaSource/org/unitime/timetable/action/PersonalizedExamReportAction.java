@@ -962,18 +962,7 @@ name|User
 name|user
 parameter_list|)
 block|{
-if|if
-condition|(
-name|user
-operator|.
-name|getRole
-argument_list|()
-operator|!=
-literal|null
-condition|)
-return|return
-literal|false
-return|;
+comment|//if (user.getRole()!=null) return false;
 name|HashSet
 argument_list|<
 name|Session
@@ -1329,46 +1318,7 @@ name|back
 argument_list|)
 return|;
 block|}
-if|if
-condition|(
-name|user
-operator|.
-name|getRole
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-name|sLog
-operator|.
-name|info
-argument_list|(
-literal|"User "
-operator|+
-name|user
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" has role "
-operator|+
-name|user
-operator|.
-name|getRole
-argument_list|()
-operator|+
-literal|", forwarding to main page."
-argument_list|)
-expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"main"
-argument_list|)
-return|;
-block|}
+comment|/*         if (user.getRole()!=null) {             sLog.info("User "+user.getName()+" has role "+user.getRole()+", forwarding to main page.");             return mapping.findForward("main");         }         */
 name|String
 name|externalId
 init|=
