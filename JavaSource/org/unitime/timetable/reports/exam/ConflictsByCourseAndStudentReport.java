@@ -441,33 +441,11 @@ if|if
 condition|(
 name|o
 index|[
-literal|1
+literal|2
 index|]
 operator|!=
 literal|null
 condition|)
-name|iStudentNames
-operator|.
-name|put
-argument_list|(
-operator|(
-name|Long
-operator|)
-name|o
-index|[
-literal|0
-index|]
-argument_list|,
-operator|(
-name|String
-operator|)
-name|o
-index|[
-literal|1
-index|]
-argument_list|)
-expr_stmt|;
-else|else
 name|iStudentNames
 operator|.
 name|put
@@ -547,6 +525,52 @@ argument_list|,
 literal|1
 argument_list|)
 operator|)
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|o
+index|[
+literal|1
+index|]
+operator|!=
+literal|null
+condition|)
+name|iStudentNames
+operator|.
+name|put
+argument_list|(
+operator|(
+name|Long
+operator|)
+name|o
+index|[
+literal|0
+index|]
+argument_list|,
+operator|(
+name|String
+operator|)
+name|o
+index|[
+literal|1
+index|]
+argument_list|)
+expr_stmt|;
+else|else
+name|iStudentNames
+operator|.
+name|put
+argument_list|(
+operator|(
+name|Long
+operator|)
+name|o
+index|[
+literal|0
+index|]
+argument_list|,
+literal|"N/A"
 argument_list|)
 expr_stmt|;
 block|}
@@ -711,7 +735,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name       Type   Subj Crsnbr "
+literal|"Sect Date And Time                Name                       Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -737,7 +761,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ---------- ------ ---- ------ "
+literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -1152,7 +1176,7 @@ argument_list|(
 name|studentId
 argument_list|)
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -1362,7 +1386,7 @@ argument_list|(
 name|studentId
 argument_list|)
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -1601,7 +1625,7 @@ argument_list|(
 name|studentId
 argument_list|)
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -1827,7 +1851,7 @@ argument_list|(
 name|studentId
 argument_list|)
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -2081,7 +2105,7 @@ argument_list|(
 name|studentId
 argument_list|)
 argument_list|,
-literal|10
+literal|25
 argument_list|)
 operator|+
 literal|" "
