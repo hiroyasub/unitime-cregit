@@ -1874,6 +1874,8 @@ argument_list|()
 operator|.
 name|compareTo
 argument_list|(
+name|info
+operator|.
 name|getOwner
 argument_list|()
 argument_list|)
@@ -1953,6 +1955,16 @@ operator|.
 name|getId
 argument_list|()
 argument_list|)
+return|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getName
+argument_list|()
 return|;
 block|}
 block|}
