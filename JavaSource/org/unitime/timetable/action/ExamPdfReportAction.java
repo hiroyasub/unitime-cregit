@@ -973,6 +973,11 @@ name|getExamType
 argument_list|()
 argument_list|,
 literal|true
+argument_list|,
+name|myForm
+operator|.
+name|getIgnoreEmptyExams
+argument_list|()
 argument_list|)
 decl_stmt|;
 comment|/*                 if (myForm.getAll()) {                     for (Iterator i=Exam.findAll(session.getUniqueId(), myForm.getExamType()).iterator();i.hasNext();) {                         exams.add(new ExamAssignmentInfo((Exam)i.next()));                     }                 } else {                     for (int i=0;i<myForm.getSubjects().length;i++) {                         SubjectArea subject = new SubjectAreaDAO().get(Long.valueOf(myForm.getSubjects()[i]));                         TreeSet<ExamAssignmentInfo> examsThisSubject = new TreeSet();                         for (Iterator j=Exam.findExamsOfSubjectArea(subject.getUniqueId(), myForm.getExamType()).iterator();j.hasNext();) {                             examsThisSubject.add(new ExamAssignmentInfo((Exam)j.next()));                         }                         examsPerSubject.put(subject, examsThisSubject);                     }                 }                 */
