@@ -1514,7 +1514,7 @@ argument_list|()
 operator|&&
 name|d
 operator|.
-name|getStatusType
+name|effectiveStatusType
 argument_list|()
 operator|.
 name|canManagerView
@@ -1533,7 +1533,7 @@ argument_list|()
 operator|&&
 name|d
 operator|.
-name|getStatusType
+name|effectiveStatusType
 argument_list|()
 operator|.
 name|canOwnerView
