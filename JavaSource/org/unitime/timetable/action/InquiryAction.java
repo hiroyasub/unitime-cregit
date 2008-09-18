@@ -753,14 +753,6 @@ argument_list|,
 name|errors
 argument_list|)
 expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"display"
-argument_list|)
-return|;
 block|}
 else|else
 block|{
