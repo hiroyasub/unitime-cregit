@@ -6372,6 +6372,9 @@ name|assgn
 parameter_list|,
 name|boolean
 name|ignNoEnrl
+parameter_list|,
+name|boolean
+name|eventConf
 parameter_list|)
 throws|throws
 name|Exception
@@ -7629,6 +7632,8 @@ if|if
 condition|(
 name|assgn
 operator|&&
+name|eventConf
+operator|&&
 literal|"true"
 operator|.
 name|equals
@@ -8615,6 +8620,8 @@ argument_list|,
 name|assgn
 argument_list|,
 name|ignempty
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 if|if
