@@ -1396,19 +1396,6 @@ name|User
 name|user
 parameter_list|)
 block|{
-comment|//can edit -> can view
-if|if
-condition|(
-name|canSeeTimetable
-argument_list|(
-name|session
-argument_list|,
-name|user
-argument_list|)
-condition|)
-return|return
-literal|true
-return|;
 comment|//admin or exam manager
 if|if
 condition|(
@@ -1466,21 +1453,11 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|TimetableManager
-name|mgr
-init|=
-name|getManager
-argument_list|(
-name|user
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|Iterator
 name|i
 init|=
-name|mgr
-operator|.
 name|getDepartments
 argument_list|()
 operator|.
