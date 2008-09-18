@@ -243,6 +243,22 @@ name|reports
 operator|.
 name|exam
 operator|.
+name|ExamPeriodChartReport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|reports
+operator|.
+name|exam
+operator|.
 name|ExamScheduleByPeriodReport
 import|;
 end_import
@@ -651,6 +667,17 @@ argument_list|(
 literal|"Period Chart"
 argument_list|,
 name|PeriodChartReport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|sRegisteredReports
+operator|.
+name|put
+argument_list|(
+literal|"Period Chart (Exams)"
+argument_list|,
+name|ExamPeriodChartReport
 operator|.
 name|class
 argument_list|)

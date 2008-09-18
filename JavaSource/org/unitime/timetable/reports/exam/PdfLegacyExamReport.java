@@ -1056,6 +1056,17 @@ name|sRegisteredReports
 operator|.
 name|put
 argument_list|(
+literal|"xchart"
+argument_list|,
+name|ExamPeriodChartReport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|sRegisteredReports
+operator|.
+name|put
+argument_list|(
 literal|"ver"
 argument_list|,
 name|ExamVerificationReport
