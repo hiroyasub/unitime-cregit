@@ -151,6 +151,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|dataexchange
+operator|.
+name|DataExchangeHelper
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|model
 operator|.
 name|DepartmentalInstructor
@@ -394,6 +408,13 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|static
+name|boolean
+name|sDebug
+init|=
+literal|false
+decl_stmt|;
+specifier|private
+specifier|static
 name|int
 name|sCreate
 init|=
@@ -440,6 +461,95 @@ index|[]
 index|[]
 name|iTotal
 decl_stmt|;
+specifier|private
+name|DataExchangeHelper
+name|iHelper
+init|=
+literal|null
+decl_stmt|;
+specifier|public
+name|UpdateExamConflicts
+parameter_list|()
+block|{
+block|}
+specifier|public
+name|UpdateExamConflicts
+parameter_list|(
+name|DataExchangeHelper
+name|helper
+parameter_list|)
+block|{
+name|iHelper
+operator|=
+name|helper
+expr_stmt|;
+block|}
+specifier|private
+name|void
+name|debug
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|sDebug
+condition|)
+return|return;
+if|if
+condition|(
+name|iHelper
+operator|==
+literal|null
+condition|)
+name|sLog
+operator|.
+name|debug
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+else|else
+name|iHelper
+operator|.
+name|debug
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+name|void
+name|info
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+block|{
+if|if
+condition|(
+name|iHelper
+operator|==
+literal|null
+condition|)
+name|sLog
+operator|.
+name|info
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+else|else
+name|iHelper
+operator|.
+name|info
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|updateConflicts
@@ -713,8 +823,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    new direct "
@@ -897,7 +1005,7 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|&&
+operator|||
 operator|!
 name|students
 operator|.
@@ -915,8 +1023,6 @@ condition|(
 name|change
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update direct "
@@ -1188,8 +1294,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    new direct "
@@ -1367,12 +1471,12 @@ argument_list|()
 operator|!=
 name|conf
 operator|.
-name|getStudents
+name|getInstructors
 argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|&&
+operator|||
 operator|!
 name|instructors
 operator|.
@@ -1390,8 +1494,6 @@ condition|(
 name|change
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update direct "
@@ -1677,8 +1779,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    new btb "
@@ -1869,7 +1969,7 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|&&
+operator|||
 operator|!
 name|students
 operator|.
@@ -1887,8 +1987,6 @@ condition|(
 name|change
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update btb "
@@ -2006,8 +2104,6 @@ operator|>
 literal|1.0
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update btb "
@@ -2246,6 +2342,26 @@ name|getStudents
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|exam
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|compareTo
+argument_list|(
+name|btb
+operator|.
+name|getOtherExam
+argument_list|()
+operator|.
+name|getExamId
+argument_list|()
+argument_list|)
+operator|<
+literal|0
+condition|)
 name|iTotal
 index|[
 name|sInstructors
@@ -2266,8 +2382,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    new btb "
@@ -2465,7 +2579,7 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|&&
+operator|||
 operator|!
 name|instructors
 operator|.
@@ -2483,8 +2597,6 @@ condition|(
 name|change
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update btb "
@@ -2602,8 +2714,6 @@ operator|>
 literal|1.0
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update btb "
@@ -2977,8 +3087,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    new m2d "
@@ -3157,7 +3265,7 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|&&
+operator|||
 operator|!
 name|students
 operator|.
@@ -3175,8 +3283,6 @@ condition|(
 name|change
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update m2d "
@@ -3544,8 +3650,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    new btb "
@@ -3724,7 +3828,7 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|&&
+operator|||
 operator|!
 name|instructors
 operator|.
@@ -3742,8 +3846,6 @@ condition|(
 name|change
 condition|)
 block|{
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"    update btb "
@@ -4010,8 +4112,6 @@ name|other
 argument_list|)
 expr_stmt|;
 block|}
-name|sLog
-operator|.
 name|debug
 argument_list|(
 literal|"  delete "
@@ -4235,6 +4335,18 @@ argument_list|(
 name|student
 argument_list|)
 expr_stmt|;
+else|else
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Student "
+operator|+
+name|studentId
+operator|+
+literal|" not found."
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|students
@@ -4338,10 +4450,286 @@ argument_list|(
 name|instructor
 argument_list|)
 expr_stmt|;
+else|else
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Instructor "
+operator|+
+name|instructorId
+operator|+
+literal|" not found."
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|instructors
 return|;
+block|}
+specifier|public
+name|void
+name|simpleCheck
+parameter_list|(
+name|ExamAssignmentInfo
+name|e1
+parameter_list|,
+name|ExamAssignmentInfo
+name|e2
+parameter_list|)
+block|{
+if|if
+condition|(
+name|e1
+operator|.
+name|getNrDirectConflicts
+argument_list|()
+operator|!=
+name|e2
+operator|.
+name|getNrDirectConflicts
+argument_list|()
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Wrong number of direct student conflicts for "
+operator|+
+name|e1
+operator|.
+name|getExamName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|e1
+operator|.
+name|getNrDirectConflicts
+argument_list|()
+operator|+
+literal|"!="
+operator|+
+name|e2
+operator|.
+name|getNrDirectConflicts
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|e1
+operator|.
+name|getNrBackToBackConflicts
+argument_list|()
+operator|!=
+name|e2
+operator|.
+name|getNrBackToBackConflicts
+argument_list|()
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Wrong number of back-to-back student conflicts for "
+operator|+
+name|e1
+operator|.
+name|getExamName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|e1
+operator|.
+name|getNrBackToBackConflicts
+argument_list|()
+operator|+
+literal|"!="
+operator|+
+name|e2
+operator|.
+name|getNrBackToBackConflicts
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|e1
+operator|.
+name|getNrMoreThanTwoConflicts
+argument_list|()
+operator|!=
+name|e2
+operator|.
+name|getNrMoreThanTwoConflicts
+argument_list|()
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Wrong number of>2 exams a day student conflicts for "
+operator|+
+name|e1
+operator|.
+name|getExamName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|e1
+operator|.
+name|getNrMoreThanTwoConflicts
+argument_list|()
+operator|+
+literal|"!="
+operator|+
+name|e2
+operator|.
+name|getNrMoreThanTwoConflicts
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|e1
+operator|.
+name|getNrInstructorDirectConflicts
+argument_list|()
+operator|!=
+name|e2
+operator|.
+name|getNrInstructorDirectConflicts
+argument_list|()
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Wrong number of direct instructor conflicts for "
+operator|+
+name|e1
+operator|.
+name|getExamName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|e1
+operator|.
+name|getNrInstructorDirectConflicts
+argument_list|()
+operator|+
+literal|"!="
+operator|+
+name|e2
+operator|.
+name|getNrInstructorDirectConflicts
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|e1
+operator|.
+name|getNrInstructorBackToBackConflicts
+argument_list|()
+operator|!=
+name|e2
+operator|.
+name|getNrInstructorBackToBackConflicts
+argument_list|()
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Wrong number of back-to-back instructor conflicts for "
+operator|+
+name|e1
+operator|.
+name|getExamName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|e1
+operator|.
+name|getNrInstructorBackToBackConflicts
+argument_list|()
+operator|+
+literal|"!="
+operator|+
+name|e2
+operator|.
+name|getNrInstructorBackToBackConflicts
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|e1
+operator|.
+name|getNrInstructorMoreThanTwoConflicts
+argument_list|()
+operator|!=
+name|e2
+operator|.
+name|getNrInstructorMoreThanTwoConflicts
+argument_list|()
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Wrong number of>2 exams a day instructor conflicts for "
+operator|+
+name|e1
+operator|.
+name|getExamName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|e1
+operator|.
+name|getNrInstructorMoreThanTwoConflicts
+argument_list|()
+operator|+
+literal|"!="
+operator|+
+name|e2
+operator|.
+name|getNrInstructorMoreThanTwoConflicts
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
@@ -4497,9 +4885,7 @@ range|:
 name|exams
 control|)
 block|{
-name|sLog
-operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Checking "
 operator|+
@@ -4511,8 +4897,6 @@ operator|+
 literal|" ..."
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|updateConflicts
 argument_list|(
 name|exam
@@ -4520,38 +4904,7 @@ argument_list|,
 name|hibSession
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-name|sLog
-operator|.
-name|error
-argument_list|(
-literal|"Update of "
-operator|+
-name|exam
-operator|.
-name|getExamName
-argument_list|()
-operator|+
-literal|" failed, reason: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-throw|throw
-name|e
-throw|;
-block|}
+comment|//simpleCheck(exam, new ExamAssignmentInfo(exam.getExam(),true));
 block|}
 if|if
 condition|(
@@ -4568,8 +4921,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"Direct student conflicts: "
@@ -4585,8 +4936,6 @@ name|sConflictTypeDirect
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -4605,8 +4954,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -4625,8 +4972,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -4645,8 +4990,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -4719,8 +5062,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|">2 exams a day student conflicts: "
@@ -4736,8 +5077,6 @@ name|sConflictTypeMoreThanTwoADay
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -4756,8 +5095,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -4776,8 +5113,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -4796,8 +5131,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -4870,8 +5203,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"Back-to-back student conflicts: "
@@ -4887,8 +5218,6 @@ name|sConflictTypeBackToBack
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -4907,8 +5236,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -4927,8 +5254,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -4947,8 +5272,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -5021,8 +5344,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"Distance back-to-back student conflicts: "
@@ -5038,8 +5359,6 @@ name|sConflictTypeBackToBackDist
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -5058,8 +5377,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -5078,8 +5395,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -5098,8 +5413,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -5172,8 +5485,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"Direct instructor conflicts: "
@@ -5189,8 +5500,6 @@ name|sConflictTypeDirect
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -5209,8 +5518,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -5229,8 +5536,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -5249,8 +5554,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -5323,8 +5626,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|">2 exams a day instructor conflicts: "
@@ -5340,8 +5641,6 @@ name|sConflictTypeMoreThanTwoADay
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -5360,8 +5659,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -5380,8 +5677,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -5400,8 +5695,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -5474,8 +5767,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"Back-to-back instructor conflicts: "
@@ -5491,8 +5782,6 @@ name|sConflictTypeBackToBack
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -5511,8 +5800,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -5531,8 +5818,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -5551,8 +5836,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
@@ -5625,8 +5908,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"Distance back-to-back instructor conflicts: "
@@ -5642,8 +5923,6 @@ name|sConflictTypeBackToBackDist
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    created: "
@@ -5662,8 +5941,6 @@ name|sCreate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    updated: "
@@ -5682,8 +5959,6 @@ name|sUpdate
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"    deleted: "
@@ -5702,8 +5977,6 @@ name|sDelete
 index|]
 argument_list|)
 expr_stmt|;
-name|sLog
-operator|.
 name|info
 argument_list|(
 literal|"  unchanged: "
