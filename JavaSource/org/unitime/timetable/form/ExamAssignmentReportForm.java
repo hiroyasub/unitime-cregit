@@ -104,6 +104,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|sStatistics
+init|=
+literal|"Statistics"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|sPeriodUsage
 init|=
 literal|"Period Usage"
@@ -271,6 +279,8 @@ block|{
 name|sExamAssignmentReport
 block|,
 name|sRoomAssignmentReport
+block|,
+name|sStatistics
 block|,
 name|sPeriodUsage
 block|,
