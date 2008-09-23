@@ -1525,7 +1525,21 @@ name|sInfoKeys
 operator|.
 name|add
 argument_list|(
+literal|"Period&times;Size Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
 literal|"Exam Rotation Penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Average Period"
 argument_list|)
 expr_stmt|;
 name|sInfoKeys
@@ -1589,6 +1603,13 @@ operator|.
 name|add
 argument_list|(
 literal|"Perturbation penalty"
+argument_list|)
+expr_stmt|;
+name|sInfoKeys
+operator|.
+name|add
+argument_list|(
+literal|"Room Perturbation Penalty"
 argument_list|)
 expr_stmt|;
 name|sInfoKeys
