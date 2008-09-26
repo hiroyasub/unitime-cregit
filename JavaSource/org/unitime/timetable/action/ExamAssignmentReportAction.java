@@ -22816,6 +22816,17 @@ literal|"\n"
 operator|)
 decl_stmt|;
 name|String
+name|sp
+init|=
+operator|(
+name|html
+condition|?
+literal|"&nbsp;"
+else|:
+literal|" "
+operator|)
+decl_stmt|;
+name|String
 name|indent
 init|=
 operator|(
@@ -23572,7 +23583,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"&nbsp;"
+name|sp
 block|,
 literal|""
 block|}
@@ -23718,7 +23729,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"&nbsp;"
+name|sp
 block|,
 literal|""
 block|}
@@ -23873,7 +23884,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"&nbsp;"
+name|sp
 block|,
 literal|""
 block|}
@@ -24142,7 +24153,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"&nbsp;"
+name|sp
 block|,
 literal|""
 block|}
@@ -24249,7 +24260,7 @@ index|[]
 block|{
 name|indent
 operator|+
-literal|"Student not available"
+literal|"Instructor not available"
 block|,
 name|df2
 operator|.
@@ -24394,7 +24405,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"&nbsp;"
+name|sp
 block|,
 literal|""
 block|}
@@ -24700,7 +24711,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"&nbsp;"
+name|sp
 block|,
 literal|""
 block|}
@@ -24821,7 +24832,7 @@ index|[]
 block|{
 name|indent
 operator|+
-literal|"Student not available"
+literal|"Instructor not available"
 block|,
 name|df1
 operator|.
