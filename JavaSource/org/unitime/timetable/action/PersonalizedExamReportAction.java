@@ -3123,7 +3123,7 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.exams.reports.conflicts.cache"
 argument_list|,
-literal|"false"
+literal|"true"
 argument_list|)
 argument_list|)
 decl_stmt|;
