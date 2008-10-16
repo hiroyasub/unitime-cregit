@@ -371,6 +371,12 @@ operator|.
 name|getDepartments
 argument_list|(
 name|session
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|session
 operator|.
 name|getUniqueId
 argument_list|()
