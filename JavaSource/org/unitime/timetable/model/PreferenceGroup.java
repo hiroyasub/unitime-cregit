@@ -1394,6 +1394,14 @@ name|user
 operator|.
 name|getCurrentRole
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|(
+name|user
+operator|.
+name|getCurrentRole
+argument_list|()
 operator|.
 name|equals
 argument_list|(
@@ -1413,6 +1421,7 @@ name|Roles
 operator|.
 name|EXAM_MGR_ROLE
 argument_list|)
+operator|)
 condition|)
 return|return
 literal|true
