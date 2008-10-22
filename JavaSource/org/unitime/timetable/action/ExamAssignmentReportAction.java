@@ -23660,7 +23660,9 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Registered students with at lest one class"
+name|indent
+operator|+
+literal|"Students enrolled in classes"
 block|,
 name|df2
 operator|.
