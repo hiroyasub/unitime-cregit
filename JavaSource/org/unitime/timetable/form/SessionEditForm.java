@@ -846,7 +846,7 @@ literal|"Event Start Date"
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
+if|else if
 condition|(
 operator|!
 name|CalendarUtils
@@ -899,6 +899,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|errors
+operator|.
+name|isEmpty
+argument_list|()
+operator|&&
 operator|!
 name|d4
 operator|.
