@@ -7897,6 +7897,9 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
+name|lastPage
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
