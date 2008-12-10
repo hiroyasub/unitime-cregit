@@ -5885,7 +5885,7 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" Examination Conflicts for "
+literal|" Examination Conflicts and/or Back-To-Back Exams for "
 operator|+
 name|student
 operator|.
@@ -7941,7 +7941,7 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" Examination Instructor Conflicts for "
+literal|" Examination Instructor Conflicts and/or Back-To-Back Exams for "
 operator|+
 name|instructor
 operator|.
