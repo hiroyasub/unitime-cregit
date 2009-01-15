@@ -2770,7 +2770,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|eventBeginDate
+name|eventBeginTime
 operator|!=
 literal|null
 condition|)
@@ -2795,7 +2795,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|eventEndDate
+name|eventEndTime
 operator|!=
 literal|null
 condition|)
