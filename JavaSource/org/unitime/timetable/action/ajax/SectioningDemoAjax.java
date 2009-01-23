@@ -493,7 +493,7 @@ name|createQuery
 argument_list|(
 literal|"select co from InstructionalOffering as io , CourseOffering co "
 operator|+
-literal|"where co.uniqueCourseNbr.subjectArea.uniqueId = :subjectAreaId "
+literal|"where co.subjectArea.uniqueId = :subjectAreaId "
 operator|+
 literal|"and io.uniqueId = co.instructionalOffering.uniqueId "
 operator|+
@@ -567,10 +567,47 @@ operator|.
 name|toString
 argument_list|()
 argument_list|,
+operator|(
 name|co
 operator|.
 name|getCourseNbr
 argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|co
+operator|.
+name|getTitle
+argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|">"
+argument_list|,
+literal|"&gt;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"<"
+argument_list|,
+literal|"&lt;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"'"
+argument_list|,
+literal|"&quot;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"&"
+argument_list|,
+literal|"&amp;"
+argument_list|)
+operator|)
 argument_list|)
 expr_stmt|;
 block|}

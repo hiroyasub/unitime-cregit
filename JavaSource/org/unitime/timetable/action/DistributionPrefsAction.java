@@ -2765,7 +2765,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|"select co.uniqueId, co.courseNbr "
+literal|"select co.uniqueId, co.courseNbr, co.title "
 argument_list|)
 expr_stmt|;
 name|query
@@ -2779,7 +2779,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" where co.uniqueCourseNbr.subjectArea.uniqueId = :subjectAreaId "
+literal|" where co.subjectArea.uniqueId = :subjectAreaId "
 argument_list|)
 expr_stmt|;
 name|query
@@ -2933,6 +2933,7 @@ init|=
 operator|new
 name|ComboBoxLookup
 argument_list|(
+operator|(
 name|a
 index|[
 literal|1
@@ -2940,6 +2941,17 @@ index|]
 operator|.
 name|toString
 argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|a
+index|[
+literal|2
+index|]
+operator|.
+name|toString
+argument_list|()
+operator|)
 argument_list|,
 name|a
 index|[

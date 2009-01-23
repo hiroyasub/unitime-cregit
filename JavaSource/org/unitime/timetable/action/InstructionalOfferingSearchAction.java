@@ -745,24 +745,8 @@ argument_list|,
 literal|"addInstructionalOfferings"
 argument_list|)
 expr_stmt|;
-name|map
-operator|.
-name|put
-argument_list|(
-literal|"button.update"
-argument_list|,
-literal|"updateInstructionalOfferings"
-argument_list|)
-expr_stmt|;
-name|map
-operator|.
-name|put
-argument_list|(
-literal|"button.delete"
-argument_list|,
-literal|"deleteCourseOffering"
-argument_list|)
-expr_stmt|;
+comment|//	      map.put("button.update", "updateInstructionalOfferings");
+comment|//	      map.put("button.delete", "deleteCourseOffering");
 name|map
 operator|.
 name|put
@@ -3425,6 +3409,28 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Offering exists - redirect to offering detail
+name|String
+name|courseNumbersMustBeUnique
+init|=
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.courseNumber.unique"
+argument_list|,
+literal|"true"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|courseNumbersMustBeUnique
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+literal|"true"
+argument_list|)
+condition|)
+block|{
 name|List
 name|l
 init|=
@@ -3501,7 +3507,11 @@ literal|"showInstructionalOfferingDetail"
 argument_list|)
 return|;
 block|}
+block|}
 comment|// No Errors - create Course Offering
+name|CourseOffering
+name|newCourseOffering
+init|=
 name|CourseOffering
 operator|.
 name|addNew
@@ -3510,7 +3520,7 @@ name|subjAreaId
 argument_list|,
 name|courseNbr
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -3570,28 +3580,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Offering exists - redirect to offering detail
-name|List
-name|l2
-init|=
-name|CourseOffering
-operator|.
-name|search
-argument_list|(
-name|sessionId
-argument_list|,
-name|subjAreaId
-argument_list|,
-name|courseNbr
-argument_list|)
-decl_stmt|;
+comment|//	    List l2 = CourseOffering.search(sessionId, subjAreaId, courseNbr);
 if|if
 condition|(
-name|l2
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
+name|newCourseOffering
+operator|!=
+literal|null
 condition|)
 block|{
 comment|// errors.add("courseNbr", new ActionMessage("errors.exists", courseNbr));
@@ -3624,17 +3618,7 @@ name|setAttribute
 argument_list|(
 literal|"courseOfferingId"
 argument_list|,
-operator|(
-operator|(
-name|CourseOffering
-operator|)
-name|l2
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-operator|)
+name|newCourseOffering
 operator|.
 name|getUniqueId
 argument_list|()
@@ -3662,1255 +3646,220 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * Updates changes made to instructional offerings 	 * @param mapping 	 * @param form 	 * @param request 	 * @param response 	 * @return 	 * @throws Exception 	 */
-specifier|public
-name|ActionForward
-name|updateInstructionalOfferings
-parameter_list|(
-name|ActionMapping
-name|mapping
-parameter_list|,
-name|ActionForm
-name|form
-parameter_list|,
-name|HttpServletRequest
-name|request
-parameter_list|,
-name|HttpServletResponse
-name|response
-parameter_list|)
-throws|throws
-name|Exception
-block|{
-name|HttpSession
-name|httpSession
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|Web
-operator|.
-name|isLoggedIn
-argument_list|(
-name|httpSession
-argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
-throw|;
-block|}
-name|User
-name|user
-init|=
-name|Web
-operator|.
-name|getUser
-argument_list|(
-name|httpSession
-argument_list|)
-decl_stmt|;
-name|Long
-name|sessionId
-init|=
-operator|(
-name|Long
-operator|)
-name|user
-operator|.
-name|getAttribute
-argument_list|(
-name|Constants
-operator|.
-name|SESSION_ID_ATTR_NAME
-argument_list|)
-decl_stmt|;
-comment|// Read values
-name|InstructionalOfferingListForm
-name|frm
-init|=
-operator|(
-name|InstructionalOfferingListForm
-operator|)
-name|form
-decl_stmt|;
-name|ActionMessages
-name|errors
-init|=
-operator|new
-name|ActionMessages
-argument_list|()
-decl_stmt|;
-name|String
-name|subjAreaId
-init|=
-name|frm
-operator|.
-name|getSubjectAreaId
-argument_list|()
-decl_stmt|;
-name|String
-name|courseNbr
-init|=
-name|frm
-operator|.
-name|getCourseNbr
-argument_list|()
-decl_stmt|;
-name|String
-name|ctrCrsOffrId
-init|=
-name|frm
-operator|.
-name|getCtrlInstrOfferingId
-argument_list|()
-decl_stmt|;
-name|Boolean
-name|isControl
-init|=
-name|frm
-operator|.
-name|getIsControl
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|ctrCrsOffrId
-operator|==
-literal|null
-condition|)
-name|ctrCrsOffrId
-operator|=
-literal|""
-expr_stmt|;
-if|if
-condition|(
-name|isControl
-operator|==
-literal|null
-condition|)
-name|isControl
-operator|=
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-name|frm
-operator|.
-name|setCollections
-argument_list|(
-name|request
-argument_list|,
-name|getInstructionalOfferings
-argument_list|(
-name|request
-argument_list|,
-name|frm
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|frm
-operator|.
-name|setSubjectAreaAbbv
-argument_list|(
-operator|new
-name|SubjectAreaDAO
-argument_list|()
-operator|.
-name|get
-argument_list|(
-operator|new
-name|Long
-argument_list|(
-name|subjAreaId
-argument_list|)
-argument_list|)
-operator|.
-name|getSubjectAreaAbbreviation
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|List
-name|l
-init|=
-name|CourseOffering
-operator|.
-name|search
-argument_list|(
-name|sessionId
-argument_list|,
-name|subjAreaId
-argument_list|,
-name|courseNbr
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|l
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-name|CourseOfferingDAO
-name|cdao
-init|=
-operator|new
-name|CourseOfferingDAO
-argument_list|()
-decl_stmt|;
-name|InstructionalOfferingDAO
-name|idao
-init|=
-operator|new
-name|InstructionalOfferingDAO
-argument_list|()
-decl_stmt|;
-name|org
-operator|.
-name|hibernate
-operator|.
-name|Session
-name|hibSession
-init|=
-name|idao
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
-name|Transaction
-name|tx
-init|=
-name|hibSession
-operator|.
-name|beginTransaction
-argument_list|()
-decl_stmt|;
-try|try
-block|{
-comment|// Update
-name|CourseOffering
-name|co
-init|=
-operator|(
-name|CourseOffering
-operator|)
-name|l
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-name|InstructionalOffering
-name|io
-init|=
-name|co
-operator|.
-name|getInstructionalOffering
-argument_list|()
-decl_stmt|;
-name|String
-name|ctrCrsOffrId2
-init|=
-name|io
-operator|.
-name|getCtrlCourseId
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-decl_stmt|;
-name|Boolean
-name|isControl2
-init|=
-name|co
-operator|.
-name|isIsControl
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|ctrCrsOffrId2
-operator|==
-literal|null
-condition|)
-name|ctrCrsOffrId2
-operator|=
-literal|""
-expr_stmt|;
-if|if
-condition|(
-name|isControl2
-operator|==
-literal|null
-condition|)
-name|isControl2
-operator|=
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-comment|// Check if value is changed
-if|if
-condition|(
-name|isControl2
-operator|.
-name|booleanValue
-argument_list|()
-operator|!=
-name|isControl
-operator|.
-name|booleanValue
-argument_list|()
-operator|||
-operator|!
-name|ctrCrsOffrId2
-operator|.
-name|equals
-argument_list|(
-name|ctrCrsOffrId
-argument_list|)
-condition|)
-block|{
-comment|// Control flag is changed
-if|if
-condition|(
-name|isControl2
-operator|.
-name|booleanValue
-argument_list|()
-operator|!=
-name|isControl
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
-comment|// It is now a controlling course
-if|if
-condition|(
-name|isControl
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
-name|co
-operator|.
-name|setIsControl
-argument_list|(
-name|isControl
-argument_list|)
-expr_stmt|;
-comment|// Loop through IO and update other controlling course to false
-name|Set
-name|offerings
-init|=
-name|io
-operator|.
-name|getCourseOfferings
-argument_list|()
-decl_stmt|;
-name|Iterator
-name|iter
-init|=
-name|offerings
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|iter
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
-name|CourseOffering
-name|co2
-init|=
-operator|(
-name|CourseOffering
-operator|)
-name|iter
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|co2
-operator|.
-name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
-argument_list|()
-operator|!=
-name|co
-operator|.
-name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
-argument_list|()
-operator|&&
-name|co2
-operator|.
-name|isIsControl
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
-name|co2
-operator|.
-name|setIsControl
-argument_list|(
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-name|idao
-operator|.
-name|saveOrUpdate
-argument_list|(
-name|io
-argument_list|)
-expr_stmt|;
-block|}
-comment|// It is now NOT a controlling course
-else|else
-block|{
-comment|// Check that controlling course is not the same
-if|if
-condition|(
-name|ctrCrsOffrId2
-operator|.
-name|equals
-argument_list|(
-name|ctrCrsOffrId
-argument_list|)
-operator|||
-name|ctrCrsOffrId
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"ctrlInstrOfferingId"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.ctrlCourse.invalid"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|// Has other course offerings attached to it
-if|if
-condition|(
-name|io
-operator|.
-name|getCourseOfferings
-argument_list|()
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|1
-condition|)
-block|{
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"ctrlInstrOfferingId"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.ctrlCourse.multipleChildren"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|io
-operator|.
-name|removeCourseOffering
-argument_list|(
-name|co
-argument_list|)
-expr_stmt|;
-name|io
-operator|.
-name|setCourseOfferings
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-name|co
-operator|.
-name|setIsControl
-argument_list|(
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|co
-operator|.
-name|setInstructionalOffering
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-name|Event
-operator|.
-name|deleteFromEvents
-argument_list|(
-name|hibSession
-argument_list|,
-name|io
-argument_list|)
-expr_stmt|;
-name|Exam
-operator|.
-name|deleteFromExams
-argument_list|(
-name|hibSession
-argument_list|,
-name|io
-argument_list|)
-expr_stmt|;
-name|idao
-operator|.
-name|delete
-argument_list|(
-name|io
-argument_list|)
-expr_stmt|;
-name|CourseOffering
-name|co2
-init|=
-name|cdao
-operator|.
-name|get
-argument_list|(
-operator|new
-name|Long
-argument_list|(
-name|ctrCrsOffrId
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|InstructionalOffering
-name|io2
-init|=
-name|co2
-operator|.
-name|getInstructionalOffering
-argument_list|()
-decl_stmt|;
-name|io2
-operator|.
-name|addTocourseOfferings
-argument_list|(
-name|co
-argument_list|)
-expr_stmt|;
-name|co
-operator|.
-name|setInstructionalOffering
-argument_list|(
-name|io2
-argument_list|)
-expr_stmt|;
-name|idao
-operator|.
-name|save
-argument_list|(
-name|io2
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-block|}
-else|else
-block|{
-comment|// Controlling course has changed
-if|if
-condition|(
-operator|!
-name|ctrCrsOffrId2
-operator|.
-name|equals
-argument_list|(
-name|ctrCrsOffrId
-argument_list|)
-condition|)
-block|{
-comment|// Check that is not a controlling course
-if|if
-condition|(
-operator|!
-name|isControl2
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
-comment|// Has other course offerings attached to it
-if|if
-condition|(
-name|io
-operator|.
-name|getCourseOfferings
-argument_list|()
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|1
-operator|&&
-name|isControl
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"ctrlInstrOfferingId"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.ctrlCourse.multipleChildren"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|io
-operator|.
-name|removeCourseOffering
-argument_list|(
-name|co
-argument_list|)
-expr_stmt|;
-name|co
-operator|.
-name|setInstructionalOffering
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-name|idao
-operator|.
-name|save
-argument_list|(
-name|io
-argument_list|)
-expr_stmt|;
-name|CourseOffering
-name|co2
-init|=
-name|cdao
-operator|.
-name|get
-argument_list|(
-operator|new
-name|Long
-argument_list|(
-name|ctrCrsOffrId
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|InstructionalOffering
-name|io2
-init|=
-name|co2
-operator|.
-name|getInstructionalOffering
-argument_list|()
-decl_stmt|;
-name|io2
-operator|.
-name|addTocourseOfferings
-argument_list|(
-name|co
-argument_list|)
-expr_stmt|;
-name|co
-operator|.
-name|setInstructionalOffering
-argument_list|(
-name|io2
-argument_list|)
-expr_stmt|;
-name|idao
-operator|.
-name|save
-argument_list|(
-name|io2
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|// Ambiguous - cannot have a controlling course if it is controlling
-else|else
-block|{
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"ctrlInstrOfferingId"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.exception"
-argument_list|,
-literal|"Ambiguous operation requested - cannot assign a controlling offering it is flagged as a controlling course"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-name|tx
-operator|.
-name|commit
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-name|tx
-operator|.
-name|rollback
-argument_list|()
-expr_stmt|;
-name|Debug
-operator|.
-name|error
-argument_list|(
-name|e
-argument_list|)
-expr_stmt|;
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|""
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.exception"
-argument_list|,
-literal|"ERRORS: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|addErrors
-argument_list|(
-name|request
-argument_list|,
-name|errors
-argument_list|)
-expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"editInstructionalOffering"
-argument_list|)
-return|;
-block|}
-block|}
-else|else
-block|{
-name|String
-name|crsName
-init|=
-name|frm
-operator|.
-name|getSubjectAreaAbbv
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|frm
-operator|.
-name|getCourseNbr
-argument_list|()
-decl_stmt|;
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"courseNbr"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.lookup.notFound"
-argument_list|,
-literal|"Course Offering: "
-operator|+
-name|crsName
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-name|addErrors
-argument_list|(
-name|request
-argument_list|,
-name|errors
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|errors
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
-condition|)
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"editInstructionalOffering"
-argument_list|)
-return|;
-name|frm
-operator|.
-name|setCollections
-argument_list|(
-name|request
-argument_list|,
-name|getInstructionalOfferings
-argument_list|(
-name|request
-argument_list|,
-name|frm
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showInstructionalOfferingList"
-argument_list|)
-return|;
-block|}
-specifier|public
-name|ActionForward
-name|deleteCourseOffering
-parameter_list|(
-name|ActionMapping
-name|mapping
-parameter_list|,
-name|ActionForm
-name|form
-parameter_list|,
-name|HttpServletRequest
-name|request
-parameter_list|,
-name|HttpServletResponse
-name|response
-parameter_list|)
-throws|throws
-name|Exception
-block|{
-name|HttpSession
-name|httpSession
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|Web
-operator|.
-name|isLoggedIn
-argument_list|(
-name|httpSession
-argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
-throw|;
-block|}
-name|User
-name|user
-init|=
-name|Web
-operator|.
-name|getUser
-argument_list|(
-name|httpSession
-argument_list|)
-decl_stmt|;
-name|Long
-name|sessionId
-init|=
-operator|(
-name|Long
-operator|)
-name|user
-operator|.
-name|getAttribute
-argument_list|(
-name|Constants
-operator|.
-name|SESSION_ID_ATTR_NAME
-argument_list|)
-decl_stmt|;
-name|InstructionalOfferingListForm
-name|frm
-init|=
-operator|(
-name|InstructionalOfferingListForm
-operator|)
-name|form
-decl_stmt|;
-name|ActionMessages
-name|errors
-init|=
-operator|new
-name|ActionMessages
-argument_list|()
-decl_stmt|;
-name|String
-name|subjAreaId
-init|=
-name|frm
-operator|.
-name|getSubjectAreaId
-argument_list|()
-decl_stmt|;
-name|String
-name|courseNbr
-init|=
-name|frm
-operator|.
-name|getCourseNbr
-argument_list|()
-decl_stmt|;
-name|List
-name|l
-init|=
-name|CourseOffering
-operator|.
-name|search
-argument_list|(
-name|sessionId
-argument_list|,
-name|subjAreaId
-argument_list|,
-name|courseNbr
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|l
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-comment|// Delete
-name|InstructionalOfferingDAO
-name|idao
-init|=
-operator|new
-name|InstructionalOfferingDAO
-argument_list|()
-decl_stmt|;
-name|CourseOffering
-name|co
-init|=
-operator|(
-name|CourseOffering
-operator|)
-name|l
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-name|InstructionalOffering
-name|io
-init|=
-name|co
-operator|.
-name|getInstructionalOffering
-argument_list|()
-decl_stmt|;
-name|org
-operator|.
-name|hibernate
-operator|.
-name|Session
-name|hibSession
-init|=
-name|idao
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
-name|Transaction
-name|tx
-init|=
-name|hibSession
-operator|.
-name|beginTransaction
-argument_list|()
-decl_stmt|;
-try|try
-block|{
-name|Event
-operator|.
-name|deleteFromEvents
-argument_list|(
-name|hibSession
-argument_list|,
-name|co
-argument_list|)
-expr_stmt|;
-name|Exam
-operator|.
-name|deleteFromExams
-argument_list|(
-name|hibSession
-argument_list|,
-name|co
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|co
-operator|.
-name|isIsControl
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
-name|Event
-operator|.
-name|deleteFromEvents
-argument_list|(
-name|hibSession
-argument_list|,
-name|io
-argument_list|)
-expr_stmt|;
-name|Exam
-operator|.
-name|deleteFromExams
-argument_list|(
-name|hibSession
-argument_list|,
-name|io
-argument_list|)
-expr_stmt|;
-name|idao
-operator|.
-name|delete
-argument_list|(
-name|io
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|io
-operator|.
-name|removeCourseOffering
-argument_list|(
-name|co
-argument_list|)
-expr_stmt|;
-name|idao
-operator|.
-name|save
-argument_list|(
-name|io
-argument_list|)
-expr_stmt|;
-block|}
-name|tx
-operator|.
-name|commit
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-name|tx
-operator|.
-name|rollback
-argument_list|()
-expr_stmt|;
-name|Debug
-operator|.
-name|error
-argument_list|(
-name|e
-argument_list|)
-expr_stmt|;
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"subjectAreaId"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.exception"
-argument_list|,
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|addErrors
-argument_list|(
-name|request
-argument_list|,
-name|errors
-argument_list|)
-expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"addInstructionalOffering"
-argument_list|)
-return|;
-block|}
-block|}
-comment|// Redirect back to search
-name|frm
-operator|.
-name|setSubjectAreaId
-argument_list|(
-name|subjAreaId
-argument_list|)
-expr_stmt|;
-name|frm
-operator|.
-name|setCourseNbr
-argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
-name|frm
-operator|.
-name|setCollections
-argument_list|(
-name|request
-argument_list|,
-name|getInstructionalOfferings
-argument_list|(
-name|request
-argument_list|,
-name|frm
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showInstructionalOfferingList"
-argument_list|)
-return|;
-block|}
+comment|//	public ActionForward updateInstructionalOfferings(
+comment|//			ActionMapping mapping,
+comment|//			ActionForm form,
+comment|//			HttpServletRequest request,
+comment|//			HttpServletResponse response) throws Exception {
+comment|//
+comment|//        HttpSession httpSession = request.getSession();
+comment|//        if(!Web.isLoggedIn( httpSession )) {
+comment|//            throw new Exception ("Access Denied.");
+comment|//        }
+comment|//
+comment|//        User user = Web.getUser(httpSession);
+comment|//        Long sessionId = (Long) user.getAttribute(Constants.SESSION_ID_ATTR_NAME);
+comment|//
+comment|//        // Read values
+comment|//	    InstructionalOfferingListForm frm = (InstructionalOfferingListForm) form;
+comment|//	    ActionMessages errors = new ActionMessages();
+comment|//
+comment|//        String subjAreaId = frm.getSubjectAreaId();
+comment|//        String courseNbr = frm.getCourseNbr();
+comment|//        String ctrCrsOffrId = frm.getCtrlInstrOfferingId();
+comment|//        Boolean isControl = frm.getIsControl();
+comment|//
+comment|//        if(ctrCrsOffrId==null) ctrCrsOffrId = "";
+comment|//        if(isControl==null) isControl = new Boolean(false);
+comment|//
+comment|//        frm.setCollections(request, getInstructionalOfferings(request, frm));
+comment|//	    frm.setSubjectAreaAbbv(new SubjectAreaDAO().get(new Long(subjAreaId)).getSubjectAreaAbbreviation());
+comment|//
+comment|//        List l = CourseOffering.search(sessionId, subjAreaId, courseNbr);
+comment|//	    if(l.size()>0) {
+comment|//
+comment|//            CourseOfferingDAO cdao = new CourseOfferingDAO();
+comment|//    	    InstructionalOfferingDAO idao = new InstructionalOfferingDAO();
+comment|//    	    org.hibernate.Session hibSession = idao.getSession();
+comment|//    	    Transaction tx = hibSession.beginTransaction();
+comment|//
+comment|//    	    try {
+comment|//		        // Update
+comment|//		        CourseOffering co = (CourseOffering) l.get(0);
+comment|//		        InstructionalOffering io = co.getInstructionalOffering();
+comment|//
+comment|//		        String ctrCrsOffrId2 = io.getCtrlCourseId().toString();
+comment|//		        Boolean isControl2 = co.isIsControl();
+comment|//
+comment|//		        if(ctrCrsOffrId2==null) ctrCrsOffrId2 = "";
+comment|//		        if(isControl2==null) isControl2 = new Boolean(false);
+comment|//
+comment|//		        // Check if value is changed
+comment|//		        if(isControl2.booleanValue()!=isControl.booleanValue()
+comment|//		               || !ctrCrsOffrId2.equals(ctrCrsOffrId) ) {
+comment|//
+comment|//		            // Control flag is changed
+comment|//		            if(isControl2.booleanValue()!=isControl.booleanValue()) {
+comment|//
+comment|//
+comment|//		                // It is now a controlling course
+comment|//		                if(isControl.booleanValue()) {
+comment|//		                    co.setIsControl(isControl);
+comment|//
+comment|//		                    // Loop through IO and update other controlling course to false
+comment|//		                    Set offerings = io.getCourseOfferings();
+comment|//		                    Iterator iter = offerings.iterator();
+comment|//		                    while(iter.hasNext()) {
+comment|//		                        CourseOffering co2 = (CourseOffering) iter.next();
+comment|//		                        if(co2.getUniqueId().intValue()!=co.getUniqueId().intValue()&& co2.isIsControl().booleanValue()) {
+comment|//		                            co2.setIsControl(new Boolean(false));
+comment|//		                        }
+comment|//		                    }
+comment|//		                    idao.saveOrUpdate(io);
+comment|//		                }
+comment|//		                // It is now NOT a controlling course
+comment|//		                else {
+comment|//
+comment|//			                // Check that controlling course is not the same
+comment|//		                    if(ctrCrsOffrId2.equals(ctrCrsOffrId) || ctrCrsOffrId.trim().length()==0) {
+comment|//		        		        errors.add("ctrlInstrOfferingId", new ActionMessage("errors.ctrlCourse.invalid"));
+comment|//		                    }
+comment|//		                    else {
+comment|//
+comment|//		                        // Has other course offerings attached to it
+comment|//		                        if(io.getCourseOfferings().size()>1) {
+comment|//			        		        errors.add("ctrlInstrOfferingId", new ActionMessage("errors.ctrlCourse.multipleChildren"));
+comment|//		                        }
+comment|//		                        else {
+comment|//								    io.removeCourseOffering(co);
+comment|//								    io.setCourseOfferings(null);
+comment|//								    co.setIsControl(new Boolean(false));
+comment|//								    co.setInstructionalOffering(null);
+comment|//								    Event.deleteFromEvents(hibSession, io);
+comment|//								    Exam.deleteFromExams(hibSession, io);
+comment|//								    idao.delete(io);
+comment|//
+comment|//			                        CourseOffering co2 = cdao.get(new Long(ctrCrsOffrId));
+comment|//			                        InstructionalOffering io2 = co2.getInstructionalOffering();
+comment|//			                        io2.addTocourseOfferings(co);
+comment|//			                        co.setInstructionalOffering(io2);
+comment|//			                        idao.save(io2);
+comment|//		                        }
+comment|//		                    }
+comment|//		                }
+comment|//		            }
+comment|//		            else {
+comment|//			            // Controlling course has changed
+comment|//			            if(!ctrCrsOffrId2.equals(ctrCrsOffrId)) {
+comment|//			                // Check that is not a controlling course
+comment|//			                if(!isControl2.booleanValue()) {
+comment|//		                        // Has other course offerings attached to it
+comment|//		                        if(io.getCourseOfferings().size()>1&& isControl.booleanValue()) {
+comment|//			        		        errors.add("ctrlInstrOfferingId", new ActionMessage("errors.ctrlCourse.multipleChildren"));
+comment|//		                        }
+comment|//		                        else {
+comment|//								    io.removeCourseOffering(co);
+comment|//								    co.setInstructionalOffering(null);
+comment|//								    idao.save(io);
+comment|//
+comment|//								    CourseOffering co2 = cdao.get(new Long(ctrCrsOffrId));
+comment|//			                        InstructionalOffering io2 = co2.getInstructionalOffering();
+comment|//			                        io2.addTocourseOfferings(co);
+comment|//			                        co.setInstructionalOffering(io2);
+comment|//			                        idao.save(io2);
+comment|//		                        }
+comment|//			                }
+comment|//			                // Ambiguous - cannot have a controlling course if it is controlling
+comment|//			                else {
+comment|//			                    errors.add("ctrlInstrOfferingId",
+comment|//	                            	new ActionMessage("errors.exception",
+comment|//	                            	    "Ambiguous operation requested - cannot assign a controlling offering it is flagged as a controlling course"));
+comment|//			                }
+comment|//			            }
+comment|//		            }
+comment|//
+comment|//				    tx.commit();
+comment|//			    }
+comment|//	        }
+comment|//		    catch (Exception e) {
+comment|//		        tx.rollback();
+comment|//		        Debug.error(e);
+comment|//		        errors.add("", new ActionMessage("errors.exception", "ERRORS: " + e.getMessage()));
+comment|//			    addErrors(request, errors);
+comment|//			    return mapping.findForward("editInstructionalOffering");
+comment|//		    }
+comment|//	    }
+comment|//	    else {
+comment|//	        String crsName = frm.getSubjectAreaAbbv() + " " + frm.getCourseNbr();
+comment|//	        errors.add("courseNbr", new ActionMessage("errors.lookup.notFound", "Course Offering: " + crsName ));
+comment|//	    }
+comment|//
+comment|//	    addErrors(request, errors);
+comment|//	    if(errors.size()>0)
+comment|//		    return mapping.findForward("editInstructionalOffering");
+comment|//
+comment|//	    frm.setCollections(request, getInstructionalOfferings(request, frm));
+comment|//	    return mapping.findForward("showInstructionalOfferingList");
+comment|//	}
+comment|//	public ActionForward deleteCourseOffering(
+comment|//			ActionMapping mapping,
+comment|//			ActionForm form,
+comment|//			HttpServletRequest request,
+comment|//			HttpServletResponse response) throws Exception {
+comment|//
+comment|//        HttpSession httpSession = request.getSession();
+comment|//        if(!Web.isLoggedIn( httpSession )) {
+comment|//            throw new Exception ("Access Denied.");
+comment|//        }
+comment|//
+comment|//        User user = Web.getUser(httpSession);
+comment|//        Long sessionId = (Long) user.getAttribute(Constants.SESSION_ID_ATTR_NAME);
+comment|//
+comment|//        InstructionalOfferingListForm frm = (InstructionalOfferingListForm) form;
+comment|//        ActionMessages errors = new ActionMessages();
+comment|//
+comment|//        String subjAreaId = frm.getSubjectAreaId();
+comment|//        String courseNbr = frm.getCourseNbr();
+comment|//        List l = CourseOffering.search(sessionId, subjAreaId, courseNbr);
+comment|//	    if(l.size()>0) {
+comment|//	        // Delete
+comment|//	        InstructionalOfferingDAO idao = new InstructionalOfferingDAO();
+comment|//	        CourseOffering co = (CourseOffering) l.get(0);
+comment|//	        InstructionalOffering io = co.getInstructionalOffering();
+comment|//
+comment|//    	    org.hibernate.Session hibSession = idao.getSession();
+comment|//    	    Transaction tx = hibSession.beginTransaction();
+comment|//
+comment|//    	    try {
+comment|//    	        Event.deleteFromEvents(hibSession, co);
+comment|//                Exam.deleteFromExams(hibSession, co);
+comment|//
+comment|//    	        if(co.isIsControl().booleanValue()) {
+comment|//    	            Event.deleteFromEvents(hibSession, io);
+comment|//    	            Exam.deleteFromExams(hibSession, io);
+comment|//    	            idao.delete(io);
+comment|//    	        } else {
+comment|//    	            io.removeCourseOffering(co);
+comment|//    	            idao.save(io);
+comment|//    	        }
+comment|//
+comment|//		        tx.commit();
+comment|//    	    }
+comment|//		    catch (Exception e) {
+comment|//		        tx.rollback();
+comment|//		        Debug.error(e);
+comment|//		        errors.add("subjectAreaId", new ActionMessage("errors.exception", e.getMessage()));
+comment|//		        addErrors(request, errors);
+comment|//			    return mapping.findForward("addInstructionalOffering");
+comment|//		    }
+comment|//	    }
+comment|//
+comment|//	    // Redirect back to search
+comment|//	    frm.setSubjectAreaId(subjAreaId);
+comment|//	    frm.setCourseNbr("");
+comment|//	    frm.setCollections(request, getInstructionalOfferings(request, frm));
+comment|//	    return mapping.findForward("showInstructionalOfferingList");
+comment|//	}
 specifier|public
 specifier|static
 name|void

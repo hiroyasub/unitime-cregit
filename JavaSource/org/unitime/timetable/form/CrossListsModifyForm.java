@@ -1545,10 +1545,19 @@ name|courseOfferingNames
 operator|.
 name|add
 argument_list|(
+operator|(
 name|co
 operator|.
 name|getCourseName
 argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|co
+operator|.
+name|getTitle
+argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 name|this

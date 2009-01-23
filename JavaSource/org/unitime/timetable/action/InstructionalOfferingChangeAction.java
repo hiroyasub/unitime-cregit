@@ -540,7 +540,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" where co2.uniqueCourseNbr.subjectArea.uniqueId = :subjectAreaId "
+literal|" where co2.subjectArea.uniqueId = :subjectAreaId "
 argument_list|)
 expr_stmt|;
 name|query
@@ -574,7 +574,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" and co2.uniqueCourseNbr.courseNbr = '"
+literal|" and co2.courseNbr = '"
 argument_list|)
 expr_stmt|;
 name|query

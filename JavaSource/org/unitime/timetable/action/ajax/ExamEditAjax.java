@@ -636,9 +636,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select co.uniqueId, co.courseNbr from CourseOffering co "
+literal|"select co.uniqueId, co.courseNbr, co.title from CourseOffering co "
 operator|+
-literal|"where co.uniqueCourseNbr.subjectArea.uniqueId = :subjectAreaId "
+literal|"where co.subjectArea.uniqueId = :subjectAreaId "
 operator|+
 literal|"and co.instructionalOffering.notOffered = false "
 operator|+
@@ -746,6 +746,7 @@ operator|.
 name|toString
 argument_list|()
 argument_list|,
+operator|(
 name|o
 index|[
 literal|1
@@ -753,6 +754,45 @@ index|]
 operator|.
 name|toString
 argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|o
+index|[
+literal|2
+index|]
+operator|.
+name|toString
+argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|">"
+argument_list|,
+literal|"&gt;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"<"
+argument_list|,
+literal|"&lt;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"'"
+argument_list|,
+literal|"&quot;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"&"
+argument_list|,
+literal|"&amp;"
+argument_list|)
+operator|)
 argument_list|)
 expr_stmt|;
 block|}

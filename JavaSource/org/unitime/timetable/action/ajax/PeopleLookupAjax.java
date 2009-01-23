@@ -835,7 +835,7 @@ literal|"/>"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|TreeSet
 argument_list|<
 name|Person

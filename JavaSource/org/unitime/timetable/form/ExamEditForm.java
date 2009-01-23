@@ -1895,9 +1895,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select co.uniqueId, co.courseNbr from CourseOffering co "
+literal|"select co.uniqueId, co.courseNbr, co.title from CourseOffering co "
 operator|+
-literal|"where co.uniqueCourseNbr.subjectArea.uniqueId = :subjectAreaId "
+literal|"where co.subjectArea.uniqueId = :subjectAreaId "
 operator|+
 literal|"and co.instructionalOffering.notOffered = false "
 operator|+
@@ -1963,12 +1963,24 @@ literal|0
 index|]
 argument_list|,
 operator|(
+operator|(
 name|String
 operator|)
 name|o
 index|[
 literal|1
 index|]
+operator|+
+literal|" - "
+operator|+
+operator|(
+name|String
+operator|)
+name|o
+index|[
+literal|2
+index|]
+operator|)
 argument_list|)
 argument_list|)
 expr_stmt|;

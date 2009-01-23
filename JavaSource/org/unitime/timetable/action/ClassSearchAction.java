@@ -2610,7 +2610,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" where co2.uniqueCourseNbr.subjectArea.uniqueId in ( "
+literal|" where co2.subjectArea.uniqueId in ( "
 argument_list|)
 expr_stmt|;
 name|boolean
@@ -2706,7 +2706,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" and co2.uniqueCourseNbr.courseNbr "
+literal|" and co2.courseNbr "
 argument_list|)
 expr_stmt|;
 if|if
