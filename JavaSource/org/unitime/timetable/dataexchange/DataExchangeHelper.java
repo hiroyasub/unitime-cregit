@@ -478,6 +478,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sImportRegister
+operator|.
+name|put
+argument_list|(
+literal|"events"
+argument_list|,
+name|EventImport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|DataExchangeHelper
