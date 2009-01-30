@@ -8047,6 +8047,16 @@ name|getClassSuffix
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|clazz
+operator|.
+name|getClassSuffix
+argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|!=
+literal|6
 condition|)
 continue|continue;
 name|int
