@@ -721,6 +721,37 @@ literal|"Access Denied."
 argument_list|)
 throw|;
 block|}
+name|ActionMessages
+name|errors1
+init|=
+name|myForm
+operator|.
+name|validate
+argument_list|(
+name|mapping
+argument_list|,
+name|request
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|errors1
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|saveErrors
+argument_list|(
+name|request
+argument_list|,
+name|errors1
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|String
 name|iOp
 init|=
@@ -3735,7 +3766,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*                 if (Event.sEventTypes[Event.sEventTypeFinalExam].equals(myForm.getEventType()) || Event.sEventTypes[Event.sEventTypeMidtermExam].equals(myForm.getEventType())) {                     ExamEvent examEvent = new ExamEventDAO().get(Long.valueOf(id));                     if (examEvent.getExam()!=null&& !examEvent.getExam().getOwners().isEmpty()) {                         WebTable table = new WebTable(5, null, new String[] {"Object", "Type", "Title","Limit","Assignment"}, new String[] {"left", "left", "left","right","left"}, new boolean[] {true, true, true, true,true});                         for (Iterator i=new TreeSet(examEvent.getExam().getOwners()).iterator();i.hasNext();) {                             ExamOwner owner = (ExamOwner)i.next();                             String onclick = null, name = null, type = null, title = null, assignment = null;                             String students = String.valueOf(owner.countStudents());                             switch (owner.getOwnerType()) {                                 case ExamOwner.sOwnerTypeClass :                                     Class_ clazz = (Class_)owner.getOwnerObject();                                     if (user.getRole()!=null&& clazz.isViewableBy(user))                                         onclick = "onClick=\"document.location='classDetail.do?cid="+clazz.getUniqueId()+"';\"";                                     name = owner.getLabel();//clazz.getClassLabel();                                     type = "Class";                                     title = clazz.getSchedulePrintNote();                                     if (title==null || title.length()==0) title=clazz.getSchedulingSubpart().getControllingCourseOffering().getTitle();                                     if (clazz.getCommittedAssignment()!=null)                                         assignment = clazz.getCommittedAssignment().getPlacement().getLongName();                                     break;                                 case ExamOwner.sOwnerTypeConfig :                                     InstrOfferingConfig config = (InstrOfferingConfig)owner.getOwnerObject();                                     if (user.getRole()!=null&& config.isViewableBy(user))                                         onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+config.getInstructionalOffering().getUniqueId()+"';\"";                                     name = owner.getLabel();//config.getCourseName()+" ["+config.getName()+"]";                                     type = "Configuration";                                     title = config.getControllingCourseOffering().getTitle();                                     break;                                 case ExamOwner.sOwnerTypeOffering :                                     InstructionalOffering offering = (InstructionalOffering)owner.getOwnerObject();                                     if (user.getRole()!=null&& offering.isViewableBy(user))                                         onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+offering.getUniqueId()+"';\"";                                     name = owner.getLabel();//offering.getCourseName();                                     type = "Offering";                                     title = offering.getControllingCourseOffering().getTitle();                                     break;                                 case ExamOwner.sOwnerTypeCourse :                                     CourseOffering course = (CourseOffering)owner.getOwnerObject();                                     if (user.getRole()!=null&& course.isViewableBy(user))                                         onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+course.getInstructionalOffering().getUniqueId()+"';\"";                                     name = owner.getLabel();//course.getCourseName();                                     type = "Course";                                     title = course.getTitle();                                     break;                                                                      }                             table.addLine(onclick, new String[] { name, type, title, students, assignment}, null);                         }                         request.setAttribute("EventDetail.table",table.printTable());                     }                            }                 */
+comment|/* 	                if (Event.sEventTypes[Event.sEventTypeFinalExam].equals(myForm.getEventType()) || Event.sEventTypes[Event.sEventTypeMidtermExam].equals(myForm.getEventType())) { 	                    ExamEvent examEvent = new ExamEventDAO().get(Long.valueOf(id)); 	                    if (examEvent.getExam()!=null&& !examEvent.getExam().getOwners().isEmpty()) { 	                        WebTable table = new WebTable(5, null, new String[] {"Object", "Type", "Title","Limit","Assignment"}, new String[] {"left", "left", "left","right","left"}, new boolean[] {true, true, true, true,true}); 	                        for (Iterator i=new TreeSet(examEvent.getExam().getOwners()).iterator();i.hasNext();) { 	                            ExamOwner owner = (ExamOwner)i.next(); 	                            String onclick = null, name = null, type = null, title = null, assignment = null; 	                            String students = String.valueOf(owner.countStudents()); 	                            switch (owner.getOwnerType()) { 	                                case ExamOwner.sOwnerTypeClass : 	                                    Class_ clazz = (Class_)owner.getOwnerObject(); 	                                    if (user.getRole()!=null&& clazz.isViewableBy(user)) 	                                        onclick = "onClick=\"document.location='classDetail.do?cid="+clazz.getUniqueId()+"';\""; 	                                    name = owner.getLabel();//clazz.getClassLabel(); 	                                    type = "Class"; 	                                    title = clazz.getSchedulePrintNote(); 	                                    if (title==null || title.length()==0) title=clazz.getSchedulingSubpart().getControllingCourseOffering().getTitle(); 	                                    if (clazz.getCommittedAssignment()!=null) 	                                        assignment = clazz.getCommittedAssignment().getPlacement().getLongName(); 	                                    break; 	                                case ExamOwner.sOwnerTypeConfig : 	                                    InstrOfferingConfig config = (InstrOfferingConfig)owner.getOwnerObject(); 	                                    if (user.getRole()!=null&& config.isViewableBy(user)) 	                                        onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+config.getInstructionalOffering().getUniqueId()+"';\""; 	                                    name = owner.getLabel();//config.getCourseName()+" ["+config.getName()+"]"; 	                                    type = "Configuration"; 	                                    title = config.getControllingCourseOffering().getTitle(); 	                                    break; 	                                case ExamOwner.sOwnerTypeOffering : 	                                    InstructionalOffering offering = (InstructionalOffering)owner.getOwnerObject(); 	                                    if (user.getRole()!=null&& offering.isViewableBy(user)) 	                                        onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+offering.getUniqueId()+"';\""; 	                                    name = owner.getLabel();//offering.getCourseName(); 	                                    type = "Offering"; 	                                    title = offering.getControllingCourseOffering().getTitle(); 	                                    break; 	                                case ExamOwner.sOwnerTypeCourse : 	                                    CourseOffering course = (CourseOffering)owner.getOwnerObject(); 	                                    if (user.getRole()!=null&& course.isViewableBy(user)) 	                                        onclick = "onClick=\"document.location='instructionalOfferingDetail.do?io="+course.getInstructionalOffering().getUniqueId()+"';\""; 	                                    name = owner.getLabel();//course.getCourseName(); 	                                    type = "Course"; 	                                    title = course.getTitle(); 	                                    break; 	                                         	                            } 	                            table.addLine(onclick, new String[] { name, type, title, students, assignment}, null); 	                        } 	                        request.setAttribute("EventDetail.table",table.printTable()); 	                    }            	                } 	                */
 if|if
 condition|(
 name|Event
@@ -4031,6 +4062,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|mapping
 operator|.
