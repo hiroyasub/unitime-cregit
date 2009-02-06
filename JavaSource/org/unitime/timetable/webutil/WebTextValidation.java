@@ -82,7 +82,7 @@ specifier|final
 name|String
 name|phonePatternStr
 init|=
-literal|"^[0-9)(][0-9)(.,-]+$"
+literal|"^[ \t\n\f\r]*[0-9)( \t\n\f\r+][0-9)( \t\n\f\r.,-]+[ \t\n\f\r]*$"
 decl_stmt|;
 specifier|public
 specifier|static
