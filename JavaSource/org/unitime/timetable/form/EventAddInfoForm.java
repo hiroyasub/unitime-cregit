@@ -1406,7 +1406,7 @@ condition|(
 operator|!
 name|WebTextValidation
 operator|.
-name|containsOnlyCharactersUsedInPhoneNumbers
+name|isTextValid
 argument_list|(
 name|iMainContactPhone
 argument_list|,

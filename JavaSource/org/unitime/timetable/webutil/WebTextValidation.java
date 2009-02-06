@@ -118,13 +118,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|Debug
-operator|.
-name|info
-argument_list|(
-literal|"null text when text was required"
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 literal|false
@@ -215,15 +208,6 @@ name|matches
 argument_list|()
 condition|)
 block|{
-name|Debug
-operator|.
-name|info
-argument_list|(
-literal|"matched pattern bad characters"
-operator|+
-name|checkText
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 literal|false
@@ -270,15 +254,6 @@ name|matches
 argument_list|()
 condition|)
 block|{
-name|Debug
-operator|.
-name|info
-argument_list|(
-literal|"matched pattern bad hex characters"
-operator|+
-name|checkText
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 literal|false
@@ -350,13 +325,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|Debug
-operator|.
-name|log
-argument_list|(
-literal|"null text when text was required"
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 literal|false
@@ -439,13 +407,6 @@ literal|false
 operator|)
 return|;
 block|}
-name|Debug
-operator|.
-name|log
-argument_list|(
-literal|"did not match pattern phone number"
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 literal|false
