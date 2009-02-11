@@ -1003,6 +1003,41 @@ name|equals
 argument_list|(
 name|iOp
 argument_list|)
+operator|||
+literal|"Export PDF"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+operator|||
+literal|"Clear"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+operator|||
+literal|"Add Event"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+operator|||
+literal|"Cancel Event"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
+operator|||
+literal|"Cancel"
+operator|.
+name|equals
+argument_list|(
+name|iOp
+argument_list|)
 operator|)
 condition|)
 block|{
