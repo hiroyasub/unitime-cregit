@@ -159,13 +159,6 @@ operator|.
 name|toUpperCase
 argument_list|()
 decl_stmt|;
-name|Debug
-operator|.
-name|info
-argument_list|(
-name|checkText
-argument_list|)
-expr_stmt|;
 try|try
 block|{
 name|Pattern
