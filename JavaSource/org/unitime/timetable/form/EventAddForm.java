@@ -6804,6 +6804,16 @@ literal|" where b.uniqueId = :buildingId and "
 operator|+
 literal|"rd.control=true and mr.role.reference=:eventMgr and "
 operator|+
+literal|" 1 = (select rto.status from RoomTypeOption rto where rto.session.uniqueId = "
+operator|+
+name|getSessionId
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+operator|+
+literal|" and rto.roomType.id = r.roomType.id) and "
+operator|+
 literal|"(r.building=b or ((((r.coordinateX - b.coordinateX)*(r.coordinateX - b.coordinateX)) +"
 operator|+
 literal|"((r.coordinateY - b.coordinateY)*(r.coordinateY - b.coordinateY)))"
@@ -6830,6 +6840,16 @@ operator|+
 name|a
 operator|+
 literal|" where rd.control=true and mr.role.reference=:eventMgr"
+operator|+
+literal|" and 1 = (select rto.status from RoomTypeOption rto where rto.session.uniqueId = "
+operator|+
+name|getSessionId
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+operator|+
+literal|" and rto.roomType.uniqueId = r.roomType.id) "
 expr_stmt|;
 if|if
 condition|(
