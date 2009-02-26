@@ -499,7 +499,7 @@ specifier|final
 name|String
 name|EVENT_CAPACITY
 init|=
-literal|"Capacity"
+literal|"Attendance"
 decl_stmt|;
 specifier|public
 specifier|static
