@@ -6812,7 +6812,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and rto.roomType.id = r.roomType.id) and "
+literal|" and rto.roomType.uniqueId = r.roomType.uniqueId) and "
 operator|+
 literal|"(r.building=b or ((((r.coordinateX - b.coordinateX)*(r.coordinateX - b.coordinateX)) +"
 operator|+
@@ -6849,7 +6849,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and rto.roomType.uniqueId = r.roomType.id) "
+literal|" and rto.roomType.uniqueId = r.roomType.uniqueId) "
 expr_stmt|;
 if|if
 condition|(
