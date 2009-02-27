@@ -1006,7 +1006,7 @@ name|sActionCreate
 case|:
 name|message
 operator|+=
-literal|"Following meetings were created by you or on your behalf"
+literal|"Following meetings were requested by you or on your behalf confirmation will follow"
 expr_stmt|;
 break|break;
 case|case
@@ -1047,7 +1047,7 @@ name|sActionAddMeeting
 case|:
 name|message
 operator|+=
-literal|"Following meetings were added by you or on your behalf"
+literal|"Following meetings were added by you or on your behalf confirmation will follow"
 expr_stmt|;
 break|break;
 case|case
