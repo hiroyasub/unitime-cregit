@@ -19663,7 +19663,7 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Total number of course reservations is bellow the offering limit for instructional offering "
+literal|"Total number of course reservations is below the offering limit for instructional offering "
 operator|+
 name|getOfferingLabel
 argument_list|(

@@ -1039,7 +1039,7 @@ literal|0
 condition|)
 name|message
 operator|+=
-literal|" (see the note bellow for more details)"
+literal|" (see the note below for more details)"
 expr_stmt|;
 break|break;
 case|case
