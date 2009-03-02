@@ -2515,7 +2515,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-literal|"Course Event"
+literal|"Course Related Event"
 operator|.
 name|equals
 argument_list|(

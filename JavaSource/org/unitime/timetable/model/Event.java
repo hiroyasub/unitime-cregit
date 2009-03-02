@@ -329,7 +329,7 @@ literal|"Final Examination Event"
 block|,
 literal|"Midterm Examination Event"
 block|,
-literal|"Course Event"
+literal|"Course Related Event"
 block|,
 literal|"Special Event"
 block|}

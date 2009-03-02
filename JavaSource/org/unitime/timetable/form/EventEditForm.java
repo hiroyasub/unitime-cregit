@@ -560,7 +560,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"Course Event"
+literal|"Course Related Event"
 operator|.
 name|equals
 argument_list|(
