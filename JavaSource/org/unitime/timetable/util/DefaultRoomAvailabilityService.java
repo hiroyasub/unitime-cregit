@@ -1742,14 +1742,14 @@ name|iStart
 operator|=
 name|m
 operator|.
-name|getStartTime
+name|getTrueStartTime
 argument_list|()
 expr_stmt|;
 name|iEnd
 operator|=
 name|m
 operator|.
-name|getStopTime
+name|getTrueStopTime
 argument_list|()
 expr_stmt|;
 block|}
