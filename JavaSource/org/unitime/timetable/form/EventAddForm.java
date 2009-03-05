@@ -1743,6 +1743,10 @@ name|iHasRole
 operator|=
 operator|(
 name|user
+operator|!=
+literal|null
+operator|&&
+name|user
 operator|.
 name|getRole
 argument_list|()
@@ -1752,6 +1756,8 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+name|iHasRole
+operator|&&
 name|Roles
 operator|.
 name|EVENT_MGR_ROLE
