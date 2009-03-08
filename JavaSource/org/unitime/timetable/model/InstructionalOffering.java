@@ -515,6 +515,15 @@ name|this
 operator|.
 name|getControllingCourseOffering
 argument_list|()
+operator|==
+literal|null
+condition|?
+literal|"missing course name"
+else|:
+name|this
+operator|.
+name|getControllingCourseOffering
+argument_list|()
 operator|.
 name|getCourseName
 argument_list|()
