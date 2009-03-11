@@ -1817,7 +1817,7 @@ argument_list|)
 expr_stmt|;
 name|message
 operator|+=
-literal|" (Univesity Timetabling Application, http://www.unitime.org)."
+literal|" (University Timetabling Application, http://www.unitime.org)."
 expr_stmt|;
 name|message
 operator|+=
