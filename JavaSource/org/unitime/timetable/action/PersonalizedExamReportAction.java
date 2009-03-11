@@ -4239,6 +4239,8 @@ argument_list|,
 name|exams
 argument_list|,
 name|student
+argument_list|,
+name|user
 argument_list|)
 expr_stmt|;
 if|if
@@ -4371,6 +4373,8 @@ argument_list|,
 name|exams
 argument_list|,
 name|instructor
+argument_list|,
+name|user
 argument_list|)
 expr_stmt|;
 if|if
@@ -5917,6 +5921,9 @@ name|exams
 parameter_list|,
 name|Student
 name|student
+parameter_list|,
+name|User
+name|user
 parameter_list|)
 block|{
 name|String
@@ -7398,6 +7405,16 @@ name|table
 operator|.
 name|addLine
 argument_list|(
+operator|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 literal|"onClick=\"document.location='examDetail.do?examId="
 operator|+
 name|exam
@@ -7406,6 +7423,7 @@ name|getExamId
 argument_list|()
 operator|+
 literal|"';\""
+operator|)
 argument_list|,
 operator|new
 name|String
@@ -7977,6 +7995,9 @@ name|exams
 parameter_list|,
 name|DepartmentalInstructor
 name|instructor
+parameter_list|,
+name|User
+name|user
 parameter_list|)
 block|{
 name|String
@@ -9686,6 +9707,16 @@ name|table
 operator|.
 name|addLine
 argument_list|(
+operator|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 literal|"onClick=\"document.location='examDetail.do?examId="
 operator|+
 name|exam
@@ -9694,6 +9725,7 @@ name|getExamId
 argument_list|()
 operator|+
 literal|"';\""
+operator|)
 argument_list|,
 operator|new
 name|String
