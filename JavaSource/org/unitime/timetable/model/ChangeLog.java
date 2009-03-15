@@ -457,6 +457,8 @@ block|,
 name|EVENT_EDIT
 block|,
 name|DATA_IMPORT_EVENTS
+block|,
+name|DATA_IMPORT_LASTLIKE_DEMAND
 block|}
 specifier|public
 specifier|static
