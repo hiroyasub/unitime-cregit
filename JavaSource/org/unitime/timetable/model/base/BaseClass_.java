@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008-2009, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
 end_comment
 
 begin_package
@@ -140,6 +140,13 @@ name|PROP_EXTERNAL_UNIQUE_ID
 init|=
 literal|"externalUniqueId"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_ENROLLMENT
+init|=
+literal|"enrollment"
+decl_stmt|;
 comment|// constructors
 specifier|public
 name|BaseClass_
@@ -271,6 +278,14 @@ name|lang
 operator|.
 name|String
 name|externalUniqueId
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|enrollment
 decl_stmt|;
 comment|// one to one
 specifier|private
@@ -837,6 +852,40 @@ operator|.
 name|externalUniqueId
 operator|=
 name|externalUniqueId
+expr_stmt|;
+block|}
+comment|/** 	 * Return the value associated with the column: enrollment 	 */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|getEnrollment
+parameter_list|()
+block|{
+return|return
+name|enrollment
+return|;
+block|}
+comment|/** 	 * Set the value related to the column: enrollment 	 * @param enrollment the enrollment value 	 */
+specifier|public
+name|void
+name|setEnrollment
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Integer
+name|enrollment
+parameter_list|)
+block|{
+name|this
+operator|.
+name|enrollment
+operator|=
+name|enrollment
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: sectioningInfo 	 */

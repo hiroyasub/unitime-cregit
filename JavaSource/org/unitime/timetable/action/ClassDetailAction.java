@@ -1966,6 +1966,16 @@ argument_list|)
 expr_stmt|;
 name|frm
 operator|.
+name|setEnrollment
+argument_list|(
+name|c
+operator|.
+name|getEnrollment
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|frm
+operator|.
 name|setDatePattern
 argument_list|(
 name|c

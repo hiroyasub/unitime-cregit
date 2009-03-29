@@ -1867,6 +1867,16 @@ argument_list|)
 expr_stmt|;
 name|frm
 operator|.
+name|setEnrollment
+argument_list|(
+name|io
+operator|.
+name|getEnrollment
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|frm
+operator|.
 name|setProjectedDemand
 argument_list|(
 name|io
