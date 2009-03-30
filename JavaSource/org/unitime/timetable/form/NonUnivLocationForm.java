@@ -477,6 +477,7 @@ else|else
 block|{
 if|if
 condition|(
+operator|!
 name|WebTextValidation
 operator|.
 name|isTextValid
