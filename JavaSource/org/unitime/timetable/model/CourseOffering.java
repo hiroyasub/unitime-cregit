@@ -2634,7 +2634,7 @@ literal|" where c.uniqueId in (select crs.uniqueId "
 operator|+
 literal|" from CourseOffering crs inner join crs.instructionalOffering as io "
 operator|+
-literal|" where io.session.uniqueId :sessionId"
+literal|" where io.session.uniqueId = :sessionId)"
 argument_list|)
 operator|.
 name|setLong

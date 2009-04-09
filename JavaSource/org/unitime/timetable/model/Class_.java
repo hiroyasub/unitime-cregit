@@ -8726,7 +8726,7 @@ literal|" where c.uniqueId in (select cls.uniqueId "
 operator|+
 literal|" from Class_ cls inner join cls.schedulingSubpart.instrOfferingConfig.instructionalOffering as io "
 operator|+
-literal|" where io.session.uniqueId :sessionId"
+literal|" where io.session.uniqueId = :sessionId)"
 argument_list|)
 operator|.
 name|setLong
