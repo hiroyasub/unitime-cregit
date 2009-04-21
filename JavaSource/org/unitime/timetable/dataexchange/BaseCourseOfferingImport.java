@@ -18735,15 +18735,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Debug
-operator|.
-name|info
-argument_list|(
-literal|"looked up itype by sisref "
-operator|+
-name|itypeRef
-argument_list|)
-expr_stmt|;
 name|itype
 operator|=
 name|itypesBySisRef
