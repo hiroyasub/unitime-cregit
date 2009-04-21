@@ -878,6 +878,20 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+name|info
+argument_list|(
+literal|"Appliation property: tmtbl.data.import.studentEnrl.class.updateEnrollments = "
+operator|+
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.data.import.studentEnrl.class.updateEnrollments"
+argument_list|,
+literal|"false"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|session
@@ -901,6 +915,11 @@ condition|)
 block|{
 try|try
 block|{
+name|info
+argument_list|(
+literal|"  Updating class enrollments..."
+argument_list|)
+expr_stmt|;
 name|Class_
 operator|.
 name|updateClassEnrollmentForSession
@@ -909,6 +928,11 @@ name|session
 argument_list|,
 name|getHibSession
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|info
+argument_list|(
+literal|"  Updating course offering enrollments..."
 argument_list|)
 expr_stmt|;
 name|CourseOffering
