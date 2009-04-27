@@ -8737,6 +8737,9 @@ name|acadSession
 operator|.
 name|getUniqueId
 argument_list|()
+operator|.
+name|longValue
+argument_list|()
 argument_list|)
 operator|.
 name|executeUpdate
