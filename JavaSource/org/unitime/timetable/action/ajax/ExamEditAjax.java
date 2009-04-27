@@ -757,6 +757,16 @@ argument_list|()
 operator|+
 literal|" - "
 operator|+
+operator|(
+name|o
+index|[
+literal|2
+index|]
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|o
 index|[
 literal|2
@@ -792,6 +802,7 @@ literal|"&"
 argument_list|,
 literal|"&amp;"
 argument_list|)
+operator|)
 operator|)
 argument_list|)
 expr_stmt|;

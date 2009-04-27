@@ -575,6 +575,16 @@ argument_list|()
 operator|+
 literal|" - "
 operator|+
+operator|(
+name|co
+operator|.
+name|getTitle
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|co
 operator|.
 name|getTitle
@@ -607,6 +617,7 @@ literal|"&"
 argument_list|,
 literal|"&amp;"
 argument_list|)
+operator|)
 operator|)
 argument_list|)
 expr_stmt|;
