@@ -1382,7 +1382,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"No exan period defined for this session."
+literal|"No examination periods defined for this session."
 block|}
 argument_list|,
 literal|null
