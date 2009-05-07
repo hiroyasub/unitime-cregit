@@ -858,7 +858,7 @@ specifier|final
 name|String
 name|DIV_SEC
 init|=
-literal|"Tentative Div-Sec"
+literal|"Suffix"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -3076,10 +3076,8 @@ name|isShowExam
 argument_list|()
 condition|)
 block|{
-name|row
-operator|.
-name|addContent
-argument_list|(
+name|cell
+operator|=
 name|headerCell
 argument_list|(
 literal|"-----------"
@@ -3108,6 +3106,19 @@ else|:
 literal|0
 operator|)
 argument_list|)
+expr_stmt|;
+name|cell
+operator|.
+name|setNoWrap
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|row
+operator|.
+name|addContent
+argument_list|(
+name|cell
 argument_list|)
 expr_stmt|;
 if|if

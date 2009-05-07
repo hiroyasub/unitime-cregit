@@ -886,7 +886,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.required"
 argument_list|,
-literal|"PuID / Career Account"
+literal|"PuID / Account Name"
 argument_list|)
 argument_list|)
 expr_stmt|;

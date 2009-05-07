@@ -1537,7 +1537,7 @@ index|[]
 block|{
 literal|"Class"
 block|,
-literal|"Lead"
+literal|"Check Conflicts"
 block|,
 literal|"Share"
 block|,
@@ -1585,7 +1585,7 @@ index|[]
 block|{
 literal|"Class"
 block|,
-literal|"Lead"
+literal|"Check Conflicts"
 block|,
 literal|"Share"
 block|,

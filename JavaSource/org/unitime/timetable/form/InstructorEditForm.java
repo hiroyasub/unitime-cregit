@@ -795,7 +795,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Supply one or more of the following information: Career Account / First Name / Last Name"
+literal|"Supply one or more of the following information: Account Name / First Name / Last Name"
 argument_list|)
 argument_list|)
 expr_stmt|;

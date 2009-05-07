@@ -1563,7 +1563,7 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-literal|", lead"
+literal|", check conflicts"
 else|:
 literal|""
 operator|)

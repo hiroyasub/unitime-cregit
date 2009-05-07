@@ -2393,7 +2393,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Dates                     Time            Room       Lead Share"
+literal|"Sect  Dates                     Time            Room       Chk  Share"
 block|,
 literal|"---- ------ "
 operator|+
