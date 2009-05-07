@@ -132,6 +132,24 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|postLoadAction
+parameter_list|()
+block|{
+comment|// Core UniTime does not implement the post load action
+block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|preLoadAction
+parameter_list|()
+block|{
+comment|// Core UniTime does not implement the pre load action
+block|}
 block|}
 end_class
 
