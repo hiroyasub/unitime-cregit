@@ -2487,6 +2487,10 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
+name|mngDept
+operator|==
+literal|null
+operator|||
 operator|!
 name|mngDept
 operator|.
@@ -2528,6 +2532,11 @@ name|equals
 argument_list|(
 name|type
 argument_list|)
+operator|&&
+name|getManagingDept
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 comment|//Department Room Prefs are not used in this way
@@ -3571,6 +3580,20 @@ operator|new
 name|Vector
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|getClassInstructors
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+operator|(
+name|ret
+operator|)
+return|;
+block|}
 for|for
 control|(
 name|Iterator
