@@ -876,7 +876,7 @@ literal|"displayRollForwardSessionForm"
 argument_list|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|void
 name|setToFromSessionsInForm
 parameter_list|(
@@ -1034,7 +1034,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|private
+specifier|protected
 name|Set
 name|getSubjectAreas
 parameter_list|(
