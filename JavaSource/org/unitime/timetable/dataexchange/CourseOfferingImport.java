@@ -150,6 +150,26 @@ parameter_list|()
 block|{
 comment|// Core UniTime does not implement the pre load action
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|boolean
+name|handleCustomInstrOffrConfigChildElements
+parameter_list|(
+name|InstrOfferingConfig
+name|instrOfferingConfig
+parameter_list|,
+name|Element
+name|instrOfferingConfigElement
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+comment|// Core UniTime does not have any child elements for the instructional offering config element
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 
