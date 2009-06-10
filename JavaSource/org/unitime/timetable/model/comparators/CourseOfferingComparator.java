@@ -300,6 +300,22 @@ literal|1
 operator|)
 return|;
 block|}
+if|else if
+condition|(
+name|co2
+operator|.
+name|getTitle
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+operator|(
+literal|1
+operator|)
+return|;
+block|}
 return|return
 operator|(
 name|co1
