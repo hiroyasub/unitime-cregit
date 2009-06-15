@@ -2284,7 +2284,7 @@ operator|!=
 literal|null
 operator|&&
 name|lim
-operator|!=
+operator|<
 name|io
 operator|.
 name|getLimit
