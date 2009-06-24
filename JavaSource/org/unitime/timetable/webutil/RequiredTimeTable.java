@@ -107,6 +107,18 @@ name|unitime
 operator|.
 name|commons
 operator|.
+name|Debug
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|commons
+operator|.
 name|User
 import|;
 end_import
@@ -3730,13 +3742,11 @@ name|createNewFile
 argument_list|()
 condition|)
 block|{
-name|System
+name|Debug
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
-literal|"Unable to write file "
+literal|"Unable to write a file "
 operator|+
 name|file
 argument_list|)
@@ -3765,13 +3775,11 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-name|System
+name|Debug
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
-literal|"Unable to write file "
+literal|"Unable to write a file "
 operator|+
 name|file
 argument_list|)
