@@ -464,7 +464,9 @@ decl_stmt|;
 name|ActionMessages
 name|errors
 init|=
-literal|null
+operator|new
+name|ActionMessages
+argument_list|()
 decl_stmt|;
 name|String
 name|op
