@@ -1483,7 +1483,7 @@ specifier|private
 name|boolean
 name|iWeighStudents
 init|=
-literal|false
+literal|true
 decl_stmt|;
 specifier|public
 name|TimetableDatabaseLoader
