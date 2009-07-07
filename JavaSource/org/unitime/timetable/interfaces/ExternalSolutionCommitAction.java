@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|hibernate
@@ -52,8 +62,11 @@ specifier|public
 name|void
 name|performExternalSolutionCommitAction
 parameter_list|(
+name|Set
+argument_list|<
 name|Solution
-name|solution
+argument_list|>
+name|solutions
 parameter_list|,
 name|Session
 name|hibSession
