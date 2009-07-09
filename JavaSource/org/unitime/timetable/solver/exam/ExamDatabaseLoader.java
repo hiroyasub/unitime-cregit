@@ -2536,7 +2536,7 @@ name|setPrintOffset
 argument_list|(
 name|exam
 operator|.
-name|getPrintOffset
+name|examOffset
 argument_list|()
 argument_list|)
 expr_stmt|;
