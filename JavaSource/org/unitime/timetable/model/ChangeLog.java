@@ -459,6 +459,8 @@ block|,
 name|DATA_IMPORT_EVENTS
 block|,
 name|DATA_IMPORT_LASTLIKE_DEMAND
+block|,
+name|CLASS_INFO
 block|}
 specifier|public
 specifier|static

@@ -779,6 +779,17 @@ name|tInfo
 return|;
 block|}
 specifier|public
+name|void
+name|cleastAssignmentInfoCache
+parameter_list|()
+block|{
+name|iAssignmentInfoCache
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
 specifier|transient
 name|Hashtable
 name|iConstraintInfoCache
