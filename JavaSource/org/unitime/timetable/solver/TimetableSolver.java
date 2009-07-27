@@ -10508,6 +10508,7 @@ index|[]
 block|{}
 argument_list|)
 decl_stmt|;
+comment|//TODO: checked OK, tested OK
 name|String
 name|name
 init|=
@@ -10520,7 +10521,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 decl_stmt|;
 for|for

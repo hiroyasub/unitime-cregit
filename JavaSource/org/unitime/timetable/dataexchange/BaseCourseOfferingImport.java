@@ -5228,11 +5228,12 @@ name|length
 argument_list|()
 condition|)
 block|{
+comment|//TODO: checked OK, tested OK
 name|year
 operator|=
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 expr_stmt|;
 block|}

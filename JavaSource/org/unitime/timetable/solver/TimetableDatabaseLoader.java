@@ -17001,6 +17001,7 @@ name|getSessionEndDateTime
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//TODO: checked OK, tested OK
 name|getModel
 argument_list|()
 operator|.
@@ -17008,7 +17009,7 @@ name|setYear
 argument_list|(
 name|iSession
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -24439,6 +24440,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//TODO: checked OK
 name|int
 name|firstDOY
 init|=
@@ -24504,12 +24506,13 @@ name|id
 init|=
 literal|0
 decl_stmt|;
+comment|//TODO: change made needs to be checked
 name|int
 name|sessionYear
 init|=
 name|iSession
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 decl_stmt|;
 for|for
@@ -24649,7 +24652,22 @@ name|sessionYear
 condition|)
 name|m
 operator|-=
+operator|(
 literal|12
+operator|*
+operator|(
+name|sessionYear
+operator|-
+name|c
+operator|.
+name|get
+argument_list|(
+name|Calendar
+operator|.
+name|YEAR
+argument_list|)
+operator|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -24666,7 +24684,22 @@ name|sessionYear
 condition|)
 name|m
 operator|+=
+operator|(
 literal|12
+operator|*
+operator|(
+name|c
+operator|.
+name|get
+argument_list|(
+name|Calendar
+operator|.
+name|YEAR
+argument_list|)
+operator|-
+name|sessionYear
+operator|)
+operator|)
 expr_stmt|;
 name|BitSet
 name|weekCode
@@ -24677,6 +24710,7 @@ argument_list|(
 name|size
 argument_list|)
 decl_stmt|;
+comment|//TODO: checked OK
 name|int
 name|offset
 init|=

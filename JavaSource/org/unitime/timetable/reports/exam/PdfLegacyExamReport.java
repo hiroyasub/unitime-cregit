@@ -8832,6 +8832,7 @@ literal|"."
 argument_list|)
 argument_list|)
 argument_list|,
+comment|//TODO: checked OK, tested OK
 name|session
 operator|.
 name|getAcademicTerm
@@ -8839,7 +8840,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -9122,6 +9123,7 @@ operator|)
 operator|.
 name|printInstructorReports
 argument_list|(
+comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9131,7 +9133,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -9249,6 +9251,7 @@ operator|)
 operator|.
 name|printStudentReports
 argument_list|(
+comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9258,7 +9261,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -9367,6 +9370,7 @@ literal|"."
 argument_list|)
 argument_list|)
 argument_list|,
+comment|//TODO: checked OK, tested OK
 name|session
 operator|.
 name|getAcademicTerm
@@ -9374,7 +9378,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -9573,6 +9577,7 @@ operator|)
 operator|.
 name|printInstructorReports
 argument_list|(
+comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9582,7 +9587,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -9700,6 +9705,7 @@ operator|)
 operator|.
 name|printStudentReports
 argument_list|(
+comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9709,7 +9715,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -9814,6 +9820,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+comment|//TODO: checked OK, tested OK
 name|sendEmails
 argument_list|(
 name|session
@@ -9823,7 +9830,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(

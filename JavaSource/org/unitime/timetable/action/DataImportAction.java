@@ -997,6 +997,7 @@ operator|new
 name|Properties
 argument_list|()
 decl_stmt|;
+comment|//TODO: checked OK, tested OK
 name|xmlName
 operator|=
 name|session
@@ -1006,7 +1007,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 literal|"_"

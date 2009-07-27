@@ -1293,6 +1293,7 @@ operator|+
 literal|1
 operator|)
 expr_stmt|;
+comment|//TODO: checked OK, tested OK
 name|String
 name|name
 init|=
@@ -1303,7 +1304,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -3276,6 +3277,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//TODO: checked OK, tested OK
 name|attachement
 operator|.
 name|setFileName
@@ -3287,7 +3289,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -3730,6 +3732,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//TODO: checked OK, tested OK
 name|attachement
 operator|.
 name|setFileName
@@ -3741,7 +3744,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -4202,6 +4205,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//TODO: checked OK, tested OK
 name|attachement
 operator|.
 name|setFileName
@@ -4213,7 +4217,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -4718,6 +4722,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//TODO: checked OK, tested OK
 name|attachement
 operator|.
 name|setFileName
@@ -4729,7 +4734,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -4929,6 +4934,7 @@ literal|null
 decl_stmt|;
 try|try
 block|{
+comment|//TODO: checked OK, tested OK
 name|File
 name|zipFile
 init|=
@@ -4943,7 +4949,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(
@@ -4984,7 +4990,7 @@ argument_list|()
 operator|+
 name|session
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 operator|+
 operator|(

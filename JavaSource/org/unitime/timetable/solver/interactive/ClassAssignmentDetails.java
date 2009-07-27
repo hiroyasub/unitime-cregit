@@ -2751,6 +2751,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+comment|//TODO: checked OK, tested OK
 name|iYear
 operator|=
 name|solution
@@ -2758,7 +2759,7 @@ operator|.
 name|getSession
 argument_list|()
 operator|.
-name|getYear
+name|getSessionStartYear
 argument_list|()
 expr_stmt|;
 name|int
