@@ -1492,6 +1492,17 @@ name|length
 argument_list|()
 operator|>
 literal|0
+operator|&&
+operator|!
+name|frm
+operator|.
+name|getPuId
+argument_list|()
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+literal|"null"
+argument_list|)
 condition|)
 block|{
 name|inst
