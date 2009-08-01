@@ -1485,6 +1485,12 @@ name|iWeighStudents
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+name|boolean
+name|iIgnoreCommittedStudentConflicts
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|TimetableDatabaseLoader
 parameter_list|(
@@ -1879,6 +1885,21 @@ argument_list|(
 literal|"General.WeightStudents"
 argument_list|,
 name|iWeighStudents
+argument_list|)
+expr_stmt|;
+name|iIgnoreCommittedStudentConflicts
+operator|=
+name|getModel
+argument_list|()
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.IgnoreCommittedStudentConflicts"
+argument_list|,
+name|iIgnoreCommittedStudentConflicts
 argument_list|)
 expr_stmt|;
 block|}
@@ -14941,30 +14962,11 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-name|Query
-name|q
+comment|//Load all committed assignment - student relations that may be relevant
+comment|/*     	Query q = null;         if (iSolverGroup.length>1 || iSolverGroup[0].isExternalManager()) {         	q = hibSession.createQuery(         			"select distinct a, e.studentId from "+         			"Solution s inner join s.assignments a inner join s.studentEnrollments e "+         			"where "+         			"s.commited=true and s.owner.session.uniqueId=:sessionId and s.owner not in ("+iSolverGroupIds+") and "+         			"a.clazz=e.clazz");         } else {         	q = hibSession.createQuery(         			"select distinct a, e.studentId from "+         			"Solution s inner join s.assignments a inner join s.studentEnrollments e, "+         			"LastLikeCourseDemand d inner join d.subjectArea sa "+         			"where "+         			"s.commited=true and s.owner.session.uniqueId=:sessionId and s.owner.uniqueId!=:ownerId and "+         			"a.clazz=e.clazz and e.studentId=d.student.uniqueId and sa.department.uniqueId in ("+iDepartmentIds+")");         	q.setLong("ownerId",iSolverGroup[0].getUniqueId().longValue());         } 		q.setLong("sessionId", iSessionId.longValue()); 		*/
+name|List
+name|assignmentEnrollments
 init|=
-literal|null
-decl_stmt|;
-if|if
-condition|(
-name|iSolverGroup
-operator|.
-name|length
-operator|>
-literal|1
-operator|||
-name|iSolverGroup
-index|[
-literal|0
-index|]
-operator|.
-name|isExternalManager
-argument_list|()
-condition|)
-block|{
-name|q
-operator|=
 name|hibSession
 operator|.
 name|createQuery
@@ -14983,53 +14985,6 @@ literal|") and "
 operator|+
 literal|"a.clazz=e.clazz"
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|q
-operator|=
-name|hibSession
-operator|.
-name|createQuery
-argument_list|(
-literal|"select distinct a, e.studentId from "
-operator|+
-literal|"Solution s inner join s.assignments a inner join s.studentEnrollments e, "
-operator|+
-literal|"LastLikeCourseDemand d inner join d.subjectArea sa "
-operator|+
-literal|"where "
-operator|+
-literal|"s.commited=true and s.owner.session.uniqueId=:sessionId and s.owner.uniqueId!=:ownerId and "
-operator|+
-literal|"a.clazz=e.clazz and e.studentId=d.student.uniqueId and sa.department.uniqueId in ("
-operator|+
-name|iDepartmentIds
-operator|+
-literal|")"
-argument_list|)
-expr_stmt|;
-name|q
-operator|.
-name|setLong
-argument_list|(
-literal|"ownerId"
-argument_list|,
-name|iSolverGroup
-index|[
-literal|0
-index|]
-operator|.
-name|getUniqueId
-argument_list|()
-operator|.
-name|longValue
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-name|q
 operator|.
 name|setLong
 argument_list|(
@@ -15040,15 +14995,11 @@ operator|.
 name|longValue
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|List
-name|assignmentEnrollments
-init|=
-name|q
 operator|.
 name|list
 argument_list|()
 decl_stmt|;
+comment|// Filter out relevant relations (relations that are for loaded students)
 name|Hashtable
 name|assignments
 init|=
@@ -15173,6 +15124,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// Ensure no assignment-class relation is got from the cache
 for|for
 control|(
 name|Iterator
@@ -15387,6 +15339,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|// Make up the appropriate committed placements and propagate those through the course structure
 name|iProgress
 operator|.
 name|setPhase
@@ -18166,45 +18119,18 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|Iterator
-name|i
-init|=
-name|distPrefs
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|i
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|DistributionPref
-name|distributionPref
-init|=
-operator|(
-name|DistributionPref
-operator|)
-name|i
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|Hibernate
 operator|.
 name|initialize
 argument_list|(
-name|distributionPref
-operator|.
-name|getDistributionObjects
-argument_list|()
+name|distPrefs
 argument_list|)
 expr_stmt|;
-block|}
+comment|// Commented out for speeding up issues (calling just
+comment|// Hibernate.initialize(distPrefs) instead)
+comment|// May need to call Hibernate.initialize on committed classed
+comment|// in getLecture(Class_) if this will cause issues.
+comment|/* 		for (Iterator i=distPrefs.iterator();i.hasNext();) { 			DistributionPref distributionPref = (DistributionPref)i.next(); 			Hibernate.initialize(distributionPref.getDistributionObjects()); 		} 		*/
 for|for
 control|(
 name|Iterator
@@ -21513,6 +21439,11 @@ argument_list|(
 literal|"Hibernate session not open."
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|iIgnoreCommittedStudentConflicts
+condition|)
 name|loadCommittedStudentConflicts
 argument_list|(
 name|hibSession
