@@ -175,6 +175,9 @@ name|startTime
 parameter_list|,
 name|Date
 name|endTime
+parameter_list|,
+name|String
+name|excludeType
 parameter_list|)
 function_decl|;
 specifier|public
@@ -194,8 +197,7 @@ name|Date
 name|endTime
 parameter_list|,
 name|String
-index|[]
-name|excludeTypes
+name|excludeType
 parameter_list|)
 function_decl|;
 specifier|public
@@ -210,6 +212,9 @@ name|startTime
 parameter_list|,
 name|Date
 name|endTime
+parameter_list|,
+name|String
+name|excludeType
 parameter_list|,
 name|boolean
 name|waitForSync

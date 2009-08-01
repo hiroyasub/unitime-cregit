@@ -9121,10 +9121,6 @@ index|[
 literal|1
 index|]
 argument_list|,
-operator|new
-name|String
-index|[]
-block|{
 operator|(
 name|iForm
 operator|.
@@ -9143,7 +9139,6 @@ name|RoomAvailabilityInterface
 operator|.
 name|sMidtermExamType
 operator|)
-block|}
 argument_list|)
 expr_stmt|;
 block|}

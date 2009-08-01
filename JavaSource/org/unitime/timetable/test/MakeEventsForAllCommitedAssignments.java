@@ -219,6 +219,11 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
+name|int
+name|idx
+init|=
+literal|0
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -247,6 +252,9 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+name|idx
+operator|++
+expr_stmt|;
 name|System
 operator|.
 name|out
@@ -254,6 +262,17 @@ operator|.
 name|println
 argument_list|(
 literal|"Procession solution "
+operator|+
+name|idx
+operator|+
+literal|"/"
+operator|+
+name|commitedSolutions
+operator|.
+name|size
+argument_list|()
+operator|+
+literal|" ("
 operator|+
 name|s
 operator|.
@@ -273,7 +292,7 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" (committed:"
+literal|", committed "
 operator|+
 name|s
 operator|.

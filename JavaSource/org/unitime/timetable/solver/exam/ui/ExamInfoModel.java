@@ -5175,10 +5175,6 @@ operator|.
 name|getEndTime
 argument_list|()
 argument_list|,
-operator|new
-name|String
-index|[]
-block|{
 operator|(
 name|getExam
 argument_list|()
@@ -5198,7 +5194,6 @@ name|RoomAvailabilityInterface
 operator|.
 name|sMidtermExamType
 operator|)
-block|}
 argument_list|)
 decl_stmt|;
 if|if
