@@ -4742,13 +4742,9 @@ argument_list|,
 name|ioc
 argument_list|)
 expr_stmt|;
-name|hibSession
-operator|.
-name|delete
-argument_list|(
-name|ioc
-argument_list|)
-expr_stmt|;
+comment|// The following line was calling delete ioc for the second time (which is a problem for MySQL as
+comment|// it returns zero number of deleted lines even when called in the same transaction).
+comment|//hibSession.delete(ioc);
 name|hibSession
 operator|.
 name|saveOrUpdate
