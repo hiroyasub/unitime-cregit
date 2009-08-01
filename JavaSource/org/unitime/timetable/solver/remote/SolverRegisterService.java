@@ -2720,7 +2720,7 @@ name|String
 operator|)
 name|cmd
 index|[
-literal|4
+literal|3
 index|]
 argument_list|)
 return|;
