@@ -683,6 +683,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
+name|global
+operator|&&
 name|deptSize
 operator|!=
 literal|1
