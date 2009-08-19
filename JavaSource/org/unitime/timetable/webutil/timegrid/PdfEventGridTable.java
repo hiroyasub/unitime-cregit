@@ -775,7 +775,15 @@ operator|.
 name|getCapacity
 argument_list|()
 operator|+
-literal|")"
+literal|")\n"
+operator|+
+name|m
+operator|.
+name|getLocation
+argument_list|()
+operator|.
+name|getRoomTypeLabel
+argument_list|()
 argument_list|,
 name|firstColSpan
 argument_list|)
@@ -1868,7 +1876,15 @@ operator|.
 name|getCapacity
 argument_list|()
 operator|+
-literal|" seats)"
+literal|" seats)\n"
+operator|+
+name|m
+operator|.
+name|getLocation
+argument_list|()
+operator|.
+name|getRoomTypeLabel
+argument_list|()
 argument_list|,
 name|split
 argument_list|)

@@ -1330,7 +1330,14 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|")</td>"
+literal|")<br><font size=\"-1\">"
+operator|+
+name|location
+operator|.
+name|getRoomTypeLabel
+argument_list|()
+operator|+
+literal|"</font></td>"
 expr_stmt|;
 name|jsLocations
 operator|+=

@@ -587,7 +587,17 @@ operator|.
 name|getCapacity
 argument_list|()
 operator|+
-literal|" seats)</i></td>"
+literal|" seats)</i><br><font size=\"-1\">"
+operator|+
+name|m
+operator|.
+name|getLocation
+argument_list|()
+operator|.
+name|getRoomTypeLabel
+argument_list|()
+operator|+
+literal|"</font></td>"
 argument_list|)
 expr_stmt|;
 name|DateFormat
@@ -2088,7 +2098,17 @@ operator|.
 name|getCapacity
 argument_list|()
 operator|+
-literal|" seats)</i></td>"
+literal|" seats)</i><br><font size=\"-1\">"
+operator|+
+name|m
+operator|.
+name|getLocation
+argument_list|()
+operator|.
+name|getRoomTypeLabel
+argument_list|()
+operator|+
+literal|"</font></td>"
 argument_list|)
 expr_stmt|;
 name|row
