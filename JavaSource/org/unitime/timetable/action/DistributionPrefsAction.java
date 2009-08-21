@@ -2944,6 +2944,16 @@ argument_list|()
 operator|+
 literal|" - "
 operator|+
+operator|(
+name|a
+index|[
+literal|2
+index|]
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|a
 index|[
 literal|2
@@ -2951,6 +2961,7 @@ index|]
 operator|.
 name|toString
 argument_list|()
+operator|)
 operator|)
 argument_list|,
 name|a
