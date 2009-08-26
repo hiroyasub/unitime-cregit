@@ -487,7 +487,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"ID"
+literal|"External Id"
 block|,
 literal|"Name"
 block|,
@@ -2042,7 +2042,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"ID"
+literal|"External Id"
 block|,
 literal|"Name"
 block|,
