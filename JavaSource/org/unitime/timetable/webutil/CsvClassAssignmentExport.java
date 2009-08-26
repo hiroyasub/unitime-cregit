@@ -347,7 +347,7 @@ block|,
 operator|new
 name|CSVField
 argument_list|(
-literal|"DIV-SEC"
+literal|"EXTERNAL_ID"
 argument_list|)
 block|,
 operator|new

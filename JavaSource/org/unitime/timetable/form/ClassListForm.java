@@ -359,7 +359,7 @@ specifier|static
 name|String
 name|sSortByDivSec
 init|=
-literal|"Div-Sec"
+literal|"External Id"
 decl_stmt|;
 specifier|public
 specifier|static

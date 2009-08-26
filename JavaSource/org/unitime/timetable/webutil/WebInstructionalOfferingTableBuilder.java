@@ -858,7 +858,7 @@ specifier|final
 name|String
 name|DIV_SEC
 init|=
-literal|"Suffix"
+literal|"External Id"
 decl_stmt|;
 specifier|public
 specifier|static
