@@ -2142,7 +2142,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"\">"
+literal|"\" onblur=\"if (!confirmNumClasses(this.value)) { this.value = 0 }\">"
 operator|)
 operator|)
 block|,
