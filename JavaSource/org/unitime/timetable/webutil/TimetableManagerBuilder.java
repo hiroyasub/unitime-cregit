@@ -884,6 +884,28 @@ name|title
 init|=
 name|roleRef
 decl_stmt|;
+name|boolean
+name|receivesEmail
+init|=
+operator|(
+name|mgrRole
+operator|.
+name|isReceiveEmails
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|mgrRole
+operator|.
+name|isReceiveEmails
+argument_list|()
+operator|.
+name|booleanValue
+argument_list|()
+operator|)
+decl_stmt|;
 if|if
 condition|(
 name|images
@@ -919,16 +941,23 @@ operator|=
 literal|"1"
 expr_stmt|;
 name|title
-operator|=
-name|mgrRole
-operator|.
-name|getRole
-argument_list|()
-operator|.
-name|getReference
-argument_list|()
-operator|+
+operator|+=
 literal|" - Primary Role"
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|receivesEmail
+condition|)
+block|{
+name|title
+operator|+=
+literal|", * No Email for this Role"
+expr_stmt|;
+name|border
+operator|=
+literal|"1"
 expr_stmt|;
 block|}
 name|roleStr
@@ -1022,15 +1051,41 @@ literal|"<span title='"
 operator|+
 name|roleRef
 operator|+
-literal|" - Primary Role' style='font-weight:bold;'>"
+literal|" - Primary Role"
+operator|+
+operator|(
+name|receivesEmail
+condition|?
+literal|""
+else|:
+literal|", * No Email for this Role"
+operator|)
+operator|+
+literal|"' style='font-weight:bold;'>"
 operator|+
 name|roleRef
+operator|+
+operator|(
+name|receivesEmail
+condition|?
+literal|""
+else|:
+literal|"*"
+operator|)
 operator|+
 literal|"</span>"
 else|:
 literal|"@@BOLD "
 operator|+
 name|roleRef
+operator|+
+operator|(
+name|receivesEmail
+condition|?
+literal|""
+else|:
+literal|"*"
+operator|)
 operator|+
 literal|"@@END_BOLD "
 operator|)
@@ -1040,7 +1095,52 @@ else|else
 block|{
 name|roleStr
 operator|+=
+operator|(
+name|html
+condition|?
+operator|(
+operator|!
+name|receivesEmail
+condition|?
+literal|"<span title='"
+operator|+
 name|roleRef
+operator|+
+operator|(
+name|receivesEmail
+condition|?
+literal|""
+else|:
+literal|", * No Email for this Role"
+operator|)
+operator|+
+literal|"' style='font-weight:normal;'>"
+operator|+
+name|roleRef
+operator|+
+operator|(
+name|receivesEmail
+condition|?
+literal|""
+else|:
+literal|"*"
+operator|)
+operator|+
+literal|"</span>"
+else|:
+name|roleRef
+operator|)
+else|:
+name|roleRef
+operator|+
+operator|(
+name|receivesEmail
+condition|?
+literal|""
+else|:
+literal|"*"
+operator|)
+operator|)
 expr_stmt|;
 block|}
 block|}

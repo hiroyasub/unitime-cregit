@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008-2009, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
 end_comment
 
 begin_package
@@ -52,6 +52,13 @@ name|String
 name|PROP_PRIMARY
 init|=
 literal|"primary"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_RECEIVE_EMAILS
+init|=
+literal|"receiveEmails"
 decl_stmt|;
 comment|// constructors
 specifier|public
@@ -176,6 +183,14 @@ operator|.
 name|Boolean
 name|primary
 decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|lang
+operator|.
+name|Boolean
+name|receiveEmails
+decl_stmt|;
 comment|// many to one
 specifier|private
 name|org
@@ -201,7 +216,7 @@ operator|.
 name|TimetableManager
 name|timetableManager
 decl_stmt|;
-comment|/** 	 * Return the unique identifier of this class      * @hibernate.id      *  generator-class="sequence"      *  column="UNIQUEID"      */
+comment|/** 	 * Return the unique identifier of this class      * @hibernate.id      *  generator-class="org.unitime.commons.hibernate.id.UniqueIdGenerator"      *  column="UNIQUEID"      */
 specifier|public
 name|java
 operator|.
@@ -243,7 +258,7 @@ operator|.
 name|MIN_VALUE
 expr_stmt|;
 block|}
-comment|/** 	 * Return the value associated with the column: PRIMARY 	 */
+comment|/** 	 * Return the value associated with the column: IS_PRIMARY 	 */
 specifier|public
 name|java
 operator|.
@@ -257,7 +272,7 @@ return|return
 name|primary
 return|;
 block|}
-comment|/** 	 * Set the value related to the column: PRIMARY 	 * @param primary the PRIMARY value 	 */
+comment|/** 	 * Set the value related to the column: IS_PRIMARY 	 * @param primary the IS_PRIMARY value 	 */
 specifier|public
 name|void
 name|setPrimary
@@ -275,6 +290,40 @@ operator|.
 name|primary
 operator|=
 name|primary
+expr_stmt|;
+block|}
+comment|/** 	 * Return the value associated with the column: receive_emails 	 */
+specifier|public
+name|java
+operator|.
+name|lang
+operator|.
+name|Boolean
+name|isReceiveEmails
+parameter_list|()
+block|{
+return|return
+name|receiveEmails
+return|;
+block|}
+comment|/** 	 * Set the value related to the column: receive_emails 	 * @param receiveEmails the receive_emails value 	 */
+specifier|public
+name|void
+name|setReceiveEmails
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Boolean
+name|receiveEmails
+parameter_list|)
+block|{
+name|this
+operator|.
+name|receiveEmails
+operator|=
+name|receiveEmails
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: ROLE_ID 	 */
