@@ -1579,6 +1579,8 @@ operator|.
 name|defaultSession
 argument_list|(
 name|sessions
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|iSessionId
@@ -2611,7 +2613,6 @@ argument_list|(
 name|iSessionId
 argument_list|)
 decl_stmt|;
-comment|//TODO: checked OK, tested OK
 name|int
 name|year
 init|=
