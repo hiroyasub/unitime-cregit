@@ -2593,18 +2593,6 @@ name|html
 init|=
 literal|""
 decl_stmt|;
-comment|// Delete
-name|html
-operator|+=
-literal|"<A onClick=\"doClick('delete', "
-operator|+
-name|sic
-operator|.
-name|getId
-argument_list|()
-operator|+
-literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Delete\" title=\"Delete Instructional Type\" align=\"top\" src=\"images/Delete16.gif\"></A>&nbsp; "
-expr_stmt|;
 comment|// Right Arrow
 if|if
 condition|(
@@ -2752,6 +2740,18 @@ else|else
 name|html
 operator|+=
 literal|"<IMG align=\"absmiddle\" src=\"images/blank.gif\">"
+expr_stmt|;
+comment|// Delete
+name|html
+operator|+=
+literal|"<A onClick=\"doClick('delete', "
+operator|+
+name|sic
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Delete\" title=\"Delete Instructional Type\" align=\"top\" src=\"images/Delete16.gif\"></A>&nbsp; "
 expr_stmt|;
 name|html
 operator|+=
