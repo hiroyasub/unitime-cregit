@@ -542,6 +542,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|myForm
+operator|.
+name|canDisplayAllSubjectsAtOnce
+argument_list|()
+condition|)
+block|{
 name|myForm
 operator|.
 name|setSubjectArea
@@ -549,6 +557,7 @@ argument_list|(
 literal|"--ALL--"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
