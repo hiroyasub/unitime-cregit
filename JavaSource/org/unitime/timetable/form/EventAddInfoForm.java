@@ -1193,7 +1193,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|30
+literal|100
 condition|)
 block|{
 name|errors
@@ -1207,7 +1207,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"The contact's last name cannot exceed 30 characters."
+literal|"The contact's last name cannot exceed 100 characters."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1256,7 +1256,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|30
+literal|100
 condition|)
 block|{
 name|errors
@@ -1270,7 +1270,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"The contact's first name cannot exceed 20 characters."
+literal|"The contact's first name cannot exceed 100 characters."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1319,7 +1319,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|30
+literal|100
 condition|)
 block|{
 name|errors
@@ -1333,7 +1333,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"The contact's middle name cannot exceed 20 characters."
+literal|"The contact's middle name cannot exceed 100 characters."
 argument_list|)
 argument_list|)
 expr_stmt|;
