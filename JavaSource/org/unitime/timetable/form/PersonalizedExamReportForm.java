@@ -76,6 +76,15 @@ name|PersonalizedExamReportForm
 extends|extends
 name|ActionForm
 block|{
+comment|/** 	 *  	 */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|9166328961282253491L
+decl_stmt|;
 specifier|private
 name|String
 name|iOp

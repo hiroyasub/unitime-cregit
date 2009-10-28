@@ -1115,7 +1115,6 @@ name|DAY_OF_YEAR
 argument_list|)
 return|;
 block|}
-comment|//TODO: checked OK, tested OK
 specifier|public
 name|Integer
 name|getDateOffset
@@ -1193,7 +1192,6 @@ name|getTime
 argument_list|()
 return|;
 block|}
-comment|//TODO: checked OK,tested OK
 specifier|public
 name|int
 name|getStartMonth
@@ -1299,7 +1297,6 @@ return|return
 name|month
 return|;
 block|}
-comment|//TODO: checked OK,tested OK
 specifier|public
 name|int
 name|getEndMonth
@@ -1788,7 +1785,6 @@ argument_list|(
 literal|"["
 argument_list|)
 expr_stmt|;
-comment|//TODO: checked OK, tested OK
 name|int
 name|daysOfMonth
 init|=
