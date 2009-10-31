@@ -349,7 +349,7 @@ specifier|static
 name|boolean
 name|sStudentId10
 init|=
-literal|true
+literal|false
 decl_stmt|;
 specifier|public
 specifier|static
@@ -2282,6 +2282,7 @@ name|remove
 argument_list|()
 expr_stmt|;
 block|}
+block|}
 name|int
 name|priority
 init|=
@@ -3075,7 +3076,6 @@ operator|+
 literal|" not recognized."
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|getHibSession
 argument_list|()
