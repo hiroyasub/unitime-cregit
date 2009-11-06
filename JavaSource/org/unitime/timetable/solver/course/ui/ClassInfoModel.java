@@ -806,6 +806,12 @@ literal|"true"
 argument_list|)
 argument_list|)
 decl_stmt|;
+specifier|private
+name|boolean
+name|iUnassignConflictingAssignments
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|void
 name|clear
@@ -829,6 +835,10 @@ expr_stmt|;
 name|iTimes
 operator|=
 literal|null
+expr_stmt|;
+name|iUnassignConflictingAssignments
+operator|=
+literal|false
 expr_stmt|;
 name|iManagerExternalId
 operator|=
@@ -969,6 +979,14 @@ operator|.
 name|getAssignmentTable
 argument_list|()
 decl_stmt|;
+name|iUnassignConflictingAssignments
+operator|=
+operator|!
+name|iForm
+operator|.
+name|getKeepConflictingAssignments
+argument_list|()
+expr_stmt|;
 name|iChange
 operator|.
 name|getAssignments
@@ -1037,6 +1055,11 @@ block|{
 comment|// Check for room conflicts
 if|if
 condition|(
+name|iUnassignConflictingAssignments
+condition|)
+block|{
+if|if
+condition|(
 name|assignment
 operator|.
 name|getRooms
@@ -1054,6 +1077,15 @@ operator|.
 name|getRooms
 argument_list|()
 control|)
+block|{
+if|if
+condition|(
+operator|!
+name|room
+operator|.
+name|isIgnoreRoomChecks
+argument_list|()
+condition|)
 block|{
 for|for
 control|(
@@ -1128,6 +1160,7 @@ name|a
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -1237,6 +1270,7 @@ name|a
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
