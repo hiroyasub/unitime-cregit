@@ -153,6 +153,12 @@ specifier|private
 name|boolean
 name|iIgnoreRoomChecks
 decl_stmt|;
+specifier|private
+name|String
+name|iRoomType
+init|=
+literal|null
+decl_stmt|;
 specifier|public
 name|ClassRoomInfo
 parameter_list|(
@@ -251,6 +257,13 @@ operator|=
 name|location
 operator|.
 name|isIgnoreRoomCheck
+argument_list|()
+expr_stmt|;
+name|iRoomType
+operator|=
+name|location
+operator|.
+name|getRoomTypeLabel
 argument_list|()
 expr_stmt|;
 block|}
@@ -495,7 +508,11 @@ operator|+
 name|getCapacity
 argument_list|()
 operator|+
-literal|" seats)'>"
+literal|" seats, "
+operator|+
+name|iRoomType
+operator|+
+literal|")'>"
 operator|+
 operator|(
 name|s
