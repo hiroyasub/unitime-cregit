@@ -951,6 +951,13 @@ name|iRoomAvailabilityTimeStampIsSet
 init|=
 literal|false
 decl_stmt|;
+specifier|private
+specifier|static
+name|int
+name|sMaxNbrRooms
+init|=
+literal|10
+decl_stmt|;
 specifier|public
 name|ExamDatabaseLoader
 parameter_list|(
@@ -2405,6 +2412,49 @@ name|getModel
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|x
+operator|.
+name|getMaxRooms
+argument_list|()
+operator|>
+name|sMaxNbrRooms
+condition|)
+block|{
+name|iProgress
+operator|.
+name|error
+argument_list|(
+literal|"Exam "
+operator|+
+name|getExamLabel
+argument_list|(
+name|exam
+argument_list|)
+operator|+
+literal|" has maximal number of rooms set to "
+operator|+
+name|x
+operator|.
+name|getMaxRooms
+argument_list|()
+operator|+
+literal|" which exceeds the solver limit of "
+operator|+
+name|sMaxNbrRooms
+operator|+
+literal|" rooms."
+argument_list|)
+expr_stmt|;
+name|x
+operator|.
+name|setMaxRooms
+argument_list|(
+name|sMaxNbrRooms
+argument_list|)
+expr_stmt|;
+block|}
 name|int
 name|minSize
 init|=
