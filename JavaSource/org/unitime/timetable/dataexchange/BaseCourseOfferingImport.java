@@ -4423,7 +4423,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from DatePattern as d where d.session.uniqueId = :sessionId and d.pattern = :pattern and d.offset = :offset"
+literal|"from DatePattern as d where d.session.uniqueId = :sessionId and d.pattern = :pattern and d.offset = :offset and d.type = (select min(dd.type) from DatePattern as dd where dd.session.uniqueId = :sessionId and dd.pattern = :pattern and dd.offset = :offset)"
 argument_list|)
 operator|.
 name|setLong
