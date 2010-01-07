@@ -7855,19 +7855,7 @@ argument_list|>
 name|getRooms
 parameter_list|()
 block|{
-if|if
-condition|(
-name|getClazz
-argument_list|()
-operator|.
-name|getClassLimit
-argument_list|()
-operator|==
-literal|0
-condition|)
-return|return
-literal|null
-return|;
+comment|// if (getClazz().getClassLimit()==0) return null;
 name|int
 name|minRoomSize
 init|=
