@@ -557,7 +557,7 @@ literal|" -- answer ("
 operator|+
 name|answer
 operator|+
-literal|") recieved in "
+literal|") received in "
 operator|+
 operator|(
 name|System

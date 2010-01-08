@@ -1782,7 +1782,7 @@ return|;
 block|}
 specifier|protected
 name|Document
-name|recieveResponse
+name|receiveResponse
 parameter_list|()
 throws|throws
 name|IOException
@@ -1956,7 +1956,7 @@ condition|(
 operator|(
 name|response
 operator|=
-name|recieveResponse
+name|receiveResponse
 argument_list|()
 operator|)
 operator|==
@@ -1998,7 +1998,7 @@ name|sLog
 operator|.
 name|error
 argument_list|(
-literal|"No response recieved after "
+literal|"No response received after "
 operator|+
 operator|(
 name|iTimeout

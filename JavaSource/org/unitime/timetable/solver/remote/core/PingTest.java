@@ -481,7 +481,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Ping recieved in "
+literal|"Ping received in "
 operator|+
 operator|(
 name|t1

@@ -404,7 +404,7 @@ block|}
 block|}
 specifier|protected
 name|Document
-name|recieveResponse
+name|receiveResponse
 parameter_list|()
 throws|throws
 name|IOException
@@ -563,7 +563,7 @@ name|sLog
 operator|.
 name|error
 argument_list|(
-literal|"Unable to recieve response: "
+literal|"Unable to receive response: "
 operator|+
 name|e
 operator|.
