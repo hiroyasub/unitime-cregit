@@ -3658,6 +3658,11 @@ argument_list|()
 operator|.
 name|getWeekCode
 argument_list|()
+argument_list|,
+name|lecture
+operator|.
+name|getInstructorName
+argument_list|()
 argument_list|)
 return|;
 block|}
