@@ -515,7 +515,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name                       Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -529,7 +529,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time"
+literal|"Sect  Time"
 block|,
 literal|"---- ------ "
 operator|+
@@ -541,7 +541,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -551,7 +551,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -848,7 +848,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -947,7 +947,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1056,7 +1056,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1212,7 +1212,7 @@ operator|.
 name|getSectionNumberString
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1293,7 +1293,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1353,9 +1353,9 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|23
+literal|24
 else|:
-literal|16
+literal|17
 operator|)
 argument_list|)
 operator|+
@@ -1520,7 +1520,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1619,7 +1619,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1778,7 +1778,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1877,7 +1877,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "

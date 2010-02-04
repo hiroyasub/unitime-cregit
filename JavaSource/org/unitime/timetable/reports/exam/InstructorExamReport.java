@@ -2393,7 +2393,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Dates                     Time            Room       Chk  Share"
+literal|"Sect   Dates                     Time            Room       Chk  Share"
 block|,
 literal|"---- ------ "
 operator|+
@@ -2405,7 +2405,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ------------------------- --------------- ----------- ---- -----"
+literal|"----- ------------------------- --------------- ----------- ---- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -2635,7 +2635,7 @@ name|lpad
 argument_list|(
 name|section
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -2758,7 +2758,7 @@ name|lpad
 argument_list|(
 name|section
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -2772,7 +2772,7 @@ name|rpad
 argument_list|(
 literal|""
 argument_list|,
-literal|17
+literal|18
 operator|+
 operator|(
 name|iItype
@@ -3093,7 +3093,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect   Meeting Times                         Enrl    Date And Time                   Room         Cap ExCap"
+literal|"Sect    Meeting Times                         Enrl    Date And Time                   Room         Cap ExCap"
 block|,
 literal|"---- ------ "
 operator|+
@@ -3105,7 +3105,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- -------------------------------------- -----  -------------------------------- ----------- ----- -----"
+literal|"----- -------------------------------------- -----  -------------------------------- ----------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -3419,7 +3419,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -3615,7 +3615,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -4009,7 +4009,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -4023,7 +4023,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -4035,7 +4035,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -4045,7 +4045,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -4167,7 +4167,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -4250,7 +4250,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -4347,7 +4347,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -4361,7 +4361,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -4373,7 +4373,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -4383,7 +4383,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -4513,7 +4513,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -4653,7 +4653,7 @@ operator|.
 name|getSectionNumberString
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -4737,7 +4737,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -4781,9 +4781,9 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|23
+literal|24
 else|:
-literal|16
+literal|17
 operator|)
 argument_list|)
 operator|+
@@ -4944,7 +4944,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -4958,7 +4958,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -4970,7 +4970,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -4980,7 +4980,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -5102,7 +5102,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -5185,7 +5185,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -5340,7 +5340,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -5366,7 +5366,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -5498,7 +5498,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -5908,7 +5908,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -5922,7 +5922,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -5934,7 +5934,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -5944,7 +5944,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -6066,7 +6066,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -6165,7 +6165,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -6263,7 +6263,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -6277,7 +6277,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -6289,7 +6289,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -6299,7 +6299,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -6429,7 +6429,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -6585,7 +6585,7 @@ operator|.
 name|getSectionNumberString
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -6669,7 +6669,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -6729,9 +6729,9 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|23
+literal|24
 else|:
-literal|16
+literal|17
 operator|)
 argument_list|)
 operator|+
@@ -6890,7 +6890,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -6904,7 +6904,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -6916,7 +6916,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -6926,7 +6926,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -7048,7 +7048,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -7147,7 +7147,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -7297,7 +7297,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
 operator|+
 operator|(
 name|iItype
@@ -7311,7 +7311,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Sect  Time                 "
 block|,
 literal|"---- ------ "
 operator|+
@@ -7323,7 +7323,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
 operator|+
 operator|(
 name|iItype
@@ -7333,7 +7333,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"----- ---------------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -7455,7 +7455,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -7554,7 +7554,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "

@@ -417,7 +417,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect   Meeting Times                         Enrl    Date And Time                   Room         Cap ExCap "
+literal|"Sect    Meeting Times                         Enrl    Date And Time                   Room         Cap ExCap "
 block|,
 literal|"---- ------ "
 operator|+
@@ -429,7 +429,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- -------------------------------------- -----  -------------------------------- ----------- ----- -----"
+literal|"----- -------------------------------------- -----  -------------------------------- ----------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -675,7 +675,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -866,7 +866,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "

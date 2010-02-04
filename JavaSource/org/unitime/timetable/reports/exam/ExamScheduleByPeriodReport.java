@@ -280,7 +280,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect   Meeting Times                         Enrl"
+literal|"Sect    Meeting Times                         Enrl"
 operator|+
 operator|(
 name|iDispRooms
@@ -300,7 +300,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- -------------------------------------- -----"
+literal|"----- -------------------------------------- -----"
 operator|+
 operator|(
 name|iDispRooms
@@ -720,7 +720,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -864,7 +864,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
@@ -1045,7 +1045,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|5
 argument_list|)
 operator|+
 literal|" "
