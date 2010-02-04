@@ -88,12 +88,27 @@ name|courseOffering
 parameter_list|)
 block|{
 return|return
-operator|(
+name|courseOffering
+operator|.
+name|getCourseName
+argument_list|()
+operator|+
+literal|" "
+operator|+
 name|clazz
 operator|.
-name|getClassLabel
+name|getItypeDesc
 argument_list|()
-operator|)
+operator|.
+name|trim
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|clazz
+operator|.
+name|getSectionNumberString
+argument_list|()
 return|;
 block|}
 comment|/* (non-Javadoc) 	 * @see org.unitime.timetable.interfaces.ExternalClassNameHelperInterface#getClassSuffix(org.unitime.timetable.model.Class_, org.unitime.timetable.model.CourseOffering) 	 */
@@ -130,12 +145,27 @@ name|courseOffering
 parameter_list|)
 block|{
 return|return
-operator|(
+name|courseOffering
+operator|.
+name|getCourseNameWithTitle
+argument_list|()
+operator|+
+literal|" "
+operator|+
 name|clazz
 operator|.
-name|getClassLabelWithTitle
+name|getItypeDesc
 argument_list|()
-operator|)
+operator|.
+name|trim
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|clazz
+operator|.
+name|getSectionNumberString
+argument_list|()
 return|;
 block|}
 comment|/* (non-Javadoc) 	 * @see org.unitime.timetable.interfaces.ExternalClassNameHelperInterface#getClassLabelWithTitle(org.unitime.timetable.model.Class_, org.unitime.timetable.model.CourseOffering) 	 */
