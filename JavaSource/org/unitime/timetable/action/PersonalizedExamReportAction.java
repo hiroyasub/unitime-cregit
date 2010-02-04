@@ -13442,13 +13442,18 @@ name|println
 argument_list|(
 literal|"SUMMARY:"
 operator|+
-name|meeting
+name|sce
 operator|.
-name|getEvent
+name|getClazz
 argument_list|()
 operator|.
-name|getEventName
+name|getClassLabel
+argument_list|(
+name|sce
+operator|.
+name|getCourseOffering
 argument_list|()
+argument_list|)
 operator|+
 literal|" ("
 operator|+
