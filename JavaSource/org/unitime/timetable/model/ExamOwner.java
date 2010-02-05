@@ -5664,8 +5664,11 @@ name|getOwnerObject
 argument_list|()
 operator|)
 operator|.
-name|getExternalUniqueId
+name|getExternalId
+argument_list|(
+name|getCourse
 argument_list|()
+argument_list|)
 decl_stmt|;
 return|return
 operator|(
@@ -5778,14 +5781,20 @@ operator|&&
 name|clazz
 operator|.
 name|getClassSuffix
+argument_list|(
+name|getCourse
 argument_list|()
+argument_list|)
 operator|!=
 literal|null
 condition|?
 name|clazz
 operator|.
 name|getClassSuffix
+argument_list|(
+name|getCourse
 argument_list|()
+argument_list|)
 else|:
 name|clazz
 operator|.
@@ -6185,7 +6194,10 @@ argument_list|()
 operator|)
 operator|.
 name|getClassSuffix
+argument_list|(
+name|getCourse
 argument_list|()
+argument_list|)
 return|;
 default|default :
 return|return
@@ -6245,8 +6257,11 @@ name|getOwnerObject
 argument_list|()
 operator|)
 operator|.
-name|getExternalUniqueId
+name|getExternalId
+argument_list|(
+name|getCourse
 argument_list|()
+argument_list|)
 return|;
 default|default :
 return|return
