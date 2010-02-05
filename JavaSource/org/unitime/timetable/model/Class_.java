@@ -10809,9 +10809,6 @@ specifier|public
 name|String
 name|getExternalId
 parameter_list|(
-name|Class_
-name|clazz
-parameter_list|,
 name|CourseOffering
 name|courseOffering
 parameter_list|)
