@@ -533,6 +533,16 @@ return|return
 literal|0
 return|;
 block|}
+specifier|public
+name|Comparable
+index|[]
+name|getContent
+parameter_list|()
+block|{
+return|return
+name|iCmp
+return|;
+block|}
 block|}
 end_class
 
