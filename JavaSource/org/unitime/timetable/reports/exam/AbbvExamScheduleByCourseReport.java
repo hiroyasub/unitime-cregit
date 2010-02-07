@@ -461,7 +461,7 @@ name|addAll
 argument_list|(
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1327,7 +1327,7 @@ name|Vector
 argument_list|(
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 argument_list|)
 decl_stmt|;

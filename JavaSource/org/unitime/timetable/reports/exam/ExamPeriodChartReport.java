@@ -1153,7 +1153,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 name|size
@@ -1181,7 +1181,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 if|if
@@ -1685,7 +1685,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 name|size
@@ -1702,7 +1702,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{

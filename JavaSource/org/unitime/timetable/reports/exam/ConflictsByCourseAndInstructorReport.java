@@ -410,7 +410,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{
@@ -763,7 +763,7 @@ operator|.
 name|getOtherExam
 argument_list|()
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{
@@ -1452,7 +1452,7 @@ name|other
 range|:
 name|otherExam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{
@@ -1693,7 +1693,7 @@ operator|.
 name|getOtherExam
 argument_list|()
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{

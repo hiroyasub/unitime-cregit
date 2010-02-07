@@ -753,7 +753,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{

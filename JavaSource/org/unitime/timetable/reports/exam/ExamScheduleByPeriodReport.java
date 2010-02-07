@@ -508,7 +508,7 @@ name|j
 init|=
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 operator|.
 name|iterator
