@@ -1235,7 +1235,7 @@ name|exams
 operator|=
 name|Exam
 operator|.
-name|findExamsOfSubjectArea
+name|findExamsOfSubjectAreaIncludeCrossLists
 argument_list|(
 name|sa
 operator|.
@@ -1622,7 +1622,7 @@ name|section
 range|:
 name|exam
 operator|.
-name|getSections
+name|getSectionsIncludeCrosslistedDummies
 argument_list|()
 control|)
 block|{
