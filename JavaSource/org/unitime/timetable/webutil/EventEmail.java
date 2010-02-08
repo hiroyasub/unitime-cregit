@@ -1099,7 +1099,7 @@ operator|+
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd"
+literal|"MM/dd/yyyy"
 argument_list|)
 operator|.
 name|format
@@ -1134,7 +1134,7 @@ operator|+
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd"
+literal|"MM/dd/yyyy"
 argument_list|)
 operator|.
 name|format
@@ -1373,7 +1373,7 @@ operator|+
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd"
+literal|"MM/dd/yyyy"
 argument_list|)
 operator|.
 name|format
@@ -1408,7 +1408,7 @@ operator|+
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd"
+literal|"MM/dd/yyyy"
 argument_list|)
 operator|.
 name|format
@@ -1581,7 +1581,7 @@ operator|+=
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd"
+literal|"MM/dd/yyyy"
 argument_list|)
 operator|.
 name|format
@@ -1677,7 +1677,7 @@ operator|+
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd hh:mmaa"
+literal|"MM/dd/yyyy hh:mmaa"
 argument_list|)
 operator|.
 name|format
@@ -1822,6 +1822,10 @@ expr_stmt|;
 name|message
 operator|+=
 literal|"</td></tr></table>"
+expr_stmt|;
+name|message
+operator|+=
+literal|"</body></html>"
 expr_stmt|;
 name|Properties
 name|p
