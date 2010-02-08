@@ -11620,18 +11620,14 @@ condition|)
 block|{
 name|title
 operator|+=
-literal|"<b><font color=\""
-operator|+
-name|disabledColor
-operator|+
-literal|"\">"
+literal|"<b>"
 operator|+
 name|co
 operator|.
 name|getTitle
 argument_list|()
 operator|+
-literal|"</font></b>"
+literal|"</b>"
 expr_stmt|;
 name|title
 operator|+=
@@ -11661,7 +11657,7 @@ block|}
 else|else
 block|{
 name|title
-operator|=
+operator|+=
 literal|"<span title='"
 operator|+
 name|io
@@ -11757,7 +11753,15 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
+literal|"<font color=\""
+operator|+
+name|disabledColor
+operator|+
+literal|"\">"
+operator|+
 name|title
+operator|+
+literal|"</font>"
 argument_list|,
 name|isEditable
 argument_list|)
@@ -11769,7 +11773,11 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
-literal|"<span title='"
+literal|"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=\""
+operator|+
+name|disabledColor
+operator|+
+literal|"\"><span title='"
 operator|+
 name|io
 operator|.
@@ -11789,7 +11797,7 @@ operator|.
 name|getCourseName
 argument_list|()
 operator|+
-literal|"</span>"
+literal|"</span></font>"
 argument_list|,
 name|isEditable
 argument_list|)
