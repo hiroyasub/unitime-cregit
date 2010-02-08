@@ -11921,12 +11921,18 @@ condition|)
 block|{
 name|title
 operator|+=
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+literal|"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=\""
+operator|+
+name|disabledColor
+operator|+
+literal|"\">"
 operator|+
 name|x
 operator|.
 name|getTitle
 argument_list|()
+operator|+
+literal|"</font>"
 expr_stmt|;
 block|}
 block|}
