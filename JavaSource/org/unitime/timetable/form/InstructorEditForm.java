@@ -292,6 +292,10 @@ specifier|protected
 name|boolean
 name|limitedEditable
 decl_stmt|;
+specifier|private
+name|boolean
+name|canDelete
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 specifier|public
 name|boolean
@@ -585,6 +589,10 @@ expr_stmt|;
 name|email
 operator|=
 literal|null
+expr_stmt|;
+name|canDelete
+operator|=
+literal|false
 expr_stmt|;
 block|}
 comment|/** 	 *  	 * @param request 	 */
@@ -1194,6 +1202,30 @@ name|limitedEditable
 operator|=
 name|limitedEditable
 expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setCanDelete
+parameter_list|(
+name|boolean
+name|canDelete
+parameter_list|)
+block|{
+name|this
+operator|.
+name|canDelete
+operator|=
+name|canDelete
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getCanDelete
+parameter_list|()
+block|{
+return|return
+name|canDelete
+return|;
 block|}
 block|}
 end_class
