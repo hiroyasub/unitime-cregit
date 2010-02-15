@@ -2084,8 +2084,6 @@ name|iProgress
 operator|.
 name|debug
 argument_list|(
-literal|"  -- "
-operator|+
 name|section
 operator|.
 name|getName
