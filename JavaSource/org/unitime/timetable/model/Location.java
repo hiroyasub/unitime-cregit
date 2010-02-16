@@ -5037,6 +5037,11 @@ name|permanentIds
 operator|.
 name|isEmpty
 argument_list|()
+operator|||
+name|dates
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 return|return
 operator|new
@@ -5329,7 +5334,7 @@ argument_list|<
 name|Event
 argument_list|>
 argument_list|>
-name|findEvemtTable
+name|findEventTable
 parameter_list|(
 name|Set
 argument_list|<
@@ -5353,6 +5358,11 @@ block|{
 if|if
 condition|(
 name|permanentIds
+operator|.
+name|isEmpty
+argument_list|()
+operator|||
+name|dates
 operator|.
 name|isEmpty
 argument_list|()
