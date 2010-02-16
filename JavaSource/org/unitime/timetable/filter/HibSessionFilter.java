@@ -392,6 +392,18 @@ name|IOException
 operator|)
 name|ex
 throw|;
+if|if
+condition|(
+name|ex
+operator|instanceof
+name|RuntimeException
+condition|)
+throw|throw
+operator|(
+name|RuntimeException
+operator|)
+name|ex
+throw|;
 comment|// Let others handle it... maybe another interceptor for exceptions?
 throw|throw
 operator|new
