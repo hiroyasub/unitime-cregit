@@ -1610,10 +1610,6 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|nc
-operator|=
-literal|1
-expr_stmt|;
 name|nr
 operator|=
 operator|-
@@ -2081,8 +2077,6 @@ block|,
 operator|(
 operator|(
 name|disabled
-operator|||
-name|uDisabled
 operator|)
 condition|?
 operator|(

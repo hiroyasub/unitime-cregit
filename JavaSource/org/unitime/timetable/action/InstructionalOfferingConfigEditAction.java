@@ -9322,10 +9322,6 @@ name|mxlpc
 operator|=
 literal|0
 expr_stmt|;
-name|nc
-operator|=
-literal|1
-expr_stmt|;
 name|nr
 operator|=
 literal|0
