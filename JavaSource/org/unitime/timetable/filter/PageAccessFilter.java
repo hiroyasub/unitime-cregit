@@ -1331,6 +1331,16 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+literal|"password"
+operator|.
+name|equals
+argument_list|(
+name|n
+argument_list|)
+condition|)
+continue|continue;
 name|message
 operator|+=
 literal|"\n    "
