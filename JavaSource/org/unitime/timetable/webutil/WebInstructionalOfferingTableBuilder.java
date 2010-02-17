@@ -5173,7 +5173,7 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
-literal|"&nbsp;"
+literal|"<font size=\"+1\">&infin;</font>"
 argument_list|,
 name|isEditable
 argument_list|)
@@ -9993,7 +9993,7 @@ argument_list|(
 operator|(
 name|unlimited
 condition|?
-literal|"<img src='images/infinity.gif' alt='Unlimited Enrollment' title='Unlimited Enrollment' border='0' align='top'>"
+literal|"<font size=\"+1\">&infin;</font>"
 else|:
 name|ioc
 operator|.
@@ -11401,7 +11401,7 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
-literal|"<img src='images/infinity.gif' alt='Unlimited Enrollment' title='Unlimited Enrollment' border='0' align='top'>"
+literal|"<font size=\"+1\">&infin;</font>"
 argument_list|,
 name|co
 operator|.
