@@ -2122,7 +2122,7 @@ literal|" name=\"nc"
 operator|+
 name|sicId
 operator|+
-literal|"\" type=\"text\" size=\"4\" maxlength=\"4\" value=\""
+literal|"\" type=\"text\" size=\"3\" maxlength=\"3\" value=\""
 operator|+
 operator|(
 name|nc
