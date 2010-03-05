@@ -4123,6 +4123,7 @@ name|sExamLocationTypeBoth
 operator|+
 literal|")"
 expr_stmt|;
+break|break;
 case|case
 name|Exam
 operator|.
@@ -4144,6 +4145,7 @@ name|sExamLocationTypeBoth
 operator|+
 literal|")"
 expr_stmt|;
+break|break;
 default|default :
 name|b
 operator|+=
