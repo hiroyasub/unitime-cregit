@@ -11608,14 +11608,15 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
-operator|!
 name|co
 operator|.
 name|getTitle
 argument_list|()
 operator|.
-name|isEmpty
+name|length
 argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|title

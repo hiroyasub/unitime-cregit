@@ -14155,11 +14155,12 @@ condition|)
 continue|continue;
 if|if
 condition|(
-operator|!
 name|clist
 operator|.
-name|isEmpty
+name|length
 argument_list|()
+operator|>
+literal|0
 condition|)
 name|clist
 operator|+=
