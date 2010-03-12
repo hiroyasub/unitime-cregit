@@ -3075,7 +3075,12 @@ operator|)
 operator|&&
 operator|(
 operator|(
+operator|(
 name|slot
+operator|-
+name|firstSlot
+argument_list|()
+operator|)
 operator|%
 name|sNrSlotsPerPeriod
 operator|)
@@ -3966,7 +3971,12 @@ operator|)
 operator|&&
 operator|(
 operator|(
+operator|(
 name|slot
+operator|-
+name|firstSlot
+argument_list|()
+operator|)
 operator|%
 name|sNrSlotsPerPeriod
 operator|)
