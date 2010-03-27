@@ -8832,7 +8832,6 @@ literal|"."
 argument_list|)
 argument_list|)
 argument_list|,
-comment|//TODO: checked OK, tested OK
 name|session
 operator|.
 name|getAcademicTerm
@@ -9123,7 +9122,6 @@ operator|)
 operator|.
 name|printInstructorReports
 argument_list|(
-comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9251,7 +9249,6 @@ operator|)
 operator|.
 name|printStudentReports
 argument_list|(
-comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9370,7 +9367,6 @@ literal|"."
 argument_list|)
 argument_list|)
 argument_list|,
-comment|//TODO: checked OK, tested OK
 name|session
 operator|.
 name|getAcademicTerm
@@ -9577,7 +9573,6 @@ operator|)
 operator|.
 name|printInstructorReports
 argument_list|(
-comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9705,7 +9700,6 @@ operator|)
 operator|.
 name|printStudentReports
 argument_list|(
-comment|//TODO: checked OK, tested OK
 name|mode
 argument_list|,
 name|session
@@ -9820,7 +9814,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|//TODO: checked OK, tested OK
 name|sendEmails
 argument_list|(
 name|session
