@@ -710,6 +710,21 @@ parameter_list|()
 throws|throws
 name|LoginException
 block|{
+comment|// Skip this module when LDAP provider is not set
+if|if
+condition|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.authenticate.ldap.provider"
+argument_list|)
+operator|==
+literal|null
+condition|)
+return|return
+literal|false
+return|;
 if|if
 condition|(
 name|isDebug
