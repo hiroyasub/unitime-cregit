@@ -15084,6 +15084,13 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"END:VCALENDAR"
+argument_list|)
+expr_stmt|;
 block|}
 finally|finally
 block|{
@@ -15833,6 +15840,13 @@ literal|"END:VEVENT"
 argument_list|)
 expr_stmt|;
 block|}
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"END:VCALENDAR"
+argument_list|)
+expr_stmt|;
 block|}
 finally|finally
 block|{
