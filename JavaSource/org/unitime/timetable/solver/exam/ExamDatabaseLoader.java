@@ -7176,7 +7176,7 @@ argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|" has not period available."
+literal|" has no period available."
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -7277,7 +7277,7 @@ argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|" has not room placement available."
+literal|" has no room placement available."
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -7354,7 +7354,7 @@ argument_list|(
 name|exam
 argument_list|)
 operator|+
-literal|" has not assignment available."
+literal|" has no assignment available."
 argument_list|)
 expr_stmt|;
 continue|continue;
