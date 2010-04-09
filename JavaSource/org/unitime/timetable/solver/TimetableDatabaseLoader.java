@@ -4100,7 +4100,7 @@ operator|/
 literal|50.0
 argument_list|)
 operator|+
-literal|" Hours in MSF.</i>"
+literal|" Hours.</i>"
 argument_list|)
 expr_stmt|;
 return|return
