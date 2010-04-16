@@ -5216,7 +5216,10 @@ argument_list|(
 literal|true
 argument_list|)
 operator|.
-name|iterate
+name|list
+argument_list|()
+operator|.
+name|iterator
 argument_list|()
 init|;
 name|i
@@ -5410,7 +5413,10 @@ argument_list|(
 literal|true
 argument_list|)
 operator|.
-name|iterate
+name|list
+argument_list|()
+operator|.
+name|iterator
 argument_list|()
 init|;
 name|i

@@ -712,7 +712,10 @@ name|i
 init|=
 name|q
 operator|.
-name|iterate
+name|list
+argument_list|()
+operator|.
+name|iterator
 argument_list|()
 init|;
 name|i
@@ -1428,7 +1431,10 @@ name|i
 init|=
 name|q
 operator|.
-name|iterate
+name|list
+argument_list|()
+operator|.
+name|iterator
 argument_list|()
 init|;
 name|i
