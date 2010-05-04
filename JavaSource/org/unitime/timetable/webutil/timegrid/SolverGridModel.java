@@ -390,9 +390,6 @@ name|room
 operator|.
 name|getResourceId
 argument_list|()
-operator|.
-name|intValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -892,9 +889,6 @@ argument_list|,
 name|instructor
 operator|.
 name|getResourceId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3605,9 +3599,6 @@ condition|?
 literal|0
 else|:
 name|iRoomId
-operator|.
-name|intValue
-argument_list|()
 operator|)
 argument_list|,
 name|placement

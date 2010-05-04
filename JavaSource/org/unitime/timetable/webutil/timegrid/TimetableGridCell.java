@@ -150,7 +150,7 @@ name|long
 name|iAssignmentId
 decl_stmt|;
 specifier|private
-name|int
+name|long
 name|iRoomId
 decl_stmt|;
 specifier|private
@@ -255,7 +255,7 @@ parameter_list|,
 name|long
 name|assignmentId
 parameter_list|,
-name|int
+name|long
 name|roomId
 parameter_list|,
 name|String
@@ -517,7 +517,7 @@ name|iAssignmentId
 return|;
 block|}
 specifier|public
-name|int
+name|long
 name|getRoomId
 parameter_list|()
 block|{

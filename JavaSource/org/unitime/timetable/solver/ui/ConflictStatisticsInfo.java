@@ -1065,9 +1065,6 @@ operator|)
 operator|.
 name|getResourceId
 argument_list|()
-operator|.
-name|intValue
-argument_list|()
 argument_list|,
 name|constraint
 operator|.
@@ -1104,9 +1101,6 @@ name|constraint
 operator|)
 operator|.
 name|getResourceId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|,
 name|constraint
