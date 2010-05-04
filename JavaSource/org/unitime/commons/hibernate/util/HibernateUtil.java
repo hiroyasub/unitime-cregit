@@ -1728,7 +1728,63 @@ name|publicId
 operator|.
 name|equals
 argument_list|(
+literal|"-//Hibernate/Hibernate Mapping DTD//EN"
+argument_list|)
+condition|)
+block|{
+return|return
+operator|new
+name|InputSource
+argument_list|(
+name|HibernateUtil
+operator|.
+name|class
+operator|.
+name|getClassLoader
+argument_list|()
+operator|.
+name|getResourceAsStream
+argument_list|(
+literal|"hibernate-mapping-3.0.dtd"
+argument_list|)
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
+name|publicId
+operator|.
+name|equals
+argument_list|(
 literal|"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+argument_list|)
+condition|)
+block|{
+return|return
+operator|new
+name|InputSource
+argument_list|(
+name|HibernateUtil
+operator|.
+name|class
+operator|.
+name|getClassLoader
+argument_list|()
+operator|.
+name|getResourceAsStream
+argument_list|(
+literal|"hibernate-configuration-3.0.dtd"
+argument_list|)
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
+name|publicId
+operator|.
+name|equals
+argument_list|(
+literal|"-//Hibernate/Hibernate Configuration DTD//EN"
 argument_list|)
 condition|)
 block|{
@@ -1954,7 +2010,63 @@ name|publicId
 operator|.
 name|equals
 argument_list|(
+literal|"-//Hibernate/Hibernate Mapping DTD//EN"
+argument_list|)
+condition|)
+block|{
+return|return
+operator|new
+name|InputSource
+argument_list|(
+name|HibernateUtil
+operator|.
+name|class
+operator|.
+name|getClassLoader
+argument_list|()
+operator|.
+name|getResourceAsStream
+argument_list|(
+literal|"hibernate-mapping-3.0.dtd"
+argument_list|)
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
+name|publicId
+operator|.
+name|equals
+argument_list|(
 literal|"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+argument_list|)
+condition|)
+block|{
+return|return
+operator|new
+name|InputSource
+argument_list|(
+name|HibernateUtil
+operator|.
+name|class
+operator|.
+name|getClassLoader
+argument_list|()
+operator|.
+name|getResourceAsStream
+argument_list|(
+literal|"hibernate-configuration-3.0.dtd"
+argument_list|)
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
+name|publicId
+operator|.
+name|equals
+argument_list|(
+literal|"-//Hibernate/Hibernate Configuration DTD//EN"
 argument_list|)
 condition|)
 block|{
