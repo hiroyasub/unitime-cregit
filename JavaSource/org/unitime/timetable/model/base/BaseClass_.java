@@ -287,19 +287,6 @@ operator|.
 name|Integer
 name|enrollment
 decl_stmt|;
-comment|// one to one
-specifier|private
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|SectioningInfo
-name|sectioningInfo
-decl_stmt|;
 comment|// many to one
 specifier|private
 name|org
@@ -886,48 +873,6 @@ operator|.
 name|enrollment
 operator|=
 name|enrollment
-expr_stmt|;
-block|}
-comment|/** 	 * Return the value associated with the column: sectioningInfo 	 */
-specifier|public
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|SectioningInfo
-name|getSectioningInfo
-parameter_list|()
-block|{
-return|return
-name|sectioningInfo
-return|;
-block|}
-comment|/** 	 * Set the value related to the column: sectioningInfo 	 * @param sectioningInfo the sectioningInfo value 	 */
-specifier|public
-name|void
-name|setSectioningInfo
-parameter_list|(
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|SectioningInfo
-name|sectioningInfo
-parameter_list|)
-block|{
-name|this
-operator|.
-name|sectioningInfo
-operator|=
-name|sectioningInfo
 expr_stmt|;
 block|}
 comment|/** 	 * Return the value associated with the column: controllingDept 	 */
