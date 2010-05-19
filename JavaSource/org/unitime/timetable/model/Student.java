@@ -1239,6 +1239,16 @@ operator|new
 name|Hashtable
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|dates
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+return|return
+name|table
+return|;
 name|String
 name|datesStr
 init|=
