@@ -1168,7 +1168,6 @@ decl_stmt|;
 comment|//set to false for old behaviour
 specifier|protected
 specifier|static
-specifier|final
 name|boolean
 name|sAggregateRoomPrefs
 init|=
