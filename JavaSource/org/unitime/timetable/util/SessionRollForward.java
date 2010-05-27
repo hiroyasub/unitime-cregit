@@ -163,6 +163,18 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|ApplicationProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|form
 operator|.
 name|RollForwardSessionForm
@@ -15859,6 +15871,9 @@ name|toSession
 operator|.
 name|getUniqueId
 argument_list|()
+operator|.
+name|longValue
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|int
@@ -16043,6 +16058,114 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.courseNumber.unique"
+argument_list|,
+literal|"true"
+argument_list|)
+operator|.
+name|equals
+argument_list|(
+literal|"true"
+argument_list|)
+condition|)
+block|{
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"update CourseOffering c set c.demand="
+operator|+
+literal|"(select count(distinct d.student) from LastLikeCourseDemand d where "
+operator|+
+literal|"(c.subjectArea=d.subjectArea and c.courseNbr=d.courseNbr)) where "
+operator|+
+literal|"c.subjectArea.uniqueId in (select sa.uniqueId from SubjectArea sa where sa.session.uniqueId=:sessionId)"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|longValue
+argument_list|()
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"update CourseOffering c set c.demand="
+operator|+
+literal|"(select count(distinct d.student) from LastLikeCourseDemand d where "
+operator|+
+literal|"(c.subjectArea=d.subjectArea and c.courseNbr=d.courseNbr)) where "
+operator|+
+literal|"c.permId is null and c.subjectArea.uniqueId in (select sa.uniqueId from SubjectArea sa where sa.session.uniqueId=:sessionId)"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|longValue
+argument_list|()
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
+expr_stmt|;
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"update CourseOffering c set c.demand="
+operator|+
+literal|"(select count(distinct d.student) from LastLikeCourseDemand d where "
+operator|+
+literal|"d.student.session=c.subjectArea.session and c.permId=d.coursePermId) where "
+operator|+
+literal|"c.permId is not null and c.subjectArea.uniqueId in (select sa.uniqueId from SubjectArea sa where sa.session.uniqueId=:sessionId)"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|toSession
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|longValue
+argument_list|()
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|/** 	 * @return the subpartTimeRollForward 	 */
 specifier|public
