@@ -117,6 +117,22 @@ name|RoomAvailability
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|queue
+operator|.
+name|QueueProcessor
+import|;
+end_import
+
 begin_comment
 comment|/**  * Application Initialization Servlet  * @version 1.0  * @author Heston Fernandes  */
 end_comment
@@ -329,6 +345,11 @@ name|stopService
 argument_list|()
 expr_stmt|;
 block|}
+name|QueueProcessor
+operator|.
+name|stopProcessor
+argument_list|()
+expr_stmt|;
 name|logMessage
 argument_list|(
 literal|"******* Timetabling Application : Shut down DONE *******"
