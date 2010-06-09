@@ -2050,7 +2050,7 @@ operator|=
 literal|""
 expr_stmt|;
 comment|// Has other exam
-if|else if
+if|if
 condition|(
 operator|!
 name|hasSectionExam
@@ -2304,7 +2304,7 @@ operator|=
 literal|""
 expr_stmt|;
 comment|// Has other exam
-if|else if
+if|if
 condition|(
 operator|!
 name|hasSectionExam
@@ -7547,23 +7547,8 @@ block|}
 if|if
 condition|(
 name|allSectionsHaveExam
-operator|&&
-name|classes
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|1
 condition|)
 name|hasSubpartExam
-operator|=
-literal|true
-expr_stmt|;
-if|if
-condition|(
-name|allSectionsHaveExam
-condition|)
-name|hasCourseExam
 operator|=
 literal|true
 expr_stmt|;
@@ -7670,6 +7655,8 @@ argument_list|(
 name|clazz
 argument_list|,
 name|hasCourseExam
+operator|||
+name|hasSubpartExam
 argument_list|,
 name|hasSectionExam
 argument_list|,
@@ -7757,6 +7744,8 @@ argument_list|(
 name|clazz
 argument_list|,
 name|hasCourseExam
+operator|||
+name|hasSubpartExam
 argument_list|,
 name|hasSectionExam
 argument_list|,
@@ -7855,6 +7844,8 @@ argument_list|(
 name|clazz
 argument_list|,
 name|hasCourseExam
+operator|||
+name|hasSubpartExam
 argument_list|,
 name|hasSectionExam
 argument_list|,
