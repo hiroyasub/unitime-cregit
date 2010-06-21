@@ -394,7 +394,7 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|info
+name|debug
 argument_list|(
 literal|"classes loaded"
 argument_list|)
@@ -882,9 +882,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|info
+name|debug
 argument_list|(
-literal|"Appliation property: tmtbl.data.import.studentEnrl.class.updateEnrollments = "
+literal|"Application property: tmtbl.data.import.studentEnrl.class.updateEnrollments = "
 operator|+
 name|ApplicationProperties
 operator|.
@@ -892,7 +892,7 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.data.import.studentEnrl.class.updateEnrollments"
 argument_list|,
-literal|"false"
+literal|"true"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -912,7 +912,7 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.data.import.studentEnrl.class.updateEnrollments"
 argument_list|,
-literal|"false"
+literal|"true"
 argument_list|)
 argument_list|)
 condition|)
@@ -1100,6 +1100,18 @@ operator|.
 name|addToclassEnrollments
 argument_list|(
 name|sce
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|warn
+argument_list|(
+literal|"Class "
+operator|+
+name|externalId
+operator|+
+literal|" not found."
 argument_list|)
 expr_stmt|;
 block|}
