@@ -4335,9 +4335,9 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-throw|throw
-operator|new
-name|RuntimeException
+name|iForm
+operator|.
+name|setMessage
 argument_list|(
 literal|"Class "
 operator|+
@@ -4349,7 +4349,10 @@ argument_list|()
 operator|+
 literal|" has no available time."
 argument_list|)
-throw|;
+expr_stmt|;
+return|return
+name|iTimes
+return|;
 block|}
 block|}
 return|return
