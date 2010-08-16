@@ -924,6 +924,13 @@ name|e
 parameter_list|)
 block|{
 block|}
+catch|catch
+parameter_list|(
+name|NullPointerException
+name|e
+parameter_list|)
+block|{
+block|}
 block|}
 block|}
 end_class
