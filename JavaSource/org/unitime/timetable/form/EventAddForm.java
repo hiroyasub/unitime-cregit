@@ -6690,9 +6690,17 @@ operator|>
 literal|0
 condition|)
 block|{
+name|a
+operator|+=
+literal|", RoomGroup g"
+expr_stmt|;
 name|b
 operator|+=
-literal|" and ("
+literal|" and "
+expr_stmt|;
+name|b
+operator|+=
+literal|" g.uniqueId in ( "
 expr_stmt|;
 for|for
 control|(
@@ -6719,37 +6727,19 @@ literal|0
 condition|)
 name|b
 operator|+=
-literal|" or"
-expr_stmt|;
-name|a
-operator|+=
-literal|", RoomGroup g"
-operator|+
-name|i
+literal|" ,"
 expr_stmt|;
 name|b
 operator|+=
-literal|" (g"
-operator|+
-name|i
-operator|+
-literal|".uniqueId="
-operator|+
 name|iRoomGroups
 index|[
 name|i
 index|]
-operator|+
-literal|" and g"
-operator|+
-name|i
-operator|+
-literal|" in elements(r.roomGroups))"
 expr_stmt|;
 block|}
 name|b
 operator|+=
-literal|")"
+literal|" ) and g in elements(r.roomGroups) "
 expr_stmt|;
 block|}
 if|if
