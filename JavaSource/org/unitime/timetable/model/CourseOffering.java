@@ -2751,25 +2751,21 @@ operator|.
 name|beginTransaction
 argument_list|()
 expr_stmt|;
-name|List
-argument_list|<
-name|Long
-argument_list|>
-name|courseIds
-init|=
-operator|(
-name|List
-argument_list|<
-name|Long
-argument_list|>
-operator|)
 name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select crs.uniqueId from CourseOffering crs inner join crs.instructionalOffering as io "
+literal|"update CourseOffering  c "
 operator|+
-literal|" where io.session.uniqueId = :sessionId)"
+literal|"set c.enrollment=(select count(distinct d.student) "
+operator|+
+literal|" from StudentClassEnrollment d "
+operator|+
+literal|" where d.courseOffering.uniqueId =c.uniqueId) "
+operator|+
+literal|" where c.subjectArea.uniqueId in (select sa.uniqueId "
+operator|+
+literal|" from SubjectArea sa where sa.session.uniqueId = :sessionId)"
 argument_list|)
 operator|.
 name|setLong
@@ -2785,111 +2781,9 @@ name|longValue
 argument_list|()
 argument_list|)
 operator|.
-name|list
-argument_list|()
-decl_stmt|;
-name|int
-name|count
-init|=
-literal|0
-decl_stmt|;
-name|String
-name|ids
-init|=
-literal|""
-decl_stmt|;
-for|for
-control|(
-name|Long
-name|id
-range|:
-name|courseIds
-control|)
-block|{
-if|if
-condition|(
-name|count
-operator|>
-literal|0
-condition|)
-name|ids
-operator|+=
-literal|","
-expr_stmt|;
-name|ids
-operator|+=
-name|id
-expr_stmt|;
-if|if
-condition|(
-name|count
-operator|==
-literal|1000
-condition|)
-block|{
-name|hibSession
-operator|.
-name|createQuery
-argument_list|(
-literal|"update CourseOffering  c "
-operator|+
-literal|"set c.enrollment=(select count(distinct d.student) "
-operator|+
-literal|" from StudentClassEnrollment d "
-operator|+
-literal|" where d.courseOffering.uniqueId =c.uniqueId) "
-operator|+
-literal|" where c.uniqueId in ("
-operator|+
-name|ids
-operator|+
-literal|")"
-argument_list|)
-operator|.
 name|executeUpdate
 argument_list|()
 expr_stmt|;
-name|count
-operator|=
-literal|0
-expr_stmt|;
-name|ids
-operator|=
-literal|""
-expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
-name|count
-operator|>
-literal|0
-condition|)
-block|{
-name|hibSession
-operator|.
-name|createQuery
-argument_list|(
-literal|"update CourseOffering  c "
-operator|+
-literal|"set c.enrollment=(select count(distinct d.student) "
-operator|+
-literal|" from StudentClassEnrollment d "
-operator|+
-literal|" where d.courseOffering.uniqueId =c.uniqueId) "
-operator|+
-literal|" where c.uniqueId in ("
-operator|+
-name|ids
-operator|+
-literal|")"
-argument_list|)
-operator|.
-name|executeUpdate
-argument_list|()
-expr_stmt|;
-block|}
-comment|/*      	// This does not work on MySQL (You can't specify target table 'COURSE_OFFERING' for update in FROM clause)          hibSession.createQuery("update CourseOffering  c " +          		"set c.enrollment=(select count(distinct d.student) " +                  " from StudentClassEnrollment d " +                  " where d.courseOffering.uniqueId =c.uniqueId) " +                   " where c.uniqueId in (select crs.uniqueId " +                   " from CourseOffering crs inner join crs.instructionalOffering as io " +                  " where io.session.uniqueId = :sessionId)").                  setLong("sessionId", acadSession.getUniqueId().longValue()).executeUpdate();          */
 name|trans
 operator|.
 name|commit
