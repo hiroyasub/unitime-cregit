@@ -5384,7 +5384,7 @@ argument_list|(
 name|session
 argument_list|)
 decl_stmt|;
-comment|//TODO: checked OK, tested OK
+comment|//TODO: checked OK, tested OK --- really ????
 name|int
 name|startDay
 init|=
@@ -5421,6 +5421,8 @@ name|acadSession
 operator|.
 name|getStartMonth
 argument_list|()
+operator|-
+literal|3
 argument_list|)
 operator|-
 literal|1
