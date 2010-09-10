@@ -851,6 +851,8 @@ name|session
 operator|.
 name|getStartMonth
 argument_list|()
+operator|-
+literal|3
 argument_list|)
 decl_stmt|;
 name|Calendar
@@ -949,6 +951,8 @@ name|session
 operator|.
 name|getStartMonth
 argument_list|()
+operator|-
+literal|3
 argument_list|)
 decl_stmt|;
 name|SolverProxy
