@@ -24379,7 +24379,6 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//TODO: checked OK
 name|int
 name|firstDOY
 init|=
@@ -24393,6 +24392,8 @@ name|iSession
 operator|.
 name|getStartMonth
 argument_list|()
+operator|-
+literal|3
 argument_list|)
 decl_stmt|;
 name|int
@@ -24408,6 +24409,8 @@ name|iSession
 operator|.
 name|getEndMonth
 argument_list|()
+operator|+
+literal|3
 operator|+
 literal|1
 argument_list|)
@@ -24445,7 +24448,6 @@ name|id
 init|=
 literal|0
 decl_stmt|;
-comment|//TODO: change made needs to be checked
 name|int
 name|sessionYear
 init|=
@@ -24649,7 +24651,6 @@ argument_list|(
 name|size
 argument_list|)
 decl_stmt|;
-comment|//TODO: checked OK
 name|int
 name|offset
 init|=
