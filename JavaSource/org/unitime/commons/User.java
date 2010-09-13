@@ -428,7 +428,7 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.instructor.external_id.lookup.enabled"
+literal|"tmtbl.manager.external_id.lookup.enabled"
 argument_list|,
 literal|"false"
 argument_list|)
