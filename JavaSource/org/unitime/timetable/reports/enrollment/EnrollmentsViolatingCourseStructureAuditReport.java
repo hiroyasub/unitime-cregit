@@ -784,7 +784,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" from StudentClassEnrollment sce2 where sce2.clazz.schedulingSubpart.uniqueId = c.schedulingSubpart.uniqueId and sce2.student.uniqueId = s.uniqueId  )"
+literal|" from StudentClassEnrollment sce2 where sce2.clazz.schedulingSubpart.uniqueId = c.schedulingSubpart.uniqueId and sce2.student.uniqueId = s.uniqueId and sce2.courseOffering.uniqueId = sce.courseOffering.uniqueId )"
 argument_list|)
 operator|.
 name|append
