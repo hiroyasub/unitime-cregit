@@ -5732,7 +5732,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.cc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -5785,7 +5785,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.bcc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -6168,7 +6168,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.cc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -6221,7 +6221,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.bcc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -6648,7 +6648,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.cc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -6701,7 +6701,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.bcc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -7152,7 +7152,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.cc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
@@ -7205,7 +7205,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"email.to"
+literal|"email.bcc"
 argument_list|)
 argument_list|,
 literal|";,\n\r "
