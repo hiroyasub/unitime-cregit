@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -117,7 +117,19 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
+operator|.
+name|text
+operator|.
+name|BaseColor
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -129,7 +141,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -141,7 +153,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -153,7 +165,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -165,7 +177,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -177,7 +189,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -189,7 +201,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -201,7 +213,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -213,7 +225,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -225,7 +237,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -239,7 +251,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -253,7 +265,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -402,7 +414,7 @@ name|cell
 operator|.
 name|setBorderColor
 argument_list|(
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|)
@@ -699,7 +711,7 @@ argument_list|()
 argument_list|,
 name|font
 operator|.
-name|size
+name|getSize
 argument_list|()
 argument_list|)
 argument_list|)
@@ -725,7 +737,7 @@ name|text
 argument_list|,
 name|font
 operator|.
-name|size
+name|getSize
 argument_list|()
 argument_list|)
 argument_list|)
@@ -841,7 +853,7 @@ argument_list|()
 argument_list|,
 name|font
 operator|.
-name|size
+name|getSize
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -866,7 +878,7 @@ name|text
 argument_list|,
 name|font
 operator|.
-name|size
+name|getSize
 argument_list|()
 argument_list|)
 argument_list|)
@@ -894,10 +906,10 @@ parameter_list|,
 name|boolean
 name|underline
 parameter_list|,
-name|Color
+name|BaseColor
 name|color
 parameter_list|,
-name|Color
+name|BaseColor
 name|bgColor
 parameter_list|)
 block|{
@@ -1088,7 +1100,7 @@ argument_list|()
 argument_list|,
 name|font
 operator|.
-name|size
+name|getSize
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1114,7 +1126,7 @@ name|text
 argument_list|,
 name|font
 operator|.
-name|size
+name|getSize
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1142,7 +1154,7 @@ parameter_list|,
 name|boolean
 name|underline
 parameter_list|,
-name|Color
+name|BaseColor
 name|color
 parameter_list|,
 name|boolean
@@ -1157,10 +1169,10 @@ parameter_list|,
 name|boolean
 name|borderRight
 parameter_list|,
-name|Color
+name|BaseColor
 name|borderColor
 parameter_list|,
-name|Color
+name|BaseColor
 name|bgColor
 parameter_list|)
 block|{
@@ -1195,7 +1207,7 @@ name|cell
 operator|.
 name|setBorderColorTop
 argument_list|(
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|)
@@ -1233,7 +1245,7 @@ name|cell
 operator|.
 name|setBorderColorBottom
 argument_list|(
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|)
@@ -1271,7 +1283,7 @@ name|cell
 operator|.
 name|setBorderColorLeft
 argument_list|(
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|)
@@ -1309,7 +1321,7 @@ name|cell
 operator|.
 name|setBorderColorRight
 argument_list|(
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|)
@@ -1361,16 +1373,16 @@ parameter_list|,
 name|boolean
 name|underline
 parameter_list|,
-name|Color
+name|BaseColor
 name|color
 parameter_list|,
 name|boolean
 name|border
 parameter_list|,
-name|Color
+name|BaseColor
 name|borderColor
 parameter_list|,
-name|Color
+name|BaseColor
 name|bgColor
 parameter_list|)
 block|{
@@ -1417,7 +1429,7 @@ name|cell
 operator|.
 name|setBorderColor
 argument_list|(
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|)
@@ -1483,7 +1495,7 @@ literal|false
 argument_list|,
 literal|false
 argument_list|,
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|,
@@ -1514,28 +1526,28 @@ literal|false
 argument_list|,
 literal|false
 argument_list|,
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 argument_list|,
 literal|null
 argument_list|)
 return|;
-name|Color
+name|BaseColor
 name|color
 init|=
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 decl_stmt|;
-name|Color
+name|BaseColor
 name|bcolor
 init|=
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 decl_stmt|;
-name|Color
+name|BaseColor
 name|bgColor
 init|=
 literal|null
@@ -2107,7 +2119,7 @@ expr_stmt|;
 name|color
 operator|=
 operator|new
-name|Color
+name|BaseColor
 argument_list|(
 name|Integer
 operator|.
@@ -2132,7 +2144,7 @@ condition|)
 block|{
 name|color
 operator|=
-name|Color
+name|BaseColor
 operator|.
 name|BLACK
 expr_stmt|;
@@ -2178,7 +2190,7 @@ expr_stmt|;
 name|bgColor
 operator|=
 operator|new
-name|Color
+name|BaseColor
 argument_list|(
 name|Integer
 operator|.
@@ -2323,7 +2335,7 @@ expr_stmt|;
 name|bcolor
 operator|=
 operator|new
-name|Color
+name|BaseColor
 argument_list|(
 name|Integer
 operator|.
@@ -3258,7 +3270,7 @@ name|PageSize
 operator|.
 name|LETTER
 operator|.
-name|height
+name|getHeight
 argument_list|()
 argument_list|,
 name|totalWidth

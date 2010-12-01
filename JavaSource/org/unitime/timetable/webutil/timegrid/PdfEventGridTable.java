@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -12,16 +16,6 @@ operator|.
 name|timegrid
 package|;
 end_package
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|Color
-import|;
-end_import
 
 begin_import
 import|import
@@ -80,16 +74,6 @@ operator|.
 name|util
 operator|.
 name|Date
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
 import|;
 end_import
 
@@ -227,7 +211,19 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
+operator|.
+name|text
+operator|.
+name|BaseColor
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -239,7 +235,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -251,7 +247,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -263,7 +259,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -275,7 +271,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -287,7 +283,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -299,7 +295,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -311,7 +307,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -325,27 +321,13 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
 name|pdf
 operator|.
 name|PdfPTable
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|lowagie
-operator|.
-name|text
-operator|.
-name|pdf
-operator|.
-name|PdfWriter
 import|;
 end_import
 
@@ -357,12 +339,6 @@ extends|extends
 name|EventGridTable
 block|{
 specifier|private
-name|PdfWriter
-name|iWriter
-init|=
-literal|null
-decl_stmt|;
-specifier|private
 name|Document
 name|iDocument
 init|=
@@ -370,11 +346,11 @@ literal|null
 decl_stmt|;
 specifier|private
 specifier|static
-name|Color
+name|BaseColor
 name|sBorderColor
 init|=
 operator|new
-name|Color
+name|BaseColor
 argument_list|(
 literal|100
 argument_list|,
@@ -385,11 +361,11 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|static
-name|Color
+name|BaseColor
 name|sNotAvailableColor
 init|=
 operator|new
-name|Color
+name|BaseColor
 argument_list|(
 literal|224
 argument_list|,
@@ -477,8 +453,6 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|iWriter
-operator|=
 name|PdfEventHandler
 operator|.
 name|initFooter
@@ -647,15 +621,6 @@ operator|new
 name|SimpleDateFormat
 argument_list|(
 literal|"MMM dd, yyyy"
-argument_list|)
-decl_stmt|;
-name|DateFormat
-name|df3
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"MM/dd"
 argument_list|)
 decl_stmt|;
 if|if
@@ -1894,16 +1859,6 @@ operator|.
 name|newLine
 argument_list|()
 expr_stmt|;
-name|HashSet
-argument_list|<
-name|Meeting
-argument_list|>
-name|rendered
-init|=
-operator|new
-name|HashSet
-argument_list|()
-decl_stmt|;
 name|int
 name|lastCol
 init|=
@@ -3002,7 +2957,7 @@ parameter_list|,
 name|boolean
 name|left
 parameter_list|,
-name|Color
+name|BaseColor
 name|color
 parameter_list|)
 block|{
@@ -3144,7 +3099,7 @@ parameter_list|,
 name|boolean
 name|bold
 parameter_list|,
-name|Color
+name|BaseColor
 name|color
 parameter_list|)
 block|{

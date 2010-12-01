@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -54,18 +54,6 @@ operator|.
 name|http
 operator|.
 name|HttpServletRequest
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|http
-operator|.
-name|HttpSession
 import|;
 end_import
 
@@ -317,6 +305,15 @@ extends|extends
 name|EventAddInfoForm
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|3328395693067063643L
+decl_stmt|;
+specifier|private
 name|Long
 name|iId
 decl_stmt|;
@@ -364,27 +361,6 @@ literal|"id"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|HttpSession
-name|session
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
-name|User
-name|user
-init|=
-name|Web
-operator|.
-name|getUser
-argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|setEvent
 argument_list|(
 name|EventDAO
@@ -585,16 +561,6 @@ expr_stmt|;
 name|loadExistingMeetings
 argument_list|()
 expr_stmt|;
-name|TimetableManager
-name|tm
-init|=
-name|TimetableManager
-operator|.
-name|getManager
-argument_list|(
-name|user
-argument_list|)
-decl_stmt|;
 block|}
 specifier|public
 name|void
@@ -604,14 +570,6 @@ name|HttpServletRequest
 name|request
 parameter_list|)
 block|{
-name|HttpSession
-name|session
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
 name|Transaction
 name|tx
 init|=
@@ -1113,6 +1071,8 @@ argument_list|()
 argument_list|,
 name|getAdditionalInfo
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 operator|.
 name|send

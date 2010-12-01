@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -216,6 +216,15 @@ name|BuildingEditForm
 extends|extends
 name|ActionForm
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|4104780400760573687L
+decl_stmt|;
 specifier|private
 name|Long
 name|iUniqueId
@@ -796,13 +805,6 @@ name|getCoordinateX
 argument_list|()
 operator|==
 literal|null
-operator|||
-name|building
-operator|.
-name|getCoordinateX
-argument_list|()
-operator|<
-literal|0
 condition|?
 literal|null
 else|:
@@ -823,13 +825,6 @@ name|getCoordinateY
 argument_list|()
 operator|==
 literal|null
-operator|||
-name|building
-operator|.
-name|getCoordinateY
-argument_list|()
-operator|<
-literal|0
 condition|?
 literal|null
 else|:
@@ -955,12 +950,11 @@ argument_list|()
 operator|==
 literal|0
 condition|?
-operator|-
-literal|1
+literal|null
 else|:
-name|Integer
+name|Double
 operator|.
-name|parseInt
+name|valueOf
 argument_list|(
 name|getCoordX
 argument_list|()
@@ -984,12 +978,11 @@ argument_list|()
 operator|==
 literal|0
 condition|?
-operator|-
-literal|1
+literal|null
 else|:
-name|Integer
+name|Double
 operator|.
-name|parseInt
+name|valueOf
 argument_list|(
 name|getCoordY
 argument_list|()

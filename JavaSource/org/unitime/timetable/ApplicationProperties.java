@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -40,6 +40,16 @@ operator|.
 name|io
 operator|.
 name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URI
 import|;
 end_import
 
@@ -1010,10 +1020,6 @@ name|getBasePath
 parameter_list|()
 block|{
 comment|//Get the URL of the class location (usually in /WEB-INF/classes/...)
-name|java
-operator|.
-name|net
-operator|.
 name|URL
 name|url
 init|=
@@ -1040,18 +1046,42 @@ return|return
 literal|null
 return|;
 comment|//Get file and parent
-name|java
-operator|.
-name|io
-operator|.
 name|File
 name|file
 init|=
+literal|null
+decl_stmt|;
+try|try
+block|{
+comment|// Try to use URI to avoid bug 4466485 on Windows (see http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4466485)
+name|file
+operator|=
 operator|new
-name|java
+name|File
+argument_list|(
+operator|new
+name|URI
+argument_list|(
+name|url
 operator|.
-name|io
+name|toString
+argument_list|()
+argument_list|)
 operator|.
+name|getPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|URISyntaxException
+name|e
+parameter_list|)
+block|{
+name|file
+operator|=
+operator|new
 name|File
 argument_list|(
 name|url
@@ -1059,11 +1089,8 @@ operator|.
 name|getFile
 argument_list|()
 argument_list|)
-decl_stmt|;
-name|java
-operator|.
-name|io
-operator|.
+expr_stmt|;
+block|}
 name|File
 name|parent
 init|=

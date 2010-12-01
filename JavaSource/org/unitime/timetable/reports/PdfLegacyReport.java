@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -89,7 +93,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -101,7 +105,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -113,7 +117,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -125,7 +129,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -137,7 +141,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -149,7 +153,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -158,6 +162,10 @@ operator|.
 name|PdfWriter
 import|;
 end_import
+
+begin_comment
+comment|/**  * @author Tomas Muller  */
+end_comment
 
 begin_class
 specifier|public
@@ -177,12 +185,6 @@ init|=
 literal|50
 decl_stmt|;
 specifier|private
-name|File
-name|iFile
-init|=
-literal|null
-decl_stmt|;
-specifier|private
 name|FileOutputStream
 name|iOut
 init|=
@@ -191,12 +193,6 @@ decl_stmt|;
 specifier|private
 name|Document
 name|iDoc
-init|=
-literal|null
-decl_stmt|;
-specifier|private
-name|PdfWriter
-name|iWriter
 init|=
 literal|null
 decl_stmt|;
@@ -269,12 +265,6 @@ name|iEmpty
 init|=
 literal|true
 decl_stmt|;
-specifier|private
-name|int
-name|iMode
-init|=
-literal|0
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -325,10 +315,6 @@ name|IOException
 throws|,
 name|DocumentException
 block|{
-name|iFile
-operator|=
-name|file
-expr_stmt|;
 name|iTitle
 operator|=
 name|title
@@ -443,8 +429,6 @@ name|rotate
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iWriter
-operator|=
 name|PdfWriter
 operator|.
 name|getInstance
@@ -1371,6 +1355,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|//FIXME: For some reason when a line starts with space, the line is shifted by one space in the resulting PDF (when using iText 5.0.2)
 name|Paragraph
 name|p
 init|=
@@ -1381,6 +1366,13 @@ name|iBuffer
 operator|.
 name|toString
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"\n "
+argument_list|,
+literal|"\n  "
+argument_list|)
 argument_list|,
 name|FontFactory
 operator|.

@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -1528,7 +1528,7 @@ name|warn
 argument_list|(
 literal|"Major "
 operator|+
-name|code
+name|majorCode
 operator|+
 literal|" not found."
 argument_list|)
@@ -1620,7 +1620,7 @@ name|warn
 argument_list|(
 literal|"Major "
 operator|+
-name|code
+name|minorCode
 operator|+
 literal|" not found."
 argument_list|)
@@ -2013,11 +2013,6 @@ operator|.
 name|SLOT_LENGTH_MIN
 decl_stmt|;
 name|int
-name|breakTime
-init|=
-literal|0
-decl_stmt|;
-name|int
 name|nrSlots
 init|=
 literal|0
@@ -2029,63 +2024,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|breakTime
-operator|=
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|length
-argument_list|)
-operator|-
-operator|(
-operator|(
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|endTime
-argument_list|)
-operator|/
-literal|100
-operator|)
-operator|*
-literal|60
-operator|+
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|endTime
-argument_list|)
-operator|%
-literal|100
-operator|)
-operator|+
-operator|(
-operator|(
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|startTime
-argument_list|)
-operator|/
-literal|100
-operator|)
-operator|*
-literal|60
-operator|+
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|startTime
-argument_list|)
-operator|%
-literal|100
-operator|)
-expr_stmt|;
 name|nrSlots
 operator|=
 name|Integer

@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -190,32 +190,6 @@ operator|.
 name|hibernate
 operator|.
 name|Transaction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|User
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|web
-operator|.
-name|Web
 import|;
 end_import
 
@@ -535,19 +509,6 @@ init|=
 name|getResources
 argument_list|(
 name|request
-argument_list|)
-decl_stmt|;
-name|User
-name|user
-init|=
-name|Web
-operator|.
-name|getUser
-argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|CourseReservationEditForm
@@ -1170,14 +1131,6 @@ name|getReservationId
 argument_list|()
 decl_stmt|;
 name|List
-name|resvTypes
-init|=
-name|frm
-operator|.
-name|getReservationType
-argument_list|()
-decl_stmt|;
-name|List
 name|resvPriorities
 init|=
 name|frm
@@ -1441,19 +1394,6 @@ operator|(
 name|String
 operator|)
 name|resvIds
-operator|.
-name|get
-argument_list|(
-name|i
-argument_list|)
-decl_stmt|;
-name|String
-name|resvType
-init|=
-operator|(
-name|String
-operator|)
-name|resvTypes
 operator|.
 name|get
 argument_list|(

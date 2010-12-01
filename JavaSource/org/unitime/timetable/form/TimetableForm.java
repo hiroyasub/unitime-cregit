@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -135,6 +135,15 @@ extends|extends
 name|ActionForm
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|783119205646238864L
+decl_stmt|;
+specifier|private
 name|String
 name|iOp
 init|=
@@ -211,6 +220,12 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|iShowInstructors
+init|=
+literal|false
+decl_stmt|;
+specifier|private
+name|boolean
+name|iShowEvents
 init|=
 literal|false
 decl_stmt|;
@@ -328,6 +343,10 @@ name|Vector
 argument_list|()
 expr_stmt|;
 name|iShowInstructors
+operator|=
+literal|false
+expr_stmt|;
+name|iShowEvents
 operator|=
 literal|false
 expr_stmt|;
@@ -498,6 +517,13 @@ operator|.
 name|getShowInstructors
 argument_list|()
 expr_stmt|;
+name|iShowEvents
+operator|=
+name|table
+operator|.
+name|getShowEvents
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -613,6 +639,13 @@ operator|.
 name|setShowInstructors
 argument_list|(
 name|iShowInstructors
+argument_list|)
+expr_stmt|;
+name|table
+operator|.
+name|setShowEvents
+argument_list|(
+name|iShowEvents
 argument_list|)
 expr_stmt|;
 if|if
@@ -912,6 +945,28 @@ block|{
 name|iShowInstructors
 operator|=
 name|showInstructors
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getShowEvents
+parameter_list|()
+block|{
+return|return
+name|iShowEvents
+return|;
+block|}
+specifier|public
+name|void
+name|setShowEvents
+parameter_list|(
+name|boolean
+name|showEvents
+parameter_list|)
+block|{
+name|iShowEvents
+operator|=
+name|showEvents
 expr_stmt|;
 block|}
 specifier|public

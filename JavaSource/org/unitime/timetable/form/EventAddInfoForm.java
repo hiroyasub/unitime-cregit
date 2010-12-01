@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -14,16 +14,6 @@ operator|.
 name|form
 package|;
 end_package
-
-begin_import
-import|import
-name|java
-operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
 
 begin_import
 import|import
@@ -82,16 +72,6 @@ operator|.
 name|util
 operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Locale
 import|;
 end_import
 
@@ -793,6 +773,15 @@ extends|extends
 name|ActionForm
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|4484465349988824413L
+decl_stmt|;
+specifier|private
 name|TreeSet
 argument_list|<
 name|DateLocation
@@ -814,14 +803,6 @@ decl_stmt|;
 specifier|private
 name|String
 name|iOp
-decl_stmt|;
-specifier|private
-name|String
-name|iStartTimeString
-decl_stmt|;
-specifier|private
-name|String
-name|iStopTimeString
 decl_stmt|;
 specifier|private
 name|String
@@ -1592,14 +1573,6 @@ name|iOp
 operator|=
 literal|null
 expr_stmt|;
-name|iStartTimeString
-operator|=
-literal|null
-expr_stmt|;
-name|iStopTimeString
-operator|=
-literal|null
-expr_stmt|;
 name|iEventName
 operator|=
 literal|null
@@ -1742,19 +1715,6 @@ name|request
 operator|.
 name|getSession
 argument_list|()
-decl_stmt|;
-name|User
-name|user
-init|=
-name|Web
-operator|.
-name|getUser
-argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
-argument_list|)
 decl_stmt|;
 name|iDateLocations
 operator|=
@@ -2007,16 +1967,6 @@ literal|"Event.AttendanceRequired"
 argument_list|)
 expr_stmt|;
 block|}
-name|TimetableManager
-name|tm
-init|=
-name|TimetableManager
-operator|.
-name|getManager
-argument_list|(
-name|user
-argument_list|)
-decl_stmt|;
 name|iIsAddMeetings
 operator|=
 operator|(
@@ -2303,14 +2253,6 @@ name|HttpServletRequest
 name|request
 parameter_list|)
 block|{
-name|HttpSession
-name|session
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
 name|Transaction
 name|tx
 init|=
@@ -3051,6 +2993,8 @@ name|getMultiMeetings
 argument_list|()
 argument_list|,
 name|iAdditionalInfo
+argument_list|,
+literal|null
 argument_list|)
 operator|.
 name|send
@@ -3103,14 +3047,6 @@ name|HttpServletRequest
 name|request
 parameter_list|)
 block|{
-name|HttpSession
-name|session
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
 name|Transaction
 name|tx
 init|=
@@ -3502,6 +3438,8 @@ name|createdMeetings
 argument_list|)
 argument_list|,
 name|iAdditionalInfo
+argument_list|,
+literal|null
 argument_list|)
 operator|.
 name|send
@@ -4068,19 +4006,6 @@ name|void
 name|loadExistingMeetings
 parameter_list|()
 block|{
-name|SimpleDateFormat
-name|iDateFormat
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"EEE MM/dd, yyyy"
-argument_list|,
-name|Locale
-operator|.
-name|US
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|Iterator

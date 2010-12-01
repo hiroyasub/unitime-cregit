@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -135,6 +135,18 @@ name|servlet
 operator|.
 name|http
 operator|.
+name|HttpServletRequest
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|servlet
+operator|.
+name|http
+operator|.
 name|HttpSession
 import|;
 end_import
@@ -206,6 +218,38 @@ operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|server
+operator|.
+name|Query
+operator|.
+name|TermMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|interfaces
+operator|.
+name|RoomAvailabilityInterface
 import|;
 end_import
 
@@ -406,6 +450,20 @@ operator|.
 name|util
 operator|.
 name|DateUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|RoomAvailability
 import|;
 end_import
 
@@ -774,6 +832,28 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
+name|boolean
+name|iShowEvents
+init|=
+literal|false
+decl_stmt|;
+specifier|private
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|server
+operator|.
+name|Query
+name|iQuery
+init|=
+literal|null
+decl_stmt|;
+specifier|private
 name|String
 name|iDefaultDatePatternName
 init|=
@@ -919,6 +999,32 @@ name|iFindStr
 operator|=
 name|findSrt
 expr_stmt|;
+name|iQuery
+operator|=
+operator|(
+name|findSrt
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+operator|new
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|server
+operator|.
+name|Query
+argument_list|(
+name|findSrt
+argument_list|)
+operator|)
+expr_stmt|;
 block|}
 specifier|public
 name|int
@@ -1009,6 +1115,28 @@ name|showInstructors
 expr_stmt|;
 block|}
 specifier|public
+name|boolean
+name|getShowEvents
+parameter_list|()
+block|{
+return|return
+name|iShowEvents
+return|;
+block|}
+specifier|public
+name|void
+name|setShowEvents
+parameter_list|(
+name|boolean
+name|showEvents
+parameter_list|)
+block|{
+name|iShowEvents
+operator|=
+name|showEvents
+expr_stmt|;
+block|}
+specifier|public
 name|Vector
 name|getWeeks
 parameter_list|(
@@ -1072,9 +1200,19 @@ argument_list|()
 argument_list|)
 operator|-
 operator|(
-name|Session
+name|Integer
 operator|.
-name|sNrExcessDays
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.session.nrExcessDays"
+argument_list|,
+literal|"0"
+argument_list|)
+argument_list|)
 operator|/
 literal|7
 operator|)
@@ -1109,9 +1247,19 @@ name|Calendar
 operator|.
 name|DAY_OF_YEAR
 argument_list|,
-name|Session
+name|Integer
 operator|.
-name|sNrExcessDays
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.session.nrExcessDays"
+argument_list|,
+literal|"0"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|int
@@ -2066,7 +2214,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<th width='40' height='40' colspan='"
+literal|"<th colspan='"
 operator|+
 operator|(
 literal|1
@@ -2220,7 +2368,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<th width='40' height='40' colspan='"
+literal|"<th colspan='"
 operator|+
 name|sNrSlotsPerPeriod
 operator|+
@@ -2312,14 +2460,14 @@ parameter_list|,
 name|StringBuffer
 name|onMouseOut
 parameter_list|,
+name|StringBuffer
+name|onClick
+parameter_list|,
 name|TimetableGridCell
 name|cell
 parameter_list|,
 name|String
 name|bgColor
-parameter_list|,
-name|boolean
-name|changeMouse
 parameter_list|)
 block|{
 if|if
@@ -2347,6 +2495,13 @@ if|if
 condition|(
 name|isDispModePerWeek
 argument_list|()
+operator|&&
+name|cell
+operator|.
+name|getAssignmentId
+argument_list|()
+operator|>=
+literal|0
 condition|)
 block|{
 for|for
@@ -2467,10 +2622,54 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+else|else
+block|{
+name|onMouseOver
+operator|.
+name|append
+argument_list|(
+literal|"this.style.backgroundColor='rgb(223,231,242)';"
+argument_list|)
+expr_stmt|;
+name|onMouseOut
+operator|.
+name|append
+argument_list|(
+literal|"this.style.backgroundColor='"
+operator|+
+operator|(
+name|bgColor
+operator|==
+literal|null
+condition|?
+literal|"transparent"
+else|:
+name|bgColor
+operator|)
+operator|+
+literal|"';"
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
-name|changeMouse
+name|cell
+operator|.
+name|getOnClick
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|cell
+operator|.
+name|getOnClick
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
+block|{
 name|onMouseOver
 operator|.
 name|append
@@ -2478,6 +2677,177 @@ argument_list|(
 literal|"this.style.cursor='hand';this.style.cursor='pointer';"
 argument_list|)
 expr_stmt|;
+name|onClick
+operator|.
+name|append
+argument_list|(
+literal|" onclick=\"hideGwtHint();"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|isDispModePerWeek
+argument_list|()
+operator|&&
+name|cell
+operator|.
+name|getAssignmentId
+argument_list|()
+operator|>=
+literal|0
+condition|)
+block|{
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|cell
+operator|.
+name|getNrMeetings
+argument_list|()
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|onClick
+operator|.
+name|append
+argument_list|(
+literal|"if (document.getElementById('"
+operator|+
+name|cell
+operator|.
+name|getAssignmentId
+argument_list|()
+operator|+
+literal|"."
+operator|+
+name|cell
+operator|.
+name|getRoomId
+argument_list|()
+operator|+
+literal|"."
+operator|+
+name|i
+operator|+
+literal|"')!=null) document.getElementById('"
+operator|+
+name|cell
+operator|.
+name|getAssignmentId
+argument_list|()
+operator|+
+literal|"."
+operator|+
+name|cell
+operator|.
+name|getRoomId
+argument_list|()
+operator|+
+literal|"."
+operator|+
+name|i
+operator|+
+literal|"').style.backgroundColor='"
+operator|+
+operator|(
+name|bgColor
+operator|==
+literal|null
+condition|?
+literal|"transparent"
+else|:
+name|bgColor
+operator|)
+operator|+
+literal|"';"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|onClick
+operator|.
+name|append
+argument_list|(
+literal|"this.style.backgroundColor='"
+operator|+
+operator|(
+name|bgColor
+operator|==
+literal|null
+condition|?
+literal|"transparent"
+else|:
+name|bgColor
+operator|)
+operator|+
+literal|"';"
+argument_list|)
+expr_stmt|;
+block|}
+name|onClick
+operator|.
+name|append
+argument_list|(
+name|cell
+operator|.
+name|getOnClick
+argument_list|()
+operator|+
+literal|"\""
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|cell
+operator|.
+name|getTitle
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|cell
+operator|.
+name|getTitle
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|onMouseOver
+operator|.
+name|append
+argument_list|(
+literal|"showGwtHint(this,'"
+operator|+
+name|cell
+operator|.
+name|getTitle
+argument_list|()
+operator|+
+literal|"');"
+argument_list|)
+expr_stmt|;
+name|onMouseOut
+operator|.
+name|append
+argument_list|(
+literal|"hideGwtHint();"
+argument_list|)
+expr_stmt|;
+block|}
 name|onMouseOver
 operator|.
 name|append
@@ -2569,7 +2939,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<th width='40' height='40' rowspan='"
+literal|"<th rowspan='"
 operator|+
 operator|(
 literal|1
@@ -3191,22 +3561,24 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
+name|StringBuffer
+name|onClick
+init|=
+operator|new
+name|StringBuffer
+argument_list|()
+decl_stmt|;
 name|getMouseOverAndMouseOut
 argument_list|(
 name|onMouseOver
 argument_list|,
 name|onMouseOut
 argument_list|,
+name|onClick
+argument_list|,
 name|cell
 argument_list|,
 name|bgColor
-argument_list|,
-name|cell
-operator|.
-name|getOnClick
-argument_list|()
-operator|!=
-literal|null
 argument_list|)
 expr_stmt|;
 name|out
@@ -3260,26 +3632,6 @@ operator|+
 operator|(
 name|cell
 operator|.
-name|getOnClick
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-literal|"onclick=\""
-operator|+
-name|cell
-operator|.
-name|getOnClick
-argument_list|()
-operator|+
-literal|"\" "
-operator|)
-operator|+
-operator|(
-name|cell
-operator|.
 name|getAssignmentId
 argument_list|()
 operator|>=
@@ -3311,30 +3663,13 @@ else|:
 literal|""
 operator|)
 operator|+
+name|onClick
+operator|+
 name|onMouseOver
 operator|+
 name|onMouseOut
 operator|+
-operator|(
-name|cell
-operator|.
-name|getTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-literal|"title=\""
-operator|+
-name|cell
-operator|.
-name|getTitle
-argument_list|()
-operator|+
-literal|"\" "
-operator|)
-operator|+
+comment|//(cell.getTitle()==null?"":"title=\""+cell.getTitle()+"\" ")+
 literal|">"
 argument_list|)
 expr_stmt|;
@@ -3524,7 +3859,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<th width='40' height='40' rowspan='"
+literal|"<th rowspan='"
 operator|+
 operator|(
 literal|1
@@ -4088,22 +4423,24 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
+name|StringBuffer
+name|onClick
+init|=
+operator|new
+name|StringBuffer
+argument_list|()
+decl_stmt|;
 name|getMouseOverAndMouseOut
 argument_list|(
 name|onMouseOver
 argument_list|,
 name|onMouseOut
 argument_list|,
+name|onClick
+argument_list|,
 name|cell
 argument_list|,
 name|bgColor
-argument_list|,
-name|cell
-operator|.
-name|getOnClick
-argument_list|()
-operator|!=
-literal|null
 argument_list|)
 expr_stmt|;
 name|out
@@ -4157,26 +4494,6 @@ operator|+
 operator|(
 name|cell
 operator|.
-name|getOnClick
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-literal|"onclick=\""
-operator|+
-name|cell
-operator|.
-name|getOnClick
-argument_list|()
-operator|+
-literal|"\" "
-operator|)
-operator|+
-operator|(
-name|cell
-operator|.
 name|getAssignmentId
 argument_list|()
 operator|>=
@@ -4208,30 +4525,13 @@ else|:
 literal|""
 operator|)
 operator|+
+name|onClick
+operator|+
 name|onMouseOver
 operator|+
 name|onMouseOut
 operator|+
-operator|(
-name|cell
-operator|.
-name|getTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-literal|"title=\""
-operator|+
-name|cell
-operator|.
-name|getTitle
-argument_list|()
-operator|+
-literal|"\" "
-operator|)
-operator|+
+comment|//(cell.getTitle()==null?"":"title=\""+cell.getTitle()+"\" ")+
 literal|">"
 argument_list|)
 expr_stmt|;
@@ -4434,7 +4734,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<th width='40' height='40' class='TimetableHeadCell"
+literal|"<th class='TimetableHeadCell"
 operator|+
 operator|(
 name|slot
@@ -4466,7 +4766,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<th width='40' height='40' class='TimetableHeadCellInVertical'>&nbsp;</th>"
+literal|"<th class='TimetableHeadCellInVertical'>&nbsp;</th>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4852,22 +5152,24 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
+name|StringBuffer
+name|onClick
+init|=
+operator|new
+name|StringBuffer
+argument_list|()
+decl_stmt|;
 name|getMouseOverAndMouseOut
 argument_list|(
 name|onMouseOver
 argument_list|,
 name|onMouseOut
 argument_list|,
+name|onClick
+argument_list|,
 name|cell
 argument_list|,
 name|bgColor
-argument_list|,
-name|cell
-operator|.
-name|getOnClick
-argument_list|()
-operator|!=
-literal|null
 argument_list|)
 expr_stmt|;
 name|boolean
@@ -4938,26 +5240,6 @@ operator|+
 operator|(
 name|cell
 operator|.
-name|getOnClick
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-literal|"onclick=\""
-operator|+
-name|cell
-operator|.
-name|getOnClick
-argument_list|()
-operator|+
-literal|"\" "
-operator|)
-operator|+
-operator|(
-name|cell
-operator|.
 name|getAssignmentId
 argument_list|()
 operator|>=
@@ -4989,30 +5271,13 @@ else|:
 literal|""
 operator|)
 operator|+
+name|onClick
+operator|+
 name|onMouseOver
 operator|+
 name|onMouseOut
 operator|+
-operator|(
-name|cell
-operator|.
-name|getTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-literal|"title=\""
-operator|+
-name|cell
-operator|.
-name|getTitle
-argument_list|()
-operator|+
-literal|"\" "
-operator|)
-operator|+
+comment|//(cell.getTitle()==null?"":"title=\""+cell.getTitle()+"\" ")+
 literal|">"
 argument_list|)
 expr_stmt|;
@@ -5165,101 +5430,164 @@ specifier|private
 name|boolean
 name|match
 parameter_list|(
+specifier|final
 name|String
 name|name
 parameter_list|)
 block|{
-if|if
-condition|(
-name|getFindString
-argument_list|()
+return|return
+name|iQuery
 operator|==
 literal|null
 operator|||
-name|getFindString
-argument_list|()
+name|iQuery
 operator|.
-name|trim
+name|match
+argument_list|(
+operator|new
+name|TermMatcher
 argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|match
+parameter_list|(
+name|String
+name|attr
+parameter_list|,
+name|String
+name|term
+parameter_list|)
+block|{
+if|if
+condition|(
+name|term
 operator|.
-name|length
+name|isEmpty
 argument_list|()
-operator|==
-literal|0
 condition|)
 return|return
 literal|true
 return|;
+if|if
+condition|(
+name|attr
+operator|==
+literal|null
+condition|)
+block|{
+for|for
+control|(
 name|StringTokenizer
-name|stk
+name|s
 init|=
 operator|new
 name|StringTokenizer
 argument_list|(
-name|getFindString
-argument_list|()
-operator|.
-name|toUpperCase
-argument_list|()
+name|name
 argument_list|,
 literal|" ,"
 argument_list|)
-decl_stmt|;
-name|String
-name|n
-init|=
-name|name
-operator|.
-name|toUpperCase
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|stk
+init|;
+name|s
 operator|.
 name|hasMoreTokens
 argument_list|()
-condition|)
+condition|;
+control|)
 block|{
 name|String
 name|token
 init|=
-name|stk
+name|s
 operator|.
 name|nextToken
-argument_list|()
-operator|.
-name|trim
 argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|token
+name|term
 operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
-condition|)
-continue|continue;
-if|if
-condition|(
-name|n
-operator|.
-name|indexOf
+name|equalsIgnoreCase
 argument_list|(
 name|token
 argument_list|)
-operator|<
-literal|0
 condition|)
+return|return
+literal|true
+return|;
+block|}
+block|}
+if|else if
+condition|(
+literal|"regex"
+operator|.
+name|equals
+argument_list|(
+name|attr
+argument_list|)
+operator|||
+literal|"regexp"
+operator|.
+name|equals
+argument_list|(
+name|attr
+argument_list|)
+operator|||
+literal|"re"
+operator|.
+name|equals
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+name|name
+operator|.
+name|matches
+argument_list|(
+name|term
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
+literal|"find"
+operator|.
+name|equals
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+name|name
+operator|.
+name|toLowerCase
+argument_list|()
+operator|.
+name|indexOf
+argument_list|(
+name|term
+operator|.
+name|toLowerCase
+argument_list|()
+argument_list|)
+operator|>=
+literal|0
+return|;
+block|}
 return|return
 literal|false
 return|;
 block|}
-return|return
-literal|true
+block|}
+argument_list|)
 return|;
+comment|/* 		if (getFindString()==null || getFindString().trim().length()==0) return true; 		StringTokenizer stk = new StringTokenizer(getFindString().toUpperCase()," ,"); 		String n = name.toUpperCase(); 		while (stk.hasMoreTokens()) { 			String token = stk.nextToken().trim(); 			if (token.length()==0) continue; 			if (n.indexOf(token)<0) return false; 		} 		return true;*/
 block|}
 specifier|private
 name|void
@@ -5319,8 +5647,8 @@ specifier|public
 name|boolean
 name|reload
 parameter_list|(
-name|HttpSession
-name|session
+name|HttpServletRequest
+name|request
 parameter_list|)
 throws|throws
 name|Exception
@@ -5336,6 +5664,14 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+name|HttpSession
+name|session
+init|=
+name|request
+operator|.
+name|getSession
+argument_list|()
+decl_stmt|;
 name|Session
 name|acadSession
 init|=
@@ -5384,7 +5720,6 @@ argument_list|(
 name|session
 argument_list|)
 decl_stmt|;
-comment|//TODO: checked OK, tested OK --- really ????
 name|int
 name|startDay
 init|=
@@ -5419,10 +5754,8 @@ literal|1
 argument_list|,
 name|acadSession
 operator|.
-name|getStartMonth
+name|getPatternStartMonth
 argument_list|()
-operator|-
-literal|3
 argument_list|)
 operator|-
 literal|1
@@ -5450,6 +5783,9 @@ argument_list|,
 name|startDay
 argument_list|,
 name|getBgMode
+argument_list|()
+argument_list|,
+name|getShowEvents
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -5561,6 +5897,192 @@ operator|.
 name|sResourceTypeRoom
 condition|)
 block|{
+if|if
+condition|(
+name|RoomAvailability
+operator|.
+name|getInstance
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|Calendar
+name|startDateCal
+init|=
+name|Calendar
+operator|.
+name|getInstance
+argument_list|(
+name|Locale
+operator|.
+name|US
+argument_list|)
+decl_stmt|;
+name|startDateCal
+operator|.
+name|setTime
+argument_list|(
+name|DateUtils
+operator|.
+name|getDate
+argument_list|(
+literal|1
+argument_list|,
+name|acadSession
+operator|.
+name|getStartMonth
+argument_list|()
+argument_list|,
+name|acadSession
+operator|.
+name|getSessionStartYear
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|startDateCal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|HOUR_OF_DAY
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|startDateCal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|MINUTE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|startDateCal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|SECOND
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|Calendar
+name|endDateCal
+init|=
+name|Calendar
+operator|.
+name|getInstance
+argument_list|(
+name|Locale
+operator|.
+name|US
+argument_list|)
+decl_stmt|;
+name|endDateCal
+operator|.
+name|setTime
+argument_list|(
+name|DateUtils
+operator|.
+name|getDate
+argument_list|(
+literal|0
+argument_list|,
+name|acadSession
+operator|.
+name|getEndMonth
+argument_list|()
+operator|+
+literal|1
+argument_list|,
+name|acadSession
+operator|.
+name|getSessionStartYear
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|endDateCal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|HOUR_OF_DAY
+argument_list|,
+literal|23
+argument_list|)
+expr_stmt|;
+name|endDateCal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|MINUTE
+argument_list|,
+literal|59
+argument_list|)
+expr_stmt|;
+name|endDateCal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|SECOND
+argument_list|,
+literal|59
+argument_list|)
+expr_stmt|;
+name|RoomAvailability
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|activate
+argument_list|(
+name|acadSession
+argument_list|,
+name|startDateCal
+operator|.
+name|getTime
+argument_list|()
+argument_list|,
+name|endDateCal
+operator|.
+name|getTime
+argument_list|()
+argument_list|,
+name|RoomAvailabilityInterface
+operator|.
+name|sClassType
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+name|RoomAvailability
+operator|.
+name|setAvailabilityWarning
+argument_list|(
+name|request
+argument_list|,
+name|acadSession
+argument_list|,
+literal|true
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 name|Query
 name|q
 init|=
@@ -5645,6 +6167,9 @@ argument_list|,
 name|startDay
 argument_list|,
 name|getBgMode
+argument_list|()
+argument_list|,
+name|getShowEvents
 argument_list|()
 argument_list|)
 argument_list|)
@@ -6315,7 +6840,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6333,7 +6858,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6351,7 +6876,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6369,7 +6894,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6387,7 +6912,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6405,7 +6930,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6423,7 +6948,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6451,7 +6976,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6469,7 +6994,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6487,7 +7012,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6505,7 +7030,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6523,7 +7048,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6541,7 +7066,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6559,7 +7084,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6612,7 +7137,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|color
 operator|+
@@ -6668,7 +7193,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6686,7 +7211,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6704,7 +7229,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6732,7 +7257,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6750,7 +7275,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6768,7 +7293,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6786,7 +7311,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6814,7 +7339,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6832,7 +7357,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6850,7 +7375,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6868,7 +7393,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6886,7 +7411,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6939,7 +7464,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|color
 operator|+
@@ -6981,7 +7506,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -6999,7 +7524,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7017,7 +7542,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7035,7 +7560,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7053,7 +7578,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7071,7 +7596,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7124,7 +7649,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|color
 operator|+
@@ -7166,7 +7691,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7184,7 +7709,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7202,7 +7727,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7220,7 +7745,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7246,7 +7771,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7259,7 +7784,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7282,7 +7807,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7300,7 +7825,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.
@@ -7318,7 +7843,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<tr><td width=40 style='background-color:"
+literal|"<tr><td width='40' style='background-color:"
 operator|+
 name|TimetableGridCell
 operator|.

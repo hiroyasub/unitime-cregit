@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -113,6 +113,20 @@ name|timetable
 operator|.
 name|util
 operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
 name|RoomAvailability
 import|;
 end_import
@@ -134,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Application Initialization Servlet  * @version 1.0  * @author Heston Fernandes  */
+comment|/**  * Application Initialization Servlet  * @version 1.0  * @author Heston Fernandes, Tomas Muller  */
 end_comment
 
 begin_class
@@ -155,6 +169,13 @@ name|serialVersionUID
 init|=
 literal|3258415014804142137L
 decl_stmt|;
+specifier|private
+specifier|static
+name|Exception
+name|sInitializationException
+init|=
+literal|null
+decl_stmt|;
 comment|/** 	* Initializes the application 	*/
 specifier|public
 name|void
@@ -163,9 +184,45 @@ parameter_list|()
 throws|throws
 name|ServletException
 block|{
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
-literal|"******* Initializing Timetabling Application : START *******"
+literal|"******* UniTime "
+operator|+
+operator|(
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
+operator|+
+name|Constants
+operator|.
+name|BLD_NUMBER
+operator|)
+operator|.
+name|replace
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" build on "
+operator|+
+name|Constants
+operator|.
+name|REL_DATE
+operator|.
+name|replace
+argument_list|(
+literal|"@build.date@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" is starting up *******"
 argument_list|)
 expr_stmt|;
 name|super
@@ -175,9 +232,11 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
-literal|" - Initializing Debugger ... "
+literal|" - Initializing Logging ... "
 argument_list|)
 expr_stmt|;
 name|Debug
@@ -190,7 +249,9 @@ name|getProperties
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
 literal|" - Initializing Hibernate ... "
 argument_list|)
@@ -200,7 +261,9 @@ operator|.
 name|initialize
 argument_list|()
 expr_stmt|;
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
 literal|" - Initializing Solver Register ... "
 argument_list|)
@@ -225,7 +288,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
 literal|" - Initializing Room Availability Service ... "
 argument_list|)
@@ -239,9 +304,45 @@ name|startService
 argument_list|()
 expr_stmt|;
 block|}
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
-literal|"******* Timetabling Application : Initializing DONE *******"
+literal|"******* UniTime "
+operator|+
+operator|(
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
+operator|+
+name|Constants
+operator|.
+name|BLD_NUMBER
+operator|)
+operator|.
+name|replace
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" build on "
+operator|+
+name|Constants
+operator|.
+name|REL_DATE
+operator|.
+name|replace
+argument_list|(
+literal|"@build.date@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" initialized successfully *******"
 argument_list|)
 expr_stmt|;
 block|}
@@ -251,20 +352,23 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|logError
+name|Debug
+operator|.
+name|error
 argument_list|(
-literal|"Servlet Initialization Failed : "
+literal|"UniTime Initialization Failed : "
 operator|+
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
+name|sInitializationException
+operator|=
 name|e
-operator|.
-name|printStackTrace
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -276,9 +380,45 @@ parameter_list|()
 block|{
 try|try
 block|{
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
-literal|"******* Shutting down Timetabling Application *******"
+literal|"******* UniTime "
+operator|+
+operator|(
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
+operator|+
+name|Constants
+operator|.
+name|BLD_NUMBER
+operator|)
+operator|.
+name|replace
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" build on "
+operator|+
+name|Constants
+operator|.
+name|REL_DATE
+operator|.
+name|replace
+argument_list|(
+literal|"@build.date@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" is going down *******"
 argument_list|)
 expr_stmt|;
 name|super
@@ -286,7 +426,9 @@ operator|.
 name|destroy
 argument_list|()
 expr_stmt|;
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
 literal|" - Stopping Solver Register ... "
 argument_list|)
@@ -331,7 +473,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
 literal|" - Stopping Room Availability Service ... "
 argument_list|)
@@ -350,9 +494,32 @@ operator|.
 name|stopProcessor
 argument_list|()
 expr_stmt|;
-name|logMessage
+name|Debug
+operator|.
+name|info
 argument_list|(
-literal|"******* Timetabling Application : Shut down DONE *******"
+literal|"******* UniTime "
+operator|+
+operator|(
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
+operator|+
+name|Constants
+operator|.
+name|BLD_NUMBER
+operator|)
+operator|.
+name|replace
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" shut down successfully *******"
 argument_list|)
 expr_stmt|;
 block|}
@@ -366,6 +533,13 @@ name|Debug
 operator|.
 name|error
 argument_list|(
+literal|"UniTime Shutdown Failed : "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -386,7 +560,12 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Shut down failed"
+literal|"UniTime Shutdown Failed : "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
 argument_list|,
 name|e
 argument_list|)
@@ -400,53 +579,39 @@ name|getServletInfo
 parameter_list|()
 block|{
 return|return
-literal|"Timetabling Initialization Servlet"
+literal|"UniTime "
+operator|+
+operator|(
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|"."
+operator|+
+name|Constants
+operator|.
+name|BLD_NUMBER
+operator|)
+operator|.
+name|replace
+argument_list|(
+literal|"@build.number@"
+argument_list|,
+literal|"?"
+argument_list|)
+operator|+
+literal|" Initialization Servlet"
 return|;
 block|}
-comment|/* 	 * Writes message to log 	 */
-specifier|private
+specifier|public
 specifier|static
-name|void
-name|logMessage
-parameter_list|(
-name|String
-name|message
-parameter_list|)
+name|Exception
+name|getInitializationException
+parameter_list|()
 block|{
-name|Debug
-operator|.
-name|info
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* 	 * Write error to log 	 */
-specifier|private
-specifier|static
-name|void
-name|logError
-parameter_list|(
-name|String
-name|message
-parameter_list|)
-block|{
-name|Debug
-operator|.
-name|error
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|err
-operator|.
-name|println
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
+return|return
+name|sInitializationException
+return|;
 block|}
 block|}
 end_class

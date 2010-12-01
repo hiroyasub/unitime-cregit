@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -370,34 +370,6 @@ operator|.
 name|form
 operator|.
 name|ExamAssignmentReportForm
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|ClassEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|CourseEvent
 import|;
 end_import
 
@@ -3234,7 +3206,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select p.uniqueId, ce, m from ClassEvent ce inner join ce.meetings m, ExamPeriod p "
+literal|"select p.uniqueId, m from ClassEvent ce inner join ce.meetings m, ExamPeriod p "
 operator|+
 literal|"where p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -3325,17 +3297,6 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|ClassEvent
-name|event
-init|=
-operator|(
-name|ClassEvent
-operator|)
-name|o
-index|[
-literal|1
-index|]
-decl_stmt|;
 name|Meeting
 name|meeting
 init|=
@@ -3344,7 +3305,7 @@ name|Meeting
 operator|)
 name|o
 index|[
-literal|2
+literal|1
 index|]
 decl_stmt|;
 name|Set
@@ -3405,7 +3366,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select p.uniqueId, ce, m from CourseEvent ce inner join ce.meetings m, ExamPeriod p "
+literal|"select p.uniqueId, m from CourseEvent ce inner join ce.meetings m, ExamPeriod p "
 operator|+
 literal|"where ce.reqAttendance=true and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -3496,17 +3457,6 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|CourseEvent
-name|event
-init|=
-operator|(
-name|CourseEvent
-operator|)
-name|o
-index|[
-literal|1
-index|]
-decl_stmt|;
 name|Meeting
 name|meeting
 init|=
@@ -3515,7 +3465,7 @@ name|Meeting
 operator|)
 name|o
 index|[
-literal|2
+literal|1
 index|]
 decl_stmt|;
 name|Set
@@ -20014,17 +19964,6 @@ name|boolean
 name|studentConf
 parameter_list|)
 block|{
-name|String
-name|nl
-init|=
-operator|(
-name|html
-condition|?
-literal|"<br>"
-else|:
-literal|"\n"
-operator|)
-decl_stmt|;
 name|DecimalFormat
 name|df
 init|=
@@ -22006,17 +21945,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|String
-name|nl
-init|=
-operator|(
-name|html
-condition|?
-literal|"<br>"
-else|:
-literal|"\n"
-operator|)
-decl_stmt|;
 name|PdfWebTable
 name|table
 init|=
@@ -23272,17 +23200,6 @@ argument_list|>
 name|exams
 parameter_list|)
 block|{
-name|String
-name|nl
-init|=
-operator|(
-name|html
-condition|?
-literal|"<br>"
-else|:
-literal|"\n"
-operator|)
-decl_stmt|;
 name|String
 name|sp
 init|=

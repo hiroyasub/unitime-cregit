@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2009, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2009 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -139,6 +139,14 @@ argument_list|<
 name|ClassInfo
 argument_list|>
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|7324981486913342471L
+decl_stmt|;
 specifier|protected
 name|String
 name|iClassName
@@ -389,7 +397,17 @@ name|iDatePatternHtml
 operator|+=
 literal|"<img style=\"cursor: pointer;\" src=\"scripts/jscalendar/calendar_1.gif\" border=\"0\" "
 operator|+
-literal|"onclick=\"window.open('user/dispDatePattern.jsp?id="
+literal|"onclick=\"showGwtDialog('Preview of "
+operator|+
+name|clazz
+operator|.
+name|effectiveDatePattern
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"', 'user/dispDatePattern.jsp?id="
 operator|+
 name|clazz
 operator|.
@@ -406,9 +424,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 operator|+
-literal|"',"
+literal|"','840','520');"
 operator|+
-literal|"'datepatt','width=800,height=410,resizable=no,scrollbars=no,toolbar=no,location=no,directories=no,status=no,menubar=no,copyhistory=no');\">"
+literal|"\">"
 expr_stmt|;
 name|Class_
 name|parent

@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*   * UniTime 3.1 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2008, UniTime LLC  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.  */
+comment|/*   * UniTime 3.1 (University Course Timetabling& Student Sectioning Application)  * Copyright (C) 2008 - 2010, UniTime LLC  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *   */
 end_comment
 
 begin_package
@@ -114,55 +114,6 @@ name|uniqueId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Constructor for required fields 	 */
-specifier|public
-name|EventNote
-parameter_list|(
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|uniqueId
-parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Event
-name|event
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|Integer
-name|noteType
-parameter_list|,
-name|java
-operator|.
-name|util
-operator|.
-name|Date
-name|timeStamp
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|uniqueId
-argument_list|,
-name|event
-argument_list|,
-name|noteType
-argument_list|,
-name|timeStamp
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
 specifier|static
@@ -215,6 +166,14 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
+name|int
+name|sEventNoteTypeInquire
+init|=
+literal|6
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
 name|String
 index|[]
 name|sEventNoteTypeBgColor
@@ -230,6 +189,8 @@ block|,
 literal|"#D7FFD7"
 block|,
 literal|"#FFD7D7"
+block|,
+literal|"transparent"
 block|,
 literal|"transparent"
 block|,
@@ -258,6 +219,8 @@ block|,
 literal|"Delete"
 block|,
 literal|"Edit"
+block|,
+literal|"Inquire"
 block|}
 decl_stmt|;
 specifier|public

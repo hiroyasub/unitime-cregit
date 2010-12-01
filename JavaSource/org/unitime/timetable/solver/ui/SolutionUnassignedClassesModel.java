@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -33,16 +33,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Enumeration
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
 import|;
 end_import
@@ -53,7 +43,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Vector
+name|List
 import|;
 end_import
 
@@ -110,6 +100,14 @@ name|SolutionUnassignedClassesModel
 extends|extends
 name|UnassignedClassesModel
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|8222974077941239586L
+decl_stmt|;
 specifier|public
 name|SolutionUnassignedClassesModel
 parameter_list|(
@@ -205,16 +203,19 @@ decl_stmt|;
 name|String
 name|onClick
 init|=
-literal|"window.open('suggestions.do?id="
+literal|"showGwtDialog('Suggestions', 'suggestions.do?id="
 operator|+
 name|clazz
 operator|.
 name|getUniqueId
 argument_list|()
 operator|+
-literal|"&op=Reset','suggestions','width=1000,height=600,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,copyhistory=no').focus();"
+literal|"&op=Reset','900','90%');"
 decl_stmt|;
-name|Vector
+name|List
+argument_list|<
+name|DepartmentalInstructor
+argument_list|>
 name|leads
 init|=
 name|clazz
@@ -231,17 +232,20 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|Enumeration
+name|Iterator
+argument_list|<
+name|DepartmentalInstructor
+argument_list|>
 name|e
 init|=
 name|leads
 operator|.
-name|elements
+name|iterator
 argument_list|()
 init|;
 name|e
 operator|.
-name|hasMoreElements
+name|hasNext
 argument_list|()
 condition|;
 control|)
@@ -254,7 +258,7 @@ name|DepartmentalInstructor
 operator|)
 name|e
 operator|.
-name|nextElement
+name|next
 argument_list|()
 decl_stmt|;
 name|leadsSb
@@ -273,7 +277,7 @@ if|if
 condition|(
 name|e
 operator|.
-name|hasMoreElements
+name|hasNext
 argument_list|()
 condition|)
 name|leadsSb

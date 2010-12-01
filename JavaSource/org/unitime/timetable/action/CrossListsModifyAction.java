@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -136,18 +136,6 @@ operator|.
 name|http
 operator|.
 name|HttpServletResponse
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|http
-operator|.
-name|HttpSession
 import|;
 end_import
 
@@ -684,14 +672,6 @@ literal|"Access Denied."
 argument_list|)
 throw|;
 block|}
-name|HttpSession
-name|httpSession
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
 name|MessageResources
 name|rsc
 init|=
@@ -1669,16 +1649,6 @@ argument_list|(
 name|io
 operator|.
 name|getSession
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|io1
-operator|.
-name|setProjectedDemand
-argument_list|(
-name|io
-operator|.
-name|getProjectedDemand
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3960,7 +3930,7 @@ argument_list|)
 expr_stmt|;
 name|io
 operator|.
-name|getCourseOfferings
+name|getCourseReservations
 argument_list|()
 operator|.
 name|add

@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -278,7 +278,7 @@ name|table
 operator|.
 name|setWidth
 argument_list|(
-literal|"90%"
+literal|"100%"
 argument_list|)
 expr_stmt|;
 name|table
@@ -4552,45 +4552,6 @@ argument_list|(
 literal|"</font>"
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-name|cell
-operator|)
-return|;
-block|}
-comment|/**      * Generate table cell (nowrap=false, align=left and valign=top)      * @param content Content of cell      * @param rowSpan Row Span      * @param colSpan Column Span      * @return TableHeaderCell Object      */
-specifier|private
-name|TableCell
-name|cell
-parameter_list|(
-name|String
-name|content
-parameter_list|,
-name|int
-name|rowSpan
-parameter_list|,
-name|int
-name|colSpan
-parameter_list|)
-block|{
-name|TableCell
-name|cell
-init|=
-name|cell
-argument_list|(
-name|content
-argument_list|,
-name|rowSpan
-argument_list|,
-name|colSpan
-argument_list|,
-literal|false
-argument_list|,
-literal|"left"
-argument_list|,
-literal|"top"
-argument_list|)
-decl_stmt|;
 return|return
 operator|(
 name|cell

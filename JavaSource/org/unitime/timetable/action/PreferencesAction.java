@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -32,16 +32,6 @@ operator|.
 name|util
 operator|.
 name|Enumeration
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Hashtable
 import|;
 end_import
 
@@ -2161,13 +2151,6 @@ name|co
 operator|.
 name|isIsControl
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|frm2
-operator|.
-name|setInstructionalOffering
-argument_list|(
-name|io
 argument_list|)
 expr_stmt|;
 name|request
@@ -4492,14 +4475,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|HttpSession
-name|httpSession
-init|=
-name|request
-operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
 name|TimePatternDAO
 name|timePatternDao
 init|=
@@ -4531,13 +4506,6 @@ name|tpat
 argument_list|)
 argument_list|)
 operator|)
-decl_stmt|;
-name|Hashtable
-name|timeReq
-init|=
-operator|new
-name|Hashtable
-argument_list|()
 decl_stmt|;
 comment|// Generate grid prefs
 name|RequiredTimeTable

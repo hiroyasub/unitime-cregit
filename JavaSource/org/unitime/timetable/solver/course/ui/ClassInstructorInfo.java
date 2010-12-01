@@ -67,6 +67,14 @@ argument_list|<
 name|ClassInstructorInfo
 argument_list|>
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|8576391767085203451L
+decl_stmt|;
 specifier|protected
 name|Long
 name|iId

@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -163,6 +163,18 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|log4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|commons
@@ -266,6 +278,20 @@ name|DbAuthenticateModule
 extends|extends
 name|AuthenticateModule
 block|{
+specifier|private
+specifier|static
+name|Logger
+name|sLog
+init|=
+name|Logger
+operator|.
+name|getLogger
+argument_list|(
+name|DbAuthenticateModule
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 specifier|private
 name|String
@@ -574,16 +600,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"Role not found. Access Denied to User: "
 operator|+
@@ -603,16 +622,9 @@ argument_list|)
 throw|;
 block|}
 comment|// Create user principal
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"User Roles: "
 operator|+
@@ -622,16 +634,9 @@ name|getRoles
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"User Depts: "
 operator|+
@@ -717,16 +722,9 @@ parameter_list|()
 throws|throws
 name|LoginException
 block|{
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"Performing db authentication ... "
 argument_list|)
@@ -863,16 +861,9 @@ return|return
 literal|true
 return|;
 comment|// Authentication failed
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"Db authentication failed ... "
 argument_list|)
@@ -892,16 +883,9 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"Db authentication failed ... "
 operator|+
@@ -909,6 +893,8 @@ name|ex
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|ex
 argument_list|)
 expr_stmt|;
 name|setAuthSucceeded
@@ -1028,16 +1014,9 @@ name|pwd
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|isDebug
-argument_list|()
-condition|)
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|debug
 argument_list|(
 literal|"Db authentication passed ... "
 argument_list|)

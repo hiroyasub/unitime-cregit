@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -32,16 +32,6 @@ operator|.
 name|util
 operator|.
 name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Enumeration
 import|;
 end_import
 
@@ -1357,20 +1347,6 @@ operator|.
 name|effectiveTimePatterns
 argument_list|()
 expr_stmt|;
-comment|// Dist Prefs are not editable by Sched Dpty Asst
-name|String
-name|currentRole
-init|=
-name|user
-operator|.
-name|getCurrentRole
-argument_list|()
-decl_stmt|;
-name|boolean
-name|editable
-init|=
-literal|true
-decl_stmt|;
 comment|// Display distribution Prefs
 name|DistributionPrefsTableBuilder
 name|tbl
@@ -2039,6 +2015,16 @@ name|getCourseName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setCourseTitle
+argument_list|(
+name|cco
+operator|.
+name|getTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|//TODO Reservations Bypass - to be removed later
 name|frm
 operator|.
@@ -2501,7 +2487,10 @@ operator|>
 literal|0
 condition|)
 block|{
-name|Vector
+name|List
+argument_list|<
+name|RoomLocation
+argument_list|>
 name|roomLocations
 init|=
 name|TimetableDatabaseLoader
@@ -2547,34 +2536,12 @@ literal|0
 decl_stmt|;
 for|for
 control|(
-name|Enumeration
-name|e
-init|=
-name|roomLocations
-operator|.
-name|elements
-argument_list|()
-init|;
-name|e
-operator|.
-name|hasMoreElements
-argument_list|()
-condition|;
-name|idx
-operator|++
-control|)
-block|{
 name|RoomLocation
 name|rl
-init|=
-operator|(
-name|RoomLocation
-operator|)
-name|e
-operator|.
-name|nextElement
-argument_list|()
-decl_stmt|;
+range|:
+name|roomLocations
+control|)
+block|{
 if|if
 condition|(
 name|idx
@@ -2654,6 +2621,9 @@ argument_list|()
 operator|+
 literal|"</font></span>"
 argument_list|)
+expr_stmt|;
+name|idx
+operator|++
 expr_stmt|;
 block|}
 if|if

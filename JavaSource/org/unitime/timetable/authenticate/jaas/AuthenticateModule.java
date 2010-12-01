@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -111,11 +111,6 @@ specifier|private
 name|Map
 name|options
 decl_stmt|;
-comment|// Config option
-specifier|private
-name|boolean
-name|debug
-decl_stmt|;
 comment|// Flags
 specifier|private
 name|boolean
@@ -195,43 +190,6 @@ expr_stmt|;
 name|setCommitSucceeded
 argument_list|(
 literal|false
-argument_list|)
-expr_stmt|;
-name|setDebug
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-comment|// Check if debug option is set in jaas config
-name|String
-name|d
-init|=
-operator|(
-name|String
-operator|)
-name|options
-operator|.
-name|get
-argument_list|(
-literal|"debug"
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|d
-operator|!=
-literal|null
-operator|&&
-name|d
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-literal|"true"
-argument_list|)
-condition|)
-name|setDebug
-argument_list|(
-literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -327,30 +285,6 @@ operator|.
 name|commitSucceeded
 operator|=
 name|commitSucceeded
-expr_stmt|;
-block|}
-specifier|public
-name|boolean
-name|isDebug
-parameter_list|()
-block|{
-return|return
-name|debug
-return|;
-block|}
-specifier|public
-name|void
-name|setDebug
-parameter_list|(
-name|boolean
-name|debug
-parameter_list|)
-block|{
-name|this
-operator|.
-name|debug
-operator|=
-name|debug
 expr_stmt|;
 block|}
 specifier|public

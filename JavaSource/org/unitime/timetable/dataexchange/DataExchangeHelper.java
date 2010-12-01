@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -10,16 +14,6 @@ operator|.
 name|dataexchange
 package|;
 end_package
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|PrintWriter
-import|;
-end_import
 
 begin_import
 import|import
@@ -178,7 +172,7 @@ init|=
 literal|"FATAL"
 decl_stmt|;
 specifier|protected
-name|PrintWriter
+name|LogWriter
 name|iTextLog
 decl_stmt|;
 specifier|protected
@@ -276,6 +270,17 @@ argument_list|(
 literal|"timetable"
 argument_list|,
 name|CourseTimetableExport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|sExportRegister
+operator|.
+name|put
+argument_list|(
+literal|"curricula"
+argument_list|,
+name|CurriculaExport
 operator|.
 name|class
 argument_list|)
@@ -489,6 +494,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sImportRegister
+operator|.
+name|put
+argument_list|(
+literal|"curricula"
+argument_list|,
+name|CurriculaImport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|DataExchangeHelper
@@ -499,7 +515,7 @@ specifier|public
 name|void
 name|setLog
 parameter_list|(
-name|PrintWriter
+name|LogWriter
 name|out
 parameter_list|)
 block|{
@@ -509,7 +525,7 @@ name|out
 expr_stmt|;
 block|}
 specifier|public
-name|PrintWriter
+name|LogWriter
 name|getLog
 parameter_list|()
 block|{
@@ -1364,7 +1380,7 @@ parameter_list|,
 name|TimetableManager
 name|manager
 parameter_list|,
-name|PrintWriter
+name|LogWriter
 name|log
 parameter_list|)
 throws|throws
@@ -1423,7 +1439,7 @@ parameter_list|,
 name|Properties
 name|parameters
 parameter_list|,
-name|PrintWriter
+name|LogWriter
 name|log
 parameter_list|)
 throws|throws
@@ -1454,6 +1470,19 @@ argument_list|,
 name|parameters
 argument_list|)
 return|;
+block|}
+specifier|public
+interface|interface
+name|LogWriter
+block|{
+specifier|public
+name|void
+name|println
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
 block|}
 block|}
 end_class

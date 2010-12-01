@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -163,6 +163,18 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|ApplicationProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|model
 operator|.
 name|base
@@ -309,13 +321,6 @@ block|{
 specifier|public
 specifier|static
 name|int
-name|sNrExcessDays
-init|=
-literal|0
-decl_stmt|;
-specifier|public
-specifier|static
-name|int
 name|sHolidayTypeNone
 init|=
 literal|0
@@ -375,12 +380,6 @@ name|long
 name|serialVersionUID
 init|=
 literal|3691040980400813366L
-decl_stmt|;
-specifier|static
-name|String
-name|mappingTable
-init|=
-literal|"timetable.ll_course_mapping"
 decl_stmt|;
 comment|/* 	 * @return all sessions 	 */
 specifier|public
@@ -480,7 +479,14 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from Location"
+literal|"from Location where session.uniqueId = :sessionId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|id
 argument_list|)
 operator|.
 name|iterate
@@ -2403,74 +2409,6 @@ literal|"done"
 operator|)
 return|;
 block|}
-specifier|private
-name|String
-name|getInsertCrsOffering
-parameter_list|(
-name|String
-name|llMsf
-parameter_list|,
-name|int
-name|control
-parameter_list|)
-throws|throws
-name|Exception
-block|{
-name|String
-name|sql
-init|=
-literal|"INSERT INTO timetable.course_offering "
-operator|+
-literal|"(UNIQUEID, SUBJECT_AREA_ID, COURSE_NBR, PERM_ID, INSTR_OFFR_ID, IS_CONTROL, PROJ_DEMAND) "
-operator|+
-literal|"	SELECT "
-operator|+
-literal|"    	   timetable.crs_offr_seq.nextval, "
-operator|+
-literal|"	       subject_id, course_nbr, perm_id, "
-operator|+
-literal|"    	   timetable.instr_offr_seq.currval, "
-operator|+
-name|control
-operator|+
-literal|", proj_demand"
-operator|+
-literal|"   FROM ( "
-operator|+
-literal|"	SELECT "
-operator|+
-literal|"	       llcm.course_nbr, llcm.perm_id,"
-operator|+
-literal|"    	   nvl(SUM(crscurr.requests), 0) proj_demand, llcm.subject_id "
-operator|+
-literal|"  	  FROM "
-operator|+
-name|mappingTable
-operator|+
-literal|" llcm, "
-operator|+
-name|llMsf
-operator|+
-literal|".crscurr, "
-operator|+
-name|mappingTable
-operator|+
-literal|" llcm_related"
-operator|+
-literal|"  	 WHERE llcm.course=?"
-operator|+
-literal|"      AND llcm_related.subject_id  = llcm.subject_id AND llcm_related.course_nbr = llcm.course_nbr"
-operator|+
-literal|"  	   AND llcm_related.course = crscurr.course(+)"
-operator|+
-literal|"  	 GROUP BY llcm.course_nbr, llcm.perm_id, llcm.subject_id ) xx "
-operator|+
-literal|" where not exists (select 1 from timetable.course_offering yy where xx.subject_id = yy.subject_area_id and xx.course_nbr = yy.course_nbr)"
-decl_stmt|;
-return|return
-name|sql
-return|;
-block|}
 specifier|public
 name|Long
 name|getSessionId
@@ -2618,7 +2556,19 @@ argument_list|,
 name|getSessionStartYear
 argument_list|()
 argument_list|,
-name|sNrExcessDays
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.session.nrExcessDays"
+argument_list|,
+literal|"0"
+argument_list|)
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -2638,7 +2588,67 @@ argument_list|,
 name|getSessionStartYear
 argument_list|()
 argument_list|,
-name|sNrExcessDays
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.session.nrExcessDays"
+argument_list|,
+literal|"0"
+argument_list|)
+argument_list|)
+argument_list|)
+return|;
+block|}
+specifier|public
+name|int
+name|getPatternStartMonth
+parameter_list|()
+block|{
+return|return
+name|getStartMonth
+argument_list|()
+operator|-
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.pattern.nrExcessMoths"
+argument_list|,
+literal|"3"
+argument_list|)
+argument_list|)
+return|;
+block|}
+specifier|public
+name|int
+name|getPatternEndMonth
+parameter_list|()
+block|{
+return|return
+name|getEndMonth
+argument_list|()
+operator|+
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.pattern.nrExcessMoths"
+argument_list|,
+literal|"3"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -3158,7 +3168,19 @@ name|sessionBeginTime
 argument_list|,
 name|acadYear
 argument_list|,
-name|sNrExcessDays
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.session.nrExcessDays"
+argument_list|,
+literal|"0"
+argument_list|)
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|int
@@ -3185,7 +3207,19 @@ name|sessionEndTime
 argument_list|,
 name|acadYear
 argument_list|,
-name|sNrExcessDays
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.session.nrExcessDays"
+argument_list|,
+literal|"0"
+argument_list|)
+argument_list|)
 argument_list|)
 decl_stmt|;
 for|for

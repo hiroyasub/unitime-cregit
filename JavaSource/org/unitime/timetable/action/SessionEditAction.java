@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -306,6 +306,20 @@ operator|.
 name|model
 operator|.
 name|Session
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|StudentSectioningQueue
 import|;
 end_import
 
@@ -1082,17 +1096,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-name|SessionEditForm
-name|sessionEditForm
-init|=
-operator|(
-name|SessionEditForm
-operator|)
-name|form
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 name|Long
 name|id
 init|=
@@ -1172,19 +1175,6 @@ return|;
 block|}
 end_if_stmt
 
-begin_decl_stmt
-name|Session
-name|sessn
-init|=
-name|Session
-operator|.
-name|getSessionById
-argument_list|(
-name|id
-argument_list|)
-decl_stmt|;
-end_decl_stmt
-
 begin_expr_stmt
 name|Session
 operator|.
@@ -1263,17 +1253,6 @@ throw|;
 block|}
 end_block
 
-begin_decl_stmt
-name|SessionEditForm
-name|sessionEditForm
-init|=
-operator|(
-name|SessionEditForm
-operator|)
-name|form
-decl_stmt|;
-end_decl_stmt
-
 begin_return
 return|return
 name|mapping
@@ -1343,6 +1322,17 @@ block|}
 end_block
 
 begin_decl_stmt
+name|SessionEditForm
+name|sessionEditForm
+init|=
+operator|(
+name|SessionEditForm
+operator|)
+name|form
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 name|Transaction
 name|tx
 init|=
@@ -1378,14 +1368,6 @@ operator|.
 name|beginTransaction
 argument_list|()
 expr_stmt|;
-name|SessionEditForm
-name|sessionEditForm
-init|=
-operator|(
-name|SessionEditForm
-operator|)
-name|form
-decl_stmt|;
 name|Session
 name|sessn
 init|=
@@ -1826,6 +1808,29 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|sessionEditForm
+operator|.
+name|getSessionId
+argument_list|()
+operator|!=
+literal|null
+condition|)
+name|StudentSectioningQueue
+operator|.
+name|sessionStatusChanged
+argument_list|(
+name|hibSession
+argument_list|,
+name|sessionEditForm
+operator|.
+name|getSessionId
+argument_list|()
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
 name|tx
 operator|.
 name|commit
@@ -1917,15 +1922,6 @@ argument_list|,
 name|sessn
 argument_list|)
 expr_stmt|;
-name|SimpleDateFormat
-name|sdf
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"MM/dd/yyyy"
-argument_list|)
-decl_stmt|;
 name|request
 operator|.
 name|setAttribute

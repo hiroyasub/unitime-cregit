@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -72,16 +72,6 @@ operator|.
 name|util
 operator|.
 name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Hashtable
 import|;
 end_import
 
@@ -1889,18 +1879,6 @@ argument_list|(
 literal|"Solver is working, stop it first."
 argument_list|)
 throw|;
-name|ActionMessages
-name|errors
-init|=
-name|myForm
-operator|.
-name|validate
-argument_list|(
-name|mapping
-argument_list|,
-name|request
-argument_list|)
-decl_stmt|;
 name|Long
 name|sessionId
 init|=
@@ -3143,15 +3121,6 @@ argument_list|)
 return|;
 block|}
 specifier|private
-specifier|static
-name|Hashtable
-name|sNames
-init|=
-operator|new
-name|Hashtable
-argument_list|()
-decl_stmt|;
-specifier|private
 name|void
 name|getSolutions
 parameter_list|(
@@ -3170,11 +3139,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Transaction
-name|tx
-init|=
-literal|null
-decl_stmt|;
 try|try
 block|{
 name|WebTable

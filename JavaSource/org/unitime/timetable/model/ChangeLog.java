@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -71,16 +71,6 @@ name|javax
 operator|.
 name|servlet
 operator|.
-name|ServletRequest
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|servlet
-operator|.
 name|http
 operator|.
 name|HttpServletRequest
@@ -96,32 +86,6 @@ operator|.
 name|http
 operator|.
 name|HttpSession
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|Globals
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|util
-operator|.
-name|MessageResources
 import|;
 end_import
 
@@ -249,104 +213,6 @@ name|uniqueId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Constructor for required fields 	 */
-specifier|public
-name|ChangeLog
-parameter_list|(
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|uniqueId
-parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Session
-name|session
-parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|TimetableManager
-name|manager
-parameter_list|,
-name|java
-operator|.
-name|util
-operator|.
-name|Date
-name|timeStamp
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-name|objectType
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-name|objectTitle
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|objectUniqueId
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-name|sourceString
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-name|operationString
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|uniqueId
-argument_list|,
-name|session
-argument_list|,
-name|manager
-argument_list|,
-name|timeStamp
-argument_list|,
-name|objectType
-argument_list|,
-name|objectTitle
-argument_list|,
-name|objectUniqueId
-argument_list|,
-name|sourceString
-argument_list|,
-name|operationString
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
 specifier|static
@@ -354,22 +220,79 @@ enum|enum
 name|Operation
 block|{
 name|CREATE
+argument_list|(
+literal|"create"
+argument_list|)
 block|,
 name|UPDATE
+argument_list|(
+literal|"update"
+argument_list|)
 block|,
 name|DELETE
+argument_list|(
+literal|"delete"
+argument_list|)
 block|,
 name|CLEAR_PREF
+argument_list|(
+literal|"clear preferences"
+argument_list|)
 block|,
 name|CLEAR_ALL_PREF
+argument_list|(
+literal|"clear class preferences"
+argument_list|)
 block|,
 name|ASSIGN
+argument_list|(
+literal|"assignment"
+argument_list|)
 block|,
 name|UNASSIGN
+argument_list|(
+literal|"unassignment"
+argument_list|)
 block|,
 name|APPROVE
+argument_list|(
+literal|"approve"
+argument_list|)
 block|,
 name|REJECT
+argument_list|(
+literal|"reject"
+argument_list|)
+block|,
+name|MERGE
+argument_list|(
+literal|"merge"
+argument_list|)
+block|;
+specifier|private
+name|String
+name|iTitle
+decl_stmt|;
+name|Operation
+parameter_list|(
+name|String
+name|title
+parameter_list|)
+block|{
+name|iTitle
+operator|=
+name|title
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getTitle
+parameter_list|()
+block|{
+return|return
+name|iTitle
+return|;
+block|}
 block|}
 specifier|public
 specifier|static
@@ -377,90 +300,274 @@ enum|enum
 name|Source
 block|{
 name|CLASS_EDIT
+argument_list|(
+literal|"Class Edit"
+argument_list|)
 block|,
 name|SCHEDULING_SUBPART_EDIT
+argument_list|(
+literal|"Scheduling Subpart Edit"
+argument_list|)
 block|,
 name|INSTR_CFG_EDIT
+argument_list|(
+literal|"Configuration Edit"
+argument_list|)
 block|,
 name|CROSS_LIST
+argument_list|(
+literal|"Cross Lists"
+argument_list|)
 block|,
 name|MAKE_OFFERED
+argument_list|(
+literal|"Make Offered"
+argument_list|)
 block|,
 name|MAKE_NOT_OFFERED
+argument_list|(
+literal|"Make Not Offered"
+argument_list|)
 block|,
 name|RESERVATION
+argument_list|(
+literal|"Reservations"
+argument_list|)
 block|,
 name|COURSE_OFFERING_EDIT
+argument_list|(
+literal|"Course Offering Edit"
+argument_list|)
 block|,
 name|CLASS_SETUP
+argument_list|(
+literal|"Class Setup"
+argument_list|)
 block|,
 name|CLASS_INSTR_ASSIGN
+argument_list|(
+literal|"Assign Instructors"
+argument_list|)
 block|,
 name|DIST_PREF_EDIT
+argument_list|(
+literal|"Distribution Preferences"
+argument_list|)
 block|,
 name|DESIGNATOR_EDIT
+argument_list|(
+literal|"Designator Edit"
+argument_list|)
 block|,
 name|INSTRUCTOR_EDIT
+argument_list|(
+literal|"Instructor Edit"
+argument_list|)
 block|,
 name|INSTRUCTOR_PREF_EDIT
+argument_list|(
+literal|"Instructor Preferences"
+argument_list|)
 block|,
 name|INSTRUCTOR_MANAGE
+argument_list|(
+literal|"Manage Instructors"
+argument_list|)
 block|,
 name|ROOM_DEPT_EDIT
+argument_list|(
+literal|"Room Availability"
+argument_list|)
 block|,
 name|ROOM_FEATURE_EDIT
+argument_list|(
+literal|"Room Feature Edit"
+argument_list|)
 block|,
 name|ROOM_GROUP_EDIT
+argument_list|(
+literal|"Room Group Edit"
+argument_list|)
 block|,
 name|ROOM_EDIT
+argument_list|(
+literal|"Room Edit"
+argument_list|)
 block|,
 name|ROOM_PREF_EDIT
+argument_list|(
+literal|"Room Preference Edit"
+argument_list|)
 block|,
 name|DEPARTMENT_EDIT
+argument_list|(
+literal|"Department Edit"
+argument_list|)
 block|,
 name|SESSION_EDIT
+argument_list|(
+literal|"Session Edit"
+argument_list|)
 block|,
 name|SOLVER_GROUP_EDIT
+argument_list|(
+literal|"Solver Group Edit"
+argument_list|)
 block|,
 name|TIME_PATTERN_EDIT
+argument_list|(
+literal|"Time Pattern Edit"
+argument_list|)
 block|,
 name|DATE_PATTERN_EDIT
+argument_list|(
+literal|"Date Pattern Edit"
+argument_list|)
 block|,
 name|DIST_TYPE_EDIT
+argument_list|(
+literal|"Distribution Type Edit"
+argument_list|)
 block|,
 name|MANAGER_EDIT
+argument_list|(
+literal|"Timetabling Manager Edit"
+argument_list|)
 block|,
 name|SUBJECT_AREA_EDIT
+argument_list|(
+literal|"Subject Area Edit"
+argument_list|)
 block|,
 name|BUILDING_EDIT
+argument_list|(
+literal|"Building Edit"
+argument_list|)
 block|,
 name|EXAM_PERIOD_EDIT
+argument_list|(
+literal|"Examination Period Edit"
+argument_list|)
 block|,
 name|EXAM_EDIT
+argument_list|(
+literal|"Examination Edit"
+argument_list|)
 block|,
 name|DATA_IMPORT_OFFERINGS
+argument_list|(
+literal|"Data Import: Offerings"
+argument_list|)
 block|,
 name|DATA_IMPORT_STUDENT_ENROLLMENTS
+argument_list|(
+literal|"Data Import: Students"
+argument_list|)
 block|,
 name|DATA_IMPORT_SUBJECT_AREAS
+argument_list|(
+literal|"Data Import: Subjects"
+argument_list|)
 block|,
 name|DATA_IMPORT_DEPARTMENTS
+argument_list|(
+literal|"Data Import: Departments"
+argument_list|)
 block|,
 name|DATA_IMPORT_EXT_BUILDING_ROOM
+argument_list|(
+literal|"Data Import: Rooms"
+argument_list|)
 block|,
 name|DATA_IMPORT_STAFF
+argument_list|(
+literal|"Data Import: Staff"
+argument_list|)
 block|,
 name|EXAM_INFO
+argument_list|(
+literal|"Examination Assignment"
+argument_list|)
 block|,
 name|EXAM_SOLVER
+argument_list|(
+literal|"Examination Solver"
+argument_list|)
 block|,
 name|EVENT_EDIT
+argument_list|(
+literal|"Event Edit"
+argument_list|)
 block|,
 name|DATA_IMPORT_EVENTS
+argument_list|(
+literal|"Data Import: Events"
+argument_list|)
 block|,
 name|DATA_IMPORT_LASTLIKE_DEMAND
+argument_list|(
+literal|"Data Import: Demands"
+argument_list|)
 block|,
 name|CLASS_INFO
+argument_list|(
+literal|"Class Assignment"
+argument_list|)
+block|,
+name|DATA_IMPORT_CURRICULA
+argument_list|(
+literal|"Data Import: Curricula"
+argument_list|)
+block|,
+name|CURRICULUM_EDIT
+argument_list|(
+literal|"Curriculum Edit"
+argument_list|)
+block|,
+name|CUR_CLASF_EDIT
+argument_list|(
+literal|"Curriculum Requested Enrollments"
+argument_list|)
+block|,
+name|CUR_PROJ_RULES
+argument_list|(
+literal|"Course Projection Rules"
+argument_list|)
+block|,
+name|CURRICULA
+argument_list|(
+literal|"Curricula"
+argument_list|)
+block|,
+name|SIMPLE_EDIT
+argument_list|(
+literal|"Configuration"
+argument_list|)
+block|;
+specifier|private
+name|String
+name|iTitle
+decl_stmt|;
+name|Source
+parameter_list|(
+name|String
+name|title
+parameter_list|)
+block|{
+name|iTitle
+operator|=
+name|title
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getTitle
+parameter_list|()
+block|{
+return|return
+name|iTitle
+return|;
+block|}
 block|}
 specifier|public
 specifier|static
@@ -1298,119 +1405,45 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
-specifier|static
-name|String
-name|getMessage
-parameter_list|(
-name|ServletRequest
-name|request
-parameter_list|,
-name|String
-name|message
-parameter_list|)
-block|{
-name|MessageResources
-name|rsc
-init|=
-operator|(
-name|MessageResources
-operator|)
-name|request
-operator|.
-name|getAttribute
-argument_list|(
-name|Globals
-operator|.
-name|MESSAGES_KEY
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|rsc
-operator|==
-literal|null
-condition|)
-return|return
-name|message
-return|;
-name|String
-name|ret
-init|=
-name|rsc
-operator|.
-name|getMessage
-argument_list|(
-name|message
-argument_list|)
-decl_stmt|;
-return|return
-operator|(
-name|ret
-operator|==
-literal|null
-condition|?
-name|message
-else|:
-name|ret
-operator|)
-return|;
-block|}
+comment|/*     public static String getMessage(ServletRequest request, String message) {         MessageResources rsc = (MessageResources)request.getAttribute(Globals.MESSAGES_KEY);         if (rsc==null) return message;         String ret = rsc.getMessage(message);         return (ret==null?message:ret);     }     */
 specifier|public
 name|String
 name|getOperationTitle
-parameter_list|(
-name|ServletRequest
-name|request
-parameter_list|)
+parameter_list|()
 block|{
 return|return
-name|getMessage
-argument_list|(
-name|request
-argument_list|,
-literal|"changelog.operation."
-operator|+
-name|getOperationString
+name|getOperation
 argument_list|()
-argument_list|)
+operator|.
+name|getTitle
+argument_list|()
 return|;
+comment|// return getMessage(request, "changelog.operation."+getOperationString());
 block|}
 specifier|public
 name|String
 name|getSourceTitle
-parameter_list|(
-name|ServletRequest
-name|request
-parameter_list|)
+parameter_list|()
 block|{
 return|return
-name|getMessage
-argument_list|(
-name|request
-argument_list|,
-literal|"changelog.source."
-operator|+
-name|getSourceString
+name|getSource
 argument_list|()
-argument_list|)
+operator|.
+name|getTitle
+argument_list|()
 return|;
+comment|//return getMessage(request, "changelog.source."+getSourceString());
 block|}
 specifier|public
 name|String
 name|getLabel
-parameter_list|(
-name|ServletRequest
-name|request
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 literal|"Last "
 operator|+
 name|getOperationTitle
-argument_list|(
-name|request
-argument_list|)
+argument_list|()
 operator|+
 literal|" of "
 operator|+
@@ -1439,18 +1472,13 @@ block|}
 specifier|public
 name|String
 name|getShortLabel
-parameter_list|(
-name|ServletRequest
-name|request
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 literal|"Last "
 operator|+
 name|getOperationTitle
-argument_list|(
-name|request
-argument_list|)
+argument_list|()
 operator|+
 literal|" was made by "
 operator|+
@@ -1469,6 +1497,16 @@ argument_list|(
 name|getTimeStamp
 argument_list|()
 argument_list|)
+return|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getLabel
+argument_list|()
 return|;
 block|}
 specifier|public

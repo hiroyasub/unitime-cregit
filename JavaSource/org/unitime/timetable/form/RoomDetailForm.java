@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -126,11 +126,11 @@ name|Integer
 name|capacity
 decl_stmt|;
 specifier|private
-name|Integer
+name|Double
 name|coordinateX
 decl_stmt|;
 specifier|private
-name|Integer
+name|Double
 name|coordinateY
 decl_stmt|;
 specifier|private
@@ -225,6 +225,12 @@ specifier|private
 name|String
 name|examEPref
 decl_stmt|;
+specifier|private
+name|Long
+name|previos
+decl_stmt|,
+name|next
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/** 	 *  	 */
 specifier|private
@@ -296,6 +302,14 @@ name|examEPref
 operator|=
 literal|null
 expr_stmt|;
+name|previos
+operator|=
+literal|null
+expr_stmt|;
+name|next
+operator|=
+literal|null
+expr_stmt|;
 block|}
 specifier|public
 name|Integer
@@ -322,7 +336,7 @@ name|capacity
 expr_stmt|;
 block|}
 specifier|public
-name|Integer
+name|Double
 name|getCoordinateX
 parameter_list|()
 block|{
@@ -334,7 +348,7 @@ specifier|public
 name|void
 name|setCoordinateX
 parameter_list|(
-name|Integer
+name|Double
 name|coordinateX
 parameter_list|)
 block|{
@@ -346,7 +360,7 @@ name|coordinateX
 expr_stmt|;
 block|}
 specifier|public
-name|Integer
+name|Double
 name|getCoordinateY
 parameter_list|()
 block|{
@@ -358,7 +372,7 @@ specifier|public
 name|void
 name|setCoordinateY
 parameter_list|(
-name|Integer
+name|Double
 name|coordinateY
 parameter_list|)
 block|{
@@ -968,6 +982,54 @@ block|{
 return|return
 name|examEPref
 return|;
+block|}
+specifier|public
+name|Long
+name|getNext
+parameter_list|()
+block|{
+return|return
+name|next
+return|;
+block|}
+specifier|public
+name|void
+name|setNext
+parameter_list|(
+name|Long
+name|next
+parameter_list|)
+block|{
+name|this
+operator|.
+name|next
+operator|=
+name|next
+expr_stmt|;
+block|}
+specifier|public
+name|Long
+name|getPrevious
+parameter_list|()
+block|{
+return|return
+name|previos
+return|;
+block|}
+specifier|public
+name|void
+name|setPrevious
+parameter_list|(
+name|Long
+name|previous
+parameter_list|)
+block|{
+name|this
+operator|.
+name|previos
+operator|=
+name|previous
+expr_stmt|;
 block|}
 block|}
 end_class

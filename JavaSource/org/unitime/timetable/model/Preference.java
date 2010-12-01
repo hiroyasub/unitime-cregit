@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -85,50 +85,6 @@ name|uniqueId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Constructor for required fields 	 */
-specifier|public
-name|Preference
-parameter_list|(
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|uniqueId
-parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|PreferenceGroup
-name|owner
-parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|PreferenceLevel
-name|prefLevel
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|uniqueId
-argument_list|,
-name|owner
-argument_list|,
-name|prefLevel
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
 name|String
@@ -158,7 +114,9 @@ name|sb
 init|=
 operator|new
 name|StringBuffer
-argument_list|()
+argument_list|(
+literal|"<span "
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -180,7 +138,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"<span style='color:"
+literal|"style='color:"
 operator|+
 name|this
 operator|.
@@ -190,12 +148,7 @@ operator|.
 name|prefcolor
 argument_list|()
 operator|+
-literal|";font-weight:bold;' title='"
-operator|+
-name|preferenceTitle
-argument_list|()
-operator|+
-literal|"'>"
+literal|";font-weight:bold;' "
 argument_list|)
 expr_stmt|;
 block|}
@@ -205,15 +158,22 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"<span style='font-weight:bold;' title='"
+literal|"style='font-weight:bold;' "
+argument_list|)
+expr_stmt|;
+block|}
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|"onmouseover=\"showGwtHint(this, '"
 operator|+
 name|preferenceTitle
 argument_list|()
 operator|+
-literal|"'>"
+literal|"');\" onmouseout=\"hideGwtHint();\">"
 argument_list|)
 expr_stmt|;
-block|}
 name|sb
 operator|.
 name|append

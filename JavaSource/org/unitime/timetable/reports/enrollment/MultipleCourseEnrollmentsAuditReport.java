@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -137,7 +137,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|lowagie
+name|itextpdf
 operator|.
 name|text
 operator|.
@@ -238,13 +238,6 @@ parameter_list|()
 throws|throws
 name|DocumentException
 block|{
-name|int
-name|n
-init|=
-name|iNrLines
-operator|-
-literal|3
-decl_stmt|;
 name|setHeader
 argument_list|(
 name|buildHeaderString
@@ -905,10 +898,6 @@ extends|extends
 name|EnrollmentAuditResult
 block|{
 specifier|private
-name|String
-name|itype
-decl_stmt|;
-specifier|private
 name|Long
 name|studentUniqueId
 decl_stmt|;
@@ -975,27 +964,6 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|result
-index|[
-literal|8
-index|]
-operator|!=
-literal|null
-condition|)
-name|this
-operator|.
-name|itype
-operator|=
-name|result
-index|[
-literal|8
-index|]
-operator|.
-name|toString
-argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -1153,17 +1121,6 @@ name|className
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-specifier|public
-name|String
-name|itypeString
-parameter_list|()
-block|{
-return|return
-operator|(
-name|itype
-operator|)
-return|;
 block|}
 specifier|public
 name|String

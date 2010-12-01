@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -286,17 +286,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-specifier|private
-specifier|static
-name|SimpleDateFormat
-name|sDF
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"MM/dd"
-argument_list|)
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -380,55 +369,6 @@ block|{
 name|super
 argument_list|(
 name|uniqueId
-argument_list|)
-expr_stmt|;
-block|}
-comment|/** 	 * Constructor for required fields 	 */
-specifier|public
-name|DatePattern
-parameter_list|(
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|uniqueId
-parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Session
-name|session
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-name|pattern
-parameter_list|,
-name|java
-operator|.
-name|lang
-operator|.
-name|Integer
-name|offset
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|uniqueId
-argument_list|,
-name|session
-argument_list|,
-name|pattern
-argument_list|,
-name|offset
 argument_list|)
 expr_stmt|;
 block|}
@@ -679,10 +619,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getStartMonth
+name|getPatternStartMonth
 argument_list|()
-operator|-
-literal|3
 decl_stmt|;
 name|int
 name|endMonth
@@ -690,12 +628,9 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getEndMonth
+name|getPatternEndMonth
 argument_list|()
-operator|+
-literal|3
 decl_stmt|;
-comment|//TODO: checked OK, tested OK
 name|int
 name|size
 init|=
@@ -816,7 +751,6 @@ condition|)
 return|return
 literal|false
 return|;
-comment|// TODO: checked OK, tested OK
 name|int
 name|idx
 init|=
@@ -878,7 +812,6 @@ name|Set
 name|usage
 parameter_list|)
 block|{
-comment|//TODO: checked OK, tested OK
 if|if
 condition|(
 name|usage
@@ -939,10 +872,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getStartMonth
+name|getPatternStartMonth
 argument_list|()
-operator|-
-literal|3
 decl_stmt|;
 name|int
 name|endMonth
@@ -950,10 +881,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getEndMonth
+name|getPatternEndMonth
 argument_list|()
-operator|+
-literal|3
 decl_stmt|;
 name|int
 name|year
@@ -999,7 +928,6 @@ argument_list|(
 literal|"["
 argument_list|)
 expr_stmt|;
-comment|//TODO: checked OK, tested OK
 name|int
 name|daysOfMonth
 init|=
@@ -1245,7 +1173,6 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|//TODO: checked OK, tested OK
 specifier|public
 name|HashMap
 name|getPatternDateStringHashMaps
@@ -2437,10 +2364,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getStartMonth
+name|getPatternStartMonth
 argument_list|()
-operator|-
-literal|3
 decl_stmt|;
 name|int
 name|endMonth
@@ -2448,10 +2373,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getEndMonth
+name|getPatternEndMonth
 argument_list|()
-operator|+
-literal|3
 decl_stmt|;
 name|int
 name|dayOfYear
@@ -2466,11 +2389,6 @@ argument_list|()
 operator|.
 name|getSessionStartYear
 argument_list|()
-decl_stmt|;
-name|Set
-name|classes
-init|=
-literal|null
 decl_stmt|;
 name|Set
 name|usage
@@ -2532,7 +2450,6 @@ argument_list|(
 literal|"["
 argument_list|)
 expr_stmt|;
-comment|//TODO: checked OK, tested OK
 name|int
 name|daysOfMonth
 init|=
@@ -2726,7 +2643,6 @@ argument_list|(
 literal|"<script language='JavaScript'>"
 argument_list|)
 expr_stmt|;
-comment|//TODO: checked OK, tested OK
 name|sb
 operator|.
 name|append
@@ -2745,10 +2661,8 @@ operator|(
 name|getSession
 argument_list|()
 operator|.
-name|getStartMonth
+name|getPatternStartMonth
 argument_list|()
-operator|-
-literal|3
 operator|)
 operator|+
 literal|","
@@ -2757,10 +2671,8 @@ operator|(
 name|getSession
 argument_list|()
 operator|.
-name|getEndMonth
+name|getPatternEndMonth
 argument_list|()
-operator|+
-literal|3
 operator|)
 operator|+
 literal|","
@@ -2822,10 +2734,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getStartMonth
+name|getPatternStartMonth
 argument_list|()
-operator|-
-literal|3
 decl_stmt|;
 name|int
 name|endMonth
@@ -2833,10 +2743,8 @@ init|=
 name|getSession
 argument_list|()
 operator|.
-name|getEndMonth
+name|getPatternEndMonth
 argument_list|()
-operator|+
-literal|3
 decl_stmt|;
 name|int
 name|firstOne
@@ -2861,7 +2769,6 @@ name|sb
 init|=
 literal|null
 decl_stmt|;
-comment|//TODO: checked OK, tested OK
 name|int
 name|idx
 init|=
@@ -2890,7 +2797,6 @@ name|m
 operator|++
 control|)
 block|{
-comment|//TODO: checked OK, tested OK
 name|int
 name|daysOfMonth
 init|=
@@ -2930,7 +2836,6 @@ name|d
 operator|++
 control|)
 block|{
-comment|//TODO: checked OK, tested OK
 name|String
 name|offered
 init|=
@@ -3672,66 +3577,6 @@ operator|++
 expr_stmt|;
 return|return
 name|size
-return|;
-block|}
-specifier|private
-name|int
-name|first
-parameter_list|()
-block|{
-if|if
-condition|(
-name|getPattern
-argument_list|()
-operator|==
-literal|null
-condition|)
-return|return
-literal|0
-return|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|getPattern
-argument_list|()
-operator|.
-name|length
-argument_list|()
-condition|;
-name|i
-operator|++
-control|)
-if|if
-condition|(
-literal|'1'
-operator|==
-name|getPattern
-argument_list|()
-operator|.
-name|charAt
-argument_list|(
-name|i
-argument_list|)
-condition|)
-block|{
-return|return
-name|i
-operator|-
-name|getOffset
-argument_list|()
-operator|.
-name|intValue
-argument_list|()
-return|;
-block|}
-return|return
-literal|0
 return|;
 block|}
 specifier|public

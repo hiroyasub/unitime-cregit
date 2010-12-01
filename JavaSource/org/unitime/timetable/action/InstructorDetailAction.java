@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -14,6 +14,16 @@ operator|.
 name|action
 package|;
 end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Enumeration
+import|;
+end_import
 
 begin_import
 import|import
@@ -98,24 +108,6 @@ operator|.
 name|http
 operator|.
 name|HttpSession
-import|;
-end_import
-
-begin_import
-import|import
-name|net
-operator|.
-name|sf
-operator|.
-name|cpsolver
-operator|.
-name|coursett
-operator|.
-name|model
-operator|.
-name|TimeLocation
-operator|.
-name|IntEnumeration
 import|;
 end_import
 
@@ -632,14 +624,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|InstructorEditForm
-name|instructorEditForm
-init|=
-operator|(
-name|InstructorEditForm
-operator|)
-name|form
-decl_stmt|;
 try|try
 block|{
 comment|// Set common lookup tables
@@ -672,21 +656,6 @@ operator|.
 name|getUser
 argument_list|(
 name|httpSession
-argument_list|)
-decl_stmt|;
-name|Long
-name|sessionId
-init|=
-operator|(
-name|Long
-operator|)
-name|user
-operator|.
-name|getAttribute
-argument_list|(
-name|Constants
-operator|.
-name|SESSION_ID_ATTR_NAME
 argument_list|)
 decl_stmt|;
 name|InstructorEditForm
@@ -764,16 +733,6 @@ name|frm
 operator|.
 name|getOp
 argument_list|()
-decl_stmt|;
-name|String
-name|deleteType
-init|=
-name|request
-operator|.
-name|getParameter
-argument_list|(
-literal|"deleteType"
-argument_list|)
 decl_stmt|;
 name|boolean
 name|timeVertical
@@ -1959,7 +1918,10 @@ argument_list|)
 operator|+
 literal|"'>"
 expr_stmt|;
-name|IntEnumeration
+name|Enumeration
+argument_list|<
+name|Integer
+argument_list|>
 name|e
 init|=
 name|a
@@ -1984,12 +1946,9 @@ name|Constants
 operator|.
 name|DAY_NAMES_SHORT
 index|[
-operator|(
-name|int
-operator|)
 name|e
 operator|.
-name|nextInt
+name|nextElement
 argument_list|()
 index|]
 expr_stmt|;

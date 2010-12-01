@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.1 (University Timetabling Application)  * Copyright (C) 2008, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program; if not, write to the Free Software Foundation, Inc.,  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -190,6 +190,18 @@ operator|.
 name|action
 operator|.
 name|ActionMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|commons
+operator|.
+name|Debug
 import|;
 end_import
 
@@ -2309,6 +2321,11 @@ argument_list|(
 name|px
 argument_list|)
 decl_stmt|;
+name|String
+name|hint
+init|=
+literal|null
+decl_stmt|;
 name|File
 name|imageFileName
 init|=
@@ -2325,6 +2342,38 @@ argument_list|(
 name|timeVertical
 argument_list|)
 expr_stmt|;
+name|hint
+operator|=
+name|rtt
+operator|.
+name|print
+argument_list|(
+literal|false
+argument_list|,
+name|timeVertical
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|");\n</script>"
+argument_list|,
+literal|""
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|"<script language=\"javascript\">\ndocument.write("
+argument_list|,
+literal|""
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|"\n"
+argument_list|,
+literal|" "
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -2332,15 +2381,10 @@ name|IOException
 name|ex
 parameter_list|)
 block|{
-name|ex
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
-block|}
-name|String
-name|title
-init|=
+name|hint
+operator|=
+literal|"'"
+operator|+
 name|rtt
 operator|.
 name|getModel
@@ -2348,7 +2392,34 @@ argument_list|()
 operator|.
 name|toString
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+if|if
+condition|(
+name|ea
+operator|!=
+literal|null
+condition|)
+name|hint
+operator|+=
+literal|", assigned "
+operator|+
+name|ea
+operator|.
+name|getPeriodName
+argument_list|()
+expr_stmt|;
+name|hint
+operator|+=
+literal|"'"
+expr_stmt|;
+name|Debug
+operator|.
+name|error
+argument_list|(
+name|ex
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|imageFileName
@@ -2366,11 +2437,11 @@ name|getName
 argument_list|()
 operator|)
 operator|+
-literal|"' title='"
+literal|"' onmouseover=\"showGwtHint(this, "
 operator|+
-name|title
+name|hint
 operator|+
-literal|"'>"
+literal|");\" onmouseout=\"hideGwtHint();\">"
 expr_stmt|;
 else|else
 name|perPref
@@ -2683,11 +2754,6 @@ name|preferenceText
 argument_list|()
 expr_stmt|;
 block|}
-name|boolean
-name|prefPrinted
-init|=
-literal|false
-decl_stmt|;
 if|if
 condition|(
 name|Exam
