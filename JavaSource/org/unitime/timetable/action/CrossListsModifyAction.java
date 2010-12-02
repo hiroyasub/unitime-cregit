@@ -2856,7 +2856,10 @@ name|cor1
 operator|.
 name|setPriorEnrollment
 argument_list|(
-literal|null
+name|co1
+operator|.
+name|getDemand
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|cor1
@@ -2874,7 +2877,10 @@ name|cor1
 operator|.
 name|setProjectedEnrollment
 argument_list|(
-literal|null
+name|co1
+operator|.
+name|getProjectedDemand
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|cor1
