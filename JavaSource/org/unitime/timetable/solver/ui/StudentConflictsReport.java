@@ -220,6 +220,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|model
+operator|.
+name|constantVariables
+argument_list|()
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Lecture
