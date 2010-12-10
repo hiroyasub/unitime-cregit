@@ -97,7 +97,7 @@ name|client
 operator|.
 name|widgets
 operator|.
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 import|;
 end_import
 
@@ -1270,7 +1270,7 @@ name|CourseCurriculaTable
 name|iCurricula
 decl_stmt|;
 specifier|private
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 name|iCourseDetailsTabPanel
 decl_stmt|;
 specifier|private
@@ -2507,7 +2507,7 @@ expr_stmt|;
 name|iCourseDetailsTabPanel
 operator|=
 operator|new
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 argument_list|()
 expr_stmt|;
 name|iCourseDetails

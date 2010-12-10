@@ -101,12 +101,12 @@ literal|"deprecation"
 argument_list|)
 specifier|public
 class|class
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 extends|extends
 name|TabPanel
 block|{
 specifier|public
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 parameter_list|()
 block|{
 name|super

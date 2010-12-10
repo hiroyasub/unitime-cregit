@@ -107,7 +107,7 @@ name|client
 operator|.
 name|widgets
 operator|.
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 import|;
 end_import
 
@@ -896,7 +896,7 @@ name|HTML
 name|iErrorMessage
 decl_stmt|;
 specifier|private
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 name|iAssignmentPanel
 decl_stmt|;
 specifier|private
@@ -1815,7 +1815,7 @@ expr_stmt|;
 name|iAssignmentPanel
 operator|=
 operator|new
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 argument_list|()
 expr_stmt|;
 name|iAssignmentPanel

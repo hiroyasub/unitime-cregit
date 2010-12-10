@@ -87,7 +87,7 @@ name|client
 operator|.
 name|widgets
 operator|.
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 import|;
 end_import
 
@@ -1250,7 +1250,7 @@ decl_stmt|,
 name|iFreeTimeTip
 decl_stmt|;
 specifier|private
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 name|iTabPanel
 decl_stmt|,
 name|iCourseDetailsTabPanel
@@ -2962,7 +2962,7 @@ expr_stmt|;
 name|iTabPanel
 operator|=
 operator|new
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 argument_list|()
 expr_stmt|;
 if|if
@@ -3052,7 +3052,7 @@ block|{
 name|iCourseDetailsTabPanel
 operator|=
 operator|new
-name|UniTimeTabPabel
+name|UniTimeTabPanel
 argument_list|()
 expr_stmt|;
 name|iCourseDetailsTabPanel
