@@ -269,7 +269,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c from Class_ as c where "
 operator|+
-literal|"c.schedulingSubpart.instrOfferingConfig.instructionalOffering.session.uniqueId=:sessionId"
+literal|"c.schedulingSubpart.instrOfferingConfig.instructionalOffering.session.uniqueId=:sessionId and c.parentClass is null"
 argument_list|)
 operator|.
 name|setLong
@@ -447,10 +447,24 @@ name|addAttribute
 argument_list|(
 literal|"suffix"
 argument_list|,
+operator|(
+name|clazz
+operator|.
+name|getClassSuffix
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|clazz
+operator|.
+name|getClassSuffix
+argument_list|()
+else|:
 name|clazz
 operator|.
 name|getSectionNumberString
 argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 for|for
