@@ -5687,7 +5687,7 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|""
+literal|"-"
 else|:
 name|i
 operator|.
