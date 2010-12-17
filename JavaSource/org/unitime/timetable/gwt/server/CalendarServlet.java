@@ -31,6 +31,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|PrintWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|math
 operator|.
 name|BigInteger
@@ -282,16 +292,6 @@ operator|.
 name|servlet
 operator|.
 name|ServletException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|ServletOutputStream
 import|;
 end_import
 
@@ -1282,7 +1282,14 @@ name|response
 operator|.
 name|setContentType
 argument_list|(
-literal|"text/calendar"
+literal|"text/calendar; charset=UTF-8"
+argument_list|)
+expr_stmt|;
+name|response
+operator|.
+name|setCharacterEncoding
+argument_list|(
+literal|"UTF-8"
 argument_list|)
 expr_stmt|;
 name|response
@@ -1294,12 +1301,12 @@ argument_list|,
 literal|"attachment; filename=\"schedule.ics\""
 argument_list|)
 expr_stmt|;
-name|ServletOutputStream
+name|PrintWriter
 name|out
 init|=
 name|response
 operator|.
-name|getOutputStream
+name|getWriter
 argument_list|()
 decl_stmt|;
 name|org
@@ -2679,7 +2686,7 @@ parameter_list|(
 name|EventInterface
 name|event
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -3252,6 +3259,9 @@ name|instructor
 index|[
 name|i
 index|]
+operator|.
+name|trim
+argument_list|()
 operator|+
 literal|"\":MAILTO:"
 operator|+
@@ -3259,6 +3269,9 @@ name|email
 index|[
 name|i
 index|]
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -3324,7 +3337,7 @@ name|Meeting
 argument_list|>
 name|meetings
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -3888,7 +3901,7 @@ parameter_list|(
 name|Exam
 name|exam
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -4226,7 +4239,7 @@ parameter_list|,
 name|Class_
 name|clazz
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -6016,7 +6029,7 @@ parameter_list|,
 name|Assignment
 name|assignment
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -6316,7 +6329,7 @@ parameter_list|,
 name|Section
 name|section
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -8088,7 +8101,7 @@ parameter_list|,
 name|Section
 name|section
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -8501,7 +8514,7 @@ parameter_list|,
 name|int
 name|len
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
