@@ -143,6 +143,20 @@ name|RoomDeptDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|LocationPermIdGenerator
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -761,7 +775,7 @@ block|{
 name|String
 name|query
 init|=
-literal|"from ExternalRoom er where er.building.session.uniqueId=:sessionId"
+literal|"from ExternalRoom er where er.building.session.uniqueId=:sessionId and er.building.externalUniqueId is not null and er.externalUniqueId is not null"
 decl_stmt|;
 name|boolean
 name|updateExistingRooms
@@ -787,7 +801,9 @@ name|updateExistingRooms
 condition|)
 name|query
 operator|+=
-literal|" and er.externalUniqueId not in (select r.externalUniqueId from Room r where r.session.uniqueId =:sessionId)"
+literal|" and er.externalUniqueId not in (select r.externalUniqueId from Room r where r.session.uniqueId =:sessionId "
+operator|+
+literal|"and r.externalUniqueId is not null)"
 expr_stmt|;
 name|boolean
 name|resetRoomFeatures
@@ -1399,6 +1415,13 @@ name|er
 operator|.
 name|getRoomDepartments
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|LocationPermIdGenerator
+operator|.
+name|setPermanentId
+argument_list|(
+name|r
 argument_list|)
 expr_stmt|;
 name|hibSession
