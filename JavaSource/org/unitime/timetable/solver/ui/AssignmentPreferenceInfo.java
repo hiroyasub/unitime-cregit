@@ -2088,7 +2088,7 @@ name|iRoomPreference
 operator|.
 name|put
 argument_list|(
-name|Integer
+name|Long
 operator|.
 name|valueOf
 argument_list|(
