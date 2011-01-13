@@ -4474,7 +4474,7 @@ name|date
 operator|.
 name|compareTo
 argument_list|(
-name|getSessionBeginDateTime
+name|getEventBeginDate
 argument_list|()
 argument_list|)
 operator|<
@@ -4482,7 +4482,7 @@ literal|0
 condition|)
 comment|//before session
 return|return
-name|getSessionBeginDateTime
+name|getEventBeginDate
 argument_list|()
 operator|.
 name|getTime
@@ -4499,7 +4499,7 @@ name|date
 operator|.
 name|compareTo
 argument_list|(
-name|getSessionEndDateTime
+name|getEventEndDate
 argument_list|()
 argument_list|)
 operator|>
@@ -4512,7 +4512,7 @@ operator|.
 name|getTime
 argument_list|()
 operator|-
-name|getSessionEndDateTime
+name|getEventEndDate
 argument_list|()
 operator|.
 name|getTime
