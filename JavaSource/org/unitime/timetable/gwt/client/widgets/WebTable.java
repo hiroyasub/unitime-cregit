@@ -2024,10 +2024,9 @@ condition|;
 name|j
 operator|--
 control|)
-block|{
 name|iTable
 operator|.
-name|clearCell
+name|removeCell
 argument_list|(
 name|i
 operator|+
@@ -2037,7 +2036,6 @@ argument_list|,
 name|j
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|public
