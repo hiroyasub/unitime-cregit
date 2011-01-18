@@ -1561,7 +1561,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select r from Room r where r.session.uniqueId = :sessionId and ("
+literal|"select distinct r from Room r "
+operator|+
+literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr "
+operator|+
+literal|"where r.session.uniqueId = :sessionId and rd.control=true and mr.role.reference=:eventMgr and ("
 operator|+
 literal|"r.buildingAbbv || ' ' || r.roomNumber = :name or r.buildingAbbv || r.roomNumber = :name)"
 argument_list|)
@@ -1581,6 +1585,15 @@ name|academicSession
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"eventMgr"
+argument_list|,
+name|Roles
+operator|.
+name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|list
@@ -1680,9 +1693,13 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select l from NonUniversityLocation l where "
+literal|"select distinct l from NonUniversityLocation l "
 operator|+
-literal|"l.session.uniqueId = :sessionId and l.name = :name"
+literal|"inner join l.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr "
+operator|+
+literal|"where l.session.uniqueId = :sessionId and l.name = :name and "
+operator|+
+literal|"rd.control=true and mr.role.reference=:eventMgr"
 argument_list|)
 operator|.
 name|setString
@@ -1700,6 +1717,15 @@ name|academicSession
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"eventMgr"
+argument_list|,
+name|Roles
+operator|.
+name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|list
@@ -7438,7 +7464,13 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select r from Room r, RoomTypeOption o where r.session.uniqueId = :sessionId and "
+literal|"select distinct r from Room r "
+operator|+
+literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr, "
+operator|+
+literal|"RoomTypeOption o where r.session.uniqueId = :sessionId and "
+operator|+
+literal|"rd.control=true and mr.role.reference=:eventMgr and "
 operator|+
 literal|"o.status = 1 and o.roomType = r.roomType and o.session = r.session and ("
 operator|+
@@ -7467,6 +7499,15 @@ name|academicSession
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"eventMgr"
+argument_list|,
+name|Roles
+operator|.
+name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|setMaxResults
@@ -7641,7 +7682,13 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select l from NonUniversityLocation l, RoomTypeOption o where "
+literal|"select distinct l from NonUniversityLocation l "
+operator|+
+literal|"inner join l.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr, "
+operator|+
+literal|"RoomTypeOption o where "
+operator|+
+literal|"rd.control=true and mr.role.reference=:eventMgr and "
 operator|+
 literal|"l.session.uniqueId = :sessionId and o.status = 1 and o.roomType = l.roomType and o.session = l.session and lower(l.name) like :name "
 operator|+
@@ -7668,6 +7715,15 @@ name|academicSession
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"eventMgr"
+argument_list|,
+name|Roles
+operator|.
+name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|setMaxResults
