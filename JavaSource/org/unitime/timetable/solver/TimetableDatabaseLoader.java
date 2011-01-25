@@ -24995,6 +24995,17 @@ argument_list|)
 operator|-
 name|firstDOY
 decl_stmt|;
+if|if
+condition|(
+name|offset
+operator|<
+literal|0
+operator|||
+name|offset
+operator|>=
+name|size
+condition|)
+continue|continue;
 name|weekCode
 operator|.
 name|set
