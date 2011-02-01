@@ -2856,7 +2856,17 @@ name|section
 operator|.
 name|getLimit
 argument_list|()
-operator|-
+decl_stmt|;
+if|if
+condition|(
+name|limit
+operator|>=
+literal|0
+condition|)
+block|{
+comment|// limited section, deduct enrollments
+name|limit
+operator|-=
 name|section
 operator|.
 name|getEnrollments
@@ -2864,7 +2874,7 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|Iterator
@@ -2914,6 +2924,18 @@ operator|++
 expr_stmt|;
 break|break;
 block|}
+block|}
+if|if
+condition|(
+name|limit
+operator|<
+literal|0
+condition|)
+name|limit
+operator|=
+literal|0
+expr_stmt|;
+comment|// over-enrolled, but not unlimited
 block|}
 name|Section
 name|clonedSection
@@ -7033,7 +7055,7 @@ name|config
 operator|.
 name|setProperty
 argument_list|(
-literal|"Student.WeightsClass"
+literal|"StudentWeights.Class"
 argument_list|,
 name|StudentSchedulingAssistantWeights
 operator|.
@@ -8224,7 +8246,7 @@ name|config
 operator|.
 name|setProperty
 argument_list|(
-literal|"Student.WeightsClass"
+literal|"StudentWeights.Class"
 argument_list|,
 name|StudentSchedulingAssistantWeights
 operator|.
