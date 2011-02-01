@@ -1133,6 +1133,16 @@ name|isAutoSpreadInTime
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setStudentAllowOverlap
+argument_list|(
+name|ss
+operator|.
+name|isStudentAllowOverlap
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 comment|// Load form attributes that are constant
 name|doLoad
@@ -2319,11 +2329,10 @@ name|ss
 operator|.
 name|setStudentAllowOverlap
 argument_list|(
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
+name|frm
+operator|.
+name|getStudentAllowOverlap
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if

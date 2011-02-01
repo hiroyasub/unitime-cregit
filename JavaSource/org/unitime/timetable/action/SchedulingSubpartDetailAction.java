@@ -1713,6 +1713,16 @@ argument_list|)
 expr_stmt|;
 name|frm
 operator|.
+name|setStudentAllowOverlap
+argument_list|(
+name|ss
+operator|.
+name|isStudentAllowOverlap
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|frm
+operator|.
 name|setDatePattern
 argument_list|(
 name|ss

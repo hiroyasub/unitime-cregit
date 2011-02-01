@@ -188,6 +188,10 @@ specifier|private
 name|boolean
 name|itypeBasic
 decl_stmt|;
+specifier|private
+name|Boolean
+name|studentAllowOverlap
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -285,6 +289,12 @@ operator|=
 literal|""
 expr_stmt|;
 name|autoSpreadInTime
+operator|=
+name|Boolean
+operator|.
+name|FALSE
+expr_stmt|;
+name|studentAllowOverlap
 operator|=
 name|Boolean
 operator|.
@@ -944,6 +954,30 @@ operator|.
 name|itypeBasic
 operator|=
 name|itypeBasic
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getStudentAllowOverlap
+parameter_list|()
+block|{
+return|return
+name|studentAllowOverlap
+return|;
+block|}
+specifier|public
+name|void
+name|setStudentAllowOverlap
+parameter_list|(
+name|boolean
+name|studentAllowOverlap
+parameter_list|)
+block|{
+name|this
+operator|.
+name|studentAllowOverlap
+operator|=
+name|studentAllowOverlap
 expr_stmt|;
 block|}
 block|}

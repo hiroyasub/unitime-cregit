@@ -2863,6 +2863,16 @@ argument_list|,
 name|parentSubpart
 argument_list|)
 decl_stmt|;
+name|subpart
+operator|.
+name|setAllowOverlap
+argument_list|(
+name|ss
+operator|.
+name|isStudentAllowOverlap
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|ss2subpart
 operator|.
 name|put
