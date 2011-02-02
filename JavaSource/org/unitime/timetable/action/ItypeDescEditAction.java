@@ -446,6 +446,15 @@ literal|"Save"
 argument_list|)
 expr_stmt|;
 block|}
+name|LookupTables
+operator|.
+name|setupItypes
+argument_list|(
+name|request
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 comment|// Add / Update
 if|if
 condition|(
@@ -839,15 +848,6 @@ literal|"back"
 argument_list|)
 return|;
 block|}
-name|LookupTables
-operator|.
-name|setupItypes
-argument_list|(
-name|request
-argument_list|,
-literal|true
-argument_list|)
-expr_stmt|;
 return|return
 name|mapping
 operator|.
