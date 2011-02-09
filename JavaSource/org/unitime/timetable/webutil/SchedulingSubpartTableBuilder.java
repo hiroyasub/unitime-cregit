@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2011, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -1643,6 +1643,19 @@ name|onBlur2
 init|=
 literal|""
 decl_stmt|;
+name|String
+name|maxClasses
+init|=
+literal|"if ( document.forms[0].nc"
+operator|+
+name|sicId
+operator|+
+literal|".value> 999) { document.forms[0].nc"
+operator|+
+name|sicId
+operator|+
+literal|".value=0 } "
+decl_stmt|;
 if|if
 condition|(
 name|autoCalc
@@ -1695,7 +1708,11 @@ operator|.
 name|getId
 argument_list|()
 operator|+
-literal|".value) / this.value ); } "
+literal|".value) / this.value ); "
+operator|+
+name|maxClasses
+operator|+
+literal|" } "
 expr_stmt|;
 block|}
 else|else
@@ -1706,7 +1723,11 @@ literal|" onBlur=\"if (this.value!=0) { document.forms[0].nc"
 operator|+
 name|sicId
 operator|+
-literal|".value=Math.ceil(document.forms[0].limit.value/this.value); } "
+literal|".value=Math.ceil(document.forms[0].limit.value/this.value); "
+operator|+
+name|maxClasses
+operator|+
+literal|"} "
 expr_stmt|;
 block|}
 block|}
