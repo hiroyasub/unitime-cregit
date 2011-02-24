@@ -1861,11 +1861,6 @@ argument_list|,
 name|student
 argument_list|)
 expr_stmt|;
-name|flushIfNeeded
-argument_list|(
-name|hibSession
-argument_list|)
-expr_stmt|;
 block|}
 name|flush
 argument_list|(
