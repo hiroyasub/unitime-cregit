@@ -780,7 +780,7 @@ init|=
 operator|new
 name|ClientResource
 argument_list|(
-literal|"https://unitimereg.appspot.com/xml"
+literal|"http://register.unitime.org/xml"
 argument_list|)
 decl_stmt|;
 name|StringWriter
