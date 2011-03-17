@@ -3458,6 +3458,13 @@ name|cd
 operator|.
 name|isWaitlist
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|cd
+operator|.
+name|isWaitlist
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
