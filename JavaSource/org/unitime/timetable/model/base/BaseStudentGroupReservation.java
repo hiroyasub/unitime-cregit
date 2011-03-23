@@ -37,7 +37,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CharacteristicReservation
+name|Reservation
 import|;
 end_import
 
@@ -75,7 +75,7 @@ specifier|abstract
 class|class
 name|BaseStudentGroupReservation
 extends|extends
-name|CharacteristicReservation
+name|Reservation
 implements|implements
 name|Serializable
 block|{
@@ -89,7 +89,7 @@ literal|1L
 decl_stmt|;
 specifier|private
 name|StudentGroup
-name|iStudentGroup
+name|iGroup
 decl_stmt|;
 specifier|public
 name|BaseStudentGroupReservation
@@ -123,24 +123,24 @@ block|{
 block|}
 specifier|public
 name|StudentGroup
-name|getStudentGroup
+name|getGroup
 parameter_list|()
 block|{
 return|return
-name|iStudentGroup
+name|iGroup
 return|;
 block|}
 specifier|public
 name|void
-name|setStudentGroup
+name|setGroup
 parameter_list|(
 name|StudentGroup
-name|studentGroup
+name|group
 parameter_list|)
 block|{
-name|iStudentGroup
+name|iGroup
 operator|=
-name|studentGroup
+name|group
 expr_stmt|;
 block|}
 specifier|public
@@ -255,49 +255,24 @@ block|{
 return|return
 literal|"StudentGroupReservation["
 operator|+
-literal|"\n	Owner: "
+literal|"\n	ExpirationDate: "
 operator|+
-name|getOwner
+name|getExpirationDate
 argument_list|()
 operator|+
-literal|"\n	OwnerClassId: "
+literal|"\n	Group: "
 operator|+
-name|getOwnerClassId
+name|getGroup
 argument_list|()
 operator|+
-literal|"\n	PriorEnrollment: "
+literal|"\n	InstructionalOffering: "
 operator|+
-name|getPriorEnrollment
+name|getInstructionalOffering
 argument_list|()
 operator|+
-literal|"\n	Priority: "
+literal|"\n	Limit: "
 operator|+
-name|getPriority
-argument_list|()
-operator|+
-literal|"\n	ProjectedEnrollment: "
-operator|+
-name|getProjectedEnrollment
-argument_list|()
-operator|+
-literal|"\n	Requested: "
-operator|+
-name|getRequested
-argument_list|()
-operator|+
-literal|"\n	ReservationType: "
-operator|+
-name|getReservationType
-argument_list|()
-operator|+
-literal|"\n	Reserved: "
-operator|+
-name|getReserved
-argument_list|()
-operator|+
-literal|"\n	StudentGroup: "
-operator|+
-name|getStudentGroup
+name|getLimit
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

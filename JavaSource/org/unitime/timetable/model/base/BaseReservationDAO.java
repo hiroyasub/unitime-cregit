@@ -137,7 +137,7 @@ name|List
 argument_list|<
 name|Reservation
 argument_list|>
-name|findByReservationType
+name|findByInstructionalOffering
 parameter_list|(
 name|org
 operator|.
@@ -147,7 +147,7 @@ name|Session
 name|hibSession
 parameter_list|,
 name|Long
-name|reservationTypeId
+name|instructionalOfferingId
 parameter_list|)
 block|{
 return|return
@@ -155,14 +155,14 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from Reservation x where x.reservationType.uniqueId = :reservationTypeId"
+literal|"from Reservation x where x.instructionalOffering.uniqueId = :instructionalOfferingId"
 argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"reservationTypeId"
+literal|"instructionalOfferingId"
 argument_list|,
-name|reservationTypeId
+name|instructionalOfferingId
 argument_list|)
 operator|.
 name|list

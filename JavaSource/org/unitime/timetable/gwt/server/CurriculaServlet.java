@@ -635,20 +635,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|CourseOfferingReservation
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|Curriculum
 import|;
 end_import
@@ -1098,7 +1084,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"findCurricula(filter='"
 operator|+
@@ -1506,7 +1492,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found "
 operator|+
@@ -1602,7 +1588,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadClassifications(curriculumIds="
 operator|+
@@ -2307,7 +2293,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Loaded "
 operator|+
@@ -2397,7 +2383,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadCurriculum(curriculumId="
 operator|+
@@ -3993,7 +3979,7 @@ argument_list|)
 expr_stmt|;
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Loaded 1 curriculum (took "
 operator|+
@@ -4085,7 +4071,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"saveCurriculum(curriculum="
 operator|+
@@ -5966,7 +5952,7 @@ literal|null
 expr_stmt|;
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Saved 1 curriculum (took "
 operator|+
@@ -6089,7 +6075,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"saveClassifications()"
 argument_list|)
@@ -6524,7 +6510,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Saved classifications for "
 operator|+
@@ -6614,7 +6600,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"deleteCurriculum(curriculumId="
 operator|+
@@ -6828,7 +6814,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Deleted 1 curriculum (took "
 operator|+
@@ -6914,7 +6900,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"deleteCurricula(curriculumIds="
 operator|+
@@ -7144,7 +7130,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Deleted "
 operator|+
@@ -7237,7 +7223,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"mergeCurricula(curriculumIds="
 operator|+
@@ -8555,7 +8541,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Merged "
 operator|+
@@ -8645,7 +8631,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadAcademicClassifications()"
 argument_list|)
@@ -8784,7 +8770,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Loaded "
 operator|+
@@ -8886,7 +8872,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"computeEnrollmentsAndLastLikes(acadAreaId="
 operator|+
@@ -9609,7 +9595,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found "
 operator|+
@@ -12450,7 +12436,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"getCurriculaForACourse(courseName='"
 operator|+
@@ -12561,7 +12547,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found "
 operator|+
@@ -12662,7 +12648,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"findCurriculaForAnOffering(offeringId='"
 operator|+
@@ -12921,7 +12907,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found "
 operator|+
@@ -13011,7 +12997,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadAcademicAreas()"
 argument_list|)
@@ -13169,7 +13155,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Loaded "
 operator|+
@@ -13265,7 +13251,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadMajors(academicAreaId="
 operator|+
@@ -13566,7 +13552,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Loaded "
 operator|+
@@ -13656,7 +13642,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadDepartments()"
 argument_list|)
@@ -13944,7 +13930,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Loaded "
 operator|+
@@ -14029,7 +14015,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"lastCurriculaFilter()"
 argument_list|)
@@ -14150,7 +14136,7 @@ block|}
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Last filter is '"
 operator|+
@@ -14203,7 +14189,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"listCourseOfferings(query='"
 operator|+
@@ -14487,64 +14473,22 @@ name|getLimit
 argument_list|()
 expr_stmt|;
 block|}
-for|for
-control|(
-name|Iterator
-argument_list|<
-name|CourseOfferingReservation
-argument_list|>
-name|k
-init|=
-name|c
-operator|.
-name|getCourseReservations
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|k
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|CourseOfferingReservation
-name|reservation
-init|=
-name|k
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|reservation
-operator|.
-name|getCourseOffering
-argument_list|()
-operator|.
-name|equals
-argument_list|(
 name|c
-argument_list|)
-operator|&&
-name|reservation
 operator|.
-name|getReserved
+name|getReservation
 argument_list|()
 operator|!=
 literal|null
 condition|)
 name|courseLimit
 operator|=
-name|reservation
+name|c
 operator|.
-name|getReserved
+name|getReservation
 argument_list|()
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|courseLimit
@@ -14616,7 +14560,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found "
 operator|+
@@ -14706,7 +14650,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"retrieveCourseDetails(course='"
 operator|+
@@ -14841,7 +14785,7 @@ argument_list|)
 decl_stmt|;
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Details of length "
 operator|+
@@ -14945,7 +14889,7 @@ try|try
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"listClasses(course='"
 operator|+
@@ -15719,7 +15663,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Found "
 operator|+
@@ -16087,7 +16031,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"loadProjectionRules()"
 argument_list|)
@@ -17043,7 +16987,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Curriculum projection rules loaded (took "
 operator|+
@@ -17140,7 +17084,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"saveProjectionRules()"
 argument_list|)
@@ -17691,7 +17635,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Curriculum projection rules saved (took "
 operator|+
@@ -17832,7 +17776,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"makeupCurriculaFromLastLikeDemands(lastLike="
 operator|+
@@ -18094,7 +18038,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Curricula recreated (took "
 operator|+
@@ -18181,7 +18125,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"updateCurriculaByProjections(curricula="
 operator|+
@@ -19421,7 +19365,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Curricula update (took "
 operator|+
@@ -19502,7 +19446,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"populateCourseProjectedDemands(includeOtherStudents="
 operator|+
@@ -20256,7 +20200,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Course projected demands updated (took "
 operator|+
@@ -20340,7 +20284,7 @@ name|CurriculaException
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"populateCourseProjectedDemands(includeOtherStudents="
 operator|+
@@ -21090,7 +21034,7 @@ expr_stmt|;
 block|}
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Course projected demands updated (took "
 operator|+

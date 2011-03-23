@@ -4430,9 +4430,10 @@ name|isEnabled
 parameter_list|()
 block|{
 return|return
+operator|!
 name|iTextField
 operator|.
-name|isEnabled
+name|isReadOnly
 argument_list|()
 return|;
 block|}

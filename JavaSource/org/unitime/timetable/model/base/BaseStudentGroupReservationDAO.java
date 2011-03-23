@@ -137,7 +137,7 @@ name|List
 argument_list|<
 name|StudentGroupReservation
 argument_list|>
-name|findByStudentGroup
+name|findByGroup
 parameter_list|(
 name|org
 operator|.
@@ -147,7 +147,7 @@ name|Session
 name|hibSession
 parameter_list|,
 name|Long
-name|studentGroupId
+name|groupId
 parameter_list|)
 block|{
 return|return
@@ -155,14 +155,14 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from StudentGroupReservation x where x.studentGroup.uniqueId = :studentGroupId"
+literal|"from StudentGroupReservation x where x.group.uniqueId = :groupId"
 argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"studentGroupId"
+literal|"groupId"
 argument_list|,
-name|studentGroupId
+name|groupId
 argument_list|)
 operator|.
 name|list

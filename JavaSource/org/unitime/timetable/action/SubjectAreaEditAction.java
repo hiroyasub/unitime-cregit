@@ -1511,13 +1511,6 @@ argument_list|)
 expr_stmt|;
 name|io
 operator|.
-name|deleteAllReservations
-argument_list|(
-name|hibSession
-argument_list|)
-expr_stmt|;
-name|io
-operator|.
 name|deleteAllClasses
 argument_list|(
 name|hibSession
