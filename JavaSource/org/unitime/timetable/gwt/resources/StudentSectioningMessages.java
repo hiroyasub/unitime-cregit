@@ -338,6 +338,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Loading..."
+argument_list|)
+name|String
+name|courseRequestsLoading
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Validation failed, see above for errors."
 argument_list|)
 name|String
@@ -939,19 +948,28 @@ comment|/* Student Sectioning widget messags 	 */
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>P</u>revious"
+literal|"<u>R</u>equests"
 argument_list|)
 name|String
-name|buttonPrev
+name|buttonRequests
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>N</u>ext"
+literal|"Re-schedule"
 argument_list|)
 name|String
-name|buttonNext
+name|buttonReset
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>S</u>chedule"
+argument_list|)
+name|String
+name|buttonSchedule
 parameter_list|()
 function_decl|;
 annotation|@
@@ -966,7 +984,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"P<u>r</u>int"
+literal|"<u>P</u>rint"
 argument_list|)
 name|String
 name|buttonPrint
@@ -1273,6 +1291,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Not assigned."
+argument_list|)
+name|String
+name|courseNotAssigned
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Conflicts with "
 argument_list|)
 name|String
@@ -1326,6 +1353,63 @@ parameter_list|,
 name|int
 name|available
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} is locked."
+argument_list|)
+name|String
+name|courseLocked
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are currently enrolled in {0}."
+argument_list|)
+name|String
+name|saved
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are currently enrolled in {0}, this enrollment will get dropped."
+argument_list|)
+name|String
+name|unassignment
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are currently not enrolled in {0}."
+argument_list|)
+name|String
+name|assignment
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show unassignments"
+argument_list|)
+name|String
+name|showUnassignments
+parameter_list|()
 function_decl|;
 block|}
 end_interface

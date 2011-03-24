@@ -145,6 +145,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
+name|test
+operator|.
+name|OnlineSectioningTest
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -385,7 +403,29 @@ return|;
 block|}
 block|}
 argument_list|)
-block|;
+block|,
+name|sectioningtest
+argument_list|(
+literal|"Online Student Sectioning Test"
+argument_list|,
+operator|new
+name|PageFactory
+argument_list|()
+block|{
+specifier|public
+name|Widget
+name|create
+parameter_list|()
+block|{
+return|return
+operator|new
+name|OnlineSectioningTest
+argument_list|()
+return|;
+block|}
+block|}
+argument_list|)
+block|, 	;
 specifier|private
 name|String
 name|iTitle

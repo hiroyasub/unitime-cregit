@@ -965,16 +965,6 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|setOptions
-argument_list|(
-literal|"mustHaveExternalId"
-argument_list|)
-expr_stmt|;
-name|Lookup
-operator|.
-name|getInstance
-argument_list|()
-operator|.
 name|setCallback
 argument_list|(
 name|createLookupCallback

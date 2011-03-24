@@ -11,9 +11,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|gwt
-operator|.
-name|server
+name|onlinesectioning
 package|;
 end_package
 
@@ -26,24 +24,6 @@ operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|server
-operator|.
-name|custom
-operator|.
-name|CourseDetailsProvider
 import|;
 end_import
 
@@ -90,6 +70,22 @@ operator|.
 name|model
 operator|.
 name|CourseOffering
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|custom
+operator|.
+name|CourseDetailsProvider
 import|;
 end_import
 
@@ -689,7 +685,7 @@ name|provider
 operator|.
 name|getDetails
 argument_list|(
-name|SectioningServer
+name|OnlineSectioningService
 operator|.
 name|getInstance
 argument_list|(
@@ -707,6 +703,26 @@ expr_stmt|;
 block|}
 return|return
 name|iDetails
+return|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|(
+name|getSubjectArea
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|getCourseNbr
+argument_list|()
+operator|)
+operator|.
+name|toLowerCase
+argument_list|()
 return|;
 block|}
 block|}

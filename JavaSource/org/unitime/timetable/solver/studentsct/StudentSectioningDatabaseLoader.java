@@ -5478,7 +5478,7 @@ name|student
 argument_list|,
 name|cx
 argument_list|,
-literal|false
+literal|true
 argument_list|,
 name|timeStamp
 operator|.
@@ -9334,7 +9334,7 @@ operator|+
 operator|(
 name|iLoadStudentInfo
 condition|?
-literal|"left join fetch s.academicAreaClassifications as a "
+literal|"left join fetch s.academicAreaClassifications as a left join fetch s.posMajors as mj "
 else|:
 literal|""
 operator|)

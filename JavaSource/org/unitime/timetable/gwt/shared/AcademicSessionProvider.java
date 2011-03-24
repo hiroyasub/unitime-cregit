@@ -54,6 +54,16 @@ name|Long
 name|getNewAcademicSessionId
 parameter_list|()
 function_decl|;
+specifier|public
+name|Long
+name|getOldAcademicSessionId
+parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
+name|isChanged
+parameter_list|()
+function_decl|;
 block|}
 specifier|public
 specifier|static

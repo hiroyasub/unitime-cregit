@@ -4610,9 +4610,6 @@ name|cd
 operator|.
 name|isWaitlist
 argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|,
 name|cd
 operator|.
@@ -6883,6 +6880,8 @@ operator|.
 name|attributeValue
 argument_list|(
 literal|"waitlist"
+argument_list|,
+literal|"false"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -8169,7 +8168,6 @@ name|addAttribute
 argument_list|(
 literal|"waitlist"
 argument_list|,
-operator|(
 name|courseRequest
 operator|.
 name|isWaitlist
@@ -8178,7 +8176,6 @@ condition|?
 literal|"true"
 else|:
 literal|"false"
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -8196,12 +8193,7 @@ name|addAttribute
 argument_list|(
 literal|"timeStamp"
 argument_list|,
-operator|(
-operator|(
-name|CourseRequest
-operator|)
-name|request
-operator|)
+name|courseRequest
 operator|.
 name|getTimeStamp
 argument_list|()

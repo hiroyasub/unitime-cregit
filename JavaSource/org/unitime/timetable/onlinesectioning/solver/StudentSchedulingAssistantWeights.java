@@ -11,9 +11,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|gwt
+name|onlinesectioning
 operator|.
-name|server
+name|solver
 package|;
 end_package
 
@@ -262,14 +262,14 @@ specifier|private
 name|double
 name|iPreferenceFactor
 init|=
-literal|0.250
+literal|0.125
 decl_stmt|;
 comment|/** deduction for over expected sections */
 specifier|private
 name|double
 name|iPenaltyFactor
 init|=
-literal|0.500
+literal|0.250
 decl_stmt|;
 comment|/** similar to balancing factor on {@link PriorityStudentWeights} */
 specifier|private
@@ -596,6 +596,23 @@ return|return
 name|bestTime
 return|;
 block|}
+specifier|public
+name|double
+name|getBaseWeight
+parameter_list|(
+name|Enrollment
+name|enrollment
+parameter_list|)
+block|{
+return|return
+name|super
+operator|.
+name|getWeight
+argument_list|(
+name|enrollment
+argument_list|)
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -622,9 +639,7 @@ return|;
 name|double
 name|base
 init|=
-name|super
-operator|.
-name|getWeight
+name|getBaseWeight
 argument_list|(
 name|enrollment
 argument_list|)

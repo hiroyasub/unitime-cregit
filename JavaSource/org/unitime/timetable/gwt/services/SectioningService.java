@@ -306,12 +306,7 @@ parameter_list|)
 throws|throws
 name|SectioningException
 function_decl|;
-name|ArrayList
-argument_list|<
 name|ClassAssignmentInterface
-operator|.
-name|ClassAssignment
-argument_list|>
 name|lastResult
 parameter_list|(
 name|Long
@@ -329,10 +324,7 @@ parameter_list|)
 throws|throws
 name|SectioningException
 function_decl|;
-name|ArrayList
-argument_list|<
-name|Long
-argument_list|>
+name|ClassAssignmentInterface
 name|enroll
 parameter_list|(
 name|CourseRequestInterface

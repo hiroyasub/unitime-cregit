@@ -90,6 +90,12 @@ name|Request
 argument_list|>
 argument_list|()
 decl_stmt|;
+specifier|private
+name|boolean
+name|iSaved
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|CourseRequestInterface
 parameter_list|()
@@ -162,6 +168,28 @@ block|{
 return|return
 name|iAlternatives
 return|;
+block|}
+specifier|public
+name|boolean
+name|isSaved
+parameter_list|()
+block|{
+return|return
+name|iSaved
+return|;
+block|}
+specifier|public
+name|void
+name|setSaved
+parameter_list|(
+name|boolean
+name|saved
+parameter_list|)
+block|{
+name|iSaved
+operator|=
+name|saved
+expr_stmt|;
 block|}
 specifier|public
 specifier|static
@@ -812,7 +840,7 @@ name|ret
 init|=
 literal|"CourseRequests(student = "
 operator|+
-name|iSessionId
+name|iStudentId
 operator|+
 literal|", session = "
 operator|+

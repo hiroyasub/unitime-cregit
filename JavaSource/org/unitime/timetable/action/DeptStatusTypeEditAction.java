@@ -1960,7 +1960,33 @@ if|if
 condition|(
 name|s
 operator|.
-name|canSectioningStudents
+name|canOnlineSectionStudents
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|rights
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+name|rights
+operator|+=
+literal|"; "
+expr_stmt|;
+name|rights
+operator|+=
+literal|"sectioning"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|s
+operator|.
+name|canSectionAssistStudents
 argument_list|()
 condition|)
 block|{

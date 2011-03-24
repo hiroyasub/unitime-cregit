@@ -11,9 +11,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|gwt
+name|onlinesectioning
 operator|.
-name|server
+name|solver
 package|;
 end_package
 

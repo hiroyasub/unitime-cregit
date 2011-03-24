@@ -367,12 +367,7 @@ name|sessionId
 parameter_list|,
 name|AsyncCallback
 argument_list|<
-name|ArrayList
-argument_list|<
 name|ClassAssignmentInterface
-operator|.
-name|ClassAssignment
-argument_list|>
 argument_list|>
 name|callback
 parameter_list|)
@@ -410,10 +405,7 @@ name|currentAssignment
 parameter_list|,
 name|AsyncCallback
 argument_list|<
-name|ArrayList
-argument_list|<
-name|Long
-argument_list|>
+name|ClassAssignmentInterface
 argument_list|>
 name|callback
 parameter_list|)

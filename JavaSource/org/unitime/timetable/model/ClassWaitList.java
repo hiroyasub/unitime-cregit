@@ -96,6 +96,13 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
+specifier|public
+specifier|static
+enum|enum
+name|Type
+block|{
+name|LOCKED
+block|}
 block|}
 end_class
 

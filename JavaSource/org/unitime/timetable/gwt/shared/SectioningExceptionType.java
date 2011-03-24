@@ -113,6 +113,8 @@ block|,
 name|CUSTOM_SECTION_LIMITS_FAILURE
 block|,
 name|NO_CUSTOM_COURSE_DETAILS
+block|,
+name|COURSE_LOCKED
 block|;
 specifier|private
 specifier|static
@@ -441,6 +443,17 @@ return|return
 name|sMessages
 operator|.
 name|customSectionLimitsFailed
+argument_list|(
+name|problem
+argument_list|)
+return|;
+case|case
+name|COURSE_LOCKED
+case|:
+return|return
+name|sMessages
+operator|.
+name|courseLocked
 argument_list|(
 name|problem
 argument_list|)

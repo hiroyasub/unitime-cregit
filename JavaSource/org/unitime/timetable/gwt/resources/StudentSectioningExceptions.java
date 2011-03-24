@@ -197,6 +197,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course {0} is locked."
+argument_list|)
+name|String
+name|courseLocked
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course detail interface not provided."
 argument_list|)
 name|String
