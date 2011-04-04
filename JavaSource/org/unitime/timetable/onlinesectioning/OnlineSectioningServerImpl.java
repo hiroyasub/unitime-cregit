@@ -2960,10 +2960,15 @@ name|a
 operator|.
 name|setExpected
 argument_list|(
+name|Math
+operator|.
+name|round
+argument_list|(
 name|section
 operator|.
 name|getSpaceExpected
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

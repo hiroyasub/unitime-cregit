@@ -329,6 +329,13 @@ name|iPreferredSections
 init|=
 literal|null
 decl_stmt|;
+comment|/** add up to 50% for preferred sections */
+specifier|private
+name|double
+name|iPreferenceFactor
+init|=
+literal|0.500
+decl_stmt|;
 specifier|public
 name|SuggestionSelection
 parameter_list|(
@@ -367,6 +374,17 @@ block|{
 name|super
 argument_list|(
 name|properties
+argument_list|)
+expr_stmt|;
+name|iPreferenceFactor
+operator|=
+name|properties
+operator|.
+name|getPropertyDouble
+argument_list|(
+literal|"StudentWeights.PreferenceFactor"
+argument_list|,
+name|iPreferenceFactor
 argument_list|)
 expr_stmt|;
 name|iRequiredFreeTimes
@@ -931,7 +949,7 @@ name|weight
 operator|*=
 literal|1.0
 operator|+
-literal|0.5
+name|iPreferenceFactor
 operator|*
 name|preferredFraction
 expr_stmt|;
@@ -999,7 +1017,11 @@ argument_list|()
 condition|)
 name|bound
 operator|*=
-literal|1.5
+operator|(
+literal|1.0
+operator|+
+name|iPreferenceFactor
+operator|)
 expr_stmt|;
 comment|// add 50% if can be preferred
 block|}
