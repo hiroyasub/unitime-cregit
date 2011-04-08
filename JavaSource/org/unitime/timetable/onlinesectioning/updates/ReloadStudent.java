@@ -330,7 +330,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct e.courseOffering.InstructionalOffering.uniqueId from StudentClassEnrollment e where "
+literal|"select distinct e.courseOffering.instructionalOffering.uniqueId from StudentClassEnrollment e where "
 operator|+
 literal|"e.student.uniqueId = :studentId"
 argument_list|)
