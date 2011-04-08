@@ -23,6 +23,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Set
 import|;
 end_import
@@ -156,7 +166,7 @@ parameter_list|,
 name|Session
 name|session
 parameter_list|,
-name|Set
+name|Collection
 argument_list|<
 name|InstructionalOffering
 argument_list|>
