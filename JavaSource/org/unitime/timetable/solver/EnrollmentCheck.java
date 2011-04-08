@@ -1917,11 +1917,11 @@ name|nrWeightedStudents
 argument_list|()
 operator|-
 name|w
-operator|>
+operator|+
 name|FinalSectioning
 operator|.
 name|sEps
-operator|+
+operator|>
 name|lecture
 operator|.
 name|classLimit
