@@ -3570,7 +3570,7 @@ name|println
 argument_list|(
 name|mpad
 argument_list|(
-literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+literal|"~ ~ ~ ~ ~ EXAMINATION CONFLICTS AND/OR BACK-TO-BACK EXAMINATIONS ~ ~ ~ ~ ~"
 argument_list|,
 name|iNrChars
 argument_list|)
@@ -3606,7 +3606,7 @@ name|setCont
 argument_list|(
 name|shortName
 operator|+
-literal|"  STUDENT CONFLICTS"
+literal|"  EXAMINATION CONFLICTS"
 argument_list|)
 expr_stmt|;
 name|headerPrinted
@@ -3905,7 +3905,7 @@ name|println
 argument_list|(
 name|mpad
 argument_list|(
-literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+literal|"~ ~ ~ ~ ~ EXAMINATION CONFLICTS AND/OR BACK-TO-BACK EXAMINATIONS ~ ~ ~ ~ ~"
 argument_list|,
 name|iNrChars
 argument_list|)
@@ -3941,7 +3941,7 @@ name|setCont
 argument_list|(
 name|shortName
 operator|+
-literal|"  STUDENT CONFLICTS"
+literal|"  EXAMINATION CONFLICTS"
 argument_list|)
 expr_stmt|;
 name|headerPrinted
@@ -4502,7 +4502,7 @@ name|println
 argument_list|(
 name|mpad
 argument_list|(
-literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+literal|"~ ~ ~ ~ ~ EXAMINATION CONFLICTS AND/OR BACK-TO-BACK EXAMINATIONS ~ ~ ~ ~ ~"
 argument_list|,
 name|iNrChars
 argument_list|)
@@ -4538,7 +4538,7 @@ name|setCont
 argument_list|(
 name|shortName
 operator|+
-literal|"  STUDENT CONFLICTS"
+literal|"  EXAMINATION CONFLICTS"
 argument_list|)
 expr_stmt|;
 name|headerPrinted
@@ -4895,7 +4895,7 @@ name|println
 argument_list|(
 name|mpad
 argument_list|(
-literal|"~ ~ ~ ~ ~ STUDENT CONFLICTS ~ ~ ~ ~ ~"
+literal|"~ ~ ~ ~ ~ EXAMINATION CONFLICTS AND/OR BACK-TO-BACK EXAMINATIONS ~ ~ ~ ~ ~"
 argument_list|,
 name|iNrChars
 argument_list|)
@@ -4931,7 +4931,7 @@ name|setCont
 argument_list|(
 name|shortName
 operator|+
-literal|"  STUDENT CONFLICTS"
+literal|"  EXAMINATION CONFLICTS"
 argument_list|)
 expr_stmt|;
 name|headerPrinted
