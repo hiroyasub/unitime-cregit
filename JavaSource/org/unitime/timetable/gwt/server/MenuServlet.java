@@ -2196,11 +2196,33 @@ return|;
 block|}
 if|else if
 condition|(
-literal|"canSeeEvents"
+literal|"hasRight"
 operator|.
 name|equals
 argument_list|(
 name|cond
+argument_list|)
+condition|)
+block|{
+name|String
+name|right
+init|=
+name|conditionElement
+operator|.
+name|attributeValue
+argument_list|(
+literal|"name"
+argument_list|,
+literal|"unknown"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+literal|"canSeeEvents"
+operator|.
+name|equals
+argument_list|(
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2229,7 +2251,7 @@ literal|"hasRoomAvailability"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2248,7 +2270,7 @@ literal|"hasPersonalReport"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2277,7 +2299,7 @@ literal|"isChameleon"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2321,7 +2343,7 @@ literal|"isSectioningEnabled"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2338,7 +2360,7 @@ literal|"isStudent"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2359,7 +2381,7 @@ literal|"isRegistrationEnabled"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2429,7 +2451,7 @@ literal|"canSeeCourses"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2450,7 +2472,7 @@ literal|"canSeeTimetable"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2471,7 +2493,7 @@ literal|"canDoTimetable"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2492,7 +2514,7 @@ literal|"hasASolverGroup"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2513,7 +2535,7 @@ literal|"canSectionStudents"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2534,7 +2556,7 @@ literal|"canSeeExams"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2555,7 +2577,7 @@ literal|"canTimetableExams"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2576,7 +2598,7 @@ literal|"canAudit"
 operator|.
 name|equals
 argument_list|(
-name|cond
+name|right
 argument_list|)
 condition|)
 block|{
@@ -2591,6 +2613,21 @@ name|user
 argument_list|)
 return|;
 block|}
+block|}
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Unknown right "
+operator|+
+name|right
+operator|+
+literal|"."
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
 block|}
 name|sLog
 operator|.
