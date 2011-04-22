@@ -815,6 +815,20 @@ name|op
 argument_list|)
 expr_stmt|;
 block|}
+comment|//Check op exists
+if|if
+condition|(
+name|op
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|Exception
+argument_list|(
+literal|"Null Operation not supported."
+argument_list|)
+throw|;
 comment|// Read instructor id from form
 if|if
 condition|(
@@ -911,20 +925,6 @@ name|request
 argument_list|)
 expr_stmt|;
 block|}
-comment|//Check op exists
-if|if
-condition|(
-name|op
-operator|==
-literal|null
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Null Operation not supported."
-argument_list|)
-throw|;
 name|Debug
 operator|.
 name|debug

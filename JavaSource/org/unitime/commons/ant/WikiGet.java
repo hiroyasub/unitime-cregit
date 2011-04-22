@@ -1606,6 +1606,9 @@ operator|.
 name|printStackTrace
 argument_list|()
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 empty_stmt|;
 if|if
@@ -2093,15 +2096,6 @@ name|pageName
 argument_list|)
 return|;
 block|}
-if|if
-condition|(
-name|imageUrl
-operator|==
-literal|null
-condition|)
-return|return
-literal|null
-return|;
 if|if
 condition|(
 literal|"mailto"

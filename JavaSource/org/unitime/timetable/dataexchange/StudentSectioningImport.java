@@ -1400,7 +1400,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|area
+name|clasf
 operator|==
 literal|null
 condition|)

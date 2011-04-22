@@ -705,13 +705,6 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|student
-operator|==
-literal|null
-condition|)
-continue|continue;
 name|loadCourses
 argument_list|(
 name|element
@@ -1084,28 +1077,6 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|area
-operator|==
-literal|null
-condition|)
-block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Subject area "
-operator|+
-name|subject
-operator|+
-literal|" not found"
-argument_list|)
-expr_stmt|;
-continue|continue;
 block|}
 name|LastLikeCourseDemand
 name|demand
