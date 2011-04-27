@@ -10379,6 +10379,8 @@ literal|"left join fetch s.classEnrollments as e "
 operator|+
 literal|"left join fetch s.waitlists as w "
 operator|+
+literal|"left join fetch cr.classEnrollments as cre "
+operator|+
 operator|(
 name|iLoadStudentInfo
 condition|?
