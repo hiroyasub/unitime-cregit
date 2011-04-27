@@ -1089,6 +1089,8 @@ literal|"left join fetch s.posMajors as mj "
 operator|+
 literal|"left join fetch s.waitlists as w "
 operator|+
+literal|"left join fetch cr.classEnrollments as cre "
+operator|+
 literal|"where s.session.uniqueId=:sessionId"
 argument_list|)
 operator|.
