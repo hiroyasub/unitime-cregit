@@ -1366,7 +1366,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|c
 operator|.
@@ -1467,7 +1467,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.
@@ -2708,7 +2708,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|c
 operator|.
@@ -2809,7 +2809,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.
@@ -8219,7 +8219,7 @@ name|name
 init|=
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|mergedCurriculum
 operator|.
@@ -8357,7 +8357,7 @@ name|name
 operator|+=
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|m
 operator|.
@@ -10074,7 +10074,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|curriculum
 operator|.
@@ -10241,7 +10241,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.
@@ -12371,7 +12371,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|a
 operator|.
@@ -13127,7 +13127,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|a
 operator|.
@@ -13536,7 +13536,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|m
 operator|.
@@ -14281,7 +14281,7 @@ literal|"select c from CourseOffering c where "
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and ("
 operator|+
-literal|"lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like :q || '%' "
+literal|"lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like :q || '%' or lower(c.courseNbr) like :q || '%' "
 operator|+
 operator|(
 name|query
@@ -16365,7 +16365,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.

@@ -8263,7 +8263,7 @@ name|getName
 argument_list|()
 return|;
 case|case
-name|ABBV_NAME
+name|CODE_NAME
 case|:
 return|return
 name|dept

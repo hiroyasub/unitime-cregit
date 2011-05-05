@@ -1019,7 +1019,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|classification
 operator|.
@@ -1118,7 +1118,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|area
 operator|.
@@ -1187,7 +1187,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.
@@ -2898,7 +2898,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|cr
 operator|.
@@ -2976,7 +2976,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|classification
 operator|.
@@ -3104,7 +3104,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.

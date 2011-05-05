@@ -1913,7 +1913,7 @@ literal|" - "
 operator|+
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|e1
 operator|.
@@ -1956,7 +1956,7 @@ literal|" - "
 operator|+
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|e2
 operator|.
@@ -2080,7 +2080,7 @@ name|setName
 argument_list|(
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|e1
 operator|.
@@ -2113,7 +2113,7 @@ literal|" / "
 operator|+
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|e2
 operator|.

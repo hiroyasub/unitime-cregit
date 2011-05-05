@@ -1545,7 +1545,7 @@ name|name
 operator|=
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|area
 operator|.
@@ -1602,7 +1602,7 @@ name|name
 operator|+=
 name|Constants
 operator|.
-name|toInitialCase
+name|curriculaToInitialCase
 argument_list|(
 name|major
 operator|.

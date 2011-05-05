@@ -5575,7 +5575,7 @@ name|cx
 operator|.
 name|setWidth
 argument_list|(
-literal|"100px"
+literal|"130px"
 argument_list|)
 expr_stmt|;
 name|cx
@@ -6221,7 +6221,7 @@ name|cx
 operator|.
 name|setWidth
 argument_list|(
-literal|"100px"
+literal|"130px"
 argument_list|)
 expr_stmt|;
 name|cx
