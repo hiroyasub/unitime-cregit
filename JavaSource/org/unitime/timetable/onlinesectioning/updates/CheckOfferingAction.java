@@ -853,6 +853,16 @@ argument_list|,
 name|toc
 argument_list|)
 decl_stmt|;
+name|Lock
+name|wl
+init|=
+name|server
+operator|.
+name|writeLock
+argument_list|()
+decl_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|enrollment
@@ -912,6 +922,15 @@ name|unassign
 argument_list|(
 literal|0
 argument_list|)
+expr_stmt|;
+block|}
+block|}
+finally|finally
+block|{
+name|wl
+operator|.
+name|release
+argument_list|()
 expr_stmt|;
 block|}
 comment|// helper.info("New: " + (r.getRequest().getAssignment() == null ? "not assigned" : r.getRequest().getAssignment().getAssignments()));
