@@ -767,6 +767,12 @@ argument_list|(
 name|offeringId
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|oldOffering
+operator|!=
+literal|null
+condition|)
 name|server
 operator|.
 name|remove
