@@ -1083,6 +1083,11 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
+name|hibSession
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1408,6 +1413,11 @@ name|saveOrUpdate
 argument_list|(
 name|r
 argument_list|)
+expr_stmt|;
+name|hibSession
+operator|.
+name|flush
+argument_list|()
 expr_stmt|;
 for|for
 control|(
