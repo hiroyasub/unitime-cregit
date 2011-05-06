@@ -464,6 +464,11 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|Lock
+name|writeLock
+parameter_list|()
+function_decl|;
+specifier|public
+name|Lock
 name|lockAll
 parameter_list|()
 function_decl|;
