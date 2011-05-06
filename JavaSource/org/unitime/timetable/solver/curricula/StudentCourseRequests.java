@@ -332,11 +332,11 @@ name|iHibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct e.courseOffering.uniqueId, s.uniqueId, a.academicAreaAbbreviation, f.code, m.code from StudentClassEnrollment e inner join e.student s "
+literal|"select distinct r.courseOffering.uniqueId, s.uniqueId, a.academicAreaAbbreviation, f.code, m.code from CourseRequest r inner join r.courseDemand.student s "
 operator|+
 literal|"left outer join s.academicAreaClassifications c left outer join s.posMajors m left outer join c.academicArea a left outer join c.academicClassification f "
 operator|+
-literal|"where e.courseOffering.subjectArea.uniqueId = :subjectId"
+literal|"where r.courseOffering.subjectArea.uniqueId = :subjectId"
 argument_list|)
 operator|.
 name|setLong
@@ -558,9 +558,9 @@ name|iHibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct e.student.uniqueId, e.courseOffering "
+literal|"select distinct r.courseDemand.student.uniqueId, r.courseOffering "
 operator|+
-literal|"from StudentClassEnrollment e where e.student.session.uniqueId = :sessionId"
+literal|"from CourseRequest r where r.courseDemand.student.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong
