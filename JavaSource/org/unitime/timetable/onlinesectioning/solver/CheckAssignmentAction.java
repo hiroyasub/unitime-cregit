@@ -821,6 +821,13 @@ name|course
 argument_list|)
 expr_stmt|;
 block|}
+name|sections
+operator|.
+name|add
+argument_list|(
+name|section
+argument_list|)
+expr_stmt|;
 block|}
 for|for
 control|(
