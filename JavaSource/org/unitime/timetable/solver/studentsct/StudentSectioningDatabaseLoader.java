@@ -10375,6 +10375,8 @@ literal|"left join fetch s.courseDemands as cd "
 operator|+
 literal|"left join fetch cd.courseRequests as cr "
 operator|+
+literal|"left join fetch cr.classWaitLists as cw "
+operator|+
 literal|"left join fetch s.classEnrollments as e "
 operator|+
 literal|"left join fetch s.waitlists as w "
