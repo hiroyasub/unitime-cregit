@@ -600,6 +600,47 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|course
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|SectioningException
+argument_list|(
+name|SectioningExceptionType
+operator|.
+name|ENROLL_NOT_AVAILABLE
+argument_list|,
+name|ca
+operator|.
+name|getSubject
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|ca
+operator|.
+name|getCourseNbr
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|ca
+operator|.
+name|getSubpart
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|ca
+operator|.
+name|getSection
+argument_list|()
+argument_list|)
+throw|;
+if|if
+condition|(
 name|server
 operator|.
 name|isOfferingLocked
@@ -624,15 +665,10 @@ name|getId
 argument_list|()
 argument_list|)
 expr_stmt|;
-continue|continue;
 comment|// throw new SectioningException(SectioningExceptionType.COURSE_LOCKED, course.getName());
 block|}
-if|if
-condition|(
-name|course
-operator|!=
-literal|null
-condition|)
+else|else
+block|{
 name|offeringIds
 operator|.
 name|add
@@ -646,6 +682,7 @@ name|getId
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|OnlineSectioningServer
 operator|.
@@ -2626,10 +2663,7 @@ name|helper
 operator|.
 name|debug
 argument_list|(
-name|info
-operator|.
-name|getClazz
-argument_list|()
+name|clazz
 operator|.
 name|getClassLabel
 argument_list|(
@@ -2689,10 +2723,7 @@ name|helper
 operator|.
 name|info
 argument_list|(
-name|info
-operator|.
-name|getClazz
-argument_list|()
+name|clazz
 operator|.
 name|getClassLabel
 argument_list|(
