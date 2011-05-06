@@ -551,15 +551,7 @@ name|code
 operator|==
 literal|null
 condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Major Code is required."
-argument_list|)
-throw|;
-block|}
+continue|continue;
 name|String
 name|academicArea
 init|=
@@ -581,7 +573,6 @@ name|academicArea
 operator|!=
 literal|null
 condition|)
-block|{
 name|major
 operator|=
 name|PosMajor
@@ -598,9 +589,7 @@ argument_list|,
 name|academicArea
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|major
 operator|=
 name|PosMajor
@@ -615,14 +604,34 @@ argument_list|,
 name|code
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|major
-operator|!=
+operator|==
 literal|null
 condition|)
-block|{
+name|warn
+argument_list|(
+literal|"Major "
+operator|+
+operator|(
+name|academicArea
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+name|academicArea
+operator|+
+literal|" "
+operator|)
+operator|+
+name|code
+operator|+
+literal|" was not found."
+argument_list|)
+expr_stmt|;
+else|else
 name|student
 operator|.
 name|addToPosMajors
@@ -630,7 +639,6 @@ argument_list|(
 name|major
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|private
@@ -712,15 +720,7 @@ name|code
 operator|==
 literal|null
 condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Minor Code is required."
-argument_list|)
-throw|;
-block|}
+continue|continue;
 name|String
 name|academicArea
 init|=
@@ -742,7 +742,6 @@ name|academicArea
 operator|!=
 literal|null
 condition|)
-block|{
 name|minor
 operator|=
 name|PosMinor
@@ -759,9 +758,7 @@ argument_list|,
 name|academicArea
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|minor
 operator|=
 name|PosMinor
@@ -776,14 +773,34 @@ argument_list|,
 name|code
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|minor
-operator|!=
+operator|==
 literal|null
 condition|)
-block|{
+name|warn
+argument_list|(
+literal|"Minor "
+operator|+
+operator|(
+name|academicArea
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+name|academicArea
+operator|+
+literal|" "
+operator|)
+operator|+
+name|code
+operator|+
+literal|" was not found."
+argument_list|)
+expr_stmt|;
+else|else
 name|student
 operator|.
 name|addToPosMinors
@@ -791,7 +808,6 @@ argument_list|(
 name|minor
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|private
@@ -810,13 +826,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|AcademicClassificationDAO
-name|acadClassDAO
-init|=
-operator|new
-name|AcademicClassificationDAO
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|element
@@ -829,6 +838,13 @@ operator|==
 literal|null
 condition|)
 return|return;
+name|AcademicClassificationDAO
+name|acadClassDAO
+init|=
+operator|new
+name|AcademicClassificationDAO
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -874,26 +890,18 @@ argument_list|(
 literal|"academicArea"
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|abbv
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Academic Area is required."
-argument_list|)
-throw|;
-block|}
 name|AcademicArea
 name|acadArea
 init|=
 literal|null
 decl_stmt|;
+if|if
+condition|(
+name|abbv
+operator|!=
+literal|null
+condition|)
+block|{
 name|acadArea
 operator|=
 name|AcademicArea
@@ -914,10 +922,7 @@ name|acadArea
 operator|==
 literal|null
 condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
+name|warn
 argument_list|(
 literal|"Academic Area "
 operator|+
@@ -925,8 +930,13 @@ name|abbv
 operator|+
 literal|" was not found."
 argument_list|)
-throw|;
+expr_stmt|;
 block|}
+name|AcademicClassification
+name|acadClass
+init|=
+literal|null
+decl_stmt|;
 name|String
 name|code
 init|=
@@ -940,23 +950,10 @@ decl_stmt|;
 if|if
 condition|(
 name|code
-operator|==
+operator|!=
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Academic Classification is required."
-argument_list|)
-throw|;
-block|}
-name|AcademicClassification
-name|acadClass
-init|=
-literal|null
-decl_stmt|;
 name|acadClass
 operator|=
 name|findAcadClass
@@ -977,23 +974,27 @@ name|acadClass
 operator|==
 literal|null
 condition|)
-block|{
-name|acadClass
-operator|=
-name|findAcadClass
+name|warn
 argument_list|(
-name|acadClassDAO
-argument_list|,
-literal|"00"
-argument_list|,
-name|session
-operator|.
-name|getSessionId
-argument_list|()
+literal|"Academic Classification "
+operator|+
+name|code
+operator|+
+literal|" was not found."
 argument_list|)
 expr_stmt|;
-comment|//throw new Exception("Academic Classification " + code + " was not found.");
 block|}
+if|if
+condition|(
+name|acadArea
+operator|!=
+literal|null
+operator|&&
+name|acadClass
+operator|!=
+literal|null
+condition|)
+block|{
 name|AcademicAreaClassification
 name|acadAreaClass
 init|=
@@ -1029,6 +1030,7 @@ argument_list|(
 name|acadAreaClass
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|private
