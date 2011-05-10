@@ -31,6 +31,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|PrintWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Iterator
@@ -44,16 +54,6 @@ operator|.
 name|util
 operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|ServletOutputStream
 import|;
 end_import
 
@@ -247,22 +247,29 @@ name|addHeader
 argument_list|(
 literal|"Content-Type"
 argument_list|,
-literal|"text/xml"
+literal|"text/xml; charset=UTF-8"
 argument_list|)
 expr_stmt|;
-name|ServletOutputStream
+name|request
+operator|.
+name|setCharacterEncoding
+argument_list|(
+literal|"UTF-8"
+argument_list|)
+expr_stmt|;
+name|PrintWriter
 name|out
 init|=
 name|response
 operator|.
-name|getOutputStream
+name|getWriter
 argument_list|()
 decl_stmt|;
 name|out
 operator|.
 name|print
 argument_list|(
-literal|"<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>\n"
+literal|"<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
 argument_list|)
 expr_stmt|;
 name|out
@@ -294,7 +301,7 @@ specifier|protected
 name|void
 name|print
 parameter_list|(
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|,
 name|String
@@ -329,7 +336,7 @@ parameter_list|(
 name|HttpServletRequest
 name|request
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -439,7 +446,7 @@ parameter_list|(
 name|String
 name|subjectAreaId
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -610,7 +617,7 @@ parameter_list|(
 name|String
 name|timePatternId
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
@@ -715,7 +722,7 @@ parameter_list|(
 name|String
 name|timePatternId
 parameter_list|,
-name|ServletOutputStream
+name|PrintWriter
 name|out
 parameter_list|)
 throws|throws
