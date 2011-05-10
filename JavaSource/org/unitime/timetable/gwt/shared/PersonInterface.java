@@ -796,6 +796,19 @@ operator|.
 name|getDepartment
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|iSource
+operator|.
+name|contains
+argument_list|(
+name|person
+operator|.
+name|getSource
+argument_list|()
+argument_list|)
+condition|)
 name|iSource
 operator|+=
 literal|", "
