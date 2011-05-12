@@ -1998,14 +1998,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|iIncludeOtherStudents
+operator|&&
 name|studentId
 operator|>=
 literal|0
-operator|||
-name|iStudentRequests
-operator|.
-name|isEmpty
-argument_list|()
 condition|)
 return|return
 name|iFallback
