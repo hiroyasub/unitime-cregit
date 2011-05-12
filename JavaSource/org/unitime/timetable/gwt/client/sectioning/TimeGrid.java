@@ -2448,7 +2448,7 @@ operator|)
 name|iScrollPanel
 operator|)
 operator|.
-name|setScrollPosition
+name|setVerticalScrollPosition
 argument_list|(
 literal|350
 argument_list|)
