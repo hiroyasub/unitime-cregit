@@ -1691,11 +1691,6 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
-name|flushIfNeeded
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 block|}
 for|for
 control|(
