@@ -371,7 +371,7 @@ name|shared
 operator|.
 name|ReservationInterface
 operator|.
-name|Curriculum
+name|Area
 import|;
 end_import
 
@@ -3591,7 +3591,7 @@ literal|"Curriculum"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Curriculum
+name|Area
 name|curriculum
 init|=
 operator|(
