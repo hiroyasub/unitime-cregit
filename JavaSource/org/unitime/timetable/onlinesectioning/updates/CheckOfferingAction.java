@@ -700,6 +700,8 @@ argument_list|(
 operator|new
 name|SectioningRequest
 argument_list|(
+name|offering
+argument_list|,
 name|request
 argument_list|,
 literal|null
@@ -762,6 +764,8 @@ argument_list|(
 operator|new
 name|SectioningRequest
 argument_list|(
+name|offering
+argument_list|,
 name|request
 argument_list|,
 literal|null

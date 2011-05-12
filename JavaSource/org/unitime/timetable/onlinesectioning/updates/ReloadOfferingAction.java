@@ -806,7 +806,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|oldOffering
+name|io
 operator|!=
 literal|null
 condition|)
@@ -1499,6 +1499,8 @@ argument_list|(
 operator|new
 name|SectioningRequest
 argument_list|(
+name|newOffering
+argument_list|,
 name|newRequest
 argument_list|,
 name|student
@@ -1658,6 +1660,8 @@ argument_list|(
 operator|new
 name|SectioningRequest
 argument_list|(
+name|newOffering
+argument_list|,
 name|newRequest
 argument_list|,
 name|student
