@@ -1290,7 +1290,7 @@ name|iReservationTable
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Unable to retrieve curricula ("
+literal|"Unable to retrieve reservations ("
 operator|+
 name|caught
 operator|.
