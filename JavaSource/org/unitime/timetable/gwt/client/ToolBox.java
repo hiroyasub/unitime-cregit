@@ -305,7 +305,7 @@ literal|"<table class=\"unitime-Footer\"><tr>"
 operator|+
 literal|"<td width=\"33%\" align=\"left\" nowrap=\"nowrap\">Printed from UniTime 3.2 | University Timetabling Application</td>"
 operator|+
-literal|"<td width=\"34%\" align=\"center\">&copy; 2008 - 2010 UniTime LLC</td>"
+literal|"<td width=\"34%\" align=\"center\">&copy; 2008 - 2011 UniTime LLC</td>"
 operator|+
 literal|"<td width=\"33%\" align=\"right\">"
 operator|+
