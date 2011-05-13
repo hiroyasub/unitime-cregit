@@ -150,6 +150,14 @@ specifier|public
 specifier|static
 specifier|final
 name|int
+name|sResourceTypeCurriculum
+init|=
+literal|3
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
 name|sBgModeNotAvailable
 init|=
 operator|-
@@ -291,6 +299,8 @@ block|,
 literal|"Instructor"
 block|,
 literal|"Department"
+block|,
+literal|"Curriculum"
 block|}
 decl_stmt|;
 specifier|private
