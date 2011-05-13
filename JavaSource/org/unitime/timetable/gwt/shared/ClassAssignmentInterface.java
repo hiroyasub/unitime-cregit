@@ -553,6 +553,16 @@ name|String
 argument_list|>
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|iOverlaps
+operator|.
+name|contains
+argument_list|(
+name|overlap
+argument_list|)
+condition|)
 name|iOverlaps
 operator|.
 name|add
