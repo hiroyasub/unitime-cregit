@@ -1471,7 +1471,7 @@ name|iFilter
 operator|.
 name|addRow
 argument_list|(
-literal|"Resoure Type:"
+literal|"Resource Type:"
 argument_list|,
 name|iResourceTypes
 argument_list|)
