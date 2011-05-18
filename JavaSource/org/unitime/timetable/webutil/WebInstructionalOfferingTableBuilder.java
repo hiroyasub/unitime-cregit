@@ -253,6 +253,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|form
@@ -764,6 +792,20 @@ name|WebInstructionalOfferingTableBuilder
 block|{
 specifier|protected
 specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|protected
+specifier|static
 name|SimpleDateFormat
 name|sDateFormat
 init|=
@@ -850,7 +892,10 @@ specifier|final
 name|String
 name|DIV_SEC
 init|=
-literal|"External Id"
+name|MSG
+operator|.
+name|columnExternalId
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -858,7 +903,21 @@ specifier|final
 name|String
 name|DEMAND
 init|=
-literal|"Enrollment"
+name|MSG
+operator|.
+name|columnDemand
+argument_list|()
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|LAST_DEMAND
+init|=
+name|MSG
+operator|.
+name|columnLastDemand
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -866,7 +925,10 @@ specifier|final
 name|String
 name|PROJECTED_DEMAND
 init|=
-literal|"Projected Demand"
+name|MSG
+operator|.
+name|columnProjectedDemand
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -874,7 +936,10 @@ specifier|final
 name|String
 name|LIMIT
 init|=
-literal|"Limit"
+name|MSG
+operator|.
+name|columnLimit
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -882,7 +947,10 @@ specifier|final
 name|String
 name|ROOM_RATIO
 init|=
-literal|"Room Ratio"
+name|MSG
+operator|.
+name|columnRoomRatio
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -890,7 +958,10 @@ specifier|final
 name|String
 name|MIN_PER_WK
 init|=
-literal|"Mins Per Week"
+name|MSG
+operator|.
+name|columnMinPerWk
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -898,7 +969,10 @@ specifier|final
 name|String
 name|MANAGER
 init|=
-literal|"Manager"
+name|MSG
+operator|.
+name|columnManager
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -906,7 +980,10 @@ specifier|final
 name|String
 name|DATE_PATTERN
 init|=
-literal|"Date Pattern"
+name|MSG
+operator|.
+name|columnDatePattern
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -914,7 +991,10 @@ specifier|final
 name|String
 name|TIME_PATTERN
 init|=
-literal|"Time Pattern"
+name|MSG
+operator|.
+name|columnTimePattern
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -922,7 +1002,10 @@ specifier|final
 name|String
 name|INSTRUCTOR
 init|=
-literal|"Instructor"
+name|MSG
+operator|.
+name|columnInstructor
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -930,7 +1013,10 @@ specifier|final
 name|String
 name|PREFERENCES
 init|=
-literal|"Preferences"
+name|MSG
+operator|.
+name|columnPreferences
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -938,7 +1024,10 @@ specifier|final
 name|String
 name|TIMETABLE
 init|=
-literal|"Timetable"
+name|MSG
+operator|.
+name|columnTimetable
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -946,7 +1035,10 @@ specifier|final
 name|String
 name|CREDIT
 init|=
-literal|"Offering Credit"
+name|MSG
+operator|.
+name|columnOfferingCredit
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -954,7 +1046,10 @@ specifier|final
 name|String
 name|SCHEDULING_SUBPART_CREDIT
 init|=
-literal|"Subpart Credit"
+name|MSG
+operator|.
+name|columnSubpartCredit
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -962,14 +1057,20 @@ specifier|final
 name|String
 name|SCHEDULE_PRINT_NOTE_FILTER
 init|=
-literal|"Schedule of Classes Notes"
+name|MSG
+operator|.
+name|columnSchedulePrintNote
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
 name|String
 name|SCHEDULE_PRINT_NOTE
 init|=
-literal|"Schedule of Classes Notes"
+name|MSG
+operator|.
+name|columnSchedulePrintNote
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -977,7 +1078,10 @@ specifier|final
 name|String
 name|NOTE
 init|=
-literal|"Note to Schedule Manager"
+name|MSG
+operator|.
+name|columnNote
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -985,7 +1089,10 @@ specifier|final
 name|String
 name|TITLE
 init|=
-literal|"Title"
+name|MSG
+operator|.
+name|columnTitle
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -993,7 +1100,10 @@ specifier|final
 name|String
 name|CONSENT
 init|=
-literal|"Consent"
+name|MSG
+operator|.
+name|columnConsent
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1001,7 +1111,10 @@ specifier|final
 name|String
 name|DESIGNATOR_REQ
 init|=
-literal|"Designator Required"
+name|MSG
+operator|.
+name|columnDesignatorRequired
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1009,7 +1122,10 @@ specifier|final
 name|String
 name|EXAM
 init|=
-literal|"Examination"
+name|MSG
+operator|.
+name|columnExam
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1017,7 +1133,10 @@ specifier|final
 name|String
 name|EXAM_NAME
 init|=
-literal|"Name"
+name|MSG
+operator|.
+name|columnExamName
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1025,7 +1144,10 @@ specifier|final
 name|String
 name|EXAM_PER
 init|=
-literal|"Period"
+name|MSG
+operator|.
+name|columnExamPeriod
+argument_list|()
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1033,7 +1155,10 @@ specifier|final
 name|String
 name|EXAM_ROOM
 init|=
-literal|"Room"
+name|MSG
+operator|.
+name|columnExamRoom
+argument_list|()
 decl_stmt|;
 comment|// Preference Labels
 specifier|protected
@@ -1041,49 +1166,70 @@ specifier|static
 name|String
 name|TIME
 init|=
-literal|"Time"
+name|MSG
+operator|.
+name|columnTimePref
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|ROOMGR
 init|=
-literal|"Room&nbsp;Group"
+name|MSG
+operator|.
+name|columnRoomGroupPref
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|BLDG
 init|=
-literal|"Bldg"
+name|MSG
+operator|.
+name|columnBuildingPref
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|ROOM
 init|=
-literal|"Room"
+name|MSG
+operator|.
+name|columnRoomPref
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|FEATURES
 init|=
-literal|"Features"
+name|MSG
+operator|.
+name|columnRoomFeaturePref
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|DISTRIBUTION
 init|=
-literal|"Distribution"
+name|MSG
+operator|.
+name|columnDistributionPref
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|ALL_ROOM
 init|=
-literal|"Room"
+name|MSG
+operator|.
+name|columnAllRoomPref
+argument_list|()
 decl_stmt|;
 comment|// Timetable Labels
 specifier|protected
@@ -1091,21 +1237,30 @@ specifier|static
 name|String
 name|ASSIGNED_TIME
 init|=
-literal|"Time"
+name|MSG
+operator|.
+name|columnAssignedTime
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|ASSIGNED_ROOM
 init|=
-literal|"Room"
+name|MSG
+operator|.
+name|columnAssignedRoom
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
 name|String
 name|ASSIGNED_ROOM_CAPACITY
 init|=
-literal|"Room Cap"
+name|MSG
+operator|.
+name|columnAssignedRoomCapacity
+argument_list|()
 decl_stmt|;
 specifier|protected
 specifier|static
@@ -2324,9 +2479,7 @@ operator|.
 name|headerCell
 argument_list|(
 operator|(
-literal|"Last "
-operator|+
-name|DEMAND
+name|LAST_DEMAND
 operator|)
 argument_list|,
 literal|2
@@ -3771,12 +3924,15 @@ name|cell
 operator|.
 name|setTitle
 argument_list|(
+name|MSG
+operator|.
+name|tooltipDoNotDisplayInScheduleBook
+argument_list|(
 name|aClass
 operator|.
 name|getClassLabelWithTitle
 argument_list|()
-operator|+
-literal|" - Do Not Display In Schedule Book."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
@@ -5528,7 +5684,14 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
-literal|"<IMG border='0' alt='Has Schedule Print Note' title='"
+literal|"<IMG border='0' alt='"
+operator|+
+name|MSG
+operator|.
+name|altHasSchedulePrintNote
+argument_list|()
+operator|+
+literal|"' title='"
 operator|+
 name|note
 operator|+
@@ -5707,13 +5870,15 @@ operator|)
 operator|+
 literal|"title='"
 operator|+
+name|MSG
+operator|.
+name|tooltipExam
+argument_list|(
 name|exam
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|Exam
 operator|.
 name|sExamTypes
@@ -5723,8 +5888,9 @@ operator|.
 name|getExamType
 argument_list|()
 index|]
+argument_list|)
 operator|+
-literal|" Examination'>"
+literal|"'>"
 argument_list|)
 expr_stmt|;
 name|sb
@@ -5877,13 +6043,15 @@ operator|)
 operator|+
 literal|"title='"
 operator|+
+name|MSG
+operator|.
+name|tooltipExam
+argument_list|(
 name|exam
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|Exam
 operator|.
 name|sExamTypes
@@ -5893,8 +6061,9 @@ operator|.
 name|getExamType
 argument_list|()
 index|]
+argument_list|)
 operator|+
-literal|" Examination'>"
+literal|"'>"
 argument_list|)
 expr_stmt|;
 if|if
@@ -6134,13 +6303,15 @@ operator|)
 operator|+
 literal|"title='"
 operator|+
+name|MSG
+operator|.
+name|tooltipExam
+argument_list|(
 name|exam
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|Exam
 operator|.
 name|sExamTypes
@@ -6150,8 +6321,9 @@ operator|.
 name|getExamType
 argument_list|()
 index|]
+argument_list|)
 operator|+
-literal|" Examination'>"
+literal|"'>"
 argument_list|)
 expr_stmt|;
 if|if
@@ -6599,7 +6771,14 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
-literal|"<IMG border='0' alt='Has Course Offering Note' title='"
+literal|"<IMG border='0' alt='"
+operator|+
+name|MSG
+operator|.
+name|altHasCourseOfferingNote
+argument_list|()
+operator|+
+literal|"' title='"
 operator|+
 name|note
 operator|+
@@ -6832,7 +7011,14 @@ name|cell
 operator|=
 name|initNormalCell
 argument_list|(
-literal|"<IMG border='0' alt='Has Note to Mgr' title='"
+literal|"<IMG border='0' alt='"
+operator|+
+name|MSG
+operator|.
+name|altHasNoteToMgr
+argument_list|()
+operator|+
+literal|"' title='"
 operator|+
 name|note
 operator|+
@@ -9799,9 +9985,12 @@ name|initNormalCell
 argument_list|(
 name|indent
 operator|+
-literal|"Configuration "
-operator|+
+name|MSG
+operator|.
+name|labelConfiguration
+argument_list|(
 name|configName
+argument_list|)
 argument_list|,
 name|isEditable
 argument_list|)
@@ -13190,14 +13379,28 @@ name|outputStream
 operator|.
 name|print
 argument_list|(
-literal|"<DIV align=\"right\"><A class=\"l7\" href=\"#notOffered\">Courses Not Offered</A></DIV>"
+literal|"<DIV align=\"right\"><A class=\"l7\" href=\"#notOffered\">"
+operator|+
+name|MSG
+operator|.
+name|labelNotOfferedCourses
+argument_list|()
+operator|+
+literal|"</A></DIV>"
 argument_list|)
 expr_stmt|;
 name|outputStream
 operator|.
 name|print
 argument_list|(
-literal|"<DIV class=\"WelcomeRowHead\"><A name=\"offered\"></A>Offered Courses</DIV>"
+literal|"<DIV class=\"WelcomeRowHead\"><A name=\"offered\"></A>"
+operator|+
+name|MSG
+operator|.
+name|labelOfferedCourses
+argument_list|()
+operator|+
+literal|"</DIV>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -13323,7 +13526,14 @@ name|outputStream
 operator|.
 name|print
 argument_list|(
-literal|"<font class=\"error\">There are no courses currently offered for this subject.</font>"
+literal|"<font class=\"error\">"
+operator|+
+name|MSG
+operator|.
+name|errorNoCoursesOffered
+argument_list|()
+operator|+
+literal|"</font>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -13370,14 +13580,28 @@ name|outputStream
 operator|.
 name|print
 argument_list|(
-literal|"<DIV align=\"right\"><A class=\"l7\" href=\"#offered\">Offered Courses</A></DIV>"
+literal|"<DIV align=\"right\"><A class=\"l7\" href=\"#offered\">"
+operator|+
+name|MSG
+operator|.
+name|labelOfferedCourses
+argument_list|()
+operator|+
+literal|"</A></DIV>"
 argument_list|)
 expr_stmt|;
 name|outputStream
 operator|.
 name|print
 argument_list|(
-literal|"<DIV class=\"WelcomeRowHead\"><A name=\"notOffered\"></A>Not Offered Courses</DIV>"
+literal|"<DIV class=\"WelcomeRowHead\"><A name=\"notOffered\"></A>"
+operator|+
+name|MSG
+operator|.
+name|labelNotOfferedCourses
+argument_list|()
+operator|+
+literal|"</DIV>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -13503,7 +13727,14 @@ name|outputStream
 operator|.
 name|print
 argument_list|(
-literal|"<font class=\"normal\">&nbsp;<br>All courses are currently being offered for this subject.</font>"
+literal|"<font class=\"normal\">&nbsp;<br>"
+operator|+
+name|MSG
+operator|.
+name|errorAllCoursesOffered
+argument_list|()
+operator|+
+literal|"</font>"
 argument_list|)
 expr_stmt|;
 block|}
