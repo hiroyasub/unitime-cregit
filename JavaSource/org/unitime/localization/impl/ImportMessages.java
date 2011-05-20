@@ -287,7 +287,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"# UniTime 3.3 (University Timetabling Application"
+literal|"# UniTime 3.3 (University Timetabling Application)"
 argument_list|)
 expr_stmt|;
 name|out
@@ -308,7 +308,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"#"
+literal|"# "
 argument_list|)
 expr_stmt|;
 name|out
@@ -343,7 +343,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"#"
+literal|"# "
 argument_list|)
 expr_stmt|;
 name|out
@@ -378,7 +378,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"#"
+literal|"# "
 argument_list|)
 expr_stmt|;
 name|out
@@ -399,7 +399,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"#"
+literal|"# "
 argument_list|)
 expr_stmt|;
 name|CSVFile

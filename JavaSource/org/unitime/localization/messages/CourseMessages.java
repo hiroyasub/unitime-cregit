@@ -272,7 +272,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{1} {2} Examination"
+literal|"{0} {1} Examination"
 argument_list|)
 name|String
 name|tooltipExam
@@ -404,7 +404,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{1} - Do Not Display In Schedule Book."
+literal|"{0} - Do Not Display In Schedule Book."
 argument_list|)
 name|String
 name|tooltipDoNotDisplayInScheduleBook
@@ -443,7 +443,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Configuration {1}"
+literal|"Configuration {0}"
 argument_list|)
 name|String
 name|labelConfiguration
@@ -610,7 +610,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Search/Display Offerings (Alt+{1})"
+literal|"Search/Display Offerings (Alt+{0})"
 argument_list|)
 name|String
 name|titleSearchInstructionalOfferings
@@ -622,7 +622,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Export PDF (Alt+{1})"
+literal|"Export PDF (Alt+{0})"
 argument_list|)
 name|String
 name|titleExportPdf
@@ -634,7 +634,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Export Worksheet PDF (Alt+{1})"
+literal|"Export Worksheet PDF (Alt+{0})"
 argument_list|)
 name|String
 name|titleWorksheetPdf
@@ -646,7 +646,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Add New Offering (Alt+{1})"
+literal|"Add New Offering (Alt+{0})"
 argument_list|)
 name|String
 name|titleAddNewInstructionalOffering
@@ -712,7 +712,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to create worksheet PDF file: {1}."
+literal|"Unable to create worksheet PDF file: {0}."
 argument_list|)
 name|String
 name|errorUnableToCreateWorksheetPdf
@@ -724,7 +724,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course Number cannot be matched to regular expression: {1}. Reason: {2}"
+literal|"Course Number cannot be matched to regular expression: {0}. Reason: {1}"
 argument_list|)
 name|String
 name|errorCourseDoesNotMatchRegEx
