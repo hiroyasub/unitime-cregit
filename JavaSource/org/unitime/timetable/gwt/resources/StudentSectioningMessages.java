@@ -1411,6 +1411,27 @@ name|String
 name|showUnassignments
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Free time is not allowed."
+argument_list|)
+name|String
+name|freeTimeNotAllowed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} is a course."
+argument_list|)
+name|String
+name|notFreeTimeIsCourse
+parameter_list|(
+name|String
+name|text
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
