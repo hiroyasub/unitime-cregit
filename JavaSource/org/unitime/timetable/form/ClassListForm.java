@@ -1729,9 +1729,15 @@ index|[]
 block|{
 literal|""
 block|,
-literal|"am"
+name|MSG
+operator|.
+name|timeAm
+argument_list|()
 block|,
-literal|"pm"
+name|MSG
+operator|.
+name|timePm
+argument_list|()
 block|}
 return|;
 block|}
