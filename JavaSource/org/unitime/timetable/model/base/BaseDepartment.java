@@ -244,6 +244,10 @@ name|Boolean
 name|iAllowReqRoom
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iAllowReqDistribution
+decl_stmt|;
+specifier|private
 name|String
 name|iRoomSharingColor
 decl_stmt|;
@@ -358,6 +362,13 @@ name|String
 name|PROP_ALLOW_REQ_ROOM
 init|=
 literal|"allowReqRoom"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_ALLOW_REQ_DIST
+init|=
+literal|"allowReqDistribution"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -572,6 +583,37 @@ block|{
 name|iAllowReqRoom
 operator|=
 name|allowReqRoom
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isAllowReqDistribution
+parameter_list|()
+block|{
+return|return
+name|iAllowReqDistribution
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getAllowReqDistribution
+parameter_list|()
+block|{
+return|return
+name|iAllowReqDistribution
+return|;
+block|}
+specifier|public
+name|void
+name|setAllowReqDistribution
+parameter_list|(
+name|Boolean
+name|allowReqDistribution
+parameter_list|)
+block|{
+name|iAllowReqDistribution
+operator|=
+name|allowReqDistribution
 expr_stmt|;
 block|}
 specifier|public
@@ -1233,6 +1275,11 @@ operator|+
 literal|"\n	Abbreviation: "
 operator|+
 name|getAbbreviation
+argument_list|()
+operator|+
+literal|"\n	AllowReqDistribution: "
+operator|+
+name|getAllowReqDistribution
 argument_list|()
 operator|+
 literal|"\n	AllowReqRoom: "

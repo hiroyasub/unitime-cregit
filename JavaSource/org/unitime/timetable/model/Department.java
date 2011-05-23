@@ -2395,6 +2395,14 @@ argument_list|)
 expr_stmt|;
 name|d
 operator|.
+name|setAllowReqDistribution
+argument_list|(
+name|isAllowReqDistribution
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|d
+operator|.
 name|setDeptCode
 argument_list|(
 name|getDeptCode
