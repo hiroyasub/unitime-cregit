@@ -63,6 +63,20 @@ name|Target
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|LocalizedLookupDispatchAction
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -106,6 +120,18 @@ name|String
 name|value
 parameter_list|()
 function_decl|;
+name|Class
+argument_list|<
+name|?
+extends|extends
+name|LocalizedLookupDispatchAction
+argument_list|>
+index|[]
+name|apply
+argument_list|()
+expr|default
+block|{}
+expr_stmt|;
 block|}
 block|}
 end_interface

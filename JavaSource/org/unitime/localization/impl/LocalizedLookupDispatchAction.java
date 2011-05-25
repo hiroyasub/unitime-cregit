@@ -174,6 +174,8 @@ condition|(
 name|keyMethodMap
 operator|==
 literal|null
+operator|||
+literal|true
 condition|)
 name|keyMethodMap
 operator|=
@@ -188,7 +190,18 @@ argument_list|()
 operator|)
 operator|.
 name|getStrutsActions
+argument_list|(
+operator|(
+name|Class
+argument_list|<
+name|LocalizedLookupDispatchAction
+argument_list|>
+operator|)
+name|this
+operator|.
+name|getClass
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 return|return
