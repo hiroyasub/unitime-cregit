@@ -505,6 +505,11 @@ name|void
 name|close
 parameter_list|()
 block|{
+name|OnlineSectioningLogger
+operator|.
+name|stopLogger
+argument_list|()
+expr_stmt|;
 name|HibernateUtil
 operator|.
 name|closeHibernate
