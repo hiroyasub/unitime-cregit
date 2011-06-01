@@ -197,7 +197,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course {0} is locked."
+literal|"Course {0} is undergoing maintenance / changes."
 argument_list|)
 name|String
 name|courseLocked
