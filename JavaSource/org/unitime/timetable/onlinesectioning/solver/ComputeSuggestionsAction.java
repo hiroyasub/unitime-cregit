@@ -1052,11 +1052,6 @@ condition|(
 name|assignment
 operator|!=
 literal|null
-operator|&&
-name|assignment
-operator|.
-name|isAssigned
-argument_list|()
 condition|)
 name|requested
 operator|.
@@ -1926,7 +1921,7 @@ literal|null
 operator|&&
 name|e
 operator|.
-name|getSections
+name|getAssignments
 argument_list|()
 operator|!=
 literal|null

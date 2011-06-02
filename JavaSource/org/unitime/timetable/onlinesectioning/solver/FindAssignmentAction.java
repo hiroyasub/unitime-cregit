@@ -1317,9 +1317,8 @@ control|)
 if|if
 condition|(
 name|assignment
-operator|.
-name|isAssigned
-argument_list|()
+operator|!=
+literal|null
 condition|)
 name|requested
 operator|.

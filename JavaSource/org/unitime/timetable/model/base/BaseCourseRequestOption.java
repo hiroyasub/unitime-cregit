@@ -31,16 +31,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|dom4j
-operator|.
-name|Document
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -90,7 +80,8 @@ name|Integer
 name|iOptionType
 decl_stmt|;
 specifier|private
-name|Document
+name|byte
+index|[]
 name|iValue
 decl_stmt|;
 specifier|private
@@ -193,7 +184,8 @@ name|optionType
 expr_stmt|;
 block|}
 specifier|public
-name|Document
+name|byte
+index|[]
 name|getValue
 parameter_list|()
 block|{
@@ -205,7 +197,8 @@ specifier|public
 name|void
 name|setValue
 parameter_list|(
-name|Document
+name|byte
+index|[]
 name|value
 parameter_list|)
 block|{
