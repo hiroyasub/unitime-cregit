@@ -1300,7 +1300,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Wait-listed"
+literal|"Not Enrolled"
 argument_list|)
 name|String
 name|courseWaitListed
@@ -1465,6 +1465,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"The selected class has no students enrolled."
+argument_list|)
+name|String
+name|classHasNoEnrollments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Sort by {0}"
 argument_list|)
 name|String
@@ -1594,7 +1603,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Total Wait-Listed: {0}"
+literal|"Total Not Enrolled: {0}"
 argument_list|)
 name|String
 name|totalWaitListed
@@ -1626,6 +1635,24 @@ parameter_list|(
 name|String
 name|student
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show External Ids"
+argument_list|)
+name|String
+name|showExternalIds
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show Class Numbers"
+argument_list|)
+name|String
+name|showClassNumbers
+parameter_list|()
 function_decl|;
 block|}
 end_interface
