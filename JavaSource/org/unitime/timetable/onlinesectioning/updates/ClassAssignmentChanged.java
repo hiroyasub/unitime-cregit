@@ -681,8 +681,6 @@ operator|.
 name|toProto
 argument_list|(
 name|section
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1107,8 +1105,6 @@ operator|.
 name|toProto
 argument_list|(
 name|section
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

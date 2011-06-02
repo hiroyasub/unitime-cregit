@@ -4583,7 +4583,7 @@ name|getAssignment
 argument_list|()
 operator|==
 literal|null
-operator|||
+operator|&&
 operator|!
 name|request
 operator|.

@@ -566,9 +566,6 @@ name|oldRequest
 operator|.
 name|getInitialAssignment
 argument_list|()
-operator|.
-name|getCourse
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -766,9 +763,6 @@ argument_list|,
 name|newRequest
 operator|.
 name|getInitialAssignment
-argument_list|()
-operator|.
-name|getCourse
 argument_list|()
 argument_list|)
 argument_list|)

@@ -1017,9 +1017,6 @@ name|request
 operator|.
 name|getAssignment
 argument_list|()
-operator|.
-name|getCourse
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1213,6 +1210,16 @@ argument_list|,
 name|enrollment
 argument_list|)
 expr_stmt|;
+name|enrollment
+operator|.
+name|setTimeStamp
+argument_list|(
+name|ts
+operator|.
+name|getTime
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1309,9 +1316,6 @@ argument_list|(
 name|assignment
 argument_list|,
 name|enrollment
-operator|.
-name|getCourse
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

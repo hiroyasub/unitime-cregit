@@ -961,9 +961,6 @@ name|assignment
 argument_list|,
 name|getOldEnrollment
 argument_list|()
-operator|.
-name|getCourse
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1053,9 +1050,6 @@ argument_list|,
 name|r
 operator|.
 name|getInitialAssignment
-argument_list|()
-operator|.
-name|getCourse
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1159,9 +1153,6 @@ argument_list|,
 name|r
 operator|.
 name|getAssignment
-argument_list|()
-operator|.
-name|getCourse
 argument_list|()
 argument_list|)
 argument_list|)
