@@ -1873,7 +1873,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c from Class_ as c where c.managingDept=:departmentId"
+literal|"select distinct c from Class_ as c where c.managingDept=:departmentId or (c.managingDept is null and c.controllingDept=:departmentId)"
 argument_list|)
 operator|.
 name|setLong
@@ -1922,7 +1922,7 @@ literal|"left join fetch ioc.instructionalOffering as io "
 operator|+
 literal|"left join fetch io.courseOfferings as cox "
 operator|+
-literal|"where c.managingDept=:departmentId"
+literal|"where c.managingDept=:departmentId or (c.managingDept is null and c.controllingDept=:departmentId)"
 argument_list|)
 operator|.
 name|setLong
@@ -1960,7 +1960,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c from Class_ as c where c.managingDept=:departmentId and "
+literal|"select distinct c from Class_ as c where (c.managingDept=:departmentId or (c.managingDept is null and c.controllingDept=:departmentId)) and "
 operator|+
 literal|"not exists (from c.assignments as a where a.solution=:solutionId)"
 argument_list|)
