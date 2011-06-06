@@ -990,6 +990,19 @@ name|Session
 name|s
 parameter_list|)
 block|{
+comment|// already in a transaction, do not create a new one
+if|if
+condition|(
+name|s
+operator|.
+name|getTransaction
+argument_list|()
+operator|!=
+literal|null
+condition|)
+return|return
+literal|null
+return|;
 return|return
 name|s
 operator|.
@@ -1006,6 +1019,12 @@ name|Transaction
 name|t
 parameter_list|)
 block|{
+if|if
+condition|(
+name|t
+operator|!=
+literal|null
+condition|)
 name|t
 operator|.
 name|commit
