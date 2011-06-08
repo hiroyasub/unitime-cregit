@@ -358,7 +358,7 @@ name|HTML
 argument_list|(
 name|html
 argument_list|,
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 name|iPrint
