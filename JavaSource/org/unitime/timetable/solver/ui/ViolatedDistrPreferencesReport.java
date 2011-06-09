@@ -297,6 +297,9 @@ name|gc
 operator|.
 name|getType
 argument_list|()
+operator|.
+name|reference
+argument_list|()
 expr_stmt|;
 name|iName
 operator|=

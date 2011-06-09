@@ -2406,7 +2406,9 @@ argument_list|()
 operator|==
 name|GroupConstraint
 operator|.
-name|TYPE_SAME_ROOM
+name|ConstraintType
+operator|.
+name|SAME_ROOM
 condition|)
 continue|continue;
 name|int
@@ -2428,7 +2430,9 @@ argument_list|()
 operator|==
 name|GroupConstraint
 operator|.
-name|TYPE_BTB
+name|ConstraintType
+operator|.
+name|BTB
 condition|)
 block|{
 name|gc
@@ -2437,7 +2441,9 @@ name|setType
 argument_list|(
 name|GroupConstraint
 operator|.
-name|TYPE_BTB_TIME
+name|ConstraintType
+operator|.
+name|BTB_TIME
 argument_list|)
 expr_stmt|;
 name|curPref
@@ -2455,7 +2461,9 @@ name|setType
 argument_list|(
 name|GroupConstraint
 operator|.
-name|TYPE_BTB
+name|ConstraintType
+operator|.
+name|BTB
 argument_list|)
 expr_stmt|;
 block|}
@@ -2468,7 +2476,9 @@ argument_list|()
 operator|==
 name|GroupConstraint
 operator|.
-name|TYPE_SAME_STUDENTS
+name|ConstraintType
+operator|.
+name|SAME_STUDENTS
 condition|)
 block|{
 name|gc
@@ -2477,7 +2487,9 @@ name|setType
 argument_list|(
 name|GroupConstraint
 operator|.
-name|TYPE_DIFF_TIME
+name|ConstraintType
+operator|.
+name|DIFF_TIME
 argument_list|)
 expr_stmt|;
 name|curPref
@@ -2495,7 +2507,9 @@ name|setType
 argument_list|(
 name|GroupConstraint
 operator|.
-name|TYPE_SAME_STUDENTS
+name|ConstraintType
+operator|.
+name|SAME_STUDENTS
 argument_list|)
 expr_stmt|;
 block|}
