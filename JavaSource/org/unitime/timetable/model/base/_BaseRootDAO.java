@@ -999,6 +999,14 @@ name|getTransaction
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|s
+operator|.
+name|getTransaction
+argument_list|()
+operator|.
+name|isActive
+argument_list|()
 condition|)
 return|return
 literal|null
