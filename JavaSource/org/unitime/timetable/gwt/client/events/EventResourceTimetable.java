@@ -1218,7 +1218,7 @@ name|Throwable
 name|caught
 parameter_list|)
 block|{
-name|iHeader
+name|iFilterHeader
 operator|.
 name|setErrorMessage
 argument_list|(
@@ -1226,6 +1226,13 @@ name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|ToolBox
+operator|.
+name|checkAccess
+argument_list|(
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -1664,6 +1671,13 @@ name|Response
 argument_list|(
 name|suggestions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|ToolBox
+operator|.
+name|checkAccess
+argument_list|(
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -2897,6 +2911,11 @@ literal|null
 operator|)
 condition|)
 block|{
+name|iFilterHeader
+operator|.
+name|clearMessage
+argument_list|()
+expr_stmt|;
 name|LoadingWidget
 operator|.
 name|getInstance
@@ -2966,7 +2985,7 @@ operator|.
 name|hide
 argument_list|()
 expr_stmt|;
-name|iHeader
+name|iFilterHeader
 operator|.
 name|setErrorMessage
 argument_list|(
@@ -3092,6 +3111,11 @@ name|iResource
 operator|=
 name|resource
 expr_stmt|;
+name|iFilterHeader
+operator|.
+name|clearMessage
+argument_list|()
+expr_stmt|;
 name|iEventService
 operator|.
 name|findEvents
@@ -3187,7 +3211,7 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|iHeader
+name|iFilterHeader
 operator|.
 name|setErrorMessage
 argument_list|(
@@ -4066,7 +4090,7 @@ operator|.
 name|hide
 argument_list|()
 expr_stmt|;
-name|iHeader
+name|iFilterHeader
 operator|.
 name|setErrorMessage
 argument_list|(

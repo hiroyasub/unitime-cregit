@@ -115,6 +115,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -180,6 +196,8 @@ name|name
 parameter_list|)
 throws|throws
 name|EventException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -193,6 +211,8 @@ name|resource
 parameter_list|)
 throws|throws
 name|EventException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -206,6 +226,8 @@ name|session
 parameter_list|)
 throws|throws
 name|EventException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -228,6 +250,8 @@ name|limit
 parameter_list|)
 throws|throws
 name|EventException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -235,6 +259,8 @@ name|canLookupPeople
 parameter_list|()
 throws|throws
 name|EventException
+throws|,
+name|PageAccessException
 function_decl|;
 block|}
 end_interface

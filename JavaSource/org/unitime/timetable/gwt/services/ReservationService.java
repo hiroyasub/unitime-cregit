@@ -39,6 +39,22 @@ name|gwt
 operator|.
 name|shared
 operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
 name|ReservationException
 import|;
 end_import
@@ -122,6 +138,8 @@ name|offeringId
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|ReservationInterface
@@ -134,6 +152,8 @@ name|course
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -146,6 +166,8 @@ name|getAreas
 parameter_list|()
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -158,6 +180,8 @@ name|getStudentGroups
 parameter_list|()
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -173,6 +197,8 @@ name|offeringId
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|ReservationInterface
@@ -183,6 +209,8 @@ name|reservationId
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -196,6 +224,8 @@ name|offeringId
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Long
@@ -206,6 +236,8 @@ name|reservation
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -216,6 +248,8 @@ name|reservationId
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -223,6 +257,8 @@ name|canAddReservation
 parameter_list|()
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|String
@@ -230,6 +266,8 @@ name|lastReservationFilter
 parameter_list|()
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -243,6 +281,8 @@ name|query
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 block|}
 end_interface

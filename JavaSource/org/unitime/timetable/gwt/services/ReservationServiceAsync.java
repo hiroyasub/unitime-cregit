@@ -39,6 +39,22 @@ name|gwt
 operator|.
 name|shared
 operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
 name|ReservationException
 import|;
 end_import
@@ -103,6 +119,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -121,6 +139,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -139,6 +159,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -157,6 +179,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -178,6 +202,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -194,6 +220,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -213,6 +241,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -229,6 +259,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -245,6 +277,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -258,6 +292,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -271,6 +307,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|void
@@ -290,6 +328,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|ReservationException
+throws|,
+name|PageAccessException
 function_decl|;
 block|}
 end_interface

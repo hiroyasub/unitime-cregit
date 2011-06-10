@@ -171,6 +171,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -233,6 +249,8 @@ name|filter
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|List
@@ -251,6 +269,8 @@ name|curriculumIds
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|HashMap
@@ -275,6 +295,8 @@ name|majors
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|TreeSet
@@ -287,6 +309,8 @@ name|loadAcademicAreas
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|TreeSet
@@ -299,6 +323,8 @@ name|loadAcademicClassifications
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|TreeSet
@@ -311,6 +337,8 @@ name|loadDepartments
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|TreeSet
@@ -329,6 +357,8 @@ name|academicAreaId
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|String
@@ -336,6 +366,8 @@ name|lastCurriculaFilter
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|CurriculumInterface
@@ -346,6 +378,8 @@ name|curriculumId
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Long
@@ -356,6 +390,8 @@ name|curriculum
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -366,6 +402,8 @@ name|curriculumId
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -379,6 +417,8 @@ name|curriculumIds
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -392,6 +432,8 @@ name|curriculumIds
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|TreeSet
@@ -405,6 +447,8 @@ name|courseName
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|TreeSet
@@ -418,6 +462,8 @@ name|offeringId
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -431,6 +477,8 @@ name|curricula
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Collection
@@ -449,6 +497,8 @@ name|limit
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|String
@@ -459,6 +509,8 @@ name|course
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Collection
@@ -474,6 +526,8 @@ name|course
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|String
@@ -486,6 +540,8 @@ name|name
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -493,6 +549,8 @@ name|canAddCurriculum
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -500,6 +558,8 @@ name|isAdmin
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -510,6 +570,8 @@ name|lastLike
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -526,6 +588,8 @@ name|updateCurriculumCourses
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -536,6 +600,8 @@ name|includeOtherStudents
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -549,6 +615,8 @@ name|offeringId
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|HashMap
@@ -572,6 +640,8 @@ name|loadProjectionRules
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -598,6 +668,8 @@ name|rules
 parameter_list|)
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 specifier|public
 name|Boolean
@@ -605,6 +677,8 @@ name|canEditProjectionRules
 parameter_list|()
 throws|throws
 name|CurriculaException
+throws|,
+name|PageAccessException
 function_decl|;
 block|}
 end_interface

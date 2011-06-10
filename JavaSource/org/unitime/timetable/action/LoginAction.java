@@ -363,6 +363,16 @@ argument_list|(
 literal|"password"
 argument_list|)
 decl_stmt|;
+name|String
+name|menu
+init|=
+name|request
+operator|.
+name|getParameter
+argument_list|(
+literal|"menu"
+argument_list|)
+decl_stmt|;
 comment|// Check form is submitted
 if|if
 condition|(
@@ -457,6 +467,10 @@ literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=1"
+operator|+
+literal|"&menu="
+operator|+
+name|menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -505,6 +519,10 @@ literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=4"
+operator|+
+literal|"&menu="
+operator|+
+name|menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -594,6 +612,10 @@ literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=2"
+operator|+
+literal|"&menu="
+operator|+
+name|menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -790,6 +812,10 @@ literal|"tmtbl.login_url"
 argument_list|)
 operator|+
 literal|"?e=3"
+operator|+
+literal|"&menu="
+operator|+
+name|menu
 argument_list|)
 expr_stmt|;
 block|}

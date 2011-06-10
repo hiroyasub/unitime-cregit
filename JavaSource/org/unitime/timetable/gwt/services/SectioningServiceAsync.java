@@ -91,6 +91,22 @@ name|gwt
 operator|.
 name|shared
 operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
 name|SectioningException
 import|;
 end_import
@@ -147,6 +163,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|listAcademicSessions
@@ -166,6 +184,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|retrieveCourseDetails
@@ -184,6 +204,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|listClasses
@@ -225,6 +247,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|section
@@ -248,6 +272,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|checkCourses
@@ -266,6 +292,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|computeSuggestions
@@ -295,6 +323,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|logIn
@@ -313,6 +343,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|logOut
@@ -325,6 +357,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|whoAmI
@@ -337,6 +371,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|lastAcademicSession
@@ -353,6 +389,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|lastRequest
@@ -368,6 +406,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|lastResult
@@ -383,6 +423,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|saveRequest
@@ -398,6 +440,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|enroll
@@ -421,6 +465,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|isAdmin
@@ -433,6 +479,8 @@ name|isAdmin
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|listEnrollments
@@ -453,6 +501,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|getEnrollment
@@ -468,6 +518,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 block|}
 end_interface

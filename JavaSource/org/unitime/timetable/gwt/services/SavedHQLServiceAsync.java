@@ -39,6 +39,22 @@ name|gwt
 operator|.
 name|shared
 operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
 name|SavedHQLException
 import|;
 end_import
@@ -102,6 +118,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|getOptions
@@ -119,6 +137,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|editable
@@ -131,6 +151,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|queries
@@ -151,6 +173,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|execute
@@ -186,6 +210,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|store
@@ -203,6 +229,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|delete
@@ -218,6 +246,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|setBack
@@ -245,6 +275,8 @@ name|callback
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 function_decl|;
 block|}
 end_interface

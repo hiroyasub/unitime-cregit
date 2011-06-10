@@ -4862,6 +4862,13 @@ operator|+
 literal|")."
 argument_list|)
 expr_stmt|;
+name|ToolBox
+operator|.
+name|checkAccess
+argument_list|(
+name|caught
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|next

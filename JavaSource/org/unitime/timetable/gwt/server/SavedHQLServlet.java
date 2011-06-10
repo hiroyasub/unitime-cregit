@@ -111,6 +111,18 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|log4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|hibernate
 operator|.
 name|EntityMode
@@ -236,6 +248,22 @@ operator|.
 name|services
 operator|.
 name|SavedHQLService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|PageAccessException
 import|;
 end_import
 
@@ -399,6 +427,20 @@ init|=
 operator|-
 literal|5724832564531363833L
 decl_stmt|;
+specifier|private
+specifier|static
+name|Logger
+name|sLog
+init|=
+name|Logger
+operator|.
+name|getLogger
+argument_list|(
+name|SavedHQLServlet
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -412,7 +454,63 @@ name|getFlags
 parameter_list|()
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
+name|User
+name|user
+init|=
+name|Web
+operator|.
+name|getUser
+argument_list|(
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|user
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|isNew
+argument_list|()
+condition|?
+literal|"Your timetabling session has expired. Please log in again."
+else|:
+literal|"Login is required to use this page."
+argument_list|)
+throw|;
+if|if
+condition|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+literal|"Insufficient user privileges."
+argument_list|)
+throw|;
 name|List
 argument_list|<
 name|SavedHQLInterface
@@ -501,6 +599,8 @@ name|getOptions
 parameter_list|()
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 name|User
 name|user
@@ -524,9 +624,36 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
-literal|"Not authenticated."
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|isNew
+argument_list|()
+condition|?
+literal|"Your timetabling session has expired. Please log in again."
+else|:
+literal|"Login is required to use this page."
+argument_list|)
+throw|;
+if|if
+condition|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+literal|"Insufficient user privileges."
 argument_list|)
 throw|;
 name|List
@@ -737,6 +864,8 @@ name|editable
 parameter_list|()
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 name|User
 name|user
@@ -781,6 +910,8 @@ name|appearance
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 name|User
 name|user
@@ -804,9 +935,36 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
-literal|"Not authenticated."
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|isNew
+argument_list|()
+condition|?
+literal|"Your timetabling session has expired. Please log in again."
+else|:
+literal|"Login is required to use this page."
+argument_list|)
+throw|;
+if|if
+condition|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+literal|"Insufficient user privileges."
 argument_list|)
 throw|;
 name|SavedHQL
@@ -977,6 +1135,8 @@ name|maxRows
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 try|try
 block|{
@@ -999,7 +1159,27 @@ condition|(
 name|user
 operator|==
 literal|null
-operator|||
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|isNew
+argument_list|()
+condition|?
+literal|"Your timetabling session has expired. Please log in again."
+else|:
+literal|"Login is required to use this page."
+argument_list|)
+throw|;
+if|if
+condition|(
 name|user
 operator|.
 name|getRole
@@ -1009,9 +1189,9 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
-literal|"Not authenticated."
+literal|"Insufficient user privileges."
 argument_list|)
 throw|;
 name|String
@@ -1381,27 +1561,42 @@ return|;
 block|}
 catch|catch
 parameter_list|(
+name|PageAccessException
+name|e
+parameter_list|)
+block|{
+throw|throw
+name|e
+throw|;
+block|}
+catch|catch
+parameter_list|(
+name|SavedHQLException
+name|e
+parameter_list|)
+block|{
+throw|throw
+name|e
+throw|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
 block|{
+name|sLog
+operator|.
+name|error
+argument_list|(
 name|e
 operator|.
-name|printStackTrace
+name|getMessage
 argument_list|()
+argument_list|,
+name|e
+argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|e
-operator|instanceof
-name|SavedHQLException
-condition|)
-throw|throw
-operator|(
-name|SavedHQLException
-operator|)
-name|e
-throw|;
 throw|throw
 operator|new
 name|SavedHQLException
@@ -2828,6 +3023,8 @@ name|query
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 name|User
 name|user
@@ -2851,9 +3048,36 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
-literal|"Not authenticated."
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|isNew
+argument_list|()
+condition|?
+literal|"Your timetabling session has expired. Please log in again."
+else|:
+literal|"Login is required to use this page."
+argument_list|)
+throw|;
+if|if
+condition|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+literal|"Insufficient user privileges."
 argument_list|)
 throw|;
 if|if
@@ -2866,7 +3090,7 @@ argument_list|()
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
 literal|"Only administrator can save a query."
 argument_list|)
@@ -3010,6 +3234,8 @@ name|id
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 if|if
 condition|(
@@ -3046,9 +3272,36 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
-literal|"Not authenticated."
+name|getThreadLocalRequest
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|isNew
+argument_list|()
+condition|?
+literal|"Your timetabling session has expired. Please log in again."
+else|:
+literal|"Login is required to use this page."
+argument_list|)
+throw|;
+if|if
+condition|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+literal|"Insufficient user privileges."
 argument_list|)
 throw|;
 if|if
@@ -3061,7 +3314,7 @@ argument_list|()
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|PageAccessException
 argument_list|(
 literal|"Only administrator can delete a query."
 argument_list|)
@@ -3676,6 +3929,8 @@ name|type
 parameter_list|)
 throws|throws
 name|SavedHQLException
+throws|,
+name|PageAccessException
 block|{
 name|String
 name|title

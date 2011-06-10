@@ -1612,6 +1612,13 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|ToolBox
+operator|.
+name|checkAccess
+argument_list|(
+name|caught
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 argument_list|)
@@ -1802,6 +1809,13 @@ argument_list|()
 operator|.
 name|hide
 argument_list|()
+expr_stmt|;
+name|ToolBox
+operator|.
+name|checkAccess
+argument_list|(
+name|caught
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
