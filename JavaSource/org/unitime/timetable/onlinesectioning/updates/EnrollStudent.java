@@ -2416,6 +2416,17 @@ name|Enrollment
 name|oldEnrollment
 parameter_list|)
 block|{
+if|if
+condition|(
+name|newEnrollment
+operator|==
+literal|null
+operator|&&
+name|oldEnrollment
+operator|==
+literal|null
+condition|)
+return|return;
 name|Map
 argument_list|<
 name|Long
