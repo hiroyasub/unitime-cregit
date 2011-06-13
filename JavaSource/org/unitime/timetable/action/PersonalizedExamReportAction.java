@@ -5867,6 +5867,17 @@ literal|0
 condition|?
 name|noRoom
 else|:
+name|html
+condition|?
+name|exam
+operator|.
+name|getRoomsNameWithHint
+argument_list|(
+literal|false
+argument_list|,
+literal|", "
+argument_list|)
+else|:
 name|exam
 operator|.
 name|getRoomsName
@@ -6429,6 +6440,17 @@ operator|==
 literal|0
 condition|?
 name|noRoom
+else|:
+name|html
+condition|?
+name|exam
+operator|.
+name|getRoomsNameWithHint
+argument_list|(
+literal|false
+argument_list|,
+literal|", "
+argument_list|)
 else|:
 name|exam
 operator|.
@@ -12793,6 +12815,9 @@ specifier|protected
 name|String
 name|getMeetingRooms
 parameter_list|(
+name|boolean
+name|html
+parameter_list|,
 name|Class_
 name|clazz
 parameter_list|)
@@ -12964,10 +12989,19 @@ literal|", "
 expr_stmt|;
 name|meetingRooms
 operator|+=
+operator|(
+name|html
+condition|?
+name|location
+operator|.
+name|getLabelWithHint
+argument_list|()
+else|:
 name|location
 operator|.
 name|getLabel
 argument_list|()
+operator|)
 expr_stmt|;
 block|}
 return|return
@@ -13451,6 +13485,8 @@ name|room
 init|=
 name|getMeetingRooms
 argument_list|(
+name|html
+argument_list|,
 name|sce
 operator|.
 name|getClazz
@@ -13958,6 +13994,8 @@ name|room
 init|=
 name|getMeetingRooms
 argument_list|(
+name|html
+argument_list|,
 name|ci
 operator|.
 name|getClassInstructing

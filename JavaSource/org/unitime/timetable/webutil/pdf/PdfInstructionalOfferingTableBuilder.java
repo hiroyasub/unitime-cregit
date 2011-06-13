@@ -4269,6 +4269,15 @@ operator|.
 name|getRequiredTimeTable
 argument_list|(
 name|a
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|a
+operator|.
+name|getTimeLocation
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

@@ -6443,7 +6443,7 @@ name|append
 argument_list|(
 name|location
 operator|.
-name|getLabel
+name|getLabelWithHint
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -7957,7 +7957,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"<font color='"
+literal|"<span style='color:"
 operator|+
 operator|(
 name|isEditable
@@ -7980,7 +7980,35 @@ else|:
 name|disabledColor
 operator|)
 operator|+
-literal|"'>"
+literal|";' "
+operator|+
+literal|"onmouseover=\"showGwtHint(this, '"
+operator|+
+name|room
+operator|.
+name|getHtmlHint
+argument_list|(
+name|isEditable
+condition|?
+name|PreferenceLevel
+operator|.
+name|int2string
+argument_list|(
+name|info
+operator|.
+name|getRoomPreference
+argument_list|(
+name|room
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+argument_list|)
+else|:
+literal|null
+argument_list|)
+operator|+
+literal|"');\" onmouseout=\"hideGwtHint();\">"
 argument_list|)
 expr_stmt|;
 name|sb
@@ -8003,7 +8031,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"</font>"
+literal|"</span>"
 argument_list|)
 expr_stmt|;
 if|if

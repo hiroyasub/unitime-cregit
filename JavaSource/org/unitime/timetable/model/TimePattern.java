@@ -79,6 +79,22 @@ end_import
 
 begin_import
 import|import
+name|net
+operator|.
+name|sf
+operator|.
+name|cpsolver
+operator|.
+name|coursett
+operator|.
+name|model
+operator|.
+name|TimeLocation
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|hibernate
@@ -1484,7 +1500,7 @@ specifier|public
 name|TimePatternModel
 name|getTimePatternModel
 parameter_list|(
-name|Assignment
+name|TimeLocation
 name|assignment
 parameter_list|,
 name|boolean
@@ -1709,7 +1725,7 @@ specifier|public
 name|RequiredTimeTable
 name|getRequiredTimeTable
 parameter_list|(
-name|Assignment
+name|TimeLocation
 name|assignment
 parameter_list|,
 name|boolean

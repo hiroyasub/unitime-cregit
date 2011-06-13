@@ -498,11 +498,49 @@ argument_list|)
 operator|+
 literal|";' "
 operator|+
-literal|"title='"
+literal|"onmouseover=\"showGwtHint(this, '"
+operator|+
+name|getLocation
+argument_list|()
+operator|.
+name|getHtmlHint
+argument_list|(
+name|PreferenceLevel
+operator|.
+name|int2string
+argument_list|(
+name|getPreference
+argument_list|()
+argument_list|)
+argument_list|)
+operator|+
+literal|"');\" onmouseout=\"hideGwtHint();\">"
+operator|+
+name|getName
+argument_list|()
+operator|+
+literal|"</span>"
+return|;
+block|}
+specifier|public
+name|String
+name|getNameWithHint
+parameter_list|(
+name|boolean
+name|pref
+parameter_list|)
+block|{
+return|return
+literal|"<span"
+operator|+
+operator|(
+name|pref
+condition|?
+literal|" style='color:"
 operator|+
 name|PreferenceLevel
 operator|.
-name|prolog2string
+name|prolog2color
 argument_list|(
 name|PreferenceLevel
 operator|.
@@ -513,22 +551,28 @@ argument_list|()
 argument_list|)
 argument_list|)
 operator|+
-literal|" "
+literal|";'"
+else|:
+literal|""
+operator|)
 operator|+
-name|getName
+literal|" onmouseover=\"showGwtHint(this, '"
+operator|+
+name|getLocation
 argument_list|()
-operator|+
-literal|" ("
-operator|+
-name|getCapacity
+operator|.
+name|getHtmlHint
+argument_list|(
+name|PreferenceLevel
+operator|.
+name|int2string
+argument_list|(
+name|getPreference
 argument_list|()
+argument_list|)
+argument_list|)
 operator|+
-literal|" seats, "
-operator|+
-name|getExamCapacity
-argument_list|()
-operator|+
-literal|" exam seats)'>"
+literal|"');\" onmouseout=\"hideGwtHint();\">"
 operator|+
 name|getName
 argument_list|()

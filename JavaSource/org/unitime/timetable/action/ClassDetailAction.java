@@ -429,6 +429,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|LocationDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|solver
 operator|.
 name|TimetableDatabaseLoader
@@ -2316,35 +2332,7 @@ name|rooms
 operator|.
 name|append
 argument_list|(
-literal|"<span title='"
-operator|+
-name|PreferenceLevel
-operator|.
-name|int2string
-argument_list|(
-name|rl
-operator|.
-name|getPreference
-argument_list|()
-argument_list|)
-operator|+
-literal|" "
-operator|+
-name|rl
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" ("
-operator|+
-name|rl
-operator|.
-name|getRoomSize
-argument_list|()
-operator|+
-literal|" seats)'>"
-operator|+
-literal|"<font color='"
+literal|"<span style='color:"
 operator|+
 name|PreferenceLevel
 operator|.
@@ -2356,14 +2344,44 @@ name|getPreference
 argument_list|()
 argument_list|)
 operator|+
-literal|"'>"
+literal|";' "
+operator|+
+literal|"onmouseover=\"showGwtHint(this, '"
+operator|+
+name|LocationDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|rl
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+operator|.
+name|getHtmlHint
+argument_list|(
+name|PreferenceLevel
+operator|.
+name|int2string
+argument_list|(
+name|rl
+operator|.
+name|getPreference
+argument_list|()
+argument_list|)
+argument_list|)
+operator|+
+literal|"');\" onmouseout=\"hideGwtHint();\">"
 operator|+
 name|rl
 operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"</font></span>"
+literal|"</span>"
 argument_list|)
 expr_stmt|;
 name|idx

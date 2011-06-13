@@ -1731,6 +1731,17 @@ literal|0
 condition|?
 name|noRoom
 else|:
+name|html
+condition|?
+name|exam
+operator|.
+name|getRoomsNameWithHint
+argument_list|(
+literal|false
+argument_list|,
+literal|", "
+argument_list|)
+else|:
 name|exam
 operator|.
 name|getRoomsName

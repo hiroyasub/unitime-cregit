@@ -3341,7 +3341,7 @@ name|setHeaderTitle
 argument_list|(
 name|iResource
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 operator|+
 literal|" timetable for "
@@ -3659,7 +3659,7 @@ name|setHeaderTitle
 argument_list|(
 name|iResource
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 operator|+
 literal|" events for "
@@ -4236,7 +4236,7 @@ name|setHeaderTitle
 argument_list|(
 name|iResource
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 operator|+
 literal|" timetable for "
@@ -4253,7 +4253,7 @@ name|setHeaderTitle
 argument_list|(
 name|iResource
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 operator|+
 literal|" events for "
@@ -4304,7 +4304,7 @@ name|setHeaderTitle
 argument_list|(
 name|iResource
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 operator|+
 literal|" timetable for "
@@ -4329,7 +4329,7 @@ name|setHeaderTitle
 argument_list|(
 name|iResource
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 operator|+
 literal|" events for "
@@ -6740,6 +6740,7 @@ name|getLocationName
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|room
 operator|+=
 operator|(
@@ -6755,7 +6756,7 @@ operator|)
 operator|+
 name|m
 operator|.
-name|getLocationName
+name|getLocationNameWithHint
 argument_list|()
 operator|+
 operator|(
@@ -6769,6 +6770,7 @@ else|:
 literal|""
 operator|)
 expr_stmt|;
+block|}
 name|prevPast
 operator|=
 name|m
