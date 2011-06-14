@@ -20457,7 +20457,7 @@ literal|" projection: "
 operator|+
 name|oldDemand
 operator|+
-literal|"&rarr "
+literal|"&rarr; "
 operator|+
 name|demand
 argument_list|,
@@ -21301,7 +21301,7 @@ literal|" projection: "
 operator|+
 name|oldDemand
 operator|+
-literal|"&rarr "
+literal|"&rarr; "
 operator|+
 name|demand
 argument_list|,
