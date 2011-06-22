@@ -283,13 +283,16 @@ block|}
 specifier|public
 specifier|static
 name|PosMajor
-name|findByExternalId
+name|findByExternalIdAcadAreaExternalId
 parameter_list|(
 name|Long
 name|sessionId
 parameter_list|,
 name|String
 name|externalId
+parameter_list|,
+name|String
+name|academicArea
 parameter_list|)
 block|{
 return|return
@@ -305,11 +308,13 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a from PosMajor a where "
+literal|"select a from PosMajor a inner join a.academicAreas as areas where "
 operator|+
 literal|"a.session.uniqueId=:sessionId and "
 operator|+
 literal|"a.externalUniqueId=:externalUniqueId"
+operator|+
+literal|"areas.externalUniqueId = :academicArea"
 argument_list|)
 operator|.
 name|setLong
