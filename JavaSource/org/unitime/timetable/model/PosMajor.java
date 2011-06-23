@@ -312,7 +312,7 @@ literal|"select a from PosMajor a inner join a.academicAreas as areas where "
 operator|+
 literal|"a.session.uniqueId=:sessionId and "
 operator|+
-literal|"a.externalUniqueId=:externalUniqueId"
+literal|"a.externalUniqueId=:externalUniqueId and "
 operator|+
 literal|"areas.externalUniqueId = :academicArea"
 argument_list|)
@@ -332,6 +332,13 @@ argument_list|(
 literal|"externalUniqueId"
 argument_list|,
 name|externalId
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"academicArea"
+argument_list|,
+name|academicArea
 argument_list|)
 operator|.
 name|setCacheable
