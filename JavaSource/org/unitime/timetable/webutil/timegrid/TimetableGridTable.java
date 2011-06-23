@@ -838,6 +838,12 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
+name|boolean
+name|iShowComments
+init|=
+literal|false
+decl_stmt|;
+specifier|private
 name|org
 operator|.
 name|unitime
@@ -1112,6 +1118,28 @@ block|{
 name|iShowInstructors
 operator|=
 name|showInstructors
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getShowComments
+parameter_list|()
+block|{
+return|return
+name|iShowComments
+return|;
+block|}
+specifier|public
+name|void
+name|setShowComments
+parameter_list|(
+name|boolean
+name|showComments
+parameter_list|)
+block|{
+name|iShowComments
+operator|=
+name|showComments
 expr_stmt|;
 block|}
 specifier|public
@@ -3704,7 +3732,7 @@ name|getRoomName
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|else if
+if|if
 condition|(
 name|getResourceType
 argument_list|()
@@ -3727,7 +3755,10 @@ name|getInstructor
 argument_list|()
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+name|iShowComments
+condition|)
 name|out
 operator|.
 name|print
@@ -4566,7 +4597,7 @@ name|getRoomName
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|else if
+if|if
 condition|(
 name|getResourceType
 argument_list|()
@@ -4589,7 +4620,10 @@ name|getInstructor
 argument_list|()
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+name|iShowComments
+condition|)
 name|out
 operator|.
 name|print
@@ -5312,7 +5346,7 @@ name|getRoomName
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|else if
+if|if
 condition|(
 name|getResourceType
 argument_list|()
@@ -5335,7 +5369,10 @@ name|getInstructor
 argument_list|()
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+name|iShowComments
+condition|)
 name|out
 operator|.
 name|print
