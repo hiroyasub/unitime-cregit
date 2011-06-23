@@ -844,6 +844,9 @@ name|UniTimeSideBar
 parameter_list|(
 name|boolean
 name|useStackPanel
+parameter_list|,
+name|boolean
+name|dynamic
 parameter_list|)
 block|{
 name|iPanel
@@ -1395,6 +1398,11 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dynamic
+condition|)
+block|{
 name|iScrollTimer
 operator|=
 operator|new
@@ -1676,6 +1684,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|boolean
@@ -2104,6 +2113,10 @@ name|contains
 argument_list|(
 literal|"Root"
 argument_list|)
+operator|||
+name|sideBarCookie
+operator|==
+literal|null
 argument_list|)
 expr_stmt|;
 if|if
