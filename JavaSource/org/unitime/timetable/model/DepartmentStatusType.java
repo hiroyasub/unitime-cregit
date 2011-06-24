@@ -890,6 +890,19 @@ name|canExamTimetable
 argument_list|()
 return|;
 block|}
+specifier|public
+name|boolean
+name|canLockOfferings
+parameter_list|()
+block|{
+return|return
+name|canOnlineSectionStudents
+argument_list|()
+operator|||
+name|canSectionAssistStudents
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

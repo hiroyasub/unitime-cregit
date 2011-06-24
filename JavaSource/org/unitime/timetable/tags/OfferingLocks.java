@@ -209,7 +209,7 @@ operator|.
 name|getStatusType
 argument_list|()
 operator|.
-name|canOnlineSectionStudents
+name|canLockOfferings
 argument_list|()
 condition|)
 return|return

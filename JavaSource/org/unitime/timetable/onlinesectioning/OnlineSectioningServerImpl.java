@@ -10543,6 +10543,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|getAcademicSession
+argument_list|()
+operator|.
+name|isSectioningEnabled
+argument_list|()
+operator|&&
 literal|"true"
 operator|.
 name|equals
@@ -10935,6 +10941,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|getAcademicSession
+argument_list|()
+operator|.
+name|isSectioningEnabled
+argument_list|()
+operator|&&
 literal|"true"
 operator|.
 name|equals

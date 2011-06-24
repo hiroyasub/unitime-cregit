@@ -810,7 +810,7 @@ operator|.
 name|getStatusType
 argument_list|()
 operator|.
-name|canOnlineSectionStudents
+name|canLockOfferings
 argument_list|()
 condition|)
 return|return
@@ -954,17 +954,7 @@ condition|(
 name|getSession
 argument_list|()
 operator|.
-name|getStatusType
-argument_list|()
-operator|.
-name|canOnlineSectionStudents
-argument_list|()
-operator|&&
-operator|!
-name|getSession
-argument_list|()
-operator|.
-name|isOfferingLocked
+name|isOfferingFullLockNeeded
 argument_list|(
 name|getUniqueId
 argument_list|()
