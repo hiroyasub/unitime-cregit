@@ -1124,6 +1124,17 @@ operator|)
 decl_stmt|;
 if|if
 condition|(
+name|before
+operator|==
+literal|null
+operator|&&
+name|after
+operator|==
+literal|null
+condition|)
+continue|continue;
+if|if
+condition|(
 operator|!
 name|first
 condition|)
