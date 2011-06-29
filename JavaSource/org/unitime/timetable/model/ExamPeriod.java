@@ -4048,6 +4048,13 @@ condition|(
 name|bounds
 operator|==
 literal|null
+operator|||
+name|bounds
+index|[
+literal|0
+index|]
+operator|==
+literal|null
 condition|)
 return|return
 literal|null

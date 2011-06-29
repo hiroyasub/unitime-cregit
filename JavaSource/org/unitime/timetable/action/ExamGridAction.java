@@ -520,6 +520,13 @@ operator|.
 name|sMidtermExamType
 operator|)
 decl_stmt|;
+if|if
+condition|(
+name|bounds
+operator|!=
+literal|null
+condition|)
+block|{
 name|RoomAvailability
 operator|.
 name|getInstance
@@ -562,6 +569,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|PdfExamGridTable
 name|table
