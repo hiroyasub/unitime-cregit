@@ -1986,6 +1986,9 @@ argument_list|,
 name|sideBarCookie
 argument_list|)
 expr_stmt|;
+name|resizeWideTables
+argument_list|()
+expr_stmt|;
 block|}
 specifier|private
 name|void
@@ -3020,6 +3023,14 @@ return|;
 block|}
 block|}
 block|}
+specifier|public
+specifier|native
+specifier|static
+name|int
+name|resizeWideTables
+parameter_list|()
+comment|/*-{ 		if ($wnd.resizeWideTables) 			$wnd.resizeWideTables(); 	}-*/
+function_decl|;
 block|}
 end_class
 
