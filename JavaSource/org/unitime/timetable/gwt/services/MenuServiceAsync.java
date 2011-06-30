@@ -174,6 +174,9 @@ specifier|public
 name|void
 name|getSolverInfo
 parameter_list|(
+name|boolean
+name|includeSolutionInfo
+parameter_list|,
 name|AsyncCallback
 argument_list|<
 name|HashMap

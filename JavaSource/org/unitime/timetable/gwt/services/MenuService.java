@@ -180,7 +180,10 @@ argument_list|,
 name|String
 argument_list|>
 name|getSolverInfo
-parameter_list|()
+parameter_list|(
+name|boolean
+name|includeSolutionInfo
+parameter_list|)
 throws|throws
 name|MenuException
 function_decl|;
