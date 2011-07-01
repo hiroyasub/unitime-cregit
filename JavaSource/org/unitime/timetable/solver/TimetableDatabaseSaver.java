@@ -5242,6 +5242,17 @@ literal|"F"
 else|:
 literal|""
 operator|)
+operator|+
+operator|(
+name|jInfo
+operator|.
+name|isImportant
+argument_list|()
+condition|?
+literal|"I"
+else|:
+literal|""
+operator|)
 argument_list|)
 expr_stmt|;
 name|Assignment
