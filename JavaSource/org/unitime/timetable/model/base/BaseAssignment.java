@@ -113,6 +113,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|DatePattern
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|DepartmentalInstructor
 import|;
 end_import
@@ -198,6 +212,10 @@ decl_stmt|;
 specifier|private
 name|TimePattern
 name|iTimePattern
+decl_stmt|;
+specifier|private
+name|DatePattern
+name|iDatePattern
 decl_stmt|;
 specifier|private
 name|Solution
@@ -430,6 +448,28 @@ block|{
 name|iTimePattern
 operator|=
 name|timePattern
+expr_stmt|;
+block|}
+specifier|public
+name|DatePattern
+name|getDatePattern
+parameter_list|()
+block|{
+return|return
+name|iDatePattern
+return|;
+block|}
+specifier|public
+name|void
+name|setDatePattern
+parameter_list|(
+name|DatePattern
+name|datePattern
+parameter_list|)
+block|{
+name|iDatePattern
+operator|=
+name|datePattern
 expr_stmt|;
 block|}
 specifier|public
@@ -837,6 +877,11 @@ operator|+
 literal|"\n	Clazz: "
 operator|+
 name|getClazz
+argument_list|()
+operator|+
+literal|"\n	DatePattern: "
+operator|+
+name|getDatePattern
 argument_list|()
 operator|+
 literal|"\n	Days: "

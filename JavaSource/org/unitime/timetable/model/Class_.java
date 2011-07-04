@@ -8263,6 +8263,14 @@ argument_list|)
 expr_stmt|;
 name|a
 operator|.
+name|setDatePattern
+argument_list|(
+name|effectiveDatePattern
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|a
+operator|.
 name|setAssignmentInfo
 argument_list|(
 operator|new

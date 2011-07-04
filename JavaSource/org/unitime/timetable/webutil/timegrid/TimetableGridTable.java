@@ -569,6 +569,22 @@ literal|8
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
+name|int
+name|sDaysMonThu
+init|=
+literal|9
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|sDaysFriSat
+init|=
+literal|10
+decl_stmt|;
+specifier|public
+specifier|static
 name|String
 index|[]
 name|sDays
@@ -594,6 +610,10 @@ block|,
 literal|"Saturday"
 block|,
 literal|"Sunday"
+block|,
+literal|"Monday - Thursday"
+block|,
+literal|"Friday& Saturday"
 block|}
 decl_stmt|;
 specifier|public
@@ -1878,6 +1898,18 @@ case|:
 return|return
 literal|6
 return|;
+case|case
+name|sDaysMonThu
+case|:
+return|return
+literal|0
+return|;
+case|case
+name|sDaysFriSat
+case|:
+return|return
+literal|4
+return|;
 default|default :
 return|return
 literal|0
@@ -1947,6 +1979,18 @@ name|sDaysSun
 case|:
 return|return
 literal|6
+return|;
+case|case
+name|sDaysMonThu
+case|:
+return|return
+literal|3
+return|;
+case|case
+name|sDaysFriSat
+case|:
+return|return
+literal|5
 return|;
 default|default :
 return|return

@@ -989,6 +989,9 @@ name|roomIds
 parameter_list|,
 name|Long
 name|patternId
+parameter_list|,
+name|Long
+name|datePatternId
 parameter_list|)
 block|{
 name|Hint
@@ -1006,6 +1009,8 @@ argument_list|,
 name|roomIds
 argument_list|,
 name|patternId
+argument_list|,
+name|datePatternId
 argument_list|)
 decl_stmt|;
 name|Hint
@@ -1329,6 +1334,11 @@ argument_list|,
 name|hint
 operator|.
 name|getPatternId
+argument_list|()
+argument_list|,
+name|hint
+operator|.
+name|getDatePatternId
 argument_list|()
 argument_list|)
 expr_stmt|;

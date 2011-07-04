@@ -2742,7 +2742,16 @@ name|ext
 init|=
 operator|new
 name|StringBuffer
-argument_list|()
+argument_list|(
+name|properties
+operator|.
+name|getProperty
+argument_list|(
+literal|"Extensions.Classes"
+argument_list|,
+literal|""
+argument_list|)
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
