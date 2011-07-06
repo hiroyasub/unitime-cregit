@@ -540,6 +540,11 @@ name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
+argument_list|)
+expr_stmt|;
 name|iRoomId
 operator|=
 name|room
@@ -1994,6 +1999,11 @@ argument_list|()
 operator|)
 argument_list|)
 expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
+argument_list|)
+expr_stmt|;
 name|Solution
 name|firstSolution
 init|=
@@ -2455,6 +2465,11 @@ name|dept
 operator|.
 name|getShortLabel
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
 argument_list|)
 expr_stmt|;
 name|Solution

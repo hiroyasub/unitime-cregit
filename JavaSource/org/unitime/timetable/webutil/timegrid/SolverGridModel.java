@@ -486,6 +486,11 @@ name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
+argument_list|)
+expr_stmt|;
 name|iRoomId
 operator|=
 name|room
@@ -904,6 +909,11 @@ name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|firstDay
@@ -1136,6 +1146,11 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
+argument_list|)
+expr_stmt|;
 name|Vector
 name|placements
 init|=
@@ -1218,6 +1233,11 @@ expr_stmt|;
 name|setName
 argument_list|(
 name|name
+argument_list|)
+expr_stmt|;
+name|setFirstDay
+argument_list|(
+name|firstDay
 argument_list|)
 expr_stmt|;
 name|Hashtable
