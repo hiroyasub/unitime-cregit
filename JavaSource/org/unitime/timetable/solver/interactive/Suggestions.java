@@ -2354,6 +2354,11 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|iTimeoutReached
+condition|)
+break|break;
+if|if
+condition|(
 name|resolvedLectures
 operator|.
 name|contains
@@ -2406,6 +2411,11 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|iTimeoutReached
+condition|)
+break|break;
 name|Placement
 name|placement
 init|=
