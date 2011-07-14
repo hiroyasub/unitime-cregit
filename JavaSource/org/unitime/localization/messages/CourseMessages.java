@@ -845,7 +845,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Offered Coursses"
+literal|"Offered Courses"
 argument_list|)
 name|String
 name|labelOfferedCourses
