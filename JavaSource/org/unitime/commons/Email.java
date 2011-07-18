@@ -591,6 +591,8 @@ operator|.
 name|setSubject
 argument_list|(
 name|subject
+argument_list|,
+literal|"UTF-8"
 argument_list|)
 expr_stmt|;
 block|}
@@ -625,6 +627,8 @@ argument_list|(
 name|email
 argument_list|,
 name|name
+argument_list|,
+literal|"UTF-8"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -664,6 +668,8 @@ argument_list|(
 name|email
 argument_list|,
 name|name
+argument_list|,
+literal|"UTF-8"
 argument_list|)
 block|}
 argument_list|)
@@ -699,6 +705,8 @@ argument_list|(
 name|email
 argument_list|,
 name|name
+argument_list|,
+literal|"UTF-8"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -807,7 +815,7 @@ name|setContent
 argument_list|(
 name|message
 argument_list|,
-literal|"text/plain"
+literal|"text/plain; charset=UTF-8"
 argument_list|)
 expr_stmt|;
 name|iBody
@@ -841,7 +849,7 @@ name|setContent
 argument_list|(
 name|message
 argument_list|,
-literal|"text/html"
+literal|"text/html; charset=UTF-8"
 argument_list|)
 expr_stmt|;
 name|iBody
@@ -911,6 +919,8 @@ argument_list|,
 literal|"UniTime Operator"
 argument_list|)
 argument_list|)
+argument_list|,
+literal|"UTF-8"
 argument_list|)
 argument_list|)
 expr_stmt|;
