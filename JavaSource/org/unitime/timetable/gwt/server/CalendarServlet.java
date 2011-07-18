@@ -10244,7 +10244,7 @@ name|salt
 argument_list|,
 literal|1024
 argument_list|,
-literal|256
+literal|128
 argument_list|)
 decl_stmt|;
 name|SecretKey
