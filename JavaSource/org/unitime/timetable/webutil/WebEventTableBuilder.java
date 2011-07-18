@@ -6499,7 +6499,11 @@ condition|)
 block|{
 name|query
 operator|+=
-literal|" and ((select count(r) from Room as r where r.permanentId = m.locationPermanentId and upper(r.building.abbreviation) like :bldgSubstr and upper(r.roomNumber) like :roomSubstr)> 0 or (select count(nul) from NonUniversityLocation as nul where nul.permanentId = m.locationPermanentId and upper(nul.name) like :nameStr)> 0)) "
+literal|" and ("
+operator|+
+literal|"(select count(r) from Room as r where r.permanentId = m.locationPermanentId and upper(r.building.abbreviation) like :bldgSubstr and upper(r.roomNumber) like :roomSubstr)> 0 or "
+operator|+
+literal|"(select count(nul) from NonUniversityLocation as nul where nul.permanentId = m.locationPermanentId and upper(nul.name) like :nameStr)> 0) "
 expr_stmt|;
 block|}
 switch|switch
