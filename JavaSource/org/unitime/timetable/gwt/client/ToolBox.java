@@ -55,6 +55,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtConstants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|PageAccessException
@@ -170,6 +186,21 @@ specifier|public
 class|class
 name|ToolBox
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|GwtConstants
+name|CONSTANTS
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtConstants
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|native
 specifier|static
@@ -292,7 +323,14 @@ argument_list|()
 operator|+
 literal|"images/timetabling.ico\">"
 operator|+
-literal|"<title>UniTime 3.3 | University Timetabling Application</title>"
+literal|"<title>UniTime "
+operator|+
+name|CONSTANTS
+operator|.
+name|version
+argument_list|()
+operator|+
+literal|"| University Timetabling Application</title>"
 operator|+
 literal|"</header><body>"
 operator|+
@@ -337,9 +375,23 @@ literal|"</td></tr><tr><td>"
 operator|+
 literal|"<table class=\"unitime-Footer\"><tr>"
 operator|+
-literal|"<td width=\"33%\" align=\"left\" nowrap=\"nowrap\">Printed from UniTime 3.3 | University Timetabling Application</td>"
+literal|"<td width=\"33%\" align=\"left\" nowrap=\"nowrap\">Printed from UniTime "
 operator|+
-literal|"<td width=\"34%\" align=\"center\">&copy; 2008 - 2011 UniTime LLC</td>"
+name|CONSTANTS
+operator|.
+name|version
+argument_list|()
+operator|+
+literal|" | University Timetabling Application</td>"
+operator|+
+literal|"<td width=\"34%\" align=\"center\">"
+operator|+
+name|CONSTANTS
+operator|.
+name|copyright
+argument_list|()
+operator|+
+literal|"</td>"
 operator|+
 literal|"<td width=\"33%\" align=\"right\">"
 operator|+
@@ -407,7 +459,14 @@ name|UniTimeFrameDialog
 operator|.
 name|openDialog
 argument_list|(
-literal|"UniTime Log In"
+literal|"UniTime "
+operator|+
+name|CONSTANTS
+operator|.
+name|version
+argument_list|()
+operator|+
+literal|"| Log In"
 argument_list|,
 literal|"login.jsp?menu=hide&m="
 operator|+

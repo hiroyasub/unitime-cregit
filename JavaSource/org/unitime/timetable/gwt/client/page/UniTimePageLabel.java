@@ -49,6 +49,22 @@ name|gwt
 operator|.
 name|resources
 operator|.
+name|GwtConstants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
 name|GwtResources
 import|;
 end_import
@@ -323,6 +339,21 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|GwtConstants
+name|CONSTANTS
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtConstants
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|final
 name|MenuServiceAsync
@@ -588,7 +619,14 @@ name|Window
 operator|.
 name|setTitle
 argument_list|(
-literal|"UniTime 3.2| "
+literal|"UniTime "
+operator|+
+name|CONSTANTS
+operator|.
+name|version
+argument_list|()
+operator|+
+literal|"| "
 operator|+
 name|title
 argument_list|)
