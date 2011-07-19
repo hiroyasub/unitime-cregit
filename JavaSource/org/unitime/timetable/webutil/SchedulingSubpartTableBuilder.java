@@ -2628,14 +2628,16 @@ operator|)
 condition|)
 name|html
 operator|+=
-literal|"<A onClick=\"doClick('shiftRight', "
+literal|"<IMG border=\"0\" alt=\"Move to Child Level\" title=\"Move to Child Level\" align=\"top\" src=\"images/arrow_r.gif\" "
+operator|+
+literal|"onClick=\"doClick('shiftRight', "
 operator|+
 name|sic
 operator|.
 name|getId
 argument_list|()
 operator|+
-literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Move to Child Level\" title=\"Move to Child Level\" align=\"top\" src=\"images/arrow_r.gif\"></A>"
+literal|");\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">"
 expr_stmt|;
 else|else
 name|html
@@ -2651,14 +2653,16 @@ literal|1
 condition|)
 name|html
 operator|+=
-literal|"<A onClick=\"doClick('shiftLeft', "
+literal|"<IMG border=\"0\" alt=\"Move to Parent Level\" title=\"Move to Parent Level\" align=\"top\" src=\"images/arrow_l.gif\" "
+operator|+
+literal|"onClick=\"doClick('shiftLeft', "
 operator|+
 name|sic
 operator|.
 name|getId
 argument_list|()
 operator|+
-literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Move to Parent Level\" title=\"Move to Parent Level\" align=\"top\" src=\"images/arrow_l.gif\"></A>"
+literal|");\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">"
 expr_stmt|;
 else|else
 name|html
@@ -2690,14 +2694,16 @@ operator|)
 condition|)
 name|html
 operator|+=
-literal|"<A onClick=\"doClick('shiftUp', "
+literal|"<IMG border=\"0\" alt=\"Move Up\" align=\"absmiddle\" src=\"images/arrow_u.gif\" "
+operator|+
+literal|"onClick=\"doClick('shiftUp', "
 operator|+
 name|sic
 operator|.
 name|getId
 argument_list|()
 operator|+
-literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Move Up\" align=\"absmiddle\" src=\"images/arrow_u.gif\"></A>"
+literal|");\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">"
 expr_stmt|;
 else|else
 name|html
@@ -2737,14 +2743,16 @@ operator|)
 condition|)
 name|html
 operator|+=
-literal|"<A onClick=\"doClick('shiftDown', "
+literal|"<IMG border=\"0\" alt=\"Move Down\" align=\"absmiddle\" src=\"images/arrow_d.gif\" "
+operator|+
+literal|"onClick=\"doClick('shiftDown', "
 operator|+
 name|sic
 operator|.
 name|getId
 argument_list|()
 operator|+
-literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Move Down\" align=\"absmiddle\" src=\"images/arrow_d.gif\"></A>"
+literal|");\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">"
 expr_stmt|;
 else|else
 name|html
@@ -2754,14 +2762,16 @@ expr_stmt|;
 comment|// Delete
 name|html
 operator|+=
-literal|"<A onClick=\"doClick('delete', "
+literal|"<IMG border=\"0\" alt=\"Delete\" title=\"Delete Instructional Type\" align=\"top\" src=\"images/Delete16.gif\" "
+operator|+
+literal|"onClick=\"doClick('delete', "
 operator|+
 name|sic
 operator|.
 name|getId
 argument_list|()
 operator|+
-literal|");\" href=\"#null\"><IMG border=\"0\" alt=\"Delete\" title=\"Delete Instructional Type\" align=\"top\" src=\"images/Delete16.gif\"></A>&nbsp; "
+literal|");\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">&nbsp; "
 expr_stmt|;
 name|html
 operator|+=
