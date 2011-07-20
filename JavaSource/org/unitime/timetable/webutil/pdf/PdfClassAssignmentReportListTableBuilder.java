@@ -287,13 +287,15 @@ end_import
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|itextpdf
+name|unitime
 operator|.
-name|text
+name|timetable
 operator|.
-name|Document
+name|util
+operator|.
+name|PdfFont
 import|;
 end_import
 
@@ -305,7 +307,7 @@ name|itextpdf
 operator|.
 name|text
 operator|.
-name|FontFactory
+name|Document
 import|;
 end_import
 
@@ -890,15 +892,11 @@ argument_list|(
 name|subjectArea
 argument_list|)
 argument_list|,
-name|FontFactory
+name|PdfFont
 operator|.
-name|getFont
+name|getBigFont
 argument_list|(
-name|FontFactory
-operator|.
-name|HELVETICA_BOLD
-argument_list|,
-literal|16
+literal|true
 argument_list|)
 argument_list|)
 argument_list|)

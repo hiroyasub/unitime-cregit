@@ -2105,7 +2105,7 @@ name|equals
 argument_list|(
 name|Constants
 operator|.
-name|ALL_OPTION_LABEL
+name|ALL_OPTION_VALUE
 argument_list|)
 condition|)
 name|list

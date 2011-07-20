@@ -91,6 +91,20 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|PdfFont
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|itextpdf
@@ -110,18 +124,6 @@ operator|.
 name|text
 operator|.
 name|DocumentException
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|itextpdf
-operator|.
-name|text
-operator|.
-name|FontFactory
 import|;
 end_import
 
@@ -1374,16 +1376,10 @@ argument_list|,
 literal|"\n  "
 argument_list|)
 argument_list|,
-name|FontFactory
+name|PdfFont
 operator|.
-name|getFont
-argument_list|(
-name|FontFactory
-operator|.
-name|COURIER
-argument_list|,
-literal|9
-argument_list|)
+name|getFixedFont
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|p

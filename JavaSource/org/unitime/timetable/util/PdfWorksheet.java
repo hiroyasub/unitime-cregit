@@ -587,18 +587,6 @@ name|itextpdf
 operator|.
 name|text
 operator|.
-name|FontFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|itextpdf
-operator|.
-name|text
-operator|.
 name|PageSize
 import|;
 end_import
@@ -5214,6 +5202,7 @@ literal|">  "
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//FIXME: For some reason when a line starts with space, the line is shifted by one space in the resulting PDF (when using iText 5.0.2)
 name|Paragraph
 name|p
 init|=
@@ -5224,17 +5213,18 @@ name|iBuffer
 operator|.
 name|toString
 argument_list|()
-argument_list|,
-name|FontFactory
 operator|.
-name|getFont
+name|replace
 argument_list|(
-name|FontFactory
-operator|.
-name|COURIER
+literal|"\n "
 argument_list|,
-literal|9
+literal|"\n  "
 argument_list|)
+argument_list|,
+name|PdfFont
+operator|.
+name|getFixedFont
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|p
