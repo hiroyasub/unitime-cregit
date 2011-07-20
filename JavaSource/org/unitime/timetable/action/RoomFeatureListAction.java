@@ -1272,7 +1272,7 @@ if|else if
 condition|(
 name|Constants
 operator|.
-name|ALL_OPTION_LABEL
+name|ALL_OPTION_VALUE
 operator|.
 name|equals
 argument_list|(
