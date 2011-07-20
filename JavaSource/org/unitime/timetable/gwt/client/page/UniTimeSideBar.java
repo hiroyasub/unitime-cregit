@@ -1725,18 +1725,6 @@ name|Throwable
 name|caught
 parameter_list|)
 block|{
-name|Window
-operator|.
-name|alert
-argument_list|(
-literal|"Failed to load menu: "
-operator|+
-name|caught
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 argument_list|)
