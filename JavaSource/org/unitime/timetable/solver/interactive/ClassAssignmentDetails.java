@@ -5240,6 +5240,9 @@ name|showSelected
 parameter_list|,
 name|boolean
 name|endTime
+parameter_list|,
+name|boolean
+name|showHint
 parameter_list|)
 block|{
 name|boolean
@@ -5259,8 +5262,14 @@ decl_stmt|;
 name|String
 name|hint
 init|=
+operator|(
+name|showHint
+condition|?
 name|getHint
 argument_list|()
+else|:
+literal|null
+operator|)
 decl_stmt|;
 return|return
 operator|(
@@ -5883,6 +5892,9 @@ name|link
 parameter_list|,
 name|boolean
 name|showSelected
+parameter_list|,
+name|boolean
+name|showHint
 parameter_list|)
 block|{
 name|boolean
@@ -5934,6 +5946,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|showHint
+operator|&&
 name|getLocation
 argument_list|()
 operator|!=
@@ -6644,6 +6658,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|true
+argument_list|,
+literal|false
 argument_list|)
 operator|+
 literal|" "
@@ -6708,6 +6724,8 @@ index|]
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -7086,6 +7104,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|true
+argument_list|,
+literal|false
 argument_list|)
 operator|+
 literal|" "
@@ -7138,6 +7158,8 @@ index|]
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -7444,6 +7466,8 @@ argument_list|(
 name|link
 argument_list|,
 name|showSelected
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7530,6 +7554,8 @@ argument_list|(
 name|link
 argument_list|,
 name|showSelected
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7922,6 +7948,8 @@ argument_list|,
 name|showSelected
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8038,6 +8066,8 @@ argument_list|,
 name|showSelected
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8594,6 +8624,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|true
+argument_list|,
+literal|false
 argument_list|)
 operator|+
 literal|" "
@@ -8655,6 +8687,8 @@ index|]
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9282,6 +9316,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -9296,6 +9332,8 @@ name|oldTime
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9333,6 +9371,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 return|return
@@ -9340,6 +9380,8 @@ name|oldTime
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9353,6 +9395,8 @@ name|newTime
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9411,6 +9455,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -9425,6 +9471,8 @@ name|oldTime
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9462,6 +9510,8 @@ argument_list|,
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 return|return
@@ -9469,6 +9519,8 @@ name|oldTime
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9482,6 +9534,8 @@ name|newTime
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9632,6 +9686,8 @@ argument_list|(
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 if|if
@@ -9645,6 +9701,8 @@ name|oldRoom
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9678,6 +9736,8 @@ argument_list|(
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 return|return
@@ -9685,6 +9745,8 @@ name|oldRoom
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9696,6 +9758,8 @@ name|newRoom
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9739,6 +9803,8 @@ argument_list|(
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 if|if
@@ -9752,6 +9818,8 @@ name|oldRoom
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9785,6 +9853,8 @@ argument_list|(
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|false
 argument_list|)
 return|;
 return|return
@@ -9792,6 +9862,8 @@ name|oldRoom
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
@@ -9803,6 +9875,8 @@ name|newRoom
 operator|.
 name|toHtml
 argument_list|(
+literal|false
+argument_list|,
 literal|false
 argument_list|,
 literal|false
