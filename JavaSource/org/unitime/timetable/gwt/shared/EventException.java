@@ -17,6 +17,24 @@ name|shared
 package|;
 end_package
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|user
+operator|.
+name|client
+operator|.
+name|rpc
+operator|.
+name|IsSerializable
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -27,6 +45,8 @@ class|class
 name|EventException
 extends|extends
 name|RuntimeException
+implements|implements
+name|IsSerializable
 block|{
 specifier|private
 specifier|static
