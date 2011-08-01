@@ -344,6 +344,24 @@ name|String
 name|reason
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Academic session is not available for student scheduling."
+argument_list|)
+name|String
+name|noServerForSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong class or instructional offering."
+argument_list|)
+name|String
+name|badClassOrOffering
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

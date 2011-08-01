@@ -21,6 +21,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -37,9 +51,9 @@ name|timetable
 operator|.
 name|gwt
 operator|.
-name|shared
+name|resources
 operator|.
-name|SectioningException
+name|StudentSectioningExceptions
 import|;
 end_import
 
@@ -55,7 +69,7 @@ name|gwt
 operator|.
 name|shared
 operator|.
-name|SectioningExceptionType
+name|SectioningException
 import|;
 end_import
 
@@ -103,6 +117,20 @@ argument_list|<
 name|CourseInfo
 argument_list|>
 block|{
+specifier|private
+specifier|static
+name|StudentSectioningExceptions
+name|EXCEPTIONS
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|StudentSectioningExceptions
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|Long
 name|iUniqueId
@@ -673,9 +701,10 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|NO_CUSTOM_COURSE_DETAILS
+name|noCustomCourseDetails
+argument_list|()
 argument_list|)
 throw|;
 block|}

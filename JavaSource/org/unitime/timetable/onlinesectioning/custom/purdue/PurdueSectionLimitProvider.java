@@ -177,13 +177,27 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|gwt
 operator|.
-name|shared
+name|resources
 operator|.
-name|SectioningException
+name|StudentSectioningExceptions
 import|;
 end_import
 
@@ -199,7 +213,7 @@ name|gwt
 operator|.
 name|shared
 operator|.
-name|SectioningExceptionType
+name|SectioningException
 import|;
 end_import
 
@@ -262,6 +276,20 @@ name|SectionLimitProvider
 implements|,
 name|SectionUrlProvider
 block|{
+specifier|private
+specifier|static
+name|StudentSectioningExceptions
+name|EXCEPTIONS
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|StudentSectioningExceptions
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|Logger
@@ -445,10 +473,10 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"academic term "
 operator|+
 name|session
@@ -457,6 +485,7 @@ name|getTerm
 argument_list|()
 operator|+
 literal|" not known"
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -581,11 +610,12 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"class CRN not provided"
+argument_list|)
 argument_list|)
 throw|;
 name|String
@@ -680,11 +710,12 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"course detail url is wrong"
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -866,15 +897,16 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
 literal|"'>class detial page</a>"
+argument_list|)
 argument_list|)
 throw|;
 name|String
@@ -908,15 +940,16 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
 literal|"'>class detial page</a>"
+argument_list|)
 argument_list|)
 throw|;
 name|int
@@ -946,15 +979,16 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
 literal|"'>class detial page</a>"
+argument_list|)
 argument_list|)
 throw|;
 name|int
@@ -984,15 +1018,16 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
 literal|"'>class detial page</a>"
+argument_list|)
 argument_list|)
 throw|;
 comment|//			int remaning = Integer.parseInt(match.group(1));
@@ -1017,15 +1052,16 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|SectioningExceptionType
+name|EXCEPTIONS
 operator|.
-name|CUSTOM_SECTION_LIMITS_FAILURE
-argument_list|,
+name|customSectionLimitsFailed
+argument_list|(
 literal|"unable to read<a href='"
 operator|+
 name|secionUrl
 operator|+
 literal|"'>class detial page</a>"
+argument_list|)
 argument_list|)
 throw|;
 block|}
