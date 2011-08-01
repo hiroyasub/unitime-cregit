@@ -1386,7 +1386,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|getRollForwardExamConfiguration
+name|getRollForwardMidtermExams
 argument_list|()
 operator|.
 name|booleanValue
@@ -1436,7 +1436,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|getRollForwardExamConfiguration
+name|getRollForwardFinalExams
 argument_list|()
 operator|.
 name|booleanValue
