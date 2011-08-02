@@ -849,7 +849,7 @@ name|WebTable
 argument_list|(
 literal|9
 argument_list|,
-literal|"Roll forward in progress"
+literal|null
 argument_list|,
 literal|"rollForwardSession.do?ord=%%"
 argument_list|,
@@ -1038,7 +1038,7 @@ condition|)
 block|{
 name|delete
 operator|=
-literal|"<img src='images/Delete16.gif' border='0' onClick=\"if (confirm('Do you really want to remove this data exchange?')) document.location='rollForwardSession.do?remove="
+literal|"<img src='images/Delete16.gif' border='0' onClick=\"if (confirm('Do you really want to remove this roll forward?')) document.location='rollForwardSession.do?remove="
 operator|+
 name|item
 operator|.
