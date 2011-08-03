@@ -420,7 +420,7 @@ name|getProperty
 argument_list|(
 literal|"year"
 argument_list|,
-literal|"2010"
+literal|"2011"
 argument_list|)
 argument_list|,
 name|ApplicationProperties
@@ -476,6 +476,8 @@ name|session
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
