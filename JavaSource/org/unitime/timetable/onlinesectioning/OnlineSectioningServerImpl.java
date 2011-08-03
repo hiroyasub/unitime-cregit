@@ -1172,6 +1172,14 @@ throw|throw
 name|exception
 throw|;
 block|}
+if|if
+condition|(
+name|iAcademicSession
+operator|.
+name|isSectioningEnabled
+argument_list|()
+condition|)
+block|{
 try|try
 block|{
 name|execute
@@ -1205,6 +1213,7 @@ expr_stmt|;
 throw|throw
 name|exception
 throw|;
+block|}
 block|}
 block|}
 else|else
