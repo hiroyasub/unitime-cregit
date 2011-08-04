@@ -6688,15 +6688,9 @@ if|if
 condition|(
 name|sectionx
 operator|.
-name|getTime
-argument_list|()
-operator|.
-name|hasIntersection
+name|isOverlapping
 argument_list|(
 name|section
-operator|.
-name|getTime
-argument_list|()
 argument_list|)
 condition|)
 block|{
