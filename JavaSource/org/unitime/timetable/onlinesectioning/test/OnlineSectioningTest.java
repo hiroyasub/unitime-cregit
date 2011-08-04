@@ -176,6 +176,17 @@ argument_list|>
 name|operations
 parameter_list|()
 block|{
+name|getServer
+argument_list|()
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|setSectioningEnabled
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|org
 operator|.
 name|hibernate
