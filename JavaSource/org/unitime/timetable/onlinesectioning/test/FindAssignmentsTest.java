@@ -136,19 +136,6 @@ name|FindAssignmentsTest
 extends|extends
 name|OnlineSectioningTestFwk
 block|{
-static|static
-block|{
-name|System
-operator|.
-name|setProperty
-argument_list|(
-literal|"jprof"
-argument_list|,
-literal|"cpu"
-argument_list|)
-expr_stmt|;
-comment|// wall or cpu
-block|}
 specifier|public
 name|List
 argument_list|<
@@ -157,11 +144,6 @@ argument_list|>
 name|operations
 parameter_list|()
 block|{
-comment|// getServer().getConfig().setProperty("Neighbour.BranchAndBoundTimeout", "-1");
-comment|// getServer().getConfig().setProperty("StudentWeights.NoTimeFactor", "0.0");
-comment|// getServer().getConfig().setProperty("StudentWeights.SelectionFactor", "0.0");
-comment|// getServer().getConfig().setProperty("StudentWeights.PenaltyFactor", "0.0");
-comment|// getServer().getConfig().setProperty("StudentWeights.AvgPenaltyFactor", "0.0");
 name|org
 operator|.
 name|hibernate
