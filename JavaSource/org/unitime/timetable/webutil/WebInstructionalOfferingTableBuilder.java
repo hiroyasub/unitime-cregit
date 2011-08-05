@@ -4789,10 +4789,17 @@ operator|.
 name|getEnrollment
 argument_list|()
 operator|+
+name|Math
+operator|.
+name|max
+argument_list|(
+literal|0.0
+argument_list|,
 name|i
 operator|.
 name|getNbrExpectedStudents
 argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
