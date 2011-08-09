@@ -776,7 +776,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Chceck Conflicts"
+literal|"Check Conflicts"
 argument_list|)
 name|String
 name|columnInstructorCheckConflicts
