@@ -1787,6 +1787,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|int
+name|i
+init|=
+literal|0
+decl_stmt|;
 for|for
 control|(
 name|TimetableGridCell
@@ -1795,11 +1800,6 @@ range|:
 name|cells
 control|)
 block|{
-name|int
-name|i
-init|=
-literal|0
-decl_stmt|;
 while|while
 condition|(
 name|used
@@ -1822,6 +1822,7 @@ name|getAssignmentId
 argument_list|()
 argument_list|,
 name|i
+operator|++
 argument_list|)
 expr_stmt|;
 block|}
