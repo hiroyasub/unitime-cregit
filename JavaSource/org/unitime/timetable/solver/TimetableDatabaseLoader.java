@@ -8793,7 +8793,7 @@ operator|.
 name|getTimeLocation
 argument_list|()
 operator|.
-name|getName
+name|getLongName
 argument_list|()
 operator|+
 literal|" "
