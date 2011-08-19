@@ -566,6 +566,12 @@ name|iIncludeOtherStudents
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+name|boolean
+name|iSetStudentCourseLimits
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|CurriculaLastLikeCourseDemands
 parameter_list|(
@@ -590,6 +596,17 @@ argument_list|(
 literal|"CurriculaCourseDemands.IncludeOtherStudents"
 argument_list|,
 name|iIncludeOtherStudents
+argument_list|)
+expr_stmt|;
+name|iSetStudentCourseLimits
+operator|=
+name|config
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"CurriculaCourseDemands.SetStudentCourseLimits"
+argument_list|,
+name|iSetStudentCourseLimits
 argument_list|)
 expr_stmt|;
 block|}
@@ -2039,6 +2056,15 @@ argument_list|,
 name|m
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|iSetStudentCourseLimits
+condition|)
+name|m
+operator|.
+name|setStudentLimits
+argument_list|()
+expr_stmt|;
 comment|// Load model from cache (if exists)
 name|CurModel
 name|cachedModel
@@ -2093,6 +2119,15 @@ name|loadFromXml
 argument_list|(
 name|cache
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|iSetStudentCourseLimits
+condition|)
+name|cachedModel
+operator|.
+name|setStudentLimits
+argument_list|()
 expr_stmt|;
 block|}
 comment|// Check the cached model
