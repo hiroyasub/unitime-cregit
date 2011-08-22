@@ -65,6 +65,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Date
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Hashtable
 import|;
 end_import
@@ -3113,7 +3123,14 @@ operator|.
 name|getExamName
 argument_list|()
 argument_list|,
-literal|"examInfo.do?op=Reorder&pord=%%"
+literal|"examInfo.do?op=Reorder&pord=%%&noCacheTS="
+operator|+
+operator|new
+name|Date
+argument_list|()
+operator|.
+name|getTime
+argument_list|()
 argument_list|,
 operator|new
 name|String
@@ -3242,6 +3259,15 @@ operator|+
 name|period
 operator|.
 name|getPeriodId
+argument_list|()
+operator|+
+literal|"&noCacheTS="
+operator|+
+operator|new
+name|Date
+argument_list|()
+operator|.
+name|getTime
 argument_list|()
 operator|+
 literal|"';\""
@@ -6510,7 +6536,16 @@ operator|.
 name|getNrStudents
 argument_list|()
 operator|+
-literal|") {displayLoading(); document.location='examInfo.do?op=Select&room='+sRooms;}"
+literal|") {displayLoading(); document.location='examInfo.do?op=Select&room='+sRooms+'&noCacheTS="
+operator|+
+operator|new
+name|Date
+argument_list|()
+operator|.
+name|getTime
+argument_list|()
+operator|+
+literal|"';}"
 expr_stmt|;
 name|ret
 operator|+=

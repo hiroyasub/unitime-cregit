@@ -3417,7 +3417,16 @@ literal|"    displayLoading();"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"    document.location='classInfo.do?op=Select&time='+id;"
+literal|"    document.location='classInfo.do?op=Select&time='+id+'&noCacheTS="
+operator|+
+operator|new
+name|Date
+argument_list|()
+operator|.
+name|getTime
+argument_list|()
+operator|+
+literal|"';"
 expr_stmt|;
 name|ret
 operator|+=
@@ -8815,7 +8824,16 @@ operator|.
 name|getNumberOfRooms
 argument_list|()
 operator|+
-literal|") {displayLoading(); document.location='classInfo.do?op=Select&room='+sRooms;}"
+literal|") {displayLoading(); document.location='classInfo.do?op=Select&room='+sRooms+'&noCacheTS="
+operator|+
+operator|new
+name|Date
+argument_list|()
+operator|.
+name|getTime
+argument_list|()
+operator|+
+literal|"';}"
 expr_stmt|;
 name|ret
 operator|+=

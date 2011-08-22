@@ -73,6 +73,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Date
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Enumeration
 import|;
 end_import
@@ -4429,7 +4439,16 @@ literal|"<a class='noFancyLinks' href='suggestions.do?id="
 operator|+
 name|iClassId
 operator|+
-literal|"&op=Select'><font color='"
+literal|"&op=Select&noCacheTS="
+operator|+
+operator|new
+name|Date
+argument_list|()
+operator|.
+name|getTime
+argument_list|()
+operator|+
+literal|"'><font color='"
 operator|+
 name|PreferenceLevel
 operator|.
