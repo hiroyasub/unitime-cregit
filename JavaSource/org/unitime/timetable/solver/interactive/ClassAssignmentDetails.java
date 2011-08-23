@@ -10385,7 +10385,7 @@ operator|.
 name|getDatePatternName
 argument_list|()
 else|:
-name|getAssignedTime
+name|getTime
 argument_list|()
 operator|.
 name|getDatePatternName
@@ -10393,7 +10393,7 @@ argument_list|()
 operator|+
 literal|"&rarr; "
 operator|+
-name|getTime
+name|getAssignedTime
 argument_list|()
 operator|.
 name|getDatePatternName
