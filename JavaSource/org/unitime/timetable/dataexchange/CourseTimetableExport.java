@@ -846,6 +846,9 @@ argument_list|(
 name|classElement
 argument_list|,
 name|clazz
+operator|.
+name|effectiveDatePattern
+argument_list|()
 argument_list|,
 name|session
 argument_list|)
