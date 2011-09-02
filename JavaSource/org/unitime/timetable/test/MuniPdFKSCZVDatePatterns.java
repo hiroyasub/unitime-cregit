@@ -472,7 +472,7 @@ name|setString
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"TÃ½den %"
+literal|"T%den %"
 argument_list|)
 operator|.
 name|list
@@ -611,7 +611,7 @@ name|setString
 argument_list|(
 literal|"name"
 argument_list|,
-literal|"TÃ½den %"
+literal|"T%den %"
 argument_list|)
 operator|.
 name|list
@@ -883,9 +883,9 @@ operator|.
 name|getName
 argument_list|()
 operator|.
-name|equals
+name|endsWith
 argument_list|(
-literal|"TÃ½den 0"
+literal|"den 0"
 argument_list|)
 operator|&&
 operator|(
