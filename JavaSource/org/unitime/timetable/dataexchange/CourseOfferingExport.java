@@ -3669,7 +3669,7 @@ operator|-
 literal|1
 else|:
 name|m
-operator|>
+operator|>=
 literal|12
 condition|?
 name|startYear
@@ -3759,7 +3759,7 @@ operator|-
 literal|1
 else|:
 name|m
-operator|>
+operator|>=
 literal|12
 condition|?
 name|startYear
