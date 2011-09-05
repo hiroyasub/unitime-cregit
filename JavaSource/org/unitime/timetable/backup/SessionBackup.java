@@ -833,24 +833,11 @@ name|SessionBackup
 parameter_list|(
 name|OutputStream
 name|out
+parameter_list|,
+name|Progress
+name|progress
 parameter_list|)
 block|{
-name|iHibSession
-operator|=
-operator|new
-name|_RootDAO
-argument_list|()
-operator|.
-name|getSession
-argument_list|()
-expr_stmt|;
-name|iHibSessionFactory
-operator|=
-name|iHibSession
-operator|.
-name|getSessionFactory
-argument_list|()
-expr_stmt|;
 name|iOut
 operator|=
 name|CodedOutputStream
@@ -862,10 +849,7 @@ argument_list|)
 expr_stmt|;
 name|iProgress
 operator|=
-name|Progress
-operator|.
-name|getInstance
-argument_list|()
+name|progress
 expr_stmt|;
 block|}
 specifier|public
@@ -889,7 +873,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|sLog
+name|iProgress
 operator|.
 name|info
 argument_list|(
@@ -1009,18 +993,49 @@ specifier|public
 name|void
 name|backup
 parameter_list|(
-name|Session
-name|session
+name|Long
+name|sessionId
 parameter_list|)
 throws|throws
 name|IOException
 block|{
 name|iSessionId
 operator|=
-name|session
-operator|.
-name|getUniqueId
+name|sessionId
+expr_stmt|;
+name|iHibSession
+operator|=
+operator|new
+name|_RootDAO
 argument_list|()
+operator|.
+name|createNewSession
+argument_list|()
+expr_stmt|;
+name|iHibSessionFactory
+operator|=
+name|iHibSession
+operator|.
+name|getSessionFactory
+argument_list|()
+expr_stmt|;
+try|try
+block|{
+name|iProgress
+operator|.
+name|setStatus
+argument_list|(
+literal|"Exporting Session"
+argument_list|)
+expr_stmt|;
+name|iProgress
+operator|.
+name|setPhase
+argument_list|(
+literal|"Loding Model"
+argument_list|,
+literal|3
+argument_list|)
 expr_stmt|;
 name|TreeSet
 argument_list|<
@@ -1087,15 +1102,8 @@ argument_list|)
 expr_stmt|;
 name|iProgress
 operator|.
-name|setStatus
-argument_list|(
-literal|"Exporting "
-operator|+
-name|session
-operator|.
-name|getLabel
+name|incProgress
 argument_list|()
-argument_list|)
 expr_stmt|;
 name|Queue
 argument_list|<
@@ -1661,7 +1669,7 @@ argument_list|()
 operator|>
 literal|0
 condition|)
-name|sLog
+name|iProgress
 operator|.
 name|info
 argument_list|(
@@ -1675,6 +1683,11 @@ block|}
 block|}
 block|}
 block|}
+name|iProgress
+operator|.
+name|incProgress
+argument_list|()
+expr_stmt|;
 for|for
 control|(
 name|List
@@ -1905,7 +1918,7 @@ argument_list|()
 operator|>
 literal|0
 condition|)
-name|sLog
+name|iProgress
 operator|.
 name|info
 argument_list|(
@@ -2063,7 +2076,7 @@ argument_list|()
 operator|>
 literal|0
 condition|)
-name|sLog
+name|iProgress
 operator|.
 name|info
 argument_list|(
@@ -2075,6 +2088,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|iProgress
+operator|.
+name|incProgress
+argument_list|()
+expr_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -2172,7 +2190,7 @@ operator|==
 literal|0
 condition|)
 continue|continue;
-name|sLog
+name|iProgress
 operator|.
 name|info
 argument_list|(
@@ -2544,7 +2562,7 @@ name|iSessionId
 argument_list|)
 condition|)
 block|{
-name|sLog
+name|iProgress
 operator|.
 name|warn
 argument_list|(
@@ -3056,7 +3074,7 @@ continue|continue;
 block|}
 else|else
 block|{
-name|sLog
+name|iProgress
 operator|.
 name|warn
 argument_list|(
@@ -3147,7 +3165,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*         // Skip ConstraintInfo         if (!iData.containsKey(ConstraintInfo.class.getName()))         	iData.put(ConstraintInfo.class.getName(), new QueueItem(iHibSessionFactory.getClassMetadata(ConstraintInfo.class), null, null, Relation.Empty));          for (String name: items)         	export(iData.get(name));                  		while (true) { 			List<Object> objects = new ArrayList<Object>(); 			ClassMetadata meta = null; 			for (Entity e: iObjects) { 				if (e.exported()) continue; 				if (objects.isEmpty() || meta.getEntityName().equals(e.name())) { 					meta = e.meta(); 					objects.add(e.object()); 					e.notifyExported(); 				} 			} 			if (objects.isEmpty()) break; 			export(meta, objects, null); 		} 		*/
+comment|/*             // Skip ConstraintInfo             if (!iData.containsKey(ConstraintInfo.class.getName()))             	iData.put(ConstraintInfo.class.getName(), new QueueItem(iHibSessionFactory.getClassMetadata(ConstraintInfo.class), null, null, Relation.Empty));              for (String name: items)             	export(iData.get(name));                          		while (true) {     			List<Object> objects = new ArrayList<Object>();     			ClassMetadata meta = null;     			for (Entity e: iObjects) {     				if (e.exported()) continue;     				if (objects.isEmpty() || meta.getEntityName().equals(e.name())) {     					meta = e.meta();     					objects.add(e.object());     					e.notifyExported();     				}     			}     			if (objects.isEmpty()) break;     			export(meta, objects, null);     		}     		*/
 name|iProgress
 operator|.
 name|setStatus
@@ -3155,6 +3173,15 @@ argument_list|(
 literal|"All done."
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|iHibSession
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 enum|enum
 name|Relation
@@ -4433,7 +4460,7 @@ argument_list|,
 name|relation
 argument_list|)
 expr_stmt|;
-comment|// sLog.info("Fetched " + property + " (" + cnt + (data ? " items" : " ids") + ")");
+comment|// iProgress.info("Fetched " + property + " (" + cnt + (data ? " items" : " ids") + ")");
 block|}
 return|return
 name|relation
@@ -4684,6 +4711,11 @@ operator|new
 name|SessionBackup
 argument_list|(
 name|out
+argument_list|,
+name|Progress
+operator|.
+name|getInstance
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|PrintWriter
@@ -4740,6 +4772,9 @@ operator|.
 name|backup
 argument_list|(
 name|session
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|out

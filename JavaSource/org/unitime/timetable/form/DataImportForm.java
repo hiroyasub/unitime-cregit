@@ -328,6 +328,13 @@ literal|"studentEnrollments"
 argument_list|,
 literal|"Student class enrollments"
 argument_list|)
+block|,
+name|SESSION
+argument_list|(
+literal|"session"
+argument_list|,
+literal|"Academic Session"
+argument_list|)
 block|,     	;
 specifier|private
 name|String
