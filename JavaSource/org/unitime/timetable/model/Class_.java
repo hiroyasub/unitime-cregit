@@ -8542,6 +8542,12 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|event
+operator|!=
+literal|null
+condition|)
 name|hibSession
 operator|.
 name|saveOrUpdate

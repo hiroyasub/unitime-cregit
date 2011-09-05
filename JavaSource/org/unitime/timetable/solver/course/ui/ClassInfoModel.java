@@ -2374,6 +2374,18 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|session
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|isTestSession
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
 name|session
 operator|.
 name|getStatusType
@@ -2502,6 +2514,7 @@ name|getValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|hibSession

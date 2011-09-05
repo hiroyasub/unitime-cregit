@@ -101,7 +101,9 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Session
+name|dao
+operator|.
+name|SessionDAO
 import|;
 end_import
 
@@ -244,9 +246,12 @@ name|sessionListForm
 operator|.
 name|setSessions
 argument_list|(
-name|Session
+name|SessionDAO
 operator|.
-name|getAllSessions
+name|getInstance
+argument_list|()
+operator|.
+name|findAll
 argument_list|()
 argument_list|)
 expr_stmt|;
