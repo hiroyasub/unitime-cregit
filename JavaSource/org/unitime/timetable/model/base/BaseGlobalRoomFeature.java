@@ -55,6 +55,20 @@ name|RoomFeature
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Session
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -80,6 +94,10 @@ decl_stmt|;
 specifier|private
 name|String
 name|iSisValue
+decl_stmt|;
+specifier|private
+name|Session
+name|iSession
 decl_stmt|;
 specifier|public
 specifier|static
@@ -167,6 +185,28 @@ block|{
 name|iSisValue
 operator|=
 name|sisValue
+expr_stmt|;
+block|}
+specifier|public
+name|Session
+name|getSession
+parameter_list|()
+block|{
+return|return
+name|iSession
+return|;
+block|}
+specifier|public
+name|void
+name|setSession
+parameter_list|(
+name|Session
+name|session
+parameter_list|)
+block|{
+name|iSession
+operator|=
+name|session
 expr_stmt|;
 block|}
 specifier|public
@@ -294,6 +334,11 @@ operator|+
 literal|"\n	Label: "
 operator|+
 name|getLabel
+argument_list|()
+operator|+
+literal|"\n	Session: "
+operator|+
+name|getSession
 argument_list|()
 operator|+
 literal|"\n	SisReference: "

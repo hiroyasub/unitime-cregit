@@ -1359,6 +1359,8 @@ name|GlobalRoomFeature
 operator|.
 name|findGlobalRoomFeatureForLabel
 argument_list|(
+name|session
+argument_list|,
 name|erf
 operator|.
 name|getValue
@@ -1600,6 +1602,8 @@ name|GlobalRoomFeature
 operator|.
 name|findGlobalRoomFeatureForLabel
 argument_list|(
+name|session
+argument_list|,
 name|erf
 operator|.
 name|getValue

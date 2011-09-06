@@ -1342,6 +1342,9 @@ name|GlobalRoomFeature
 operator|.
 name|featureWithSisReference
 argument_list|(
+name|getSession
+argument_list|()
+argument_list|,
 name|sisReference
 argument_list|)
 decl_stmt|;

@@ -1761,6 +1761,12 @@ name|bldgs
 return|;
 block|}
 specifier|public
+specifier|abstract
+name|Session
+name|getSession
+parameter_list|()
+function_decl|;
+specifier|public
 name|Set
 name|getAvailableRoomFeatures
 parameter_list|()
@@ -1772,7 +1778,10 @@ argument_list|(
 name|RoomFeature
 operator|.
 name|getAllGlobalRoomFeatures
+argument_list|(
+name|getSession
 argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -1788,7 +1797,10 @@ argument_list|(
 name|RoomGroup
 operator|.
 name|getAllGlobalRoomGroups
+argument_list|(
+name|getSession
 argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}

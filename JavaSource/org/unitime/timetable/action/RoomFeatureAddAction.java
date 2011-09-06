@@ -765,8 +765,8 @@ argument_list|(
 name|webSession
 argument_list|)
 decl_stmt|;
-name|Long
-name|sessionId
+name|Session
+name|session
 init|=
 name|Session
 operator|.
@@ -774,9 +774,6 @@ name|getCurrentAcadSession
 argument_list|(
 name|user
 argument_list|)
-operator|.
-name|getSessionId
-argument_list|()
 decl_stmt|;
 comment|//if roomFeature is global
 if|if
@@ -836,6 +833,13 @@ name|roomFeatureEditForm
 operator|.
 name|getAbbv
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|rf
+operator|.
+name|setSession
+argument_list|(
+name|session
 argument_list|)
 expr_stmt|;
 try|try
@@ -1008,7 +1012,10 @@ operator|.
 name|getDeptCode
 argument_list|()
 argument_list|,
-name|sessionId
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

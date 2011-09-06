@@ -4959,6 +4959,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Session
+name|getSession
+parameter_list|()
+block|{
+return|return
+name|this
+return|;
+block|}
 block|}
 end_class
 

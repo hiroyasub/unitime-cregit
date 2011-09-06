@@ -2336,7 +2336,12 @@ init|=
 name|RoomFeature
 operator|.
 name|getAllGlobalRoomFeatures
+argument_list|(
+name|room
+operator|.
+name|getSession
 argument_list|()
+argument_list|)
 decl_stmt|;
 while|while
 condition|(

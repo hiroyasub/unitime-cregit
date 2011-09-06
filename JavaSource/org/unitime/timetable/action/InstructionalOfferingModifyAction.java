@@ -2410,7 +2410,12 @@ init|=
 name|RoomGroup
 operator|.
 name|getGlobalDefaultRoomGroup
+argument_list|(
+name|ioc
+operator|.
+name|getSession
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|Transaction
 name|tx
