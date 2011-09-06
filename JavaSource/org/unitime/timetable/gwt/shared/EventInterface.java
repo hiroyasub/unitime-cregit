@@ -176,6 +176,8 @@ specifier|public
 specifier|static
 enum|enum
 name|ResourceType
+implements|implements
+name|IsSerializable
 block|{
 name|ROOM
 argument_list|(

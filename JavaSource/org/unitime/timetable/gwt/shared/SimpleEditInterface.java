@@ -80,6 +80,8 @@ specifier|public
 specifier|static
 enum|enum
 name|Type
+implements|implements
+name|IsSerializable
 block|{
 name|area
 argument_list|(
@@ -130,6 +132,8 @@ specifier|public
 specifier|static
 enum|enum
 name|FieldType
+implements|implements
+name|IsSerializable
 block|{
 name|text
 block|,
