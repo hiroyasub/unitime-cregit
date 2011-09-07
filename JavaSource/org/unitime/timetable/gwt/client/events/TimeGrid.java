@@ -1806,7 +1806,10 @@ name|void
 name|labelDays
 parameter_list|(
 name|WeekInterface
-name|week
+name|first
+parameter_list|,
+name|WeekInterface
+name|last
 parameter_list|)
 block|{
 for|for
@@ -1845,7 +1848,7 @@ name|i
 index|]
 operator|+
 operator|(
-name|week
+name|first
 operator|==
 literal|null
 condition|?
@@ -1853,7 +1856,27 @@ literal|""
 else|:
 literal|" "
 operator|+
-name|week
+name|first
+operator|.
+name|getDayNames
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|i
+argument_list|)
+operator|)
+operator|+
+operator|(
+name|last
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+literal|" - "
+operator|+
+name|last
 operator|.
 name|getDayNames
 argument_list|()
