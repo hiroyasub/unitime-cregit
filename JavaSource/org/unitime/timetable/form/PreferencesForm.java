@@ -151,6 +151,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -248,6 +276,21 @@ name|serialVersionUID
 init|=
 operator|-
 literal|3578647598790726006L
+decl_stmt|;
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 specifier|protected
@@ -449,7 +492,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid room group: Check for duplicate / blank selection. "
+name|MSG
+operator|.
+name|errorInvalidRoomGroup
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -477,7 +523,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid room group level."
+name|MSG
+operator|.
+name|errorInvalidRoomGroupLevel
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -507,7 +556,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid building preference: Check for duplicate / blank selection. "
+name|MSG
+operator|.
+name|errorInvalidBuildingPreference
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -535,7 +587,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid building preference level."
+name|MSG
+operator|.
+name|errorInvalidBuildingPreferenceLevel
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -565,7 +620,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid room preference: Check for duplicate / blank selection. "
+name|MSG
+operator|.
+name|errorInvalidRoomPreference
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -593,7 +651,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid room preference level."
+name|MSG
+operator|.
+name|errorInvalidRoomPreferenceLevel
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -623,7 +684,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid room feature preference: Check for duplicate / blank selection. "
+name|MSG
+operator|.
+name|errorInvalidRoomFeaturePreference
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -651,7 +715,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid room feature preference level."
+name|MSG
+operator|.
+name|errorInvalidRoomFeaturePreferenceLevel
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -681,7 +748,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid distribution preference: Check for duplicate / blank selection. "
+name|MSG
+operator|.
+name|errorInvalidDistributionPreference
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -709,7 +779,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid distribution preference level."
+name|MSG
+operator|.
+name|errorInvalidDistributionPreferenceLevel
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

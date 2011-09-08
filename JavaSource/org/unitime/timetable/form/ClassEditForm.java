@@ -125,6 +125,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -255,6 +283,22 @@ name|long
 name|serialVersionUID
 init|=
 literal|3257849883023915058L
+decl_stmt|;
+comment|// Messages
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 comment|/** Class Start/End Date Format **/
 specifier|private
@@ -474,11 +518,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.integerGtEq"
+literal|"errors.generic"
 argument_list|,
-literal|"No. of Rooms"
-argument_list|,
-literal|"0"
+name|MSG
+operator|.
+name|errorNumberOfRoomsNegative
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -504,11 +549,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.integerGtEq"
+literal|"errors.generic"
 argument_list|,
-literal|"Room Ratio"
-argument_list|,
-literal|"0.0"
+name|MSG
+operator|.
+name|errorRoomRatioNegative
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -534,11 +580,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.integerGtEq"
+literal|"errors.generic"
 argument_list|,
-literal|"Minimum Expected Capacity"
-argument_list|,
-literal|"0"
+name|MSG
+operator|.
+name|errorMinimumExpectedCapacityNegative
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -564,11 +611,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.integerGtEq"
+literal|"errors.generic"
 argument_list|,
-literal|"Maximum Expected Capacity"
-argument_list|,
-literal|"0"
+name|MSG
+operator|.
+name|errorMaximumExpectedCapacityNegative
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -593,11 +641,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.integerGtEq"
+literal|"errors.generic"
 argument_list|,
-literal|"Maximum Expected Capacity"
-argument_list|,
-literal|"Minimum Expected Capacity"
+name|MSG
+operator|.
+name|errorMaximumExpectedCapacityLessThanMinimum
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -623,9 +672,44 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.required"
+literal|"errors.generic"
 argument_list|,
-literal|"Class Owner"
+name|MSG
+operator|.
+name|errorRequiredClassOwner
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// Schedule print note has 2000 character limit
+if|if
+condition|(
+name|schedulePrintNote
+operator|!=
+literal|null
+operator|&&
+name|schedulePrintNote
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|1999
+condition|)
+name|errors
+operator|.
+name|add
+argument_list|(
+literal|"notes"
+argument_list|,
+operator|new
+name|ActionMessage
+argument_list|(
+literal|"errors.generic"
+argument_list|,
+name|MSG
+operator|.
+name|errorSchedulePrintNoteLongerThan1999
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -652,11 +736,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.maxlength"
+literal|"errors.generic"
 argument_list|,
-literal|"Notes"
-argument_list|,
-literal|"999"
+name|MSG
+operator|.
+name|errorNotesLongerThan999
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -693,7 +778,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Invalid instructor preference: Check for duplicate / blank selection. "
+name|MSG
+operator|.
+name|errorInvalidInstructorPreference
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -826,22 +914,19 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Required room "
-operator|+
+name|MSG
+operator|.
+name|errorRequiredRoomTooSmall
+argument_list|(
 name|room
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" (capacity: "
-operator|+
+argument_list|,
 name|rCap
-operator|+
-literal|") cannot accomodate this class (capacity: "
-operator|+
+argument_list|,
 name|iRoomCapacity
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

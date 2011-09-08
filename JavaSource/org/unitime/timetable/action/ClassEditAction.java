@@ -2173,14 +2173,15 @@ operator|.
 name|getClassId
 argument_list|()
 argument_list|,
-literal|"Class ("
-operator|+
+name|MSG
+operator|.
+name|backClass
+argument_list|(
 name|frm
 operator|.
 name|getClassName
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|,
 literal|true
 argument_list|,

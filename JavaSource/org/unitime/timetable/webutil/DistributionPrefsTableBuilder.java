@@ -185,6 +185,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -608,6 +636,21 @@ specifier|public
 class|class
 name|DistributionPrefsTableBuilder
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 name|String
 name|getAllDistPrefsTableForCurrentUser
@@ -2398,7 +2441,10 @@ block|{
 name|String
 name|title
 init|=
-literal|"Distribution Preferences"
+name|MSG
+operator|.
+name|sectionTitleDistributionPreferences
+argument_list|()
 decl_stmt|;
 name|String
 name|backType
@@ -2456,7 +2502,14 @@ name|title
 operator|=
 literal|"<table width='100%'><tr><td width='100%'>"
 operator|+
-literal|"<DIV class=\"WelcomeRowHeadNoLine\">Distribution Preferences</DIV>"
+literal|"<DIV class=\"WelcomeRowHeadNoLine\">"
+operator|+
+name|MSG
+operator|.
+name|sectionTitleDistributionPreferences
+argument_list|()
+operator|+
+literal|"</DIV>"
 operator|+
 literal|"</td><td style='padding-bottom: 2px'>"
 operator|+
@@ -2502,13 +2555,25 @@ operator|new
 name|String
 index|[]
 block|{
-literal|" Type "
+name|MSG
+operator|.
+name|columnDistrPrefType
+argument_list|()
 block|,
-literal|" Structure "
+name|MSG
+operator|.
+name|columnDistrPrefStructure
+argument_list|()
 block|,
-literal|" Owner "
+name|MSG
+operator|.
+name|columnDistrPrefOwner
+argument_list|()
 block|,
-literal|" Class "
+name|MSG
+operator|.
+name|columnDistrPrefClass
+argument_list|()
 block|}
 argument_list|,
 operator|new

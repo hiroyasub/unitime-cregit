@@ -417,7 +417,7 @@ name|getProperty
 argument_list|(
 literal|"file"
 argument_list|,
-literal|"/Users/muller/Downloads/UniTime Localization Czech.csv"
+literal|"~/Downloads/UniTime Localization Czech.csv"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -511,6 +511,13 @@ argument_list|)
 operator|.
 name|toString
 argument_list|()
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|":"
+argument_list|,
+literal|"\\:"
 argument_list|)
 argument_list|)
 expr_stmt|;
