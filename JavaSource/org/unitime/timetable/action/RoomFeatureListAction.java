@@ -565,7 +565,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -577,7 +577,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -589,7 +589,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -601,7 +601,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -615,7 +615,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.

@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|awt
+operator|.
+name|Color
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|io
 operator|.
 name|File
@@ -157,19 +167,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
-operator|.
-name|text
-operator|.
-name|BaseColor
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -181,7 +179,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -193,7 +191,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -205,7 +203,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -217,7 +215,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -229,7 +227,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -241,7 +239,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -253,7 +251,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -267,7 +265,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -281,7 +279,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -295,7 +293,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -309,7 +307,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -702,11 +700,11 @@ comment|/* 		int nrCols = (iTable.isDispModePerWeekVertical()?1:12); 		if (iTabl
 block|}
 specifier|private
 specifier|static
-name|BaseColor
+name|Color
 name|sBorderColor
 init|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|100
 argument_list|,
@@ -1151,7 +1149,7 @@ name|template
 operator|.
 name|setColorFill
 argument_list|(
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 argument_list|)
@@ -1639,7 +1637,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-name|BaseColor
+name|Color
 name|getColor
 parameter_list|(
 name|String
@@ -1677,7 +1675,7 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 name|Integer
 operator|.

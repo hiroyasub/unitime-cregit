@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|awt
+operator|.
+name|Color
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|io
 operator|.
 name|File
@@ -405,19 +415,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
-operator|.
-name|text
-operator|.
-name|BaseColor
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -429,7 +427,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -441,7 +439,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -453,7 +451,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -465,7 +463,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -477,7 +475,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -491,7 +489,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -505,7 +503,7 @@ begin_import
 import|import
 name|com
 operator|.
-name|itextpdf
+name|lowagie
 operator|.
 name|text
 operator|.
@@ -541,10 +539,10 @@ init|=
 literal|null
 decl_stmt|;
 specifier|protected
-name|BaseColor
+name|Color
 name|iBgColor
 init|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 decl_stmt|;
@@ -561,10 +559,10 @@ init|=
 literal|false
 decl_stmt|;
 specifier|protected
-name|BaseColor
+name|Color
 name|iTextColor
 init|=
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 decl_stmt|;
@@ -607,7 +605,7 @@ name|cell
 operator|.
 name|setBorderColor
 argument_list|(
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 argument_list|)
@@ -794,7 +792,7 @@ parameter_list|,
 name|int
 name|orientation
 parameter_list|,
-name|BaseColor
+name|Color
 name|color
 parameter_list|,
 name|boolean
@@ -1096,7 +1094,7 @@ block|}
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|224
 argument_list|,
@@ -1266,7 +1264,7 @@ comment|//second line
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|244
 argument_list|,
@@ -1494,7 +1492,7 @@ block|}
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|224
 argument_list|,
@@ -1805,7 +1803,7 @@ block|}
 block|}
 name|iBgColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 expr_stmt|;
@@ -2874,7 +2872,7 @@ condition|)
 block|{
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|GRAY
 expr_stmt|;
@@ -2886,7 +2884,7 @@ block|}
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|223
 argument_list|,
@@ -2961,7 +2959,7 @@ argument_list|)
 expr_stmt|;
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 expr_stmt|;
@@ -2971,7 +2969,7 @@ literal|false
 expr_stmt|;
 name|iBgColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 expr_stmt|;
@@ -3011,7 +3009,7 @@ condition|)
 block|{
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|GRAY
 expr_stmt|;
@@ -3037,7 +3035,7 @@ block|{
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|255
 argument_list|,
@@ -3144,7 +3142,7 @@ argument_list|)
 expr_stmt|;
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 expr_stmt|;
@@ -3154,7 +3152,7 @@ literal|false
 expr_stmt|;
 name|iBgColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 expr_stmt|;
@@ -3258,7 +3256,7 @@ condition|)
 block|{
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|GRAY
 expr_stmt|;
@@ -3270,7 +3268,7 @@ block|}
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|255
 argument_list|,
@@ -3408,7 +3406,7 @@ argument_list|)
 expr_stmt|;
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 expr_stmt|;
@@ -3418,7 +3416,7 @@ literal|false
 expr_stmt|;
 name|iBgColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 expr_stmt|;
@@ -3461,7 +3459,7 @@ condition|)
 block|{
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|GRAY
 expr_stmt|;
@@ -3487,7 +3485,7 @@ block|{
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|255
 argument_list|,
@@ -3763,7 +3761,7 @@ expr_stmt|;
 block|}
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 expr_stmt|;
@@ -3773,7 +3771,7 @@ literal|false
 expr_stmt|;
 name|iBgColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 expr_stmt|;
@@ -3858,7 +3856,7 @@ condition|)
 block|{
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|GRAY
 expr_stmt|;
@@ -3870,7 +3868,7 @@ block|}
 name|iBgColor
 operator|=
 operator|new
-name|BaseColor
+name|Color
 argument_list|(
 literal|255
 argument_list|,
@@ -4040,7 +4038,7 @@ expr_stmt|;
 block|}
 name|iTextColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|BLACK
 expr_stmt|;
@@ -4050,7 +4048,7 @@ literal|false
 expr_stmt|;
 name|iBgColor
 operator|=
-name|BaseColor
+name|Color
 operator|.
 name|WHITE
 expr_stmt|;
