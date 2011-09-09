@@ -6307,6 +6307,60 @@ operator|+
 literal|"</span>"
 return|;
 block|}
+specifier|public
+name|boolean
+name|isUsed
+parameter_list|()
+block|{
+name|Number
+name|nrMeetings
+init|=
+operator|(
+name|Number
+operator|)
+name|LocationDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select count(m) from Meeting m, Location l where "
+operator|+
+literal|"l.uniqueId = :locId and m.locationPermanentId = l.permanentId "
+operator|+
+literal|"and m.meetingDate>= l.session.eventBeginDate and m.meetingDate<= l.session.eventEndDate"
+argument_list|)
+comment|// and m.approvedDate is not null
+operator|.
+name|setLong
+argument_list|(
+literal|"locId"
+argument_list|,
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+decl_stmt|;
+return|return
+name|nrMeetings
+operator|.
+name|intValue
+argument_list|()
+operator|>
+literal|0
+return|;
+block|}
 block|}
 end_class
 
