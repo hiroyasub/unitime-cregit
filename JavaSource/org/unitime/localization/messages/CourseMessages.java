@@ -579,6 +579,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Title:"
+argument_list|)
+name|String
+name|propertyCourseTitle
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Schedule of Classes Note:"
+argument_list|)
+name|String
+name|propertyScheduleOfClassesNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Consent:"
+argument_list|)
+name|String
+name|propertyConsent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Designator Required:"
+argument_list|)
+name|String
+name|propertyDesignatorRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Take Course Demands from Offering:"
+argument_list|)
+name|String
+name|propertyTakeCourseDemandsFromOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
@@ -1743,6 +1788,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Update"
+argument_list|)
+name|String
+name|actionUpdateCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Clear Class Preferences"
 argument_list|)
 name|String
@@ -2175,6 +2229,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"U"
+argument_list|)
+name|String
+name|accessUpdateCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"C"
 argument_list|)
 name|String
@@ -2305,6 +2368,15 @@ literal|"A"
 argument_list|)
 name|String
 name|accessAddInstructionalTypeToConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"I"
+argument_list|)
+name|String
+name|accessBackToIOList
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2566,6 +2638,18 @@ literal|"Update Configuration (Alt+{0})"
 argument_list|)
 name|String
 name|titleUpdateConfiguration
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update Course Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleUpdateCourseOffering
 parameter_list|(
 name|String
 name|accessKey
@@ -2937,6 +3021,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Back to Instructional Offering List (Alt+{0})"
+argument_list|)
+name|String
+name|titleBackToIOList
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course numbers can be specified using wildcard (*). E.g. 2*"
 argument_list|)
 name|String
@@ -3067,6 +3163,15 @@ literal|"ERRORS"
 argument_list|)
 name|String
 name|errorsConfigurationEdit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ERRORS"
+argument_list|)
+name|String
+name|errorsCourseOfferingEdit
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3324,10 +3429,52 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course Offering data was not correct: "
+argument_list|)
+name|String
+name|errorCourseDataNotCorrect
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Config ID is not valid: "
 argument_list|)
 name|String
 name|errorConfigIDNotValid
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Number is required."
+argument_list|)
+name|String
+name|errorCourseNumberRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Number cannot be matched to regular expression: {0} . Reason: {1}"
+argument_list|)
+name|String
+name|errorCourseNumberCannotBeMatched
+parameter_list|(
+name|String
+name|regularExpression
+parameter_list|,
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The course cannot be renamed. A course with the same course number already exists."
+argument_list|)
+name|String
+name|errorCourseCannotBeRenamed
 parameter_list|()
 function_decl|;
 annotation|@

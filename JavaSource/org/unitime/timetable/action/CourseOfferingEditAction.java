@@ -209,6 +209,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -468,6 +496,21 @@ name|CourseOfferingEditAction
 extends|extends
 name|Action
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Method execute      * @param mapping      * @param form      * @param request      * @param response      * @return ActionForward      */
@@ -508,7 +551,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Access Denied."
+name|MSG
+operator|.
+name|errorAccessDenied
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -648,7 +694,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Operation could not be interpreted: "
+name|MSG
+operator|.
+name|errorOperationNotInterpreted
+argument_list|()
 operator|+
 name|op
 argument_list|)
@@ -767,7 +816,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Course Offering data was not correct: "
+name|MSG
+operator|.
+name|errorCourseDataNotCorrect
+argument_list|()
 operator|+
 name|courseOfferingId
 argument_list|)
@@ -800,12 +852,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.updateCourseOffering"
-argument_list|)
+name|actionUpdateCourseOffering
+argument_list|()
 argument_list|)
 condition|)
 block|{
