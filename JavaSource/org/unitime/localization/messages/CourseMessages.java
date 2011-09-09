@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.3 (University Timetabling Application)  * Copyright (C) 2011, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+comment|/*  * Copyright (C) 2011, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -543,6 +543,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Configuration Name:"
+argument_list|)
+name|String
+name|propertyConfigurationName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unlimited Enrollment:"
+argument_list|)
+name|String
+name|propertyUnlimitedEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Configuration Limit:"
+argument_list|)
+name|String
+name|propertyConfigurationLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Catalog:"
+argument_list|)
+name|String
+name|propertyCourseCatalog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
@@ -718,7 +754,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Mins Per Week"
+literal|"Minutes Per Week"
 argument_list|)
 name|String
 name|columnMinPerWk
@@ -1237,6 +1273,78 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Min Limit<br>per Class"
+argument_list|)
+name|String
+name|columnSubpartMinLimitPerClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Max Limit<br>per Class"
+argument_list|)
+name|String
+name|columnSubpartMaxLimitPerClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Number<br>of Classes"
+argument_list|)
+name|String
+name|columnSubpartNumberOfClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Minutes<br>per Week"
+argument_list|)
+name|String
+name|columnSubpartMinutesPerWeek
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Number<br>of Rooms"
+argument_list|)
+name|String
+name|columnSubpartNumberOfRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room<br>Ratio"
+argument_list|)
+name|String
+name|columnSubpartRoomRatio
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Managing<br>Department"
+argument_list|)
+name|String
+name|columnSubpartManagingDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limit<br>per Class"
+argument_list|)
+name|String
+name|columnSubpartLimitPerClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Not assigned."
 argument_list|)
 name|String
@@ -1280,6 +1388,33 @@ literal|"Has Note to Mgr"
 argument_list|)
 name|String
 name|altHasNoteToMgr
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|altDelete
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move Up"
+argument_list|)
+name|String
+name|altMoveUp
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move Down"
+argument_list|)
+name|String
+name|altMoveDown
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1572,6 +1707,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Back"
+argument_list|)
+name|String
+name|actionBackToIODetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Update"
 argument_list|)
 name|String
@@ -1585,6 +1729,15 @@ literal|"Update"
 argument_list|)
 name|String
 name|actionUpdateExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update"
+argument_list|)
+name|String
+name|actionUpdateConfiguration
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1716,10 +1869,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionDeleteConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Save"
 argument_list|)
 name|String
 name|actionSaveExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Save"
+argument_list|)
+name|String
+name|actionSaveConfiguration
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1765,6 +1936,15 @@ literal|"Clear Class Preferences"
 argument_list|)
 name|String
 name|actionClearClassPreferencesOnSubpart
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add"
+argument_list|)
+name|String
+name|actionAddInstructionalTypeToConfig
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1941,6 +2121,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"B"
+argument_list|)
+name|String
+name|accessBackToIODetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"I"
 argument_list|)
 name|String
@@ -1972,6 +2161,15 @@ literal|"U"
 argument_list|)
 name|String
 name|accessUpdateExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"U"
+argument_list|)
+name|String
+name|accessUpdateConfiguration
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2058,6 +2256,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"S"
+argument_list|)
+name|String
+name|accessSaveConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"I"
 argument_list|)
 name|String
@@ -2080,6 +2287,24 @@ literal|"E"
 argument_list|)
 name|String
 name|accessEditSubpart
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"D"
+argument_list|)
+name|String
+name|accessDeleteConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"A"
+argument_list|)
+name|String
+name|accessAddInstructionalTypeToConfig
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2337,6 +2562,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Update Configuration (Alt+{0})"
+argument_list|)
+name|String
+name|titleUpdateConfiguration
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Return to %% (Alt+{0})"
 argument_list|)
 name|String
@@ -2365,6 +2602,18 @@ literal|"Do not commit any change. Return to Detail Screen (Alt+{0})"
 argument_list|)
 name|String
 name|titleBackToDetail
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Back to Instructional Offering Detail (Alt+{0})"
+argument_list|)
+name|String
+name|titleBackToIODetail
 parameter_list|(
 name|String
 name|accessKey
@@ -2559,10 +2808,34 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Delete Configuration (Alt+{0})"
+argument_list|)
+name|String
+name|titleDeleteConfiguration
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Save Examination (Alt+{0})"
 argument_list|)
 name|String
 name|titleSaveExamination
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Save Configuration (Alt+{0})"
+argument_list|)
+name|String
+name|titleSaveConfiguration
 parameter_list|(
 name|String
 name|accessKey
@@ -2620,6 +2893,45 @@ literal|"Delete all Class Preferences. Preferences will be inherited from the su
 argument_list|)
 name|String
 name|titleClearClassPreferencesOnSubpart
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add the selected instructional type to the configuration (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddInstructionalTypeToConfig
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move to Child Level"
+argument_list|)
+name|String
+name|titleMoveToChildLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move to Parent Level"
+argument_list|)
+name|String
+name|titleMoveToParentLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete Instructional Type"
+argument_list|)
+name|String
+name|titleDeleteInstructionalType
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2746,6 +3058,15 @@ literal|"ERRORS"
 argument_list|)
 name|String
 name|errorsSubpartEdit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ERRORS"
+argument_list|)
+name|String
+name|errorsConfigurationEdit
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2989,6 +3310,24 @@ literal|"Authentication failed"
 argument_list|)
 name|String
 name|errorAuthenticationFailed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Operation could not be interpreted: "
+argument_list|)
+name|String
+name|errorOperationNotInterpreted
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Config ID is not valid: "
+argument_list|)
+name|String
+name|errorConfigIDNotValid
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3361,6 +3700,33 @@ literal|"Do you really want to clear all class preferences?"
 argument_list|)
 name|String
 name|confirmClearAllClassPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This will create {0} classes. Continue?"
+argument_list|)
+name|String
+name|confirmCreateTooManyClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This operation may result in deletion of existing subparts/classes . Continue?"
+argument_list|)
+name|String
+name|confirmMayDeleteSubpartsClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This operation will delete existing subparts and associated classes . Continue?"
+argument_list|)
+name|String
+name|confirmDeleteExistingSubpartsClasses
 parameter_list|()
 function_decl|;
 annotation|@

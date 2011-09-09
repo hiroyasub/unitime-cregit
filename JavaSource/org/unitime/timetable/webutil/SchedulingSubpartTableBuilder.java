@@ -127,6 +127,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -230,6 +258,21 @@ specifier|public
 class|class
 name|SchedulingSubpartTableBuilder
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|/**      * Reads the user defined config object and generates html code to display it      * @param request      * @param limit      * @param uid      * @param createAsNew      * @param unlimitedEnroll      * @return Html code for displaying user defined config      */
 specifier|public
 specifier|static
@@ -525,24 +568,45 @@ name|varLimits
 condition|?
 literal|"<<1>>"
 else|:
-literal|"Min Limit<br>per Class"
+name|MSG
+operator|.
+name|columnSubpartMinLimitPerClass
+argument_list|()
 block|,
 operator|!
 name|varLimits
 condition|?
 literal|"<<11>>"
 else|:
-literal|"Max Limit<br>per Class"
+name|MSG
+operator|.
+name|columnSubpartMaxLimitPerClass
+argument_list|()
 block|,
-literal|"Number<br>of Classes"
+name|MSG
+operator|.
+name|columnSubpartNumberOfClasses
+argument_list|()
 block|,
-literal|"Minutes<br>per Week"
+name|MSG
+operator|.
+name|columnSubpartMinutesPerWeek
+argument_list|()
 block|,
-literal|"Number<br>of Rooms"
+name|MSG
+operator|.
+name|columnSubpartNumberOfRooms
+argument_list|()
 block|,
-literal|"Room<br>Ratio"
+name|MSG
+operator|.
+name|columnSubpartRoomRatio
+argument_list|()
 block|,
-literal|"Managing<br>Department"
+name|MSG
+operator|.
+name|columnSubpartManagingDepartment
+argument_list|()
 block|}
 argument_list|,
 operator|new
@@ -724,7 +788,10 @@ name|replaceAll
 argument_list|(
 literal|"<<1>>"
 argument_list|,
-literal|"Min Limit<br>per Class"
+name|MSG
+operator|.
+name|columnSubpartMinLimitPerClass
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|tblStr
@@ -735,7 +802,10 @@ name|replaceAll
 argument_list|(
 literal|"<<11>>"
 argument_list|,
-literal|"Max Limit<br>per Class"
+name|MSG
+operator|.
+name|columnSubpartMaxLimitPerClass
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -824,7 +894,10 @@ name|replaceAll
 argument_list|(
 literal|"<<11>>"
 argument_list|,
-literal|"Limit<br>per Class"
+name|MSG
+operator|.
+name|columnSubpartLimitPerClass
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2628,7 +2701,21 @@ operator|)
 condition|)
 name|html
 operator|+=
-literal|"<IMG border=\"0\" alt=\"Move to Child Level\" title=\"Move to Child Level\" align=\"top\" src=\"images/arrow_r.gif\" "
+literal|"<IMG border=\"0\" alt=\""
+operator|+
+name|MSG
+operator|.
+name|titleMoveToChildLevel
+argument_list|()
+operator|+
+literal|"\" title=\""
+operator|+
+name|MSG
+operator|.
+name|titleMoveToChildLevel
+argument_list|()
+operator|+
+literal|"\" align=\"top\" src=\"images/arrow_r.gif\" "
 operator|+
 literal|"onClick=\"doClick('shiftRight', "
 operator|+
@@ -2653,7 +2740,21 @@ literal|1
 condition|)
 name|html
 operator|+=
-literal|"<IMG border=\"0\" alt=\"Move to Parent Level\" title=\"Move to Parent Level\" align=\"top\" src=\"images/arrow_l.gif\" "
+literal|"<IMG border=\"0\" alt=\""
+operator|+
+name|MSG
+operator|.
+name|titleMoveToParentLevel
+argument_list|()
+operator|+
+literal|"\" title=\""
+operator|+
+name|MSG
+operator|.
+name|titleMoveToParentLevel
+argument_list|()
+operator|+
+literal|"\" align=\"top\" src=\"images/arrow_l.gif\" "
 operator|+
 literal|"onClick=\"doClick('shiftLeft', "
 operator|+
@@ -2694,7 +2795,14 @@ operator|)
 condition|)
 name|html
 operator|+=
-literal|"<IMG border=\"0\" alt=\"Move Up\" align=\"absmiddle\" src=\"images/arrow_u.gif\" "
+literal|"<IMG border=\"0\" alt=\""
+operator|+
+name|MSG
+operator|.
+name|altMoveUp
+argument_list|()
+operator|+
+literal|"\" align=\"absmiddle\" src=\"images/arrow_u.gif\" "
 operator|+
 literal|"onClick=\"doClick('shiftUp', "
 operator|+
@@ -2743,7 +2851,14 @@ operator|)
 condition|)
 name|html
 operator|+=
-literal|"<IMG border=\"0\" alt=\"Move Down\" align=\"absmiddle\" src=\"images/arrow_d.gif\" "
+literal|"<IMG border=\"0\" alt=\""
+operator|+
+name|MSG
+operator|.
+name|altMoveDown
+argument_list|()
+operator|+
+literal|"\" align=\"absmiddle\" src=\"images/arrow_d.gif\" "
 operator|+
 literal|"onClick=\"doClick('shiftDown', "
 operator|+
@@ -2762,7 +2877,21 @@ expr_stmt|;
 comment|// Delete
 name|html
 operator|+=
-literal|"<IMG border=\"0\" alt=\"Delete\" title=\"Delete Instructional Type\" align=\"top\" src=\"images/Delete16.gif\" "
+literal|"<IMG border=\"0\" alt=\""
+operator|+
+name|MSG
+operator|.
+name|altDelete
+argument_list|()
+operator|+
+literal|"\" title=\""
+operator|+
+name|MSG
+operator|.
+name|titleDeleteInstructionalType
+argument_list|()
+operator|+
+literal|"\" align=\"top\" src=\"images/Delete16.gif\" "
 operator|+
 literal|"onClick=\"doClick('delete', "
 operator|+
