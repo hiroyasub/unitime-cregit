@@ -1081,13 +1081,7 @@ name|buttonRequests
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iRequests
-operator|.
-name|setWidth
-argument_list|(
-literal|"75"
-argument_list|)
-expr_stmt|;
+comment|// iRequests.setWidth("75");
 name|iRequests
 operator|.
 name|setAccessKey
@@ -1120,13 +1114,7 @@ name|buttonReset
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iReset
-operator|.
-name|setWidth
-argument_list|(
-literal|"95"
-argument_list|)
-expr_stmt|;
+comment|// iReset.setWidth("95");
 name|iReset
 operator|.
 name|setVisible
@@ -1228,13 +1216,7 @@ name|buttonSchedule
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iSchedule
-operator|.
-name|setWidth
-argument_list|(
-literal|"75"
-argument_list|)
-expr_stmt|;
+comment|// iSchedule.setWidth("75");
 name|iSchedule
 operator|.
 name|setAccessKey
@@ -1277,13 +1259,7 @@ name|buttonSave
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iSave
-operator|.
-name|setWidth
-argument_list|(
-literal|"75"
-argument_list|)
-expr_stmt|;
+comment|// iSave.setWidth("75");
 name|iSave
 operator|.
 name|setAccessKey
@@ -1328,13 +1304,7 @@ name|buttonEnroll
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iEnroll
-operator|.
-name|setWidth
-argument_list|(
-literal|"75"
-argument_list|)
-expr_stmt|;
+comment|// iEnroll.setWidth("75");
 name|iEnroll
 operator|.
 name|setAccessKey
@@ -1367,13 +1337,7 @@ name|buttonPrint
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iPrint
-operator|.
-name|setWidth
-argument_list|(
-literal|"75"
-argument_list|)
-expr_stmt|;
+comment|// iPrint.setWidth("75");
 name|iPrint
 operator|.
 name|setAccessKey
@@ -1423,13 +1387,7 @@ name|buttonExport
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iExport
-operator|.
-name|setWidth
-argument_list|(
-literal|"75"
-argument_list|)
-expr_stmt|;
+comment|// iExport.setWidth("75");
 name|iExport
 operator|.
 name|setAccessKey
@@ -1687,7 +1645,10 @@ name|iCalendar
 operator|.
 name|setTitle
 argument_list|(
-literal|"Export in iCalendar format."
+name|MESSAGES
+operator|.
+name|exportICalendar
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iAssignments

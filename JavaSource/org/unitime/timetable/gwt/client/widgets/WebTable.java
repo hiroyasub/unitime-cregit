@@ -4049,16 +4049,17 @@ name|a
 operator|.
 name|setTitle
 argument_list|(
-literal|"Send "
-operator|+
+name|MESSAGES
+operator|.
+name|sendEmail
+argument_list|(
 name|names
 operator|.
 name|get
 argument_list|(
 name|i
 argument_list|)
-operator|+
-literal|" an email."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|a

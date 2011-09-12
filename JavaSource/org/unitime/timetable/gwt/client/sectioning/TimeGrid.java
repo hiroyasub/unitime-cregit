@@ -941,7 +941,10 @@ name|iCalendar
 operator|.
 name|setTitle
 argument_list|(
-literal|"Export in iCalendar format."
+name|MESSAGES
+operator|.
+name|exportICalendar
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
