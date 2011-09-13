@@ -1687,6 +1687,16 @@ literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|io1
+operator|.
+name|setByReservationOnly
+argument_list|(
+name|io
+operator|.
+name|getByReservationOnly
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// Copy attributes of old crs offering - set controlling
 name|CourseOffering
 name|co2

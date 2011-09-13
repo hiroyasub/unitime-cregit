@@ -1018,6 +1018,13 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|io
+operator|.
+name|setByReservationOnly
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|idao
 operator|.
 name|saveOrUpdate
@@ -1570,7 +1577,7 @@ operator|.
 name|getSession
 argument_list|()
 operator|.
-name|isOfferingLockNeeded
+name|isOfferingFullLockNeeded
 argument_list|(
 name|getInstructionalOffering
 argument_list|()

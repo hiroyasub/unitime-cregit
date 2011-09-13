@@ -1373,6 +1373,13 @@ argument_list|(
 name|externalId
 argument_list|)
 expr_stmt|;
+name|io
+operator|.
+name|setByReservationOnly
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{

@@ -615,6 +615,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Coordinators:"
+argument_list|)
+name|String
+name|propertyCoordinators
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Take Course Demands from Offering:"
 argument_list|)
 name|String
@@ -637,6 +646,15 @@ literal|"Course Offerings:"
 argument_list|)
 name|String
 name|propertyCourseOfferings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"By Reservation Only:"
+argument_list|)
+name|String
+name|propertyByReservationOnly
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2103,6 +2121,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Coordinator"
+argument_list|)
+name|String
+name|actionAddCoordinator
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionRemoveCoordinator
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -2494,6 +2530,15 @@ literal|"I"
 argument_list|)
 name|String
 name|accessBackToIOList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"C"
+argument_list|)
+name|String
+name|accessAddCoordinator
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3188,6 +3233,18 @@ argument_list|)
 name|String
 name|titleRemoveCourseFromCrossList
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Coordinator (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddCoordinator
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -4141,6 +4198,15 @@ literal|"Only course offerings that are not offered can be added into a cross-li
 argument_list|)
 name|String
 name|hintCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"If checked, only students meeting reservations will be allowed to enroll into the offering."
+argument_list|)
+name|String
+name|descriptionByReservationOnly
 parameter_list|()
 function_decl|;
 block|}

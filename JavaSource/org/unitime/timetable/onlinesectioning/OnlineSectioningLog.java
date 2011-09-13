@@ -314,6 +314,13 @@ literal|10
 argument_list|,
 literal|10
 argument_list|)
+block|,
+name|MANAGER
+argument_list|(
+literal|11
+argument_list|,
+literal|11
+argument_list|)
 block|,       ;
 specifier|public
 specifier|static
@@ -404,6 +411,14 @@ init|=
 literal|10
 decl_stmt|;
 specifier|public
+specifier|static
+specifier|final
+name|int
+name|MANAGER_VALUE
+init|=
+literal|11
+decl_stmt|;
+specifier|public
 specifier|final
 name|int
 name|getNumber
@@ -492,6 +507,12 @@ literal|10
 case|:
 return|return
 name|COURSE_RESERVATION
+return|;
+case|case
+literal|11
+case|:
+return|return
+name|MANAGER
 return|;
 default|default:
 return|return
@@ -685,6 +706,8 @@ block|,
 name|CURRICULUM_RESERVATION
 block|,
 name|COURSE_RESERVATION
+block|,
+name|MANAGER
 block|,        }
 decl_stmt|;
 specifier|public
@@ -27139,6 +27162,20 @@ literal|3
 argument_list|,
 literal|3
 argument_list|)
+block|,
+name|APPROVED
+argument_list|(
+literal|4
+argument_list|,
+literal|4
+argument_list|)
+block|,
+name|REJECTED
+argument_list|(
+literal|5
+argument_list|,
+literal|5
+argument_list|)
 block|,       ;
 specifier|public
 specifier|static
@@ -27171,6 +27208,22 @@ name|int
 name|STORED_VALUE
 init|=
 literal|3
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|APPROVED_VALUE
+init|=
+literal|4
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|REJECTED_VALUE
+init|=
+literal|5
 decl_stmt|;
 specifier|public
 specifier|final
@@ -27219,6 +27272,18 @@ literal|3
 case|:
 return|return
 name|STORED
+return|;
+case|case
+literal|4
+case|:
+return|return
+name|APPROVED
+return|;
+case|case
+literal|5
+case|:
+return|return
+name|REJECTED
 return|;
 default|default:
 return|return
@@ -27398,6 +27463,10 @@ block|,
 name|PREVIOUS
 block|,
 name|STORED
+block|,
+name|APPROVED
+block|,
+name|REJECTED
 block|,        }
 decl_stmt|;
 specifier|public
@@ -58476,13 +58545,13 @@ index|[]
 name|descriptorData
 init|=
 block|{
-literal|"\n$JavaSource/OnlineSectioningLog.proto\"\267"
+literal|"\n$JavaSource/OnlineSectioningLog.proto\"\304"
 operator|+
 literal|"\002\n\006Entity\022\021\n\tunique_id\030\001 \001(\003\022 \n\004type\030\002 \001"
 operator|+
 literal|"(\0162\022.Entity.EntityType\022\023\n\013external_id\030\003 "
 operator|+
-literal|"\001(\t\022\014\n\004name\030\004 \001(\t\"\324\001\n\nEntityType\022\t\n\005CLAZ"
+literal|"\001(\t\022\014\n\004name\030\004 \001(\t\"\341\001\n\nEntityType\022\t\n\005CLAZ"
 operator|+
 literal|"Z\020\000\022\n\n\006COURSE\020\001\022\014\n\010LOCATION\020\002\022\016\n\nINSTRUC"
 operator|+
@@ -58492,83 +58561,85 @@ literal|"RVATION\020\006\022\032\n\026INDIVIDUAL_RESERVATION\020\007\022\025\n"
 operator|+
 literal|"\021GROUP_RESERVATION\020\010\022\032\n\026CURRICULUM_RESER"
 operator|+
-literal|"VATION\020\t\022\026\n\022COURSE_RESERVATION\020\n\"m\n\004Time"
+literal|"VATION\020\t\022\026\n\022COURSE_RESERVATION\020\n\022\013\n\007MANA"
 operator|+
-literal|"\022\014\n\004days\030\001 \002(\005\022\r\n\005start\030\002 \002(\005\022\016\n\006length\030"
+literal|"GER\020\013\"m\n\004Time\022\014\n\004days\030\001 \002(\005\022\r\n\005start\030\002 \002"
 block|,
-literal|"\003 \002(\005\022\017\n\007pattern\030\004 \001(\t\022\'\n\npreference\030\005 \001"
+literal|"(\005\022\016\n\006length\030\003 \002(\005\022\017\n\007pattern\030\004 \001(\t\022\'\n\np"
 operator|+
-literal|"(\0162\023.Section.Preference\"\265\002\n\007Section\022\026\n\005c"
+literal|"reference\030\005 \001(\0162\023.Section.Preference\"\265\002\n"
 operator|+
-literal|"lazz\030\001 \001(\0132\007.Entity\022\023\n\004time\030\002 \001(\0132\005.Time"
+literal|"\007Section\022\026\n\005clazz\030\001 \001(\0132\007.Entity\022\023\n\004time"
 operator|+
-literal|"\022\033\n\ninstructor\030\003 \003(\0132\007.Entity\022\031\n\010locatio"
+literal|"\030\002 \001(\0132\005.Time\022\033\n\ninstructor\030\003 \003(\0132\007.Enti"
 operator|+
-literal|"n\030\004 \003(\0132\007.Entity\022\'\n\npreference\030\005 \001(\0162\023.S"
+literal|"ty\022\031\n\010location\030\004 \003(\0132\007.Entity\022\'\n\nprefere"
 operator|+
-literal|"ection.Preference\022\027\n\006course\030\006 \001(\0132\007.Enti"
+literal|"nce\030\005 \001(\0162\023.Section.Preference\022\027\n\006course"
 operator|+
-literal|"ty\022\034\n\013reservation\030\007 \001(\0132\007.Entity\022\022\n\ntime"
+literal|"\030\006 \001(\0132\007.Entity\022\034\n\013reservation\030\007 \001(\0132\007.E"
 operator|+
-literal|"_stamp\030\010 \001(\003\022\030\n\007subpart\030\t \001(\0132\007.Entity\"7"
+literal|"ntity\022\022\n\ntime_stamp\030\010 \001(\003\022\030\n\007subpart\030\t \001"
 operator|+
-literal|"\n\nPreference\022\014\n\010REQUIRED\020\000\022\r\n\tPREFERRED\020"
+literal|"(\0132\007.Entity\"7\n\nPreference\022\014\n\010REQUIRED\020\000\022"
 operator|+
-literal|"\001\022\014\n\010SELECTED\020\002\"\245\001\n\007Request\022\n\n\002id\030\001 \001(\003\022"
+literal|"\r\n\tPREFERRED\020\001\022\014\n\010SELECTED\020\002\"\245\001\n\007Request"
 block|,
-literal|"\020\n\010priority\030\002 \002(\005\022\032\n\013alternative\030\003 \001(\010:\005"
+literal|"\022\n\n\002id\030\001 \001(\003\022\020\n\010priority\030\002 \002(\005\022\032\n\013altern"
 operator|+
-literal|"false\022\030\n\tfree_time\030\004 \003(\0132\005.Time\022\027\n\006cours"
+literal|"ative\030\003 \001(\010:\005false\022\030\n\tfree_time\030\004 \003(\0132\005."
 operator|+
-literal|"e\030\005 \003(\0132\007.Entity\022\031\n\007section\030\006 \003(\0132\010.Sect"
+literal|"Time\022\027\n\006course\030\005 \003(\0132\007.Entity\022\031\n\007section"
 operator|+
-literal|"ion\022\022\n\ntime_stamp\030\010 \001(\003\"\251\001\n\nEnrollment\022("
+literal|"\030\006 \003(\0132\010.Section\022\022\n\ntime_stamp\030\010 \001(\003\"\305\001\n"
 operator|+
-literal|"\n\004type\030\001 \002(\0162\032.Enrollment.EnrollmentType"
+literal|"\nEnrollment\022(\n\004type\030\001 \002(\0162\032.Enrollment.E"
 operator|+
-literal|"\022\031\n\007section\030\002 \003(\0132\010.Section\022\r\n\005value\030\003 \001"
+literal|"nrollmentType\022\031\n\007section\030\002 \003(\0132\010.Section"
 operator|+
-literal|"(\001\"G\n\016EnrollmentType\022\r\n\tREQUESTED\020\000\022\014\n\010C"
+literal|"\022\r\n\005value\030\003 \001(\001\"c\n\016EnrollmentType\022\r\n\tREQ"
 operator|+
-literal|"OMPUTED\020\001\022\014\n\010PREVIOUS\020\002\022\n\n\006STORED\020\003\"\341\002\n\006"
+literal|"UESTED\020\000\022\014\n\010COMPUTED\020\001\022\014\n\010PREVIOUS\020\002\022\n\n\006"
 operator|+
-literal|"Action\022\021\n\toperation\030\001 \002(\t\022\030\n\007session\030\002 \002"
+literal|"STORED\020\003\022\014\n\010APPROVED\020\004\022\014\n\010REJECTED\020\005\"\341\002\n"
 operator|+
-literal|"(\0132\007.Entity\022\030\n\007student\030\003 \001(\0132\007.Entity\022\022\n"
+literal|"\006Action\022\021\n\toperation\030\001 \002(\t\022\030\n\007session\030\002 "
 block|,
-literal|"\nstart_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001(\003\022\020\n\010c"
+literal|"\002(\0132\007.Entity\022\030\n\007student\030\003 \001(\0132\007.Entity\022\022"
 operator|+
-literal|"pu_time\030\006 \001(\003\022\031\n\007request\030\007 \003(\0132\010.Request"
+literal|"\n\nstart_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001(\003\022\020\n\010"
 operator|+
-literal|"\022\037\n\nenrollment\030\010 \003(\0132\013.Enrollment\022\026\n\005oth"
+literal|"cpu_time\030\006 \001(\003\022\031\n\007request\030\007 \003(\0132\010.Reques"
 operator|+
-literal|"er\030\t \003(\0132\007.Entity\022\031\n\007message\030\n \003(\0132\010.Mes"
+literal|"t\022\037\n\nenrollment\030\010 \003(\0132\013.Enrollment\022\026\n\005ot"
 operator|+
-literal|"sage\022\"\n\006result\030\013 \001(\0162\022.Action.ResultType"
+literal|"her\030\t \003(\0132\007.Entity\022\031\n\007message\030\n \003(\0132\010.Me"
 operator|+
-literal|"\"E\n\nResultType\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020\001"
+literal|"ssage\022\"\n\006result\030\013 \001(\0162\022.Action.ResultTyp"
 operator|+
-literal|"\022\010\n\004TRUE\020\002\022\t\n\005FALSE\020\003\022\010\n\004NULL\020\004\"\233\001\n\007Mess"
+literal|"e\"E\n\nResultType\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020"
 operator|+
-literal|"age\022\035\n\005level\030\001 \002(\0162\016.Message.Level\022\014\n\004te"
+literal|"\001\022\010\n\004TRUE\020\002\022\t\n\005FALSE\020\003\022\010\n\004NULL\020\004\"\233\001\n\007Mes"
 operator|+
-literal|"xt\030\002 \002(\t\022\021\n\texception\030\003 \001(\t\022\022\n\ntime_stam"
+literal|"sage\022\035\n\005level\030\001 \002(\0162\016.Message.Level\022\014\n\004t"
 operator|+
-literal|"p\030\004 \001(\003\"<\n\005Level\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020\001\022\010\n"
+literal|"ext\030\002 \002(\t\022\021\n\texception\030\003 \001(\t\022\022\n\ntime_sta"
 block|,
-literal|"\004WARN\020\002\022\t\n\005ERROR\020\003\022\t\n\005FATAL\020\004\"9\n\003Log\022\027\n\006"
+literal|"mp\030\004 \001(\003\"<\n\005Level\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020\001\022\010"
 operator|+
-literal|"action\030\001 \003(\0132\007.Action\022\031\n\007message\030\002 \003(\0132\010"
+literal|"\n\004WARN\020\002\022\t\n\005ERROR\020\003\022\t\n\005FATAL\020\004\"9\n\003Log\022\027\n"
 operator|+
-literal|".Message\"\206\001\n\023CourseRequestOption\022-\n\004type"
+literal|"\006action\030\001 \003(\0132\007.Action\022\031\n\007message\030\002 \003(\0132"
 operator|+
-literal|"\030\001 \002(\0162\037.CourseRequestOption.OptionType\022"
+literal|"\010.Message\"\206\001\n\023CourseRequestOption\022-\n\004typ"
 operator|+
-literal|"\031\n\007section\030\002 \003(\0132\010.Section\"%\n\nOptionType"
+literal|"e\030\001 \002(\0162\037.CourseRequestOption.OptionType"
 operator|+
-literal|"\022\027\n\023ORIGINAL_ENROLLMENT\020\000B(\n&org.unitime"
+literal|"\022\031\n\007section\030\002 \003(\0132\010.Section\"%\n\nOptionTyp"
 operator|+
-literal|".timetable.onlinesectioning"
+literal|"e\022\027\n\023ORIGINAL_ENROLLMENT\020\000B(\n&org.unitim"
+operator|+
+literal|"e.timetable.onlinesectioning"
 block|}
 decl_stmt|;
 name|com

@@ -362,6 +362,15 @@ name|String
 name|badClassOrOffering
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong instructional offering."
+argument_list|)
+name|String
+name|badOffering
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

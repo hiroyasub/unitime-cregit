@@ -1066,6 +1066,12 @@ argument_list|,
 name|helper
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|newOffering
+operator|!=
+literal|null
+condition|)
 name|server
 operator|.
 name|update
