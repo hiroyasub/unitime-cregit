@@ -199,20 +199,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|util
-operator|.
-name|MessageResources
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|commons
@@ -1145,14 +1131,6 @@ operator|==
 literal|null
 condition|)
 return|return;
-name|MessageResources
-name|rsc
-init|=
-name|getResources
-argument_list|(
-name|request
-argument_list|)
-decl_stmt|;
 comment|// Add Room Group row
 if|if
 condition|(
