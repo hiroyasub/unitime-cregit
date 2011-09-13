@@ -624,6 +624,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructional Offering Limit:"
+argument_list|)
+name|String
+name|propertyIOLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Offerings:"
+argument_list|)
+name|String
+name|propertyCourseOfferings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
@@ -1390,6 +1408,60 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Offering"
+argument_list|)
+name|String
+name|columnCrossListsOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling"
+argument_list|)
+name|String
+name|columnCrossListsControlling
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reserved"
+argument_list|)
+name|String
+name|columnCrossListsReserved
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Projected"
+argument_list|)
+name|String
+name|columnCrossListsProjected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last Term"
+argument_list|)
+name|String
+name|columnCrossListsLastTerm
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Total"
+argument_list|)
+name|String
+name|rowCrossListsTotal
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Not assigned."
 argument_list|)
 name|String
@@ -1460,6 +1532,15 @@ literal|"Move Down"
 argument_list|)
 name|String
 name|altMoveDown
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limits do not match"
+argument_list|)
+name|String
+name|altCrossListsLimitsDoNotMatch
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1797,6 +1878,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Update"
+argument_list|)
+name|String
+name|actionUpdateCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Clear Class Preferences"
 argument_list|)
 name|String
@@ -1999,6 +2089,15 @@ literal|"Add"
 argument_list|)
 name|String
 name|actionAddInstructionalTypeToConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add"
+argument_list|)
+name|String
+name|actionAddCourseToCrossList
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2238,6 +2337,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"U"
+argument_list|)
+name|String
+name|accessUpdateCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"C"
 argument_list|)
 name|String
@@ -2368,6 +2476,15 @@ literal|"A"
 argument_list|)
 name|String
 name|accessAddInstructionalTypeToConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"A"
+argument_list|)
+name|String
+name|accessAddCourseToCrossList
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2650,6 +2767,18 @@ literal|"Update Course Offering (Alt+{0})"
 argument_list|)
 name|String
 name|titleUpdateCourseOffering
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update Cross Lists (Alt+{0})"
+argument_list|)
+name|String
+name|titleUpdateCrossLists
 parameter_list|(
 name|String
 name|accessKey
@@ -2994,6 +3123,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add course offering to the instructional offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddCourseToCrossList
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Move to Child Level"
 argument_list|)
 name|String
@@ -3029,6 +3170,24 @@ parameter_list|(
 name|String
 name|accessKey
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limits do not match"
+argument_list|)
+name|String
+name|titleCrossListsLimitsDoNotMatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove course from instructional offering& mark it as not offered."
+argument_list|)
+name|String
+name|titleRemoveCourseFromCrossList
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -3172,6 +3331,15 @@ literal|"ERRORS"
 argument_list|)
 name|String
 name|errorsCourseOfferingEdit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ERRORS"
+argument_list|)
+name|String
+name|errorsIOCrossLists
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3475,6 +3643,51 @@ literal|"The course cannot be renamed. A course with the same course number alre
 argument_list|)
 name|String
 name|errorCourseCannotBeRenamed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reserved spaces should total to at least the limit"
+argument_list|)
+name|String
+name|errorCrossListsLimitsDoNotMatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Offering is required."
+argument_list|)
+name|String
+name|errorRequiredCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling Course is required"
+argument_list|)
+name|String
+name|errorRequiredControllingCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reserved Space is required"
+argument_list|)
+name|String
+name|errorRequiredReservedSpace
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unique Id needed for operation. "
+argument_list|)
+name|String
+name|errorUniqueIdNeeded
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3919,6 +4132,15 @@ literal|"If checked, students will be allowed to take classes from this subpart 
 argument_list|)
 name|String
 name|descriptionStudentOverlaps
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Only course offerings that are not offered can be added into a cross-list."
+argument_list|)
+name|String
+name|hintCrossLists
 parameter_list|()
 function_decl|;
 block|}

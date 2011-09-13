@@ -287,6 +287,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -590,6 +618,21 @@ name|CrossListsModifyAction
 extends|extends
 name|Action
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method execute      * @param mapping      * @param form      * @param request      * @param response      * @return ActionForward      */
@@ -630,7 +673,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Access Denied."
+name|MSG
+operator|.
+name|errorAccessDenied
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -767,7 +813,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Operation could not be interpreted: "
+name|MSG
+operator|.
+name|errorOperationNotInterpreted
+argument_list|()
 operator|+
 name|op
 argument_list|)
@@ -869,12 +918,10 @@ name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.add"
-argument_list|)
+name|actionAddCourseToCrossList
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1017,12 +1064,10 @@ name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.update"
-argument_list|)
+name|actionUpdateCrossLists
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1130,7 +1175,7 @@ name|existingOfferings
 init|=
 name|frm
 operator|.
-name|getCourseOfferingNames
+name|getCourseOfferingIds
 argument_list|()
 decl_stmt|;
 name|Collection
@@ -1244,7 +1289,10 @@ name|equals
 argument_list|(
 name|co
 operator|.
-name|getCourseName
+name|getUniqueId
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 argument_list|)
 condition|)
@@ -3203,7 +3251,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Unique Id need for operation. "
+name|MSG
+operator|.
+name|errorUniqueIdNeeded
+argument_list|()
 argument_list|)
 throw|;
 comment|// Load details
