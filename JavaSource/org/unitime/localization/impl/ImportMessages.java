@@ -417,7 +417,14 @@ name|getProperty
 argument_list|(
 literal|"file"
 argument_list|,
-literal|"~/Downloads/UniTime Localization Czech.csv"
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"user.home"
+argument_list|)
+operator|+
+literal|"/Downloads/UniTime Localization Czech.csv"
 argument_list|)
 argument_list|)
 argument_list|)

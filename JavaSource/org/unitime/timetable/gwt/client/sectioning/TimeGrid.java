@@ -1197,6 +1197,12 @@ init|=
 operator|new
 name|Label
 argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
+argument_list|()
+condition|?
+operator|(
 name|i
 operator|==
 literal|0
@@ -1224,6 +1230,14 @@ literal|12
 operator|)
 operator|+
 literal|"pm"
+operator|)
+else|:
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|i
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|sp3
@@ -1511,7 +1525,10 @@ argument_list|()
 control|)
 name|addBusy
 argument_list|(
-literal|"Free "
+name|CONSTANTS
+operator|.
+name|freePrefix
+argument_list|()
 operator|+
 name|ft
 operator|.
@@ -1520,6 +1537,11 @@ argument_list|(
 name|CONSTANTS
 operator|.
 name|shortDays
+argument_list|()
+argument_list|,
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
 argument_list|)
 argument_list|,
@@ -3296,14 +3318,24 @@ operator|+
 name|row
 operator|.
 name|getStartString
+argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
+argument_list|)
 operator|+
 literal|" - "
 operator|+
 name|row
 operator|.
 name|getEndString
+argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|ArrayList
 argument_list|<

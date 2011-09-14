@@ -5066,7 +5066,12 @@ argument_list|(
 name|clazz
 operator|.
 name|getStartString
+argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 argument_list|,
 operator|new
@@ -5077,7 +5082,12 @@ argument_list|(
 name|clazz
 operator|.
 name|getEndString
+argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 argument_list|,
 operator|new

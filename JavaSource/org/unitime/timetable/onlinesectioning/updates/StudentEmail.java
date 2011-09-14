@@ -8922,40 +8922,12 @@ name|g
 operator|.
 name|drawString
 argument_list|(
-literal|"Free "
-operator|+
-name|DayCode
+name|OnlineSectioningHelper
 operator|.
 name|toString
 argument_list|(
 name|fr
-operator|.
-name|getTime
-argument_list|()
-operator|.
-name|getDayCode
-argument_list|()
 argument_list|)
-operator|+
-literal|" "
-operator|+
-name|fr
-operator|.
-name|getTime
-argument_list|()
-operator|.
-name|getStartTimeHeader
-argument_list|()
-operator|+
-literal|" - "
-operator|+
-name|fr
-operator|.
-name|getTime
-argument_list|()
-operator|.
-name|getEndTimeHeader
-argument_list|()
 argument_list|,
 literal|42
 operator|+
