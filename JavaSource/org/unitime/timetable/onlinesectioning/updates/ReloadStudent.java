@@ -85,7 +85,7 @@ name|gwt
 operator|.
 name|resources
 operator|.
-name|StudentSectioningExceptions
+name|StudentSectioningMessages
 import|;
 end_import
 
@@ -240,14 +240,14 @@ name|ReloadAllData
 block|{
 specifier|private
 specifier|static
-name|StudentSectioningExceptions
-name|EXCEPTIONS
+name|StudentSectioningMessages
+name|MSG
 init|=
 name|Localization
 operator|.
 name|create
 argument_list|(
-name|StudentSectioningExceptions
+name|StudentSectioningMessages
 operator|.
 name|class
 argument_list|)
@@ -915,9 +915,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|unknown
+name|exceptionUnknown
 argument_list|(
 name|e
 operator|.

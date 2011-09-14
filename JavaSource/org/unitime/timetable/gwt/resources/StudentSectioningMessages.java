@@ -44,6 +44,40 @@ name|StudentSectioningMessages
 extends|extends
 name|Messages
 block|{
+comment|/*  General messages 	 */
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1}"
+argument_list|)
+name|String
+name|courseName
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|courseNbr
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} - {2}"
+argument_list|)
+name|String
+name|courseNameWithTitle
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|courseNbr
+parameter_list|,
+name|String
+name|title
+parameter_list|)
+function_decl|;
 comment|/*  Common column names 	 */
 annotation|@
 name|DefaultMessage
@@ -590,39 +624,6 @@ argument_list|)
 name|String
 name|courseSelectionFreeTime
 parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"{0} {1}"
-argument_list|)
-name|String
-name|courseName
-parameter_list|(
-name|String
-name|subject
-parameter_list|,
-name|String
-name|courseNbr
-parameter_list|)
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"{0} {1} - {2}"
-argument_list|)
-name|String
-name|courseNameWithTitle
-parameter_list|(
-name|String
-name|subject
-parameter_list|,
-name|String
-name|courseNbr
-parameter_list|,
-name|String
-name|title
-parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -1441,6 +1442,7 @@ name|String
 name|text
 parameter_list|)
 function_decl|;
+comment|/* Enrollment table messages 	 */
 annotation|@
 name|DefaultMessage
 argument_list|(
@@ -1624,66 +1626,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Loading classes for {0}..."
-argument_list|)
-name|String
-name|loadingEnrollment
-parameter_list|(
-name|String
-name|student
-parameter_list|)
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Classes for {0}"
-argument_list|)
-name|String
-name|dialogEnrollments
-parameter_list|(
-name|String
-name|student
-parameter_list|)
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Show External Ids"
-argument_list|)
-name|String
-name|showExternalIds
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Show Class Numbers"
-argument_list|)
-name|String
-name|showClassNumbers
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Export in iCalendar format."
-argument_list|)
-name|String
-name|exportICalendar
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Enrollments"
-argument_list|)
-name|String
-name|enrollmentsTable
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"{0} by {1}"
 argument_list|)
 name|String
@@ -1755,6 +1697,383 @@ parameter_list|(
 name|String
 name|error
 parameter_list|)
+function_decl|;
+comment|/* Enrollment dialog messages (opened from Enrollments table) 	 */
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading classes for {0}..."
+argument_list|)
+name|String
+name|loadingEnrollment
+parameter_list|(
+name|String
+name|student
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Classes for {0}"
+argument_list|)
+name|String
+name|dialogEnrollments
+parameter_list|(
+name|String
+name|student
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show External Ids"
+argument_list|)
+name|String
+name|showExternalIds
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show Class Numbers"
+argument_list|)
+name|String
+name|showClassNumbers
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export in iCalendar format."
+argument_list|)
+name|String
+name|exportICalendar
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrollments"
+argument_list|)
+name|String
+name|enrollmentsTable
+parameter_list|()
+function_decl|;
+comment|/* Sectioning exceptions 	 */
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} does not exist."
+argument_list|)
+name|String
+name|exceptionCourseDoesNotExist
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Academic session {0} does not exist."
+argument_list|)
+name|String
+name|exceptionSessionDoesNotExist
+parameter_list|(
+name|String
+name|session
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Academic session not selected."
+argument_list|)
+name|String
+name|exceptionNoAcademicSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No suitable academic sessions found."
+argument_list|)
+name|String
+name|exceptionNoSuitableAcademicSessions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No classes found for {0}."
+argument_list|)
+name|String
+name|exceptionNoClassesForCourse
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to compute a schedule ({0})."
+argument_list|)
+name|String
+name|exceptionSectioningFailed
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Too many bad attempts, login disabled."
+argument_list|)
+name|String
+name|exceptionTooManyLoginAttempts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"User name not provided."
+argument_list|)
+name|String
+name|exceptionLoginNoUsername
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong username and/or password."
+argument_list|)
+name|String
+name|exceptionLoginFailed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Login failed ({0})."
+argument_list|)
+name|String
+name|exceptionLoginFailedUnknown
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"User is not logged in."
+argument_list|)
+name|String
+name|exceptionUserNotLoggedIn
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to load section information ({0})."
+argument_list|)
+name|String
+name|exceptionCustomSectionNamesFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to retrive course details ({0})."
+argument_list|)
+name|String
+name|exceptionCustomCourseDetailsFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to retrive class details ({0})."
+argument_list|)
+name|String
+name|exceptionCustomSectionLimitsFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course detail interface not provided."
+argument_list|)
+name|String
+name|exceptionNoCustomCourseDetails
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last academic session failed ({0})."
+argument_list|)
+name|String
+name|exceptionLastAcademicSessionFailed
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not a student."
+argument_list|)
+name|String
+name|exceptionNoStudent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong student id."
+argument_list|)
+name|String
+name|exceptionBadStudentId
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No requests stored for the student."
+argument_list|)
+name|String
+name|exceptionNoRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong academic session."
+argument_list|)
+name|String
+name|exceptionBadSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your are not authenticated, please log in first."
+argument_list|)
+name|String
+name|exceptionEnrollNotAuthenticated
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your are not registered as a student in {0}."
+argument_list|)
+name|String
+name|exceptionEnrollNotStudent
+parameter_list|(
+name|String
+name|session
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to enroll into {0}, the class is no longer available."
+argument_list|)
+name|String
+name|exceptionEnrollNotAvailable
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This feature is not supported in the current environment."
+argument_list|)
+name|String
+name|exceptionNotSupportedFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No schedule stored for the student."
+argument_list|)
+name|String
+name|exceptionNoSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No courses provided."
+argument_list|)
+name|String
+name|exceptionNoCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to compute a schedule (no solution found)."
+argument_list|)
+name|String
+name|exceptionNoSolution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0}"
+argument_list|)
+name|String
+name|exceptionUnknown
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Academic session is not available for student scheduling."
+argument_list|)
+name|String
+name|exceptionNoServerForSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong class or instructional offering."
+argument_list|)
+name|String
+name|exceptionBadClassOrOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong instructional offering."
+argument_list|)
+name|String
+name|exceptionBadOffering
+parameter_list|()
 function_decl|;
 block|}
 end_interface

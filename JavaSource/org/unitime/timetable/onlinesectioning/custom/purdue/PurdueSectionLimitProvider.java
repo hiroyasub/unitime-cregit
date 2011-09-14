@@ -197,7 +197,7 @@ name|gwt
 operator|.
 name|resources
 operator|.
-name|StudentSectioningExceptions
+name|StudentSectioningMessages
 import|;
 end_import
 
@@ -278,14 +278,14 @@ name|SectionUrlProvider
 block|{
 specifier|private
 specifier|static
-name|StudentSectioningExceptions
-name|EXCEPTIONS
+name|StudentSectioningMessages
+name|MSG
 init|=
 name|Localization
 operator|.
 name|create
 argument_list|(
-name|StudentSectioningExceptions
+name|StudentSectioningMessages
 operator|.
 name|class
 argument_list|)
@@ -473,9 +473,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"academic term "
 operator|+
@@ -610,9 +610,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"class CRN not provided"
 argument_list|)
@@ -710,9 +710,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"course detail url is wrong"
 argument_list|)
@@ -897,9 +897,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"unable to parse<a href='"
 operator|+
@@ -940,9 +940,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"unable to parse<a href='"
 operator|+
@@ -979,9 +979,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"unable to parse<a href='"
 operator|+
@@ -1018,9 +1018,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"unable to parse<a href='"
 operator|+
@@ -1052,9 +1052,9 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|EXCEPTIONS
+name|MSG
 operator|.
-name|customSectionLimitsFailed
+name|exceptionCustomSectionLimitsFailed
 argument_list|(
 literal|"unable to read<a href='"
 operator|+
