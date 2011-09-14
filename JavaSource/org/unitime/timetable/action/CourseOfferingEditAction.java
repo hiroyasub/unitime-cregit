@@ -1009,6 +1009,15 @@ name|getInstrOfferingId
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"op"
+argument_list|,
+literal|"view"
+argument_list|)
+expr_stmt|;
 return|return
 name|mapping
 operator|.

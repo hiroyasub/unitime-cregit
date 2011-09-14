@@ -651,6 +651,34 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Scheduling Subpart Limits:"
+argument_list|)
+name|String
+name|propertySchedulingSubpartLimits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display Classes in Schedule:"
+argument_list|)
+name|String
+name|propertyDisplayClassesInSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All:"
+argument_list|)
+comment|//used in Multiple Class Setup
+name|String
+name|propertyAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"By Reservation Only:"
 argument_list|)
 name|String
@@ -745,6 +773,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|dropDefaultDatePattern
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"External Id"
 argument_list|)
 name|String
@@ -803,6 +840,15 @@ literal|"Room Ratio"
 argument_list|)
 name|String
 name|columnRoomRatio
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room<br>Ratio"
+argument_list|)
+name|String
+name|columnRoomRatioBr
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1471,6 +1517,87 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Allow<br>variable limits"
+argument_list|)
+name|String
+name|columnAllowVariableLimits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enroll"
+argument_list|)
+name|String
+name|columnEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Nbr<br>Rms"
+argument_list|)
+name|String
+name|columnNbrRms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Managing Department"
+argument_list|)
+name|String
+name|columnManagingDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display&nbsp;<br>Instr"
+argument_list|)
+name|String
+name|columnDisplayInstr
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display&nbsp;<br>Class"
+argument_list|)
+name|String
+name|columnDisplayClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructors"
+argument_list|)
+name|String
+name|columnInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Min"
+argument_list|)
+name|String
+name|columnMin
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Max"
+argument_list|)
+name|String
+name|columnMax
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Total"
 argument_list|)
 name|String
@@ -1900,6 +2027,15 @@ literal|"Update"
 argument_list|)
 name|String
 name|actionUpdateCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update"
+argument_list|)
+name|String
+name|actionUpdateMultipleClassSetup
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2382,6 +2518,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"U"
+argument_list|)
+name|String
+name|accessUpdateMultipleClassSetup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"C"
 argument_list|)
 name|String
@@ -2832,6 +2977,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Update Class Setup (Alt+{0})"
+argument_list|)
+name|String
+name|titleUpdateMultipleClassSetup
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Return to %% (Alt+{0})"
 argument_list|)
 name|String
@@ -3237,6 +3394,69 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Display all instructors for this subpart in the schedule book."
+argument_list|)
+name|String
+name|titleDisplayAllInstrForSubpartInSchedBook
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display all classes for this subpart in the schedule book."
+argument_list|)
+name|String
+name|titleDisplayAllClassesForSubpartInSchedBook
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display these classes in the schedule book."
+argument_list|)
+name|String
+name|titleDisplayTheseClassesInSchedBook
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move Class Up"
+argument_list|)
+name|String
+name|titleMoveClassUp
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move Class Down"
+argument_list|)
+name|String
+name|titleMoveClassDown
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove Class from Instructional Offering"
+argument_list|)
+name|String
+name|titleRemoveClassFromIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add a class of this type to Instructional Offering"
+argument_list|)
+name|String
+name|titleAddClassToIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Coordinator (Alt+{0})"
 argument_list|)
 name|String
@@ -3397,6 +3617,15 @@ literal|"ERRORS"
 argument_list|)
 name|String
 name|errorsIOCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ERRORS"
+argument_list|)
+name|String
+name|errorsMultipleClassSetup
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3714,7 +3943,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course Offering is required."
+literal|"Course Offering is required"
 argument_list|)
 name|String
 name|errorRequiredCourseOffering
@@ -3745,6 +3974,129 @@ literal|"Unique Id needed for operation. "
 argument_list|)
 name|String
 name|errorUniqueIdNeeded
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class is required"
+argument_list|)
+name|String
+name|errorRequiredClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Offering Configuration is required"
+argument_list|)
+name|String
+name|errorRequiredIOConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The configuration requires that<b>{0}</b> have at least one child class."
+argument_list|)
+name|String
+name|errorClassMustHaveChildClasses
+parameter_list|(
+name|String
+name|parentClass
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The configuration requires that each scheduling subpart have at least one associated class."
+argument_list|)
+name|String
+name|errorEachSubpartMustHaveClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximum limit for class {0} cannot be less than the minimum limit for the class."
+argument_list|)
+name|String
+name|errorMaxLessThanMinLimit
+parameter_list|(
+name|String
+name|classWithWrongLimits
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximum limits for each top level class type must total to greater than or equal to the offering limit."
+argument_list|)
+name|String
+name|errorMaxLimitsTotalTooLow
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limits for each top level class type must total to greater than or equal to the offering limit."
+argument_list|)
+name|String
+name|errorLimitsForTopLevelClassesTooLow
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximum limits for child classes of the same type at a level must total to at least the parent class maximum limit."
+argument_list|)
+name|String
+name|errorTotalMaxChildrenAtLeastMaxParent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Minimum limits for child classes of the same type at a level must total to greater than or equal to the parent class minimum limit."
+argument_list|)
+name|String
+name|errorTotalMinChildrenAtLeastMinParent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limits for child classes of the same type at a level must total to greater than or equal to the parent class limit."
+argument_list|)
+name|String
+name|errorLimitsChildClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Missing Instructional Offering Configuration."
+argument_list|)
+name|String
+name|errorMissingIOConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Offering Config has not been defined."
+argument_list|)
+name|String
+name|errorIOConfigNotDefined
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Initial setup of Instructional Offering Config has not been completed."
+argument_list|)
+name|String
+name|errorInitialIOSetupIncomplete
 parameter_list|()
 function_decl|;
 annotation|@

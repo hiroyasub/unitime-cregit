@@ -1152,6 +1152,15 @@ return|return
 literal|null
 return|;
 block|}
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"op"
+argument_list|,
+literal|"view"
+argument_list|)
+expr_stmt|;
 return|return
 name|mapping
 operator|.

@@ -257,6 +257,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -734,6 +762,21 @@ name|InstructionalOfferingModifyAction
 extends|extends
 name|Action
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|/**      * Method execute      * @param mapping      * @param form      * @param request      * @param response      * @return ActionForward      */
 specifier|public
 name|ActionForward
@@ -772,7 +815,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Access Denied."
+name|MSG
+operator|.
+name|errorAccessDenied
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -1095,7 +1141,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Operation could not be interpreted: "
+name|MSG
+operator|.
+name|errorOperationNotInterpreted
+argument_list|()
 operator|+
 name|op
 argument_list|)
@@ -1523,12 +1572,10 @@ name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.update"
-argument_list|)
+name|actionUpdateMultipleClassSetup
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1574,6 +1621,15 @@ name|frm
 operator|.
 name|getInstrOfferingId
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"op"
+argument_list|,
+literal|"view"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1726,7 +1782,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Missing Instructional Offering Config."
+name|MSG
+operator|.
+name|errorMissingIOConfig
+argument_list|()
 argument_list|)
 throw|;
 comment|// Load details
@@ -1953,7 +2012,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Instructional Offering Config has not been defined."
+name|MSG
+operator|.
+name|errorIOConfigNotDefined
+argument_list|()
 argument_list|)
 throw|;
 name|ArrayList
@@ -2043,7 +2105,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Initial setup of Instructional Offering Config has not been completed."
+name|MSG
+operator|.
+name|errorInitialIOSetupIncomplete
+argument_list|()
 argument_list|)
 throw|;
 if|if
