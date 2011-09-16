@@ -671,7 +671,7 @@ name|DefaultMessage
 argument_list|(
 literal|"All:"
 argument_list|)
-comment|//used in Multiple Class Setup
+comment|//used in Multiple Class Setup, Assign Instructors
 name|String
 name|propertyAll
 parameter_list|()
@@ -1184,6 +1184,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&nbsp;Check<br>Conflicts"
+argument_list|)
+name|String
+name|columnInstructorCheckConflictsBr
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Classes / Courses"
 argument_list|)
 name|String
@@ -1580,6 +1589,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Display"
+argument_list|)
+name|String
+name|columnDisplay
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Min"
 argument_list|)
 name|String
@@ -1915,6 +1933,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Previous"
+argument_list|)
+name|String
+name|actionPreviousIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Next"
 argument_list|)
 name|String
@@ -1946,6 +1973,15 @@ literal|"Next"
 argument_list|)
 name|String
 name|actionNextExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Next"
+argument_list|)
+name|String
+name|actionNextIO
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2275,6 +2311,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Unassign All"
+argument_list|)
+name|String
+name|actionUnassignAllInstructorsFromConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update"
+argument_list|)
+name|String
+name|actionUpdateClassInstructorsAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -2383,6 +2437,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"P"
+argument_list|)
+name|String
+name|accessPreviousIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N"
 argument_list|)
 name|String
@@ -2414,6 +2477,15 @@ literal|"N"
 argument_list|)
 name|String
 name|accessNextExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"N"
+argument_list|)
+name|String
+name|accessNextIO
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2689,6 +2761,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"U"
+argument_list|)
+name|String
+name|accessUpdateClassInstructorsAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Search/Display Offerings (Alt+{0})"
 argument_list|)
 name|String
@@ -2833,6 +2914,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Update and go to previous Instructional Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titlePreviousIOWithUpdate
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Update and go to previous Instructor (Alt+{0})"
 argument_list|)
 name|String
@@ -2897,6 +2990,18 @@ literal|"Update and go to next Scheduling Subpart (Alt+{0})"
 argument_list|)
 name|String
 name|titleNextSubpartWithUpdate
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update and go to next Instructional Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleNextIOWithUpdate
 parameter_list|(
 name|String
 name|accessKey
@@ -3271,10 +3376,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Instructor to Class"
+argument_list|)
+name|String
+name|titleAddInstructorToClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Remove Instructor"
 argument_list|)
 name|String
 name|titleRemoveInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove Instructor from Class"
+argument_list|)
+name|String
+name|titleRemoveInstructorFromClass
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3469,6 +3592,27 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Unassign All Instructors"
+argument_list|)
+name|String
+name|titleUnassignAllInstructorsFromConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update Class Instructors (Alt+{0})"
+argument_list|)
+name|String
+name|titleUpdateClassInstructorsAssignment
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course numbers can be specified using wildcard (*). E.g. 2*"
 argument_list|)
 name|String
@@ -3552,8 +3696,18 @@ name|DefaultMessage
 argument_list|(
 literal|"Access Denied."
 argument_list|)
+comment|//better use exceptionAccessDenied
 name|String
 name|errorAccessDenied
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ERRORS"
+argument_list|)
+name|String
+name|errors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4102,6 +4256,60 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Duplicate instructor for class."
+argument_list|)
+name|String
+name|errorDuplicateInstructorForClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Access Denied."
+argument_list|)
+name|String
+name|exceptionAccessDenied
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Operation could not be interpreted: "
+argument_list|)
+name|String
+name|exceptionOperationNotInterpreted
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Missing Instructional Offering Config."
+argument_list|)
+name|String
+name|exceptionMissingIOConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Offering Config has not been defined."
+argument_list|)
+name|String
+name|exceptionIOConfigUndefined
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Initial setup of Instructional Offering Config has not been completed."
+argument_list|)
+name|String
+name|exceptionInitialIOSetupIncomplete
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Name"
 argument_list|)
 name|String
@@ -4496,6 +4704,15 @@ literal|"This operation will delete existing subparts and associated classes . C
 argument_list|)
 name|String
 name|confirmDeleteExistingSubpartsClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to unassign all instructors?"
+argument_list|)
+name|String
+name|confirmUnassignAllInstructors
 parameter_list|()
 function_decl|;
 annotation|@
