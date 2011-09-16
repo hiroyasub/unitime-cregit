@@ -3255,56 +3255,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|helper
-operator|.
-name|getHibSession
-argument_list|()
-operator|.
-name|createQuery
-argument_list|(
-literal|"update CourseOffering c set c.enrollment = "
-operator|+
-literal|"(select count(distinct e.student) from StudentClassEnrollment e where e.courseOffering.uniqueId = c.uniqueId) "
-operator|+
-literal|"where c.instructionalOffering.uniqueId = :offeringId"
-argument_list|)
-operator|.
-name|setLong
-argument_list|(
-literal|"offeringId"
-argument_list|,
-name|offeringId
-argument_list|)
-operator|.
-name|executeUpdate
-argument_list|()
-expr_stmt|;
-name|helper
-operator|.
-name|getHibSession
-argument_list|()
-operator|.
-name|createQuery
-argument_list|(
-literal|"update Class_ c set c.enrollment = "
-operator|+
-literal|"(select count(distinct e.student) from StudentClassEnrollment e where e.clazz.uniqueId = c.uniqueId) "
-operator|+
-literal|"where c.schedulingSubpart.uniqueId in "
-operator|+
-literal|"(select s.uniqueId from SchedulingSubpart s where s.instrOfferingConfig.instructionalOffering.uniqueId = :offeringId)"
-argument_list|)
-operator|.
-name|setLong
-argument_list|(
-literal|"offeringId"
-argument_list|,
-name|offeringId
-argument_list|)
-operator|.
-name|executeUpdate
-argument_list|()
-expr_stmt|;
+comment|/*      	helper.getHibSession().createQuery(      			"update CourseOffering c set c.enrollment = " +      			"(select count(distinct e.student) from StudentClassEnrollment e where e.courseOffering.uniqueId = c.uniqueId) " +                   "where c.instructionalOffering.uniqueId = :offeringId").                  setLong("offeringId", offeringId).executeUpdate();      	      	helper.getHibSession().createQuery(      			"update Class_ c set c.enrollment = " +      			"(select count(distinct e.student) from StudentClassEnrollment e where e.clazz.uniqueId = c.uniqueId) " +                   "where c.schedulingSubpart.uniqueId in " +                  "(select s.uniqueId from SchedulingSubpart s where s.instrOfferingConfig.instructionalOffering.uniqueId = :offeringId)").                  setLong("offeringId", offeringId).executeUpdate();          */
 block|}
 specifier|public
 name|boolean

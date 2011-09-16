@@ -4984,24 +4984,7 @@ argument_list|(
 name|sce
 argument_list|)
 expr_stmt|;
-name|sce
-operator|.
-name|getClazz
-argument_list|()
-operator|.
-name|setEnrollment
-argument_list|(
-name|sce
-operator|.
-name|getClazz
-argument_list|()
-operator|.
-name|getEnrollment
-argument_list|()
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
+comment|// sce.getClazz().setEnrollment(sce.getClazz().getEnrollment()-1);
 name|hibSession
 operator|.
 name|delete
