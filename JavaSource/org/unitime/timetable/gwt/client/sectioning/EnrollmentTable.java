@@ -7725,6 +7725,28 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|enrollment
+operator|.
+name|hasClasses
+argument_list|()
+condition|)
+block|{
+comment|// not enrolled
+name|line
+operator|.
+name|add
+argument_list|(
+operator|new
+name|HTML
+argument_list|(
+literal|"&nbsp;"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 name|enrollment
 operator|.
 name|getApprovedDate
@@ -7733,6 +7755,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// not yet approved
 name|CheckBox
 name|ch
 init|=
@@ -7777,6 +7800,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// already approved
 name|line
 operator|.
 name|add
