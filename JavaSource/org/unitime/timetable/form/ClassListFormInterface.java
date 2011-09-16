@@ -80,6 +80,11 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|boolean
+name|getShowCrossListedClasses
+parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
 name|isUserIsAdmin
 parameter_list|()
 function_decl|;
@@ -173,6 +178,14 @@ name|setSortByKeepSubparts
 parameter_list|(
 name|boolean
 name|sortByKeepSubparts
+parameter_list|)
+function_decl|;
+specifier|public
+name|void
+name|setShowCrossListedClasses
+parameter_list|(
+name|boolean
+name|showCrossListedClasses
 parameter_list|)
 function_decl|;
 block|}

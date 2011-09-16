@@ -131,9 +131,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|model
 operator|.
-name|ClassListForm
+name|Class_
 import|;
 end_import
 
@@ -147,7 +147,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Class_
+name|CourseOffering
 import|;
 end_import
 
@@ -289,7 +289,7 @@ name|model
 operator|.
 name|comparators
 operator|.
-name|ClassComparator
+name|ClassCourseComparator
 import|;
 end_import
 
@@ -959,7 +959,7 @@ block|{
 name|setClassComparator
 argument_list|(
 operator|new
-name|ClassComparator
+name|ClassCourseComparator
 argument_list|(
 name|UserData
 operator|.
@@ -972,9 +972,16 @@ argument_list|()
 argument_list|,
 literal|"InstructionalOfferingList.sortBy"
 argument_list|,
-name|ClassListForm
+name|ClassCourseComparator
 operator|.
-name|sSortByName
+name|getName
+argument_list|(
+name|ClassCourseComparator
+operator|.
+name|SortBy
+operator|.
+name|NAME
+argument_list|)
 argument_list|)
 argument_list|,
 name|classAssignment
@@ -1580,6 +1587,14 @@ argument_list|,
 name|configTable
 argument_list|,
 name|ioc
+operator|.
+name|getInstructionalOffering
+argument_list|()
+operator|.
+name|getControllingCourseOffering
+argument_list|()
+argument_list|,
+name|ioc
 argument_list|,
 name|user
 argument_list|,
@@ -1658,7 +1673,7 @@ block|{
 name|setClassComparator
 argument_list|(
 operator|new
-name|ClassComparator
+name|ClassCourseComparator
 argument_list|(
 name|UserData
 operator|.
@@ -1671,9 +1686,16 @@ argument_list|()
 argument_list|,
 literal|"InstructionalOfferingList.sortBy"
 argument_list|,
-name|ClassListForm
+name|ClassCourseComparator
 operator|.
-name|sSortByName
+name|getName
+argument_list|(
+name|ClassCourseComparator
+operator|.
+name|SortBy
+operator|.
+name|NAME
+argument_list|)
 argument_list|)
 argument_list|,
 name|classAssignment
@@ -1870,6 +1892,9 @@ specifier|protected
 name|TableCell
 name|buildPrefGroupLabel
 parameter_list|(
+name|CourseOffering
+name|co
+parameter_list|,
 name|PreferenceGroup
 name|prefGroup
 parameter_list|,
@@ -1890,6 +1915,8 @@ name|super
 operator|.
 name|buildPrefGroupLabel
 argument_list|(
+name|co
+argument_list|,
 name|prefGroup
 argument_list|,
 name|indentSpaces

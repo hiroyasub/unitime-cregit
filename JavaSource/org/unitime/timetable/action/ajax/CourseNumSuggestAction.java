@@ -816,6 +816,13 @@ name|query
 operator|.
 name|append
 argument_list|(
+literal|" 		 and co.instructionalOffering.notOffered = false "
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|append
+argument_list|(
 literal|" order by co.courseNbr "
 argument_list|)
 expr_stmt|;
@@ -1010,9 +1017,10 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" 		 and co.isControl = true "
+literal|" 		 and co.instructionalOffering.notOffered = false "
 argument_list|)
 expr_stmt|;
+comment|//query.append(" 		 and co.isControl = true ");
 name|query
 operator|.
 name|append

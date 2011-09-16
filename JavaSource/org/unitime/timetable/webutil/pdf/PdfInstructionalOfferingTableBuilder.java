@@ -549,7 +549,7 @@ name|model
 operator|.
 name|comparators
 operator|.
-name|ClassComparator
+name|ClassCourseComparator
 import|;
 end_import
 
@@ -3765,6 +3765,9 @@ specifier|protected
 name|PdfPCell
 name|pdfBuildPrefGroupLabel
 parameter_list|(
+name|CourseOffering
+name|co
+parameter_list|,
 name|PreferenceGroup
 name|prefGroup
 parameter_list|,
@@ -3817,7 +3820,9 @@ operator|=
 name|aClass
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|co
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -5504,6 +5509,9 @@ specifier|private
 name|PdfPCell
 name|pdfBuildDivisionSection
 parameter_list|(
+name|CourseOffering
+name|co
+parameter_list|,
 name|PreferenceGroup
 name|prefGroup
 parameter_list|,
@@ -5543,13 +5551,16 @@ name|Class_
 operator|)
 name|prefGroup
 decl_stmt|;
+comment|// String divSec = aClass.getDivSecNumber();
 name|String
 name|divSec
 init|=
 name|aClass
 operator|.
-name|getDivSecNumber
-argument_list|()
+name|getClassSuffix
+argument_list|(
+name|co
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -5581,7 +5592,7 @@ return|return
 name|cell
 return|;
 block|}
-specifier|private
+specifier|protected
 name|PdfPCell
 name|pdfBuildInstructor
 parameter_list|(
@@ -7961,6 +7972,9 @@ parameter_list|,
 name|ExamAssignmentProxy
 name|examAssignment
 parameter_list|,
+name|CourseOffering
+name|co
+parameter_list|,
 name|PreferenceGroup
 name|prefGroup
 parameter_list|,
@@ -7994,6 +8008,8 @@ name|addCell
 argument_list|(
 name|pdfBuildPrefGroupLabel
 argument_list|(
+name|co
+argument_list|,
 name|prefGroup
 argument_list|,
 name|indentSpaces
@@ -8017,6 +8033,8 @@ name|addCell
 argument_list|(
 name|pdfBuildDivisionSection
 argument_list|(
+name|co
+argument_list|,
 name|prefGroup
 argument_list|,
 name|isEditable
@@ -8834,6 +8852,9 @@ parameter_list|,
 name|ExamAssignmentProxy
 name|examAssignment
 parameter_list|,
+name|CourseOffering
+name|co
+parameter_list|,
 name|SchedulingSubpart
 name|ss
 parameter_list|,
@@ -8864,6 +8885,8 @@ name|classAssignment
 argument_list|,
 name|examAssignment
 argument_list|,
+name|co
+argument_list|,
 name|ss
 argument_list|,
 name|indentSpaces
@@ -8888,6 +8911,9 @@ name|classAssignment
 parameter_list|,
 name|ExamAssignmentProxy
 name|examAssignment
+parameter_list|,
+name|CourseOffering
+name|co
 parameter_list|,
 name|SchedulingSubpart
 name|ss
@@ -8920,6 +8946,8 @@ argument_list|(
 name|classAssignment
 argument_list|,
 name|examAssignment
+argument_list|,
+name|co
 argument_list|,
 name|ss
 argument_list|,
@@ -9008,6 +9036,8 @@ name|classAssignment
 argument_list|,
 name|examAssignment
 argument_list|,
+name|co
+argument_list|,
 name|child
 argument_list|,
 name|indentSpaces
@@ -9032,6 +9062,9 @@ name|examAssignment
 parameter_list|,
 name|int
 name|ct
+parameter_list|,
+name|CourseOffering
+name|co
 parameter_list|,
 name|Class_
 name|aClass
@@ -9066,6 +9099,8 @@ name|classAssignment
 argument_list|,
 name|examAssignment
 argument_list|,
+name|co
+argument_list|,
 name|aClass
 argument_list|,
 name|indentSpaces
@@ -9091,6 +9126,9 @@ parameter_list|,
 name|int
 name|ct
 parameter_list|,
+name|CourseOffering
+name|co
+parameter_list|,
 name|Class_
 name|aClass
 parameter_list|,
@@ -9111,6 +9149,8 @@ argument_list|,
 name|examAssignment
 argument_list|,
 name|ct
+argument_list|,
+name|co
 argument_list|,
 name|aClass
 argument_list|,
@@ -9208,6 +9248,8 @@ name|examAssignment
 argument_list|,
 name|ct
 argument_list|,
+name|co
+argument_list|,
 name|child
 argument_list|,
 name|indentSpaces
@@ -9234,6 +9276,9 @@ name|classAssignment
 parameter_list|,
 name|ExamAssignmentProxy
 name|examAssignment
+parameter_list|,
+name|CourseOffering
+name|co
 parameter_list|,
 name|InstrOfferingConfig
 name|ioc
@@ -9897,6 +9942,8 @@ name|classAssignment
 argument_list|,
 name|examAssignment
 argument_list|,
+name|co
+argument_list|,
 name|ss
 argument_list|,
 operator|(
@@ -10031,6 +10078,8 @@ argument_list|,
 operator|++
 name|ct
 argument_list|,
+name|co
+argument_list|,
 name|c
 argument_list|,
 name|indent
@@ -10063,6 +10112,9 @@ name|classAssignment
 parameter_list|,
 name|ExamAssignmentProxy
 name|examAssignment
+parameter_list|,
+name|CourseOffering
+name|co
 parameter_list|,
 name|Set
 name|instrOfferingConfigs
@@ -10112,6 +10164,8 @@ argument_list|,
 name|classAssignment
 argument_list|,
 name|examAssignment
+argument_list|,
+name|co
 argument_list|,
 name|ioc
 argument_list|,
@@ -11657,6 +11711,11 @@ name|classAssignment
 argument_list|,
 name|examAssignment
 argument_list|,
+name|io
+operator|.
+name|getControllingCourseOffering
+argument_list|()
+argument_list|,
 name|configs
 argument_list|,
 name|user
@@ -11842,7 +11901,7 @@ argument_list|,
 name|allCoursesAreGiven
 argument_list|,
 operator|new
-name|ClassComparator
+name|ClassCourseComparator
 argument_list|(
 name|form
 operator|.

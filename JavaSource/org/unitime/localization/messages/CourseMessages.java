@@ -1766,6 +1766,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Cross Lists:"
+argument_list|)
+name|String
+name|filterCrossList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show cross-listed classes"
+argument_list|)
+name|String
+name|showCrossListedClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Subject:"
 argument_list|)
 name|String
