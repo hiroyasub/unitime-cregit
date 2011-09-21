@@ -712,7 +712,7 @@ control|)
 block|{
 for|for
 control|(
-name|Integer
+name|int
 name|time
 range|:
 operator|new
@@ -821,7 +821,7 @@ name|idx
 operator|++
 control|)
 block|{
-name|Integer
+name|int
 name|day
 init|=
 name|f

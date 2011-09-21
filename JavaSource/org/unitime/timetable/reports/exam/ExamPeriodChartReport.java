@@ -686,7 +686,7 @@ control|)
 block|{
 for|for
 control|(
-name|Integer
+name|int
 name|time
 range|:
 operator|new
