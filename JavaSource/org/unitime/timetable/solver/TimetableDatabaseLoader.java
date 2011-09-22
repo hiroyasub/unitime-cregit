@@ -13553,7 +13553,7 @@ name|parentSubpart
 argument_list|)
 return|;
 block|}
-specifier|private
+specifier|public
 specifier|static
 class|class
 name|ChildrenFirstDistributionObjectComparator
