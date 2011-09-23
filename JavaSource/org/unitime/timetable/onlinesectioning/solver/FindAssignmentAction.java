@@ -3055,6 +3055,11 @@ argument_list|,
 name|reservationLimit
 argument_list|,
 name|applicable
+argument_list|,
+name|reservation
+operator|.
+name|mustBeUsed
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
