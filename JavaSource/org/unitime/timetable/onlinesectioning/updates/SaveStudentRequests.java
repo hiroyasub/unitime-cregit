@@ -2122,16 +2122,6 @@ condition|(
 name|keepEnrollments
 condition|)
 block|{
-if|if
-condition|(
-name|enrl
-operator|.
-name|getCourseRequest
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
 name|CourseRequest
 name|cr
 init|=
@@ -2223,7 +2213,6 @@ argument_list|(
 name|enrl
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 else|else
