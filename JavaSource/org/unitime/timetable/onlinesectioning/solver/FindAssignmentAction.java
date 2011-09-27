@@ -3244,6 +3244,11 @@ name|reservation
 operator|.
 name|mustBeUsed
 argument_list|()
+argument_list|,
+name|reservation
+operator|.
+name|isAllowOverlap
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
