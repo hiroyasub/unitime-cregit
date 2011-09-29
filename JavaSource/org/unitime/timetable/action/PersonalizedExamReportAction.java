@@ -6118,6 +6118,23 @@ else|:
 literal|"\n"
 operator|)
 decl_stmt|;
+name|boolean
+name|showBackToBack
+init|=
+literal|"true"
+operator|.
+name|equals
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exams.reports.student.btb"
+argument_list|,
+literal|"true"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|PdfWebTable
 name|table
 init|=
@@ -6134,7 +6151,17 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" Examination Conflicts and/or Back-To-Back Examinations for "
+literal|" Examination Conflicts"
+operator|+
+operator|(
+name|showBackToBack
+condition|?
+literal|" and/or Back-To-Back Examinations"
+else|:
+literal|""
+operator|)
+operator|+
+literal|" for "
 operator|+
 name|student
 operator|.
@@ -6834,6 +6861,10 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|showBackToBack
+condition|)
 for|for
 control|(
 name|BackToBackConflict
@@ -8564,6 +8595,23 @@ else|:
 literal|"\n"
 operator|)
 decl_stmt|;
+name|boolean
+name|showBackToBack
+init|=
+literal|"true"
+operator|.
+name|equals
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.exams.reports.instructor.btb"
+argument_list|,
+literal|"true"
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|PdfWebTable
 name|table
 init|=
@@ -8583,7 +8631,17 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" Examination Instructor Conflicts and/or Back-To-Back Examinations for "
+literal|" Examination Instructor Conflicts"
+operator|+
+operator|(
+name|showBackToBack
+condition|?
+literal|" and/or Back-To-Back Examinations"
+else|:
+literal|""
+operator|)
+operator|+
+literal|" for "
 operator|+
 name|instructor
 operator|.
@@ -9403,6 +9461,10 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|showBackToBack
+condition|)
 for|for
 control|(
 name|BackToBackConflict
