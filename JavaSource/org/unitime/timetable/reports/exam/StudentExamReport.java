@@ -1987,7 +1987,7 @@ name|println
 argument_list|(
 name|mpad
 argument_list|(
-literal|"~ ~ ~ ~ ~ CLASS SECHEDULE ~ ~ ~ ~ ~"
+literal|"~ ~ ~ ~ ~ CLASS SCHEDULE ~ ~ ~ ~ ~"
 argument_list|,
 name|iNrChars
 argument_list|)
@@ -2742,7 +2742,7 @@ name|println
 argument_list|(
 name|mpad
 argument_list|(
-literal|"~ ~ ~ ~ ~ EXAMINATION SECHEDULE ~ ~ ~ ~ ~"
+literal|"~ ~ ~ ~ ~ EXAMINATION SCHEDULE ~ ~ ~ ~ ~"
 argument_list|,
 name|iNrChars
 argument_list|)
