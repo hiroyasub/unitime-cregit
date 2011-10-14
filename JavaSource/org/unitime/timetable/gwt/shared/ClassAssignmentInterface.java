@@ -963,10 +963,10 @@ operator|(
 name|isAssigned
 argument_list|()
 condition|?
-literal|"NOT ASSIGNED"
-else|:
 name|getClassAssignments
 argument_list|()
+else|:
+literal|"NOT ASSIGNED"
 operator|)
 return|;
 block|}

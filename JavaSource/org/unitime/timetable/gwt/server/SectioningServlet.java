@@ -5354,6 +5354,9 @@ name|currentAssignment
 parameter_list|,
 name|int
 name|selectedAssignmentIndex
+parameter_list|,
+name|String
+name|filter
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -5457,6 +5460,8 @@ argument_list|,
 name|currentAssignment
 argument_list|,
 name|selectedAssignment
+argument_list|,
+name|filter
 argument_list|)
 argument_list|)
 decl_stmt|;

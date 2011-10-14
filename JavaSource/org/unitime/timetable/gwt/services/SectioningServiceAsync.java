@@ -228,7 +228,9 @@ argument_list|>
 name|callback
 parameter_list|)
 throws|throws
-name|IllegalArgumentException
+name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|void
 name|retrieveCourseOfferingId
@@ -311,6 +313,9 @@ name|currentAssignment
 parameter_list|,
 name|int
 name|selectedAssignment
+parameter_list|,
+name|String
+name|filter
 parameter_list|,
 name|AsyncCallback
 argument_list|<

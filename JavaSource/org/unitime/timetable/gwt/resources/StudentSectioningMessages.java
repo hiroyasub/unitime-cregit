@@ -869,6 +869,36 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"There are no alternatives for {0} matching {1}."
+argument_list|)
+name|String
+name|suggestionsNoAlternativeWithFilter
+parameter_list|(
+name|String
+name|source
+parameter_list|,
+name|String
+name|filter
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No alternative for {0} is matching {1}."
+argument_list|)
+name|String
+name|suggestionsNoMatch
+parameter_list|(
+name|String
+name|source
+parameter_list|,
+name|String
+name|filter
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Free Time {0} {1} - {2}"
 argument_list|)
 name|String
@@ -2151,6 +2181,48 @@ literal|"Wrong instructional offering."
 argument_list|)
 name|String
 name|exceptionBadOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Filter assignments of the selected class by name, day, start time, date, room or instructor."
+operator|+
+literal|"<br><br>You can also use the following tags:"
+operator|+
+literal|"<ul>"
+operator|+
+literal|"<li><i>name:</i> class name"
+operator|+
+literal|"<li><i>day:</i> class must meet on this day or days (e.g., monday, MWF)"
+operator|+
+literal|"<li><i>time:</i> class must start at this time (e.g., 730)"
+operator|+
+literal|"<li><i>before:</i> class must end before or by this time"
+operator|+
+literal|"<li><i>after:</i> class must start on or after this time"
+operator|+
+literal|"<li><i>date:</i> class must meet on this date"
+operator|+
+literal|"<li><i>room:</i> class must use this room or building"
+operator|+
+literal|"<li><i>instructor:</i> class must have this instructor"
+operator|+
+literal|"</ul>Use<i>or</i>,<i>and</i>,<i>not</i>, and brackets to build a boolean query."
+operator|+
+literal|"<br><br>Example: day: monday and (time: 730 or time: 830)"
+argument_list|)
+name|String
+name|suggestionsFilterHint
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>S</u>earch"
+argument_list|)
+name|String
+name|buttonSearch
 parameter_list|()
 function_decl|;
 block|}

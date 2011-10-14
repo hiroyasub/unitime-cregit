@@ -2627,6 +2627,8 @@ name|assignments
 argument_list|,
 name|idx
 argument_list|,
+literal|null
+argument_list|,
 operator|new
 name|AsyncCallback
 argument_list|<

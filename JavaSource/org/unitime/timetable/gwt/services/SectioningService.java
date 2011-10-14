@@ -229,7 +229,9 @@ name|String
 name|course
 parameter_list|)
 throws|throws
-name|IllegalArgumentException
+name|SectioningException
+throws|,
+name|PageAccessException
 function_decl|;
 name|Long
 name|retrieveCourseOfferingId
@@ -297,6 +299,9 @@ name|currentAssignment
 parameter_list|,
 name|int
 name|selectedAssignment
+parameter_list|,
+name|String
+name|filter
 parameter_list|)
 throws|throws
 name|SectioningException

@@ -1567,12 +1567,14 @@ literal|null
 operator|||
 name|iComparator
 operator|.
-name|isBetter
+name|compare
 argument_list|(
 name|iAssignment
 argument_list|,
 name|iBestAssignment
 argument_list|)
+operator|<
+literal|0
 condition|)
 name|saveBest
 argument_list|()
@@ -1876,8 +1878,8 @@ name|Enrollment
 argument_list|>
 block|{
 specifier|public
-name|boolean
-name|isBetter
+name|int
+name|compare
 parameter_list|(
 name|Enrollment
 index|[]
