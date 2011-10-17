@@ -143,6 +143,13 @@ argument_list|(
 name|iEncoding
 argument_list|)
 expr_stmt|;
+name|resp
+operator|.
+name|setCharacterEncoding
+argument_list|(
+name|iEncoding
+argument_list|)
+expr_stmt|;
 name|chain
 operator|.
 name|doFilter
