@@ -9773,7 +9773,7 @@ name|toRoomGroupPref
 operator|.
 name|setRoomGroup
 argument_list|(
-name|toDefaultRoomGroup
+name|toRoomGroup
 argument_list|)
 expr_stmt|;
 name|toRoomGroupPref
