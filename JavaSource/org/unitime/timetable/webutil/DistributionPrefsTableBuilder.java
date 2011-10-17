@@ -3289,7 +3289,10 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"No preferences found"
+name|MSG
+operator|.
+name|noPreferencesFound
+argument_list|()
 block|,
 literal|""
 block|,

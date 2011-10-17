@@ -445,12 +445,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.update"
-argument_list|)
+name|actionUpdateCrossLists
+argument_list|()
 argument_list|)
 condition|)
 block|{

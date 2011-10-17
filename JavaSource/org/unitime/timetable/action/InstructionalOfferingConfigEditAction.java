@@ -1289,29 +1289,16 @@ argument_list|(
 literal|"op.edit"
 argument_list|)
 argument_list|)
+comment|//	|| op.equalsIgnoreCase(rsc.getMessage("button.duplicateConfig")) --- probably never used
 operator|||
 name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.modifyConfig"
-argument_list|)
-argument_list|)
-operator|||
-name|op
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|rsc
-operator|.
-name|getMessage
-argument_list|(
-literal|"button.duplicateConfig"
-argument_list|)
+name|actionEditConfiguration
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1390,24 +1377,8 @@ name|createAsNew
 init|=
 literal|false
 decl_stmt|;
-if|if
-condition|(
-name|op
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|rsc
-operator|.
-name|getMessage
-argument_list|(
-literal|"button.duplicateConfig"
-argument_list|)
-argument_list|)
-condition|)
-name|createAsNew
-operator|=
-literal|true
-expr_stmt|;
+comment|//            if(op.equalsIgnoreCase(rsc.getMessage("button.duplicateConfig")))
+comment|//                createAsNew = true;
 if|if
 condition|(
 name|sp
@@ -1500,57 +1471,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// For duplication set configID to 0
-if|if
-condition|(
-name|op
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|rsc
-operator|.
-name|getMessage
-argument_list|(
-literal|"button.duplicateConfig"
-argument_list|)
-argument_list|)
-condition|)
-block|{
-name|frm
-operator|.
-name|setConfigId
-argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|0
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|frm
-operator|.
-name|setName
-argument_list|(
-name|InstrOfferingConfig
-operator|.
-name|getGeneratedName
-argument_list|(
-operator|(
-operator|new
-name|InstrOfferingConfigDAO
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|configId
-argument_list|)
-operator|)
-operator|.
-name|getInstructionalOffering
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
+comment|//            if(op.equalsIgnoreCase(rsc.getMessage("button.duplicateConfig"))) {
+comment|//                frm.setConfigId(new Long(0));
+comment|//                frm.setName(InstrOfferingConfig.getGeneratedName(
+comment|//                        ( new InstrOfferingConfigDAO().get(configId)).getInstructionalOffering() ));
+comment|//            }
 block|}
 comment|// Add a new configuration
 if|if
@@ -1559,12 +1484,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.addConfig"
-argument_list|)
+name|actionAddConfiguration
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1632,7 +1555,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Course Offering Id need for operation. "
+name|MSG
+operator|.
+name|exceptionCourseOfferingIdNeeded
+argument_list|()
 argument_list|)
 throw|;
 name|loadDetailFromCourseOffering
@@ -1680,12 +1606,10 @@ name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.makeOffered"
-argument_list|)
+name|actionMakeOffered
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1753,7 +1677,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Course Offering Id need for operation. "
+name|MSG
+operator|.
+name|exceptionCourseOfferingIdNeeded
+argument_list|()
 argument_list|)
 throw|;
 comment|// Get first available config

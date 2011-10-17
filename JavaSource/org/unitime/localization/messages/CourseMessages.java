@@ -688,6 +688,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Last Enrollment:"
+argument_list|)
+name|String
+name|propertyLastEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Projected Demand:"
+argument_list|)
+name|String
+name|propertyProjectedDemand
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Offering Limit:"
+argument_list|)
+name|String
+name|propertyOfferingLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
@@ -980,7 +1007,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Schedule of Classes Note"
+literal|"Schedule Print Note"
 argument_list|)
 name|String
 name|columnSchedulePrintNote
@@ -1616,6 +1643,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Reserved"
+argument_list|)
+name|String
+name|columnReserved
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Schedule of Classes Note"
+argument_list|)
+name|String
+name|columnScheduleOfClassesNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Demands From"
+argument_list|)
+name|String
+name|columnDemandsFrom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Total"
 argument_list|)
 name|String
@@ -1704,6 +1758,33 @@ literal|"Limits do not match"
 argument_list|)
 name|String
 name|altCrossListsLimitsDoNotMatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limits do not match"
+argument_list|)
+name|String
+name|altLimitsDoNotMatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling Course"
+argument_list|)
+name|String
+name|altControllingCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Designator Required"
+argument_list|)
+name|String
+name|altDesignatorRequired
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2347,6 +2428,123 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Configuration"
+argument_list|)
+name|String
+name|actionAddConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cross Lists"
+argument_list|)
+name|String
+name|actionCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Make Offered"
+argument_list|)
+name|String
+name|actionMakeOffered
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Make NOT Offered"
+argument_list|)
+name|String
+name|actionMakeNotOffered
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionDeleteIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Back"
+argument_list|)
+name|String
+name|actionBackToIOList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Course Offering"
+argument_list|)
+name|String
+name|actionEditCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Lock"
+argument_list|)
+name|String
+name|actionLockIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unlock"
+argument_list|)
+name|String
+name|actionUnlockIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Back"
+argument_list|)
+name|String
+name|actionBackIODetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Configuration"
+argument_list|)
+name|String
+name|actionEditConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Setup"
+argument_list|)
+name|String
+name|actionClassSetup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Assign Instructors"
+argument_list|)
+name|String
+name|actionAssignInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -2788,6 +2986,87 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"C"
+argument_list|)
+name|String
+name|accessAddConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"L"
+argument_list|)
+name|String
+name|accessCrossLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"F"
+argument_list|)
+name|String
+name|accessMakeOffered
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"F"
+argument_list|)
+name|String
+name|accessMakeNotOffered
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"B"
+argument_list|)
+name|String
+name|accessBackToIOListButton
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"D"
+argument_list|)
+name|String
+name|accessDeleteIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"X"
+argument_list|)
+name|String
+name|accessLockIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"X"
+argument_list|)
+name|String
+name|accessUnlockIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"B"
+argument_list|)
+name|String
+name|accessBackIODetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Search/Display Offerings (Alt+{0})"
 argument_list|)
 name|String
@@ -2932,6 +3211,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Previous Instructional Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titlePreviousIO
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Update and go to previous Instructional Offering (Alt+{0})"
 argument_list|)
 name|String
@@ -3008,6 +3299,18 @@ literal|"Update and go to next Scheduling Subpart (Alt+{0})"
 argument_list|)
 name|String
 name|titleNextSubpartWithUpdate
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Next Instructional Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleNextIO
 parameter_list|(
 name|String
 name|accessKey
@@ -3526,6 +3829,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Limits do not match"
+argument_list|)
+name|String
+name|titleLimitsDoNotMatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Remove course from instructional offering& mark it as not offered."
 argument_list|)
 name|String
@@ -3631,6 +3943,165 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Configuration (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddConfiguration
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add/Delete cross-listed courses and change controlling course Alt+{0})"
+argument_list|)
+name|String
+name|titleCrossLists
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Make this offering 'Offered' (Alt+{0})"
+argument_list|)
+name|String
+name|titleMakeOffered
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Make this offering 'Not Offered' (Alt+{0})"
+argument_list|)
+name|String
+name|titleMakeNotOffered
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete Instructional Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleDeleteIO
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Lock Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleLockIO
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unlock Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleUnlockIO
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Return to %% (Alt+{0})"
+argument_list|)
+name|String
+name|titleBackIODetail
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling Course"
+argument_list|)
+name|String
+name|titleControllingCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Course Offering"
+argument_list|)
+name|String
+name|titleEditCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unlimited Enrollment"
+argument_list|)
+name|String
+name|titleUnlimitedEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Designator Required"
+argument_list|)
+name|String
+name|titleDesignatorRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Set Up Configuration"
+argument_list|)
+name|String
+name|titleEditConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Multiple Class Setup"
+argument_list|)
+name|String
+name|titleClassSetup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Instructor Assignment"
+argument_list|)
+name|String
+name|titleAssignInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course numbers can be specified using wildcard (*). E.g. 2*"
 argument_list|)
 name|String
@@ -3724,6 +4195,7 @@ name|DefaultMessage
 argument_list|(
 literal|"ERRORS"
 argument_list|)
+comment|//preferable to use this than errors for each page
 name|String
 name|errors
 parameter_list|()
@@ -3771,15 +4243,6 @@ literal|"ERRORS"
 argument_list|)
 name|String
 name|errorsConfigurationEdit
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"ERRORS"
-argument_list|)
-name|String
-name|errorsCourseOfferingEdit
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4283,6 +4746,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Spaces reserved for course offerings ({0}) should total to at least the offering limit."
+argument_list|)
+name|String
+name|errorReservedSpacesForOfferingsTotal
+parameter_list|(
+name|String
+name|coursesTotal
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access Denied."
 argument_list|)
 name|String
@@ -4323,6 +4798,33 @@ literal|"Initial setup of Instructional Offering Config has not been completed."
 argument_list|)
 name|String
 name|exceptionInitialIOSetupIncomplete
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Offering data was not correct: "
+argument_list|)
+name|String
+name|exceptionIODataNotCorrect
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Generated method 'validate(...)' not implemented."
+argument_list|)
+name|String
+name|exceptionValidateNotImplemented
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Offering Id need for operation. "
+argument_list|)
+name|String
+name|exceptionCourseOfferingIdNeeded
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4493,6 +4995,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"None Required"
+argument_list|)
+name|String
+name|noConsentRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No preferences found"
+argument_list|)
+name|String
+name|noPreferencesFound
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class Assignment"
 argument_list|)
 name|String
@@ -4628,6 +5148,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Configuration "
+argument_list|)
+name|String
+name|sectionTitleConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructor Displayed"
 argument_list|)
 name|String
@@ -4736,6 +5265,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Do you really want to make this offering offered?"
+argument_list|)
+name|String
+name|confirmMakeOffered
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to make this offering not offered?"
+argument_list|)
+name|String
+name|confirmMakeNotOffered
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This option will delete all associated course offerings. \\nDo you really want to delete this offering?"
+argument_list|)
+name|String
+name|confirmDeleteIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Select an instructor"
 argument_list|)
 name|String
@@ -4794,6 +5350,24 @@ literal|"If checked, only students meeting reservations will be allowed to enrol
 argument_list|)
 name|String
 name|descriptionByReservationOnly
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Only students meeting reservations are allowed to enroll into this offering."
+argument_list|)
+name|String
+name|descriptionByReservationOnly2
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No"
+argument_list|)
+name|String
+name|no
 parameter_list|()
 function_decl|;
 block|}

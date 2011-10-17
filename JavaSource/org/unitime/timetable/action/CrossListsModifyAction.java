@@ -849,12 +849,10 @@ name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.crossLists"
-argument_list|)
+name|actionCrossLists
+argument_list|()
 argument_list|)
 condition|)
 block|{

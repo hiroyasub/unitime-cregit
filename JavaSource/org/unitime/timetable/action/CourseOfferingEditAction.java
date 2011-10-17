@@ -791,12 +791,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.editCourseOffering"
-argument_list|)
+name|actionEditCourseOffering
+argument_list|()
 argument_list|)
 condition|)
 block|{

@@ -1170,12 +1170,10 @@ name|op
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.modifyOffering"
-argument_list|)
+name|actionClassSetup
+argument_list|()
 argument_list|)
 condition|)
 block|{

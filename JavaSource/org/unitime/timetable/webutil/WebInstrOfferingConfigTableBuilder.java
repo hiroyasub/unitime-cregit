@@ -129,6 +129,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -406,6 +434,21 @@ name|WebInstrOfferingConfigTableBuilder
 extends|extends
 name|WebInstructionalOfferingTableBuilder
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|String
 index|[]
@@ -559,7 +602,10 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"Configuration "
+name|MSG
+operator|.
+name|sectionTitleConfiguration
+argument_list|()
 operator|+
 name|configName
 argument_list|)
@@ -653,7 +699,21 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<input type='submit' name='op' value='Edit Configuration' title='Set Up Configuration' class='btn'>"
+literal|"<input type='submit' name='op' value='"
+operator|+
+name|MSG
+operator|.
+name|actionEditConfiguration
+argument_list|()
+operator|+
+literal|"' title='"
+operator|+
+name|MSG
+operator|.
+name|titleEditConfiguration
+argument_list|()
+operator|+
+literal|"' class='btn'>"
 argument_list|)
 expr_stmt|;
 name|btnTable
@@ -729,7 +789,21 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<input type='submit' name='op' value='Class Setup' title='Multiple Class Setup' class='btn'> "
+literal|"<input type='submit' name='op' value='"
+operator|+
+name|MSG
+operator|.
+name|actionClassSetup
+argument_list|()
+operator|+
+literal|"' title='"
+operator|+
+name|MSG
+operator|.
+name|titleClassSetup
+argument_list|()
+operator|+
+literal|"' class='btn'> "
 argument_list|)
 expr_stmt|;
 name|btnTable
@@ -792,7 +866,21 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<input type='submit' name='op' value='Assign Instructors' title='Class Instructor Assignment' class='btn'> "
+literal|"<input type='submit' name='op' value='"
+operator|+
+name|MSG
+operator|.
+name|actionAssignInstructors
+argument_list|()
+operator|+
+literal|"' title='"
+operator|+
+name|MSG
+operator|.
+name|titleAssignInstructors
+argument_list|()
+operator|+
+literal|"' class='btn'> "
 argument_list|)
 expr_stmt|;
 name|btnTable
