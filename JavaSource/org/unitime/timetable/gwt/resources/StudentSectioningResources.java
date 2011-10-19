@@ -294,6 +294,15 @@ name|ImageResource
 name|loading_small
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/note.png"
+argument_list|)
+name|ImageResource
+name|note
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

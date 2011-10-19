@@ -268,6 +268,15 @@ name|String
 name|colCampus
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&nbsp;"
+argument_list|)
+name|String
+name|colNoteIcon
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
@@ -2224,6 +2233,42 @@ argument_list|)
 name|String
 name|buttonSearch
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Overlaps with {0}"
+argument_list|)
+name|String
+name|noteAllowedOverlapFirst
+parameter_list|(
+name|String
+name|classOrCourse
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|", {0}"
+argument_list|)
+name|String
+name|noteAllowedOverlapMiddle
+parameter_list|(
+name|String
+name|classOrCourse
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|" and {0}"
+argument_list|)
+name|String
+name|noteAllowedOverlapLast
+parameter_list|(
+name|String
+name|classOrCourse
+parameter_list|)
 function_decl|;
 block|}
 end_interface

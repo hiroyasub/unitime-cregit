@@ -15402,6 +15402,16 @@ name|hibSession
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|a
+operator|.
+name|addNote
+argument_list|(
+name|clazz
+operator|.
+name|getSchedulePrintNote
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Assignment
 name|ass
 init|=

@@ -2776,6 +2776,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|section
+operator|.
+name|setNote
+argument_list|(
+name|c
+operator|.
+name|getSchedulePrintNote
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|class2section
 operator|.
 name|put
