@@ -1801,7 +1801,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|area
+name|acadClasf
 operator|==
 literal|null
 condition|)
@@ -1822,7 +1822,7 @@ block|}
 block|}
 if|if
 condition|(
-name|area
+name|acadClasf
 operator|==
 literal|null
 condition|)
