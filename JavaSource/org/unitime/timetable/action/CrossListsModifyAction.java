@@ -1230,6 +1230,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|(
 operator|!
 name|co
 operator|.
@@ -1238,6 +1239,19 @@ argument_list|()
 operator|.
 name|isNotOffered
 argument_list|()
+operator|&&
+operator|!
+name|co
+operator|.
+name|getInstructionalOffering
+argument_list|()
+operator|.
+name|getInstrOfferingConfigs
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+operator|)
 operator|||
 name|co
 operator|.
