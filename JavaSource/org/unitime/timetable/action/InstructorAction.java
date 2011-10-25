@@ -561,16 +561,6 @@ if|if
 condition|(
 name|staff
 operator|.
-name|getPositionCode
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|staff
-operator|.
-name|getPositionCode
-argument_list|()
-operator|.
 name|getPositionType
 argument_list|()
 operator|!=
@@ -603,9 +593,6 @@ operator|.
 name|setPosType
 argument_list|(
 name|staff
-operator|.
-name|getPositionCode
-argument_list|()
 operator|.
 name|getPositionType
 argument_list|()

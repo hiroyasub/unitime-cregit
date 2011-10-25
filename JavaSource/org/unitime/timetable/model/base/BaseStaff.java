@@ -37,7 +37,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|PositionCodeType
+name|PositionType
 import|;
 end_import
 
@@ -100,8 +100,8 @@ name|String
 name|iEmail
 decl_stmt|;
 specifier|private
-name|PositionCodeType
-name|iPositionCode
+name|PositionType
+name|iPositionType
 decl_stmt|;
 specifier|public
 specifier|static
@@ -337,25 +337,25 @@ name|email
 expr_stmt|;
 block|}
 specifier|public
-name|PositionCodeType
-name|getPositionCode
+name|PositionType
+name|getPositionType
 parameter_list|()
 block|{
 return|return
-name|iPositionCode
+name|iPositionType
 return|;
 block|}
 specifier|public
 name|void
-name|setPositionCode
+name|setPositionType
 parameter_list|(
-name|PositionCodeType
-name|positionCode
+name|PositionType
+name|positionType
 parameter_list|)
 block|{
-name|iPositionCode
+name|iPositionType
 operator|=
-name|positionCode
+name|positionType
 expr_stmt|;
 block|}
 specifier|public
@@ -500,9 +500,9 @@ operator|+
 name|getMiddleName
 argument_list|()
 operator|+
-literal|"\n	PositionCode: "
+literal|"\n	PositionType: "
 operator|+
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

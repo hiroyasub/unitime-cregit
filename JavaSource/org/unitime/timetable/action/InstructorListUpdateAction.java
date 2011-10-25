@@ -1826,7 +1826,7 @@ if|if
 condition|(
 name|staff
 operator|.
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|!=
 literal|null
@@ -1837,9 +1837,6 @@ operator|.
 name|setPositionType
 argument_list|(
 name|staff
-operator|.
-name|getPositionCode
-argument_list|()
 operator|.
 name|getPositionType
 argument_list|()

@@ -216,13 +216,6 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_ENROLLMENT
-init|=
-literal|"enrollment"
-decl_stmt|;
-specifier|public
-specifier|static
-name|String
 name|PROP_RESERVATION
 init|=
 literal|"reservation"
@@ -827,11 +820,6 @@ operator|+
 literal|"\n	DemandOfferingType: "
 operator|+
 name|getDemandOfferingType
-argument_list|()
-operator|+
-literal|"\n	Enrollment: "
-operator|+
-name|getEnrollment
 argument_list|()
 operator|+
 literal|"\n	ExternalUniqueId: "

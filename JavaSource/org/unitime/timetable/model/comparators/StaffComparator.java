@@ -204,7 +204,7 @@ if|if
 condition|(
 name|s1
 operator|.
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|!=
 literal|null
@@ -212,9 +212,6 @@ condition|)
 name|l1
 operator|=
 name|s1
-operator|.
-name|getPositionCode
-argument_list|()
 operator|.
 name|getPositionType
 argument_list|()
@@ -236,7 +233,7 @@ if|if
 condition|(
 name|s2
 operator|.
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|!=
 literal|null
@@ -244,9 +241,6 @@ condition|)
 name|l2
 operator|=
 name|s2
-operator|.
-name|getPositionCode
-argument_list|()
 operator|.
 name|getPositionType
 argument_list|()

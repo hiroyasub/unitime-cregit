@@ -489,7 +489,7 @@ name|o
 decl_stmt|;
 if|if
 condition|(
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|==
 literal|null
@@ -499,7 +499,7 @@ if|if
 condition|(
 name|i
 operator|.
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|!=
 literal|null
@@ -514,7 +514,7 @@ if|if
 condition|(
 name|i
 operator|.
-name|getPositionCode
+name|getPositionType
 argument_list|()
 operator|==
 literal|null
@@ -526,9 +526,6 @@ return|;
 name|int
 name|cmp
 init|=
-name|getPositionCode
-argument_list|()
-operator|.
 name|getPositionType
 argument_list|()
 operator|.
@@ -538,9 +535,6 @@ operator|.
 name|compareTo
 argument_list|(
 name|i
-operator|.
-name|getPositionCode
-argument_list|()
 operator|.
 name|getPositionType
 argument_list|()

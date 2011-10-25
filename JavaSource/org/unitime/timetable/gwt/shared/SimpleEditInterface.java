@@ -128,16 +128,11 @@ argument_list|(
 literal|"Course Credit Units"
 argument_list|)
 block|,
-name|positionType
+name|position
 argument_list|(
 literal|"Position Types"
 argument_list|)
-block|,
-name|positionCode
-argument_list|(
-literal|"Position Codes"
-argument_list|)
-block|;
+block|, 		;
 specifier|private
 name|String
 name|iPageName

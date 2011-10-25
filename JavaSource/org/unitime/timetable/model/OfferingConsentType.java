@@ -291,34 +291,6 @@ literal|null
 operator|)
 return|;
 block|}
-specifier|public
-name|String
-name|getAbbv
-parameter_list|()
-block|{
-comment|//FIXME: put abbreviation into DB
-if|if
-condition|(
-name|getLabel
-argument_list|()
-operator|==
-literal|null
-condition|)
-return|return
-literal|null
-return|;
-return|return
-name|getLabel
-argument_list|()
-operator|.
-name|replaceAll
-argument_list|(
-literal|"Consent of "
-argument_list|,
-literal|""
-argument_list|)
-return|;
-block|}
 block|}
 end_class
 

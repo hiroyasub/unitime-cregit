@@ -366,13 +366,6 @@ init|=
 literal|"externalUniqueId"
 decl_stmt|;
 specifier|public
-specifier|static
-name|String
-name|PROP_ENROLLMENT
-init|=
-literal|"enrollment"
-decl_stmt|;
-specifier|public
 name|BaseClass_
 parameter_list|()
 block|{
@@ -1204,11 +1197,6 @@ operator|+
 literal|"\n	DisplayInstructor: "
 operator|+
 name|getDisplayInstructor
-argument_list|()
-operator|+
-literal|"\n	Enrollment: "
-operator|+
-name|getEnrollment
 argument_list|()
 operator|+
 literal|"\n	ExpectedCapacity: "

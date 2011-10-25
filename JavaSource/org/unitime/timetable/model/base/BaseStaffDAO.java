@@ -137,7 +137,7 @@ name|List
 argument_list|<
 name|Staff
 argument_list|>
-name|findByPositionCode
+name|findByPositionType
 parameter_list|(
 name|org
 operator|.
@@ -146,8 +146,8 @@ operator|.
 name|Session
 name|hibSession
 parameter_list|,
-name|String
-name|positionCodeId
+name|Long
+name|positionTypeId
 parameter_list|)
 block|{
 return|return
@@ -155,14 +155,14 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from Staff x where x.positionCode.positionCode = :positionCodeId"
+literal|"from Staff x where x.positionType.uniqueId = :positionTypeId"
 argument_list|)
 operator|.
-name|setString
+name|setLong
 argument_list|(
-literal|"positionCodeId"
+literal|"positionTypeId"
 argument_list|,
-name|positionCodeId
+name|positionTypeId
 argument_list|)
 operator|.
 name|list
