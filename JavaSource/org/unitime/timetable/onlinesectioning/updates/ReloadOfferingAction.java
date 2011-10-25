@@ -3419,6 +3419,13 @@ argument_list|)
 expr_stmt|;
 name|server
 operator|.
+name|persistExpectedSpaces
+argument_list|(
+name|offeringId
+argument_list|)
+expr_stmt|;
+name|server
+operator|.
 name|notifyStudentChanged
 argument_list|(
 name|r
