@@ -189,7 +189,8 @@ name|MenuException
 function_decl|;
 specifier|public
 name|String
-name|getHelpPage
+index|[]
+name|getHelpPageAndLocalizedTitle
 parameter_list|(
 name|String
 name|title

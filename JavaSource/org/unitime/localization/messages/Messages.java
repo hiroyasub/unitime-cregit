@@ -133,6 +133,21 @@ expr|default
 block|{}
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|translateMessage
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|defaultMessage
+parameter_list|,
+name|Object
+modifier|...
+name|arguments
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

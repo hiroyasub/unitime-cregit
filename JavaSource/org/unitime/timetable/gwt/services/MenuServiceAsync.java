@@ -193,7 +193,7 @@ name|MenuException
 function_decl|;
 specifier|public
 name|void
-name|getHelpPage
+name|getHelpPageAndLocalizedTitle
 parameter_list|(
 name|String
 name|title
@@ -201,6 +201,7 @@ parameter_list|,
 name|AsyncCallback
 argument_list|<
 name|String
+index|[]
 argument_list|>
 name|callback
 parameter_list|)
