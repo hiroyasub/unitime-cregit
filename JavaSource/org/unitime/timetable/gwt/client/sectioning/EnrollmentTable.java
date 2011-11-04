@@ -2918,7 +2918,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
+specifier|public
 name|void
 name|clear
 parameter_list|(
@@ -2976,7 +2976,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+specifier|public
 name|void
 name|populate
 parameter_list|(
@@ -8290,6 +8290,19 @@ name|setVisible
 argument_list|(
 literal|true
 argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setId
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
+block|{
+name|iOfferingId
+operator|=
+name|id
 expr_stmt|;
 block|}
 specifier|public

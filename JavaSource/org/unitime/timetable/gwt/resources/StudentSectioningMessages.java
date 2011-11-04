@@ -2195,6 +2195,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Insufficient user privileges."
+argument_list|)
+name|String
+name|exceptionInsufficientPrivileges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your timetabling session has expired. Please log in again."
+argument_list|)
+name|String
+name|exceptionHttpSessionExpired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Login is required to use this page."
+argument_list|)
+name|String
+name|exceptionLoginRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter assignments of the selected class by name, day, start time, date, room or instructor."
 operator|+
 literal|"<br><br>You can also use the following tags:"
@@ -2265,6 +2292,267 @@ literal|" and {0}"
 argument_list|)
 name|String
 name|noteAllowedOverlapLast
+parameter_list|(
+name|String
+name|classOrCourse
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Filter:"
+argument_list|)
+name|String
+name|filter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading data..."
+argument_list|)
+name|String
+name|loadingData
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Available"
+argument_list|)
+name|String
+name|colAvailable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Projection"
+argument_list|)
+name|String
+name|colProjection
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrollment"
+argument_list|)
+name|String
+name|colEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listed"
+argument_list|)
+name|String
+name|colWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reservation"
+argument_list|)
+name|String
+name|colReserved
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Consent"
+argument_list|)
+name|String
+name|colConsent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrollments of {0}"
+argument_list|)
+name|String
+name|titleEnrollments
+parameter_list|(
+name|String
+name|courseOrClass
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Total"
+argument_list|)
+name|String
+name|total
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limit not defined."
+argument_list|)
+name|String
+name|availableNoLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unlimited, reservation required"
+argument_list|)
+name|String
+name|availableUnlimitedWithReservation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unlimited, reservation not needed"
+argument_list|)
+name|String
+name|availableUnlimited
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No space available, limit of {0} was spaces reached"
+argument_list|)
+name|String
+name|availableNot
+parameter_list|(
+name|int
+name|limit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Available {0} out of {1} spaces, reservation not needed"
+argument_list|)
+name|String
+name|available
+parameter_list|(
+name|int
+name|available
+parameter_list|,
+name|int
+name|limit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Available {0} out of {1} spaces, reservation required"
+argument_list|)
+name|String
+name|availableWithReservation
+parameter_list|(
+name|int
+name|available
+parameter_list|,
+name|int
+name|limit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Available {0} out of {1} spaces, reservation required for {2} of them"
+argument_list|)
+name|String
+name|availableSomeReservation
+parameter_list|(
+name|int
+name|available
+parameter_list|,
+name|int
+name|limit
+parameter_list|,
+name|int
+name|availableWithReservation
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<sup><font color='#9CB0CE'>r)</font></sup>"
+argument_list|)
+name|String
+name|htmlReservationSign
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"r) Space available only with a reservation."
+argument_list|)
+name|String
+name|sectioningStatusHint
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No courses matching filter {0} found."
+argument_list|)
+name|String
+name|exceptionNoCourses
+parameter_list|(
+name|String
+name|filter
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Filter course, enrollments, and wait-listed course requests by any word<br>from the course name or title."
+operator|+
+literal|"<br><br>You can also use the following tags:"
+operator|+
+literal|"<ul>"
+operator|+
+literal|"<li><i>area:</i> academic area abbreviation"
+operator|+
+literal|"<li><i>classification:</i> academic classification code"
+operator|+
+literal|"<li><i>consent:</i> offering consent"
+operator|+
+literal|"<li><i>course:</i> course offering name"
+operator|+
+literal|"<li><i>department:</i> course controling department code or abbreviation"
+operator|+
+literal|"<li><i>group:</i> student group abbreviation"
+operator|+
+literal|"<li><i>major:</i> academic major code"
+operator|+
+literal|"<li><i>reserved:</i> enrollments with a reservation"
+operator|+
+literal|"<li><i>student:</i> student name or external id"
+operator|+
+literal|"<li><i>subject:</i> subject area abbreviation"
+operator|+
+literal|"<li><i>waitlist:</i> wait-listed course requests"
+operator|+
+literal|"</ul>Use<i>or</i>,<i>and</i>,<i>not</i>, and brackets to build a boolean query."
+operator|+
+literal|"<br><br>Example: subject:AAE and (waitlist:true or consent:waiting)"
+argument_list|)
+name|String
+name|sectioningStatusFilterHint
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading enrollments for {0}..."
+argument_list|)
+name|String
+name|loadingEnrollments
 parameter_list|(
 name|String
 name|classOrCourse

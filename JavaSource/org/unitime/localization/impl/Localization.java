@@ -904,13 +904,13 @@ name|value
 operator|=
 name|value
 operator|.
-name|replaceAll
+name|replace
 argument_list|(
-literal|"\\{"
+literal|"{"
 operator|+
 name|i
 operator|+
-literal|"\\}"
+literal|"}"
 argument_list|,
 operator|(
 name|args

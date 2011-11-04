@@ -627,6 +627,16 @@ name|Long
 name|getAcademicSessionId
 parameter_list|()
 block|{
+if|if
+condition|(
+name|getThreadLocalRequest
+argument_list|()
+operator|==
+literal|null
+condition|)
+return|return
+literal|null
+return|;
 name|User
 name|user
 init|=
@@ -873,7 +883,7 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|options
+name|option
 operator|.
 name|startsWith
 argument_list|(
