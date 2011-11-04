@@ -463,6 +463,10 @@ specifier|private
 name|String
 name|sortBy
 decl_stmt|;
+specifier|private
+name|boolean
+name|iCanAddCourse
+decl_stmt|;
 comment|/** 	 * @return Returns the controlCourseOfferings. 	 */
 specifier|public
 name|Collection
@@ -877,6 +881,10 @@ name|SortBy
 operator|.
 name|NAME
 argument_list|)
+expr_stmt|;
+name|iCanAddCourse
+operator|=
+literal|false
 expr_stmt|;
 block|}
 comment|/** 	 * @return Returns the instructionalOfferings. 	 */
@@ -2235,6 +2243,34 @@ parameter_list|()
 block|{
 empty_stmt|;
 comment|//do nothing
+block|}
+end_function
+
+begin_function
+specifier|public
+name|boolean
+name|getCanAddCourse
+parameter_list|()
+block|{
+return|return
+name|iCanAddCourse
+return|;
+block|}
+end_function
+
+begin_function
+specifier|public
+name|void
+name|setCanAddCourse
+parameter_list|(
+name|boolean
+name|canAddCourse
+parameter_list|)
+block|{
+name|iCanAddCourse
+operator|=
+name|canAddCourse
+expr_stmt|;
 block|}
 end_function
 

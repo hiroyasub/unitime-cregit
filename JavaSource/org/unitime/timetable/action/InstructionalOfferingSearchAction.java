@@ -209,20 +209,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|util
-operator|.
-name|MessageResources
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|hibernate
 operator|.
 name|Hibernate
@@ -3516,14 +3502,6 @@ condition|)
 block|{
 comment|// errors.add("courseNbr", new ActionMessage("errors.exists", courseNbr));
 comment|/* 	        InstructionalOffering io = ((CourseOffering) l2.get(0)).getInstructionalOffering(); 	        request.setAttribute("op", "view"); 	        request.setAttribute("io", io.getUniqueId().toString()); 	        return mapping.findForward("showInstructionalOfferingDetail"); 	    	*/
-name|MessageResources
-name|rsc
-init|=
-name|getResources
-argument_list|(
-name|request
-argument_list|)
-decl_stmt|;
 name|request
 operator|.
 name|setAttribute
@@ -4287,6 +4265,20 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+name|form
+operator|.
+name|setCanAddCourse
+argument_list|(
+name|manager
+operator|.
+name|canAddCourses
+argument_list|(
+name|session
+argument_list|,
+name|user
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
