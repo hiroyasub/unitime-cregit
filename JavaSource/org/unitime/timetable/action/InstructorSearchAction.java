@@ -231,6 +231,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|form
@@ -320,6 +348,21 @@ name|InstructorSearchAction
 extends|extends
 name|Action
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**  	 * Method execute 	 * @param mapping 	 * @param form 	 * @param request 	 * @param response 	 * @return ActionForward 	 */
@@ -366,7 +409,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Access Denied."
+name|MSG
+operator|.
+name|exceptionAccessDenied
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -716,7 +762,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"No instructors for the selected department were found."
+name|MSG
+operator|.
+name|errorNoInstructorsFoundForDepartment
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -857,7 +906,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"You do not have any department to manage. "
+name|MSG
+operator|.
+name|exceptionNoDepartmentToManage
+argument_list|()
 argument_list|)
 throw|;
 block|}

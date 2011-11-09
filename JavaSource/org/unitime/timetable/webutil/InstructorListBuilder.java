@@ -133,6 +133,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -376,6 +404,21 @@ specifier|public
 class|class
 name|InstructorListBuilder
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 name|String
 name|htmlTableForInstructor
@@ -477,27 +520,71 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"External Id"
+name|MSG
+operator|.
+name|columnExternalId
+argument_list|()
 block|,
-literal|"Name"
+name|MSG
+operator|.
+name|columnInstructorName
+argument_list|()
 block|,
-literal|"Position"
+name|MSG
+operator|.
+name|columnInstructorPosition
+argument_list|()
 block|,
-literal|"Designator"
+name|MSG
+operator|.
+name|columnInstructorDesignatorNr
+argument_list|()
 block|,
-literal|"Note"
+name|MSG
+operator|.
+name|columnInstructorNote
+argument_list|()
 block|,
-literal|"Preferences<BR>Time"
+name|MSG
+operator|.
+name|columnPreferences
+argument_list|()
+operator|+
+literal|"<BR>"
+operator|+
+name|MSG
+operator|.
+name|columnTimePref
+argument_list|()
 block|,
-literal|"<BR>Room"
+literal|"<BR>"
+operator|+
+name|MSG
+operator|.
+name|columnRoomPref
+argument_list|()
 block|,
-literal|"<BR>Distribution"
+literal|"<BR>"
+operator|+
+name|MSG
+operator|.
+name|columnDistributionPref
+argument_list|()
 block|,
-literal|"Class<BR>Assignments"
+name|MSG
+operator|.
+name|columnInstructorClassAssignments
+argument_list|()
 block|,
-literal|"Exam<BR>Assignments"
+name|MSG
+operator|.
+name|columnInstructorExamAssignments
+argument_list|()
 block|,
-literal|"Ignore Too Far"
+name|MSG
+operator|.
+name|columnInstructorIgnoreTooFar
+argument_list|()
 block|}
 argument_list|,
 operator|new
@@ -727,7 +814,21 @@ expr_stmt|;
 else|else
 name|puid
 operator|=
-literal|"<center><IMG src='images/Error16.jpg' border='0' alt='Not Available' title='Instructor PuID not supplied'></center>"
+literal|"<center><IMG src='images/Error16.jpg' border='0' alt='"
+operator|+
+name|MSG
+operator|.
+name|altNotAvailableExternalId
+argument_list|()
+operator|+
+literal|"' title='"
+operator|+
+name|MSG
+operator|.
+name|titleInstructorExternalIdNotSupplied
+argument_list|()
+operator|+
+literal|"'></center>"
 expr_stmt|;
 comment|//get instructor name
 name|String
@@ -787,7 +888,10 @@ comment|// position
 name|String
 name|posType
 init|=
-literal|"Not Specified"
+name|MSG
+operator|.
+name|instructorPositionNotSpecified
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -1545,7 +1649,12 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-literal|", check conflicts"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|titleCheckConflicts
+argument_list|()
 else|:
 literal|""
 operator|)
@@ -1566,7 +1675,12 @@ condition|)
 block|{
 name|title
 operator|+=
-literal|" - Do Not Display Instructor."
+literal|" - "
+operator|+
+name|MSG
+operator|.
+name|titleDoNotDisplayInstructor
+argument_list|()
 expr_stmt|;
 block|}
 if|if
@@ -1707,7 +1821,14 @@ literal|"<span title='"
 operator|+
 name|examName
 operator|+
-literal|" Midterm Examination'>"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|titleMidtermExamination
+argument_list|()
+operator|+
+literal|"'>"
 operator|+
 name|examName
 operator|+
@@ -1722,7 +1843,14 @@ literal|"<span style='font-weight:bold;' title='"
 operator|+
 name|examName
 operator|+
-literal|" Final Examination'>"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|titleFinalExamination
+argument_list|()
+operator|+
+literal|"'>"
 operator|+
 name|examName
 operator|+
@@ -1862,7 +1990,14 @@ block|,
 operator|(
 name|itf
 condition|?
-literal|"<IMG border='0' title='Ignore too far distances' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='"
+operator|+
+name|MSG
+operator|.
+name|titleIgnoreTooFarDistances
+argument_list|()
+operator|+
+literal|"' alt='true' align='absmiddle' src='images/tick.gif'>"
 else|:
 literal|"&nbsp;"
 operator|)
@@ -2011,7 +2146,10 @@ name|PdfWebTable
 argument_list|(
 name|cols
 argument_list|,
-literal|"Instructor List"
+name|MSG
+operator|.
+name|sectionTitleInstructorList
+argument_list|()
 argument_list|,
 literal|null
 argument_list|,
@@ -2019,25 +2157,66 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"External Id"
+name|MSG
+operator|.
+name|columnExternalId
+argument_list|()
 block|,
-literal|"Name"
+name|MSG
+operator|.
+name|columnInstructorName
+argument_list|()
 block|,
-literal|"Position"
+name|MSG
+operator|.
+name|columnInstructorPosition
+argument_list|()
 block|,
-literal|"Designator"
+name|MSG
+operator|.
+name|columnInstructorDesignatorNr
+argument_list|()
 block|,
-literal|"Note"
+name|MSG
+operator|.
+name|columnInstructorNote
+argument_list|()
 block|,
-literal|"Preferences\nTime"
+name|MSG
+operator|.
+name|columnPreferences
+argument_list|()
+operator|+
+literal|"\n"
+operator|+
+name|MSG
+operator|.
+name|columnTimePref
+argument_list|()
 block|,
-literal|"\nRoom"
+literal|"\n"
+operator|+
+name|MSG
+operator|.
+name|columnRoomPref
+argument_list|()
 block|,
-literal|"\nDistribution"
+literal|"\n"
+operator|+
+name|MSG
+operator|.
+name|columnDistributionPref
+argument_list|()
 block|,
-literal|"Class\nAssignments"
+name|MSG
+operator|.
+name|columnInstructorClassAssignmentsPDF
+argument_list|()
 block|,
-literal|"Exam\nAssignments"
+name|MSG
+operator|.
+name|columnInstructorExamAssignmentsPDF
+argument_list|()
 block|}
 argument_list|,
 operator|new
@@ -2243,7 +2422,12 @@ expr_stmt|;
 else|else
 name|puid
 operator|=
-literal|"@@ITALIC Not Specified"
+literal|"@@ITALIC "
+operator|+
+name|MSG
+operator|.
+name|instructorExternalIdNotSpecified
+argument_list|()
 expr_stmt|;
 comment|//get instructor name
 name|String
@@ -2303,7 +2487,12 @@ comment|// position
 name|String
 name|posType
 init|=
-literal|"@@ITALIC Not Specified"
+literal|"@@ITALIC "
+operator|+
+name|MSG
+operator|.
+name|instructorPositionNotSpecified
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

@@ -137,6 +137,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -184,6 +212,21 @@ name|InstructorSearchForm
 extends|extends
 name|ActionForm
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|/** 	 *  	 */
 specifier|private
@@ -350,7 +393,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * this function is used to determin whether there should be a dropdown list for departments on the instructor search page. 	 * if deptSize is 1, no dropdown list; otherwise, there should be a list. 	 * @param request 	 * @return 	 */
+comment|/** 	 * this function is used to determine whether there should be a dropdown list for departments on the instructor search page. 	 * if deptSize is 1, no dropdown list; otherwise, there should be a list. 	 * @param request 	 * @return 	 */
 specifier|public
 name|boolean
 name|displayDeptList
@@ -518,9 +561,12 @@ argument_list|,
 operator|new
 name|ActionMessage
 argument_list|(
-literal|"errors.required"
+literal|"errors.generic"
 argument_list|,
-literal|"Department"
+name|MSG
+operator|.
+name|errorRequiredDepartment
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

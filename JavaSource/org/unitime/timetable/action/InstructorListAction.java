@@ -235,6 +235,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|form
@@ -354,6 +382,21 @@ name|InstructorListAction
 extends|extends
 name|Action
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance
 comment|// Variables
 comment|// --------------------------------------------------------- Methods
@@ -401,7 +444,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Access Denied."
+name|MSG
+operator|.
+name|exceptionAccessDenied
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -429,29 +475,7 @@ operator|.
 name|getOp
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|op
-operator|!=
-literal|null
-operator|&&
-name|op
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-literal|"Back to Search"
-argument_list|)
-condition|)
-block|{
-return|return
-name|mapping
-operator|.
-name|findForward
-argument_list|(
-literal|"showInstructorSearch"
-argument_list|)
-return|;
-block|}
+comment|/* Suspected unused code 		if (op != null&& op.equalsIgnoreCase("Back to Search")) { 			return mapping.findForward("showInstructorSearch"); 		} */
 comment|//get deptCode from request - for user with only one department
 name|String
 name|deptId
@@ -807,7 +831,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"No instructors were found. Use the option 'Manage Instructor List' to add instructors to your list."
+name|MSG
+operator|.
+name|errorNoInstructorsFoundInSearch
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -823,7 +850,10 @@ else|else
 block|{
 if|if
 condition|(
-literal|"Export PDF"
+name|MSG
+operator|.
+name|actionExportPdf
+argument_list|()
 operator|.
 name|equals
 argument_list|(
@@ -922,8 +952,10 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-literal|"Instructors ("
-operator|+
+name|MSG
+operator|.
+name|backInstructors
+argument_list|(
 name|d
 operator|.
 name|getDeptCode
@@ -935,8 +967,7 @@ name|d
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|,
 literal|true
 argument_list|,
@@ -1027,8 +1058,10 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-literal|"Instructors ("
-operator|+
+name|MSG
+operator|.
+name|backInstructors
+argument_list|(
 name|d
 operator|.
 name|getDeptCode
@@ -1040,8 +1073,7 @@ name|d
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|,
 literal|true
 argument_list|,
@@ -1060,7 +1092,10 @@ name|request
 argument_list|,
 literal|"instructorList.do"
 argument_list|,
-literal|"Instructors"
+name|MSG
+operator|.
+name|backInstructors2
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -1221,7 +1256,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"You do not have any department to manage. "
+name|MSG
+operator|.
+name|exceptionNoDepartmentToManage
+argument_list|()
 argument_list|)
 throw|;
 block|}

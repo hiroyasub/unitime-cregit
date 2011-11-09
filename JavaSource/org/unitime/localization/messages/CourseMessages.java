@@ -715,6 +715,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Department:"
+argument_list|)
+name|String
+name|propertyDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
@@ -1215,6 +1224,80 @@ literal|"&nbsp;Check<br>Conflicts"
 argument_list|)
 name|String
 name|columnInstructorCheckConflictsBr
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Position"
+argument_list|)
+name|String
+name|columnInstructorPosition
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Designator"
+argument_list|)
+name|String
+name|columnInstructorDesignatorNr
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Note"
+argument_list|)
+name|String
+name|columnInstructorNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class<BR>Assignments"
+argument_list|)
+name|String
+name|columnInstructorClassAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class\nAssignments"
+argument_list|)
+name|String
+name|columnInstructorClassAssignmentsPDF
+parameter_list|()
+function_decl|;
+comment|//has a new line ("\n") for printing out pdf
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Exam<BR>Assignments"
+argument_list|)
+name|String
+name|columnInstructorExamAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Exam\nAssignments"
+argument_list|)
+name|String
+name|columnInstructorExamAssignmentsPDF
+parameter_list|()
+function_decl|;
+comment|//has a new line ("\n") for printing out pdf
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Ignore<BR>Too Far"
+argument_list|)
+name|String
+name|columnInstructorIgnoreTooFar
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1790,6 +1873,25 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Not Available"
+argument_list|)
+name|String
+name|altNotAvailableExternalId
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Yes"
+argument_list|)
+name|String
+name|altYes
+parameter_list|()
+function_decl|;
+comment|//an alt text to a check (as in Ignore Too Far - Checked)
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Configuration {0}"
 argument_list|)
 name|String
@@ -1922,6 +2024,15 @@ name|class
 argument_list|)
 name|String
 name|actionSearchClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Search"
+argument_list|)
+name|String
+name|actionSearchInstructors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2338,6 +2449,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add New Instructor"
+argument_list|)
+name|String
+name|actionAddNewInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Delete"
 argument_list|)
 name|String
@@ -2545,6 +2665,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Manage Instructor List"
+argument_list|)
+name|String
+name|actionManageInstructorList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -2558,6 +2687,15 @@ literal|"S"
 argument_list|)
 name|String
 name|accessSearchClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"S"
+argument_list|)
+name|String
+name|accessSearchInstructors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2914,6 +3052,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"A"
+argument_list|)
+name|String
+name|accessAddNewInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"X"
 argument_list|)
 name|String
@@ -3067,6 +3214,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"M"
+argument_list|)
+name|String
+name|accessManageInstructorList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Search/Display Offerings (Alt+{0})"
 argument_list|)
 name|String
@@ -3083,6 +3239,18 @@ literal|"Search/Display Classes (Alt+{0})"
 argument_list|)
 name|String
 name|titleSearchClasses
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Search/Display Instructors (Alt+{0})"
+argument_list|)
+name|String
+name|titleSearchInstructors
 parameter_list|(
 name|String
 name|accessKey
@@ -3697,6 +3865,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add New Instructor (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddNewInstructor
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Instructor to Class"
 argument_list|)
 name|String
@@ -4097,6 +4277,72 @@ literal|"Class Instructor Assignment"
 argument_list|)
 name|String
 name|titleAssignInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Instructor from Staff / Remove from Dept List (Alt+{0})"
+argument_list|)
+name|String
+name|titleManageInstructorList
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor ExternalId not supplied"
+argument_list|)
+name|String
+name|titleInstructorExternalIdNotSupplied
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do Not Display Instructor."
+argument_list|)
+name|String
+name|titleDoNotDisplayInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"check conflicts"
+argument_list|)
+name|String
+name|titleCheckConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Midterm Examination"
+argument_list|)
+name|String
+name|titleMidtermExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Final Examination"
+argument_list|)
+name|String
+name|titleFinalExamination
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Ignore too far distances"
+argument_list|)
+name|String
+name|titleIgnoreTooFarDistances
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4758,6 +5004,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Department is required."
+argument_list|)
+name|String
+name|errorRequiredDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No instructors for the selected department were found."
+argument_list|)
+name|String
+name|errorNoInstructorsFoundForDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No instructors were found. Use the option 'Manage Instructor List' to add instructors to your list."
+argument_list|)
+name|String
+name|errorNoInstructorsFoundInSearch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access Denied."
 argument_list|)
 name|String
@@ -4825,6 +5098,15 @@ literal|"Course Offering Id need for operation. "
 argument_list|)
 name|String
 name|exceptionCourseOfferingIdNeeded
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You do not have any department to manage. "
+argument_list|)
+name|String
+name|exceptionNoDepartmentToManage
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4974,6 +5256,28 @@ name|String
 name|ioName
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructors ({0})"
+argument_list|)
+name|String
+name|backInstructors
+parameter_list|(
+name|String
+name|deptName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructors"
+argument_list|)
+name|String
+name|backInstructors2
+parameter_list|()
+function_decl|;
+comment|//when there is no department selected in the Instructors screen
 annotation|@
 name|DefaultMessage
 argument_list|(
@@ -5152,6 +5456,15 @@ literal|"Configuration "
 argument_list|)
 name|String
 name|sectionTitleConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor List"
+argument_list|)
+name|String
+name|sectionTitleInstructorList
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5368,6 +5681,24 @@ literal|"No"
 argument_list|)
 name|String
 name|no
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Specified"
+argument_list|)
+name|String
+name|instructorPositionNotSpecified
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Specified"
+argument_list|)
+name|String
+name|instructorExternalIdNotSpecified
 parameter_list|()
 function_decl|;
 block|}
