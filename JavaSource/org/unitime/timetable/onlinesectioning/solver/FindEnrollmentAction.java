@@ -468,6 +468,10 @@ name|iCourseId
 decl_stmt|,
 name|iClassId
 decl_stmt|;
+specifier|private
+name|boolean
+name|iConsentToDoCourse
+decl_stmt|;
 specifier|public
 name|FindEnrollmentAction
 parameter_list|(
@@ -479,6 +483,9 @@ name|courseId
 parameter_list|,
 name|Long
 name|classId
+parameter_list|,
+name|boolean
+name|isConsentToDoCourse
 parameter_list|)
 block|{
 name|iQuery
@@ -497,6 +504,10 @@ name|iClassId
 operator|=
 name|classId
 expr_stmt|;
+name|iConsentToDoCourse
+operator|=
+name|isConsentToDoCourse
+expr_stmt|;
 block|}
 specifier|public
 name|Query
@@ -523,6 +534,15 @@ parameter_list|()
 block|{
 return|return
 name|iClassId
+return|;
+block|}
+specifier|public
+name|boolean
+name|isConsentToDoCourse
+parameter_list|()
+block|{
+return|return
+name|iConsentToDoCourse
 return|;
 block|}
 annotation|@
@@ -715,6 +735,9 @@ argument_list|,
 name|info
 argument_list|,
 name|request
+argument_list|,
+name|isConsentToDoCourse
+argument_list|()
 argument_list|)
 argument_list|)
 condition|)

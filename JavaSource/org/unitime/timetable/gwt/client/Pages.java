@@ -486,7 +486,7 @@ argument_list|)
 block|,
 name|sectioningstatus
 argument_list|(
-literal|"Online Student Scheduling Progress"
+literal|"Online Student Scheduling Dashboard"
 argument_list|,
 operator|new
 name|PageFactory

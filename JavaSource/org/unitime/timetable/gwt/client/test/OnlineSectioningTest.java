@@ -727,7 +727,7 @@ argument_list|)
 expr_stmt|;
 name|iSectioningService
 operator|.
-name|isAdmin
+name|isAdminOrAdvisor
 argument_list|(
 operator|new
 name|AsyncCallback
