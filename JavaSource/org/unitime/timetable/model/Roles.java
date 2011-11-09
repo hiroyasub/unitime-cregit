@@ -178,6 +178,13 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
+name|STUDENT_ADVISOR
+init|=
+literal|"Advisor"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
 name|USER_ROLES_ATTR_NAME
 init|=
 literal|"userRoles"
