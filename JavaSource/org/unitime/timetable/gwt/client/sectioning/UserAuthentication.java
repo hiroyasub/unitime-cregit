@@ -95,6 +95,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|UserAuthenticationProvider
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -473,6 +489,8 @@ class|class
 name|UserAuthentication
 extends|extends
 name|Composite
+implements|implements
+name|UserAuthenticationProvider
 block|{
 specifier|public
 specifier|static
