@@ -867,19 +867,6 @@ name|instructors
 argument_list|)
 expr_stmt|;
 comment|// First access to screen
-name|Boolean
-name|areEqual
-init|=
-name|op
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|MSG
-operator|.
-name|actionAssignInstructors
-argument_list|()
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|op

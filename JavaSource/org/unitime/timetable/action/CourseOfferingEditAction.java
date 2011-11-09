@@ -640,14 +640,6 @@ operator|.
 name|getSession
 argument_list|()
 decl_stmt|;
-name|MessageResources
-name|rsc
-init|=
-name|getResources
-argument_list|(
-name|request
-argument_list|)
-decl_stmt|;
 name|ActionMessages
 name|errors
 init|=
