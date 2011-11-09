@@ -664,6 +664,22 @@ argument_list|(
 literal|"not authenticated"
 argument_list|)
 throw|;
+if|if
+condition|(
+name|user
+operator|.
+name|getRole
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|LookupException
+argument_list|(
+literal|"insufficient rights"
+argument_list|)
+throw|;
 name|Long
 name|sessionId
 init|=
