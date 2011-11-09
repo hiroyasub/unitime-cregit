@@ -496,7 +496,7 @@ parameter_list|)
 block|{
 name|setRowStyle
 argument_list|(
-literal|"border-bottom: 1px solid "
+literal|"border-bottom: 1px dashed "
 operator|+
 name|colorCode
 argument_list|)

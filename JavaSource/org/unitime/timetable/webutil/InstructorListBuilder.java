@@ -653,7 +653,7 @@ name|webTable
 operator|.
 name|enableHR
 argument_list|(
-literal|"#EFEFEF"
+literal|"#9CB0CE"
 argument_list|)
 expr_stmt|;
 comment|// Loop through Instructor class

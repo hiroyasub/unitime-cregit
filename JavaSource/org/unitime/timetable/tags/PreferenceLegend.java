@@ -357,7 +357,7 @@ literal|"border-"
 operator|+
 name|iSeparator
 operator|+
-literal|":black 1px dashed"
+literal|":1px dashed #9CB0CE"
 expr_stmt|;
 if|if
 condition|(
