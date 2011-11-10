@@ -125,13 +125,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|unitime
 operator|.
-name|struts
+name|commons
 operator|.
-name|util
+name|web
 operator|.
-name|MessageResources
+name|Web
 import|;
 end_import
 
@@ -141,11 +141,25 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|commons
+name|localization
 operator|.
-name|web
+name|impl
 operator|.
-name|Web
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
 import|;
 end_import
 
@@ -218,6 +232,21 @@ name|InstructorAddAction
 extends|extends
 name|InstructorAction
 block|{
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**  	 * Method execute 	 * @param mapping 	 * @param form 	 * @param request 	 * @param response 	 * @return ActionForward 	 */
@@ -264,7 +293,10 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Access Denied."
+name|MSG
+operator|.
+name|exceptionAccessDenied
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -296,14 +328,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|MessageResources
-name|rsc
-init|=
-name|getResources
-argument_list|(
-name|request
-argument_list|)
-decl_stmt|;
 name|ActionMessages
 name|errors
 init|=
@@ -319,19 +343,17 @@ operator|.
 name|getOp
 argument_list|()
 decl_stmt|;
-comment|// Cancel - Go back to Instructors Detail Screen
+comment|// Cancel adding an instructor - Go back to Instructors screen
 if|if
 condition|(
 name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.backToInstructorList"
-argument_list|)
+name|actionBackToInstructors
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -415,12 +437,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.saveInstructor"
-argument_list|)
+name|actionSaveInstructor
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -495,7 +515,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"This Instructor Id already exists in your instructor list."
+name|MSG
+operator|.
+name|errorInstructorIdAlreadyExistsInList
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -524,12 +547,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.checkPuId"
-argument_list|)
+name|actionLookupInstructor
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -591,7 +612,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"No matching records found"
+name|MSG
+operator|.
+name|errorNoMatchingRecordsFound
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -620,12 +644,10 @@ name|op
 operator|.
 name|equals
 argument_list|(
-name|rsc
+name|MSG
 operator|.
-name|getMessage
-argument_list|(
-literal|"button.selectInstructor"
-argument_list|)
+name|actionSelectInstructor
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -696,7 +718,10 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"No instructor was selected from the list"
+name|MSG
+operator|.
+name|errorNoInstructorSelectedFromList
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
