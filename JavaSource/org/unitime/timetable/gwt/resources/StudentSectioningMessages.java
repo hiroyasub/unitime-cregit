@@ -2096,7 +2096,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Wrong academic session."
+literal|"Online student scheduling is not available for this academic session."
 argument_list|)
 name|String
 name|exceptionBadSession
@@ -2208,6 +2208,15 @@ literal|"Wrong instructional offering."
 argument_list|)
 name|String
 name|exceptionBadOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong course offering."
+argument_list|)
+name|String
+name|exceptionBadCourse
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2507,19 +2516,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"r) Space available only with a reservation."
+literal|"No results matching filter {0} found."
 argument_list|)
 name|String
-name|sectioningStatusHint
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"No courses matching filter {0} found."
-argument_list|)
-name|String
-name|exceptionNoCourses
+name|exceptionNoMatchingResultsFound
 parameter_list|(
 name|String
 name|filter
@@ -2625,6 +2625,54 @@ literal|"Need<br>Consent"
 argument_list|)
 name|String
 name|colNeedConsent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>E</u>nrollments"
+argument_list|)
+name|String
+name|tabEnrollments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>S</u>tudents"
+argument_list|)
+name|String
+name|tabStudents
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<sup><font color='#9CB0CE'>({0}p)</font></sup>"
+argument_list|)
+name|String
+name|firstWaitListedPrioritySign
+parameter_list|(
+name|int
+name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"r) Space available only with a reservation."
+argument_list|)
+name|String
+name|sectioningStatusReservationHint
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"(p) denotes priority of the first wait-listed course request."
+argument_list|)
+name|String
+name|sectioningStatusPriorityHint
 parameter_list|()
 function_decl|;
 block|}

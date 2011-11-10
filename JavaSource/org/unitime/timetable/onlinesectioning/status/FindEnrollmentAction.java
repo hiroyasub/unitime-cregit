@@ -13,7 +13,7 @@ name|timetable
 operator|.
 name|onlinesectioning
 operator|.
-name|solver
+name|status
 package|;
 end_package
 
@@ -411,24 +411,6 @@ name|OnlineSectioningServer
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|onlinesectioning
-operator|.
-name|solver
-operator|.
-name|FindEnrollmentInfoAction
-operator|.
-name|CourseRequestMatcher
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -726,6 +708,8 @@ operator|.
 name|match
 argument_list|(
 operator|new
+name|StatusPageSuggestionsAction
+operator|.
 name|CourseRequestMatcher
 argument_list|(
 name|helper
