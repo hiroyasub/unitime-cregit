@@ -9522,6 +9522,8 @@ name|header
 operator|.
 name|size
 argument_list|()
+operator|-
+literal|1
 expr_stmt|;
 name|UniTimeTableHeader
 name|hStatus
