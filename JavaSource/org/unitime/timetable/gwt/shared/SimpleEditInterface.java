@@ -132,6 +132,11 @@ name|position
 argument_list|(
 literal|"Position Types"
 argument_list|)
+block|,
+name|sectioning
+argument_list|(
+literal|"Student Sectioning Status Types"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

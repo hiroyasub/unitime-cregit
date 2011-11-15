@@ -510,6 +510,10 @@ name|ClassAssignment
 argument_list|>
 name|iAssignment
 decl_stmt|;
+specifier|private
+name|String
+name|iRequestedBy
+decl_stmt|;
 specifier|public
 name|EnrollStudent
 parameter_list|(
@@ -526,6 +530,9 @@ operator|.
 name|ClassAssignment
 argument_list|>
 name|assignment
+parameter_list|,
+name|String
+name|requestedBy
 parameter_list|)
 block|{
 name|iStudentId
@@ -539,6 +546,10 @@ expr_stmt|;
 name|iAssignment
 operator|=
 name|assignment
+expr_stmt|;
+name|iRequestedBy
+operator|=
+name|requestedBy
 expr_stmt|;
 block|}
 specifier|public
@@ -571,6 +582,15 @@ parameter_list|()
 block|{
 return|return
 name|iAssignment
+return|;
+block|}
+specifier|public
+name|String
+name|getRequestedBy
+parameter_list|()
+block|{
+return|return
+name|iRequestedBy
 return|;
 block|}
 annotation|@
@@ -1361,6 +1381,9 @@ name|getRequest
 argument_list|()
 argument_list|,
 literal|false
+argument_list|,
+name|getRequestedBy
+argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// save requested enrollment
@@ -1725,6 +1748,14 @@ operator|.
 name|setStudent
 argument_list|(
 name|student
+argument_list|)
+expr_stmt|;
+name|enrl
+operator|.
+name|setChangedBy
+argument_list|(
+name|getRequestedBy
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|student

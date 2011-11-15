@@ -1595,6 +1595,16 @@ name|canOnlineSectionStudents
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|update
+argument_list|(
+name|session
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 finally|finally

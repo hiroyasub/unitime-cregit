@@ -184,6 +184,24 @@ name|ImageResource
 name|delete
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/accept.png"
+argument_list|)
+name|ImageResource
+name|on
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/cross.png"
+argument_list|)
+name|ImageResource
+name|off
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

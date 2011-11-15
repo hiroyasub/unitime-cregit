@@ -164,6 +164,10 @@ name|Date
 name|iTimestamp
 decl_stmt|;
 specifier|private
+name|String
+name|iChangedBy
+decl_stmt|;
+specifier|private
 name|Student
 name|iStudent
 decl_stmt|;
@@ -219,6 +223,13 @@ name|String
 name|PROP_TIMESTAMP
 init|=
 literal|"timestamp"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_CHANGED_BY
+init|=
+literal|"changedBy"
 decl_stmt|;
 specifier|public
 name|BaseCourseDemand
@@ -376,6 +387,28 @@ block|{
 name|iTimestamp
 operator|=
 name|timestamp
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getChangedBy
+parameter_list|()
+block|{
+return|return
+name|iChangedBy
+return|;
+block|}
+specifier|public
+name|void
+name|setChangedBy
+parameter_list|(
+name|String
+name|changedBy
+parameter_list|)
+block|{
+name|iChangedBy
+operator|=
+name|changedBy
 expr_stmt|;
 block|}
 specifier|public
@@ -655,6 +688,11 @@ operator|+
 literal|"\n	Alternative: "
 operator|+
 name|getAlternative
+argument_list|()
+operator|+
+literal|"\n	ChangedBy: "
+operator|+
+name|getChangedBy
 argument_list|()
 operator|+
 literal|"\n	FreeTime: "

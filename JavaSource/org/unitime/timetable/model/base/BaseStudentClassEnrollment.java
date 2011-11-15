@@ -140,6 +140,10 @@ name|String
 name|iApprovedBy
 decl_stmt|;
 specifier|private
+name|String
+name|iChangedBy
+decl_stmt|;
+specifier|private
 name|Student
 name|iStudent
 decl_stmt|;
@@ -182,6 +186,13 @@ name|String
 name|PROP_APPROVED_BY
 init|=
 literal|"approvedBy"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_CHANGED_BY
+init|=
+literal|"changedBy"
 decl_stmt|;
 specifier|public
 name|BaseStudentClassEnrollment
@@ -299,6 +310,28 @@ block|{
 name|iApprovedBy
 operator|=
 name|approvedBy
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getChangedBy
+parameter_list|()
+block|{
+return|return
+name|iChangedBy
+return|;
+block|}
+specifier|public
+name|void
+name|setChangedBy
+parameter_list|(
+name|String
+name|changedBy
+parameter_list|)
+block|{
+name|iChangedBy
+operator|=
+name|changedBy
 expr_stmt|;
 block|}
 specifier|public
@@ -509,6 +542,11 @@ operator|+
 literal|"\n	ApprovedDate: "
 operator|+
 name|getApprovedDate
+argument_list|()
+operator|+
+literal|"\n	ChangedBy: "
+operator|+
+name|getChangedBy
 argument_list|()
 operator|+
 literal|"\n	Clazz: "

@@ -112,6 +112,61 @@ block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
 specifier|static
+enum|enum
+name|SystemChange
+block|{
+name|WAITLIST
+argument_list|(
+literal|"System: Wait-List"
+argument_list|)
+block|,
+name|SYSTEM
+argument_list|(
+literal|"System: Course Change"
+argument_list|)
+block|,
+name|IMPORT
+argument_list|(
+literal|"Data Exchange"
+argument_list|)
+block|,
+name|BATCH
+argument_list|(
+literal|"Batch Sectioning"
+argument_list|)
+block|,
+name|TEST
+argument_list|(
+literal|"Test"
+argument_list|)
+block|;
+specifier|private
+name|String
+name|iName
+decl_stmt|;
+name|SystemChange
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+name|iName
+operator|=
+name|name
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getName
+parameter_list|()
+block|{
+return|return
+name|iName
+return|;
+block|}
+block|}
+specifier|public
+specifier|static
 name|List
 name|findAll
 parameter_list|(

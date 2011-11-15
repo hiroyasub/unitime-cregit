@@ -6112,6 +6112,117 @@ name|String
 name|instructorExternalIdNotSpecified
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"New Enrollment Deadline:"
+argument_list|)
+name|String
+name|propertyLastWeekEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Number of weeks during which students are allowed to enroll to this course, defaults to {0} when left blank."
+argument_list|)
+name|String
+name|descriptionLastWeekEnrollment
+parameter_list|(
+name|String
+name|wkEnrollmentDefault
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student are allowed to enroll to this course up to {0}. week of classes."
+argument_list|)
+name|String
+name|textLastWeekEnrollment
+parameter_list|(
+name|String
+name|wkEnrollment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Weeks start on the day of session start date, number of weeks is relative to class start ({0})."
+argument_list|)
+name|String
+name|descriptionEnrollmentDeadlines
+parameter_list|(
+name|String
+name|weekStartDayOfWeek
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Changes Deadline:"
+argument_list|)
+name|String
+name|propertyLastWeekChange
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Number of weeks during which students are allowed to change existing enrollments, defaults to {0} when left blank."
+argument_list|)
+name|String
+name|descriptionLastWeekChange
+parameter_list|(
+name|String
+name|wkChangeDefault
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student are allowed to change existing enrollments up to {0}. week of classes."
+argument_list|)
+name|String
+name|textLastWeekChange
+parameter_list|(
+name|String
+name|wkChange
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Drop Deadline:"
+argument_list|)
+name|String
+name|propertyLastWeekDrop
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Number of weeks during which students are allowed to drop to this course, defaults to {0} when left blank."
+argument_list|)
+name|String
+name|descriptionLastWeekDrop
+parameter_list|(
+name|String
+name|wkDropDefault
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student are allowed to drop to this course up to {0}. week of classes."
+argument_list|)
+name|String
+name|textLastWeekDrop
+parameter_list|(
+name|String
+name|wkDrop
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
