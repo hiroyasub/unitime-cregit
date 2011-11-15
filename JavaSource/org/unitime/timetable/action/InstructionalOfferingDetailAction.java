@@ -1819,21 +1819,6 @@ name|getCourseNbr
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// Get Configuration
-name|TreeSet
-name|ts
-init|=
-operator|new
-name|TreeSet
-argument_list|()
-decl_stmt|;
-name|ts
-operator|.
-name|add
-argument_list|(
-name|io
-argument_list|)
-expr_stmt|;
 comment|// Sort Offerings
 name|ArrayList
 name|offerings
