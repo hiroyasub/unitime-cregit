@@ -857,6 +857,11 @@ operator|.
 name|getRequests
 argument_list|()
 operator|)
+argument_list|,
+name|helper
+operator|.
+name|getUser
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

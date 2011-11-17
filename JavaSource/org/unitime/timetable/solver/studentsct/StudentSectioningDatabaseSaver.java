@@ -742,6 +742,8 @@ name|sessionStatusChanged
 argument_list|(
 name|hibSession
 argument_list|,
+literal|null
+argument_list|,
 name|session
 operator|.
 name|getUniqueId

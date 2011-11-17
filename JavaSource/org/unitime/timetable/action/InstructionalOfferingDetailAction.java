@@ -1422,6 +1422,16 @@ name|io
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|,
+name|Web
+operator|.
+name|getUser
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|response

@@ -6299,6 +6299,8 @@ name|studentChanged
 argument_list|(
 name|hibSession
 argument_list|,
+literal|null
+argument_list|,
 name|s
 operator|.
 name|getSession

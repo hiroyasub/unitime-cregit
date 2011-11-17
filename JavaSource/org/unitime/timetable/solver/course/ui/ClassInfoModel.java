@@ -361,6 +361,18 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|commons
+operator|.
+name|User
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -1919,6 +1931,9 @@ name|assign
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|User
+name|user
 parameter_list|)
 block|{
 if|if
@@ -2449,6 +2464,8 @@ name|offeringChanged
 argument_list|(
 name|hibSession
 argument_list|,
+name|user
+argument_list|,
 name|sessionId
 argument_list|,
 name|unlockedOfferings
@@ -2505,6 +2522,8 @@ operator|.
 name|classAssignmentChanged
 argument_list|(
 name|hibSession
+argument_list|,
+name|user
 argument_list|,
 name|sessionId
 argument_list|,

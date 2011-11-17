@@ -1998,6 +1998,16 @@ name|sessionStatusChanged
 argument_list|(
 name|hibSession
 argument_list|,
+name|Web
+operator|.
+name|getUser
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
+argument_list|,
 name|sessionEditForm
 operator|.
 name|getSessionId

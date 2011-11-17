@@ -1961,6 +1961,8 @@ argument_list|(
 name|getHibSession
 argument_list|()
 argument_list|,
+literal|null
+argument_list|,
 name|session
 operator|.
 name|getUniqueId

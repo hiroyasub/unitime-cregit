@@ -419,6 +419,11 @@ argument_list|<
 name|E
 argument_list|>
 name|action
+parameter_list|,
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|user
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -435,6 +440,11 @@ argument_list|<
 name|E
 argument_list|>
 name|action
+parameter_list|,
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|user
 parameter_list|,
 name|Callback
 argument_list|<
@@ -540,6 +550,11 @@ argument_list|<
 name|Request
 argument_list|>
 name|newRequests
+parameter_list|,
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|user
 parameter_list|)
 function_decl|;
 specifier|public
@@ -554,6 +569,11 @@ name|request
 parameter_list|,
 name|Enrollment
 name|oldEnrollment
+parameter_list|,
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|user
 parameter_list|)
 function_decl|;
 specifier|public

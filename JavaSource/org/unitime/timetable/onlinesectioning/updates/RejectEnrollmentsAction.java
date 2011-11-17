@@ -909,6 +909,11 @@ argument_list|,
 name|cr
 argument_list|,
 name|enrollment
+argument_list|,
+name|helper
+operator|.
+name|getUser
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -937,6 +942,11 @@ argument_list|(
 name|getOfferingId
 argument_list|()
 argument_list|)
+argument_list|,
+name|helper
+operator|.
+name|getUser
+argument_list|()
 argument_list|,
 operator|new
 name|OnlineSectioningServer
