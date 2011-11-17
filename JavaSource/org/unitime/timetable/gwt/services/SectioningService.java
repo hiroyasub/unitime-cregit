@@ -677,6 +677,22 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|List
+argument_list|<
+name|ClassAssignmentInterface
+operator|.
+name|SectioningAction
+argument_list|>
+name|changeLog
+parameter_list|(
+name|String
+name|studentExternalId
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 

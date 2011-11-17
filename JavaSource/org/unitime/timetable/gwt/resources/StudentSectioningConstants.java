@@ -449,6 +449,15 @@ name|requestDateFormat
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MM/dd/yyyy HH:mm:ss"
+argument_list|)
+name|String
+name|timeStampFormat
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultBooleanValue
 argument_list|(
 literal|true

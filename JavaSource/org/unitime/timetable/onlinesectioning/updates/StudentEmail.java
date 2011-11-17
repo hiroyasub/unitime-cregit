@@ -2176,6 +2176,16 @@ argument_list|(
 literal|"email"
 argument_list|,
 name|html
+operator|.
+name|replace
+argument_list|(
+literal|"<img src='cid:timetable.png' border='0' alt='Timetable Image'/>"
+argument_list|,
+name|buffer
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|email
