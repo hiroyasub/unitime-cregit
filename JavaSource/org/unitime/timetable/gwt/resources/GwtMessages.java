@@ -52,6 +52,30 @@ name|String
 name|pageTitle
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Version {0} built on {1}"
+argument_list|)
+name|String
+name|pageVersion
+parameter_list|(
+name|String
+name|version
+parameter_list|,
+name|String
+name|buildDate
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&copy; 2008 - 2011 UniTime LLC,<br>distributed under GNU General Public License."
+argument_list|)
+name|String
+name|pageCopyright
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
