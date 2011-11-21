@@ -686,7 +686,7 @@ argument_list|>
 name|changeLog
 parameter_list|(
 name|String
-name|studentExternalId
+name|query
 parameter_list|)
 throws|throws
 name|SectioningException

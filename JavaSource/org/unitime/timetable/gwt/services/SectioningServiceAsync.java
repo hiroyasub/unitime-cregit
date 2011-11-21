@@ -866,7 +866,7 @@ name|void
 name|changeLog
 parameter_list|(
 name|String
-name|studentExternalId
+name|query
 parameter_list|,
 name|AsyncCallback
 argument_list|<

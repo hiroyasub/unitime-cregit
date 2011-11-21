@@ -2669,6 +2669,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Change<u>L</u>og"
+argument_list|)
+name|String
+name|tabChangeLog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<sup><font color='#9CB0CE'>({0}p)</font></sup>"
 argument_list|)
 name|String

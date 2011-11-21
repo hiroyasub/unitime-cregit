@@ -3823,6 +3823,8 @@ name|iSectioningService
 operator|.
 name|changeLog
 argument_list|(
+literal|"id:"
+operator|+
 name|student
 operator|.
 name|getExternalId
