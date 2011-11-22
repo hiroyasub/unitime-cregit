@@ -584,15 +584,67 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct l, s.uniqueId from OnlineSectioningLog l, Student s "
+literal|"select l, s.uniqueId from OnlineSectioningLog l, Student s "
 operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"area"
+argument_list|,
+literal|"clasf"
+argument_list|,
+literal|"classification"
+argument_list|)
+condition|?
 literal|"left outer join s.academicAreaClassifications a "
+else|:
+literal|""
+operator|)
 operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"major"
+argument_list|)
+condition|?
 literal|"left outer join s.posMajors m "
+else|:
+literal|""
+operator|)
 operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"minor"
+argument_list|)
+condition|?
 literal|"left outer join s.posMinors n "
+else|:
+literal|""
+operator|)
 operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"group"
+argument_list|)
+condition|?
 literal|"left outer join s.groups g "
+else|:
+literal|""
+operator|)
 operator|+
 literal|"where l.session.uniqueId = :sessionId and l.session = s.session and l.student = s.externalUniqueId "
 operator|+
