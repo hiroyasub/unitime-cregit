@@ -3338,7 +3338,7 @@ expr_stmt|;
 name|String
 name|style
 init|=
-literal|"font-weight: bold; padding-top: 5px;"
+literal|"white-space: nowrap; font-weight: bold; padding-top: 5px;"
 decl_stmt|;
 name|out
 operator|.
@@ -3920,7 +3920,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -3958,7 +3958,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -3996,7 +3996,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4017,7 +4017,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4045,7 +4045,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4066,7 +4066,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4092,7 +4092,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4113,7 +4113,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4134,7 +4134,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4174,7 +4174,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4224,7 +4224,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4264,7 +4264,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4569,7 +4569,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4593,7 +4593,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4617,7 +4617,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4638,7 +4638,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4674,7 +4674,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4733,7 +4733,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4784,7 +4784,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4825,7 +4825,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -4866,7 +4866,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5020,7 +5020,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5264,7 +5264,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5464,13 +5464,13 @@ expr_stmt|;
 name|String
 name|style
 init|=
-literal|"color: red; white-space: nowrap; border-top: 1px dashed #9CB0CE;"
+literal|"color: red; border-top: 1px dashed #9CB0CE;"
 decl_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5488,7 +5488,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5506,7 +5506,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5517,7 +5517,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5535,7 +5535,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5554,7 +5554,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5596,7 +5596,7 @@ decl_stmt|;
 name|String
 name|style
 init|=
-literal|"white-space: nowrap; border-top: 1px dashed #9CB0CE;"
+literal|"border-top: 1px dashed #9CB0CE;"
 decl_stmt|;
 name|out
 operator|.
@@ -5609,7 +5609,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5627,7 +5627,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5645,7 +5645,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5656,7 +5656,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5667,7 +5667,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5693,7 +5693,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5714,7 +5714,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5735,7 +5735,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td style= \""
+literal|"<td style= \"white-space: nowrap; "
 operator|+
 name|style
 operator|+
@@ -5777,8 +5777,6 @@ block|{
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -6387,8 +6385,6 @@ block|{
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -6456,8 +6452,6 @@ block|}
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -6557,7 +6551,7 @@ continue|;
 name|String
 name|style
 init|=
-literal|"text-decoration: line-through; white-space: nowrap;"
+literal|"text-decoration: line-through;"
 operator|+
 operator|(
 name|first
@@ -7019,8 +7013,6 @@ block|{
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -7109,7 +7101,7 @@ block|{
 name|String
 name|style
 init|=
-literal|"text-decoration: line-through; white-space: nowrap; white-space: nowrap;"
+literal|"text-decoration: line-through;"
 operator|+
 operator|(
 name|first
@@ -7217,8 +7209,6 @@ continue|;
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -7289,8 +7279,6 @@ block|}
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -7398,7 +7386,7 @@ continue|;
 name|String
 name|style
 init|=
-literal|"text-decoration: line-through; white-space: nowrap;"
+literal|"text-decoration: line-through;"
 operator|+
 operator|(
 name|first
@@ -7472,8 +7460,6 @@ block|{
 name|String
 name|style
 init|=
-literal|"white-space: nowrap;"
-operator|+
 operator|(
 name|first
 condition|?
@@ -7614,7 +7600,7 @@ block|{
 name|String
 name|style
 init|=
-literal|"text-decoration: line-through; white-space: nowrap; white-space: nowrap;"
+literal|"text-decoration: line-through; "
 operator|+
 operator|(
 name|first

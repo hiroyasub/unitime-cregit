@@ -4419,6 +4419,8 @@ name|clazz
 operator|.
 name|getParentSection
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|new
@@ -4430,6 +4432,8 @@ name|clazz
 operator|.
 name|getNote
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|(
@@ -5194,6 +5198,8 @@ name|clazz
 operator|.
 name|getNote
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|(
@@ -5809,6 +5815,8 @@ name|clazz
 operator|.
 name|getParentSection
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|new
@@ -5820,6 +5828,8 @@ name|clazz
 operator|.
 name|getNote
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|(
@@ -6297,6 +6307,8 @@ name|clazz
 operator|.
 name|getParentSection
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|new
@@ -6308,6 +6320,8 @@ name|clazz
 operator|.
 name|getNote
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|,
 operator|(
