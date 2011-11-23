@@ -662,7 +662,7 @@ argument_list|)
 operator|+
 literal|") "
 operator|+
-literal|"and (l.result is not null or l.operation not in ('reload-offering', 'check-offering')) order by l.timeStamp desc"
+literal|"and (l.result is not null or l.operation not in ('reload-offering', 'check-offering')) order by l.timeStamp desc, l.uniqueId desc"
 argument_list|)
 decl_stmt|;
 name|q
