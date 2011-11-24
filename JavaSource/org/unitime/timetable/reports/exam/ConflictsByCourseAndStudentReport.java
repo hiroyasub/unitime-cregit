@@ -469,21 +469,12 @@ else|:
 literal|" "
 operator|+
 operator|(
-operator|(
 name|String
 operator|)
 name|o
 index|[
 literal|3
 index|]
-operator|)
-operator|.
-name|substring
-argument_list|(
-literal|0
-argument_list|,
-literal|1
-argument_list|)
 operator|)
 operator|+
 operator|(
@@ -499,21 +490,12 @@ else|:
 literal|" "
 operator|+
 operator|(
-operator|(
 name|String
 operator|)
 name|o
 index|[
 literal|4
 index|]
-operator|)
-operator|.
-name|substring
-argument_list|(
-literal|0
-argument_list|,
-literal|1
-argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
