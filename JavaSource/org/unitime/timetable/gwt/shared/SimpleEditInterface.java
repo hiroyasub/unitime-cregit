@@ -135,7 +135,7 @@ argument_list|)
 block|,
 name|sectioning
 argument_list|(
-literal|"Student Sectioning Status Types"
+literal|"Student Scheduling Status Types"
 argument_list|)
 block|, 		;
 specifier|private
