@@ -1510,6 +1510,13 @@ argument_list|(
 name|externalId
 argument_list|)
 expr_stmt|;
+name|io
+operator|.
+name|setByReservationOnly
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1756,6 +1763,13 @@ argument_list|(
 name|externalId
 argument_list|)
 expr_stmt|;
+name|io
+operator|.
+name|setByReservationOnly
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Iterator
@@ -1849,6 +1863,13 @@ operator|.
 name|setExternalUniqueId
 argument_list|(
 name|externalId
+argument_list|)
+expr_stmt|;
+name|io
+operator|.
+name|setByReservationOnly
+argument_list|(
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
