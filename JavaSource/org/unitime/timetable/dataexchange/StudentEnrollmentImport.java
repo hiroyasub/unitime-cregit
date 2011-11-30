@@ -249,22 +249,6 @@ name|model
 operator|.
 name|dao
 operator|.
-name|StudentDAO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|dao
-operator|.
 name|_RootDAO
 import|;
 end_import
@@ -561,6 +545,11 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+name|info
+argument_list|(
+literal|"Loading classes..."
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Object
@@ -798,11 +787,6 @@ name|course
 argument_list|)
 expr_stmt|;
 block|}
-name|debug
-argument_list|(
-literal|"classes loaded"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|created
@@ -842,6 +826,11 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+name|info
+argument_list|(
+literal|"Loading students..."
+argument_list|)
+expr_stmt|;
 name|Hashtable
 argument_list|<
 name|String
@@ -864,32 +853,44 @@ control|(
 name|Student
 name|student
 range|:
-name|StudentDAO
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|findBySession
-argument_list|(
+operator|(
+name|List
+argument_list|<
+name|Student
+argument_list|>
+operator|)
 name|getHibSession
 argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select distinct s from Student s "
+operator|+
+literal|"left join fetch s.courseDemands as cd "
+operator|+
+literal|"left join fetch cd.courseRequests as cr "
+operator|+
+literal|"left join fetch s.classEnrollments as e "
+operator|+
+literal|"left join fetch cr.classEnrollments as cre "
+operator|+
+literal|"where s.session.uniqueId=:sessionId and s.externalUniqueId is not null"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
 argument_list|,
 name|session
 operator|.
 name|getUniqueId
 argument_list|()
 argument_list|)
+operator|.
+name|list
+argument_list|()
 control|)
 block|{
-if|if
-condition|(
-name|student
-operator|.
-name|getExternalUniqueId
-argument_list|()
-operator|!=
-literal|null
-condition|)
 name|students
 operator|.
 name|put
@@ -903,6 +904,11 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
+name|info
+argument_list|(
+literal|"Importing enrollments..."
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Iterator
@@ -1946,6 +1952,16 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
+name|info
+argument_list|(
+name|updatedStudents
+operator|.
+name|size
+argument_list|()
+operator|+
+literal|" students changed"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1973,16 +1989,6 @@ argument_list|)
 expr_stmt|;
 name|commitTransaction
 argument_list|()
-expr_stmt|;
-name|debug
-argument_list|(
-name|updatedStudents
-operator|.
-name|size
-argument_list|()
-operator|+
-literal|" students changed"
-argument_list|)
 expr_stmt|;
 block|}
 catch|catch
