@@ -250,6 +250,9 @@ name|filter
 parameter_list|,
 name|Date
 name|firstDate
+parameter_list|,
+name|boolean
+name|avoidOverExpected
 parameter_list|)
 block|{
 name|super
@@ -271,6 +274,8 @@ argument_list|,
 name|filter
 argument_list|,
 name|firstDate
+argument_list|,
+name|avoidOverExpected
 argument_list|)
 expr_stmt|;
 name|iComparator
