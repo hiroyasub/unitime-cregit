@@ -1280,6 +1280,8 @@ literal|"left join fetch s.waitlists as w "
 operator|+
 literal|"left join fetch cr.classEnrollments as cre "
 operator|+
+literal|"left join fetch s.groups as g "
+operator|+
 literal|"where s.session.uniqueId=:sessionId"
 argument_list|)
 operator|.
