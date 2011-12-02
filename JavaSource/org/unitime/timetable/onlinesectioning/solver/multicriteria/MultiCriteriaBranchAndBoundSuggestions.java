@@ -251,8 +251,8 @@ parameter_list|,
 name|Date
 name|firstDate
 parameter_list|,
-name|boolean
-name|avoidOverExpected
+name|int
+name|maxSectionsWithPenalty
 parameter_list|)
 block|{
 name|super
@@ -275,7 +275,7 @@ name|filter
 argument_list|,
 name|firstDate
 argument_list|,
-name|avoidOverExpected
+name|maxSectionsWithPenalty
 argument_list|)
 expr_stmt|;
 name|iComparator
