@@ -1917,7 +1917,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"50"
+literal|"70"
 argument_list|)
 argument_list|,
 operator|new
