@@ -49,6 +49,20 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningServer
+import|;
+end_import
+
+begin_import
+import|import
 name|net
 operator|.
 name|sf
@@ -71,6 +85,8 @@ begin_interface
 specifier|public
 interface|interface
 name|StudentSolverProxy
+extends|extends
+name|OnlineSectioningServer
 block|{
 specifier|public
 name|String

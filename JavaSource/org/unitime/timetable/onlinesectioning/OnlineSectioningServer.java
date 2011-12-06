@@ -446,7 +446,7 @@ operator|.
 name|Entity
 name|user
 parameter_list|,
-name|Callback
+name|ServerCallback
 argument_list|<
 name|E
 argument_list|>
@@ -755,7 +755,7 @@ block|}
 specifier|public
 specifier|static
 interface|interface
-name|Callback
+name|ServerCallback
 parameter_list|<
 name|E
 parameter_list|>
@@ -801,7 +801,7 @@ name|boolean
 name|match
 parameter_list|(
 name|Student
-name|course
+name|student
 parameter_list|)
 function_decl|;
 block|}

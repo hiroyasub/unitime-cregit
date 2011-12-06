@@ -265,6 +265,9 @@ function_decl|;
 name|void
 name|section
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|,
@@ -290,6 +293,9 @@ function_decl|;
 name|void
 name|checkCourses
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|,
@@ -310,6 +316,9 @@ function_decl|;
 name|void
 name|computeSuggestions
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|,
@@ -410,6 +419,9 @@ function_decl|;
 name|void
 name|lastRequest
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|,
@@ -427,6 +439,9 @@ function_decl|;
 name|void
 name|lastResult
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|,
@@ -536,6 +551,9 @@ function_decl|;
 name|void
 name|getEnrollment
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|,
@@ -616,6 +634,9 @@ function_decl|;
 name|void
 name|findEnrollmentInfos
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -641,6 +662,9 @@ function_decl|;
 name|void
 name|findStudentInfos
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -663,6 +687,9 @@ function_decl|;
 name|void
 name|findEnrollments
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -691,6 +718,9 @@ function_decl|;
 name|void
 name|querySuggestions
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -729,6 +759,9 @@ function_decl|;
 name|void
 name|canEnroll
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|,
@@ -746,6 +779,9 @@ function_decl|;
 name|void
 name|savedRequest
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|,
@@ -763,6 +799,9 @@ function_decl|;
 name|void
 name|savedResult
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|,

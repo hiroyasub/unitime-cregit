@@ -202,6 +202,14 @@ name|CheckOfferingAction
 block|{
 specifier|private
 specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+specifier|private
+specifier|static
 name|StudentSectioningMessages
 name|MSG
 init|=
@@ -665,15 +673,7 @@ name|offering
 argument_list|)
 expr_stmt|;
 comment|// Update enrollment counters
-name|updateEnrollmentCounters
-argument_list|(
-name|server
-argument_list|,
-name|helper
-argument_list|,
-name|offering
-argument_list|)
-expr_stmt|;
+comment|// updateEnrollmentCounters(server, helper, offering);
 block|}
 block|}
 finally|finally

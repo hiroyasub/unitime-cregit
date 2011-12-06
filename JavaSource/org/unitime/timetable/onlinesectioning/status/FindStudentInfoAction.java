@@ -375,6 +375,14 @@ argument_list|>
 argument_list|>
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+specifier|private
 name|Query
 name|iQuery
 decl_stmt|;

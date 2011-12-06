@@ -484,7 +484,7 @@ block|}
 block|}
 argument_list|)
 block|,
-name|sectioningstatus
+name|onlinesctdash
 argument_list|(
 literal|"Online Student Scheduling Dashboard"
 argument_list|,
@@ -500,7 +500,33 @@ block|{
 return|return
 operator|new
 name|SectioningStatusPage
+argument_list|(
+literal|true
+argument_list|)
+return|;
+block|}
+block|}
+argument_list|)
+block|,
+name|batchsctdash
+argument_list|(
+literal|"Student Sectioning Dashboard"
+argument_list|,
+operator|new
+name|PageFactory
 argument_list|()
+block|{
+specifier|public
+name|Widget
+name|create
+parameter_list|()
+block|{
+return|return
+operator|new
+name|SectioningStatusPage
+argument_list|(
+literal|false
+argument_list|)
 return|;
 block|}
 block|}

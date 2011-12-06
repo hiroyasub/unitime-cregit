@@ -15,6 +15,16 @@ name|onlinesectioning
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -26,6 +36,8 @@ name|OnlineSectioningAction
 parameter_list|<
 name|T
 parameter_list|>
+extends|extends
+name|Serializable
 block|{
 specifier|public
 name|T

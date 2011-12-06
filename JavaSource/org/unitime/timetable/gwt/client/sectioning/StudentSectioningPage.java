@@ -772,6 +772,8 @@ init|=
 operator|new
 name|StudentSectioningWidget
 argument_list|(
+literal|true
+argument_list|,
 name|sessionSelector
 argument_list|,
 name|userAuthentication

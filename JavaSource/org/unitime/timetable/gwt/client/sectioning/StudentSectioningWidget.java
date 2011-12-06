@@ -1134,9 +1134,16 @@ name|iTrackHistory
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+name|boolean
+name|iOnline
+decl_stmt|;
 specifier|public
 name|StudentSectioningWidget
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|AcademicSessionProvider
 name|sessionSelector
 parameter_list|,
@@ -1152,6 +1159,10 @@ name|boolean
 name|history
 parameter_list|)
 block|{
+name|iOnline
+operator|=
+name|online
+expr_stmt|;
 name|iSessionSelector
 operator|=
 name|sessionSelector
@@ -1176,6 +1187,8 @@ operator|new
 name|CourseRequestsTable
 argument_list|(
 name|iSessionSelector
+argument_list|,
+name|iOnline
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -2265,6 +2278,8 @@ name|iSectioningService
 operator|.
 name|section
 argument_list|(
+name|iOnline
+argument_list|,
 name|iCourseRequests
 operator|.
 name|getRequest
@@ -2395,6 +2410,11 @@ condition|(
 name|result
 condition|)
 block|{
+if|if
+condition|(
+name|iOnline
+condition|)
+block|{
 name|iSectioningService
 operator|.
 name|saveRequest
@@ -2481,6 +2501,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+block|}
 name|LoadingWidget
 operator|.
 name|getInstance
@@ -2498,6 +2519,8 @@ name|iSectioningService
 operator|.
 name|section
 argument_list|(
+name|iOnline
+argument_list|,
 name|iCourseRequests
 operator|.
 name|getRequest
@@ -3857,7 +3880,9 @@ name|iSuggestionsBox
 operator|=
 operator|new
 name|SuggestionsBox
-argument_list|()
+argument_list|(
+name|iOnline
+argument_list|)
 expr_stmt|;
 name|iSuggestionsBox
 operator|.
@@ -7013,6 +7038,8 @@ name|iSectioningService
 operator|.
 name|lastRequest
 argument_list|(
+name|iOnline
+argument_list|,
 name|sessionId
 argument_list|,
 operator|new
@@ -7096,6 +7123,8 @@ name|iSectioningService
 operator|.
 name|lastResult
 argument_list|(
+name|iOnline
+argument_list|,
 name|request
 operator|.
 name|getAcademicSessionId
@@ -7252,6 +7281,8 @@ name|iSectioningService
 operator|.
 name|section
 argument_list|(
+name|iOnline
+argument_list|,
 name|request
 argument_list|,
 name|classes

@@ -2090,6 +2090,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student sectioning solver is not loaded in memory."
+argument_list|)
+name|String
+name|exceptionNoSolver
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Your are not authenticated, please log in first."
 argument_list|)
 name|String

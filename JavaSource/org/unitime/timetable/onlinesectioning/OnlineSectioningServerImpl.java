@@ -1440,7 +1440,7 @@ argument_list|,
 name|user
 argument_list|,
 operator|new
-name|Callback
+name|ServerCallback
 argument_list|<
 name|Boolean
 argument_list|>
@@ -1472,7 +1472,7 @@ argument_list|,
 name|user
 argument_list|,
 operator|new
-name|Callback
+name|ServerCallback
 argument_list|<
 name|Boolean
 argument_list|>
@@ -11812,7 +11812,7 @@ argument_list|,
 name|user
 argument_list|,
 operator|new
-name|Callback
+name|ServerCallback
 argument_list|<
 name|Boolean
 argument_list|>
@@ -12267,7 +12267,7 @@ argument_list|,
 name|user
 argument_list|,
 operator|new
-name|Callback
+name|ServerCallback
 argument_list|<
 name|Boolean
 argument_list|>
@@ -12532,7 +12532,7 @@ name|Entity
 name|user
 parameter_list|,
 specifier|final
-name|Callback
+name|ServerCallback
 argument_list|<
 name|E
 argument_list|>

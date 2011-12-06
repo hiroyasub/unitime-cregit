@@ -155,7 +155,7 @@ name|onlinesectioning
 operator|.
 name|OnlineSectioningServer
 operator|.
-name|Callback
+name|ServerCallback
 import|;
 end_import
 
@@ -995,7 +995,7 @@ name|user
 argument_list|()
 argument_list|,
 operator|new
-name|Callback
+name|ServerCallback
 argument_list|<
 name|Boolean
 argument_list|>

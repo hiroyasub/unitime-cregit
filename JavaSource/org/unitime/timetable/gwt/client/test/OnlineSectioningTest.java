@@ -2621,6 +2621,8 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
+literal|true
+argument_list|,
 name|request
 argument_list|,
 name|assignments
@@ -2786,6 +2788,8 @@ name|iSectioningService
 operator|.
 name|section
 argument_list|(
+literal|true
+argument_list|,
 name|request
 argument_list|,
 name|assignment
@@ -2888,6 +2892,8 @@ name|iSectioningService
 operator|.
 name|checkCourses
 argument_list|(
+literal|true
+argument_list|,
 name|request
 argument_list|,
 operator|new

@@ -263,6 +263,9 @@ name|String
 argument_list|>
 name|checkCourses
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|)
@@ -274,6 +277,9 @@ function_decl|;
 name|ClassAssignmentInterface
 name|section
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|,
@@ -296,6 +302,9 @@ name|ClassAssignmentInterface
 argument_list|>
 name|computeSuggestions
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|,
@@ -363,6 +372,9 @@ function_decl|;
 name|CourseRequestInterface
 name|lastRequest
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|)
@@ -374,6 +386,9 @@ function_decl|;
 name|ClassAssignmentInterface
 name|lastResult
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|)
@@ -447,6 +462,9 @@ function_decl|;
 name|ClassAssignmentInterface
 name|getEnrollment
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|)
@@ -508,6 +526,9 @@ name|EnrollmentInfo
 argument_list|>
 name|findEnrollmentInfos
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -527,6 +548,9 @@ name|StudentInfo
 argument_list|>
 name|findStudentInfos
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|)
@@ -543,6 +567,9 @@ name|Enrollment
 argument_list|>
 name|findEnrollments
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -564,6 +591,9 @@ index|[]
 argument_list|>
 name|querySuggestions
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -586,6 +616,9 @@ function_decl|;
 name|Long
 name|canEnroll
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|)
@@ -597,6 +630,9 @@ function_decl|;
 name|CourseRequestInterface
 name|savedRequest
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|)
@@ -608,6 +644,9 @@ function_decl|;
 name|ClassAssignmentInterface
 name|savedResult
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|studentId
 parameter_list|)
