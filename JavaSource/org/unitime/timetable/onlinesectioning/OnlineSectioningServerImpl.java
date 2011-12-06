@@ -8873,6 +8873,9 @@ name|mustUse
 parameter_list|,
 name|boolean
 name|allowOverlap
+parameter_list|,
+name|boolean
+name|expired
 parameter_list|)
 block|{
 name|super
@@ -8905,6 +8908,11 @@ expr_stmt|;
 name|iAllowOverlap
 operator|=
 name|allowOverlap
+expr_stmt|;
+name|setExpired
+argument_list|(
+name|expired
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@

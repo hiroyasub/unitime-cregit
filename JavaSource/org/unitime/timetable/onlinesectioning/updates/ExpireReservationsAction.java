@@ -578,7 +578,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-comment|// Remove reservation from the model
+comment|// Expire reservations
 for|for
 control|(
 name|Reservation
@@ -635,14 +635,11 @@ operator|+
 literal|"..."
 argument_list|)
 expr_stmt|;
-name|offering
-operator|.
-name|getReservations
-argument_list|()
-operator|.
-name|remove
-argument_list|(
 name|reservation
+operator|.
+name|setExpired
+argument_list|(
+literal|true
 argument_list|)
 expr_stmt|;
 name|offering
