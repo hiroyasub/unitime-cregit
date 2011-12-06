@@ -193,7 +193,7 @@ name|serialVersionUID
 init|=
 literal|7234507709430023477L
 decl_stmt|;
-comment|/** deptCode prpoerty */
+comment|/** deptCode property */
 specifier|private
 name|String
 name|deptCode

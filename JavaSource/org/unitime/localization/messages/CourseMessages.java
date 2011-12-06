@@ -5466,6 +5466,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Null Operation not supported."
+argument_list|)
+name|String
+name|exceptionNullOperationNotSupported
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Name"
 argument_list|)
 name|String
