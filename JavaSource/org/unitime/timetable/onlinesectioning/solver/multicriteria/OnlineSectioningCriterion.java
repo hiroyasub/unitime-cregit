@@ -532,6 +532,56 @@ block|}
 block|}
 block|}
 block|}
+specifier|protected
+name|StudentSectioningModel
+name|getModel
+parameter_list|()
+block|{
+return|return
+name|iModel
+return|;
+block|}
+specifier|protected
+name|Student
+name|getStudent
+parameter_list|()
+block|{
+return|return
+name|iStudent
+return|;
+block|}
+specifier|protected
+name|Set
+argument_list|<
+name|Section
+argument_list|>
+name|getPreferredSections
+parameter_list|(
+name|Request
+name|request
+parameter_list|)
+block|{
+return|return
+name|iPreferredSections
+operator|.
+name|get
+argument_list|(
+name|request
+argument_list|)
+return|;
+block|}
+specifier|protected
+name|List
+argument_list|<
+name|TimeToAvoid
+argument_list|>
+name|getTimesToAvoid
+parameter_list|()
+block|{
+return|return
+name|iTimesToAvoid
+return|;
+block|}
 comment|/**      * Distance conflicts of idx-th assignment of the current      * schedule      */
 specifier|public
 name|Set
@@ -552,7 +602,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -577,7 +628,8 @@ name|Conflict
 argument_list|>
 name|dist
 init|=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -617,7 +669,8 @@ name|dist
 operator|.
 name|addAll
 argument_list|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -660,7 +713,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -721,7 +775,8 @@ name|overlaps
 operator|.
 name|addAll
 argument_list|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -742,7 +797,8 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -758,7 +814,8 @@ name|overlaps
 operator|.
 name|addAll
 argument_list|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -769,7 +826,8 @@ operator|(
 operator|(
 name|FreeTimeRequest
 operator|)
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -823,7 +881,8 @@ name|double
 name|weight
 init|=
 operator|-
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getStudentWeights
 argument_list|()
@@ -894,7 +953,8 @@ argument_list|()
 condition|)
 name|weight
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getStudentWeights
 argument_list|()
@@ -923,7 +983,8 @@ control|)
 block|{
 name|weight
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getStudentWeights
 argument_list|()
@@ -964,7 +1025,8 @@ literal|0
 operator|||
 name|index
 operator|>=
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -974,7 +1036,8 @@ argument_list|()
 condition|?
 literal|null
 else|:
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -1473,13 +1536,8 @@ name|Section
 argument_list|>
 name|preferred
 init|=
-name|iPreferredSections
-operator|.
-name|get
+name|getPreferredSections
 argument_list|(
-operator|(
-name|CourseRequest
-operator|)
 name|best
 index|[
 name|idx
@@ -1577,7 +1635,8 @@ return|;
 comment|// 4. avoid time overlaps
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -1667,7 +1726,8 @@ literal|null
 condition|)
 name|bestTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -1687,7 +1747,8 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -1701,7 +1762,8 @@ name|FreeTimeRequest
 condition|)
 name|bestTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -1712,7 +1774,8 @@ operator|(
 operator|(
 name|FreeTimeRequest
 operator|)
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -1769,7 +1832,8 @@ literal|null
 condition|)
 name|currentTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -1789,7 +1853,8 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -1803,7 +1868,8 @@ name|FreeTimeRequest
 condition|)
 name|currentTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -1814,7 +1880,8 @@ operator|(
 operator|(
 name|FreeTimeRequest
 operator|)
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -1860,7 +1927,8 @@ block|}
 comment|// 5. avoid distance conflicts
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -1950,7 +2018,8 @@ literal|null
 condition|)
 name|bestDistanceConf
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -2005,7 +2074,8 @@ literal|null
 condition|)
 name|currentDistanceConf
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -2928,7 +2998,8 @@ block|{
 name|Request
 name|request
 init|=
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -3135,13 +3206,8 @@ name|Section
 argument_list|>
 name|preferred
 init|=
-name|iPreferredSections
-operator|.
-name|get
+name|getPreferredSections
 argument_list|(
-operator|(
-name|CourseRequest
-operator|)
 name|best
 index|[
 name|idx
@@ -3236,13 +3302,8 @@ name|Section
 argument_list|>
 name|preferred
 init|=
-name|iPreferredSections
-operator|.
-name|get
+name|getPreferredSections
 argument_list|(
-operator|(
-name|CourseRequest
-operator|)
 name|current
 index|[
 name|idx
@@ -3314,7 +3375,8 @@ return|;
 comment|// 4. avoid time overlaps
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -3384,7 +3446,8 @@ literal|null
 condition|)
 name|bestTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -3404,7 +3467,8 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -3418,7 +3482,8 @@ name|FreeTimeRequest
 condition|)
 name|bestTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -3429,7 +3494,8 @@ operator|(
 operator|(
 name|FreeTimeRequest
 operator|)
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -3491,7 +3557,8 @@ literal|null
 condition|)
 name|currentTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -3511,7 +3578,8 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -3525,7 +3593,8 @@ name|FreeTimeRequest
 condition|)
 name|currentTimeOverlaps
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -3536,7 +3605,8 @@ operator|(
 operator|(
 name|FreeTimeRequest
 operator|)
-name|iStudent
+name|getStudent
+argument_list|()
 operator|.
 name|getRequests
 argument_list|()
@@ -3581,7 +3651,8 @@ block|}
 comment|// 5. avoid distance conflicts
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -3651,7 +3722,8 @@ literal|null
 condition|)
 name|bestDistanceConf
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -3711,7 +3783,8 @@ literal|null
 condition|)
 name|currentDistanceConf
 operator|+=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -4527,13 +4600,8 @@ name|Section
 argument_list|>
 name|preferred
 init|=
-name|iPreferredSections
-operator|.
-name|get
+name|getPreferredSections
 argument_list|(
-operator|(
-name|CourseRequest
-operator|)
 name|e1
 operator|.
 name|getRequest
@@ -4630,14 +4698,16 @@ block|}
 comment|// 4. avoid time overlaps
 if|if
 condition|(
-name|iTimesToAvoid
+name|getTimesToAvoid
+argument_list|()
 operator|==
 literal|null
 condition|)
 block|{
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -4648,7 +4718,8 @@ block|{
 name|int
 name|o1
 init|=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -4661,7 +4732,8 @@ decl_stmt|;
 name|int
 name|o2
 init|=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getTimeOverlaps
 argument_list|()
@@ -4749,7 +4821,8 @@ control|(
 name|TimeToAvoid
 name|avoid
 range|:
-name|iTimesToAvoid
+name|getTimesToAvoid
+argument_list|()
 control|)
 block|{
 if|if
@@ -4803,7 +4876,8 @@ control|(
 name|TimeToAvoid
 name|avoid
 range|:
-name|iTimesToAvoid
+name|getTimesToAvoid
+argument_list|()
 control|)
 block|{
 if|if
@@ -4856,7 +4930,8 @@ block|}
 comment|// 5. avoid distance conflicts
 if|if
 condition|(
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -4867,7 +4942,8 @@ block|{
 name|int
 name|c1
 init|=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -4880,7 +4956,8 @@ decl_stmt|;
 name|int
 name|c2
 init|=
-name|iModel
+name|getModel
+argument_list|()
 operator|.
 name|getDistanceConflict
 argument_list|()
@@ -5296,7 +5373,7 @@ return|return
 literal|0
 return|;
 block|}
-specifier|private
+specifier|protected
 specifier|static
 class|class
 name|TimeToAvoid
