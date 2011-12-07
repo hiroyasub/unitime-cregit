@@ -598,7 +598,7 @@ name|request
 operator|.
 name|getParameter
 argument_list|(
-literal|"p"
+literal|"ap"
 argument_list|)
 operator|!=
 literal|null
@@ -620,7 +620,7 @@ name|request
 operator|.
 name|getParameter
 argument_list|(
-literal|"p"
+literal|"ap"
 argument_list|)
 argument_list|)
 argument_list|)
