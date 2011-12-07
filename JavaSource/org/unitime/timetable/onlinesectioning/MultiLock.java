@@ -416,7 +416,7 @@ try|try
 block|{
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Locking all ..."
 argument_list|)
@@ -470,7 +470,7 @@ expr_stmt|;
 block|}
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Locked: all"
 argument_list|)
@@ -504,7 +504,7 @@ try|try
 block|{
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Unlocking all ..."
 argument_list|)
@@ -525,7 +525,7 @@ argument_list|()
 expr_stmt|;
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Unlocked: all"
 argument_list|)
@@ -578,7 +578,7 @@ argument_list|)
 return|;
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Locking "
 operator|+
@@ -650,7 +650,7 @@ argument_list|)
 expr_stmt|;
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Locked: "
 operator|+
@@ -782,7 +782,7 @@ condition|)
 return|return;
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Unlocking "
 operator|+
@@ -825,7 +825,7 @@ argument_list|()
 expr_stmt|;
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Unlocked: "
 operator|+
