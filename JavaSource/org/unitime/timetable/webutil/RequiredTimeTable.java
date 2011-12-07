@@ -869,12 +869,6 @@ parameter_list|,
 name|boolean
 name|timeVertical
 parameter_list|)
-throws|throws
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
 block|{
 return|return
 name|print
@@ -2207,12 +2201,6 @@ parameter_list|,
 name|boolean
 name|showTexts
 parameter_list|)
-throws|throws
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
 block|{
 if|if
 condition|(
@@ -3451,6 +3439,8 @@ name|image
 return|;
 block|}
 comment|/** create a table image -- returns appropriate file (table is not created when the file already exists -- cache) */
+annotation|@
+name|Deprecated
 specifier|public
 name|File
 name|createImage

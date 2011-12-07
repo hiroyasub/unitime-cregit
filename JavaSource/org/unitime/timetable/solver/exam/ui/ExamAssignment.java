@@ -25,16 +25,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|Serializable
 import|;
 end_import
@@ -1853,8 +1843,6 @@ operator|==
 literal|null
 condition|)
 block|{
-try|try
-block|{
 name|PeriodPreferenceModel
 name|px
 init|=
@@ -1922,14 +1910,6 @@ argument_list|,
 literal|" "
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ex
-parameter_list|)
-block|{
-block|}
 block|}
 return|return
 name|iHint
