@@ -780,9 +780,11 @@ argument_list|)
 expr_stmt|;
 name|iCache
 operator|.
-name|add
+name|insertElementAt
 argument_list|(
 name|cache
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
