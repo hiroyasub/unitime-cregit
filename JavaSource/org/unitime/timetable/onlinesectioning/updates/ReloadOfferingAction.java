@@ -966,6 +966,29 @@ argument_list|>
 name|newStudentIds
 parameter_list|)
 block|{
+comment|// Persist expected spaces if needed
+if|if
+condition|(
+name|server
+operator|.
+name|needPersistExpectedSpaces
+argument_list|(
+name|offeringId
+argument_list|)
+condition|)
+name|PersistExpectedSpacesAction
+operator|.
+name|persistExpectedSpaces
+argument_list|(
+name|offeringId
+argument_list|,
+literal|false
+argument_list|,
+name|server
+argument_list|,
+name|helper
+argument_list|)
+expr_stmt|;
 comment|// Load course request options
 name|Hashtable
 argument_list|<
