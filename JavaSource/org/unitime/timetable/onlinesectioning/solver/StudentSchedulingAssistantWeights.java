@@ -583,6 +583,16 @@ if|if
 condition|(
 name|section
 operator|.
+name|getLimit
+argument_list|()
+operator|==
+literal|0
+condition|)
+continue|continue;
+if|if
+condition|(
+name|section
+operator|.
 name|getTime
 argument_list|()
 operator|!=
