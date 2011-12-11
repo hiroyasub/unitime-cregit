@@ -432,6 +432,17 @@ name|properties
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|clearBestCache
+parameter_list|()
+block|{
+name|iCache
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
 specifier|private
 name|double
 index|[]
