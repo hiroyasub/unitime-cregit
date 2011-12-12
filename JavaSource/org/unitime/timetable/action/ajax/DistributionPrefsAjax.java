@@ -1143,6 +1143,13 @@ argument_list|)
 operator|.
 name|replaceAll
 argument_list|(
+literal|"\""
+argument_list|,
+literal|"&quot;"
+argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
 literal|"'"
 argument_list|,
 literal|"&quot;"
