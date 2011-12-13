@@ -1722,7 +1722,13 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"@@ITALICNo subject area is selected.@@END_ITALIC"
+literal|"@@ITALIC No subject area is selected."
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
 block|}
 argument_list|,
 literal|null
@@ -1748,7 +1754,13 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"@@ITALICNeither a solver is started nor solution is selected.@@END_ITALIC"
+literal|"@@ITALIC Neither a solver is started nor solution is selected."
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
 block|}
 argument_list|,
 literal|null
@@ -1777,7 +1789,13 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"@@ITALICAll variables are assigned.@@END_ITALIC"
+literal|"@@ITALIC All variables are assigned."
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
 block|}
 argument_list|,
 literal|null
