@@ -1357,7 +1357,7 @@ literal|5
 argument_list|,
 literal|null
 argument_list|,
-literal|"deptStatusTypeEdit.do?ord=%%"
+literal|"roomTypeEdit.do?ord=%%"
 argument_list|,
 operator|new
 name|String
