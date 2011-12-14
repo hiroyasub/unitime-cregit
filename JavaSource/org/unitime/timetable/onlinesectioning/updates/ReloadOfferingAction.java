@@ -2702,6 +2702,23 @@ decl_stmt|;
 if|if
 condition|(
 name|e
+operator|==
+literal|null
+operator|&&
+name|r
+operator|.
+name|getLastEnrollment
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+comment|// remained unassigned
+continue|continue;
+block|}
+if|if
+condition|(
+name|e
 operator|!=
 literal|null
 condition|)
