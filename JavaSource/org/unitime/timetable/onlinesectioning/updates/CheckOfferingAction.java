@@ -2012,6 +2012,11 @@ name|section
 operator|.
 name|getId
 argument_list|()
+argument_list|,
+name|helper
+operator|.
+name|getHibSession
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

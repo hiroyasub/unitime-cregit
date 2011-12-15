@@ -852,10 +852,15 @@ block|}
 comment|/** 	 * Close all sessions for the current thread 	 */
 specifier|public
 specifier|static
-name|void
+name|boolean
 name|closeCurrentThreadSessions
 parameter_list|()
 block|{
+name|boolean
+name|ret
+init|=
+literal|false
+decl_stmt|;
 if|if
 condition|(
 name|sSessions
@@ -887,6 +892,10 @@ name|session
 operator|.
 name|close
 argument_list|()
+expr_stmt|;
+name|ret
+operator|=
+literal|true
 expr_stmt|;
 block|}
 block|}
@@ -946,11 +955,17 @@ operator|.
 name|isOpen
 argument_list|()
 condition|)
+block|{
 name|session
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+name|ret
+operator|=
+literal|true
+expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
@@ -980,6 +995,9 @@ name|thrownException
 throw|;
 block|}
 block|}
+return|return
+name|ret
+return|;
 block|}
 comment|/** 	 * Begin the transaction related to the session 	 */
 specifier|public

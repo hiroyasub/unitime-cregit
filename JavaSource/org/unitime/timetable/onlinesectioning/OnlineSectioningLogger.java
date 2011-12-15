@@ -1008,6 +1008,8 @@ operator|.
 name|get
 argument_list|(
 name|sessionId
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 name|sessions
