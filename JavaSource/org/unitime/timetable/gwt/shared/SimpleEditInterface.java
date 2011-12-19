@@ -85,72 +85,97 @@ name|IsSerializable
 block|{
 name|area
 argument_list|(
-literal|"Academic Areas"
+literal|"Academic Area"
 argument_list|)
 block|,
 name|classification
 argument_list|(
-literal|"Academic Classifications"
+literal|"Academic Classification"
 argument_list|)
 block|,
 name|major
 argument_list|(
-literal|"Majors"
+literal|"Major"
 argument_list|)
 block|,
 name|minor
 argument_list|(
-literal|"Minors"
+literal|"Minor"
 argument_list|)
 block|,
 name|group
 argument_list|(
-literal|"Student Groups"
+literal|"Student Group"
 argument_list|)
 block|,
 name|consent
 argument_list|(
-literal|"Offering Consent Types"
+literal|"Offering Consent Type"
 argument_list|)
 block|,
 name|creditFormat
 argument_list|(
-literal|"Course Credit Formats"
+literal|"Course Credit Format"
 argument_list|)
 block|,
 name|creditType
 argument_list|(
-literal|"Course Credit Types"
+literal|"Course Credit Type"
 argument_list|)
 block|,
 name|creditUnit
 argument_list|(
-literal|"Course Credit Units"
+literal|"Course Credit Unit"
 argument_list|)
 block|,
 name|position
 argument_list|(
-literal|"Position Types"
+literal|"Position Type"
 argument_list|)
 block|,
 name|sectioning
 argument_list|(
-literal|"Student Scheduling Status Types"
+literal|"Student Scheduling Status Type"
 argument_list|)
 block|, 		;
 specifier|private
 name|String
-name|iPageName
+name|iSingular
+decl_stmt|,
+name|iPlural
 decl_stmt|;
 name|Type
 parameter_list|(
 name|String
-name|pageName
+name|singular
+parameter_list|,
+name|String
+name|plural
 parameter_list|)
 block|{
-name|iPageName
+name|iSingular
 operator|=
-name|pageName
+name|singular
+expr_stmt|;
+name|iPlural
+operator|=
+name|plural
+expr_stmt|;
+block|}
+name|Type
+parameter_list|(
+name|String
+name|singular
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|singular
+argument_list|,
+name|singular
+operator|+
+literal|"s"
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -159,7 +184,25 @@ name|getTitle
 parameter_list|()
 block|{
 return|return
-name|iPageName
+name|iPlural
+return|;
+block|}
+specifier|public
+name|String
+name|getTitlePlural
+parameter_list|()
+block|{
+return|return
+name|iPlural
+return|;
+block|}
+specifier|public
+name|String
+name|getTitleSingular
+parameter_list|()
+block|{
+return|return
+name|iSingular
 return|;
 block|}
 block|}
@@ -1048,6 +1091,29 @@ name|iEditable
 index|[
 name|index
 index|]
+return|;
+block|}
+specifier|public
+name|boolean
+name|isEditable
+parameter_list|()
+block|{
+for|for
+control|(
+name|boolean
+name|editable
+range|:
+name|iEditable
+control|)
+if|if
+condition|(
+name|editable
+condition|)
+return|return
+literal|true
+return|;
+return|return
+literal|false
 return|;
 block|}
 specifier|public
