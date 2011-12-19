@@ -202,6 +202,15 @@ name|ImageResource
 name|off
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/application_edit.png"
+argument_list|)
+name|ImageResource
+name|edit
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
