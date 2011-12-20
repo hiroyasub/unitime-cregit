@@ -875,6 +875,11 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|int
+name|row
+init|=
+literal|0
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -1126,6 +1131,14 @@ operator|.
 name|attributeValue
 argument_list|(
 literal|"priority"
+argument_list|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|row
+operator|++
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
