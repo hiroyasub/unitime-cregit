@@ -8782,7 +8782,7 @@ name|limit
 operator|==
 literal|0
 condition|?
-literal|"No"
+literal|"No space"
 else|:
 name|limit
 operator|==
@@ -8805,11 +8805,37 @@ else|else
 block|{
 if|if
 condition|(
+operator|!
+name|iOffering
+operator|.
+name|isOffered
+argument_list|()
+condition|)
+name|iLimit
+operator|.
+name|setHint
+argument_list|(
+name|iOffering
+operator|.
+name|getAbbv
+argument_list|()
+operator|+
+literal|" is not offered"
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
 name|totalUnlimited
 operator|||
 name|total
 operator|>=
 name|entered
+operator|||
+name|entered
+operator|==
+name|Integer
+operator|.
+name|MAX_VALUE
 condition|)
 name|iLimit
 operator|.
@@ -8826,7 +8852,7 @@ name|total
 operator|==
 literal|0
 condition|?
-literal|"No"
+literal|"No space"
 else|:
 name|total
 operator|==
