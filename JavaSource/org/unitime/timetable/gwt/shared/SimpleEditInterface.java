@@ -794,6 +794,13 @@ name|Integer
 argument_list|(
 name|s1
 operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|0
+else|:
+name|s1
+operator|.
 name|split
 argument_list|(
 literal|"\\n"
@@ -804,6 +811,13 @@ argument_list|)
 operator|.
 name|compareTo
 argument_list|(
+name|s2
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|0
+else|:
 name|s2
 operator|.
 name|split
