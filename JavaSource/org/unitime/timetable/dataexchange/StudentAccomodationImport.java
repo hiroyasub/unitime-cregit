@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.2 (University Timetabling Application)  * Copyright (C) 2008 - 2010, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+comment|/*  * UniTime 3.3 (University Timetabling Application)  * Copyright (C) 2011, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_package
@@ -75,7 +75,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AcademicArea
+name|Session
 import|;
 end_import
 
@@ -89,18 +89,14 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Session
+name|StudentAccomodation
 import|;
 end_import
-
-begin_comment
-comment|/**  *   * @author Timothy Almon  *  */
-end_comment
 
 begin_class
 specifier|public
 class|class
-name|AcademicAreaImport
+name|StudentAccomodationImport
 extends|extends
 name|BaseImport
 block|{
@@ -124,7 +120,7 @@ argument_list|()
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-literal|"academicAreas"
+literal|"studentAccomodations"
 argument_list|)
 condition|)
 block|{
@@ -132,7 +128,7 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Given XML file is not acedemic areas load file."
+literal|"Given XML file is not student accomodations load file."
 argument_list|)
 throw|;
 block|}
@@ -191,6 +187,7 @@ name|session
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|Exception
@@ -198,20 +195,21 @@ argument_list|(
 literal|"No session found for the given campus, year, and term."
 argument_list|)
 throw|;
+block|}
 name|Map
 argument_list|<
 name|String
 argument_list|,
-name|AcademicArea
+name|StudentAccomodation
 argument_list|>
-name|id2area
+name|id2accomodation
 init|=
 operator|new
 name|Hashtable
 argument_list|<
 name|String
 argument_list|,
-name|AcademicArea
+name|StudentAccomodation
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -219,28 +217,28 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|AcademicArea
+name|StudentAccomodation
 argument_list|>
-name|abbv2area
+name|code2accomodation
 init|=
 operator|new
 name|Hashtable
 argument_list|<
 name|String
 argument_list|,
-name|AcademicArea
+name|StudentAccomodation
 argument_list|>
 argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|AcademicArea
-name|area
+name|StudentAccomodation
+name|accomodation
 range|:
 operator|(
 name|List
 argument_list|<
-name|AcademicArea
+name|StudentAccomodation
 argument_list|>
 operator|)
 name|getHibSession
@@ -248,7 +246,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AcademicArea where session.uniqueId=:sessionId"
+literal|"from StudentAccomodation where session.uniqueId=:sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -267,35 +265,35 @@ control|)
 block|{
 if|if
 condition|(
-name|area
+name|accomodation
 operator|.
 name|getExternalUniqueId
 argument_list|()
 operator|!=
 literal|null
 condition|)
-name|id2area
+name|id2accomodation
 operator|.
 name|put
 argument_list|(
-name|area
+name|accomodation
 operator|.
 name|getExternalUniqueId
 argument_list|()
 argument_list|,
-name|area
+name|accomodation
 argument_list|)
 expr_stmt|;
-name|abbv2area
+name|code2accomodation
 operator|.
 name|put
 argument_list|(
-name|area
+name|accomodation
 operator|.
-name|getAcademicAreaAbbreviation
+name|getAbbreviation
 argument_list|()
 argument_list|,
-name|area
+name|accomodation
 argument_list|)
 expr_stmt|;
 block|}
@@ -347,8 +345,18 @@ argument_list|(
 literal|"abbreviation"
 argument_list|)
 decl_stmt|;
-name|AcademicArea
-name|area
+name|String
+name|name
+init|=
+name|element
+operator|.
+name|attributeValue
+argument_list|(
+literal|"name"
+argument_list|)
+decl_stmt|;
+name|StudentAccomodation
+name|accomodation
 init|=
 literal|null
 decl_stmt|;
@@ -358,9 +366,9 @@ name|externalId
 operator|!=
 literal|null
 condition|)
-name|area
+name|accomodation
 operator|=
-name|id2area
+name|id2accomodation
 operator|.
 name|remove
 argument_list|(
@@ -369,13 +377,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|area
+name|accomodation
 operator|==
 literal|null
 condition|)
-name|area
+name|accomodation
 operator|=
-name|abbv2area
+name|code2accomodation
 operator|.
 name|get
 argument_list|(
@@ -384,18 +392,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|area
+name|accomodation
 operator|==
 literal|null
 condition|)
 block|{
-name|area
+name|accomodation
 operator|=
 operator|new
-name|AcademicArea
+name|StudentAccomodation
 argument_list|()
 expr_stmt|;
-name|area
+name|accomodation
 operator|.
 name|setSession
 argument_list|(
@@ -404,7 +412,7 @@ argument_list|)
 expr_stmt|;
 name|info
 argument_list|(
-literal|"Academic area "
+literal|"Accomodation "
 operator|+
 name|abbv
 operator|+
@@ -430,7 +438,7 @@ else|else
 block|{
 name|info
 argument_list|(
-literal|"Academic area "
+literal|"Accomodation "
 operator|+
 name|abbv
 operator|+
@@ -452,42 +460,25 @@ literal|" updated."
 argument_list|)
 expr_stmt|;
 block|}
-name|area
+name|accomodation
 operator|.
 name|setExternalUniqueId
 argument_list|(
 name|externalId
 argument_list|)
 expr_stmt|;
-name|area
+name|accomodation
 operator|.
-name|setAcademicAreaAbbreviation
+name|setAbbreviation
 argument_list|(
 name|abbv
 argument_list|)
 expr_stmt|;
-name|area
+name|accomodation
 operator|.
-name|setLongTitle
+name|setName
 argument_list|(
-name|element
-operator|.
-name|attributeValue
-argument_list|(
-literal|"longTitle"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|area
-operator|.
-name|setShortTitle
-argument_list|(
-name|element
-operator|.
-name|attributeValue
-argument_list|(
-literal|"shortTitle"
-argument_list|)
+name|name
 argument_list|)
 expr_stmt|;
 name|getHibSession
@@ -495,16 +486,16 @@ argument_list|()
 operator|.
 name|saveOrUpdate
 argument_list|(
-name|area
+name|accomodation
 argument_list|)
 expr_stmt|;
 block|}
 for|for
 control|(
-name|AcademicArea
-name|area
+name|StudentAccomodation
+name|accomodation
 range|:
-name|id2area
+name|id2accomodation
 operator|.
 name|values
 argument_list|()
@@ -512,16 +503,16 @@ control|)
 block|{
 name|info
 argument_list|(
-literal|"Academic area "
+literal|"Accomodation "
 operator|+
-name|area
+name|accomodation
 operator|.
-name|getAcademicAreaAbbreviation
+name|getAbbreviation
 argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|area
+name|accomodation
 operator|.
 name|getExternalUniqueId
 argument_list|()
@@ -534,7 +525,7 @@ argument_list|()
 operator|.
 name|delete
 argument_list|(
-name|area
+name|accomodation
 argument_list|)
 expr_stmt|;
 block|}

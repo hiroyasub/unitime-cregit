@@ -329,6 +329,13 @@ argument_list|,
 literal|"Student class enrollments"
 argument_list|)
 block|,
+name|STUDENTS
+argument_list|(
+literal|"students"
+argument_list|,
+literal|"Students"
+argument_list|)
+block|,
 name|SESSION
 argument_list|(
 literal|"session"
