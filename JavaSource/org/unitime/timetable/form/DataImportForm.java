@@ -336,6 +336,13 @@ argument_list|,
 literal|"Students"
 argument_list|)
 block|,
+name|RESERVATIONS
+argument_list|(
+literal|"reservations"
+argument_list|,
+literal|"Reservations"
+argument_list|)
+block|,
 name|SESSION
 argument_list|(
 literal|"session"

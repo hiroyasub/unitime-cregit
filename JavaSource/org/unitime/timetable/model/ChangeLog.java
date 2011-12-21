@@ -543,7 +543,12 @@ name|SIMPLE_EDIT
 argument_list|(
 literal|"Configuration"
 argument_list|)
-block|;
+block|,
+name|DATA_IMPORT_RESERVATIONS
+argument_list|(
+literal|"Data Import: Reservations"
+argument_list|)
+block|,;
 specifier|private
 name|String
 name|iTitle
