@@ -2586,6 +2586,8 @@ literal|"<li><i>subject:</i> subject area abbreviation"
 operator|+
 literal|"<li><i>waitlist:</i> wait-listed course requests"
 operator|+
+literal|"<li><i>status:</i> student scheduling status"
+operator|+
 literal|"</ul>Use<i>or</i>,<i>and</i>,<i>not</i>, and brackets to build a boolean query."
 operator|+
 literal|"<br><br>Example: subject:AAE and (waitlist:true or consent:waiting)"
