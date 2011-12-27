@@ -3729,7 +3729,7 @@ name|UniTimeDialogBox
 argument_list|(
 literal|true
 argument_list|,
-literal|true
+literal|false
 argument_list|)
 decl_stmt|;
 name|dialog
@@ -4172,7 +4172,7 @@ name|UniTimeDialogBox
 argument_list|(
 literal|true
 argument_list|,
-literal|true
+literal|false
 argument_list|)
 expr_stmt|;
 name|iEnrollmentDialog
@@ -6780,7 +6780,7 @@ operator|.
 name|colSubject
 argument_list|()
 operator|+
-literal|"<br>"
+literal|"<br>&nbsp;&nbsp;"
 operator|+
 name|MESSAGES
 operator|.
@@ -8393,7 +8393,7 @@ name|UniTimeDialogBox
 argument_list|(
 literal|true
 argument_list|,
-literal|true
+literal|false
 argument_list|)
 decl_stmt|;
 name|dialog
