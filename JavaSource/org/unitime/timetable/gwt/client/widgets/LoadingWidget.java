@@ -680,7 +680,7 @@ name|show
 argument_list|(
 name|message
 argument_list|,
-literal|30000
+literal|120000
 argument_list|)
 expr_stmt|;
 block|}
