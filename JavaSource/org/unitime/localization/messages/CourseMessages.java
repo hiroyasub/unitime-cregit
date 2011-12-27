@@ -6232,6 +6232,30 @@ name|String
 name|wkDrop
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"showGwtLoading('Locking {0}...'); return true;"
+argument_list|)
+name|String
+name|jsSubmitLockIO
+parameter_list|(
+name|String
+name|instrOfferingName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"showGwtLoading('Unlocking {0}...'); return true;"
+argument_list|)
+name|String
+name|jsSubmitUnlockIO
+parameter_list|(
+name|String
+name|instrOfferingName
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
