@@ -1358,7 +1358,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|" or {0}"
+literal|" and/or {0}"
 argument_list|)
 name|String
 name|conflictWithLast
