@@ -396,6 +396,14 @@ name|getAssignments
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|best
+index|[
+name|idx
+index|]
+operator|.
+name|isCourseRequest
+argument_list|()
 condition|)
 block|{
 for|for
