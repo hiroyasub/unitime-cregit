@@ -2818,7 +2818,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Body:"
+literal|"Message:"
 argument_list|)
 name|String
 name|emailBody
@@ -3218,6 +3218,69 @@ literal|"Arrange Hours"
 argument_list|)
 name|String
 name|emailArrangeHours
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Mass cancel..."
+argument_list|)
+name|String
+name|massCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Status:"
+argument_list|)
+name|String
+name|newStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancel Students"
+argument_list|)
+name|String
+name|buttonMassCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancelling selected students..."
+argument_list|)
+name|String
+name|massCanceling
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Schedule cancelation for %session%"
+argument_list|)
+name|String
+name|defaulSubjectMassCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class schedule for %session%"
+argument_list|)
+name|String
+name|defaulSubject
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Mass cancellation is an irreversible operation that will delete all class enrollments and course requests for the selected student(s). Are you sure to do that?"
+argument_list|)
+name|String
+name|massCancelConfirmation
 parameter_list|()
 function_decl|;
 block|}
