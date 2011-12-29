@@ -16605,15 +16605,10 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|MSG
-operator|.
-name|exceptionEnrollmentDisabledWithMessage
-argument_list|(
 name|status
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
 argument_list|)
 throw|;
 block|}

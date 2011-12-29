@@ -2728,18 +2728,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Enrollment disabled: {0}"
-argument_list|)
-name|String
-name|exceptionEnrollmentDisabledWithMessage
-parameter_list|(
-name|String
-name|message
-parameter_list|)
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Status"
 argument_list|)
 name|String
