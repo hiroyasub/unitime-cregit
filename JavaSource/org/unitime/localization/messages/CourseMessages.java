@@ -6211,7 +6211,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Number of weeks during which students are allowed to drop to this course, defaults to {0} when left blank."
+literal|"Number of weeks during which students are allowed to drop from this course, defaults to {0} when left blank."
 argument_list|)
 name|String
 name|descriptionLastWeekDrop
@@ -6223,7 +6223,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Student are allowed to drop to this course up to {0}. week of classes."
+literal|"Student are allowed to drop from this course up to {0}. week of classes."
 argument_list|)
 name|String
 name|textLastWeekDrop
@@ -6254,6 +6254,33 @@ name|jsSubmitUnlockIO
 parameter_list|(
 name|String
 name|instrOfferingName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} is locked (students are not able to enroll to this course)."
+argument_list|)
+name|String
+name|lockedCourse
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Courses {0} and {1} are locked."
+argument_list|)
+name|String
+name|lockedCourses
+parameter_list|(
+name|String
+name|course1
+parameter_list|,
+name|String
+name|course2
 parameter_list|)
 function_decl|;
 block|}
