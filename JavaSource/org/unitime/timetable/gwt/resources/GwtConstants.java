@@ -52,7 +52,7 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"&copy; 2008 - 2011 UniTime LLC"
+literal|"&copy; 2008 - 2012 UniTime LLC"
 argument_list|)
 name|String
 name|copyright
