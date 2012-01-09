@@ -986,7 +986,13 @@ name|store
 argument_list|(
 name|out
 argument_list|,
-literal|"UniTime 3.2 registration file, please do not delete or modify."
+literal|"UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|" registration file, please do not delete or modify."
 argument_list|)
 expr_stmt|;
 name|out
@@ -1356,7 +1362,13 @@ literal|"<br><span style=\"font-size: x-small;\">Click<a "
 operator|+
 literal|"onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\" "
 operator|+
-literal|"onClick=\"showGwtDialog('UniTime 3.2 Registration', 'https://unitimereg.appspot.com?key="
+literal|"onClick=\"showGwtDialog('UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|" Registration', 'https://unitimereg.appspot.com?key="
 operator|+
 name|sKey
 operator|+
@@ -1366,7 +1378,13 @@ name|backUrl
 operator|+
 literal|"', '750px', '75%');\" "
 operator|+
-literal|"title='UniTime 3.2 Registration'>here</a> to "
+literal|"title='UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|" Registration'>here</a> to "
 operator|+
 operator|(
 name|sRegistered
