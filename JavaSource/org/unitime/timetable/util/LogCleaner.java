@@ -183,6 +183,7 @@ name|setInteger
 argument_list|(
 literal|"days"
 argument_list|,
+operator|-
 name|days
 argument_list|)
 operator|.
@@ -324,6 +325,7 @@ name|setInteger
 argument_list|(
 literal|"days"
 argument_list|,
+operator|-
 name|days
 argument_list|)
 operator|.
@@ -465,6 +467,7 @@ name|setInteger
 argument_list|(
 literal|"days"
 argument_list|,
+operator|-
 name|days
 argument_list|)
 operator|.
