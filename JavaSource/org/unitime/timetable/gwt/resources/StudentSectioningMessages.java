@@ -2572,7 +2572,7 @@ literal|"<li><i>consent:</i> offering consent"
 operator|+
 literal|"<li><i>course:</i> course offering name"
 operator|+
-literal|"<li><i>department:</i> course controling department code or abbreviation"
+literal|"<li><i>department:</i> course controlling department code or abbreviation"
 operator|+
 literal|"<li><i>group:</i> student group abbreviation"
 operator|+
