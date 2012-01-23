@@ -2477,7 +2477,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No space available, limit of {0} was spaces reached"
+literal|"No space available, limit of {0} spaces has been reached"
 argument_list|)
 name|String
 name|availableNot
