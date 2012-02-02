@@ -3859,7 +3859,9 @@ literal|"select distinct x from Exam x inner join x.instructors xi, Departmental
 operator|+
 literal|"i.uniqueId=:instructorId and (xi.uniqueId=i.uniqueId or ("
 operator|+
-literal|"i.externalUniqueId is not null and i.externalUniqueId=xi.externalUniqueId))"
+literal|"i.externalUniqueId is not null and i.externalUniqueId=xi.externalUniqueId "
+operator|+
+literal|"and xi.department.session = i.department.session))"
 argument_list|)
 operator|.
 name|setLong
