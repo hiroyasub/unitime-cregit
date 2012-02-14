@@ -385,6 +385,11 @@ condition|(
 name|reservation
 operator|==
 literal|null
+operator|||
+name|reservation
+operator|.
+name|isExpired
+argument_list|()
 condition|)
 continue|continue;
 comment|// already expired
