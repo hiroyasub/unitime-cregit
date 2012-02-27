@@ -3551,6 +3551,7 @@ literal|"<br>"
 operator|+
 literal|"Student conflicts: "
 operator|+
+operator|(
 name|lecture
 operator|.
 name|countStudentConflicts
@@ -3558,7 +3559,51 @@ argument_list|(
 name|placement
 argument_list|)
 operator|+
-literal|"<br>"
+name|lecture
+operator|.
+name|getCommitedConflicts
+argument_list|(
+name|placement
+argument_list|)
+operator|)
+operator|+
+literal|" [committed:"
+operator|+
+operator|(
+name|lecture
+operator|.
+name|countCommittedStudentConflicts
+argument_list|(
+name|placement
+argument_list|)
+operator|+
+name|lecture
+operator|.
+name|getCommitedConflicts
+argument_list|(
+name|placement
+argument_list|)
+operator|)
+operator|+
+literal|", distance:"
+operator|+
+name|lecture
+operator|.
+name|countDistanceStudentConflicts
+argument_list|(
+name|placement
+argument_list|)
+operator|+
+literal|", hard:"
+operator|+
+name|lecture
+operator|.
+name|countHardStudentConflicts
+argument_list|(
+name|placement
+argument_list|)
+operator|+
+literal|"]<br>"
 operator|+
 literal|"Room preference: "
 operator|+

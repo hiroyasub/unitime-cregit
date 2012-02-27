@@ -3979,7 +3979,28 @@ operator|.
 name|getNrStudentConflicts
 argument_list|()
 operator|+
-literal|"<br>"
+literal|" [committed:"
+operator|+
+name|assignmentInfo
+operator|.
+name|getNrCommitedStudentConflicts
+argument_list|()
+operator|+
+literal|", distance:"
+operator|+
+name|assignmentInfo
+operator|.
+name|getNrDistanceStudentConflicts
+argument_list|()
+operator|+
+literal|", hard:"
+operator|+
+name|assignmentInfo
+operator|.
+name|getNrHardStudentConflicts
+argument_list|()
+operator|+
+literal|"]<br>"
 operator|+
 literal|"Room preference: "
 operator|+
