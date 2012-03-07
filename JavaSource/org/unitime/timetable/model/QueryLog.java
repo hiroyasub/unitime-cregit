@@ -174,6 +174,8 @@ block|,
 name|GWT
 block|,
 name|OTHER
+block|,
+name|RPC
 block|}
 specifier|public
 specifier|static
