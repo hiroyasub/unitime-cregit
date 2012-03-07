@@ -76,6 +76,15 @@ name|String
 name|pageCopyright
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Authentication is required to access this page."
+argument_list|)
+name|String
+name|authenticationRequired
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

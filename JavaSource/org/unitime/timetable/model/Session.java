@@ -388,6 +388,7 @@ name|Comparable
 block|{
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|sHolidayTypeNone
 init|=
@@ -395,6 +396,7 @@ literal|0
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|sHolidayTypeHoliday
 init|=
@@ -402,6 +404,7 @@ literal|1
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|sHolidayTypeBreak
 init|=
