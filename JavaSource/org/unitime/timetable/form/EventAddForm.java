@@ -7548,6 +7548,12 @@ name|dm
 operator|.
 name|getDistanceInMeters
 argument_list|(
+operator|-
+name|building
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
 name|building
 operator|.
 name|getCoordinateX
@@ -7556,6 +7562,11 @@ argument_list|,
 name|building
 operator|.
 name|getCoordinateY
+argument_list|()
+argument_list|,
+name|location
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|,
 name|location

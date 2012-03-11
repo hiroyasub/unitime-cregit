@@ -79,10 +79,37 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Authentication is required to access this page."
+literal|"Login is required to access this page."
 argument_list|)
 name|String
 name|authenticationRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your timetabling session has expired. Please log in again."
+argument_list|)
+name|String
+name|authenticationExpired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Insufficient user privileges."
+argument_list|)
+name|String
+name|authenticationInsufficient
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No academic session selected."
+argument_list|)
+name|String
+name|authenticationNoSession
 parameter_list|()
 function_decl|;
 block|}
