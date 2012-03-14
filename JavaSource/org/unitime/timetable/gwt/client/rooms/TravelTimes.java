@@ -1385,7 +1385,7 @@ argument_list|)
 expr_stmt|;
 name|iRoomFilter
 operator|.
-name|getRooms
+name|getElements
 argument_list|(
 operator|new
 name|AsyncCallback
