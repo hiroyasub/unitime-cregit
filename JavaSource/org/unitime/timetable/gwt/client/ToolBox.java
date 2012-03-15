@@ -350,7 +350,7 @@ argument_list|()
 operator|+
 literal|"| University Timetabling Application</title>"
 operator|+
-literal|"</header><body>"
+literal|"</header><body class='unitime-Body'>"
 operator|+
 literal|"<table align=\"center\"><tr><td>"
 operator|+

@@ -1470,7 +1470,7 @@ name|iTimeScroll
 operator|.
 name|setWidth
 argument_list|(
-literal|"67px"
+literal|"77px"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1626,7 +1626,7 @@ name|prev
 operator|==
 literal|null
 condition|?
-literal|"67px"
+literal|"77px"
 else|:
 literal|"137px"
 argument_list|)
