@@ -94,6 +94,12 @@ operator|=
 name|parse
 argument_list|(
 name|query
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+name|query
 operator|.
 name|trim
 argument_list|()

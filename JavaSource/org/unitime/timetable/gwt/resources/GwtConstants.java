@@ -136,6 +136,15 @@ name|int
 name|eventLengthDefault
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultIntValue
+argument_list|(
+literal|1000
+argument_list|)
+name|int
+name|maxMeetings
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
