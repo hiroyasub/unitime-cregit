@@ -139,7 +139,7 @@ function_decl|;
 annotation|@
 name|DefaultIntValue
 argument_list|(
-literal|1000
+literal|10000
 argument_list|)
 name|int
 name|maxMeetings
