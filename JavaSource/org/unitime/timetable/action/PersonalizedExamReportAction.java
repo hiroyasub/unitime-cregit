@@ -405,9 +405,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|events
 operator|.
-name|PersonalizedExamReportForm
+name|QueryEncoderBackend
 import|;
 end_import
 
@@ -419,11 +419,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|gwt
+name|form
 operator|.
-name|server
-operator|.
-name|CalendarServlet
+name|PersonalizedExamReportForm
 import|;
 end_import
 
@@ -1426,7 +1424,7 @@ name|String
 index|[]
 name|params
 init|=
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|decode
 argument_list|(
@@ -4187,7 +4185,7 @@ name|REQUEST_OPEN_URL
 argument_list|,
 literal|"calendar?q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -5689,7 +5687,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o1=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -6174,7 +6172,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o3=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -8062,7 +8060,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o2=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -8654,7 +8652,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o4=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -10823,7 +10821,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o5=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -13307,7 +13305,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o6=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
@@ -13748,7 +13746,7 @@ argument_list|)
 argument_list|,
 literal|"personalSchedule.do?o7=%%&q="
 operator|+
-name|CalendarServlet
+name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(

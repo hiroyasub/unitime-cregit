@@ -77,7 +77,7 @@ name|R
 name|execute
 parameter_list|(
 name|T
-name|command
+name|request
 parameter_list|,
 name|GwtRpcHelper
 name|helper

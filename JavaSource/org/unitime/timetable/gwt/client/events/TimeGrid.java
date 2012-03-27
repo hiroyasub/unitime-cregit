@@ -1990,6 +1990,9 @@ name|isRoomResource
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|showSelections
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|Mode
