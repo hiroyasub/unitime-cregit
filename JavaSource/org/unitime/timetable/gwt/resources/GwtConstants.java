@@ -101,6 +101,15 @@ name|eventDateFormat
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MM/dd hh:mmaa"
+argument_list|)
+name|String
+name|timeStampFormat
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultIntValue
 argument_list|(
 literal|3
