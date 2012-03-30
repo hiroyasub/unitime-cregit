@@ -1004,7 +1004,7 @@ name|iProgress
 operator|.
 name|setPhase
 argument_list|(
-literal|"Loding Model"
+literal|"Loading Model"
 argument_list|,
 literal|3
 argument_list|)
