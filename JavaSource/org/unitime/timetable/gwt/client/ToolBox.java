@@ -119,6 +119,22 @@ name|google
 operator|.
 name|gwt
 operator|.
+name|dom
+operator|.
+name|client
+operator|.
+name|Style
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
 name|i18n
 operator|.
 name|client
@@ -523,6 +539,20 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
+specifier|native
+specifier|static
+name|void
+name|setWhiteSpace
+parameter_list|(
+name|Style
+name|style
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+comment|/*-{ 		style["white-space"] = value; 	}-*/
+function_decl|;
 block|}
 end_class
 
