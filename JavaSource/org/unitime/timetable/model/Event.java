@@ -365,6 +365,15 @@ specifier|public
 specifier|abstract
 name|Collection
 argument_list|<
+name|StudentClassEnrollment
+argument_list|>
+name|getStudentClassEnrollments
+parameter_list|()
+function_decl|;
+specifier|public
+specifier|abstract
+name|Collection
+argument_list|<
 name|Long
 argument_list|>
 name|getStudentIds

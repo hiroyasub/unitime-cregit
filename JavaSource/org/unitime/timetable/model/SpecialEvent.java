@@ -159,6 +159,20 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Collection
+argument_list|<
+name|StudentClassEnrollment
+argument_list|>
+name|getStudentClassEnrollments
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 

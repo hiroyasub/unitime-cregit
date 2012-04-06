@@ -156,6 +156,24 @@ name|getStudentIds
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Collection
+argument_list|<
+name|StudentClassEnrollment
+argument_list|>
+name|getStudentClassEnrollments
+parameter_list|()
+block|{
+return|return
+name|getExam
+argument_list|()
+operator|.
+name|getStudentClassEnrollments
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
