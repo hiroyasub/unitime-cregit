@@ -692,7 +692,16 @@ name|getStyleName
 parameter_list|()
 block|{
 return|return
+operator|(
+name|iOperations
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|"unitime-TableHeader"
+else|:
 literal|"unitime-ClickableTableHeader"
+operator|)
 return|;
 block|}
 specifier|public
