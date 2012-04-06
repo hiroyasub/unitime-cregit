@@ -6639,15 +6639,12 @@ name|iAssignmentPanel
 operator|.
 name|setWidth
 argument_list|(
-name|String
-operator|.
-name|valueOf
-argument_list|(
 name|iAssignmentGrid
 operator|.
 name|getWidth
 argument_list|()
-argument_list|)
+operator|+
+literal|"px"
 argument_list|)
 expr_stmt|;
 name|iAssignments

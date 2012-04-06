@@ -1137,7 +1137,7 @@ name|requested
 operator|.
 name|setWidth
 argument_list|(
-literal|"200"
+literal|"200px"
 argument_list|)
 expr_stmt|;
 specifier|final

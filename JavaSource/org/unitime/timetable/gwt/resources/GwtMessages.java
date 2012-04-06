@@ -112,6 +112,15 @@ name|String
 name|authenticationNoSession
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export in iCalendar format."
+argument_list|)
+name|String
+name|exportICalendar
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
