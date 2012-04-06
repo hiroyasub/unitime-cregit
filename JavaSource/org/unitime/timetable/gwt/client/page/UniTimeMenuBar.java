@@ -843,15 +843,12 @@ name|iSimple
 operator|.
 name|setHeight
 argument_list|(
-name|String
-operator|.
-name|valueOf
-argument_list|(
 name|iMenu
 operator|.
 name|getOffsetHeight
 argument_list|()
-argument_list|)
+operator|+
+literal|"px"
 argument_list|)
 expr_stmt|;
 block|}

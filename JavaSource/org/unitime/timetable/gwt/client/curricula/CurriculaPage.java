@@ -930,7 +930,7 @@ name|iFilter
 operator|.
 name|setHeight
 argument_list|(
-literal|"26"
+literal|"26px"
 argument_list|)
 expr_stmt|;
 name|iFilterPanel
