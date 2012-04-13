@@ -170,6 +170,9 @@ block|}
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|SponsoringOrganization
+argument_list|>
 name|findAll
 parameter_list|()
 block|{

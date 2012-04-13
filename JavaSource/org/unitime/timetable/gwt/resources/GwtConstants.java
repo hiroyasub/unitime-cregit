@@ -103,6 +103,15 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
+literal|"EEE, MM/dd/yyyy"
+argument_list|)
+name|String
+name|meetingDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
 literal|"MM/dd hh:mmaa"
 argument_list|)
 name|String
