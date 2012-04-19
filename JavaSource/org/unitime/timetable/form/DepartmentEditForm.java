@@ -501,7 +501,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.required"
 argument_list|,
-literal|"Number"
+literal|"Code"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -534,7 +534,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.maxlength"
 argument_list|,
-literal|"Number"
+literal|"Code"
 argument_list|,
 literal|"50"
 argument_list|)
