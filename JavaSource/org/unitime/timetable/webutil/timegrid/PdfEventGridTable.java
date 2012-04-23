@@ -641,11 +641,6 @@ range|:
 name|iModel
 control|)
 block|{
-name|int
-name|nrCols
-init|=
-literal|0
-decl_stmt|;
 name|boolean
 name|split
 init|=
@@ -701,10 +696,6 @@ name|colSpan
 expr_stmt|;
 block|}
 block|}
-name|nrCols
-operator|+=
-name|colSpan
-expr_stmt|;
 if|if
 condition|(
 name|colSpan
@@ -1710,11 +1701,6 @@ name|split
 init|=
 literal|false
 decl_stmt|;
-name|int
-name|nrCols
-init|=
-literal|0
-decl_stmt|;
 name|boolean
 name|first
 init|=
@@ -1765,10 +1751,6 @@ name|colSpan
 expr_stmt|;
 block|}
 block|}
-name|nrCols
-operator|+=
-name|colSpan
-expr_stmt|;
 if|if
 condition|(
 name|colSpan

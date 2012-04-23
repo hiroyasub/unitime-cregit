@@ -13195,11 +13195,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|int
-name|cnt
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -13215,8 +13210,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|cnt
-operator|++
 control|)
 block|{
 name|Department

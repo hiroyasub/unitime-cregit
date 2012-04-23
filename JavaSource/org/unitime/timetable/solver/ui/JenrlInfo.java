@@ -1593,11 +1593,6 @@ init|=
 literal|0
 decl_stmt|;
 name|double
-name|cover
-init|=
-literal|0.0
-decl_stmt|;
-name|double
 name|total
 init|=
 literal|0.0
@@ -1650,10 +1645,6 @@ condition|)
 block|{
 name|top
 operator|++
-expr_stmt|;
-name|cover
-operator|+=
-name|fraction
 expr_stmt|;
 if|if
 condition|(

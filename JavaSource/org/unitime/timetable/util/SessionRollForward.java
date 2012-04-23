@@ -16058,11 +16058,6 @@ name|executeUpdate
 argument_list|()
 expr_stmt|;
 empty_stmt|;
-name|int
-name|total
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|int
@@ -16224,9 +16219,6 @@ name|saveOrUpdate
 argument_list|(
 name|d
 argument_list|)
-expr_stmt|;
-name|total
-operator|++
 expr_stmt|;
 block|}
 block|}

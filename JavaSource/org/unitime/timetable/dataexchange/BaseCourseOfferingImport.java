@@ -20504,14 +20504,6 @@ name|ImportCourseOffering
 block|{
 comment|/** 		 *  		 */
 specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|5993231932828326663L
-decl_stmt|;
-specifier|private
 name|CourseOffering
 name|courseOffering
 decl_stmt|;

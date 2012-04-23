@@ -2676,10 +2676,6 @@ index|[]
 condition|)
 block|{
 name|int
-name|a
-init|=
-literal|0
-decl_stmt|,
 name|idx
 init|=
 literal|0
@@ -2857,9 +2853,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|a
-operator|++
-expr_stmt|;
 block|}
 block|}
 else|else

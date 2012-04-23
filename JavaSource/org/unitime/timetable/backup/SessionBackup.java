@@ -4201,11 +4201,6 @@ argument_list|>
 argument_list|>
 argument_list|()
 expr_stmt|;
-name|int
-name|cnt
-init|=
-literal|0
-decl_stmt|;
 name|String
 name|idProperty
 init|=
@@ -4371,9 +4366,6 @@ index|[
 literal|1
 index|]
 argument_list|)
-expr_stmt|;
-name|cnt
-operator|++
 expr_stmt|;
 block|}
 name|iRelationCache

@@ -11683,11 +11683,6 @@ operator|=
 literal|0
 expr_stmt|;
 name|int
-name|total
-init|=
-literal|0
-decl_stmt|;
-name|int
 name|totalC
 index|[]
 init|=
@@ -11848,13 +11843,6 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|total
-operator|+=
-name|thisEnrollment
-operator|.
-name|size
-argument_list|()
-expr_stmt|;
 name|Set
 argument_list|<
 name|Long

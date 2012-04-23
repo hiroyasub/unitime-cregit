@@ -3621,11 +3621,6 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Enumeration
@@ -3641,8 +3636,6 @@ operator|.
 name|hasMoreElements
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|BtbInstructorInfo

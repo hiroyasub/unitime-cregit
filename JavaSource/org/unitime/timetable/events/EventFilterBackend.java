@@ -464,11 +464,6 @@ operator|.
 name|getSession
 argument_list|()
 decl_stmt|;
-name|int
-name|total
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Object
@@ -592,10 +587,6 @@ literal|"type"
 argument_list|,
 name|e
 argument_list|)
-expr_stmt|;
-name|total
-operator|+=
-name|count
 expr_stmt|;
 block|}
 for|for
@@ -844,10 +835,6 @@ literal|"day"
 argument_list|,
 name|e
 argument_list|)
-expr_stmt|;
-name|total
-operator|+=
-name|count
 expr_stmt|;
 block|}
 name|Entity

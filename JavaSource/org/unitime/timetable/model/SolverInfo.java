@@ -1037,12 +1037,6 @@ name|isEmpty
 argument_list|()
 condition|)
 continue|continue;
-comment|//Debug.debug("InfoCache cleanup started ...");
-name|int
-name|removed
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -1104,12 +1098,8 @@ operator|.
 name|remove
 argument_list|()
 expr_stmt|;
-name|removed
-operator|++
-expr_stmt|;
 block|}
 block|}
-comment|//Debug.debug("InfoCache cleanup finished ("+removed+" of "+(removed+sInfoCache.size())+" items purged).");
 block|}
 block|}
 block|}

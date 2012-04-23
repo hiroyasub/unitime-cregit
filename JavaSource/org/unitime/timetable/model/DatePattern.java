@@ -2377,11 +2377,6 @@ name|getPatternEndMonth
 argument_list|()
 decl_stmt|;
 name|int
-name|dayOfYear
-init|=
-literal|0
-decl_stmt|;
-name|int
 name|year
 init|=
 name|getSession
@@ -2477,9 +2472,6 @@ name|d
 operator|++
 control|)
 block|{
-name|dayOfYear
-operator|++
-expr_stmt|;
 if|if
 condition|(
 name|d

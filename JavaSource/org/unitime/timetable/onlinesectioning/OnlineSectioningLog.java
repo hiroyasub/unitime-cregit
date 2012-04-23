@@ -56257,11 +56257,6 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
-name|int
-name|from_bitField0_
-init|=
-name|bitField0_
-decl_stmt|;
 if|if
 condition|(
 name|actionBuilder_

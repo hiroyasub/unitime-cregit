@@ -1784,11 +1784,6 @@ name|dp
 init|=
 literal|""
 decl_stmt|;
-name|long
-name|id
-init|=
-literal|0
-decl_stmt|;
 name|int
 name|f
 init|=
@@ -1846,14 +1841,6 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|id
-operator|+=
-operator|(
-literal|1
-operator|<<
-name|i
-operator|)
 expr_stmt|;
 block|}
 else|else

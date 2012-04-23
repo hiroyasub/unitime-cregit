@@ -3251,11 +3251,6 @@ decl_stmt|;
 try|try
 block|{
 name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
-name|int
 name|nrAllRooms
 init|=
 literal|0
@@ -3368,8 +3363,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|RoomReport
@@ -4003,11 +3996,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -4026,8 +4014,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|DeptBalancingReport
@@ -4696,11 +4682,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -4719,8 +4700,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|ViolatedDistrPreferencesReport
@@ -5291,11 +5270,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -5314,8 +5288,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|DiscouragedInstructorBtbReport
@@ -6018,11 +5990,6 @@ expr_stmt|;
 try|try
 block|{
 name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
-name|int
 name|total
 index|[]
 init|=
@@ -6061,8 +6028,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|JenrlInfo
@@ -7711,11 +7676,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -7734,8 +7694,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|SameSubpartBalancingReport
@@ -8525,11 +8483,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -8548,8 +8501,6 @@ operator|.
 name|hasNext
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|PerturbationReport

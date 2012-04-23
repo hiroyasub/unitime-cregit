@@ -1528,11 +1528,6 @@ operator|)
 decl_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Enumeration
@@ -1548,8 +1543,6 @@ operator|.
 name|hasMoreElements
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|ClassAssignmentDetails
@@ -2610,11 +2603,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|int
-name|idx
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|Enumeration
@@ -2630,8 +2618,6 @@ operator|.
 name|hasMoreElements
 argument_list|()
 condition|;
-name|idx
-operator|++
 control|)
 block|{
 name|ClassAssignmentDetails
