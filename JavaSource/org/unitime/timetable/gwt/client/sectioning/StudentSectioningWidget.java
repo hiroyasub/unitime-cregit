@@ -1211,6 +1211,13 @@ argument_list|(
 literal|"unitime-MainTableBottomHeader"
 argument_list|)
 expr_stmt|;
+name|iFooter
+operator|.
+name|setWidth
+argument_list|(
+literal|"100%"
+argument_list|)
+expr_stmt|;
 name|HorizontalPanel
 name|leftFooterPanel
 init|=
