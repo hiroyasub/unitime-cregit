@@ -475,6 +475,24 @@ name|String
 name|patternDateFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+name|boolean
+name|isAuthenticationRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|true
+argument_list|)
+name|boolean
+name|tryAuthenticationWhenGuest
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
