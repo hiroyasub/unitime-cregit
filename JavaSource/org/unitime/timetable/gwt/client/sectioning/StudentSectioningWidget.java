@@ -1982,6 +1982,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|iAssignments
+operator|.
+name|setWidth
+argument_list|(
+literal|"100%"
+argument_list|)
+expr_stmt|;
 name|VerticalPanel
 name|vp
 init|=
