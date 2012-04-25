@@ -1204,6 +1204,8 @@ argument_list|(
 name|request
 argument_list|,
 name|frm
+argument_list|,
+name|ss
 argument_list|)
 expr_stmt|;
 comment|// Generate Time Pattern Grids
@@ -2015,6 +2017,9 @@ name|request
 parameter_list|,
 name|SchedulingSubpartEditForm
 name|frm
+parameter_list|,
+name|SchedulingSubpart
+name|ss
 parameter_list|)
 throws|throws
 name|Exception
@@ -2022,14 +2027,10 @@ block|{
 name|DatePattern
 name|selectedDatePattern
 init|=
-operator|new
-name|DatePattern
-argument_list|(
-name|frm
+name|ss
 operator|.
-name|getDatePattern
+name|effectiveDatePattern
 argument_list|()
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
