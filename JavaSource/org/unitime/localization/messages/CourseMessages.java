@@ -2440,6 +2440,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|titleRemoveDatePatternPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Room Preference"
 argument_list|)
 name|String
@@ -2449,10 +2458,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Date Pattern Preference"
+argument_list|)
+name|String
+name|actionAddDatePatternPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Delete"
 argument_list|)
 name|String
 name|actionRemoveRoomPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionRemoveDatePatternPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3973,6 +4000,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Date Pattern Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddDatePatternPreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Remove Room Preference"
 argument_list|)
 name|String
@@ -4852,6 +4891,15 @@ literal|"Invalid distribution preference: Check for duplicate / blank selection.
 argument_list|)
 name|String
 name|errorInvalidDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid date pattern preference: Check for duplicate / blank selection. "
+argument_list|)
+name|String
+name|errorInvalidDatePatternPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5786,6 +5834,15 @@ literal|"Distribution Preferences"
 argument_list|)
 name|String
 name|sectionTitleDistributionPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Date Pattern Preferences"
+argument_list|)
+name|String
+name|sectionTitleDatePatternPreferences
 parameter_list|()
 function_decl|;
 annotation|@

@@ -791,7 +791,7 @@ argument_list|()
 operator|)
 return|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|preferenceHtml
 parameter_list|()

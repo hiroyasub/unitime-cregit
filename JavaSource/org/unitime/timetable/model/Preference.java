@@ -104,7 +104,7 @@ name|preferenceText
 argument_list|()
 return|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|preferenceHtml
 parameter_list|()

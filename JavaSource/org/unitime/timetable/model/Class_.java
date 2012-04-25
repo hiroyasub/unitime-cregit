@@ -2590,11 +2590,11 @@ block|}
 name|Set
 name|classPrefs
 init|=
-name|super
-operator|.
-name|effectivePreferences
+name|getPreferences
 argument_list|(
 name|type
+argument_list|,
+name|this
 argument_list|)
 decl_stmt|;
 name|Set
@@ -2824,6 +2824,8 @@ operator|.
 name|getPreferences
 argument_list|(
 name|type
+argument_list|,
+name|this
 argument_list|)
 operator|)
 decl_stmt|;
