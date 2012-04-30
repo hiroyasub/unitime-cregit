@@ -827,7 +827,7 @@ specifier|public
 name|void
 name|setWidth
 parameter_list|(
-name|int
+name|double
 name|width
 parameter_list|)
 block|{
@@ -851,7 +851,7 @@ specifier|public
 name|void
 name|setHeight
 parameter_list|(
-name|int
+name|double
 name|height
 parameter_list|)
 block|{
@@ -875,10 +875,10 @@ specifier|public
 name|void
 name|setSize
 parameter_list|(
-name|int
+name|double
 name|width
 parameter_list|,
-name|int
+name|double
 name|height
 parameter_list|)
 block|{

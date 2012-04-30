@@ -1486,6 +1486,21 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|meeting
+operator|.
+name|setStartOffset
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+name|meeting
+operator|.
+name|setEndOffset
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+comment|//TODO: add ability to enter offsets
 name|ResourceInterface
 name|location
 init|=
