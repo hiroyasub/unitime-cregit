@@ -1191,9 +1191,6 @@ argument_list|()
 operator|.
 name|trim
 argument_list|()
-operator|.
-name|toUpperCase
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1241,9 +1238,6 @@ argument_list|()
 operator|.
 name|trim
 argument_list|()
-operator|.
-name|toUpperCase
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1267,9 +1261,6 @@ name|getLname
 argument_list|()
 operator|.
 name|trim
-argument_list|()
-operator|.
-name|toUpperCase
 argument_list|()
 argument_list|)
 expr_stmt|;
