@@ -6657,7 +6657,7 @@ name|Math
 operator|.
 name|max
 argument_list|(
-literal|3
+literal|3.0
 argument_list|,
 name|iNrMeetings
 operator|*
@@ -6711,6 +6711,12 @@ name|FILLSPACE
 case|:
 name|iWidth
 operator|=
+name|Math
+operator|.
+name|max
+argument_list|(
+literal|3.0
+argument_list|,
 operator|(
 name|iCellWidth
 operator|-
@@ -6735,6 +6741,7 @@ literal|3
 else|:
 literal|0
 operator|)
+argument_list|)
 expr_stmt|;
 name|iLeft
 operator|=
@@ -6778,6 +6785,12 @@ operator|)
 decl_stmt|;
 name|iWidth
 operator|=
+name|Math
+operator|.
+name|max
+argument_list|(
+literal|3.0
+argument_list|,
 name|iNrMeetings
 operator|*
 operator|(
@@ -6808,6 +6821,7 @@ operator|-
 literal|5
 operator|*
 name|iNrColumns
+argument_list|)
 expr_stmt|;
 name|iLeft
 operator|=
