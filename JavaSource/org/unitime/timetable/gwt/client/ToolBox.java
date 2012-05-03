@@ -553,6 +553,20 @@ name|value
 parameter_list|)
 comment|/*-{ 		style["white-space"] = value; 	}-*/
 function_decl|;
+specifier|public
+specifier|native
+specifier|static
+name|void
+name|setMaxHeight
+parameter_list|(
+name|Style
+name|style
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+comment|/*-{ 		style["max-height"] = value; 	}-*/
+function_decl|;
 block|}
 end_class
 

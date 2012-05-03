@@ -1343,8 +1343,6 @@ literal|"edit"
 argument_list|,
 literal|"<u>E</u>dit"
 argument_list|,
-literal|'s'
-argument_list|,
 literal|75
 argument_list|,
 name|edit
@@ -1357,8 +1355,6 @@ argument_list|(
 literal|"save"
 argument_list|,
 literal|"<u>S</u>ave"
-argument_list|,
-literal|'s'
 argument_list|,
 literal|75
 argument_list|,
@@ -1373,8 +1369,6 @@ literal|"print"
 argument_list|,
 literal|"<u>P</u>rint"
 argument_list|,
-literal|'p'
-argument_list|,
 literal|75
 argument_list|,
 name|print
@@ -1388,8 +1382,6 @@ literal|"close"
 argument_list|,
 literal|"<u>C</u>lose"
 argument_list|,
-literal|'c'
-argument_list|,
 literal|75
 argument_list|,
 name|close
@@ -1402,8 +1394,6 @@ argument_list|(
 literal|"back"
 argument_list|,
 literal|"<u>B</u>ack"
-argument_list|,
-literal|'b'
 argument_list|,
 literal|75
 argument_list|,

@@ -911,8 +911,6 @@ literal|"execute"
 argument_list|,
 literal|"E<u>x</u>ecute"
 argument_list|,
-literal|'x'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -953,8 +951,6 @@ literal|"print"
 argument_list|,
 literal|"<u>P</u>rint"
 argument_list|,
-literal|'p'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -987,8 +983,6 @@ argument_list|(
 literal|"export"
 argument_list|,
 literal|"Export&nbsp;<u>C</u>SV"
-argument_list|,
-literal|'c'
 argument_list|,
 literal|85
 argument_list|,
@@ -1361,8 +1355,6 @@ literal|"edit"
 argument_list|,
 literal|"<u>E</u>dit"
 argument_list|,
-literal|'e'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -1472,8 +1464,6 @@ argument_list|(
 literal|"add"
 argument_list|,
 literal|"<u>A</u>dd New"
-argument_list|,
-literal|'a'
 argument_list|,
 literal|75
 argument_list|,
@@ -2292,8 +2282,6 @@ literal|"previous"
 argument_list|,
 literal|"Previous"
 argument_list|,
-literal|null
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -2328,8 +2316,6 @@ argument_list|(
 literal|"next"
 argument_list|,
 literal|"Next"
-argument_list|,
-literal|null
 argument_list|,
 literal|75
 argument_list|,
@@ -2995,8 +2981,6 @@ literal|"save"
 argument_list|,
 literal|"Save"
 argument_list|,
-literal|null
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -3267,8 +3251,6 @@ literal|"test"
 argument_list|,
 literal|"Test"
 argument_list|,
-literal|null
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -3469,8 +3451,6 @@ literal|"delete"
 argument_list|,
 literal|"Delete"
 argument_list|,
-literal|null
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -3561,8 +3541,6 @@ argument_list|(
 literal|"back"
 argument_list|,
 literal|"Back"
-argument_list|,
-literal|null
 argument_list|,
 literal|75
 argument_list|,

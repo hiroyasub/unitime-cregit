@@ -1272,8 +1272,6 @@ literal|"start"
 argument_list|,
 literal|"<u>S</u>tart"
 argument_list|,
-literal|'s'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -1377,8 +1375,6 @@ argument_list|(
 literal|"stop"
 argument_list|,
 literal|"Sto<u>p</u>"
-argument_list|,
-literal|'p'
 argument_list|,
 literal|75
 argument_list|,
@@ -1501,8 +1497,6 @@ argument_list|(
 literal|"clear"
 argument_list|,
 literal|"<u>C</u>lear"
-argument_list|,
-literal|'c'
 argument_list|,
 literal|75
 argument_list|,

@@ -1719,8 +1719,6 @@ literal|"edit"
 argument_list|,
 literal|"<u>E</u>dit"
 argument_list|,
-literal|'e'
-argument_list|,
 literal|75
 argument_list|,
 name|editHandler
@@ -1733,8 +1731,6 @@ argument_list|(
 literal|"save"
 argument_list|,
 literal|"<u>S</u>ave"
-argument_list|,
-literal|'s'
 argument_list|,
 literal|75
 argument_list|,
@@ -1749,8 +1745,6 @@ literal|"previous"
 argument_list|,
 literal|"<u>P</u>revious"
 argument_list|,
-literal|'p'
-argument_list|,
 literal|75
 argument_list|,
 name|previousHandler
@@ -1763,8 +1757,6 @@ argument_list|(
 literal|"next"
 argument_list|,
 literal|"<u>N</u>ext"
-argument_list|,
-literal|'n'
 argument_list|,
 literal|75
 argument_list|,
@@ -1779,8 +1771,6 @@ literal|"delete"
 argument_list|,
 literal|"<u>D</u>elete"
 argument_list|,
-literal|'d'
-argument_list|,
 literal|75
 argument_list|,
 name|deleteHandler
@@ -1794,8 +1784,6 @@ literal|"print"
 argument_list|,
 literal|"Prin<u>t</u>"
 argument_list|,
-literal|'t'
-argument_list|,
 literal|75
 argument_list|,
 name|printHandler
@@ -1808,8 +1796,6 @@ argument_list|(
 literal|"back"
 argument_list|,
 literal|"<u>B</u>ack"
-argument_list|,
-literal|'b'
 argument_list|,
 literal|75
 argument_list|,

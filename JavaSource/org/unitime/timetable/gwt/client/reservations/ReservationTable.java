@@ -1077,13 +1077,6 @@ literal|"add"
 argument_list|,
 literal|"Add&nbsp;<u>R</u>eservation"
 argument_list|,
-literal|'r'
-argument_list|,
-operator|(
-name|Integer
-operator|)
-literal|null
-argument_list|,
 operator|new
 name|ClickHandler
 argument_list|()

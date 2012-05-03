@@ -1002,8 +1002,6 @@ literal|"save"
 argument_list|,
 literal|"<u>S</u>ave"
 argument_list|,
-literal|'s'
-argument_list|,
 literal|75
 argument_list|,
 name|save
@@ -1017,8 +1015,6 @@ literal|"back"
 argument_list|,
 literal|"<u>B</u>ack"
 argument_list|,
-literal|'b'
-argument_list|,
 literal|75
 argument_list|,
 name|back
@@ -1031,8 +1027,6 @@ argument_list|(
 literal|"print"
 argument_list|,
 literal|"<u>P</u>rint"
-argument_list|,
-literal|'p'
 argument_list|,
 literal|75
 argument_list|,

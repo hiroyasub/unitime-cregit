@@ -942,8 +942,6 @@ literal|"save"
 argument_list|,
 literal|"<u>S</u>ave"
 argument_list|,
-literal|'s'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -1086,8 +1084,6 @@ literal|"back"
 argument_list|,
 literal|"<u>B</u>ack"
 argument_list|,
-literal|'b'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -1166,8 +1162,6 @@ argument_list|(
 literal|"edit"
 argument_list|,
 literal|"<u>E</u>dit"
-argument_list|,
-literal|'e'
 argument_list|,
 literal|75
 argument_list|,

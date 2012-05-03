@@ -2356,8 +2356,6 @@ literal|"operations"
 argument_list|,
 literal|"Curricula&nbsp;<u>O</u>perations&nbsp;&or;"
 argument_list|,
-literal|'o'
-argument_list|,
 operator|(
 name|Integer
 operator|)
