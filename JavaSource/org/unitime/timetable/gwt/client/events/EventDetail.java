@@ -549,8 +549,6 @@ literal|"back"
 argument_list|,
 literal|"<u>B</u>ack"
 argument_list|,
-literal|'b'
-argument_list|,
 literal|75
 argument_list|,
 operator|new
@@ -773,7 +771,7 @@ name|EnrollmentTable
 argument_list|(
 literal|false
 argument_list|,
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 name|iEnrollments

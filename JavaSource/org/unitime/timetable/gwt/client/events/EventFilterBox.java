@@ -185,6 +185,26 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|client
+operator|.
+name|widgets
+operator|.
+name|TimeSelector
+operator|.
+name|TimeUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|command
 operator|.
 name|client
@@ -2751,7 +2771,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2777,7 +2797,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2805,7 +2825,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2833,7 +2853,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2869,7 +2889,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2895,7 +2915,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2923,7 +2943,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2951,7 +2971,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -2990,7 +3010,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3016,7 +3036,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3044,7 +3064,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3072,7 +3092,7 @@ name|Chip
 argument_list|(
 literal|"before"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3108,7 +3128,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3134,7 +3154,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3162,7 +3182,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3190,7 +3210,7 @@ name|Chip
 argument_list|(
 literal|"after"
 argument_list|,
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3278,7 +3298,7 @@ block|{
 name|String
 name|text
 init|=
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(
@@ -3395,7 +3415,7 @@ block|{
 name|String
 name|text
 init|=
-name|TimeSelector
+name|TimeUtils
 operator|.
 name|slot2time
 argument_list|(

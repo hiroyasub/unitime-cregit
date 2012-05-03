@@ -142,7 +142,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Remove Selected Meetings"
+literal|"&#10007; Remove"
 argument_list|)
 name|String
 name|opDeleteSelectedMeetings
@@ -151,7 +151,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Remove All New Meetings"
+literal|"&#10008 Remove All"
 argument_list|)
 name|String
 name|opDeleteNewMeetings
@@ -160,7 +160,16 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Add Meetings"
+literal|"Setup Times ..."
+argument_list|)
+name|String
+name|opChangeOffsets
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<b><i>+</i></b> Add Meetings ..."
 argument_list|)
 name|String
 name|opAddMeetings
@@ -181,6 +190,84 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&#9744; {0}"
+argument_list|)
+name|String
+name|opShow
+parameter_list|(
+name|String
+name|column
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#9746; {0}"
+argument_list|)
+name|String
+name|opHide
+parameter_list|(
+name|String
+name|column
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#10003; Approve ..."
+argument_list|)
+name|String
+name|opApproveSelectedMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#10004; Approve All ..."
+argument_list|)
+name|String
+name|opApproveAllMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#10007; Reject ..."
+argument_list|)
+name|String
+name|opRejectSelectedMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#10008; Reject All ..."
+argument_list|)
+name|String
+name|opRejectAllMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<i>?</i> Inquire ..."
+argument_list|)
+name|String
+name|opInquireSelectedMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<b><i>?</i></b> Inquire ..."
+argument_list|)
+name|String
+name|opInquireAllMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Date"
 argument_list|)
 name|String
@@ -190,10 +277,55 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Time"
+literal|"Published Time"
 argument_list|)
 name|String
-name|colTime
+name|colPublishedTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Allocated Time"
+argument_list|)
+name|String
+name|colAllocatedTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Setup"
+argument_list|)
+name|String
+name|colSetupTimeShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Setup Time"
+argument_list|)
+name|String
+name|colSetupTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teardown"
+argument_list|)
+name|String
+name|colTeardownTimeShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teardown Time"
+argument_list|)
+name|String
+name|colTeardownTime
 parameter_list|()
 function_decl|;
 annotation|@
@@ -247,10 +379,91 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"not approved"
+argument_list|)
+name|String
+name|approvalNotApprovedPast
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"new meeting"
 argument_list|)
 name|String
 name|approvalNewMeeting
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"midnight"
+argument_list|)
+name|String
+name|timeMidnitgh
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"noon"
+argument_list|)
+name|String
+name|timeNoon
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"all day"
+argument_list|)
+name|String
+name|timeAllDay
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Setup / Teardown Times"
+argument_list|)
+name|String
+name|dlgChangeOffsets
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Setup Time:"
+argument_list|)
+name|String
+name|propSetupTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teardown Time:"
+argument_list|)
+name|String
+name|propTeardownTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>O</u>k"
+argument_list|)
+name|String
+name|buttonOk
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>ancel"
+argument_list|)
+name|String
+name|buttonCancel
 parameter_list|()
 function_decl|;
 block|}
