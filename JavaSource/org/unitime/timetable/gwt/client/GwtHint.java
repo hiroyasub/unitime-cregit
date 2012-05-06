@@ -216,12 +216,13 @@ specifier|native
 name|void
 name|createTriggers
 parameter_list|()
-comment|/*-{ 		$wnd.showGwtHint = function(source, content) { 			@org.unitime.timetable.gwt.client.GwtHint::showHint(Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/String;)(source, content); 		}; 		$wnd.hideGwtHint = function() { 			@org.unitime.timetable.gwt.client.GwtHint::hideHint()(); 		}; 	}-*/
+comment|/*-{ 		$wnd.showGwtHint = function(source, content) { 			@org.unitime.timetable.gwt.client.GwtHint::_showHint(Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/String;)(source, content); 		}; 		$wnd.hideGwtHint = function() { 			@org.unitime.timetable.gwt.client.GwtHint::hideHint()(); 		}; 	}-*/
 function_decl|;
+comment|/** Never use from GWT code */
 specifier|public
 specifier|static
 name|void
-name|showHint
+name|_showHint
 parameter_list|(
 name|JavaScriptObject
 name|source
@@ -232,6 +233,9 @@ parameter_list|)
 block|{
 name|showHint
 argument_list|(
+operator|(
+name|Element
+operator|)
 name|source
 operator|.
 name|cast
