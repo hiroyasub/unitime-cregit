@@ -1756,7 +1756,10 @@ name|owner
 operator|)
 operator|.
 name|getClassLabel
+argument_list|(
+name|getCourse
 argument_list|()
+argument_list|)
 return|;
 case|case
 name|ExamOwner
@@ -1764,6 +1767,14 @@ operator|.
 name|sOwnerTypeConfig
 case|:
 return|return
+name|getCourse
+argument_list|()
+operator|.
+name|getCourseName
+argument_list|()
+operator|+
+literal|" ["
+operator|+
 operator|(
 operator|(
 name|InstrOfferingConfig
@@ -1771,8 +1782,10 @@ operator|)
 name|owner
 operator|)
 operator|.
-name|toString
+name|getName
 argument_list|()
+operator|+
+literal|"]"
 return|;
 case|case
 name|ExamOwner

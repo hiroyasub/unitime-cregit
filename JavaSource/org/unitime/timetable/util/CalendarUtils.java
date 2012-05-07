@@ -457,7 +457,7 @@ expr_stmt|;
 if|if
 condition|(
 name|dayOfYear
-operator|<
+operator|<=
 literal|0
 condition|)
 block|{
