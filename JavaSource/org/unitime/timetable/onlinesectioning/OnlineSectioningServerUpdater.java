@@ -596,6 +596,8 @@ name|void
 name|checkForUpdates
 parameter_list|()
 block|{
+try|try
+block|{
 name|org
 operator|.
 name|hibernate
@@ -744,6 +746,28 @@ name|hibSession
 operator|.
 name|close
 argument_list|()
+expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|iLog
+operator|.
+name|error
+argument_list|(
+literal|"Unable to check for updates: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
 expr_stmt|;
 block|}
 block|}
