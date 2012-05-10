@@ -79,6 +79,12 @@ block|,
 name|SHOW_TEARDOWN_TIME
 block|,
 name|SHOW_CAPACITY
+block|,
+name|SHOW_LIMIT
+block|,
+name|SHOW_ENROLLMENT
+block|,
+name|SHOW_MAIN_CONTACT
 block|;
 specifier|public
 name|int

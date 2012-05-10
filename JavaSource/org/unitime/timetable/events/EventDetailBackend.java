@@ -4159,6 +4159,16 @@ name|meeting
 operator|.
 name|setCanEdit
 argument_list|(
+name|m
+operator|.
+name|getEvent
+argument_list|()
+operator|.
+name|getMainContact
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|user
 operator|.
 name|getId
