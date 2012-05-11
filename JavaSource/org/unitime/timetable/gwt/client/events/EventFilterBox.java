@@ -275,6 +275,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|AcademicSessionProvider
@@ -675,6 +691,21 @@ operator|.
 name|create
 argument_list|(
 name|GwtConstants
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
 operator|.
 name|class
 argument_list|)
@@ -1128,7 +1159,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Requested By:"
+name|MESSAGES
+operator|.
+name|propRequestedBy
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -1167,7 +1201,10 @@ init|=
 operator|new
 name|CheckBox
 argument_list|(
-literal|"Display Conflicts"
+name|MESSAGES
+operator|.
+name|checkDisplayConflicts
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|conflicts
@@ -1279,7 +1316,13 @@ name|toLowerCase
 argument_list|()
 argument_list|)
 operator|||
-literal|"display conflicts"
+name|MESSAGES
+operator|.
+name|checkDisplayConflicts
+argument_list|()
+operator|.
+name|toLowerCase
+argument_list|()
 operator|.
 name|startsWith
 argument_list|(
@@ -1297,7 +1340,10 @@ argument_list|(
 operator|new
 name|Suggestion
 argument_list|(
-literal|"Display Conflicts"
+name|MESSAGES
+operator|.
+name|checkDisplayConflicts
+argument_list|()
 argument_list|,
 operator|new
 name|Chip
@@ -2591,7 +2637,10 @@ argument_list|,
 operator|new
 name|Label
 argument_list|(
-literal|"After:"
+name|MESSAGES
+operator|.
+name|propAfter
+argument_list|()
 argument_list|)
 argument_list|,
 name|st
@@ -2599,7 +2648,12 @@ argument_list|,
 operator|new
 name|Label
 argument_list|(
-literal|" Before:"
+literal|" "
+operator|+
+name|MESSAGES
+operator|.
+name|propBefore
+argument_list|()
 argument_list|)
 argument_list|,
 name|et

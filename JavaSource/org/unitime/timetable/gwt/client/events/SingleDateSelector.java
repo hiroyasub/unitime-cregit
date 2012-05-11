@@ -187,6 +187,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|AcademicSessionProvider
@@ -759,6 +775,21 @@ operator|.
 name|create
 argument_list|(
 name|GwtConstants
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
 operator|.
 name|class
 argument_list|)
@@ -1569,7 +1600,10 @@ name|iPicker
 operator|.
 name|setHint
 argument_list|(
-literal|"No academic session is selected."
+name|MESSAGES
+operator|.
+name|hintNoSession
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1579,14 +1613,15 @@ name|iPicker
 operator|.
 name|setHint
 argument_list|(
-literal|"Loading data for "
-operator|+
+name|MESSAGES
+operator|.
+name|waitLoadingData
+argument_list|(
 name|iAcademicSession
 operator|.
 name|getAcademicSessionName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|RPC

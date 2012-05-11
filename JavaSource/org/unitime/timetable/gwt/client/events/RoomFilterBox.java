@@ -117,6 +117,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|AcademicSessionProvider
@@ -174,6 +190,22 @@ operator|.
 name|EventInterface
 operator|.
 name|RoomFilterRpcRequest
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|core
+operator|.
+name|client
+operator|.
+name|GWT
 import|;
 end_import
 
@@ -416,6 +448,21 @@ name|RoomFilterBox
 extends|extends
 name|UniTimeFilterBox
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|ListBox
 name|iBuildings
@@ -1239,7 +1286,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Min:"
+name|MESSAGES
+operator|.
+name|propMin
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -1287,7 +1337,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Max:"
+name|MESSAGES
+operator|.
+name|propMax
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|l2
@@ -1353,7 +1406,10 @@ init|=
 operator|new
 name|CheckBox
 argument_list|(
-literal|"Include close by locations"
+name|MESSAGES
+operator|.
+name|checkIncludeNearby
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|nearby
@@ -1469,7 +1525,13 @@ name|toLowerCase
 argument_list|()
 argument_list|)
 operator|||
-literal|"include close by locations"
+name|MESSAGES
+operator|.
+name|checkIncludeNearby
+argument_list|()
+operator|.
+name|toLowerCase
+argument_list|()
 operator|.
 name|startsWith
 argument_list|(
@@ -1487,7 +1549,10 @@ argument_list|(
 operator|new
 name|Suggestion
 argument_list|(
-literal|"Include close by locations"
+name|MESSAGES
+operator|.
+name|checkIncludeNearby
+argument_list|()
 argument_list|,
 operator|new
 name|Chip
@@ -2756,7 +2821,10 @@ name|iDepartments
 operator|.
 name|addItem
 argument_list|(
-literal|"All Departments"
+name|MESSAGES
+operator|.
+name|itemAllDepartments
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)

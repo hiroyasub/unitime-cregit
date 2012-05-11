@@ -230,7 +230,7 @@ name|iHint
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-Hint"
+literal|"unitime-NotClickableHint"
 argument_list|)
 expr_stmt|;
 if|if
@@ -538,7 +538,7 @@ name|iHint
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-Hint"
+literal|"unitime-NotClickableHint"
 argument_list|)
 expr_stmt|;
 name|iHint

@@ -988,7 +988,16 @@ name|hint
 operator|.
 name|setStyleName
 argument_list|(
+name|result
+operator|.
+name|containsKey
+argument_list|(
+literal|"Chameleon"
+argument_list|)
+condition|?
 literal|"unitime-Hint"
+else|:
+literal|"unitime-NotClickableHint"
 argument_list|)
 expr_stmt|;
 name|iUserInfo

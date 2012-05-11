@@ -183,6 +183,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|AcademicSessionProvider
@@ -516,6 +532,21 @@ decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
 name|GwtRpcServiceAsync
 name|RPC
 init|=
@@ -669,7 +700,10 @@ name|iPanel
 operator|.
 name|setHint
 argument_list|(
-literal|"No academic session is selected."
+name|MESSAGES
+operator|.
+name|hintNoSession
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -679,14 +713,15 @@ name|iPanel
 operator|.
 name|setHint
 argument_list|(
-literal|"Loading data for "
-operator|+
+name|MESSAGES
+operator|.
+name|waitLoadingData
+argument_list|(
 name|iAcademicSession
 operator|.
 name|getAcademicSessionName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|RPC
@@ -3243,7 +3278,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Selected"
+name|MESSAGES
+operator|.
+name|legendSelected
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3286,7 +3324,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Not Selected"
+name|MESSAGES
+operator|.
+name|legendNotSelected
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3345,7 +3386,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Not in Session"
+name|MESSAGES
+operator|.
+name|legendNotInSession
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3405,7 +3449,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Classes Start/End"
+name|MESSAGES
+operator|.
+name|legendClassesStartOrEnd
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3465,7 +3512,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Examination Start"
+name|MESSAGES
+operator|.
+name|legendExamStart
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3525,7 +3575,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Holiday"
+name|MESSAGES
+operator|.
+name|legendHoliday
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3585,7 +3638,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Break"
+name|MESSAGES
+operator|.
+name|legendBreak
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
@@ -3643,7 +3699,10 @@ argument_list|(
 operator|new
 name|P
 argument_list|(
-literal|"Today"
+name|MESSAGES
+operator|.
+name|legendToday
+argument_list|()
 argument_list|,
 literal|"title"
 argument_list|)
