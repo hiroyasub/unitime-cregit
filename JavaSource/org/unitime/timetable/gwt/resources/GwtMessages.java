@@ -79,6 +79,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Oooops, the loading is taking too much time... Something probably went wrong. You may need to reload this page."
+argument_list|)
+name|String
+name|warnLoadingTooLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The operation is taking a lot of time...<br>Click this message to cancel the operation."
+argument_list|)
+name|String
+name|warnLoadingTooLongCanCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Login is required to access this page."
 argument_list|)
 name|String
