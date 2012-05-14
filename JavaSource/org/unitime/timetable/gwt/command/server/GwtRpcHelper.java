@@ -151,6 +151,18 @@ name|isNew
 argument_list|()
 return|;
 block|}
+specifier|public
+name|String
+name|getHttpSessionId
+parameter_list|()
+block|{
+return|return
+name|iHttpSession
+operator|.
+name|getId
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
