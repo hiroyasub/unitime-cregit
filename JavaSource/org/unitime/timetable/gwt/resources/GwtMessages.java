@@ -1525,6 +1525,15 @@ name|String
 name|legendToday
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<span title=\"Conflicting event\" style=\"font-style:normal;\">&#9785;</span>"
+argument_list|)
+name|String
+name|signConflict
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
