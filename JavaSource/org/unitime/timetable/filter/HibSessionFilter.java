@@ -117,6 +117,22 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|base
+operator|.
+name|_BaseRootDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|dao
 operator|.
 name|_RootDAO
@@ -406,6 +422,14 @@ argument_list|(
 name|ex
 argument_list|)
 throw|;
+block|}
+finally|finally
+block|{
+name|_BaseRootDAO
+operator|.
+name|closeCurrentThreadSessions
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 comment|/** 	 * @see javax.servlet.Filter#destroy() 	 */

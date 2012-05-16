@@ -898,6 +898,11 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+name|sSessions
+operator|.
+name|remove
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -994,6 +999,11 @@ throw|throw
 name|thrownException
 throw|;
 block|}
+name|sMappedSessions
+operator|.
+name|remove
+argument_list|()
+expr_stmt|;
 block|}
 return|return
 name|ret
