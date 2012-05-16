@@ -181,6 +181,8 @@ name|IOException
 throws|,
 name|ServletException
 block|{
+try|try
+block|{
 if|if
 condition|(
 name|req
@@ -316,6 +318,15 @@ argument_list|,
 name|resp
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|Localization
+operator|.
+name|removeLocale
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 annotation|@
 name|Override
