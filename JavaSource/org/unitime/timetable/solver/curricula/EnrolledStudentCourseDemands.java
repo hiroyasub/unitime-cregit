@@ -544,6 +544,23 @@ name|studentId
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Double
+name|getEnrollmentPriority
+parameter_list|(
+name|Long
+name|studentId
+parameter_list|,
+name|Long
+name|courseId
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 
