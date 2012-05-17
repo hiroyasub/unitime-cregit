@@ -8324,7 +8324,18 @@ literal|"conflicts"
 argument_list|)
 condition|)
 block|{
-comment|/* 					if (!request.getEventFilter().hasOption("mode") || "All Events".equals(request.getEventFilter().getOption("mode"))) 						request.getEventFilter().setOption("mode", "Conflicting Events"); 						*/
+name|request
+operator|.
+name|getEventFilter
+argument_list|()
+operator|.
+name|setOption
+argument_list|(
+literal|"mode"
+argument_list|,
+literal|"Conflicting Events"
+argument_list|)
+expr_stmt|;
 name|query
 operator|=
 name|EventFilterBackend
