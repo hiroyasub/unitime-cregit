@@ -300,6 +300,9 @@ operator|.
 name|register
 argument_list|()
 expr_stmt|;
+name|callGwtOnLoadIfExists
+argument_list|()
+expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -872,6 +875,14 @@ name|event
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+specifier|static
+specifier|native
+name|void
+name|callGwtOnLoadIfExists
+parameter_list|()
+comment|/*-{ 		if ($wnd.gwtOnLoad) 			$wnd.gwtOnLoad(); 	}-*/
+function_decl|;
 block|}
 end_class
 
