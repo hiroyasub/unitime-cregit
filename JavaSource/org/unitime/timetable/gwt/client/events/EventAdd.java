@@ -453,7 +453,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|GetEnrollmentsFromRelatedObjectsRpcRequest
+name|EventEnrollmentsRpcRequest
 import|;
 end_import
 
@@ -4569,14 +4569,13 @@ name|RPC
 operator|.
 name|execute
 argument_list|(
-operator|new
-name|GetEnrollmentsFromRelatedObjectsRpcRequest
+name|EventEnrollmentsRpcRequest
+operator|.
+name|getEnrollmentsForRelatedObjects
 argument_list|(
 name|relatedObjects
 argument_list|,
 name|meetings
-argument_list|,
-literal|null
 argument_list|)
 argument_list|,
 operator|new

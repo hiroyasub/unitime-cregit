@@ -1261,6 +1261,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load enrollments: {0}."
+argument_list|)
+name|String
+name|failedNoEnrollments
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -1286,6 +1298,15 @@ literal|"No rooms are matching the filter."
 argument_list|)
 name|String
 name|errorNoMatchingRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wrong event id provided."
+argument_list|)
+name|String
+name|errorBadEventId
 parameter_list|()
 function_decl|;
 annotation|@

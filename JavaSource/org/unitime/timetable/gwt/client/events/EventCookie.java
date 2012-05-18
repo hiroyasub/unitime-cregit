@@ -53,7 +53,7 @@ argument_list|()
 operator|+
 name|EventFlag
 operator|.
-name|SHOW_CAPACITY
+name|SHOW_MAIN_CONTACT
 operator|.
 name|flag
 argument_list|()
