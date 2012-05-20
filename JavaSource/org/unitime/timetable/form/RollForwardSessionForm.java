@@ -1369,6 +1369,17 @@ name|SessionRollForward
 operator|.
 name|PUSH_UP_ACTION
 argument_list|)
+operator|&&
+operator|!
+name|getClassPrefsAction
+argument_list|()
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|SessionRollForward
+operator|.
+name|ROLL_PREFS_ACTION
+argument_list|)
 condition|)
 block|{
 name|errors
