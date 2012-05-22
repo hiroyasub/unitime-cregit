@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * UniTime 3.3 (University Timetabling Application)  * Copyright (C) 2011 - 2012, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -68,6 +72,24 @@ operator|.
 name|client
 operator|.
 name|ToolBox
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
+name|page
+operator|.
+name|UniTimeNotifications
 import|;
 end_import
 
@@ -761,7 +783,12 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|fail
+name|hide
+argument_list|()
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
 argument_list|(
 name|caught
 operator|.
@@ -805,7 +832,12 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|fail
+name|hide
+argument_list|()
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
 argument_list|(
 literal|"Only administrators can use this page."
 argument_list|)
@@ -854,7 +886,12 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|fail
+name|hide
+argument_list|()
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
 argument_list|(
 name|caught
 operator|.
@@ -1106,29 +1143,7 @@ argument_list|()
 operator|.
 name|setText
 argument_list|(
-literal|"CS 11000\n"
-operator|+
-literal|"CS 38100\n"
-operator|+
-literal|"MA 26100\n"
-operator|+
-literal|"CHNS 20100\n"
-operator|+
-literal|"CS 54100\n"
-operator|+
-literal|"MUS 36100\n"
-operator|+
-literal|"ENGL 10600\n"
-operator|+
-literal|"COM 11400F\n"
-operator|+
-literal|"COM 10200\n"
-operator|+
-literal|"CNIT 26700\n"
-operator|+
-literal|"BIOL 11000\n"
-operator|+
-literal|"BIOL 11100"
+literal|""
 argument_list|)
 expr_stmt|;
 name|iCourses
@@ -1197,25 +1212,7 @@ argument_list|()
 operator|.
 name|setText
 argument_list|(
-literal|"131545480\n"
-operator|+
-literal|"131545487\n"
-operator|+
-literal|"131545489\n"
-operator|+
-literal|"131545491\n"
-operator|+
-literal|"131545494\n"
-operator|+
-literal|"131545496\n"
-operator|+
-literal|"131545498\n"
-operator|+
-literal|"131545501\n"
-operator|+
-literal|"131545505\n"
-operator|+
-literal|"131545507"
+literal|""
 argument_list|)
 expr_stmt|;
 name|iStudents
