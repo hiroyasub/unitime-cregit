@@ -1400,6 +1400,123 @@ literal|"</span>"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|isUpdate
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|user
+operator|!=
+literal|null
+operator|&&
+name|user
+operator|.
+name|isAdmin
+argument_list|()
+condition|)
+block|{
+name|String
+name|backUrl
+init|=
+name|URLEncoder
+operator|.
+name|encode
+argument_list|(
+operator|(
+operator|(
+name|HttpServletRequest
+operator|)
+name|pageContext
+operator|.
+name|getRequest
+argument_list|()
+operator|)
+operator|.
+name|getRequestURL
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+operator|+
+literal|"?refresh=1"
+argument_list|,
+literal|"ISO-8859-1"
+argument_list|)
+decl_stmt|;
+name|pageContext
+operator|.
+name|getOut
+argument_list|()
+operator|.
+name|println
+argument_list|(
+literal|"<script>function gwtOnLoad() { gwtShowMessage(\""
+operator|+
+name|sMessage
+operator|+
+literal|"<br><span style='font-size: x-small;'>Click<a "
+operator|+
+literal|"onMouseOver=\\\"this.style.cursor='hand';this.style.cursor='pointer';\\\" "
+operator|+
+literal|"onCLick=\\\"showGwtDialog('UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|" Registration', 'https://unitimereg.appspot.com?key="
+operator|+
+name|sKey
+operator|+
+literal|"&back="
+operator|+
+name|backUrl
+operator|+
+literal|"', '750px', '75%');\\\" "
+operator|+
+literal|"title='UniTime "
+operator|+
+name|Constants
+operator|.
+name|VERSION
+operator|+
+literal|" Registration'>here</a> to "
+operator|+
+operator|(
+name|sRegistered
+condition|?
+literal|"update the current registration"
+else|:
+literal|"register"
+operator|)
+operator|+
+literal|"."
+operator|+
+literal|"</span>\"); }</script>"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|pageContext
+operator|.
+name|getOut
+argument_list|()
+operator|.
+name|println
+argument_list|(
+literal|"<script>function gwtOnLoad() { gwtShowMessage(\""
+operator|+
+name|sMessage
+operator|+
+literal|"\"); }</script>"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 catch|catch
