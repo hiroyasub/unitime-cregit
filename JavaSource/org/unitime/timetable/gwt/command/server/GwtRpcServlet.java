@@ -441,9 +441,6 @@ name|GwtRpcHelper
 argument_list|(
 name|getThreadLocalRequest
 argument_list|()
-operator|.
-name|getSession
-argument_list|()
 argument_list|)
 decl_stmt|;
 try|try
@@ -1526,9 +1523,6 @@ operator|new
 name|GwtRpcHelper
 argument_list|(
 name|getThreadLocalRequest
-argument_list|()
-operator|.
-name|getSession
 argument_list|()
 argument_list|)
 expr_stmt|;

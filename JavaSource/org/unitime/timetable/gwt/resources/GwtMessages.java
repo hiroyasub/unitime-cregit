@@ -151,6 +151,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Select All Conflicting"
+argument_list|)
+name|String
+name|opSelectAllConflicting
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Clear Selection"
 argument_list|)
 name|String
@@ -394,6 +403,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Offering"
+argument_list|)
+name|String
+name|colOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Configuration"
+argument_list|)
+name|String
+name|colConfig
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Section"
 argument_list|)
 name|String
@@ -493,10 +520,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Subjects"
+argument_list|)
+name|String
+name|colSubjects
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course Number"
 argument_list|)
 name|String
 name|colCourseNumber
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Courses"
+argument_list|)
+name|String
+name|colCourses
 parameter_list|()
 function_decl|;
 annotation|@
@@ -511,10 +556,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Configs / Subparts"
+argument_list|)
+name|String
+name|colConfigsOrSubparts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class Number"
 argument_list|)
 name|String
 name|colClassNumber
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Classess"
+argument_list|)
+name|String
+name|colClasses
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1018,6 +1081,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>S</u>ave"
+argument_list|)
+name|String
+name|buttonSave
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>E</u>dit"
+argument_list|)
+name|String
+name|buttonEdit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>L</u>ookup"
 argument_list|)
 name|String
@@ -1186,6 +1267,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Saving {0}..."
+argument_list|)
+name|String
+name|waitSave
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Loading data for {0} ..."
 argument_list|)
 name|String
@@ -1246,17 +1339,38 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No events found for {0} in {1}."
+literal|"Failed to save {0}: {1}"
 argument_list|)
 name|String
-name|failedNoEvents
+name|failedSave
 parameter_list|(
 name|String
 name|name
 parameter_list|,
 name|String
-name|session
+name|reason
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load academic sessions: {0}"
+argument_list|)
+name|String
+name|failedLoadSessions
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No events matching the given criteria were found."
+argument_list|)
+name|String
+name|failedNoEvents
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -1273,6 +1387,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Validation failed: {0}"
+argument_list|)
+name|String
+name|failedValidation
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room availability failed: {0}"
+argument_list|)
+name|String
+name|failedRoomAvailability
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add meetings failed: {0}"
+argument_list|)
+name|String
+name|failedAddMeetings
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -1281,6 +1431,54 @@ parameter_list|(
 name|int
 name|maximum
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No academic session selected."
+argument_list|)
+name|String
+name|warnNoSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No resource type selected."
+argument_list|)
+name|String
+name|warnNoResourceType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Waiting for the academic session {0} to load..."
+argument_list|)
+name|String
+name|warnNoEventProperties
+parameter_list|(
+name|String
+name|session
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Waiting for the room filter to load..."
+argument_list|)
+name|String
+name|warnRoomFilterNotInitialized
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Waiting for the event filter to load..."
+argument_list|)
+name|String
+name|warnEventFilterNotInitialized
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -1397,6 +1595,15 @@ literal|"Add Event"
 argument_list|)
 name|String
 name|pageAddEvent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Event"
+argument_list|)
+name|String
+name|pageEditEvent
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1549,10 +1756,73 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"In The Past"
+argument_list|)
+name|String
+name|legendPast
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<span title=\"Conflicting event\" style=\"font-style:normal;\">&#9785;</span>"
 argument_list|)
 name|String
 name|signConflict
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event name is required."
+argument_list|)
+name|String
+name|reqEventName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Main contact last name is required."
+argument_list|)
+name|String
+name|reqMainContactLastName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Main contact email is required."
+argument_list|)
+name|String
+name|reqMainContactEmail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No meetings were defined."
+argument_list|)
+name|String
+name|reqMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"One or more meetings is overlapping with an existing event."
+argument_list|)
+name|String
+name|reqNoOverlaps
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"an event"
+argument_list|)
+name|String
+name|anEvent
 parameter_list|()
 function_decl|;
 block|}

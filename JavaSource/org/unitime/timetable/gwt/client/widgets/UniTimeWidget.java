@@ -719,8 +719,11 @@ block|}
 else|else
 block|{
 return|return
-name|getWidget
-argument_list|()
+name|iReadOnly
+operator|!=
+literal|null
+operator|&&
+name|iReadOnly
 operator|.
 name|isVisible
 argument_list|()
