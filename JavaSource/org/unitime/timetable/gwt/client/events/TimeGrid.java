@@ -101,6 +101,22 @@ name|gwt
 operator|.
 name|client
 operator|.
+name|ToolBox
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
 name|widgets
 operator|.
 name|ImageLink
@@ -1043,7 +1059,7 @@ operator|)
 operator|(
 literal|0.9
 operator|*
-name|Window
+name|ToolBox
 operator|.
 name|getClientWidth
 argument_list|()
@@ -2634,7 +2650,7 @@ operator|)
 operator|(
 literal|0.9
 operator|*
-name|Window
+name|ToolBox
 operator|.
 name|getClientWidth
 argument_list|()
@@ -6255,14 +6271,11 @@ name|dateString
 operator|+
 literal|" "
 operator|+
-name|meeting
+name|MeetingTable
 operator|.
-name|getMeetingTime
+name|meetingTime
 argument_list|(
-name|CONSTANTS
-operator|.
-name|useAmPm
-argument_list|()
+name|meeting
 argument_list|)
 operator|+
 literal|" "

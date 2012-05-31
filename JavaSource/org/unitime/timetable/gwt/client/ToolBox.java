@@ -581,6 +581,14 @@ name|value
 parameter_list|)
 comment|/*-{ 		style["max-width"] = value; 	}-*/
 function_decl|;
+specifier|public
+specifier|native
+specifier|static
+name|int
+name|getClientWidth
+parameter_list|()
+comment|/*-{ 		var sideMenu = $doc.getElementById("unitime-SideMenu").getElementsByTagName("span");     	if (sideMenu.length> 0) {     		return $doc.body.clientWidth - sideMenu[0].clientWidth;     	} else {     		return $doc.body.clientWidth;     	} 	}-*/
+function_decl|;
 block|}
 end_class
 

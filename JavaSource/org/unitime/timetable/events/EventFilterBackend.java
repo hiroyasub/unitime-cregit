@@ -137,20 +137,6 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|localization
-operator|.
-name|impl
-operator|.
-name|Localization
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
 name|timetable
 operator|.
 name|gwt
@@ -160,22 +146,6 @@ operator|.
 name|widgets
 operator|.
 name|TimeSelector
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|resources
-operator|.
-name|GwtConstants
 import|;
 end_import
 
@@ -414,20 +384,6 @@ name|EventFilterBackend
 extends|extends
 name|FilterBoxBackend
 block|{
-specifier|private
-specifier|static
-name|GwtConstants
-name|CONSTANTS
-init|=
-name|Localization
-operator|.
-name|create
-argument_list|(
-name|GwtConstants
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -439,6 +395,9 @@ name|request
 parameter_list|,
 name|FilterRpcResponse
 name|response
+parameter_list|,
+name|EventRights
+name|rights
 parameter_list|)
 block|{
 name|EventQuery
@@ -1286,7 +1245,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"m.approvedDate is null rd.control=true and g.externalUniqueId = :user"
+literal|"m.approvedDate is null and rd.control=true and g.externalUniqueId = :user"
 argument_list|)
 operator|.
 name|set
@@ -2777,6 +2736,9 @@ name|request
 parameter_list|,
 name|FilterRpcResponse
 name|response
+parameter_list|,
+name|EventRights
+name|rights
 parameter_list|)
 block|{
 name|org
@@ -3038,6 +3000,9 @@ name|request
 parameter_list|,
 name|FilterRpcResponse
 name|response
+parameter_list|,
+name|EventRights
+name|rights
 parameter_list|)
 block|{
 name|org

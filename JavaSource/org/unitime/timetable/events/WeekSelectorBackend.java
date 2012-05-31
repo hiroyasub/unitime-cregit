@@ -307,12 +307,13 @@ argument_list|)
 decl_stmt|;
 while|while
 condition|(
+operator|!
 name|c
 operator|.
 name|getTime
 argument_list|()
 operator|.
-name|before
+name|after
 argument_list|(
 name|session
 operator|.
