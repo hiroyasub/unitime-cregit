@@ -2817,6 +2817,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|rights
+operator|.
+name|canLookupContacts
+argument_list|()
+operator|&&
+operator|(
 operator|!
 name|request
 operator|.
@@ -2843,6 +2849,7 @@ name|size
 argument_list|()
 operator|<
 literal|20
+operator|)
 operator|)
 condition|)
 block|{
