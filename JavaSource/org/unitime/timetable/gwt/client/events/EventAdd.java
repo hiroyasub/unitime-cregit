@@ -3683,9 +3683,12 @@ name|iMeetings
 operator|=
 operator|new
 name|MeetingTable
+argument_list|()
+expr_stmt|;
+name|iMeetings
+operator|.
+name|setEditable
 argument_list|(
-literal|null
-argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;

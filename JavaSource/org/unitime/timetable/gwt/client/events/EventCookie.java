@@ -57,6 +57,13 @@ name|SHOW_MAIN_CONTACT
 operator|.
 name|flag
 argument_list|()
+operator|+
+name|EventFlag
+operator|.
+name|SHOW_SPONSOR
+operator|.
+name|flag
+argument_list|()
 decl_stmt|;
 specifier|private
 specifier|static
@@ -85,6 +92,8 @@ block|,
 name|SHOW_ENROLLMENT
 block|,
 name|SHOW_MAIN_CONTACT
+block|,
+name|SHOW_SPONSOR
 block|;
 specifier|public
 name|int

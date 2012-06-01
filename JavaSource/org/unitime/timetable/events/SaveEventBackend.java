@@ -1808,6 +1808,9 @@ operator|.
 name|canCreate
 argument_list|(
 name|location
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 condition|)
 throw|throw
@@ -1832,6 +1835,9 @@ operator|.
 name|canApprove
 argument_list|(
 name|location
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 condition|)
 name|meeting
@@ -1881,6 +1887,9 @@ operator|.
 name|canOverbook
 argument_list|(
 name|location
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 condition|)
 for|for

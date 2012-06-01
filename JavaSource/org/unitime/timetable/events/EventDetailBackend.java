@@ -733,11 +733,6 @@ operator|.
 name|getException
 argument_list|()
 throw|;
-name|helper
-operator|.
-name|clearLastUploadedFile
-argument_list|()
-expr_stmt|;
 name|EventInterface
 name|detail
 init|=

@@ -93,20 +93,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Location
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|Meeting
 import|;
 end_import
@@ -209,8 +195,8 @@ specifier|public
 name|boolean
 name|canCreate
 parameter_list|(
-name|Location
-name|location
+name|Long
+name|locationId
 parameter_list|)
 function_decl|;
 comment|/** 	 * Check if the user can approve meetings in the given location. 	 * @param location a location 	 * @return true if a newly created meeting by the user should get automatically approved 	 */
@@ -218,8 +204,8 @@ specifier|public
 name|boolean
 name|canApprove
 parameter_list|(
-name|Location
-name|location
+name|Long
+name|locationId
 parameter_list|)
 function_decl|;
 comment|/** 	 * Check if the user can overbook meetings in the given location. 	 * @param location a location 	 * @return true if the user can create a meeting in the room that is conflicting with some other meeting 	 */
@@ -227,8 +213,8 @@ specifier|public
 name|boolean
 name|canOverbook
 parameter_list|(
-name|Location
-name|location
+name|Long
+name|locationId
 parameter_list|)
 function_decl|;
 block|}

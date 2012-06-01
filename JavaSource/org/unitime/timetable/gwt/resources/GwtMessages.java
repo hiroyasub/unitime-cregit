@@ -1072,6 +1072,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Events:"
+argument_list|)
+name|String
+name|propEvents
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -2017,6 +2026,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<span title=\"Selected event\" style=\"font-style:normal;\">&#9745;</span>"
+argument_list|)
+name|String
+name|signSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Event name is required."
 argument_list|)
 name|String
@@ -2078,6 +2096,18 @@ name|conflictPastOrOutside
 parameter_list|(
 name|String
 name|academicSessionName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} is not managed in UniTime or disabled for events."
+argument_list|)
+name|String
+name|conflictNotEventRoom
+parameter_list|(
+name|String
+name|locationName
 parameter_list|)
 function_decl|;
 annotation|@

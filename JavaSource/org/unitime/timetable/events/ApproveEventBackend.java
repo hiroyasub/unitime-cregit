@@ -1028,11 +1028,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|helper
-operator|.
-name|clearLastUploadedFile
-argument_list|()
-expr_stmt|;
 name|attachement
 operator|=
 operator|new
@@ -1161,11 +1156,6 @@ name|void
 name|destroy
 parameter_list|()
 block|{
-name|uploaded
-operator|.
-name|delete
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 expr_stmt|;
