@@ -6038,9 +6038,6 @@ operator|.
 name|getMeetingTime
 argument_list|(
 name|CONSTANTS
-operator|.
-name|useAmPm
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6279,11 +6276,11 @@ name|dateString
 operator|+
 literal|" "
 operator|+
-name|MeetingTable
-operator|.
-name|meetingTime
-argument_list|(
 name|meeting
+operator|.
+name|getMeetingTime
+argument_list|(
+name|CONSTANTS
 argument_list|)
 operator|+
 literal|" "

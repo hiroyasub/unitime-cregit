@@ -340,6 +340,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Day Of Week"
+argument_list|)
+name|String
+name|colDayOfWeek
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"First Date"
+argument_list|)
+name|String
+name|colFirstDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last Date"
+argument_list|)
+name|String
+name|colLastDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Published Time"
 argument_list|)
 name|String
@@ -349,10 +376,46 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Published Start"
+argument_list|)
+name|String
+name|colPublishedStartTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Published End"
+argument_list|)
+name|String
+name|colPublishedEndTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Allocated Time"
 argument_list|)
 name|String
 name|colAllocatedTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Allocated Start"
+argument_list|)
+name|String
+name|colAllocatedStartTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Allocated End"
+argument_list|)
+name|String
+name|colAllocatedEndTime
 parameter_list|()
 function_decl|;
 annotation|@
@@ -689,33 +752,6 @@ literal|"new meeting"
 argument_list|)
 name|String
 name|approvalNewMeeting
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"midnight"
-argument_list|)
-name|String
-name|timeMidnitgh
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"noon"
-argument_list|)
-name|String
-name|timeNoon
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"all day"
-argument_list|)
-name|String
-name|timeAllDay
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1324,7 +1360,22 @@ argument_list|(
 literal|"{0} events for {1}"
 argument_list|)
 name|String
-name|sectEvents
+name|sectEventList
+parameter_list|(
+name|String
+name|resource
+parameter_list|,
+name|String
+name|session
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} meetings for {1}"
+argument_list|)
+name|String
+name|sectMeetingList
 parameter_list|(
 name|String
 name|resource
@@ -1762,10 +1813,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>L</u>ist of Events"
+literal|"List of<u>E</u>vents"
 argument_list|)
 name|String
-name|tabTable
+name|tabEventTable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"List of<u>M</u>eetings"
+argument_list|)
+name|String
+name|tabMeetingTable
 parameter_list|()
 function_decl|;
 annotation|@
