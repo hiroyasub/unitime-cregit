@@ -2384,6 +2384,11 @@ name|getId
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|meeting
+operator|.
+name|isCanEdit
+argument_list|()
 return|;
 block|}
 annotation|@

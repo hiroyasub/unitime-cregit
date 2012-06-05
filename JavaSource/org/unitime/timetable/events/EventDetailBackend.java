@@ -3288,6 +3288,15 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|e
+operator|.
+name|getUniqueId
+argument_list|()
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object

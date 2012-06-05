@@ -315,7 +315,7 @@ literal|"END:VCALENDAR"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+specifier|public
 name|void
 name|print
 parameter_list|(
