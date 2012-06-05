@@ -2186,7 +2186,9 @@ argument_list|(
 name|calendar
 operator|.
 name|getBytes
-argument_list|()
+argument_list|(
+literal|"UTF-8"
+argument_list|)
 argument_list|)
 return|;
 block|}
