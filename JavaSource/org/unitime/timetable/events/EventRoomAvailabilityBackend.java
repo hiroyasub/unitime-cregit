@@ -924,6 +924,13 @@ argument_list|(
 literal|288
 argument_list|)
 expr_stmt|;
+name|conflict
+operator|.
+name|setPast
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|meeting
 operator|.
 name|addConflict

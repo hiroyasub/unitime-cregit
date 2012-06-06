@@ -10109,13 +10109,6 @@ name|getMaxCapacity
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|parent
-operator|.
-name|addConflict
-argument_list|(
-name|event
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|m
@@ -11931,6 +11924,13 @@ operator|.
 name|addMeeting
 argument_list|(
 name|meeting
+argument_list|)
+expr_stmt|;
+name|parent
+operator|.
+name|addConflict
+argument_list|(
+name|event
 argument_list|)
 expr_stmt|;
 block|}

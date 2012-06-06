@@ -1905,6 +1905,10 @@ name|void
 name|showDialog
 parameter_list|()
 block|{
+name|iResponse
+operator|=
+literal|null
+expr_stmt|;
 name|setWidget
 argument_list|(
 name|iDatesForm

@@ -1801,6 +1801,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Meeting {0} overlaps with an existing meeting {1}."
+argument_list|)
+name|String
+name|warnNewMeetingOverlaps
+parameter_list|(
+name|String
+name|m1
+parameter_list|,
+name|String
+name|m2
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No date is selected."
 argument_list|)
 name|String
