@@ -237,6 +237,8 @@ name|timetable
 operator|.
 name|export
 operator|.
+name|events
+operator|.
 name|EventsExportEventsToICal
 import|;
 end_import

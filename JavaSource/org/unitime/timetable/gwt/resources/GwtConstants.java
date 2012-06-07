@@ -121,7 +121,7 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"EEE, MM/dd/yyyy"
+literal|"EEE MM/dd, yyyy"
 argument_list|)
 name|String
 name|meetingDateFormat

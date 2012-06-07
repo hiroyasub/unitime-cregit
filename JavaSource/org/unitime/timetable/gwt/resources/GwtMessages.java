@@ -79,6 +79,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"UniTime {0}, \u00A9 2008 - 2012 UniTime LLC, distributed under GNU GPL."
+argument_list|)
+name|String
+name|pdfCopyright
+parameter_list|(
+name|String
+name|version
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Oooops, the loading is taking too much time... Something probably went wrong. You may need to reload this page."
 argument_list|)
 name|String
@@ -88,7 +100,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The operation is taking a lot of time...<br>Click this message to cancel the operation."
+literal|"The operation may take a lot of time...<br>Click this message to cancel the operation."
 argument_list|)
 name|String
 name|warnLoadingTooLongCanCancel
@@ -326,6 +338,51 @@ literal|"<u>C</u>ancel"
 argument_list|)
 name|String
 name|onCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export PDF"
+argument_list|)
+name|String
+name|opExportPDF
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export CSV"
+argument_list|)
+name|String
+name|opExportCSV
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export iCalendar"
+argument_list|)
+name|String
+name|opExportICalendar
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Copy iCalendar URL"
+argument_list|)
+name|String
+name|opCopyToClipboardICalendar
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Press Ctrl + C to copy the selected URL, and Escape to hide this dialog."
+argument_list|)
+name|String
+name|hintCtrlCToCopy
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1192,7 +1249,7 @@ argument_list|(
 literal|"E<u>x</u>port"
 argument_list|)
 name|String
-name|buttonExportICal
+name|buttonExport
 parameter_list|()
 function_decl|;
 annotation|@
