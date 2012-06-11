@@ -1238,6 +1238,9 @@ argument_list|(
 literal|"count(distinct e)"
 argument_list|)
 operator|.
+name|joinWithLocation
+argument_list|()
+operator|.
 name|from
 argument_list|(
 literal|"inner join l.roomDepts rd inner join rd.department.timetableManagers g"
@@ -2787,6 +2790,11 @@ argument_list|(
 literal|20
 argument_list|)
 operator|.
+name|order
+argument_list|(
+literal|"e.eventName"
+argument_list|)
+operator|.
 name|query
 argument_list|(
 name|hibSession
@@ -3687,6 +3695,13 @@ operator|new
 name|EventInstance
 argument_list|(
 name|select
+argument_list|,
+name|iWhere
+operator|.
+name|containsKey
+argument_list|(
+literal|"room"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -3727,6 +3742,12 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
+name|boolean
+name|iJoinWithLocation
+init|=
+literal|false
+decl_stmt|;
+specifier|private
 name|Set
 argument_list|<
 name|String
@@ -3763,11 +3784,18 @@ name|EventInstance
 parameter_list|(
 name|String
 name|select
+parameter_list|,
+name|boolean
+name|joinWithLocation
 parameter_list|)
 block|{
 name|iSelect
 operator|=
 name|select
+expr_stmt|;
+name|iJoinWithLocation
+operator|=
+name|joinWithLocation
 expr_stmt|;
 block|}
 specifier|public
@@ -3941,6 +3969,19 @@ name|this
 return|;
 block|}
 specifier|public
+name|EventInstance
+name|joinWithLocation
+parameter_list|()
+block|{
+name|iJoinWithLocation
+operator|=
+literal|true
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
 name|String
 name|query
 parameter_list|()
@@ -3962,7 +4003,15 @@ literal|" from "
 operator|+
 name|iType
 operator|+
-literal|" e inner join e.meetings m, Location l inner join l.session s "
+literal|" e inner join e.meetings m"
+operator|+
+operator|(
+name|iJoinWithLocation
+condition|?
+literal|", Location l inner join l.session s"
+else|:
+literal|", Session s"
+operator|)
 operator|+
 operator|(
 name|iFrom
@@ -3998,7 +4047,15 @@ argument_list|(
 name|iExclude
 argument_list|)
 operator|+
-literal|" where s.uniqueId = :sessionId and m.meetingDate>= s.eventBeginDate and m.meetingDate<= s.eventEndDate and m.locationPermanentId = l.permanentId "
+literal|" where s.uniqueId = :sessionId and m.meetingDate>= s.eventBeginDate and m.meetingDate<= s.eventEndDate"
+operator|+
+operator|(
+name|iJoinWithLocation
+condition|?
+literal|" and m.locationPermanentId = l.permanentId"
+else|:
+literal|""
+operator|)
 operator|+
 name|getWhere
 argument_list|(

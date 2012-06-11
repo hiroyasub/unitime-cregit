@@ -1264,10 +1264,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>S</u>ave"
+literal|"<u>C</u>reate"
 argument_list|)
 name|String
-name|buttonSave
+name|buttonCreate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>U</u>pdate"
+argument_list|)
+name|String
+name|buttonUpdate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>elete"
+argument_list|)
+name|String
+name|buttonDelete
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1465,10 +1483,34 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Saving {0}..."
+literal|"Creating {0}..."
 argument_list|)
 name|String
-name|waitSave
+name|waitCreate
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating {0}..."
+argument_list|)
+name|String
+name|waitUpdate
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Deleting {0}..."
+argument_list|)
+name|String
+name|waitDelete
 parameter_list|(
 name|String
 name|name
@@ -1573,10 +1615,40 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to save {0}: {1}"
+literal|"Failed to create {0}: {1}"
 argument_list|)
 name|String
-name|failedSave
+name|failedCreate
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update {0}: {1}"
+argument_list|)
+name|String
+name|failedUpdate
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to delete {0}: {1}"
+argument_list|)
+name|String
+name|failedDelete
 parameter_list|(
 name|String
 name|name
@@ -2544,6 +2616,15 @@ parameter_list|(
 name|String
 name|eventName
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"N/A"
+argument_list|)
+name|String
+name|notApplicable
+parameter_list|()
 function_decl|;
 block|}
 end_interface

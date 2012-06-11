@@ -190,6 +190,15 @@ name|Meeting
 name|meeting
 parameter_list|)
 function_decl|;
+comment|/** 	 * Check if the given location is an event location 	 * @param location a location (null to check if there is at least one such location) 	 * @return if the given location is event location (UniTime is maintaining events for this location)  	 */
+specifier|public
+name|boolean
+name|isEventLocation
+parameter_list|(
+name|Long
+name|locationId
+parameter_list|)
+function_decl|;
 comment|/** 	 * Check if the user can create a meeting using the given location. 	 * @param location a location 	 * @return true, if a meeting can be created using the given location 	 */
 specifier|public
 name|boolean

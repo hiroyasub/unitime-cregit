@@ -457,6 +457,14 @@ name|getMeetings
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|m
+operator|.
+name|isArrangeHours
+argument_list|()
+condition|)
+continue|continue;
 name|Date
 name|startTime
 init|=

@@ -266,6 +266,15 @@ name|daily
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"Arrange Hours"
+argument_list|)
+name|String
+name|arrangeHours
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
