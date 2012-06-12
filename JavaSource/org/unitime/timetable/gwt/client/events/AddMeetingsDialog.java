@@ -2102,6 +2102,8 @@ else|:
 literal|"department:Event "
 operator|+
 name|roomFilterValue
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}

@@ -1911,6 +1911,10 @@ argument_list|,
 literal|"title"
 argument_list|,
 literal|"Event Timetable"
+argument_list|,
+literal|"rooms"
+argument_list|,
+literal|""
 argument_list|)
 block|,
 name|Events
@@ -6817,6 +6821,8 @@ literal|"events"
 argument_list|,
 literal|""
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|reload
@@ -6982,6 +6988,8 @@ else|:
 literal|""
 operator|)
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|reload
