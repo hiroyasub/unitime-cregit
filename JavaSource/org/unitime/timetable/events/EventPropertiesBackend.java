@@ -462,6 +462,11 @@ name|canSeeSchedule
 argument_list|(
 literal|null
 argument_list|)
+operator|||
+name|rights
+operator|.
+name|canLookupContacts
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|setupSponsoringOrganizations

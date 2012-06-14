@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|unitime
@@ -134,6 +124,22 @@ operator|.
 name|client
 operator|.
 name|GwtRpcServiceAsync
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -320,6 +326,21 @@ block|{
 specifier|private
 specifier|static
 specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
 name|GwtRpcServiceAsync
 name|RPC
 init|=
@@ -342,15 +363,6 @@ name|compile
 argument_list|(
 literal|"[^0-9]*([0-9]+)[/ ]*([0-9]*)[ -]*([0-9]*)[/ ]*([0-9]*)"
 argument_list|)
-decl_stmt|;
-specifier|private
-name|List
-argument_list|<
-name|WeekInterface
-argument_list|>
-name|iAllWeeks
-init|=
-literal|null
 decl_stmt|;
 specifier|private
 name|AcademicSessionProvider
@@ -520,10 +532,6 @@ argument_list|>
 name|result
 parameter_list|)
 block|{
-name|iAllWeeks
-operator|=
-name|result
-expr_stmt|;
 name|clearHint
 argument_list|()
 expr_stmt|;
@@ -1081,7 +1089,20 @@ name|isAll
 argument_list|()
 condition|)
 return|return
-literal|"All Weeks"
+name|interval
+operator|.
+name|isEnableFilter
+argument_list|()
+condition|?
+name|MESSAGES
+operator|.
+name|itemAllWeeksWithFilter
+argument_list|()
+else|:
+name|MESSAGES
+operator|.
+name|itemAllWeeks
+argument_list|()
 return|;
 if|if
 condition|(
@@ -1091,8 +1112,10 @@ name|isOne
 argument_list|()
 condition|)
 return|return
-literal|"Week "
-operator|+
+name|MESSAGES
+operator|.
+name|itemWeek
+argument_list|(
 name|interval
 operator|.
 name|getFirst
@@ -1105,9 +1128,7 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-operator|+
-literal|" - "
-operator|+
+argument_list|,
 name|interval
 operator|.
 name|getFirst
@@ -1130,6 +1151,7 @@ name|size
 argument_list|()
 operator|-
 literal|1
+argument_list|)
 argument_list|)
 return|;
 return|return
@@ -1182,7 +1204,20 @@ name|isAll
 argument_list|()
 condition|)
 return|return
-literal|"All Weeks"
+name|interval
+operator|.
+name|isEnableFilter
+argument_list|()
+condition|?
+name|MESSAGES
+operator|.
+name|itemAllWeeksWithFilter
+argument_list|()
+else|:
+name|MESSAGES
+operator|.
+name|itemAllWeeks
+argument_list|()
 return|;
 if|if
 condition|(
@@ -1192,8 +1227,10 @@ name|isOne
 argument_list|()
 condition|)
 return|return
-literal|"Week "
-operator|+
+name|MESSAGES
+operator|.
+name|itemWeek
+argument_list|(
 name|interval
 operator|.
 name|getFirst
@@ -1206,9 +1243,7 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-operator|+
-literal|" - "
-operator|+
+argument_list|,
 name|interval
 operator|.
 name|getFirst
@@ -1232,10 +1267,13 @@ argument_list|()
 operator|-
 literal|1
 argument_list|)
+argument_list|)
 return|;
 return|return
-literal|"Weeks "
-operator|+
+name|MESSAGES
+operator|.
+name|itemWeeks
+argument_list|(
 name|interval
 operator|.
 name|getFirst
@@ -1248,9 +1286,7 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-operator|+
-literal|" - "
-operator|+
+argument_list|,
 name|interval
 operator|.
 name|getLast
@@ -1263,18 +1299,7 @@ name|get
 argument_list|(
 literal|6
 argument_list|)
-return|;
-block|}
-specifier|public
-name|List
-argument_list|<
-name|WeekInterface
-argument_list|>
-name|getAllWeeks
-parameter_list|()
-block|{
-return|return
-name|iAllWeeks
+argument_list|)
 return|;
 block|}
 specifier|public

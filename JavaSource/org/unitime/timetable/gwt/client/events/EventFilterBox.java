@@ -1143,8 +1143,6 @@ operator|.
 name|StaticSimpleFilter
 argument_list|(
 literal|"mode"
-argument_list|,
-literal|true
 argument_list|)
 decl_stmt|;
 name|mode

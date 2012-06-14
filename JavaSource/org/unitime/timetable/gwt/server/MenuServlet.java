@@ -1655,7 +1655,9 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-comment|// init();
+name|init
+argument_list|()
+expr_stmt|;
 name|List
 argument_list|<
 name|MenuInterface
