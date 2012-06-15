@@ -5364,7 +5364,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Configurations {0} have a higher limit than there is space available in its classes."
+literal|"Configurations {0} have a higher limit than there is space available in their classes."
 argument_list|)
 name|String
 name|errorConfigsWithTooHighLimit
