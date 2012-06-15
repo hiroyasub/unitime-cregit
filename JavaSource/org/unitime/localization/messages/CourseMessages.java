@@ -5352,6 +5352,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Configuration {0} has a higher limit than there is space available in its classes."
+argument_list|)
+name|String
+name|errorConfigWithTooHighLimit
+parameter_list|(
+name|String
+name|configuration
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Configurations {0} have a higher limit than there is space available in its classes."
+argument_list|)
+name|String
+name|errorConfigsWithTooHighLimit
+parameter_list|(
+name|String
+name|configurations
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Department is required."
 argument_list|)
 name|String
