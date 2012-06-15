@@ -1362,20 +1362,8 @@ literal|"UniTime "
 operator|+
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|.
-name|replaceAll
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|" (Univesity Timetabling Application, http://www.unitime.org)."
 argument_list|)

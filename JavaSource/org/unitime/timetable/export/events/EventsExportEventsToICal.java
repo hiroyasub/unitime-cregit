@@ -317,20 +317,8 @@ literal|"PRODID:-//UniTime "
 operator|+
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|.
-name|replaceAll
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|"/Events Calendar//NONSGML v1.0//EN"
 argument_list|)

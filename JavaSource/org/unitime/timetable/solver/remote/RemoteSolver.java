@@ -1438,13 +1438,8 @@ block|{
 return|return
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
+name|getVersion
+argument_list|()
 return|;
 block|}
 if|if

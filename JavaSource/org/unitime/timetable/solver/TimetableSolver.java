@@ -1945,13 +1945,8 @@ literal|"VERSION"
 argument_list|,
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
+name|getVersion
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return

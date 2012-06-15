@@ -204,37 +204,17 @@ name|info
 argument_list|(
 literal|"******* UniTime "
 operator|+
-operator|(
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|)
-operator|.
-name|replace
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|" build on "
 operator|+
 name|Constants
 operator|.
-name|REL_DATE
-operator|.
-name|replace
-argument_list|(
-literal|"@build.date@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getReleaseDate
+argument_list|()
 operator|+
 literal|" is starting up *******"
 argument_list|)
@@ -336,37 +316,17 @@ name|info
 argument_list|(
 literal|"******* UniTime "
 operator|+
-operator|(
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|)
-operator|.
-name|replace
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|" build on "
 operator|+
 name|Constants
 operator|.
-name|REL_DATE
-operator|.
-name|replace
-argument_list|(
-literal|"@build.date@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getReleaseDate
+argument_list|()
 operator|+
 literal|" initialized successfully *******"
 argument_list|)
@@ -412,37 +372,17 @@ name|info
 argument_list|(
 literal|"******* UniTime "
 operator|+
-operator|(
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|)
-operator|.
-name|replace
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|" build on "
 operator|+
 name|Constants
 operator|.
-name|REL_DATE
-operator|.
-name|replace
-argument_list|(
-literal|"@build.date@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getReleaseDate
+argument_list|()
 operator|+
 literal|" is going down *******"
 argument_list|)
@@ -526,24 +466,10 @@ name|info
 argument_list|(
 literal|"******* UniTime "
 operator|+
-operator|(
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|)
-operator|.
-name|replace
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|" shut down successfully *******"
 argument_list|)
@@ -607,24 +533,10 @@ block|{
 return|return
 literal|"UniTime "
 operator|+
-operator|(
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
-operator|)
-operator|.
-name|replace
-argument_list|(
-literal|"@build.number@"
-argument_list|,
-literal|"?"
-argument_list|)
+name|getVersion
+argument_list|()
 operator|+
 literal|" Initialization Servlet"
 return|;

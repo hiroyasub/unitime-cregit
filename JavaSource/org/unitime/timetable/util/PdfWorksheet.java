@@ -872,13 +872,8 @@ literal|"UniTime "
 operator|+
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
+name|getVersion
+argument_list|()
 operator|+
 literal|", www.unitime.org"
 argument_list|)
@@ -909,13 +904,8 @@ literal|"UniTime "
 operator|+
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
+name|getVersion
+argument_list|()
 operator|+
 literal|", www.unitime.org"
 argument_list|)
@@ -5051,13 +5041,8 @@ literal|"UniTime "
 operator|+
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
+name|getVersion
+argument_list|()
 argument_list|)
 argument_list|,
 name|ApplicationProperties

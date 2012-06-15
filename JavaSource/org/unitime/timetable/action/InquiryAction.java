@@ -1086,19 +1086,15 @@ literal|"Version: "
 operator|+
 name|Constants
 operator|.
-name|VERSION
-operator|+
-literal|"."
-operator|+
-name|Constants
-operator|.
-name|BLD_NUMBER
+name|getVersion
+argument_list|()
 operator|+
 literal|" ("
 operator|+
 name|Constants
 operator|.
-name|REL_DATE
+name|getReleaseDate
+argument_list|()
 operator|+
 literal|")\r\n"
 expr_stmt|;
