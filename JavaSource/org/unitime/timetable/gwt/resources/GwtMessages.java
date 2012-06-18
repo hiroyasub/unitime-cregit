@@ -931,6 +931,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Conflicts with: "
+argument_list|)
+name|String
+name|propConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Event Type:"
 argument_list|)
 name|String
@@ -1219,7 +1228,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dd Event"
+literal|"<u>A</u>dd&nbsp;Event"
 argument_list|)
 name|String
 name|buttonAddEvent
@@ -1255,7 +1264,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"M<u>o</u>re&or;"
+literal|"M<u>o</u>re&nbsp;&or;"
 argument_list|)
 name|String
 name|buttonMoreOperations
@@ -1322,6 +1331,15 @@ literal|"More<u>C</u>ontacts..."
 argument_list|)
 name|String
 name|buttonLookupAdditionalContact
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Standard&nbsp;<u>N</u>otes..."
+argument_list|)
+name|String
+name|buttonStandardNotes
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2143,6 +2161,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Standard Notes"
+argument_list|)
+name|String
+name|dialogStandardNotes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0}<br>{1}<br>{2} seats"
 argument_list|)
 name|String
@@ -2165,6 +2192,27 @@ literal|"{0}<br>{1}<br>{2} - {3}"
 argument_list|)
 name|String
 name|dateTimeHeader
+parameter_list|(
+name|String
+name|dow
+parameter_list|,
+name|String
+name|date
+parameter_list|,
+name|String
+name|start
+parameter_list|,
+name|String
+name|end
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0}, {1} {2} - {3}"
+argument_list|)
+name|String
+name|dateTimeHint
 parameter_list|(
 name|String
 name|dow
@@ -2708,6 +2756,39 @@ literal|"All Matching Rooms"
 argument_list|)
 name|String
 name|itemAllRoomsWithFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} seats"
+argument_list|)
+name|String
+name|hintRoomCapacity
+parameter_list|(
+name|String
+name|size
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} m"
+argument_list|)
+name|String
+name|hintRoomDistance
+parameter_list|(
+name|String
+name|distanceInMeters
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Press ENTER or double click a standard note to add it to additional information."
+argument_list|)
+name|String
+name|hintStandardNoteDoubleClickToSelect
 parameter_list|()
 function_decl|;
 block|}

@@ -2798,6 +2798,10 @@ name|MESSAGES
 operator|.
 name|colCapacity
 argument_list|()
+argument_list|,
+name|HasHorizontalAlignment
+operator|.
+name|ALIGN_RIGHT
 argument_list|)
 decl_stmt|;
 name|header

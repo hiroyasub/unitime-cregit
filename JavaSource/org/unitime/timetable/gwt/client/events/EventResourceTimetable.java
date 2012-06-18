@@ -11683,6 +11683,12 @@ argument_list|()
 condition|?
 literal|", "
 operator|+
+name|MESSAGES
+operator|.
+name|hintRoomCapacity
+argument_list|(
+literal|""
+operator|+
 name|interval
 operator|.
 name|getFirst
@@ -11690,8 +11696,7 @@ argument_list|()
 operator|.
 name|getSize
 argument_list|()
-operator|+
-literal|" seats"
+argument_list|)
 else|:
 literal|""
 operator|)
@@ -11707,6 +11712,12 @@ argument_list|()
 condition|?
 literal|", "
 operator|+
+name|MESSAGES
+operator|.
+name|hintRoomDistance
+argument_list|(
+literal|""
+operator|+
 name|Math
 operator|.
 name|round
@@ -11719,8 +11730,7 @@ operator|.
 name|getDistance
 argument_list|()
 argument_list|)
-operator|+
-literal|" m"
+argument_list|)
 else|:
 literal|""
 operator|)
