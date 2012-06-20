@@ -95,6 +95,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|solver
 operator|.
 name|remote
@@ -314,6 +328,18 @@ name|Debug
 operator|.
 name|info
 argument_list|(
+literal|" - Starting Online Sectioning Service ..."
+argument_list|)
+expr_stmt|;
+name|OnlineSectioningService
+operator|.
+name|startService
+argument_list|()
+expr_stmt|;
+name|Debug
+operator|.
+name|info
+argument_list|(
 literal|"******* UniTime "
 operator|+
 name|Constants
@@ -390,6 +416,18 @@ expr_stmt|;
 name|super
 operator|.
 name|destroy
+argument_list|()
+expr_stmt|;
+name|Debug
+operator|.
+name|info
+argument_list|(
+literal|" - Stopping Online Sectioning Service ..."
+argument_list|)
+expr_stmt|;
+name|OnlineSectioningService
+operator|.
+name|stopService
 argument_list|()
 expr_stmt|;
 name|Debug

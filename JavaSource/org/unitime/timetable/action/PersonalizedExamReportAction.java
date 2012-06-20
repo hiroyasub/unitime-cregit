@@ -1048,10 +1048,19 @@ specifier|static
 name|boolean
 name|hasPersonalReport
 parameter_list|(
-name|User
-name|user
+name|String
+name|userId
 parameter_list|)
 block|{
+if|if
+condition|(
+name|userId
+operator|==
+literal|null
+condition|)
+return|return
+literal|false
+return|;
 comment|//if (user.getRole()!=null) return false;
 name|HashSet
 argument_list|<
@@ -1089,10 +1098,7 @@ name|setString
 argument_list|(
 literal|"externalId"
 argument_list|,
-name|user
-operator|.
-name|getId
-argument_list|()
+name|userId
 argument_list|)
 operator|.
 name|setCacheable
@@ -1210,10 +1216,7 @@ name|setString
 argument_list|(
 literal|"externalId"
 argument_list|,
-name|user
-operator|.
-name|getId
-argument_list|()
+name|userId
 argument_list|)
 operator|.
 name|setCacheable

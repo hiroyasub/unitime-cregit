@@ -49,17 +49,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|timetable
+name|stereotype
 operator|.
-name|gwt
-operator|.
-name|command
-operator|.
-name|server
-operator|.
-name|GwtRpcHelper
+name|Service
 import|;
 end_import
 
@@ -219,6 +213,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|spring
+operator|.
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|util
 operator|.
 name|CalendarUtils
@@ -240,6 +248,11 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"org.unitime.timetable.gwt.shared.EventInterface$EventRoomAvailabilityRpcRequest"
+argument_list|)
 specifier|public
 class|class
 name|EventRoomAvailabilityBackend
@@ -260,8 +273,8 @@ parameter_list|(
 name|EventRoomAvailabilityRpcRequest
 name|request
 parameter_list|,
-name|GwtRpcHelper
-name|helper
+name|SessionContext
+name|context
 parameter_list|,
 name|EventRights
 name|rights

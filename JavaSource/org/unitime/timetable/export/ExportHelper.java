@@ -51,9 +51,11 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|commons
+name|timetable
 operator|.
-name|User
+name|spring
+operator|.
+name|UserContext
 import|;
 end_import
 
@@ -100,7 +102,7 @@ throws|throws
 name|IOException
 function_decl|;
 specifier|public
-name|User
+name|UserContext
 name|getUser
 parameter_list|()
 function_decl|;

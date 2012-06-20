@@ -57,6 +57,20 @@ name|CurriculumDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|spring
+operator|.
+name|UserContext
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -193,13 +207,7 @@ specifier|public
 name|boolean
 name|canUserEdit
 parameter_list|(
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|User
+name|UserContext
 name|user
 parameter_list|)
 block|{
@@ -224,7 +232,7 @@ name|equals
 argument_list|(
 name|user
 operator|.
-name|getRole
+name|getCurrentRole
 argument_list|()
 argument_list|)
 condition|)
@@ -243,7 +251,7 @@ name|equals
 argument_list|(
 name|user
 operator|.
-name|getRole
+name|getCurrentRole
 argument_list|()
 argument_list|)
 operator|&&
@@ -256,7 +264,7 @@ name|equals
 argument_list|(
 name|user
 operator|.
-name|getRole
+name|getCurrentRole
 argument_list|()
 argument_list|)
 condition|)
@@ -266,29 +274,20 @@ return|;
 comment|//TODO: Do we want to check Session status as well?
 comment|//  E.g., getDepartment().effectiveStatusType().canOwnerEdit()
 comment|// Check department
-name|TimetableManager
-name|tm
-init|=
-name|TimetableManager
-operator|.
-name|getManager
-argument_list|(
-name|user
-argument_list|)
-decl_stmt|;
 return|return
-name|tm
+name|getDepartment
+argument_list|()
 operator|!=
 literal|null
 operator|&&
-name|tm
+name|user
 operator|.
-name|getDepartments
-argument_list|()
-operator|.
-name|contains
+name|hasDepartment
 argument_list|(
 name|getDepartment
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 return|;

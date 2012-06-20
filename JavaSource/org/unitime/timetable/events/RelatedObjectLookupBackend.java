@@ -49,17 +49,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|timetable
+name|stereotype
 operator|.
-name|gwt
-operator|.
-name|command
-operator|.
-name|client
-operator|.
-name|GwtRpcResponseList
+name|Service
 import|;
 end_import
 
@@ -75,9 +69,9 @@ name|gwt
 operator|.
 name|command
 operator|.
-name|server
+name|client
 operator|.
-name|GwtRpcHelper
+name|GwtRpcResponseList
 import|;
 end_import
 
@@ -305,7 +299,26 @@ name|SessionDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|spring
+operator|.
+name|SessionContext
+import|;
+end_import
+
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"org.unitime.timetable.gwt.shared.EventInterface$RelatedObjectLookupRpcRequest"
+argument_list|)
 specifier|public
 class|class
 name|RelatedObjectLookupBackend
@@ -332,8 +345,8 @@ parameter_list|(
 name|RelatedObjectLookupRpcRequest
 name|request
 parameter_list|,
-name|GwtRpcHelper
-name|helper
+name|SessionContext
+name|context
 parameter_list|,
 name|EventRights
 name|rights

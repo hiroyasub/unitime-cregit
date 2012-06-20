@@ -55,6 +55,20 @@ name|GwtRpcResponse
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|spring
+operator|.
+name|SessionContext
+import|;
+end_import
+
 begin_interface
 specifier|public
 interface|interface
@@ -79,8 +93,8 @@ parameter_list|(
 name|T
 name|request
 parameter_list|,
-name|GwtRpcHelper
-name|helper
+name|SessionContext
+name|context
 parameter_list|)
 function_decl|;
 block|}
