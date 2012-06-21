@@ -1096,6 +1096,12 @@ parameter_list|)
 throws|throws
 name|SectioningException
 block|{
+name|iConfig
+operator|=
+operator|new
+name|ServerConfig
+argument_list|()
+expr_stmt|;
 name|org
 operator|.
 name|hibernate
@@ -1506,12 +1512,6 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
-name|iConfig
-operator|=
-operator|new
-name|ServerConfig
-argument_list|()
-expr_stmt|;
 name|iDistanceMetric
 operator|=
 operator|new
