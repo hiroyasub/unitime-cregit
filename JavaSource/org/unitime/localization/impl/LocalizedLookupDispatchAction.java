@@ -75,20 +75,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|actions
-operator|.
-name|LookupDispatchAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|localization
@@ -113,6 +99,22 @@ name|Messages
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|spring
+operator|.
+name|struts
+operator|.
+name|SpringAwareLookupDispatchAction
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -123,7 +125,7 @@ specifier|abstract
 class|class
 name|LocalizedLookupDispatchAction
 extends|extends
-name|LookupDispatchAction
+name|SpringAwareLookupDispatchAction
 block|{
 annotation|@
 name|Override

@@ -171,20 +171,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|actions
-operator|.
-name|LookupDispatchAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|hibernate
 operator|.
 name|HibernateException
@@ -198,6 +184,18 @@ operator|.
 name|hibernate
 operator|.
 name|Transaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
+name|stereotype
+operator|.
+name|Service
 import|;
 end_import
 
@@ -389,6 +387,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|spring
+operator|.
+name|struts
+operator|.
+name|SpringAwareLookupDispatchAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|util
 operator|.
 name|Constants
@@ -400,11 +414,16 @@ comment|/**   * MyEclipse Struts  * Creation date: 02-18-2005  *   * XDoclet def
 end_comment
 
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"/roomFeatureEdit"
+argument_list|)
 specifier|public
 class|class
 name|RoomFeatureEditAction
 extends|extends
-name|LookupDispatchAction
+name|SpringAwareLookupDispatchAction
 block|{
 comment|// --------------------------------------------------------- Methods
 comment|/** 	 *  	 */

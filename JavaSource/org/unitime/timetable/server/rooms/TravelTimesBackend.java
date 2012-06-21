@@ -416,6 +416,9 @@ name|context
 operator|.
 name|getUser
 argument_list|()
+operator|.
+name|getCurrentRole
+argument_list|()
 argument_list|)
 condition|)
 throw|throw

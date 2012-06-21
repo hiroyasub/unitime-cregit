@@ -121,6 +121,18 @@ begin_import
 import|import
 name|org
 operator|.
+name|springframework
+operator|.
+name|stereotype
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|commons
@@ -164,6 +176,11 @@ comment|/**  *   * @author Tomas Muller  *  */
 end_comment
 
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"/buildingCoordsAjax"
+argument_list|)
 specifier|public
 class|class
 name|BuildingCoordsAjax

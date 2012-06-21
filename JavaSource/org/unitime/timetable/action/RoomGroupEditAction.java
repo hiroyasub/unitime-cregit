@@ -191,20 +191,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|struts
-operator|.
-name|actions
-operator|.
-name|LookupDispatchAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|hibernate
 operator|.
 name|HibernateException
@@ -242,6 +228,18 @@ operator|.
 name|criterion
 operator|.
 name|Restrictions
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
+name|stereotype
+operator|.
+name|Service
 import|;
 end_import
 
@@ -479,6 +477,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|spring
+operator|.
+name|struts
+operator|.
+name|SpringAwareLookupDispatchAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|util
 operator|.
 name|Constants
@@ -490,11 +504,16 @@ comment|/**   * MyEclipse Struts  * Creation date: 05-02-2006  *   * XDoclet def
 end_comment
 
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"/roomGroupEdit"
+argument_list|)
 specifier|public
 class|class
 name|RoomGroupEditAction
 extends|extends
-name|LookupDispatchAction
+name|SpringAwareLookupDispatchAction
 block|{
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods

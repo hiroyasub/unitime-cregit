@@ -137,6 +137,18 @@ begin_import
 import|import
 name|org
 operator|.
+name|springframework
+operator|.
+name|stereotype
+operator|.
+name|Service
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|commons
@@ -392,6 +404,11 @@ comment|/**   * MyEclipse Struts  * Creation date: 02-18-2005  *   * XDoclet def
 end_comment
 
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"/distributionTypeEdit"
+argument_list|)
 specifier|public
 class|class
 name|DistributionTypeEditAction

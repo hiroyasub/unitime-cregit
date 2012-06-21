@@ -181,13 +181,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|hibernate
 operator|.
-name|struts
-operator|.
-name|actions
-operator|.
-name|LookupDispatchAction
+name|HibernateException
 import|;
 end_import
 
@@ -195,9 +191,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|hibernate
+name|springframework
 operator|.
-name|HibernateException
+name|stereotype
+operator|.
+name|Service
 import|;
 end_import
 
@@ -335,6 +333,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|spring
+operator|.
+name|struts
+operator|.
+name|SpringAwareLookupDispatchAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|util
 operator|.
 name|Constants
@@ -404,11 +418,16 @@ comment|/**  * @author Stephanie Schluttenhofer  */
 end_comment
 
 begin_class
+annotation|@
+name|Service
+argument_list|(
+literal|"/classAssignmentsReportSearch"
+argument_list|)
 specifier|public
 class|class
 name|ClassAssignmentsReportSearchAction
 extends|extends
-name|LookupDispatchAction
+name|SpringAwareLookupDispatchAction
 block|{
 specifier|protected
 name|Map
