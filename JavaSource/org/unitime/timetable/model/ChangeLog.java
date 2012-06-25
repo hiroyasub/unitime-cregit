@@ -193,7 +193,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
 operator|.
 name|SessionContext
 import|;
@@ -207,7 +207,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
 operator|.
 name|UserContext
 import|;
@@ -1045,7 +1045,7 @@ argument_list|()
 operator|instanceof
 name|UserContext
 operator|.
-name|CanUseChameleon
+name|Chameleon
 condition|)
 block|{
 name|userId
@@ -1054,7 +1054,7 @@ operator|(
 operator|(
 name|UserContext
 operator|.
-name|CanUseChameleon
+name|Chameleon
 operator|)
 name|context
 operator|.
@@ -1062,7 +1062,10 @@ name|getUser
 argument_list|()
 operator|)
 operator|.
-name|getOriginalExternalUserId
+name|getOriginalUserContext
+argument_list|()
+operator|.
+name|getExternalUserId
 argument_list|()
 expr_stmt|;
 block|}
@@ -1091,7 +1094,7 @@ operator|.
 name|getUser
 argument_list|()
 operator|.
-name|getCurrentAcademicSessionId
+name|getCurrentAuthority
 argument_list|()
 operator|==
 literal|null
@@ -1110,7 +1113,10 @@ operator|.
 name|getUser
 argument_list|()
 operator|.
-name|getCurrentAcademicSessionId
+name|getCurrentAuthority
+argument_list|()
+operator|.
+name|getAcademicSessionId
 argument_list|()
 argument_list|)
 operator|)

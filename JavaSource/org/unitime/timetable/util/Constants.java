@@ -997,6 +997,8 @@ init|=
 literal|0
 decl_stmt|;
 comment|/** Configuration Keys */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -1005,6 +1007,8 @@ name|SESSION_APP_ACCESS_LEVEL
 init|=
 literal|"systemAccess"
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -1013,6 +1017,8 @@ name|CFG_APP_ACCESS_LEVEL
 init|=
 literal|"tmtbl.access_level"
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -1022,6 +1028,8 @@ init|=
 literal|"tmtbl.system_message"
 decl_stmt|;
 comment|/** Configuration Values */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -1030,6 +1038,8 @@ name|APP_ACL_ALL
 init|=
 literal|"all"
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final

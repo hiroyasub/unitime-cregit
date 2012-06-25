@@ -239,6 +239,22 @@ name|org
 operator|.
 name|springframework
 operator|.
+name|security
+operator|.
+name|access
+operator|.
+name|prepost
+operator|.
+name|PreAuthorize
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
 name|stereotype
 operator|.
 name|Service
@@ -995,7 +1011,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
 operator|.
 name|SessionContext
 import|;
@@ -1009,7 +1025,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
 operator|.
 name|UserContext
 import|;
@@ -1161,6 +1177,11 @@ return|return
 name|sessionContext
 return|;
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -1664,6 +1685,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|List
 argument_list|<
@@ -2475,6 +2501,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission(#curriculumId, 'Curriculum', 'CurriculumDetail')"
+argument_list|)
 specifier|public
 name|CurriculumInterface
 name|loadCurriculum
@@ -4168,6 +4199,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission(#curriculum.id, 'Curriculum', 'CurriculumEdit') or hasPermission(#curriculum.department.id, 'Department', 'CurriculumAdd')"
+argument_list|)
 specifier|public
 name|Long
 name|saveCurriculum
@@ -6174,6 +6210,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission(#curricula, 'Curriculum', 'CurriculumEdit')"
+argument_list|)
 specifier|public
 name|Boolean
 name|saveClassifications
@@ -6707,6 +6748,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission(#curriculumId, 'Curriculum', 'CurriculumDelete')"
+argument_list|)
 specifier|public
 name|Boolean
 name|deleteCurriculum
@@ -7009,6 +7055,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission(#curriculumIds, 'Curriculum', 'CurriculumDelete')"
+argument_list|)
 specifier|public
 name|Boolean
 name|deleteCurricula
@@ -7337,6 +7388,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission(#curriculumIds, 'Curriculum', 'CurriculumMerge')"
+argument_list|)
 specifier|public
 name|Boolean
 name|mergeCurricula
@@ -8753,6 +8809,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -8992,6 +9053,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|HashMap
 argument_list|<
@@ -9827,6 +9893,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|private
 name|TreeSet
 argument_list|<
@@ -12577,6 +12648,11 @@ return|return
 name|results
 return|;
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -12799,6 +12875,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -13161,6 +13242,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -13419,6 +13505,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -13826,6 +13917,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|TreeSet
 argument_list|<
@@ -14209,6 +14305,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|String
 name|lastCurriculaFilter
@@ -14369,6 +14470,11 @@ return|return
 name|filter
 return|;
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|Collection
 argument_list|<
@@ -14848,6 +14954,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|String
 name|retrieveCourseDetails
@@ -15063,6 +15174,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|Collection
 argument_list|<
@@ -16025,6 +16141,11 @@ return|return
 name|ret
 return|;
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasRight('CurriculumAdd') and hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|Boolean
 name|canAddCurriculum
@@ -16170,6 +16291,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|PreAuthorize
+argument_list|(
+literal|"hasRight('CurriculumAdmin') and hasPermission('CurriculumView')"
+argument_list|)
 specifier|public
 name|Boolean
 name|isAdmin
@@ -21369,6 +21495,8 @@ throw|;
 block|}
 block|}
 comment|/* Support functions (lookups etc.) */
+annotation|@
+name|Deprecated
 specifier|private
 name|TimetableManager
 name|getManager
@@ -21410,7 +21538,7 @@ if|if
 condition|(
 name|user
 operator|.
-name|getCurrentRole
+name|getCurrentAuthority
 argument_list|()
 operator|==
 literal|null
@@ -21492,10 +21620,24 @@ throw|;
 name|Long
 name|sessionId
 init|=
+operator|(
 name|user
 operator|.
-name|getCurrentAcademicSessionId
+name|getCurrentAuthority
 argument_list|()
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|user
+operator|.
+name|getCurrentAuthority
+argument_list|()
+operator|.
+name|getAcademicSessionId
+argument_list|()
+operator|)
 decl_stmt|;
 if|if
 condition|(
@@ -21507,7 +21649,7 @@ throw|throw
 operator|new
 name|PageAccessException
 argument_list|(
-literal|"No academic session is selecgted."
+literal|"No academic session is selected."
 argument_list|)
 throw|;
 return|return

@@ -465,7 +465,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
 operator|.
 name|SessionContext
 import|;
@@ -479,7 +479,7 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
 operator|.
 name|UserContext
 import|;
@@ -655,7 +655,7 @@ if|if
 condition|(
 name|user
 operator|.
-name|getCurrentRole
+name|getCurrentAuthority
 argument_list|()
 operator|==
 literal|null
@@ -672,7 +672,10 @@ name|sessionId
 init|=
 name|user
 operator|.
-name|getCurrentAcademicSessionId
+name|getCurrentAuthority
+argument_list|()
+operator|.
+name|getAcademicSessionId
 argument_list|()
 decl_stmt|;
 if|if

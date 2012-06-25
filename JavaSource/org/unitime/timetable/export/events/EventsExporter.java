@@ -401,7 +401,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|spring
+name|security
+operator|.
+name|context
 operator|.
 name|SimpleUserContext
 import|;
@@ -869,6 +871,8 @@ operator|.
 name|setCurrentRole
 argument_list|(
 name|role
+argument_list|,
+name|sessionId
 argument_list|)
 expr_stmt|;
 block|}
@@ -956,6 +960,8 @@ argument_list|()
 operator|.
 name|getCurrentRole
 argument_list|()
+argument_list|,
+name|sessionId
 argument_list|)
 expr_stmt|;
 name|eventFilter
