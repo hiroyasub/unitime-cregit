@@ -1073,6 +1073,15 @@ name|Long
 name|locationId
 parameter_list|)
 block|{
+comment|// Admin can always create an event.
+if|if
+condition|(
+name|isAdmin
+argument_list|()
+condition|)
+return|return
+literal|true
+return|;
 return|return
 name|isAuthenticated
 argument_list|()
@@ -1309,6 +1318,15 @@ name|Meeting
 name|meeting
 parameter_list|)
 block|{
+comment|// Admin can always edit a meeting
+if|if
+condition|(
+name|isAdmin
+argument_list|()
+condition|)
+return|return
+literal|true
+return|;
 comment|// Past meetings cannot be edited
 if|if
 condition|(
@@ -1390,12 +1408,9 @@ condition|)
 return|return
 literal|true
 return|;
-comment|// Admin or event manager can edit if no location, or if the location is managed by the user
+comment|// Event manager can edit if no location, or if the location is managed by the user
 if|if
 condition|(
-name|isAdmin
-argument_list|()
-operator|||
 name|isEventManager
 argument_list|()
 condition|)
@@ -1436,20 +1451,6 @@ name|Meeting
 name|meeting
 parameter_list|)
 block|{
-comment|// Past meetings cannot be edited
-if|if
-condition|(
-name|isPastOrOutside
-argument_list|(
-name|meeting
-operator|.
-name|getStartTime
-argument_list|()
-argument_list|)
-condition|)
-return|return
-literal|false
-return|;
 comment|// No approval for examination and class events
 switch|switch
 condition|(
@@ -1481,12 +1482,32 @@ return|return
 literal|false
 return|;
 block|}
-comment|// Admin or event manager can approve if no location, or if the location is managed by the user
+comment|// Admin can always approve a meeting
 if|if
 condition|(
 name|isAdmin
 argument_list|()
-operator|||
+condition|)
+return|return
+literal|true
+return|;
+comment|// Past meetings cannot be edited
+if|if
+condition|(
+name|isPastOrOutside
+argument_list|(
+name|meeting
+operator|.
+name|getStartTime
+argument_list|()
+argument_list|)
+condition|)
+return|return
+literal|false
+return|;
+comment|// Event manager can approve if no location, or if the location is managed by the user
+if|if
+condition|(
 name|isEventManager
 argument_list|()
 condition|)

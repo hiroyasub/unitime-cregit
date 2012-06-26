@@ -1211,6 +1211,10 @@ expr_stmt|;
 if|if
 condition|(
 name|result
+operator|==
+literal|null
+operator|||
+name|result
 operator|.
 name|isEmpty
 argument_list|()
@@ -1682,6 +1686,7 @@ name|meeting
 operator|.
 name|setEndOffset
 argument_list|(
+operator|-
 name|Integer
 operator|.
 name|parseInt
@@ -1692,7 +1697,7 @@ name|getProperty
 argument_list|(
 literal|"breakTime"
 argument_list|,
-literal|"10"
+literal|"0"
 argument_list|)
 argument_list|)
 argument_list|)

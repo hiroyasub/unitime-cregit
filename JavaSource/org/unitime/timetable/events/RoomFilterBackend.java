@@ -4598,7 +4598,15 @@ literal|"0"
 argument_list|,
 literal|"breakTime"
 argument_list|,
-literal|"10"
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|location
+operator|.
+name|getBreakTime
+argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

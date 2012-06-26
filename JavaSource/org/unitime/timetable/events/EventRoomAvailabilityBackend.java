@@ -1098,14 +1098,6 @@ name|conflict
 argument_list|)
 expr_stmt|;
 block|}
-name|meeting
-operator|.
-name|setEndOffset
-argument_list|(
-operator|-
-literal|10
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|Meeting

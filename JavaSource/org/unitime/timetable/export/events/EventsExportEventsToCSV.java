@@ -337,20 +337,31 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|SHOW_TITLE
+case|:
+name|out
+operator|.
+name|hideColumn
+argument_list|(
+literal|3
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|SHOW_PUBLISHED_TIME
 case|:
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|6
+literal|7
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|7
+literal|8
 argument_list|)
 expr_stmt|;
 break|break;
@@ -361,14 +372,14 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|8
+literal|9
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|9
+literal|10
 argument_list|)
 expr_stmt|;
 break|break;
@@ -379,7 +390,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|10
+literal|11
 argument_list|)
 expr_stmt|;
 break|break;
@@ -390,7 +401,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|11
+literal|12
 argument_list|)
 expr_stmt|;
 break|break;
@@ -401,7 +412,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|13
+literal|14
 argument_list|)
 expr_stmt|;
 break|break;
@@ -412,7 +423,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|14
+literal|15
 argument_list|)
 expr_stmt|;
 break|break;
@@ -423,7 +434,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|15
+literal|16
 argument_list|)
 expr_stmt|;
 break|break;
@@ -434,14 +445,14 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|16
+literal|17
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|17
+literal|18
 argument_list|)
 expr_stmt|;
 break|break;
@@ -452,14 +463,25 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|18
+literal|19
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|19
+literal|20
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SHOW_APPROVAL
+case|:
+name|out
+operator|.
+name|hideColumn
+argument_list|(
+literal|21
 argument_list|)
 expr_stmt|;
 break|break;
@@ -506,106 +528,112 @@ argument_list|,
 comment|/*  3 */
 name|MESSAGES
 operator|.
-name|colDayOfWeek
+name|colTitle
 argument_list|()
 argument_list|,
 comment|/*  4 */
 name|MESSAGES
 operator|.
-name|colFirstDate
+name|colDayOfWeek
 argument_list|()
 argument_list|,
 comment|/*  5 */
 name|MESSAGES
 operator|.
-name|colLastDate
+name|colFirstDate
 argument_list|()
 argument_list|,
 comment|/*  6 */
 name|MESSAGES
 operator|.
-name|colPublishedStartTime
+name|colLastDate
 argument_list|()
 argument_list|,
 comment|/*  7 */
 name|MESSAGES
 operator|.
-name|colPublishedEndTime
+name|colPublishedStartTime
 argument_list|()
 argument_list|,
 comment|/*  8 */
 name|MESSAGES
 operator|.
-name|colAllocatedStartTime
+name|colPublishedEndTime
 argument_list|()
 argument_list|,
 comment|/*  9 */
 name|MESSAGES
 operator|.
-name|colAllocatedEndTime
+name|colAllocatedStartTime
 argument_list|()
 argument_list|,
 comment|/* 10 */
 name|MESSAGES
 operator|.
-name|colSetupTimeShort
+name|colAllocatedEndTime
 argument_list|()
 argument_list|,
 comment|/* 11 */
 name|MESSAGES
 operator|.
-name|colTeardownTimeShort
+name|colSetupTimeShort
 argument_list|()
 argument_list|,
 comment|/* 12 */
 name|MESSAGES
 operator|.
-name|colLocation
+name|colTeardownTimeShort
 argument_list|()
 argument_list|,
 comment|/* 13 */
 name|MESSAGES
 operator|.
-name|colCapacity
+name|colLocation
 argument_list|()
 argument_list|,
 comment|/* 14 */
 name|MESSAGES
 operator|.
-name|colEnrollment
+name|colCapacity
 argument_list|()
 argument_list|,
 comment|/* 15 */
 name|MESSAGES
 operator|.
-name|colLimit
+name|colEnrollment
 argument_list|()
 argument_list|,
 comment|/* 16 */
 name|MESSAGES
 operator|.
-name|colSponsorOrInstructor
+name|colLimit
 argument_list|()
 argument_list|,
 comment|/* 17 */
 name|MESSAGES
 operator|.
-name|colEmail
+name|colSponsorOrInstructor
 argument_list|()
 argument_list|,
 comment|/* 18 */
 name|MESSAGES
 operator|.
-name|colMainContact
+name|colEmail
 argument_list|()
 argument_list|,
 comment|/* 19 */
 name|MESSAGES
 operator|.
-name|colEmail
+name|colMainContact
 argument_list|()
 argument_list|,
 comment|/* 20 */
+name|MESSAGES
+operator|.
+name|colEmail
+argument_list|()
+argument_list|,
+comment|/* 21 */
 name|MESSAGES
 operator|.
 name|colApproval
@@ -699,6 +727,11 @@ argument_list|()
 operator|.
 name|getAbbreviation
 argument_list|()
+argument_list|,
+name|getTitle
+argument_list|(
+name|event
+argument_list|)
 argument_list|,
 name|multi
 operator|.

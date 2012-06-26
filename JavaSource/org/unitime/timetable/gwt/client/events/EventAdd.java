@@ -4895,7 +4895,7 @@ name|EventMeetingTable
 operator|.
 name|Mode
 operator|.
-name|ApprovalOfSingleEventMeetings
+name|MeetingsOfAnEvent
 argument_list|,
 literal|true
 argument_list|)
@@ -6426,7 +6426,11 @@ name|meeting
 operator|.
 name|setEndOffset
 argument_list|(
-literal|0
+operator|-
+name|room
+operator|.
+name|getBreakTime
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|meeting

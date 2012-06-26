@@ -856,7 +856,6 @@ argument_list|(
 literal|null
 argument_list|)
 condition|)
-block|{
 name|acadSession
 operator|.
 name|set
@@ -892,7 +891,6 @@ operator|.
 name|CanAddEvents
 argument_list|)
 expr_stmt|;
-block|}
 name|Session
 name|prev
 init|=
@@ -1140,7 +1138,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select s from Session s, RoomTypeOption o where o.session = s and o.status = 1 and ("
+literal|"select s from Session s, RoomTypeOption o where o.session = s and ("
 operator|+
 literal|"s.academicTerm || s.academicYear = :term or "
 operator|+
@@ -1213,7 +1211,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select s from Session s, RoomTypeOption o where o.session = s and o.status = 1 and "
+literal|"select s from Session s, RoomTypeOption o where o.session = s and "
 operator|+
 literal|"s.eventBeginDate<= :today and s.eventEndDate>= :today"
 argument_list|)

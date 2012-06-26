@@ -595,6 +595,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Title"
+argument_list|)
+name|String
+name|colTitle
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Time"
 argument_list|)
 name|String

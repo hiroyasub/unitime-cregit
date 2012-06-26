@@ -471,19 +471,10 @@ name|response
 operator|.
 name|setCanExportCSV
 argument_list|(
-name|rights
-operator|.
-name|canSeeSchedule
-argument_list|(
-literal|null
-argument_list|)
-operator|||
-name|rights
-operator|.
-name|canLookupContacts
-argument_list|()
+literal|true
 argument_list|)
 expr_stmt|;
+comment|// rights.canSeeSchedule(null) || rights.canLookupContacts());
 name|setupSponsoringOrganizations
 argument_list|(
 name|session
