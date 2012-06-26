@@ -1288,7 +1288,10 @@ argument_list|(
 operator|new
 name|DistanceConflict
 argument_list|(
-literal|null
+name|server
+operator|.
+name|getDistanceMetric
+argument_list|()
 argument_list|,
 name|model
 operator|.

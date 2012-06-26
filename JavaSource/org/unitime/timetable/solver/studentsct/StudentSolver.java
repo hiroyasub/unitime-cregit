@@ -7060,7 +7060,7 @@ name|a1
 operator|-
 name|t1
 operator|.
-name|getStartSlot
+name|getLength
 argument_list|()
 operator|)
 condition|)

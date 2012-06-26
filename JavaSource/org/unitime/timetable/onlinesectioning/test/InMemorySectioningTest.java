@@ -612,7 +612,14 @@ argument_list|(
 operator|new
 name|DistanceConflict
 argument_list|(
-literal|null
+operator|new
+name|DistanceMetric
+argument_list|(
+name|iModel
+operator|.
+name|getProperties
+argument_list|()
+argument_list|)
 argument_list|,
 name|iModel
 operator|.
