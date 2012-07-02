@@ -672,10 +672,7 @@ name|sessionId
 init|=
 name|user
 operator|.
-name|getCurrentAuthority
-argument_list|()
-operator|.
-name|getAcademicSessionId
+name|getCurrentAcademicSessionId
 argument_list|()
 decl_stmt|;
 if|if

@@ -541,10 +541,7 @@ operator|.
 name|getUser
 argument_list|()
 operator|.
-name|getCurrentAuthority
-argument_list|()
-operator|.
-name|getAcademicSessionId
+name|getCurrentAcademicSessionId
 argument_list|()
 else|:
 literal|null

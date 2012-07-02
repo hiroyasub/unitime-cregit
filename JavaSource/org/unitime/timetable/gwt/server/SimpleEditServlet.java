@@ -8042,10 +8042,7 @@ name|Long
 operator|)
 name|user
 operator|.
-name|getCurrentAuthority
-argument_list|()
-operator|.
-name|getAcademicSessionId
+name|getCurrentAcademicSessionId
 argument_list|()
 decl_stmt|;
 if|if
@@ -8099,10 +8096,7 @@ name|equals
 argument_list|(
 name|user
 operator|.
-name|getCurrentAuthority
-argument_list|()
-operator|.
-name|getRole
+name|getCurrentRole
 argument_list|()
 argument_list|)
 return|;

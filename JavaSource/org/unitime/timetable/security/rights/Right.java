@@ -17,28 +17,11 @@ name|rights
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|security
-operator|.
-name|UserContext
-import|;
-end_import
-
 begin_enum
 specifier|public
 enum|enum
 name|Right
 block|{
-comment|/** Authority can be selected as current authority in the {@link UserContext} */
-name|CanSelectAsCurrentRole
-block|,
 comment|/** Session default: current session */
 name|SessionDefaultCurrent
 block|,
@@ -62,6 +45,18 @@ name|DepartmentIndependent
 block|,
 comment|/** Status dependency -- session / department status must match */
 name|StatusIndependent
+block|,
+name|AddNonUnivLocation
+block|,
+name|AddSpecialUseRoom
+block|,
+name|ApplicationConfig
+block|,
+name|AssignedClasses
+block|,
+name|AssignedExams
+block|,
+name|AssignmentHistory
 block|,
 comment|/** Class level rights */
 name|ClassDetail

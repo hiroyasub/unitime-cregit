@@ -545,7 +545,10 @@ operator|.
 name|getCurrentAuthority
 argument_list|()
 operator|.
-name|getAcademicSessionId
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getQualifierId
 argument_list|()
 operator|)
 expr_stmt|;

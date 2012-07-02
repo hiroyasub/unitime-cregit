@@ -175,9 +175,13 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|stereotype
+name|beans
 operator|.
-name|Service
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
 import|;
 end_import
 
@@ -185,13 +189,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|commons
+name|stereotype
 operator|.
-name|web
-operator|.
-name|Web
+name|Service
 import|;
 end_import
 
@@ -259,7 +261,9 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Roles
+name|dao
+operator|.
+name|ApplicationConfigDAO
 import|;
 end_import
 
@@ -271,11 +275,25 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
+name|security
 operator|.
-name|dao
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|ApplicationConfigDAO
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|rights
+operator|.
+name|Right
 import|;
 end_import
 
@@ -296,6 +314,11 @@ extends|extends
 name|Action
 block|{
 comment|// --------------------------------------------------------- Instance Variables
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method execute      * @param mapping      * @param form      * @param request      * @param response      * @return ActionForward      */
 specifier|public
@@ -317,37 +340,20 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Check Access
 if|if
 condition|(
 operator|!
-name|Web
+name|sessionContext
 operator|.
-name|isLoggedIn
+name|hasPermission
 argument_list|(
-name|request
+name|Right
 operator|.
-name|getSession
-argument_list|()
-argument_list|)
-operator|||
-operator|!
-name|Web
-operator|.
-name|hasRole
-argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|ApplicationConfig
 argument_list|,
-name|Roles
-operator|.
-name|getAdminRoles
-argument_list|()
+literal|false
 argument_list|)
 condition|)
-block|{
 throw|throw
 operator|new
 name|Exception
@@ -355,7 +361,6 @@ argument_list|(
 literal|"Access Denied."
 argument_list|)
 throw|;
-block|}
 name|ApplicationConfigForm
 name|frm
 init|=
