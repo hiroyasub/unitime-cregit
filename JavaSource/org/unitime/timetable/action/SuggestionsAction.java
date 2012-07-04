@@ -6079,7 +6079,7 @@ operator|.
 name|getAssignedTime
 argument_list|()
 operator|.
-name|getDatePatternName
+name|getDatePatternHtml
 argument_list|()
 operator|+
 literal|"</TD></TR>"

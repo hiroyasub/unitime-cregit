@@ -334,6 +334,7 @@ operator|.
 name|isShowing
 argument_list|()
 condition|)
+block|{
 name|LoadingWidget
 operator|.
 name|getInstance
@@ -368,6 +369,7 @@ operator|+
 literal|"</a> for yourself."
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 expr_stmt|;

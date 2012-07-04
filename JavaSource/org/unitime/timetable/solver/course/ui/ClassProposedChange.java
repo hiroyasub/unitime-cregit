@@ -251,7 +251,7 @@ if|if
 condition|(
 name|change
 operator|.
-name|getTimeId
+name|getDateId
 argument_list|()
 operator|!=
 literal|null
@@ -389,6 +389,8 @@ name|conflict
 operator|.
 name|getClazz
 argument_list|()
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,
@@ -736,6 +738,10 @@ literal|"<td><i>Instructor</i></td>"
 expr_stmt|;
 name|ret
 operator|+=
+literal|"<td><i>Date Change</i></td>"
+expr_stmt|;
+name|ret
+operator|+=
 literal|"<td><i>Time Change</i></td>"
 expr_stmt|;
 name|ret
@@ -881,6 +887,65 @@ name|getLeadingInstructorNames
 argument_list|(
 literal|", "
 argument_list|)
+expr_stmt|;
+name|ret
+operator|+=
+literal|"</td><td nowrap>"
+expr_stmt|;
+if|if
+condition|(
+name|initial
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|initial
+operator|.
+name|getDateId
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|current
+operator|.
+name|getDateId
+argument_list|()
+argument_list|)
+condition|)
+name|ret
+operator|+=
+name|initial
+operator|.
+name|getDateNameHtml
+argument_list|()
+operator|+
+literal|"&rarr; "
+expr_stmt|;
+if|if
+condition|(
+name|initial
+operator|==
+literal|null
+condition|)
+name|ret
+operator|+=
+literal|"<font color='"
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+literal|"P"
+argument_list|)
+operator|+
+literal|"'><i>not-assigned</i></font>&rarr; "
+expr_stmt|;
+name|ret
+operator|+=
+name|current
+operator|.
+name|getDateNameHtml
+argument_list|()
 expr_stmt|;
 name|ret
 operator|+=
@@ -1155,6 +1220,30 @@ name|ret
 operator|+=
 name|conflict
 operator|.
+name|getDateNameHtml
+argument_list|()
+operator|+
+literal|"&rarr;<font color='"
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+literal|"P"
+argument_list|)
+operator|+
+literal|"'><i>not-assigned</i></font>"
+operator|+
+literal|"</td>"
+expr_stmt|;
+name|ret
+operator|+=
+literal|"</td><td nowrap>"
+expr_stmt|;
+name|ret
+operator|+=
+name|conflict
+operator|.
 name|getTimeNameHtml
 argument_list|()
 operator|+
@@ -1253,6 +1342,13 @@ literal|" "
 operator|+
 name|conflict
 operator|.
+name|getDate
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|conflict
+operator|.
 name|getTime
 argument_list|()
 operator|.
@@ -1323,6 +1419,13 @@ literal|"Not Assigned"
 else|:
 name|initial
 operator|.
+name|getDate
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|initial
+operator|.
 name|getTime
 argument_list|()
 operator|.
@@ -1340,6 +1443,13 @@ argument_list|)
 operator|)
 operator|+
 literal|" -> "
+operator|+
+name|current
+operator|.
+name|getDate
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|current
 operator|.

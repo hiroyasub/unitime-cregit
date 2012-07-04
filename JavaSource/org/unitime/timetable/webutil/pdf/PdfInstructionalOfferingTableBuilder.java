@@ -3903,7 +3903,7 @@ return|return
 name|cell
 return|;
 block|}
-specifier|private
+specifier|protected
 name|PdfPCell
 name|pdfBuildDatePatternCell
 parameter_list|(
