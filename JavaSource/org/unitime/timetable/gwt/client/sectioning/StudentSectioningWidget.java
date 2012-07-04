@@ -4488,14 +4488,12 @@ argument_list|,
 operator|new
 name|WebTable
 operator|.
-name|Cell
+name|NoteCell
 argument_list|(
 name|clazz
 operator|.
 name|getNote
 argument_list|()
-argument_list|,
-literal|true
 argument_list|)
 argument_list|,
 operator|(

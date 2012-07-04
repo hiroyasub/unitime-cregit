@@ -1990,6 +1990,9 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+name|Course
+name|course
+init|=
 operator|new
 name|Course
 argument_list|(
@@ -2016,6 +2019,16 @@ argument_list|,
 name|limit
 argument_list|,
 name|projected
+argument_list|)
+decl_stmt|;
+name|course
+operator|.
+name|setNote
+argument_list|(
+name|co
+operator|.
+name|getScheduleBookNote
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

@@ -3788,6 +3788,16 @@ name|a
 operator|.
 name|addNote
 argument_list|(
+name|c
+operator|.
+name|getNote
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|a
+operator|.
+name|addNote
+argument_list|(
 name|section
 operator|.
 name|getNote
