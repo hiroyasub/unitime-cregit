@@ -101,6 +101,22 @@ name|org
 operator|.
 name|springframework
 operator|.
+name|beans
+operator|.
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
 name|stereotype
 operator|.
 name|Service
@@ -177,6 +193,22 @@ name|WebSolver
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|service
+operator|.
+name|SolverService
+import|;
+end_import
+
 begin_comment
 comment|/**   * @author Tomas Muller  */
 end_comment
@@ -193,6 +225,14 @@ name|SolverLogAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SolverService
+argument_list|<
+name|SolverProxy
+argument_list|>
+name|courseTimetablingSolverService
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 specifier|public
@@ -314,15 +354,10 @@ expr_stmt|;
 name|SolverProxy
 name|solver
 init|=
-name|WebSolver
+name|courseTimetablingSolverService
 operator|.
 name|getSolver
-argument_list|(
-name|request
-operator|.
-name|getSession
 argument_list|()
-argument_list|)
 decl_stmt|;
 if|if
 condition|(

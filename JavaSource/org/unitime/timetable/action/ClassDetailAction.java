@@ -189,6 +189,22 @@ name|org
 operator|.
 name|springframework
 operator|.
+name|beans
+operator|.
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
 name|stereotype
 operator|.
 name|Service
@@ -487,6 +503,20 @@ name|timetable
 operator|.
 name|solver
 operator|.
+name|SolverProxy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
 name|TimetableDatabaseLoader
 import|;
 end_import
@@ -502,6 +532,22 @@ operator|.
 name|solver
 operator|.
 name|WebSolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|service
+operator|.
+name|SolverService
 import|;
 end_import
 
@@ -605,6 +651,14 @@ name|CourseMessages
 operator|.
 name|class
 argument_list|)
+decl_stmt|;
+annotation|@
+name|Autowired
+name|SolverService
+argument_list|<
+name|SolverProxy
+argument_list|>
+name|courseTimetablingSolverService
 decl_stmt|;
 comment|// --------------------------------------------------------- Class Constants
 comment|/** Anchor names **/
@@ -1162,12 +1216,10 @@ name|user
 argument_list|)
 operator|&&
 comment|// CLASS IS EDITABLE
-name|WebSolver
+name|courseTimetablingSolverService
 operator|.
 name|getSolver
-argument_list|(
-name|httpSession
-argument_list|)
+argument_list|()
 operator|==
 literal|null
 operator|&&

@@ -388,6 +388,9 @@ block|}
 specifier|public
 specifier|static
 name|Set
+argument_list|<
+name|SolverGroup
+argument_list|>
 name|findBySessionId
 parameter_list|(
 name|Long
@@ -397,6 +400,9 @@ block|{
 return|return
 operator|new
 name|TreeSet
+argument_list|<
+name|SolverGroup
+argument_list|>
 argument_list|(
 operator|(
 operator|new
