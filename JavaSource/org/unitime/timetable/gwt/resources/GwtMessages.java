@@ -823,10 +823,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"new approval"
+argument_list|)
+name|String
+name|approvelNewApprovedMeeting
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"waiting approval"
 argument_list|)
 name|String
 name|approvalWaiting
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"deleted meeting"
+argument_list|)
+name|String
+name|approvalDeleted
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2057,6 +2075,15 @@ literal|"Display Conflicts"
 argument_list|)
 name|String
 name|checkDisplayConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All Sessions"
+argument_list|)
+name|String
+name|checkSpanMultipleSessions
 parameter_list|()
 function_decl|;
 annotation|@

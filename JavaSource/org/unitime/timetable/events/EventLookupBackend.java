@@ -7783,7 +7783,7 @@ argument_list|)
 operator|.
 name|contains
 argument_list|(
-literal|"conflicts"
+literal|"Conflicts"
 argument_list|)
 condition|)
 block|{

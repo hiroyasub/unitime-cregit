@@ -2863,6 +2863,14 @@ name|approval
 argument_list|)
 control|)
 block|{
+if|if
+condition|(
+name|meeting
+operator|.
+name|isDelete
+argument_list|()
+condition|)
+continue|continue;
 name|out
 operator|.
 name|println

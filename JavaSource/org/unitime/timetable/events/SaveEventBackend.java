@@ -1502,6 +1502,14 @@ if|if
 condition|(
 name|m
 operator|.
+name|isDelete
+argument_list|()
+condition|)
+continue|continue;
+if|if
+condition|(
+name|m
+operator|.
 name|getId
 argument_list|()
 operator|!=
@@ -1848,6 +1856,11 @@ argument_list|(
 name|hibSession
 argument_list|,
 name|m
+argument_list|,
+name|event
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -3299,6 +3312,9 @@ name|hibSession
 parameter_list|,
 name|MeetingInterface
 name|meeting
+parameter_list|,
+name|Long
+name|eventId
 parameter_list|)
 block|{
 name|List
@@ -3335,7 +3351,7 @@ literal|"select m from Meeting m, Location l "
 operator|+
 literal|"where m.startPeriod< :stopTime and m.stopPeriod> :startTime and "
 operator|+
-literal|"m.locationPermanentId = l.permanentId and l.uniqueId = :locationdId and m.meetingDate = :meetingDate and m.uniqueId != :meetingId"
+literal|"m.locationPermanentId = l.permanentId and l.uniqueId = :locationdId and m.meetingDate = :meetingDate and m.uniqueId != :meetingId and m.event.uniqueId != :eventId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3399,6 +3415,20 @@ name|meeting
 operator|.
 name|getId
 argument_list|()
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"eventId"
+argument_list|,
+name|eventId
+operator|==
+literal|null
+condition|?
+operator|-
+literal|1
+else|:
+name|eventId
 argument_list|)
 operator|.
 name|list

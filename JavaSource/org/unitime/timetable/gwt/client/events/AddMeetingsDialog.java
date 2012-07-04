@@ -1012,6 +1012,12 @@ init|=
 literal|10
 decl_stmt|;
 specifier|private
+name|Long
+name|iEventId
+init|=
+literal|null
+decl_stmt|;
+specifier|private
 name|AsyncCallback
 argument_list|<
 name|List
@@ -1273,6 +1279,8 @@ argument_list|()
 argument_list|,
 name|getRooms
 argument_list|()
+argument_list|,
+name|iEventId
 argument_list|,
 name|iSession
 operator|.
@@ -1900,7 +1908,10 @@ block|}
 specifier|public
 name|void
 name|showDialog
-parameter_list|()
+parameter_list|(
+name|Long
+name|eventId
+parameter_list|)
 block|{
 name|iStep
 operator|=
@@ -1966,6 +1977,10 @@ expr_stmt|;
 name|iResponse
 operator|=
 literal|null
+expr_stmt|;
+name|iEventId
+operator|=
+name|eventId
 expr_stmt|;
 name|setWidget
 argument_list|(
@@ -2152,6 +2167,11 @@ name|roomFilterValue
 argument_list|,
 literal|true
 argument_list|)
+expr_stmt|;
+name|iSelected
+operator|.
+name|clear
+argument_list|()
 expr_stmt|;
 block|}
 specifier|private
