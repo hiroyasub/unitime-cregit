@@ -10871,7 +10871,7 @@ name|sections
 operator|.
 name|size
 argument_list|()
-operator|>
+operator|>=
 literal|2
 condition|)
 block|{
@@ -11054,7 +11054,7 @@ name|s
 operator|.
 name|size
 argument_list|()
-operator|>
+operator|>=
 literal|2
 condition|)
 name|ret

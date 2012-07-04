@@ -1405,7 +1405,7 @@ name|sections
 operator|.
 name|size
 argument_list|()
-operator|>
+operator|>=
 literal|2
 condition|)
 name|model
