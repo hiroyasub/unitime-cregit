@@ -486,6 +486,8 @@ operator|)
 return|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Set
@@ -658,6 +660,8 @@ return|return
 name|saList
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Set
@@ -1356,6 +1360,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSeeTimetable
@@ -1787,6 +1793,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canDoTimetable
@@ -1900,6 +1908,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canDoTimetable
@@ -2490,6 +2500,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canAddCourses
@@ -2619,6 +2631,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSeeExams

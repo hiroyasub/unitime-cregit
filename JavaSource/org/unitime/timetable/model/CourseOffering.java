@@ -485,60 +485,41 @@ block|}
 comment|/** 	 * Search for a particular course offering 	 * @param acadSessionId Academic Session 	 * @param subjAreaId Subject Area Unique Id 	 * @param courseNbr Course Number 	 * @return List object with matching course offering 	 */
 specifier|public
 specifier|static
-name|List
-name|search
+name|CourseOffering
+name|findBySessionSubjAreaIdCourseNbr
 parameter_list|(
 name|Long
 name|acadSessionId
 parameter_list|,
-name|String
+name|Long
 name|subjAreaId
 parameter_list|,
 name|String
 name|courseNbr
 parameter_list|)
 block|{
-name|InstructionalOfferingDAO
-name|iDao
-init|=
-operator|new
-name|InstructionalOfferingDAO
+return|return
+operator|(
+name|CourseOffering
+operator|)
+name|CourseOfferingDAO
+operator|.
+name|getInstance
 argument_list|()
-decl_stmt|;
-name|org
-operator|.
-name|hibernate
-operator|.
-name|Session
-name|hibSession
-init|=
-name|iDao
 operator|.
 name|getSession
 argument_list|()
-decl_stmt|;
-name|String
-name|sql
-init|=
-literal|" from CourseOffering co "
-operator|+
-literal|" where co.uniqueCourseNbr.subjectArea.uniqueId=:subjArea"
-operator|+
-literal|" and co.uniqueCourseNbr.courseNbr = :crsNbr"
-operator|+
-literal|" and co.instructionalOffering.session.uniqueId = :acadSessionId"
-decl_stmt|;
-name|Query
-name|query
-init|=
-name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-name|sql
+literal|"from CourseOffering co "
+operator|+
+literal|"where co.uniqueCourseNbr.subjectArea.uniqueId = :subjArea "
+operator|+
+literal|"and co.uniqueCourseNbr.courseNbr = :crsNbr "
+operator|+
+literal|"and co.instructionalOffering.session.uniqueId = :acadSessionId"
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
 name|setString
 argument_list|(
@@ -546,38 +527,28 @@ literal|"crsNbr"
 argument_list|,
 name|courseNbr
 argument_list|)
-expr_stmt|;
-name|query
 operator|.
-name|setString
+name|setLong
 argument_list|(
 literal|"subjArea"
 argument_list|,
 name|subjAreaId
 argument_list|)
-expr_stmt|;
-name|query
 operator|.
 name|setLong
 argument_list|(
 literal|"acadSessionId"
 argument_list|,
 name|acadSessionId
-operator|.
-name|longValue
-argument_list|()
 argument_list|)
-expr_stmt|;
-name|List
-name|l
-init|=
-name|query
 operator|.
-name|list
+name|setMaxResults
+argument_list|(
+literal|1
+argument_list|)
+operator|.
+name|uniqueResult
 argument_list|()
-decl_stmt|;
-return|return
-name|l
 return|;
 block|}
 specifier|public
@@ -595,47 +566,28 @@ name|String
 name|courseNbr
 parameter_list|)
 block|{
-name|InstructionalOfferingDAO
-name|iDao
-init|=
-operator|new
-name|InstructionalOfferingDAO
+return|return
+operator|(
+name|CourseOffering
+operator|)
+name|CourseOfferingDAO
+operator|.
+name|getInstance
 argument_list|()
-decl_stmt|;
-name|org
-operator|.
-name|hibernate
-operator|.
-name|Session
-name|hibSession
-init|=
-name|iDao
 operator|.
 name|getSession
 argument_list|()
-decl_stmt|;
-name|String
-name|sql
-init|=
-literal|" from CourseOffering co "
-operator|+
-literal|" where co.uniqueCourseNbr.subjectArea.subjectAreaAbbreviation=:subjArea"
-operator|+
-literal|" and co.uniqueCourseNbr.courseNbr = :crsNbr"
-operator|+
-literal|" and co.instructionalOffering.session.uniqueId = :acadSessionId"
-decl_stmt|;
-name|Query
-name|query
-init|=
-name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-name|sql
+literal|"from CourseOffering co "
+operator|+
+literal|"where co.uniqueCourseNbr.subjectArea.subjectAreaAbbreviation = :subjArea "
+operator|+
+literal|"and co.uniqueCourseNbr.courseNbr = :crsNbr "
+operator|+
+literal|"and co.instructionalOffering.session.uniqueId = :acadSessionId"
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
 name|setString
 argument_list|(
@@ -643,8 +595,6 @@ literal|"crsNbr"
 argument_list|,
 name|courseNbr
 argument_list|)
-expr_stmt|;
-name|query
 operator|.
 name|setString
 argument_list|(
@@ -652,24 +602,18 @@ literal|"subjArea"
 argument_list|,
 name|subjAreaAbbv
 argument_list|)
-expr_stmt|;
-name|query
 operator|.
 name|setLong
 argument_list|(
 literal|"acadSessionId"
 argument_list|,
 name|acadSessionId
-operator|.
-name|longValue
-argument_list|()
 argument_list|)
-expr_stmt|;
-return|return
-operator|(
-name|CourseOffering
-operator|)
-name|query
+operator|.
+name|setMaxResults
+argument_list|(
+literal|1
+argument_list|)
 operator|.
 name|uniqueResult
 argument_list|()
@@ -791,7 +735,7 @@ specifier|synchronized
 name|CourseOffering
 name|addNew
 parameter_list|(
-name|String
+name|Long
 name|subjAreaId
 parameter_list|,
 name|String
@@ -833,11 +777,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
-name|Long
-argument_list|(
 name|subjAreaId
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|org

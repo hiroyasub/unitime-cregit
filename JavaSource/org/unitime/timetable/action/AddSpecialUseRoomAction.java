@@ -656,8 +656,6 @@ argument_list|(
 name|Right
 operator|.
 name|AddSpecialUseRoom
-argument_list|,
-literal|true
 argument_list|)
 condition|)
 throw|throw

@@ -432,8 +432,6 @@ argument_list|(
 name|Right
 operator|.
 name|AssignedExams
-argument_list|,
-literal|true
 argument_list|)
 condition|)
 throw|throw

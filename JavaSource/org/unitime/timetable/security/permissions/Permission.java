@@ -73,22 +73,6 @@ name|UserContext
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|security
-operator|.
-name|rights
-operator|.
-name|Right
-import|;
-end_import
-
 begin_interface
 specifier|public
 interface|interface
@@ -136,9 +120,6 @@ parameter_list|,
 name|Department
 name|department
 parameter_list|,
-name|Right
-name|right
-parameter_list|,
 name|DepartmentStatusType
 operator|.
 name|Status
@@ -166,9 +147,6 @@ name|user
 parameter_list|,
 name|Session
 name|session
-parameter_list|,
-name|Right
-name|right
 parameter_list|,
 name|DepartmentStatusType
 operator|.

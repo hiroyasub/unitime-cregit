@@ -147,8 +147,12 @@ name|user
 argument_list|,
 name|department
 argument_list|,
-name|right
-argument_list|()
+operator|new
+name|DepartmentStatusType
+operator|.
+name|Status
+index|[]
+block|{}
 argument_list|)
 operator|&&
 name|checkStatus
@@ -171,9 +175,6 @@ name|user
 parameter_list|,
 name|Department
 name|department
-parameter_list|,
-name|Right
-name|right
 parameter_list|,
 name|DepartmentStatusType
 operator|.
@@ -262,24 +263,6 @@ condition|)
 return|return
 literal|false
 return|;
-comment|// Right check
-if|if
-condition|(
-name|right
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|authority
-operator|.
-name|hasRight
-argument_list|(
-name|right
-argument_list|)
-condition|)
-return|return
-literal|false
-return|;
 comment|// Check department status
 if|if
 condition|(
@@ -362,15 +345,6 @@ return|return
 name|Department
 operator|.
 name|class
-return|;
-block|}
-specifier|public
-name|Right
-name|right
-parameter_list|()
-block|{
-return|return
-literal|null
 return|;
 block|}
 specifier|public

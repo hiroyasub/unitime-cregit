@@ -1140,6 +1140,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isViewableBy
@@ -1415,7 +1417,7 @@ parameter_list|(
 name|Long
 name|acadSessionId
 parameter_list|,
-name|String
+name|Long
 name|subjectAreaId
 parameter_list|,
 name|String
@@ -1784,12 +1786,7 @@ name|setLong
 argument_list|(
 literal|"subjectAreaId"
 argument_list|,
-name|Long
-operator|.
-name|parseLong
-argument_list|(
 name|subjectAreaId
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|q

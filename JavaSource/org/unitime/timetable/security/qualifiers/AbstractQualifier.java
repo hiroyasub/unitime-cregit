@@ -179,6 +179,7 @@ argument_list|()
 operator|+
 literal|":"
 operator|+
+operator|(
 name|getQualifierReference
 argument_list|()
 operator|==
@@ -192,6 +193,7 @@ argument_list|()
 else|:
 name|getQualifierReference
 argument_list|()
+operator|)
 return|;
 block|}
 annotation|@

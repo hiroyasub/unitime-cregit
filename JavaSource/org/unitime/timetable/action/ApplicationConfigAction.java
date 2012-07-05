@@ -350,8 +350,6 @@ argument_list|(
 name|Right
 operator|.
 name|ApplicationConfig
-argument_list|,
-literal|false
 argument_list|)
 condition|)
 throw|throw
