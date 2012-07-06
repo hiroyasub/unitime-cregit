@@ -3194,6 +3194,9 @@ name|io
 parameter_list|,
 name|CourseOffering
 name|co
+parameter_list|,
+name|boolean
+name|isEditable
 parameter_list|)
 block|{
 name|TableCell
@@ -3203,6 +3206,8 @@ name|this
 operator|.
 name|initCell
 argument_list|(
+name|isEditable
+operator|&&
 name|co
 operator|.
 name|isIsControl
@@ -11150,6 +11155,10 @@ literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|isEditable
+condition|)
 name|row
 operator|.
 name|setOnClick
@@ -11195,6 +11204,8 @@ argument_list|(
 name|io
 argument_list|,
 name|co
+argument_list|,
+name|isEditable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11338,6 +11349,8 @@ name|initNormalCell
 argument_list|(
 name|demand
 argument_list|,
+name|isEditable
+operator|&&
 name|co
 operator|.
 name|isIsControl
@@ -11391,6 +11404,8 @@ else|:
 literal|"0"
 operator|)
 argument_list|,
+name|isEditable
+operator|&&
 name|co
 operator|.
 name|isIsControl
@@ -11513,6 +11528,8 @@ argument_list|()
 else|:
 literal|""
 argument_list|,
+name|isEditable
+operator|&&
 name|co
 operator|.
 name|isIsControl

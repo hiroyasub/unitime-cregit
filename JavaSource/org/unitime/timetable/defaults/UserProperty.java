@@ -115,7 +115,18 @@ name|No
 argument_list|,
 literal|"Sort classes on detail pages based on Classes page sorting options."
 argument_list|)
-block|;
+block|,
+name|ConfirmationDialogs
+argument_list|(
+literal|"jsConfirm"
+argument_list|,
+name|CommonValues
+operator|.
+name|Yes
+argument_list|,
+literal|"Display confirmation dialogs"
+argument_list|)
+block|, 	 	;
 name|String
 name|iKey
 decl_stmt|,
