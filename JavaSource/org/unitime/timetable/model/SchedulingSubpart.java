@@ -1879,6 +1879,8 @@ name|getDefaultDatePatternNotNull
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canUseHardTimePreferences
@@ -1973,6 +1975,8 @@ literal|false
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canUseHardRoomPreferences
@@ -4446,6 +4450,18 @@ literal|true
 argument_list|)
 operator|.
 name|uniqueResult
+argument_list|()
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|Department
+name|getDepartment
+parameter_list|()
+block|{
+return|return
+name|getManagingDept
 argument_list|()
 return|;
 block|}

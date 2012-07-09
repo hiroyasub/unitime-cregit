@@ -461,6 +461,8 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -513,6 +515,8 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String
@@ -600,6 +604,8 @@ name|defaultValue
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|HashMap
@@ -1069,6 +1075,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean
@@ -1153,6 +1161,8 @@ name|defaultValue
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void

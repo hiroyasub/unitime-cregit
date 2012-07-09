@@ -117,18 +117,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|http
-operator|.
-name|HttpSession
-import|;
-end_import
-
-begin_import
-import|import
 name|net
 operator|.
 name|sf
@@ -9441,6 +9429,18 @@ comment|//	@Override
 comment|//	public String getClassSuffix() {
 comment|//		return(getClassSuffix(getSchedulingSubpart().getControllingCourseOffering()));
 comment|//	}
+annotation|@
+name|Override
+specifier|public
+name|Department
+name|getDepartment
+parameter_list|()
+block|{
+return|return
+name|getManagingDept
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

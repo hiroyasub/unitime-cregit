@@ -631,6 +631,8 @@ class|class
 name|LookupTables
 block|{
 comment|/**      * Gets the current academic session id for the current session      * @param request      * @return      */
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|String
@@ -1034,6 +1036,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Get Time Patterns and store it in request object      * @param request      * @throws Exception      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1867,6 +1871,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Executes the query to retrieve instructors      * @param request      * @param clause      * @throws Exception      */
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|void
@@ -2215,6 +2221,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Gets course offereings based on parameters      * @param request      * @param onlyOffered true indicates only retrieve offered courses       * @param onlyControlling true indicates retrieve only controlling courses      * @throws Exception      */
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|void
@@ -2632,6 +2640,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Gets the controlling course offerings for a user       * @param request      * @throws Exception      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void

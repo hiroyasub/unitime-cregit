@@ -89,7 +89,22 @@ name|No
 argument_list|(
 literal|"no"
 argument_list|)
-block|, 	 	 	;
+block|,
+name|Ask
+argument_list|(
+literal|"ask"
+argument_list|)
+block|,
+name|Always
+argument_list|(
+literal|"always"
+argument_list|)
+block|,
+name|Never
+argument_list|(
+literal|"never"
+argument_list|)
+block|, 	 	;
 name|String
 name|iValue
 decl_stmt|;
@@ -122,7 +137,7 @@ name|value
 parameter_list|)
 block|{
 return|return
-name|value
+name|iValue
 operator|.
 name|equals
 argument_list|(

@@ -2185,6 +2185,8 @@ return|return
 name|ret
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String
@@ -3160,6 +3162,17 @@ argument_list|)
 expr_stmt|;
 return|return
 name|departments
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|Department
+name|getDepartment
+parameter_list|()
+block|{
+return|return
+name|this
 return|;
 block|}
 block|}

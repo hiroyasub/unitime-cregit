@@ -438,10 +438,6 @@ specifier|private
 name|Boolean
 name|isCrosslisted
 decl_stmt|;
-specifier|private
-name|boolean
-name|iDisplayInfo
-decl_stmt|;
 comment|//End Bypass
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Instructors */
@@ -1101,10 +1097,6 @@ expr_stmt|;
 name|enrollment
 operator|=
 literal|null
-expr_stmt|;
-name|iDisplayInfo
-operator|=
-literal|false
 expr_stmt|;
 name|super
 operator|.
@@ -2488,28 +2480,6 @@ operator|.
 name|enrollment
 operator|=
 name|enrollment
-expr_stmt|;
-block|}
-specifier|public
-name|boolean
-name|getDisplayInfo
-parameter_list|()
-block|{
-return|return
-name|iDisplayInfo
-return|;
-block|}
-specifier|public
-name|void
-name|setDisplayInfo
-parameter_list|(
-name|boolean
-name|displayInfo
-parameter_list|)
-block|{
-name|iDisplayInfo
-operator|=
-name|displayInfo
 expr_stmt|;
 block|}
 block|}

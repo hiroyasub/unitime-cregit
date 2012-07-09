@@ -110,7 +110,14 @@ literal|"crsAsgnLstSubjectAreaIds"
 argument_list|,
 literal|"Last used subject areas (String containing a comma separated list of ids)"
 argument_list|)
-block|, 	;
+block|,
+name|TableOrder
+argument_list|(
+literal|"OrderInfo"
+argument_list|,
+literal|"WebTable order info"
+argument_list|)
+block|; 	;
 name|String
 name|iKey
 decl_stmt|,

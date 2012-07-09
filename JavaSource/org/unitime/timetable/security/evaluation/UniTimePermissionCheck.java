@@ -695,10 +695,6 @@ argument_list|,
 name|right
 argument_list|)
 return|;
-else|else
-return|return
-literal|false
-return|;
 block|}
 if|if
 condition|(

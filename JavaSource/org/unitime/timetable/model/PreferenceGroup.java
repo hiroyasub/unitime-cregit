@@ -1562,6 +1562,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canUseHardTimePreferences
@@ -1574,6 +1576,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canUseHardRoomPreferences
@@ -1736,6 +1740,12 @@ name|class
 argument_list|)
 return|;
 block|}
+specifier|public
+specifier|abstract
+name|Department
+name|getDepartment
+parameter_list|()
+function_decl|;
 block|}
 end_class
 

@@ -126,6 +126,39 @@ name|Yes
 argument_list|,
 literal|"Display confirmation dialogs"
 argument_list|)
+block|,
+name|InheritInstructorPrefs
+argument_list|(
+literal|"inheritInstrPref"
+argument_list|,
+name|CommonValues
+operator|.
+name|Never
+argument_list|,
+literal|"Inherit instructor preferences on a class"
+argument_list|)
+block|,
+name|DisplayLastChanges
+argument_list|(
+literal|"dispLastChanges"
+argument_list|,
+name|CommonValues
+operator|.
+name|Yes
+argument_list|,
+literal|"Display last changes"
+argument_list|)
+block|,
+name|DispInstructorPrefs
+argument_list|(
+literal|"InstructorDetail.distPref"
+argument_list|,
+name|CommonValues
+operator|.
+name|Yes
+argument_list|,
+literal|"Display instructor preferences"
+argument_list|)
 block|, 	 	;
 name|String
 name|iKey
