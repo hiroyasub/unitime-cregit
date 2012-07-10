@@ -1131,7 +1131,7 @@ literal|"InstructionalOffering"
 argument_list|,
 name|Right
 operator|.
-name|AddInstructionalOfferingConfig
+name|InstrOfferingConfigAdd
 argument_list|)
 condition|)
 throw|throw

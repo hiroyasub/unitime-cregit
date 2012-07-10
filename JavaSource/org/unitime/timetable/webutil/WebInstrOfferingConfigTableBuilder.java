@@ -616,7 +616,7 @@ name|ioc
 argument_list|,
 name|Right
 operator|.
-name|EditInstructionalOfferingConfig
+name|InstrOfferingConfigEdit
 argument_list|)
 condition|)
 block|{
