@@ -9029,8 +9029,8 @@ specifier|public
 name|String
 name|buildInstructorHtml
 parameter_list|(
-name|User
-name|user
+name|String
+name|nameFormat
 parameter_list|)
 block|{
 name|StringBuffer
@@ -9106,7 +9106,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|(
-name|user
+name|nameFormat
 argument_list|)
 argument_list|)
 expr_stmt|;

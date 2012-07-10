@@ -686,6 +686,12 @@ case|case
 name|MultipleClassSetup
 case|:
 case|case
+name|MultipleClassSetupClass
+case|:
+case|case
+name|MultipleClassSetupDepartment
+case|:
+case|case
 name|InstrOfferingConfigAdd
 case|:
 case|case

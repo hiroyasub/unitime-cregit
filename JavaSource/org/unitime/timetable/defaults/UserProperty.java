@@ -159,6 +159,28 @@ name|Yes
 argument_list|,
 literal|"Display instructor preferences"
 argument_list|)
+block|,
+name|VariableClassLimits
+argument_list|(
+literal|"showVarLimits"
+argument_list|,
+name|CommonValues
+operator|.
+name|No
+argument_list|,
+literal|"Show the option to set variable class limits"
+argument_list|)
+block|,
+name|ConfigAutoCalc
+argument_list|(
+literal|"cfgAutoCalc"
+argument_list|,
+name|CommonValues
+operator|.
+name|Yes
+argument_list|,
+literal|"Automatically calculate number of classes and room size when editing configuration"
+argument_list|)
 block|, 	 	;
 name|String
 name|iKey
