@@ -289,6 +289,16 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|source
+operator|.
+name|isNotOffered
+argument_list|()
+condition|)
+return|return
+literal|false
+return|;
+if|if
+condition|(
 operator|!
 name|permissionSession
 operator|.

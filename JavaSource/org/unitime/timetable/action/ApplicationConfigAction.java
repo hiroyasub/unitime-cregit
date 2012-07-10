@@ -1183,10 +1183,7 @@ name|WebTable
 operator|.
 name|setOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"applicationConfig.ord"
 argument_list|,
@@ -1456,10 +1453,7 @@ name|WebTable
 operator|.
 name|getOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"applicationConfig.ord"
 argument_list|)
