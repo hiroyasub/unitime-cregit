@@ -981,6 +981,9 @@ case|:
 case|case
 name|Registration
 case|:
+case|case
+name|Chameleon
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.

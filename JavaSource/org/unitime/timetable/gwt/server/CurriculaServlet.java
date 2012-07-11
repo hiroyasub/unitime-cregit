@@ -1180,7 +1180,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -1688,7 +1688,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|List
@@ -2504,7 +2504,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission(#curriculumId, 'Curriculum', 'CurriculumDetail')"
+literal|"checkPermission(#curriculumId, 'Curriculum', 'CurriculumDetail')"
 argument_list|)
 specifier|public
 name|CurriculumInterface
@@ -4202,7 +4202,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission(#curriculum.id, 'Curriculum', 'CurriculumEdit') or hasPermission(#curriculum.department.id, 'Department', 'CurriculumAdd')"
+literal|"(#curriculum.id != null and checkPermission(#curriculum.id, 'Curriculum', 'CurriculumEdit')) or checkPermission(#curriculum.department.id, 'Department', 'CurriculumAdd')"
 argument_list|)
 specifier|public
 name|Long
@@ -6213,7 +6213,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission(#curricula, 'Curriculum', 'CurriculumEdit')"
+literal|"checkPermission(#curricula, 'Curriculum', 'CurriculumEdit')"
 argument_list|)
 specifier|public
 name|Boolean
@@ -6751,7 +6751,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission(#curriculumId, 'Curriculum', 'CurriculumDelete')"
+literal|"checkPermission(#curriculumId, 'Curriculum', 'CurriculumDelete')"
 argument_list|)
 specifier|public
 name|Boolean
@@ -7058,7 +7058,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission(#curriculumIds, 'Curriculum', 'CurriculumDelete')"
+literal|"checkPermission(#curriculumIds, 'Curriculum', 'CurriculumDelete')"
 argument_list|)
 specifier|public
 name|Boolean
@@ -7391,7 +7391,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission(#curriculumIds, 'Curriculum', 'CurriculumMerge')"
+literal|"checkPermission(#curriculumIds, 'Curriculum', 'CurriculumMerge')"
 argument_list|)
 specifier|public
 name|Boolean
@@ -8812,7 +8812,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -9056,7 +9056,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|HashMap
@@ -9896,7 +9896,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|private
 name|TreeSet
@@ -12651,7 +12651,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -12878,7 +12878,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -13245,7 +13245,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -13508,7 +13508,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -13920,7 +13920,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -14308,7 +14308,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|String
@@ -14473,7 +14473,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|Collection
@@ -14957,7 +14957,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|String
@@ -15177,7 +15177,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|Collection
@@ -16144,7 +16144,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasRight('CurriculumAdd') and hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumAdd') and checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|Boolean
@@ -16294,7 +16294,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"hasRight('CurriculumAdmin') and hasPermission('CurriculumView')"
+literal|"checkPermission('CurriculumAdmin') and checkPermission('CurriculumView')"
 argument_list|)
 specifier|public
 name|Boolean

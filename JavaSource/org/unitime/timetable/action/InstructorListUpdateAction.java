@@ -563,25 +563,15 @@ throws|throws
 name|Exception
 block|{
 comment|//Check permissions
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|Right
 operator|.
 name|ManageInstructors
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|InstructorListUpdateForm
 name|frm
 init|=

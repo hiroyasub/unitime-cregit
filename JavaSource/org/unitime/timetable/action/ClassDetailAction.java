@@ -862,12 +862,9 @@ argument_list|(
 literal|"Class Info not supplied."
 argument_list|)
 throw|;
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|classId
 argument_list|,
@@ -877,17 +874,7 @@ name|Right
 operator|.
 name|ClassDetail
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-name|MSG
-operator|.
-name|errorAccessDenied
-argument_list|()
-argument_list|)
-throw|;
+expr_stmt|;
 name|boolean
 name|timeVertical
 init|=

@@ -3378,12 +3378,9 @@ operator|.
 name|getInstructionalOffering
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|io
 argument_list|,
@@ -3391,17 +3388,7 @@ name|Right
 operator|.
 name|InstructionalOfferingCrossLists
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-name|MSG
-operator|.
-name|errorAccessDenied
-argument_list|()
-argument_list|)
-throw|;
+expr_stmt|;
 comment|// Sort Offerings
 name|ArrayList
 name|offerings

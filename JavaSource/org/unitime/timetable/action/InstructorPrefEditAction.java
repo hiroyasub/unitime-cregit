@@ -784,12 +784,9 @@ name|exceptionInstructorInfoNotSupplied
 argument_list|()
 argument_list|)
 throw|;
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|instructorId
 argument_list|,
@@ -799,14 +796,7 @@ name|Right
 operator|.
 name|InstructorPreferences
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|boolean
 name|timeVertical
 init|=

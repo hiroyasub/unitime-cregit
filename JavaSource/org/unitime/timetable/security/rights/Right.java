@@ -228,6 +228,13 @@ block|,
 comment|/** Status dependency -- session / department status must match */
 name|StatusIndependent
 block|,
+name|Chameleon
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingCanLock
 argument_list|(
 name|InstructionalOffering
@@ -824,6 +831,25 @@ return|return
 name|iType
 operator|!=
 literal|null
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|name
+argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|"(\\p{Ll})(\\p{Lu})"
+argument_list|,
+literal|"$1 $2"
+argument_list|)
 return|;
 block|}
 block|}

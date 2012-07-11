@@ -1051,12 +1051,9 @@ return|return
 literal|null
 return|;
 block|}
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|examId
 argument_list|,
@@ -1066,14 +1063,7 @@ name|Right
 operator|.
 name|ExaminationDetail
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 comment|//Edit Information - Redirect to info edit screen
 if|if
 condition|(
@@ -1101,12 +1091,9 @@ operator|!=
 literal|""
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|exam
 argument_list|,
@@ -1114,14 +1101,7 @@ name|Right
 operator|.
 name|ExaminationEdit
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|response
 operator|.
 name|sendRedirect
@@ -1166,12 +1146,9 @@ operator|!=
 literal|""
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|exam
 argument_list|,
@@ -1179,14 +1156,7 @@ name|Right
 operator|.
 name|ExaminationClone
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|response
 operator|.
 name|sendRedirect
@@ -1294,12 +1264,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|exam
 argument_list|,
@@ -1307,14 +1274,7 @@ name|Right
 operator|.
 name|ExaminationDelete
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|org
 operator|.
 name|hibernate
@@ -1487,12 +1447,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|exam
 argument_list|,
@@ -1500,14 +1457,7 @@ name|Right
 operator|.
 name|DistributionPreferenceExam
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|request
 operator|.
 name|setAttribute

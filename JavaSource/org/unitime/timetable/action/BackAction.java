@@ -145,6 +145,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|util
+operator|.
+name|AccessDeniedException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|webutil
 operator|.
 name|BackTracker
@@ -211,10 +225,8 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
+name|AccessDeniedException
+argument_list|()
 throw|;
 name|BackTracker
 operator|.

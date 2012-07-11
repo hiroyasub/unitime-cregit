@@ -4768,16 +4768,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Access Denied."
-argument_list|)
-comment|//better use exceptionAccessDenied
-name|String
-name|errorAccessDenied
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"ERRORS"
 argument_list|)
 comment|//preferable to use this than errors for each page

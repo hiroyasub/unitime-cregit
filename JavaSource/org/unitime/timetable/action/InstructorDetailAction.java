@@ -718,12 +718,9 @@ argument_list|(
 literal|"instructorId"
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|instructorId
 argument_list|,
@@ -733,14 +730,7 @@ name|Right
 operator|.
 name|InstructorDetail
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|String
 name|op
 init|=
@@ -1083,12 +1073,9 @@ operator|!=
 literal|""
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|instructorId
 argument_list|,
@@ -1098,14 +1085,7 @@ name|Right
 operator|.
 name|InstructorEdit
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|response
 operator|.
 name|sendRedirect
@@ -1151,12 +1131,9 @@ operator|!=
 literal|""
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|instructorId
 argument_list|,
@@ -1166,14 +1143,7 @@ name|Right
 operator|.
 name|InstructorPreferences
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|response
 operator|.
 name|sendRedirect
@@ -1219,12 +1189,9 @@ operator|!=
 literal|""
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|sessionContext
 operator|.
-name|hasPermission
+name|checkPermission
 argument_list|(
 name|instructorId
 argument_list|,
@@ -1234,14 +1201,7 @@ name|Right
 operator|.
 name|InstructorAddDesignator
 argument_list|)
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access denied."
-argument_list|)
-throw|;
+expr_stmt|;
 name|request
 operator|.
 name|setAttribute
