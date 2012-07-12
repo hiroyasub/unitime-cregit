@@ -602,7 +602,7 @@ name|Permission
 argument_list|<
 name|InstructionalOffering
 argument_list|>
-name|permissionOfferingLockNeeded
+name|permissionOfferingLockNeededLimitedEdit
 decl_stmt|;
 annotation|@
 name|Override
@@ -743,7 +743,7 @@ block|}
 comment|// Need an offering lock
 if|if
 condition|(
-name|permissionOfferingLockNeeded
+name|permissionOfferingLockNeededLimitedEdit
 operator|.
 name|check
 argument_list|(

@@ -4010,6 +4010,8 @@ operator|==
 name|DatePattern
 operator|.
 name|sTypePatternSet
+operator|&&
+name|isEditable
 condition|)
 block|{
 name|boolean

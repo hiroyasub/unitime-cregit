@@ -683,6 +683,9 @@ case|case
 name|AssignInstructors
 case|:
 case|case
+name|AssignInstructorsClass
+case|:
+case|case
 name|MultipleClassSetup
 case|:
 case|case

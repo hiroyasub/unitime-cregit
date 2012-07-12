@@ -2023,11 +2023,11 @@ name|cell
 operator|.
 name|addContent
 argument_list|(
-literal|"<font color="
+literal|"<span style=\"color:"
 operator|+
 name|disabledColor
 operator|+
-literal|">"
+literal|";\">"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2058,7 +2058,7 @@ name|cell
 operator|.
 name|addContent
 argument_list|(
-literal|"</font>"
+literal|"</span>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4008,6 +4008,8 @@ operator|==
 name|DatePattern
 operator|.
 name|sTypePatternSet
+operator|&&
+name|isEditable
 condition|)
 block|{
 name|String
@@ -5509,6 +5511,21 @@ operator|+
 name|label
 operator|+
 literal|"</i>"
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|isEditable
+condition|)
+block|{
+name|label
+operator|=
+literal|"<span style=\"color:gray;\">"
+operator|+
+name|label
+operator|+
+literal|"</span>"
 expr_stmt|;
 block|}
 name|cell

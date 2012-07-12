@@ -403,6 +403,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|AssignInstructorsClass
+argument_list|(
+name|Class_
+operator|.
+name|class
+argument_list|)
+block|,
 name|CourseTimetabling
 argument_list|(
 name|Department
