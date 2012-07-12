@@ -115,6 +115,9 @@ block|{
 case|case
 name|SessionDefaultCurrent
 case|:
+case|case
+name|PersonalSchedule
+case|:
 return|return
 literal|true
 return|;
