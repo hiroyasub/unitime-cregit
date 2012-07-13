@@ -665,6 +665,9 @@ case|case
 name|AssignmentHistory
 case|:
 case|case
+name|ConflictStatistics
+case|:
+case|case
 name|AddCourseOffering
 case|:
 case|case

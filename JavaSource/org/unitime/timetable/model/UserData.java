@@ -909,6 +909,8 @@ return|return
 name|ret
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -931,6 +933,8 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|int
@@ -973,6 +977,8 @@ name|defaultValue
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1003,6 +1009,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|double

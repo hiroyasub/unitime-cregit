@@ -181,7 +181,18 @@ name|Yes
 argument_list|,
 literal|"Automatically calculate number of classes and room size when editing configuration"
 argument_list|)
-block|, 	 	;
+block|,
+name|SortNames
+argument_list|(
+literal|"instrNameSort"
+argument_list|,
+name|CommonValues
+operator|.
+name|SortByLastName
+argument_list|,
+literal|"Sort instructor names"
+argument_list|)
+block|, 	;
 name|String
 name|iKey
 decl_stmt|,

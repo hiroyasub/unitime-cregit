@@ -524,6 +524,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ConflictStatistics
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Class level rights */
 name|ClassDetail
 argument_list|(

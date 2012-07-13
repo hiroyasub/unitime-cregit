@@ -104,6 +104,16 @@ name|Never
 argument_list|(
 literal|"never"
 argument_list|)
+block|,
+name|SortByLastName
+argument_list|(
+literal|"Always by Last Name"
+argument_list|)
+block|,
+name|SortAsDisplayed
+argument_list|(
+literal|"Natural Order (as displayed)"
+argument_list|)
 block|, 	 	;
 name|String
 name|iValue

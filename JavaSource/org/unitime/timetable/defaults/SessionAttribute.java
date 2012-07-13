@@ -111,6 +111,13 @@ argument_list|,
 literal|"Last used subject areas (String containing a comma separated list of ids)"
 argument_list|)
 block|,
+name|DepartmentId
+argument_list|(
+literal|"deptUniqueId"
+argument_list|,
+literal|"Last department (String containing department unique id)"
+argument_list|)
+block|,
 name|TableOrder
 argument_list|(
 literal|"OrderInfo"
