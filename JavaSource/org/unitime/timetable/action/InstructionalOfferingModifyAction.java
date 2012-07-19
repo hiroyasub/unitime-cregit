@@ -1597,6 +1597,11 @@ name|setupDatePatterns
 argument_list|(
 name|request
 argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
 literal|"Default"
 argument_list|,
 literal|null

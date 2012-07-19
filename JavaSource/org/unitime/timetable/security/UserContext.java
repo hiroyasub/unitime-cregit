@@ -93,6 +93,11 @@ name|getName
 parameter_list|()
 function_decl|;
 specifier|public
+name|String
+name|getEmail
+parameter_list|()
+function_decl|;
+specifier|public
 name|UserAuthority
 name|getCurrentAuthority
 parameter_list|()
@@ -185,6 +190,8 @@ name|Long
 name|getCurrentAcademicSessionId
 parameter_list|()
 function_decl|;
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCurrentRole

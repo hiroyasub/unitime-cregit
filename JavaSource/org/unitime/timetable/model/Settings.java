@@ -567,6 +567,8 @@ name|settings
 return|;
 block|}
 comment|/** 	 * Get the user setting value for the given key 	 * @param user User object 	 * @param key Key  	 * @return user setting or default value if none exists 	 */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String
@@ -646,6 +648,8 @@ literal|1
 index|]
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String

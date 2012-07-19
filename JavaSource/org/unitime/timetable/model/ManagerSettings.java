@@ -132,6 +132,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String
@@ -163,6 +165,8 @@ name|defaultValue
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String

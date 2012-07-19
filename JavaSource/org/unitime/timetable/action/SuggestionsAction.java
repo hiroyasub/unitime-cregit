@@ -542,9 +542,9 @@ name|model
 operator|.
 name|load
 argument_list|(
-name|request
+name|sessionContext
 operator|.
-name|getSession
+name|getUser
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -561,6 +561,14 @@ name|model
 argument_list|)
 expr_stmt|;
 block|}
+name|SolverProxy
+name|solver
+init|=
+name|courseTimetablingSolverService
+operator|.
+name|getSolver
+argument_list|()
+decl_stmt|;
 comment|// Read operation to be performed
 name|String
 name|op
@@ -650,10 +658,7 @@ name|model
 operator|.
 name|reset
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|solver
 argument_list|)
 expr_stmt|;
 name|model
@@ -685,9 +690,9 @@ name|model
 operator|.
 name|save
 argument_list|(
-name|request
+name|sessionContext
 operator|.
-name|getSession
+name|getUser
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -795,10 +800,7 @@ name|model
 operator|.
 name|reset
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|solver
 argument_list|)
 expr_stmt|;
 name|String
@@ -962,14 +964,6 @@ argument_list|(
 literal|"No dates selected."
 argument_list|)
 throw|;
-name|SolverProxy
-name|solver
-init|=
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|solver
@@ -1168,10 +1162,7 @@ argument_list|()
 operator|.
 name|assign
 argument_list|(
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|)
 expr_stmt|;
 if|else if
@@ -1190,10 +1181,7 @@ argument_list|()
 operator|.
 name|assign
 argument_list|(
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|)
 expr_stmt|;
 else|else
@@ -1208,10 +1196,7 @@ name|model
 operator|.
 name|reset
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|solver
 argument_list|)
 expr_stmt|;
 name|myForm
@@ -1342,10 +1327,7 @@ name|model
 operator|.
 name|reset
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|solver
 argument_list|)
 expr_stmt|;
 name|int
@@ -1362,14 +1344,6 @@ argument_list|(
 literal|"hist"
 argument_list|)
 argument_list|)
-decl_stmt|;
-name|SolverProxy
-name|solver
-init|=
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
 decl_stmt|;
 name|AssignmentRecord
 name|record
@@ -1536,10 +1510,7 @@ name|createClassAssignmentDetails
 argument_list|(
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 name|myForm
 operator|.
@@ -1571,10 +1542,7 @@ name|model
 operator|.
 name|compute
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|solver
 argument_list|)
 condition|)
 block|{
@@ -1612,10 +1580,7 @@ argument_list|()
 operator|.
 name|conflictInfo
 argument_list|(
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1639,10 +1604,7 @@ argument_list|()
 operator|.
 name|conflictInfo
 argument_list|(
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1660,10 +1622,7 @@ name|request
 argument_list|,
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 literal|"Selected Assignments"
 argument_list|,
@@ -1685,14 +1644,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|SolverProxy
-name|solver
-init|=
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
-decl_stmt|;
 name|confInfo
 operator|.
 name|putAll
@@ -1948,10 +1899,7 @@ name|request
 argument_list|,
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 literal|"Selected Suggestion"
 argument_list|,
@@ -2029,10 +1977,7 @@ name|request
 argument_list|,
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 literal|"Conflicting Assignments"
 argument_list|,
@@ -2185,10 +2130,7 @@ name|request
 argument_list|,
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 literal|"Suggestions"
 argument_list|,
@@ -2401,10 +2343,7 @@ name|request
 argument_list|,
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 literal|"Placements"
 argument_list|,
@@ -2550,10 +2489,7 @@ name|request
 argument_list|,
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 name|model
 argument_list|,
@@ -2580,10 +2516,7 @@ name|getAssignmentTable
 argument_list|(
 name|sessionContext
 argument_list|,
-name|courseTimetablingSolverService
-operator|.
-name|getSolver
-argument_list|()
+name|solver
 argument_list|,
 name|ca
 argument_list|,

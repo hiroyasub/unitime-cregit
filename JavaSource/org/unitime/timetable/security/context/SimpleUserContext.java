@@ -152,6 +152,17 @@ annotation|@
 name|Override
 specifier|public
 name|String
+name|getEmail
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
 name|getPassword
 parameter_list|()
 block|{

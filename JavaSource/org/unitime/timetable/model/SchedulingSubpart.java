@@ -674,6 +674,8 @@ operator|)
 return|;
 block|}
 comment|/* (non-Javadoc) 	 * @see org.unitime.timetable.model.PreferenceGroup#canUserEdit(org.unitime.commons.User) 	 * canUserEdit() - the user can edit this subpart if the user canEdit all of the 	 *      classes owned by this subpart or the user is the schedule deputy for the 	 *      subjectArea of the subpart and can edit at least one class owned by the 	 *      subpart 	 */
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserEdit
@@ -783,6 +785,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserView
@@ -926,6 +930,8 @@ return|;
 block|}
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
@@ -971,6 +977,8 @@ name|user
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isLimitedEditable
@@ -3551,6 +3559,8 @@ literal|false
 return|;
 block|}
 comment|/**      * Check if subpart has atleast one externally managed class      * @param user      * @return      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|hasExternallyManagedClasses

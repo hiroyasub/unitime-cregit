@@ -580,9 +580,9 @@ name|model
 operator|.
 name|load
 argument_list|(
-name|request
+name|sessionContext
 operator|.
-name|getSession
+name|getUser
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -627,9 +627,9 @@ name|model
 operator|.
 name|save
 argument_list|(
-name|request
+name|sessionContext
 operator|.
-name|getSession
+name|getUser
 argument_list|()
 argument_list|)
 expr_stmt|;

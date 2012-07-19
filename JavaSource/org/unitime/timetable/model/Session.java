@@ -958,6 +958,8 @@ literal|null
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Set
@@ -1081,6 +1083,8 @@ return|return
 name|sessions
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Session
@@ -1107,6 +1111,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Session
@@ -1948,6 +1954,8 @@ name|ref
 return|;
 block|}
 comment|/** 	 * Fetch rooms efficiently, joining features and roomDepts 	 *  	 * @return 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|java
 operator|.
@@ -2064,6 +2072,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|java
 operator|.
@@ -2234,6 +2244,8 @@ argument_list|()
 return|;
 block|}
 comment|/** 	 *  	 * @param depts 	 * @return 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|java
 operator|.

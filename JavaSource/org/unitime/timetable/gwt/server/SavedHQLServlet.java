@@ -1757,9 +1757,6 @@ name|markForBack
 argument_list|(
 name|getSessionContext
 argument_list|()
-operator|.
-name|getHttpServletRequest
-argument_list|()
 argument_list|,
 literal|"gwt.jsp?page=hql&appearance="
 operator|+

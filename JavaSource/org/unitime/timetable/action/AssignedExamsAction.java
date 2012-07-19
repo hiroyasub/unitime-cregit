@@ -428,7 +428,7 @@ name|checkPermission
 argument_list|(
 name|Right
 operator|.
-name|AssignedExams
+name|AssignedExaminations
 argument_list|)
 expr_stmt|;
 name|String
@@ -476,10 +476,7 @@ name|myForm
 operator|.
 name|save
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|)
 expr_stmt|;
 block|}
@@ -507,10 +504,7 @@ name|myForm
 operator|.
 name|load
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|)
 expr_stmt|;
 name|Session

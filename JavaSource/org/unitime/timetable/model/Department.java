@@ -780,6 +780,8 @@ argument_list|)
 return|;
 block|}
 comment|/* (non-Javadoc) 	 * @see org.unitime.timetable.model.PreferenceGroup#canUserEdit(org.unitime.commons.User) 	 */
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserEdit
@@ -871,6 +873,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserView
@@ -2778,6 +2782,8 @@ literal|null
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isLimitedEditableBy
@@ -2897,6 +2903,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isLimitedEditableBy

@@ -1297,6 +1297,8 @@ operator|)
 return|;
 block|}
 comment|/** The course as well as all its classes are editable by the user */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isFullyEditableBy
@@ -1496,6 +1498,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
@@ -1626,6 +1630,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
@@ -1757,6 +1763,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isLimitedEditableBy
@@ -1867,6 +1875,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isViewableBy

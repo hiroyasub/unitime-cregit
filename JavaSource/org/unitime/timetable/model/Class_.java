@@ -3986,6 +3986,8 @@ name|class
 return|;
 block|}
 comment|/* (non-Javadoc) 	 * @see org.unitime.timetable.model.PreferenceGroup#canUserEdit(org.unitime.commons.User) 	 */
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserEdit
@@ -4096,6 +4098,8 @@ literal|false
 return|;
 block|}
 comment|/* 	 * canUserEdit() - if the user can edit any of the classes in the same 	 * 	   SchedulingSubpart as this class then the user can view this class 	 */
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserView
@@ -4208,6 +4212,8 @@ return|;
 block|}
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
@@ -4259,6 +4265,8 @@ name|user
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isLimitedEditable

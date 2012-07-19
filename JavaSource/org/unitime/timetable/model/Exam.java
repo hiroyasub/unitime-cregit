@@ -537,6 +537,8 @@ name|typeMidterm
 argument_list|()
 block|}
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserEdit
@@ -676,6 +678,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|canUserView

@@ -1178,7 +1178,10 @@ name|TimePattern
 operator|.
 name|findApplicable
 argument_list|(
-name|request
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
 argument_list|,
 name|ss
 operator|.
@@ -1300,6 +1303,11 @@ operator|.
 name|setupDatePatterns
 argument_list|(
 name|request
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
 argument_list|,
 literal|"Default"
 argument_list|,

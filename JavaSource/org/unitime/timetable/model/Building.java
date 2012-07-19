@@ -1192,6 +1192,9 @@ block|}
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|Building
+argument_list|>
 name|findAll
 parameter_list|(
 name|Long

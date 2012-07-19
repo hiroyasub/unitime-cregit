@@ -29,18 +29,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|http
-operator|.
-name|HttpSession
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -64,6 +52,20 @@ operator|.
 name|action
 operator|.
 name|ActionMapping
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|SessionContext
 import|;
 end_import
 
@@ -458,7 +460,7 @@ specifier|public
 name|void
 name|load
 parameter_list|(
-name|HttpSession
+name|SessionContext
 name|session
 parameter_list|)
 block|{
@@ -522,7 +524,7 @@ specifier|public
 name|void
 name|save
 parameter_list|(
-name|HttpSession
+name|SessionContext
 name|session
 parameter_list|)
 block|{

@@ -1127,6 +1127,8 @@ argument_list|()
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canAudit
@@ -1240,6 +1242,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canAudit
@@ -1574,6 +1578,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSeeTimetable
@@ -2030,6 +2036,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canEditExams
@@ -2111,6 +2119,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canEditExams
@@ -2192,6 +2202,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSeeCourses
@@ -2346,6 +2358,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSeeCourses
@@ -2727,6 +2741,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSeeExams
@@ -2821,6 +2837,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canTimetableExams
@@ -2876,6 +2894,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canTimetableExams
@@ -2931,6 +2951,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSectionStudents
@@ -2963,6 +2985,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canSectionStudents
@@ -2995,6 +3019,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|hasASolverGroup
@@ -3068,6 +3094,8 @@ argument_list|()
 return|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|hasASolverGroup
@@ -3148,7 +3176,8 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|//needs to be implemented
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean
@@ -3186,6 +3215,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean
@@ -3837,6 +3868,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|Vector
 argument_list|<

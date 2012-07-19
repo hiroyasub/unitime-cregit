@@ -101,9 +101,13 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|stereotype
+name|beans
 operator|.
-name|Service
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
 import|;
 end_import
 
@@ -111,13 +115,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|commons
+name|stereotype
 operator|.
-name|web
-operator|.
-name|Web
+name|Service
 import|;
 end_import
 
@@ -143,9 +145,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
+name|security
 operator|.
-name|UserData
+name|SessionContext
 import|;
 end_import
 
@@ -157,9 +159,11 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|solver
+name|security
 operator|.
-name|WebSolver
+name|rights
+operator|.
+name|Right
 import|;
 end_import
 
@@ -179,6 +183,22 @@ name|ExamSolverProxy
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|service
+operator|.
+name|SolverService
+import|;
+end_import
+
 begin_comment
 comment|/**   * @author Tomas Muller  */
 end_comment
@@ -195,6 +215,19 @@ name|ExamSolverLogAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
+annotation|@
+name|Autowired
+name|SolverService
+argument_list|<
+name|ExamSolverProxy
+argument_list|>
+name|examinationSolverService
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 specifier|public
@@ -225,28 +258,15 @@ operator|)
 name|form
 decl_stmt|;
 comment|// Check Access
-if|if
-condition|(
-operator|!
-name|Web
+name|sessionContext
 operator|.
-name|isLoggedIn
+name|checkPermission
 argument_list|(
-name|request
+name|Right
 operator|.
-name|getSession
-argument_list|()
+name|ExaminationSolverLog
 argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 comment|// Read operation to be performed
 name|String
 name|op
@@ -272,13 +292,8 @@ literal|"op"
 argument_list|)
 operator|)
 decl_stmt|;
-comment|// Change log level
 if|if
 condition|(
-name|op
-operator|==
-literal|null
-operator|||
 literal|"Change"
 operator|.
 name|equals
@@ -296,15 +311,13 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
-name|UserData
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
 operator|.
 name|setProperty
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
-argument_list|,
 literal|"SolverLog.level"
 argument_list|,
 name|myForm
@@ -313,18 +326,33 @@ name|getLevelNoDefault
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|myForm
+operator|.
+name|setLevel
+argument_list|(
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getProperty
+argument_list|(
+literal|"SolverLog.level"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|// Change log level
 name|ExamSolverProxy
 name|solver
 init|=
-name|WebSolver
+name|examinationSolverService
 operator|.
-name|getExamSolver
-argument_list|(
-name|request
-operator|.
-name|getSession
+name|getSolver
 argument_list|()
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -332,6 +360,7 @@ name|solver
 operator|!=
 literal|null
 condition|)
+block|{
 name|solver
 operator|.
 name|setDebugLevel
@@ -342,16 +371,19 @@ name|getLevelInt
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-name|myForm
-operator|.
-name|reset
-argument_list|(
-name|mapping
-argument_list|,
 name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"log"
+argument_list|,
+name|solver
+operator|.
+name|getLog
+argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|mapping
 operator|.

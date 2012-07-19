@@ -1134,6 +1134,8 @@ argument_list|)
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|protected
 specifier|abstract
 name|boolean
@@ -1143,6 +1145,8 @@ name|User
 name|user
 parameter_list|)
 function_decl|;
+annotation|@
+name|Deprecated
 specifier|protected
 specifier|abstract
 name|boolean
@@ -1152,6 +1156,8 @@ name|User
 name|user
 parameter_list|)
 function_decl|;
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
@@ -1222,6 +1228,8 @@ argument_list|)
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isViewableBy

@@ -117,16 +117,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Vector
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -5826,7 +5816,10 @@ name|getSessionToRollDatePatternsForwardFrom
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Vector
+name|List
+argument_list|<
+name|DatePattern
+argument_list|>
 name|fromDatePatterns
 init|=
 name|DatePattern

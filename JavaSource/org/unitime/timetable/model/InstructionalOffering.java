@@ -800,6 +800,8 @@ argument_list|()
 operator|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isLockableBy
@@ -925,6 +927,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
@@ -1066,6 +1070,8 @@ literal|true
 return|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isEditableBy
