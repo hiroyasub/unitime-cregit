@@ -301,7 +301,7 @@ name|iReport
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|Map
 argument_list|<
 name|String
@@ -319,7 +319,7 @@ name|Counter
 argument_list|>
 argument_list|()
 decl_stmt|;
-specifier|private
+specifier|protected
 name|Map
 argument_list|<
 name|String
@@ -517,7 +517,7 @@ operator|new
 name|_RootDAO
 argument_list|()
 operator|.
-name|getSession
+name|createNewSession
 argument_list|()
 decl_stmt|;
 name|Session
@@ -1300,7 +1300,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|void
+name|double
 name|inc
 parameter_list|(
 name|String
@@ -1350,6 +1350,12 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+return|return
+name|cnt
+operator|.
+name|sum
+argument_list|()
+return|;
 block|}
 specifier|public
 name|void
