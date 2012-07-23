@@ -261,6 +261,22 @@ name|org
 operator|.
 name|springframework
 operator|.
+name|beans
+operator|.
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
 name|stereotype
 operator|.
 name|Service
@@ -511,6 +527,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|security
+operator|.
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|util
 operator|.
 name|Constants
@@ -653,6 +683,11 @@ name|RoomFeatureListAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance
 comment|// Variables
 comment|// --------------------------------------------------------- Methods
@@ -1255,13 +1290,11 @@ expr_stmt|;
 comment|//set request attribute for department
 name|LookupTables
 operator|.
-name|setupDeptsForUser
+name|setupDepartments
 argument_list|(
 name|request
 argument_list|,
-name|user
-argument_list|,
-name|sessionId
+name|sessionContext
 argument_list|,
 literal|true
 argument_list|)

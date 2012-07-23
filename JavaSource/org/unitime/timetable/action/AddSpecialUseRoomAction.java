@@ -1208,7 +1208,7 @@ name|extRoom
 argument_list|,
 name|Right
 operator|.
-name|AddSpecialUseRoom
+name|AddSpecialUseRoomExternalRoom
 argument_list|)
 condition|)
 block|{

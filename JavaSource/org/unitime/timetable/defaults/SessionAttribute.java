@@ -118,6 +118,13 @@ argument_list|,
 literal|"Last department (String containing department unique id)"
 argument_list|)
 block|,
+name|DepartmentCodeRoom
+argument_list|(
+literal|"deptCodeRoom"
+argument_list|,
+literal|"Last department code (used by Rooms pages)"
+argument_list|)
+block|,
 name|TableOrder
 argument_list|(
 literal|"OrderInfo"

@@ -192,7 +192,18 @@ name|SortByLastName
 argument_list|,
 literal|"Sort instructor names"
 argument_list|)
-block|, 	;
+block|,
+name|RoomFeaturesInOneColumn
+argument_list|(
+literal|"roomFeaturesInOneColumn"
+argument_list|,
+name|CommonValues
+operator|.
+name|Yes
+argument_list|,
+literal|"Display Room Features In One Column"
+argument_list|)
+block|; 	;
 name|String
 name|iKey
 decl_stmt|,
