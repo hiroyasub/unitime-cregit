@@ -269,6 +269,7 @@ name|deptCode
 operator|==
 literal|null
 condition|)
+block|{
 name|deptCode
 operator|=
 operator|(
@@ -283,6 +284,7 @@ operator|.
 name|DepartmentCodeRoom
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|deptCode
@@ -328,6 +330,19 @@ name|deptCode
 operator|.
 name|isEmpty
 argument_list|()
+operator|&&
+name|sessionContext
+operator|.
+name|hasPermission
+argument_list|(
+name|deptCode
+argument_list|,
+literal|"Department"
+argument_list|,
+name|Right
+operator|.
+name|Rooms
+argument_list|)
 condition|)
 block|{
 name|roomListForm
