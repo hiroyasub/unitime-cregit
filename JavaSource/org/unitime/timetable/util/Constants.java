@@ -679,6 +679,8 @@ name|DEPT_CODE_ATTR_NAME
 init|=
 literal|"deptCode"
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String

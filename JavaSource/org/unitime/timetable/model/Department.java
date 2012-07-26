@@ -588,9 +588,6 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
-operator|.
-name|longValue
-argument_list|()
 argument_list|)
 operator|.
 name|setString

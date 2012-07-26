@@ -33,15 +33,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|web
+name|timetable
 operator|.
-name|context
+name|security
 operator|.
-name|support
-operator|.
-name|WebApplicationContextUtils
+name|SessionContext
 import|;
 end_import
 
@@ -55,7 +53,9 @@ name|timetable
 operator|.
 name|security
 operator|.
-name|SessionContext
+name|context
+operator|.
+name|HttpSessionContext
 import|;
 end_import
 
@@ -101,22 +101,14 @@ name|getSessionContext
 parameter_list|()
 block|{
 return|return
-operator|(
-name|SessionContext
-operator|)
-name|WebApplicationContextUtils
+name|HttpSessionContext
 operator|.
-name|getWebApplicationContext
+name|getSessionContext
 argument_list|(
 name|pageContext
 operator|.
 name|getServletContext
 argument_list|()
-argument_list|)
-operator|.
-name|getBean
-argument_list|(
-literal|"sessionContext"
 argument_list|)
 return|;
 block|}
