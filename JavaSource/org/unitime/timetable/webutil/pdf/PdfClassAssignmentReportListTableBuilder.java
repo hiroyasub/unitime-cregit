@@ -584,10 +584,6 @@ name|context
 operator|.
 name|hasPermission
 argument_list|(
-literal|null
-argument_list|,
-literal|"Department"
-argument_list|,
 name|Right
 operator|.
 name|ClassAssignments

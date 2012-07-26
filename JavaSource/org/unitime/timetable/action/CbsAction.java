@@ -318,10 +318,6 @@ name|sessionContext
 operator|.
 name|checkPermission
 argument_list|(
-literal|null
-argument_list|,
-literal|"Department"
-argument_list|,
 name|Right
 operator|.
 name|ConflictStatistics
@@ -360,7 +356,7 @@ literal|null
 condition|)
 name|op
 operator|=
-literal|"Change"
+literal|"Refresh"
 expr_stmt|;
 if|if
 condition|(

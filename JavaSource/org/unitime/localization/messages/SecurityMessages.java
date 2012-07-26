@@ -184,6 +184,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Access denied for {0}: user has no solver group."
+argument_list|)
+name|String
+name|noSolverGroup
+parameter_list|(
+name|String
+name|right
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access denied for {0}: academic session check failed for {1}."
 argument_list|)
 name|String

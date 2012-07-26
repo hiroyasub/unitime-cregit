@@ -314,7 +314,7 @@ name|removeAttribute
 argument_list|(
 name|attribute
 operator|.
-name|name
+name|key
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -336,7 +336,7 @@ name|setAttribute
 argument_list|(
 name|attribute
 operator|.
-name|name
+name|key
 argument_list|()
 argument_list|,
 name|value
@@ -360,7 +360,7 @@ name|getAttribute
 argument_list|(
 name|attribute
 operator|.
-name|name
+name|key
 argument_list|()
 argument_list|)
 decl_stmt|;

@@ -2725,7 +2725,13 @@ name|ExamPeriod
 operator|.
 name|findAll
 argument_list|(
-name|request
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getCurrentAcademicSessionId
+argument_list|()
 argument_list|,
 operator|(
 name|frm
