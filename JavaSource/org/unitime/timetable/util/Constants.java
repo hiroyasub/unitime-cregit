@@ -2446,6 +2446,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean
@@ -2540,6 +2542,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean
@@ -2569,6 +2573,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean
@@ -2598,6 +2604,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|boolean

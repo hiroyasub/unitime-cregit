@@ -832,13 +832,6 @@ operator|.
 name|class
 argument_list|)
 block|,
-name|InstructorAddDesignator
-argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|class
-argument_list|)
-block|,
 name|ExaminationDetail
 argument_list|(
 name|Exam

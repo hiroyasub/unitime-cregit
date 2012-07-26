@@ -784,9 +784,6 @@ case|case
 name|InstructorAdd
 case|:
 case|case
-name|InstructorAddDesignator
-case|:
-case|case
 name|ManageInstructors
 case|:
 case|case
