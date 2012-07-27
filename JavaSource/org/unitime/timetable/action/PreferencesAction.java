@@ -1153,6 +1153,8 @@ operator|.
 name|setupInstructorDistribTypes
 argument_list|(
 name|request
+argument_list|,
+name|sessionContext
 argument_list|)
 expr_stmt|;
 comment|// Distribution Types

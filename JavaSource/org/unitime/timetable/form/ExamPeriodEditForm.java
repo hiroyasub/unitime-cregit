@@ -2666,7 +2666,10 @@ name|ExamPeriod
 operator|.
 name|findAll
 argument_list|(
-name|request
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)
@@ -3499,7 +3502,10 @@ name|ExamPeriod
 operator|.
 name|findAll
 argument_list|(
-name|request
+name|iSession
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|Exam
 operator|.

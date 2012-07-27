@@ -2904,9 +2904,9 @@ name|getDistPrefsTableForInstructionalOffering
 argument_list|(
 name|request
 argument_list|,
-name|io
+name|sessionContext
 argument_list|,
-literal|true
+name|io
 argument_list|)
 decl_stmt|;
 if|if

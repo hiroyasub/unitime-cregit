@@ -1231,9 +1231,9 @@ name|getDistPrefsTableForClass
 argument_list|(
 name|request
 argument_list|,
-name|c
+name|sessionContext
 argument_list|,
-literal|true
+name|c
 argument_list|)
 decl_stmt|;
 if|if

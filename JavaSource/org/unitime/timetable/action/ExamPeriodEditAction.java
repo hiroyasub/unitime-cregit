@@ -169,6 +169,22 @@ name|org
 operator|.
 name|springframework
 operator|.
+name|beans
+operator|.
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
 name|stereotype
 operator|.
 name|Service
@@ -323,6 +339,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|security
+operator|.
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|util
 operator|.
 name|Constants
@@ -345,6 +375,11 @@ name|ExamPeriodEditAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**  	 * Method execute 	 * @param mapping 	 * @param form 	 * @param request 	 * @param response 	 * @return ActionForward 	 */
@@ -1332,7 +1367,13 @@ name|ExamPeriod
 operator|.
 name|findAll
 argument_list|(
-name|request
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getCurrentAcademicSessionId
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)

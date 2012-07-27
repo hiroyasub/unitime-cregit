@@ -1235,9 +1235,9 @@ name|getDistPrefsTableForSchedulingSubpart
 argument_list|(
 name|request
 argument_list|,
-name|ss
+name|sessionContext
 argument_list|,
-literal|true
+name|ss
 argument_list|)
 decl_stmt|;
 if|if

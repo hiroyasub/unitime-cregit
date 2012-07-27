@@ -1144,8 +1144,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Get Distribution Types and store it in request object      * @param request      * @throws Exception      */
-annotation|@
-name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1153,6 +1151,9 @@ name|setupDistribTypes
 parameter_list|(
 name|HttpServletRequest
 name|request
+parameter_list|,
+name|SessionContext
+name|context
 parameter_list|)
 throws|throws
 name|Exception
@@ -1169,7 +1170,7 @@ name|DistributionType
 operator|.
 name|findApplicable
 argument_list|(
-name|request
+name|context
 argument_list|,
 literal|false
 argument_list|,
@@ -1178,8 +1179,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1187,6 +1186,9 @@ name|setupExamDistribTypes
 parameter_list|(
 name|HttpServletRequest
 name|request
+parameter_list|,
+name|SessionContext
+name|context
 parameter_list|)
 throws|throws
 name|Exception
@@ -1203,7 +1205,7 @@ name|DistributionType
 operator|.
 name|findApplicable
 argument_list|(
-name|request
+name|context
 argument_list|,
 literal|false
 argument_list|,
@@ -1212,8 +1214,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1221,6 +1221,9 @@ name|setupInstructorDistribTypes
 parameter_list|(
 name|HttpServletRequest
 name|request
+parameter_list|,
+name|SessionContext
+name|context
 parameter_list|)
 throws|throws
 name|Exception
@@ -1237,7 +1240,7 @@ name|DistributionType
 operator|.
 name|findApplicable
 argument_list|(
-name|request
+name|context
 argument_list|,
 literal|true
 argument_list|,
@@ -1246,8 +1249,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1255,6 +1256,9 @@ name|setupExaminationPeriods
 parameter_list|(
 name|HttpServletRequest
 name|request
+parameter_list|,
+name|Long
+name|sessionId
 parameter_list|,
 name|Integer
 name|examType
@@ -1274,7 +1278,7 @@ name|ExamPeriod
 operator|.
 name|findAll
 argument_list|(
-name|request
+name|sessionId
 argument_list|,
 name|examType
 argument_list|)
