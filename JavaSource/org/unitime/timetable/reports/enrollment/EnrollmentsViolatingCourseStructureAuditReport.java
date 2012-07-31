@@ -772,7 +772,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" ( select sce2.clazz.schedulingSubpart.itype.abbv || ' ' || sce2.clazz.sectionNumberCache || ' ' ||  sce2.clazz.schedulingSubpart.schedulingSubpartSuffixCache"
+literal|" ( select distinct sce2.clazz.schedulingSubpart.itype.abbv || ' ' || sce2.clazz.sectionNumberCache || ' ' ||  sce2.clazz.schedulingSubpart.schedulingSubpartSuffixCache"
 argument_list|)
 operator|.
 name|append
