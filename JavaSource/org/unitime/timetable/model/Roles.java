@@ -1683,6 +1683,9 @@ case|:
 case|case
 name|ExtendedTimePatterns
 case|:
+case|case
+name|ExaminationPeriods
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.
