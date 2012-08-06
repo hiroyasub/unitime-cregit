@@ -131,7 +131,14 @@ literal|"OrderInfo"
 argument_list|,
 literal|"WebTable order info"
 argument_list|)
-block|; 	;
+block|,
+name|ExamType
+argument_list|(
+literal|"Exam.Type"
+argument_list|,
+literal|"Examination type"
+argument_list|)
+block|, 	;
 name|String
 name|iKey
 decl_stmt|,

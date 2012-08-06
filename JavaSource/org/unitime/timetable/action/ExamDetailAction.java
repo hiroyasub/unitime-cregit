@@ -1503,6 +1503,8 @@ name|getDistPrefsTable
 argument_list|(
 name|request
 argument_list|,
+name|sessionContext
+argument_list|,
 name|exam
 argument_list|)
 decl_stmt|;
