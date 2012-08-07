@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|servlet
@@ -96,10 +76,6 @@ init|=
 literal|3978708393714463539L
 decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
-specifier|private
-name|Collection
-name|sessions
-decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**  	 * Method reset 	 * @param mapping 	 * @param request 	 */
 specifier|public
@@ -113,38 +89,6 @@ name|HttpServletRequest
 name|request
 parameter_list|)
 block|{
-name|sessions
-operator|=
-operator|new
-name|ArrayList
-argument_list|()
-expr_stmt|;
-block|}
-comment|/** 	 * @return Returns the sessions. 	 */
-specifier|public
-name|Collection
-name|getSessions
-parameter_list|()
-block|{
-return|return
-name|sessions
-return|;
-block|}
-comment|/** 	 * @param sessions The sessions to set. 	 */
-specifier|public
-name|void
-name|setSessions
-parameter_list|(
-name|Collection
-name|sessions
-parameter_list|)
-block|{
-name|this
-operator|.
-name|sessions
-operator|=
-name|sessions
-expr_stmt|;
 block|}
 block|}
 end_class

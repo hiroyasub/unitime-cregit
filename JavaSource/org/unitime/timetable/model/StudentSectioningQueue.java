@@ -807,6 +807,8 @@ name|q
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|protected
 specifier|static
 name|void
@@ -1402,13 +1404,7 @@ operator|.
 name|Session
 name|hibSession
 parameter_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|User
+name|UserContext
 name|user
 parameter_list|,
 name|Long
@@ -1570,6 +1566,8 @@ name|studentIds
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1703,6 +1701,8 @@ name|classIds
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
@@ -1836,6 +1836,8 @@ name|offeringId
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|void
