@@ -111,9 +111,13 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|stereotype
+name|beans
 operator|.
-name|Service
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
 import|;
 end_import
 
@@ -121,13 +125,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|commons
+name|stereotype
 operator|.
-name|web
-operator|.
-name|Web
+name|Service
 import|;
 end_import
 
@@ -165,9 +167,25 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
+name|security
 operator|.
-name|Roles
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|rights
+operator|.
+name|Right
 import|;
 end_import
 
@@ -229,6 +247,11 @@ name|TimetableManagerListAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Reads list of schedule deputies and assistants and displays them in the form of a HTML table      * @param mapping      * @param form      * @param request      * @param response      * @return ActionForward      * @throws Exception      */
@@ -257,48 +280,20 @@ init|=
 literal|""
 decl_stmt|;
 comment|// Check permissions
-if|if
-condition|(
-operator|!
-name|Web
+name|sessionContext
 operator|.
-name|hasRole
+name|checkPermission
 argument_list|(
-name|request
+name|Right
 operator|.
-name|getSession
-argument_list|()
-argument_list|,
-operator|new
-name|String
-index|[]
-block|{
-name|Roles
-operator|.
-name|ADMIN_ROLE
-block|}
-block_content|)
-block|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
+name|TimetableManagers
 argument_list|)
-throw|;
-block|}
-end_class
-
-begin_expr_stmt
+expr_stmt|;
 name|WebTable
 operator|.
 name|setOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"timetableManagerList.ord"
 argument_list|,
@@ -312,9 +307,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_decl_stmt
 name|PdfWebTable
 name|table
 init|=
@@ -324,16 +316,11 @@ argument_list|()
 operator|.
 name|getManagersTable
 argument_list|(
-name|request
-argument_list|,
-literal|false
+name|sessionContext
 argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 name|int
 name|order
 init|=
@@ -341,17 +328,11 @@ name|WebTable
 operator|.
 name|getOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"timetableManagerList.ord"
 argument_list|)
 decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 name|String
 name|tblData
 init|=
@@ -373,9 +354,6 @@ name|printTable
 argument_list|()
 operator|)
 decl_stmt|;
-end_decl_stmt
-
-begin_if_stmt
 if|if
 condition|(
 literal|"Export PDF"
@@ -400,9 +378,7 @@ argument_list|()
 operator|.
 name|getManagersTable
 argument_list|(
-name|request
-argument_list|,
-literal|false
+name|sessionContext
 argument_list|,
 literal|false
 argument_list|)
@@ -445,9 +421,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-end_if_stmt
-
-begin_expr_stmt
 name|request
 operator|.
 name|setAttribute
@@ -459,9 +432,6 @@ operator|+
 name|tblData
 argument_list|)
 expr_stmt|;
-end_expr_stmt
-
-begin_return
 return|return
 name|mapping
 operator|.
@@ -470,8 +440,9 @@ argument_list|(
 literal|"success"
 argument_list|)
 return|;
-end_return
+block|}
+block|}
+end_class
 
-unit|} }
 end_unit
 
