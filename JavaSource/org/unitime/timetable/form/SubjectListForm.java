@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|servlet
@@ -96,10 +76,6 @@ init|=
 literal|3618141147571302965L
 decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
-specifier|private
-name|Collection
-name|subjects
-decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**  	 * Method reset 	 * @param mapping 	 * @param request 	 */
 specifier|public
@@ -113,38 +89,6 @@ name|HttpServletRequest
 name|request
 parameter_list|)
 block|{
-name|subjects
-operator|=
-operator|new
-name|ArrayList
-argument_list|()
-expr_stmt|;
-block|}
-comment|/** 	 * @return Returns the subjects. 	 */
-specifier|public
-name|Collection
-name|getSubjects
-parameter_list|()
-block|{
-return|return
-name|subjects
-return|;
-block|}
-comment|/** 	 * @param subjects The subjects to set. 	 */
-specifier|public
-name|void
-name|setSubjects
-parameter_list|(
-name|Collection
-name|subjects
-parameter_list|)
-block|{
-name|this
-operator|.
-name|subjects
-operator|=
-name|subjects
-expr_stmt|;
 block|}
 block|}
 end_class
