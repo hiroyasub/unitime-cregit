@@ -186,14 +186,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
-comment|/** Request attribute name **/
-specifier|public
-specifier|static
-name|String
-name|SETTINGS_ATTR_NAME
-init|=
-literal|"settings"
-decl_stmt|;
 comment|/**      * Returns all the settings for a user      * @param request request object       * @param user User object      * @return Set containing settings, null otherwise      */
 specifier|public
 specifier|static

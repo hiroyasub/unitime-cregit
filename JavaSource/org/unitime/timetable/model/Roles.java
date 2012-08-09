@@ -1755,6 +1755,9 @@ case|:
 case|case
 name|SubjectAreaDelete
 case|:
+case|case
+name|SettingsAdmin
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.
@@ -1769,6 +1772,9 @@ name|HasRole
 case|:
 case|case
 name|Inquiry
+case|:
+case|case
+name|SettingsUser
 case|:
 return|return
 literal|true

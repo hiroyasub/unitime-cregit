@@ -161,9 +161,13 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|stereotype
+name|beans
 operator|.
-name|Service
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
 import|;
 end_import
 
@@ -171,13 +175,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|commons
+name|stereotype
 operator|.
-name|web
-operator|.
-name|Web
+name|Service
 import|;
 end_import
 
@@ -219,20 +221,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Roles
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|Settings
 import|;
 end_import
@@ -253,6 +241,36 @@ name|SettingsDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|rights
+operator|.
+name|Right
+import|;
+end_import
+
 begin_comment
 comment|/**   * MyEclipse Struts  * Creation date: 10-17-2005  *   * XDoclet definition:  * @struts:action path="/settings" name="settingsForm" input="/admin/settings.jsp" scope="request"  */
 end_comment
@@ -269,6 +287,11 @@ name|SettingsAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method execute      * @param mapping      * @param form      * @param request      * @param response      * @return ActionForward      */
@@ -292,44 +315,15 @@ throws|throws
 name|Exception
 block|{
 comment|// Check Access
-if|if
-condition|(
-operator|!
-name|Web
+name|sessionContext
 operator|.
-name|isLoggedIn
+name|checkPermission
 argument_list|(
-name|request
+name|Right
 operator|.
-name|getSession
-argument_list|()
+name|SettingsAdmin
 argument_list|)
-operator|||
-operator|!
-name|Web
-operator|.
-name|hasRole
-argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
-argument_list|,
-name|Roles
-operator|.
-name|getAdminRoles
-argument_list|()
-argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 comment|// Read operation to be performed
 name|SettingsForm
 name|settingsForm
@@ -863,10 +857,7 @@ name|WebTable
 operator|.
 name|setOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"settings.ord"
 argument_list|,
@@ -1133,9 +1124,7 @@ name|request
 operator|.
 name|setAttribute
 argument_list|(
-name|Settings
-operator|.
-name|SETTINGS_ATTR_NAME
+literal|"table"
 argument_list|,
 name|webTable
 operator|.
@@ -1145,10 +1134,7 @@ name|WebTable
 operator|.
 name|getOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"settings.ord"
 argument_list|)

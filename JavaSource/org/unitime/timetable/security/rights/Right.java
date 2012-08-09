@@ -1688,13 +1688,6 @@ operator|.
 name|class
 argument_list|)
 block|,
-name|Inquiry
-argument_list|(
-name|Session
-operator|.
-name|class
-argument_list|)
-block|,
 name|Registration
 block|,
 name|ExtendedTimePatterns
@@ -1704,6 +1697,12 @@ block|,
 name|SessionRollForward
 block|,
 name|CanSelectSolverServer
+block|,
+name|Inquiry
+block|,
+name|SettingsUser
+block|,
+name|SettingsAdmin
 block|,      ;
 specifier|private
 name|Class
