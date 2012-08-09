@@ -1767,6 +1767,9 @@ return|;
 case|case
 name|HasRole
 case|:
+case|case
+name|Inquiry
+case|:
 return|return
 literal|true
 return|;

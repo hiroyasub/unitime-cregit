@@ -118,6 +118,9 @@ case|:
 case|case
 name|PersonalSchedule
 case|:
+case|case
+name|Inquiry
+case|:
 return|return
 literal|true
 return|;
