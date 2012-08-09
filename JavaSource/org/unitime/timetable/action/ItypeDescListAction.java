@@ -61,18 +61,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|http
-operator|.
-name|HttpSession
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -133,9 +121,13 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|stereotype
+name|beans
 operator|.
-name|Service
+name|factory
+operator|.
+name|annotation
+operator|.
+name|Autowired
 import|;
 end_import
 
@@ -143,13 +135,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|springframework
 operator|.
-name|commons
+name|stereotype
 operator|.
-name|web
-operator|.
-name|Web
+name|Service
 import|;
 end_import
 
@@ -176,6 +166,36 @@ operator|.
 name|model
 operator|.
 name|ItypeDesc
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|SessionContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|rights
+operator|.
+name|Right
 import|;
 end_import
 
@@ -223,6 +243,11 @@ name|ItypeDescListAction
 extends|extends
 name|Action
 block|{
+annotation|@
+name|Autowired
+name|SessionContext
+name|sessionContext
+decl_stmt|;
 comment|// --------------------------------------------------------- Instance Variables
 comment|// --------------------------------------------------------- Methods
 comment|/**  	 * Method execute 	 * @param mapping 	 * @param form 	 * @param request 	 * @param response 	 * @return ActionForward 	 */
@@ -251,33 +276,15 @@ init|=
 literal|""
 decl_stmt|;
 comment|// Check if user is logged in
-name|HttpSession
-name|webSession
-init|=
-name|request
+name|sessionContext
 operator|.
-name|getSession
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|Web
+name|checkPermission
+argument_list|(
+name|Right
 operator|.
-name|isLoggedIn
-argument_list|(
-name|webSession
+name|InstructionalTypes
 argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-literal|"Access Denied."
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 comment|// Create new table
 name|PdfWebTable
 name|webTable
@@ -353,10 +360,7 @@ name|PdfWebTable
 operator|.
 name|setOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"itypeDescList.ord"
 argument_list|,
@@ -606,10 +610,7 @@ name|PdfWebTable
 operator|.
 name|getOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"itypeDescList.ord"
 argument_list|)
@@ -643,10 +644,7 @@ name|PdfWebTable
 operator|.
 name|getOrder
 argument_list|(
-name|request
-operator|.
-name|getSession
-argument_list|()
+name|sessionContext
 argument_list|,
 literal|"itypeDescList.ord"
 argument_list|)
