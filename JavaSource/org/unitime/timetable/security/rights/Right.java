@@ -349,6 +349,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|SponsoringOrganization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|SubjectArea
 import|;
 end_import
@@ -1734,6 +1748,24 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|SponsoringOrganizations
+block|,
+name|SponsoringOrganizationAdd
+block|,
+name|SponsoringOrganizationEdit
+argument_list|(
+name|SponsoringOrganization
+operator|.
+name|class
+argument_list|)
+block|,
+name|SponsoringOrganizationDelete
+argument_list|(
+name|SponsoringOrganization
+operator|.
+name|class
+argument_list|)
+block|,
 name|Registration
 block|,
 name|ExtendedTimePatterns
@@ -1749,7 +1781,9 @@ block|,
 name|SettingsUser
 block|,
 name|SettingsAdmin
-block|,      ;
+block|,
+name|RoomTypes
+block|,     ;
 specifier|private
 name|Class
 argument_list|<
