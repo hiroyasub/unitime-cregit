@@ -1041,6 +1041,20 @@ literal|null
 return|;
 block|}
 block|}
+annotation|@
+name|PermissionForRight
+argument_list|(
+name|Right
+operator|.
+name|LastChanges
+argument_list|)
+specifier|public
+specifier|static
+class|class
+name|LastChanges
+extends|extends
+name|SimpleSessionPermission
+block|{}
 block|}
 end_class
 

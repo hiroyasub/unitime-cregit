@@ -1761,6 +1761,9 @@ case|:
 case|case
 name|TimePatterns
 case|:
+case|case
+name|LastChanges
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.

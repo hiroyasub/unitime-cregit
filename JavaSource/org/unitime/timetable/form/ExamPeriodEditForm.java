@@ -2588,6 +2588,12 @@ name|iAutoSetup
 operator|=
 literal|false
 expr_stmt|;
+if|if
+condition|(
+name|request
+operator|!=
+literal|null
+condition|)
 name|iSession
 operator|=
 name|SessionDAO
