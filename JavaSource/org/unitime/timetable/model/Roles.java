@@ -1758,6 +1758,9 @@ case|:
 case|case
 name|SettingsAdmin
 case|:
+case|case
+name|TimePatterns
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.
