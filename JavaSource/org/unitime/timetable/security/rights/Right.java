@@ -1783,6 +1783,8 @@ block|,
 name|SettingsAdmin
 block|,
 name|RoomTypes
+block|,
+name|Users
 block|,     ;
 specifier|private
 name|Class

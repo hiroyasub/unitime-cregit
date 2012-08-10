@@ -1791,6 +1791,9 @@ case|:
 case|case
 name|SponsoringOrganizationDelete
 case|:
+case|case
+name|Users
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.
