@@ -1335,6 +1335,20 @@ name|SponsoringOrganizationAdd
 extends|extends
 name|SponsoringOrganizationEdit
 block|{}
+annotation|@
+name|PermissionForRight
+argument_list|(
+name|Right
+operator|.
+name|DistributionTypeEdit
+argument_list|)
+specifier|public
+specifier|static
+class|class
+name|DistributionTypeEdit
+extends|extends
+name|SimpleSessionPermission
+block|{}
 block|}
 end_class
 

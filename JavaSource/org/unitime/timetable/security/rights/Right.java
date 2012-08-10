@@ -1785,6 +1785,23 @@ block|,
 name|RoomTypes
 block|,
 name|Users
+block|,
+name|SolutionInformationDefinitions
+block|,
+name|SolverParameterGroups
+block|,
+name|SolverParameters
+block|,
+name|SolverConfigurations
+block|,
+name|DistributionTypes
+block|,
+name|DistributionTypeEdit
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
 block|,     ;
 specifier|private
 name|Class
