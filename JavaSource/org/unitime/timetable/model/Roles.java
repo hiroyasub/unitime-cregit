@@ -1812,6 +1812,12 @@ case|:
 case|case
 name|SolverParameters
 case|:
+case|case
+name|HibernateStatistics
+case|:
+case|case
+name|PageStatistics
+case|:
 return|return
 name|ADMIN_ROLE
 operator|.

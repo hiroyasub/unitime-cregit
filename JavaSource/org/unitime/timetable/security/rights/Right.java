@@ -1802,7 +1802,11 @@ name|Session
 operator|.
 name|class
 argument_list|)
-block|,     ;
+block|,
+name|HibernateStatistics
+block|,
+name|PageStatistics
+block|,          ;
 specifier|private
 name|Class
 argument_list|<
