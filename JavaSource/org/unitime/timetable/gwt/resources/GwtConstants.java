@@ -68,6 +68,15 @@ name|useAmPm
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+name|boolean
+name|firstDayThenMonth
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
@@ -130,7 +139,7 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"MM/dd hh:mmaa"
+literal|"MM/dd/yyyy hh:mmaa"
 argument_list|)
 name|String
 name|timeStampFormat
@@ -235,7 +244,7 @@ argument_list|(
 literal|"midnight"
 argument_list|)
 name|String
-name|timeMidnitgh
+name|timeMidnight
 parameter_list|()
 function_decl|;
 annotation|@
@@ -324,6 +333,94 @@ argument_list|)
 name|String
 index|[]
 name|meetingColors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Room Timetable"
+block|,
+literal|"Subject Timetable"
+block|,
+literal|"Curriculum Timetable"
+block|,
+literal|"Departmental Timetable"
+block|,
+literal|"Personal Timetable"
+block|,
+literal|"Course Timetable"
+block|}
+argument_list|)
+name|String
+index|[]
+name|resourceType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Room"
+block|,
+literal|"Subject"
+block|,
+literal|"Curriculum"
+block|,
+literal|"Department"
+block|,
+literal|"Person"
+block|,
+literal|"Course"
+block|}
+argument_list|)
+name|String
+index|[]
+name|resourceName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Class Event"
+block|,
+literal|"Final Examination Event"
+block|,
+literal|"Midterm Examination Event"
+block|,
+literal|"Course Related Event"
+block|,
+literal|"Special Event"
+block|,
+literal|"Not Available"
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventTypeName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Class"
+block|,
+literal|"Final Examination"
+block|,
+literal|"Midterm Examination"
+block|,
+literal|"Course"
+block|,
+literal|"Special"
+block|,
+literal|"Not Available"
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventTypeAbbv
 parameter_list|()
 function_decl|;
 block|}

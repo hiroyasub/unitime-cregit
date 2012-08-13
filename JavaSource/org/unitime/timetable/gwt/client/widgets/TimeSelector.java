@@ -3240,7 +3240,7 @@ condition|)
 return|return
 name|CONSTANTS
 operator|.
-name|timeMidnitgh
+name|timeMidnight
 argument_list|()
 return|;
 if|if
@@ -3373,7 +3373,7 @@ condition|)
 return|return
 name|CONSTANTS
 operator|.
-name|timeMidnitgh
+name|timeMidnight
 argument_list|()
 return|;
 if|if

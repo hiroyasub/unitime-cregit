@@ -7461,9 +7461,9 @@ name|week
 operator|=
 operator|-
 operator|(
-operator|(
 name|int
 operator|)
+operator|(
 operator|(
 name|start
 operator|-
@@ -7581,9 +7581,9 @@ name|offset
 operator|=
 operator|-
 operator|(
-operator|(
 name|int
 operator|)
+operator|(
 operator|(
 name|start
 operator|-

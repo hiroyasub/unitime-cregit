@@ -1203,7 +1203,9 @@ operator|+
 name|instructor
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 operator|+
 literal|"\":MAILTO:"
 operator|+
@@ -1290,7 +1292,9 @@ name|getContact
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 operator|+
 literal|"\":MAILTO:"
 operator|+
@@ -1473,7 +1477,9 @@ operator|+
 name|instructor
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 operator|+
 literal|"\":MAILTO:"
 operator|+
@@ -1560,7 +1566,9 @@ name|getContact
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 operator|+
 literal|"\":MAILTO:"
 operator|+

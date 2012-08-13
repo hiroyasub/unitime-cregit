@@ -2827,6 +2827,24 @@ name|String
 name|hintStandardNoteDoubleClickToSelect
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{2}, {0} {1}"
+argument_list|)
+name|String
+name|formatName
+parameter_list|(
+name|String
+name|first
+parameter_list|,
+name|String
+name|middle
+parameter_list|,
+name|String
+name|last
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

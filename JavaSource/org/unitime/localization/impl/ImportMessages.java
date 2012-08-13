@@ -287,14 +287,14 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"# UniTime 3.3 (University Timetabling Application)"
+literal|"# UniTime 3.4 (University Timetabling Application)"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# Copyright (C) 2011, UniTime LLC, and individual contributors"
+literal|"# Copyright (C) 2012, UniTime LLC, and individual contributors"
 argument_list|)
 expr_stmt|;
 name|out
@@ -469,6 +469,17 @@ name|size
 argument_list|()
 operator|>=
 literal|3
+operator|&&
+operator|!
+name|line
+operator|.
+name|getField
+argument_list|(
+literal|2
+argument_list|)
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 name|out

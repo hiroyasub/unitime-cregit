@@ -3061,7 +3061,9 @@ name|getType
 argument_list|()
 operator|.
 name|getAbbreviation
-argument_list|()
+argument_list|(
+name|CONSTANTS
+argument_list|)
 operator|+
 literal|")"
 expr_stmt|;
@@ -3422,7 +3424,9 @@ name|getType
 argument_list|()
 operator|.
 name|getAbbreviation
-argument_list|()
+argument_list|(
+name|CONSTANTS
+argument_list|)
 operator|+
 literal|")"
 expr_stmt|;

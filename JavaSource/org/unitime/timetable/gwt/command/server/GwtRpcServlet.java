@@ -687,6 +687,8 @@ name|t
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|t
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -713,6 +715,8 @@ name|t
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|t
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1683,6 +1687,8 @@ name|t
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|t
 argument_list|)
 expr_stmt|;
 name|iException
@@ -1710,6 +1716,8 @@ name|t
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|t
 argument_list|)
 expr_stmt|;
 name|iException

@@ -338,18 +338,18 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_PUBLISHED_TIME
+name|SHOW_NOTE
 case|:
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_ALLOCATED_TIME
+name|SHOW_PUBLISHED_TIME
 case|:
 name|out
 operator|.
@@ -360,7 +360,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_SETUP_TIME
+name|SHOW_ALLOCATED_TIME
 case|:
 name|out
 operator|.
@@ -371,7 +371,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_TEARDOWN_TIME
+name|SHOW_SETUP_TIME
 case|:
 name|out
 operator|.
@@ -382,18 +382,18 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_CAPACITY
+name|SHOW_TEARDOWN_TIME
 case|:
 name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|10
+literal|9
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_ENROLLMENT
+name|SHOW_CAPACITY
 case|:
 name|out
 operator|.
@@ -404,7 +404,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_LIMIT
+name|SHOW_ENROLLMENT
 case|:
 name|out
 operator|.
@@ -415,7 +415,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_SPONSOR
+name|SHOW_LIMIT
 case|:
 name|out
 operator|.
@@ -426,7 +426,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_MAIN_CONTACT
+name|SHOW_SPONSOR
 case|:
 name|out
 operator|.
@@ -437,13 +437,24 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_APPROVAL
+name|SHOW_MAIN_CONTACT
 case|:
 name|out
 operator|.
 name|hideColumn
 argument_list|(
 literal|15
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SHOW_APPROVAL
+case|:
+name|out
+operator|.
+name|hideColumn
+argument_list|(
+literal|16
 argument_list|)
 expr_stmt|;
 break|break;
@@ -496,70 +507,76 @@ argument_list|,
 comment|/*  4 */
 name|MESSAGES
 operator|.
-name|colDate
+name|colNote
 argument_list|()
 argument_list|,
 comment|/*  5 */
 name|MESSAGES
 operator|.
-name|colPublishedTime
+name|colDate
 argument_list|()
 argument_list|,
 comment|/*  6 */
 name|MESSAGES
 operator|.
-name|colAllocatedTime
+name|colPublishedTime
 argument_list|()
 argument_list|,
 comment|/*  7 */
 name|MESSAGES
 operator|.
-name|colSetupTimeShort
+name|colAllocatedTime
 argument_list|()
 argument_list|,
 comment|/*  8 */
 name|MESSAGES
 operator|.
-name|colTeardownTimeShort
+name|colSetupTimeShort
 argument_list|()
 argument_list|,
 comment|/*  9 */
 name|MESSAGES
 operator|.
-name|colLocation
+name|colTeardownTimeShort
 argument_list|()
 argument_list|,
 comment|/* 10 */
 name|MESSAGES
 operator|.
-name|colCapacity
+name|colLocation
 argument_list|()
 argument_list|,
 comment|/* 11 */
 name|MESSAGES
 operator|.
-name|colEnrollment
+name|colCapacity
 argument_list|()
 argument_list|,
 comment|/* 12 */
 name|MESSAGES
 operator|.
-name|colLimit
+name|colEnrollment
 argument_list|()
 argument_list|,
 comment|/* 13 */
 name|MESSAGES
 operator|.
-name|colSponsorOrInstructor
+name|colLimit
 argument_list|()
 argument_list|,
 comment|/* 14 */
 name|MESSAGES
 operator|.
-name|colMainContact
+name|colSponsorOrInstructor
 argument_list|()
 argument_list|,
 comment|/* 15 */
+name|MESSAGES
+operator|.
+name|colMainContact
+argument_list|()
+argument_list|,
+comment|/* 16 */
 name|MESSAGES
 operator|.
 name|colApproval
@@ -684,12 +701,32 @@ name|getType
 argument_list|()
 operator|.
 name|getAbbreviation
-argument_list|()
+argument_list|(
+name|CONSTANTS
+argument_list|)
 argument_list|,
 name|getTitle
 argument_list|(
 name|event
 argument_list|)
+argument_list|,
+name|event
+operator|.
+name|hasNotes
+argument_list|()
+condition|?
+name|event
+operator|.
+name|getNotes
+argument_list|()
+operator|.
+name|first
+argument_list|()
+operator|.
+name|getNote
+argument_list|()
+else|:
+literal|""
 argument_list|,
 name|meeting
 operator|.
@@ -817,6 +854,8 @@ operator|.
 name|getInstructorNames
 argument_list|(
 literal|"\n"
+argument_list|,
+name|MESSAGES
 argument_list|)
 else|:
 name|event
@@ -845,7 +884,9 @@ name|getContact
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 else|:
 literal|null
 argument_list|,

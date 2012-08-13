@@ -668,7 +668,9 @@ name|getContact
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -713,7 +715,9 @@ argument_list|,
 name|contact
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -825,7 +829,9 @@ name|getType
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|CONSTANTS
+argument_list|)
 operator|+
 literal|")"
 argument_list|)
@@ -1211,7 +1217,9 @@ name|getContact
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 else|:
 literal|"?"
 argument_list|)
@@ -2253,7 +2261,9 @@ name|getType
 argument_list|()
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|CONSTANTS
+argument_list|)
 operator|+
 literal|"</td></tr>"
 argument_list|)
@@ -2545,7 +2555,9 @@ operator|+
 name|contact
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 operator|+
 literal|"</td><td>"
 operator|+
@@ -2612,7 +2624,9 @@ operator|+
 name|contact
 operator|.
 name|getName
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 operator|+
 literal|"</td><td>"
 operator|+
