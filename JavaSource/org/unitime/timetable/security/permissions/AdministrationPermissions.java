@@ -1326,12 +1326,12 @@ name|PermissionForRight
 argument_list|(
 name|Right
 operator|.
-name|SponsoringOrganizationAdd
+name|SponsoringOrganizationDelete
 argument_list|)
 specifier|public
 specifier|static
 class|class
-name|SponsoringOrganizationAdd
+name|SponsoringOrganizationDelete
 extends|extends
 name|SponsoringOrganizationEdit
 block|{}

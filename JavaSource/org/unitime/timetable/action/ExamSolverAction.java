@@ -905,13 +905,6 @@ operator|.
 name|save
 argument_list|()
 expr_stmt|;
-name|myForm
-operator|.
-name|setChangeTab
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1011,13 +1004,6 @@ name|solver
 operator|.
 name|clear
 argument_list|()
-expr_stmt|;
-name|myForm
-operator|.
-name|setChangeTab
-argument_list|(
-literal|true
-argument_list|)
 expr_stmt|;
 block|}
 comment|// Reload
@@ -1151,13 +1137,6 @@ operator|.
 name|reload
 argument_list|(
 name|config
-argument_list|)
-expr_stmt|;
-name|myForm
-operator|.
-name|setChangeTab
-argument_list|(
-literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -1345,13 +1324,6 @@ name|start
 argument_list|()
 expr_stmt|;
 block|}
-name|myForm
-operator|.
-name|setChangeTab
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
