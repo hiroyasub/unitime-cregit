@@ -4371,7 +4371,7 @@ name|setHTML
 argument_list|(
 name|event
 operator|.
-name|hasNotes
+name|hasEventNote
 argument_list|()
 operator|&&
 name|getMode
@@ -4382,13 +4382,7 @@ argument_list|()
 condition|?
 name|event
 operator|.
-name|getNotes
-argument_list|()
-operator|.
-name|first
-argument_list|()
-operator|.
-name|getNote
+name|getEventNote
 argument_list|()
 operator|.
 name|replace
@@ -4658,7 +4652,7 @@ name|setHTML
 argument_list|(
 name|event
 operator|.
-name|hasNotes
+name|hasEventNote
 argument_list|()
 operator|&&
 name|getMode
@@ -4669,13 +4663,7 @@ argument_list|()
 condition|?
 name|event
 operator|.
-name|getNotes
-argument_list|()
-operator|.
-name|first
-argument_list|()
-operator|.
-name|getNote
+name|getEventNote
 argument_list|()
 operator|.
 name|replace
