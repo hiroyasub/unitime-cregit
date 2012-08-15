@@ -702,6 +702,16 @@ name|DoubleClickEvent
 name|event
 parameter_list|)
 block|{
+if|if
+condition|(
+name|iStandardNotes
+operator|.
+name|getItemCount
+argument_list|()
+operator|<=
+literal|0
+condition|)
+return|return;
 name|String
 name|text
 init|=
@@ -1203,7 +1213,7 @@ name|getRow
 argument_list|(
 name|MESSAGES
 operator|.
-name|propNotes
+name|propStandardNotes
 argument_list|()
 argument_list|)
 argument_list|,
