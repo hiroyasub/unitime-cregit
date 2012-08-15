@@ -381,41 +381,7 @@ throws|throws
 name|IOException
 block|{
 comment|// Check rights
-if|if
-condition|(
-name|helper
-operator|.
-name|getUser
-argument_list|()
-operator|==
-literal|null
-condition|)
-throw|throw
-operator|new
-name|PageAccessException
-argument_list|(
-literal|"Login is required to use this page."
-argument_list|)
-throw|;
-if|if
-condition|(
-name|helper
-operator|.
-name|getUser
-argument_list|()
-operator|.
-name|getCurrentRole
-argument_list|()
-operator|==
-literal|null
-condition|)
-throw|throw
-operator|new
-name|PageAccessException
-argument_list|(
-literal|"Insufficient user privileges."
-argument_list|)
-throw|;
+comment|// FIXME: helper.getSessionContext().checkPermission(Right.???);
 comment|// Retrive report
 name|SavedHQL
 name|hql
@@ -702,6 +668,9 @@ expr_stmt|;
 name|execute
 argument_list|(
 name|helper
+operator|.
+name|getSessionContext
+argument_list|()
 operator|.
 name|getUser
 argument_list|()

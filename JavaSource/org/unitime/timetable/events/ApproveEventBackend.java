@@ -361,7 +361,9 @@ name|timetable
 operator|.
 name|security
 operator|.
-name|SessionContext
+name|rights
+operator|.
+name|Right
 import|;
 end_import
 
@@ -405,11 +407,8 @@ parameter_list|(
 name|ApproveEventRpcRequest
 name|request
 parameter_list|,
-name|SessionContext
+name|EventContext
 name|context
-parameter_list|,
-name|EventRights
-name|rights
 parameter_list|)
 block|{
 name|org
@@ -647,11 +646,15 @@ case|:
 if|if
 condition|(
 operator|!
-name|rights
+name|context
 operator|.
-name|canApprove
+name|hasPermission
 argument_list|(
 name|meeting
+argument_list|,
+name|Right
+operator|.
+name|EventMeetingApprove
 argument_list|)
 condition|)
 throw|throw
@@ -688,11 +691,15 @@ case|:
 if|if
 condition|(
 operator|!
-name|rights
+name|context
 operator|.
-name|canApprove
+name|hasPermission
 argument_list|(
 name|meeting
+argument_list|,
+name|Right
+operator|.
+name|EventMeetingApprove
 argument_list|)
 condition|)
 throw|throw
@@ -1094,7 +1101,7 @@ argument_list|)
 argument_list|,
 name|event
 argument_list|,
-name|rights
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1137,7 +1144,7 @@ name|session
 argument_list|,
 name|event
 argument_list|,
-name|rights
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;

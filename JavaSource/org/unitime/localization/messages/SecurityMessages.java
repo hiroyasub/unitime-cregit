@@ -58,6 +58,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Access denied for {0}: user has no matching role / academic session."
+argument_list|)
+name|String
+name|noMatchingAuthority
+parameter_list|(
+name|String
+name|right
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access denied: unknown or no permission provided."
 argument_list|)
 name|String

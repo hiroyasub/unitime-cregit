@@ -55,7 +55,7 @@ name|timetable
 operator|.
 name|security
 operator|.
-name|UserContext
+name|SessionContext
 import|;
 end_import
 
@@ -102,8 +102,8 @@ throws|throws
 name|IOException
 function_decl|;
 specifier|public
-name|UserContext
-name|getUser
+name|SessionContext
+name|getSessionContext
 parameter_list|()
 function_decl|;
 specifier|public

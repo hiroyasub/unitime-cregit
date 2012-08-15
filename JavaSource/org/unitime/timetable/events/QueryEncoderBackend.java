@@ -328,7 +328,10 @@ operator|.
 name|getUser
 argument_list|()
 operator|.
-name|getCurrentRole
+name|getCurrentAuthority
+argument_list|()
+operator|.
+name|getRole
 argument_list|()
 operator|==
 literal|null
@@ -342,7 +345,10 @@ operator|.
 name|getUser
 argument_list|()
 operator|.
-name|getCurrentRole
+name|getCurrentAuthority
+argument_list|()
+operator|.
+name|getRole
 argument_list|()
 operator|)
 operator|)

@@ -121,20 +121,6 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|security
-operator|.
-name|SessionContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
 name|util
 operator|.
 name|DateUtils
@@ -181,11 +167,8 @@ operator|.
 name|RequestSessionDetails
 name|command
 parameter_list|,
-name|SessionContext
-name|helper
-parameter_list|,
-name|EventRights
-name|rights
+name|EventContext
+name|context
 parameter_list|)
 block|{
 name|Session
@@ -527,7 +510,7 @@ argument_list|)
 expr_stmt|;
 if|else if
 condition|(
-name|rights
+name|context
 operator|.
 name|isPastOrOutside
 argument_list|(
