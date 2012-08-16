@@ -5021,7 +5021,7 @@ name|Override
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"(#reservation.id != null and checkPermission(#reservation.id, 'Reservation', 'ReservationEdit')) or (checkPermission(#reservation.offering.id, 'InstructionalOffering', 'ReservationOffering') and checkPermission('ReservationAdd'))"
+literal|"(#reservation.id != null and checkPermission(#reservation.id, 'Reservation', 'ReservationEdit')) or (#reservation.id == null and checkPermission(#reservation.offering.id, 'InstructionalOffering', 'ReservationOffering') and checkPermission('ReservationAdd'))"
 argument_list|)
 specifier|public
 name|Long

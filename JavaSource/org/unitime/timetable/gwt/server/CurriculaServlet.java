@@ -4194,7 +4194,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"(#curriculum.id != null and checkPermission(#curriculum.id, 'Curriculum', 'CurriculumEdit')) or checkPermission(#curriculum.department.id, 'Department', 'CurriculumAdd')"
+literal|"(#curriculum.id != null and checkPermission(#curriculum.id, 'Curriculum', 'CurriculumEdit')) or (#curriculum.id == null and checkPermission(#curriculum.department.id, 'Department', 'CurriculumAdd'))"
 argument_list|)
 specifier|public
 name|Long
