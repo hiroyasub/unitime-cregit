@@ -117,6 +117,9 @@ case|:
 case|case
 name|EventDate
 case|:
+case|case
+name|SchedulingAssistant
+case|:
 return|return
 literal|true
 return|;
