@@ -1716,6 +1716,12 @@ if|if
 condition|(
 name|iEditable
 operator|||
+operator|!
+name|iData
+operator|.
+name|isEditable
+argument_list|()
+operator|||
 name|event
 operator|.
 name|getData
@@ -3539,7 +3545,15 @@ name|add
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|iEditable
+operator|&&
+name|iData
+operator|.
+name|isEditable
+argument_list|()
+condition|)
 block|{
 name|line
 operator|.
@@ -3665,7 +3679,15 @@ name|delete
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|iEditable
+operator|&&
+name|iData
+operator|.
+name|isEditable
+argument_list|()
+condition|)
 block|{
 name|line
 operator|.
