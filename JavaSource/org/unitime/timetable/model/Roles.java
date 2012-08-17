@@ -1846,6 +1846,9 @@ case|case
 name|StudentSectioningSolverLog
 case|:
 case|case
+name|StudentSectioningSolverDashboard
+case|:
+case|case
 name|EnrollmentAuditPDFReports
 case|:
 return|return
@@ -2234,6 +2237,9 @@ argument_list|)
 return|;
 case|case
 name|StudentSchedulingAdvisor
+case|:
+case|case
+name|CourseRequests
 case|:
 return|return
 name|ADMIN_ROLE

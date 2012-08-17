@@ -2827,6 +2827,16 @@ return|return
 operator|(
 name|Long
 operator|)
+operator|(
+name|iAuthority
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
 name|iAuthority
 operator|.
 name|getAcademicSession
@@ -2834,6 +2844,7 @@ argument_list|()
 operator|.
 name|getQualifierId
 argument_list|()
+operator|)
 return|;
 block|}
 annotation|@

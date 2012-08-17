@@ -936,6 +936,9 @@ argument_list|()
 operator|||
 name|canExamTimetable
 argument_list|()
+operator|||
+name|canNoRoleReport
+argument_list|()
 return|;
 block|}
 specifier|public

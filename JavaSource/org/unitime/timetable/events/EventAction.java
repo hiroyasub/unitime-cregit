@@ -491,11 +491,22 @@ block|{
 comment|// Check basic permissions
 name|context
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|Right
 operator|.
 name|Events
+argument_list|,
+operator|new
+name|SimpleQualifier
+argument_list|(
+literal|"Session"
+argument_list|,
+name|request
+operator|.
+name|getSessionId
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// Execute action

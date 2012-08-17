@@ -1184,6 +1184,16 @@ argument_list|()
 operator|.
 name|getCurrentAuthority
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|context
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getCurrentAuthority
+argument_list|()
 operator|.
 name|hasRight
 argument_list|(

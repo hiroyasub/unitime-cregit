@@ -174,6 +174,9 @@ case|:
 case|case
 name|SchedulingAssistant
 case|:
+case|case
+name|CourseRequests
+case|:
 return|return
 literal|true
 return|;
