@@ -6418,7 +6418,7 @@ argument_list|()
 operator|.
 name|hasPermission
 argument_list|(
-name|r
+name|reservation
 argument_list|,
 name|Right
 operator|.
