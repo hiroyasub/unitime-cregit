@@ -3482,6 +3482,8 @@ name|setupInstructors
 argument_list|(
 name|request
 argument_list|,
+name|sessionContext
+argument_list|,
 name|deptsIdsArray
 argument_list|)
 expr_stmt|;
@@ -3829,6 +3831,8 @@ operator|.
 name|setupInstructors
 argument_list|(
 name|request
+argument_list|,
+name|sessionContext
 argument_list|,
 name|deptsIdsArray
 argument_list|)

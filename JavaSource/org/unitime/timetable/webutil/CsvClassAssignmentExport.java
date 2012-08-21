@@ -63,18 +63,6 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|commons
-operator|.
-name|User
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
 name|timetable
 operator|.
 name|defaults
@@ -860,7 +848,7 @@ specifier|static
 name|CSVFile
 name|exportCsv2
 parameter_list|(
-name|User
+name|UserContext
 name|user
 parameter_list|,
 name|Collection

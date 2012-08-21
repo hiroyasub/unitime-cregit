@@ -190,13 +190,6 @@ name|Long
 name|getCurrentAcademicSessionId
 parameter_list|()
 function_decl|;
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getCurrentRole
-parameter_list|()
-function_decl|;
 specifier|public
 name|boolean
 name|hasDepartment

@@ -814,6 +814,8 @@ argument_list|,
 name|context
 argument_list|,
 name|prefs
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
@@ -1184,6 +1186,8 @@ argument_list|,
 name|context
 argument_list|,
 name|prefs
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -1224,6 +1228,8 @@ argument_list|,
 name|context
 argument_list|,
 name|prefs
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -1368,6 +1374,8 @@ argument_list|,
 name|context
 argument_list|,
 name|prefs
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -1575,6 +1583,8 @@ argument_list|,
 name|context
 argument_list|,
 name|prefs
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -1591,6 +1601,9 @@ name|context
 parameter_list|,
 name|Collection
 name|distPrefs
+parameter_list|,
+name|boolean
+name|addButton
 parameter_list|)
 block|{
 name|String
@@ -1638,6 +1651,8 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|addButton
+operator|&&
 name|context
 operator|.
 name|hasPermission

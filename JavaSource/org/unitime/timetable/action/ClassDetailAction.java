@@ -2383,6 +2383,8 @@ name|setupInstructors
 argument_list|(
 name|request
 argument_list|,
+name|sessionContext
+argument_list|,
 name|c
 operator|.
 name|getDepartmentForSubjectArea

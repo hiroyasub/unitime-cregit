@@ -368,13 +368,6 @@ argument_list|(
 literal|"Updating enrollment counts..."
 argument_list|)
 expr_stmt|;
-name|updateAllEnrollmentCounters
-argument_list|(
-name|server
-argument_list|,
-name|helper
-argument_list|)
-expr_stmt|;
 name|helper
 operator|.
 name|info
@@ -385,21 +378,6 @@ expr_stmt|;
 return|return
 literal|true
 return|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|updateAllEnrollmentCounters
-parameter_list|(
-name|OnlineSectioningServer
-name|server
-parameter_list|,
-name|OnlineSectioningHelper
-name|helper
-parameter_list|)
-block|{
-comment|/* 		helper.beginTransaction(); 		try { 	     	helper.getHibSession().createQuery( 	     			"update CourseOffering c set c.enrollment = " + 	     			"(select count(distinct e.student) from StudentClassEnrollment e where e.courseOffering.uniqueId = c.uniqueId) " +  	                 "where c.subjectArea.uniqueId in " + 	                 "(select s.uniqueId from SubjectArea s where s.session.uniqueId = :sessionId)"). 	                 setLong("sessionId", server.getAcademicSession().getUniqueId()).executeUpdate(); 	     	 	     	helper.getHibSession().createQuery( 	     			"update Class_ c set c.enrollment = " + 	     			"(select count(distinct e.student) from StudentClassEnrollment e where e.clazz.uniqueId = c.uniqueId) " +  	                 "where c.schedulingSubpart.uniqueId in " + 	                 "(select s.uniqueId from SchedulingSubpart s where s.instrOfferingConfig.instructionalOffering.session.uniqueId = :sessionId)"). 	                 setLong("sessionId", server.getAcademicSession().getUniqueId()).executeUpdate(); 			helper.commitTransaction(); 		} catch (Exception e) { 			helper.rollbackTransaction(); 			if (e instanceof SectioningException) 				throw (SectioningException)e; 			throw new SectioningException(MSG.exceptionUnknown(e.getMessage()), e); 		} 		*/
 block|}
 annotation|@
 name|Override

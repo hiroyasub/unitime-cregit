@@ -1427,16 +1427,6 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|n
-operator|.
-name|equals
-argument_list|(
-literal|"userTrace"
-argument_list|)
-condition|)
-continue|continue;
 name|message
 operator|+=
 literal|"\n    "

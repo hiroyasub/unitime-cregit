@@ -31,6 +31,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|text
+operator|.
+name|DecimalFormat
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collection
@@ -114,20 +124,6 @@ operator|.
 name|util
 operator|.
 name|Vector
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|web
-operator|.
-name|Web
 import|;
 end_import
 
@@ -2635,6 +2631,15 @@ name|TimetableGridCell
 operator|.
 name|sBgColorNeutral
 decl_stmt|;
+name|DecimalFormat
+name|df
+init|=
+operator|new
+name|DecimalFormat
+argument_list|(
+literal|"0.0"
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|bgMode
@@ -3670,7 +3675,7 @@ literal|null
 condition|?
 literal|"<br>Perturbation penalty: "
 operator|+
-name|Web
+name|df
 operator|.
 name|format
 argument_list|(

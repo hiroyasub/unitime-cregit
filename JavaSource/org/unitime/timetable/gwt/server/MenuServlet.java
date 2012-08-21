@@ -51,6 +51,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|text
+operator|.
+name|DecimalFormat
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -250,20 +260,6 @@ operator|.
 name|util
 operator|.
 name|HibernateUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|web
-operator|.
-name|Web
 import|;
 end_import
 
@@ -4440,7 +4436,11 @@ name|progressMax
 operator|+
 literal|" ("
 operator|+
-name|Web
+operator|new
+name|DecimalFormat
+argument_list|(
+literal|"0.0"
+argument_list|)
 operator|.
 name|format
 argument_list|(

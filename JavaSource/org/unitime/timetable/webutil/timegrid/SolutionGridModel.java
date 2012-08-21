@@ -23,6 +23,16 @@ name|java
 operator|.
 name|text
 operator|.
+name|DecimalFormat
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|text
+operator|.
 name|SimpleDateFormat
 import|;
 end_import
@@ -178,20 +188,6 @@ operator|.
 name|commons
 operator|.
 name|Debug
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|web
-operator|.
-name|Web
 import|;
 end_import
 
@@ -481,6 +477,17 @@ name|Long
 name|iRoomId
 init|=
 literal|null
+decl_stmt|;
+specifier|private
+specifier|static
+name|DecimalFormat
+name|sDF
+init|=
+operator|new
+name|DecimalFormat
+argument_list|(
+literal|"0.0"
+argument_list|)
 decl_stmt|;
 specifier|public
 name|SolutionGridModel
@@ -4056,7 +4063,7 @@ literal|null
 condition|?
 literal|"Perturbation penalty: "
 operator|+
-name|Web
+name|sDF
 operator|.
 name|format
 argument_list|(
