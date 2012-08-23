@@ -392,7 +392,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"count m from ManagerRole m where m.role.roleId = :roleId"
+literal|"select count(m) from ManagerRole m where m.role.roleId = :roleId"
 argument_list|)
 operator|.
 name|setLong
