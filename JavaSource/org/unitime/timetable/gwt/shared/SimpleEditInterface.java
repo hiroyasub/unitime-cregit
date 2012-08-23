@@ -137,6 +137,16 @@ name|sectioning
 argument_list|(
 literal|"Student Scheduling Status Type"
 argument_list|)
+block|,
+name|roles
+argument_list|(
+literal|"Roles"
+argument_list|)
+block|,
+name|permissions
+argument_list|(
+literal|"Permissions"
+argument_list|)
 block|, 		;
 specifier|private
 name|String
@@ -744,6 +754,26 @@ name|Record
 name|r2
 parameter_list|)
 block|{
+if|if
+condition|(
+name|index
+operator|<
+literal|0
+condition|)
+return|return
+name|r1
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|compareTo
+argument_list|(
+name|r2
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+return|;
 name|Field
 name|field
 init|=

@@ -159,7 +159,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_USER
+name|PROP_USER_ID
 init|=
 literal|"user"
 decl_stmt|;
