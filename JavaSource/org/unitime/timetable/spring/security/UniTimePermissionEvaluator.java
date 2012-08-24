@@ -278,7 +278,7 @@ parameter_list|)
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 name|permission
 operator|+
@@ -410,7 +410,7 @@ parameter_list|)
 block|{
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 name|permission
 operator|+

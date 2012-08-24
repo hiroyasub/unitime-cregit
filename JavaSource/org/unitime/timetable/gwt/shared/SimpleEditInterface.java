@@ -140,12 +140,12 @@ argument_list|)
 block|,
 name|roles
 argument_list|(
-literal|"Roles"
+literal|"Role"
 argument_list|)
 block|,
 name|permissions
 argument_list|(
-literal|"Permissions"
+literal|"Permission"
 argument_list|)
 block|, 		;
 specifier|private

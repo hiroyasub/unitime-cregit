@@ -461,7 +461,7 @@ literal|null
 operator|)
 return|;
 block|}
-comment|/** 	 * Retrieves all position types in the database 	 * ordered by column label 	 * @param refresh true - refreshes the list from database 	 * @return Vector of PositionType objects 	 */
+comment|/** 	 * Retrieves all position types in the database 	 * ordered by column label 	 * @return List of PositionType objects 	 */
 specifier|public
 specifier|static
 specifier|synchronized
