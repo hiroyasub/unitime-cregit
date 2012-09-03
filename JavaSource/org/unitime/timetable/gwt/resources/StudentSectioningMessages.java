@@ -289,6 +289,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Credit"
+argument_list|)
+name|String
+name|colCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Year"
 argument_list|)
 name|String
