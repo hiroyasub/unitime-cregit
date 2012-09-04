@@ -3933,6 +3933,11 @@ operator|=
 operator|new
 name|SuggestionsBox
 argument_list|(
+name|iAssignmentGrid
+operator|.
+name|getColorProvider
+argument_list|()
+argument_list|,
 name|iOnline
 argument_list|)
 expr_stmt|;
@@ -4132,7 +4137,9 @@ decl_stmt|;
 name|iAssignmentGrid
 operator|.
 name|clear
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 for|for
 control|(
