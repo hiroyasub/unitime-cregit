@@ -1090,6 +1090,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>S</u>elect"
+argument_list|)
+name|String
+name|buttonSelect
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>L</u>ist of Classes"
 argument_list|)
 name|String
