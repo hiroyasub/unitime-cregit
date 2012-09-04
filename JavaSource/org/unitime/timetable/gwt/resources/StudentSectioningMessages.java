@@ -2375,6 +2375,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Changes to the selected free time {0} are in<font color='blue'>blue</font>, classes to be removed from the schedule are in<font color='red'>red</font>. Changes to other classes or free times are in<font color='black'>black</font>."
+argument_list|)
+name|String
+name|suggestionsLegendOnFreeTime
+parameter_list|(
+name|String
+name|freeTime
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Changes to the selected class {0} are in<font color='blue'>blue</font>, classes to be removed from the schedule are in<font color='red'>red</font>. Changes to other classes or free times are in<font color='black'>black</font>."
+argument_list|)
+name|String
+name|suggestionsLegendOnClass
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Changes to the selected course {0} are in<font color='blue'>blue</font>, classes to be removed from the schedule are in<font color='red'>red</font>. Changes to other courses or free times are in<font color='black'>black</font>."
+argument_list|)
+name|String
+name|suggestionsLegendOnCourse
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>S</u>earch"
 argument_list|)
 name|String
