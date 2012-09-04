@@ -465,7 +465,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No course provided."
+literal|"No primary course provided."
 argument_list|)
 name|String
 name|validationNoCourse
