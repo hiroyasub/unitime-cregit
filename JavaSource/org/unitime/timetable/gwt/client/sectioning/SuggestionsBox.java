@@ -6229,6 +6229,10 @@ name|iIndex
 operator|=
 name|index
 expr_stmt|;
+name|iHintId
+operator|=
+literal|null
+expr_stmt|;
 if|if
 condition|(
 name|row
