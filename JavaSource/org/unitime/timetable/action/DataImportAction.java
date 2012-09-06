@@ -1129,6 +1129,16 @@ operator|>
 name|timeToShow
 condition|)
 continue|continue;
+if|if
+condition|(
+name|item
+operator|.
+name|getSession
+argument_list|()
+operator|==
+literal|null
+condition|)
+continue|continue;
 name|String
 name|name
 init|=
