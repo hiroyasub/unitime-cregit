@@ -904,17 +904,6 @@ argument_list|)
 expr_stmt|;
 name|io
 operator|.
-name|setDesignatorRequired
-argument_list|(
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|io
-operator|.
 name|setSession
 argument_list|(
 name|acadSession

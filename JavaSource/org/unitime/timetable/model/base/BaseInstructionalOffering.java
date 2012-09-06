@@ -204,10 +204,6 @@ name|Integer
 name|iLimit
 decl_stmt|;
 specifier|private
-name|Boolean
-name|iDesignatorRequired
-decl_stmt|;
-specifier|private
 name|Long
 name|iUniqueIdRolledForwardFrom
 decl_stmt|;
@@ -294,13 +290,6 @@ name|String
 name|PROP_NOT_OFFERED
 init|=
 literal|"notOffered"
-decl_stmt|;
-specifier|public
-specifier|static
-name|String
-name|PROP_DESIGNATOR_REQUIRED
-init|=
-literal|"designatorRequired"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -535,37 +524,6 @@ block|{
 name|iLimit
 operator|=
 name|limit
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|isDesignatorRequired
-parameter_list|()
-block|{
-return|return
-name|iDesignatorRequired
-return|;
-block|}
-specifier|public
-name|Boolean
-name|getDesignatorRequired
-parameter_list|()
-block|{
-return|return
-name|iDesignatorRequired
-return|;
-block|}
-specifier|public
-name|void
-name|setDesignatorRequired
-parameter_list|(
-name|Boolean
-name|designatorRequired
-parameter_list|)
-block|{
-name|iDesignatorRequired
-operator|=
-name|designatorRequired
 expr_stmt|;
 block|}
 specifier|public
@@ -1168,11 +1126,6 @@ operator|+
 literal|"\n	ConsentType: "
 operator|+
 name|getConsentType
-argument_list|()
-operator|+
-literal|"\n	DesignatorRequired: "
-operator|+
-name|getDesignatorRequired
 argument_list|()
 operator|+
 literal|"\n	ExternalUniqueId: "

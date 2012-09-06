@@ -134,10 +134,6 @@ name|String
 name|iApprovalType
 decl_stmt|;
 specifier|private
-name|Boolean
-name|iDesignatorRequired
-decl_stmt|;
-specifier|private
 name|String
 name|iPreviousSubject
 decl_stmt|;
@@ -228,13 +224,6 @@ name|String
 name|PROP_APPROVAL_TYPE
 init|=
 literal|"approvalType"
-decl_stmt|;
-specifier|public
-specifier|static
-name|String
-name|PROP_DESIGNATOR_REQ
-init|=
-literal|"designatorRequired"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -474,37 +463,6 @@ block|{
 name|iApprovalType
 operator|=
 name|approvalType
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|isDesignatorRequired
-parameter_list|()
-block|{
-return|return
-name|iDesignatorRequired
-return|;
-block|}
-specifier|public
-name|Boolean
-name|getDesignatorRequired
-parameter_list|()
-block|{
-return|return
-name|iDesignatorRequired
-return|;
-block|}
-specifier|public
-name|void
-name|setDesignatorRequired
-parameter_list|(
-name|Boolean
-name|designatorRequired
-parameter_list|)
-block|{
-name|iDesignatorRequired
-operator|=
-name|designatorRequired
 expr_stmt|;
 block|}
 specifier|public
@@ -908,11 +866,6 @@ operator|+
 literal|"\n	CreditUnitType: "
 operator|+
 name|getCreditUnitType
-argument_list|()
-operator|+
-literal|"\n	DesignatorRequired: "
-operator|+
-name|getDesignatorRequired
 argument_list|()
 operator|+
 literal|"\n	ExternalUniqueId: "

@@ -2122,16 +2122,6 @@ argument_list|)
 expr_stmt|;
 name|frm
 operator|.
-name|setDesignatorRequired
-argument_list|(
-name|io
-operator|.
-name|isDesignatorRequired
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|frm
-operator|.
 name|setCreditText
 argument_list|(
 operator|(

@@ -107,11 +107,6 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|Boolean
-name|getDesignatorRequired
-parameter_list|()
-function_decl|;
-specifier|public
-name|Boolean
 name|getTitle
 parameter_list|()
 function_decl|;

@@ -1761,17 +1761,6 @@ argument_list|)
 expr_stmt|;
 name|io1
 operator|.
-name|setDesignatorRequired
-argument_list|(
-operator|new
-name|Boolean
-argument_list|(
-literal|false
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|io1
-operator|.
 name|setByReservationOnly
 argument_list|(
 name|io

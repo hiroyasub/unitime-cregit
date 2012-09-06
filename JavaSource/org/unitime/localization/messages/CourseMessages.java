@@ -606,15 +606,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Designator Required:"
-argument_list|)
-name|String
-name|propertyDesignatorRequired
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Coordinators:"
 argument_list|)
 name|String
@@ -1079,15 +1070,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Designator Required"
-argument_list|)
-name|String
-name|columnDesignatorRequired
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Schedule Print Note"
 argument_list|)
 name|String
@@ -1305,15 +1287,6 @@ literal|"Position"
 argument_list|)
 name|String
 name|columnInstructorPosition
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Designator"
-argument_list|)
-name|String
-name|columnInstructorDesignatorNr
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1949,15 +1922,6 @@ literal|"Controlling Course"
 argument_list|)
 name|String
 name|altControllingCourse
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Designator Required"
-argument_list|)
-name|String
-name|altDesignatorRequired
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4496,15 +4460,6 @@ literal|"Unlimited Enrollment"
 argument_list|)
 name|String
 name|titleUnlimitedEnrollment
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Designator Required"
-argument_list|)
-name|String
-name|titleDesignatorRequired
 parameter_list|()
 function_decl|;
 annotation|@

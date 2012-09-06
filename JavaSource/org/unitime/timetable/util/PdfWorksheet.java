@@ -3291,17 +3291,17 @@ literal|"                                                                       
 operator|+
 name|s2
 operator|+
-literal|"   Desig                   "
+literal|"                     "
 argument_list|)
 expr_stmt|;
 name|println
 argument_list|(
-literal|"Course     Title/Notes                           Credit Course Organization             Limit Enrl  Enrl  Reqd  Consent    Cross List"
+literal|"Course     Title/Notes                           Credit Course Organization             Limit Enrl  Enrl  Consent    Cross List"
 argument_list|)
 expr_stmt|;
 name|println
 argument_list|(
-literal|"---------- ------------------------------------- ------ ------------------------------- ----- ----- ----- ----- ---------- ----------"
+literal|"---------- ------------------------------------- ------ ------------------------------- ----- ----- ----- ---------- ----------"
 argument_list|)
 expr_stmt|;
 name|println
@@ -3431,34 +3431,6 @@ name|valueOf
 argument_list|(
 name|lastLikeEnrl
 argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-operator|+
-literal|" "
-operator|+
-name|rpad
-argument_list|(
-name|offering
-operator|.
-name|isDesignatorRequired
-argument_list|()
-operator|==
-literal|null
-condition|?
-literal|""
-else|:
-name|offering
-operator|.
-name|isDesignatorRequired
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|?
-literal|"yes"
-else|:
-literal|"no"
 argument_list|,
 literal|5
 argument_list|)
