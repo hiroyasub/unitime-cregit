@@ -169,15 +169,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|String
-name|EVENT_MGR_ROLE
-init|=
-literal|"Event Mgr"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final

@@ -167,20 +167,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Roles
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|RoomDept
 import|;
 end_import
@@ -677,18 +663,9 @@ name|createQuery
 argument_list|(
 literal|"select l.uniqueId "
 operator|+
-literal|"from Location l inner join l.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr, RoomTypeOption o "
+literal|"from Location l, RoomTypeOption o "
 operator|+
-literal|"where rd.control = true and mr.role.reference = :eventMgr and o.status = 1 and o.roomType = l.roomType and o.session = l.session and l.session.uniqueId = :sessionId"
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventMgr"
-argument_list|,
-name|Roles
-operator|.
-name|EVENT_MGR_ROLE
+literal|"where l.eventDepartment.allowEvents = true and o.status = 1 and o.roomType = l.roomType and o.session = l.session and l.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong

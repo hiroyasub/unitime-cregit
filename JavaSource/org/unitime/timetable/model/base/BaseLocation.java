@@ -71,6 +71,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|Department
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|ExamLocationPref
 import|;
 end_import
@@ -212,6 +226,10 @@ decl_stmt|;
 specifier|private
 name|Session
 name|iSession
+decl_stmt|;
+specifier|private
+name|Department
+name|iEventDepartment
 decl_stmt|;
 specifier|private
 name|Set
@@ -667,6 +685,28 @@ name|session
 expr_stmt|;
 block|}
 specifier|public
+name|Department
+name|getEventDepartment
+parameter_list|()
+block|{
+return|return
+name|iEventDepartment
+return|;
+block|}
+specifier|public
+name|void
+name|setEventDepartment
+parameter_list|(
+name|Department
+name|eventDepartment
+parameter_list|)
+block|{
+name|iEventDepartment
+operator|=
+name|eventDepartment
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|RoomFeature
@@ -1091,6 +1131,11 @@ operator|+
 literal|"\n	DisplayName: "
 operator|+
 name|getDisplayName
+argument_list|()
+operator|+
+literal|"\n	EventDepartment: "
+operator|+
+name|getEventDepartment
 argument_list|()
 operator|+
 literal|"\n	ExamCapacity: "

@@ -564,6 +564,8 @@ literal|"Dist Pref\nPriority"
 block|,
 literal|"Allow\nRequired"
 block|,
+literal|"Events"
+block|,
 literal|"Last\nChange"
 block|}
 else|:
@@ -588,6 +590,8 @@ block|,
 literal|"Dist Pref\nPriority"
 block|,
 literal|"Allow\nRequired"
+block|,
+literal|"Events"
 block|}
 operator|)
 argument_list|,
@@ -610,6 +614,8 @@ block|,
 literal|"left"
 block|,
 literal|"right"
+block|,
+literal|"left"
 block|,
 literal|"left"
 block|,
@@ -1107,6 +1113,15 @@ operator|)
 block|,
 name|allowReq
 block|,
+name|d
+operator|.
+name|isAllowEvents
+argument_list|()
+condition|?
+literal|"Yes"
+else|:
+literal|"No"
+block|,
 name|lastChangeStr
 block|}
 argument_list|,
@@ -1188,6 +1203,11 @@ name|Integer
 argument_list|(
 name|allowReqOrd
 argument_list|)
+block|,
+name|d
+operator|.
+name|isAllowEvents
+argument_list|()
 block|,
 name|lastChangeCmp
 block|}
@@ -1283,6 +1303,8 @@ literal|"Dist&nbsp;Pref Priority"
 block|,
 literal|"Allow Required"
 block|,
+literal|"Events"
+block|,
 literal|"Last Change"
 block|}
 else|:
@@ -1307,6 +1329,8 @@ block|,
 literal|"Dist Pref Priority"
 block|,
 literal|"Allow Required"
+block|,
+literal|"Events"
 block|}
 operator|)
 argument_list|,
@@ -1333,12 +1357,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -1917,6 +1945,17 @@ operator|)
 block|,
 name|allowReq
 block|,
+operator|(
+name|d
+operator|.
+name|isAllowEvents
+argument_list|()
+condition|?
+literal|"<IMG border='0' title='This department has event management enabled.' alt='Event Management' align='absmiddle' src='images/tick.gif'>"
+else|:
+literal|""
+operator|)
+block|,
 name|lastChangeStr
 block|}
 argument_list|,
@@ -2007,6 +2046,11 @@ name|Integer
 argument_list|(
 name|allowReqOrd
 argument_list|)
+block|,
+name|d
+operator|.
+name|isAllowEvents
+argument_list|()
 block|,
 name|lastChangeCmp
 block|}

@@ -459,20 +459,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Roles
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|Room
 import|;
 end_import
@@ -7547,11 +7533,9 @@ name|query
 operator|=
 literal|"select r from Room r "
 operator|+
-literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr"
-operator|+
 name|a
 operator|+
-literal|" where rd.control=true and mr.role.reference=:eventMgr"
+literal|" where r.eventDepartment.allowEvents = true"
 operator|+
 literal|" and 1 = (select rto.status from RoomTypeOption rto where rto.session.uniqueId = "
 operator|+
@@ -7680,17 +7664,6 @@ argument_list|(
 literal|"buildingId"
 argument_list|,
 name|iBuildingId
-argument_list|)
-expr_stmt|;
-name|hibQuery
-operator|.
-name|setString
-argument_list|(
-literal|"eventMgr"
-argument_list|,
-name|Roles
-operator|.
-name|EVENT_MGR_ROLE
 argument_list|)
 expr_stmt|;
 if|if
@@ -7880,11 +7853,9 @@ name|query
 operator|=
 literal|"select r from NonUniversityLocation r "
 operator|+
-literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr"
-operator|+
 name|a
 operator|+
-literal|" where rd.control=true and mr.role.reference=:eventMgr"
+literal|" where r.eventDepartment.allowEvents = true"
 expr_stmt|;
 if|if
 condition|(
@@ -7963,17 +7934,6 @@ operator|.
 name|createQuery
 argument_list|(
 name|query
-argument_list|)
-expr_stmt|;
-name|hibQuery
-operator|.
-name|setString
-argument_list|(
-literal|"eventMgr"
-argument_list|,
-name|Roles
-operator|.
-name|EVENT_MGR_ROLE
 argument_list|)
 expr_stmt|;
 if|if

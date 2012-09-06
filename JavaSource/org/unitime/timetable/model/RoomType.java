@@ -544,11 +544,9 @@ operator|)
 operator|+
 literal|" r "
 operator|+
-literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr "
-operator|+
 literal|"where r.roomType.uniqueId=:roomTypeId and "
 operator|+
-literal|"rd.control=true and mr.role.reference=:eventMgr"
+literal|"r.eventDepartment.allowEvents = true"
 argument_list|)
 operator|.
 name|setLong
@@ -557,15 +555,6 @@ literal|"roomTypeId"
 argument_list|,
 name|getUniqueId
 argument_list|()
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventMgr"
-argument_list|,
-name|Roles
-operator|.
-name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|setCacheable
@@ -617,11 +606,9 @@ operator|)
 operator|+
 literal|" r "
 operator|+
-literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr "
-operator|+
 literal|"where r.roomType.uniqueId=:roomTypeId and r.session.uniqueId=:sessionId and "
 operator|+
-literal|"rd.control=true and mr.role.reference=:eventMgr"
+literal|"r.eventDepartment.allowEvents = true"
 argument_list|)
 operator|.
 name|setLong
@@ -637,15 +624,6 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventMgr"
-argument_list|,
-name|Roles
-operator|.
-name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|setCacheable
@@ -686,11 +664,9 @@ name|createQuery
 argument_list|(
 literal|"select count(r) from Room r "
 operator|+
-literal|"inner join r.roomDepts rd inner join rd.department.timetableManagers m inner join m.managerRoles mr "
-operator|+
 literal|"where r.roomType.uniqueId=:roomTypeId and r.building.uniqueId=:buildingId and "
 operator|+
-literal|"rd.control=true and mr.role.reference=:eventMgr"
+literal|"r.eventDepartment.allowEvents = true"
 argument_list|)
 operator|.
 name|setLong
@@ -706,15 +682,6 @@ argument_list|(
 literal|"buildingId"
 argument_list|,
 name|buildingId
-argument_list|)
-operator|.
-name|setString
-argument_list|(
-literal|"eventMgr"
-argument_list|,
-name|Roles
-operator|.
-name|EVENT_MGR_ROLE
 argument_list|)
 operator|.
 name|setCacheable

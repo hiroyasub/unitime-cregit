@@ -313,6 +313,11 @@ operator|+
 name|getDisplayName
 argument_list|()
 operator|+
+literal|"\n	EventDepartment: "
+operator|+
+name|getEventDepartment
+argument_list|()
+operator|+
 literal|"\n	ExamCapacity: "
 operator|+
 name|getExamCapacity
