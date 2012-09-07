@@ -321,6 +321,13 @@ literal|"session"
 argument_list|,
 literal|"Academic Session"
 argument_list|)
+block|,
+name|PERMISSIONS
+argument_list|(
+literal|"permissions"
+argument_list|,
+literal|"Permissions"
+argument_list|)
 block|,     	;
 specifier|private
 name|String
