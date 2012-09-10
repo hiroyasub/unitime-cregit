@@ -493,7 +493,9 @@ literal|false
 return|;
 if|if
 condition|(
-literal|"Instructor"
+name|Roles
+operator|.
+name|ROLE_INSTRUCTOR
 operator|.
 name|equals
 argument_list|(
@@ -637,7 +639,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-literal|"Instructor"
+name|Roles
+operator|.
+name|ROLE_INSTRUCTOR
 operator|.
 name|equals
 argument_list|(

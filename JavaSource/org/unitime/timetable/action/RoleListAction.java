@@ -798,7 +798,7 @@ index|[]
 block|{
 name|authority
 operator|.
-name|getRole
+name|getLabel
 argument_list|()
 block|,
 name|session
