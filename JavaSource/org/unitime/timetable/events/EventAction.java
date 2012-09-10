@@ -1042,10 +1042,7 @@ control|(
 name|UserAuthority
 name|authority
 range|:
-name|context
-operator|.
-name|getUser
-argument_list|()
+name|user
 operator|.
 name|getAuthorities
 argument_list|()
