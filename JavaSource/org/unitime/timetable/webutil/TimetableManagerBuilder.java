@@ -832,7 +832,7 @@ operator|.
 name|getRole
 argument_list|()
 operator|.
-name|getReference
+name|getAbbv
 argument_list|()
 decl_stmt|;
 name|String
