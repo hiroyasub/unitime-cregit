@@ -9258,7 +9258,7 @@ case|:
 return|return
 name|Right
 operator|.
-name|RoleEdit
+name|Roles
 return|;
 case|case
 name|permissions
@@ -9266,7 +9266,7 @@ case|:
 return|return
 name|Right
 operator|.
-name|PermissionEdit
+name|Permissions
 return|;
 default|default:
 return|return
@@ -9383,7 +9383,7 @@ case|:
 return|return
 name|Right
 operator|.
-name|Roles
+name|RoleEdit
 return|;
 case|case
 name|permissions
@@ -9391,7 +9391,7 @@ case|:
 return|return
 name|Right
 operator|.
-name|Permissions
+name|PermissionEdit
 return|;
 default|default:
 return|return
