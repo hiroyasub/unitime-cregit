@@ -1069,7 +1069,10 @@ specifier|public
 specifier|static
 name|ReferenceList
 name|getSessionStatusList
-parameter_list|()
+parameter_list|(
+name|boolean
+name|includeTestSessions
+parameter_list|)
 block|{
 name|ReferenceList
 name|ref
@@ -1085,7 +1088,9 @@ argument_list|(
 name|DepartmentStatusType
 operator|.
 name|findAllForSession
-argument_list|()
+argument_list|(
+name|includeTestSessions
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
