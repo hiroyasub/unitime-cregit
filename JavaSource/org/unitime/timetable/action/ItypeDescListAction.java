@@ -412,6 +412,17 @@ name|webTable
 operator|.
 name|addLine
 argument_list|(
+name|sessionContext
+operator|.
+name|hasPermission
+argument_list|(
+name|itypeDesc
+argument_list|,
+name|Right
+operator|.
+name|InstructionalTypeEdit
+argument_list|)
+condition|?
 literal|"onclick=\"document.location='itypeDescEdit.do?op=Edit&id="
 operator|+
 name|itypeDesc
@@ -420,6 +431,8 @@ name|getItype
 argument_list|()
 operator|+
 literal|"';\""
+else|:
+literal|null
 argument_list|,
 operator|new
 name|String
