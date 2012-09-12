@@ -423,6 +423,27 @@ index|[]
 name|eventTypeAbbv
 parameter_list|()
 function_decl|;
+comment|// firstDay|lastDay|firstSlot|lastSlot|step
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Workdays Ã Daytime|0|4|90|222|6"
+block|,
+literal|"All Week Ã Daytime|0|6|90|222|6"
+block|,
+literal|"Workdays Ã Evening|0|4|222|288|6"
+block|,
+literal|"All Week Ã Evening|0|5|222|288|6"
+block|,
+literal|"All Week Ã All Times|0|6|0|288|6"
+block|}
+argument_list|)
+name|String
+index|[]
+name|roomSharingModes
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

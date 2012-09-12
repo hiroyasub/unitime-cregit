@@ -1825,6 +1825,9 @@ block|}
 specifier|public
 specifier|static
 name|TreeSet
+argument_list|<
+name|Department
+argument_list|>
 name|findAllBeingUsed
 parameter_list|(
 name|Long

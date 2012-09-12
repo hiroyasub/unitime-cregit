@@ -4776,49 +4776,21 @@ condition|(
 name|gridAsText
 condition|)
 block|{
-name|String
-name|hint
-init|=
-name|rtt
-operator|.
-name|print
-argument_list|(
-literal|false
-argument_list|,
-name|timeVertical
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|");\n</script>"
-argument_list|,
-literal|""
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|"<script language=\"javascript\">\ndocument.write("
-argument_list|,
-literal|""
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|"\n"
-argument_list|,
-literal|" "
-argument_list|)
-decl_stmt|;
+comment|// String hint = rtt.print(false, timeVertical).replace(");\n</script>", "").replace("<script language=\"javascript\">\ndocument.write(", "").replace("\n", " ");
+comment|// text[idx] = "<span onmouseover=\"showGwtHint(this, " + hint + ");\" onmouseout=\"hideGwtHint();\">" + rtt.getModel().toString().replaceAll(", ","<br>") + "</span>";
 name|text
 index|[
 name|idx
 index|]
 operator|=
-literal|"<span onmouseover=\"showGwtHint(this, "
+literal|"<span onmouseover=\"showGwtRoomAvailabilityHint(this, '"
 operator|+
-name|hint
+name|location
+operator|.
+name|getUniqueId
+argument_list|()
 operator|+
-literal|");\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomAvailabilityHint();\">"
 operator|+
 name|rtt
 operator|.
@@ -4840,49 +4812,21 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|String
-name|hint
-init|=
-name|rtt
-operator|.
-name|print
-argument_list|(
-literal|false
-argument_list|,
-name|timeVertical
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|");\n</script>"
-argument_list|,
-literal|""
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|"<script language=\"javascript\">\ndocument.write("
-argument_list|,
-literal|""
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|"\n"
-argument_list|,
-literal|" "
-argument_list|)
-decl_stmt|;
+comment|// String hint = rtt.print(false, timeVertical).replace(");\n</script>", "").replace("<script language=\"javascript\">\ndocument.write(", "").replace("\n", " ");
+comment|// text[idx] = "<img border='0' onmouseover=\"showGwtHint(this, " + hint + ");\" onmouseout=\"hideGwtHint();\" src='" +
 name|text
 index|[
 name|idx
 index|]
 operator|=
-literal|"<img border='0' onmouseover=\"showGwtHint(this, "
+literal|"<img border='0' onmouseover=\"showGwtRoomAvailabilityHint(this, '"
 operator|+
-name|hint
+name|location
+operator|.
+name|getUniqueId
+argument_list|()
 operator|+
-literal|");\" onmouseout=\"hideGwtHint();\" src='"
+literal|"');\" onmouseout=\"hideGwtRoomAvailabilityHint();\" src='"
 operator|+
 literal|"pattern?v="
 operator|+

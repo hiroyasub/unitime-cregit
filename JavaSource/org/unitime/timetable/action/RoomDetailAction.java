@@ -798,13 +798,26 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-return|return
-name|mapping
+comment|// return mapping.findForward("showEditRoomDept");
+name|response
 operator|.
-name|findForward
+name|sendRedirect
 argument_list|(
-literal|"showEditRoomDept"
+name|response
+operator|.
+name|encodeURL
+argument_list|(
+literal|"gwt.jsp?page=roomavailability&id="
+operator|+
+name|roomDetailForm
+operator|.
+name|getId
+argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
 return|;
 block|}
 comment|//modify room groups
