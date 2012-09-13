@@ -6309,6 +6309,21 @@ name|String
 name|course2
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} ({1} seats)"
+argument_list|)
+name|String
+name|labelLocationLabelWithCapacity
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|int
+name|capacity
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
