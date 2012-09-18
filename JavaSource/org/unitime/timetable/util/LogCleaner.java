@@ -582,7 +582,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|cleanupChangeLog
+name|cleanupOnlineSectioningLog
 argument_list|(
 name|Integer
 operator|.
