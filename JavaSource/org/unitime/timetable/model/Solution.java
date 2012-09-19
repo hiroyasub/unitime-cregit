@@ -640,14 +640,11 @@ argument_list|,
 name|name
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 operator|.
@@ -1993,14 +1990,11 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2086,16 +2080,13 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"roomId"
 argument_list|,
 name|room
 operator|.
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2109,9 +2100,6 @@ name|getOwner
 argument_list|()
 operator|.
 name|getUniqueId
-argument_list|()
-operator|.
-name|longValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2144,7 +2132,7 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"roomId"
 argument_list|,
@@ -2152,21 +2140,15 @@ name|room
 operator|.
 name|getUniqueId
 argument_list|()
-operator|.
-name|intValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2336,14 +2318,11 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2406,16 +2385,13 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"instructorId"
 argument_list|,
 name|instructor
 operator|.
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2464,7 +2440,7 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"instructorId"
 argument_list|,
@@ -2472,21 +2448,15 @@ name|instructor
 operator|.
 name|getUniqueId
 argument_list|()
-operator|.
-name|intValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2655,7 +2625,7 @@ literal|false
 return|;
 block|}
 comment|// NOTE: In order to decrease the amount of interaction between solutions persistance of committed student conflicts was disabled
-comment|/* 		SolverInfoDef defJenrlInfo = SolverInfoDef.findByName(hibSession,"JenrlInfo"); 		Hashtable solverInfos = new Hashtable(); 		AssignmentDAO adao = new AssignmentDAO();  		q = hibSession.createQuery( 				"select a.uniqueId, oa.uniqueId, count(*) from "+ 				"Solution s inner join s.assignments a inner join s.studentEnrollments as e, "+ 				"Solution os inner join os.assignments oa inner join os.studentEnrollments as oe "+ 				"where "+ 				"s.uniqueId=:solutionId and os.owner.session.uniqueId=:sessionId and os.owner.uniqueId!=:ownerId and "+ 				"a.clazz=e.clazz and oa.clazz=oe.clazz and a.clazz.schedulingSubpart!=oa.clazz.schedulingSubpart and e.studentId=oe.studentId "+ 				"group by a.uniqueId, oa.uniqueId"); 		q.setLong("ownerId",getOwner().getUniqueId().longValue()); 		q.setInteger("solutionId",getUniqueId().intValue()); 		q.setLong("sessionId",getOwner().getSession().getUniqueId().longValue()); 		Iterator otherAssignments = q.iterate(); 		while (otherAssignments.hasNext()) { 			Object[] result = (Object[])otherAssignments.next(); 			Assignment assignment = adao.get((Integer)result[0],hibSession); 			Assignment otherAssignment = adao.get((Integer)result[1],hibSession); 			int jenrl = ((Number)result[2]).intValue(); 			 			if (assignment==null || otherAssignment==null || jenrl==0 || !assignment.isInConflict(otherAssignment)) continue; 			addCommitJenrl(hibSession, assignment, otherAssignment, jenrl, defJenrlInfo, solverInfos);         }	 		 		for (Iterator i=solverInfos.values().iterator();i.hasNext();) { 			SolverInfo sInfo = (SolverInfo)i.next(); 			hibSession.saveOrUpdate(sInfo); 		} 		*/
+comment|/* 		SolverInfoDef defJenrlInfo = SolverInfoDef.findByName(hibSession,"JenrlInfo"); 		Hashtable solverInfos = new Hashtable(); 		AssignmentDAO adao = new AssignmentDAO();  		q = hibSession.createQuery( 				"select a.uniqueId, oa.uniqueId, count(*) from "+ 				"Solution s inner join s.assignments a inner join s.studentEnrollments as e, "+ 				"Solution os inner join os.assignments oa inner join os.studentEnrollments as oe "+ 				"where "+ 				"s.uniqueId=:solutionId and os.owner.session.uniqueId=:sessionId and os.owner.uniqueId!=:ownerId and "+ 				"a.clazz=e.clazz and oa.clazz=oe.clazz and a.clazz.schedulingSubpart!=oa.clazz.schedulingSubpart and e.studentId=oe.studentId "+ 				"group by a.uniqueId, oa.uniqueId"); 		q.setLong("ownerId",getOwner().getUniqueId().longValue()); 		q.setLong("solutionId",getUniqueId()); 		q.setLong("sessionId",getOwner().getSession().getUniqueId().longValue()); 		Iterator otherAssignments = q.iterate(); 		while (otherAssignments.hasNext()) { 			Object[] result = (Object[])otherAssignments.next(); 			Assignment assignment = adao.get((Integer)result[0],hibSession); 			Assignment otherAssignment = adao.get((Integer)result[1],hibSession); 			int jenrl = ((Number)result[2]).intValue(); 			 			if (assignment==null || otherAssignment==null || jenrl==0 || !assignment.isInConflict(otherAssignment)) continue; 			addCommitJenrl(hibSession, assignment, otherAssignment, jenrl, defJenrlInfo, solverInfos);         }	 		 		for (Iterator i=solverInfos.values().iterator();i.hasNext();) { 			SolverInfo sInfo = (SolverInfo)i.next(); 			hibSession.saveOrUpdate(sInfo); 		} 		*/
 name|setCommitDate
 argument_list|(
 operator|new
@@ -5344,14 +5314,11 @@ argument_list|(
 name|idQuery
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 operator|.
@@ -5482,7 +5449,7 @@ name|hibSession
 parameter_list|)
 block|{
 comment|// NOTE: In order to decrease the amount of interaction between solutions persistance of committed student conflicts was disabled
-comment|/* 		Iterator i = hibSession.createQuery( 				"select distinct c, oa from "+ 				"ConstraintInfo c inner join c.assignments a, Assignment oa "+ 				"where "+ 				"a.solution.uniqueId=:solutionId and oa.solution.uniqueId!=:solutionId and oa in elements ( c.assignments) ") 				.setInteger("solutionId",getUniqueId().intValue()) 				.iterate(); 		while (i.hasNext()) { 			Object[] next = (Object[])i.next(); 			ConstraintInfo c = (ConstraintInfo)next[0]; 			Assignment oa = (Assignment)next[1]; 			oa.getConstraintInfo().remove(c); 			hibSession.saveOrUpdate(oa); 		} 		*/
+comment|/* 		Iterator i = hibSession.createQuery( 				"select distinct c, oa from "+ 				"ConstraintInfo c inner join c.assignments a, Assignment oa "+ 				"where "+ 				"a.solution.uniqueId=:solutionId and oa.solution.uniqueId!=:solutionId and oa in elements ( c.assignments) ") 				.setLong("solutionId",getUniqueId()) 				.iterate(); 		while (i.hasNext()) { 			Object[] next = (Object[])i.next(); 			ConstraintInfo c = (ConstraintInfo)next[0]; 			Assignment oa = (Assignment)next[1]; 			oa.getConstraintInfo().remove(c); 			hibSession.saveOrUpdate(oa); 		} 		*/
 try|try
 block|{
 name|SolutionInfo
@@ -5597,14 +5564,11 @@ argument_list|(
 literal|"delete Assignment x where x.solution.uniqueId=:solutionId "
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 operator|.
@@ -5644,7 +5608,7 @@ name|proxy
 parameter_list|)
 block|{
 comment|// NOTE: In order to decrease the amount of interaction between solutions persistance of committed student conflicts was disabled
-comment|/* 		Iterator i = hibSession.createQuery( 				"select distinct c, oa from "+ 				"ConstraintInfo c inner join c.assignments a, Assignment oa "+ 				"where "+ 				"a.solution.uniqueId=:solutionId and oa.solution.uniqueId!=:solutionId and oa in elements ( c.assignments) ") 				.setInteger("solutionId",getUniqueId().intValue()) 				.iterate(); 		while (i.hasNext()) { 			Object[] next = (Object[])i.next(); 			ConstraintInfo c = (ConstraintInfo)next[0]; 			Assignment oa = (Assignment)next[1]; 			oa.getConstraintInfo().remove(c); 			hibSession.saveOrUpdate(oa); 		} 		*/
+comment|/* 		Iterator i = hibSession.createQuery( 				"select distinct c, oa from "+ 				"ConstraintInfo c inner join c.assignments a, Assignment oa "+ 				"where "+ 				"a.solution.uniqueId=:solutionId and oa.solution.uniqueId!=:solutionId and oa in elements ( c.assignments) ") 				.setLong("solutionId",getUniqueId()) 				.iterate(); 		while (i.hasNext()) { 			Object[] next = (Object[])i.next(); 			ConstraintInfo c = (ConstraintInfo)next[0]; 			Assignment oa = (Assignment)next[1]; 			oa.getConstraintInfo().remove(c); 			hibSession.saveOrUpdate(oa); 		} 		*/
 try|try
 block|{
 name|SolutionInfo
@@ -5697,14 +5661,11 @@ argument_list|(
 literal|"delete StudentEnrollment x where x.solution.uniqueId=:solutionId "
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 operator|.
@@ -5718,14 +5679,11 @@ argument_list|(
 literal|"delete JointEnrollment x where x.solution.uniqueId=:solutionId ) "
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 operator|.
@@ -5766,14 +5724,11 @@ argument_list|(
 literal|"delete Assignment x where x.solution.uniqueId=:solutionId ) "
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"solutionId"
 argument_list|,
 name|getUniqueId
-argument_list|()
-operator|.
-name|intValue
 argument_list|()
 argument_list|)
 operator|.
@@ -6007,7 +5962,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|//NOTE: In order to decrease the amount of interaction between solutions persistance of committed student conflicts was disabled
-comment|/* 		if (getAssignments()!=null) { 			for (Iterator i=getAssignments().iterator();i.hasNext();) { 				Assignment a = (Assignment)i.next(); 				for (Iterator j=a.getAssignmentInfo().iterator();j.hasNext();) { 					AssignmentInfo aInfo = (AssignmentInfo)j.next(); 					if (!"AssignmentInfo".equals(aInfo.getDefinition().getName())) continue; 					AssignmentPreferenceInfo assignmentInfo = (AssignmentPreferenceInfo)aInfo.getInfo(); 					assignmentInfo.setNrStudentConflicts(assignmentInfo.getNrStudentConflicts()-assignmentInfo.getNrCommitedStudentConflicts()); 					assignmentInfo.setNrCommitedStudentConflicts(0); 					aInfo.setInfo(assignmentInfo); 					hibSession.saveOrUpdate(aInfo); 				} 				for (Iterator j=a.getConstraintInfos("JenrlInfo").iterator();j.hasNext();) { 					ConstraintInfo c = (ConstraintInfo)j.next(); 					boolean isCommittedInfo = false; 					for (Iterator k=c.getAssignments().iterator();k.hasNext();) { 						Assignment oa = (Assignment)k.next(); 						if (!oa.getSolution().equals(this)) { 							oa.getConstraintInfo().remove(c); 							hibSession.saveOrUpdate(oa); 							isCommittedInfo = true; 						} 					} 					if (isCommittedInfo) { 						a.getConstraintInfo().remove(c); 						hibSession.saveOrUpdate(a); 						hibSession.delete(c); 					} 				} 			} 		} 		 		SolverInfoDef defJenrlInfo = SolverInfoDef.findByName(hibSession,"JenrlInfo"); 		Hashtable solverInfos = new Hashtable(); 		AssignmentDAO adao = new AssignmentDAO();  		Query q = hibSession.createQuery( 				"select a.uniqueId, oa.uniqueId, count(*) from "+ 				"Solution s inner join s.assignments a inner join s.studentEnrollments as e, "+ 				"Solution os inner join os.assignments oa inner join os.studentEnrollments as oe "+ 				"where "+ 				"s.uniqueId=:solutionId and os.owner.session.uniqueId=:sessionId and os.owner.uniqueId!=:ownerId and os.commited=true and "+ 				"a.clazz=e.clazz and oa.clazz=oe.clazz and a.clazz.schedulingSubpart!=oa.clazz.schedulingSubpart and e.studentId=oe.studentId "+ 				"group by a.uniqueId, oa.uniqueId"); 		q.setLong("ownerId",getOwner().getUniqueId().longValue()); 		q.setInteger("solutionId",getUniqueId().intValue()); 		q.setLong("sessionId",getOwner().getSession().getUniqueId().longValue()); 		Iterator otherAssignments = q.iterate(); 		while (otherAssignments.hasNext()) { 			Object[] result = (Object[])otherAssignments.next(); 			Assignment assignment = adao.get((Integer)result[0],hibSession); 			Assignment otherAssignment = adao.get((Integer)result[1],hibSession); 			int jenrl = ((Number)result[2]).intValue(); 			 			if (assignment==null || otherAssignment==null || jenrl==0 || !assignment.isInConflict(otherAssignment)) continue; 			addCommitJenrl(hibSession, otherAssignment, assignment, jenrl, defJenrlInfo, solverInfos);         } 		 		for (Iterator i=solverInfos.values().iterator();i.hasNext();) { 			SolverInfo solverInfo = (SolverInfo)i.next(); 			hibSession.saveOrUpdate(solverInfo); 		} 		*/
+comment|/* 		if (getAssignments()!=null) { 			for (Iterator i=getAssignments().iterator();i.hasNext();) { 				Assignment a = (Assignment)i.next(); 				for (Iterator j=a.getAssignmentInfo().iterator();j.hasNext();) { 					AssignmentInfo aInfo = (AssignmentInfo)j.next(); 					if (!"AssignmentInfo".equals(aInfo.getDefinition().getName())) continue; 					AssignmentPreferenceInfo assignmentInfo = (AssignmentPreferenceInfo)aInfo.getInfo(); 					assignmentInfo.setNrStudentConflicts(assignmentInfo.getNrStudentConflicts()-assignmentInfo.getNrCommitedStudentConflicts()); 					assignmentInfo.setNrCommitedStudentConflicts(0); 					aInfo.setInfo(assignmentInfo); 					hibSession.saveOrUpdate(aInfo); 				} 				for (Iterator j=a.getConstraintInfos("JenrlInfo").iterator();j.hasNext();) { 					ConstraintInfo c = (ConstraintInfo)j.next(); 					boolean isCommittedInfo = false; 					for (Iterator k=c.getAssignments().iterator();k.hasNext();) { 						Assignment oa = (Assignment)k.next(); 						if (!oa.getSolution().equals(this)) { 							oa.getConstraintInfo().remove(c); 							hibSession.saveOrUpdate(oa); 							isCommittedInfo = true; 						} 					} 					if (isCommittedInfo) { 						a.getConstraintInfo().remove(c); 						hibSession.saveOrUpdate(a); 						hibSession.delete(c); 					} 				} 			} 		} 		 		SolverInfoDef defJenrlInfo = SolverInfoDef.findByName(hibSession,"JenrlInfo"); 		Hashtable solverInfos = new Hashtable(); 		AssignmentDAO adao = new AssignmentDAO();  		Query q = hibSession.createQuery( 				"select a.uniqueId, oa.uniqueId, count(*) from "+ 				"Solution s inner join s.assignments a inner join s.studentEnrollments as e, "+ 				"Solution os inner join os.assignments oa inner join os.studentEnrollments as oe "+ 				"where "+ 				"s.uniqueId=:solutionId and os.owner.session.uniqueId=:sessionId and os.owner.uniqueId!=:ownerId and os.commited=true and "+ 				"a.clazz=e.clazz and oa.clazz=oe.clazz and a.clazz.schedulingSubpart!=oa.clazz.schedulingSubpart and e.studentId=oe.studentId "+ 				"group by a.uniqueId, oa.uniqueId"); 		q.setLong("ownerId",getOwner().getUniqueId().longValue()); 		q.setLong("solutionId",getUniqueId()); 		q.setLong("sessionId",getOwner().getSession().getUniqueId().longValue()); 		Iterator otherAssignments = q.iterate(); 		while (otherAssignments.hasNext()) { 			Object[] result = (Object[])otherAssignments.next(); 			Assignment assignment = adao.get((Integer)result[0],hibSession); 			Assignment otherAssignment = adao.get((Integer)result[1],hibSession); 			int jenrl = ((Number)result[2]).intValue(); 			 			if (assignment==null || otherAssignment==null || jenrl==0 || !assignment.isInConflict(otherAssignment)) continue; 			addCommitJenrl(hibSession, otherAssignment, assignment, jenrl, defJenrlInfo, solverInfos);         } 		 		for (Iterator i=solverInfos.values().iterator();i.hasNext();) { 			SolverInfo solverInfo = (SolverInfo)i.next(); 			hibSession.saveOrUpdate(solverInfo); 		} 		*/
 block|}
 specifier|public
 name|Session

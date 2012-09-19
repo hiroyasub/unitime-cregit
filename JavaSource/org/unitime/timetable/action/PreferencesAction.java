@@ -2313,9 +2313,15 @@ name|setAttribute
 argument_list|(
 literal|"subjectAreaId"
 argument_list|,
-name|frm2
+name|co
 operator|.
-name|getSubjectAreaId
+name|getSubjectArea
+argument_list|()
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;

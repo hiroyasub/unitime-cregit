@@ -379,13 +379,13 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"acadSessionId"
 argument_list|,
-name|Integer
+name|Long
 operator|.
-name|parseInt
+name|parseLong
 argument_list|(
 name|map
 operator|.

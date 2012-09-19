@@ -2884,13 +2884,13 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"subjectAreaId"
 argument_list|,
-name|Integer
+name|Long
 operator|.
-name|parseInt
+name|parseLong
 argument_list|(
 name|subjectAreaId
 argument_list|)
@@ -3179,13 +3179,13 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"courseNbr"
 argument_list|,
-name|Integer
+name|Long
 operator|.
-name|parseInt
+name|parseLong
 argument_list|(
 name|courseNbr
 argument_list|)
@@ -4050,13 +4050,13 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"distPrefId"
 argument_list|,
-name|Integer
+name|Long
 operator|.
-name|parseInt
+name|parseLong
 argument_list|(
 name|distPrefId
 argument_list|)
@@ -4213,13 +4213,13 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
 literal|"distPrefId"
 argument_list|,
-name|Integer
+name|Long
 operator|.
-name|parseInt
+name|parseLong
 argument_list|(
 name|distPrefId
 argument_list|)
@@ -5404,7 +5404,7 @@ name|String
 name|distPrefId
 parameter_list|)
 block|{
-comment|/*         String query = "delete DistributionPref dp where dp.uniqueId=:distPrefId";          Query q = hibSession.createQuery(query);         q.setInteger("distPrefId", Integer.parseInt(distPrefId));         q.executeUpdate();         */
+comment|/*         String query = "delete DistributionPref dp where dp.uniqueId=:distPrefId";          Query q = hibSession.createQuery(query);         q.setLong("distPrefId", Long.parseLong(distPrefId));         q.executeUpdate();         */
 name|Transaction
 name|tx
 init|=
