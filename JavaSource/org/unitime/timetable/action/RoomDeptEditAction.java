@@ -775,6 +775,12 @@ condition|(
 name|d
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|d
+operator|.
+name|isExternalManager
+argument_list|()
 condition|)
 block|{
 name|rooms
