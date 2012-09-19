@@ -602,6 +602,10 @@ expr_stmt|;
 if|if
 condition|(
 name|errors
+operator|!=
+literal|null
+operator|&&
+name|errors
 operator|.
 name|size
 argument_list|()
