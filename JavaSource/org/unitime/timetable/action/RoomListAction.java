@@ -1570,6 +1570,15 @@ literal|"No rooms for the selected department were found."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+literal|"colspan"
+argument_list|,
+literal|"7"
+argument_list|)
+expr_stmt|;
 name|saveErrors
 argument_list|(
 name|request
