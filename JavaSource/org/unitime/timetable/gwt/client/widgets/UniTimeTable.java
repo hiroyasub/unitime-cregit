@@ -3418,6 +3418,8 @@ if|if
 condition|(
 name|isAllowSelection
 argument_list|()
+operator|&&
+name|hasData
 condition|)
 block|{
 name|Element
