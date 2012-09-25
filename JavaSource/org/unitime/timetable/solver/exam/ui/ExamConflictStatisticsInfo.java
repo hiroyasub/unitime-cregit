@@ -932,7 +932,10 @@ name|sIntLevelRequired
 else|:
 name|placement
 operator|.
-name|getPeriodPenalty
+name|getPeriodPlacement
+argument_list|()
+operator|.
+name|getPenalty
 argument_list|()
 operator|)
 argument_list|,
@@ -1547,7 +1550,10 @@ name|sIntLevelRequired
 else|:
 name|p
 operator|.
-name|getPeriodPenalty
+name|getPeriodPlacement
+argument_list|()
+operator|.
+name|getPenalty
 argument_list|()
 operator|)
 argument_list|,
