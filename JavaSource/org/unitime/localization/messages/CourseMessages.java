@@ -6324,6 +6324,54 @@ name|int
 name|capacity
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unassigned {0}"
+argument_list|)
+name|String
+name|classNoteUnassigned
+parameter_list|(
+name|String
+name|assignment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Assigned {0}"
+argument_list|)
+name|String
+name|classNoteAssigned
+parameter_list|(
+name|String
+name|assignment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reassigned {0}>> {1}"
+argument_list|)
+name|String
+name|classNoteReassigned
+parameter_list|(
+name|String
+name|oldAssignment
+parameter_list|,
+name|String
+name|newAssignment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"N/A"
+argument_list|)
+name|String
+name|classMeetingsNotApplicable
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
