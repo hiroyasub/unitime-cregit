@@ -11224,9 +11224,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i.externalUniqueId, a from DepartmentalInstructor i inner join i.assignments as a "
+literal|"select distinct i.externalUniqueId, a from ClassInstructor ci inner join ci.instructor i inner join ci.classInstructing.assignments a "
 operator|+
-literal|"where i.externalUniqueId in ("
+literal|"where ci.lead = true and i.externalUniqueId in ("
 operator|+
 name|puids
 operator|+
