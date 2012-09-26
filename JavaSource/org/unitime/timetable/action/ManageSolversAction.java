@@ -1552,11 +1552,6 @@ operator|.
 name|disconnectProxy
 argument_list|()
 expr_stmt|;
-name|i
-operator|.
-name|remove
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 block|}
