@@ -195,6 +195,14 @@ literal|"No Role"
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
+name|String
+name|ROLE_ANONYMOUS
+init|=
+literal|"Anonymous"
+decl_stmt|;
+specifier|public
+specifier|static
 name|String
 name|USER_ROLES_ATTR_NAME
 init|=

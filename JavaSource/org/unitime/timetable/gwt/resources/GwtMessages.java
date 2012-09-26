@@ -2983,6 +2983,15 @@ name|String
 name|buttonAddAllDepartments
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No academic session is available."
+argument_list|)
+name|String
+name|noSessionAvailable
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

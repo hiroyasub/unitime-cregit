@@ -716,6 +716,14 @@ name|source
 parameter_list|)
 block|{
 return|return
+name|source
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|canNoRoleReport
+argument_list|()
+operator|||
 operator|(
 name|user
 operator|.
