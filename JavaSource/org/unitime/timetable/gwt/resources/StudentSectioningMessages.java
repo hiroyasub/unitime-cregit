@@ -1036,7 +1036,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Re-schedule"
+literal|"Re&#8209;schedule"
 argument_list|)
 name|String
 name|buttonReset
@@ -1277,7 +1277,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Log In"
+literal|"Log&nbsp;In"
 argument_list|)
 name|String
 name|buttonUserLogin
