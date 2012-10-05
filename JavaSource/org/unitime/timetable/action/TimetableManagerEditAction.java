@@ -1936,7 +1936,7 @@ name|TimetableManagerForm
 name|frm
 parameter_list|)
 block|{
-name|List
+name|Set
 argument_list|<
 name|Roles
 argument_list|>
