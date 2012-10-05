@@ -764,6 +764,18 @@ argument_list|,
 name|request
 argument_list|)
 expr_stmt|;
+comment|//set request attribute for department
+name|LookupTables
+operator|.
+name|setupDepartments
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 comment|// Validation fails
 if|if
 condition|(
@@ -985,18 +997,6 @@ argument_list|(
 name|request
 argument_list|,
 name|roomFeatureListForm
-argument_list|)
-expr_stmt|;
-comment|//set request attribute for department
-name|LookupTables
-operator|.
-name|setupDepartments
-argument_list|(
-name|request
-argument_list|,
-name|sessionContext
-argument_list|,
-literal|true
 argument_list|)
 expr_stmt|;
 if|if

@@ -713,6 +713,18 @@ name|getDeptCodeX
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//set request attribute for department
+name|LookupTables
+operator|.
+name|setupDepartments
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 comment|// Validate input
 name|errors
 operator|=
@@ -757,18 +769,6 @@ argument_list|(
 name|request
 argument_list|,
 name|roomGroupListForm
-argument_list|)
-expr_stmt|;
-comment|//set request attribute for department
-name|LookupTables
-operator|.
-name|setupDepartments
-argument_list|(
-name|request
-argument_list|,
-name|sessionContext
-argument_list|,
-literal|true
 argument_list|)
 expr_stmt|;
 if|if
