@@ -2090,6 +2090,14 @@ name|getStatusType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|d
+operator|.
+name|setAllowEvents
+argument_list|(
+name|isAllowEvents
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|d
 return|;
