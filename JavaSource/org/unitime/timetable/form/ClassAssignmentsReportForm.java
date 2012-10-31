@@ -1858,7 +1858,7 @@ operator|(
 operator|new
 name|Boolean
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 operator|)
 return|;
