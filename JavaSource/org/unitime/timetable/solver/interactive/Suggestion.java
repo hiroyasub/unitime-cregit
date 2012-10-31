@@ -3586,6 +3586,22 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|sb
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|"<br>"
+argument_list|)
+expr_stmt|;
 name|sb
 operator|.
 name|append
@@ -4086,6 +4102,27 @@ operator|+
 literal|" "
 argument_list|)
 expr_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+name|iFirstInfo
+operator|.
+name|getAssignedTime
+argument_list|()
+operator|.
+name|toDatesHtml
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+literal|true
+argument_list|)
+operator|+
+literal|" "
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|int
@@ -4163,6 +4200,27 @@ argument_list|,
 literal|true
 argument_list|,
 literal|false
+argument_list|)
+operator|+
+literal|" "
+argument_list|)
+expr_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+name|iFirstInfo
+operator|.
+name|getTime
+argument_list|()
+operator|.
+name|toDatesHtml
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+literal|true
 argument_list|)
 operator|+
 literal|" "
@@ -4282,6 +4340,27 @@ operator|+
 literal|" "
 argument_list|)
 expr_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+name|iSecondInfo
+operator|.
+name|getAssignedTime
+argument_list|()
+operator|.
+name|toDatesHtml
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+literal|true
+argument_list|)
+operator|+
+literal|" "
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|int
@@ -4359,6 +4438,27 @@ argument_list|,
 literal|true
 argument_list|,
 literal|false
+argument_list|)
+operator|+
+literal|" "
+argument_list|)
+expr_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+name|iSecondInfo
+operator|.
+name|getTime
+argument_list|()
+operator|.
+name|toDatesHtml
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+literal|true
 argument_list|)
 operator|+
 literal|" "

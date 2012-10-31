@@ -7201,6 +7201,27 @@ operator|+
 literal|" "
 argument_list|)
 expr_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+name|other
+operator|.
+name|getTime
+argument_list|()
+operator|.
+name|toDatesHtml
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+literal|true
+argument_list|)
+operator|+
+literal|" "
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|int
