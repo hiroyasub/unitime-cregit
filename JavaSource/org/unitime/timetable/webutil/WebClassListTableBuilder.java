@@ -462,23 +462,16 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|public
-specifier|static
-name|String
-name|STUDENT_SCHEDULE_NOTE
-init|=
-name|MSG
-operator|.
-name|columnStudentScheduleNote
-argument_list|()
-decl_stmt|;
 specifier|protected
 name|String
 name|getSchedulePrintNoteLabel
 parameter_list|()
 block|{
 return|return
-name|STUDENT_SCHEDULE_NOTE
+name|MSG
+operator|.
+name|columnStudentScheduleNote
+argument_list|()
 return|;
 block|}
 comment|/** 	 *  	 */
