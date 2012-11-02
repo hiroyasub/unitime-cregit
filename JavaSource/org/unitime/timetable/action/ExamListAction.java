@@ -2260,7 +2260,10 @@ operator|.
 name|getSession
 argument_list|()
 argument_list|,
-literal|null
+name|exam
+operator|.
+name|getExamType
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|epx
