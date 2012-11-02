@@ -135,11 +135,10 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|int
+name|Long
 name|iExamType
 init|=
-operator|-
-literal|1
+literal|null
 decl_stmt|;
 specifier|private
 name|Set
@@ -206,8 +205,7 @@ literal|null
 expr_stmt|;
 name|iExamType
 operator|=
-operator|-
-literal|1
+literal|null
 expr_stmt|;
 name|iAssigned
 operator|.
@@ -260,7 +258,7 @@ name|id
 expr_stmt|;
 block|}
 specifier|public
-name|int
+name|Long
 name|getExamType
 parameter_list|()
 block|{
@@ -272,7 +270,7 @@ specifier|public
 name|void
 name|setExamType
 parameter_list|(
-name|int
+name|Long
 name|examType
 parameter_list|)
 block|{

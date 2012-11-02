@@ -233,7 +233,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|Integer
+name|Long
 name|iExamType
 init|=
 literal|null
@@ -267,7 +267,7 @@ parameter_list|(
 name|Session
 name|session
 parameter_list|,
-name|Integer
+name|Long
 name|examType
 parameter_list|)
 block|{
@@ -293,7 +293,7 @@ parameter_list|,
 name|ExamAssignment
 name|assignment
 parameter_list|,
-name|Integer
+name|Long
 name|examType
 parameter_list|)
 block|{
@@ -325,7 +325,7 @@ parameter_list|,
 name|ExamPeriod
 name|assignedPeriod
 parameter_list|,
-name|Integer
+name|Long
 name|examType
 parameter_list|)
 block|{
@@ -658,6 +658,9 @@ name|getExamPeriod
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 condition|)

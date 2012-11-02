@@ -37,7 +37,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Location
+name|ExamType
 import|;
 end_import
 
@@ -51,21 +51,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|NonUniversityLocation
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|RoomType
+name|RefTableEntry
 import|;
 end_import
 
@@ -73,9 +59,9 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseNonUniversityLocation
+name|BaseExamType
 extends|extends
-name|Location
+name|RefTableEntry
 implements|implements
 name|Serializable
 block|{
@@ -88,22 +74,18 @@ init|=
 literal|1L
 decl_stmt|;
 specifier|private
-name|String
-name|iName
-decl_stmt|;
-specifier|private
-name|RoomType
-name|iRoomType
+name|Integer
+name|iType
 decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_NAME
+name|PROP_TYPE
 init|=
-literal|"name"
+literal|"type"
 decl_stmt|;
 specifier|public
-name|BaseNonUniversityLocation
+name|BaseExamType
 parameter_list|()
 block|{
 name|initialize
@@ -111,7 +93,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|BaseNonUniversityLocation
+name|BaseExamType
 parameter_list|(
 name|Long
 name|uniqueId
@@ -133,47 +115,25 @@ parameter_list|()
 block|{
 block|}
 specifier|public
-name|String
-name|getName
+name|Integer
+name|getType
 parameter_list|()
 block|{
 return|return
-name|iName
+name|iType
 return|;
 block|}
 specifier|public
 name|void
-name|setName
+name|setType
 parameter_list|(
-name|String
-name|name
+name|Integer
+name|type
 parameter_list|)
 block|{
-name|iName
+name|iType
 operator|=
-name|name
-expr_stmt|;
-block|}
-specifier|public
-name|RoomType
-name|getRoomType
-parameter_list|()
-block|{
-return|return
-name|iRoomType
-return|;
-block|}
-specifier|public
-name|void
-name|setRoomType
-parameter_list|(
-name|RoomType
-name|roomType
-parameter_list|)
-block|{
-name|iRoomType
-operator|=
-name|roomType
+name|type
 expr_stmt|;
 block|}
 specifier|public
@@ -194,7 +154,7 @@ operator|!
 operator|(
 name|o
 operator|instanceof
-name|NonUniversityLocation
+name|ExamType
 operator|)
 condition|)
 return|return
@@ -209,7 +169,7 @@ literal|null
 operator|||
 operator|(
 operator|(
-name|NonUniversityLocation
+name|ExamType
 operator|)
 name|o
 operator|)
@@ -230,7 +190,7 @@ name|equals
 argument_list|(
 operator|(
 operator|(
-name|NonUniversityLocation
+name|ExamType
 operator|)
 name|o
 operator|)
@@ -272,14 +232,14 @@ name|toString
 parameter_list|()
 block|{
 return|return
-literal|"NonUniversityLocation["
+literal|"ExamType["
 operator|+
 name|getUniqueId
 argument_list|()
 operator|+
 literal|" "
 operator|+
-name|getName
+name|getLabel
 argument_list|()
 operator|+
 literal|"]"
@@ -291,76 +251,21 @@ name|toDebugString
 parameter_list|()
 block|{
 return|return
-literal|"NonUniversityLocation["
+literal|"ExamType["
 operator|+
-literal|"\n	Capacity: "
+literal|"\n	Label: "
 operator|+
-name|getCapacity
+name|getLabel
 argument_list|()
 operator|+
-literal|"\n	CoordinateX: "
+literal|"\n	Reference: "
 operator|+
-name|getCoordinateX
+name|getReference
 argument_list|()
 operator|+
-literal|"\n	CoordinateY: "
+literal|"\n	Type: "
 operator|+
-name|getCoordinateY
-argument_list|()
-operator|+
-literal|"\n	DisplayName: "
-operator|+
-name|getDisplayName
-argument_list|()
-operator|+
-literal|"\n	EventDepartment: "
-operator|+
-name|getEventDepartment
-argument_list|()
-operator|+
-literal|"\n	ExamCapacity: "
-operator|+
-name|getExamCapacity
-argument_list|()
-operator|+
-literal|"\n	IgnoreRoomCheck: "
-operator|+
-name|getIgnoreRoomCheck
-argument_list|()
-operator|+
-literal|"\n	IgnoreTooFar: "
-operator|+
-name|getIgnoreTooFar
-argument_list|()
-operator|+
-literal|"\n	ManagerIds: "
-operator|+
-name|getManagerIds
-argument_list|()
-operator|+
-literal|"\n	Name: "
-operator|+
-name|getName
-argument_list|()
-operator|+
-literal|"\n	Pattern: "
-operator|+
-name|getPattern
-argument_list|()
-operator|+
-literal|"\n	PermanentId: "
-operator|+
-name|getPermanentId
-argument_list|()
-operator|+
-literal|"\n	RoomType: "
-operator|+
-name|getRoomType
-argument_list|()
-operator|+
-literal|"\n	Session: "
-operator|+
-name|getSession
+name|getType
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

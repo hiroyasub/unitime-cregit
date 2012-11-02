@@ -593,7 +593,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct o.exam from ExamOwner o, StudentClassEnrollment e "
 operator|+
-literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.clazz.uniqueId and o.exam.examType=:examType"
+literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.clazz.uniqueId and o.exam.examType.type=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -644,7 +644,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct o.exam from ExamOwner o, StudentClassEnrollment e "
 operator|+
-literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType=:examType"
+literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType.type=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -695,7 +695,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct o.exam from ExamOwner o, StudentClassEnrollment e "
 operator|+
-literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.courseOffering.uniqueId and o.exam.examType=:examType"
+literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.courseOffering.uniqueId and o.exam.examType.type=:examType"
 argument_list|)
 operator|.
 name|setLong
@@ -746,7 +746,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct o.exam from ExamOwner o, StudentClassEnrollment e "
 operator|+
-literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.courseOffering.instructionalOffering.uniqueId and o.exam.examType=:examType"
+literal|"where e.student.uniqueId=:studentId and o.ownerType=:ownerType and o.ownerId=e.courseOffering.instructionalOffering.uniqueId and o.exam.examType.type=:examType"
 argument_list|)
 operator|.
 name|setLong

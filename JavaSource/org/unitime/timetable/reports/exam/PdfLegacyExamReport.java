@@ -389,6 +389,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ExamType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|Meeting
 import|;
 end_import
@@ -478,6 +492,22 @@ operator|.
 name|dao
 operator|.
 name|ExamDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|ExamTypeDAO
 import|;
 end_import
 
@@ -712,11 +742,10 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|int
+name|ExamType
 name|iExamType
 init|=
-operator|-
-literal|1
+literal|null
 decl_stmt|;
 specifier|protected
 name|boolean
@@ -1033,7 +1062,7 @@ parameter_list|,
 name|Session
 name|session
 parameter_list|,
-name|int
+name|ExamType
 name|examType
 parameter_list|,
 name|SubjectArea
@@ -1058,37 +1087,25 @@ name|file
 argument_list|,
 name|title
 argument_list|,
-operator|(
-name|examType
-operator|<
-literal|0
-condition|?
-literal|""
-else|:
-name|examType
-operator|==
-name|Exam
-operator|.
-name|sExamTypeFinal
-condition|?
 name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"tmtbl.exam.report.final"
-argument_list|,
-literal|"FINAL"
-argument_list|)
-else|:
-name|ApplicationProperties
+literal|"tmtbl.exam.report."
+operator|+
+name|examType
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.exam.report.midterm"
+name|getReference
+argument_list|()
 argument_list|,
-literal|"MIDTERM"
+name|examType
+operator|.
+name|getLabel
+argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
 argument_list|)
-operator|)
 operator|+
 literal|" EXAMINATIONS"
 argument_list|,
@@ -1201,8 +1218,11 @@ literal|"m2d"
 argument_list|,
 operator|(
 name|examType
+operator|.
+name|getType
+argument_list|()
 operator|==
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeFinal
 condition|?
@@ -1802,7 +1822,7 @@ name|iSession
 return|;
 block|}
 specifier|public
-name|int
+name|ExamType
 name|getExamType
 parameter_list|()
 block|{
@@ -6583,8 +6603,8 @@ parameter_list|(
 name|Long
 name|sessionId
 parameter_list|,
-name|int
-name|examType
+name|Long
+name|examTypeId
 parameter_list|,
 name|boolean
 name|assgn
@@ -6639,7 +6659,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x from Exam x where x.session.uniqueId=:sessionId and x.examType=:examType"
+literal|"select x from Exam x where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -6649,11 +6669,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -6714,7 +6734,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:classType and c.uniqueId=o.ownerId"
+literal|"select c from Class_ c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:classType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -6724,11 +6744,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -6764,7 +6784,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from InstrOfferingConfig c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:configType and c.uniqueId=o.ownerId"
+literal|"select c from InstrOfferingConfig c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:configType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -6774,11 +6794,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -6814,7 +6834,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from CourseOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:courseType and c.uniqueId=o.ownerId"
+literal|"select c from CourseOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:courseType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -6824,11 +6844,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -6864,7 +6884,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from InstructionalOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:offeringType and c.uniqueId=o.ownerId"
+literal|"select c from InstructionalOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:offeringType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -6874,11 +6894,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -6932,7 +6952,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from ClassEvent c left join fetch c.meetings m, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:classType and c.clazz.uniqueId=o.ownerId"
+literal|"select c from ClassEvent c left join fetch c.meetings m, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:classType and c.clazz.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -6942,11 +6962,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -7085,7 +7105,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -7113,11 +7133,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -7417,7 +7437,7 @@ literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
 literal|"inner join c.schedulingSubpart.instrOfferingConfig ioc "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -7445,11 +7465,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -7747,7 +7767,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering co "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -7775,11 +7795,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -8077,7 +8097,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering.instructionalOffering io "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -8105,11 +8125,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -8396,6 +8416,19 @@ operator|new
 name|Hashtable
 argument_list|()
 decl_stmt|;
+name|ExamType
+name|type
+init|=
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|examTypeId
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|assgn
@@ -8412,17 +8445,10 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.exam.eventConflicts."
 operator|+
-operator|(
-name|examType
-operator|==
-name|Exam
+name|type
 operator|.
-name|sExamTypeFinal
-condition|?
-literal|"final"
-else|:
-literal|"midterm"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 literal|"true"
 argument_list|)
@@ -8463,7 +8489,7 @@ argument_list|,
 literal|"p.dateOffset"
 argument_list|)
 operator|+
-literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType=:examType"
+literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -8492,11 +8518,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -8630,7 +8656,7 @@ argument_list|,
 literal|"p.dateOffset"
 argument_list|)
 operator|+
-literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType=:examType"
+literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -8659,11 +8685,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -8772,7 +8798,7 @@ name|Parameters
 argument_list|(
 name|sessionId
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 decl_stmt|;
 name|sLog
@@ -9161,10 +9187,13 @@ name|session
 argument_list|)
 expr_stmt|;
 block|}
-name|int
+name|ExamType
 name|examType
 init|=
-operator|(
+name|ExamType
+operator|.
+name|findByReference
+argument_list|(
 name|ApplicationProperties
 operator|.
 name|getProperty
@@ -9173,20 +9202,7 @@ literal|"type"
 argument_list|,
 literal|"final"
 argument_list|)
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-literal|"final"
 argument_list|)
-condition|?
-name|Exam
-operator|.
-name|sExamTypeFinal
-else|:
-name|Exam
-operator|.
-name|sExamTypeMidterm
-operator|)
 decl_stmt|;
 name|boolean
 name|assgn
@@ -9269,12 +9285,10 @@ name|info
 argument_list|(
 literal|"Exam type: "
 operator|+
-name|Exam
-operator|.
-name|sExamTypes
-index|[
 name|examType
-index|]
+operator|.
+name|getLabel
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|boolean
@@ -9431,6 +9445,9 @@ name|getUniqueId
 argument_list|()
 argument_list|,
 name|examType
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|assgn
 argument_list|,
@@ -9657,17 +9674,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 literal|"_"
 operator|+
@@ -9739,7 +9749,7 @@ name|Session
 operator|.
 name|class
 argument_list|,
-name|int
+name|ExamType
 operator|.
 name|class
 argument_list|,
@@ -9949,17 +9959,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 operator|new
 name|InstructorExamReport
@@ -10076,17 +10079,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 operator|new
 name|InstructorExamReport
@@ -10192,17 +10188,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 literal|"_"
 operator|+
@@ -10400,17 +10389,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 operator|new
 name|InstructorExamReport
@@ -10527,17 +10509,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 operator|new
 name|InstructorExamReport
@@ -10641,17 +10616,10 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
 name|examType
-operator|==
-name|Exam
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 name|output
 argument_list|,

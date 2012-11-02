@@ -155,7 +155,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Exam
+name|ExamType
 import|;
 end_import
 
@@ -1713,9 +1713,9 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and e.examType = "
+literal|" and e.examType.type = "
 operator|+
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeMidterm
 argument_list|)
@@ -1775,9 +1775,9 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and e.examType = "
+literal|" and e.examType.type = "
 operator|+
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeFinal
 argument_list|)

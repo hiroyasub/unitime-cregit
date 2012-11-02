@@ -216,9 +216,9 @@ argument_list|)
 expr_stmt|;
 name|l
 operator|.
-name|setExamType
+name|setExamTypes
 argument_list|(
-name|getExamType
+name|getExamTypes
 argument_list|()
 argument_list|)
 expr_stmt|;

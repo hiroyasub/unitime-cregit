@@ -1000,14 +1000,7 @@ operator|.
 name|class
 argument_list|)
 block|,
-name|EditRoomDepartmentsFinalExams
-argument_list|(
-name|Session
-operator|.
-name|class
-argument_list|)
-block|,
-name|EditRoomDepartmentsMidtermExams
+name|EditRoomDepartmentsExams
 argument_list|(
 name|Session
 operator|.
@@ -2205,6 +2198,10 @@ block|,
 name|Permissions
 block|,
 name|PermissionEdit
+block|,
+name|ExamTypes
+block|,
+name|ExamTypeEdit
 block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig

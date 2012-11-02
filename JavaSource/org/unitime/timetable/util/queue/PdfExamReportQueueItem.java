@@ -245,7 +245,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Exam
+name|ExamOwner
 import|;
 end_import
 
@@ -259,7 +259,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|ExamOwner
+name|ExamType
 import|;
 end_import
 
@@ -346,6 +346,22 @@ operator|.
 name|dao
 operator|.
 name|ExamDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|ExamTypeDAO
 import|;
 end_import
 
@@ -633,15 +649,21 @@ name|examSolver
 expr_stmt|;
 name|iName
 operator|=
-name|Exam
+name|ExamTypeDAO
 operator|.
-name|sExamTypes
-index|[
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-index|]
+argument_list|)
+operator|.
+name|getLabel
+argument_list|()
 operator|+
 literal|" "
 expr_stmt|;
@@ -847,13 +869,16 @@ literal|null
 operator|&&
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
-operator|==
+operator|.
+name|equals
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
+argument_list|)
 operator|&&
 literal|"true"
 operator|.
@@ -953,7 +978,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select o from Exam x inner join x.owners o where x.session.uniqueId=:sessionId and x.examType=:examType"
+literal|"select o from Exam x inner join x.owners o where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -966,13 +991,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -993,7 +1018,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:classType and c.uniqueId=o.ownerId"
+literal|"select c from Class_ c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:classType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1006,13 +1031,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1042,7 +1067,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from InstrOfferingConfig c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:configType and c.uniqueId=o.ownerId"
+literal|"select c from InstrOfferingConfig c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:configType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1055,13 +1080,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1091,7 +1116,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from CourseOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:courseType and c.uniqueId=o.ownerId"
+literal|"select c from CourseOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:courseType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1104,13 +1129,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1140,7 +1165,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from InstructionalOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:offeringType and c.uniqueId=o.ownerId"
+literal|"select c from InstructionalOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:offeringType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1153,13 +1178,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1220,7 +1245,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -1251,13 +1276,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1443,7 +1468,7 @@ literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
 literal|"inner join c.schedulingSubpart.instrOfferingConfig ioc "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -1474,13 +1499,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1664,7 +1689,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering co "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -1695,13 +1720,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -1885,7 +1910,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering.instructionalOffering io "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -1916,13 +1941,13 @@ name|getSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|iExamSolver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
 argument_list|)
 operator|.
@@ -2333,20 +2358,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 literal|"_"
 operator|+
@@ -2447,7 +2473,7 @@ name|Session
 operator|.
 name|class
 argument_list|,
-name|int
+name|ExamType
 operator|.
 name|class
 argument_list|,
@@ -2481,10 +2507,18 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 argument_list|,
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
+argument_list|)
 argument_list|,
 literal|null
 argument_list|,
@@ -4074,20 +4108,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 literal|"_"
 operator|+
@@ -4394,20 +4429,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 literal|"_"
 operator|+
@@ -4730,20 +4766,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 operator|(
 name|iForm
@@ -5108,20 +5145,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 operator|(
 name|iForm
@@ -5287,20 +5325,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 argument_list|,
 literal|"zip"
 argument_list|)
@@ -5326,20 +5365,21 @@ operator|.
 name|getSessionStartYear
 argument_list|()
 operator|+
-operator|(
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
+argument_list|)
 operator|.
-name|sExamTypeMidterm
-condition|?
-literal|"evn"
-else|:
-literal|"fin"
-operator|)
+name|getReference
+argument_list|()
 operator|+
 literal|".zip</a>..."
 argument_list|)

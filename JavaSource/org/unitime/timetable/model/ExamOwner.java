@@ -1615,7 +1615,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -1627,14 +1627,17 @@ operator|.
 name|sOwnerTypeClass
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -1761,7 +1764,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -1773,14 +1776,17 @@ operator|.
 name|sOwnerTypeConfig
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -1907,7 +1913,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -1919,14 +1925,17 @@ operator|.
 name|sOwnerTypeCourse
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2053,7 +2062,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2065,14 +2074,17 @@ operator|.
 name|sOwnerTypeOffering
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2203,7 +2215,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2215,14 +2227,17 @@ operator|.
 name|sOwnerTypeClass
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2349,7 +2364,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2361,14 +2376,17 @@ operator|.
 name|sOwnerTypeConfig
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2495,7 +2513,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2507,14 +2525,17 @@ operator|.
 name|sOwnerTypeCourse
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2641,7 +2662,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where c.schedulingSubpart.instrOfferingConfig.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2653,14 +2674,17 @@ operator|.
 name|sOwnerTypeOffering
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2791,7 +2815,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2803,14 +2827,17 @@ operator|.
 name|sOwnerTypeClass
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -2937,7 +2964,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -2949,14 +2976,17 @@ operator|.
 name|sOwnerTypeConfig
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3083,7 +3113,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.uniqueId = :examOwnerId and e.student=f.student and  "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3095,14 +3125,17 @@ operator|.
 name|sOwnerTypeCourse
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3229,7 +3262,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3241,14 +3274,17 @@ operator|.
 name|sOwnerTypeOffering
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3379,7 +3415,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3391,14 +3427,17 @@ operator|.
 name|sOwnerTypeClass
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3525,7 +3564,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.clazz.schedulingSubpart.instrOfferingConfig.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3537,14 +3576,17 @@ operator|.
 name|sOwnerTypeConfig
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3671,7 +3713,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3683,14 +3725,17 @@ operator|.
 name|sOwnerTypeCourse
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3817,7 +3862,7 @@ literal|"select e.student.uniqueId, o.exam from ExamOwner o, StudentClassEnrollm
 operator|+
 literal|"where co.instructionalOffering.uniqueId = :examOwnerId and e.student=f.student and "
 operator|+
-literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType=:examType"
+literal|"o.ownerType=:ownerType and o.ownerId=f.courseOffering.instructionalOffering.uniqueId and o.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3829,14 +3874,17 @@ operator|.
 name|sOwnerTypeOffering
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -5787,16 +5835,14 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.exam.useLimit."
 operator|+
-name|Exam
-operator|.
-name|sExamTypes
-index|[
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
 argument_list|()
-index|]
+operator|.
+name|getReference
+argument_list|()
 argument_list|,
 operator|(
 name|getExam
@@ -5804,8 +5850,11 @@ argument_list|()
 operator|.
 name|getExamType
 argument_list|()
+operator|.
+name|getType
+argument_list|()
 operator|==
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeFinal
 condition|?
@@ -5857,16 +5906,14 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.exam.useLimit."
 operator|+
-name|Exam
-operator|.
-name|sExamTypes
-index|[
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
 argument_list|()
-index|]
+operator|.
+name|getReference
+argument_list|()
 argument_list|,
 operator|(
 name|getExam
@@ -5874,8 +5921,11 @@ argument_list|()
 operator|.
 name|getExamType
 argument_list|()
+operator|.
+name|getType
+argument_list|()
 operator|==
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeFinal
 condition|?
@@ -6638,16 +6688,14 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.exam.name.type."
 operator|+
-name|Exam
-operator|.
-name|sExamTypes
-index|[
 name|getExam
 argument_list|()
 operator|.
 name|getExamType
 argument_list|()
-index|]
+operator|.
+name|getReference
+argument_list|()
 argument_list|)
 return|;
 case|case

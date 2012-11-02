@@ -126,8 +126,8 @@ name|locationId
 parameter_list|)
 function_decl|;
 specifier|public
-name|int
-name|getExamType
+name|Long
+name|getExamTypeId
 parameter_list|()
 function_decl|;
 specifier|public

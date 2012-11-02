@@ -824,6 +824,22 @@ name|sessionContext
 argument_list|)
 expr_stmt|;
 comment|// Distribution Types
+name|LookupTables
+operator|.
+name|setupExamTypes
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getCurrentAcademicSessionId
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// Exam Types
 comment|// Add / Update distribution pref
 if|if
 condition|(
@@ -1310,6 +1326,9 @@ argument_list|(
 name|exam
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2104,24 +2123,6 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|frm
-operator|.
-name|setHasMidtermExams
-argument_list|(
-name|Exam
-operator|.
-name|hasMidtermExams
-argument_list|(
-name|sessionContext
-operator|.
-name|getUser
-argument_list|()
-operator|.
-name|getCurrentAcademicSessionId
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|sessionContext
@@ -2140,7 +2141,7 @@ operator|.
 name|setExamType
 argument_list|(
 operator|(
-name|Integer
+name|Long
 operator|)
 name|sessionContext
 operator|.

@@ -504,7 +504,7 @@ operator|.
 name|getSession
 argument_list|()
 argument_list|,
-name|Integer
+name|Long
 operator|.
 name|valueOf
 argument_list|(
@@ -641,6 +641,9 @@ argument_list|,
 name|exam
 operator|.
 name|getExamType
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 decl_stmt|;

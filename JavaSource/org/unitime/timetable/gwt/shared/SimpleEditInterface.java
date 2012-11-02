@@ -147,6 +147,11 @@ name|permissions
 argument_list|(
 literal|"Permission"
 argument_list|)
+block|,
+name|examType
+argument_list|(
+literal|"Examination Type"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

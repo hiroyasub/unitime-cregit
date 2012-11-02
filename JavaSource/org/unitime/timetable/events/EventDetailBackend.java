@@ -1961,6 +1961,9 @@ argument_list|()
 operator|.
 name|getExamType
 argument_list|()
+operator|.
+name|getType
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|related

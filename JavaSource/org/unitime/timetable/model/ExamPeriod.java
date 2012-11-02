@@ -859,8 +859,38 @@ parameter_list|(
 name|Long
 name|sessionId
 parameter_list|,
-name|Integer
+name|ExamType
 name|type
+parameter_list|)
+block|{
+return|return
+name|findAll
+argument_list|(
+name|sessionId
+argument_list|,
+name|type
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|type
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+return|;
+block|}
+specifier|public
+specifier|static
+name|TreeSet
+name|findAll
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|,
+name|Long
+name|examTypeId
 parameter_list|)
 block|{
 name|TreeSet
@@ -872,7 +902,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|type
+name|examTypeId
 operator|==
 literal|null
 condition|)
@@ -922,7 +952,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select ep from ExamPeriod ep where ep.session.uniqueId=:sessionId and ep.examType=:type"
+literal|"select ep from ExamPeriod ep where ep.session.uniqueId=:sessionId and ep.examType.uniqueId=:typeId"
 argument_list|)
 operator|.
 name|setLong
@@ -932,11 +962,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"type"
+literal|"typeId"
 argument_list|,
-name|type
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -1023,7 +1053,7 @@ parameter_list|(
 name|Long
 name|sessionId
 parameter_list|,
-name|Integer
+name|ExamType
 name|type
 parameter_list|,
 name|Integer
@@ -3546,7 +3576,7 @@ name|getQuery
 argument_list|(
 literal|"select distinct ep from ExamPeriod ep where ep.session.uniqueId = :sessionId"
 operator|+
-literal|" and ep.examType = :examType"
+literal|" and ep.examType.uniqueId = :examTypeId"
 operator|+
 literal|" and ep.dateOffset = :dateOffset"
 operator|+
@@ -3570,14 +3600,14 @@ name|longValue
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
 name|getExamType
 argument_list|()
 operator|.
-name|intValue
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -3900,8 +3930,8 @@ parameter_list|(
 name|Session
 name|session
 parameter_list|,
-name|int
-name|examType
+name|Long
+name|examTypeId
 parameter_list|)
 block|{
 return|return
@@ -3917,7 +3947,7 @@ operator|.
 name|getExamBeginDate
 argument_list|()
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 return|;
 block|}
@@ -3933,8 +3963,8 @@ parameter_list|,
 name|Date
 name|examBeginDate
 parameter_list|,
-name|int
-name|examType
+name|Long
+name|examTypeId
 parameter_list|)
 block|{
 name|Object
@@ -3953,7 +3983,7 @@ name|getQuery
 argument_list|(
 literal|"select min(ep.dateOffset), min(ep.startSlot - ep.eventStartOffset), max(ep.dateOffset), max(ep.startSlot+ep.length+ep.eventStopOffset) "
 operator|+
-literal|"from ExamPeriod ep where ep.session.uniqueId = :sessionId and ep.examType = :examType"
+literal|"from ExamPeriod ep where ep.session.uniqueId = :sessionId and ep.examType.uniqueId = :examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -3963,11 +3993,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable

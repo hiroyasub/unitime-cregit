@@ -229,6 +229,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|ExamTypeDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|security
 operator|.
 name|SessionContext
@@ -368,8 +384,8 @@ parameter_list|,
 name|String
 name|courseNbr
 parameter_list|,
-name|Integer
-name|examType
+name|Long
+name|examTypeId
 parameter_list|)
 throws|throws
 name|Exception
@@ -435,7 +451,7 @@ operator|)
 operator|+
 literal|"dp.distributionType.examPref = true and "
 operator|+
-literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType=:examType"
+literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -451,11 +467,11 @@ name|getCurrentAcademicSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 decl_stmt|;
 if|if
@@ -550,8 +566,8 @@ parameter_list|,
 name|String
 name|courseNbr
 parameter_list|,
-name|Integer
-name|examType
+name|Long
+name|examTypeId
 parameter_list|)
 throws|throws
 name|Exception
@@ -617,7 +633,7 @@ operator|)
 operator|+
 literal|"dp.distributionType.examPref = true and "
 operator|+
-literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType=:examType"
+literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -633,11 +649,11 @@ name|getCurrentAcademicSessionId
 argument_list|()
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 decl_stmt|;
 if|if
@@ -712,7 +728,7 @@ name|context
 argument_list|,
 name|distPrefs
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 return|;
 block|}
@@ -1310,8 +1326,8 @@ parameter_list|,
 name|Collection
 name|distPrefs
 parameter_list|,
-name|int
-name|examType
+name|Long
+name|examTypeId
 parameter_list|)
 block|{
 name|WebTable
@@ -1340,12 +1356,18 @@ name|PdfWebTable
 argument_list|(
 literal|4
 argument_list|,
-name|Exam
+name|ExamTypeDAO
 operator|.
-name|sExamTypes
-index|[
-name|examType
-index|]
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|examTypeId
+argument_list|)
+operator|.
+name|getLabel
+argument_list|()
 operator|+
 literal|" Examination Distribution Preferences"
 argument_list|,

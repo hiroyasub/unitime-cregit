@@ -473,8 +473,8 @@ name|Long
 name|iSessionId
 decl_stmt|;
 specifier|private
-name|int
-name|iExamType
+name|Long
+name|iExamTypeId
 decl_stmt|;
 specifier|private
 name|Progress
@@ -522,7 +522,7 @@ operator|)
 literal|null
 argument_list|)
 expr_stmt|;
-name|iExamType
+name|iExamTypeId
 operator|=
 name|getModel
 argument_list|()
@@ -530,21 +530,11 @@ operator|.
 name|getProperties
 argument_list|()
 operator|.
-name|getPropertyInt
+name|getPropertyLong
 argument_list|(
 literal|"Exam.Type"
 argument_list|,
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Exam
-operator|.
-name|sExamTypeFinal
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -714,7 +704,7 @@ name|findAll
 argument_list|(
 name|iSessionId
 argument_list|,
-name|iExamType
+name|iExamTypeId
 argument_list|)
 decl_stmt|;
 name|Hashtable
@@ -738,7 +728,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select e from ExamEvent e where e.exam.session.uniqueId=:sessionId and e.exam.examType=:examType"
+literal|"select e from ExamEvent e where e.exam.session.uniqueId=:sessionId and e.exam.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -748,11 +738,11 @@ argument_list|,
 name|iSessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|iExamType
+name|iExamTypeId
 argument_list|)
 operator|.
 name|iterate

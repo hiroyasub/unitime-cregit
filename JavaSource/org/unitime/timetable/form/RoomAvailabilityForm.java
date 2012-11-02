@@ -204,8 +204,7 @@ literal|false
 expr_stmt|;
 name|setExamType
 argument_list|(
-operator|-
-literal|1
+literal|null
 argument_list|)
 expr_stmt|;
 block|}

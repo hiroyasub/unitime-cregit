@@ -875,6 +875,20 @@ name|timetable
 operator|.
 name|util
 operator|.
+name|LookupTables
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
 name|RoomAvailability
 import|;
 end_import
@@ -1147,13 +1161,16 @@ literal|null
 operator|&&
 name|solver
 operator|.
-name|getExamType
+name|getExamTypeId
 argument_list|()
-operator|==
+operator|.
+name|equals
+argument_list|(
 name|myForm
 operator|.
 name|getExamType
 argument_list|()
+argument_list|)
 condition|)
 name|assignedExams
 operator|=
@@ -1522,6 +1539,21 @@ literal|"backId"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|LookupTables
+operator|.
+name|setupExamTypes
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getCurrentAcademicSessionId
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|mapping
 operator|.
@@ -1545,8 +1577,8 @@ parameter_list|,
 name|Long
 name|subjectAreaId
 parameter_list|,
-name|int
-name|examType
+name|Long
+name|examTypeId
 parameter_list|)
 throws|throws
 name|Exception
@@ -1577,7 +1609,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select x from Exam x where x.session.uniqueId=:sessionId and x.examType=:examType"
+literal|"select x from Exam x where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setLong
@@ -1587,11 +1619,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -1645,7 +1677,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:classType and c.uniqueId=o.ownerId"
+literal|"select c from Class_ c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:classType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1655,11 +1687,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -1688,7 +1720,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from InstrOfferingConfig c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:configType and c.uniqueId=o.ownerId"
+literal|"select c from InstrOfferingConfig c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:configType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1698,11 +1730,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -1731,7 +1763,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from CourseOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:courseType and c.uniqueId=o.ownerId"
+literal|"select c from CourseOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:courseType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1741,11 +1773,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -1774,7 +1806,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from InstructionalOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType=:examType and o.ownerType=:offeringType and c.uniqueId=o.ownerId"
+literal|"select c from InstructionalOffering c, ExamOwner o where o.exam.session.uniqueId=:sessionId and o.exam.examType.uniqueId=:examTypeId and o.ownerType=:offeringType and c.uniqueId=o.ownerId"
 argument_list|)
 operator|.
 name|setLong
@@ -1784,11 +1816,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setInteger
@@ -1878,7 +1910,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -1906,11 +1938,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -2203,7 +2235,7 @@ literal|"StudentClassEnrollment e inner join e.clazz c "
 operator|+
 literal|"inner join c.schedulingSubpart.instrOfferingConfig ioc "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -2231,11 +2263,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -2526,7 +2558,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering co "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -2554,11 +2586,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -2849,7 +2881,7 @@ literal|"Exam x inner join x.owners o, "
 operator|+
 literal|"StudentClassEnrollment e inner join e.courseOffering.instructionalOffering io "
 operator|+
-literal|"where x.session.uniqueId=:sessionId and x.examType=:examType and "
+literal|"where x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"o.ownerType="
 operator|+
@@ -2877,11 +2909,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -3194,7 +3226,7 @@ argument_list|,
 literal|"p.dateOffset"
 argument_list|)
 operator|+
-literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType=:examType"
+literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3223,11 +3255,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -3354,7 +3386,7 @@ argument_list|,
 literal|"p.dateOffset"
 argument_list|)
 operator|+
-literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType=:examType"
+literal|" = m.meetingDate and p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId"
 argument_list|)
 operator|.
 name|setInteger
@@ -3383,11 +3415,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
-name|setInteger
+name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -3495,7 +3527,7 @@ name|Parameters
 argument_list|(
 name|sessionId
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 decl_stmt|;
 name|TreeSet
@@ -3535,7 +3567,7 @@ name|createQuery
 argument_list|(
 literal|"select x from Exam x where "
 operator|+
-literal|"x.examType=:examType and "
+literal|"x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"x.session.uniqueId=:sessionId and x.assignedPeriod!=null"
 argument_list|)
@@ -3549,9 +3581,9 @@ argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable
@@ -3631,7 +3663,7 @@ literal|"select distinct x from Exam x inner join x.owners o where "
 operator|+
 literal|"o.course.subjectArea.uniqueId=:subjectAreaId and "
 operator|+
-literal|"x.examType=:examType and "
+literal|"x.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"x.session.uniqueId=:sessionId and x.assignedPeriod!=null"
 argument_list|)
@@ -3645,9 +3677,9 @@ argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"examType"
+literal|"examTypeId"
 argument_list|,
-name|examType
+name|examTypeId
 argument_list|)
 operator|.
 name|setLong

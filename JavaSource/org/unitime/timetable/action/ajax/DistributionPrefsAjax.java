@@ -697,7 +697,7 @@ argument_list|(
 literal|"id"
 argument_list|)
 argument_list|,
-name|Integer
+name|Long
 operator|.
 name|valueOf
 argument_list|(
@@ -1552,7 +1552,7 @@ parameter_list|(
 name|String
 name|courseOfferingId
 parameter_list|,
-name|Integer
+name|Long
 name|examType
 parameter_list|,
 name|PrintWriter

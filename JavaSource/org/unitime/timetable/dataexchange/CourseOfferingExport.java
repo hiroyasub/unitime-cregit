@@ -359,6 +359,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ExamType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|FixedCreditUnitConfig
 import|;
 end_import
@@ -842,16 +856,12 @@ name|TreeSet
 argument_list|(
 name|Exam
 operator|.
-name|findAll
+name|findAllFinal
 argument_list|(
 name|session
 operator|.
 name|getUniqueId
 argument_list|()
-argument_list|,
-name|Exam
-operator|.
-name|sExamTypeFinal
 argument_list|)
 argument_list|)
 operator|.
@@ -930,16 +940,12 @@ name|TreeSet
 argument_list|(
 name|Exam
 operator|.
-name|findAll
+name|findAllMidterm
 argument_list|(
 name|session
 operator|.
 name|getUniqueId
 argument_list|()
-argument_list|,
-name|Exam
-operator|.
-name|sExamTypeMidterm
 argument_list|)
 argument_list|)
 operator|.
@@ -1081,9 +1087,9 @@ literal|"all"
 argument_list|)
 argument_list|)
 condition|?
-literal|" and x.examType="
+literal|" and x.examType.type="
 operator|+
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeMidterm
 else|:
@@ -1105,9 +1111,9 @@ literal|"all"
 argument_list|)
 argument_list|)
 condition|?
-literal|" and x.examType="
+literal|" and x.examType.type="
 operator|+
-name|Exam
+name|ExamType
 operator|.
 name|sExamTypeFinal
 else|:
@@ -4150,14 +4156,9 @@ name|exam
 operator|.
 name|getExamType
 argument_list|()
-operator|==
-name|Exam
 operator|.
-name|sExamTypeFinal
-condition|?
-literal|"final"
-else|:
-literal|"midterm"
+name|getReference
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|Element

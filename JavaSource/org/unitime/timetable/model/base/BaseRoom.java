@@ -460,11 +460,6 @@ operator|+
 name|getExamCapacity
 argument_list|()
 operator|+
-literal|"\n	ExamType: "
-operator|+
-name|getExamType
-argument_list|()
-operator|+
 literal|"\n	ExternalUniqueId: "
 operator|+
 name|getExternalUniqueId
