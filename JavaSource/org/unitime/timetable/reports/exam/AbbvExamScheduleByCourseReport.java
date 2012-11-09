@@ -2340,7 +2340,12 @@ argument_list|)
 operator|+
 literal|"| "
 operator|+
+name|rpad
+argument_list|(
 name|b
+argument_list|,
+literal|65
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
