@@ -1123,13 +1123,23 @@ literal|" and location1Id in ("
 operator|+
 name|ids
 operator|+
-literal|") and location1Id in ("
+literal|") and location2Id in ("
 operator|+
 name|ids
 operator|+
 literal|")"
 operator|)
 argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
+argument_list|)
+operator|.
+name|executeUpdate
+argument_list|()
 expr_stmt|;
 for|for
 control|(
