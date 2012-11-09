@@ -328,6 +328,13 @@ literal|"permissions"
 argument_list|,
 literal|"Permissions"
 argument_list|)
+block|,
+name|TRAVELTIMES
+argument_list|(
+literal|"traveltimes"
+argument_list|,
+literal|"Travel Times"
+argument_list|)
 block|,     	;
 specifier|private
 name|String
