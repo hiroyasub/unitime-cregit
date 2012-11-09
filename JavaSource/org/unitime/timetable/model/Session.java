@@ -854,7 +854,7 @@ argument_list|()
 operator|+
 literal|" "
 operator|+
-name|getSessionStartYear
+name|getAcademicYear
 argument_list|()
 operator|+
 literal|" ("
@@ -874,7 +874,7 @@ return|return
 name|getAcademicTerm
 argument_list|()
 operator|+
-name|getSessionStartYear
+name|getAcademicYear
 argument_list|()
 operator|+
 name|getAcademicInitiative
