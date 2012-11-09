@@ -427,8 +427,15 @@ name|r
 operator|.
 name|setExamTypes
 argument_list|(
+operator|new
+name|HashSet
+argument_list|<
+name|ExamType
+argument_list|>
+argument_list|(
 name|getExamTypes
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

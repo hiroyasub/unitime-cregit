@@ -13112,7 +13112,7 @@ name|eDao
 operator|.
 name|getQuery
 argument_list|(
-literal|"select distinct e from ExamOwner as eo inner join eo.exam as e where e.examType = :examType "
+literal|"select distinct e from ExamOwner as eo inner join eo.exam as e where e.examType.type = :examType "
 operator|+
 literal|" and ((eo.ownerType=:ownerTypeClass and eo.ownerId in (select c.uniqueIdRolledForwardFrom from Class_ as c where c.schedulingSubpart.instrOfferingConfig.instructionalOffering.session.uniqueId = :toSessionId)) "
 operator|+

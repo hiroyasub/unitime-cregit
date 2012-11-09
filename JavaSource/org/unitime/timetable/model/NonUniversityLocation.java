@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -218,8 +228,15 @@ name|l
 operator|.
 name|setExamTypes
 argument_list|(
+operator|new
+name|HashSet
+argument_list|<
+name|ExamType
+argument_list|>
+argument_list|(
 name|getExamTypes
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|l
