@@ -507,6 +507,13 @@ name|getUniqueId
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|myForm
+operator|.
+name|getUniqueId
+argument_list|()
+operator|<
+literal|0
 condition|)
 name|sessionContext
 operator|.
