@@ -324,22 +324,7 @@ operator|+
 name|getStyle
 argument_list|()
 operator|+
-literal|"\" width='5'>&nbsp;</td>"
-argument_list|)
-expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"<td class=\""
-operator|+
-name|getStyle
-argument_list|()
-operator|+
-literal|"\">"
+literal|"\" style='padding-left:10px;'>"
 argument_list|)
 expr_stmt|;
 name|pageContext

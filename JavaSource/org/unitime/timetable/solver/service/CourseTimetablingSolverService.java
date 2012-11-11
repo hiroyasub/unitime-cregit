@@ -2135,7 +2135,7 @@ operator|+=
 operator|(
 name|dept
 condition|?
-literal|" departmental"
+literal|", departmental"
 else|:
 literal|""
 operator|)
