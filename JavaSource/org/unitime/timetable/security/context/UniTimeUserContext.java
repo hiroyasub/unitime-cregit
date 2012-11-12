@@ -2697,6 +2697,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|hibSession
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 block|}
 finally|finally
 block|{
