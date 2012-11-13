@@ -2636,7 +2636,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<sup><font color='#9CB0CE'>r)</font></sup>"
+literal|"<sup><font color='#2066CE'>r)</font></sup>"
 argument_list|)
 name|String
 name|htmlReservationSign
@@ -2788,7 +2788,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<sup><font color='#9CB0CE'>({0}p)</font></sup>"
+literal|"<sup><font color='#2066CE'>({0}p)</font></sup>"
 argument_list|)
 name|String
 name|firstWaitListedPrioritySign
