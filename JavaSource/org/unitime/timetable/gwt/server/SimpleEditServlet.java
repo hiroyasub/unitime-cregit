@@ -9253,6 +9253,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
 case|case
 name|examType
 case|:
