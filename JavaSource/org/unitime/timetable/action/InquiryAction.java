@@ -953,8 +953,9 @@ decl_stmt|;
 name|Email
 name|email
 init|=
-operator|new
 name|Email
+operator|.
+name|createEmail
 argument_list|()
 decl_stmt|;
 name|email
@@ -1310,8 +1311,9 @@ literal|"-- END INQUIRY -------------------------------------------"
 expr_stmt|;
 name|email
 operator|=
-operator|new
 name|Email
+operator|.
+name|createEmail
 argument_list|()
 expr_stmt|;
 name|email

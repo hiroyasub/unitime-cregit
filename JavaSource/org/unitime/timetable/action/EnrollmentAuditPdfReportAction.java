@@ -1299,8 +1299,9 @@ block|{
 name|Email
 name|mail
 init|=
-operator|new
 name|Email
+operator|.
+name|createEmail
 argument_list|()
 decl_stmt|;
 name|mail
