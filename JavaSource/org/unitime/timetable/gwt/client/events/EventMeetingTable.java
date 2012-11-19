@@ -7945,6 +7945,9 @@ return|;
 case|case
 name|SHOW_SPONSOR
 case|:
+case|case
+name|SHOW_NOTE
+case|:
 return|return
 name|getMode
 argument_list|()

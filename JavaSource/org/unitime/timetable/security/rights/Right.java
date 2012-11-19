@@ -2203,6 +2203,20 @@ name|ExamTypes
 block|,
 name|ExamTypeEdit
 block|,
+name|EventRoomTypes
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
+block|,
+name|EventRoomTypeEdit
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

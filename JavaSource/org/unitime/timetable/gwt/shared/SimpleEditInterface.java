@@ -152,7 +152,12 @@ name|examType
 argument_list|(
 literal|"Examination Type"
 argument_list|)
-block|, 		;
+block|,
+name|eventRoomType
+argument_list|(
+literal|"Event Room Type"
+argument_list|)
+block|;
 specifier|private
 name|String
 name|iSingular

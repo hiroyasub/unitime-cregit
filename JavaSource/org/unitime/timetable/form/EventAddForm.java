@@ -701,22 +701,6 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
-operator|.
-name|dao
-operator|.
-name|SessionDAO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
 name|security
 operator|.
 name|SessionContext
@@ -3928,16 +3912,10 @@ name|iAdmin
 operator|||
 name|roomType
 operator|.
-name|getOption
-argument_list|(
-name|b
-operator|.
-name|getSession
-argument_list|()
-argument_list|)
-operator|.
 name|canScheduleEvents
-argument_list|()
+argument_list|(
+name|iSessionId
+argument_list|)
 operator|)
 operator|&&
 name|roomType
@@ -4090,7 +4068,7 @@ name|getOption
 argument_list|(
 name|location
 operator|.
-name|getSession
+name|getEventDepartment
 argument_list|()
 argument_list|)
 operator|.
@@ -4425,19 +4403,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Session
-name|session
-init|=
-operator|new
-name|SessionDAO
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|getSessionId
-argument_list|()
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -4497,13 +4462,11 @@ operator|&&
 operator|!
 name|t
 operator|.
-name|getOption
-argument_list|(
-name|session
-argument_list|)
-operator|.
 name|canScheduleEvents
+argument_list|(
+name|getSessionId
 argument_list|()
+argument_list|)
 condition|)
 block|{
 name|i
@@ -7359,15 +7322,7 @@ name|a
 operator|+
 literal|" where rd.control=true and mr.role.reference=:eventMgr and "
 operator|+
-literal|" 1 = (select rto.status from RoomTypeOption rto where rto.session.uniqueId = "
-operator|+
-name|getSessionId
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|" and rto.roomType.uniqueId = r.roomType.uniqueId)"
+literal|" 1 = (select rto.status from RoomTypeOption rto where rto.department.uniqueId = r.eventDepartment.uniqueId and rto.roomType.uniqueId = r.roomType.uniqueId)"
 expr_stmt|;
 specifier|final
 name|double
@@ -7537,15 +7492,7 @@ name|a
 operator|+
 literal|" where r.eventDepartment.allowEvents = true"
 operator|+
-literal|" and 1 = (select rto.status from RoomTypeOption rto where rto.session.uniqueId = "
-operator|+
-name|getSessionId
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|" and rto.roomType.uniqueId = r.roomType.uniqueId) "
+literal|" and 1 = (select rto.status from RoomTypeOption rto where rto.department.uniqueId = r.eventDepartment.uniqueId and rto.roomType.uniqueId = r.roomType.uniqueId) "
 expr_stmt|;
 if|if
 condition|(
@@ -8159,16 +8106,6 @@ condition|)
 return|return
 literal|false
 return|;
-name|Session
-name|s
-init|=
-name|Session
-operator|.
-name|getSessionById
-argument_list|(
-name|iSessionId
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|RoomType
@@ -8189,13 +8126,10 @@ name|iAdmin
 operator|||
 name|roomType
 operator|.
-name|getOption
-argument_list|(
-name|s
-argument_list|)
-operator|.
 name|canScheduleEvents
-argument_list|()
+argument_list|(
+name|iSessionId
+argument_list|)
 operator|)
 operator|&&
 name|roomType

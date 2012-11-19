@@ -679,7 +679,7 @@ literal|"select l.uniqueId "
 operator|+
 literal|"from Location l, RoomTypeOption o "
 operator|+
-literal|"where l.eventDepartment.allowEvents = true and o.status = 1 and o.roomType = l.roomType and o.session = l.session and l.session.uniqueId = :sessionId"
+literal|"where l.eventDepartment.allowEvents = true and o.status = 1 and o.roomType = l.roomType and o.department = l.eventDepartment and l.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong

@@ -1174,11 +1174,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select s from Session s, RoomTypeOption o where o.session = s and ("
+literal|"select s from Session s where "
 operator|+
 literal|"s.academicTerm || s.academicYear = :term or "
 operator|+
-literal|"s.academicTerm || s.academicYear || s.academicInitiative = :term)"
+literal|"s.academicTerm || s.academicYear || s.academicInitiative = :term"
 argument_list|)
 operator|.
 name|setString
@@ -1247,7 +1247,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select s from Session s, RoomTypeOption o where o.session = s and "
+literal|"select s from Session s where "
 operator|+
 literal|"s.eventBeginDate<= :today and s.eventEndDate>= :today"
 argument_list|)

@@ -80,7 +80,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_TYPE
+name|PROP_XTYPE
 init|=
 literal|"type"
 decl_stmt|;

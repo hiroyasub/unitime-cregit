@@ -62,8 +62,8 @@ parameter_list|(
 name|RoomType
 name|roomType
 parameter_list|,
-name|Session
-name|session
+name|Department
+name|department
 parameter_list|)
 block|{
 name|setRoomType
@@ -71,9 +71,9 @@ argument_list|(
 name|roomType
 argument_list|)
 expr_stmt|;
-name|setSession
+name|setDepartment
 argument_list|(
-name|session
+name|department
 argument_list|)
 expr_stmt|;
 name|initialize

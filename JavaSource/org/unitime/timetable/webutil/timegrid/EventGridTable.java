@@ -433,7 +433,7 @@ name|getOption
 argument_list|(
 name|location
 operator|.
-name|getSession
+name|getEventDepartment
 argument_list|()
 argument_list|)
 operator|.
