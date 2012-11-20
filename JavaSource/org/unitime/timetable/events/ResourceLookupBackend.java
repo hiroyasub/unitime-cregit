@@ -2347,7 +2347,7 @@ literal|"RoomTypeOption o where r.session.uniqueId = :sessionId and "
 operator|+
 literal|"r.eventDepartment.allowEvents = true and "
 operator|+
-literal|"o.status = 1 and o.roomType = r.roomType and o.department = r.eventDepartment and ("
+literal|"o.status != 0 and o.roomType = r.roomType and o.department = r.eventDepartment and ("
 operator|+
 literal|"lower(r.roomNumber) like :name or lower(r.buildingAbbv || ' ' || r.roomNumber) like :name or lower(r.buildingAbbv || r.roomNumber) like :name) "
 operator|+
@@ -2537,7 +2537,7 @@ literal|"select distinct l from NonUniversityLocation l, "
 operator|+
 literal|"RoomTypeOption o where l.eventDepartment.allowEvents = true and "
 operator|+
-literal|"l.session.uniqueId = :sessionId and o.status = 1 and o.roomType = l.roomType and o.department = l.eventDepartment and lower(l.name) like :name "
+literal|"l.session.uniqueId = :sessionId and o.status != 0 and o.roomType = l.roomType and o.department = l.eventDepartment and lower(l.name) like :name "
 operator|+
 literal|"order by l.name"
 argument_list|)

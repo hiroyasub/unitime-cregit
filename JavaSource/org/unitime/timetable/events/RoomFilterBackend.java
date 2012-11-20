@@ -571,7 +571,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select o.department.uniqueId, o.roomType.label from RoomTypeOption o where o.status = 1 and o.department.session.uniqueId = :sessionId"
+literal|"select o.department.uniqueId, o.roomType.label from RoomTypeOption o where o.status != 0 and o.department.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -2496,7 +2496,7 @@ literal|" l.session.uniqueId = :sessionId and"
 operator|+
 literal|" l.eventDepartment.allowEvents = true and"
 operator|+
-literal|" o.status = 1 and o.roomType = l.roomType and o.department = l.eventDepartment"
+literal|" o.status != 0 and o.roomType = l.roomType and o.department = l.eventDepartment"
 argument_list|)
 operator|.
 name|setLong

@@ -380,7 +380,8 @@ name|setStatus
 argument_list|(
 name|RoomTypeOption
 operator|.
-name|sStatusNoOptions
+name|getDefaultStatus
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|opt
@@ -459,7 +460,8 @@ name|setStatus
 argument_list|(
 name|RoomTypeOption
 operator|.
-name|sStatusNoOptions
+name|getDefaultStatus
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -497,6 +499,8 @@ return|return
 name|opt
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|canScheduleEvents

@@ -541,6 +541,8 @@ block|,
 name|Special
 block|,
 name|Unavailabile
+block|,
+name|Message
 block|, 		;
 specifier|public
 name|String
