@@ -67,7 +67,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 import|;
 end_import
 
@@ -1071,11 +1071,11 @@ name|compare
 argument_list|(
 name|m1
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|?
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|m1
 operator|)
@@ -1087,11 +1087,11 @@ literal|null
 argument_list|,
 name|m2
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|?
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|m2
 operator|)
@@ -1121,11 +1121,11 @@ init|=
 operator|(
 name|m1
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|?
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|m1
 operator|)
@@ -1142,11 +1142,11 @@ init|=
 operator|(
 name|m2
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|?
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|m2
 operator|)
@@ -1203,11 +1203,11 @@ if|if
 condition|(
 name|m1
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|&&
 name|m2
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|)
 block|{
 name|int
@@ -1215,7 +1215,7 @@ name|cmp
 init|=
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|m1
 operator|)
@@ -1227,7 +1227,7 @@ name|compareTo
 argument_list|(
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|m2
 operator|)

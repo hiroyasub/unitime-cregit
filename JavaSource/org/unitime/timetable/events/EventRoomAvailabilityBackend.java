@@ -87,7 +87,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 import|;
 end_import
 
@@ -629,11 +629,11 @@ name|list
 argument_list|()
 control|)
 block|{
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|new
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|()
 decl_stmt|;
 if|if
@@ -948,11 +948,11 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|new
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|()
 decl_stmt|;
 name|conflict
@@ -1100,11 +1100,11 @@ name|EventLocation
 argument_list|)
 condition|)
 block|{
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|new
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|()
 decl_stmt|;
 name|conflict
@@ -1352,11 +1352,11 @@ name|list
 argument_list|()
 control|)
 block|{
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|new
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|()
 decl_stmt|;
 if|if

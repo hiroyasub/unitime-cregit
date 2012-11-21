@@ -373,7 +373,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 import|;
 end_import
 
@@ -3905,16 +3905,16 @@ operator|.
 name|getMeeting
 argument_list|()
 decl_stmt|;
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|(
 name|meeting
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|?
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|meeting
 else|:
@@ -6673,7 +6673,7 @@ condition|)
 block|{
 for|for
 control|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|cMeeting
 range|:
 name|meeting
@@ -11204,12 +11204,12 @@ literal|null
 operator|&&
 name|iMeeting
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|)
 return|return
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|iMeeting
 operator|)

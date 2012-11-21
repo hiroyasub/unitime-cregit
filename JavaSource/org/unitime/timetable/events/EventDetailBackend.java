@@ -231,7 +231,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 import|;
 end_import
 
@@ -4164,11 +4164,11 @@ range|:
 name|overlapsThisMeeting
 control|)
 block|{
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|new
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|()
 decl_stmt|;
 name|conflict

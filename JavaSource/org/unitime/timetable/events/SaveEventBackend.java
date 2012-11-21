@@ -189,7 +189,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 import|;
 end_import
 
@@ -1963,7 +1963,7 @@ condition|)
 block|{
 name|List
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|conflicts
 init|=
@@ -3432,7 +3432,7 @@ block|}
 specifier|private
 name|List
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|computeConflicts
 parameter_list|(
@@ -3452,7 +3452,7 @@ parameter_list|)
 block|{
 name|List
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|conflicts
 init|=
@@ -3461,7 +3461,7 @@ name|ArrayList
 argument_list|<
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -3568,11 +3568,11 @@ name|list
 argument_list|()
 control|)
 block|{
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 init|=
 operator|new
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|()
 decl_stmt|;
 name|conflict

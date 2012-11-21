@@ -3779,7 +3779,7 @@ decl_stmt|;
 specifier|private
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|iConflicts
 decl_stmt|;
@@ -4648,7 +4648,7 @@ specifier|public
 name|void
 name|addConflict
 parameter_list|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 parameter_list|)
 block|{
@@ -4663,7 +4663,7 @@ operator|=
 operator|new
 name|TreeSet
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -4678,7 +4678,7 @@ block|}
 specifier|public
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|getConflicts
 parameter_list|()
@@ -4693,7 +4693,7 @@ name|setConflicts
 parameter_list|(
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|conflicts
 parameter_list|)
@@ -5072,7 +5072,7 @@ block|}
 specifier|public
 specifier|static
 class|class
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 extends|extends
 name|MeetingInterface
 block|{
@@ -5089,7 +5089,7 @@ name|EventType
 name|iEventType
 decl_stmt|;
 specifier|public
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 parameter_list|()
 block|{
 block|}
@@ -5255,7 +5255,7 @@ name|compareTo
 argument_list|(
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|conflict
 operator|)
@@ -5282,7 +5282,7 @@ name|compareTo
 argument_list|(
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|conflict
 operator|)
@@ -11597,7 +11597,7 @@ name|Long
 argument_list|,
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|>
 argument_list|>
@@ -11614,7 +11614,7 @@ name|Long
 argument_list|,
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|>
 argument_list|>
@@ -11687,7 +11687,7 @@ parameter_list|,
 name|Long
 name|locationId
 parameter_list|,
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 name|conflict
 parameter_list|)
 block|{
@@ -11697,7 +11697,7 @@ name|Long
 argument_list|,
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|>
 name|loc2overlaps
@@ -11725,7 +11725,7 @@ name|Long
 argument_list|,
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|>
 argument_list|()
@@ -11742,7 +11742,7 @@ expr_stmt|;
 block|}
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|overlaps
 init|=
@@ -11765,7 +11765,7 @@ operator|=
 operator|new
 name|TreeSet
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -11817,7 +11817,7 @@ parameter_list|)
 block|{
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|overlaps
 init|=
@@ -11844,7 +11844,7 @@ block|}
 specifier|public
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 name|getOverlaps
 parameter_list|(
@@ -11861,7 +11861,7 @@ name|Long
 argument_list|,
 name|Set
 argument_list|<
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 argument_list|>
 argument_list|>
 name|loc2overlaps

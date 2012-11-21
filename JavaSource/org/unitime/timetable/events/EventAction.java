@@ -193,7 +193,7 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 import|;
 end_import
 
@@ -529,11 +529,11 @@ return|return
 operator|(
 name|meeting
 operator|instanceof
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 condition|?
 operator|(
 operator|(
-name|MeetingConglictInterface
+name|MeetingConflictInterface
 operator|)
 name|meeting
 operator|)
