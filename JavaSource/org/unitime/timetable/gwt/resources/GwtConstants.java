@@ -394,6 +394,8 @@ block|,
 literal|"Special Event"
 block|,
 literal|"Not Available"
+block|,
+literal|"Message"
 block|}
 argument_list|)
 name|String
@@ -416,6 +418,8 @@ block|,
 literal|"Special"
 block|,
 literal|"Not Available"
+block|,
+literal|"Message"
 block|}
 argument_list|)
 name|String

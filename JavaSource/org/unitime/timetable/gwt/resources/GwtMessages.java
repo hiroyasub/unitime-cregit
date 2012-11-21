@@ -2398,6 +2398,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<span title=\"Warning\" style=\"font-style:normal;\">&#9888;</span>"
+argument_list|)
+name|String
+name|signMessage
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Event name is required."
 argument_list|)
 name|String
@@ -2464,7 +2473,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0} is not managed in UniTime or disabled for events."
+literal|"{0} is not managed in UniTime or it is disabled for events."
 argument_list|)
 name|String
 name|conflictNotEventRoom
