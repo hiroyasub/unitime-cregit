@@ -1322,36 +1322,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/*         if(room&& coordX==null || coordX.equalsIgnoreCase("") || coordY==null || coordY.equalsIgnoreCase("")) {             errors.add("Coordinates",                      new ActionMessage("errors.required", "Coordinates") );         }         */
-if|if
-condition|(
-name|controlDept
-operator|==
-literal|null
-operator|||
-name|controlDept
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-literal|""
-argument_list|)
-condition|)
-block|{
-name|errors
-operator|.
-name|add
-argument_list|(
-literal|"Department"
-argument_list|,
-operator|new
-name|ActionMessage
-argument_list|(
-literal|"errors.required"
-argument_list|,
-literal|"Department"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
+comment|/*         if (controlDept==null || controlDept.equalsIgnoreCase("")) {         	errors.add("Department",                      new ActionMessage("errors.required", "Department") );         }         */
 return|return
 name|errors
 return|;
