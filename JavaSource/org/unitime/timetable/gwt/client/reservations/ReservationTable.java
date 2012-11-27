@@ -1107,6 +1107,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 literal|"gwt.jsp?page=reservation&offering="
 operator|+
 name|iOfferingId
@@ -4373,6 +4378,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 literal|"gwt.jsp?page=reservation&id="
 operator|+
 name|evt

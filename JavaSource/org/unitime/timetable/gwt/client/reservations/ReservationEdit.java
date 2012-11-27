@@ -1269,6 +1269,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 literal|"instructionalOfferingDetail.do?io="
 operator|+
 name|iOffering
@@ -1294,6 +1299,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 literal|"instructionalOfferingDetail.do?io="
 operator|+
 name|iOffering
@@ -1319,6 +1329,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 literal|"instructionalOfferingDetail.do?io="
 operator|+
 name|iOffering
@@ -1355,6 +1370,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 literal|"instructionalOfferingDetail.do?io="
 operator|+
 name|iOffering
