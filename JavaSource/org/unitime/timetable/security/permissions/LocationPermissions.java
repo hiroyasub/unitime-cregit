@@ -879,7 +879,7 @@ expr_stmt|;
 block|}
 return|return
 name|controls
-operator|&&
+operator|||
 name|allDepts
 return|;
 block|}
