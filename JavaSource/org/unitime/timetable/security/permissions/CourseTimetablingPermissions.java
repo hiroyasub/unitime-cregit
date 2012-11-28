@@ -761,6 +761,14 @@ name|PermissionDepartment
 name|permissionDepartment
 decl_stmt|;
 annotation|@
+name|Autowired
+name|SolverService
+argument_list|<
+name|SolverProxy
+argument_list|>
+name|courseTimetablingSolverService
+decl_stmt|;
+annotation|@
 name|Override
 specifier|public
 name|boolean
@@ -787,6 +795,19 @@ argument_list|)
 condition|)
 return|return
 literal|false
+return|;
+comment|// Has a solver running -> can see assignments
+if|if
+condition|(
+name|courseTimetablingSolverService
+operator|.
+name|getSolver
+argument_list|()
+operator|!=
+literal|null
+condition|)
+return|return
+literal|true
 return|;
 comment|// Check for a department with a committed solution or for my department with a solution
 for|for
