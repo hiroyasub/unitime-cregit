@@ -1151,6 +1151,13 @@ name|getSubjectArea
 argument_list|()
 operator|!=
 literal|0
+operator|&&
+name|myForm
+operator|.
+name|getExamType
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 if|if
