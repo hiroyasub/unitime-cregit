@@ -372,6 +372,7 @@ block|}
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_MON
 init|=
@@ -379,6 +380,7 @@ literal|0
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_TUE
 init|=
@@ -386,6 +388,7 @@ literal|1
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_WED
 init|=
@@ -393,6 +396,7 @@ literal|2
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_THU
 init|=
@@ -400,6 +404,7 @@ literal|3
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_FRI
 init|=
@@ -407,6 +412,7 @@ literal|4
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_SAT
 init|=
@@ -414,6 +420,7 @@ literal|5
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|DAY_SUN
 init|=
