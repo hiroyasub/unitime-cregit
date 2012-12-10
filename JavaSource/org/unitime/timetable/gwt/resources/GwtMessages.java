@@ -1987,6 +1987,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Please, enter a {0}."
+argument_list|)
+name|String
+name|warnNoResourceName
+parameter_list|(
+name|String
+name|resourceName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Waiting for the academic session {0} to load..."
 argument_list|)
 name|String

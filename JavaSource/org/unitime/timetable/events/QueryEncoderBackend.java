@@ -327,11 +327,15 @@ name|context
 operator|.
 name|getUser
 argument_list|()
+operator|==
+literal|null
+operator|||
+name|context
 operator|.
-name|getCurrentAuthority
+name|getUser
 argument_list|()
 operator|.
-name|getRole
+name|getCurrentAuthority
 argument_list|()
 operator|==
 literal|null
