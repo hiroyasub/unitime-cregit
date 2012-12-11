@@ -509,6 +509,13 @@ operator|)
 decl_stmt|;
 if|if
 condition|(
+literal|"Export CSV"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+operator|||
 literal|"Export PDF"
 operator|.
 name|equals
@@ -721,6 +728,8 @@ name|getTable
 argument_list|(
 literal|true
 argument_list|,
+literal|false
+argument_list|,
 name|myForm
 argument_list|,
 name|assignedExams
@@ -747,6 +756,8 @@ name|getTable
 argument_list|(
 literal|false
 argument_list|,
+literal|true
+argument_list|,
 name|myForm
 argument_list|,
 name|assignedExams
@@ -767,6 +778,79 @@ decl_stmt|;
 name|pdfTable
 operator|.
 name|exportPdf
+argument_list|(
+name|file
+argument_list|,
+name|WebTable
+operator|.
+name|getOrder
+argument_list|(
+name|sessionContext
+argument_list|,
+literal|"assignedExams.ord"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+name|Constants
+operator|.
+name|REQUEST_OPEN_URL
+argument_list|,
+literal|"temp/"
+operator|+
+name|file
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+literal|"Export CSV"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+operator|&&
+name|table
+operator|!=
+literal|null
+condition|)
+block|{
+name|PdfWebTable
+name|pdfTable
+init|=
+name|getTable
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+name|myForm
+argument_list|,
+name|assignedExams
+argument_list|)
+decl_stmt|;
+name|File
+name|file
+init|=
+name|ApplicationProperties
+operator|.
+name|getTempFile
+argument_list|(
+literal|"assigned"
+argument_list|,
+literal|"csv"
+argument_list|)
+decl_stmt|;
+name|pdfTable
+operator|.
+name|exportCsv
 argument_list|(
 name|file
 argument_list|,
@@ -884,6 +968,9 @@ name|getTable
 parameter_list|(
 name|boolean
 name|html
+parameter_list|,
+name|boolean
+name|color
 parameter_list|,
 name|ExamReportForm
 name|form
@@ -1095,6 +1182,9 @@ name|dc
 operator|+
 literal|"</font>"
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1105,6 +1195,9 @@ literal|"P"
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|String
 operator|.
@@ -1141,6 +1234,9 @@ name|edc
 operator|+
 literal|"</font>"
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1151,6 +1247,9 @@ literal|"P"
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|String
 operator|.
@@ -1195,6 +1294,9 @@ name|m2d
 operator|+
 literal|"</font>"
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1205,6 +1307,9 @@ literal|"2"
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|String
 operator|.
@@ -1275,6 +1380,9 @@ operator|)
 operator|+
 literal|"</font>"
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1285,6 +1393,9 @@ literal|"1"
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|btb
 operator|+
@@ -1332,6 +1443,9 @@ name|rooms
 operator|+=
 operator|(
 name|html
+operator|||
+operator|!
+name|color
 condition|?
 literal|", "
 else|:
@@ -1348,6 +1462,9 @@ operator|.
 name|toString
 argument_list|()
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1366,6 +1483,9 @@ argument_list|)
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|room
 operator|.
@@ -1403,6 +1523,9 @@ name|distConfs
 operator|+=
 operator|(
 name|html
+operator|||
+operator|!
+name|color
 condition|?
 literal|", "
 else|:
@@ -1419,6 +1542,9 @@ operator|.
 name|getTypeHtml
 argument_list|()
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1432,6 +1558,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|dist
 operator|.
@@ -1507,6 +1636,9 @@ operator|.
 name|getPeriodAbbreviationWithPref
 argument_list|()
 else|:
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1520,6 +1652,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|exam
 operator|.

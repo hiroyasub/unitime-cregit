@@ -645,6 +645,13 @@ operator|)
 decl_stmt|;
 if|if
 condition|(
+literal|"Export CSV"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+operator|||
 literal|"Export PDF"
 operator|.
 name|equals
@@ -860,6 +867,8 @@ name|getTable
 argument_list|(
 literal|true
 argument_list|,
+literal|false
+argument_list|,
 name|myForm
 argument_list|,
 name|unassignedExams
@@ -886,6 +895,8 @@ name|getTable
 argument_list|(
 literal|false
 argument_list|,
+literal|true
+argument_list|,
 name|myForm
 argument_list|,
 name|unassignedExams
@@ -906,6 +917,79 @@ decl_stmt|;
 name|pdfTable
 operator|.
 name|exportPdf
+argument_list|(
+name|file
+argument_list|,
+name|WebTable
+operator|.
+name|getOrder
+argument_list|(
+name|sessionContext
+argument_list|,
+literal|"unassignedExams.ord"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|request
+operator|.
+name|setAttribute
+argument_list|(
+name|Constants
+operator|.
+name|REQUEST_OPEN_URL
+argument_list|,
+literal|"temp/"
+operator|+
+name|file
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+literal|"Export CSV"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+operator|&&
+name|table
+operator|!=
+literal|null
+condition|)
+block|{
+name|PdfWebTable
+name|pdfTable
+init|=
+name|getTable
+argument_list|(
+literal|false
+argument_list|,
+literal|false
+argument_list|,
+name|myForm
+argument_list|,
+name|unassignedExams
+argument_list|)
+decl_stmt|;
+name|File
+name|file
+init|=
+name|ApplicationProperties
+operator|.
+name|getTempFile
+argument_list|(
+literal|"unassigned"
+argument_list|,
+literal|"csv"
+argument_list|)
+decl_stmt|;
+name|pdfTable
+operator|.
+name|exportCsv
 argument_list|(
 name|file
 argument_list|,
@@ -1023,6 +1107,9 @@ name|getTable
 parameter_list|(
 name|boolean
 name|html
+parameter_list|,
+name|boolean
+name|color
 parameter_list|,
 name|ExamReportForm
 name|form
@@ -1569,6 +1656,9 @@ name|nl
 expr_stmt|;
 name|roomPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1585,6 +1675,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
@@ -1660,6 +1753,9 @@ name|nl
 expr_stmt|;
 name|roomPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1676,6 +1772,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
@@ -1751,6 +1850,9 @@ name|nl
 expr_stmt|;
 name|roomPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1767,6 +1869,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
@@ -1842,6 +1947,9 @@ name|nl
 expr_stmt|;
 name|roomPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -1858,6 +1966,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
@@ -1942,6 +2053,9 @@ block|{
 if|if
 condition|(
 name|timeText
+operator|||
+operator|!
+name|color
 condition|)
 block|{
 for|for
@@ -1997,6 +2111,9 @@ name|nl
 expr_stmt|;
 name|perPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -2013,6 +2130,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
@@ -2182,6 +2302,9 @@ name|nl
 expr_stmt|;
 name|perPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -2198,6 +2321,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
@@ -2276,6 +2402,9 @@ name|nl
 expr_stmt|;
 name|distPref
 operator|+=
+operator|(
+name|color
+condition|?
 literal|"@@COLOR "
 operator|+
 name|PreferenceLevel
@@ -2292,6 +2421,9 @@ argument_list|()
 argument_list|)
 operator|+
 literal|" "
+else|:
+literal|""
+operator|)
 operator|+
 name|PreferenceLevel
 operator|.
