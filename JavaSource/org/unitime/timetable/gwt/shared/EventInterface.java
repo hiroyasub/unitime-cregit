@@ -9049,7 +9049,7 @@ return|;
 block|}
 else|else
 return|return
-literal|false
+literal|true
 return|;
 block|}
 annotation|@
