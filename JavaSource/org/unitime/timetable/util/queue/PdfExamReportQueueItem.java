@@ -2980,7 +2980,7 @@ name|Session
 operator|.
 name|class
 argument_list|,
-name|int
+name|ExamType
 operator|.
 name|class
 argument_list|,
@@ -3014,10 +3014,18 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 argument_list|,
+name|ExamTypeDAO
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|get
+argument_list|(
 name|iForm
 operator|.
 name|getExamType
 argument_list|()
+argument_list|)
 argument_list|,
 name|subject
 argument_list|,
