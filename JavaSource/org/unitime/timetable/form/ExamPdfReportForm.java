@@ -923,6 +923,8 @@ operator|.
 name|load
 argument_list|(
 name|session
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|setAll
