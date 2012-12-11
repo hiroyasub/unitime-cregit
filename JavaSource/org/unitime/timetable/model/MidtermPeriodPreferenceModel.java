@@ -2805,6 +2805,9 @@ name|prefs
 parameter_list|,
 name|boolean
 name|html
+parameter_list|,
+name|boolean
+name|color
 parameter_list|)
 block|{
 name|SimpleDateFormat
@@ -3099,6 +3102,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|color
+condition|)
+name|ret
+operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|lastPref
+argument_list|)
+operator|+
+literal|" "
+expr_stmt|;
 name|ret
 operator|+=
 name|PreferenceLevel
@@ -3309,6 +3329,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|color
+condition|)
+name|ret
+operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|lastPref
+argument_list|)
+operator|+
+literal|" "
+expr_stmt|;
 name|ret
 operator|+=
 name|PreferenceLevel
@@ -3423,6 +3460,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|color
+condition|)
+name|ret
+operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|lastPref
+argument_list|)
+operator|+
+literal|" "
+expr_stmt|;
 name|ret
 operator|+=
 name|PreferenceLevel
@@ -3486,6 +3540,26 @@ name|toString
 parameter_list|(
 name|boolean
 name|html
+parameter_list|)
+block|{
+return|return
+name|toString
+argument_list|(
+name|html
+argument_list|,
+literal|false
+argument_list|)
+return|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|(
+name|boolean
+name|html
+parameter_list|,
+name|boolean
+name|color
 parameter_list|)
 block|{
 if|if
@@ -3586,6 +3660,8 @@ argument_list|,
 name|fPref
 argument_list|,
 name|html
+argument_list|,
+name|color
 argument_list|)
 decl_stmt|;
 if|if
@@ -3649,6 +3725,8 @@ argument_list|,
 name|fPref
 argument_list|,
 name|html
+argument_list|,
+name|color
 argument_list|)
 decl_stmt|;
 if|if
