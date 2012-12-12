@@ -1860,7 +1860,15 @@ name|isAssigned
 argument_list|()
 condition|)
 return|return
+operator|(
+name|iClassId
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|arrangeHours
+operator|)
 return|;
 return|return
 name|getDaysString

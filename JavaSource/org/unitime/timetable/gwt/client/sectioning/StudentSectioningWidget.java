@@ -4859,7 +4859,7 @@ name|Cell
 argument_list|(
 name|MESSAGES
 operator|.
-name|arrageHours
+name|arrangeHours
 argument_list|()
 argument_list|,
 literal|4
@@ -5926,7 +5926,7 @@ name|Cell
 argument_list|(
 name|MESSAGES
 operator|.
-name|arrageHours
+name|arrangeHours
 argument_list|()
 argument_list|,
 literal|4
@@ -6812,7 +6812,7 @@ name|Cell
 argument_list|(
 name|MESSAGES
 operator|.
-name|arrageHours
+name|arrangeHours
 argument_list|()
 argument_list|,
 literal|4
@@ -7661,7 +7661,7 @@ name|Cell
 argument_list|(
 name|MESSAGES
 operator|.
-name|arrageHours
+name|arrangeHours
 argument_list|()
 argument_list|,
 literal|4

@@ -3376,7 +3376,7 @@ argument_list|(
 literal|"<i>Arrange Hours</i>"
 argument_list|)
 name|String
-name|arrageHours
+name|arrangeHours
 parameter_list|()
 function_decl|;
 block|}
