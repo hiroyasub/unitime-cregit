@@ -3530,6 +3530,10 @@ argument_list|,
 name|idx
 argument_list|)
 expr_stmt|;
+name|pos
+operator|=
+name|idx
+expr_stmt|;
 block|}
 name|pos
 operator|+=
