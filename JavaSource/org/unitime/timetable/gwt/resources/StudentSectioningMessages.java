@@ -3370,6 +3370,15 @@ name|String
 name|massCancelConfirmation
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<i>Arrange Hours</i>"
+argument_list|)
+name|String
+name|arrageHours
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

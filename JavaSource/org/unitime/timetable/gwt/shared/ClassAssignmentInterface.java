@@ -1848,6 +1848,9 @@ name|shortDays
 parameter_list|,
 name|boolean
 name|useAmPm
+parameter_list|,
+name|String
+name|arrangeHours
 parameter_list|)
 block|{
 if|if
@@ -1857,7 +1860,7 @@ name|isAssigned
 argument_list|()
 condition|)
 return|return
-literal|""
+name|arrangeHours
 return|;
 return|return
 name|getDaysString
@@ -2833,6 +2836,8 @@ literal|"X"
 block|}
 argument_list|,
 literal|true
+argument_list|,
+literal|""
 argument_list|)
 else|:
 literal|""
