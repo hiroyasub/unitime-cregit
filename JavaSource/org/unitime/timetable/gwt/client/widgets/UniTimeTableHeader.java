@@ -684,6 +684,22 @@ expr_stmt|;
 block|}
 specifier|public
 name|UniTimeTableHeader
+parameter_list|()
+block|{
+name|this
+argument_list|(
+literal|" "
+argument_list|,
+literal|1
+argument_list|,
+name|HasHorizontalAlignment
+operator|.
+name|ALIGN_LEFT
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|UniTimeTableHeader
 parameter_list|(
 name|String
 name|title
