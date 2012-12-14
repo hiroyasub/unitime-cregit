@@ -279,6 +279,14 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
+name|int
+name|sEventTypeUnavailable
+init|=
+literal|5
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
 name|String
 index|[]
 name|sEventTypes
@@ -296,6 +304,8 @@ block|,
 literal|"Course Related Event"
 block|,
 literal|"Special Event"
+block|,
+literal|"Not Available Event"
 block|}
 decl_stmt|;
 specifier|public
@@ -318,6 +328,8 @@ block|,
 literal|"Course"
 block|,
 literal|"Special"
+block|,
+literal|"Not Available"
 block|}
 decl_stmt|;
 specifier|public

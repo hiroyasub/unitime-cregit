@@ -1768,6 +1768,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EventAddUnavailable
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|EventLookupContact
 block|,
 name|EventLookupSchedule

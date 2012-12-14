@@ -850,6 +850,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"new unavailability"
+argument_list|)
+name|String
+name|approvalNewUnavailabiliyMeeting
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Setup / Teardown Times"
 argument_list|)
 name|String
@@ -3011,6 +3020,15 @@ literal|"No academic session is available."
 argument_list|)
 name|String
 name|noSessionAvailable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"N/A"
+argument_list|)
+name|String
+name|unavailableEventDefaultName
 parameter_list|()
 function_decl|;
 block|}

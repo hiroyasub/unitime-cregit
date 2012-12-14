@@ -6393,6 +6393,28 @@ argument_list|()
 operator|==
 literal|null
 condition|?
+name|event
+operator|!=
+literal|null
+operator|&&
+name|event
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|EventType
+operator|.
+name|Unavailabile
+condition|?
+literal|"<span class='new-meeting'>"
+operator|+
+name|MESSAGES
+operator|.
+name|approvalNewUnavailabiliyMeeting
+argument_list|()
+operator|+
+literal|"</span>"
+else|:
 name|meeting
 operator|.
 name|isCanApprove
@@ -11110,6 +11132,8 @@ argument_list|()
 operator|.
 name|filter
 argument_list|(
+name|event
+argument_list|,
 name|meeting
 argument_list|)
 condition|)
@@ -11635,6 +11659,8 @@ name|filter
 operator|.
 name|filter
 argument_list|(
+name|iEvent
+argument_list|,
 name|iMeeting
 argument_list|)
 condition|)
@@ -11674,6 +11700,8 @@ name|filter
 operator|.
 name|filter
 argument_list|(
+name|iEvent
+argument_list|,
 name|meeting
 argument_list|)
 condition|)
@@ -11857,6 +11885,9 @@ specifier|public
 name|boolean
 name|filter
 parameter_list|(
+name|EventInterface
+name|event
+parameter_list|,
 name|MeetingInterface
 name|meeting
 parameter_list|)
