@@ -1877,6 +1877,11 @@ name|MSG
 operator|.
 name|columnInstructorExamAssignmentsPDF
 argument_list|()
+block|,
+name|MSG
+operator|.
+name|columnInstructorIgnoreTooFarPDF
+argument_list|()
 block|}
 argument_list|,
 operator|new
@@ -1900,12 +1905,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -2251,6 +2260,23 @@ literal|"\n"
 expr_stmt|;
 name|rmPref
 operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|rp
+operator|.
+name|getPrefLevel
+argument_list|()
+operator|.
+name|getPrefProlog
+argument_list|()
+argument_list|)
+operator|+
+literal|" "
+operator|+
 name|PreferenceLevel
 operator|.
 name|prolog2abbv
@@ -2325,6 +2351,23 @@ literal|"\n"
 expr_stmt|;
 name|rmPref
 operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|bp
+operator|.
+name|getPrefLevel
+argument_list|()
+operator|.
+name|getPrefProlog
+argument_list|()
+argument_list|)
+operator|+
+literal|" "
+operator|+
 name|PreferenceLevel
 operator|.
 name|prolog2abbv
@@ -2399,6 +2442,23 @@ literal|"\n"
 expr_stmt|;
 name|rmPref
 operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|rfp
+operator|.
+name|getPrefLevel
+argument_list|()
+operator|.
+name|getPrefProlog
+argument_list|()
+argument_list|)
+operator|+
+literal|" "
+operator|+
 name|PreferenceLevel
 operator|.
 name|prolog2abbv
@@ -2473,6 +2533,23 @@ literal|"\n"
 expr_stmt|;
 name|rmPref
 operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|rgp
+operator|.
+name|getPrefLevel
+argument_list|()
+operator|.
+name|getPrefProlog
+argument_list|()
+argument_list|)
+operator|+
+literal|" "
+operator|+
 name|PreferenceLevel
 operator|.
 name|prolog2abbv
@@ -2735,6 +2812,23 @@ literal|"\n"
 expr_stmt|;
 name|distPref
 operator|+=
+literal|"@@COLOR "
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|dp
+operator|.
+name|getPrefLevel
+argument_list|()
+operator|.
+name|getPrefProlog
+argument_list|()
+argument_list|)
+operator|+
+literal|" "
+operator|+
 name|PreferenceLevel
 operator|.
 name|prolog2abbv
@@ -3038,6 +3132,32 @@ block|,
 name|classesStr
 block|,
 name|examsStr
+block|,
+name|di
+operator|.
+name|isIgnoreToFar
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|di
+operator|.
+name|isIgnoreToFar
+argument_list|()
+condition|?
+literal|"@@ITALIC "
+operator|+
+name|MSG
+operator|.
+name|yes
+argument_list|()
+else|:
+literal|"@@ITALIC "
+operator|+
+name|MSG
+operator|.
+name|no
+argument_list|()
 block|}
 argument_list|,
 operator|new
@@ -3061,6 +3181,11 @@ block|,
 literal|null
 block|,
 literal|null
+block|,
+name|di
+operator|.
+name|isIgnoreToFar
+argument_list|()
 block|}
 argument_list|)
 expr_stmt|;

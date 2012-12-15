@@ -1348,6 +1348,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Ignore\nToo Far"
+argument_list|)
+name|String
+name|columnInstructorIgnoreTooFarPDF
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Classes / Courses"
 argument_list|)
 name|String
@@ -6118,6 +6127,15 @@ literal|"Only students meeting reservations are allowed to enroll into this offe
 argument_list|)
 name|String
 name|descriptionByReservationOnly2
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Yes"
+argument_list|)
+name|String
+name|yes
 parameter_list|()
 function_decl|;
 annotation|@
