@@ -1515,6 +1515,13 @@ name|assignment
 operator|.
 name|getTime
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|assignment
+operator|.
+name|getTime
+argument_list|()
 operator|.
 name|overlaps
 argument_list|(

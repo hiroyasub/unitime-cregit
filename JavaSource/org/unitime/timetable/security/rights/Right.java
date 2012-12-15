@@ -2224,6 +2224,10 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|RoomFeatureTypes
+block|,
+name|RoomFeatureTypeEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

@@ -519,7 +519,7 @@ specifier|private
 name|AcademicSessionProvider
 name|iAcademicSession
 decl_stmt|;
-specifier|private
+specifier|protected
 name|UniTimeWidget
 argument_list|<
 name|FilterBox
@@ -1049,6 +1049,11 @@ argument_list|()
 argument_list|)
 condition|)
 return|return;
+name|onLoad
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|FilterBox
@@ -1108,6 +1113,15 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|protected
+name|void
+name|onLoad
+parameter_list|(
+name|FilterRpcResponse
+name|result
+parameter_list|)
+block|{
 block|}
 specifier|public
 name|boolean

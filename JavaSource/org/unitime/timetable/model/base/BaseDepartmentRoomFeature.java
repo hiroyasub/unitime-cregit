@@ -270,6 +270,11 @@ operator|+
 name|getDepartment
 argument_list|()
 operator|+
+literal|"\n	FeatureType: "
+operator|+
+name|getFeatureType
+argument_list|()
+operator|+
 literal|"\n	Label: "
 operator|+
 name|getLabel

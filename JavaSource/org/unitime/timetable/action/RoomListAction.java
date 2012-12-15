@@ -9952,7 +9952,7 @@ index|]
 operator|+=
 name|rf
 operator|.
-name|getLabel
+name|getLabelWithType
 argument_list|()
 expr_stmt|;
 block|}
@@ -10133,7 +10133,7 @@ literal|" "
 operator|+
 name|drf
 operator|.
-name|getLabel
+name|getLabelWithType
 argument_list|()
 expr_stmt|;
 block|}
@@ -13488,7 +13488,7 @@ literal|" "
 operator|+
 name|rf
 operator|.
-name|getLabel
+name|getLabelWithType
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -13647,7 +13647,7 @@ operator|)
 operator|+
 name|drf
 operator|.
-name|getLabel
+name|getLabelWithType
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -933,7 +933,7 @@ argument_list|()
 operator|)
 return|;
 block|}
-specifier|private
+specifier|public
 name|Set
 name|classInstructorPrefsOfType
 parameter_list|(

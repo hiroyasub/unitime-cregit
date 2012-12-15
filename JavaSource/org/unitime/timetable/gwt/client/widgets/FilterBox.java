@@ -1992,6 +1992,13 @@ name|filter
 operator|.
 name|getCommand
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|'_'
+argument_list|,
+literal|' '
+argument_list|)
 argument_list|,
 literal|false
 argument_list|)
@@ -2467,6 +2474,13 @@ name|chip
 operator|.
 name|getCommand
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|'_'
+argument_list|,
+literal|' '
+argument_list|)
 operator|+
 literal|"</span>"
 argument_list|,
@@ -5153,6 +5167,13 @@ name|Label
 argument_list|(
 name|getCommand
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|'_'
+argument_list|,
+literal|' '
+argument_list|)
 argument_list|,
 literal|false
 argument_list|)
@@ -5847,6 +5868,13 @@ name|Label
 argument_list|(
 name|getCommand
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|'_'
+argument_list|,
+literal|' '
+argument_list|)
 argument_list|,
 literal|false
 argument_list|)
@@ -6678,6 +6706,13 @@ name|add
 operator|.
 name|getCommand
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|'_'
+argument_list|,
+literal|' '
+argument_list|)
 operator|+
 literal|"</span>"
 expr_stmt|;
@@ -6727,6 +6762,13 @@ operator|)
 operator|.
 name|getCommand
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|'_'
+argument_list|,
+literal|' '
+argument_list|)
 operator|+
 literal|"</span>"
 expr_stmt|;

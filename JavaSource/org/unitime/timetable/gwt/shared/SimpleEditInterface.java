@@ -157,7 +157,12 @@ name|eventRoomType
 argument_list|(
 literal|"Event Room Type"
 argument_list|)
-block|;
+block|,
+name|featureType
+argument_list|(
+literal|"Room Feature Type"
+argument_list|)
+block|, 		;
 specifier|private
 name|String
 name|iSingular
