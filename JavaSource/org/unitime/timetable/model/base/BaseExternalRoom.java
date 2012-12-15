@@ -174,6 +174,10 @@ name|String
 name|iDisplayName
 decl_stmt|;
 specifier|private
+name|Double
+name|iArea
+decl_stmt|;
+specifier|private
 name|RoomType
 name|iRoomType
 decl_stmt|;
@@ -264,6 +268,13 @@ name|String
 name|PROP_DISPLAY_NAME
 init|=
 literal|"displayName"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_AREA
+init|=
+literal|"area"
 decl_stmt|;
 specifier|public
 name|BaseExternalRoom
@@ -522,6 +533,28 @@ block|{
 name|iDisplayName
 operator|=
 name|displayName
+expr_stmt|;
+block|}
+specifier|public
+name|Double
+name|getArea
+parameter_list|()
+block|{
+return|return
+name|iArea
+return|;
+block|}
+specifier|public
+name|void
+name|setArea
+parameter_list|(
+name|Double
+name|area
+parameter_list|)
+block|{
+name|iArea
+operator|=
+name|area
 expr_stmt|;
 block|}
 specifier|public
@@ -797,6 +830,11 @@ parameter_list|()
 block|{
 return|return
 literal|"ExternalRoom["
+operator|+
+literal|"\n	Area: "
+operator|+
+name|getArea
+argument_list|()
 operator|+
 literal|"\n	Building: "
 operator|+

@@ -420,6 +420,11 @@ block|{
 return|return
 literal|"Room["
 operator|+
+literal|"\n	Area: "
+operator|+
+name|getArea
+argument_list|()
+operator|+
 literal|"\n	Building: "
 operator|+
 name|getBuilding

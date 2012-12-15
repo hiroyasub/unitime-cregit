@@ -162,6 +162,14 @@ argument_list|)
 expr_stmt|;
 name|l
 operator|.
+name|setArea
+argument_list|(
+name|getArea
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|l
+operator|.
 name|setDisplayName
 argument_list|(
 name|getDisplayName

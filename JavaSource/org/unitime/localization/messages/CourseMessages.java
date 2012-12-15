@@ -6390,6 +6390,51 @@ name|String
 name|classMeetingsNotApplicable
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Area:"
+argument_list|)
+name|String
+name|propertyRoomArea
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"square feet"
+argument_list|)
+name|String
+name|roomAreaUnitsLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ft&sup2;"
+argument_list|)
+name|String
+name|roomAreaUnitsShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Area [ft&sup2;]"
+argument_list|)
+name|String
+name|columnArea
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Area [ft2]"
+argument_list|)
+name|String
+name|columnAreaPDF
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

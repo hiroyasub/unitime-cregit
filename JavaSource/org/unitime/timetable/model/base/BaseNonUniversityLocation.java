@@ -293,6 +293,11 @@ block|{
 return|return
 literal|"NonUniversityLocation["
 operator|+
+literal|"\n	Area: "
+operator|+
+name|getArea
+argument_list|()
+operator|+
 literal|"\n	Capacity: "
 operator|+
 name|getCapacity

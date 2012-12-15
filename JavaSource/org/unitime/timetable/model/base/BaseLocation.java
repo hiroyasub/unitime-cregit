@@ -218,6 +218,10 @@ name|Boolean
 name|iIgnoreRoomCheck
 decl_stmt|;
 specifier|private
+name|Double
+name|iArea
+decl_stmt|;
+specifier|private
 name|String
 name|iManagerIds
 decl_stmt|;
@@ -331,6 +335,13 @@ name|String
 name|PROP_IGNORE_ROOM_CHECK
 init|=
 literal|"ignoreRoomCheck"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_AREA
+init|=
+literal|"area"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -560,6 +571,28 @@ block|{
 name|iIgnoreRoomCheck
 operator|=
 name|ignoreRoomCheck
+expr_stmt|;
+block|}
+specifier|public
+name|Double
+name|getArea
+parameter_list|()
+block|{
+return|return
+name|iArea
+return|;
+block|}
+specifier|public
+name|void
+name|setArea
+parameter_list|(
+name|Double
+name|area
+parameter_list|)
+block|{
+name|iArea
+operator|=
+name|area
 expr_stmt|;
 block|}
 specifier|public
@@ -1159,6 +1192,11 @@ parameter_list|()
 block|{
 return|return
 literal|"Location["
+operator|+
+literal|"\n	Area: "
+operator|+
+name|getArea
+argument_list|()
 operator|+
 literal|"\n	Capacity: "
 operator|+

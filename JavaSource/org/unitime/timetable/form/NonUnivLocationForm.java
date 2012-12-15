@@ -207,6 +207,10 @@ name|coordX
 decl_stmt|,
 name|coordY
 decl_stmt|;
+specifier|private
+name|String
+name|area
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/** 	 *  	 */
 specifier|private
@@ -522,6 +526,10 @@ name|coordY
 operator|=
 literal|null
 expr_stmt|;
+name|area
+operator|=
+literal|null
+expr_stmt|;
 block|}
 specifier|public
 name|String
@@ -778,6 +786,30 @@ operator|.
 name|coordY
 operator|=
 name|coordY
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getArea
+parameter_list|()
+block|{
+return|return
+name|area
+return|;
+block|}
+specifier|public
+name|void
+name|setArea
+parameter_list|(
+name|String
+name|area
+parameter_list|)
+block|{
+name|this
+operator|.
+name|area
+operator|=
+name|area
 expr_stmt|;
 block|}
 block|}

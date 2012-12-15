@@ -1322,6 +1322,16 @@ argument_list|)
 expr_stmt|;
 name|room
 operator|.
+name|setArea
+argument_list|(
+name|extRoom
+operator|.
+name|getArea
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|room
+operator|.
 name|setCapacity
 argument_list|(
 name|extRoom

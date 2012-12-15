@@ -2862,6 +2862,16 @@ argument_list|)
 expr_stmt|;
 name|toRoom
 operator|.
+name|setArea
+argument_list|(
+name|toExternalRoom
+operator|.
+name|getArea
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toRoom
+operator|.
 name|setDisplayName
 argument_list|(
 name|toExternalRoom
