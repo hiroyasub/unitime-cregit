@@ -2103,7 +2103,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -2265,7 +2265,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -2427,7 +2427,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -2589,7 +2589,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -2778,7 +2778,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -2940,7 +2940,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -3102,7 +3102,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+
@@ -3264,7 +3264,7 @@ name|createQuery
 argument_list|(
 literal|"select m, s.student.uniqueId from "
 operator|+
-literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and "
+literal|"CourseEvent e inner join e.meetings m inner join e.relatedCourses o, StudentClassEnrollment s where e.reqAttendance=true and m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate=:meetingDate and m.startPeriod< :endSlot and m.stopPeriod> :startSlot and s.student.uniqueId in ("
 operator|+

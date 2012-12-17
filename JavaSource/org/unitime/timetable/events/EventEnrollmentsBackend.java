@@ -1561,7 +1561,7 @@ argument_list|,
 literal|1
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setDate
@@ -2053,7 +2053,7 @@ argument_list|,
 literal|1
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setDate
@@ -2545,7 +2545,7 @@ argument_list|,
 literal|1
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setDate
@@ -3037,7 +3037,7 @@ argument_list|,
 literal|1
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = :meetingDate and m1.startPeriod< :stopPeriod and :startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setDate
@@ -5131,7 +5131,7 @@ argument_list|,
 literal|1
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setLong
@@ -5653,7 +5653,7 @@ argument_list|,
 literal|2
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setLong
@@ -5849,7 +5849,7 @@ argument_list|,
 literal|2
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod and m2.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|setLong
@@ -6012,7 +6012,7 @@ argument_list|,
 literal|2
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod and m2.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|setLong
@@ -6176,7 +6176,7 @@ argument_list|,
 literal|2
 argument_list|)
 operator|+
-literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod"
+literal|" and m1.meetingDate = m2.meetingDate and m1.startPeriod< m2.stopPeriod and m2.startPeriod< m1.stopPeriod and e1.reqAttendance = true and m1.approvalStatus = 1 and m2.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|setLong

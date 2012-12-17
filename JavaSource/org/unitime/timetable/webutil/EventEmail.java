@@ -1369,7 +1369,7 @@ operator|.
 name|first
 argument_list|()
 operator|.
-name|getApprovedDate
+name|getApprovalDate
 argument_list|()
 operator|==
 literal|null
@@ -1400,7 +1400,7 @@ operator|.
 name|first
 argument_list|()
 operator|.
-name|getApprovedDate
+name|getApprovalDate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1631,7 +1631,7 @@ operator|.
 name|first
 argument_list|()
 operator|.
-name|getApprovedDate
+name|getApprovalDate
 argument_list|()
 operator|==
 literal|null
@@ -1662,7 +1662,7 @@ operator|.
 name|first
 argument_list|()
 operator|.
-name|getApprovedDate
+name|getApprovalDate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2019,7 +2019,7 @@ operator|.
 name|first
 argument_list|()
 operator|.
-name|getApprovedDate
+name|getApprovalDate
 argument_list|()
 operator|==
 literal|null
@@ -2050,7 +2050,7 @@ operator|.
 name|first
 argument_list|()
 operator|.
-name|getApprovedDate
+name|getApprovalDate
 argument_list|()
 argument_list|)
 expr_stmt|;

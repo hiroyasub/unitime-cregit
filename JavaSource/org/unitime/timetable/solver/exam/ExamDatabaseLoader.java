@@ -4931,7 +4931,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct e.uniqueId, p.uniqueId, m from CourseEvent e inner join e.meetings m, ExamPeriod p where "
 operator|+
-literal|"e.reqAttendance=true and p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and "
+literal|"e.reqAttendance=true and m.approvalStatus = 1 and p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and "
 operator|+
 literal|"p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+

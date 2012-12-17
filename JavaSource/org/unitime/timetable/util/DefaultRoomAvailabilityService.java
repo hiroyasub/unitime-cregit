@@ -599,7 +599,7 @@ name|createQuery
 argument_list|(
 literal|"select m from Meeting m where m.locationPermanentId=:locPermId and "
 operator|+
-literal|"m.approvedDate is not null and "
+literal|"m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate>=:startDate and m.meetingDate<=:endDate and "
 operator|+
@@ -1324,7 +1324,7 @@ name|createQuery
 argument_list|(
 literal|"select m from Meeting m where m.locationPermanentId!=null and "
 operator|+
-literal|"m.approvedDate is not null and "
+literal|"m.approvalStatus = 1 and "
 operator|+
 literal|"m.meetingDate>=:startDate and m.meetingDate<=:endDate and "
 operator|+

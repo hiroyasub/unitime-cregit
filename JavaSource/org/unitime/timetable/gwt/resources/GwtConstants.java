@@ -555,6 +555,24 @@ index|[]
 name|eventTypeAbbv
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Pending"
+block|,
+literal|"Approved"
+block|,
+literal|"Rejected"
+block|,
+literal|"Cancelled"
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventApprovalStatus
+parameter_list|()
+function_decl|;
 comment|// firstDay|lastDay|firstSlot|lastSlot|step
 annotation|@
 name|DefaultStringArrayValue

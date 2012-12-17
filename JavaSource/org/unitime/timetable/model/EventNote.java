@@ -174,6 +174,14 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
+name|int
+name|sEventNoteTypeCancel
+init|=
+literal|7
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
 name|String
 index|[]
 name|sEventNoteTypeBgColor
@@ -194,8 +202,8 @@ literal|"transparent"
 block|,
 literal|"transparent"
 block|,
-literal|"transparent"
-block|}
+literal|"#FFFFD7"
+block|,   	}
 decl_stmt|;
 specifier|public
 specifier|static
@@ -221,6 +229,8 @@ block|,
 literal|"Edit"
 block|,
 literal|"Inquire"
+block|,
+literal|"Cancel"
 block|}
 decl_stmt|;
 specifier|public

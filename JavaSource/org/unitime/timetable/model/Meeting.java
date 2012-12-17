@@ -217,6 +217,19 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
+specifier|public
+specifier|static
+enum|enum
+name|Status
+block|{
+name|PENDING
+block|,
+name|APPROVED
+block|,
+name|REJECTED
+block|,
+name|CANCELLED
+block|, 		; 	}
 annotation|@
 name|Override
 specifier|public
@@ -285,6 +298,17 @@ name|setStopPeriod
 argument_list|(
 name|getStopPeriod
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|newMeeting
+operator|.
+name|setStatus
+argument_list|(
+name|Meeting
+operator|.
+name|Status
+operator|.
+name|PENDING
 argument_list|)
 expr_stmt|;
 return|return
@@ -770,7 +794,7 @@ name|createQuery
 argument_list|(
 literal|"from Meeting m where m.meetingDate=:meetingDate and m.startPeriod< :stopPeriod and m.stopPeriod> :startPeriod and "
 operator|+
-literal|"m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId"
+literal|"m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId and m.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|setDate
@@ -857,7 +881,7 @@ name|createQuery
 argument_list|(
 literal|"from Meeting m where m.meetingDate=:meetingDate and m.startPeriod< :stopPeriod and m.stopPeriod> :startPeriod and "
 operator|+
-literal|"m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId and m.approvedDate != null"
+literal|"m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId and m.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setDate
@@ -942,7 +966,7 @@ name|createQuery
 argument_list|(
 literal|"from Meeting m where m.meetingDate=:meetingDate and m.startPeriod< :stopPeriod and m.stopPeriod> :startPeriod and "
 operator|+
-literal|"m.locationPermanentId = :locPermId"
+literal|"m.locationPermanentId = :locPermId and m.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|setDate
@@ -999,7 +1023,7 @@ name|createQuery
 argument_list|(
 literal|"select count(m) from Meeting m where m.meetingDate=:meetingDate and m.startPeriod< :stopPeriod and m.stopPeriod> :startPeriod and "
 operator|+
-literal|"m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId"
+literal|"m.locationPermanentId = :locPermId and m.uniqueId != :uniqueId and m.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|setDate
@@ -1638,10 +1662,23 @@ name|isApproved
 parameter_list|()
 block|{
 return|return
-name|getApprovedDate
+name|getApprovalStatus
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|getApprovalStatus
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|Status
+operator|.
+name|APPROVED
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -1706,6 +1743,50 @@ operator|==
 name|Constants
 operator|.
 name|SLOTS_PER_DAY
+return|;
+block|}
+specifier|public
+name|void
+name|setStatus
+parameter_list|(
+name|Status
+name|status
+parameter_list|)
+block|{
+name|setApprovalStatus
+argument_list|(
+name|status
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|Status
+name|getStatus
+parameter_list|()
+block|{
+return|return
+operator|(
+name|getApprovalStatus
+argument_list|()
+operator|==
+literal|null
+condition|?
+name|Status
+operator|.
+name|PENDING
+else|:
+name|Status
+operator|.
+name|values
+argument_list|()
+index|[
+name|getApprovalStatus
+argument_list|()
+index|]
+operator|)
 return|;
 block|}
 block|}

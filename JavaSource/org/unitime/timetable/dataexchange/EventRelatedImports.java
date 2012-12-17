@@ -1278,6 +1278,17 @@ name|getEndPeriod
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|meeting
+operator|.
+name|setStatus
+argument_list|(
+name|Meeting
+operator|.
+name|Status
+operator|.
+name|PENDING
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|meeting

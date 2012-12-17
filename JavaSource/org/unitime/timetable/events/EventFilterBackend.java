@@ -1238,7 +1238,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"m.approvedDate is not null"
+literal|"m.approvalStatus = 1"
 argument_list|)
 operator|.
 name|exclude
@@ -1308,7 +1308,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"m.approvedDate is null"
+literal|"m.approvalStatus = 0"
 argument_list|)
 operator|.
 name|exclude
@@ -1383,7 +1383,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"mx.uniqueId!=m.uniqueId and m.meetingDate=mx.meetingDate and m.startPeriod< mx.stopPeriod and m.stopPeriod> mx.startPeriod and m.locationPermanentId = mx.locationPermanentId"
+literal|"mx.uniqueId!=m.uniqueId and m.meetingDate=mx.meetingDate and m.startPeriod< mx.stopPeriod and m.stopPeriod> mx.startPeriod and m.locationPermanentId = mx.locationPermanentId and m.approvalStatus<= 1 and mx.approvalStatus<= 1"
 argument_list|)
 operator|.
 name|exclude
@@ -1471,7 +1471,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"m.approvedDate is null and m.meetingDate>= :today"
+literal|"m.approvalStatus = 0 and m.meetingDate>= :today"
 argument_list|)
 operator|.
 name|set
@@ -1574,7 +1574,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"m.approvedDate is null and rd.control=true and g.externalUniqueId = :user and m.meetingDate>= :today"
+literal|"m.approvalStatus = 0 and rd.control=true and g.externalUniqueId = :user and m.meetingDate>= :today"
 argument_list|)
 operator|.
 name|set
@@ -1649,6 +1649,76 @@ name|myAwaiting
 argument_list|)
 expr_stmt|;
 block|}
+name|int
+name|rejectedCnt
+init|=
+operator|(
+operator|(
+name|Number
+operator|)
+name|query
+operator|.
+name|select
+argument_list|(
+literal|"count(distinct e)"
+argument_list|)
+operator|.
+name|where
+argument_list|(
+literal|"m.approvalStatus>= 2"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
+literal|"query"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
+literal|"mode"
+argument_list|)
+operator|.
+name|query
+argument_list|(
+name|hibSession
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
+operator|)
+operator|.
+name|intValue
+argument_list|()
+decl_stmt|;
+name|Entity
+name|rejected
+init|=
+operator|new
+name|Entity
+argument_list|(
+literal|7l
+argument_list|,
+literal|"Cancelled"
+argument_list|,
+literal|"Cancelled / Rejected"
+argument_list|)
+decl_stmt|;
+name|rejected
+operator|.
+name|setCount
+argument_list|(
+name|rejectedCnt
+argument_list|)
+expr_stmt|;
+name|response
+operator|.
+name|add
+argument_list|(
+literal|"mode"
+argument_list|,
+name|rejected
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -2955,7 +3025,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"m.approvedDate is not null"
+literal|"m.approvalStatus = 1"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2975,7 +3045,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"m.approvedDate is null"
+literal|"m.approvalStatus = 0"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2995,7 +3065,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"m.approvedDate is null and m.meetingDate>= :Xtoday"
+literal|"m.approvalStatus = 0 and m.meetingDate>= :Xtoday"
 argument_list|)
 expr_stmt|;
 name|query
@@ -3040,7 +3110,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"m.approvedDate is null and Xl.session.uniqueId = :sessionId and Xl.permanentId = m.locationPermanentId and Xrd.control=true and Xg.externalUniqueId = :Xuser and m.meetingDate>= :Xtoday"
+literal|"m.approvalStatus = 0 and Xl.session.uniqueId = :sessionId and Xl.permanentId = m.locationPermanentId and Xrd.control=true and Xg.externalUniqueId = :Xuser and m.meetingDate>= :Xtoday"
 argument_list|)
 expr_stmt|;
 name|query
@@ -3097,10 +3167,64 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"Xm.uniqueId != m.uniqueId and m.meetingDate = Xm.meetingDate and m.startPeriod< Xm.stopPeriod and m.stopPeriod> Xm.startPeriod and m.locationPermanentId = Xm.locationPermanentId"
+literal|"Xm.uniqueId != m.uniqueId and m.meetingDate = Xm.meetingDate and m.startPeriod< Xm.stopPeriod and m.stopPeriod> Xm.startPeriod and m.locationPermanentId = Xm.locationPermanentId and m.approvalStatus<= 1 and Xm.approvalStatus<= 1"
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+literal|"Cancelled / Rejected"
+operator|.
+name|equals
+argument_list|(
+name|mode
+argument_list|)
+condition|)
+block|{
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"mode"
+argument_list|,
+literal|"m.approvalStatus>= 2"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"mode"
+argument_list|,
+literal|"m.approvalStatus<= 1"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+operator|!
+name|request
+operator|.
+name|hasOption
+argument_list|(
+literal|"requested"
+argument_list|)
+condition|)
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"mode"
+argument_list|,
+literal|"m.approvalStatus<= 1"
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(

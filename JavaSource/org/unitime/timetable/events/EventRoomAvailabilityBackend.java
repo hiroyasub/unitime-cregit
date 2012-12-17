@@ -87,6 +87,24 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
+name|ApprovalStatus
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|EventInterface
+operator|.
 name|MeetingConflictInterface
 import|;
 end_import
@@ -472,7 +490,7 @@ name|createQuery
 argument_list|(
 literal|"select m from Meeting m "
 operator|+
-literal|"where m.startPeriod<:stopTime and m.stopPeriod>:startTime and "
+literal|"where m.startPeriod<:stopTime and m.stopPeriod>:startTime and m.approvalStatus<= 1 and "
 operator|+
 literal|"m.locationPermanentId in ("
 operator|+
@@ -805,20 +823,23 @@ name|getStopPeriod
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|m
-operator|.
-name|isApproved
-argument_list|()
-condition|)
 name|conflict
 operator|.
 name|setApprovalDate
 argument_list|(
 name|m
 operator|.
-name|getApprovedDate
+name|getApprovalDate
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|conflict
+operator|.
+name|setApprovalStatus
+argument_list|(
+name|m
+operator|.
+name|getApprovalStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -931,8 +952,30 @@ if|if
 condition|(
 name|meeting
 operator|.
-name|isDelete
+name|getApprovalStatus
 argument_list|()
+operator|==
+name|ApprovalStatus
+operator|.
+name|Deleted
+operator|||
+name|meeting
+operator|.
+name|getApprovalStatus
+argument_list|()
+operator|==
+name|ApprovalStatus
+operator|.
+name|Cancelled
+operator|||
+name|meeting
+operator|.
+name|getApprovalStatus
+argument_list|()
+operator|==
+name|ApprovalStatus
+operator|.
+name|Rejected
 condition|)
 continue|continue;
 if|if
@@ -1508,7 +1551,7 @@ name|createQuery
 argument_list|(
 literal|"select m from Meeting m, Location l "
 operator|+
-literal|"where m.startPeriod< :stopTime and m.stopPeriod> :startTime and "
+literal|"where m.startPeriod< :stopTime and m.stopPeriod> :startTime and m.approvalStatus<= 1 and "
 operator|+
 literal|"m.locationPermanentId = l.permanentId and l.uniqueId = :locationdId and m.meetingDate = :meetingDate and m.uniqueId != :meetingId"
 argument_list|)
@@ -1746,20 +1789,23 @@ name|getStopOffset
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|m
-operator|.
-name|isApproved
-argument_list|()
-condition|)
 name|conflict
 operator|.
 name|setApprovalDate
 argument_list|(
 name|m
 operator|.
-name|getApprovedDate
+name|getApprovalDate
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|conflict
+operator|.
+name|setApprovalStatus
+argument_list|(
+name|m
+operator|.
+name|getApprovalStatus
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -289,6 +289,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&#10007; Cancel ..."
+argument_list|)
+name|String
+name|opCancelSelectedMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#10008; Cancel All ..."
+argument_list|)
+name|String
+name|opCancelAllMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<i>?</i> Inquire ..."
 argument_list|)
 name|String
@@ -337,7 +355,16 @@ argument_list|(
 literal|"<u>C</u>ancel"
 argument_list|)
 name|String
-name|onCancel
+name|opCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>B</u>ack"
+argument_list|)
+name|String
+name|opBack
 parameter_list|()
 function_decl|;
 annotation|@
@@ -536,6 +563,15 @@ literal|"Approved"
 argument_list|)
 name|String
 name|colApproval
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Status"
+argument_list|)
+name|String
+name|colStatus
 parameter_list|()
 function_decl|;
 annotation|@
@@ -796,7 +832,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"not approved"
+literal|"pending"
 argument_list|)
 name|String
 name|approvalNotApproved
@@ -832,19 +868,37 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"waiting approval"
+literal|"cancelled"
 argument_list|)
 name|String
-name|approvalWaiting
+name|approvalCancelled
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"deleted meeting"
+literal|"deleted"
 argument_list|)
 name|String
 name|approvalDeleted
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"rejected"
+argument_list|)
+name|String
+name|approvalRejected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"approved"
+argument_list|)
+name|String
+name|approvalApproved
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1582,6 +1636,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Cancelling {0}..."
+argument_list|)
+name|String
+name|waitCancel
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Loading data for {0} ..."
 argument_list|)
 name|String
@@ -1643,6 +1709,18 @@ literal|"Rejecting meetings of {0} ..."
 argument_list|)
 name|String
 name|waitForRejection
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancelling meetings of {0} ..."
+argument_list|)
+name|String
+name|waitForCancellation
 parameter_list|(
 name|String
 name|name
@@ -1721,6 +1799,21 @@ literal|"Failed to delete {0}: {1}"
 argument_list|)
 name|String
 name|failedDelete
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to cancel {0}: {1}"
+argument_list|)
+name|String
+name|failedCancel
 parameter_list|(
 name|String
 name|name
@@ -1880,6 +1973,18 @@ literal|"Meeting {0} cannot be deleted by the user."
 argument_list|)
 name|String
 name|failedSaveEventCanNotDeleteMeeting
+parameter_list|(
+name|String
+name|meeting
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Meeting {0} cannot be cancelled by the user."
+argument_list|)
+name|String
+name|failedSaveEventCanNotCancelMeeting
 parameter_list|(
 name|String
 name|meeting
@@ -2242,6 +2347,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Cancel Meetings..."
+argument_list|)
+name|String
+name|dialogCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Inquire..."
 argument_list|)
 name|String
@@ -2587,6 +2701,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Event {0} cancelled."
+argument_list|)
+name|String
+name|emailSubjectCancel
+parameter_list|(
+name|String
+name|eventName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Event {0} inquiry."
 argument_list|)
 name|String
@@ -2632,7 +2758,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Following meetings were deleted by you or on your behalf"
+literal|"Following meetings were cancelled or deleted by you or on your behalf"
 argument_list|)
 name|String
 name|emailDeletedMeetings
@@ -2663,6 +2789,15 @@ literal|"Following meetings were rejected"
 argument_list|)
 name|String
 name|emailRejectedMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Following meetings were cancelled"
+argument_list|)
+name|String
+name|emailCancelledMeetings
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2707,6 +2842,15 @@ argument_list|(
 literal|"Notes"
 argument_list|)
 name|String
+name|emailMessageCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Notes"
+argument_list|)
+name|String
 name|emailMessageApproval
 parameter_list|()
 function_decl|;
@@ -2731,7 +2875,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"History of {0}"
+literal|"Current status of {0}"
 argument_list|)
 name|String
 name|emailAllMeetings
@@ -2751,6 +2895,15 @@ parameter_list|(
 name|String
 name|eventName
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are no pending or approved meetings in the event."
+argument_list|)
+name|String
+name|emailEventNoMeetings
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -3025,7 +3178,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"N/A"
+literal|"Not Available"
 argument_list|)
 name|String
 name|unavailableEventDefaultName

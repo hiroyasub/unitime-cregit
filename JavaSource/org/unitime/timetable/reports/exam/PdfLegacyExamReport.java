@@ -8649,7 +8649,7 @@ name|createQuery
 argument_list|(
 literal|"select p.uniqueId, m from CourseEvent ce inner join ce.meetings m, ExamPeriod p "
 operator|+
-literal|"where ce.reqAttendance=true and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
+literal|"where ce.reqAttendance=true and m.approvalStatus = 1 and p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
 name|HibernateUtil
 operator|.
