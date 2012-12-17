@@ -925,7 +925,7 @@ name|addRow
 argument_list|(
 name|MESSAGES
 operator|.
-name|propAttachement
+name|propAttachment
 argument_list|()
 argument_list|,
 name|iFileUpload

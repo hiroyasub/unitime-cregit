@@ -220,6 +220,15 @@ name|ImageResource
 name|calendar
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/download.png"
+argument_list|)
+name|ImageResource
+name|download
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

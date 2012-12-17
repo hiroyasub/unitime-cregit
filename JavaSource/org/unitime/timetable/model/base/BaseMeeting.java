@@ -184,7 +184,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_APPROVAL_STAUTS
+name|PROP_APPROVAL_STATUS
 init|=
 literal|"approvalStatus"
 decl_stmt|;

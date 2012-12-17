@@ -820,6 +820,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Attachment"
+argument_list|)
+name|String
+name|colAttachment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Conflicts with {0}"
 argument_list|)
 name|String
@@ -1255,10 +1264,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Attachement:"
+literal|"Attachment:"
 argument_list|)
 name|String
-name|propAttachement
+name|propAttachment
 parameter_list|()
 function_decl|;
 annotation|@
