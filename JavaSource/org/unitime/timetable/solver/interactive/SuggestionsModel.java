@@ -1348,6 +1348,15 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|suggestions
+operator|==
+literal|null
+condition|)
+return|return
+literal|false
+return|;
 comment|//solver.getSuggestions(iDepth,iTimeOut,iAllTheSame,iFilter==sFilterSameTime,iFilter==sFilterSameRoom,iAllowBreakHard,iClassId,iHints,iDisplayPlacements,iLimit,iFilterText,iMinRoomSize,iMaxRoomSize,iDisplaySuggestions,iDisplayConfTable);
 name|iSuggestions
 operator|=

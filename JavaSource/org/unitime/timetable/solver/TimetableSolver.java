@@ -5395,6 +5395,13 @@ name|SuggestionsModel
 name|model
 parameter_list|)
 block|{
+if|if
+condition|(
+name|iWorking
+condition|)
+return|return
+literal|null
+return|;
 synchronized|synchronized
 init|(
 name|currentSolution
