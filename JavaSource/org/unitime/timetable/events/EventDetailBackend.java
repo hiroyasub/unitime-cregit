@@ -5318,9 +5318,9 @@ if|if
 condition|(
 name|clazz
 operator|.
-name|getSectionNumberString
+name|getClassSuffix
 argument_list|(
-name|hibSession
+name|co
 argument_list|)
 operator|!=
 literal|null
