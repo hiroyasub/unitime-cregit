@@ -1821,6 +1821,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EventLocationUnavailable
+argument_list|(
+name|Location
+operator|.
+name|class
+argument_list|)
+block|,
 name|EventMeetingEdit
 argument_list|(
 name|Meeting

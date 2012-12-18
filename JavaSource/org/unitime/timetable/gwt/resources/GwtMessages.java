@@ -2002,6 +2002,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Not enough permissions to make {0} not available."
+argument_list|)
+name|String
+name|failedSaveCannotMakeUnavailable
+parameter_list|(
+name|String
+name|location
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The event does no longer exist."
 argument_list|)
 name|String
@@ -2621,6 +2633,18 @@ literal|"{0} is not managed in UniTime or it is disabled for events."
 argument_list|)
 name|String
 name|conflictNotEventRoom
+parameter_list|(
+name|String
+name|locationName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not enough permissions to make {0} not available."
+argument_list|)
+name|String
+name|conflictCannotMakeUnavailable
 parameter_list|(
 name|String
 name|locationName

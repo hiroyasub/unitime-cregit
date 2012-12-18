@@ -224,7 +224,7 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|isEventsManagersCanApprove
+name|isEventManagersCanApprove
 parameter_list|()
 block|{
 return|return
