@@ -2791,10 +2791,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Following meetings were cancelled or deleted by you or on your behalf"
+literal|"Following meetings were deleted by you or on your behalf"
 argument_list|)
 name|String
 name|emailDeletedMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Following meetings were cancelled by you or on your behalf"
+argument_list|)
+name|String
+name|emailCancelledMeetingsInEdit
 parameter_list|()
 function_decl|;
 annotation|@

@@ -2288,13 +2288,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|hasOperation
-argument_list|(
-name|OperationType
-operator|.
-name|Cancel
-argument_list|)
+name|isEditable
+argument_list|()
 condition|)
 block|{
 while|while
@@ -2444,6 +2439,11 @@ name|void
 name|execute
 parameter_list|()
 block|{
+name|super
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|hasOperation
