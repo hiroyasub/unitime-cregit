@@ -1216,7 +1216,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"50"
 argument_list|)
 argument_list|,
 operator|new
@@ -1231,7 +1231,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"50"
 argument_list|)
 argument_list|,
 operator|new
@@ -1246,7 +1246,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"50"
+literal|"40"
 argument_list|)
 argument_list|,
 operator|new
@@ -1261,7 +1261,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"85"
+literal|"40"
 argument_list|)
 argument_list|,
 operator|new
@@ -1372,7 +1372,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"85"
+literal|"50"
 argument_list|)
 argument_list|,
 operator|new
@@ -3230,12 +3230,10 @@ decl_stmt|;
 name|String
 name|style
 init|=
-literal|"unitime-ClassRow"
-operator|+
 operator|(
 name|selected
 condition|?
-literal|"Blue"
+literal|"text-blue"
 else|:
 literal|""
 operator|)
@@ -3252,7 +3250,7 @@ argument_list|()
 operator|==
 name|lastSize
 condition|?
-literal|"First2"
+literal|" top-border-solid"
 else|:
 name|clazzIdx
 operator|==
@@ -3264,7 +3262,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -3298,6 +3296,9 @@ operator|.
 name|setStyleName
 argument_list|(
 name|style
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|row
@@ -3309,8 +3310,6 @@ argument_list|)
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-ClassRow"
-operator|+
 operator|(
 name|lastSize
 operator|>
@@ -3323,7 +3322,7 @@ argument_list|()
 operator|==
 name|lastSize
 condition|?
-literal|"First2"
+literal|"top-border-solid"
 else|:
 literal|""
 operator|)
@@ -3340,7 +3339,7 @@ name|clazzIdx
 operator|++
 expr_stmt|;
 block|}
-comment|/* 								if (sameCourse.size()> course.getClassAssignments().size()) { 									for (int idx = course.getClassAssignments().size(); idx< sameCourse.size(); idx++) { 										ClassAssignmentInterface.ClassAssignment old = sameCourse.get(idx); 										ClassAssignmentInterface.ClassAssignment clazz = null; 										final WebTable.Row row = new WebTable.Row( 												new WebTable.Cell(rows.size() == lastSize ? suggestionId + "." : ""), 												new WebTable.Cell(clazzIdx> 0 ? "" : course.isFreeTime() ? "Free" : course.getSubject()), 												new WebTable.Cell(clazzIdx> 0 ? "" : course.isFreeTime() ? "Time" : course.getCourseNbr()), 												new WebTable.Cell(compare(old == null ? null : old.getSubpart(), clazz == null ? null : clazz.getSubpart(), false)), 												new WebTable.Cell(compare(old == null ? null : old.getSection(), clazz == null ? null : clazz.getSection(), false)), 												//new WebTable.Cell(compare(old == null ? null : old.getLimitString(), clazz == null ? null : clazz.getLimitString(), false)), 												new WebTable.Cell(compare(old == null ? null : old.getTimeString(), clazz == null ? null : clazz.getTimeString(), true)), 												new WebTable.Cell(compare(old == null ? null : old.getDatePattern(), clazz == null ? null : clazz.getDatePattern(), true)), 												(old != null&& old.hasDistanceConflict() ?  														new WebTable.IconCell(RESOURCES.distantConflict(), old.getBackToBackDistanceMessage(), 																compare(old == null ? null : old.getRooms(", "), clazz == null ? null : clazz.getRooms(", "), true)) :  														new WebTable.Cell(compare(old == null ? null : old.getRooms(", "), clazz == null ? null : clazz.getRooms(", "), true))), 												new WebTable.Cell(compare(old == null ? null : old.getInstructors(", "), clazz == null ? null : clazz.getInstructors(", "), true)), 												new WebTable.Cell(compare(old == null ? null : old.getParentSection(), clazz == null ? null : clazz.getParentSection(), false)), 												(old != null&& old.isSaved() ? new WebTable.IconCell(RESOURCES.saved(), null, null) : new WebTable.Cell(""))); 										row.setId(String.valueOf(suggestionId)); 										String style = "unitime-ClassRow" + (lastSize> 0&& rows.size() == lastSize ? "First2" : clazzIdx == 0&& !rows.isEmpty() ? "First": ""); 										for (WebTable.Cell cell: row.getCells()) 											cell.setStyleName(style); 										row.getCell(0).setStyleName("unitime-ClassRow" + (lastSize> 0&& rows.size() == lastSize ? "First2" : "")); 										rows.add(row); 										clazzIdx++; 									} 								} 								*/
+comment|/* 								if (sameCourse.size()> course.getClassAssignments().size()) { 									for (int idx = course.getClassAssignments().size(); idx< sameCourse.size(); idx++) { 										ClassAssignmentInterface.ClassAssignment old = sameCourse.get(idx); 										ClassAssignmentInterface.ClassAssignment clazz = null; 										final WebTable.Row row = new WebTable.Row( 												new WebTable.Cell(rows.size() == lastSize ? suggestionId + "." : ""), 												new WebTable.Cell(clazzIdx> 0 ? "" : course.isFreeTime() ? "Free" : course.getSubject()), 												new WebTable.Cell(clazzIdx> 0 ? "" : course.isFreeTime() ? "Time" : course.getCourseNbr()), 												new WebTable.Cell(compare(old == null ? null : old.getSubpart(), clazz == null ? null : clazz.getSubpart(), false)), 												new WebTable.Cell(compare(old == null ? null : old.getSection(), clazz == null ? null : clazz.getSection(), false)), 												//new WebTable.Cell(compare(old == null ? null : old.getLimitString(), clazz == null ? null : clazz.getLimitString(), false)), 												new WebTable.Cell(compare(old == null ? null : old.getTimeString(), clazz == null ? null : clazz.getTimeString(), true)), 												new WebTable.Cell(compare(old == null ? null : old.getDatePattern(), clazz == null ? null : clazz.getDatePattern(), true)), 												(old != null&& old.hasDistanceConflict() ?  														new WebTable.IconCell(RESOURCES.distantConflict(), old.getBackToBackDistanceMessage(), 																compare(old == null ? null : old.getRooms(", "), clazz == null ? null : clazz.getRooms(", "), true)) :  														new WebTable.Cell(compare(old == null ? null : old.getRooms(", "), clazz == null ? null : clazz.getRooms(", "), true))), 												new WebTable.Cell(compare(old == null ? null : old.getInstructors(", "), clazz == null ? null : clazz.getInstructors(", "), true)), 												new WebTable.Cell(compare(old == null ? null : old.getParentSection(), clazz == null ? null : clazz.getParentSection(), false)), 												(old != null&& old.isSaved() ? new WebTable.IconCell(RESOURCES.saved(), null, null) : new WebTable.Cell(""))); 										row.setId(String.valueOf(suggestionId)); 										String style =  (lastSize> 0&& rows.size() == lastSize ? "top-border-solid" : clazzIdx == 0&& !rows.isEmpty() ? "top-border-solid": ""); 										for (WebTable.Cell cell: row.getCells()) 											cell.setStyleName(style.trim()); 										row.getCell(0).setStyleName((lastSize> 0&& rows.size() == lastSize ? "top-border-solid" : "")); 										rows.add(row); 										clazzIdx++; 									} 								} 								*/
 block|}
 else|else
 block|{
@@ -4199,7 +4198,7 @@ expr_stmt|;
 name|String
 name|style
 init|=
-literal|"unitime-ClassRowRed"
+literal|"text-red"
 operator|+
 operator|(
 name|lastSize
@@ -4213,7 +4212,7 @@ argument_list|()
 operator|==
 name|lastSize
 condition|?
-literal|"First2"
+literal|" top-border-solid"
 else|:
 name|idx
 operator|==
@@ -4225,7 +4224,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -4258,8 +4257,6 @@ argument_list|)
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-ClassRow"
-operator|+
 operator|(
 name|lastSize
 operator|>
@@ -4272,7 +4269,7 @@ argument_list|()
 operator|==
 name|lastSize
 condition|?
-literal|"First2"
+literal|"top-border-solid"
 else|:
 literal|""
 operator|)
@@ -5130,7 +5127,7 @@ expr_stmt|;
 name|String
 name|style
 init|=
-literal|"unitime-ClassRowRed"
+literal|"text-red"
 operator|+
 operator|(
 name|lastSize
@@ -5144,7 +5141,7 @@ argument_list|()
 operator|==
 name|lastSize
 condition|?
-literal|"First2"
+literal|" top-border-solid"
 else|:
 operator|!
 name|old
@@ -5163,7 +5160,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -5196,8 +5193,6 @@ argument_list|)
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-ClassRow"
-operator|+
 operator|(
 name|lastSize
 operator|>
@@ -5210,7 +5205,7 @@ argument_list|()
 operator|==
 name|lastSize
 condition|?
-literal|"First2"
+literal|" top-border-solid"
 else|:
 literal|""
 operator|)

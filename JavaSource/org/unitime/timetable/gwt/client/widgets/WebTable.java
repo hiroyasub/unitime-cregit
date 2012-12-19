@@ -658,6 +658,13 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+name|iTable
+operator|.
+name|setStyleName
+argument_list|(
+literal|"unitime-WebTable"
+argument_list|)
+expr_stmt|;
 name|initWidget
 argument_list|(
 name|iTable

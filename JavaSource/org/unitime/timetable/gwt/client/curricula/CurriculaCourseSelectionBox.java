@@ -5273,7 +5273,7 @@ expr_stmt|;
 name|String
 name|styleName
 init|=
-literal|"unitime-ClassRow"
+literal|""
 decl_stmt|;
 if|if
 condition|(
@@ -5294,7 +5294,7 @@ argument_list|)
 condition|)
 name|styleName
 operator|+=
-literal|"First"
+literal|" .top-border-dashed"
 expr_stmt|;
 if|if
 condition|(
@@ -5306,7 +5306,7 @@ argument_list|()
 condition|)
 name|styleName
 operator|+=
-literal|"Unavail"
+literal|" .text-gray"
 expr_stmt|;
 for|for
 control|(
@@ -5325,6 +5325,9 @@ operator|.
 name|setStyleName
 argument_list|(
 name|styleName
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|rows

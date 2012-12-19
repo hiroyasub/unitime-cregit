@@ -2055,8 +2055,6 @@ block|{
 name|String
 name|style
 init|=
-literal|"unitime-ClassRow"
-operator|+
 operator|(
 name|firstClazz
 operator|&&
@@ -2066,7 +2064,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|"top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -2375,7 +2373,7 @@ block|{
 name|String
 name|style
 init|=
-literal|"unitime-ClassRowRed"
+literal|"text-red"
 operator|+
 operator|(
 operator|!
@@ -2384,7 +2382,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -2868,7 +2866,7 @@ argument_list|)
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-ClassRowProblem"
+literal|"text-gray"
 operator|+
 operator|(
 operator|!
@@ -2877,7 +2875,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -12901,7 +12899,7 @@ name|getStyleName
 parameter_list|()
 block|{
 return|return
-literal|"unitime-ClassRowRed"
+literal|"text-red"
 return|;
 block|}
 block|}

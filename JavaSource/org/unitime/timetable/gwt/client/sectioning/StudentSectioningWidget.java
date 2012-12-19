@@ -4243,8 +4243,6 @@ expr_stmt|;
 name|String
 name|style
 init|=
-literal|"unitime-ClassRow"
-operator|+
 operator|(
 name|firstClazz
 operator|&&
@@ -4254,7 +4252,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|"top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -5379,7 +5377,7 @@ block|{
 name|String
 name|style
 init|=
-literal|"unitime-ClassRowRed"
+literal|"text-red"
 operator|+
 operator|(
 operator|!
@@ -5388,7 +5386,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -6244,7 +6242,7 @@ argument_list|)
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-ClassRowProblem"
+literal|"text-red-centered"
 operator|+
 operator|(
 operator|!
@@ -6253,7 +6251,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
@@ -6374,7 +6372,7 @@ continue|;
 name|String
 name|style
 init|=
-literal|"unitime-ClassRowUnused"
+literal|"text-gray"
 decl_stmt|;
 name|WebTable
 operator|.
@@ -7181,7 +7179,7 @@ block|{
 name|String
 name|style
 init|=
-literal|"unitime-ClassRowUnused"
+literal|"text-gray"
 operator|+
 operator|(
 name|firstClazz
@@ -7192,7 +7190,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|"First"
+literal|" top-border-dashed"
 else|:
 literal|""
 operator|)
