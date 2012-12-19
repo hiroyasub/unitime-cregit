@@ -7031,6 +7031,7 @@ argument_list|(
 name|hOperations
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hSubject
 init|=
@@ -7076,6 +7077,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hSubject
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7132,6 +7135,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hCourse
 init|=
@@ -7177,6 +7181,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hCourse
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7233,6 +7239,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hTitleSubpart
 init|=
@@ -7278,6 +7285,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hTitleSubpart
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7355,6 +7364,7 @@ argument_list|(
 name|hStart
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hRoom
 init|=
@@ -7400,6 +7410,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hRoom
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7456,6 +7468,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hLimit
 init|=
@@ -7494,6 +7507,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hLimit
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7550,6 +7565,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hProjection
 init|=
@@ -7588,6 +7604,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hProjection
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7644,6 +7662,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hEnrollment
 init|=
@@ -7682,6 +7701,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hEnrollment
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7738,6 +7759,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hWaitListed
 init|=
@@ -7776,6 +7798,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hWaitListed
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7832,6 +7856,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hReserved
 init|=
@@ -7870,6 +7895,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hReserved
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -7926,6 +7953,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hConsent
 init|=
@@ -7964,6 +7992,8 @@ name|iCourseTable
 operator|.
 name|sort
 argument_list|(
+name|hConsent
+argument_list|,
 operator|new
 name|EnrollmentComparator
 argument_list|(
@@ -9835,6 +9865,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+specifier|final
 name|UniTimeTableHeader
 name|hStudent
 init|=
@@ -9873,6 +9904,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hStudent
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -10257,6 +10290,7 @@ condition|(
 name|hasArea
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hArea
 init|=
@@ -10296,6 +10330,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hArea
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -10519,6 +10555,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hClasf
 init|=
@@ -10558,6 +10595,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hClasf
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -10821,6 +10860,7 @@ condition|(
 name|hasMajor
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hMajor
 init|=
@@ -10860,6 +10900,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hMajor
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -11089,6 +11131,7 @@ condition|(
 name|hasGroup
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hGroup
 init|=
@@ -11128,6 +11171,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hGroup
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -11361,6 +11406,7 @@ argument_list|()
 operator|-
 literal|1
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hStatus
 init|=
@@ -11400,6 +11446,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hStatus
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -11604,6 +11652,7 @@ condition|(
 name|hasEnrollment
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hEnrollment
 init|=
@@ -11642,6 +11691,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hEnrollment
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -11901,6 +11952,7 @@ condition|(
 name|hasWaitList
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hWaitlist
 init|=
@@ -11939,6 +11991,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hWaitlist
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -12250,6 +12304,7 @@ condition|(
 name|hasReservation
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hReservation
 init|=
@@ -12288,6 +12343,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hReservation
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -12547,6 +12604,7 @@ condition|(
 name|hasConsent
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hConsent
 init|=
@@ -12585,6 +12643,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hConsent
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -12844,6 +12904,7 @@ condition|(
 name|hasRequestedDate
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hTimeStamp
 init|=
@@ -12876,6 +12937,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hTimeStamp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -13096,6 +13159,7 @@ condition|(
 name|hasEnrolledDate
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hTimeStamp
 init|=
@@ -13128,6 +13192,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hTimeStamp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -13348,6 +13414,7 @@ condition|(
 name|iOnline
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hTimeStamp
 init|=
@@ -13380,6 +13447,8 @@ name|iStudentTable
 operator|.
 name|sort
 argument_list|(
+name|hTimeStamp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -14435,6 +14504,7 @@ name|UniTimeTableHeader
 argument_list|>
 argument_list|()
 decl_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hStudent
 init|=
@@ -14473,6 +14543,8 @@ name|iLogTable
 operator|.
 name|sort
 argument_list|(
+name|hStudent
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -14588,6 +14660,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hOp
 init|=
@@ -14626,6 +14699,8 @@ name|iLogTable
 operator|.
 name|sort
 argument_list|(
+name|hOp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -14735,6 +14810,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hTimeStamp
 init|=
@@ -14773,6 +14849,8 @@ name|iLogTable
 operator|.
 name|sort
 argument_list|(
+name|hTimeStamp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -14857,6 +14935,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hResult
 init|=
@@ -14895,6 +14974,8 @@ name|iLogTable
 operator|.
 name|sort
 argument_list|(
+name|hResult
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -15024,6 +15105,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hUser
 init|=
@@ -15062,6 +15144,8 @@ name|iLogTable
 operator|.
 name|sort
 argument_list|(
+name|hUser
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -15191,6 +15275,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hMessage
 init|=
@@ -15229,6 +15314,8 @@ name|iLogTable
 operator|.
 name|sort
 argument_list|(
+name|hMessage
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<

@@ -1508,6 +1508,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hCurriculum
 init|=
@@ -1553,6 +1554,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|hCurriculum
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -1642,6 +1645,7 @@ range|:
 name|academicClassifications
 control|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hClasf
 init|=
@@ -1711,6 +1715,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|hClasf
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -1934,6 +1940,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|hClasf
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2263,6 +2271,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+specifier|final
 name|UniTimeTableHeader
 name|hTotal
 init|=
@@ -2329,6 +2338,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|hTotal
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2497,6 +2508,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|hTotal
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<

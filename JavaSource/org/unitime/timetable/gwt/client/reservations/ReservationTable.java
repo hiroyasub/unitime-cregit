@@ -1536,6 +1536,7 @@ operator|==
 literal|null
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hOffering
 init|=
@@ -1578,6 +1579,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hOffering
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -1648,6 +1651,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+specifier|final
 name|UniTimeTableHeader
 name|hType
 init|=
@@ -1683,6 +1687,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hType
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -1788,6 +1794,7 @@ argument_list|(
 name|hType
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hOwner
 init|=
@@ -1830,6 +1837,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hOwner
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -1952,6 +1961,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hRestrict
 init|=
@@ -1987,6 +1997,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hRestrict
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2154,6 +2166,7 @@ argument_list|(
 name|hRestrict
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hLimit
 init|=
@@ -2196,6 +2209,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hLimit
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2317,6 +2332,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hLastLike
 init|=
@@ -2359,6 +2375,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hLastLike
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2478,6 +2496,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hProjected
 init|=
@@ -2520,6 +2539,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hProjected
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2639,6 +2660,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hEnrollment
 init|=
@@ -2681,6 +2703,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hEnrollment
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -2800,6 +2824,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hExpiration
 init|=
@@ -2842,6 +2867,8 @@ name|iReservations
 operator|.
 name|sort
 argument_list|(
+name|hExpiration
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<

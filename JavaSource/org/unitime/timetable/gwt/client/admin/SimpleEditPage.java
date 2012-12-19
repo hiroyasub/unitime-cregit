@@ -3064,6 +3064,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|index
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -3284,6 +3286,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|index
+argument_list|,
 name|iData
 operator|.
 name|getComparator

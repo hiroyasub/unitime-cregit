@@ -5259,6 +5259,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hStudent
 init|=
@@ -5298,6 +5299,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hStudent
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -5483,6 +5486,7 @@ condition|(
 name|crosslist
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hCourse
 init|=
@@ -5522,6 +5526,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hCourse
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -5846,6 +5852,7 @@ condition|(
 name|hasPriority
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hPriority
 init|=
@@ -5878,6 +5885,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hPriority
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -6073,6 +6082,7 @@ condition|(
 name|hasAlternative
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hAlternative
 init|=
@@ -6105,6 +6115,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hAlternative
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -6300,6 +6312,7 @@ condition|(
 name|hasArea
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hArea
 init|=
@@ -6339,6 +6352,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hArea
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -6537,6 +6552,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hClasf
 init|=
@@ -6576,6 +6592,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hClasf
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -6814,6 +6832,7 @@ condition|(
 name|hasMajor
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hMajor
 init|=
@@ -6853,6 +6872,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hMajor
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -7057,6 +7078,7 @@ condition|(
 name|hasGroup
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hGroup
 init|=
@@ -7096,6 +7118,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hGroup
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -7300,6 +7324,7 @@ condition|(
 name|hasReservation
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hReservation
 init|=
@@ -7332,6 +7357,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hReservation
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -7577,6 +7604,7 @@ range|:
 name|subparts
 control|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hSubpart
 init|=
@@ -8005,6 +8033,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hSubpart
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -8181,6 +8211,7 @@ condition|(
 name|hasRequestedDate
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hTimeStamp
 init|=
@@ -8213,6 +8244,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hTimeStamp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -8408,6 +8441,7 @@ condition|(
 name|hasEnrolledDate
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hTimeStamp
 init|=
@@ -8440,6 +8474,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hTimeStamp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -8635,8 +8671,9 @@ condition|(
 name|hasConflict
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
-name|hConflict
+name|hConflictName
 init|=
 operator|new
 name|UniTimeTableHeader
@@ -8647,7 +8684,7 @@ name|colConflictName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|hConflict
+name|hConflictName
 operator|.
 name|addOperation
 argument_list|(
@@ -8666,6 +8703,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hConflictName
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -8941,11 +8980,13 @@ name|header
 operator|.
 name|add
 argument_list|(
-name|hConflict
+name|hConflictName
 argument_list|)
 expr_stmt|;
-name|hConflict
-operator|=
+specifier|final
+name|UniTimeTableHeader
+name|hConflictType
+init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
@@ -8954,8 +8995,8 @@ operator|.
 name|colConflictType
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|hConflict
+decl_stmt|;
+name|hConflictType
 operator|.
 name|addOperation
 argument_list|(
@@ -8974,6 +9015,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hConflictType
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -9273,11 +9316,13 @@ name|header
 operator|.
 name|add
 argument_list|(
-name|hConflict
+name|hConflictType
 argument_list|)
 expr_stmt|;
-name|hConflict
-operator|=
+specifier|final
+name|UniTimeTableHeader
+name|hConflictDate
+init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
@@ -9286,8 +9331,8 @@ operator|.
 name|colConflictDate
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|hConflict
+decl_stmt|;
+name|hConflictDate
 operator|.
 name|addOperation
 argument_list|(
@@ -9306,6 +9351,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hConflictDate
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -9605,11 +9652,13 @@ name|header
 operator|.
 name|add
 argument_list|(
-name|hConflict
+name|hConflictDate
 argument_list|)
 expr_stmt|;
-name|hConflict
-operator|=
+specifier|final
+name|UniTimeTableHeader
+name|hConflictTime
+init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
@@ -9618,8 +9667,8 @@ operator|.
 name|colConflictTime
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|hConflict
+decl_stmt|;
+name|hConflictTime
 operator|.
 name|addOperation
 argument_list|(
@@ -9638,6 +9687,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hConflictTime
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -9937,11 +9988,13 @@ name|header
 operator|.
 name|add
 argument_list|(
-name|hConflict
+name|hConflictTime
 argument_list|)
 expr_stmt|;
-name|hConflict
-operator|=
+specifier|final
+name|UniTimeTableHeader
+name|hConflictRoom
+init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
@@ -9950,8 +10003,8 @@ operator|.
 name|colConflictRoom
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|hConflict
+decl_stmt|;
+name|hConflictRoom
 operator|.
 name|addOperation
 argument_list|(
@@ -9970,6 +10023,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hConflictRoom
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -10269,7 +10324,7 @@ name|header
 operator|.
 name|add
 argument_list|(
-name|hConflict
+name|hConflictRoom
 argument_list|)
 expr_stmt|;
 block|}
@@ -10278,6 +10333,7 @@ condition|(
 name|canApprove
 condition|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hApproved
 init|=
@@ -11486,6 +11542,8 @@ name|iEnrollments
 operator|.
 name|sort
 argument_list|(
+name|hApproved
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<

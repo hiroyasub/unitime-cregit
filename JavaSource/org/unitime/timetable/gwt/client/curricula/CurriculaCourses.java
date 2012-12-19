@@ -1563,6 +1563,7 @@ name|UniTimeTableHeader
 argument_list|>
 argument_list|()
 decl_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hGroup
 init|=
@@ -1767,6 +1768,8 @@ name|iTable
 operator|.
 name|sortByRow
 argument_list|(
+name|hGroup
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -1803,6 +1806,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hCourse
 init|=
@@ -3523,6 +3527,8 @@ name|iTable
 operator|.
 name|sortByRow
 argument_list|(
+name|hCourse
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -3607,6 +3613,7 @@ name|getClassifications
 argument_list|()
 control|)
 block|{
+specifier|final
 name|UniTimeTableHeader
 name|hExp
 init|=
@@ -4759,6 +4766,8 @@ name|iTable
 operator|.
 name|sortByRow
 argument_list|(
+name|hExp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -4795,6 +4804,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UniTimeTableHeader
 name|hCmp
 init|=
@@ -5267,6 +5277,8 @@ name|iTable
 operator|.
 name|sortByRow
 argument_list|(
+name|hCmp
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<

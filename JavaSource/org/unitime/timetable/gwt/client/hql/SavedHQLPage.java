@@ -4730,6 +4730,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|col
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
@@ -5042,6 +5044,8 @@ name|iTable
 operator|.
 name|sort
 argument_list|(
+name|iLastSort
+argument_list|,
 operator|new
 name|Comparator
 argument_list|<
