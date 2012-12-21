@@ -2868,7 +2868,7 @@ operator|.
 name|getLocation
 argument_list|()
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;

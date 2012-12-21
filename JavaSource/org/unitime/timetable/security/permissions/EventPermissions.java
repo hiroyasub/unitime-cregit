@@ -1065,11 +1065,15 @@ literal|"from Location l, RoomTypeOption o "
 operator|+
 literal|"where l.eventDepartment.allowEvents = true and o.roomType = l.roomType and o.department = l.eventDepartment and l.session.uniqueId = :sessionId and ("
 operator|+
-literal|"o.status in ("
+literal|"(l.eventStatus in ("
 operator|+
 name|anyRequest
 operator|+
-literal|")"
+literal|") or (l.eventStatus is null and o.status in ("
+operator|+
+name|anyRequest
+operator|+
+literal|")))"
 operator|+
 operator|(
 name|user
@@ -1084,11 +1088,15 @@ operator|.
 name|DepartmentIndependent
 argument_list|)
 condition|?
-literal|" or o.status in ("
+literal|" or (l.eventStatus in ("
 operator|+
 name|deptRequest
 operator|+
-literal|")"
+literal|") or (l.eventStatus is null and o.status in ("
+operator|+
+name|deptRequest
+operator|+
+literal|")))"
 else|:
 name|roleDept
 operator|==
@@ -1096,11 +1104,15 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|" or (o.status in ("
+literal|" or ((l.eventStatus in ("
 operator|+
 name|deptRequest
 operator|+
-literal|") and o.department.uniqueId in ("
+literal|") or (l.eventStatus is null and o.status in ("
+operator|+
+name|deptRequest
+operator|+
+literal|"))) and o.department.uniqueId in ("
 operator|+
 name|roleDept
 operator|+
@@ -1132,11 +1144,15 @@ operator|.
 name|EventMeetingApprove
 argument_list|)
 condition|?
-literal|" or o.status in ("
+literal|" or (l.eventStatus in ("
 operator|+
 name|mgrRequest
 operator|+
-literal|")"
+literal|") or (l.eventStatus is null and o.status in ("
+operator|+
+name|mgrRequest
+operator|+
+literal|")))"
 else|:
 name|mgrDept
 operator|==
@@ -1144,11 +1160,15 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|" or (o.status in ("
+literal|" or ((l.eventStatus in ("
 operator|+
 name|mgrRequest
 operator|+
-literal|") and o.department.uniqueId in ("
+literal|") or (l.eventStatus is null and o.status in ("
+operator|+
+name|mgrRequest
+operator|+
+literal|"))) and o.department.uniqueId in ("
 operator|+
 name|mgrDept
 operator|+
@@ -1522,23 +1542,7 @@ literal|true
 return|;
 comment|// Event manager can see all events.
 comment|// FIXME: Really?
-if|if
-condition|(
-name|user
-operator|.
-name|getCurrentAuthority
-argument_list|()
-operator|.
-name|hasRight
-argument_list|(
-name|Right
-operator|.
-name|EventLookupContact
-argument_list|)
-condition|)
-return|return
-literal|true
-return|;
+comment|// if (user.getCurrentAuthority().hasRight(Right.EventLookupContact)) return true;
 switch|switch
 condition|(
 name|source

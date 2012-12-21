@@ -1809,7 +1809,7 @@ name|setBreakTime
 argument_list|(
 name|r
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2199,7 +2199,7 @@ name|setBreakTime
 argument_list|(
 name|r
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2724,7 +2724,7 @@ name|setBreakTime
 argument_list|(
 name|r
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3436,7 +3436,7 @@ name|setBreakTime
 argument_list|(
 name|r
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -4191,7 +4191,7 @@ operator|.
 name|getLocation
 argument_list|()
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -4269,21 +4269,7 @@ operator|.
 name|getLocation
 argument_list|()
 operator|.
-name|getRoomType
-argument_list|()
-operator|.
-name|getOption
-argument_list|(
-name|m
-operator|.
-name|getLocation
-argument_list|()
-operator|.
-name|getEventDepartment
-argument_list|()
-argument_list|)
-operator|.
-name|getMessage
+name|getEventMessage
 argument_list|()
 decl_stmt|;
 if|if

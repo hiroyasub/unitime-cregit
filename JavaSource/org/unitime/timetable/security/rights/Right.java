@@ -979,6 +979,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|RoomEditChangeEventProperties
+argument_list|(
+name|Location
+operator|.
+name|class
+argument_list|)
+block|,
 name|RoomAvailability
 argument_list|(
 name|Session
@@ -2255,6 +2262,20 @@ block|,
 name|RoomFeatureTypes
 block|,
 name|RoomFeatureTypeEdit
+block|,
+name|InstructorRoles
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
+block|,
+name|InstructorRoleEdit
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
 block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig

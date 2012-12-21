@@ -2568,6 +2568,14 @@ name|getEmail
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|newDepartmentalInstructor
+operator|.
+name|setRole
+argument_list|(
+name|getRole
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|newDepartmentalInstructor

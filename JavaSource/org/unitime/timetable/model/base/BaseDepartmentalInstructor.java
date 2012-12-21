@@ -159,6 +159,20 @@ name|PreferenceGroup
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Roles
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -216,6 +230,10 @@ decl_stmt|;
 specifier|private
 name|Department
 name|iDepartment
+decl_stmt|;
+specifier|private
+name|Roles
+name|iRole
 decl_stmt|;
 specifier|private
 name|Set
@@ -558,6 +576,28 @@ block|{
 name|iDepartment
 operator|=
 name|department
+expr_stmt|;
+block|}
+specifier|public
+name|Roles
+name|getRole
+parameter_list|()
+block|{
+return|return
+name|iRole
+return|;
+block|}
+specifier|public
+name|void
+name|setRole
+parameter_list|(
+name|Roles
+name|role
+parameter_list|)
+block|{
+name|iRole
+operator|=
+name|role
 expr_stmt|;
 block|}
 specifier|public
@@ -956,6 +996,11 @@ operator|+
 literal|"\n	PositionType: "
 operator|+
 name|getPositionType
+argument_list|()
+operator|+
+literal|"\n	Role: "
+operator|+
+name|getRole
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

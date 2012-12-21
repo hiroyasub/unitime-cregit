@@ -298,6 +298,11 @@ operator|+
 name|getArea
 argument_list|()
 operator|+
+literal|"\n	BreakTime: "
+operator|+
+name|getBreakTime
+argument_list|()
+operator|+
 literal|"\n	Capacity: "
 operator|+
 name|getCapacity
@@ -323,6 +328,11 @@ operator|+
 name|getEventDepartment
 argument_list|()
 operator|+
+literal|"\n	EventStatus: "
+operator|+
+name|getEventStatus
+argument_list|()
+operator|+
 literal|"\n	ExamCapacity: "
 operator|+
 name|getExamCapacity
@@ -346,6 +356,11 @@ operator|+
 literal|"\n	Name: "
 operator|+
 name|getName
+argument_list|()
+operator|+
+literal|"\n	Note: "
+operator|+
+name|getNote
 argument_list|()
 operator|+
 literal|"\n	Pattern: "

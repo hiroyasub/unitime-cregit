@@ -2113,6 +2113,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"It is not allowed to create a new event in {0}."
+argument_list|)
+name|String
+name|warnCannotAddEvent
+parameter_list|(
+name|String
+name|session
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No resource type selected."
 argument_list|)
 name|String

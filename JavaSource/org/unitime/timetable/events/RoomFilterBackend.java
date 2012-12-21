@@ -4923,7 +4923,7 @@ name|valueOf
 argument_list|(
 name|location
 operator|.
-name|getBreakTime
+name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 argument_list|,

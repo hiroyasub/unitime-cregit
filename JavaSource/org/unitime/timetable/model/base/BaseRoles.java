@@ -98,6 +98,10 @@ name|Boolean
 name|iEnabled
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iInstructor
+decl_stmt|;
+specifier|private
 name|Set
 argument_list|<
 name|String
@@ -138,6 +142,13 @@ name|String
 name|PROP_ENABLED
 init|=
 literal|"enabled"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_INSTRUCTOR
+init|=
+literal|"instructor"
 decl_stmt|;
 specifier|public
 name|BaseRoles
@@ -295,6 +306,37 @@ block|{
 name|iEnabled
 operator|=
 name|enabled
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isInstructor
+parameter_list|()
+block|{
+return|return
+name|iInstructor
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getInstructor
+parameter_list|()
+block|{
+return|return
+name|iInstructor
+return|;
+block|}
+specifier|public
+name|void
+name|setInstructor
+parameter_list|(
+name|Boolean
+name|instructor
+parameter_list|)
+block|{
+name|iInstructor
+operator|=
+name|instructor
 expr_stmt|;
 block|}
 specifier|public
@@ -476,6 +518,11 @@ operator|+
 literal|"\n	Enabled: "
 operator|+
 name|getEnabled
+argument_list|()
+operator|+
+literal|"\n	Instructor: "
+operator|+
+name|getInstructor
 argument_list|()
 operator|+
 literal|"\n	Manager: "

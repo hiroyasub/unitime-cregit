@@ -162,7 +162,12 @@ name|featureType
 argument_list|(
 literal|"Room Feature Type"
 argument_list|)
-block|, 		;
+block|,
+name|instructorRole
+argument_list|(
+literal|"Instructor Role"
+argument_list|)
+block|;
 specifier|private
 name|String
 name|iSingular
@@ -247,6 +252,8 @@ block|,
 name|multi
 block|,
 name|students
+block|,
+name|person
 block|; 	}
 specifier|private
 name|Type
