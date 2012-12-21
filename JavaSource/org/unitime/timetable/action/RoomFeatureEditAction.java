@@ -1643,7 +1643,7 @@ name|getFeatureTypeId
 argument_list|()
 operator|!=
 literal|null
-operator|||
+operator|&&
 name|roomFeatureEditForm
 operator|.
 name|getFeatureTypeId
