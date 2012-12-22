@@ -262,7 +262,12 @@ name|MERGE
 argument_list|(
 literal|"merge"
 argument_list|)
-block|;
+block|,
+name|NOTE
+argument_list|(
+literal|"note"
+argument_list|)
+block|,         ;
 specifier|private
 name|String
 name|iTitle
@@ -1762,6 +1767,8 @@ else|:
 literal|"and ch.sourceString=:source "
 operator|)
 operator|+
+literal|"and ch.operationString != :note "
+operator|+
 literal|"order by ch.timeStamp desc"
 argument_list|)
 decl_stmt|;
@@ -1784,6 +1791,20 @@ argument_list|(
 literal|"objectType"
 argument_list|,
 name|objectType
+argument_list|)
+expr_stmt|;
+name|q
+operator|.
+name|setString
+argument_list|(
+literal|"note"
+argument_list|,
+name|Operation
+operator|.
+name|NOTE
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if

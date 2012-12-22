@@ -3238,6 +3238,72 @@ name|String
 name|unavailableEventDefaultName
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Note History"
+argument_list|)
+name|String
+name|sectRoomNoteHistory
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The selected room has no room note changes."
+argument_list|)
+name|String
+name|noRoomNoteChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load change logs: {0}"
+argument_list|)
+name|String
+name|failedLoadRoomNoteChanges
+parameter_list|(
+name|String
+name|cause
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Session"
+argument_list|)
+name|String
+name|colAcademicSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Manager"
+argument_list|)
+name|String
+name|colManager
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"not set"
+argument_list|)
+name|String
+name|emptyNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display changes across all academic sessions."
+argument_list|)
+name|String
+name|checkAllSessions
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
