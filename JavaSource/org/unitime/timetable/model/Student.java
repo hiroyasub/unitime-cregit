@@ -1040,6 +1040,12 @@ name|getMiddleName
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|getMiddleName
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|?
 literal|""
 else|:

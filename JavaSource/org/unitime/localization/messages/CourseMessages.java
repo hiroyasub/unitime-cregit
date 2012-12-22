@@ -4687,11 +4687,14 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to create PDF file."
+literal|"Unable to create PDF file: {0}."
 argument_list|)
 name|String
 name|errorUnableToCreatePdf
-parameter_list|()
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage

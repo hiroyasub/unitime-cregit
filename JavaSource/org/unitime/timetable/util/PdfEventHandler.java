@@ -21,7 +21,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileOutputStream
+name|IOException
 import|;
 end_import
 
@@ -31,7 +31,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
+name|OutputStream
 import|;
 end_import
 
@@ -309,7 +309,7 @@ parameter_list|(
 name|Document
 name|document
 parameter_list|,
-name|FileOutputStream
+name|OutputStream
 name|outputStream
 parameter_list|)
 throws|throws
