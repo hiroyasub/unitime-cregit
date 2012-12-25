@@ -707,6 +707,8 @@ name|value
 operator|.
 name|getStart
 argument_list|()
+argument_list|,
+name|fireEvents
 argument_list|)
 expr_stmt|;
 name|iEnd
@@ -723,6 +725,8 @@ name|value
 operator|.
 name|getEnd
 argument_list|()
+argument_list|,
+name|fireEvents
 argument_list|)
 expr_stmt|;
 if|if

@@ -208,6 +208,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Modify ..."
+argument_list|)
+name|String
+name|opModifyMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<b><i>+</i></b> Add Meetings ..."
 argument_list|)
 name|String
@@ -1903,6 +1912,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to modify meetings: {0}"
+argument_list|)
+name|String
+name|failedChangeMeetings
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} cannot be created through the event interface."
 argument_list|)
 name|String
@@ -2357,6 +2378,15 @@ literal|"Add Meetings..."
 argument_list|)
 name|String
 name|dialogAddMeetings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Modify Meetings..."
+argument_list|)
+name|String
+name|dialogModifyMeetings
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3302,6 +3332,15 @@ literal|"Display changes across all academic sessions."
 argument_list|)
 name|String
 name|checkAllSessions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show deleted, cancelled, and rejected meetings."
+argument_list|)
+name|String
+name|showDeletedMeetings
 parameter_list|()
 function_decl|;
 block|}
