@@ -7784,8 +7784,6 @@ name|period
 operator|.
 name|getStartSlot
 argument_list|()
-operator|/
-literal|6
 decl_stmt|;
 name|int
 name|endTime
@@ -7803,8 +7801,6 @@ argument_list|()
 operator|-
 literal|1
 operator|)
-operator|/
-literal|6
 decl_stmt|;
 for|for
 control|(

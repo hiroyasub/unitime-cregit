@@ -79,12 +79,6 @@ name|int
 name|day
 parameter_list|)
 function_decl|;
-comment|/** Unique file name representing the model and its content */
-specifier|public
-name|String
-name|getFileName
-parameter_list|()
-function_decl|;
 comment|/** Set preference */
 specifier|public
 name|void

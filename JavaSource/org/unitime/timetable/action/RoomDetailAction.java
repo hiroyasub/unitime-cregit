@@ -1759,16 +1759,6 @@ argument_list|)
 expr_stmt|;
 name|roomDetailForm
 operator|.
-name|setPatterns
-argument_list|(
-name|location
-operator|.
-name|getPattern
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|roomDetailForm
-operator|.
 name|setGlobalFeatures
 argument_list|(
 operator|new
