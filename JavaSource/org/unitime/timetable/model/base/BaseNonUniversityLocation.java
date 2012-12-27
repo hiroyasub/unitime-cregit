@@ -323,6 +323,11 @@ operator|+
 name|getDisplayName
 argument_list|()
 operator|+
+literal|"\n	EventAvailability: "
+operator|+
+name|getEventAvailability
+argument_list|()
+operator|+
 literal|"\n	EventDepartment: "
 operator|+
 name|getEventDepartment

@@ -296,7 +296,7 @@ comment|/** Never use from GWT code */
 specifier|public
 specifier|static
 name|void
-name|_showHint
+name|_showRoomSharingHint
 parameter_list|(
 name|JavaScriptObject
 name|source
@@ -321,6 +321,42 @@ name|valueOf
 argument_list|(
 name|locationId
 argument_list|)
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** Never use from GWT code */
+specifier|public
+specifier|static
+name|void
+name|_showEventAvailabilityHint
+parameter_list|(
+name|JavaScriptObject
+name|source
+parameter_list|,
+name|String
+name|locationId
+parameter_list|)
+block|{
+name|showHint
+argument_list|(
+operator|(
+name|Element
+operator|)
+name|source
+operator|.
+name|cast
+argument_list|()
+argument_list|,
+name|Long
+operator|.
+name|valueOf
+argument_list|(
+name|locationId
+argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -336,6 +372,9 @@ parameter_list|,
 specifier|final
 name|long
 name|locationId
+parameter_list|,
+name|boolean
+name|eventAvailability
 parameter_list|)
 block|{
 name|getInstance
@@ -357,6 +396,8 @@ operator|.
 name|load
 argument_list|(
 name|locationId
+argument_list|,
+name|eventAvailability
 argument_list|)
 argument_list|,
 operator|new
@@ -759,7 +800,7 @@ specifier|native
 name|void
 name|createTriggers
 parameter_list|()
-comment|/*-{ 	$wnd.showGwtRoomAvailabilityHint = function(source, content) { 		@org.unitime.timetable.gwt.client.rooms.RoomSharingHint::_showHint(Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/String;)(source, content); 	}; 	$wnd.hideGwtRoomAvailabilityHint = function() { 		@org.unitime.timetable.gwt.client.rooms.RoomSharingHint::hideHint()(); 	}; }-*/
+comment|/*-{ 	$wnd.showGwtRoomAvailabilityHint = function(source, content) { 		@org.unitime.timetable.gwt.client.rooms.RoomSharingHint::_showRoomSharingHint(Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/String;)(source, content); 	}; 	$wnd.showGwtRoomEventAvailabilityHint = function(source, content) { 		@org.unitime.timetable.gwt.client.rooms.RoomSharingHint::_showEventAvailabilityHint(Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/String;)(source, content); 	}; 	$wnd.hideGwtRoomAvailabilityHint = function() { 		@org.unitime.timetable.gwt.client.rooms.RoomSharingHint::hideHint()(); 	}; 	$wnd.hideGwtRoomEventAvailabilityHint = function() { 		@org.unitime.timetable.gwt.client.rooms.RoomSharingHint::hideHint()(); 	}; }-*/
 function_decl|;
 block|}
 end_class

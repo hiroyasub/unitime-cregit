@@ -470,6 +470,14 @@ name|getNote
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|r
+operator|.
+name|setEventAvailability
+argument_list|(
+name|getEventAvailability
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|r
 return|;

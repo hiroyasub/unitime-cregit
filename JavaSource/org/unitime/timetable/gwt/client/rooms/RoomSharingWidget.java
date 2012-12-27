@@ -1373,6 +1373,9 @@ parameter_list|(
 specifier|final
 name|RootPanel
 name|panel
+parameter_list|,
+name|boolean
+name|eventAvailability
 parameter_list|)
 block|{
 name|Long
@@ -1405,6 +1408,8 @@ operator|.
 name|load
 argument_list|(
 name|locationId
+argument_list|,
+name|eventAvailability
 argument_list|)
 argument_list|,
 operator|new

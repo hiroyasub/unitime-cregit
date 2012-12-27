@@ -242,6 +242,10 @@ name|String
 name|iPattern
 decl_stmt|;
 specifier|private
+name|String
+name|iEventAvailability
+decl_stmt|;
+specifier|private
 name|Integer
 name|iExamCapacity
 decl_stmt|;
@@ -389,6 +393,13 @@ name|String
 name|PROP_PATTERN
 init|=
 literal|"pattern"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_AVAILABILITY
+init|=
+literal|"eventAvailability"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -736,6 +747,28 @@ block|{
 name|iPattern
 operator|=
 name|pattern
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getEventAvailability
+parameter_list|()
+block|{
+return|return
+name|iEventAvailability
+return|;
+block|}
+specifier|public
+name|void
+name|setEventAvailability
+parameter_list|(
+name|String
+name|eventAvailability
+parameter_list|)
+block|{
+name|iEventAvailability
+operator|=
+name|eventAvailability
 expr_stmt|;
 block|}
 specifier|public
@@ -1320,6 +1353,11 @@ operator|+
 literal|"\n	DisplayName: "
 operator|+
 name|getDisplayName
+argument_list|()
+operator|+
+literal|"\n	EventAvailability: "
+operator|+
+name|getEventAvailability
 argument_list|()
 operator|+
 literal|"\n	EventDepartment: "

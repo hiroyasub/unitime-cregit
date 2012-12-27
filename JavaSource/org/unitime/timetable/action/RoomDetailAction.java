@@ -842,6 +842,38 @@ return|return
 literal|null
 return|;
 block|}
+if|if
+condition|(
+name|doit
+operator|.
+name|equals
+argument_list|(
+literal|"Edit Event Availability"
+argument_list|)
+condition|)
+block|{
+comment|// return mapping.findForward("showEditRoomDept");
+name|response
+operator|.
+name|sendRedirect
+argument_list|(
+name|response
+operator|.
+name|encodeURL
+argument_list|(
+literal|"gwt.jsp?page=roomavailability&events=1&id="
+operator|+
+name|roomDetailForm
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 comment|//modify room groups
 if|if
 condition|(

@@ -1056,6 +1056,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|RoomDetailEventAvailability
+argument_list|(
+name|Location
+operator|.
+name|class
+argument_list|)
+block|,
 name|RoomEditAvailability
 argument_list|(
 name|Location
@@ -1092,6 +1099,13 @@ name|class
 argument_list|)
 block|,
 name|RoomEditGlobalFeatures
+argument_list|(
+name|Location
+operator|.
+name|class
+argument_list|)
+block|,
+name|RoomEditEventAvailability
 argument_list|(
 name|Location
 operator|.
