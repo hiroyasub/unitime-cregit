@@ -334,19 +334,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>pprove"
+literal|"<u>A</u>pprove Meetings"
 argument_list|)
 name|String
-name|opApprove
+name|opApproveMeetings
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>R</u>eject"
+literal|"<u>R</u>eject Meetings"
 argument_list|)
 name|String
-name|opReject
+name|opRejectMeetings
 parameter_list|()
 function_decl|;
 annotation|@
@@ -355,16 +355,16 @@ argument_list|(
 literal|"<u>I</u>nquire"
 argument_list|)
 name|String
-name|opInquire
+name|opInquireMeetings
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>C</u>ancel"
+literal|"<u>C</u>ancel Meetings"
 argument_list|)
 name|String
-name|opCancel
+name|opCancelMeetings
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1318,6 +1318,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>C</u>ancel Event"
+argument_list|)
+name|String
+name|buttonCancelEvent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>S</u>earch"
 argument_list|)
 name|String
@@ -1345,7 +1354,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dd"
+literal|"<u>A</u>dd Meetings"
 argument_list|)
 name|String
 name|buttonAddMeetings
@@ -1390,37 +1399,37 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>C</u>reate"
+literal|"<u>C</u>reate Event"
 argument_list|)
 name|String
-name|buttonCreate
+name|buttonCreateEvent
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>U</u>pdate"
+literal|"<u>U</u>pdate Event"
 argument_list|)
 name|String
-name|buttonUpdate
+name|buttonUpdateEvent
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>D</u>elete"
+literal|"<u>D</u>elete Event"
 argument_list|)
 name|String
-name|buttonDelete
+name|buttonDeleteEvent
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>E</u>dit"
+literal|"<u>E</u>dit Event"
 argument_list|)
 name|String
-name|buttonEdit
+name|buttonEditEvent
 parameter_list|()
 function_decl|;
 annotation|@

@@ -945,7 +945,7 @@ literal|"approve"
 argument_list|,
 name|MESSAGES
 operator|.
-name|opApprove
+name|opApproveMeetings
 argument_list|()
 argument_list|,
 operator|new
@@ -996,7 +996,7 @@ literal|"inquire"
 argument_list|,
 name|MESSAGES
 operator|.
-name|opInquire
+name|opInquireMeetings
 argument_list|()
 argument_list|,
 operator|new
@@ -1047,7 +1047,7 @@ literal|"reject"
 argument_list|,
 name|MESSAGES
 operator|.
-name|opReject
+name|opRejectMeetings
 argument_list|()
 argument_list|,
 operator|new
@@ -1098,7 +1098,7 @@ literal|"cancel"
 argument_list|,
 name|MESSAGES
 operator|.
-name|opCancel
+name|opCancelMeetings
 argument_list|()
 argument_list|,
 operator|new

@@ -1063,10 +1063,10 @@ literal|"edit"
 argument_list|,
 name|MESSAGES
 operator|.
-name|buttonEdit
+name|buttonEditEvent
 argument_list|()
 argument_list|,
-literal|75
+literal|100
 argument_list|,
 operator|new
 name|ClickHandler
