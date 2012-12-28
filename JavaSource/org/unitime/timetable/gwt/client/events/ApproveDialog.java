@@ -1369,6 +1369,7 @@ name|dialogApprove
 argument_list|()
 argument_list|)
 expr_stmt|;
+break|break;
 case|case
 name|REJECT
 case|:
@@ -1380,6 +1381,7 @@ name|dialogReject
 argument_list|()
 argument_list|)
 expr_stmt|;
+break|break;
 case|case
 name|INQUIRE
 case|:
@@ -1391,6 +1393,7 @@ name|dialogInquire
 argument_list|()
 argument_list|)
 expr_stmt|;
+break|break;
 case|case
 name|CANCEL
 case|:
@@ -1402,6 +1405,7 @@ name|dialogCancel
 argument_list|()
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|iFooter
 operator|.
