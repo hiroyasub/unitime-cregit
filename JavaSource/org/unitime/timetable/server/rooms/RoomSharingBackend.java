@@ -2271,7 +2271,8 @@ argument_list|(
 operator|new
 name|RoomSharingOption
 argument_list|(
-literal|0l
+operator|-
+literal|1l
 argument_list|,
 literal|"#FFFFFF"
 argument_list|,
@@ -2296,7 +2297,8 @@ argument_list|(
 operator|new
 name|RoomSharingOption
 argument_list|(
-literal|1l
+operator|-
+literal|2l
 argument_list|,
 literal|"#696969"
 argument_list|,
@@ -2511,9 +2513,11 @@ name|pref
 operator|==
 literal|'0'
 condition|?
-literal|0l
-else|:
+operator|-
 literal|1l
+else|:
+operator|-
+literal|2l
 argument_list|)
 expr_stmt|;
 block|}
@@ -2605,7 +2609,8 @@ operator|.
 name|getId
 argument_list|()
 operator|==
-literal|0l
+operator|-
+literal|1l
 condition|?
 literal|'0'
 else|:
