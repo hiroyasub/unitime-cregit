@@ -1336,7 +1336,9 @@ return|return
 name|RoomType
 operator|.
 name|findAll
-argument_list|()
+argument_list|(
+name|iSessionId
+argument_list|)
 return|;
 block|}
 block|}

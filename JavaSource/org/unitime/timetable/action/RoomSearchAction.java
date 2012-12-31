@@ -255,6 +255,16 @@ operator|.
 name|Rooms
 argument_list|)
 expr_stmt|;
+name|roomListForm
+operator|.
+name|load
+argument_list|(
+name|request
+operator|.
+name|getSession
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|String
 name|deptCode
 init|=
