@@ -637,11 +637,6 @@ argument_list|(
 name|sessionId
 argument_list|)
 expr_stmt|;
-name|boolean
-name|hasRoomFilter
-init|=
-literal|false
-decl_stmt|;
 for|for
 control|(
 name|Enumeration
@@ -740,10 +735,6 @@ literal|"r:text"
 argument_list|)
 condition|)
 block|{
-name|hasRoomFilter
-operator|=
-literal|true
-expr_stmt|;
 name|roomFilter
 operator|.
 name|setText
@@ -767,10 +758,6 @@ literal|"r:"
 argument_list|)
 condition|)
 block|{
-name|hasRoomFilter
-operator|=
-literal|true
-expr_stmt|;
 for|for
 control|(
 name|String
@@ -799,10 +786,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|hasRoomFilter
-condition|)
 name|request
 operator|.
 name|setRoomFilter
