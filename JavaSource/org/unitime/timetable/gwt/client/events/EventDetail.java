@@ -1315,7 +1315,9 @@ name|iApproveDialog
 operator|=
 operator|new
 name|ApproveDialog
-argument_list|()
+argument_list|(
+name|iProperties
+argument_list|)
 block|{
 annotation|@
 name|Override
@@ -1708,6 +1710,8 @@ operator|.
 name|MeetingsOfAnEvent
 argument_list|,
 literal|true
+argument_list|,
+name|iProperties
 argument_list|)
 expr_stmt|;
 name|iMeetings
