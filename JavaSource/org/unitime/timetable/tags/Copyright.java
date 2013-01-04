@@ -120,7 +120,7 @@ comment|// If you need a different licensing, please contact us at support@uniti
 name|String
 name|body
 init|=
-literal|"<a class='unitime-FooterLink' href='http://www.unitime.org' tabIndex='-1'>&copy;&nbsp;2008&nbsp;-&nbsp;2012&nbsp;UniTime&nbsp;LLC</a>,"
+literal|"<a class='unitime-FooterLink' href='http://www.unitime.org' tabIndex='-1'>&copy;&nbsp;2008&nbsp;-&nbsp;2013&nbsp;UniTime&nbsp;LLC</a>,"
 operator|+
 operator|(
 name|isBr

@@ -70,7 +70,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&copy; 2008 - 2012 UniTime LLC,<br>distributed under GNU General Public License."
+literal|"&copy; 2008 - 2013 UniTime LLC,<br>distributed under GNU General Public License."
 argument_list|)
 name|String
 name|pageCopyright
@@ -79,7 +79,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"UniTime {0}, \u00A9 2008 - 2012 UniTime LLC, distributed under GNU GPL."
+literal|"UniTime {0}, \u00A9 2008 - 2013 UniTime LLC, distributed under GNU GPL."
 argument_list|)
 name|String
 name|pdfCopyright
