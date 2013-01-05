@@ -610,6 +610,17 @@ name|getClientWidth
 parameter_list|()
 comment|/*-{ 		var sideMenu = $doc.getElementById("unitime-SideMenu").getElementsByTagName("span");     	if (sideMenu.length> 0) {     		return $doc.body.clientWidth - sideMenu[0].clientWidth;     	} else {     		return $doc.body.clientWidth;     	} 	}-*/
 function_decl|;
+specifier|public
+specifier|native
+specifier|static
+name|void
+name|scrollToElement
+parameter_list|(
+name|Element
+name|element
+parameter_list|)
+comment|/*-{ 		element.scrollIntoView(); 	}-*/
+function_decl|;
 block|}
 end_class
 
