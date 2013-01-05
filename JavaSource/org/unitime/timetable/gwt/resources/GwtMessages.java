@@ -1390,6 +1390,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>U</u>pdate"
+argument_list|)
+name|String
+name|buttonUpdate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>B</u>ack"
 argument_list|)
 name|String

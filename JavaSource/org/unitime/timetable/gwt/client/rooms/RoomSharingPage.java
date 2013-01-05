@@ -394,7 +394,7 @@ literal|"update"
 argument_list|,
 name|MESSAGES
 operator|.
-name|buttonUpdateEvent
+name|buttonUpdate
 argument_list|()
 argument_list|,
 literal|75
