@@ -2605,6 +2605,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Mapped Class Date"
+argument_list|)
+name|String
+name|legendDateMappingClassDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Mapped Event Date"
+argument_list|)
+name|String
+name|legendDateMappingEventDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Finals"
 argument_list|)
 name|String

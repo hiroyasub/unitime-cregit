@@ -167,6 +167,11 @@ name|instructorRole
 argument_list|(
 literal|"Instructor Role"
 argument_list|)
+block|,
+name|dateMapping
+argument_list|(
+literal|"Event Date Mapping"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

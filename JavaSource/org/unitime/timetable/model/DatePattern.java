@@ -2667,7 +2667,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"calGenerate("
+literal|"calGenerate2("
 operator|+
 name|getSession
 argument_list|()
@@ -2714,6 +2714,14 @@ name|getBorderArray
 argument_list|(
 name|uniqueId
 argument_list|)
+operator|+
+literal|","
+operator|+
+name|getSession
+argument_list|()
+operator|.
+name|getColorArray
+argument_list|()
 operator|+
 literal|","
 operator|+

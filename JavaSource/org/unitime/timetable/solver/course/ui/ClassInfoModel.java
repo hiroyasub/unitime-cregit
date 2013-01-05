@@ -9096,6 +9096,11 @@ name|Location
 operator|.
 name|findClassLocationTable
 argument_list|(
+name|clazz
+operator|.
+name|getSessionId
+argument_list|()
+argument_list|,
 name|permIds
 argument_list|,
 name|period
@@ -9154,6 +9159,11 @@ name|Location
 operator|.
 name|findEventTable
 argument_list|(
+name|clazz
+operator|.
+name|getSessionId
+argument_list|()
+argument_list|,
 name|permIds
 argument_list|,
 name|period

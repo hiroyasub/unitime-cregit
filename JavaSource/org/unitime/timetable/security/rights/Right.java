@@ -2291,6 +2291,20 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EventDateMappings
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|EventDateMappingEdit
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

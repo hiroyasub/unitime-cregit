@@ -14988,6 +14988,10 @@ block|,
 name|PAST
 block|,
 name|WEEKEND
+block|,
+name|DATE_MAPPING_CLASS
+block|,
+name|DATE_MAPPING_EVENT
 block|;
 specifier|public
 name|int
