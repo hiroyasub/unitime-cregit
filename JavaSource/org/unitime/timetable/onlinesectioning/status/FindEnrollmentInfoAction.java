@@ -3813,7 +3813,7 @@ name|name
 parameter_list|()
 block|{
 return|return
-literal|"find-enrollment-infos"
+literal|"find-enrollment-info"
 return|;
 block|}
 block|}
