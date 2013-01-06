@@ -583,6 +583,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EditCourseOfferingCoordinators
+argument_list|(
+name|CourseOffering
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingCanLock
 argument_list|(
 name|InstructionalOffering
