@@ -4400,6 +4400,11 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|uniqueResult
 argument_list|()
 operator|)

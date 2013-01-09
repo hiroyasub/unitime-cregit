@@ -412,6 +412,11 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|uniqueResult
 argument_list|()
 operator|)
@@ -455,6 +460,11 @@ argument_list|(
 literal|"sessionId"
 argument_list|,
 name|sessionId
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|uniqueResult
