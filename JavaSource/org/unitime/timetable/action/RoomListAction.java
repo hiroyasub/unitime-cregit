@@ -2418,29 +2418,6 @@ operator|+=
 literal|" and ((l.class = Room and (lower(l.buildingAbbv || ' ' || l.roomNumber) like :filter or lower(l.displayName) like :filter)) or (l.class = NonUniversityLocation and lower(l.name) like :filter))"
 expr_stmt|;
 block|}
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Query: select distinct l from \n    "
-operator|+
-name|from
-operator|+
-literal|" \n where \n    "
-operator|+
-name|where
-argument_list|)
-expr_stmt|;
-name|long
-name|t0
-init|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-decl_stmt|;
 name|Query
 name|query
 init|=
@@ -2720,26 +2697,6 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"  took: "
-operator|+
-operator|(
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-operator|-
-name|t0
-operator|)
-operator|+
-literal|"ms"
 argument_list|)
 expr_stmt|;
 block|}
