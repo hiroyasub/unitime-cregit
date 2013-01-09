@@ -1621,6 +1621,16 @@ name|String
 name|from
 init|=
 literal|"Location l"
+operator|+
+literal|" left join fetch l.roomDepts rd"
+operator|+
+literal|" left join fetch l.examTypes xt"
+operator|+
+literal|" left join fetch l.features f"
+operator|+
+literal|" left join fetch l.roomGroups g"
+operator|+
+literal|" left join fetch l.roomType t"
 decl_stmt|;
 name|String
 name|where
@@ -1749,10 +1759,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|from
-operator|=
-literal|"Location l left outer join l.roomDepts rd"
-expr_stmt|;
 name|where
 operator|+=
 literal|" and (rd.department.uniqueId in ("
@@ -1829,10 +1835,6 @@ operator|+
 name|examTypeId
 argument_list|)
 expr_stmt|;
-name|from
-operator|=
-literal|"Location l inner join l.examTypes xt"
-expr_stmt|;
 name|where
 operator|+=
 literal|" and xt.uniqueId = :examTypeId"
@@ -1852,10 +1854,7 @@ literal|"Exam[0-9]*"
 argument_list|)
 condition|)
 block|{
-name|from
-operator|=
-literal|"Location l inner join l.examTypes xt"
-expr_stmt|;
+comment|// from = "Location l inner join l.examTypes xt";
 name|examTypeId
 operator|=
 name|Long
@@ -1966,10 +1965,6 @@ name|Rooms
 argument_list|)
 expr_stmt|;
 block|}
-name|from
-operator|=
-literal|"Location l left outer join l.roomDepts rd"
-expr_stmt|;
 name|where
 operator|+=
 literal|" and (rd.department.uniqueId = :dept0 or l.eventDepartment.uniqueId = :dept0)"
@@ -2291,10 +2286,6 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|from
-operator|+=
-literal|" inner join l.roomGroups g"
-expr_stmt|;
 name|where
 operator|+=
 literal|" and g.uniqueId in ("
@@ -2422,15 +2413,34 @@ operator|.
 name|getFilter
 argument_list|()
 expr_stmt|;
-name|from
-operator|+=
-literal|", Room r, NonUniversityLocation u"
-expr_stmt|;
 name|where
 operator|+=
-literal|" and ((r.uniqueId = l.uniqueId and (lower(r.buildingAbbv || ' ' || r.roomNumber) like '%' || :filter || '%' or lower(r.displayName) like '%' || :filter || '%')) or (u.uniqueId = l.uniqueId and lower(u.name) like '%' || :filter || '%'))"
+literal|" and ((l.class = Room and (lower(l.buildingAbbv || ' ' || l.roomNumber) like :filter or lower(l.displayName) like :filter)) or (l.class = NonUniversityLocation and lower(l.name) like :filter))"
 expr_stmt|;
 block|}
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Query: select distinct l from \n    "
+operator|+
+name|from
+operator|+
+literal|" \n where \n    "
+operator|+
+name|where
+argument_list|)
+expr_stmt|;
+name|long
+name|t0
+init|=
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+decl_stmt|;
 name|Query
 name|query
 init|=
@@ -2564,10 +2574,14 @@ name|setString
 argument_list|(
 literal|"filter"
 argument_list|,
+literal|"%"
+operator|+
 name|filter
 operator|.
 name|toLowerCase
 argument_list|()
+operator|+
+literal|"%"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2706,6 +2720,26 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"  took: "
+operator|+
+operator|(
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+operator|-
+name|t0
+operator|)
+operator|+
+literal|"ms"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3075,6 +3109,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|list
 argument_list|()
 argument_list|)
@@ -3158,6 +3197,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|list
 argument_list|()
 argument_list|)
@@ -3208,6 +3252,11 @@ name|roomListForm
 operator|.
 name|getDeptCodeX
 argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|list
@@ -7821,6 +7870,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|list
 argument_list|()
 argument_list|)
@@ -7904,6 +7958,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|list
 argument_list|()
 argument_list|)
@@ -7954,6 +8013,11 @@ name|roomListForm
 operator|.
 name|getDeptCodeX
 argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|list
@@ -12162,6 +12226,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|list
 argument_list|()
 argument_list|)
@@ -12245,6 +12314,11 @@ argument_list|,
 name|sessionId
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|list
 argument_list|()
 argument_list|)
@@ -12295,6 +12369,11 @@ name|roomListForm
 operator|.
 name|getDeptCodeX
 argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|list
