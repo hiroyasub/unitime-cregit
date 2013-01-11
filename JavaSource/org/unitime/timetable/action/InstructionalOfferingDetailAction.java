@@ -2448,6 +2448,11 @@ name|lim
 init|=
 literal|0
 decl_stmt|;
+name|boolean
+name|reservationSet
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
 name|CourseOffering
@@ -2468,6 +2473,7 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
+block|{
 name|lim
 operator|+=
 name|course
@@ -2475,9 +2481,16 @@ operator|.
 name|getReservation
 argument_list|()
 expr_stmt|;
+name|reservationSet
+operator|=
+literal|true
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
+name|reservationSet
+operator|&&
 name|io
 operator|.
 name|getLimit
