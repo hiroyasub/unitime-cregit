@@ -3256,7 +3256,7 @@ argument_list|)
 expr_stmt|;
 name|iResources
 operator|.
-name|getTextBox
+name|getValueBox
 argument_list|()
 operator|.
 name|addFocusHandler

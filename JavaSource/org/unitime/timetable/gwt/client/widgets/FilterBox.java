@@ -7155,7 +7155,7 @@ literal|null
 condition|)
 name|selected
 operator|.
-name|getCommand
+name|getScheduledCommand
 argument_list|()
 operator|.
 name|execute
