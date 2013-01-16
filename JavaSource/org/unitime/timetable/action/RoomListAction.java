@@ -4927,14 +4927,14 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"<span onmouseover=\"showGwtHint(this, '"
+literal|"<span onmouseover=\"showGwtRoomHint(this, '-"
 operator|+
 name|bldg
 operator|.
-name|getHtmlHint
+name|getUniqueId
 argument_list|()
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|bldg
 operator|.
@@ -5016,14 +5016,14 @@ operator|.
 name|getLabelWithHint
 argument_list|()
 else|:
-literal|"<span onmouseover=\"showGwtHint(this, '"
+literal|"<span onmouseover=\"showGwtRoomHint(this, '"
 operator|+
 name|location
 operator|.
-name|getHtmlHint
+name|getUniqueId
 argument_list|()
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|room
 operator|.
@@ -5606,21 +5606,21 @@ operator|.
 name|prefcolor
 argument_list|()
 operator|+
-literal|";font-weight:bold;' onmouseover=\"showGwtHint(this, '"
+literal|";font-weight:bold;' onmouseover=\"showGwtRoomHint(this, '"
+operator|+
+name|location
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"', '"
 operator|+
 name|roomPref
 operator|.
 name|getPrefName
 argument_list|()
 operator|+
-literal|" "
-operator|+
-name|location
-operator|.
-name|getHtmlHint
-argument_list|()
-operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|location
 operator|.
@@ -5672,7 +5672,14 @@ operator|.
 name|prefcolor
 argument_list|()
 operator|+
-literal|";font-weight:bold;' onmouseover=\"showGwtHint(this, '"
+literal|";font-weight:bold;' onmouseover=\"showGwtRoomHint(this, '-"
+operator|+
+name|bldg
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"', '"
 operator|+
 operator|(
 name|bldg
@@ -5683,21 +5690,11 @@ name|roomPref
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|location
-operator|.
-name|getHtmlHint
-argument_list|()
 else|:
-name|bldg
-operator|.
-name|getHtmlHint
-argument_list|()
+literal|""
 operator|)
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 operator|(
 name|bldg
@@ -5754,21 +5751,21 @@ operator|.
 name|prefcolor
 argument_list|()
 operator|+
-literal|";font-weight:bold;' onmouseover=\"showGwtHint(this, '"
+literal|";font-weight:bold;' onmouseover=\"showGwtRoomHint(this, '"
+operator|+
+name|location
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"', '"
 operator|+
 name|roomPref
 operator|.
 name|getPrefName
 argument_list|()
 operator|+
-literal|" "
-operator|+
-name|location
-operator|.
-name|getHtmlHint
-argument_list|()
-operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|room
 operator|.

@@ -8055,12 +8055,16 @@ operator|)
 operator|+
 literal|";' "
 operator|+
-literal|"onmouseover=\"showGwtHint(this, '"
+literal|"onmouseover=\"showGwtRoomHint(this, '"
 operator|+
 name|room
 operator|.
-name|getHtmlHint
-argument_list|(
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"', '"
+operator|+
+operator|(
 name|isEditable
 condition|?
 name|PreferenceLevel
@@ -8078,10 +8082,10 @@ argument_list|()
 argument_list|)
 argument_list|)
 else|:
-literal|null
-argument_list|)
+literal|""
+operator|)
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 argument_list|)
 expr_stmt|;
 name|sb

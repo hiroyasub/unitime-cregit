@@ -471,22 +471,6 @@ name|model
 operator|.
 name|dao
 operator|.
-name|LocationDAO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|dao
-operator|.
 name|SolutionDAO
 import|;
 end_import
@@ -5767,11 +5751,6 @@ specifier|private
 name|boolean
 name|iStrike
 decl_stmt|;
-specifier|private
-specifier|transient
-name|Location
-name|iLocation
-decl_stmt|;
 specifier|public
 name|RoomInfo
 parameter_list|(
@@ -5915,34 +5894,6 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|Location
-name|getLocation
-parameter_list|()
-block|{
-if|if
-condition|(
-name|iLocation
-operator|==
-literal|null
-condition|)
-name|iLocation
-operator|=
-name|LocationDAO
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|getId
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-name|iLocation
-return|;
-block|}
-specifier|public
 name|String
 name|toHtml
 parameter_list|(
@@ -6006,11 +5957,6 @@ block|}
 if|if
 condition|(
 name|showHint
-operator|&&
-name|getLocation
-argument_list|()
-operator|!=
-literal|null
 condition|)
 block|{
 return|return
@@ -6051,22 +5997,21 @@ argument_list|)
 operator|+
 literal|";' "
 operator|+
-literal|"onmouseover=\"showGwtHint(this, '"
+literal|"onmouseover=\"showGwtRoomHint(this, '"
 operator|+
-name|getLocation
+name|getId
 argument_list|()
-operator|.
-name|getHtmlHint
-argument_list|(
+operator|+
+literal|"', '"
+operator|+
 name|PreferenceLevel
 operator|.
 name|int2string
 argument_list|(
 name|iPref
 argument_list|)
-argument_list|)
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 operator|(
 name|uline

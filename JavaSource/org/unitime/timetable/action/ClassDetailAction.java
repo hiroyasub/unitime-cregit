@@ -475,22 +475,6 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
-operator|.
-name|dao
-operator|.
-name|LocationDAO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
 name|security
 operator|.
 name|SessionContext
@@ -2230,23 +2214,15 @@ argument_list|)
 operator|+
 literal|";' "
 operator|+
-literal|"onmouseover=\"showGwtHint(this, '"
+literal|"onmouseover=\"showGwtRoomHint(this, '"
 operator|+
-name|LocationDAO
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|get
-argument_list|(
 name|rl
 operator|.
 name|getId
 argument_list|()
-argument_list|)
-operator|.
-name|getHtmlHint
-argument_list|(
+operator|+
+literal|"', '"
+operator|+
 name|PreferenceLevel
 operator|.
 name|int2string
@@ -2256,9 +2232,8 @@ operator|.
 name|getPreference
 argument_list|()
 argument_list|)
-argument_list|)
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|rl
 operator|.

@@ -498,13 +498,13 @@ argument_list|)
 operator|+
 literal|";' "
 operator|+
-literal|"onmouseover=\"showGwtHint(this, '"
+literal|"onmouseover=\"showGwtRoomHint(this, '"
 operator|+
-name|getLocation
+name|getLocationId
 argument_list|()
-operator|.
-name|getHtmlHint
-argument_list|(
+operator|+
+literal|"', '"
+operator|+
 name|PreferenceLevel
 operator|.
 name|int2string
@@ -512,9 +512,8 @@ argument_list|(
 name|getPreference
 argument_list|()
 argument_list|)
-argument_list|)
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|getName
 argument_list|()
@@ -556,13 +555,13 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|" onmouseover=\"showGwtHint(this, '"
+literal|" onmouseover=\"showGwtRoomHint(this, '"
 operator|+
-name|getLocation
+name|getLocationId
 argument_list|()
-operator|.
-name|getHtmlHint
-argument_list|(
+operator|+
+literal|"', '"
+operator|+
 name|PreferenceLevel
 operator|.
 name|int2string
@@ -570,9 +569,8 @@ argument_list|(
 name|getPreference
 argument_list|()
 argument_list|)
-argument_list|)
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|getName
 argument_list|()

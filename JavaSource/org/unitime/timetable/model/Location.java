@@ -1574,6 +1574,7 @@ return|return
 name|grfs
 return|;
 block|}
+specifier|public
 name|TreeSet
 argument_list|<
 name|RoomGroup
@@ -6139,6 +6140,8 @@ return|return
 name|table
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getHtmlHint
@@ -6151,6 +6154,8 @@ literal|null
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getHtmlHint
@@ -6236,6 +6241,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 specifier|private
 name|String
 name|getHtmlHintImpl
@@ -6726,12 +6733,12 @@ name|getLabelWithHint
 parameter_list|()
 block|{
 return|return
-literal|"<span onmouseover=\"showGwtHint(this, '"
+literal|"<span onmouseover=\"showGwtRoomHint(this, '"
 operator|+
-name|getHtmlHint
+name|getUniqueId
 argument_list|()
 operator|+
-literal|"');\" onmouseout=\"hideGwtHint();\">"
+literal|"');\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|getLabel
 argument_list|()

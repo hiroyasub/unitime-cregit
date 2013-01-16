@@ -1230,6 +1230,8 @@ name|list
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getHtmlHint
