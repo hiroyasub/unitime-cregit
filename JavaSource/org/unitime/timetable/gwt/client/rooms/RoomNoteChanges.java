@@ -2111,6 +2111,8 @@ operator|.
 name|getDate
 argument_list|()
 argument_list|)
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2125,6 +2127,8 @@ name|log
 operator|.
 name|getSession
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2155,6 +2159,8 @@ name|log
 operator|.
 name|getManager
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2203,6 +2209,8 @@ name|log
 operator|.
 name|getObject
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
