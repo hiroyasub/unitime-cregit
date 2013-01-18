@@ -2095,6 +2095,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Insufficient rights to cancel meeting {0}."
+argument_list|)
+name|String
+name|failedApproveEventNoRightsToCancel
+parameter_list|(
+name|String
+name|meeting
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to hide academic session info: {0}"
 argument_list|)
 name|String

@@ -2097,6 +2097,11 @@ if|if
 condition|(
 name|hasInstructionType
 argument_list|()
+operator|&&
+name|event
+operator|.
+name|hasInstructionType
+argument_list|()
 condition|)
 block|{
 name|cmp
