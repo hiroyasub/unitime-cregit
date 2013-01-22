@@ -2048,7 +2048,7 @@ expr_stmt|;
 block|}
 name|hibSession
 operator|.
-name|save
+name|saveOrUpdate
 argument_list|(
 name|location
 argument_list|)

@@ -1622,7 +1622,7 @@ name|from
 init|=
 literal|"Location l"
 operator|+
-literal|" left join fetch l.roomDepts rd"
+literal|" left join l.roomDepts rd"
 operator|+
 literal|" left join fetch l.examTypes xt"
 operator|+
