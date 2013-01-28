@@ -3502,6 +3502,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Break Time:"
+argument_list|)
+name|String
+name|propRoomBreakTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} ({1})"
 argument_list|)
 name|String
@@ -3587,6 +3596,18 @@ name|roomDistance
 parameter_list|(
 name|String
 name|distanceInMeters
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} minutes"
+argument_list|)
+name|String
+name|breakTime
+parameter_list|(
+name|String
+name|breakTimeInMinutes
 parameter_list|)
 function_decl|;
 block|}
