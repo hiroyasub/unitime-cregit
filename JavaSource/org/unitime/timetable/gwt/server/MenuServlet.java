@@ -5312,6 +5312,7 @@ name|p
 range|:
 name|property2value
 control|)
+block|{
 name|UserData
 operator|.
 name|setProperty
@@ -5332,6 +5333,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 literal|null
 return|;

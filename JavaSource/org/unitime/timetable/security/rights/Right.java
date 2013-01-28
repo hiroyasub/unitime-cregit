@@ -2329,14 +2329,14 @@ name|ExamTypes
 block|,
 name|ExamTypeEdit
 block|,
-name|EventRoomTypes
+name|EventStatuses
 argument_list|(
 name|Department
 operator|.
 name|class
 argument_list|)
 block|,
-name|EventRoomTypeEdit
+name|EventStatusEdit
 argument_list|(
 name|Department
 operator|.
