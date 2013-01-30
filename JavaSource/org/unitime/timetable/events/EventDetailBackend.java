@@ -4546,6 +4546,17 @@ name|getEventDepartment
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|m
+operator|.
+name|getLocation
+argument_list|()
+operator|.
+name|getEventDepartment
+argument_list|()
+operator|.
+name|isAllowEvents
+argument_list|()
 condition|)
 block|{
 name|String

@@ -2341,6 +2341,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Only event locations"
+argument_list|)
+name|String
+name|checkOnlyEventLocations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All locations"
+argument_list|)
+name|String
+name|checkAllLocations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"One email per line please."
 argument_list|)
 name|String
@@ -2768,6 +2786,18 @@ literal|"{0} is not managed in UniTime or it is disabled for events."
 argument_list|)
 name|String
 name|conflictNotEventRoom
+parameter_list|(
+name|String
+name|locationName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not allowed to request an event in {0}."
+argument_list|)
+name|String
+name|conflictRoomDenied
 parameter_list|(
 name|String
 name|locationName
