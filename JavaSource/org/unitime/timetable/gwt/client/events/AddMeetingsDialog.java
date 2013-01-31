@@ -1753,7 +1753,7 @@ name|iResponse
 argument_list|,
 name|iIndex
 operator|-
-literal|10
+name|iStep
 argument_list|,
 literal|null
 argument_list|)
@@ -1796,7 +1796,7 @@ name|iResponse
 argument_list|,
 name|iIndex
 operator|+
-literal|10
+name|iStep
 argument_list|,
 literal|null
 argument_list|)
@@ -2273,13 +2273,6 @@ operator|new
 name|ScrollPanel
 argument_list|(
 name|iRoomAvailability
-argument_list|)
-expr_stmt|;
-name|iScrollRooms
-operator|.
-name|setStyleName
-argument_list|(
-literal|"unitime-VerticalScrollPanel"
 argument_list|)
 expr_stmt|;
 name|iAvailabilityForm
