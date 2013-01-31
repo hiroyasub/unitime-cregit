@@ -4814,7 +4814,7 @@ name|clickable
 condition|)
 name|onClick
 operator|=
-literal|"onclick=\"showGwtDialog('Examination Assignment', 'examInfo.do?examId="
+literal|"onclick=\"(parent ? parent : window).showGwtDialog('Examination Assignment', 'examInfo.do?examId="
 operator|+
 name|variable
 operator|.
@@ -5003,7 +5003,7 @@ name|clickable
 condition|)
 name|onClick
 operator|=
-literal|"onclick=\"showGwtDialog('Examination Assignment', 'examInfo.do?examId="
+literal|"onclick=\"(parent ? parent : window).showGwtDialog('Examination Assignment', 'examInfo.do?examId="
 operator|+
 name|value
 operator|.
@@ -5431,7 +5431,7 @@ name|clickable
 condition|)
 name|onClick
 operator|=
-literal|"onclick=\"showGwtDialog('Examination Assignment', 'examInfo.do?examId="
+literal|"onclick=\"(parent ? parent : window).showGwtDialog('Examination Assignment', 'examInfo.do?examId="
 operator|+
 name|assignment
 operator|.
