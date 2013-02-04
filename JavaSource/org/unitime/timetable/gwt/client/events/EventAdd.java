@@ -861,6 +861,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|EventInterface
+operator|.
+name|StandardEventNoteInterface
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -4456,7 +4474,7 @@ name|text
 operator|+=
 name|iStandardNotes
 operator|.
-name|getItemText
+name|getValue
 argument_list|(
 name|iStandardNotes
 operator|.
@@ -4574,7 +4592,7 @@ name|text
 operator|+=
 name|iStandardNotes
 operator|.
-name|getItemText
+name|getValue
 argument_list|(
 name|iStandardNotes
 operator|.
@@ -9480,7 +9498,7 @@ name|canSeeStandardNotes
 condition|)
 for|for
 control|(
-name|String
+name|StandardEventNoteInterface
 name|note
 range|:
 name|getProperties
@@ -9494,6 +9512,14 @@ operator|.
 name|addItem
 argument_list|(
 name|note
+operator|.
+name|toString
+argument_list|()
+argument_list|,
+name|note
+operator|.
+name|getNote
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iEventAddMeetings

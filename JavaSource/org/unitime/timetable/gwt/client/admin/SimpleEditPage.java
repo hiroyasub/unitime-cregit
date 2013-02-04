@@ -1860,13 +1860,6 @@ argument_list|()
 expr_stmt|;
 name|iTable
 operator|.
-name|setStyleName
-argument_list|(
-literal|"unitime-WebTable"
-argument_list|)
-expr_stmt|;
-name|iTable
-operator|.
 name|setAllowSelection
 argument_list|(
 literal|true

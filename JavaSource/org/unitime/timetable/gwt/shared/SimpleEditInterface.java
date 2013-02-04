@@ -174,6 +174,11 @@ name|dateMapping
 argument_list|(
 literal|"Event Date Mapping"
 argument_list|)
+block|,
+name|stdEvtNote
+argument_list|(
+literal|"Standard Event Note"
+argument_list|)
 block|, 		;
 specifier|private
 name|String
