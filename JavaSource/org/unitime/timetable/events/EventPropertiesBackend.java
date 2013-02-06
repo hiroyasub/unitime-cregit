@@ -1940,7 +1940,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
+if|else if
+condition|(
+operator|!
+name|departments
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
 block|{
 for|for
 control|(
