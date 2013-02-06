@@ -865,6 +865,13 @@ name|endsWith
 argument_list|(
 literal|"\""
 argument_list|)
+operator|&&
+name|query
+operator|.
+name|length
+argument_list|()
+operator|>=
+literal|2
 condition|)
 return|return
 operator|new
