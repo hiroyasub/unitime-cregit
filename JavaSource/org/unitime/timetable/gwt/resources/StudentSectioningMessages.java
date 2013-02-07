@@ -522,7 +522,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Courses"
+literal|"Course Selections"
 argument_list|)
 name|String
 name|courseRequestsCourses
@@ -543,7 +543,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternatives"
+literal|"Alternate Course Selections (used only if course selection above is not available)"
 argument_list|)
 name|String
 name|courseRequestsAlternatives
@@ -552,7 +552,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0}. Alternative"
+literal|"{0}. Alternate"
 argument_list|)
 name|String
 name|courseRequestsAlternative
@@ -627,7 +627,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternative(s) to all the courses above."
+literal|"Alternate selection if course(s) above not available."
 argument_list|)
 name|String
 name|courseRequestsHintA0
@@ -1023,7 +1023,7 @@ name|int
 name|distanceInMinutes
 parameter_list|)
 function_decl|;
-comment|/* Student Sectioning widget messags 	 */
+comment|/* Student Sectioning widget messages 	 */
 annotation|@
 name|DefaultMessage
 argument_list|(

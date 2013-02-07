@@ -58,7 +58,7 @@ literal|"Tip: Use Ctrl+N (or Ctrl+Alt+N in some browsers) to validate the screen
 block|,
 literal|"Tip: Start entering the name (e.g., ENGL 10600) of the course or a part of its title (e.g., History) to see suggestions."
 block|,
-literal|"Tip: The Alternatives below are here to ensure that you get a desired number of courses even when a course (and its alternatives) are not available."
+literal|"Tip: The Alternate Course Selections below can be used to ensure that the desired number of courses are scheduled even when a Course Selection (and its alternatives) are not available."
 block|,
 literal|"Tip: Enter a free time to aviod getting classes in time you need for something else."
 block|,
@@ -66,7 +66,7 @@ literal|"Tip: All courses above a free time should not overlap with the free tim
 block|,
 literal|"Tip: All courses below a free time can not overlap with the free time (you will only get the course if there are sections that do not break the free time)."
 block|,
-literal|"Tip: Clik this tip to see another tip."
+literal|"Tip: Click this tip to see another tip."
 block|,
 literal|"Tip: There are no alternative free times."
 block|,
