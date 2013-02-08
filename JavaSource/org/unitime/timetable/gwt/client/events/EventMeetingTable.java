@@ -3002,6 +3002,11 @@ name|allowNoSelection
 argument_list|()
 condition|)
 block|{
+name|boolean
+name|canSelect
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
 name|int
@@ -3111,10 +3116,14 @@ condition|)
 return|return
 literal|false
 return|;
+name|canSelect
+operator|=
+literal|true
+expr_stmt|;
 block|}
 block|}
 return|return
-literal|true
+name|canSelect
 return|;
 block|}
 else|else
