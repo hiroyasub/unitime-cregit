@@ -5811,6 +5811,11 @@ argument_list|()
 condition|)
 block|{
 return|return
+name|term
+operator|.
+name|isEmpty
+argument_list|()
+operator|||
 name|has
 argument_list|(
 name|getLocation
