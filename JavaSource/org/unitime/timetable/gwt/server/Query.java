@@ -1616,6 +1616,13 @@ name|endsWith
 argument_list|(
 literal|"\""
 argument_list|)
+operator|&&
+name|body
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|1
 condition|)
 name|body
 operator|=
