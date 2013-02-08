@@ -522,7 +522,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course Selections"
+literal|"Course Requests"
 argument_list|)
 name|String
 name|courseRequestsCourses
@@ -543,7 +543,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternate Course Selections (used only if course selection above is not available)"
+literal|"Alternate Course Requests (used only if a course requested above is not available)"
 argument_list|)
 name|String
 name|courseRequestsAlternatives
@@ -627,7 +627,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternate selection if course(s) above not available."
+literal|"Alternate request if course(s) above not available."
 argument_list|)
 name|String
 name|courseRequestsHintA0
@@ -2249,7 +2249,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No courses provided."
+literal|"No courses requested."
 argument_list|)
 name|String
 name|exceptionNoCourse
