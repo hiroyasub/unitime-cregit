@@ -5015,7 +5015,7 @@ operator|.
 name|MidtermExam
 operator|||
 name|type
-operator|!=
+operator|==
 name|EventType
 operator|.
 name|FinalExam
