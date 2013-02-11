@@ -588,6 +588,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Type:"
+argument_list|)
+name|String
+name|propertyCourseType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Schedule of Classes Note:"
 argument_list|)
 name|String
@@ -1820,6 +1829,15 @@ literal|"Department"
 argument_list|)
 name|String
 name|columnDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Type"
+argument_list|)
+name|String
+name|columnCourseType
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5689,6 +5707,15 @@ literal|"Not Found"
 argument_list|)
 name|String
 name|valueInstructorAccountNameNotFound
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Set"
+argument_list|)
+name|String
+name|valueNotSet
 parameter_list|()
 function_decl|;
 annotation|@

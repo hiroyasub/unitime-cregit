@@ -2391,6 +2391,10 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|CourseTypes
+block|,
+name|CourseTypeEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

@@ -257,6 +257,9 @@ name|query
 parameter_list|,
 name|Integer
 name|limit
+parameter_list|,
+name|CourseInfoMatcher
+name|matcher
 parameter_list|)
 function_decl|;
 specifier|public

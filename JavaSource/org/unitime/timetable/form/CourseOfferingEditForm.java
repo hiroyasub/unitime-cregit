@@ -404,6 +404,10 @@ specifier|private
 name|String
 name|weekStartDayOfWeek
 decl_stmt|;
+specifier|private
+name|String
+name|courseTypeId
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -836,6 +840,10 @@ operator|=
 literal|null
 expr_stmt|;
 name|weekStartDayOfWeek
+operator|=
+literal|null
+expr_stmt|;
+name|courseTypeId
 operator|=
 literal|null
 expr_stmt|;
@@ -1648,6 +1656,30 @@ operator|.
 name|weekStartDayOfWeek
 operator|=
 name|weekStartDayOfWeek
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getCourseTypeId
+parameter_list|()
+block|{
+return|return
+name|courseTypeId
+return|;
+block|}
+specifier|public
+name|void
+name|setCourseTypeId
+parameter_list|(
+name|String
+name|courseTypeId
+parameter_list|)
+block|{
+name|this
+operator|.
+name|courseTypeId
+operator|=
+name|courseTypeId
 expr_stmt|;
 block|}
 block|}

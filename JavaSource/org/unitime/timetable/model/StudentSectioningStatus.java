@@ -66,6 +66,11 @@ name|email
 argument_list|(
 literal|"Email Notifications"
 argument_list|)
+block|,
+name|notype
+argument_list|(
+literal|"Must Have Course Type"
+argument_list|)
 block|;
 specifier|private
 name|String

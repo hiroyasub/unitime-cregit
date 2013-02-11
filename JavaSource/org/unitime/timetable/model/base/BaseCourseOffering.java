@@ -51,6 +51,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|CourseType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|DemandOfferingType
 import|;
 end_import
@@ -170,6 +184,10 @@ decl_stmt|;
 specifier|private
 name|DemandOfferingType
 name|iDemandOfferingType
+decl_stmt|;
+specifier|private
+name|CourseType
+name|iCourseType
 decl_stmt|;
 specifier|public
 specifier|static
@@ -691,6 +709,28 @@ name|demandOfferingType
 expr_stmt|;
 block|}
 specifier|public
+name|CourseType
+name|getCourseType
+parameter_list|()
+block|{
+return|return
+name|iCourseType
+return|;
+block|}
+specifier|public
+name|void
+name|setCourseType
+parameter_list|(
+name|CourseType
+name|courseType
+parameter_list|)
+block|{
+name|iCourseType
+operator|=
+name|courseType
+expr_stmt|;
+block|}
+specifier|public
 name|boolean
 name|equals
 parameter_list|(
@@ -805,6 +845,11 @@ operator|+
 literal|"\n	CourseNbr: "
 operator|+
 name|getCourseNbr
+argument_list|()
+operator|+
+literal|"\n	CourseType: "
+operator|+
+name|getCourseType
 argument_list|()
 operator|+
 literal|"\n	Demand: "
