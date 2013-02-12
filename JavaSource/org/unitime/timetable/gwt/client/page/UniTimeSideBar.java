@@ -1804,6 +1804,13 @@ argument_list|>
 name|result
 parameter_list|)
 block|{
+name|iStackPanel
+operator|.
+name|setActive
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|iTree
 operator|.
 name|clear
