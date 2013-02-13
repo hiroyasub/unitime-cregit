@@ -127,20 +127,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|OfferingConsentType
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|Reservation
 import|;
 end_import
@@ -230,10 +216,6 @@ decl_stmt|;
 specifier|private
 name|Session
 name|iSession
-decl_stmt|;
-specifier|private
-name|OfferingConsentType
-name|iConsentType
 decl_stmt|;
 specifier|private
 name|Set
@@ -690,28 +672,6 @@ name|session
 expr_stmt|;
 block|}
 specifier|public
-name|OfferingConsentType
-name|getConsentType
-parameter_list|()
-block|{
-return|return
-name|iConsentType
-return|;
-block|}
-specifier|public
-name|void
-name|setConsentType
-parameter_list|(
-name|OfferingConsentType
-name|consentType
-parameter_list|)
-block|{
-name|iConsentType
-operator|=
-name|consentType
-expr_stmt|;
-block|}
-specifier|public
 name|Set
 argument_list|<
 name|CourseOffering
@@ -1121,11 +1081,6 @@ operator|+
 literal|"\n	ByReservationOnly: "
 operator|+
 name|getByReservationOnly
-argument_list|()
-operator|+
-literal|"\n	ConsentType: "
-operator|+
-name|getConsentType
 argument_list|()
 operator|+
 literal|"\n	ExternalUniqueId: "

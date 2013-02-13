@@ -15597,9 +15597,6 @@ name|setParentSection
 argument_list|(
 name|courseOffering
 operator|.
-name|getInstructionalOffering
-argument_list|()
-operator|.
 name|getConsentType
 argument_list|()
 operator|==
@@ -15608,9 +15605,6 @@ condition|?
 literal|null
 else|:
 name|courseOffering
-operator|.
-name|getInstructionalOffering
-argument_list|()
 operator|.
 name|getConsentType
 argument_list|()

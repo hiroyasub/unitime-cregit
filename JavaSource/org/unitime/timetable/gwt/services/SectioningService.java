@@ -473,7 +473,10 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
-name|Boolean
+name|List
+argument_list|<
+name|Long
+argument_list|>
 name|canApprove
 parameter_list|(
 name|Long

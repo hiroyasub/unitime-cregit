@@ -576,7 +576,10 @@ name|classOrOfferingId
 parameter_list|,
 name|AsyncCallback
 argument_list|<
-name|Boolean
+name|List
+argument_list|<
+name|Long
+argument_list|>
 argument_list|>
 name|callback
 parameter_list|)

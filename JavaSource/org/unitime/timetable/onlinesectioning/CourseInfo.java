@@ -285,9 +285,6 @@ if|if
 condition|(
 name|course
 operator|.
-name|getInstructionalOffering
-argument_list|()
-operator|.
 name|getConsentType
 argument_list|()
 operator|!=
@@ -298,9 +295,6 @@ name|iConsent
 operator|=
 name|course
 operator|.
-name|getInstructionalOffering
-argument_list|()
-operator|.
 name|getConsentType
 argument_list|()
 operator|.
@@ -310,9 +304,6 @@ expr_stmt|;
 name|iConsentAbbv
 operator|=
 name|course
-operator|.
-name|getInstructionalOffering
-argument_list|()
 operator|.
 name|getConsentType
 argument_list|()

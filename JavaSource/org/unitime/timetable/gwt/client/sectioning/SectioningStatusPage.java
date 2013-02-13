@@ -2895,7 +2895,10 @@ argument_list|,
 operator|new
 name|AsyncCallback
 argument_list|<
-name|Boolean
+name|List
+argument_list|<
+name|Long
+argument_list|>
 argument_list|>
 argument_list|()
 block|{
@@ -2906,8 +2909,11 @@ name|void
 name|onSuccess
 parameter_list|(
 specifier|final
-name|Boolean
-name|canApprove
+name|List
+argument_list|<
+name|Long
+argument_list|>
+name|courseIdsCanApprove
 parameter_list|)
 block|{
 name|iSectioningService
@@ -3046,7 +3052,7 @@ name|populate
 argument_list|(
 name|result
 argument_list|,
-name|canApprove
+name|courseIdsCanApprove
 argument_list|)
 expr_stmt|;
 if|if
@@ -3350,7 +3356,7 @@ name|populate
 argument_list|(
 name|result
 argument_list|,
-literal|false
+literal|null
 argument_list|)
 expr_stmt|;
 if|if

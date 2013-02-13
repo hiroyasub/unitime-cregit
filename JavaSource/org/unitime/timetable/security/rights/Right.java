@@ -1786,7 +1786,7 @@ argument_list|)
 block|,
 name|ConsentApproval
 argument_list|(
-name|InstructionalOffering
+name|CourseOffering
 operator|.
 name|class
 argument_list|)

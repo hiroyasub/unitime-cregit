@@ -6744,9 +6744,6 @@ if|if
 condition|(
 name|course
 operator|.
-name|getInstructionalOffering
-argument_list|()
-operator|.
 name|getConsentType
 argument_list|()
 operator|!=
@@ -6757,9 +6754,6 @@ operator|+=
 literal|" ("
 operator|+
 name|course
-operator|.
-name|getInstructionalOffering
-argument_list|()
 operator|.
 name|getConsentType
 argument_list|()
