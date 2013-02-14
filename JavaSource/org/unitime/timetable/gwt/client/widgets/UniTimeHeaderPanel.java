@@ -1309,8 +1309,16 @@ literal|null
 condition|)
 name|button
 operator|.
-name|setWidth
+name|getElement
+argument_list|()
+operator|.
+name|getStyle
+argument_list|()
+operator|.
+name|setProperty
 argument_list|(
+literal|"min-width"
+argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
@@ -1682,7 +1690,7 @@ argument_list|()
 operator|.
 name|getProperty
 argument_list|(
-literal|"width"
+literal|"min-width"
 argument_list|)
 decl_stmt|;
 name|clone
