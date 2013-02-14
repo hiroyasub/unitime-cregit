@@ -572,7 +572,7 @@ parameter_list|,
 name|String
 name|value
 parameter_list|)
-comment|/*-{ 		style["white-space"] = value; 	}-*/
+comment|/*-{ 		style.whiteSpace = value; 	}-*/
 function_decl|;
 specifier|public
 specifier|native
@@ -586,7 +586,7 @@ parameter_list|,
 name|String
 name|value
 parameter_list|)
-comment|/*-{ 		style["max-height"] = value; 	}-*/
+comment|/*-{ 		style.maxHeight = value; 	}-*/
 function_decl|;
 specifier|public
 specifier|native
@@ -600,7 +600,32 @@ parameter_list|,
 name|String
 name|value
 parameter_list|)
-comment|/*-{ 		style["max-width"] = value; 	}-*/
+comment|/*-{ 		style.maxWidth = value; 	}-*/
+function_decl|;
+specifier|public
+specifier|native
+specifier|static
+name|void
+name|setMinWidth
+parameter_list|(
+name|Style
+name|style
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+comment|/*-{ 		style.minWidth = value; 	}-*/
+function_decl|;
+specifier|public
+specifier|native
+specifier|static
+name|String
+name|getMinWidth
+parameter_list|(
+name|Style
+name|style
+parameter_list|)
+comment|/*-{ 		return style.minWidth; 	}-*/
 function_decl|;
 specifier|public
 specifier|native

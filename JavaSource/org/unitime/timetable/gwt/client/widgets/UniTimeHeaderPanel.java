@@ -1307,6 +1307,10 @@ name|width
 operator|!=
 literal|null
 condition|)
+name|ToolBox
+operator|.
+name|setMinWidth
+argument_list|(
 name|button
 operator|.
 name|getElement
@@ -1314,10 +1318,6 @@ argument_list|()
 operator|.
 name|getStyle
 argument_list|()
-operator|.
-name|setProperty
-argument_list|(
-literal|"min-width"
 argument_list|,
 name|width
 argument_list|)
@@ -1680,6 +1680,10 @@ decl_stmt|;
 name|String
 name|width
 init|=
+name|ToolBox
+operator|.
+name|getMinWidth
+argument_list|(
 name|button
 operator|.
 name|getElement
@@ -1687,10 +1691,6 @@ argument_list|()
 operator|.
 name|getStyle
 argument_list|()
-operator|.
-name|getProperty
-argument_list|(
-literal|"min-width"
 argument_list|)
 decl_stmt|;
 name|clone
