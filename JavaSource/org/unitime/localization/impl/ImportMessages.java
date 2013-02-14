@@ -294,7 +294,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"# Copyright (C) 2012, UniTime LLC, and individual contributors"
+literal|"# Copyright (C) 2012 - 2013, UniTime LLC, and individual contributors"
 argument_list|)
 expr_stmt|;
 name|out
@@ -470,6 +470,7 @@ argument_list|()
 operator|>=
 literal|3
 operator|&&
+operator|(
 operator|!
 name|line
 operator|.
@@ -480,6 +481,17 @@ argument_list|)
 operator|.
 name|isEmpty
 argument_list|()
+operator|||
+name|line
+operator|.
+name|getField
+argument_list|(
+literal|1
+argument_list|)
+operator|.
+name|isEmpty
+argument_list|()
+operator|)
 condition|)
 block|{
 name|out
