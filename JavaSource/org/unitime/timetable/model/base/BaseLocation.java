@@ -254,6 +254,10 @@ name|String
 name|iDisplayName
 decl_stmt|;
 specifier|private
+name|String
+name|iExternalUniqueId
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -414,6 +418,13 @@ name|String
 name|PROP_DISPLAY_NAME
 init|=
 literal|"displayName"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXTERNAL_UID
+init|=
+literal|"externalUniqueId"
 decl_stmt|;
 specifier|public
 name|BaseLocation
@@ -813,6 +824,28 @@ block|{
 name|iDisplayName
 operator|=
 name|displayName
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getExternalUniqueId
+parameter_list|()
+block|{
+return|return
+name|iExternalUniqueId
+return|;
+block|}
+specifier|public
+name|void
+name|setExternalUniqueId
+parameter_list|(
+name|String
+name|externalUniqueId
+parameter_list|)
+block|{
+name|iExternalUniqueId
+operator|=
+name|externalUniqueId
 expr_stmt|;
 block|}
 specifier|public
@@ -1373,6 +1406,11 @@ operator|+
 literal|"\n	ExamCapacity: "
 operator|+
 name|getExamCapacity
+argument_list|()
+operator|+
+literal|"\n	ExternalUniqueId: "
+operator|+
+name|getExternalUniqueId
 argument_list|()
 operator|+
 literal|"\n	IgnoreRoomCheck: "

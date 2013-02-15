@@ -2064,16 +2064,6 @@ name|getLabel
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|roomDetailForm
-operator|.
-name|setExternalId
-argument_list|(
-name|r
-operator|.
-name|getExternalUniqueId
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -2098,13 +2088,6 @@ name|nonUnivLocation
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|roomDetailForm
-operator|.
-name|setExternalId
-argument_list|(
-literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -2140,6 +2123,16 @@ name|errors
 argument_list|)
 expr_stmt|;
 block|}
+name|roomDetailForm
+operator|.
+name|setExternalId
+argument_list|(
+name|location
+operator|.
+name|getExternalUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|roomDetailForm
 operator|.
 name|setType

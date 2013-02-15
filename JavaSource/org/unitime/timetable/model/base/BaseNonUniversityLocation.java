@@ -343,6 +343,11 @@ operator|+
 name|getExamCapacity
 argument_list|()
 operator|+
+literal|"\n	ExternalUniqueId: "
+operator|+
+name|getExternalUniqueId
+argument_list|()
+operator|+
 literal|"\n	IgnoreRoomCheck: "
 operator|+
 name|getIgnoreRoomCheck

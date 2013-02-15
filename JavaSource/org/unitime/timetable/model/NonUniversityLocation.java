@@ -287,6 +287,14 @@ name|getEventAvailability
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|l
+operator|.
+name|setExternalUniqueId
+argument_list|(
+name|getExternalUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|l
 return|;
