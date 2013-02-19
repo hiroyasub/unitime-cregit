@@ -860,11 +860,11 @@ literal|"select distinct s.uniqueId from Student s "
 operator|+
 literal|"left outer join s.classEnrollments e "
 operator|+
-literal|"left outer join s.courseDemands d inner join d.courseRequests r "
+literal|"left outer join s.courseDemands d left outer join d.courseRequests r left outer join r.courseOffering co "
 operator|+
 literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId or "
 operator|+
-literal|"r.courseOffering.instructionalOffering.uniqueId = :offeringId"
+literal|"co.instructionalOffering.uniqueId = :offeringId"
 argument_list|)
 operator|.
 name|setLong
@@ -900,8 +900,6 @@ argument_list|,
 name|helper
 argument_list|,
 name|offeringId
-argument_list|,
-name|studentIds
 argument_list|)
 expr_stmt|;
 block|}
@@ -978,14 +976,125 @@ name|helper
 parameter_list|,
 name|Long
 name|offeringId
-parameter_list|,
-name|List
-argument_list|<
-name|Long
-argument_list|>
-name|newStudentIds
 parameter_list|)
 block|{
+comment|// Load new students
+name|Map
+argument_list|<
+name|Long
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+argument_list|>
+name|newStudents
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|Long
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+argument_list|>
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+name|student
+range|:
+operator|(
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+argument_list|>
+operator|)
+name|helper
+operator|.
+name|getHibSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select distinct s from Student s "
+operator|+
+literal|"left join fetch s.courseDemands as cd "
+operator|+
+literal|"left join fetch cd.courseRequests as cr "
+operator|+
+literal|"left join fetch cr.courseOffering as co "
+operator|+
+literal|"left join fetch cr.classWaitLists as cwl "
+operator|+
+literal|"left join fetch s.classEnrollments as e "
+operator|+
+literal|"left join fetch s.academicAreaClassifications as a "
+operator|+
+literal|"left join fetch s.posMajors as mj "
+operator|+
+literal|"left join fetch s.waitlists as w "
+operator|+
+literal|"left join fetch cr.classEnrollments as cre "
+operator|+
+literal|"left join fetch s.groups as g "
+operator|+
+literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId or co.instructionalOffering.uniqueId = :offeringId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"offeringId"
+argument_list|,
+name|offeringId
+argument_list|)
+operator|.
+name|list
+argument_list|()
+control|)
+block|{
+name|newStudents
+operator|.
+name|put
+argument_list|(
+name|student
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
+name|student
+argument_list|)
+expr_stmt|;
+block|}
 comment|// Persist expected spaces if needed
 if|if
 condition|(
@@ -1564,6 +1673,24 @@ operator|.
 name|Student
 name|student
 init|=
+name|newStudents
+operator|.
+name|get
+argument_list|(
+name|oldStudent
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|student
+operator|==
+literal|null
+condition|)
+name|student
+operator|=
 name|StudentDAO
 operator|.
 name|getInstance
@@ -1581,7 +1708,7 @@ operator|.
 name|getHibSession
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|Student
 name|newStudent
 init|=
@@ -1631,7 +1758,7 @@ name|newStudent
 block|}
 argument_list|)
 expr_stmt|;
-name|newStudentIds
+name|newStudents
 operator|.
 name|remove
 argument_list|(
@@ -1645,10 +1772,21 @@ block|}
 block|}
 for|for
 control|(
-name|Long
-name|studentId
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+name|student
 range|:
-name|newStudentIds
+name|newStudents
+operator|.
+name|values
+argument_list|()
 control|)
 block|{
 name|Student
@@ -1658,7 +1796,10 @@ name|server
 operator|.
 name|getStudent
 argument_list|(
-name|studentId
+name|student
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -1674,42 +1815,9 @@ argument_list|(
 name|oldStudent
 argument_list|)
 expr_stmt|;
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|Student
-name|student
-init|=
-name|StudentDAO
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|studentId
-argument_list|,
-name|helper
-operator|.
-name|getHibSession
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|Student
 name|newStudent
 init|=
-operator|(
-name|student
-operator|==
-literal|null
-condition|?
-literal|null
-else|:
 name|ReloadAllData
 operator|.
 name|loadStudent
@@ -1720,7 +1828,6 @@ name|server
 argument_list|,
 name|helper
 argument_list|)
-operator|)
 decl_stmt|;
 if|if
 condition|(
