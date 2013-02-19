@@ -2593,6 +2593,11 @@ name|getExternalUserId
 argument_list|()
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|setMaxResults
 argument_list|(
 literal|1
