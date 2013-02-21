@@ -1996,6 +1996,17 @@ name|session
 parameter_list|)
 function_decl|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|AcademicSessionInfo
+name|getAcademicSessionInfo
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 

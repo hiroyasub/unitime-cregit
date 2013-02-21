@@ -1929,7 +1929,10 @@ name|cd
 operator|.
 name|setWaitlist
 argument_list|(
-literal|false
+name|r
+operator|.
+name|isWaitList
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|Iterator

@@ -4573,6 +4573,17 @@ name|handler
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|AcademicSessionInfo
+name|getAcademicSessionInfo
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 specifier|private
 name|void
 name|fireChange

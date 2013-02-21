@@ -943,6 +943,16 @@ argument_list|(
 name|c
 argument_list|)
 expr_stmt|;
+name|e
+operator|.
+name|setWaitList
+argument_list|(
+name|request
+operator|.
+name|isWaitlist
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!

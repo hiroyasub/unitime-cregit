@@ -5072,11 +5072,8 @@ operator|.
 name|isWaitlist
 argument_list|()
 operator|)
-operator|||
-name|assignedConfig
-operator|!=
-literal|null
 argument_list|,
+comment|// || assignedConfig != null,
 operator|(
 name|cd
 operator|.
@@ -5828,7 +5825,7 @@ name|student
 argument_list|,
 name|cx
 argument_list|,
-literal|true
+literal|false
 argument_list|,
 name|timeStamp
 operator|.

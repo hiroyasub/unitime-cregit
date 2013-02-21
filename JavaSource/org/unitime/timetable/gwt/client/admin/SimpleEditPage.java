@@ -1505,6 +1505,17 @@ name|handler
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
+specifier|public
+name|AcademicSessionInfo
+name|getAcademicSessionInfo
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 decl_stmt|;
 specifier|public

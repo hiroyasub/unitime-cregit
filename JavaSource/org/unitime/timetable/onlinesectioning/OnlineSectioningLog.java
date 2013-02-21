@@ -18952,6 +18952,15 @@ name|long
 name|getTimeStamp
 parameter_list|()
 function_decl|;
+comment|// optional bool wait_list = 9 [default = false];
+name|boolean
+name|hasWaitList
+parameter_list|()
+function_decl|;
+name|boolean
+name|getWaitList
+parameter_list|()
+function_decl|;
 block|}
 specifier|public
 specifier|static
@@ -19682,6 +19691,45 @@ return|return
 name|timeStamp_
 return|;
 block|}
+comment|// optional bool wait_list = 9 [default = false];
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|WAIT_LIST_FIELD_NUMBER
+init|=
+literal|9
+decl_stmt|;
+specifier|private
+name|boolean
+name|waitList_
+decl_stmt|;
+specifier|public
+name|boolean
+name|hasWaitList
+parameter_list|()
+block|{
+return|return
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000010
+operator|)
+operator|==
+literal|0x00000010
+operator|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|getWaitList
+parameter_list|()
+block|{
+return|return
+name|waitList_
+return|;
+block|}
 specifier|private
 name|void
 name|initFields
@@ -19735,6 +19783,10 @@ expr_stmt|;
 name|timeStamp_
 operator|=
 literal|0L
+expr_stmt|;
+name|waitList_
+operator|=
+literal|false
 expr_stmt|;
 block|}
 specifier|private
@@ -20078,6 +20130,29 @@ name|timeStamp_
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000010
+operator|)
+operator|==
+literal|0x00000010
+operator|)
+condition|)
+block|{
+name|output
+operator|.
+name|writeBool
+argument_list|(
+literal|9
+argument_list|,
+name|waitList_
+argument_list|)
+expr_stmt|;
+block|}
 name|getUnknownFields
 argument_list|()
 operator|.
@@ -20362,6 +20437,37 @@ argument_list|(
 literal|8
 argument_list|,
 name|timeStamp_
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000010
+operator|)
+operator|==
+literal|0x00000010
+operator|)
+condition|)
+block|{
+name|size
+operator|+=
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|CodedOutputStream
+operator|.
+name|computeBoolSize
+argument_list|(
+literal|9
+argument_list|,
+name|waitList_
 argument_list|)
 expr_stmt|;
 block|}
@@ -21358,6 +21464,19 @@ operator|~
 literal|0x00000040
 operator|)
 expr_stmt|;
+name|waitList_
+operator|=
+literal|false
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000080
+operator|)
+expr_stmt|;
 return|return
 name|this
 return|;
@@ -21888,6 +22007,30 @@ operator|.
 name|timeStamp_
 operator|=
 name|timeStamp_
+expr_stmt|;
+if|if
+condition|(
+operator|(
+operator|(
+name|from_bitField0_
+operator|&
+literal|0x00000080
+operator|)
+operator|==
+literal|0x00000080
+operator|)
+condition|)
+block|{
+name|to_bitField0_
+operator||=
+literal|0x00000010
+expr_stmt|;
+block|}
+name|result
+operator|.
+name|waitList_
+operator|=
+name|waitList_
 expr_stmt|;
 name|result
 operator|.
@@ -22492,6 +22635,23 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|other
+operator|.
+name|hasWaitList
+argument_list|()
+condition|)
+block|{
+name|setWaitList
+argument_list|(
+name|other
+operator|.
+name|getWaitList
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|this
 operator|.
 name|mergeUnknownFields
@@ -22945,6 +23105,23 @@ operator|=
 name|input
 operator|.
 name|readInt64
+argument_list|()
+expr_stmt|;
+break|break;
+block|}
+case|case
+literal|72
+case|:
+block|{
+name|bitField0_
+operator||=
+literal|0x00000080
+expr_stmt|;
+name|waitList_
+operator|=
+name|input
+operator|.
+name|readBool
 argument_list|()
 expr_stmt|;
 break|break;
@@ -26873,6 +27050,85 @@ expr_stmt|;
 name|timeStamp_
 operator|=
 literal|0L
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|// optional bool wait_list = 9 [default = false];
+specifier|private
+name|boolean
+name|waitList_
+decl_stmt|;
+specifier|public
+name|boolean
+name|hasWaitList
+parameter_list|()
+block|{
+return|return
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000080
+operator|)
+operator|==
+literal|0x00000080
+operator|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|getWaitList
+parameter_list|()
+block|{
+return|return
+name|waitList_
+return|;
+block|}
+specifier|public
+name|Builder
+name|setWaitList
+parameter_list|(
+name|boolean
+name|value
+parameter_list|)
+block|{
+name|bitField0_
+operator||=
+literal|0x00000080
+expr_stmt|;
+name|waitList_
+operator|=
+name|value
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
+name|Builder
+name|clearWaitList
+parameter_list|()
+block|{
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000080
+operator|)
+expr_stmt|;
+name|waitList_
+operator|=
+literal|false
 expr_stmt|;
 name|onChanged
 argument_list|()
@@ -56257,6 +56513,11 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+name|int
+name|from_bitField0_
+init|=
+name|bitField0_
+decl_stmt|;
 if|if
 condition|(
 name|actionBuilder_
@@ -64175,7 +64436,7 @@ literal|"subpart\030\t \001(\0132\007.Entity\"7\n\nPreference\022\014\n\010"
 operator|+
 literal|"REQUIRED\020\000\022\r\n\tPREFERRED\020\001\022\014\n\010SELECTED\020\002\""
 block|,
-literal|"\245\001\n\007Request\022\n\n\002id\030\001 \001(\003\022\020\n\010priority\030\002 \002("
+literal|"\277\001\n\007Request\022\n\n\002id\030\001 \001(\003\022\020\n\010priority\030\002 \002("
 operator|+
 literal|"\005\022\032\n\013alternative\030\003 \001(\010:\005false\022\030\n\tfree_ti"
 operator|+
@@ -64183,59 +64444,59 @@ literal|"me\030\004 \003(\0132\005.Time\022\027\n\006course\030\005 \003(\0132\0
 operator|+
 literal|"\022\031\n\007section\030\006 \003(\0132\010.Section\022\022\n\ntime_stam"
 operator|+
-literal|"p\030\010 \001(\003\"\305\001\n\nEnrollment\022(\n\004type\030\001 \002(\0162\032.E"
+literal|"p\030\010 \001(\003\022\030\n\twait_list\030\t \001(\010:\005false\"\305\001\n\nEn"
 operator|+
-literal|"nrollment.EnrollmentType\022\031\n\007section\030\002 \003("
+literal|"rollment\022(\n\004type\030\001 \002(\0162\032.Enrollment.Enro"
 operator|+
-literal|"\0132\010.Section\022\r\n\005value\030\003 \001(\001\"c\n\016Enrollment"
+literal|"llmentType\022\031\n\007section\030\002 \003(\0132\010.Section\022\r\n"
 operator|+
-literal|"Type\022\r\n\tREQUESTED\020\000\022\014\n\010COMPUTED\020\001\022\014\n\010PRE"
+literal|"\005value\030\003 \001(\001\"c\n\016EnrollmentType\022\r\n\tREQUES"
 operator|+
-literal|"VIOUS\020\002\022\n\n\006STORED\020\003\022\014\n\010APPROVED\020\004\022\014\n\010REJ"
+literal|"TED\020\000\022\014\n\010COMPUTED\020\001\022\014\n\010PREVIOUS\020\002\022\n\n\006STO"
 operator|+
-literal|"ECTED\020\005\"\223\003\n\006Action\022\021\n\toperation\030\001 \002(\t\022\030\n"
+literal|"RED\020\003\022\014\n\010APPROVED\020\004\022\014\n\010REJECTED\020\005\"\223\003\n\006Ac"
 block|,
-literal|"\007session\030\002 \002(\0132\007.Entity\022\030\n\007student\030\003 \001(\013"
+literal|"tion\022\021\n\toperation\030\001 \002(\t\022\030\n\007session\030\002 \002(\013"
 operator|+
-literal|"2\007.Entity\022\022\n\nstart_time\030\004 \001(\003\022\020\n\010end_tim"
+literal|"2\007.Entity\022\030\n\007student\030\003 \001(\0132\007.Entity\022\022\n\ns"
 operator|+
-literal|"e\030\005 \001(\003\022\020\n\010cpu_time\030\006 \001(\003\022\031\n\007request\030\007 \003"
+literal|"tart_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001(\003\022\020\n\010cpu"
 operator|+
-literal|"(\0132\010.Request\022\037\n\nenrollment\030\010 \003(\0132\013.Enrol"
+literal|"_time\030\006 \001(\003\022\031\n\007request\030\007 \003(\0132\010.Request\022\037"
 operator|+
-literal|"lment\022\026\n\005other\030\t \003(\0132\007.Entity\022\031\n\007message"
+literal|"\n\nenrollment\030\010 \003(\0132\013.Enrollment\022\026\n\005other"
 operator|+
-literal|"\030\n \003(\0132\010.Message\022\"\n\006result\030\013 \001(\0162\022.Actio"
+literal|"\030\t \003(\0132\007.Entity\022\031\n\007message\030\n \003(\0132\010.Messa"
 operator|+
-literal|"n.ResultType\022\025\n\004user\030\014 \001(\0132\007.Entity\022\031\n\006o"
+literal|"ge\022\"\n\006result\030\013 \001(\0162\022.Action.ResultType\022\025"
 operator|+
-literal|"ption\030\r \003(\0132\t.Property\"E\n\nResultType\022\013\n\007"
+literal|"\n\004user\030\014 \001(\0132\007.Entity\022\031\n\006option\030\r \003(\0132\t."
 operator|+
-literal|"SUCCESS\020\000\022\013\n\007FAILURE\020\001\022\010\n\004TRUE\020\002\022\t\n\005FALS"
+literal|"Property\"E\n\nResultType\022\013\n\007SUCCESS\020\000\022\013\n\007F"
 operator|+
-literal|"E\020\003\022\010\n\004NULL\020\004\"\233\001\n\007Message\022\035\n\005level\030\001 \002(\016"
+literal|"AILURE\020\001\022\010\n\004TRUE\020\002\022\t\n\005FALSE\020\003\022\010\n\004NULL\020\004\""
 block|,
-literal|"2\016.Message.Level\022\014\n\004text\030\002 \002(\t\022\021\n\texcept"
+literal|"\233\001\n\007Message\022\035\n\005level\030\001 \002(\0162\016.Message.Lev"
 operator|+
-literal|"ion\030\003 \001(\t\022\022\n\ntime_stamp\030\004 \001(\003\"<\n\005Level\022\t"
+literal|"el\022\014\n\004text\030\002 \002(\t\022\021\n\texception\030\003 \001(\t\022\022\n\nt"
 operator|+
-literal|"\n\005DEBUG\020\000\022\010\n\004INFO\020\001\022\010\n\004WARN\020\002\022\t\n\005ERROR\020\003"
+literal|"ime_stamp\030\004 \001(\003\"<\n\005Level\022\t\n\005DEBUG\020\000\022\010\n\004I"
 operator|+
-literal|"\022\t\n\005FATAL\020\004\"&\n\010Property\022\013\n\003key\030\001 \002(\t\022\r\n\005"
+literal|"NFO\020\001\022\010\n\004WARN\020\002\022\t\n\005ERROR\020\003\022\t\n\005FATAL\020\004\"&\n"
 operator|+
-literal|"value\030\002 \002(\t\"9\n\003Log\022\027\n\006action\030\001 \003(\0132\007.Act"
+literal|"\010Property\022\013\n\003key\030\001 \002(\t\022\r\n\005value\030\002 \002(\t\"9\n"
 operator|+
-literal|"ion\022\031\n\007message\030\002 \003(\0132\010.Message\"\206\001\n\023Cours"
+literal|"\003Log\022\027\n\006action\030\001 \003(\0132\007.Action\022\031\n\007message"
 operator|+
-literal|"eRequestOption\022-\n\004type\030\001 \002(\0162\037.CourseReq"
+literal|"\030\002 \003(\0132\010.Message\"\206\001\n\023CourseRequestOption"
 operator|+
-literal|"uestOption.OptionType\022\031\n\007section\030\002 \003(\0132\010"
+literal|"\022-\n\004type\030\001 \002(\0162\037.CourseRequestOption.Opt"
 operator|+
-literal|".Section\"%\n\nOptionType\022\027\n\023ORIGINAL_ENROL"
+literal|"ionType\022\031\n\007section\030\002 \003(\0132\010.Section\"%\n\nOp"
 operator|+
-literal|"LMENT\020\000B(\n&org.unitime.timetable.onlines"
+literal|"tionType\022\027\n\023ORIGINAL_ENROLLMENT\020\000B(\n&org"
 block|,
-literal|"ectioning"
+literal|".unitime.timetable.onlinesectioning"
 block|}
 decl_stmt|;
 name|com
@@ -64580,6 +64841,8 @@ block|,
 literal|"Section"
 block|,
 literal|"TimeStamp"
+block|,
+literal|"WaitList"
 block|, }
 argument_list|,
 name|org

@@ -853,6 +853,8 @@ operator|.
 name|selectSession
 argument_list|(
 literal|null
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|sessionSelector
@@ -977,8 +979,9 @@ argument_list|,
 operator|new
 name|AsyncCallback
 argument_list|<
-name|String
-index|[]
+name|AcademicSessionProvider
+operator|.
+name|AcademicSessionInfo
 argument_list|>
 argument_list|()
 block|{
@@ -1008,8 +1011,9 @@ specifier|public
 name|void
 name|onSuccess
 parameter_list|(
-name|String
-index|[]
+name|AcademicSessionProvider
+operator|.
+name|AcademicSessionInfo
 name|result
 parameter_list|)
 block|{
@@ -1018,6 +1022,8 @@ operator|.
 name|selectSession
 argument_list|(
 name|result
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|widget

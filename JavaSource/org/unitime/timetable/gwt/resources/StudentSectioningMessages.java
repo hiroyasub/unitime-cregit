@@ -531,6 +531,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&darr; Wait-List"
+argument_list|)
+name|String
+name|courseRequestsWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0}. Priority"
 argument_list|)
 name|String
@@ -543,10 +552,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternate Course Requests (used only if a course requested above is not available)"
+literal|"Alternate Course Requests"
 argument_list|)
 name|String
 name|courseRequestsAlternatives
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"(used only if a course requested above is not available)"
+argument_list|)
+name|String
+name|courseRequestsAlternativesNote
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1391,6 +1409,15 @@ argument_list|(
 literal|"Not Enrolled"
 argument_list|)
 name|String
+name|courseNotEnrolled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listed"
+argument_list|)
+name|String
 name|courseWaitListed
 parameter_list|()
 function_decl|;
@@ -1720,6 +1747,18 @@ annotation|@
 name|DefaultMessage
 argument_list|(
 literal|"Total Not Enrolled: {0}"
+argument_list|)
+name|String
+name|totalNotEnrolled
+parameter_list|(
+name|int
+name|count
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Total Wait-Listed: {0}"
 argument_list|)
 name|String
 name|totalWaitListed
@@ -3199,6 +3238,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course is not enrolled."
+argument_list|)
+name|String
+name|emailCourseNotEnrolled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course is not enrolled alternative."
+argument_list|)
+name|String
+name|emailCourseNotEnrolledAlternative
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course {0} {1} dropped due to a reject."
 argument_list|)
 name|String
@@ -3296,6 +3353,24 @@ literal|"wait-listed alternative"
 argument_list|)
 name|String
 name|emailWaitListedAlternativeRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"not enrolled"
+argument_list|)
+name|String
+name|emailNotEnrolledRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"not enrolled alternative"
+argument_list|)
+name|String
+name|emailNotEnrolledAlternativeRequest
 parameter_list|()
 function_decl|;
 annotation|@
