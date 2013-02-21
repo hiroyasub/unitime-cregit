@@ -1046,7 +1046,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct s from Student s "
+literal|"select s from Student s "
 operator|+
 literal|"left join fetch s.courseDemands as cd "
 operator|+
@@ -1068,7 +1068,9 @@ literal|"left join fetch cr.classEnrollments as cre "
 operator|+
 literal|"left join fetch s.groups as g "
 operator|+
-literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId or co.instructionalOffering.uniqueId = :offeringId"
+literal|"where s.uniqueId in (select xe.student.uniqueId from StudentClassEnrollment xe where xe.courseOffering.instructionalOffering.uniqueId = :offeringId) "
+operator|+
+literal|"or s.uniqueId in (select xr.courseDemand.student.uniqueId from CourseRequest xr where xr.courseOffering.instructionalOffering.uniqueId = :offeringId)"
 argument_list|)
 operator|.
 name|setLong
