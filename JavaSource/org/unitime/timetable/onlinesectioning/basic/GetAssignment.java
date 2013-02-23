@@ -2087,6 +2087,17 @@ operator|.
 name|getTime
 argument_list|()
 argument_list|)
+operator|&&
+operator|!
+name|section
+operator|.
+name|isToIgnoreStudentConflictsWith
+argument_list|(
+name|s
+operator|.
+name|getId
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|overlap
