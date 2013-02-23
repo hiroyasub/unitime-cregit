@@ -2391,6 +2391,12 @@ condition|(
 name|j
 operator|>
 literal|0
+operator|&&
+operator|!
+name|jenrl
+operator|.
+name|isToBeIgnored
+argument_list|()
 condition|)
 block|{
 comment|//if (lecture.getAssignment()==null&& jenrl.areStudentConflictsDistance(dummyPlacement)) continue;

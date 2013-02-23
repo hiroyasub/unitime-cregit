@@ -2369,6 +2369,14 @@ argument_list|(
 name|lecture
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|jenrl
+operator|.
+name|isToBeIgnored
+argument_list|()
+condition|)
 name|iStudentConflicts
 operator|.
 name|add

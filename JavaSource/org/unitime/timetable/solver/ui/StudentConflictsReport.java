@@ -176,6 +176,12 @@ name|jenrl
 operator|.
 name|isInConflict
 argument_list|()
+operator|&&
+operator|!
+name|jenrl
+operator|.
+name|isToBeIgnored
+argument_list|()
 condition|)
 name|iGroups
 operator|.
