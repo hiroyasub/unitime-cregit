@@ -1020,6 +1020,17 @@ name|defaultValue
 argument_list|)
 return|;
 block|}
+comment|/** 	 * Return default properties (excluding application configuration) 	 */
+specifier|public
+specifier|static
+name|Properties
+name|getDefaultProperties
+parameter_list|()
+block|{
+return|return
+name|props
+return|;
+block|}
 comment|/** 	 * Gets the properties used to configure the application  	 * @return Properties object 	 */
 specifier|public
 specifier|static

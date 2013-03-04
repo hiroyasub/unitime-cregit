@@ -269,6 +269,17 @@ operator|.
 name|initialize
 argument_list|()
 expr_stmt|;
+comment|// Now, when hibernate is initialized, we can re-initialize logging with application configuration included
+name|Debug
+operator|.
+name|init
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperties
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Debug
 operator|.
 name|info
