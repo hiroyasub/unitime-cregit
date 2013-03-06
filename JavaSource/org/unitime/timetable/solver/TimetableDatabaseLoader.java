@@ -20939,7 +20939,7 @@ literal|"crossListWithoutReservation"
 argument_list|,
 name|Progress
 operator|.
-name|MSGLEVEL_WARN
+name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
 literal|"Cross-listed course "
@@ -20999,13 +20999,6 @@ block|}
 if|if
 condition|(
 name|totalCourseLimit
-operator|==
-literal|0
-condition|)
-continue|continue;
-if|if
-condition|(
-name|totalCourseLimit
 operator|<
 name|offeringLimit
 condition|)
@@ -21017,6 +21010,14 @@ name|msglevel
 argument_list|(
 literal|"courseReservationsBelowLimit"
 argument_list|,
+name|totalCourseLimit
+operator|==
+literal|0
+condition|?
+name|Progress
+operator|.
+name|MSGLEVEL_INFO
+else|:
 name|Progress
 operator|.
 name|MSGLEVEL_WARN
@@ -21077,6 +21078,13 @@ operator|+
 literal|")."
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|totalCourseLimit
+operator|==
+literal|0
+condition|)
+continue|continue;
 if|if
 condition|(
 name|totalCourseLimit
