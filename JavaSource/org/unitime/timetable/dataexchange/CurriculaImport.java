@@ -1188,6 +1188,9 @@ argument_list|(
 literal|"Academic area "
 operator|+
 name|areaElement
+operator|.
+name|asXML
+argument_list|()
 operator|+
 literal|" does not exist."
 argument_list|)
@@ -1309,6 +1312,9 @@ argument_list|(
 literal|"Department "
 operator|+
 name|deptElement
+operator|.
+name|asXML
+argument_list|()
 operator|+
 literal|" does not exist."
 argument_list|)
@@ -1425,6 +1431,9 @@ argument_list|(
 literal|"Major "
 operator|+
 name|majorElement
+operator|.
+name|asXML
+argument_list|()
 operator|+
 literal|" does not exist."
 argument_list|)
@@ -1811,6 +1820,9 @@ argument_list|(
 literal|"Academic classification "
 operator|+
 name|acadClasfElement
+operator|.
+name|asXML
+argument_list|()
 operator|+
 literal|" does not exist."
 argument_list|)
@@ -2023,6 +2035,9 @@ argument_list|(
 literal|"Course "
 operator|+
 name|courseElement
+operator|.
+name|asXML
+argument_list|()
 operator|+
 literal|" does not exist."
 argument_list|)

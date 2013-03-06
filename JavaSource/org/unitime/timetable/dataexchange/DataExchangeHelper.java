@@ -77,6 +77,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|springframework
+operator|.
+name|web
+operator|.
+name|util
+operator|.
+name|HtmlUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|timetable
@@ -660,6 +674,16 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|String
+name|escapedMessage
+init|=
+name|HtmlUtils
+operator|.
+name|htmlEscape
+argument_list|(
+name|message
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|sLogLevelDebug
@@ -675,9 +699,9 @@ name|println
 argument_list|(
 literal|"<font color='gray'>&nbsp;&nbsp;--"
 operator|+
-name|message
+name|escapedMessage
 operator|+
-literal|"</font><br>"
+literal|"</font>"
 argument_list|)
 expr_stmt|;
 if|else if
@@ -693,9 +717,9 @@ name|iTextLog
 operator|.
 name|println
 argument_list|(
-name|message
+name|escapedMessage
 operator|+
-literal|"<br>"
+literal|""
 argument_list|)
 expr_stmt|;
 if|else if
@@ -713,9 +737,9 @@ name|println
 argument_list|(
 literal|"<font color='orange'>"
 operator|+
-name|message
+name|escapedMessage
 operator|+
-literal|"</font><br>"
+literal|"</font>"
 argument_list|)
 expr_stmt|;
 if|else if
@@ -733,9 +757,9 @@ name|println
 argument_list|(
 literal|"<font color='red'>"
 operator|+
-name|message
+name|escapedMessage
 operator|+
-literal|"</font><br>"
+literal|"</font>"
 argument_list|)
 expr_stmt|;
 if|else if
@@ -753,9 +777,9 @@ name|println
 argument_list|(
 literal|"<font color='red'><b>"
 operator|+
-name|message
+name|escapedMessage
 operator|+
-literal|"</b></font><br>"
+literal|"</b></font>"
 argument_list|)
 expr_stmt|;
 else|else
@@ -763,7 +787,7 @@ name|iTextLog
 operator|.
 name|println
 argument_list|(
-name|message
+name|escapedMessage
 argument_list|)
 expr_stmt|;
 block|}
