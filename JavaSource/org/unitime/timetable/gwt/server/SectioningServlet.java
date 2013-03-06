@@ -14373,7 +14373,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators i where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and c.instructionalOffering.consentType.reference = :reference and "
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.consentType.reference = :reference and "
 operator|+
 literal|"i.externalUniqueId = :extId"
 argument_list|)
@@ -14460,7 +14460,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c.uniqueId from CourseOffering c where c.subjectArea.session.uniqueId = :sessionId and c.instructionalOffering.consentType is not null"
+literal|"select c.uniqueId from CourseOffering c where c.subjectArea.session.uniqueId = :sessionId and c.consentType is not null"
 argument_list|)
 operator|.
 name|setLong
@@ -14508,7 +14508,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c.uniqueId from CourseOffering c where "
 operator|+
-literal|"c.subjectArea.department.uniqueId = :departmentId and c.instructionalOffering.consentType is not null"
+literal|"c.subjectArea.department.uniqueId = :departmentId and c.consentType is not null"
 argument_list|)
 operator|.
 name|setLong
