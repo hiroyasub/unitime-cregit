@@ -20999,6 +20999,13 @@ block|}
 if|if
 condition|(
 name|totalCourseLimit
+operator|==
+literal|0
+condition|)
+continue|continue;
+if|if
+condition|(
+name|totalCourseLimit
 operator|<
 name|offeringLimit
 condition|)
@@ -21070,13 +21077,6 @@ operator|+
 literal|")."
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|totalCourseLimit
-operator|==
-literal|0
-condition|)
-continue|continue;
 if|if
 condition|(
 name|totalCourseLimit
