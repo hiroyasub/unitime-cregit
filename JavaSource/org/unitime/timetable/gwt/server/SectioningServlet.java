@@ -17511,6 +17511,10 @@ parameter_list|)
 block|{
 return|return
 name|course
+operator|!=
+literal|null
+operator|&&
+name|course
 operator|.
 name|matchType
 argument_list|(
