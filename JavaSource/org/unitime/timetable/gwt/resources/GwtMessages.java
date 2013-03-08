@@ -3550,6 +3550,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Department:"
+argument_list|)
+name|String
+name|propRoomEventDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Distance:"
 argument_list|)
 name|String
