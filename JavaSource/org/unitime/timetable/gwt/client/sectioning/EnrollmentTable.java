@@ -1640,6 +1640,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -1811,7 +1813,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1826,7 +1828,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1841,7 +1843,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"50"
+literal|"50px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1856,7 +1858,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1871,7 +1873,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"60"
+literal|"60px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1886,7 +1888,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"50"
+literal|"50px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1901,7 +1903,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1916,7 +1918,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1931,7 +1933,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1946,7 +1948,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"100"
+literal|"100px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1961,7 +1963,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"100"
+literal|"100px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1976,7 +1978,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"75"
+literal|"75px"
 argument_list|)
 argument_list|,
 operator|new
@@ -1991,7 +1993,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"10"
+literal|"10px"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -3083,9 +3085,6 @@ operator|.
 name|error
 argument_list|(
 name|caught
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -3215,9 +3214,6 @@ operator|.
 name|error
 argument_list|(
 name|caught
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

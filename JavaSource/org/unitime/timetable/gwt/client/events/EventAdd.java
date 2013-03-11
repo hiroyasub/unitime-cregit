@@ -2433,6 +2433,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -2592,6 +2594,8 @@ operator|.
 name|error
 argument_list|(
 name|message
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -2880,6 +2884,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -3220,6 +3226,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -5191,6 +5199,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -5286,6 +5296,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -5375,6 +5387,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -5468,6 +5482,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -5572,6 +5588,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -8797,6 +8815,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -10413,6 +10433,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -10801,6 +10823,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -11144,6 +11168,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -11606,6 +11632,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -12189,6 +12217,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}

@@ -1520,6 +1520,8 @@ name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -4303,6 +4305,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|iForm

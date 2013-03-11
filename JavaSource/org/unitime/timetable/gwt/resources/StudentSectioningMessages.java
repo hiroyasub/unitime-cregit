@@ -256,6 +256,15 @@ argument_list|(
 literal|"&nbsp;"
 argument_list|)
 name|String
+name|colIcons
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&nbsp;"
+argument_list|)
+name|String
 name|colSaved
 parameter_list|()
 function_decl|;
@@ -449,6 +458,18 @@ argument_list|)
 name|String
 name|validationFailed
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Validation failed: {0}"
+argument_list|)
+name|String
+name|validationFailedWithMessage
+parameter_list|(
+name|String
+name|message
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage

@@ -807,9 +807,6 @@ operator|.
 name|error
 argument_list|(
 name|caught
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ToolBox
@@ -911,9 +908,6 @@ operator|.
 name|error
 argument_list|(
 name|caught
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

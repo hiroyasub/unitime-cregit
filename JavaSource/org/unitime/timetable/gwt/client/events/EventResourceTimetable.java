@@ -2820,6 +2820,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -5847,6 +5849,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -6227,6 +6231,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -6420,6 +6426,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -6642,6 +6650,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -7211,9 +7221,6 @@ operator|.
 name|error
 argument_list|(
 name|caught
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|onSubmit
@@ -9079,6 +9086,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -9790,6 +9799,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|hideResults
@@ -10163,6 +10174,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|hideResults
@@ -10382,6 +10395,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|hideResults
@@ -13416,6 +13431,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 if|if
@@ -13494,6 +13511,8 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 if|if
