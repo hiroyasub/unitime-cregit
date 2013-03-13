@@ -41,7 +41,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|TreeSet
 import|;
 end_import
 
@@ -527,7 +527,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|List
+name|TreeSet
 argument_list|<
 name|ExamType
 argument_list|>
@@ -560,10 +560,8 @@ name|setExamType
 argument_list|(
 name|types
 operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
+name|first
+argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()

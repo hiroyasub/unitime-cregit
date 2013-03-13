@@ -1079,7 +1079,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|List
+name|TreeSet
 argument_list|<
 name|ExamType
 argument_list|>
@@ -1121,10 +1121,8 @@ name|examType
 operator|=
 name|types
 operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
+name|first
+argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()

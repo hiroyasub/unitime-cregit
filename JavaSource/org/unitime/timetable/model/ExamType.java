@@ -27,6 +27,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -287,7 +297,7 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|List
+name|TreeSet
 argument_list|<
 name|ExamType
 argument_list|>
@@ -298,12 +308,12 @@ name|sessionId
 parameter_list|)
 block|{
 return|return
-operator|(
-name|List
+operator|new
+name|TreeSet
 argument_list|<
 name|ExamType
 argument_list|>
-operator|)
+argument_list|(
 name|ExamTypeDAO
 operator|.
 name|getInstance
@@ -314,7 +324,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct p.examType from ExamPeriod p where p.session.uniqueId = :sessionId order by p.examType.type, p.examType.label"
+literal|"select distinct p.examType from ExamPeriod p where p.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -331,6 +341,7 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public
