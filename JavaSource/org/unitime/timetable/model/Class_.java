@@ -5701,7 +5701,7 @@ operator|.
 name|getPlacement
 argument_list|()
 operator|.
-name|minRoomSize
+name|getRoomSize
 argument_list|()
 operator|/
 name|getRoomRatio
