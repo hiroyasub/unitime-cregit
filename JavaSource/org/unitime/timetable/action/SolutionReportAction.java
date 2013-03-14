@@ -6303,11 +6303,7 @@ argument_list|()
 operator|.
 name|toHtml
 argument_list|(
-operator|!
-name|g
-operator|.
-name|isCommited
-argument_list|()
+literal|true
 argument_list|,
 literal|true
 argument_list|)
@@ -6722,11 +6718,7 @@ argument_list|()
 operator|.
 name|toHtml
 argument_list|(
-operator|!
-name|g
-operator|.
-name|isCommited
-argument_list|()
+literal|true
 argument_list|,
 literal|true
 argument_list|)
