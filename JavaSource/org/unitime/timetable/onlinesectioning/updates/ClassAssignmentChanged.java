@@ -869,10 +869,18 @@ block|{
 name|int
 name|roomLimit
 init|=
+operator|(
+name|int
+operator|)
 name|Math
 operator|.
-name|round
+name|floor
 argument_list|(
+name|p
+operator|.
+name|getRoomSize
+argument_list|()
+operator|/
 operator|(
 name|clazz
 operator|.
@@ -888,13 +896,9 @@ operator|.
 name|getRoomRatio
 argument_list|()
 operator|)
-operator|*
-name|p
-operator|.
-name|getRoomSize
-argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// int roomLimit = Math.round((clazz.getRoomRatio() == null ? 1.0f : clazz.getRoomRatio()) * p.getRoomSize());
 name|limit
 operator|=
 name|Math
