@@ -2890,6 +2890,11 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|uniqueResult
 argument_list|()
 decl_stmt|;
@@ -3539,6 +3544,11 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|uniqueResult
 argument_list|()
 decl_stmt|;
@@ -3694,6 +3704,11 @@ argument_list|()
 operator|.
 name|getAcademicAreaAbbreviation
 argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|list
@@ -3910,6 +3925,11 @@ name|sg
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|uniqueResult
