@@ -2395,6 +2395,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Send email confirmation"
+argument_list|)
+name|String
+name|checkSendEmailConfirmation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"One email per line please."
 argument_list|)
 name|String
@@ -3251,6 +3260,15 @@ literal|"All Matching Rooms"
 argument_list|)
 name|String
 name|itemAllRoomsWithFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Select..."
+argument_list|)
+name|String
+name|itemSelect
 parameter_list|()
 function_decl|;
 annotation|@

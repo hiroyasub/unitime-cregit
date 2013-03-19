@@ -1901,6 +1901,15 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|HorizontalPanel
+name|getPanel
+parameter_list|()
+block|{
+return|return
+name|iPanel
+return|;
+block|}
 block|}
 end_class
 

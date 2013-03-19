@@ -587,6 +587,16 @@ block|{
 if|if
 condition|(
 operator|!
+name|request
+argument_list|()
+operator|.
+name|isEmailConfirmation
+argument_list|()
+condition|)
+return|return;
+if|if
+condition|(
+operator|!
 literal|"true"
 operator|.
 name|equals

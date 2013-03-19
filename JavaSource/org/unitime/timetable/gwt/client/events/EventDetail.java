@@ -1339,6 +1339,9 @@ name|items
 parameter_list|,
 name|String
 name|message
+parameter_list|,
+name|boolean
+name|emailConfirmation
 parameter_list|)
 block|{
 switch|switch
@@ -1485,6 +1488,8 @@ argument_list|,
 name|meetings
 argument_list|,
 name|message
+argument_list|,
+name|emailConfirmation
 argument_list|)
 argument_list|,
 operator|new
