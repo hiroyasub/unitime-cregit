@@ -149,6 +149,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|SimpleEditInterface
@@ -393,6 +409,21 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -404,7 +435,15 @@ return|return
 operator|new
 name|PageName
 argument_list|(
-literal|"Event Date Mapping"
+name|MESSAGES
+operator|.
+name|pageEventDateMapping
+argument_list|()
+argument_list|,
+name|MESSAGES
+operator|.
+name|pageEventDateMappings
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -435,7 +474,10 @@ argument_list|(
 operator|new
 name|Field
 argument_list|(
-literal|"Class Date"
+name|MESSAGES
+operator|.
+name|fieldClassDate
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -451,7 +493,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Event Date"
+name|MESSAGES
+operator|.
+name|fieldEventDate
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -467,7 +512,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Note"
+name|MESSAGES
+operator|.
+name|fieldNote
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.

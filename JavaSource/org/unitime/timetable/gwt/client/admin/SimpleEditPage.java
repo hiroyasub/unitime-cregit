@@ -1591,7 +1591,10 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Edit type is not provided."
+name|MESSAGES
+operator|.
+name|errorNoEditType
+argument_list|()
 argument_list|)
 throw|;
 name|ClickHandler
@@ -1658,7 +1661,10 @@ name|iHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Saving data..."
+name|MESSAGES
+operator|.
+name|waitSavingData
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|RPC
@@ -1697,14 +1703,15 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Save failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedSave
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1852,7 +1859,10 @@ name|addButton
 argument_list|(
 literal|"add"
 argument_list|,
-literal|"<u>A</u>dd"
+name|MESSAGES
+operator|.
+name|buttonAdd
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1865,7 +1875,10 @@ name|addButton
 argument_list|(
 literal|"edit"
 argument_list|,
-literal|"<u>E</u>dit"
+name|MESSAGES
+operator|.
+name|buttonEdit
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1878,7 +1891,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"<u>S</u>ave"
+name|MESSAGES
+operator|.
+name|buttonSave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1891,7 +1907,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"<u>B</u>ack"
+name|MESSAGES
+operator|.
+name|buttonBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -2365,12 +2384,15 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Edit type not recognized:"
-operator|+
+name|MESSAGES
+operator|.
+name|failedWrongEditType
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|UniTimeNotifications
@@ -2409,7 +2431,7 @@ name|setPageName
 argument_list|(
 name|iPageName
 operator|.
-name|list
+name|plural
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2697,15 +2719,25 @@ argument_list|()
 operator|==
 literal|null
 condition|?
+name|MESSAGES
+operator|.
+name|pageAdd
+argument_list|(
 name|iPageName
 operator|.
-name|addOne
+name|singular
 argument_list|()
+argument_list|)
 else|:
+name|MESSAGES
+operator|.
+name|pageEdit
+argument_list|(
 name|iPageName
 operator|.
-name|editOne
+name|singular
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -2747,7 +2779,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"<u>S</u>ave"
+name|MESSAGES
+operator|.
+name|buttonSave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -2795,7 +2830,10 @@ name|header
 operator|.
 name|setMessage
 argument_list|(
-literal|"Saving record..."
+name|MESSAGES
+operator|.
+name|waitSavingRecord
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|RPC
@@ -2834,14 +2872,15 @@ name|header
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Save failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedSave
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2997,7 +3036,10 @@ name|addButton
 argument_list|(
 literal|"delete"
 argument_list|,
-literal|"<u>D</u>elete"
+name|MESSAGES
+operator|.
+name|buttonDelete
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3019,7 +3061,10 @@ name|header
 operator|.
 name|setMessage
 argument_list|(
-literal|"Deleting record..."
+name|MESSAGES
+operator|.
+name|waitDeletingRecord
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|RPC
@@ -3058,14 +3103,23 @@ name|header
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Save failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedDelete
+argument_list|(
+name|iPageName
+operator|.
+name|singular
+argument_list|()
+operator|.
+name|toLowerCase
+argument_list|()
+argument_list|,
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3137,7 +3191,10 @@ name|addButton
 argument_list|(
 literal|"prev"
 argument_list|,
-literal|"<u>P</u>revious"
+name|MESSAGES
+operator|.
+name|buttonPrevious
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3185,7 +3242,10 @@ name|header
 operator|.
 name|setMessage
 argument_list|(
-literal|"Saving record..."
+name|MESSAGES
+operator|.
+name|waitSavingRecord
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|RPC
@@ -3224,14 +3284,15 @@ name|header
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Save failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedSave
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3317,7 +3378,10 @@ name|addButton
 argument_list|(
 literal|"next"
 argument_list|,
-literal|"<u>N</u>ext"
+name|MESSAGES
+operator|.
+name|buttonNext
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3365,7 +3429,10 @@ name|header
 operator|.
 name|setMessage
 argument_list|(
-literal|"Saving record..."
+name|MESSAGES
+operator|.
+name|waitSavingRecord
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|RPC
@@ -3404,14 +3471,15 @@ name|header
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Save failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedSave
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3490,7 +3558,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"<u>B</u>ack"
+name|MESSAGES
+operator|.
+name|buttonBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3520,6 +3591,23 @@ operator|.
 name|copyFrom
 argument_list|(
 name|backup
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|record
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+name|iData
+operator|.
+name|getRecords
+argument_list|()
+operator|.
+name|remove
+argument_list|(
+name|record
 argument_list|)
 expr_stmt|;
 name|iEditable
@@ -4147,7 +4235,10 @@ name|iHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Loading data..."
+name|MESSAGES
+operator|.
+name|waitLoadingData
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
@@ -4855,14 +4946,15 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Unable to load data ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedLoadData
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ToolBox
@@ -5280,7 +5372,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Expand All"
+name|MESSAGES
+operator|.
+name|opExpandAll
+argument_list|()
 return|;
 block|}
 block|}
@@ -5510,7 +5605,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Collapse All"
+name|MESSAGES
+operator|.
+name|opCollapseAll
+argument_list|()
 return|;
 block|}
 block|}
@@ -5639,12 +5737,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
@@ -5720,7 +5821,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by default"
+name|MESSAGES
+operator|.
+name|opSortDefault
+argument_list|()
 return|;
 block|}
 block|}
@@ -5889,7 +5993,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Hide All"
+name|MESSAGES
+operator|.
+name|opHideAll
+argument_list|()
 return|;
 block|}
 block|}
@@ -6095,7 +6202,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show All"
+name|MESSAGES
+operator|.
+name|opShowAll
+argument_list|()
 return|;
 block|}
 block|}
@@ -6371,14 +6481,19 @@ name|setPageName
 argument_list|(
 name|iEditable
 condition|?
+name|MESSAGES
+operator|.
+name|pageEdit
+argument_list|(
 name|iPageName
 operator|.
-name|edit
+name|plural
 argument_list|()
+argument_list|)
 else|:
 name|iPageName
 operator|.
-name|list
+name|plural
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -6799,7 +6914,10 @@ name|add
 operator|.
 name|setTitle
 argument_list|(
-literal|"Insert a new row above this row."
+name|MESSAGES
+operator|.
+name|titleInsertRowAbove
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|add
@@ -6913,7 +7031,10 @@ name|delete
 operator|.
 name|setTitle
 argument_list|(
-literal|"Delete this row."
+name|MESSAGES
+operator|.
+name|titleDeleteRow
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|delete
@@ -8914,14 +9035,25 @@ init|=
 operator|new
 name|Button
 argument_list|(
-literal|"<u>L</u>ookup"
+name|MESSAGES
+operator|.
+name|buttonLookup
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|lookup
 operator|.
 name|setAccessKey
 argument_list|(
-literal|'l'
+name|UniTimeHeaderPanel
+operator|.
+name|guessAccessKey
+argument_list|(
+name|MESSAGES
+operator|.
+name|buttonLookup
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|lookup
@@ -9251,7 +9383,10 @@ name|addButton
 argument_list|(
 literal|"lookup"
 argument_list|,
-literal|"<u>L</u>ookup"
+name|MESSAGES
+operator|.
+name|buttonLookup
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -9288,7 +9423,10 @@ name|addButton
 argument_list|(
 literal|"close"
 argument_list|,
-literal|"<u>C</u>lose"
+name|MESSAGES
+operator|.
+name|buttonClose
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -9326,7 +9464,10 @@ name|dialog
 operator|.
 name|setText
 argument_list|(
-literal|"Group Students"
+name|field
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -9400,7 +9541,14 @@ name|length
 operator|<=
 literal|2
 condition|?
-literal|"<i>Not set</i>"
+literal|"<i>"
+operator|+
+name|MESSAGES
+operator|.
+name|notSet
+argument_list|()
+operator|+
+literal|"</i>"
 else|:
 name|name
 index|[
@@ -9561,7 +9709,14 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-literal|"<i>Not set</i>"
+literal|"<i>"
+operator|+
+name|MESSAGES
+operator|.
+name|notSet
+argument_list|()
+operator|+
+literal|"</i>"
 argument_list|)
 condition|?
 literal|""
@@ -10134,7 +10289,14 @@ name|length
 operator|<=
 literal|2
 condition|?
-literal|"<i>Not set</i>"
+literal|"<i>"
+operator|+
+name|MESSAGES
+operator|.
+name|notSet
+argument_list|()
+operator|+
+literal|"</i>"
 else|:
 name|name
 index|[
@@ -10363,9 +10525,10 @@ name|w
 operator|.
 name|setHint
 argument_list|(
-literal|"Defaults to "
-operator|+
-operator|(
+name|MESSAGES
+operator|.
+name|hintDefaultsToWhenEmpty
+argument_list|(
 name|parent
 operator|.
 name|length
@@ -10385,9 +10548,7 @@ operator|+
 literal|"..."
 else|:
 name|parent
-operator|)
-operator|+
-literal|" when empty."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -10900,7 +11061,10 @@ name|iHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Saving order..."
+name|MESSAGES
+operator|.
+name|waitSavingOrder
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|String
@@ -11236,7 +11400,6 @@ name|Throwable
 name|caught
 parameter_list|)
 block|{
-comment|// iHeader.setErrorMessage("Failed to save table order (" + caught.getMessage() + ")");
 name|iHeader
 operator|.
 name|clearMessage
@@ -11544,12 +11707,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11565,12 +11731,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11599,24 +11768,30 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeUnique
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be unique."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|old
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeUnique
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be unique."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11632,12 +11807,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeUnique
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be unique."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11679,12 +11857,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11700,12 +11881,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11750,9 +11934,12 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorNotValidDate
+argument_list|(
 name|value
-operator|+
-literal|" is not a valid date."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11768,9 +11955,12 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorNotValidDate
+argument_list|(
 name|value
-operator|+
-literal|" is not a valid date."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11790,12 +11980,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11811,12 +12004,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11841,12 +12037,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorTooLong
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" is too long."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11862,12 +12061,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorTooLong
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" is too long."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -12030,12 +12232,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12047,12 +12252,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -12081,24 +12289,30 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeUnique
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be unique."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|old
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeUnique
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be unique."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12110,12 +12324,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeUnique
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be unique."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -12157,12 +12374,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12174,12 +12394,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -12224,9 +12447,12 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorNotValidDate
+argument_list|(
 name|value
-operator|+
-literal|" is not a valid date."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12238,9 +12464,12 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorNotValidDate
+argument_list|(
 name|value
-operator|+
-literal|" is not a valid date."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -12260,12 +12489,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12277,12 +12509,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorMustBeSet
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" must be set."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -12307,12 +12542,15 @@ name|widget
 operator|.
 name|setError
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorTooLong
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" is too long."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12324,12 +12562,15 @@ condition|)
 block|{
 name|valid
 operator|=
+name|MESSAGES
+operator|.
+name|errorTooLong
+argument_list|(
 name|field
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" is too long."
+argument_list|)
 expr_stmt|;
 block|}
 block|}

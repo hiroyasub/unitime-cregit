@@ -97,6 +97,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|gwt
@@ -106,6 +120,22 @@ operator|.
 name|client
 operator|.
 name|GwtRpcException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -351,6 +381,21 @@ name|ExaminationTypes
 implements|implements
 name|AdminTable
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -362,7 +407,15 @@ return|return
 operator|new
 name|PageName
 argument_list|(
-literal|"Examination Type"
+name|MESSAGES
+operator|.
+name|pageExaminationType
+argument_list|()
+argument_list|,
+name|MESSAGES
+operator|.
+name|pageExaminationTypes
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -413,7 +466,10 @@ operator|.
 name|sExamTypeFinal
 argument_list|)
 argument_list|,
-literal|"Final Examinations"
+name|MESSAGES
+operator|.
+name|finalExaminations
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -433,7 +489,10 @@ operator|.
 name|sExamTypeMidterm
 argument_list|)
 argument_list|,
-literal|"Midterm Examinations"
+name|MESSAGES
+operator|.
+name|midtermExaminations
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -446,7 +505,10 @@ argument_list|(
 operator|new
 name|Field
 argument_list|(
-literal|"Reference"
+name|MESSAGES
+operator|.
+name|fieldReference
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -464,7 +526,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Name"
+name|MESSAGES
+operator|.
+name|fieldName
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -482,7 +547,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Type"
+name|MESSAGES
+operator|.
+name|fieldType
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -1122,14 +1190,15 @@ throw|throw
 operator|new
 name|GwtRpcException
 argument_list|(
-literal|"Attempted to delete an examination type "
-operator|+
+name|MESSAGES
+operator|.
+name|failedDeleteUsedExaminationType
+argument_list|(
 name|type
 operator|.
 name|getReference
 argument_list|()
-operator|+
-literal|" that is being used."
+argument_list|)
 argument_list|)
 throw|;
 name|ChangeLog

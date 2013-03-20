@@ -97,6 +97,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|gwt
@@ -106,6 +120,22 @@ operator|.
 name|client
 operator|.
 name|GwtRpcException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -421,6 +451,21 @@ name|EventStatuses
 implements|implements
 name|AdminTable
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -432,9 +477,15 @@ return|return
 operator|new
 name|PageName
 argument_list|(
-literal|"Event Status"
+name|MESSAGES
+operator|.
+name|pageEventStatus
+argument_list|()
 argument_list|,
-literal|"Event Statuses"
+name|MESSAGES
+operator|.
+name|pageEventStatuses
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -534,7 +585,17 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Department|Type"
+name|MESSAGES
+operator|.
+name|fieldDepartment
+argument_list|()
+operator|+
+literal|"|"
+operator|+
+name|MESSAGES
+operator|.
+name|fieldType
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -550,7 +611,17 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Room Type|Room"
+name|MESSAGES
+operator|.
+name|fieldRoomType
+argument_list|()
+operator|+
+literal|"|"
+operator|+
+name|MESSAGES
+operator|.
+name|fieldRoom
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -566,7 +637,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Event Status"
+name|MESSAGES
+operator|.
+name|fieldEventStatus
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -588,7 +662,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Room Note"
+name|MESSAGES
+operator|.
+name|fieldRoomNote
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -608,7 +685,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Break Time"
+name|MESSAGES
+operator|.
+name|fieldBreakTime
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -626,7 +706,10 @@ argument_list|,
 operator|new
 name|Field
 argument_list|(
-literal|"Sort Order"
+name|MESSAGES
+operator|.
+name|fieldSortOrder
+argument_list|()
 argument_list|,
 name|FieldType
 operator|.
@@ -2264,7 +2347,10 @@ throw|throw
 operator|new
 name|GwtRpcException
 argument_list|(
-literal|"Operation not supported."
+name|MESSAGES
+operator|.
+name|errorOperationNotSupported
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -3298,7 +3384,10 @@ throw|throw
 operator|new
 name|GwtRpcException
 argument_list|(
-literal|"Operation not supported."
+name|MESSAGES
+operator|.
+name|errorOperationNotSupported
+argument_list|()
 argument_list|)
 throw|;
 block|}

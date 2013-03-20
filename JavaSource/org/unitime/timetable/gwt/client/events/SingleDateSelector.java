@@ -2168,7 +2168,7 @@ name|setHint
 argument_list|(
 name|MESSAGES
 operator|.
-name|waitLoadingData
+name|waitLoadingDataForSession
 argument_list|(
 name|iAcademicSession
 operator|.
