@@ -505,7 +505,7 @@ operator|.
 name|list
 argument_list|()
 argument_list|,
-literal|false
+literal|true
 argument_list|)
 decl_stmt|;
 try|try
