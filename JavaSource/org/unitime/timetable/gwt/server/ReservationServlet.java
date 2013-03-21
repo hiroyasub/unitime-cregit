@@ -159,11 +159,41 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|defaults
 operator|.
 name|UserProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -843,6 +873,21 @@ name|ReservationServlet
 implements|implements
 name|ReservationService
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|Logger
@@ -1918,7 +1963,21 @@ throw|throw
 operator|new
 name|ReservationException
 argument_list|(
-literal|"Offering does not exist."
+name|MESSAGES
+operator|.
+name|errorOfferingDoesNotExist
+argument_list|(
+name|offeringId
+operator|==
+literal|null
+condition|?
+literal|"null"
+else|:
+name|offeringId
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -2126,11 +2185,12 @@ throw|throw
 operator|new
 name|ReservationException
 argument_list|(
-literal|"Course "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCourseDoesNotExist
+argument_list|(
 name|courseName
-operator|+
-literal|" does not exist."
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -3961,8 +4021,10 @@ throw|throw
 operator|new
 name|ReservationException
 argument_list|(
-literal|"Unknown reservation "
-operator|+
+name|MESSAGES
+operator|.
+name|errorUnknownReservationType
+argument_list|(
 name|reservation
 operator|.
 name|getClass
@@ -3970,6 +4032,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -5069,8 +5132,10 @@ throw|throw
 operator|new
 name|ReservationException
 argument_list|(
-literal|"Offering "
-operator|+
+name|MESSAGES
+operator|.
+name|errorOfferingDoesNotExist
+argument_list|(
 name|reservation
 operator|.
 name|getOffering
@@ -5078,8 +5143,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" does not exist."
+argument_list|)
 argument_list|)
 throw|;
 name|Reservation
@@ -5183,8 +5247,10 @@ throw|throw
 operator|new
 name|ReservationException
 argument_list|(
-literal|"Unknown reservation "
-operator|+
+name|MESSAGES
+operator|.
+name|errorUnknownReservationType
+argument_list|(
 name|reservation
 operator|.
 name|getClass
@@ -5192,6 +5258,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 block|}

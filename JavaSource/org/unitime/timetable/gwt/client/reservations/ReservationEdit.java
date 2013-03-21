@@ -305,6 +305,22 @@ name|gwt
 operator|.
 name|resources
 operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
 name|GwtResources
 import|;
 end_import
@@ -948,6 +964,21 @@ name|ReservationEdit
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -1336,7 +1367,10 @@ throw|throw
 operator|new
 name|ReservationException
 argument_list|(
-literal|"Reservation or instructional offering id not provided."
+name|MESSAGES
+operator|.
+name|errorReservationOrOfferingIdNotProvided
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -1357,7 +1391,10 @@ operator|=
 operator|new
 name|UniTimeHeaderPanel
 argument_list|(
-literal|"Reservation Details"
+name|MESSAGES
+operator|.
+name|sectReservationDetails
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTitleAndButtons
@@ -1366,7 +1403,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"<u>S</u>ave"
+name|MESSAGES
+operator|.
+name|buttonSave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1406,7 +1446,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed, please check the form for warnings."
+name|MESSAGES
+operator|.
+name|failedValidationCheckForm
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1419,7 +1462,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Saving reservation..."
+name|MESSAGES
+operator|.
+name|waitSavingReservation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iReservationService
@@ -1520,7 +1566,10 @@ name|addButton
 argument_list|(
 literal|"delete"
 argument_list|,
-literal|"<u>D</u>elete"
+name|MESSAGES
+operator|.
+name|buttonDelete
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1549,7 +1598,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Cannot delete unsaved reservation."
+name|MESSAGES
+operator|.
+name|errorCannotDeleteUnsavedReservation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1562,7 +1614,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Deleting reservation..."
+name|MESSAGES
+operator|.
+name|waitDeletingReservation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iReservationService
@@ -1684,7 +1739,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"<u>B</u>ack"
+name|MESSAGES
+operator|.
+name|buttonBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1764,7 +1822,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Instructional Offering:"
+name|MESSAGES
+operator|.
+name|propInstructionalOffering
+argument_list|()
 argument_list|,
 name|iCourseBox
 argument_list|)
@@ -1828,7 +1889,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Reserved Space:"
+name|MESSAGES
+operator|.
+name|propReservedSpace
+argument_list|()
 argument_list|,
 name|iLimit
 argument_list|)
@@ -1886,7 +1950,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Expiration Date:"
+name|MESSAGES
+operator|.
+name|propExpirationDate
+argument_list|()
 argument_list|,
 name|iExpirationDate
 argument_list|)
@@ -1905,7 +1972,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Restrictions:"
+name|MESSAGES
+operator|.
+name|propRestrictions
+argument_list|()
 argument_list|,
 name|iStructure
 argument_list|)
@@ -1961,7 +2031,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -1973,7 +2046,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Individual Reservation"
+name|MESSAGES
+operator|.
+name|reservationIndividual
+argument_list|()
 argument_list|,
 literal|"individual"
 argument_list|)
@@ -1985,7 +2061,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Student Group Reservation"
+name|MESSAGES
+operator|.
+name|reservationStudentGroup
+argument_list|()
 argument_list|,
 literal|"group"
 argument_list|)
@@ -1997,7 +2076,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Curriculum Reservation"
+name|MESSAGES
+operator|.
+name|reservationCurriculum
+argument_list|()
 argument_list|,
 literal|"curriculum"
 argument_list|)
@@ -2009,7 +2091,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Course Reservation"
+name|MESSAGES
+operator|.
+name|reservationCourse
+argument_list|()
 argument_list|,
 literal|"course"
 argument_list|)
@@ -2058,7 +2143,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Type:"
+name|MESSAGES
+operator|.
+name|propType
+argument_list|()
 argument_list|,
 name|iType
 argument_list|)
@@ -2214,7 +2302,10 @@ init|=
 operator|new
 name|Button
 argument_list|(
-literal|"<u>L</u>ookup"
+name|MESSAGES
+operator|.
+name|buttonLookup
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|lookup
@@ -2432,7 +2523,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Students:"
+name|MESSAGES
+operator|.
+name|propStudents
+argument_list|()
 argument_list|,
 name|students
 argument_list|)
@@ -2527,7 +2621,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -2546,7 +2643,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Student Group:"
+name|MESSAGES
+operator|.
+name|propStudentGroup
+argument_list|()
 argument_list|,
 name|iGroup
 argument_list|)
@@ -2690,7 +2790,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Course:"
+name|MESSAGES
+operator|.
+name|propCourse
+argument_list|()
 argument_list|,
 name|iCourse
 argument_list|)
@@ -2734,7 +2837,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"None"
+name|MESSAGES
+operator|.
+name|itemNone
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -2797,7 +2903,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -2816,7 +2925,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Academic Area:"
+name|MESSAGES
+operator|.
+name|propAcademicArea
+argument_list|()
 argument_list|,
 name|iArea
 argument_list|)
@@ -2870,7 +2982,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Classifications:"
+name|MESSAGES
+operator|.
+name|propClassifications
+argument_list|()
 argument_list|,
 name|iClassifications
 argument_list|)
@@ -2915,7 +3030,10 @@ name|iPanel
 operator|.
 name|addRow
 argument_list|(
-literal|"Majors:"
+name|MESSAGES
+operator|.
+name|propMajors
+argument_list|()
 argument_list|,
 name|iMajors
 argument_list|)
@@ -3246,7 +3364,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Loading reservation..."
+name|MESSAGES
+operator|.
+name|waitLoadingReservation
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -3540,12 +3661,15 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Load failed: "
-operator|+
+name|MESSAGES
+operator|.
+name|failedLoadData
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3680,24 +3804,30 @@ name|UniTimeNotifications
 operator|.
 name|error
 argument_list|(
-literal|"Load failed: "
-operator|+
+name|MESSAGES
+operator|.
+name|failedLoadData
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Load failed: "
-operator|+
+name|MESSAGES
+operator|.
+name|failedLoadData
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -4062,9 +4192,15 @@ name|iReservation
 operator|==
 literal|null
 condition|?
-literal|"Add Reservation"
+name|MESSAGES
+operator|.
+name|pageAddReservation
+argument_list|()
 else|:
-literal|"Edit Reservation"
+name|MESSAGES
+operator|.
+name|pageEditReservation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTitleAndButtons
@@ -4293,7 +4429,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"None"
+name|MESSAGES
+operator|.
+name|itemNone
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -4331,7 +4470,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Loading reservation..."
+name|MESSAGES
+operator|.
+name|waitLoadingReservation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iReservationService
@@ -4533,7 +4675,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -4623,7 +4768,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"None"
+name|MESSAGES
+operator|.
+name|itemNone
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -6694,7 +6842,10 @@ name|iType
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Reservation type must be selected."
+name|MESSAGES
+operator|.
+name|hintReservationTypeNotSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -6749,7 +6900,10 @@ name|iStudents
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"No students provided."
+name|MESSAGES
+operator|.
+name|hintNoStudentsProvided
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -6825,11 +6979,12 @@ name|iStudents
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Line '"
-operator|+
+name|MESSAGES
+operator|.
+name|hintLineXIsNotValidStudent
+argument_list|(
 name|student
-operator|+
-literal|"' is not a valid student record."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ok
@@ -6920,7 +7075,10 @@ name|iStudents
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"No students provided."
+name|MESSAGES
+operator|.
+name|hintNoStudentsProvided
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -6939,18 +7097,17 @@ name|iStudents
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Line '"
-operator|+
+name|MESSAGES
+operator|.
+name|hintLineXIsNotValidStudentException
+argument_list|(
 name|student
-operator|+
-literal|"' is not a valid student record ("
-operator|+
+argument_list|,
 name|e
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ok
@@ -7010,7 +7167,10 @@ name|iGroup
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"A student group must be provided."
+name|MESSAGES
+operator|.
+name|hintStudentGroupNotProvided
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -7125,7 +7285,10 @@ name|iCourse
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"A course must be provided."
+name|MESSAGES
+operator|.
+name|hintCourseNotProvided
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -7240,7 +7403,10 @@ name|iArea
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"An academic area must be provided."
+name|MESSAGES
+operator|.
+name|hintAcademicAreaNotProvided
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -7464,7 +7630,12 @@ name|iType
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Reservation type not supported."
+name|MESSAGES
+operator|.
+name|hintReservationTypeNotSupported
+argument_list|(
+name|type
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -7500,7 +7671,10 @@ name|iExpirationDate
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Expiration date is not valid."
+name|MESSAGES
+operator|.
+name|hintExpirationDateNotValid
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -7595,7 +7769,10 @@ name|iLimit
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Reservation limit is not valid."
+name|MESSAGES
+operator|.
+name|hintReservationLimitNotValid
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ok
@@ -7628,6 +7805,30 @@ operator|new
 name|Offering
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|iOffering
+operator|==
+literal|null
+condition|)
+block|{
+name|iCourseBox
+operator|.
+name|setError
+argument_list|(
+name|MESSAGES
+operator|.
+name|hintOfferingNotProvided
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|ok
+operator|=
+literal|false
+expr_stmt|;
+block|}
+else|else
+block|{
 name|o
 operator|.
 name|setId
@@ -7648,6 +7849,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|r
 operator|.
 name|setOffering
@@ -8268,14 +8470,15 @@ argument_list|)
 expr_stmt|;
 name|setText
 argument_list|(
-literal|"Configuration "
-operator|+
+name|MESSAGES
+operator|.
+name|selectionConfiguration
+argument_list|(
 name|config
 operator|.
 name|getAbbv
 argument_list|()
-operator|+
-operator|(
+argument_list|,
 name|config
 operator|.
 name|getLimit
@@ -8283,17 +8486,19 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|" (unlimited)"
+name|MESSAGES
+operator|.
+name|configUnlimited
+argument_list|()
 else|:
-literal|" ("
-operator|+
 name|config
 operator|.
 name|getLimit
 argument_list|()
-operator|+
-literal|")"
-operator|)
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iConfig
@@ -8727,27 +8932,30 @@ name|iLimit
 operator|.
 name|setHint
 argument_list|(
-operator|(
 name|limit
 operator|==
 literal|0
 condition|?
-literal|"No space"
+name|MESSAGES
+operator|.
+name|hintNoSpaceSelected
+argument_list|()
 else|:
 name|limit
 operator|==
 literal|1
 condition|?
-literal|"Only 1 space"
+name|MESSAGES
+operator|.
+name|hintOnlyOneSpaceSelected
+argument_list|()
 else|:
-literal|"Only "
-operator|+
+name|MESSAGES
+operator|.
+name|hintOnlyNSpacesSelected
+argument_list|(
 name|limit
-operator|+
-literal|" spaces"
-operator|)
-operator|+
-literal|" selected"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8765,12 +8973,15 @@ name|iLimit
 operator|.
 name|setHint
 argument_list|(
+name|MESSAGES
+operator|.
+name|hintCourseNotOffered
+argument_list|(
 name|iOffering
 operator|.
 name|getAbbv
 argument_list|()
-operator|+
-literal|" is not offered"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|else if
@@ -8797,32 +9008,45 @@ name|iLimit
 operator|.
 name|setHint
 argument_list|(
-operator|(
 name|total
 operator|==
 literal|0
 condition|?
-literal|"No space"
+name|MESSAGES
+operator|.
+name|hintNoSpaceInCourse
+argument_list|(
+name|iOffering
+operator|.
+name|getAbbv
+argument_list|()
+argument_list|)
 else|:
 name|total
 operator|==
 literal|1
 condition|?
-literal|"Only 1 space"
-else|:
-literal|"Only "
-operator|+
-name|total
-operator|+
-literal|" spaces"
-operator|)
-operator|+
-literal|" in "
-operator|+
+name|MESSAGES
+operator|.
+name|hintOnlyOneSpaceInCourse
+argument_list|(
 name|iOffering
 operator|.
 name|getAbbv
 argument_list|()
+argument_list|)
+else|:
+name|MESSAGES
+operator|.
+name|hintOnlyNSpacesInCourse
+argument_list|(
+name|total
+argument_list|,
+name|iOffering
+operator|.
+name|getAbbv
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

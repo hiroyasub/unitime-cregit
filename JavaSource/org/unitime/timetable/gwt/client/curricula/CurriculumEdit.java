@@ -2393,7 +2393,7 @@ name|addRow
 argument_list|(
 name|MESSAGES
 operator|.
-name|propMajors
+name|propMajorOrMajors
 argument_list|()
 argument_list|,
 name|iCurriculumMajors
