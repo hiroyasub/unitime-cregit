@@ -95,6 +95,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|CurriculumInterface
@@ -134,6 +150,22 @@ operator|.
 name|CurriculumInterface
 operator|.
 name|CurriculumClassificationInterface
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|core
+operator|.
+name|client
+operator|.
+name|GWT
 import|;
 end_import
 
@@ -274,6 +306,21 @@ name|CurriculaClassifications
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|UniTimeTable
 name|iTable
@@ -387,7 +434,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Name:"
+name|MESSAGES
+operator|.
+name|propName
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
@@ -398,7 +448,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|"Classification:"
+name|MESSAGES
+operator|.
+name|propClassification
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
@@ -409,7 +462,10 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
-literal|"Last-Like Enrollment:"
+name|MESSAGES
+operator|.
+name|propLastLikeEnrollment
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
@@ -434,7 +490,10 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
-literal|"Projected by Rule:"
+name|MESSAGES
+operator|.
+name|propProjectedByRule
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
@@ -459,7 +518,10 @@ literal|4
 argument_list|,
 literal|0
 argument_list|,
-literal|"Requested Enrollment:"
+name|MESSAGES
+operator|.
+name|propRequestedEnrollment
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
@@ -484,7 +546,10 @@ literal|5
 argument_list|,
 literal|0
 argument_list|,
-literal|"Current Enrollment:"
+name|MESSAGES
+operator|.
+name|propCurrentEnrollment
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable

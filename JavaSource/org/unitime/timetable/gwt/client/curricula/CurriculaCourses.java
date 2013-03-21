@@ -291,6 +291,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|shared
 operator|.
 name|CurriculumInterface
@@ -384,6 +400,22 @@ operator|.
 name|CurriculumInterface
 operator|.
 name|CurriculumStudentsInterface
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|core
+operator|.
+name|client
+operator|.
+name|GWT
 import|;
 end_import
 
@@ -802,6 +834,21 @@ name|CurriculaCourses
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|UniTimeTable
 argument_list|<
@@ -830,23 +877,41 @@ name|Mode
 block|{
 name|LAST
 argument_list|(
-literal|"Last"
+name|MESSAGES
+operator|.
+name|abbvLastLikeEnrollment
+argument_list|()
 argument_list|,
-literal|"Last-Like Enrollment"
+name|MESSAGES
+operator|.
+name|fieldLastLikeEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|PROJ
 argument_list|(
-literal|"Proj"
+name|MESSAGES
+operator|.
+name|abbvProjectedByRule
+argument_list|()
 argument_list|,
-literal|"Projection by Rule"
+name|MESSAGES
+operator|.
+name|fieldProjectedByRule
+argument_list|()
 argument_list|)
 block|,
 name|ENRL
 argument_list|(
-literal|"Curr"
+name|MESSAGES
+operator|.
+name|abbvCurrentEnrollment
+argument_list|()
 argument_list|,
-literal|"Current Enrollment"
+name|MESSAGES
+operator|.
+name|fieldCurrentEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|NONE
@@ -1570,7 +1635,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Group"
+name|MESSAGES
+operator|.
+name|colGroup
+argument_list|()
 argument_list|)
 block|{
 annotation|@
@@ -1657,7 +1725,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"New group..."
+name|MESSAGES
+operator|.
+name|opNewGroup
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1730,7 +1801,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Group"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colGroup
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -1813,7 +1892,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Course"
+name|MESSAGES
+operator|.
+name|colCourse
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -1874,7 +1956,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show All Courses"
+name|MESSAGES
+operator|.
+name|opShowAllCourses
+argument_list|()
 return|;
 block|}
 block|}
@@ -1971,7 +2056,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Select All Courses"
+name|MESSAGES
+operator|.
+name|opSelectAllCourses
+argument_list|()
 return|;
 block|}
 block|}
@@ -2121,7 +2209,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Remove Selected Courses"
+name|MESSAGES
+operator|.
+name|opRemoveSelectedCourses
+argument_list|()
 return|;
 block|}
 block|}
@@ -2206,7 +2297,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Clear Selection"
+name|MESSAGES
+operator|.
+name|opClearSelection
+argument_list|()
 return|;
 block|}
 block|}
@@ -2270,8 +2364,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show "
-operator|+
 operator|(
 name|CurriculumCookie
 operator|.
@@ -2281,9 +2373,15 @@ operator|.
 name|getCurriculaCoursesPercent
 argument_list|()
 condition|?
-literal|"Numbers"
+name|MESSAGES
+operator|.
+name|opShowNumbers
+argument_list|()
 else|:
-literal|"Percentages"
+name|MESSAGES
+operator|.
+name|opShowPercentages
+argument_list|()
 operator|)
 return|;
 block|}
@@ -2368,8 +2466,10 @@ name|Mode
 operator|.
 name|NONE
 condition|?
-literal|"Hide "
-operator|+
+name|MESSAGES
+operator|.
+name|opHideItem
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -2380,13 +2480,17 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 else|:
-literal|"Show "
-operator|+
+name|MESSAGES
+operator|.
+name|opShowItem
+argument_list|(
 name|m
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|)
 return|;
 block|}
@@ -2453,7 +2557,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show Empty Courses"
+name|MESSAGES
+operator|.
+name|opShowEmptyCourses
+argument_list|()
 return|;
 block|}
 block|}
@@ -2636,7 +2743,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Hide Empty Courses"
+name|MESSAGES
+operator|.
+name|opHideEmptyCourses
+argument_list|()
 return|;
 block|}
 block|}
@@ -2789,9 +2899,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Clear Requested Enrollments (All Classifications"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -2799,12 +2906,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|", Selected Courses Only"
+name|MESSAGES
+operator|.
+name|opClearRequestedEnrollmentAllClassificationsSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
-operator|+
-literal|")"
+name|MESSAGES
+operator|.
+name|opClearRequestedEnrollmentAllClassifications
+argument_list|()
 return|;
 block|}
 block|}
@@ -3010,9 +3120,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Copy Last-Like&rarr; Requested (All Classifications"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -3020,12 +3127,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|", Selected Courses Only"
+name|MESSAGES
+operator|.
+name|opCopyLastLikeToRequestedAllClassificationsSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
-operator|+
-literal|")"
+name|MESSAGES
+operator|.
+name|opCopyLastLikeToRequestedAllClassifications
+argument_list|()
 return|;
 block|}
 block|}
@@ -3231,9 +3341,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Copy Current&rarr; Requested (All Classifications"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -3241,12 +3348,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|", Selected Courses Only"
+name|MESSAGES
+operator|.
+name|opCopyCurrentToRequestedAllClassificationsSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
-operator|+
-literal|")"
+name|MESSAGES
+operator|.
+name|opCopyCurrentToRequestedAllClassifications
+argument_list|()
 return|;
 block|}
 block|}
@@ -3452,9 +3562,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Copy Projection&rarr; Requested (All Classifications"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -3462,12 +3569,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|", Selected Courses Only"
+name|MESSAGES
+operator|.
+name|opCopyProjectionToRequestedAllClassificationsSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
-operator|+
-literal|")"
+name|MESSAGES
+operator|.
+name|opCopyProjectionToRequestedAllClassifications
+argument_list|()
 return|;
 block|}
 block|}
@@ -3735,7 +3845,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Select All"
+name|MESSAGES
+operator|.
+name|opSelectAll
+argument_list|()
 return|;
 block|}
 block|}
@@ -3820,7 +3933,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Clear Selection"
+name|MESSAGES
+operator|.
+name|opClearSelection
+argument_list|()
 return|;
 block|}
 block|}
@@ -3884,9 +4000,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show "
-operator|+
-operator|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -3895,10 +4008,15 @@ operator|.
 name|getCurriculaCoursesPercent
 argument_list|()
 condition|?
-literal|"Numbers"
+name|MESSAGES
+operator|.
+name|opShowNumbers
+argument_list|()
 else|:
-literal|"Percentages"
-operator|)
+name|MESSAGES
+operator|.
+name|opShowPercentages
+argument_list|()
 return|;
 block|}
 block|}
@@ -3982,8 +4100,10 @@ name|Mode
 operator|.
 name|NONE
 condition|?
-literal|"Hide "
-operator|+
+name|MESSAGES
+operator|.
+name|opHideItem
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -3994,13 +4114,17 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 else|:
-literal|"Show "
-operator|+
+name|MESSAGES
+operator|.
+name|opShowItem
+argument_list|(
 name|m
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|)
 return|;
 block|}
@@ -4124,9 +4248,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Clear Requested Enrollments"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -4134,10 +4255,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|" (Selected Courses Only)"
+name|MESSAGES
+operator|.
+name|opClearRequestedEnrollmentSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
+name|MESSAGES
+operator|.
+name|opClearRequestedEnrollment
+argument_list|()
 return|;
 block|}
 block|}
@@ -4312,9 +4438,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Copy Last-Like&rarr; Requested"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -4322,10 +4445,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|" (Selected Courses Only)"
+name|MESSAGES
+operator|.
+name|opCopyLastLikeToRequestedSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
+name|MESSAGES
+operator|.
+name|opCopyLastLikeToRequested
+argument_list|()
 return|;
 block|}
 block|}
@@ -4500,9 +4628,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Copy Current&rarr; Requested"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -4510,10 +4635,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|" (Selected Courses Only)"
+name|MESSAGES
+operator|.
+name|opCopyCurrentToRequestedSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
+name|MESSAGES
+operator|.
+name|opCopyCurrentToRequested
+argument_list|()
 return|;
 block|}
 block|}
@@ -4688,9 +4818,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Copy Projection&rarr; Requested"
-operator|+
-operator|(
 name|iTable
 operator|.
 name|getSelectedCount
@@ -4698,10 +4825,15 @@ argument_list|()
 operator|>
 literal|0
 condition|?
-literal|" (Selected Courses Only)"
+name|MESSAGES
+operator|.
+name|opCopyProjectionToRequestedSelectedCoursesOnly
+argument_list|()
 else|:
-literal|""
-operator|)
+name|MESSAGES
+operator|.
+name|opCopyProjectionToRequested
+argument_list|()
 return|;
 block|}
 block|}
@@ -4723,12 +4855,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
 name|clasf
 operator|.
 name|getCode
 argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4932,7 +5067,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Select All"
+name|MESSAGES
+operator|.
+name|opSelectAll
+argument_list|()
 return|;
 block|}
 block|}
@@ -5017,7 +5155,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Clear Selection"
+name|MESSAGES
+operator|.
+name|opClearSelection
+argument_list|()
 return|;
 block|}
 block|}
@@ -5081,9 +5222,6 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show "
-operator|+
-operator|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -5092,10 +5230,15 @@ operator|.
 name|getCurriculaCoursesPercent
 argument_list|()
 condition|?
-literal|"Numbers"
+name|MESSAGES
+operator|.
+name|opShowNumbers
+argument_list|()
 else|:
-literal|"Percentages"
-operator|)
+name|MESSAGES
+operator|.
+name|opShowPercentages
+argument_list|()
 return|;
 block|}
 block|}
@@ -5179,8 +5322,10 @@ name|Mode
 operator|.
 name|NONE
 condition|?
-literal|"Hide "
-operator|+
+name|MESSAGES
+operator|.
+name|opHideItem
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -5191,13 +5336,17 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 else|:
-literal|"Show "
-operator|+
+name|MESSAGES
+operator|.
+name|opShowItem
+argument_list|(
 name|m
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|)
 return|;
 block|}
@@ -5221,8 +5370,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
 name|clasf
 operator|.
 name|getCode
@@ -5240,6 +5391,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -5895,9 +6047,12 @@ operator|)
 operator|.
 name|setError
 argument_list|(
-literal|"Duplicate course "
-operator|+
+name|MESSAGES
+operator|.
+name|errorDuplicateCourse
+argument_list|(
 name|course
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ret
@@ -8944,7 +9099,10 @@ name|total
 operator|==
 literal|null
 condition|?
-literal|"N/A"
+name|MESSAGES
+operator|.
+name|notApplicable
+argument_list|()
 else|:
 name|NF
 operator|.
@@ -9021,7 +9179,10 @@ name|total
 operator|==
 literal|null
 condition|?
-literal|"N/A"
+name|MESSAGES
+operator|.
+name|notApplicable
+argument_list|()
 else|:
 name|NF
 operator|.
@@ -9098,7 +9259,10 @@ name|total
 operator|==
 literal|null
 condition|?
-literal|"N/A"
+name|MESSAGES
+operator|.
+name|notApplicable
+argument_list|()
 else|:
 name|NF
 operator|.
@@ -9699,7 +9863,10 @@ name|exp
 operator|==
 literal|null
 condition|?
-literal|"N/A"
+name|MESSAGES
+operator|.
+name|notApplicable
+argument_list|()
 else|:
 name|String
 operator|.
@@ -11358,8 +11525,10 @@ argument_list|(
 operator|new
 name|Label
 argument_list|(
-literal|"Comparing "
-operator|+
+name|MESSAGES
+operator|.
+name|hintComparingStudentsWithOtherCourses
+argument_list|(
 name|course
 operator|+
 literal|" "
@@ -11384,8 +11553,7 @@ literal|" enrollment"
 argument_list|,
 literal|""
 argument_list|)
-operator|+
-literal|" students with the other selected courses:"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11537,7 +11705,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|"Students in at least 1 other course"
+name|MESSAGES
+operator|.
+name|hintStudentsInOneOtherCourse
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iT
@@ -11548,7 +11719,10 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
-literal|"Students in at least 2 other courses"
+name|MESSAGES
+operator|.
+name|hintStudentsInTwoOtherCourses
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iT
@@ -11559,7 +11733,10 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
-literal|"Students in at least 3 other courses"
+name|MESSAGES
+operator|.
+name|hintStudentsInThreeOtherCourses
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iT
@@ -11570,7 +11747,10 @@ literal|4
 argument_list|,
 literal|0
 argument_list|,
-literal|"Students in all other courses"
+name|MESSAGES
+operator|.
+name|hintStudentsInAllOtherCourses
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iT
@@ -11581,7 +11761,10 @@ literal|5
 argument_list|,
 literal|0
 argument_list|,
-literal|"Students not in any other course"
+name|MESSAGES
+operator|.
+name|hintStudentsNotInAnyOtherCourse
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|int
@@ -11687,9 +11870,12 @@ name|row
 argument_list|,
 literal|0
 argument_list|,
-literal|"Students shared with "
-operator|+
+name|MESSAGES
+operator|.
+name|hinStudentsSharedWith
+argument_list|(
 name|c
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|row
@@ -13190,14 +13376,20 @@ name|iGrType
 operator|.
 name|addItem
 argument_list|(
-literal|"No conflict (different students)"
+name|MESSAGES
+operator|.
+name|groupDifferentStudents
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iGrType
 operator|.
 name|addItem
 argument_list|(
-literal|"Conflict (same students)"
+name|MESSAGES
+operator|.
+name|groupSameStudents
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iGrType
@@ -13237,7 +13429,10 @@ operator|=
 operator|new
 name|Button
 argument_list|(
-literal|"Assign"
+name|MESSAGES
+operator|.
+name|opGroupAssign
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|grButtons
@@ -13252,7 +13447,10 @@ operator|=
 operator|new
 name|Button
 argument_list|(
-literal|"Update"
+name|MESSAGES
+operator|.
+name|opGroupUpdate
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|grButtons
@@ -13267,7 +13465,10 @@ operator|=
 operator|new
 name|Button
 argument_list|(
-literal|"Delete"
+name|MESSAGES
+operator|.
+name|opGroupDelete
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|grButtons

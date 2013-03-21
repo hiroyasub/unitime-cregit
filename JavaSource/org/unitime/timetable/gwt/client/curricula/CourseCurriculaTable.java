@@ -127,6 +127,24 @@ name|gwt
 operator|.
 name|client
 operator|.
+name|page
+operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
 name|widgets
 operator|.
 name|LoadingWidget
@@ -184,6 +202,22 @@ operator|.
 name|widgets
 operator|.
 name|UniTimeHeaderPanel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -810,6 +844,21 @@ name|CourseCurriculaTable
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -1011,47 +1060,109 @@ name|Type
 block|{
 name|EXP
 argument_list|(
-literal|"Requested"
+name|MESSAGES
+operator|.
+name|fieldRequestedEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|ENRL
 argument_list|(
-literal|"Current"
+name|MESSAGES
+operator|.
+name|fieldCurrentEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|LAST
 argument_list|(
-literal|"Last-Like"
+name|MESSAGES
+operator|.
+name|fieldLastLikeEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|PROJ
 argument_list|(
-literal|"Projected by Rule"
+name|MESSAGES
+operator|.
+name|fieldProjectedByRule
+argument_list|()
 argument_list|)
 block|,
 name|EXP2ENRL
 argument_list|(
-literal|"Requested / Current"
+name|MESSAGES
+operator|.
+name|shortRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|MESSAGES
+operator|.
+name|shortCurrentEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|EXP2LAST
 argument_list|(
-literal|"Requested / Last-Like"
+name|MESSAGES
+operator|.
+name|shortRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|MESSAGES
+operator|.
+name|shortLastLikeEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|EXP2PROJ
 argument_list|(
-literal|"Requested / Projected"
+name|MESSAGES
+operator|.
+name|shortRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|MESSAGES
+operator|.
+name|shortProjectedByRule
+argument_list|()
 argument_list|)
 block|,
 name|LAST2ENRL
 argument_list|(
-literal|"Last-Like / Current"
+name|MESSAGES
+operator|.
+name|shortLastLikeEnrollment
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|MESSAGES
+operator|.
+name|shortCurrentEnrollment
+argument_list|()
 argument_list|)
 block|,
 name|PROJ2ENRL
 argument_list|(
-literal|"Projected / Current"
+name|MESSAGES
+operator|.
+name|shortProjectedByRule
+argument_list|()
+operator|+
+literal|" / "
+operator|+
+name|MESSAGES
+operator|.
+name|shortCurrentEnrollment
+argument_list|()
 argument_list|)
 block|;
 specifier|private
@@ -1200,9 +1311,15 @@ operator|.
 name|getCurriculaCoursesDetails
 argument_list|()
 condition|?
-literal|"Hide Details"
+name|MESSAGES
+operator|.
+name|opHideDetails
+argument_list|()
 else|:
-literal|"Show Details"
+name|MESSAGES
+operator|.
+name|opShowDetails
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -1515,7 +1632,10 @@ init|=
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Expand All"
+name|MESSAGES
+operator|.
+name|opExpandAll
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -1641,7 +1761,10 @@ init|=
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Collapse All"
+name|MESSAGES
+operator|.
+name|opCollapseAll
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -1773,14 +1896,15 @@ init|=
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Show "
-operator|+
+name|MESSAGES
+operator|.
+name|opShowEnrollmentByType
+argument_list|(
 name|t
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|,
 literal|true
 argument_list|,
@@ -1814,14 +1938,15 @@ name|iHint
 operator|.
 name|setText
 argument_list|(
-literal|"Showing "
-operator|+
+name|MESSAGES
+operator|.
+name|hintEnrollmentOfType
+argument_list|(
 name|t
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1921,14 +2046,15 @@ operator|)
 operator|.
 name|setText
 argument_list|(
-literal|"Total "
-operator|+
+name|MESSAGES
+operator|.
+name|totalEnrollmentOfType
+argument_list|(
 name|t
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1995,7 +2121,10 @@ init|=
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Populate Course Projected Demands"
+name|MESSAGES
+operator|.
+name|opPopulateCourseProjectedDemands
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -2022,7 +2151,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Populating projected demands for this offering ..."
+name|MESSAGES
+operator|.
+name|waitPopulateCourseProjectedDemands
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iCurriculaService
@@ -2054,14 +2186,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Unable to populate course projected demands ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedPopulateCourseProjectedDemands
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedPopulateCourseProjectedDemands
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -2133,7 +2283,10 @@ init|=
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Populate Course Projected Demands (Include Other Students)"
+name|MESSAGES
+operator|.
+name|opPopulateCourseProjectedDemandsIncludeOther
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -2160,7 +2313,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Populating projected demands for this course ..."
+name|MESSAGES
+operator|.
+name|waitPopulateCourseProjectedDemands
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iCurriculaService
@@ -2192,14 +2348,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Unable to populate course projected demands ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedPopulateCourseProjectedDemands
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedPopulateCourseProjectedDemands
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -2314,7 +2488,10 @@ name|UniTimeHeaderPanel
 argument_list|(
 name|showHeader
 condition|?
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|headerCurricula
+argument_list|()
 else|:
 literal|""
 argument_list|)
@@ -2354,7 +2531,10 @@ name|addButton
 argument_list|(
 literal|"operations"
 argument_list|,
-literal|"Curricula&nbsp;<u>O</u>perations&nbsp;&or;"
+name|MESSAGES
+operator|.
+name|buttonCurriculaOperations
+argument_list|()
 argument_list|,
 operator|(
 name|Integer
@@ -2613,8 +2793,10 @@ operator|=
 operator|new
 name|Label
 argument_list|(
-literal|"Showing "
-operator|+
+name|MESSAGES
+operator|.
+name|hintEnrollmentOfType
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -2625,8 +2807,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iHint
@@ -2726,8 +2907,10 @@ name|iHint
 operator|.
 name|setText
 argument_list|(
-literal|"Showing "
-operator|+
+name|MESSAGES
+operator|.
+name|hintEnrollmentOfType
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -2738,8 +2921,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2834,8 +3016,10 @@ operator|)
 operator|.
 name|setText
 argument_list|(
-literal|"Total "
-operator|+
+name|MESSAGES
+operator|.
+name|totalEnrollmentOfType
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -2846,8 +3030,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3057,14 +3240,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to load academic areas ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadAcademicAreas
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadAcademicAreas
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|next
@@ -3121,14 +3322,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to load departments ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadDepartments
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadDepartments
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|next
@@ -3355,14 +3574,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to load classifications ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadClassifications
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadClassifications
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -3460,7 +3697,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Curriculum"
+name|MESSAGES
+operator|.
+name|colCurriculum
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -3521,7 +3761,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Area"
+name|MESSAGES
+operator|.
+name|colAcademicArea
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -3582,7 +3825,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Major(s)"
+name|MESSAGES
+operator|.
+name|colMajors
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -3730,7 +3976,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Total"
+name|MESSAGES
+operator|.
+name|colTotal
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -5084,21 +5333,42 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to load details for "
-operator|+
+name|MESSAGES
+operator|.
+name|failedLoadDetails
+argument_list|(
 name|curriculum
 operator|.
 name|getAbbv
 argument_list|()
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedLoadDetails
+argument_list|(
+name|curriculum
+operator|.
+name|getAbbv
+argument_list|()
+argument_list|,
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|next
@@ -5137,14 +5407,15 @@ name|getLoadingMessage
 parameter_list|()
 block|{
 return|return
-literal|"Loading details for "
-operator|+
+name|MESSAGES
+operator|.
+name|waitLoadingDetailsOf
+argument_list|(
 name|curriculum
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 return|;
 block|}
 block|}
@@ -6400,7 +6671,14 @@ argument_list|,
 operator|new
 name|HTML
 argument_list|(
-literal|"<i>Other Students</i>"
+literal|"<i>"
+operator|+
+name|MESSAGES
+operator|.
+name|colOtherStudents
+argument_list|()
+operator|+
+literal|"</i>"
 argument_list|,
 literal|false
 argument_list|)
@@ -7020,8 +7298,10 @@ argument_list|,
 operator|new
 name|Label
 argument_list|(
-literal|"Total "
-operator|+
+name|MESSAGES
+operator|.
+name|totalEnrollmentOfType
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -7032,8 +7312,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|,
 literal|false
 argument_list|)
@@ -7834,14 +8113,15 @@ name|iHint
 operator|.
 name|setText
 argument_list|(
-literal|"Showing "
-operator|+
+name|MESSAGES
+operator|.
+name|hintEnrollmentOfType
+argument_list|(
 name|type
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -7941,14 +8221,15 @@ operator|)
 operator|.
 name|setText
 argument_list|(
-literal|"Total "
-operator|+
+name|MESSAGES
+operator|.
+name|totalEnrollmentOfType
+argument_list|(
 name|type
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" Enrollment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8060,14 +8341,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to load curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|iHeader
@@ -8113,7 +8412,10 @@ name|iHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"The selected offering has no curricula."
+name|MESSAGES
+operator|.
+name|offeringHasNoCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iHeader

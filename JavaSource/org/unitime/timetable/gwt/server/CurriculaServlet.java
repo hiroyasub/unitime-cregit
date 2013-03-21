@@ -267,9 +267,39 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -1097,6 +1127,21 @@ name|CurriculaServlet
 implements|implements
 name|CurriculaService
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|Logger
@@ -1821,11 +1866,21 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCurriculumDoesNotExist
+argument_list|(
 name|curriculumId
-operator|+
-literal|" does not exist anymore, please refresh your data"
+operator|==
+literal|null
+condition|?
+literal|"null"
+else|:
+name|curriculumId
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 name|Hashtable
@@ -2635,11 +2690,21 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCurriculumDoesNotExist
+argument_list|(
 name|curriculumId
-operator|+
-literal|" does not exist"
+operator|==
+literal|null
+condition|?
+literal|"null"
+else|:
+name|curriculumId
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 name|Hashtable
@@ -4323,14 +4388,15 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"course "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCourseDoesNotExist
+argument_list|(
 name|course
 operator|.
 name|getCourseName
 argument_list|()
-operator|+
-literal|" does not exist"
+argument_list|)
 argument_list|)
 throw|;
 name|courses
@@ -4388,14 +4454,18 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCurriculumDoesNotExist
+argument_list|(
 name|curriculum
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|" no longer exists."
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -6763,7 +6833,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Unsaved curriculum cannot be deleted."
+name|MESSAGES
+operator|.
+name|errorCannotDeleteUnsavedCurriculum
+argument_list|()
 argument_list|)
 throw|;
 name|Curriculum
@@ -6791,11 +6864,15 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCurriculumDoesNotExist
+argument_list|(
 name|curriculumId
-operator|+
-literal|" no longer exists."
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 name|ChangeLog
@@ -7055,7 +7132,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Unsaved curriculum cannot be deleted."
+name|MESSAGES
+operator|.
+name|errorCannotDeleteUnsavedCurriculum
+argument_list|()
 argument_list|)
 throw|;
 name|Curriculum
@@ -7083,11 +7163,15 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCurriculumDoesNotExist
+argument_list|(
 name|curriculumId
-operator|+
-literal|" no longer exists."
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 name|ChangeLog
@@ -7423,7 +7507,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Unsaved curriculum cannot be merged."
+name|MESSAGES
+operator|.
+name|errorCannotMergeUnsavedCurriculum
+argument_list|()
 argument_list|)
 throw|;
 name|Curriculum
@@ -7451,11 +7538,15 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCurriculumDoesNotExist
+argument_list|(
 name|curriculumId
-operator|+
-literal|" no longer exists."
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 name|cidx
@@ -7502,7 +7593,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Selected curricula have different academic areas."
+name|MESSAGES
+operator|.
+name|errorCannotMergeDifferentAcademicAreas
+argument_list|()
 argument_list|)
 throw|;
 if|if
@@ -7546,7 +7640,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"Selected curricula have different departments."
+name|MESSAGES
+operator|.
+name|errorCannotMergeDifferentDepartments
+argument_list|()
 argument_list|)
 throw|;
 name|mergedCurriculum
@@ -12598,11 +12695,12 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"course "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCourseDoesNotExist
+argument_list|(
 name|courseName
-operator|+
-literal|" does not exist"
+argument_list|)
 argument_list|)
 throw|;
 name|results
@@ -12830,11 +12928,21 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"offering "
-operator|+
+name|MESSAGES
+operator|.
+name|errorOfferingDoesNotExist
+argument_list|(
 name|offeringId
-operator|+
-literal|" does not exist"
+operator|==
+literal|null
+condition|?
+literal|"null"
+else|:
+name|offeringId
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 for|for
@@ -14639,11 +14747,12 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"course "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCourseDoesNotExist
+argument_list|(
 name|course
-operator|+
-literal|" does not exist"
+argument_list|)
 argument_list|)
 throw|;
 if|if
@@ -14656,7 +14765,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"course detail interface not provided"
+name|MESSAGES
+operator|.
+name|errorCourseDetailsInterfaceNotProvided
+argument_list|()
 argument_list|)
 throw|;
 name|String
@@ -14941,11 +15053,12 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"course "
-operator|+
+name|MESSAGES
+operator|.
+name|errorCourseDoesNotExist
+argument_list|(
 name|course
-operator|+
-literal|" does not exist"
+argument_list|)
 argument_list|)
 throw|;
 name|List
@@ -15857,9 +15970,15 @@ operator|.
 name|isHttpSessionNew
 argument_list|()
 condition|?
-literal|"Your timetabling session has expired. Please log in again."
+name|MESSAGES
+operator|.
+name|authenticationExpired
+argument_list|()
 else|:
-literal|"Login is required to use this page."
+name|MESSAGES
+operator|.
+name|authenticationRequired
+argument_list|()
 argument_list|)
 throw|;
 name|HashMap
@@ -16865,7 +16984,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"not authorized to change curriculum projection rules"
+name|MESSAGES
+operator|.
+name|authenticationInsufficient
+argument_list|()
 argument_list|)
 throw|;
 name|org
@@ -17534,7 +17656,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"not authorized to (re)create curricula"
+name|MESSAGES
+operator|.
+name|authenticationInsufficient
+argument_list|()
 argument_list|)
 throw|;
 name|org
@@ -19220,7 +19345,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"not authorized to populate course projected demands"
+name|MESSAGES
+operator|.
+name|authenticationInsufficient
+argument_list|()
 argument_list|)
 throw|;
 name|org
@@ -20121,11 +20249,21 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"offering "
-operator|+
+name|MESSAGES
+operator|.
+name|errorOfferingDoesNotExist
+argument_list|(
 name|offeringId
-operator|+
-literal|" does not exist"
+operator|==
+literal|null
+condition|?
+literal|"null"
+else|:
+name|offeringId
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 throw|;
 for|for

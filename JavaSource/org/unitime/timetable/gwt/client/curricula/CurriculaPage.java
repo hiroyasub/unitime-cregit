@@ -151,6 +151,24 @@ name|client
 operator|.
 name|page
 operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
+name|page
+operator|.
 name|UniTimePageLabel
 import|;
 end_import
@@ -170,6 +188,22 @@ operator|.
 name|widgets
 operator|.
 name|LoadingWidget
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -634,6 +668,21 @@ name|CurriculaPage
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -758,7 +807,10 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Filter:"
+name|MESSAGES
+operator|.
+name|propFilter
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|iFilterPanel
@@ -797,7 +849,10 @@ operator|=
 operator|new
 name|AriaButton
 argument_list|(
-literal|"<u>S</u>earch"
+name|MESSAGES
+operator|.
+name|buttonSearch
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iSearch
@@ -819,7 +874,10 @@ operator|=
 operator|new
 name|AriaButton
 argument_list|(
-literal|"<u>P</u>rint"
+name|MESSAGES
+operator|.
+name|buttonPrint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPrint
@@ -841,7 +899,10 @@ operator|=
 operator|new
 name|AriaButton
 argument_list|(
-literal|"<u>A</u>dd New"
+name|MESSAGES
+operator|.
+name|buttonAddNew
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iNew
@@ -1223,7 +1284,10 @@ else|else
 block|{
 name|showLoading
 argument_list|(
-literal|"Loading curricula ..."
+name|MESSAGES
+operator|.
+name|waitLoadingCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1289,14 +1353,32 @@ name|iCurriculaTable
 operator|.
 name|setError
 argument_list|(
-literal|"Unable to retrieve curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|hideLoading
@@ -1378,7 +1460,10 @@ condition|)
 block|{
 name|showLoading
 argument_list|(
-literal|"Loading curriculum ..."
+name|MESSAGES
+operator|.
+name|waitLoadingCurriculum
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1481,7 +1566,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Add Curriculum"
+name|MESSAGES
+operator|.
+name|pageAddCurriculum
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iCurriculumPanel
@@ -1552,7 +1640,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|pageCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -1606,8 +1697,10 @@ parameter_list|)
 block|{
 name|showLoading
 argument_list|(
-literal|"Loading curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|waitLoadingCurriculumWithName
+argument_list|(
 name|evt
 operator|.
 name|getCurriculum
@@ -1615,8 +1708,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1744,7 +1836,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Add Curriculum"
+name|MESSAGES
+operator|.
+name|pageAddCurriculum
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iCurriculumPanel
@@ -1809,7 +1904,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curriculum Requested Enrollments"
+name|MESSAGES
+operator|.
+name|pageCurriculumRequestedEnrollments
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -1868,7 +1966,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|pageCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -1920,7 +2021,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|pageCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -1972,7 +2076,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|pageCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -2041,7 +2148,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|pageCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel
@@ -2095,7 +2205,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Curricula"
+name|MESSAGES
+operator|.
+name|pageCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iPanel

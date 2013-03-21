@@ -113,6 +113,24 @@ name|client
 operator|.
 name|page
 operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
+name|page
+operator|.
 name|UniTimePageLabel
 import|;
 end_import
@@ -204,6 +222,22 @@ operator|.
 name|widgets
 operator|.
 name|UniTimeWidget
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -604,6 +638,21 @@ name|CurriculumEdit
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|final
 name|CurriculaServiceAsync
@@ -771,7 +820,10 @@ name|Mode
 block|{
 name|ADD
 argument_list|(
-literal|"Add Curriculum"
+name|MESSAGES
+operator|.
+name|pageAddCurriculum
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -780,7 +832,10 @@ argument_list|)
 block|,
 name|EDIT
 argument_list|(
-literal|"Edit Curriculum"
+name|MESSAGES
+operator|.
+name|pageEditCurriculum
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -789,7 +844,10 @@ argument_list|)
 block|,
 name|DETAILS
 argument_list|(
-literal|"Curriculum Detail"
+name|MESSAGES
+operator|.
+name|pageCurriculumDetails
+argument_list|()
 argument_list|,
 literal|false
 argument_list|,
@@ -991,14 +1049,15 @@ condition|)
 block|{
 name|showLoading
 argument_list|(
-literal|"Saving curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|waitSavingCurriculum
+argument_list|(
 name|iCurriculum
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1031,14 +1090,32 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedValidation
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedValidation
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -1121,7 +1198,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed, see errors below."
+name|MESSAGES
+operator|.
+name|failedValidationSeeBelow
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1152,20 +1232,24 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you realy want to delete this curriculum?"
+name|MESSAGES
+operator|.
+name|confirmDeleteThisCurriculum
+argument_list|()
 argument_list|)
 condition|)
 return|return;
 name|showLoading
 argument_list|(
-literal|"Deleting curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|waitDeletingCurriculum
+argument_list|(
 name|iCurriculum
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1198,14 +1282,42 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Delete failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedDelete
+argument_list|(
+name|iCurriculum
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedDelete
+argument_list|(
+name|iCurriculum
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|hideLoading
@@ -1354,7 +1466,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Next curriculum not provided."
+name|MESSAGES
+operator|.
+name|errorNoNextCurriculum
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1376,14 +1491,15 @@ condition|)
 block|{
 name|showLoading
 argument_list|(
-literal|"Saving curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|waitSavingCurriculum
+argument_list|(
 name|iCurriculum
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1416,14 +1532,32 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedValidation
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedValidation
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -1471,7 +1605,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed, see errors below."
+name|MESSAGES
+operator|.
+name|failedValidationSeeBelow
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1549,7 +1686,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Previous curriculum not provided."
+name|MESSAGES
+operator|.
+name|errorNoPreviousCurriculum
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1571,14 +1711,15 @@ condition|)
 block|{
 name|showLoading
 argument_list|(
-literal|"Saving curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|waitSavingCurriculum
+argument_list|(
 name|iCurriculum
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1611,14 +1752,32 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedValidation
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedValidation
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -1666,7 +1825,10 @@ name|iTitleAndButtons
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Validation failed, see errors below."
+name|MESSAGES
+operator|.
+name|failedValidationSeeBelow
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1708,7 +1870,10 @@ operator|=
 operator|new
 name|UniTimeHeaderPanel
 argument_list|(
-literal|"Curriculum Details"
+name|MESSAGES
+operator|.
+name|headerCurriculumDetails
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTitleAndButtons
@@ -1717,7 +1882,10 @@ name|addButton
 argument_list|(
 literal|"edit"
 argument_list|,
-literal|"<u>E</u>dit"
+name|MESSAGES
+operator|.
+name|buttonEdit
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1730,7 +1898,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"<u>S</u>ave"
+name|MESSAGES
+operator|.
+name|buttonSave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1743,7 +1914,10 @@ name|addButton
 argument_list|(
 literal|"previous"
 argument_list|,
-literal|"<u>P</u>revious"
+name|MESSAGES
+operator|.
+name|buttonPrevious
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1756,7 +1930,10 @@ name|addButton
 argument_list|(
 literal|"next"
 argument_list|,
-literal|"<u>N</u>ext"
+name|MESSAGES
+operator|.
+name|buttonNext
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1769,7 +1946,10 @@ name|addButton
 argument_list|(
 literal|"delete"
 argument_list|,
-literal|"<u>D</u>elete"
+name|MESSAGES
+operator|.
+name|buttonDelete
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1782,7 +1962,10 @@ name|addButton
 argument_list|(
 literal|"print"
 argument_list|,
-literal|"Prin<u>t</u>"
+name|MESSAGES
+operator|.
+name|buttonPrint
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1795,7 +1978,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"<u>B</u>ack"
+name|MESSAGES
+operator|.
+name|buttonBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1834,7 +2020,10 @@ name|iCurriculaTable
 operator|.
 name|addRow
 argument_list|(
-literal|"Abbreviation:"
+name|MESSAGES
+operator|.
+name|propAbbreviation
+argument_list|()
 argument_list|,
 name|iCurriculumAbbv
 argument_list|)
@@ -1894,7 +2083,10 @@ name|iCurriculaTable
 operator|.
 name|addRow
 argument_list|(
-literal|"Name:"
+name|MESSAGES
+operator|.
+name|propName
+argument_list|()
 argument_list|,
 name|iCurriculumName
 argument_list|)
@@ -1982,7 +2174,10 @@ name|iCurriculaTable
 operator|.
 name|addRow
 argument_list|(
-literal|"Academic Area:"
+name|MESSAGES
+operator|.
+name|propAcademicArea
+argument_list|()
 argument_list|,
 name|iCurriculumArea
 argument_list|)
@@ -2196,7 +2391,10 @@ name|iCurriculaTable
 operator|.
 name|addRow
 argument_list|(
-literal|"Major(s):"
+name|MESSAGES
+operator|.
+name|propMajors
+argument_list|()
 argument_list|,
 name|iCurriculumMajors
 argument_list|)
@@ -2521,7 +2719,10 @@ name|iCurriculaTable
 operator|.
 name|addRow
 argument_list|(
-literal|"Department:"
+name|MESSAGES
+operator|.
+name|propDepartment
+argument_list|()
 argument_list|,
 name|iCurriculumDept
 argument_list|)
@@ -2530,7 +2731,10 @@ name|iCurriculaTable
 operator|.
 name|addRow
 argument_list|(
-literal|"Last Change:"
+name|MESSAGES
+operator|.
+name|propLastChange
+argument_list|()
 argument_list|,
 operator|new
 name|Label
@@ -2587,7 +2791,10 @@ name|iCurriculaTable
 operator|.
 name|addHeaderRow
 argument_list|(
-literal|"Curriculum Classifications"
+name|MESSAGES
+operator|.
+name|headerCurriculumClassifications
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iCurriculumClasfTable
@@ -2617,7 +2824,10 @@ name|iCurriculaTable
 operator|.
 name|addHeaderRow
 argument_list|(
-literal|"Course Projections"
+name|MESSAGES
+operator|.
+name|headerCourseProjections
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iCurriculaTable
@@ -3431,7 +3641,10 @@ name|iCurriculumAbbv
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Curriculum abbreviation must be filled in."
+name|MESSAGES
+operator|.
+name|hintCurriculumAbbreviationNotSet
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ret
@@ -3467,7 +3680,10 @@ name|iCurriculumName
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Curriculum name must be filled in."
+name|MESSAGES
+operator|.
+name|hintCurriculumNameNotSet
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ret
@@ -3492,7 +3708,10 @@ name|iCurriculumArea
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"An academic area must be selected."
+name|MESSAGES
+operator|.
+name|hintAcademicAreaNotSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ret
@@ -3724,7 +3943,10 @@ name|iCurriculumArea
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"Selected academic area has no majors without a curriculum."
+name|MESSAGES
+operator|.
+name|hintAcademicAreaHasNoMajors
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ret
@@ -3749,7 +3971,10 @@ name|iCurriculumDept
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"A controlling department must be selected."
+name|MESSAGES
+operator|.
+name|hintControllingDepartmentNotSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ret
@@ -3832,7 +4057,10 @@ name|iCurriculumClasfTable
 operator|.
 name|setErrorHint
 argument_list|(
-literal|"At least some students must be expected."
+name|MESSAGES
+operator|.
+name|hintNoStudentExpectations
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ret
@@ -4604,7 +4832,10 @@ condition|)
 return|return;
 name|showLoading
 argument_list|(
-literal|"Loading course enrollments ..."
+name|MESSAGES
+operator|.
+name|waitLoadingCourseEnrollments
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -5046,7 +5277,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select ..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -5127,7 +5361,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select ..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
@@ -5293,7 +5530,10 @@ name|iHint
 operator|.
 name|setText
 argument_list|(
-literal|"Show all columns."
+name|MESSAGES
+operator|.
+name|hintShowAllColumns
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iHint
@@ -5330,7 +5570,10 @@ name|iHint
 operator|.
 name|setText
 argument_list|(
-literal|"Show all columns."
+name|MESSAGES
+operator|.
+name|hintShowAllColumns
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -5346,7 +5589,10 @@ name|iHint
 operator|.
 name|setText
 argument_list|(
-literal|"Hide empty columns."
+name|MESSAGES
+operator|.
+name|hintHideEmptyColumns
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -5424,7 +5670,10 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-literal|"Hide empty columns."
+name|MESSAGES
+operator|.
+name|hintHideEmptyColumns
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -5504,14 +5753,15 @@ parameter_list|)
 block|{
 name|showLoading
 argument_list|(
-literal|"Loading curriculum "
-operator|+
+name|MESSAGES
+operator|.
+name|waitLoadingCurriculumWithName
+argument_list|(
 name|iCurriculum
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iService

@@ -127,6 +127,24 @@ name|gwt
 operator|.
 name|client
 operator|.
+name|page
+operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
 name|widgets
 operator|.
 name|LoadingWidget
@@ -184,6 +202,22 @@ operator|.
 name|widgets
 operator|.
 name|UniTimeTextBox
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -836,6 +870,21 @@ name|CurriculumProjectionRulesPage
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -998,7 +1047,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Saving curriculum projection rules ..."
+name|MESSAGES
+operator|.
+name|waitSavingCurriculumProjectionRules
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1028,14 +1080,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to save curricula projection rules ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToSaveCurriculumProjectionRules
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToSaveCurriculumProjectionRules
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -1341,7 +1411,10 @@ name|addButton
 argument_list|(
 literal|"edit"
 argument_list|,
-literal|"<u>E</u>dit"
+name|MESSAGES
+operator|.
+name|buttonEdit
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1354,7 +1427,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"<u>S</u>ave"
+name|MESSAGES
+operator|.
+name|buttonSave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1367,7 +1443,10 @@ name|addButton
 argument_list|(
 literal|"print"
 argument_list|,
-literal|"<u>P</u>rint"
+name|MESSAGES
+operator|.
+name|buttonPrint
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1380,7 +1459,10 @@ name|addButton
 argument_list|(
 literal|"close"
 argument_list|,
-literal|"<u>C</u>lose"
+name|MESSAGES
+operator|.
+name|buttonClose
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1393,7 +1475,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"<u>B</u>ack"
+name|MESSAGES
+operator|.
+name|buttonBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1507,7 +1592,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Loading curriculum projection rules ..."
+name|MESSAGES
+operator|.
+name|waitLoadingCurriculumProjectionRules
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1551,14 +1639,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Loading failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadCurriculumProjectionRules
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadCurriculumProjectionRules
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -1860,14 +1966,32 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Loading failed ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadCurriculumProjectionRules
+argument_list|(
 name|t
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadCurriculumProjectionRules
+argument_list|(
+name|t
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|t
 argument_list|)
 expr_stmt|;
 for|for
@@ -2248,7 +2372,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"No academic areas defined."
+name|MESSAGES
+operator|.
+name|errorNoAcademicAreasDefined
+argument_list|()
 argument_list|)
 throw|;
 name|String
@@ -3445,7 +3572,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"No academic classifications defined."
+name|MESSAGES
+operator|.
+name|errorNoAcademicClassificationsDefined
+argument_list|()
 argument_list|)
 throw|;
 name|ClickHandler
@@ -3501,7 +3631,10 @@ argument_list|(
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Show Numbers"
+name|MESSAGES
+operator|.
+name|opShowNumbers
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -3547,7 +3680,10 @@ argument_list|(
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Show Percentages"
+name|MESSAGES
+operator|.
+name|opShowPercentages
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -3602,7 +3738,15 @@ argument_list|(
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Hide Last-Like Enrollments"
+name|MESSAGES
+operator|.
+name|opHideItem
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldLastLikeEnrollment
+argument_list|()
+argument_list|)
 argument_list|,
 literal|true
 argument_list|,
@@ -3648,7 +3792,15 @@ argument_list|(
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Show Last-Like Enrollments"
+name|MESSAGES
+operator|.
+name|opShowItem
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldLastLikeEnrollment
+argument_list|()
+argument_list|)
 argument_list|,
 literal|true
 argument_list|,
@@ -3778,7 +3930,10 @@ argument_list|(
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Collapse All"
+name|MESSAGES
+operator|.
+name|opCollapseAll
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -3890,7 +4045,10 @@ argument_list|(
 operator|new
 name|MenuItem
 argument_list|(
-literal|"Expand All"
+name|MESSAGES
+operator|.
+name|opExpandAll
+argument_list|()
 argument_list|,
 literal|true
 argument_list|,
@@ -4249,7 +4407,10 @@ throw|throw
 operator|new
 name|CurriculaException
 argument_list|(
-literal|"No last-like enrollments."
+name|MESSAGES
+operator|.
+name|errorNoLastLikeEnrollemnts
+argument_list|()
 argument_list|)
 throw|;
 name|iTable
@@ -4918,9 +5079,9 @@ operator|=
 operator|new
 name|HTML
 argument_list|(
-name|String
+name|MESSAGES
 operator|.
-name|valueOf
+name|curriculumProjectionRulesOldValue
 argument_list|(
 name|iRow
 operator|.
@@ -4929,8 +5090,6 @@ argument_list|(
 name|iClasf
 argument_list|)
 argument_list|)
-operator|+
-literal|"&nbsp;&rarr;&nbsp;"
 argument_list|,
 literal|false
 argument_list|)
@@ -4963,11 +5122,9 @@ operator|=
 operator|new
 name|HTML
 argument_list|(
-literal|"&nbsp;(of&nbsp;"
-operator|+
-name|String
+name|MESSAGES
 operator|.
-name|valueOf
+name|curriculumProjectionRulesOfTotal
 argument_list|(
 name|iRow
 operator|.
@@ -4976,8 +5133,6 @@ argument_list|(
 name|iClasf
 argument_list|)
 argument_list|)
-operator|+
-literal|")"
 argument_list|,
 literal|false
 argument_list|)
@@ -5072,7 +5227,12 @@ operator|=
 operator|new
 name|HTML
 argument_list|(
-literal|"Academic Area: "
+name|MESSAGES
+operator|.
+name|propAcademicArea
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|iRow
 operator|.
@@ -5104,7 +5264,12 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"Major: "
+name|MESSAGES
+operator|.
+name|propMajor
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|iRow
 operator|.
@@ -5127,7 +5292,12 @@ operator|+
 literal|"<br>"
 operator|)
 operator|+
-literal|"Academic Classification: "
+name|MESSAGES
+operator|.
+name|propAcademicClassification
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|iClasf
 operator|.
@@ -5782,9 +5952,9 @@ name|iFrontLabel
 operator|.
 name|setHTML
 argument_list|(
-name|String
+name|MESSAGES
 operator|.
-name|valueOf
+name|curriculumProjectionRulesOldValue
 argument_list|(
 name|iRow
 operator|.
@@ -5793,8 +5963,6 @@ argument_list|(
 name|iClasf
 argument_list|)
 argument_list|)
-operator|+
-literal|"&nbsp;&rarr;&nbsp;"
 argument_list|)
 expr_stmt|;
 block|}
@@ -6311,14 +6479,12 @@ operator|=
 operator|new
 name|HTML
 argument_list|(
-name|String
+name|MESSAGES
 operator|.
-name|valueOf
+name|curriculumProjectionRulesOldValue
 argument_list|(
 name|lastLike
 argument_list|)
-operator|+
-literal|"&nbsp;&rarr;&nbsp;"
 argument_list|,
 literal|false
 argument_list|)
@@ -6351,16 +6517,12 @@ operator|=
 operator|new
 name|HTML
 argument_list|(
-literal|"&nbsp;(of&nbsp;"
-operator|+
-name|String
+name|MESSAGES
 operator|.
-name|valueOf
+name|curriculumProjectionRulesOfTotal
 argument_list|(
 name|lastLike
 argument_list|)
-operator|+
-literal|")"
 argument_list|,
 literal|false
 argument_list|)
@@ -6795,14 +6957,12 @@ name|iFrontLabel
 operator|.
 name|setHTML
 argument_list|(
-name|String
+name|MESSAGES
 operator|.
-name|valueOf
+name|curriculumProjectionRulesOldValue
 argument_list|(
 name|lastLike
 argument_list|)
-operator|+
-literal|"&nbsp;&rarr;&nbsp;"
 argument_list|)
 expr_stmt|;
 block|}
@@ -7586,7 +7746,10 @@ name|iHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Saving order..."
+name|MESSAGES
+operator|.
+name|waitSavingOrder
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|String
@@ -7825,20 +7988,6 @@ name|Throwable
 name|caught
 parameter_list|)
 block|{
-name|iHeader
-operator|.
-name|setErrorMessage
-argument_list|(
-literal|"Failed to save table order ("
-operator|+
-name|caught
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-expr_stmt|;
 block|}
 annotation|@
 name|Override

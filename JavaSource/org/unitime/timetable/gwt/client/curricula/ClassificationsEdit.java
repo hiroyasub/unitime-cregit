@@ -101,6 +101,24 @@ name|gwt
 operator|.
 name|client
 operator|.
+name|page
+operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
 name|widgets
 operator|.
 name|LoadingWidget
@@ -354,6 +372,22 @@ operator|.
 name|UniTimeTableHeader
 operator|.
 name|Operation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -736,6 +770,21 @@ name|ClassificationsEdit
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|final
 name|CurriculaServiceAsync
@@ -815,7 +864,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Saving curricula ..."
+name|MESSAGES
+operator|.
+name|waitSavingData
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -856,14 +908,32 @@ name|iHeaderPanel
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Failed to save curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToSaveCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToSaveCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -1000,7 +1070,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"<u>S</u>ave"
+name|MESSAGES
+operator|.
+name|buttonSave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1013,7 +1086,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"<u>B</u>ack"
+name|MESSAGES
+operator|.
+name|buttonBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1026,7 +1102,10 @@ name|addButton
 argument_list|(
 literal|"print"
 argument_list|,
-literal|"<u>P</u>rint"
+name|MESSAGES
+operator|.
+name|buttonPrint
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1317,7 +1396,14 @@ name|NONE
 condition|?
 literal|""
 else|:
-literal|" Req / "
+literal|" "
+operator|+
+name|MESSAGES
+operator|.
+name|abbvRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
 operator|+
 name|m
 operator|.
@@ -1336,24 +1422,33 @@ argument_list|)
 operator|.
 name|setText
 argument_list|(
-literal|"Total"
-operator|+
-operator|(
 name|m
 operator|==
 name|Mode
 operator|.
 name|NONE
 condition|?
-literal|""
+name|MESSAGES
+operator|.
+name|colTotal
+argument_list|()
 else|:
-literal|" Req / "
+name|MESSAGES
+operator|.
+name|colTotalOf
+argument_list|(
+name|MESSAGES
+operator|.
+name|abbvRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
 operator|+
 name|m
 operator|.
 name|getAbbv
 argument_list|()
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|updateAll
@@ -1404,8 +1499,10 @@ name|Mode
 operator|.
 name|NONE
 condition|?
-literal|"Hide "
-operator|+
+name|MESSAGES
+operator|.
+name|opHideItem
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -1416,13 +1513,17 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 else|:
-literal|"Show "
-operator|+
+name|MESSAGES
+operator|.
+name|opShowItem
+argument_list|(
 name|m
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
@@ -1499,9 +1600,15 @@ operator|(
 name|hasEmptyColumns
 argument_list|()
 condition|?
-literal|"Hide Empty Classifications"
+name|MESSAGES
+operator|.
+name|opHideEmptyClassifications
+argument_list|()
 else|:
-literal|"Show All Classifications"
+name|MESSAGES
+operator|.
+name|opShowAllClassifications
+argument_list|()
 operator|)
 return|;
 block|}
@@ -1515,7 +1622,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Curriculum"
+name|MESSAGES
+operator|.
+name|colCurriculum
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -1619,7 +1729,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Curriculum"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colCurriculum
+argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
@@ -1666,7 +1784,14 @@ name|NONE
 condition|?
 literal|""
 else|:
-literal|" Req / "
+literal|" "
+operator|+
+name|MESSAGES
+operator|.
+name|abbvRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
 operator|+
 name|m
 operator|.
@@ -1908,14 +2033,22 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
 name|clasf
 operator|.
 name|getCode
 argument_list|()
 operator|+
-literal|" Requested Enrollment"
+literal|" "
+operator|+
+name|MESSAGES
+operator|.
+name|fieldRequestedEnrollment
+argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
@@ -2246,8 +2379,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
 name|clasf
 operator|.
 name|getCode
@@ -2265,6 +2400,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
@@ -2278,24 +2414,33 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Total"
-operator|+
-operator|(
 name|m
 operator|==
 name|Mode
 operator|.
 name|NONE
 condition|?
-literal|""
+name|MESSAGES
+operator|.
+name|colTotal
+argument_list|()
 else|:
-literal|" Req / "
+name|MESSAGES
+operator|.
+name|colTotalOf
+argument_list|(
+name|MESSAGES
+operator|.
+name|abbvRequestedEnrollment
+argument_list|()
+operator|+
+literal|" / "
 operator|+
 name|m
 operator|.
 name|getAbbv
 argument_list|()
-operator|)
+argument_list|)
 argument_list|,
 name|HasHorizontalAlignment
 operator|.
@@ -2483,7 +2628,20 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Total Requested Enrollment"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colTotalOf
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldRequestedEnrollment
+argument_list|()
+argument_list|)
+argument_list|)
 return|;
 block|}
 block|}
@@ -2843,8 +3001,14 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Total "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colTotalOf
+argument_list|(
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -2855,6 +3019,8 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+argument_list|)
 return|;
 block|}
 block|}
@@ -3824,7 +3990,12 @@ name|getHint
 parameter_list|()
 block|{
 return|return
-literal|"Curriculum: "
+name|MESSAGES
+operator|.
+name|propCurriculum
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|iCurriculum
 operator|.
@@ -3840,7 +4011,12 @@ argument_list|()
 operator|+
 literal|"<br>"
 operator|+
-literal|"Academic Area: "
+name|MESSAGES
+operator|.
+name|propAcademicArea
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|iCurriculum
 operator|.
@@ -3868,7 +4044,12 @@ operator|.
 name|hasMajors
 argument_list|()
 condition|?
-literal|"Major: "
+name|MESSAGES
+operator|.
+name|propMajor
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|iCurriculum
 operator|.
@@ -3882,7 +4063,12 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Academic Classification: "
+name|MESSAGES
+operator|.
+name|propAcademicClassification
+argument_list|()
+operator|+
+literal|" "
 operator|+
 operator|(
 name|iClasf

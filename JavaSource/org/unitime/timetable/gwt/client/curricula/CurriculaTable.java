@@ -145,6 +145,24 @@ name|gwt
 operator|.
 name|client
 operator|.
+name|page
+operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
 name|widgets
 operator|.
 name|LoadingWidget
@@ -282,6 +300,22 @@ operator|.
 name|UniTimeTableHeader
 operator|.
 name|Operation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -840,6 +874,21 @@ name|CurriculaTable
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -1000,7 +1049,10 @@ operator|=
 operator|new
 name|AriaButton
 argument_list|(
-literal|"<u>M</u>ore&or;"
+name|MESSAGES
+operator|.
+name|buttonMoreOperations
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iOperations
@@ -1083,7 +1135,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Select All"
+name|MESSAGES
+operator|.
+name|opSelectAll
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1211,7 +1266,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Clear All"
+name|MESSAGES
+operator|.
+name|opClearSelection
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1329,7 +1387,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Edit Requested Enrollments"
+name|MESSAGES
+operator|.
+name|opEditRequestedEnrollments
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1424,7 +1485,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Delete Selected Curricula"
+name|MESSAGES
+operator|.
+name|opDeleteSelectedCurricula
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1484,9 +1548,6 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you realy want to delete the selected "
-operator|+
-operator|(
 name|deleteIds
 operator|.
 name|size
@@ -1494,12 +1555,15 @@ argument_list|()
 operator|==
 literal|1
 condition|?
-literal|"curriculum"
+name|MESSAGES
+operator|.
+name|confirmDeleteSelectedCurriculum
+argument_list|()
 else|:
-literal|"curricula"
-operator|)
-operator|+
-literal|"?"
+name|MESSAGES
+operator|.
+name|confirmDeleteSelectedCurricula
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1510,7 +1574,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Deleting selected curricula ..."
+name|MESSAGES
+operator|.
+name|waitDeletingSelectedCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1546,14 +1613,32 @@ argument_list|()
 expr_stmt|;
 name|setError
 argument_list|(
-literal|"Unable to delete selected curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToDeleteSelectedCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToDeleteSelectedCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|unmarkSelected
@@ -1622,7 +1707,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Merge Selected Curricula"
+name|MESSAGES
+operator|.
+name|opMergeSelectedCurricula
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1788,9 +1876,6 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you realy want to merge the selected "
-operator|+
-operator|(
 name|mergeIds
 operator|.
 name|size
@@ -1798,12 +1883,15 @@ argument_list|()
 operator|==
 literal|1
 condition|?
-literal|"curriculum"
+name|MESSAGES
+operator|.
+name|confirmMergeSelectedCurriculum
+argument_list|()
 else|:
-literal|"curricula"
-operator|)
-operator|+
-literal|"?"
+name|MESSAGES
+operator|.
+name|confirmMergeSelectedCurricula
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -1814,7 +1902,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Merging selected curricula ..."
+name|MESSAGES
+operator|.
+name|waitMergingSelectedCurricula
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -1850,14 +1941,32 @@ argument_list|()
 expr_stmt|;
 name|setError
 argument_list|(
-literal|"Unable to merge selected curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToMergeSelectedCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToMergeSelectedCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|unmarkSelected
@@ -1926,7 +2035,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Curriculum Projection Rules"
+name|MESSAGES
+operator|.
+name|opCurriculumProjectionRules
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -1981,7 +2093,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Update Requested Enrollment by Projection Rules"
+name|MESSAGES
+operator|.
+name|opUpdateRequestedEnrollmentByProjectionRules
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -2039,28 +2154,22 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you realy want to update "
-operator|+
-operator|(
 name|curIds
 operator|==
 literal|null
 condition|?
-literal|"all "
-operator|+
-operator|(
 name|iIsAdmin
 condition|?
-literal|""
+name|MESSAGES
+operator|.
+name|confirmUpdateAllCurricula
+argument_list|()
 else|:
-literal|"your "
-operator|)
-operator|+
-literal|"curricula"
+name|MESSAGES
+operator|.
+name|confirmUpdateYourCurricula
+argument_list|()
 else|:
-literal|"the selected "
-operator|+
-operator|(
 name|curIds
 operator|.
 name|size
@@ -2068,13 +2177,15 @@ argument_list|()
 operator|==
 literal|1
 condition|?
-literal|"curriculum"
+name|MESSAGES
+operator|.
+name|confirmUpdateSelectedCurriculum
+argument_list|()
 else|:
-literal|"curricula"
-operator|)
-operator|)
-operator|+
-literal|"?"
+name|MESSAGES
+operator|.
+name|confirmUpdateSelectedCurricula
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -2085,44 +2196,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Updating "
-operator|+
-operator|(
-name|curIds
-operator|==
-literal|null
-condition|?
-literal|"all "
-operator|+
-operator|(
-name|iIsAdmin
-condition|?
-literal|""
-else|:
-literal|"your "
-operator|)
-operator|+
-literal|"curricula"
-else|:
-literal|"the selected "
-operator|+
-operator|(
-name|curIds
+name|MESSAGES
 operator|.
-name|size
+name|waitUpdatingCurricula
 argument_list|()
-operator|==
-literal|1
-condition|?
-literal|"curriculum"
-else|:
-literal|"curricula"
-operator|)
-operator|)
-operator|+
-literal|" ... "
-operator|+
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;This could take a while ..."
 argument_list|,
 literal|300000
 argument_list|)
@@ -2162,14 +2239,32 @@ argument_list|()
 expr_stmt|;
 name|setError
 argument_list|(
-literal|"Unable to update curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToUpdateCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToUpdateCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|unmarkSelected
@@ -2232,7 +2327,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Update Requested Enrollment And Course Projections"
+name|MESSAGES
+operator|.
+name|opUpdateRequestedEnrollmentAndCourseProjections
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -2290,28 +2388,22 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you realy want to update "
-operator|+
-operator|(
 name|curIds
 operator|==
 literal|null
 condition|?
-literal|"all "
-operator|+
-operator|(
 name|iIsAdmin
 condition|?
-literal|""
+name|MESSAGES
+operator|.
+name|confirmUpdateAllCurricula
+argument_list|()
 else|:
-literal|"your "
-operator|)
-operator|+
-literal|"curricula"
+name|MESSAGES
+operator|.
+name|confirmUpdateYourCurricula
+argument_list|()
 else|:
-literal|"the selected "
-operator|+
-operator|(
 name|curIds
 operator|.
 name|size
@@ -2319,13 +2411,15 @@ argument_list|()
 operator|==
 literal|1
 condition|?
-literal|"curriculum"
+name|MESSAGES
+operator|.
+name|confirmUpdateSelectedCurriculum
+argument_list|()
 else|:
-literal|"curricula"
-operator|)
-operator|)
-operator|+
-literal|"?"
+name|MESSAGES
+operator|.
+name|confirmUpdateSelectedCurricula
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -2336,44 +2430,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Updating "
-operator|+
-operator|(
-name|curIds
-operator|==
-literal|null
-condition|?
-literal|"all "
-operator|+
-operator|(
-name|iIsAdmin
-condition|?
-literal|""
-else|:
-literal|"your "
-operator|)
-operator|+
-literal|"curricula"
-else|:
-literal|"the selected "
-operator|+
-operator|(
-name|curIds
+name|MESSAGES
 operator|.
-name|size
+name|waitUpdatingCurricula
 argument_list|()
-operator|==
-literal|1
-condition|?
-literal|"curriculum"
-else|:
-literal|"curricula"
-operator|)
-operator|)
-operator|+
-literal|" ... "
-operator|+
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;This could take a while ..."
 argument_list|,
 literal|300000
 argument_list|)
@@ -2413,14 +2473,32 @@ argument_list|()
 expr_stmt|;
 name|setError
 argument_list|(
-literal|"Unable to update curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToUpdateCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToUpdateCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|unmarkSelected
@@ -2483,7 +2561,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Populate Course Projected Demands"
+name|MESSAGES
+operator|.
+name|opPopulateCourseProjectedDemands
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -2521,7 +2602,10 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you really want to populate projected demands for all courses?"
+name|MESSAGES
+operator|.
+name|confirmPopulateProjectedDemands
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -2532,7 +2616,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Populating projected demands for all courses ..."
+name|MESSAGES
+operator|.
+name|waitPopulatingProjectedDemands
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -2560,14 +2647,32 @@ parameter_list|)
 block|{
 name|setError
 argument_list|(
-literal|"Unable to populate course projected demands ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToPopulateProjectedDemands
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToPopulateProjectedDemands
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -2634,7 +2739,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Populate Course Projected Demands (Include Other Students)"
+name|MESSAGES
+operator|.
+name|opPopulateCourseProjectedDemandsIncludeOther
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -2672,7 +2780,10 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Do you really want to populate projected demands for all courses?"
+name|MESSAGES
+operator|.
+name|confirmPopulateProjectedDemands
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -2683,11 +2794,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Populating projected demands for all courses ... "
-operator|+
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;You may also go grab a coffee ...&nbsp;&nbsp;&nbsp;&nbsp;This will take a while ..."
-argument_list|,
-literal|300000
+name|MESSAGES
+operator|.
+name|waitPopulatingProjectedDemands
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -2715,14 +2825,32 @@ parameter_list|)
 block|{
 name|setError
 argument_list|(
-literal|"Unable to populate course projected demands ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToPopulateProjectedDemands
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToPopulateProjectedDemands
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -2797,12 +2925,16 @@ argument_list|()
 operator|>
 literal|1
 condition|?
-literal|"Recreate"
+name|MESSAGES
+operator|.
+name|opRecreateCurriculaFromLastLike
+argument_list|()
 else|:
-literal|"Create"
+name|MESSAGES
+operator|.
+name|opCreateCurriculaFromLastLike
+argument_list|()
 operator|)
-operator|+
-literal|" Curricula from Last-Like Enrollments&amp; Projections"
 return|;
 block|}
 annotation|@
@@ -2843,7 +2975,10 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"This will delete all existing curricula and create them from scratch. Are you sure you want to do it?"
+name|MESSAGES
+operator|.
+name|confirmDeleteAllCurricula
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -2853,7 +2988,10 @@ name|Window
 operator|.
 name|confirm
 argument_list|(
-literal|"Are you REALLY sure you want to recreate all curricula?"
+name|MESSAGES
+operator|.
+name|confirmDeleteAllCurriculaSecondWarning
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -2864,22 +3002,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-operator|(
-name|iTable
+name|MESSAGES
 operator|.
-name|getRowCount
+name|waitCreatingAllCurricula
 argument_list|()
-operator|>
-literal|1
-condition|?
-literal|"Recreating"
-else|:
-literal|"Creating"
-operator|)
-operator|+
-literal|" all curricula ... "
-operator|+
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;You may also go grab a coffee ...&nbsp;&nbsp;&nbsp;&nbsp;This will take a while ..."
 argument_list|,
 literal|300000
 argument_list|)
@@ -2909,14 +3035,32 @@ parameter_list|)
 block|{
 name|setError
 argument_list|(
-literal|"Unable to create curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToCreateCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToCreateCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|unmarkAll
@@ -3034,9 +3178,15 @@ operator|.
 name|isCurriculumAbbv
 argument_list|()
 condition|?
-literal|"Show Names"
+name|MESSAGES
+operator|.
+name|opShowNames
+argument_list|()
 else|:
-literal|"Show Abbreviations"
+name|MESSAGES
+operator|.
+name|opShowAbbreviations
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -3180,7 +3330,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Curriculum"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colCurriculum
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -3324,7 +3482,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Academic Area"
+name|MESSAGES
+operator|.
+name|colAcademicArea
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -3368,9 +3529,15 @@ operator|.
 name|isAreaAbbv
 argument_list|()
 condition|?
-literal|"Show Names"
+name|MESSAGES
+operator|.
+name|opShowNames
+argument_list|()
 else|:
-literal|"Show Abbreviations"
+name|MESSAGES
+operator|.
+name|opShowAbbreviations
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -3520,7 +3687,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Academic Area"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colAcademicArea
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -3676,7 +3851,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Major(s)"
+name|MESSAGES
+operator|.
+name|colMajors
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -3720,9 +3898,15 @@ operator|.
 name|isMajorAbbv
 argument_list|()
 condition|?
-literal|"Show Names"
+name|MESSAGES
+operator|.
+name|opShowNames
+argument_list|()
 else|:
-literal|"Show Codes"
+name|MESSAGES
+operator|.
+name|opShowAbbreviations
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -3891,7 +4075,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Major(s)"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colMajors
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4043,7 +4235,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Department"
+name|MESSAGES
+operator|.
+name|colDepartment
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -4088,12 +4283,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Show "
-operator|+
+name|MESSAGES
+operator|.
+name|opShowItem
+argument_list|(
 name|m
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4243,7 +4441,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Department"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colDepartment
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4377,7 +4583,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Last-Like<br>Enrollment"
+name|MESSAGES
+operator|.
+name|colLastLikeEnrollment
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -4410,7 +4619,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Last-Like Enrollment"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldLastLikeEnrollment
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4556,7 +4773,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Projection<br>by&nbsp;Rule"
+name|MESSAGES
+operator|.
+name|colProjectedByRule
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -4589,7 +4809,10 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Curriculum Projection Rules"
+name|MESSAGES
+operator|.
+name|opCurriculumProjectionRules
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -4644,7 +4867,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Projection by Rule"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldProjectedByRule
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4790,7 +5021,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Requested<br>Enrollment"
+name|MESSAGES
+operator|.
+name|colRequestedEnrollment
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -4823,7 +5057,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Requested Enrollment"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldRequestedEnrollment
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -4969,7 +5211,10 @@ init|=
 operator|new
 name|UniTimeTableHeader
 argument_list|(
-literal|"Current<br>Enrollment"
+name|MESSAGES
+operator|.
+name|colCurrentEnrollment
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
@@ -5002,7 +5247,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Current Enrollment"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|fieldCurrentEnrollment
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -5232,7 +5485,10 @@ operator|=
 operator|new
 name|Label
 argument_list|(
-literal|"No data."
+name|MESSAGES
+operator|.
+name|errorNoData
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iErrorLabel
@@ -7210,7 +7466,10 @@ condition|)
 block|{
 name|setError
 argument_list|(
-literal|"No curricula matching the above filter found."
+name|MESSAGES
+operator|.
+name|errorNoMatchingCurriculaFound
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7655,14 +7914,32 @@ argument_list|)
 expr_stmt|;
 name|setError
 argument_list|(
-literal|"Unable to retrieve curricula ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadCurricula
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToLoadCurricula
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 name|ToolBox
@@ -7874,7 +8151,10 @@ name|dialog
 operator|.
 name|setText
 argument_list|(
-literal|"Curriculum Projection Rules"
+name|MESSAGES
+operator|.
+name|dialogCurriculumProjectionRules
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|rules
@@ -7955,14 +8235,32 @@ parameter_list|)
 block|{
 name|setError
 argument_list|(
-literal|"Unable to open curriculum projection rules ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToOpenCurriculumProjectionRules
+argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|UniTimeNotifications
+operator|.
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedToOpenCurriculumProjectionRules
+argument_list|(
+name|caught
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -8092,35 +8390,64 @@ name|CODE
 argument_list|(
 literal|'0'
 argument_list|,
-literal|"Code"
+name|MESSAGES
+operator|.
+name|fieldCode
+argument_list|()
 argument_list|)
 block|,
 name|ABBV
 argument_list|(
 literal|'1'
 argument_list|,
-literal|"Abbreviation"
+name|MESSAGES
+operator|.
+name|fieldAbbreviation
+argument_list|()
 argument_list|)
 block|,
 name|NAME
 argument_list|(
 literal|'2'
 argument_list|,
-literal|"Name"
+name|MESSAGES
+operator|.
+name|fieldName
+argument_list|()
 argument_list|)
 block|,
 name|ABBV_NAME
 argument_list|(
 literal|'3'
 argument_list|,
-literal|"Abbv - Name"
+name|MESSAGES
+operator|.
+name|fieldAbbv
+argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|MESSAGES
+operator|.
+name|fieldName
+argument_list|()
 argument_list|)
 block|,
 name|CODE_NAME
 argument_list|(
 literal|'4'
 argument_list|,
-literal|"Code - Name"
+name|MESSAGES
+operator|.
+name|fieldCode
+argument_list|()
+operator|+
+literal|" - "
+operator|+
+name|MESSAGES
+operator|.
+name|fieldName
+argument_list|()
 argument_list|)
 block|;
 specifier|private
