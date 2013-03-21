@@ -187,6 +187,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|export
@@ -220,6 +234,22 @@ operator|.
 name|export
 operator|.
 name|Exporter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -343,6 +373,20 @@ name|SavedHqlExportToCSV
 implements|implements
 name|Exporter
 block|{
+specifier|protected
+specifier|static
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|Logger
@@ -853,14 +897,15 @@ throw|throw
 operator|new
 name|SavedHQLException
 argument_list|(
-literal|"Unable to set parameter "
-operator|+
+name|MESSAGES
+operator|.
+name|errorUnableToSetParameterNoValues
+argument_list|(
 name|o
 operator|.
 name|name
 argument_list|()
-operator|+
-literal|": no available values."
+argument_list|)
 argument_list|)
 throw|;
 name|value
@@ -1149,8 +1194,10 @@ throw|throw
 operator|new
 name|SavedHQLException
 argument_list|(
-literal|"Execution failed: "
-operator|+
+name|MESSAGES
+operator|.
+name|failedExecution
+argument_list|(
 name|e
 operator|.
 name|getMessage
@@ -1178,6 +1225,7 @@ argument_list|()
 operator|+
 literal|")"
 operator|)
+argument_list|)
 argument_list|)
 throw|;
 block|}

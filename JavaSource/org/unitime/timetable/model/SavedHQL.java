@@ -149,42 +149,40 @@ name|APPEARANCE_COURSES
 argument_list|(
 literal|"Appearance: Courses"
 argument_list|,
-literal|true
+literal|"courses"
 argument_list|)
 block|,
 name|APPEARANCE_EXAMS
 argument_list|(
 literal|"Appearance: Examinations"
 argument_list|,
-literal|true
+literal|"examinations"
 argument_list|)
 block|,
 name|APPEARANCE_SECTIONING
 argument_list|(
 literal|"Appearance: Student Sectioning"
 argument_list|,
-literal|true
+literal|"sectioning"
 argument_list|)
 block|,
 name|APPEARANCE_EVENTS
 argument_list|(
 literal|"Appearance: Events"
 argument_list|,
-literal|true
+literal|"events"
 argument_list|)
 block|,
 name|APPEARANCE_ADMINISTRATION
 argument_list|(
 literal|"Appearance: Administration"
 argument_list|,
-literal|true
+literal|"administration"
 argument_list|)
 block|,
 name|ADMIN_ONLY
 argument_list|(
 literal|"Restrictions: Administrator Only"
-argument_list|,
-literal|false
 argument_list|)
 block|;
 specifier|private
@@ -192,7 +190,7 @@ name|String
 name|iDescription
 decl_stmt|;
 specifier|private
-name|boolean
+name|String
 name|iAppearance
 decl_stmt|;
 name|Flag
@@ -200,7 +198,7 @@ parameter_list|(
 name|String
 name|desc
 parameter_list|,
-name|boolean
+name|String
 name|appearance
 parameter_list|)
 block|{
@@ -211,6 +209,20 @@ expr_stmt|;
 name|iAppearance
 operator|=
 name|appearance
+expr_stmt|;
+block|}
+name|Flag
+parameter_list|(
+name|String
+name|desc
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|desc
+argument_list|,
+literal|null
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -254,8 +266,8 @@ name|iDescription
 return|;
 block|}
 specifier|public
-name|boolean
-name|isAppearance
+name|String
+name|getAppearance
 parameter_list|()
 block|{
 return|return
@@ -650,7 +662,7 @@ argument_list|)
 block|,
 name|BUILDING
 argument_list|(
-literal|"Buildings"
+literal|"Building"
 argument_list|,
 literal|true
 argument_list|,

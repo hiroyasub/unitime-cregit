@@ -79,6 +79,24 @@ name|client
 operator|.
 name|page
 operator|.
+name|UniTimeNotifications
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
+name|page
+operator|.
 name|UniTimePageLabel
 import|;
 end_import
@@ -260,6 +278,22 @@ operator|.
 name|client
 operator|.
 name|GwtRpcServiceAsync
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -654,6 +688,21 @@ name|SavedHQLPage
 extends|extends
 name|Composite
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|final
 name|SavedHQLServiceAsync
@@ -848,7 +897,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Course Reports"
+name|MESSAGES
+operator|.
+name|pageCourseReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -869,7 +921,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Examination Reports"
+name|MESSAGES
+operator|.
+name|pageExaminationReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -890,7 +945,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Student Sectioning Reports"
+name|MESSAGES
+operator|.
+name|pageStudentSectioningReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -911,7 +969,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Event Reports"
+name|MESSAGES
+operator|.
+name|pageEventReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -932,7 +993,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Administration Reports"
+name|MESSAGES
+operator|.
+name|pageAdministrationReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -949,7 +1013,10 @@ argument_list|()
 operator|.
 name|setPageName
 argument_list|(
-literal|"Course Reports"
+name|MESSAGES
+operator|.
+name|pageCourseReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -973,7 +1040,10 @@ operator|=
 operator|new
 name|UniTimeHeaderPanel
 argument_list|(
-literal|"Filter"
+name|MESSAGES
+operator|.
+name|sectFilter
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iHeader
@@ -982,7 +1052,10 @@ name|addButton
 argument_list|(
 literal|"execute"
 argument_list|,
-literal|"E<u>x</u>ecute"
+name|MESSAGES
+operator|.
+name|buttonExecute
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1022,7 +1095,10 @@ name|addButton
 argument_list|(
 literal|"print"
 argument_list|,
-literal|"<u>P</u>rint"
+name|MESSAGES
+operator|.
+name|buttonPrint
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1055,7 +1131,10 @@ name|addButton
 argument_list|(
 literal|"export"
 argument_list|,
-literal|"Export&nbsp;<u>C</u>SV"
+name|MESSAGES
+operator|.
+name|buttonExportCSV
+argument_list|()
 argument_list|,
 literal|85
 argument_list|,
@@ -1145,7 +1224,10 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"No report is selected."
+name|MESSAGES
+operator|.
+name|errorNoReportSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1340,12 +1422,15 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorItemNotSelected
+argument_list|(
 name|option
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not selected."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1474,7 +1559,10 @@ name|addButton
 argument_list|(
 literal|"edit"
 argument_list|,
-literal|"<u>E</u>dit"
+name|MESSAGES
+operator|.
+name|buttonEdit
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1564,7 +1652,10 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"No report is selected."
+name|MESSAGES
+operator|.
+name|errorNoReportSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1584,7 +1675,10 @@ name|addButton
 argument_list|(
 literal|"add"
 argument_list|,
-literal|"<u>A</u>dd New"
+name|MESSAGES
+operator|.
+name|buttonAddNew
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -1767,7 +1861,10 @@ name|iForm
 operator|.
 name|addRow
 argument_list|(
-literal|"Report:"
+name|MESSAGES
+operator|.
+name|propReport
+argument_list|()
 argument_list|,
 name|iQuerySelector
 argument_list|)
@@ -1838,7 +1935,10 @@ name|iForm
 operator|.
 name|addRow
 argument_list|(
-literal|"Description:"
+name|MESSAGES
+operator|.
+name|propDescription
+argument_list|()
 argument_list|,
 name|iDescription
 argument_list|)
@@ -1866,7 +1966,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Loading reports..."
+name|MESSAGES
+operator|.
+name|waitLoadingReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -2058,7 +2161,10 @@ name|list
 operator|.
 name|addItem
 argument_list|(
-literal|"Select..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|"-1"
 argument_list|)
@@ -2190,7 +2296,10 @@ name|u
 operator|.
 name|setPrintText
 argument_list|(
-literal|"All"
+name|MESSAGES
+operator|.
+name|itemAll
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2338,7 +2447,10 @@ literal|5
 condition|)
 name|selected
 operator|=
-literal|"All"
+name|MESSAGES
+operator|.
+name|itemAll
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -2384,7 +2496,10 @@ operator|=
 operator|new
 name|UniTimeHeaderPanel
 argument_list|(
-literal|"Results"
+name|MESSAGES
+operator|.
+name|sectResults
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTableHeader
@@ -2393,7 +2508,10 @@ name|addButton
 argument_list|(
 literal|"previous"
 argument_list|,
-literal|"Previous"
+name|MESSAGES
+operator|.
+name|buttonPrevious
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -2428,7 +2546,10 @@ name|addButton
 argument_list|(
 literal|"next"
 argument_list|,
-literal|"Next"
+name|MESSAGES
+operator|.
+name|buttonNext
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -2881,9 +3002,9 @@ operator|=
 operator|new
 name|UniTimeDialogBox
 argument_list|(
-literal|false
-argument_list|,
 literal|true
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|iDialogForm
@@ -2906,7 +3027,10 @@ name|iDialogForm
 operator|.
 name|addRow
 argument_list|(
-literal|"Name:"
+name|MESSAGES
+operator|.
+name|propName
+argument_list|()
 argument_list|,
 name|iDialogName
 argument_list|)
@@ -2942,7 +3066,10 @@ name|iDialogForm
 operator|.
 name|addRow
 argument_list|(
-literal|"Description:"
+name|MESSAGES
+operator|.
+name|propDescription
+argument_list|()
 argument_list|,
 name|iDialogDescription
 argument_list|)
@@ -2994,7 +3121,10 @@ name|iDialogForm
 operator|.
 name|addRow
 argument_list|(
-literal|"Query:"
+name|MESSAGES
+operator|.
+name|propQuery
+argument_list|()
 argument_list|,
 name|iDialogQueryArea
 argument_list|)
@@ -3065,7 +3195,10 @@ name|i
 operator|==
 literal|0
 condition|?
-literal|"Flags:"
+name|MESSAGES
+operator|.
+name|propFlags
+argument_list|()
 else|:
 literal|""
 argument_list|,
@@ -3092,7 +3225,10 @@ name|addButton
 argument_list|(
 literal|"save"
 argument_list|,
-literal|"Save"
+name|MESSAGES
+operator|.
+name|opQuerySave
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3135,7 +3271,10 @@ name|iDialogHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Name is required."
+name|MESSAGES
+operator|.
+name|errorNameIsRequired
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3175,7 +3314,10 @@ name|iDialogHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Query is required."
+name|MESSAGES
+operator|.
+name|errorQueryIsRequired
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3256,13 +3398,8 @@ if|if
 condition|(
 name|f
 operator|.
-name|getText
+name|isAppearance
 argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-literal|"Appearance:"
-argument_list|)
 condition|)
 name|hasAppearance
 operator|=
@@ -3280,7 +3417,10 @@ name|iDialogHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"At least one appearance must be selected."
+name|MESSAGES
+operator|.
+name|errorNoAppearanceSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3362,7 +3502,10 @@ name|addButton
 argument_list|(
 literal|"test"
 argument_list|,
-literal|"Test"
+name|MESSAGES
+operator|.
+name|opQueryTest
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3395,7 +3538,10 @@ name|iDialogHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Query is required."
+name|MESSAGES
+operator|.
+name|errorQueryIsRequired
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3417,7 +3563,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Testing query..."
+name|MESSAGES
+operator|.
+name|waitTestingQuery
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -3464,7 +3613,10 @@ name|iDialogHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"Test failed."
+name|MESSAGES
+operator|.
+name|failedTestNoReason
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -3475,14 +3627,21 @@ operator|.
 name|hide
 argument_list|()
 expr_stmt|;
-name|Window
+name|UniTimeNotifications
 operator|.
-name|alert
+name|error
+argument_list|(
+name|MESSAGES
+operator|.
+name|failedTest
 argument_list|(
 name|caught
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 block|}
@@ -3504,9 +3663,6 @@ name|iDialogHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Success ("
-operator|+
-operator|(
 name|result
 operator|.
 name|size
@@ -3514,7 +3670,10 @@ argument_list|()
 operator|<=
 literal|1
 condition|?
-literal|"no row returned"
+name|MESSAGES
+operator|.
+name|infoTestSucceededNoResults
+argument_list|()
 else|:
 name|result
 operator|.
@@ -3523,21 +3682,22 @@ argument_list|()
 operator|>
 literal|101
 condition|?
-literal|"100+ rows returned"
+name|MESSAGES
+operator|.
+name|infoTestSucceededWith100OrMoreRows
+argument_list|()
 else|:
-operator|(
+name|MESSAGES
+operator|.
+name|infoTestSucceededWithRows
+argument_list|(
 name|result
 operator|.
 name|size
 argument_list|()
 operator|-
 literal|1
-operator|)
-operator|+
-literal|" rows returned"
-operator|)
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -3562,7 +3722,10 @@ name|addButton
 argument_list|(
 literal|"delete"
 argument_list|,
-literal|"Delete"
+name|MESSAGES
+operator|.
+name|opQueryDelete
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3653,7 +3816,10 @@ name|addButton
 argument_list|(
 literal|"back"
 argument_list|,
-literal|"Back"
+name|MESSAGES
+operator|.
+name|opQueryBack
+argument_list|()
 argument_list|,
 literal|75
 argument_list|,
@@ -3696,14 +3862,20 @@ name|q
 operator|==
 literal|null
 condition|?
-literal|"New Report"
+name|MESSAGES
+operator|.
+name|dialogNewReport
+argument_list|()
 else|:
-literal|"Edit "
-operator|+
+name|MESSAGES
+operator|.
+name|dialogEditReport
+argument_list|(
 name|q
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iDialogHeader
@@ -3716,6 +3888,11 @@ name|q
 operator|!=
 literal|null
 argument_list|)
+expr_stmt|;
+name|iDialogHeader
+operator|.
+name|clearMessage
+argument_list|()
 expr_stmt|;
 name|iDialogName
 operator|.
@@ -3820,16 +3997,14 @@ name|q
 operator|==
 literal|null
 condition|?
+name|iAppearance
+operator|.
+name|equals
+argument_list|(
 name|f
 operator|.
-name|getText
+name|getAppearance
 argument_list|()
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-literal|"Appearance: "
-operator|+
-name|iAppearance
 argument_list|)
 else|:
 operator|(
@@ -3899,7 +4074,10 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Loading reports..."
+name|MESSAGES
+operator|.
+name|waitLoadingReports
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iService
@@ -4036,7 +4214,10 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"No reports are avaialable."
+name|MESSAGES
+operator|.
+name|errorNoReportsAvailable
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -4049,7 +4230,10 @@ argument_list|()
 operator|.
 name|addItem
 argument_list|(
-literal|"Select..."
+name|MESSAGES
+operator|.
+name|itemSelect
+argument_list|()
 argument_list|,
 literal|"-1"
 argument_list|)
@@ -4589,7 +4773,10 @@ name|iTableHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"No results."
+name|MESSAGES
+operator|.
+name|errorNoResults
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -4812,9 +4999,12 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by "
-operator|+
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
 name|name
+argument_list|)
 return|;
 block|}
 block|}
@@ -4939,21 +5129,18 @@ name|iTableHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Showing lines "
-operator|+
-operator|(
+name|MESSAGES
+operator|.
+name|infoShowingLines
+argument_list|(
 name|iFirstLine
 operator|+
 literal|1
-operator|)
-operator|+
-literal|" -- "
-operator|+
-operator|(
+argument_list|,
 name|iFirstLine
 operator|+
 literal|100
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|else if
@@ -4966,17 +5153,14 @@ name|iTableHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Showing lines "
-operator|+
-operator|(
+name|MESSAGES
+operator|.
+name|infoShowingLines
+argument_list|(
 name|iFirstLine
 operator|+
 literal|1
-operator|)
-operator|+
-literal|" -- "
-operator|+
-operator|(
+argument_list|,
 name|iFirstLine
 operator|+
 name|result
@@ -4985,7 +5169,7 @@ name|size
 argument_list|()
 operator|-
 literal|1
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -4993,18 +5177,17 @@ name|iTableHeader
 operator|.
 name|setMessage
 argument_list|(
-literal|"Showing all "
-operator|+
-operator|(
+name|MESSAGES
+operator|.
+name|infoShowingAllLines
+argument_list|(
 name|result
 operator|.
 name|size
 argument_list|()
 operator|-
 literal|1
-operator|)
-operator|+
-literal|" lines."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iTableHeader
@@ -5763,7 +5946,10 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
-literal|"No report is selected."
+name|MESSAGES
+operator|.
+name|errorNoReportSelected
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6001,12 +6187,15 @@ name|iHeader
 operator|.
 name|setErrorMessage
 argument_list|(
+name|MESSAGES
+operator|.
+name|errorItemNotSelected
+argument_list|(
 name|option
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not selected."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6070,14 +6259,15 @@ argument_list|()
 operator|.
 name|show
 argument_list|(
-literal|"Executing "
-operator|+
+name|MESSAGES
+operator|.
+name|waitExecuting
+argument_list|(
 name|query
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|History

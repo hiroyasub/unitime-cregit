@@ -55,6 +55,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -347,6 +363,21 @@ argument_list|<
 name|UniTimeDialogBox
 argument_list|>
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|GwtAriaMessages
@@ -433,7 +464,10 @@ name|iClose
 operator|.
 name|setTitle
 argument_list|(
-literal|"Click here or outside of the dialog to close."
+name|MESSAGES
+operator|.
+name|hintCloseDialog
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iClose
