@@ -156,7 +156,7 @@ name|APPEARANCE_EXAMS
 argument_list|(
 literal|"Appearance: Examinations"
 argument_list|,
-literal|"examinations"
+literal|"exams"
 argument_list|)
 block|,
 name|APPEARANCE_SECTIONING
