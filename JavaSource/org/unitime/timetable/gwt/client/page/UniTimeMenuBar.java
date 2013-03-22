@@ -159,6 +159,22 @@ name|timetable
 operator|.
 name|gwt
 operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
 name|services
 operator|.
 name|MenuService
@@ -504,6 +520,21 @@ name|UniTimeMenuBar
 extends|extends
 name|UniTimeMenu
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|GwtMessages
+name|MESSAGES
+init|=
+name|GWT
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|protected
 specifier|final
 name|MenuServiceAsync
@@ -1520,14 +1551,17 @@ argument_list|()
 operator|.
 name|setMessage
 argument_list|(
-literal|"Loading "
-operator|+
+name|MESSAGES
+operator|.
+name|waitLoading
+argument_list|(
 name|p
 operator|.
-name|title
-argument_list|()
-operator|+
-literal|" ..."
+name|name
+argument_list|(
+name|MESSAGES
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|UniTimePageLabel
@@ -1539,8 +1573,10 @@ name|setTitle
 argument_list|(
 name|p
 operator|.
-name|title
-argument_list|()
+name|name
+argument_list|(
+name|MESSAGES
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|RootPanel
@@ -1567,23 +1603,21 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Failed to load the page ("
-operator|+
-operator|(
 name|page
 operator|==
 literal|null
 condition|?
-literal|"page not provided"
+name|MESSAGES
+operator|.
+name|failedToLoadPageNotProvided
+argument_list|()
 else|:
-literal|"page "
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadPageNotProvided
+argument_list|(
 name|page
-operator|+
-literal|" not registered"
-operator|)
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|error
@@ -1618,14 +1652,15 @@ init|=
 operator|new
 name|Label
 argument_list|(
-literal|"Failed to load the page ("
-operator|+
+name|MESSAGES
+operator|.
+name|failedToLoadPage
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|error

@@ -1552,6 +1552,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Source"
+argument_list|)
+name|String
+name|colSource
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Conflicts with {0}"
 argument_list|)
 name|String
@@ -2473,6 +2482,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Show"
+argument_list|)
+name|String
+name|buttonShow
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter"
 argument_list|)
 name|String
@@ -2603,6 +2621,15 @@ literal|"Reservations"
 argument_list|)
 name|String
 name|sectReservations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Travel time in minutes"
+argument_list|)
+name|String
+name|sectTravelTimesInMintes
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3032,6 +3059,24 @@ literal|"Loading reservations..."
 argument_list|)
 name|String
 name|waitLoadingReservations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading travel times..."
+argument_list|)
+name|String
+name|waitLoadingTravelTimes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading page ..."
+argument_list|)
+name|String
+name|waitLoadingPage
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3700,6 +3745,96 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to save the matrix: {0}"
+argument_list|)
+name|String
+name|failedToSaveMatrix
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load the matrix: {0}"
+argument_list|)
+name|String
+name|failedToLoadMatrix
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load the matrix: there are no rooms."
+argument_list|)
+name|String
+name|failedToLoadMatrixNoRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load rooms: {0}"
+argument_list|)
+name|String
+name|failedToLoadRooms
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Uncaught exception: {0}"
+argument_list|)
+name|String
+name|failedUncaughtException
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load the page: {0}"
+argument_list|)
+name|String
+name|failedToLoadPage
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load the page: page not provided."
+argument_list|)
+name|String
+name|failedToLoadPageNotProvided
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load the page: page {0} not registered."
+argument_list|)
+name|String
+name|failedToLoadPageNotProvided
+parameter_list|(
+name|String
+name|page
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -4170,6 +4305,33 @@ parameter_list|(
 name|String
 name|tpe
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are no rooms are matching the filter."
+argument_list|)
+name|String
+name|errorNoRoomsMatchingFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There is only one room matching the filter."
+argument_list|)
+name|String
+name|errorOnlyOneRoomIsMatchingFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No person matching the query found."
+argument_list|)
+name|String
+name|errorNoPersonMatchingQuery
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -5242,6 +5404,141 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Curriculum Projection Rules"
+argument_list|)
+name|String
+name|pageCurriculumProjectionRules
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Scheduling Assistant"
+argument_list|)
+name|String
+name|pageStudentSchedulingAssistant
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Course Requests"
+argument_list|)
+name|String
+name|pageStudentCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Administration"
+argument_list|)
+name|String
+name|pageAdministration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Events"
+argument_list|)
+name|String
+name|pageEvents
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Timetable"
+argument_list|)
+name|String
+name|pageEventTimetable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Timetable"
+argument_list|)
+name|String
+name|pageRoomTimetable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Online Student Sectioning Test"
+argument_list|)
+name|String
+name|pageOnlineStudentSectioningTest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Online Student Scheduling Dashboard"
+argument_list|)
+name|String
+name|pageOnlineStudentSchedulingDashboard
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Sectioning Dashboard"
+argument_list|)
+name|String
+name|pageStudentSectioningDashboard
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Travel Times"
+argument_list|)
+name|String
+name|pageTravelTimes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Classes"
+argument_list|)
+name|String
+name|pageClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Examinations"
+argument_list|)
+name|String
+name|pageExaminations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Personal Timetable"
+argument_list|)
+name|String
+name|pagePersonalTimetable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Room Availability"
+argument_list|)
+name|String
+name|pageEditRoomAvailability
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -5358,6 +5655,15 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"People Lookup"
+argument_list|)
+name|String
+name|dialogPeopleLookup
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
