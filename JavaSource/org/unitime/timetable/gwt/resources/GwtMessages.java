@@ -3826,7 +3826,7 @@ argument_list|(
 literal|"Failed to load the page: page {0} not registered."
 argument_list|)
 name|String
-name|failedToLoadPageNotProvided
+name|failedToLoadPageNotRegistered
 parameter_list|(
 name|String
 name|page

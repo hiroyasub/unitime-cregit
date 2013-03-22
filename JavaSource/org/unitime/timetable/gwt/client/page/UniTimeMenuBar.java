@@ -1614,7 +1614,7 @@ argument_list|()
 else|:
 name|MESSAGES
 operator|.
-name|failedToLoadPageNotProvided
+name|failedToLoadPageNotRegistered
 argument_list|(
 name|page
 argument_list|)
