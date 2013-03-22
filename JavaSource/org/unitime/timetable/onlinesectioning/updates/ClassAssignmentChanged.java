@@ -518,16 +518,6 @@ operator|+
 literal|" class assignments changed."
 argument_list|)
 expr_stmt|;
-name|Lock
-name|readLock
-init|=
-name|server
-operator|.
-name|readLock
-argument_list|()
-decl_stmt|;
-try|try
-block|{
 name|helper
 operator|.
 name|beginTransaction
@@ -1227,15 +1217,6 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
-block|}
-block|}
-finally|finally
-block|{
-name|readLock
-operator|.
-name|release
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 annotation|@
