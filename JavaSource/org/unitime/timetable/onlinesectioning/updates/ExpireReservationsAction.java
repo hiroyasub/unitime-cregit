@@ -346,6 +346,13 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|offering
+operator|==
+literal|null
+condition|)
+continue|continue;
 name|Reservation
 name|reservation
 init|=
