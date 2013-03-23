@@ -493,6 +493,20 @@ name|Option
 operator|.
 name|waitlist
 argument_list|)
+block|,
+name|NoBatch
+argument_list|(
+name|MESSAGES
+operator|.
+name|toggleNoBatch
+argument_list|()
+argument_list|,
+name|StudentSectioningStatus
+operator|.
+name|Option
+operator|.
+name|nobatch
+argument_list|)
 block|, 		;
 specifier|private
 name|StudentSectioningStatus

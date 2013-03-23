@@ -7315,6 +7315,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No Batch"
+argument_list|)
+name|String
+name|toggleNoBatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Other"
 argument_list|)
 name|String

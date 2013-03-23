@@ -112,6 +112,11 @@ name|waitlist
 argument_list|(
 literal|"Wait-Listing Enabled"
 argument_list|)
+block|,
+name|nobatch
+argument_list|(
+literal|"Do Not Schedule in Batch Solver"
+argument_list|)
 block|, 		;
 specifier|private
 name|String
