@@ -2506,6 +2506,11 @@ operator|.
 name|class
 argument_list|)
 block|,
+comment|/** Scripting */
+name|Scripts
+block|,
+name|ScriptEdit
+block|,
 comment|/** Obsolete */
 name|SolutionInformationDefinitions
 block|,  	;

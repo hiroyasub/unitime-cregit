@@ -442,6 +442,7 @@ expr_stmt|;
 block|}
 specifier|public
 specifier|static
+specifier|synchronized
 name|QueueProcessor
 name|getInstance
 parameter_list|()
