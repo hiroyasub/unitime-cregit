@@ -69,6 +69,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|springframework
+operator|.
+name|web
+operator|.
+name|util
+operator|.
+name|HtmlUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|timetable
@@ -377,6 +391,13 @@ name|script
 argument_list|)
 expr_stmt|;
 block|}
+name|Collections
+operator|.
+name|sort
+argument_list|(
+name|list
+argument_list|)
+expr_stmt|;
 return|return
 name|list
 return|;
@@ -1034,7 +1055,10 @@ argument_list|()
 operator|+
 literal|" - "
 operator|+
-operator|(
+name|HtmlUtils
+operator|.
+name|htmlUnescape
+argument_list|(
 name|subject
 operator|.
 name|getLongTitle
@@ -1051,7 +1075,7 @@ name|subject
 operator|.
 name|getLongTitle
 argument_list|()
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
