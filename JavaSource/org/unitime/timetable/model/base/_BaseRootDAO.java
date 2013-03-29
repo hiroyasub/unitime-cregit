@@ -331,6 +331,11 @@ name|sConfiguration
 operator|=
 name|configuration
 expr_stmt|;
+name|HibernateUtil
+operator|.
+name|addBitwiseOperationsToDialect
+argument_list|()
+expr_stmt|;
 name|DatabaseUpdate
 operator|.
 name|update
