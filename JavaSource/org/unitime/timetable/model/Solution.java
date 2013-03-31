@@ -2146,9 +2146,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select i1, a1, a2 from DepartmentalInstructor i1 inner join i1.assignments a1, DepartmentalInstructor i2 inner join i2.assignments a2 "
+literal|"select i1, a1, a2 from ClassInstructor c1 inner join c1.instructor i1 inner join c1.classInstructing.assignments a1, "
 operator|+
-literal|"where i1.department.solverGroup.uniqueId = :ownerId and i2.department.solverGroup.uniqueId != :ownerId and i2.department.session = :sessionId and "
+literal|"ClassInstructor c2 inner join c2.instructor i2 inner join c2.classInstructing.assignments a2 where c1.lead = true and c2.lead = true and "
+operator|+
+literal|"i1.department.solverGroup.uniqueId = :ownerId and i2.department.solverGroup.uniqueId != :ownerId and i2.department.session = :sessionId and "
 operator|+
 literal|"i1.externalUniqueId is not null and i1.externalUniqueId = i2.externalUniqueId and "
 operator|+
