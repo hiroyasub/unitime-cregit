@@ -8353,6 +8353,21 @@ name|int
 name|limit
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{1} of {0}"
+argument_list|)
+name|String
+name|addMeetingsLimitAndType
+parameter_list|(
+name|int
+name|limit
+parameter_list|,
+name|String
+name|type
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
