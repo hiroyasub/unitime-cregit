@@ -5042,6 +5042,27 @@ argument_list|(
 name|CONSTANTS
 argument_list|)
 operator|+
+operator|(
+name|conflictingEvent
+operator|.
+name|hasLimit
+argument_list|()
+condition|?
+literal|", "
+operator|+
+name|MESSAGES
+operator|.
+name|eventGridLimit
+argument_list|(
+name|conflictingEvent
+operator|.
+name|getLimit
+argument_list|()
+argument_list|)
+else|:
+literal|""
+operator|)
+operator|+
 literal|")"
 operator|)
 expr_stmt|;
