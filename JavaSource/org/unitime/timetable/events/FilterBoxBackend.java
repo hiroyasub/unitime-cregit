@@ -56,10 +56,15 @@ specifier|public
 specifier|abstract
 class|class
 name|FilterBoxBackend
+parameter_list|<
+name|T
+extends|extends
+name|FilterRpcRequest
+parameter_list|>
 extends|extends
 name|EventAction
 argument_list|<
-name|FilterRpcRequest
+name|T
 argument_list|,
 name|FilterRpcResponse
 argument_list|>
@@ -70,7 +75,7 @@ specifier|public
 name|FilterRpcResponse
 name|execute
 parameter_list|(
-name|FilterRpcRequest
+name|T
 name|request
 parameter_list|,
 name|EventContext
@@ -163,7 +168,7 @@ specifier|abstract
 name|void
 name|load
 parameter_list|(
-name|FilterRpcRequest
+name|T
 name|request
 parameter_list|,
 name|FilterRpcResponse
@@ -178,7 +183,7 @@ specifier|abstract
 name|void
 name|suggestions
 parameter_list|(
-name|FilterRpcRequest
+name|T
 name|request
 parameter_list|,
 name|FilterRpcResponse
@@ -193,7 +198,7 @@ specifier|abstract
 name|void
 name|enumarate
 parameter_list|(
-name|FilterRpcRequest
+name|T
 name|request
 parameter_list|,
 name|FilterRpcResponse

@@ -107,11 +107,17 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|stereotype
+name|timetable
 operator|.
-name|Service
+name|gwt
+operator|.
+name|command
+operator|.
+name|server
+operator|.
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -143,9 +149,9 @@ name|gwt
 operator|.
 name|shared
 operator|.
-name|EventInterface
+name|CurriculumInterface
 operator|.
-name|FilterRpcRequest
+name|CurriculumFilterRpcRequest
 import|;
 end_import
 
@@ -303,15 +309,20 @@ end_import
 
 begin_class
 annotation|@
-name|Service
+name|GwtRpcImplements
 argument_list|(
-literal|"org.unitime.timetable.gwt.shared.CurriculumInterface$CurriculumFilterRpcRequest"
+name|CurriculumFilterRpcRequest
+operator|.
+name|class
 argument_list|)
 specifier|public
 class|class
 name|CurriculumFilterBackend
 extends|extends
 name|FilterBoxBackend
+argument_list|<
+name|CurriculumFilterRpcRequest
+argument_list|>
 block|{
 annotation|@
 name|Override
@@ -324,7 +335,7 @@ specifier|public
 name|void
 name|load
 parameter_list|(
-name|FilterRpcRequest
+name|CurriculumFilterRpcRequest
 name|request
 parameter_list|,
 name|FilterRpcResponse
@@ -2334,7 +2345,7 @@ specifier|public
 name|void
 name|suggestions
 parameter_list|(
-name|FilterRpcRequest
+name|CurriculumFilterRpcRequest
 name|request
 parameter_list|,
 name|FilterRpcResponse
@@ -2424,7 +2435,7 @@ specifier|public
 name|void
 name|enumarate
 parameter_list|(
-name|FilterRpcRequest
+name|CurriculumFilterRpcRequest
 name|request
 parameter_list|,
 name|FilterRpcResponse

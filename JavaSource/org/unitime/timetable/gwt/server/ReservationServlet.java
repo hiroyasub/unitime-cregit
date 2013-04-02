@@ -273,9 +273,9 @@ name|gwt
 operator|.
 name|shared
 operator|.
-name|EventInterface
+name|ReservationInterface
 operator|.
-name|FilterRpcRequest
+name|ReservationFilterRpcRequest
 import|;
 end_import
 
@@ -6246,7 +6246,7 @@ name|ReservationInterface
 argument_list|>
 name|findReservations
 parameter_list|(
-name|FilterRpcRequest
+name|ReservationFilterRpcRequest
 name|filter
 parameter_list|)
 throws|throws

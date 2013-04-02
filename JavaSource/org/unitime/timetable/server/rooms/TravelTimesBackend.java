@@ -73,18 +73,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
-operator|.
-name|stereotype
-operator|.
-name|Service
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|localization
@@ -180,6 +168,24 @@ operator|.
 name|server
 operator|.
 name|GwtRpcImplementation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|command
+operator|.
+name|server
+operator|.
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -319,9 +325,11 @@ end_import
 
 begin_class
 annotation|@
-name|Service
+name|GwtRpcImplements
 argument_list|(
-literal|"org.unitime.timetable.gwt.client.rooms.TravelTimes$TravelTimesRequest"
+name|TravelTimesRequest
+operator|.
+name|class
 argument_list|)
 specifier|public
 class|class

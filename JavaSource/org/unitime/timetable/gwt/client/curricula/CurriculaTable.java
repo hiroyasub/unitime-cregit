@@ -433,7 +433,7 @@ name|shared
 operator|.
 name|CurriculumInterface
 operator|.
-name|DepartmentInterface
+name|CurriculumFilterRpcRequest
 import|;
 end_import
 
@@ -449,9 +449,9 @@ name|gwt
 operator|.
 name|shared
 operator|.
-name|EventInterface
+name|CurriculumInterface
 operator|.
-name|FilterRpcRequest
+name|DepartmentInterface
 import|;
 end_import
 
@@ -946,7 +946,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|FilterRpcRequest
+name|CurriculumFilterRpcRequest
 name|iLastQuery
 init|=
 literal|null
@@ -7809,7 +7809,7 @@ specifier|public
 name|void
 name|query
 parameter_list|(
-name|FilterRpcRequest
+name|CurriculumFilterRpcRequest
 name|filter
 parameter_list|,
 specifier|final

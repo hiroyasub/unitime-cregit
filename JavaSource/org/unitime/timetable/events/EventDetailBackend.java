@@ -115,11 +115,17 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|stereotype
+name|timetable
 operator|.
-name|Service
+name|gwt
+operator|.
+name|command
+operator|.
+name|server
+operator|.
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -727,9 +733,11 @@ end_import
 
 begin_class
 annotation|@
-name|Service
+name|GwtRpcImplements
 argument_list|(
-literal|"org.unitime.timetable.gwt.shared.EventInterface$EventDetailRpcRequest"
+name|EventDetailRpcRequest
+operator|.
+name|class
 argument_list|)
 specifier|public
 class|class

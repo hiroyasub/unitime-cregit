@@ -568,6 +568,11 @@ specifier|public
 specifier|abstract
 class|class
 name|UniTimeFilterBox
+parameter_list|<
+name|T
+extends|extends
+name|FilterRpcRequest
+parameter_list|>
 extends|extends
 name|Composite
 implements|implements
@@ -1676,12 +1681,12 @@ expr_stmt|;
 block|}
 specifier|protected
 specifier|abstract
-name|FilterRpcRequest
+name|T
 name|createRpcRequest
 parameter_list|()
 function_decl|;
 specifier|protected
-name|FilterRpcRequest
+name|T
 name|createRpcRequest
 parameter_list|(
 name|FilterRpcRequest
@@ -1704,7 +1709,7 @@ name|String
 name|text
 parameter_list|)
 block|{
-name|FilterRpcRequest
+name|T
 name|request
 init|=
 name|createRpcRequest
@@ -1838,7 +1843,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|FilterRpcRequest
+name|T
 name|getElementsRequest
 parameter_list|()
 block|{

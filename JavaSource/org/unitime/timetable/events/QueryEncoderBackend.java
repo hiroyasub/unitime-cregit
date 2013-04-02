@@ -159,18 +159,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
-operator|.
-name|stereotype
-operator|.
-name|Service
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -194,6 +182,24 @@ operator|.
 name|server
 operator|.
 name|GwtRpcImplementation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|command
+operator|.
+name|server
+operator|.
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -249,9 +255,11 @@ end_import
 
 begin_class
 annotation|@
-name|Service
+name|GwtRpcImplements
 argument_list|(
-literal|"org.unitime.timetable.gwt.shared.EventInterface$EncodeQueryRpcRequest"
+name|EncodeQueryRpcRequest
+operator|.
+name|class
 argument_list|)
 specifier|public
 class|class

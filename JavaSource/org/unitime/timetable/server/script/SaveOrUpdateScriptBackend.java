@@ -77,11 +77,17 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|stereotype
+name|timetable
 operator|.
-name|Service
+name|gwt
+operator|.
+name|command
+operator|.
+name|server
+operator|.
+name|GwtRpcImplementation
 import|;
 end_import
 
@@ -99,7 +105,7 @@ name|command
 operator|.
 name|server
 operator|.
-name|GwtRpcImplementation
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -215,9 +221,11 @@ end_import
 
 begin_class
 annotation|@
-name|Service
+name|GwtRpcImplements
 argument_list|(
-literal|"org.unitime.timetable.gwt.shared.ScriptInterface$SaveOrUpdateScriptRpcRequest"
+name|SaveOrUpdateScriptRpcRequest
+operator|.
+name|class
 argument_list|)
 specifier|public
 class|class

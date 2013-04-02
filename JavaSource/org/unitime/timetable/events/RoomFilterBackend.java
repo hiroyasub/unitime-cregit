@@ -161,11 +161,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|stereotype
+name|timetable
 operator|.
-name|Service
+name|ApplicationProperties
 import|;
 end_import
 
@@ -177,7 +177,13 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|gwt
+operator|.
+name|command
+operator|.
+name|server
+operator|.
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -229,24 +235,6 @@ name|shared
 operator|.
 name|EventInterface
 operator|.
-name|FilterRpcRequest
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|shared
-operator|.
-name|EventInterface
-operator|.
 name|FilterRpcResponse
 import|;
 end_import
@@ -268,6 +256,24 @@ operator|.
 name|FilterRpcResponse
 operator|.
 name|Entity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|EventInterface
+operator|.
+name|RoomFilterRpcRequest
 import|;
 end_import
 
@@ -491,15 +497,20 @@ end_import
 
 begin_class
 annotation|@
-name|Service
+name|GwtRpcImplements
 argument_list|(
-literal|"org.unitime.timetable.gwt.shared.EventInterface$RoomFilterRpcRequest"
+name|RoomFilterRpcRequest
+operator|.
+name|class
 argument_list|)
 specifier|public
 class|class
 name|RoomFilterBackend
 extends|extends
 name|FilterBoxBackend
+argument_list|<
+name|RoomFilterRpcRequest
+argument_list|>
 block|{
 specifier|private
 name|DistanceMetric
@@ -545,7 +556,7 @@ specifier|public
 name|void
 name|load
 parameter_list|(
-name|FilterRpcRequest
+name|RoomFilterRpcRequest
 name|request
 parameter_list|,
 name|FilterRpcResponse
@@ -2161,7 +2172,7 @@ specifier|private
 name|void
 name|fixRoomFeatureTypes
 parameter_list|(
-name|FilterRpcRequest
+name|RoomFilterRpcRequest
 name|request
 parameter_list|)
 block|{
@@ -2244,7 +2255,7 @@ parameter_list|(
 name|Long
 name|sessionId
 parameter_list|,
-name|FilterRpcRequest
+name|RoomFilterRpcRequest
 name|filter
 parameter_list|,
 name|int
@@ -5017,7 +5028,7 @@ specifier|public
 name|void
 name|suggestions
 parameter_list|(
-name|FilterRpcRequest
+name|RoomFilterRpcRequest
 name|request
 parameter_list|,
 name|FilterRpcResponse
@@ -5164,7 +5175,7 @@ specifier|public
 name|void
 name|enumarate
 parameter_list|(
-name|FilterRpcRequest
+name|RoomFilterRpcRequest
 name|request
 parameter_list|,
 name|FilterRpcResponse
