@@ -8329,6 +8329,30 @@ name|String
 name|infinity
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} enrolled"
+argument_list|)
+name|String
+name|eventGridEnrolled
+parameter_list|(
+name|int
+name|enrolled
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} limit"
+argument_list|)
+name|String
+name|eventGridLimit
+parameter_list|(
+name|int
+name|limit
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
