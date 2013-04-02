@@ -805,6 +805,14 @@ name|distance
 operator|.
 name|isEmpty
 argument_list|()
+operator|&&
+operator|!
+literal|"0"
+operator|.
+name|equals
+argument_list|(
+name|distance
+argument_list|)
 condition|)
 name|form
 operator|.
