@@ -955,6 +955,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Swap Axes"
+argument_list|)
+name|String
+name|opSwapAxes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Press Ctrl + C to copy the selected URL, and Escape to hide this dialog."
 argument_list|)
 name|String
@@ -8363,6 +8372,24 @@ name|addMeetingsLimitAndType
 parameter_list|(
 name|int
 name|limit
+parameter_list|,
+name|String
+name|type
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{2} {1} / {0}"
+argument_list|)
+name|String
+name|addMeetingsLimitEnrollmentAndType
+parameter_list|(
+name|int
+name|limit
+parameter_list|,
+name|int
+name|enrollment
 parameter_list|,
 name|String
 name|type
