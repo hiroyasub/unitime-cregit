@@ -120,6 +120,9 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Deprecated
+comment|/**  * @deprecated Use {@link org.unitime.timetable.spring.ldap.SpringLdapExternalUidLookup} instead.  */
 specifier|public
 class|class
 name|LdapExternalUidLookup
