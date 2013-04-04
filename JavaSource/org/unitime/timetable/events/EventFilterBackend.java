@@ -1172,7 +1172,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"e.mainContact.externalUniqueId = :user"
+literal|"e.mainContact.externalUniqueId = :user and e.class not in (ClassEvent, FinalExamEvent, MidtermExamEvent)"
 argument_list|)
 operator|.
 name|set
@@ -3024,8 +3024,17 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"e.mainContact.externalUniqueId = '"
-operator|+
+literal|"e.mainContact.externalUniqueId = :Xowner and e.class not in (ClassEvent, FinalExamEvent, MidtermExamEvent)"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|addParameter
+argument_list|(
+literal|"mode"
+argument_list|,
+literal|"Xowner"
+argument_list|,
 name|context
 operator|.
 name|getUser
@@ -3033,8 +3042,6 @@ argument_list|()
 operator|.
 name|getExternalUserId
 argument_list|()
-operator|+
-literal|"'"
 argument_list|)
 expr_stmt|;
 block|}
