@@ -5920,6 +5920,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Details of {0}"
+argument_list|)
+name|String
+name|dialogDetailsOf
+parameter_list|(
+name|String
+name|item
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0}<br>{1}<br>{2} seats"
 argument_list|)
 name|String
