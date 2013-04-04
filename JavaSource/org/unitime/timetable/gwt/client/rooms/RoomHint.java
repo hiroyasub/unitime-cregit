@@ -319,6 +319,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+specifier|private
+specifier|static
+name|boolean
+name|sShowHint
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 specifier|static
 name|Widget
@@ -925,6 +932,10 @@ name|sLastLocationId
 operator|=
 name|locationId
 expr_stmt|;
+name|sShowHint
+operator|=
+literal|true
+expr_stmt|;
 name|RPC
 operator|.
 name|execute
@@ -979,6 +990,8 @@ operator|&&
 name|locationId
 operator|==
 name|sLastLocationId
+operator|&&
+name|sShowHint
 condition|)
 name|GwtHint
 operator|.
@@ -1007,6 +1020,10 @@ name|void
 name|hideHint
 parameter_list|()
 block|{
+name|sShowHint
+operator|=
+literal|false
+expr_stmt|;
 name|GwtHint
 operator|.
 name|hideHint
