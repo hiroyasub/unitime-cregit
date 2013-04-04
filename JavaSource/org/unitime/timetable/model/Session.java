@@ -3316,7 +3316,7 @@ name|cal
 operator|.
 name|setTime
 argument_list|(
-name|getSessionEndDateTime
+name|getClassesEndDateTime
 argument_list|()
 argument_list|)
 expr_stmt|;
