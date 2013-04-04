@@ -743,6 +743,22 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|setDiff
+parameter_list|(
+name|Integer
+name|diff
+parameter_list|)
+block|{
+name|iEnd
+operator|.
+name|setDiff
+argument_list|(
+name|diff
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

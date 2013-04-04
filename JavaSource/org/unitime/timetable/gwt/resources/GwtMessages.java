@@ -4099,6 +4099,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No start time is entered."
+argument_list|)
+name|String
+name|errorNoStartTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No end time is entered."
+argument_list|)
+name|String
+name|errorNoEndTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No rooms are matching the filter."
 argument_list|)
 name|String
