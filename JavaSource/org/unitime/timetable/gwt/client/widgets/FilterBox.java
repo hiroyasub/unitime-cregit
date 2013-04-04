@@ -1598,14 +1598,14 @@ argument_list|()
 operator|.
 name|setInnerHTML
 argument_list|(
-literal|"+"
+literal|"&#9660;"
 argument_list|)
 expr_stmt|;
 name|iAdd
 operator|.
 name|addStyleName
 argument_list|(
-literal|"button"
+literal|"button-arrow"
 argument_list|)
 expr_stmt|;
 name|add
