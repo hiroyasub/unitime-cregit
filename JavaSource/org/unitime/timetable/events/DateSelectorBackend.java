@@ -604,7 +604,7 @@ argument_list|()
 argument_list|,
 name|session
 operator|.
-name|getSessionEndDateTime
+name|getClassesEndDateTime
 argument_list|()
 argument_list|)
 operator|==
