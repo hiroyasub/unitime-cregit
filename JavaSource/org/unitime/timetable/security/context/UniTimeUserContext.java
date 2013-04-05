@@ -1919,6 +1919,16 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|iName
+operator|==
+literal|null
+condition|)
+name|iName
+operator|=
+name|iLogin
+expr_stmt|;
 block|}
 specifier|public
 specifier|static
