@@ -5773,6 +5773,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Event Room Availability"
+argument_list|)
+name|String
+name|pageEventRoomAvailability
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
