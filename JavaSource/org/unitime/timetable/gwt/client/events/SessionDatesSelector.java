@@ -1962,6 +1962,10 @@ operator|||
 name|value
 operator|==
 literal|null
+operator|||
+operator|!
+name|isEnabled
+argument_list|()
 condition|)
 return|return;
 name|iSelected
