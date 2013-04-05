@@ -1219,7 +1219,7 @@ name|ariaDescription
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-AriaStatus"
+literal|"unitime-AriaHiddenLabel"
 argument_list|)
 expr_stmt|;
 name|ariaDescription

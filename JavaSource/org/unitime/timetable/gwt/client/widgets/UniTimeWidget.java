@@ -414,7 +414,7 @@ name|iAriaLabel
 operator|.
 name|setClassName
 argument_list|(
-literal|"unitime-AriaStatus"
+literal|"unitime-AriaHiddenLabel"
 argument_list|)
 expr_stmt|;
 name|DOM
