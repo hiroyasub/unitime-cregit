@@ -8019,7 +8019,7 @@ operator|)
 operator|(
 literal|0.9
 operator|*
-name|Window
+name|ToolBox
 operator|.
 name|getClientWidth
 argument_list|()
