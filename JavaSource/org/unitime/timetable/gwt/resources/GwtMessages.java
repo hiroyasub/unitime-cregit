@@ -2365,7 +2365,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"M<u>o</u>re&nbsp;&or;"
+literal|"M<u>o</u>re<span class='unitime-ButtonArrow'>&#9660;</span>"
 argument_list|)
 name|String
 name|buttonMoreOperations
@@ -2500,7 +2500,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"S<u>o</u>rt&nbsp;by&nbsp;&or;"
+literal|"S<u>o</u>rt&nbsp;by<span class='unitime-ButtonArrow'>&#9660;</span>"
 argument_list|)
 name|String
 name|buttonSortBy
@@ -2563,7 +2563,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Curricula&nbsp;<u>O</u>perations&nbsp;&or;"
+literal|"Curricula&nbsp;<u>O</u>perations<span class='unitime-ButtonArrow'>&#9660;</span>"
 argument_list|)
 name|String
 name|buttonCurriculaOperations
