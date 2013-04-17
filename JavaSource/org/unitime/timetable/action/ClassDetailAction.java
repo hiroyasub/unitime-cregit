@@ -1935,11 +1935,11 @@ argument_list|)
 expr_stmt|;
 name|frm
 operator|.
-name|setDisplayInScheduleBook
+name|setEnabledForStudentScheduling
 argument_list|(
 name|c
 operator|.
-name|isDisplayInScheduleBook
+name|isEnabledForStudentScheduling
 argument_list|()
 argument_list|)
 expr_stmt|;

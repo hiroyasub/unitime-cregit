@@ -2040,11 +2040,11 @@ argument_list|()
 decl_stmt|;
 name|toClass
 operator|.
-name|setDisplayInScheduleBook
+name|setEnabledForStudentScheduling
 argument_list|(
 name|fromClass
 operator|.
-name|isDisplayInScheduleBook
+name|isEnabledForStudentScheduling
 argument_list|()
 argument_list|)
 expr_stmt|;

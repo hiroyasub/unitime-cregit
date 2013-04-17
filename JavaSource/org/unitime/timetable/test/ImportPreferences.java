@@ -6978,7 +6978,7 @@ argument_list|)
 expr_stmt|;
 name|clazz
 operator|.
-name|setDisplayInScheduleBook
+name|setEnabledForStudentScheduling
 argument_list|(
 name|Boolean
 operator|.

@@ -264,10 +264,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Display In Schedule Book:"
+literal|"Student Scheduling:"
 argument_list|)
 name|String
-name|propertyDisplayInScheduleBook
+name|propertyEnabledForStudentScheduling
 parameter_list|()
 function_decl|;
 annotation|@
@@ -655,15 +655,6 @@ literal|"Scheduling Subpart Limits:"
 argument_list|)
 name|String
 name|propertySchedulingSubpartLimits
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Display Classes in Schedule:"
-argument_list|)
-name|String
-name|propertyDisplayClassesInSchedule
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1744,10 +1735,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Display&nbsp;<br>Class"
+literal|"Student&nbsp;<br>Scheduling"
 argument_list|)
 name|String
-name|columnDisplayClass
+name|columnStudentScheduling
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1861,10 +1852,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0} - Do Not Display In Schedule Book."
+literal|"{0} - Disabled For Student Scheduling."
 argument_list|)
 name|String
-name|tooltipDoNotDisplayInScheduleBook
+name|tooltipDisabledForStudentScheduling
 parameter_list|(
 name|String
 name|classLabelWithTitle
@@ -4273,7 +4264,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Display all instructors for this subpart in the schedule book."
+literal|"Display all instructors of this subpart in the schedule book."
 argument_list|)
 name|String
 name|titleDisplayAllInstrForSubpartInSchedBook
@@ -4282,19 +4273,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Display all classes for this subpart in the schedule book."
+literal|"Enable all classes of this subpart for student scheduling."
 argument_list|)
 name|String
-name|titleDisplayAllClassesForSubpartInSchedBook
+name|titleEnableAllClassesOfSubpartForStudentScheduling
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Display these classes in the schedule book."
+literal|"Enable these classes for student scheduling."
 argument_list|)
 name|String
-name|titleDisplayTheseClassesInSchedBook
+name|titleEnableTheseClassesForStudentScheduling
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5964,19 +5955,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Displayed in Schedule Book"
+literal|"Enabled for Student Scheduling"
 argument_list|)
 name|String
-name|titleDisplayedInScheduleBook
+name|titleEnabledForStudentScheduling
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Not Displayed in Schedule Book"
+literal|"Disabled for Student Scheduling"
 argument_list|)
 name|String
-name|titleNotDisplayedInScheduleBook
+name|titleNotEnabledForStudentScheduling
 parameter_list|()
 function_decl|;
 annotation|@

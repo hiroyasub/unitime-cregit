@@ -3803,7 +3803,7 @@ condition|(
 operator|!
 name|aClass
 operator|.
-name|isDisplayInScheduleBook
+name|isEnabledForStudentScheduling
 argument_list|()
 operator|.
 name|booleanValue
@@ -3816,7 +3816,7 @@ name|setTitle
 argument_list|(
 name|MSG
 operator|.
-name|tooltipDoNotDisplayInScheduleBook
+name|tooltipDisabledForStudentScheduling
 argument_list|(
 name|aClass
 operator|.

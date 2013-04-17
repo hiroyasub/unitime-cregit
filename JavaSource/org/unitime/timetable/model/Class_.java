@@ -6324,9 +6324,9 @@ argument_list|)
 expr_stmt|;
 name|newClass
 operator|.
-name|setDisplayInScheduleBook
+name|setEnabledForStudentScheduling
 argument_list|(
-name|isDisplayInScheduleBook
+name|isEnabledForStudentScheduling
 argument_list|()
 argument_list|)
 expr_stmt|;

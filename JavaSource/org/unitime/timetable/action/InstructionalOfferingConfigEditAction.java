@@ -8135,7 +8135,7 @@ if|if
 condition|(
 name|c
 operator|.
-name|getDisplayInScheduleBook
+name|getEnabledForStudentScheduling
 argument_list|()
 operator|==
 literal|null
@@ -8143,7 +8143,7 @@ condition|)
 block|{
 name|c
 operator|.
-name|setDisplayInScheduleBook
+name|setEnabledForStudentScheduling
 argument_list|(
 operator|new
 name|Boolean
@@ -10049,7 +10049,7 @@ argument_list|)
 expr_stmt|;
 name|c
 operator|.
-name|setDisplayInScheduleBook
+name|setEnabledForStudentScheduling
 argument_list|(
 operator|new
 name|Boolean

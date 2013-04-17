@@ -1189,7 +1189,7 @@ condition|(
 operator|!
 name|aClass
 operator|.
-name|isDisplayInScheduleBook
+name|isEnabledForStudentScheduling
 argument_list|()
 operator|.
 name|booleanValue

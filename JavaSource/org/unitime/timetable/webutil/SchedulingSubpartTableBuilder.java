@@ -1981,6 +1981,8 @@ operator|&&
 name|mnlpc
 operator|>=
 literal|0
+operator|&&
+name|varLimits
 operator|)
 operator|||
 operator|(
