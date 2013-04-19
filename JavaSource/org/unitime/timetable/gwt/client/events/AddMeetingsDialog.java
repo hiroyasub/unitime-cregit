@@ -3134,6 +3134,17 @@ name|Entity
 name|r2
 parameter_list|)
 block|{
+if|if
+condition|(
+name|dates
+operator|!=
+literal|null
+operator|&&
+name|availability
+operator|!=
+literal|null
+condition|)
+block|{
 name|Long
 name|p1
 init|=
@@ -3263,6 +3274,7 @@ condition|)
 return|return
 literal|1
 return|;
+block|}
 name|int
 name|cmp
 init|=
