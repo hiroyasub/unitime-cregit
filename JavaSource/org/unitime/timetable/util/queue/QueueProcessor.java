@@ -512,7 +512,7 @@ name|QueueItem
 argument_list|>
 name|getItems
 parameter_list|(
-name|Long
+name|String
 name|ownerId
 parameter_list|,
 name|Long
