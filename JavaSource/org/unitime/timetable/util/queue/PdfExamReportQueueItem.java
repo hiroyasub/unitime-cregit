@@ -3935,7 +3935,7 @@ operator|+
 literal|"\r\n\r\n"
 operator|)
 operator|+
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|iUrl
 operator|+
@@ -4359,7 +4359,7 @@ operator|+
 literal|"\r\n\r\n"
 operator|)
 operator|+
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|iUrl
 operator|+
@@ -4752,7 +4752,7 @@ operator|+
 literal|"\r\n\r\n"
 operator|)
 operator|+
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|iUrl
 operator|+
@@ -5132,7 +5132,7 @@ operator|+
 literal|"\r\n\r\n"
 operator|)
 operator|+
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|iUrl
 operator|+

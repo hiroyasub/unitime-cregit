@@ -5427,7 +5427,7 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|url
 operator|+
@@ -5857,7 +5857,7 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|url
 operator|+
@@ -6265,7 +6265,7 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|url
 operator|+
@@ -6659,7 +6659,7 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"For an up-to-date report, please visit "
+literal|"For an up-to-date examination report, please visit "
 operator|+
 name|url
 operator|+
