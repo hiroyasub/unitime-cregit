@@ -947,7 +947,7 @@ literal|2
 condition|?
 literal|""
 else|:
-literal|" or lower(a.shortTitle) like '%' || :q || '%' or lower(a.longTitle) like '%' || :q || '%'"
+literal|" or lower(a.title) like '%' || :q || '%'"
 operator|)
 operator|+
 literal|")"
@@ -1045,19 +1045,7 @@ operator|+
 operator|(
 name|subject
 operator|.
-name|getLongTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-name|subject
-operator|.
-name|getShortTitle
-argument_list|()
-else|:
-name|subject
-operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 operator|)
 block|}
@@ -1295,7 +1283,7 @@ literal|2
 condition|?
 literal|""
 else|:
-literal|" or lower(a.shortTitle) like '%' || :q || '%' or lower(a.longTitle) like '%' || :q || '%'"
+literal|" or lower(a.title) like '%' || :q || '%'"
 operator|)
 operator|+
 literal|")"
@@ -1384,24 +1372,10 @@ argument_list|()
 operator|+
 literal|" - "
 operator|+
-operator|(
 name|area
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
-operator|==
-literal|null
-condition|?
-name|area
-operator|.
-name|getShortTitle
-argument_list|()
-else|:
-name|area
-operator|.
-name|getLongTitle
-argument_list|()
-operator|)
 block|}
 argument_list|)
 expr_stmt|;

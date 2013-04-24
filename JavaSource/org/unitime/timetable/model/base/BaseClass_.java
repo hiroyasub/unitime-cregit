@@ -335,7 +335,7 @@ specifier|static
 name|String
 name|PROP_DISPLAY_IN_SCHED_BOOK
 init|=
-literal|"displayInScheduleBook"
+literal|"enabledForStudentScheduling"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1189,14 +1189,14 @@ operator|+
 name|getDatePattern
 argument_list|()
 operator|+
-literal|"\n	DisplayInScheduleBook: "
-operator|+
-name|getEnabledForStudentScheduling
-argument_list|()
-operator|+
 literal|"\n	DisplayInstructor: "
 operator|+
 name|getDisplayInstructor
+argument_list|()
+operator|+
+literal|"\n	EnabledForStudentScheduling: "
+operator|+
+name|getEnabledForStudentScheduling
 argument_list|()
 operator|+
 literal|"\n	ExpectedCapacity: "

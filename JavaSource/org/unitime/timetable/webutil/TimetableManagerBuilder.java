@@ -1271,7 +1271,7 @@ literal|"<span title='"
 operator|+
 name|sa
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 operator|+
 literal|"'>"

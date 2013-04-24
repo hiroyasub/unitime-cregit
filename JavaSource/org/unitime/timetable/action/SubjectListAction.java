@@ -426,9 +426,9 @@ argument_list|(
 operator|(
 name|dispLastChanges
 condition|?
-literal|7
+literal|5
 else|:
-literal|6
+literal|4
 operator|)
 argument_list|,
 literal|"Subject Area List - "
@@ -471,10 +471,6 @@ literal|"Department"
 block|,
 literal|"Managers"
 block|,
-literal|"Sched Book\nOnly"
-block|,
-literal|"Pseudo"
-block|,
 literal|"Last Change"
 block|}
 else|:
@@ -489,10 +485,6 @@ block|,
 literal|"Departmnet"
 block|,
 literal|"Managers"
-block|,
-literal|"Sched Book\nOnly"
-block|,
-literal|"Pseudo"
 block|}
 operator|)
 argument_list|,
@@ -508,10 +500,6 @@ literal|"left"
 block|,
 literal|"left"
 block|,
-literal|"left"
-block|,
-literal|"left"
-block|,
 literal|"right"
 block|}
 argument_list|,
@@ -519,10 +507,6 @@ operator|new
 name|boolean
 index|[]
 block|{
-literal|true
-block|,
-literal|true
-block|,
 literal|true
 block|,
 literal|true
@@ -757,7 +741,7 @@ argument_list|()
 block|,
 name|s
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 block|,
 operator|(
@@ -814,30 +798,6 @@ literal|""
 else|:
 name|sdName
 block|,
-name|s
-operator|.
-name|isScheduleBookOnly
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|?
-literal|"Yes"
-else|:
-literal|"No"
-block|,
-name|s
-operator|.
-name|isPseudoSubjectArea
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|?
-literal|"Yes"
-else|:
-literal|"No"
-block|,
 name|lastChangeStr
 block|}
 argument_list|,
@@ -852,7 +812,7 @@ argument_list|()
 block|,
 name|s
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 block|,
 operator|(
@@ -869,22 +829,6 @@ name|getDeptCode
 argument_list|()
 block|,
 name|sdName
-block|,
-name|s
-operator|.
-name|isScheduleBookOnly
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-block|,
-name|s
-operator|.
-name|isPseudoSubjectArea
-argument_list|()
-operator|.
-name|toString
-argument_list|()
 block|,
 name|lastChangeCmp
 block|}
@@ -924,9 +868,9 @@ argument_list|(
 operator|(
 name|dispLastChanges
 condition|?
-literal|7
+literal|5
 else|:
-literal|6
+literal|4
 operator|)
 argument_list|,
 literal|""
@@ -948,10 +892,6 @@ literal|"Department"
 block|,
 literal|"Managers"
 block|,
-literal|"Sched Book Only"
-block|,
-literal|"Pseudo"
-block|,
 literal|"Last Change"
 block|}
 else|:
@@ -966,10 +906,6 @@ block|,
 literal|"Department"
 block|,
 literal|"Managers"
-block|,
-literal|"Sched Book Only"
-block|,
-literal|"Pseudo"
 block|}
 operator|)
 argument_list|,
@@ -985,10 +921,6 @@ literal|"left"
 block|,
 literal|"left"
 block|,
-literal|"left"
-block|,
-literal|"left"
-block|,
 literal|"right"
 block|}
 argument_list|,
@@ -996,10 +928,6 @@ operator|new
 name|boolean
 index|[]
 block|{
-literal|true
-block|,
-literal|true
-block|,
 literal|true
 block|,
 literal|true
@@ -1295,7 +1223,7 @@ literal|"</A>"
 block|,
 name|s
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 block|,
 operator|(
@@ -1363,30 +1291,6 @@ literal|"&nbsp;"
 else|:
 name|sdName
 block|,
-name|s
-operator|.
-name|isScheduleBookOnly
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|?
-literal|"<IMG src='images/tick.gif' border='0' title='Schedule Book Only' alt='Schedule Book Only'>"
-else|:
-literal|"&nbsp;"
-block|,
-name|s
-operator|.
-name|isPseudoSubjectArea
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|?
-literal|"<IMG src='images/tick.gif' border='0' title='Pseudo' alt='Pseudo'>"
-else|:
-literal|"&nbsp;"
-block|,
 name|lastChangeStr
 block|}
 argument_list|,
@@ -1401,7 +1305,7 @@ argument_list|()
 block|,
 name|s
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 block|,
 operator|(
@@ -1418,22 +1322,6 @@ name|getDeptCode
 argument_list|()
 block|,
 name|sdName
-block|,
-name|s
-operator|.
-name|isScheduleBookOnly
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-block|,
-name|s
-operator|.
-name|isPseudoSubjectArea
-argument_list|()
-operator|.
-name|toString
-argument_list|()
 block|,
 name|lastChangeCmp
 block|}

@@ -1920,25 +1920,7 @@ operator|.
 name|getKey
 argument_list|()
 operator|.
-name|getLongTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-name|e1
-operator|.
-name|getKey
-argument_list|()
-operator|.
-name|getShortTitle
-argument_list|()
-else|:
-name|e1
-operator|.
-name|getKey
-argument_list|()
-operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 argument_list|)
 operator|+
@@ -1991,7 +1973,7 @@ operator|.
 name|getKey
 argument_list|()
 operator|.
-name|getShortTitle
+name|getTitle
 argument_list|()
 operator|+
 literal|") - "
@@ -2087,7 +2069,7 @@ operator|.
 name|getKey
 argument_list|()
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 operator|==
 literal|null
@@ -2097,7 +2079,7 @@ operator|.
 name|getKey
 argument_list|()
 operator|.
-name|getShortTitle
+name|getTitle
 argument_list|()
 else|:
 name|e1
@@ -2105,7 +2087,7 @@ operator|.
 name|getKey
 argument_list|()
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 argument_list|)
 operator|+

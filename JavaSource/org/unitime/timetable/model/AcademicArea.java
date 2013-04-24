@@ -239,7 +239,7 @@ literal|" : "
 operator|+
 name|this
 operator|.
-name|getShortTitle
+name|getTitle
 argument_list|()
 return|;
 block|}
@@ -252,7 +252,7 @@ block|{
 return|return
 name|this
 operator|.
-name|getShortTitle
+name|getTitle
 argument_list|()
 operator|+
 literal|" : "
@@ -497,17 +497,9 @@ argument_list|)
 expr_stmt|;
 name|area
 operator|.
-name|setShortTitle
+name|setTitle
 argument_list|(
-name|getShortTitle
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|area
-operator|.
-name|setLongTitle
-argument_list|(
-name|getLongTitle
+name|getTitle
 argument_list|()
 argument_list|)
 expr_stmt|;

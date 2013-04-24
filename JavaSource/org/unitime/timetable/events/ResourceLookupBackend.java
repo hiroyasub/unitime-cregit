@@ -1186,19 +1186,7 @@ name|setName
 argument_list|(
 name|subject
 operator|.
-name|getLongTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-name|subject
-operator|.
-name|getShortTitle
-argument_list|()
-else|:
-name|subject
-operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3153,7 +3141,7 @@ name|createQuery
 argument_list|(
 literal|"select s from SubjectArea s where s.session.uniqueId = :sessionId and ("
 operator|+
-literal|"lower(s.subjectAreaAbbreviation) like :name or lower(' ' || s.shortTitle) like :title or lower(' ' || s.longTitle) like :title) "
+literal|"lower(s.subjectAreaAbbreviation) like :name or lower(' ' || s.title) like :title "
 operator|+
 literal|"order by s.subjectAreaAbbreviation"
 argument_list|)
@@ -3252,19 +3240,7 @@ name|setName
 argument_list|(
 name|subject
 operator|.
-name|getLongTitle
-argument_list|()
-operator|==
-literal|null
-condition|?
-name|subject
-operator|.
-name|getShortTitle
-argument_list|()
-else|:
-name|subject
-operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -544,24 +544,10 @@ argument_list|()
 operator|+
 literal|" - "
 operator|+
-operator|(
 name|area
 operator|.
-name|getLongTitle
+name|getTitle
 argument_list|()
-operator|==
-literal|null
-condition|?
-name|area
-operator|.
-name|getShortTitle
-argument_list|()
-else|:
-name|area
-operator|.
-name|getLongTitle
-argument_list|()
-operator|)
 argument_list|)
 argument_list|)
 expr_stmt|;
