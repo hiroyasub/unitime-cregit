@@ -998,6 +998,21 @@ argument_list|(
 literal|" 		 and co.courseNbr like :courseNbr "
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+literal|"include"
+operator|.
+name|equals
+argument_list|(
+name|map
+operator|.
+name|get
+argument_list|(
+literal|"notOffered"
+argument_list|)
+argument_list|)
+condition|)
 name|query
 operator|.
 name|append
