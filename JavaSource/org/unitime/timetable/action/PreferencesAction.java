@@ -2283,8 +2283,12 @@ argument_list|()
 decl_stmt|;
 name|frm2
 operator|.
-name|setSubjectAreaId
+name|setSubjectAreaIds
 argument_list|(
+operator|new
+name|String
+index|[]
+block|{
 name|co
 operator|.
 name|getSubjectArea
@@ -2292,6 +2296,10 @@ argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+block|}
 argument_list|)
 expr_stmt|;
 name|frm2

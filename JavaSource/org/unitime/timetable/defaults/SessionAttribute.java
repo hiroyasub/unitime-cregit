@@ -80,7 +80,7 @@ name|OfferingsSubjectArea
 argument_list|(
 literal|"subjectAreaId"
 argument_list|,
-literal|"Last used subject area (String containing subject area id)"
+literal|"Last used subject area or areas (String containing a comma separated list of ids)"
 argument_list|)
 block|,
 name|OfferingsCourseNumber

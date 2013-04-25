@@ -1976,38 +1976,50 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Not Offered Courses"
+literal|"{0} Not Offered Courses"
 argument_list|)
 name|String
 name|labelNotOfferedCourses
-parameter_list|()
+parameter_list|(
+name|String
+name|subjectAreaAbbv
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Offered Courses"
+literal|"{0} Offered Courses"
 argument_list|)
 name|String
 name|labelOfferedCourses
-parameter_list|()
+parameter_list|(
+name|String
+name|subjectAreaAbbv
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"There are no courses currently offered for this subject."
+literal|"There are no courses currently offered for {0} subject."
 argument_list|)
 name|String
 name|errorNoCoursesOffered
-parameter_list|()
+parameter_list|(
+name|String
+name|subjectAreaAbbv
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"All courses are currently being offered for this subject."
+literal|"All courses are currently being offered for {0} subject."
 argument_list|)
 name|String
 name|errorAllCoursesOffered
-parameter_list|()
+parameter_list|(
+name|String
+name|subjectAreaAbbv
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
