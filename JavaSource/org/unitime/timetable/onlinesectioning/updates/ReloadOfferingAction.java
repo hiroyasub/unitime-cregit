@@ -3887,6 +3887,13 @@ expr_stmt|;
 if|if
 condition|(
 name|cr
+operator|!=
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|cr
 operator|.
 name|getClassEnrollments
 argument_list|()
@@ -3915,6 +3922,7 @@ argument_list|(
 name|enrl
 argument_list|)
 expr_stmt|;
+block|}
 name|helper
 operator|.
 name|info
