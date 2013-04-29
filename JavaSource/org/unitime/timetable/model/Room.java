@@ -478,6 +478,14 @@ name|getEventAvailability
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|r
+operator|.
+name|setShareNote
+argument_list|(
+name|getShareNote
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|r
 return|;

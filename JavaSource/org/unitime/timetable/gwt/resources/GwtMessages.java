@@ -2266,6 +2266,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Note:"
+argument_list|)
+name|String
+name|propRoomAvailabilityNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Abbreviation:"
 argument_list|)
 name|String

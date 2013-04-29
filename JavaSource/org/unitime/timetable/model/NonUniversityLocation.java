@@ -295,6 +295,14 @@ name|getExternalUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|l
+operator|.
+name|setShareNote
+argument_list|(
+name|getShareNote
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|l
 return|;

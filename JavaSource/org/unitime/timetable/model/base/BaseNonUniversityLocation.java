@@ -393,6 +393,11 @@ operator|+
 name|getSession
 argument_list|()
 operator|+
+literal|"\n	ShareNote: "
+operator|+
+name|getShareNote
+argument_list|()
+operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId

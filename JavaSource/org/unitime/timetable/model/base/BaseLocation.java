@@ -243,6 +243,10 @@ name|iPattern
 decl_stmt|;
 specifier|private
 name|String
+name|iShareNote
+decl_stmt|;
+specifier|private
+name|String
 name|iEventAvailability
 decl_stmt|;
 specifier|private
@@ -397,6 +401,13 @@ name|String
 name|PROP_PATTERN
 init|=
 literal|"pattern"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_SHARE_NOTE
+init|=
+literal|"shareNote"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -758,6 +769,28 @@ block|{
 name|iPattern
 operator|=
 name|pattern
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getShareNote
+parameter_list|()
+block|{
+return|return
+name|iShareNote
+return|;
+block|}
+specifier|public
+name|void
+name|setShareNote
+parameter_list|(
+name|String
+name|shareNote
+parameter_list|)
+block|{
+name|iShareNote
+operator|=
+name|shareNote
 expr_stmt|;
 block|}
 specifier|public
@@ -1446,6 +1479,11 @@ operator|+
 literal|"\n	Session: "
 operator|+
 name|getSession
+argument_list|()
+operator|+
+literal|"\n	ShareNote: "
+operator|+
+name|getShareNote
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "
