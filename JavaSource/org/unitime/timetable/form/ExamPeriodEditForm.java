@@ -7284,7 +7284,7 @@ literal|","
 operator|+
 literal|"['1','0'],"
 operator|+
-literal|"['Midterm exams offered','Midterm exams not offered'],"
+literal|"['Examinations offered','Examinations not offered'],"
 operator|+
 literal|"['rgb(240,240,50)','rgb(240,240,240)'],"
 operator|+
