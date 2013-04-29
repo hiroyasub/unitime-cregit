@@ -3141,7 +3141,7 @@ name|createQuery
 argument_list|(
 literal|"select s from SubjectArea s where s.session.uniqueId = :sessionId and ("
 operator|+
-literal|"lower(s.subjectAreaAbbreviation) like :name or lower(' ' || s.title) like :title "
+literal|"lower(s.subjectAreaAbbreviation) like :name or lower(' ' || s.title) like :title) "
 operator|+
 literal|"order by s.subjectAreaAbbreviation"
 argument_list|)
