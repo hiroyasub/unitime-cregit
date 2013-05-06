@@ -176,7 +176,7 @@ name|boolean
 name|modal
 parameter_list|)
 block|{
-name|super
+name|this
 argument_list|(
 name|autoHide
 argument_list|,
@@ -195,7 +195,7 @@ name|boolean
 name|autoHide
 parameter_list|)
 block|{
-name|super
+name|this
 argument_list|(
 name|autoHide
 argument_list|,
@@ -211,7 +211,7 @@ specifier|public
 name|AriaDialogBox
 parameter_list|()
 block|{
-name|super
+name|this
 argument_list|(
 literal|false
 argument_list|,
