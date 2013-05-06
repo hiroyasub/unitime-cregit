@@ -52,7 +52,7 @@ literal|"Tip: Use Ctrl+1 (or Ctrl+Alt+1) to navigate to the first course, Ctrl+2
 block|,
 literal|"Tip: Use Ctrl+Arrow to navigate, Ctrl+Shift+Up and Ctrl+Shith+Down to move a line around."
 block|,
-literal|"Tip: Use Ctrl+F to open the Course Finder dialog."
+literal|"Tip: Use Ctrl+F (or Ctrl+Alt+F in some browsers) to open the Course Finder dialog."
 block|,
 literal|"Tip: Use Ctrl+N (or Ctrl+Alt+N in some browsers) to validate the screen and go next."
 block|,
@@ -72,7 +72,7 @@ literal|"Tip: There are no alternative free times."
 block|,
 literal|"Tip: Try not to break too many standard time patterns with a free time (see the numbers in the Course Finder dialog)."
 block|,
-literal|"Tip: Use Esc to hide suggestions, Ctrl+S to show suggestions."
+literal|"Tip: Use Esc to hide suggestions, Ctrl+L (or Ctrl+Alt+L in some browsers) to show suggestions."
 block|}
 argument_list|)
 name|String

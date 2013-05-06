@@ -214,7 +214,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Academic session selection dialog opened, please select an academic session. Use up and down arrows to navigate, enter to confirm the selection."
+literal|"Academic session selection dialog opened, please select an academic session. Use Alt + Up and Alt + Down to navigate, Alt + Enter to confirm the selection."
 argument_list|)
 name|String
 name|sessionSelectorDialogOpened
@@ -223,7 +223,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Academic session selection dialog opened, please select an academic session. Use up and down arrows to navigate, enter to confirm the selection. Academic session {0} of {1}: {3} {2} campus {4}."
+literal|"Academic session selection dialog opened, please select an academic session. Use Alt + Up and Alt + Down to navigate, Alt + Enter to confirm the selection. Academic session {0} of {1}: {3} {2} campus {4}."
 argument_list|)
 name|String
 name|sessionSelectorDialogOpenedWithSelection
@@ -548,7 +548,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course Finder Filter. Enter a text to look for a course or a free time. Press Ctrl + c for course selection, Ctrl + t for free time selection."
+literal|"Course Finder Filter. Enter a text to look for a course or a free time. Press Ctrl + Alt + C for course selection, Ctrl + Alt + T for free time selection."
 argument_list|)
 name|String
 name|courseFinderFilterAllowsFreeTime
@@ -566,7 +566,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Looking for a course. On a selected course press Ctrl + d for details, Ctrl + l for a list of classes."
+literal|"Looking for a course. On a selected course press Ctrl + Alt + D for details, Ctrl + Alt + L for a list of classes."
 argument_list|)
 name|String
 name|courseFinderCoursesTab
@@ -1004,6 +1004,138 @@ literal|"Arrange Hours"
 argument_list|)
 name|String
 name|arrangeHours
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1}"
+argument_list|)
+name|String
+name|courseFinderCourse
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} entitled {2}"
+argument_list|)
+name|String
+name|courseFinderCourseWithTitle
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|course
+parameter_list|,
+name|String
+name|title
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} entitled {2} with note {3}"
+argument_list|)
+name|String
+name|courseFinderCourseWithTitleAndNote
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|course
+parameter_list|,
+name|String
+name|title
+parameter_list|,
+name|String
+name|note
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} with note {2}"
+argument_list|)
+name|String
+name|courseFinderCourseWithNote
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|course
+parameter_list|,
+name|String
+name|note
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} available {2}"
+argument_list|)
+name|String
+name|courseFinderClassAvailable
+parameter_list|(
+name|String
+name|clazz
+parameter_list|,
+name|String
+name|assignment
+parameter_list|,
+name|String
+name|availability
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} not available"
+argument_list|)
+name|String
+name|courseFinderClassNotAvailable
+parameter_list|(
+name|String
+name|clazz
+parameter_list|,
+name|String
+name|assignment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Showing List of Classes. Use Alt + Up and Alt + Down to navigate, Alt + Enter to open Suggestions for the selected class."
+argument_list|)
+name|String
+name|listOfClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Showing Timetable grid."
+argument_list|)
+name|String
+name|timetable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Showing Course Requests."
+argument_list|)
+name|String
+name|courseRequests
 parameter_list|()
 function_decl|;
 block|}
