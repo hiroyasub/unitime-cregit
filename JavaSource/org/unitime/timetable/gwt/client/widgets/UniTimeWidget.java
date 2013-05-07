@@ -691,6 +691,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|setAriaLabel
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -737,6 +742,11 @@ operator|.
 name|setVisible
 argument_list|(
 literal|true
+argument_list|)
+expr_stmt|;
+name|setAriaLabel
+argument_list|(
+name|error
 argument_list|)
 expr_stmt|;
 block|}

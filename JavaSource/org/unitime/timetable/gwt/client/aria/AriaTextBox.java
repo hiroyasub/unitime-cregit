@@ -88,7 +88,7 @@ operator|.
 name|getTextboxRole
 argument_list|()
 operator|.
-name|removeAriaLabelledbyProperty
+name|removeAriaLabelProperty
 argument_list|(
 name|getElement
 argument_list|()

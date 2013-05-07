@@ -1115,7 +1115,7 @@ argument_list|()
 operator|.
 name|setAriaOwnsProperty
 argument_list|(
-name|iSuggestionPopup
+name|iText
 operator|.
 name|getElement
 argument_list|()
