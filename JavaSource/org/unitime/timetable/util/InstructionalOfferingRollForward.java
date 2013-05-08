@@ -3564,6 +3564,16 @@ name|getConsentType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|toCourseOffering
+operator|.
+name|setCourseType
+argument_list|(
+name|fromCourseOffering
+operator|.
+name|getCourseType
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|toInstructionalOffering
 operator|.
 name|addTocourseOfferings
