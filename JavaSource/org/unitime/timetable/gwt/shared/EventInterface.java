@@ -3046,6 +3046,15 @@ return|return
 name|iDistance
 operator|!=
 literal|null
+operator|&&
+name|Math
+operator|.
+name|round
+argument_list|(
+name|iDistance
+argument_list|)
+operator|>
+literal|0
 return|;
 block|}
 specifier|public
