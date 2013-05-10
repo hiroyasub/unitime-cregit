@@ -6046,6 +6046,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Classes Start"
+argument_list|)
+name|String
+name|legendClassesStart
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Classes End"
+argument_list|)
+name|String
+name|legendClassesEnd
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Finals"
 argument_list|)
 name|String

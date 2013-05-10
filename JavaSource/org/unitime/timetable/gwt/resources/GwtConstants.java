@@ -627,6 +627,24 @@ index|[]
 name|roomSharingModes
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MMMM d"
+argument_list|)
+name|String
+name|weekSelectionDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"EEEE MMMM d"
+argument_list|)
+name|String
+name|dateSelectionDateFormat
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

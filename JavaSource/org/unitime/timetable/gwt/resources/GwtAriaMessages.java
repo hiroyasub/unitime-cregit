@@ -1363,6 +1363,107 @@ name|String
 name|column
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Every {0} of {1}"
+argument_list|)
+name|String
+name|datesDayOfWeekSelection
+parameter_list|(
+name|String
+name|dayOfWeek
+parameter_list|,
+name|String
+name|month
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Week {0} starting {1}"
+argument_list|)
+name|String
+name|datesWeekSelection
+parameter_list|(
+annotation|@
+name|PluralCount
+name|int
+name|weekNumber
+parameter_list|,
+name|String
+name|firstDate
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No dates are selected."
+argument_list|)
+name|String
+name|datesNothingSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected {0}"
+argument_list|)
+name|String
+name|datesSelected
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unselected {0}"
+argument_list|)
+name|String
+name|datesUnselected
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected work days for {0}"
+argument_list|)
+name|String
+name|datesSelectedWorkDays
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected all but holidays for {0}"
+argument_list|)
+name|String
+name|datesSelectedAllButVacations
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected all days for {0}"
+argument_list|)
+name|String
+name|datesSelectedAll
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
