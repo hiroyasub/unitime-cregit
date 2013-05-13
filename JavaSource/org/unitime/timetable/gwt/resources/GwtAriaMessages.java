@@ -99,7 +99,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"There are {0, number} suggestions. Use up and down arrows to navigate.  First suggestion is {1}."
+literal|"There are {0, number} suggestions. Use up and down arrows to navigate. First suggestion is {1}."
 argument_list|)
 name|String
 name|showingMultipleSuggestionsNoQuery
@@ -145,6 +145,18 @@ name|PluralCount
 name|int
 name|nbrSuggestions
 parameter_list|,
+name|String
+name|suggestion
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Suggestion: {0}"
+argument_list|)
+name|String
+name|onSuggestionNoCount
+parameter_list|(
 name|String
 name|suggestion
 parameter_list|)
@@ -1463,6 +1475,24 @@ parameter_list|(
 name|String
 name|date
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Start Time"
+argument_list|)
+name|String
+name|startTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"End Time"
+argument_list|)
+name|String
+name|endTime
+parameter_list|()
 function_decl|;
 block|}
 end_interface
