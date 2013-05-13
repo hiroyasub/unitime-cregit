@@ -5297,6 +5297,13 @@ name|FilterRpcResponse
 name|result
 parameter_list|)
 block|{
+if|if
+condition|(
+name|result
+operator|==
+literal|null
+condition|)
+return|return;
 name|iSelectedRooms
 operator|=
 operator|new
