@@ -6163,7 +6163,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<span title='Conflicting event' style='font-style:normal;'>&#9785;</span>"
+literal|"<span title='Conflicting event' style='font-style:normal;' aria-label='Conflicting event'>&#9785;</span>"
 argument_list|)
 name|String
 name|signConflict
@@ -6172,7 +6172,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<span title='Selected event' style='font-style:normal;'>&#9745;</span>"
+literal|"<span title='Selected event' style='font-style:normal;' aria-label='Selected event'>&#9745;</span>"
 argument_list|)
 name|String
 name|signSelected
@@ -6181,7 +6181,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<span title='Warning' style='font-style:normal;'>&#9888;</span>"
+literal|"<span title='Warning' style='font-style:normal;' aria-label='Warning'>&#9888;</span>"
 argument_list|)
 name|String
 name|signMessage

@@ -6977,6 +6977,18 @@ name|message
 operator|+=
 literal|" "
 operator|+
+operator|(
+name|event
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|EventType
+operator|.
+name|Unavailabile
+condition|?
+literal|""
+else|:
 name|event
 operator|.
 name|getType
@@ -6986,6 +6998,7 @@ name|getAbbreviation
 argument_list|(
 name|CONSTANTS
 argument_list|)
+operator|)
 operator|+
 literal|" "
 operator|+
