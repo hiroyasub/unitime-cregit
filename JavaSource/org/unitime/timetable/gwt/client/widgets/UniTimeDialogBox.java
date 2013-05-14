@@ -539,6 +539,11 @@ name|void
 name|center
 parameter_list|()
 block|{
+name|super
+operator|.
+name|center
+argument_list|()
+expr_stmt|;
 name|AriaStatus
 operator|.
 name|getInstance
@@ -554,11 +559,6 @@ name|getText
 argument_list|()
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|super
-operator|.
-name|center
-argument_list|()
 expr_stmt|;
 block|}
 specifier|public
