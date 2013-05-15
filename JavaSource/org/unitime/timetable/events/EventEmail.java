@@ -3136,6 +3136,37 @@ name|empty
 operator|=
 literal|false
 expr_stmt|;
+if|if
+condition|(
+name|approval
+condition|)
+block|{
+switch|switch
+condition|(
+name|meeting
+operator|.
+name|getApprovalStatus
+argument_list|()
+condition|)
+block|{
+case|case
+name|Rejected
+case|:
+case|case
+name|Cancelled
+case|:
+case|case
+name|Deleted
+case|:
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"<tr style='color:gray; font-style: italic;'>"
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
 name|out
 operator|.
 name|println
@@ -3143,6 +3174,18 @@ argument_list|(
 literal|"<tr>"
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"<tr>"
+argument_list|)
+expr_stmt|;
+block|}
 name|out
 operator|.
 name|println
@@ -3286,7 +3329,20 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td><i>"
+literal|"<td style='"
+operator|+
+operator|(
+name|meeting
+operator|.
+name|isPast
+argument_list|()
+condition|?
+literal|"color: orange; "
+else|:
+literal|"color: red; "
+operator|)
+operator|+
+literal|"font-style: italic;'>"
 operator|+
 operator|(
 name|meeting
@@ -3335,7 +3391,7 @@ name|approvalNotApproved
 argument_list|()
 operator|)
 operator|+
-literal|"</i></td>"
+literal|"</td>"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3376,14 +3432,27 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td><i>"
+literal|"<td style='"
+operator|+
+operator|(
+name|meeting
+operator|.
+name|isPast
+argument_list|()
+condition|?
+literal|"color: gray; "
+else|:
+literal|""
+operator|)
+operator|+
+literal|"font-style: italic;'>"
 operator|+
 name|MESSAGES
 operator|.
 name|approvalApproved
 argument_list|()
 operator|+
-literal|"<i></td>"
+literal|"</td>"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3394,14 +3463,14 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td><i>"
+literal|"<td style='color: gray; font-style: italic;'>"
 operator|+
 name|MESSAGES
 operator|.
 name|approvalRejected
 argument_list|()
 operator|+
-literal|"</i></td>"
+literal|"</td>"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3412,14 +3481,14 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td><i>"
+literal|"<td style='color: gray; font-style: italic;'>"
 operator|+
 name|MESSAGES
 operator|.
 name|approvalCancelled
 argument_list|()
 operator|+
-literal|"</i></td>"
+literal|"</td>"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3430,14 +3499,14 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td><i>"
+literal|"<td style='color: gray; font-style: italic;'>"
 operator|+
 name|MESSAGES
 operator|.
 name|approvalDeleted
 argument_list|()
 operator|+
-literal|"</i></td>"
+literal|"</td>"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5352,21 +5421,6 @@ expr_stmt|;
 name|email
 operator|.
 name|setHTML
-argument_list|(
-name|buffer
-operator|.
-name|getBuffer
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
 argument_list|(
 name|buffer
 operator|.
