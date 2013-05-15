@@ -10164,6 +10164,30 @@ argument_list|()
 operator|+
 literal|"</span>"
 else|:
+name|iEvent
+operator|.
+name|hasExpirationDate
+argument_list|()
+condition|?
+literal|"<span class='not-approved'>"
+operator|+
+name|MESSAGES
+operator|.
+name|approvalExpire
+argument_list|(
+name|sDateFormat
+operator|.
+name|format
+argument_list|(
+name|iEvent
+operator|.
+name|getExpirationDate
+argument_list|()
+argument_list|)
+argument_list|)
+operator|+
+literal|"</span>"
+else|:
 literal|"<span class='not-approved'>"
 operator|+
 name|MESSAGES

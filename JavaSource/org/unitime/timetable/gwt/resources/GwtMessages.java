@@ -1699,6 +1699,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"expire {0}"
+argument_list|)
+name|String
+name|approvalExpire
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"not approved"
 argument_list|)
 name|String
