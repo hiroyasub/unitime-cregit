@@ -181,7 +181,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10007; Remove"
+literal|"&#10007; R<u>e</u>move"
 argument_list|)
 name|String
 name|opDeleteSelectedMeetings
@@ -190,7 +190,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10008 Remove All"
+literal|"&#10008 R<u>e</u>move All"
 argument_list|)
 name|String
 name|opDeleteNewMeetings
@@ -199,7 +199,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Setup Times ..."
+literal|"Setup<u>T</u>imes ..."
 argument_list|)
 name|String
 name|opChangeOffsets
@@ -208,7 +208,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Modify ..."
+literal|"<u>M</u>odify ..."
 argument_list|)
 name|String
 name|opModifyMeetings
@@ -217,7 +217,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<b><i>+</i></b> Add Meetings ..."
+literal|"<b><i>+</i></b> Add Meeti<u>n</u>gs ..."
 argument_list|)
 name|String
 name|opAddMeetings
@@ -262,7 +262,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10003; Approve ..."
+literal|"&#10003;<u>A</u>pprove ..."
 argument_list|)
 name|String
 name|opApproveSelectedMeetings
@@ -271,7 +271,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10004; Approve All ..."
+literal|"&#10004;<u>A/u>pprove All ..."
 argument_list|)
 name|String
 name|opApproveAllMeetings
@@ -280,7 +280,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10007; Reject ..."
+literal|"&#10007;<u>R</u>eject ..."
 argument_list|)
 name|String
 name|opRejectSelectedMeetings
@@ -289,7 +289,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10008; Reject All ..."
+literal|"&#10008;<u>R</u>eject All ..."
 argument_list|)
 name|String
 name|opRejectAllMeetings
@@ -298,7 +298,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10007; Cancel ..."
+literal|"&#10007;<u>C</u>ancel ..."
 argument_list|)
 name|String
 name|opCancelSelectedMeetings
@@ -307,7 +307,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10008; Cancel All ..."
+literal|"&#10008;<u>C</u>ancel All ..."
 argument_list|)
 name|String
 name|opCancelAllMeetings
@@ -316,7 +316,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<i>?</i> Inquire ..."
+literal|"<i>?</i><u>I</u>nquire ..."
 argument_list|)
 name|String
 name|opInquireSelectedMeetings
@@ -325,7 +325,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<b><i>?</i></b> Inquire ..."
+literal|"<b><i>?</i></b><u>I</u>nquire ..."
 argument_list|)
 name|String
 name|opInquireAllMeetings
