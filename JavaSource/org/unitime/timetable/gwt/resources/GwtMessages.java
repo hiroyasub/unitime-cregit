@@ -271,7 +271,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&#10004;<u>A/u>pprove All ..."
+literal|"&#10004;<u>A</u>pprove All ..."
 argument_list|)
 name|String
 name|opApproveAllMeetings
