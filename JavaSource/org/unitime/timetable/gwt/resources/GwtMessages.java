@@ -8617,6 +8617,33 @@ name|String
 name|noteEventExpired
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Clear filter"
+argument_list|)
+name|String
+name|altClearFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Open filter"
+argument_list|)
+name|String
+name|altOpenFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Close filter"
+argument_list|)
+name|String
+name|altCloseFilter
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
