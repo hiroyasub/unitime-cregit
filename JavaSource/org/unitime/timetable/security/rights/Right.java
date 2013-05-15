@@ -1960,6 +1960,8 @@ name|EventAnyLocation
 block|,
 name|EventEditPast
 block|,
+name|EventSetExpiration
+block|,
 comment|/** Administration: Academic Sessions */
 name|AcademicSessions
 block|,

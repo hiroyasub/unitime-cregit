@@ -4660,6 +4660,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Expiration date is in the past."
+argument_list|)
+name|String
+name|errorExpirationDateInPast
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Success (no row returned)"
 argument_list|)
 name|String
@@ -6479,6 +6488,18 @@ literal|"Event {0} inquiry."
 argument_list|)
 name|String
 name|emailSubjectInquire
+parameter_list|(
+name|String
+name|eventName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event {0} expired."
+argument_list|)
+name|String
+name|emailSubjectExpired
 parameter_list|(
 name|String
 name|eventName
@@ -8574,6 +8595,15 @@ parameter_list|,
 name|int
 name|limit
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event expired, all pending meetings have been cancelled."
+argument_list|)
+name|String
+name|noteEventExpired
+parameter_list|()
 function_decl|;
 block|}
 end_interface

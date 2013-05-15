@@ -958,6 +958,16 @@ argument_list|)
 expr_stmt|;
 name|event
 operator|.
+name|setExpirationDate
+argument_list|(
+name|e
+operator|.
+name|getExpirationDate
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|event
+operator|.
 name|setMaxCapacity
 argument_list|(
 name|e

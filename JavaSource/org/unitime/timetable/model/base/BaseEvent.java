@@ -33,6 +33,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Date
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashSet
 import|;
 end_import
@@ -154,6 +164,10 @@ name|String
 name|iEmail
 decl_stmt|;
 specifier|private
+name|Date
+name|iExpirationDate
+decl_stmt|;
+specifier|private
 name|EventContact
 name|iMainContact
 decl_stmt|;
@@ -216,6 +230,13 @@ name|String
 name|PROP_EMAIL
 init|=
 literal|"email"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXPIRATION_DATE
+init|=
+literal|"expirationDate"
 decl_stmt|;
 specifier|public
 name|BaseEvent
@@ -355,6 +376,28 @@ block|{
 name|iEmail
 operator|=
 name|email
+expr_stmt|;
+block|}
+specifier|public
+name|Date
+name|getExpirationDate
+parameter_list|()
+block|{
+return|return
+name|iExpirationDate
+return|;
+block|}
+specifier|public
+name|void
+name|setExpirationDate
+parameter_list|(
+name|Date
+name|expirationDate
+parameter_list|)
+block|{
+name|iExpirationDate
+operator|=
+name|expirationDate
 expr_stmt|;
 block|}
 specifier|public
@@ -698,6 +741,11 @@ operator|+
 literal|"\n	EventName: "
 operator|+
 name|getEventName
+argument_list|()
+operator|+
+literal|"\n	ExpirationDate: "
+operator|+
+name|getExpirationDate
 argument_list|()
 operator|+
 literal|"\n	MainContact: "

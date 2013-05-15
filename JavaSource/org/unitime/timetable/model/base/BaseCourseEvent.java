@@ -367,6 +367,11 @@ operator|+
 name|getEventName
 argument_list|()
 operator|+
+literal|"\n	ExpirationDate: "
+operator|+
+name|getExpirationDate
+argument_list|()
+operator|+
 literal|"\n	MainContact: "
 operator|+
 name|getMainContact

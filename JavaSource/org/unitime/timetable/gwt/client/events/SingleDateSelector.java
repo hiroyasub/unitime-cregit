@@ -5834,6 +5834,27 @@ name|getText
 argument_list|()
 return|;
 block|}
+specifier|public
+name|Date
+name|today
+parameter_list|()
+block|{
+return|return
+name|iFormat
+operator|.
+name|parse
+argument_list|(
+name|iFormat
+operator|.
+name|format
+argument_list|(
+operator|new
+name|Date
+argument_list|()
+argument_list|)
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 

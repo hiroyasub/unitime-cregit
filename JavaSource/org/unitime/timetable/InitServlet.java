@@ -65,6 +65,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|events
+operator|.
+name|EventExpirationService
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|model
 operator|.
 name|SolverInfo
@@ -351,6 +365,21 @@ name|Debug
 operator|.
 name|info
 argument_list|(
+literal|" - Starting Event Expiration Service ..."
+argument_list|)
+expr_stmt|;
+name|EventExpirationService
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+name|Debug
+operator|.
+name|info
+argument_list|(
 literal|"******* UniTime "
 operator|+
 name|Constants
@@ -427,6 +456,21 @@ expr_stmt|;
 name|super
 operator|.
 name|destroy
+argument_list|()
+expr_stmt|;
+name|Debug
+operator|.
+name|info
+argument_list|(
+literal|" - Stopping Event Expiration Service ..."
+argument_list|)
+expr_stmt|;
+name|EventExpirationService
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|interrupt
 argument_list|()
 expr_stmt|;
 name|Debug
