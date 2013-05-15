@@ -1608,12 +1608,12 @@ argument_list|()
 operator|.
 name|from
 argument_list|(
-literal|"inner join l.roomDepts rd inner join rd.department.timetableManagers g"
+literal|"inner join l.eventDepartment.timetableManagers g"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"m.approvalStatus = 0 and rd.control=true and g.externalUniqueId = :user and m.meetingDate>= :today"
+literal|"m.approvalStatus = 0 and g.externalUniqueId = :user and m.meetingDate>= :today"
 argument_list|)
 operator|.
 name|set
@@ -1671,7 +1671,7 @@ argument_list|,
 literal|"Awaiting My Approval"
 argument_list|)
 decl_stmt|;
-name|awaiting
+name|myAwaiting
 operator|.
 name|setCount
 argument_list|(
@@ -3359,7 +3359,7 @@ name|addFrom
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"Location Xl inner join Xl.roomDepts Xrd inner join Xrd.department.timetableManagers Xg"
+literal|"Location Xl inner join Xl.eventDepartment.timetableManagers Xg"
 argument_list|)
 expr_stmt|;
 name|query
@@ -3368,7 +3368,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"m.approvalStatus = 0 and Xl.session.uniqueId = :sessionId and Xl.permanentId = m.locationPermanentId and Xrd.control=true and Xg.externalUniqueId = :Xuser and m.meetingDate>= :Xtoday"
+literal|"m.approvalStatus = 0 and Xl.session.uniqueId = :sessionId and Xl.permanentId = m.locationPermanentId and Xg.externalUniqueId = :Xuser and m.meetingDate>= :Xtoday"
 argument_list|)
 expr_stmt|;
 name|query
