@@ -7837,8 +7837,6 @@ name|event
 operator|.
 name|hasEnrollment
 argument_list|()
-operator|&&
-name|iShowMainContact
 condition|)
 block|{
 name|row
@@ -7883,8 +7881,6 @@ name|event
 operator|.
 name|hasMaxCapacity
 argument_list|()
-operator|&&
-name|iShowMainContact
 condition|)
 block|{
 name|row
@@ -9419,8 +9415,6 @@ operator|.
 name|ShowEventDetails
 argument_list|)
 operator|&&
-name|iShowMainContact
-operator|&&
 name|EventCookie
 operator|.
 name|getInstance
@@ -9456,8 +9450,6 @@ name|ModeFlag
 operator|.
 name|ShowEventDetails
 argument_list|)
-operator|&&
-name|iShowMainContact
 operator|&&
 name|EventCookie
 operator|.
@@ -10296,12 +10288,6 @@ name|flag
 condition|)
 block|{
 case|case
-name|SHOW_LIMIT
-case|:
-case|case
-name|SHOW_ENROLLMENT
-case|:
-case|case
 name|SHOW_MAIN_CONTACT
 case|:
 return|return
@@ -10317,6 +10303,12 @@ operator|.
 name|ShowEventDetails
 argument_list|)
 return|;
+case|case
+name|SHOW_LIMIT
+case|:
+case|case
+name|SHOW_ENROLLMENT
+case|:
 case|case
 name|SHOW_SPONSOR
 case|:
