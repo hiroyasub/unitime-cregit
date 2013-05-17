@@ -55,6 +55,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} dialog closed."
+argument_list|)
+name|String
+name|dialogClosed
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Selected {0}"
 argument_list|)
 name|String
@@ -125,6 +137,23 @@ annotation|@
 name|PluralCount
 name|int
 name|nbrSuggestion
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are {0, number} suggestions to {1}. Use up and down arrows to navigate."
+argument_list|)
+name|String
+name|showingMultipleSuggestionsNoneSelected
+parameter_list|(
+annotation|@
+name|PluralCount
+name|int
+name|nbrSuggestions
+parameter_list|,
+name|String
+name|query
 parameter_list|)
 function_decl|;
 annotation|@
@@ -1778,6 +1807,15 @@ parameter_list|(
 name|String
 name|date
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"People lookup. Enter name, use arrows to navigate through suggested people, enter to select."
+argument_list|)
+name|String
+name|peopleLookupName
+parameter_list|()
 function_decl|;
 block|}
 end_interface

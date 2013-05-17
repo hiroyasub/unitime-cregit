@@ -4102,6 +4102,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to lookup a person: {0}"
+argument_list|)
+name|String
+name|failedLookup
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -4612,11 +4624,14 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No person matching the query found."
+literal|"No person matching the query {0} was found."
 argument_list|)
 name|String
 name|errorNoPersonMatchingQuery
-parameter_list|()
+parameter_list|(
+name|String
+name|query
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
