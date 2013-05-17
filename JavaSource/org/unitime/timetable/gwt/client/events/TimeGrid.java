@@ -9675,12 +9675,7 @@ argument_list|(
 name|iEvent
 operator|.
 name|getEventNote
-argument_list|()
-operator|.
-name|replace
 argument_list|(
-literal|"\n"
-argument_list|,
 literal|"<br>"
 argument_list|)
 argument_list|,

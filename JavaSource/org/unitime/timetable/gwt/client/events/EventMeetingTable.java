@@ -5584,12 +5584,7 @@ condition|?
 name|event
 operator|.
 name|getEventNote
-argument_list|()
-operator|.
-name|replace
 argument_list|(
-literal|"\n"
-argument_list|,
 literal|"<br>"
 argument_list|)
 else|:
@@ -5932,12 +5927,7 @@ condition|?
 name|event
 operator|.
 name|getEventNote
-argument_list|()
-operator|.
-name|replace
 argument_list|(
-literal|"\n"
-argument_list|,
 literal|"<br>"
 argument_list|)
 else|:
