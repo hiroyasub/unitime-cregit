@@ -9678,6 +9678,13 @@ name|getEventNote
 argument_list|(
 literal|"<br>"
 argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|"\n"
+argument_list|,
+literal|"<br>"
+argument_list|)
 argument_list|,
 literal|true
 argument_list|)
