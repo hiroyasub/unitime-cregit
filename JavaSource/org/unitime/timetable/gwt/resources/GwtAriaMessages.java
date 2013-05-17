@@ -1731,6 +1731,54 @@ name|String
 name|meetings
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Suggestion: {0}"
+argument_list|)
+name|String
+name|singleDateCursor
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected: {0}"
+argument_list|)
+name|String
+name|singleDateSelected
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Calendar opened, user arrows to navigate, enter to select the suggested date. Or type in a particular date. Showing {0}"
+argument_list|)
+name|String
+name|singleDatePopupOpenedNoDateSelected
+parameter_list|(
+name|String
+name|month
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Calendar opened, user arrows to navigate, enter to select the suggested date. Or type in a particular date. Suggestion: {0}"
+argument_list|)
+name|String
+name|singleDatePopupOpenedDateSelected
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

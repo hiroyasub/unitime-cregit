@@ -645,6 +645,15 @@ name|String
 name|dateSelectionDateFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"EEEE MMMM d yyyy"
+argument_list|)
+name|String
+name|singleDateSelectionFormat
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
