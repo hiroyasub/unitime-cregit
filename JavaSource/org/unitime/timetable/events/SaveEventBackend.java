@@ -2501,6 +2501,15 @@ argument_list|)
 throw|;
 if|if
 condition|(
+name|m
+operator|.
+name|getApprovalStatus
+argument_list|()
+operator|==
+name|ApprovalStatus
+operator|.
+name|Approved
+operator|&&
 name|context
 operator|.
 name|hasPermission

@@ -1407,6 +1407,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Enable {0}"
+argument_list|)
+name|String
+name|opCheck
+parameter_list|(
+name|String
+name|column
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Disable {0}"
+argument_list|)
+name|String
+name|opUncheck
+parameter_list|(
+name|String
+name|column
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Every {0} of {1}"
 argument_list|)
 name|String

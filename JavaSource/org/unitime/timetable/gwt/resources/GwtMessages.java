@@ -262,6 +262,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&#9744; {0}"
+argument_list|)
+name|String
+name|opCheck
+parameter_list|(
+name|String
+name|column
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#9746; {0}"
+argument_list|)
+name|String
+name|opUncheck
+parameter_list|(
+name|String
+name|column
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"&#10003;<u>A</u>pprove ..."
 argument_list|)
 name|String
@@ -959,6 +983,15 @@ literal|"Swap Axes"
 argument_list|)
 name|String
 name|opSwapAxes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Approve New Meetings"
+argument_list|)
+name|String
+name|opAutomaticApproval
 parameter_list|()
 function_decl|;
 annotation|@
