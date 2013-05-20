@@ -815,7 +815,19 @@ block|{
 name|myForm
 operator|.
 name|init
-argument_list|()
+argument_list|(
+literal|"y"
+operator|.
+name|equals
+argument_list|(
+name|request
+operator|.
+name|getParameter
+argument_list|(
+literal|"confirm"
+argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 return|return
 name|mapping
@@ -1214,7 +1226,9 @@ expr_stmt|;
 name|myForm
 operator|.
 name|init
-argument_list|()
+argument_list|(
+literal|false
+argument_list|)
 expr_stmt|;
 block|}
 comment|// Reload
@@ -1589,7 +1603,9 @@ expr_stmt|;
 name|myForm
 operator|.
 name|init
-argument_list|()
+argument_list|(
+literal|false
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -1614,7 +1630,9 @@ expr_stmt|;
 name|myForm
 operator|.
 name|init
-argument_list|()
+argument_list|(
+literal|false
+argument_list|)
 expr_stmt|;
 block|}
 if|if
