@@ -5073,6 +5073,16 @@ operator|new
 name|SingleDateSelector
 argument_list|()
 expr_stmt|;
+name|iExpirationDate
+operator|.
+name|setFirstDate
+argument_list|(
+name|iExpirationDate
+operator|.
+name|today
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|iForm
 operator|.
 name|addRow
