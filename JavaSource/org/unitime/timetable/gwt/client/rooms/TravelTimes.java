@@ -4790,6 +4790,8 @@ specifier|public
 specifier|static
 enum|enum
 name|Command
+implements|implements
+name|IsSerializable
 block|{
 name|INIT
 block|,

@@ -3599,7 +3599,15 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"Sort by Course"
+name|MESSAGES
+operator|.
+name|opSortBy
+argument_list|(
+name|MESSAGES
+operator|.
+name|colCourse
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@

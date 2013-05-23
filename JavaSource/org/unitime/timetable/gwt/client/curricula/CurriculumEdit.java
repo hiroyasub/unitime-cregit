@@ -975,7 +975,8 @@ name|EDIT
 condition|)
 block|{
 comment|// back to detail screen
-name|loadCurriculum
+comment|// loadCurriculum(Mode.DETAILS);
+name|reload
 argument_list|(
 name|Mode
 operator|.

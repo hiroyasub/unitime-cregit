@@ -1062,7 +1062,7 @@ name|EXP
 argument_list|(
 name|MESSAGES
 operator|.
-name|fieldRequestedEnrollment
+name|shortRequestedEnrollment
 argument_list|()
 argument_list|)
 block|,
@@ -1070,7 +1070,7 @@ name|ENRL
 argument_list|(
 name|MESSAGES
 operator|.
-name|fieldCurrentEnrollment
+name|shortCurrentEnrollment
 argument_list|()
 argument_list|)
 block|,
@@ -1078,7 +1078,7 @@ name|LAST
 argument_list|(
 name|MESSAGES
 operator|.
-name|fieldLastLikeEnrollment
+name|shortLastLikeEnrollment
 argument_list|()
 argument_list|)
 block|,
@@ -1086,7 +1086,7 @@ name|PROJ
 argument_list|(
 name|MESSAGES
 operator|.
-name|fieldProjectedByRule
+name|shortProjectedByRule
 argument_list|()
 argument_list|)
 block|,
