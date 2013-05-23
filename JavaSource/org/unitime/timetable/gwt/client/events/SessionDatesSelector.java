@@ -6970,6 +6970,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|first
+operator|!=
+literal|null
+operator|&&
 name|dateDay
 operator|<
 name|first
@@ -7005,7 +7009,12 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-else|else
+if|else if
+condition|(
+name|last
+operator|!=
+literal|null
+condition|)
 block|{
 name|iMonth
 operator|=
