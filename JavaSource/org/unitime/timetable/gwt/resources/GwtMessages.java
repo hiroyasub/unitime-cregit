@@ -6169,6 +6169,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"New Group"
+argument_list|)
+name|String
+name|dialogNewGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Group"
+argument_list|)
+name|String
+name|dialogEditGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Selected"
 argument_list|)
 name|String

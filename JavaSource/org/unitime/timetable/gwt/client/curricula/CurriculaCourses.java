@@ -13343,7 +13343,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Name:"
+name|MESSAGES
+operator|.
+name|propName
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iGrName
@@ -13371,7 +13374,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|"Type:"
+name|MESSAGES
+operator|.
+name|propType
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iGrType
@@ -13694,7 +13700,10 @@ parameter_list|)
 block|{
 name|setText
 argument_list|(
-literal|"Edit group"
+name|MESSAGES
+operator|.
+name|dialogEditGroup
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iGrOldName
@@ -13836,7 +13845,10 @@ parameter_list|()
 block|{
 name|setText
 argument_list|(
-literal|"New group"
+name|MESSAGES
+operator|.
+name|dialogNewGroup
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iGrOldName

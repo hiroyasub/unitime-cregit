@@ -4350,7 +4350,10 @@ init|=
 operator|new
 name|HTML
 argument_list|(
-literal|"Total"
+name|MESSAGES
+operator|.
+name|colTotal
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -4421,7 +4424,10 @@ name|row
 argument_list|,
 literal|0
 argument_list|,
-literal|"Total"
+name|MESSAGES
+operator|.
+name|colTotal
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable
