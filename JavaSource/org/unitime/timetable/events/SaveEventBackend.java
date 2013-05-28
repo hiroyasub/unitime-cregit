@@ -4522,6 +4522,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|tx
+operator|.
+name|commit
+argument_list|()
+expr_stmt|;
 operator|new
 name|EventEmail
 argument_list|(
@@ -4534,11 +4539,6 @@ name|send
 argument_list|(
 name|context
 argument_list|)
-expr_stmt|;
-name|tx
-operator|.
-name|commit
-argument_list|()
 expr_stmt|;
 return|return
 name|response
