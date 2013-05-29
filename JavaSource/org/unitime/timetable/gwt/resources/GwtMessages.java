@@ -5770,7 +5770,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Reservation"
+literal|"Reservations"
 argument_list|)
 name|String
 name|pageReservations
