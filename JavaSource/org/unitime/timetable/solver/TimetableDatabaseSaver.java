@@ -2667,6 +2667,16 @@ argument_list|(
 name|solverGroup
 argument_list|)
 expr_stmt|;
+name|solverGroup
+operator|.
+name|getSolutions
+argument_list|()
+operator|.
+name|add
+argument_list|(
+name|solution
+argument_list|)
+expr_stmt|;
 name|solution
 operator|.
 name|setValid
