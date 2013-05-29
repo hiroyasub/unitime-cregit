@@ -840,7 +840,7 @@ argument_list|()
 operator|.
 name|split
 argument_list|(
-literal|"\n"
+literal|"[\n,]"
 argument_list|)
 control|)
 block|{
@@ -2406,7 +2406,7 @@ argument_list|()
 operator|.
 name|split
 argument_list|(
-literal|"\n"
+literal|"[\n,]"
 argument_list|)
 control|)
 block|{
