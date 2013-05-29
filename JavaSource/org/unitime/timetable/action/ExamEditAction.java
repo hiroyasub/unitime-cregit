@@ -1949,6 +1949,7 @@ literal|"button.nextExam"
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|response
 operator|.
 name|sendRedirect
@@ -1966,6 +1967,10 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 if|if
 condition|(
 name|op
@@ -1980,6 +1985,7 @@ literal|"button.previousExam"
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|response
 operator|.
 name|sendRedirect
@@ -1997,6 +2003,10 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 comment|//response.sendRedirect(response.encodeURL("examDetail.do?examId="+examId));
 if|if
 condition|(

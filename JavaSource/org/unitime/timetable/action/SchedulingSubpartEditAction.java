@@ -1474,6 +1474,7 @@ name|actionNextSubpart
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|response
 operator|.
 name|sendRedirect
@@ -1491,6 +1492,10 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 if|if
 condition|(
 name|op
@@ -1503,6 +1508,7 @@ name|actionPreviousSubpart
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|response
 operator|.
 name|sendRedirect
@@ -1520,6 +1526,10 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 name|ActionRedirect
 name|redirect
 init|=

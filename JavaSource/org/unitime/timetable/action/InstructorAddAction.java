@@ -380,6 +380,9 @@ literal|"instructorList.do"
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 comment|//get department
 if|if
@@ -528,6 +531,9 @@ literal|"instructorList.do"
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 else|else
 block|{

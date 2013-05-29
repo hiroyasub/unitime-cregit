@@ -838,6 +838,9 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 comment|// Add Distribution Preference - Redirect to dist prefs screen
 if|if
