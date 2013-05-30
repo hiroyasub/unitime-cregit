@@ -182,6 +182,14 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
+name|int
+name|sEventNoteTypeEmail
+init|=
+literal|8
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
 name|String
 index|[]
 name|sEventNoteTypeBgColor
@@ -203,7 +211,9 @@ block|,
 literal|"transparent"
 block|,
 literal|"#FFFFD7"
-block|,   	}
+block|,
+literal|"transparent"
+block|}
 decl_stmt|;
 specifier|public
 specifier|static
@@ -231,6 +241,8 @@ block|,
 literal|"Inquire"
 block|,
 literal|"Cancel"
+block|,
+literal|"Email"
 block|}
 decl_stmt|;
 specifier|public

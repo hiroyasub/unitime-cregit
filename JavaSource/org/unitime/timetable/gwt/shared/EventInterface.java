@@ -7916,6 +7916,11 @@ name|Cancel
 argument_list|(
 literal|"Cancel"
 argument_list|)
+block|,
+name|Email
+argument_list|(
+literal|"Email"
+argument_list|)
 block|;
 specifier|private
 name|String
@@ -14629,6 +14634,8 @@ block|,
 name|DELETE
 block|,
 name|CANCEL
+block|,
+name|EMAIL
 block|}
 specifier|private
 name|EventInterface
