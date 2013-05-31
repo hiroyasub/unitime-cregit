@@ -7060,6 +7060,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>R</u>emove All"
+argument_list|)
+name|String
+name|buttonRemoveAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Department..."
 argument_list|)
 name|String
