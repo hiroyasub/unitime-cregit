@@ -10359,7 +10359,7 @@ literal|"END:VFREEBUSY"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+specifier|public
 specifier|static
 interface|interface
 name|Params
