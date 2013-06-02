@@ -13197,6 +13197,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|insructionalOfferings
+operator|==
+literal|null
+condition|)
+return|return;
+if|if
+condition|(
 name|classComparator
 operator|!=
 literal|null
