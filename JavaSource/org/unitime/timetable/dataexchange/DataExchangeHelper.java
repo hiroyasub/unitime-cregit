@@ -618,6 +618,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sImportRegister
+operator|.
+name|put
+argument_list|(
+literal|"timetable"
+argument_list|,
+name|CourseTimetableImport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|DataExchangeHelper
