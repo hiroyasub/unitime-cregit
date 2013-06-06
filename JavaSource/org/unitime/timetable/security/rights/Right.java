@@ -2311,6 +2311,13 @@ argument_list|)
 block|,
 name|Users
 block|,
+name|ChangePassword
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingConsentTypes
 block|,
 name|OfferingConsentTypeEdit

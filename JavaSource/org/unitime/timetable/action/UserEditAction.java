@@ -422,6 +422,27 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+literal|"Request Password Change"
+operator|.
+name|equals
+argument_list|(
+name|op
+argument_list|)
+condition|)
+block|{
+name|response
+operator|.
+name|sendRedirect
+argument_list|(
+literal|"gwt.jsp?page=password&reset=1"
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 comment|// Add / Update
 if|if
 condition|(

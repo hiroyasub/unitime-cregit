@@ -174,6 +174,16 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|request
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|removeAttribute
+argument_list|(
+literal|"SUGGEST_PASSWORD_RESET"
+argument_list|)
+expr_stmt|;
 name|super
 operator|.
 name|onAuthenticationSuccess
