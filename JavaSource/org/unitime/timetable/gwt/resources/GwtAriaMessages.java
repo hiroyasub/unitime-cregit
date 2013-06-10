@@ -1508,6 +1508,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Selected work days for {0} starting today"
+argument_list|)
+name|String
+name|datesSelectedWorkDaysFuture
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Selected all but holidays for {0}"
 argument_list|)
 name|String
