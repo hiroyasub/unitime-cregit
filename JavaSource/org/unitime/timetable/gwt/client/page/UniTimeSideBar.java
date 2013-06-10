@@ -3065,6 +3065,24 @@ name|url
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+literal|"eval"
+operator|.
+name|equals
+argument_list|(
+name|target
+argument_list|)
+condition|)
+block|{
+name|ToolBox
+operator|.
+name|eval
+argument_list|(
+name|url
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 block|{
 name|ToolBox

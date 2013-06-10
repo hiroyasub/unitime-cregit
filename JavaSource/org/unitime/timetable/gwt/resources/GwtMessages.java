@@ -8941,6 +8941,36 @@ name|String
 name|waitPasswordReset
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Clearing hiberante cache..."
+argument_list|)
+name|String
+name|waitClearHiberanteCache
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Hibernate cache cleared."
+argument_list|)
+name|String
+name|hibernateCacheCleared
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to clear hibernate cache: {0}"
+argument_list|)
+name|String
+name|failedToClearHiberanteCache
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

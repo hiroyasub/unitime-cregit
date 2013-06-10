@@ -2416,6 +2416,8 @@ name|HibernateStatistics
 block|,
 name|TestHQL
 block|,
+name|ClearHibernateCache
+block|,
 comment|/** Preferences */
 name|Chameleon
 argument_list|(

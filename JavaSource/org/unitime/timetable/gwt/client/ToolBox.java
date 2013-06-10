@@ -501,6 +501,17 @@ parameter_list|)
 comment|/*-{ 		$wnd.location = url; 	}-*/
 function_decl|;
 specifier|public
+specifier|native
+specifier|static
+name|void
+name|eval
+parameter_list|(
+name|String
+name|script
+parameter_list|)
+comment|/*-{ 		eval(script); 	}-*/
+function_decl|;
+specifier|public
 specifier|static
 name|void
 name|checkAccess
