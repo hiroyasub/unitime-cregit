@@ -1922,10 +1922,7 @@ name|frm
 operator|.
 name|setCareerAcct
 argument_list|(
-name|MSG
-operator|.
-name|valueInstructorAccountNameNotFound
-argument_list|()
+literal|""
 argument_list|)
 expr_stmt|;
 block|}
