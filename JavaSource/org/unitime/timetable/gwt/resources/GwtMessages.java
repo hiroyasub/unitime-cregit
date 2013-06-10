@@ -2464,6 +2464,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>C</u>lear"
+argument_list|)
+name|String
+name|buttonClear
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>L</u>ookup"
 argument_list|)
 name|String
