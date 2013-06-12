@@ -6344,12 +6344,12 @@ argument_list|()
 operator|&&
 name|meeting
 operator|.
-name|getDayOfWeek
+name|getGridIndex
 argument_list|()
 operator|==
 name|m
 operator|.
-name|getDayOfWeek
+name|getGridIndex
 argument_list|()
 operator|&&
 name|meeting
@@ -6859,7 +6859,7 @@ name|meeting
 argument_list|,
 name|meeting
 operator|.
-name|getDayOfWeek
+name|getGridIndex
 argument_list|()
 argument_list|,
 name|meeting

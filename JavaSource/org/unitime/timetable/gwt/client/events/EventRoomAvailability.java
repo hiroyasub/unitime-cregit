@@ -7110,7 +7110,7 @@ condition|)
 block|{
 name|meeting
 operator|.
-name|setDayOfWeek
+name|setGridIndex
 argument_list|(
 name|idx
 argument_list|)
