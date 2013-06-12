@@ -344,15 +344,6 @@ literal|1
 operator|)
 operator|)
 decl_stmt|;
-name|sLog
-operator|.
-name|debug
-argument_list|(
-literal|"n="
-operator|+
-name|n
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
