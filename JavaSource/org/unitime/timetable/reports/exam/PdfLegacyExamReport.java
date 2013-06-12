@@ -9629,10 +9629,6 @@ argument_list|(
 literal|"Loading subjects..."
 argument_list|)
 expr_stmt|;
-name|perSubject
-operator|=
-literal|true
-expr_stmt|;
 name|subjects
 operator|=
 operator|new
@@ -10067,7 +10063,7 @@ name|ExamType
 operator|.
 name|class
 argument_list|,
-name|SubjectArea
+name|Collection
 operator|.
 name|class
 argument_list|,
@@ -10563,7 +10559,7 @@ name|Session
 operator|.
 name|class
 argument_list|,
-name|int
+name|ExamType
 operator|.
 name|class
 argument_list|,
@@ -10586,7 +10582,7 @@ name|session
 argument_list|,
 name|examType
 argument_list|,
-literal|null
+name|subjects
 argument_list|,
 name|exams
 argument_list|)
