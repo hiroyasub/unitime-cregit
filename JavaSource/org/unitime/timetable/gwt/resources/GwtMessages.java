@@ -997,6 +997,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Condense Repetitions"
+argument_list|)
+name|String
+name|opHideRepeatingInformation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Press Ctrl + C to copy the selected URL, and Escape to hide this dialog."
 argument_list|)
 name|String
@@ -8970,6 +8979,15 @@ parameter_list|(
 name|String
 name|reason
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&nbsp;&nbsp;&nbsp;\u2307"
+argument_list|)
+name|String
+name|repeatingSymbol
+parameter_list|()
 function_decl|;
 block|}
 end_interface
