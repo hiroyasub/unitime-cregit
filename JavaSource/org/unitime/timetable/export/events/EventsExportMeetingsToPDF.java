@@ -272,6 +272,9 @@ name|eventCookieFlags
 parameter_list|,
 name|EventMeetingSortBy
 name|sort
+parameter_list|,
+name|boolean
+name|asc
 parameter_list|)
 throws|throws
 name|IOException
@@ -323,6 +326,8 @@ argument_list|(
 name|events
 argument_list|,
 name|sort
+argument_list|,
+name|asc
 argument_list|)
 argument_list|)
 expr_stmt|;
