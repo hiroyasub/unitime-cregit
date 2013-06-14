@@ -3091,6 +3091,8 @@ literal|" left outer join l.roomGroups g "
 operator|+
 literal|" left outer join l.features f "
 operator|+
+literal|" left outer join l.examTypes x "
+operator|+
 literal|" ,RoomTypeOption o"
 operator|+
 literal|" where"
@@ -3155,6 +3157,8 @@ operator|+
 literal|" left outer join l.roomGroups g "
 operator|+
 literal|" left outer join l.features f "
+operator|+
+literal|" left outer join l.examTypes x "
 operator|+
 literal|" inner join rd.department.timetableManagers m"
 operator|+
@@ -3228,6 +3232,8 @@ operator|+
 literal|" left outer join l.roomGroups g "
 operator|+
 literal|" left outer join l.features f "
+operator|+
+literal|" left outer join l.examTypes x "
 operator|+
 literal|" left outer join rd.department.timetableManagers m"
 operator|+
