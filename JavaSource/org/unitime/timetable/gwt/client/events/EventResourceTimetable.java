@@ -5929,6 +5929,8 @@ name|void
 name|edit
 parameter_list|()
 block|{
+name|super
+operator|.
 name|hide
 argument_list|()
 expr_stmt|;
