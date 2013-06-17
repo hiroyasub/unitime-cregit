@@ -2772,13 +2772,6 @@ name|ClickEvent
 name|event
 parameter_list|)
 block|{
-name|UniTimeNotifications
-operator|.
-name|info
-argument_list|(
-literal|"Clear"
-argument_list|)
-expr_stmt|;
 comment|// Event filter
 name|iEvents
 operator|.
