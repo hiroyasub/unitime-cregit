@@ -199,6 +199,24 @@ name|client
 operator|.
 name|widgets
 operator|.
+name|ServerDateTimeFormat
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|client
+operator|.
+name|widgets
+operator|.
 name|UniTimeDialogBox
 import|;
 end_import
@@ -804,7 +822,7 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|DateTimeFormat
-name|sDateFormat
+name|sDateFormatApproval
 init|=
 name|DateTimeFormat
 operator|.
@@ -819,9 +837,24 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|DateTimeFormat
+name|sDateFormatExpiration
+init|=
+name|ServerDateTimeFormat
+operator|.
+name|getFormat
+argument_list|(
+name|CONSTANTS
+operator|.
+name|eventDateFormat
+argument_list|()
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|static
+name|DateTimeFormat
 name|sDateFormatShort
 init|=
-name|DateTimeFormat
+name|ServerDateTimeFormat
 operator|.
 name|getFormat
 argument_list|(
@@ -836,7 +869,7 @@ specifier|static
 name|DateTimeFormat
 name|sDateFormatLong
 init|=
-name|DateTimeFormat
+name|ServerDateTimeFormat
 operator|.
 name|getFormat
 argument_list|(
@@ -851,7 +884,7 @@ specifier|static
 name|DateTimeFormat
 name|sDateFormatMeeting
 init|=
-name|DateTimeFormat
+name|ServerDateTimeFormat
 operator|.
 name|getFormat
 argument_list|(
@@ -866,7 +899,7 @@ specifier|static
 name|DateTimeFormat
 name|sDateFormatAria
 init|=
-name|DateTimeFormat
+name|ServerDateTimeFormat
 operator|.
 name|getFormat
 argument_list|(
@@ -5169,7 +5202,7 @@ name|ApprovalStatus
 operator|.
 name|Approved
 condition|?
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -5264,7 +5297,7 @@ argument_list|()
 condition|?
 literal|"<span class='past-meeting'>"
 operator|+
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -5276,7 +5309,7 @@ argument_list|)
 operator|+
 literal|"</span>"
 else|:
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -5377,7 +5410,7 @@ name|MESSAGES
 operator|.
 name|approvalExpire
 argument_list|(
-name|sDateFormat
+name|sDateFormatExpiration
 operator|.
 name|format
 argument_list|(
@@ -9132,7 +9165,7 @@ name|ApprovalStatus
 operator|.
 name|Approved
 condition|?
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -9227,7 +9260,7 @@ argument_list|()
 condition|?
 literal|"<span class='past-meeting'>"
 operator|+
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -9239,7 +9272,7 @@ argument_list|)
 operator|+
 literal|"</span>"
 else|:
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -9340,7 +9373,7 @@ name|MESSAGES
 operator|.
 name|approvalExpire
 argument_list|(
-name|sDateFormat
+name|sDateFormatExpiration
 operator|.
 name|format
 argument_list|(
@@ -10028,7 +10061,7 @@ name|past
 condition|?
 literal|"<span class='past-meeting'>"
 operator|+
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -10040,7 +10073,7 @@ argument_list|)
 operator|+
 literal|"</span>"
 else|:
-name|sDateFormat
+name|sDateFormatApproval
 operator|.
 name|format
 argument_list|(
@@ -10078,7 +10111,7 @@ name|MESSAGES
 operator|.
 name|approvalExpire
 argument_list|(
-name|sDateFormat
+name|sDateFormatExpiration
 operator|.
 name|format
 argument_list|(

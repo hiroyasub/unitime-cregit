@@ -7933,7 +7933,7 @@ name|setExpirationDate
 argument_list|(
 name|iExpirationDate
 operator|.
-name|getValue
+name|getValueInServerTimeZone
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -9577,7 +9577,7 @@ argument_list|)
 expr_stmt|;
 name|iExpirationDate
 operator|.
-name|setValue
+name|setValueInServerTimeZone
 argument_list|(
 name|iEvent
 operator|.
