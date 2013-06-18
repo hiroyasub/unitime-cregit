@@ -2141,7 +2141,9 @@ name|event
 parameter_list|)
 block|{
 name|typeChanged
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -4322,7 +4324,9 @@ name|areaChanged
 argument_list|()
 expr_stmt|;
 name|typeChanged
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -4614,7 +4618,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|typeChanged
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 name|populate
 argument_list|()
@@ -5118,7 +5124,10 @@ block|}
 specifier|private
 name|void
 name|typeChanged
-parameter_list|()
+parameter_list|(
+name|boolean
+name|setExpiration
+parameter_list|)
 block|{
 name|String
 name|val
@@ -5452,6 +5461,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|setExpiration
+operator|&&
 name|iExpirations
 operator|!=
 literal|null
@@ -5462,7 +5473,7 @@ operator|.
 name|getWidget
 argument_list|()
 operator|.
-name|setValue
+name|setValueInServerTimeZone
 argument_list|(
 name|iExpirations
 operator|.
@@ -6038,7 +6049,7 @@ operator|.
 name|getWidget
 argument_list|()
 operator|.
-name|setValue
+name|setValueInServerTimeZone
 argument_list|(
 name|iReservation
 operator|.
@@ -6546,7 +6557,9 @@ expr_stmt|;
 block|}
 block|}
 name|typeChanged
-argument_list|()
+argument_list|(
+literal|false
+argument_list|)
 expr_stmt|;
 name|iType
 operator|.
@@ -7595,7 +7608,7 @@ operator|.
 name|getWidget
 argument_list|()
 operator|.
-name|getValue
+name|getValueInServerTimeZone
 argument_list|()
 argument_list|)
 expr_stmt|;
