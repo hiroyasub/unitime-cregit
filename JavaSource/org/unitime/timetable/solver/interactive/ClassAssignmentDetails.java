@@ -6299,7 +6299,24 @@ name|toHtml
 parameter_list|()
 block|{
 return|return
-name|iName
+literal|"<a href='instructorDetail.do?instructorId="
+operator|+
+name|getId
+argument_list|()
+operator|+
+literal|"' target='_blank' class='noFancyLinks' "
+operator|+
+literal|"title='Open Instructor Detail for "
+operator|+
+name|getName
+argument_list|()
+operator|+
+literal|" in a new window.'>"
+operator|+
+name|getName
+argument_list|()
+operator|+
+literal|"</a>"
 return|;
 block|}
 block|}

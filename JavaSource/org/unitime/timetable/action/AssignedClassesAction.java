@@ -2438,7 +2438,7 @@ name|rooms
 block|,
 name|ca
 operator|.
-name|getInstructorHtml
+name|getInstructorName
 argument_list|()
 block|,
 name|dispNumberPdf
@@ -2715,7 +2715,7 @@ name|rooms
 block|,
 name|ca
 operator|.
-name|getInstructorHtml
+name|getInstructorName
 argument_list|()
 block|,
 name|dispNumberPdf
@@ -3538,7 +3538,7 @@ name|rooms
 block|,
 name|ca
 operator|.
-name|getInstructorHtml
+name|getInstructorName
 argument_list|()
 block|,
 name|ClassAssignmentDetails
@@ -3649,7 +3649,7 @@ name|rooms
 block|,
 name|ca
 operator|.
-name|getInstructorHtml
+name|getInstructorName
 argument_list|()
 block|,
 name|ClassAssignmentDetails

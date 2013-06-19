@@ -2531,13 +2531,33 @@ name|setAttribute
 argument_list|(
 literal|"Suggestions.assignment"
 argument_list|,
+literal|"<a href='classDetail.do?cid="
+operator|+
 name|ca
 operator|.
 name|getClazz
 argument_list|()
 operator|.
-name|getName
+name|getClassId
 argument_list|()
+operator|+
+literal|"' target='_blank' class='l8' "
+operator|+
+literal|"title='Open Class Detail for "
+operator|+
+name|ca
+operator|.
+name|getClassName
+argument_list|()
+operator|+
+literal|" in a new window.'>"
+operator|+
+name|ca
+operator|.
+name|getClassName
+argument_list|()
+operator|+
+literal|"</a>"
 argument_list|)
 expr_stmt|;
 if|if
