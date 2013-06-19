@@ -1345,6 +1345,15 @@ name|rooms
 init|=
 literal|""
 decl_stmt|;
+if|if
+condition|(
+name|exam
+operator|.
+name|getRooms
+argument_list|()
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|ExamRoomInfo
