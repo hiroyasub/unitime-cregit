@@ -1866,7 +1866,9 @@ operator|+=
 name|epx
 operator|.
 name|toString
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
