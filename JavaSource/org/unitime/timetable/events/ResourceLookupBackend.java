@@ -81,6 +81,24 @@ name|command
 operator|.
 name|client
 operator|.
+name|GwtRpcException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|command
+operator|.
+name|client
+operator|.
 name|GwtRpcResponseList
 import|;
 end_import
@@ -100,22 +118,6 @@ operator|.
 name|server
 operator|.
 name|GwtRpcImplements
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|shared
-operator|.
-name|EventException
 import|;
 end_import
 
@@ -582,8 +584,6 @@ parameter_list|,
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|EventException
 block|{
 try|try
 block|{
@@ -1068,7 +1068,7 @@ block|}
 block|}
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Unable to find a "
 operator|+
@@ -1318,7 +1318,7 @@ return|;
 block|}
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Unable to find a "
 operator|+
@@ -1597,7 +1597,7 @@ return|;
 block|}
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Unable to find a "
 operator|+
@@ -1737,7 +1737,7 @@ return|;
 block|}
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Unable to find a "
 operator|+
@@ -2106,7 +2106,7 @@ return|;
 block|}
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"No events found in "
 operator|+
@@ -2121,7 +2121,7 @@ throw|;
 default|default:
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Resource type "
 operator|+
@@ -2146,7 +2146,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|EventException
+name|GwtRpcException
 name|e
 parameter_list|)
 block|{
@@ -2162,7 +2162,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Unable to find a "
 operator|+
@@ -2181,6 +2181,8 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}
@@ -2204,8 +2206,6 @@ parameter_list|,
 name|int
 name|limit
 parameter_list|)
-throws|throws
-name|EventException
 block|{
 try|try
 block|{
@@ -4319,7 +4319,7 @@ break|break;
 default|default:
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Resource type "
 operator|+
@@ -4341,7 +4341,7 @@ argument_list|()
 condition|)
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"No "
 operator|+
@@ -4372,7 +4372,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|EventException
+name|GwtRpcException
 name|e
 parameter_list|)
 block|{
@@ -4388,7 +4388,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Failed to find resources: "
 operator|+
@@ -4396,6 +4396,8 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}

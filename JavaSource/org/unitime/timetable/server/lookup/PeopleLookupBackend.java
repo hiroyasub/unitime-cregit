@@ -235,6 +235,24 @@ name|command
 operator|.
 name|client
 operator|.
+name|GwtRpcException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|command
+operator|.
+name|client
+operator|.
 name|GwtRpcResponseList
 import|;
 end_import
@@ -272,22 +290,6 @@ operator|.
 name|server
 operator|.
 name|GwtRpcImplements
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|shared
-operator|.
-name|LookupException
 import|;
 end_import
 
@@ -723,7 +725,7 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|LookupException
+name|GwtRpcException
 argument_list|(
 literal|"not authenticated"
 argument_list|)
@@ -739,7 +741,7 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|LookupException
+name|GwtRpcException
 argument_list|(
 literal|"insufficient rights"
 argument_list|)
@@ -760,7 +762,7 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|LookupException
+name|GwtRpcException
 argument_list|(
 literal|"academic session not selected"
 argument_list|)
@@ -1309,22 +1311,20 @@ return|;
 block|}
 catch|catch
 parameter_list|(
+name|GwtRpcException
+name|e
+parameter_list|)
+block|{
+throw|throw
+name|e
+throw|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|e
-operator|instanceof
-name|LookupException
-condition|)
-throw|throw
-operator|(
-name|LookupException
-operator|)
-name|e
-throw|;
 name|sLog
 operator|.
 name|error
@@ -1341,7 +1341,7 @@ argument_list|)
 expr_stmt|;
 throw|throw
 operator|new
-name|LookupException
+name|GwtRpcException
 argument_list|(
 literal|"Lookup failed: "
 operator|+

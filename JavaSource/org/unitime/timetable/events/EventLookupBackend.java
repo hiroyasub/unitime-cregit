@@ -151,6 +151,24 @@ name|command
 operator|.
 name|client
 operator|.
+name|GwtRpcException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|command
+operator|.
+name|client
+operator|.
 name|GwtRpcResponseList
 import|;
 end_import
@@ -170,22 +188,6 @@ operator|.
 name|server
 operator|.
 name|GwtRpcImplements
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|shared
-operator|.
-name|EventException
 import|;
 end_import
 
@@ -1300,8 +1302,6 @@ parameter_list|,
 name|EventContext
 name|context
 parameter_list|)
-throws|throws
-name|EventException
 block|{
 try|try
 block|{
@@ -6190,7 +6190,7 @@ break|break;
 default|default:
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Resource type "
 operator|+
@@ -14225,7 +14225,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|EventException
+name|GwtRpcException
 name|e
 parameter_list|)
 block|{
@@ -14272,7 +14272,7 @@ argument_list|)
 expr_stmt|;
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"Unable to find events for "
 operator|+
@@ -14297,6 +14297,8 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}

@@ -1186,7 +1186,7 @@ return|;
 default|default :
 throw|throw
 operator|new
-name|RuntimeException
+name|GwtRpcException
 argument_list|(
 literal|"Unsupported related object type "
 operator|+

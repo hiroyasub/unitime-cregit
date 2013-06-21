@@ -123,9 +123,9 @@ name|gwt
 operator|.
 name|command
 operator|.
-name|server
+name|client
 operator|.
-name|GwtRpcImplements
+name|GwtRpcException
 import|;
 end_import
 
@@ -139,9 +139,11 @@ name|timetable
 operator|.
 name|gwt
 operator|.
-name|shared
+name|command
 operator|.
-name|EventException
+name|server
+operator|.
+name|GwtRpcImplements
 import|;
 end_import
 
@@ -787,7 +789,7 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|EventException
+name|GwtRpcException
 argument_list|(
 literal|"No event with id "
 operator|+
@@ -852,7 +854,7 @@ name|EventContext
 name|context
 parameter_list|)
 throws|throws
-name|EventException
+name|GwtRpcException
 block|{
 name|org
 operator|.
