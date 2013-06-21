@@ -5084,6 +5084,12 @@ condition|(
 name|message
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|message
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 name|MeetingConflictInterface
