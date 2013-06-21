@@ -8572,11 +8572,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|tag
+literal|"a"
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-literal|"a"
+name|tag
 argument_list|)
 condition|)
 block|{
@@ -8588,11 +8588,11 @@ break|break;
 block|}
 if|else if
 condition|(
-name|tag
+literal|"div"
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-literal|"div"
+name|tag
 argument_list|)
 condition|)
 block|{
