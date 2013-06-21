@@ -8989,6 +8989,21 @@ name|String
 name|repeatingSymbol
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Bad additional email address {0}: {1}."
+argument_list|)
+name|String
+name|badEmailAddress
+parameter_list|(
+name|String
+name|address
+parameter_list|,
+name|String
+name|reason
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
