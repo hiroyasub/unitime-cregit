@@ -4197,7 +4197,7 @@ name|h
 operator|.
 name|info
 argument_list|(
-literal|"Exception failed: "
+literal|"Execution failed: "
 operator|+
 name|e
 operator|.
@@ -4212,7 +4212,7 @@ name|h
 operator|.
 name|warn
 argument_list|(
-literal|"Exception failed: "
+literal|"Execution failed: "
 operator|+
 name|e
 operator|.
