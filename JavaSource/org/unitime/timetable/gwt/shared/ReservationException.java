@@ -19,6 +19,24 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|command
+operator|.
+name|client
+operator|.
+name|GwtRpcException
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -44,7 +62,7 @@ specifier|public
 class|class
 name|ReservationException
 extends|extends
-name|RuntimeException
+name|GwtRpcException
 implements|implements
 name|IsSerializable
 block|{
