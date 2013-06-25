@@ -2081,20 +2081,6 @@ argument_list|(
 literal|"Saving solution ..."
 argument_list|)
 expr_stmt|;
-name|SolverGroupDAO
-name|dao
-init|=
-operator|new
-name|SolverGroupDAO
-argument_list|()
-decl_stmt|;
-name|hibSession
-operator|=
-name|dao
-operator|.
-name|getSession
-argument_list|()
-expr_stmt|;
 name|hibSession
 operator|.
 name|setFlushMode
@@ -2155,7 +2141,10 @@ block|{
 name|SolverGroup
 name|solverGroup
 init|=
-name|dao
+name|SolverGroupDAO
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|get
 argument_list|(
@@ -2496,11 +2485,10 @@ block|}
 name|Session
 name|session
 init|=
-operator|(
-operator|new
 name|SessionDAO
+operator|.
+name|getInstance
 argument_list|()
-operator|)
 operator|.
 name|get
 argument_list|(

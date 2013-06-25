@@ -5519,11 +5519,6 @@ operator|.
 name|flush
 argument_list|()
 expr_stmt|;
-name|hibSession
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
 block|}
 specifier|public
 name|void
