@@ -5923,7 +5923,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Examination Timetable"
+literal|"Exam Timetable"
 argument_list|)
 name|String
 name|pageExaminations
