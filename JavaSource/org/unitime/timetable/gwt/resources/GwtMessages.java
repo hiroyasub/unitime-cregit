@@ -5914,7 +5914,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Classes"
+literal|"Class Timetable"
 argument_list|)
 name|String
 name|pageClasses
@@ -5923,7 +5923,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Examinations"
+literal|"Examination Timetable"
 argument_list|)
 name|String
 name|pageExaminations
