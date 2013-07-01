@@ -340,6 +340,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&#10007;<u>C</u>ancel"
+argument_list|)
+name|String
+name|opCancelSelectedMeetingsNoPopup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&#10008;<u>C</u>ancel All"
+argument_list|)
+name|String
+name|opCancelAllMeetingsNoPopup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<i>?</i><u>I</u>nquire ..."
 argument_list|)
 name|String
@@ -8357,6 +8375,24 @@ literal|"Are you REALLY sure you want to recreate all curricula?"
 argument_list|)
 name|String
 name|confirmDeleteAllCurriculaSecondWarning
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This event including ALL its meetings will be deleted. Are you sure you want to do this?\n\nTo delete just a particular meeting, select the meeting and click on the Delete option under the More button. Do not forget to click the Update Event afterwards."
+argument_list|)
+name|String
+name|confirmDeleteEvent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ALL pending or approved meetings of this event will be cancelled. Are you sure you want to do this?\n\nTo cancel just a particular meeting, select the meeting and click on the Cancel option under the More button. Do not forget to click the Update Event afterwards."
+argument_list|)
+name|String
+name|confirmCancelEvent
 parameter_list|()
 function_decl|;
 annotation|@
