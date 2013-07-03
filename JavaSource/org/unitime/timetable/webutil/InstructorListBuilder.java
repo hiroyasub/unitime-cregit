@@ -531,7 +531,7 @@ literal|"left"
 block|,
 literal|"left"
 block|,
-literal|"right"
+literal|"left"
 block|,
 literal|"left"
 block|,

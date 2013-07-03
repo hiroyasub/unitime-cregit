@@ -769,7 +769,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Notes:"
+literal|"Note:"
 argument_list|)
 name|String
 name|propertyNotes
