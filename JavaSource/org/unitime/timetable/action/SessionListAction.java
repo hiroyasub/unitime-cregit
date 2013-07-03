@@ -495,7 +495,13 @@ name|defaultSession
 argument_list|(
 name|sessions
 argument_list|,
-literal|null
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+operator|.
+name|getCurrentAuthority
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
