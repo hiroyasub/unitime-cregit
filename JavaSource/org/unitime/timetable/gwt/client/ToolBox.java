@@ -742,13 +742,13 @@ function_decl|;
 specifier|public
 specifier|native
 specifier|static
-name|void
+name|String
 name|eval
 parameter_list|(
 name|String
 name|script
 parameter_list|)
-comment|/*-{ 		eval(script); 	}-*/
+comment|/*-{ 		return eval(script); 	}-*/
 function_decl|;
 specifier|public
 specifier|static
