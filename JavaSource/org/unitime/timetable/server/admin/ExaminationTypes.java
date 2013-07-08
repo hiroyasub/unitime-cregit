@@ -665,6 +665,14 @@ argument_list|,
 operator|!
 name|xtype
 operator|.
+name|isUsed
+argument_list|(
+literal|null
+argument_list|)
+operator|&&
+operator|!
+name|xtype
+operator|.
 name|getReference
 argument_list|()
 operator|.
