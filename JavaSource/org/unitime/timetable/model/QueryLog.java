@@ -1701,7 +1701,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct uid), count(distinct sessionId), count(distinct uniqueId) from QueryLog where timeStamp> :from and timeStamp<= :to and not type = :type"
+literal|"select count(distinct uid), count(distinct sessionId), count(distinct uniqueId) from QueryLog where timeStamp> :from and timeStamp<= :to and not type = :type1 and not type = :type2"
 argument_list|)
 operator|.
 name|setTimestamp
@@ -1726,11 +1726,23 @@ argument_list|)
 operator|.
 name|setInteger
 argument_list|(
-literal|"type"
+literal|"type1"
 argument_list|,
 name|Type
 operator|.
 name|GWT
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"type2"
+argument_list|,
+name|Type
+operator|.
+name|RPC
 operator|.
 name|ordinal
 argument_list|()
@@ -1756,7 +1768,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct uniqueId) from QueryLog where timeStamp> :from and timeStamp<= :to and type = :type"
+literal|"select count(distinct uniqueId) from QueryLog where timeStamp> :from and timeStamp<= :to and (type = :type1 or type = :type2)"
 argument_list|)
 operator|.
 name|setTimestamp
@@ -1781,11 +1793,23 @@ argument_list|)
 operator|.
 name|setInteger
 argument_list|(
-literal|"type"
+literal|"type1"
 argument_list|,
 name|Type
 operator|.
 name|GWT
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"type2"
+argument_list|,
+name|Type
+operator|.
+name|RPC
 operator|.
 name|ordinal
 argument_list|()
@@ -2008,7 +2032,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select avg(q.timeSpent), max(q.timeSpent) from QueryLog q where q.timeStamp> :from and q.timeStamp<= :to and not type = :type"
+literal|"select avg(q.timeSpent), max(q.timeSpent) from QueryLog q where q.timeStamp> :from and q.timeStamp<= :to and not type = :type1 and not type = :type2"
 argument_list|)
 operator|.
 name|setTimestamp
@@ -2033,11 +2057,23 @@ argument_list|)
 operator|.
 name|setInteger
 argument_list|(
-literal|"type"
+literal|"type1"
 argument_list|,
 name|Type
 operator|.
 name|GWT
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"type2"
+argument_list|,
+name|Type
+operator|.
+name|RPC
 operator|.
 name|ordinal
 argument_list|()
@@ -2064,7 +2100,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select avg(q.timeSpent), max(q.timeSpent) from QueryLog q where q.timeStamp> :from and q.timeStamp<= :to and type = :type"
+literal|"select avg(q.timeSpent), max(q.timeSpent) from QueryLog q where q.timeStamp> :from and q.timeStamp<= :to and (type = :type1 or type = :type2)"
 argument_list|)
 operator|.
 name|setTimestamp
@@ -2089,11 +2125,23 @@ argument_list|)
 operator|.
 name|setInteger
 argument_list|(
-literal|"type"
+literal|"type1"
 argument_list|,
 name|Type
 operator|.
 name|GWT
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
+operator|.
+name|setInteger
+argument_list|(
+literal|"type2"
+argument_list|,
+name|Type
+operator|.
+name|RPC
 operator|.
 name|ordinal
 argument_list|()
