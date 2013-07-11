@@ -139,6 +139,29 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
+literal|"EEE MM/dd"
+argument_list|)
+name|String
+name|examPeriodDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"EEE"
+block|,
+literal|"MM/dd"
+block|}
+argument_list|)
+name|String
+index|[]
+name|examPeriodPreferenceDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
 literal|"MM/dd/yyyy hh:mmaa"
 argument_list|)
 name|String
