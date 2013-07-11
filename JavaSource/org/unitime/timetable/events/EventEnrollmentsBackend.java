@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|text
+operator|.
+name|DateFormat
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -4118,6 +4128,12 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|DateFormat
+name|df
+init|=
+name|getDateFormat
+argument_list|()
+decl_stmt|;
 name|Map
 argument_list|<
 name|Event
@@ -4281,7 +4297,7 @@ block|{
 name|String
 name|date
 init|=
-name|sMeetingDateFormat
+name|df
 operator|.
 name|format
 argument_list|(
@@ -4312,7 +4328,7 @@ literal|""
 else|:
 literal|" - "
 operator|+
-name|sMeetingDateFormat
+name|df
 operator|.
 name|format
 argument_list|(

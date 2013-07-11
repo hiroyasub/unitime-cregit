@@ -2712,7 +2712,8 @@ name|MESSAGES
 operator|.
 name|failedSaveEventPastOrOutside
 argument_list|(
-name|sMeetingDateFormat
+name|getDateFormat
+argument_list|()
 operator|.
 name|format
 argument_list|(
