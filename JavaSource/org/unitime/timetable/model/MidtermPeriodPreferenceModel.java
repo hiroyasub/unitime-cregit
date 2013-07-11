@@ -113,6 +113,36 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtConstants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|solver
@@ -158,6 +188,20 @@ specifier|public
 class|class
 name|MidtermPeriodPreferenceModel
 block|{
+specifier|protected
+specifier|static
+name|GwtConstants
+name|CONSTANTS
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtConstants
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|TreeSet
 argument_list|<
@@ -285,17 +329,6 @@ init|=
 literal|"mp"
 decl_stmt|;
 specifier|public
-specifier|static
-name|SimpleDateFormat
-name|sDF
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"EEE MM/dd"
-argument_list|)
-decl_stmt|;
-specifier|public
 name|MidtermPeriodPreferenceModel
 parameter_list|(
 name|Session
@@ -311,6 +344,9 @@ name|session
 argument_list|,
 name|type
 argument_list|,
+operator|(
+name|ExamPeriod
+operator|)
 literal|null
 argument_list|)
 expr_stmt|;
@@ -328,9 +364,12 @@ name|ExamAssignment
 name|assignment
 parameter_list|)
 block|{
-name|iPeriod
-operator|=
-operator|(
+name|this
+argument_list|(
+name|session
+argument_list|,
+name|type
+argument_list|,
 name|assignment
 operator|==
 literal|null
@@ -341,7 +380,25 @@ name|assignment
 operator|.
 name|getPeriod
 argument_list|()
-operator|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|MidtermPeriodPreferenceModel
+parameter_list|(
+name|Session
+name|session
+parameter_list|,
+name|ExamType
+name|type
+parameter_list|,
+name|ExamPeriod
+name|assignment
+parameter_list|)
+block|{
+name|iPeriod
+operator|=
+name|assignment
 expr_stmt|;
 name|iSession
 operator|=
@@ -2816,7 +2873,15 @@ init|=
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"MM/dd"
+name|CONSTANTS
+operator|.
+name|examPeriodDateFormat
+argument_list|()
+argument_list|,
+name|Localization
+operator|.
+name|getJavaLocale
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|String
@@ -3034,7 +3099,7 @@ argument_list|(
 name|lastPref
 argument_list|)
 operator|+
-literal|";' "
+literal|"; white-space:nowrap;' "
 operator|+
 literal|"title='"
 operator|+
@@ -3297,7 +3362,7 @@ argument_list|(
 name|lastPref
 argument_list|)
 operator|+
-literal|";' "
+literal|"; white-space:nowrap;' "
 operator|+
 literal|"title='"
 operator|+
@@ -3392,7 +3457,7 @@ argument_list|(
 name|lastPref
 argument_list|)
 operator|+
-literal|";' "
+literal|"; white-space:nowrap;' "
 operator|+
 literal|"title='"
 operator|+
