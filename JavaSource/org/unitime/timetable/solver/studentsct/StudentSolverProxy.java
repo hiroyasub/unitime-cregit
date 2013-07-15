@@ -340,6 +340,14 @@ name|void
 name|interrupt
 parameter_list|()
 function_decl|;
+specifier|public
+name|byte
+index|[]
+name|exportXml
+parameter_list|()
+throws|throws
+name|Exception
+function_decl|;
 block|}
 end_interface
 

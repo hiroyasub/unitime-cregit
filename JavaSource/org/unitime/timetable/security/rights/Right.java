@@ -1726,6 +1726,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ExaminationSolutionExportXml
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Individual page rights: Students Scheduling */
 name|StudentScheduling
 argument_list|(
@@ -1756,6 +1763,13 @@ name|class
 argument_list|)
 block|,
 name|StudentSectioningSolverDashboard
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|StudentSectioningSolutionExportXml
 argument_list|(
 name|Session
 operator|.
