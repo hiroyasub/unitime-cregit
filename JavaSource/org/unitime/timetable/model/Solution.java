@@ -5322,6 +5322,17 @@ argument_list|,
 literal|"select p.uniqueId from Solution s inner join s.parameters p where s.uniqueId=:solutionId"
 argument_list|)
 expr_stmt|;
+name|getOwner
+argument_list|()
+operator|.
+name|getSolutions
+argument_list|()
+operator|.
+name|remove
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
 name|hibSession
 operator|.
 name|delete
