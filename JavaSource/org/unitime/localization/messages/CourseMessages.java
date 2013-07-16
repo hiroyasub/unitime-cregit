@@ -2353,6 +2353,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Save"
+argument_list|)
+name|String
+name|actionSaveCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Update"
 argument_list|)
 name|String
@@ -2717,6 +2726,15 @@ literal|"Edit Course Offering"
 argument_list|)
 name|String
 name|actionEditCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Course Offering"
+argument_list|)
+name|String
+name|actionAddCourseOffering
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3104,6 +3122,15 @@ literal|"U"
 argument_list|)
 name|String
 name|accessUpdateCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"S"
+argument_list|)
+name|String
+name|accessSaveCourseOffering
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3788,6 +3815,18 @@ literal|"Update Course Offering (Alt+{0})"
 argument_list|)
 name|String
 name|titleUpdateCourseOffering
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Save Course Offering (Alt+{0})"
+argument_list|)
+name|String
+name|titleSaveCourseOffering
 parameter_list|(
 name|String
 name|accessKey
@@ -5108,6 +5147,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Subject is required."
+argument_list|)
+name|String
+name|errorSubjectRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course Number is required."
 argument_list|)
 name|String
@@ -5136,6 +5184,15 @@ literal|"The course cannot be renamed. A course with the same course number alre
 argument_list|)
 name|String
 name|errorCourseCannotBeRenamed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The course cannot be created. A course with the same course number already exists."
+argument_list|)
+name|String
+name|errorCourseCannotBeCreated
 parameter_list|()
 function_decl|;
 annotation|@
