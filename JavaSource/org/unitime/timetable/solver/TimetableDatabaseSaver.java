@@ -5300,6 +5300,17 @@ literal|"I"
 else|:
 literal|""
 operator|)
+operator|+
+operator|(
+name|jInfo
+operator|.
+name|isInstructor
+argument_list|()
+condition|?
+literal|"X"
+else|:
+literal|""
+operator|)
 argument_list|)
 expr_stmt|;
 name|Assignment
