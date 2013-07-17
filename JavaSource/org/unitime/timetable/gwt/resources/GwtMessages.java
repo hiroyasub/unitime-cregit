@@ -808,6 +808,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Copy Registered&rarr; Requested"
+argument_list|)
+name|String
+name|opCopyCourseRequestsToRequested
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Copy Registered&rarr; Requested (Selected Courses Only)"
+argument_list|)
+name|String
+name|opCopyCourseRequestsToRequestedSelectedCoursesOnly
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Copy Registered&rarr; Requested (All Classifications)"
+argument_list|)
+name|String
+name|opCopyCourseRequestsToRequestedAllClassifications
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Copy Registered&rarr; Requested (All Classifications, Selected Courses Only)"
+argument_list|)
+name|String
+name|opCopyCourseRequestsToRequestedAllClassificationsSelectedCoursesOnly
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Assign"
 argument_list|)
 name|String
@@ -974,6 +1010,24 @@ literal|"Re-Create Curricula from Last-Like Enrollments&amp; Projections"
 argument_list|)
 name|String
 name|opRecreateCurriculaFromLastLike
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Create Curricula from Course Registrations"
+argument_list|)
+name|String
+name|opCreateCurriculaFromCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Re-Create Curricula from Course Registrations"
+argument_list|)
+name|String
+name|opRecreateCurriculaFromCourseRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1598,6 +1652,15 @@ literal|"Current<br>Enrollment"
 argument_list|)
 name|String
 name|colCurrentEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course<br>Registrations"
+argument_list|)
+name|String
+name|colCourseRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2378,6 +2441,15 @@ literal|"Current Enrollment:"
 argument_list|)
 name|String
 name|propCurrentEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Registrations:"
+argument_list|)
+name|String
+name|propCourseRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8108,6 +8180,33 @@ literal|"Current Enrollment"
 argument_list|)
 name|String
 name|fieldCurrentEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reg"
+argument_list|)
+name|String
+name|abbvCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration"
+argument_list|)
+name|String
+name|shortCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Registrations"
+argument_list|)
+name|String
+name|fieldCourseRequests
 parameter_list|()
 function_decl|;
 annotation|@

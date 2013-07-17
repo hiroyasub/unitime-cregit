@@ -973,11 +973,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct a, m, c, e.student.uniqueId from StudentClassEnrollment e inner join e.student.academicAreaClassifications a "
+literal|"select distinct a, m, c, s.uniqueId from CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a "
 operator|+
-literal|"inner join e.student.posMajors m inner join e.courseOffering c where "
+literal|"inner join s.posMajors m inner join r.courseOffering c where "
 operator|+
-literal|"e.student.session.uniqueId=:sessionId"
+literal|"s.session.uniqueId=:sessionId"
 argument_list|)
 operator|.
 name|setLong

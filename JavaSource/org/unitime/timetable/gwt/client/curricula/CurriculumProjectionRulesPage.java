@@ -3740,7 +3740,7 @@ name|MenuItem
 argument_list|(
 name|MESSAGES
 operator|.
-name|opHideItem
+name|opHide
 argument_list|(
 name|MESSAGES
 operator|.
@@ -3794,7 +3794,7 @@ name|MenuItem
 argument_list|(
 name|MESSAGES
 operator|.
-name|opShowItem
+name|opShow
 argument_list|(
 name|MESSAGES
 operator|.
