@@ -12560,6 +12560,13 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|insructionalOfferings
+operator|==
+literal|null
+condition|)
+return|return;
 name|SubjectArea
 name|subjectArea
 init|=
