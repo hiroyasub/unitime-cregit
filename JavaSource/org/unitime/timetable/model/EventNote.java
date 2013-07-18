@@ -19,16 +19,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Collection
@@ -64,6 +54,20 @@ operator|.
 name|base
 operator|.
 name|BaseEventNote
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
 import|;
 end_import
 
@@ -410,10 +414,15 @@ literal|"';\">"
 operator|+
 literal|"<td>"
 operator|+
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd hh:mmaa"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_TIME_STAMP
 argument_list|)
 operator|.
 name|format

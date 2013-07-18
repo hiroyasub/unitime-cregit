@@ -19,16 +19,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Calendar
@@ -184,6 +174,20 @@ operator|.
 name|util
 operator|.
 name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
 import|;
 end_import
 
@@ -1619,10 +1623,15 @@ argument_list|()
 operator|+
 literal|" "
 operator|+
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_EVENT_SHORT
 argument_list|)
 operator|.
 name|format
@@ -1648,10 +1657,15 @@ literal|1
 condition|?
 literal|" - "
 operator|+
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_EVENT_SHORT
 argument_list|)
 operator|.
 name|format
@@ -1753,10 +1767,15 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_EVENT_SHORT
 argument_list|)
 operator|.
 name|format
@@ -1782,10 +1801,15 @@ literal|1
 condition|?
 literal|" - "
 operator|+
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_EVENT_SHORT
 argument_list|)
 operator|.
 name|format

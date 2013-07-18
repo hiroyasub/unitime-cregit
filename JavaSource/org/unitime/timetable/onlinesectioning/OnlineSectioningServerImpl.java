@@ -809,6 +809,20 @@ name|StudentEmail
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -6914,6 +6928,11 @@ expr_stmt|;
 name|Localization
 operator|.
 name|removeLocale
+argument_list|()
+expr_stmt|;
+name|Formats
+operator|.
+name|removeFormats
 argument_list|()
 expr_stmt|;
 block|}

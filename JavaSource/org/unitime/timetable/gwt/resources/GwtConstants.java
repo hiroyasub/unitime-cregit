@@ -677,6 +677,24 @@ name|String
 name|singleDateSelectionFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"M/d"
+argument_list|)
+name|String
+name|dateFormatShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"h:mma"
+argument_list|)
+name|String
+name|timeFormatShort
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

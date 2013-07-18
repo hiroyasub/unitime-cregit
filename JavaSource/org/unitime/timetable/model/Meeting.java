@@ -29,16 +29,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -160,6 +150,20 @@ operator|.
 name|util
 operator|.
 name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
 import|;
 end_import
 
@@ -1348,10 +1352,15 @@ name|dateStr
 parameter_list|()
 block|{
 return|return
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"EEE MM/dd"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_EXAM_PERIOD
 argument_list|)
 operator|.
 name|format

@@ -241,9 +241,8 @@ extends|extends
 name|BaseExport
 block|{
 specifier|protected
-specifier|static
 name|DecimalFormat
-name|sShareDF
+name|iShareDF
 init|=
 operator|new
 name|DecimalFormat
@@ -968,7 +967,7 @@ name|addAttribute
 argument_list|(
 literal|"share"
 argument_list|,
-name|sShareDF
+name|iShareDF
 operator|.
 name|format
 argument_list|(

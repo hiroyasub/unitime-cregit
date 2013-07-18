@@ -19,16 +19,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Date
@@ -237,6 +227,20 @@ name|Right
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
+import|;
+end_import
+
 begin_comment
 comment|/**  * Counts active sessions  * @author Heston Fernandes  */
 end_comment
@@ -384,13 +388,23 @@ argument_list|(
 literal|""
 argument_list|)
 decl_stmt|;
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|Format
+argument_list|<
+name|Date
+argument_list|>
 name|sdf
 init|=
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd/yyyy hh:mm:ss a"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_TIME_STAMP
 argument_list|)
 decl_stmt|;
 try|try

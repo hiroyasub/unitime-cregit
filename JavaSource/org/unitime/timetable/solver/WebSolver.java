@@ -19,9 +19,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
+name|util
 operator|.
-name|SimpleDateFormat
+name|Date
 import|;
 end_import
 
@@ -131,6 +131,20 @@ name|StudentSolverProxy
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -142,13 +156,23 @@ name|WebSolver
 block|{
 specifier|public
 specifier|static
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|Format
+argument_list|<
+name|Date
+argument_list|>
 name|sDF
 init|=
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd/yy hh:mmaa"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_TIME_STAMP
 argument_list|)
 decl_stmt|;
 specifier|private

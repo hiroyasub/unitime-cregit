@@ -41,9 +41,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
+name|util
 operator|.
-name|SimpleDateFormat
+name|Calendar
 import|;
 end_import
 
@@ -53,7 +53,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Calendar
+name|Date
 import|;
 end_import
 
@@ -112,6 +112,20 @@ operator|.
 name|util
 operator|.
 name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
 import|;
 end_import
 
@@ -306,15 +320,25 @@ specifier|public
 class|class
 name|PdfTimetableGridTable
 block|{
-specifier|private
+specifier|protected
 specifier|static
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|Format
+argument_list|<
+name|Date
+argument_list|>
 name|sDF
 init|=
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_EVENT_SHORT
 argument_list|)
 decl_stmt|;
 specifier|private

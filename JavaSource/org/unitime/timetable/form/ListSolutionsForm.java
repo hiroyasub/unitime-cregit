@@ -29,16 +29,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Collection
@@ -62,6 +52,16 @@ operator|.
 name|util
 operator|.
 name|Comparator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Date
 import|;
 end_import
 
@@ -293,6 +293,20 @@ name|PropertiesInfo
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
+import|;
+end_import
+
 begin_comment
 comment|/**   * @author Tomas Muller  */
 end_comment
@@ -314,13 +328,23 @@ literal|632293328433911455L
 decl_stmt|;
 specifier|private
 specifier|static
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|Format
+argument_list|<
+name|Date
+argument_list|>
 name|sDF
 init|=
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd/yy hh:mmaa"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_TIME_STAMP
 argument_list|)
 decl_stmt|;
 specifier|private

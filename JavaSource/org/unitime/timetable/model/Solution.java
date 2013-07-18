@@ -29,16 +29,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Calendar
@@ -502,6 +492,20 @@ operator|.
 name|util
 operator|.
 name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Formats
 import|;
 end_import
 
@@ -3208,13 +3212,23 @@ argument_list|)
 condition|)
 return|return;
 comment|//email notification disabled
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|Format
+argument_list|<
+name|Date
+argument_list|>
 name|sdf
 init|=
-operator|new
-name|SimpleDateFormat
+name|Formats
+operator|.
+name|getDateFormat
 argument_list|(
-literal|"MM/dd/yy hh:mmaa"
+name|Formats
+operator|.
+name|Pattern
+operator|.
+name|DATE_TIME_STAMP
 argument_list|)
 decl_stmt|;
 name|SolverGroup
