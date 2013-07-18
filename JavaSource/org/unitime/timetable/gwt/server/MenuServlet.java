@@ -4651,14 +4651,14 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-name|solver
+name|studentSolver
 operator|!=
 literal|null
 condition|)
 block|{
 name|info
 operator|=
-name|solver
+name|studentSolver
 operator|.
 name|statusSolutionInfo
 argument_list|()
@@ -4681,14 +4681,14 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|studentSolver
+name|solver
 operator|!=
 literal|null
 condition|)
 block|{
 name|info
 operator|=
-name|studentSolver
+name|solver
 operator|.
 name|statusSolutionInfo
 argument_list|()
