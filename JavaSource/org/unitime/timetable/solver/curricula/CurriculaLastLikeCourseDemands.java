@@ -3261,6 +3261,8 @@ name|x2
 argument_list|)
 else|:
 name|share
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -3459,6 +3461,28 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|other
+operator|==
+literal|null
+condition|)
+block|{
+name|sLog
+operator|.
+name|debug
+argument_list|(
+name|course
+operator|.
+name|getCourseName
+argument_list|()
+operator|+
+literal|" has no students."
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
 name|curricula
 operator|==
 literal|null
@@ -3600,6 +3624,7 @@ operator|+
 literal|" curriculum students)."
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|demands
