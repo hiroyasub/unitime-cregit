@@ -1760,7 +1760,7 @@ name|lookup
 argument_list|(
 name|entity
 argument_list|,
-literal|"abbv"
+literal|"reference"
 argument_list|,
 operator|(
 operator|(
@@ -1772,7 +1772,7 @@ name|getObject
 argument_list|()
 operator|)
 operator|.
-name|getAbbv
+name|getReference
 argument_list|()
 argument_list|)
 condition|)
