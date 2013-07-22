@@ -9139,6 +9139,24 @@ name|String
 name|reason
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor"
+argument_list|)
+name|String
+name|eventContactInstructorPhone
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Coordinator"
+argument_list|)
+name|String
+name|eventContactCoordinatorPhone
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
