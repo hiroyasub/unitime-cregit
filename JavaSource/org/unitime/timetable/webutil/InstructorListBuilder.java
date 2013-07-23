@@ -1114,6 +1114,15 @@ name|timePref
 operator|.
 name|append
 argument_list|(
+literal|"<span onmouseover=\"showGwtInstructorAvailabilityHint(this, '"
+operator|+
+name|di
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"');\" onmouseout=\"hideGwtInstructorAvailabilityHint();\">"
+operator|+
 name|rtt
 operator|.
 name|getModel
@@ -1128,6 +1137,8 @@ literal|", "
 argument_list|,
 literal|"<br>"
 argument_list|)
+operator|+
+literal|"</span>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1147,7 +1158,16 @@ name|timePref
 operator|.
 name|append
 argument_list|(
-literal|"<img border='0' src='pattern?v="
+literal|"<img border='0' onmouseover=\"showGwtInstructorAvailabilityHint(this, '"
+operator|+
+name|di
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"');\" onmouseout=\"hideGwtInstructorAvailabilityHint();\" "
+operator|+
+literal|"src='pattern?v="
 operator|+
 operator|(
 name|timeVertical
