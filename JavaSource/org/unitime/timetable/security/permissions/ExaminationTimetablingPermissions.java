@@ -371,17 +371,8 @@ name|user
 argument_list|,
 name|source
 argument_list|)
-operator|&&
-name|Exam
-operator|.
-name|hasTimetable
-argument_list|(
-name|source
-operator|.
-name|getUniqueId
-argument_list|()
-argument_list|)
 return|;
+comment|//&& Exam.hasTimetable(source.getUniqueId());
 block|}
 annotation|@
 name|Override
