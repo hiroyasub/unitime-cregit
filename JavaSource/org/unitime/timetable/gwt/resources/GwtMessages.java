@@ -8479,7 +8479,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This event including ALL its meetings will be deleted. Are you sure you want to do this?\n\nTo delete just a particular meeting, select the meeting and click on the Delete option under the More button. Do not forget to click the Update Event afterwards."
+literal|"This event including ALL its meetings will be deleted. Are you sure you want to do this?\n\nTo delete just a particular meeting, select the meeting and click on the Remove option under the More button. Do not forget to click the Update Event afterwards."
 argument_list|)
 name|String
 name|confirmDeleteEvent
