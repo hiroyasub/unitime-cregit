@@ -495,7 +495,7 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|createNewSession
+name|getSession
 argument_list|()
 decl_stmt|;
 name|Transaction
