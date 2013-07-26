@@ -1152,11 +1152,14 @@ name|setSubjectAreas
 argument_list|(
 name|SubjectArea
 operator|.
-name|getUserSubjectAreas
+name|getAllSubjectAreas
 argument_list|(
 name|sessionContext
 operator|.
 name|getUser
+argument_list|()
+operator|.
+name|getCurrentAcademicSessionId
 argument_list|()
 argument_list|)
 argument_list|)
