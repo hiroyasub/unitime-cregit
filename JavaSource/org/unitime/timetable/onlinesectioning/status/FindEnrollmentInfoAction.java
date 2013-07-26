@@ -1135,16 +1135,9 @@ operator|.
 name|request
 argument_list|()
 argument_list|)
-operator|&&
-name|m
-operator|.
-name|request
-argument_list|()
-operator|.
-name|isWaitlist
-argument_list|()
 condition|)
 block|{
+comment|//&& m.request().isWaitlist()) {
 name|wait
 operator|++
 expr_stmt|;
@@ -1215,16 +1208,9 @@ operator|.
 name|request
 argument_list|()
 argument_list|)
-operator|&&
-name|m
-operator|.
-name|request
-argument_list|()
-operator|.
-name|isWaitlist
-argument_list|()
 condition|)
 block|{
+comment|//&& m.request().isWaitlist()) {
 name|tWait
 operator|++
 expr_stmt|;
