@@ -7443,6 +7443,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|iEventAdd
+operator|.
+name|setup
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|callback
