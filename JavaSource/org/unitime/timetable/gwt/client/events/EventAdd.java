@@ -8738,11 +8738,11 @@ condition|(
 operator|!
 name|properties
 operator|.
-name|isCanLookupContacts
+name|isCanLookupAdditionalContacts
 argument_list|()
 condition|)
 block|{
-comment|// Can not lookup
+comment|// Can not lookup additional contacts
 comment|// Clear additional contacts
 if|if
 condition|(
@@ -8759,6 +8759,17 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|properties
+operator|.
+name|isCanLookupMainContact
+argument_list|()
+condition|)
+block|{
+comment|// Can not lookup main contact
 comment|// Clear main contact if different from the user
 if|if
 condition|(
@@ -10134,7 +10145,7 @@ operator|||
 name|getProperties
 argument_list|()
 operator|.
-name|isCanLookupContacts
+name|isCanLookupMainContact
 argument_list|()
 condition|?
 literal|null
@@ -10729,10 +10740,10 @@ operator|>
 literal|1
 argument_list|)
 expr_stmt|;
-name|boolean
-name|canLookup
-init|=
-operator|(
+name|iLookupButton
+operator|.
+name|setVisible
+argument_list|(
 name|getProperties
 argument_list|()
 operator|==
@@ -10743,22 +10754,26 @@ else|:
 name|getProperties
 argument_list|()
 operator|.
-name|isCanLookupContacts
+name|isCanLookupMainContact
 argument_list|()
-operator|)
-decl_stmt|;
-name|iLookupButton
-operator|.
-name|setVisible
-argument_list|(
-name|canLookup
 argument_list|)
 expr_stmt|;
 name|iAdditionalLookupButton
 operator|.
 name|setVisible
 argument_list|(
-name|canLookup
+name|getProperties
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|getProperties
+argument_list|()
+operator|.
+name|isCanLookupAdditionalContacts
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|boolean
@@ -10775,7 +10790,7 @@ else|:
 name|getProperties
 argument_list|()
 operator|.
-name|isCanLookupContacts
+name|isCanLookupMainContact
 argument_list|()
 operator|&&
 name|getProperties

@@ -4758,7 +4758,7 @@ literal|null
 operator|&&
 name|iProperties
 operator|.
-name|isCanLookupContacts
+name|isCanLookupMainContact
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -14872,7 +14872,7 @@ name|setOtherVisible
 argument_list|(
 name|result
 operator|.
-name|isCanLookupContacts
+name|isCanLookupMainContact
 argument_list|()
 operator|||
 name|result
@@ -14965,7 +14965,7 @@ name|setShowMainContact
 argument_list|(
 name|result
 operator|.
-name|isCanLookupContacts
+name|isCanLookupMainContact
 argument_list|()
 argument_list|)
 expr_stmt|;

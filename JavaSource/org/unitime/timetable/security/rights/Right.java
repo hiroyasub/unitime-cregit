@@ -1854,6 +1854,8 @@ argument_list|)
 block|,
 name|EventLookupContact
 block|,
+name|EventLookupContactAdditional
+block|,
 name|EventLookupSchedule
 block|,
 name|EventDetail
