@@ -9157,6 +9157,21 @@ name|String
 name|eventContactCoordinatorPhone
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Examinations for {1}"
+argument_list|)
+name|String
+name|dialogExaminations
+parameter_list|(
+name|String
+name|type
+parameter_list|,
+name|String
+name|student
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
