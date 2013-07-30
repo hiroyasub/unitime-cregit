@@ -1484,6 +1484,20 @@ name|timeOverlap
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isFreeTimeAllowOverlaps
+parameter_list|()
+block|{
+return|return
+name|iParent
+operator|.
+name|isFreeTimeAllowOverlaps
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
