@@ -724,9 +724,9 @@ name|iHibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.courseDemand.student.uniqueId, r.courseOffering, r.courseDemand.priority, r.courseDemand.alternative, r.order "
+literal|"select distinct d.student.uniqueId, c, d.priority, d.alternative, r.order "
 operator|+
-literal|"from CourseRequest r where r.courseDemand.student.session.uniqueId = :sessionId"
+literal|"from CourseRequest r inner join r.courseOffering c inner join r.courseDemand d where d.student.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong
