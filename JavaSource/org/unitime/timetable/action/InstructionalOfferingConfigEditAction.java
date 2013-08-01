@@ -4923,32 +4923,6 @@ name|getCurrentAcademicSessionId
 argument_list|()
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|rg
-operator|!=
-literal|null
-condition|)
-name|Debug
-operator|.
-name|debug
-argument_list|(
-literal|"Loaded default global room group: "
-operator|+
-name|rg
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-else|else
-name|Debug
-operator|.
-name|error
-argument_list|(
-literal|"Default Global room group not found "
-argument_list|)
-expr_stmt|;
 name|InstrOfferingConfig
 name|ioc
 init|=
