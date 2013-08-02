@@ -3220,10 +3220,7 @@ name|toRoom
 operator|.
 name|setEventStatus
 argument_list|(
-name|fromRoom
-operator|.
-name|getEventStatus
-argument_list|()
+literal|null
 argument_list|)
 expr_stmt|;
 name|toRoom
