@@ -2154,9 +2154,10 @@ name|currentActive
 operator|==
 literal|null
 operator|&&
+operator|!
 name|begin
 operator|.
-name|before
+name|after
 argument_list|(
 name|today
 argument_list|)
@@ -2367,11 +2368,12 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|today
+operator|!
+name|begin
 operator|.
 name|after
 argument_list|(
-name|begin
+name|today
 argument_list|)
 condition|)
 return|return
