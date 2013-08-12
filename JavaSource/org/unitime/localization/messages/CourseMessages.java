@@ -1070,6 +1070,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Catalog"
+argument_list|)
+name|String
+name|columnCourseCatalog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Schedule Print Note"
 argument_list|)
 name|String

@@ -9172,6 +9172,15 @@ name|String
 name|student
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"View"
+argument_list|)
+name|String
+name|courseCatalogLink
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
