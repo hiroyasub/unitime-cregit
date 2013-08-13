@@ -980,7 +980,7 @@ name|markForBack
 argument_list|(
 name|request
 argument_list|,
-literal|"instructionalOfferingSearch.do?doit=Search&loadInstrFilter=1&subjectAreaId="
+literal|"instructionalOfferingSearch.do?doit=Search&loadInstrFilter=1&subjectAreaIds="
 operator|+
 name|frm
 operator|.
