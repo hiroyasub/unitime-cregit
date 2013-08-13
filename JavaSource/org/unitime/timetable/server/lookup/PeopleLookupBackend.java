@@ -2618,7 +2618,7 @@ name|sLog
 operator|.
 name|warn
 argument_list|(
-literal|"Failed to located bean ldapPeopleLookupTemplate, creating the template manually."
+literal|"Failed to locate bean ldapPeopleLookupTemplate, creating the template manually."
 argument_list|)
 expr_stmt|;
 name|LdapContextSource
@@ -2891,7 +2891,7 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.lookup.ldap.query"
 argument_list|,
-literal|"(|(|(sn=%*)(uid=%))(givenName=%*)("
+literal|"(|(|(sn=%*)(uid=%))(givenName=%*)(cn=* %* *)("
 operator|+
 name|ApplicationProperties
 operator|.
@@ -2925,7 +2925,7 @@ name|getProperty
 argument_list|(
 literal|"tmtbl.lookup.ldap.query"
 argument_list|,
-literal|"(|(|(sn=%*)(uid=%))(givenName=%*)("
+literal|"(|(|(sn=%*)(uid=%))(givenName=%*)(cn=* %* *)("
 operator|+
 name|ApplicationProperties
 operator|.
