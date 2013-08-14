@@ -3822,6 +3822,10 @@ literal|" || '%' or upper(e.mainContact.lastName) like '%' || :Xreq"
 operator|+
 name|id
 operator|+
+literal|" || '%' or upper(e.mainContact.emailAddress) like :Xreq"
+operator|+
+name|id
+operator|+
 literal|" || '%')"
 expr_stmt|;
 name|query
@@ -3954,6 +3958,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|context
 operator|.
 name|hasPermission
@@ -3962,6 +3967,16 @@ name|Right
 operator|.
 name|EventLookupContact
 argument_list|)
+operator|||
+name|context
+operator|.
+name|hasPermission
+argument_list|(
+name|Right
+operator|.
+name|EventLookupSchedule
+argument_list|)
+operator|)
 operator|&&
 operator|(
 operator|!
@@ -4076,6 +4091,10 @@ operator|+
 name|id
 operator|+
 literal|" || '%' or upper(c.lastName) like '%' || :cn"
+operator|+
+name|id
+operator|+
+literal|" || '%' or upper(c.emailAddress) like :cn"
 operator|+
 name|id
 operator|+
