@@ -310,6 +310,10 @@ specifier|private
 name|String
 name|weekStartDayOfWeek
 decl_stmt|;
+specifier|private
+name|String
+name|accommodation
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Course Offerings */
 specifier|protected
@@ -487,6 +491,10 @@ operator|=
 literal|null
 expr_stmt|;
 name|weekStartDayOfWeek
+operator|=
+literal|null
+expr_stmt|;
+name|accommodation
 operator|=
 literal|null
 expr_stmt|;
@@ -1439,6 +1447,30 @@ return|;
 return|return
 literal|false
 return|;
+block|}
+specifier|public
+name|String
+name|getAccommodation
+parameter_list|()
+block|{
+return|return
+name|accommodation
+return|;
+block|}
+specifier|public
+name|void
+name|setAccommodation
+parameter_list|(
+name|String
+name|accommodation
+parameter_list|)
+block|{
+name|this
+operator|.
+name|accommodation
+operator|=
+name|accommodation
+expr_stmt|;
 block|}
 block|}
 end_class

@@ -6058,6 +6058,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student Accommodation"
+argument_list|)
+name|String
+name|pageStudentAccommodation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Accommodations"
+argument_list|)
+name|String
+name|pageStudentAccommodations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String

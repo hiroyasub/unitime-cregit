@@ -2914,6 +2914,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Accommodation"
+argument_list|)
+name|String
+name|colAccommodation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Send email..."
 argument_list|)
 name|String

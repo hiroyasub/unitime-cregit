@@ -438,6 +438,10 @@ specifier|private
 name|Boolean
 name|isCrosslisted
 decl_stmt|;
+specifier|private
+name|String
+name|accommodation
+decl_stmt|;
 comment|//End Bypass
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Instructors */
@@ -1095,6 +1099,10 @@ operator|=
 literal|null
 expr_stmt|;
 name|enrollment
+operator|=
+literal|null
+expr_stmt|;
+name|accommodation
 operator|=
 literal|null
 expr_stmt|;
@@ -2480,6 +2488,30 @@ operator|.
 name|enrollment
 operator|=
 name|enrollment
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getAccommodation
+parameter_list|()
+block|{
+return|return
+name|accommodation
+return|;
+block|}
+specifier|public
+name|void
+name|setAccommodation
+parameter_list|(
+name|String
+name|accommodation
+parameter_list|)
+block|{
+name|this
+operator|.
+name|accommodation
+operator|=
+name|accommodation
 expr_stmt|;
 block|}
 block|}

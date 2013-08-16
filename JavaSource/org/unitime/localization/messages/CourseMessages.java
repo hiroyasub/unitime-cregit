@@ -787,6 +787,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student Accommodations:"
+argument_list|)
+name|String
+name|propertyAccommodations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
