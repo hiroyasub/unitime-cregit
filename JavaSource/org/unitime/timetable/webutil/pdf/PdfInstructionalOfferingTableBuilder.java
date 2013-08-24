@@ -6364,7 +6364,6 @@ name|user
 operator|==
 literal|null
 operator|||
-operator|!
 name|CommonValues
 operator|.
 name|NoteAsFullText
@@ -6715,7 +6714,6 @@ name|user
 operator|==
 literal|null
 operator|||
-operator|!
 name|CommonValues
 operator|.
 name|NoteAsFullText
