@@ -13253,7 +13253,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|boolean
-name|hasEventFilterDefault
+name|hasFilterDefault
 parameter_list|(
 name|String
 name|name

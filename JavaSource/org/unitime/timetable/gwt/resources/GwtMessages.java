@@ -5566,6 +5566,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Event Default"
+argument_list|)
+name|String
+name|pageEventDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Defaults"
+argument_list|)
+name|String
+name|pageEventDefaults
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Examination Type"
 argument_list|)
 name|String
@@ -7964,6 +7982,24 @@ literal|"Expiration Date"
 argument_list|)
 name|String
 name|fieldExpirationDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Additional Emails"
+argument_list|)
+name|String
+name|fieldAdditionalEmails
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Manager"
+argument_list|)
+name|String
+name|fieldManager
 parameter_list|()
 function_decl|;
 annotation|@

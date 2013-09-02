@@ -2448,6 +2448,10 @@ name|CourseTypes
 block|,
 name|CourseTypeEdit
 block|,
+name|EventDefaults
+block|,
+name|EventDefaultsEditOther
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,
