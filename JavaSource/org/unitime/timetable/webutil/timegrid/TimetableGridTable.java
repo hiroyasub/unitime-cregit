@@ -2982,6 +2982,47 @@ name|int
 name|rowNumber
 parameter_list|)
 block|{
+name|int
+name|maxCellWidth
+init|=
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.timeGrid.maxCellWidth"
+argument_list|,
+literal|"10"
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|int
+name|maxCellWidthVertical
+init|=
+name|Integer
+operator|.
+name|parseInt
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"tmtbl.timeGrid.maxCellWidthVertical"
+argument_list|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|maxCellWidth
+operator|*
+literal|20
+argument_list|)
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|model
 operator|.
 name|clearRendered
@@ -3690,7 +3731,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td nowrap "
+literal|"<td nowrap style='"
 operator|+
 operator|(
 name|bgColor
@@ -3699,12 +3740,20 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"style='background-color:"
+literal|"background-color:"
 operator|+
 name|bgColor
-operator|+
-literal|"' "
 operator|)
+operator|+
+literal|";max-width:"
+operator|+
+operator|(
+name|maxCellWidth
+operator|*
+name|colSpan
+operator|)
+operator|+
+literal|"px;' "
 operator|+
 literal|" class='TimetableCell"
 operator|+
@@ -4541,7 +4590,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td nowrap "
+literal|"<td nowrap style='"
 operator|+
 operator|(
 name|bgColor
@@ -4550,12 +4599,20 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"style='background-color:"
+literal|"background-color:"
 operator|+
 name|bgColor
-operator|+
-literal|"' "
 operator|)
+operator|+
+literal|";max-width:"
+operator|+
+operator|(
+name|maxCellWidth
+operator|*
+name|colSpan
+operator|)
+operator|+
+literal|"px;' "
 operator|+
 literal|" class='TimetableCell"
 operator|+
@@ -5577,7 +5634,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td nowrap "
+literal|"<td nowrap style='"
 operator|+
 operator|(
 name|bgColor
@@ -5586,12 +5643,20 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"style='background-color:"
+literal|"background-color:"
 operator|+
 name|bgColor
-operator|+
-literal|"' "
 operator|)
+operator|+
+literal|";max-width:"
+operator|+
+operator|(
+name|maxCellWidth
+operator|*
+name|colSpan
+operator|)
+operator|+
+literal|"px;' "
 operator|+
 literal|" class='TimetableCell"
 operator|+
@@ -6272,7 +6337,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<td nowrap "
+literal|"<td nowrap style='"
 operator|+
 operator|(
 name|bgColor
@@ -6281,12 +6346,20 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|"style='background-color:"
+literal|"background-color:"
 operator|+
 name|bgColor
-operator|+
-literal|"' "
 operator|)
+operator|+
+literal|";max-width:"
+operator|+
+operator|(
+name|maxCellWidthVertical
+operator|*
+name|colSpan
+operator|)
+operator|+
+literal|"px;' "
 operator|+
 literal|"class='TimetableCell"
 operator|+
