@@ -256,6 +256,24 @@ name|ImageResource
 name|filter_open
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/white_star.png"
+argument_list|)
+name|ImageResource
+name|star
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/black_star.png"
+argument_list|)
+name|ImageResource
+name|starSelected
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

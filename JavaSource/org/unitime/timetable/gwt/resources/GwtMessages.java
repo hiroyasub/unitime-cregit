@@ -4255,6 +4255,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to save as default: {0}"
+argument_list|)
+name|String
+name|failedSaveAsDefault
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -8897,6 +8909,24 @@ literal|"Close filter"
 argument_list|)
 name|String
 name|altCloseFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Click here to save the current filter value as default for this page."
+argument_list|)
+name|String
+name|altStarFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The current filter value is the default."
+argument_list|)
+name|String
+name|altStarFilterSelected
 parameter_list|()
 function_decl|;
 annotation|@
