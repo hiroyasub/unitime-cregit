@@ -1201,11 +1201,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select l.uniqueId "
+literal|"select distinct l.uniqueId "
 operator|+
 literal|"from Location l, RoomTypeOption o "
 operator|+
-literal|"where l.eventDepartment.allowEvents = true and o.roomType = l.roomType and o.department = l.eventDepartment and l.session.uniqueId = :sessionId and ("
+literal|"where l.eventDepartment.allowEvents = true and l.session.uniqueId = :sessionId and ("
 operator|+
 literal|"(l.eventStatus in ("
 operator|+
@@ -1215,7 +1215,7 @@ literal|") or (l.eventStatus is null and o.status in ("
 operator|+
 name|anyRequest
 operator|+
-literal|")))"
+literal|") and o.roomType = l.roomType and o.department = l.eventDepartment))"
 operator|+
 operator|(
 name|user
@@ -1238,7 +1238,7 @@ literal|") or (l.eventStatus is null and o.status in ("
 operator|+
 name|deptRequest
 operator|+
-literal|")))"
+literal|") and o.roomType = l.roomType and o.department = l.eventDepartment))"
 else|:
 name|roleDept
 operator|==
@@ -1254,7 +1254,7 @@ literal|") or (l.eventStatus is null and o.status in ("
 operator|+
 name|deptRequest
 operator|+
-literal|"))) and o.department.uniqueId in ("
+literal|") and o.roomType = l.roomType and o.department = l.eventDepartment)) and l.eventDepartment.uniqueId in ("
 operator|+
 name|roleDept
 operator|+
@@ -1294,7 +1294,7 @@ literal|") or (l.eventStatus is null and o.status in ("
 operator|+
 name|mgrRequest
 operator|+
-literal|")))"
+literal|") and o.roomType = l.roomType and o.department = l.eventDepartment))"
 else|:
 name|mgrDept
 operator|==
@@ -1310,7 +1310,7 @@ literal|") or (l.eventStatus is null and o.status in ("
 operator|+
 name|mgrRequest
 operator|+
-literal|"))) and o.department.uniqueId in ("
+literal|") and o.roomType = l.roomType and o.department = l.eventDepartment)) and l.eventDepartment.uniqueId in ("
 operator|+
 name|mgrDept
 operator|+
