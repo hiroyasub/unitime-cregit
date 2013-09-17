@@ -3997,6 +3997,9 @@ name|instructorNameFormat
 argument_list|)
 return|;
 block|}
+return|return
+literal|null
+return|;
 block|}
 block|}
 if|if
