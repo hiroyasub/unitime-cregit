@@ -4366,6 +4366,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"The requested time {0} is unusual, please look at it closely."
+argument_list|)
+name|String
+name|warnMeetingTooEarly
+parameter_list|(
+name|String
+name|time
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No date is selected."
 argument_list|)
 name|String
@@ -6491,6 +6503,15 @@ literal|"Weekend"
 argument_list|)
 name|String
 name|hintWeekend
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Too Early?"
+argument_list|)
+name|String
+name|hintTooEarly
 parameter_list|()
 function_decl|;
 annotation|@

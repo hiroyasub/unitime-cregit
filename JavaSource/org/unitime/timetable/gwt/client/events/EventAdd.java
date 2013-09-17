@@ -5592,6 +5592,8 @@ name|AddMeetingsDialog
 argument_list|(
 name|session
 argument_list|,
+name|iProperties
+argument_list|,
 operator|new
 name|AsyncCallback
 argument_list|<
@@ -5799,6 +5801,8 @@ operator|new
 name|AddMeetingsDialog
 argument_list|(
 name|session
+argument_list|,
+name|iProperties
 argument_list|,
 operator|new
 name|AsyncCallback
@@ -14850,6 +14854,17 @@ specifier|public
 name|StartEndTime
 name|getSelectedTime
 parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
+name|isTooEarly
+parameter_list|(
+name|int
+name|startSlot
+parameter_list|,
+name|int
+name|endSlot
+parameter_list|)
 function_decl|;
 block|}
 specifier|private
