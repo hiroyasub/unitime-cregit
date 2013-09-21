@@ -1084,7 +1084,9 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|Configuration
+name|HibernateUtil
+operator|.
+name|LoggingConfiguration
 argument_list|()
 return|;
 block|}
