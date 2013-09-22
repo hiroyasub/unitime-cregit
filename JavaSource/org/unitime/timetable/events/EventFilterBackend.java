@@ -3808,17 +3808,17 @@ else|:
 literal|" and "
 operator|)
 operator|+
-literal|"(upper(e.mainContact.firstName) like '%' || :Xreq"
+literal|"(upper(e.mainContact.firstName) like :Xreq"
 operator|+
 name|id
 operator|+
 literal|" || '%' or "
 operator|+
-literal|"upper(e.mainContact.middleName) like '%' || :Xreq"
+literal|"upper(e.mainContact.middleName) like :Xreq"
 operator|+
 name|id
 operator|+
-literal|" || '%' or upper(e.mainContact.lastName) like '%' || :Xreq"
+literal|" || '%' or upper(e.mainContact.lastName) like :Xreq"
 operator|+
 name|id
 operator|+
@@ -4033,6 +4033,11 @@ argument_list|)
 operator|.
 name|exclude
 argument_list|(
+literal|"requested"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
 literal|"query"
 argument_list|)
 decl_stmt|;
@@ -4082,15 +4087,15 @@ name|instance
 operator|.
 name|where
 argument_list|(
-literal|"upper(c.firstName) like '%' || :cn"
+literal|"upper(c.firstName) like :cn"
 operator|+
 name|id
 operator|+
-literal|" || '%' or upper(c.middleName) like '%' || :cn"
+literal|" || '%' or upper(c.middleName) like :cn"
 operator|+
 name|id
 operator|+
-literal|" || '%' or upper(c.lastName) like '%' || :cn"
+literal|" || '%' or upper(c.lastName) like :cn"
 operator|+
 name|id
 operator|+
@@ -4152,6 +4157,8 @@ name|getName
 argument_list|()
 argument_list|,
 literal|"Requested By"
+argument_list|,
+literal|"requested"
 argument_list|)
 expr_stmt|;
 block|}
