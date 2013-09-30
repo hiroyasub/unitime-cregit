@@ -3729,6 +3729,12 @@ name|response
 operator|.
 name|hasDeletedMeetings
 argument_list|()
+operator|&&
+operator|!
+name|response
+operator|.
+name|hasCancelledMeetings
+argument_list|()
 operator|)
 condition|)
 block|{
