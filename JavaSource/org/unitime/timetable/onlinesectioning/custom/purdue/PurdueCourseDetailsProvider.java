@@ -263,14 +263,14 @@ specifier|static
 name|String
 name|sUrl
 init|=
-literal|"https://esa-oas-prod-wl.itap.purdue.edu/prod/bzwsrch.p_catalog_detail?term=:year:term&subject=:subject&cnbr=:courseNbr"
+literal|"https://esa-oas-prod-wl.itap.purdue.edu/prod/bzwsrch.p_catalog_detail?term=:year:term&subject=:subject&cnbr=:courseNbr&enhanced=Y"
 decl_stmt|;
 specifier|public
 specifier|static
 name|String
 name|sDummyUrl
 init|=
-literal|"https://esa-oas-prod-wl.itap.purdue.edu/prod/bzwsrch.p_catalog_detail?term=201020&subject=AAE&cnbr=20300"
+literal|"https://esa-oas-prod-wl.itap.purdue.edu/prod/bzwsrch.p_catalog_detail?term=201020&subject=AAE&cnbr=20300&enhanced=Y"
 decl_stmt|;
 specifier|public
 specifier|static
