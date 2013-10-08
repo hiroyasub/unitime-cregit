@@ -1010,7 +1010,7 @@ block|}
 block|}
 if|else if
 condition|(
-literal|"text"
+literal|"input"
 operator|.
 name|equalsIgnoreCase
 argument_list|(

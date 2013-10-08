@@ -2455,6 +2455,8 @@ block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,
+name|ApplicationConfigEdit
+block|,
 name|SettingsAdmin
 block|,
 comment|/** Administration: Utilities */
