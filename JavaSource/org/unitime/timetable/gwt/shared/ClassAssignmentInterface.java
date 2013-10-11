@@ -2735,7 +2735,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|addInstructoEmailr
+name|addInstructoEmail
 parameter_list|(
 name|String
 name|instructorEmail
@@ -2760,6 +2760,12 @@ name|iInstructoEmails
 operator|.
 name|add
 argument_list|(
+name|instructorEmail
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 name|instructorEmail
 argument_list|)
 expr_stmt|;

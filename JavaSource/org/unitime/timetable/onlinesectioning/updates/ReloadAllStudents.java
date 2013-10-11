@@ -23,23 +23,27 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
 
 begin_import
 import|import
-name|net
+name|java
 operator|.
-name|sf
+name|util
 operator|.
-name|cpsolver
-operator|.
-name|studentsct
-operator|.
-name|model
-operator|.
-name|Student
+name|Map
 import|;
 end_import
 
@@ -145,11 +149,84 @@ name|Lock
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|model
+operator|.
+name|XCourseRequest
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|model
+operator|.
+name|XStudent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|server
+operator|.
+name|CheckMaster
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|server
+operator|.
+name|CheckMaster
+operator|.
+name|Master
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
 
 begin_class
+annotation|@
+name|CheckMaster
+argument_list|(
+name|Master
+operator|.
+name|REQUIRED
+argument_list|)
 specifier|public
 class|class
 name|ReloadAllStudents
@@ -233,6 +310,29 @@ operator|.
 name|clearAllStudents
 argument_list|()
 expr_stmt|;
+name|Map
+argument_list|<
+name|Long
+argument_list|,
+name|List
+argument_list|<
+name|XCourseRequest
+argument_list|>
+argument_list|>
+name|requestMap
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|Long
+argument_list|,
+name|List
+argument_list|<
+name|XCourseRequest
+argument_list|>
+argument_list|>
+argument_list|()
+decl_stmt|;
 name|List
 argument_list|<
 name|org
@@ -260,7 +360,17 @@ literal|"left join fetch s.courseDemands as cd "
 operator|+
 literal|"left join fetch cd.courseRequests as cr "
 operator|+
+literal|"left join fetch cr.classWaitLists as cwl "
+operator|+
 literal|"left join fetch s.classEnrollments as e "
+operator|+
+literal|"left join fetch s.academicAreaClassifications as a "
+operator|+
+literal|"left join fetch s.posMajors as mj "
+operator|+
+literal|"left join fetch s.waitlists as w "
+operator|+
+literal|"left join fetch s.groups as g "
 operator|+
 literal|"where s.session.uniqueId=:sessionId"
 argument_list|)
@@ -297,12 +407,14 @@ range|:
 name|students
 control|)
 block|{
-name|Student
+name|XStudent
 name|s
 init|=
 name|loadStudent
 argument_list|(
 name|student
+argument_list|,
+name|requestMap
 argument_list|,
 name|server
 argument_list|,
@@ -320,6 +432,8 @@ operator|.
 name|update
 argument_list|(
 name|s
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}

@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -55,6 +65,8 @@ begin_interface
 specifier|public
 interface|interface
 name|CourseDetailsProvider
+extends|extends
+name|Serializable
 block|{
 specifier|public
 name|String

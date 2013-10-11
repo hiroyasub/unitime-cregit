@@ -385,7 +385,7 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|String
-name|getHostLabel
+name|getUser
 parameter_list|()
 function_decl|;
 specifier|public

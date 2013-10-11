@@ -6282,24 +6282,10 @@ name|StudentClassEnrollment
 argument_list|>
 name|i
 init|=
-operator|(
 name|cr
 operator|.
 name|getClassEnrollments
 argument_list|()
-operator|==
-literal|null
-condition|?
-name|s
-operator|.
-name|getClassEnrollments
-argument_list|()
-else|:
-name|cr
-operator|.
-name|getClassEnrollments
-argument_list|()
-operator|)
 operator|.
 name|iterator
 argument_list|()
@@ -12707,8 +12693,6 @@ operator|+
 literal|"left join fetch s.classEnrollments as e "
 operator|+
 literal|"left join fetch s.waitlists as w "
-operator|+
-literal|"left join fetch cr.classEnrollments as cre "
 operator|+
 operator|(
 name|iLoadStudentInfo

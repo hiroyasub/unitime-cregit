@@ -161,6 +161,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|commons
+operator|.
+name|jgroups
+operator|.
+name|JGroupsUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -416,6 +430,10 @@ init|=
 operator|new
 name|JChannel
 argument_list|(
+name|JGroupsUtils
+operator|.
+name|getConfigurator
+argument_list|(
 name|ApplicationProperties
 operator|.
 name|getProperty
@@ -423,6 +441,7 @@ argument_list|(
 literal|"unitime.solver.jgroups.config"
 argument_list|,
 literal|"solver-jgroups-tcp.xml"
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -487,6 +506,8 @@ name|iServer
 operator|.
 name|getCourseSolverContainer
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|iExamSolverContainer
@@ -509,6 +530,8 @@ name|iServer
 operator|.
 name|getExamSolverContainer
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|iStudentSolverContainer
@@ -531,6 +554,8 @@ name|iServer
 operator|.
 name|getStudentSolverContainer
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|iOnlineStudentSchedulingContainer
@@ -553,6 +578,8 @@ name|iServer
 operator|.
 name|getOnlineStudentSchedulingContainer
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}

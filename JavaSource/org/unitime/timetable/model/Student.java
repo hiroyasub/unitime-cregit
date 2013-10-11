@@ -420,8 +420,6 @@ literal|"left join fetch cd.courseRequests as cr "
 operator|+
 literal|"left join fetch s.classEnrollments as e "
 operator|+
-literal|"left join fetch cr.classEnrollments as cre "
-operator|+
 literal|"left join fetch s.academicAreaClassifications "
 operator|+
 literal|"left join fetch s.posMajors "
@@ -520,28 +518,6 @@ range|:
 name|enrollments
 control|)
 block|{
-name|getClassEnrollments
-argument_list|()
-operator|.
-name|remove
-argument_list|(
-name|enrollment
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|enrollment
-operator|.
-name|getCourseRequest
-argument_list|()
-operator|!=
-literal|null
-condition|)
-name|enrollment
-operator|.
-name|getCourseRequest
-argument_list|()
-operator|.
 name|getClassEnrollments
 argument_list|()
 operator|.

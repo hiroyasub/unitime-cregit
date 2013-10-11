@@ -119,6 +119,18 @@ name|beanName
 argument_list|)
 return|;
 block|}
+specifier|public
+specifier|static
+name|boolean
+name|isInitialized
+parameter_list|()
+block|{
+return|return
+name|sApplicationContext
+operator|!=
+literal|null
+return|;
+block|}
 block|}
 end_class
 

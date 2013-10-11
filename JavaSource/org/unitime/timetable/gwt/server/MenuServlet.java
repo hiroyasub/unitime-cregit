@@ -4527,7 +4527,7 @@ literal|null
 condition|?
 name|studentSolver
 operator|.
-name|getHostLabel
+name|getHost
 argument_list|()
 else|:
 name|examSolver
@@ -4536,12 +4536,12 @@ literal|null
 condition|?
 name|examSolver
 operator|.
-name|getHostLabel
+name|getHost
 argument_list|()
 else|:
 name|solver
 operator|.
-name|getHostLabel
+name|getHost
 argument_list|()
 operator|)
 argument_list|)

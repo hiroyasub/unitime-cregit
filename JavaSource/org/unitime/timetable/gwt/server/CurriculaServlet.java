@@ -16381,7 +16381,7 @@ argument_list|)
 expr_stmt|;
 name|a
 operator|.
-name|addInstructoEmailr
+name|addInstructoEmail
 argument_list|(
 name|instr
 operator|.

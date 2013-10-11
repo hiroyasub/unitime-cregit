@@ -1828,6 +1828,14 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|_RootDAO
+operator|.
+name|closeCurrentThreadSessions
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class
