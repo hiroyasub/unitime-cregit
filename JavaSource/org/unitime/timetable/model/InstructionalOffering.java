@@ -121,9 +121,11 @@ name|org
 operator|.
 name|hibernate
 operator|.
-name|impl
+name|engine
 operator|.
-name|SessionImpl
+name|spi
+operator|.
+name|SessionImplementor
 import|;
 end_import
 
@@ -2890,7 +2892,7 @@ operator|.
 name|generate
 argument_list|(
 operator|(
-name|SessionImpl
+name|SessionImplementor
 operator|)
 operator|new
 name|InstructionalOfferingDAO

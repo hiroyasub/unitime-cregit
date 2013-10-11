@@ -371,9 +371,9 @@ name|timetable
 operator|.
 name|solver
 operator|.
-name|remote
+name|jgroups
 operator|.
-name|RemoteSolver
+name|SolverServerImplementation
 import|;
 end_import
 
@@ -615,7 +615,19 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|RemoteSolver
+if|if
+condition|(
+name|SolverServerImplementation
+operator|.
+name|getInstance
+argument_list|()
+operator|!=
+literal|null
+condition|)
+name|SolverServerImplementation
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|refreshExamSolution
 argument_list|(

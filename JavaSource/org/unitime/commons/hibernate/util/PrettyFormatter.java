@@ -63,6 +63,8 @@ name|org
 operator|.
 name|hibernate
 operator|.
+name|internal
+operator|.
 name|util
 operator|.
 name|StringHelper

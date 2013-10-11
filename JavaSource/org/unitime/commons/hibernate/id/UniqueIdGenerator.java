@@ -101,6 +101,8 @@ name|hibernate
 operator|.
 name|engine
 operator|.
+name|spi
+operator|.
 name|SessionImplementor
 import|;
 end_import

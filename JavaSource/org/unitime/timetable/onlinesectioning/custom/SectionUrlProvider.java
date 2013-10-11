@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Tomas Muller  */
+comment|/**  * @author Tomas Muller  * @deprecated  */
 end_comment
 
 begin_interface

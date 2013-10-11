@@ -243,12 +243,11 @@ block|{
 comment|//return defaultValue if hibernate is not yet initialized
 if|if
 condition|(
+operator|!
 name|_RootDAO
 operator|.
-name|getConfiguration
+name|isConfigured
 argument_list|()
-operator|==
-literal|null
 condition|)
 return|return
 name|defaultValue
@@ -313,12 +312,11 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|_RootDAO
 operator|.
-name|getConfiguration
+name|isConfigured
 argument_list|()
-operator|==
-literal|null
 condition|)
 return|return
 name|properties

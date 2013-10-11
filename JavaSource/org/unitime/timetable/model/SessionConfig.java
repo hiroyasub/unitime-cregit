@@ -233,12 +233,11 @@ block|{
 comment|//return defaultValue if hibernate is not yet initialized or no session is given
 if|if
 condition|(
+operator|!
 name|_RootDAO
 operator|.
-name|getConfiguration
+name|isConfigured
 argument_list|()
-operator|==
-literal|null
 operator|||
 name|sessionId
 operator|==
@@ -318,12 +317,11 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|_RootDAO
 operator|.
-name|getConfiguration
+name|isConfigured
 argument_list|()
-operator|==
-literal|null
 operator|||
 name|sessionId
 operator|==

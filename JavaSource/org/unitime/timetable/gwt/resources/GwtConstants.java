@@ -43,7 +43,7 @@ block|{
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"3.4"
+literal|"3.5"
 argument_list|)
 name|String
 name|version

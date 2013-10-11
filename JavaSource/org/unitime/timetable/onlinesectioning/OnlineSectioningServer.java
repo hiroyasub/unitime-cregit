@@ -19,9 +19,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
+name|io
 operator|.
-name|URL
+name|Serializable
 import|;
 end_import
 
@@ -312,6 +312,14 @@ name|course
 parameter_list|)
 function_decl|;
 specifier|public
+name|CourseDetails
+name|getCourseDetails
+parameter_list|(
+name|Long
+name|courseId
+parameter_list|)
+function_decl|;
+specifier|public
 name|Student
 name|getStudent
 parameter_list|(
@@ -341,17 +349,6 @@ name|getOffering
 parameter_list|(
 name|Long
 name|offeringId
-parameter_list|)
-function_decl|;
-specifier|public
-name|URL
-name|getSectionUrl
-parameter_list|(
-name|Long
-name|courseId
-parameter_list|,
-name|Section
-name|section
 parameter_list|)
 function_decl|;
 specifier|public
@@ -736,6 +733,8 @@ specifier|public
 specifier|static
 interface|interface
 name|CourseInfoMatcher
+extends|extends
+name|Serializable
 block|{
 specifier|public
 name|boolean
@@ -750,6 +749,8 @@ specifier|public
 specifier|static
 interface|interface
 name|StudentMatcher
+extends|extends
+name|Serializable
 block|{
 specifier|public
 name|boolean

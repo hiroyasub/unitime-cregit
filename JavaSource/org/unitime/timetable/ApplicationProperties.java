@@ -1013,10 +1013,8 @@ literal|null
 operator|&&
 name|_RootDAO
 operator|.
-name|getConfiguration
+name|isConfigured
 argument_list|()
-operator|!=
-literal|null
 condition|)
 name|configProps
 operator|=
@@ -1061,12 +1059,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|_RootDAO
 operator|.
-name|getConfiguration
+name|isConfigured
 argument_list|()
-operator|==
-literal|null
 operator|||
 name|sessionId
 operator|==

@@ -85,16 +85,6 @@ name|org
 operator|.
 name|hibernate
 operator|.
-name|EntityMode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|hibernate
-operator|.
 name|MappingException
 import|;
 end_import
@@ -117,6 +107,8 @@ name|hibernate
 operator|.
 name|engine
 operator|.
+name|spi
+operator|.
 name|SessionFactoryImplementor
 import|;
 end_import
@@ -128,6 +120,8 @@ operator|.
 name|hibernate
 operator|.
 name|engine
+operator|.
+name|spi
 operator|.
 name|SessionImplementor
 import|;
@@ -2489,10 +2483,6 @@ argument_list|()
 index|[
 name|i
 index|]
-argument_list|,
-name|EntityMode
-operator|.
-name|POJO
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2640,10 +2630,6 @@ argument_list|()
 index|[
 name|i
 index|]
-argument_list|,
-name|EntityMode
-operator|.
-name|POJO
 argument_list|)
 argument_list|)
 expr_stmt|;
