@@ -49,6 +49,10 @@ name|Address
 import|;
 end_import
 
+begin_comment
+comment|/**  * @author Tomas Muller  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface

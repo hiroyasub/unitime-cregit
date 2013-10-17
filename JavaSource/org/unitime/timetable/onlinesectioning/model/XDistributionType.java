@@ -17,6 +17,10 @@ name|model
 package|;
 end_package
 
+begin_comment
+comment|/**  * @author Tomas Muller  */
+end_comment
+
 begin_enum
 specifier|public
 enum|enum

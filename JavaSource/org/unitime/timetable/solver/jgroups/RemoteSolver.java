@@ -17,6 +17,10 @@ name|jgroups
 package|;
 end_package
 
+begin_comment
+comment|/**  * @author Tomas Muller  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface

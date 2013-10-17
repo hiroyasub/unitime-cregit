@@ -97,6 +97,10 @@ name|CourseDemand
 import|;
 end_import
 
+begin_comment
+comment|/**  * @author Tomas Muller  */
+end_comment
+
 begin_class
 specifier|public
 specifier|abstract

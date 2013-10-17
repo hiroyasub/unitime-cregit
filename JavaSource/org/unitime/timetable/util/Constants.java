@@ -258,7 +258,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Various constants used in timetabling project.  * @author Tomas Muller  */
+comment|/**  * Various constants used in timetabling project.  * @author Tomas Muller, Stephanie Schluttenhofer  */
 end_comment
 
 begin_class

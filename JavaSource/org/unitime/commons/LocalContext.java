@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Inspired by the sample service provider that implements a hierarchical namespace in memory:  * http://docs.oracle.com/javase/jndi/tutorial/provider/basics/names.html  */
+comment|/**  * Inspired by the sample service provider that implements a hierarchical namespace in memory:  * http://docs.oracle.com/javase/jndi/tutorial/provider/basics/names.html  *  * @author Tomas Muller  */
 end_comment
 
 begin_class
