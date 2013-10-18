@@ -256,7 +256,7 @@ operator|.
 name|getStatusType
 argument_list|()
 operator|.
-name|isActive
+name|isAllowNoRole
 argument_list|()
 operator|||
 name|session
