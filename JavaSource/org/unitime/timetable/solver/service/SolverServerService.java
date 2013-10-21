@@ -499,6 +499,9 @@ name|SolverProxy
 argument_list|>
 argument_list|(
 name|iServer
+operator|.
+name|getDispatcher
+argument_list|()
 argument_list|,
 operator|(
 name|RemoteSolverContainer
@@ -523,6 +526,9 @@ name|ExamSolverProxy
 argument_list|>
 argument_list|(
 name|iServer
+operator|.
+name|getDispatcher
+argument_list|()
 argument_list|,
 operator|(
 name|RemoteSolverContainer
@@ -547,6 +553,9 @@ name|StudentSolverProxy
 argument_list|>
 argument_list|(
 name|iServer
+operator|.
+name|getDispatcher
+argument_list|()
 argument_list|,
 operator|(
 name|RemoteSolverContainer
@@ -571,6 +580,9 @@ name|OnlineSectioningServer
 argument_list|>
 argument_list|(
 name|iServer
+operator|.
+name|getDispatcher
+argument_list|()
 argument_list|,
 operator|(
 name|RemoteSolverContainer

@@ -3727,13 +3727,6 @@ operator|+
 literal|"';\">&nbsp;&nbsp;"
 expr_stmt|;
 block|}
-else|else
-block|{
-name|usage
-operator|+=
-literal|500
-expr_stmt|;
-block|}
 name|webTable
 operator|.
 name|addLine
