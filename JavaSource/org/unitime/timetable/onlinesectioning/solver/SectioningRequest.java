@@ -3208,15 +3208,10 @@ name|getOfferingId
 argument_list|()
 argument_list|)
 argument_list|,
-name|server
+name|offering
 operator|.
 name|getDistributions
-argument_list|(
-name|c
-operator|.
-name|getOfferingId
 argument_list|()
-argument_list|)
 argument_list|,
 name|server
 operator|.
