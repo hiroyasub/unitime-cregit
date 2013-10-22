@@ -776,7 +776,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|int
+name|Integer
 name|usage
 init|=
 name|iDispatcher
