@@ -938,15 +938,6 @@ name|getCourseDemand
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|server
-operator|.
-name|assign
-argument_list|(
-name|request
-argument_list|,
-literal|null
-argument_list|)
-expr_stmt|;
 name|student
 operator|.
 name|getRequests

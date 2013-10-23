@@ -514,7 +514,21 @@ name|message
 operator|+=
 literal|"\n    "
 operator|+
+operator|(
 name|request
+operator|==
+literal|null
+condition|?
+name|iOldOffering
+operator|.
+name|toString
+argument_list|()
+else|:
+name|request
+operator|.
+name|toString
+argument_list|()
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -576,7 +590,21 @@ name|message
 operator|+=
 literal|"\n    "
 operator|+
+operator|(
 name|request
+operator|==
+literal|null
+condition|?
+name|iOldOffering
+operator|.
+name|toString
+argument_list|()
+else|:
+name|request
+operator|.
+name|toString
+argument_list|()
+operator|)
 operator|+
 literal|" NOT ASSIGNED"
 expr_stmt|;
@@ -620,7 +648,21 @@ name|message
 operator|+=
 literal|"\n    "
 operator|+
+operator|(
 name|request
+operator|==
+literal|null
+condition|?
+name|iOldOffering
+operator|.
+name|toString
+argument_list|()
+else|:
+name|request
+operator|.
+name|toString
+argument_list|()
+operator|)
 operator|+
 literal|" NOT ASSIGNED"
 expr_stmt|;
