@@ -3450,7 +3450,6 @@ operator|.
 name|isActive
 argument_list|()
 condition|)
-block|{
 name|tx
 operator|=
 name|hibSession
@@ -3458,12 +3457,6 @@ operator|.
 name|beginTransaction
 argument_list|()
 expr_stmt|;
-name|tx
-operator|.
-name|begin
-argument_list|()
-expr_stmt|;
-block|}
 name|HashSet
 name|relatedExams
 init|=
