@@ -904,7 +904,7 @@ decl_stmt|;
 if|if
 condition|(
 name|list
-operator|!=
+operator|==
 literal|null
 condition|)
 block|{
