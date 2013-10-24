@@ -593,8 +593,9 @@ block|{
 name|int
 name|cmp
 init|=
-operator|new
 name|NaturalOrderComparator
+operator|.
+name|getInstance
 argument_list|()
 operator|.
 name|compare
