@@ -200,6 +200,15 @@ name|getGroupAbbreviation
 argument_list|()
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|getGroup
+parameter_list|()
+block|{
+return|return
+name|iGroup
+return|;
+block|}
 comment|/**      * Group reservations are of the second highest priority      */
 annotation|@
 name|Override
