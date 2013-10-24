@@ -113,6 +113,14 @@ name|void
 name|stop
 parameter_list|()
 function_decl|;
+specifier|public
+name|long
+name|getMemUsage
+parameter_list|(
+name|String
+name|user
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
