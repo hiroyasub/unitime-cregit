@@ -696,6 +696,26 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+finally|finally
+block|{
+comment|// here we need to close the session since this code may run in a separate thread
+if|if
+condition|(
+name|hibSession
+operator|!=
+literal|null
+operator|&&
+name|hibSession
+operator|.
+name|isOpen
+argument_list|()
+condition|)
+name|hibSession
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|private
 name|String
