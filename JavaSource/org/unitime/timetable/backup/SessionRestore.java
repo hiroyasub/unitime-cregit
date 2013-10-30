@@ -5801,6 +5801,11 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+name|HibernateUtil
+operator|.
+name|closeHibernate
+argument_list|()
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
