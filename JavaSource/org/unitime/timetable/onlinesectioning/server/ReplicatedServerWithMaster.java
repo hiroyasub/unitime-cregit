@@ -2044,7 +2044,7 @@ parameter_list|)
 block|{
 name|iLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Update "
 operator|+

@@ -1758,11 +1758,14 @@ parameter_list|)
 block|{
 name|sLog
 operator|.
-name|error
+name|debug
 argument_list|(
 literal|"Excution of "
 operator|+
 name|method
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|" on solver "
 operator|+
