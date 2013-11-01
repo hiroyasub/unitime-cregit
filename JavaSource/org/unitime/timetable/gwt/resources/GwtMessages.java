@@ -6635,7 +6635,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Not allowed to request an event in {0}."
+literal|"{0} is currently not available for event scheduling."
 argument_list|)
 name|String
 name|conflictRoomDenied
