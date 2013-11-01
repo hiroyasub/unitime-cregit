@@ -860,6 +860,8 @@ name|valueOf
 argument_list|(
 name|sessionId
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -869,6 +871,9 @@ name|unload
 parameter_list|(
 name|Long
 name|academicSessionId
+parameter_list|,
+name|boolean
+name|interrupt
 parameter_list|)
 block|{
 name|iGlobalLock
@@ -900,7 +905,9 @@ condition|)
 name|u
 operator|.
 name|stopUpdating
-argument_list|()
+argument_list|(
+name|interrupt
+argument_list|)
 expr_stmt|;
 name|OnlineSectioningServer
 name|s
@@ -1341,7 +1348,9 @@ block|{
 name|u
 operator|.
 name|stopUpdating
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
