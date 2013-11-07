@@ -7216,6 +7216,13 @@ name|m
 operator|.
 name|getLocation
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|m
+operator|.
+name|getLocation
+argument_list|()
 operator|.
 name|getEventAvailability
 argument_list|()

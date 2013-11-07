@@ -887,11 +887,26 @@ argument_list|)
 decl_stmt|;
 name|sLog
 operator|.
-name|debug
+name|info
 argument_list|(
 literal|"Registration information received."
 argument_list|)
 expr_stmt|;
+try|try
+block|{
+name|cr
+operator|.
+name|release
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+block|}
 name|StringReader
 name|r
 init|=
