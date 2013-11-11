@@ -548,6 +548,12 @@ name|iEnrollmentPriorityProvider
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|DataProperties
+name|iProperties
+init|=
+literal|null
+decl_stmt|;
 specifier|public
 name|CurriculaCourseDemands
 parameter_list|(
@@ -555,6 +561,10 @@ name|DataProperties
 name|properties
 parameter_list|)
 block|{
+name|iProperties
+operator|=
+name|properties
+expr_stmt|;
 if|if
 condition|(
 name|properties
@@ -1435,7 +1445,9 @@ comment|// Solve model
 name|m
 operator|.
 name|solve
-argument_list|()
+argument_list|(
+name|iProperties
+argument_list|)
 expr_stmt|;
 comment|// Save into the cache
 name|Document

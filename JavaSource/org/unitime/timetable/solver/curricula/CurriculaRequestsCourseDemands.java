@@ -610,6 +610,12 @@ name|iEnrollmentPriorityProvider
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|DataProperties
+name|iProperties
+init|=
+literal|null
+decl_stmt|;
 specifier|public
 name|CurriculaRequestsCourseDemands
 parameter_list|(
@@ -617,6 +623,10 @@ name|DataProperties
 name|config
 parameter_list|)
 block|{
+name|iProperties
+operator|=
+name|config
+expr_stmt|;
 name|iStudentCourseRequests
 operator|=
 operator|new
@@ -2641,7 +2651,9 @@ expr_stmt|;
 name|m
 operator|.
 name|solve
-argument_list|()
+argument_list|(
+name|iProperties
+argument_list|)
 expr_stmt|;
 name|sLog
 operator|.

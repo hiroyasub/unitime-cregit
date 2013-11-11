@@ -3229,7 +3229,7 @@ name|cfg
 operator|.
 name|setProperty
 argument_list|(
-literal|"HC.Iters"
+literal|"Curriculum.HC.Iters"
 argument_list|,
 name|String
 operator|.
@@ -3243,7 +3243,7 @@ name|cfg
 operator|.
 name|setProperty
 argument_list|(
-literal|"HC.Value"
+literal|"Curriculum.HC.Value"
 argument_list|,
 name|String
 operator|.
@@ -3279,7 +3279,7 @@ name|cfg
 operator|.
 name|getPropertyDouble
 argument_list|(
-literal|"Deluge.Factor"
+literal|"Curriculum.Deluge.Factor"
 argument_list|,
 literal|0.999999
 argument_list|)
@@ -3466,7 +3466,7 @@ name|cfg
 operator|.
 name|setProperty
 argument_list|(
-literal|"Deluge.Iters"
+literal|"Curriculum.Deluge.Iters"
 argument_list|,
 name|String
 operator|.
@@ -3483,7 +3483,7 @@ name|cfg
 operator|.
 name|setProperty
 argument_list|(
-literal|"Deluge.Value"
+literal|"Curriculum.Deluge.Value"
 argument_list|,
 name|String
 operator|.
@@ -3703,6 +3703,18 @@ name|DataProperties
 name|cfg
 parameter_list|)
 block|{
+if|if
+condition|(
+name|cfg
+operator|==
+literal|null
+condition|)
+name|cfg
+operator|=
+operator|new
+name|DataProperties
+argument_list|()
+expr_stmt|;
 name|sLog
 operator|.
 name|debug
@@ -3911,7 +3923,7 @@ name|cfg
 operator|.
 name|setProperty
 argument_list|(
-literal|"Initial.Value"
+literal|"Curriculum.Initial.Value"
 argument_list|,
 name|String
 operator|.
