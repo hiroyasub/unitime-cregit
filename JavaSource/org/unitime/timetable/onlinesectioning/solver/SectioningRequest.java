@@ -1297,6 +1297,24 @@ name|getAvaiableEnrollments
 argument_list|()
 control|)
 block|{
+comment|// only consider enrollments of the offering that is being checked
+if|if
+condition|(
+name|e
+operator|.
+name|getOffering
+argument_list|()
+operator|.
+name|getId
+argument_list|()
+operator|!=
+name|getOffering
+argument_list|()
+operator|.
+name|getOfferingId
+argument_list|()
+condition|)
+continue|continue;
 for|for
 control|(
 name|Request
