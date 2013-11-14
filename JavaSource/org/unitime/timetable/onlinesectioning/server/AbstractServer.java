@@ -2138,7 +2138,9 @@ operator|.
 name|getCacheMode
 argument_list|()
 else|:
-literal|null
+name|CacheMode
+operator|.
+name|IGNORE
 argument_list|)
 decl_stmt|;
 try|try

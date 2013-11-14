@@ -3000,7 +3000,7 @@ block|{
 return|return
 name|CacheMode
 operator|.
-name|REFRESH
+name|IGNORE
 return|;
 block|}
 block|}
