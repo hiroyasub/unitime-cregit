@@ -662,7 +662,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select i from SectioningInfo i where i.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering = :offeringId"
+literal|"select i from SectioningInfo i "
+operator|+
+literal|"left join fetch i.clazz as c "
+operator|+
+literal|"where i.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering = :offeringId"
 argument_list|)
 operator|.
 name|setLong
