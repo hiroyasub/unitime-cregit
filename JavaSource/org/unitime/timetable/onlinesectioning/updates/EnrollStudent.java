@@ -4725,6 +4725,13 @@ name|helper
 operator|.
 name|error
 argument_list|(
+literal|"Failed to enroll student "
+operator|+
+name|getStudentId
+argument_list|()
+operator|+
+literal|": "
+operator|+
 name|e
 operator|.
 name|getMessage
