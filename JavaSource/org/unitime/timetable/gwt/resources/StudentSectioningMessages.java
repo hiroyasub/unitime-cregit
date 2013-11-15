@@ -2291,6 +2291,54 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Unable to enroll into {0}, enrollment is incomplete."
+argument_list|)
+name|String
+name|exceptionEnrollmentIncomplete
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to enroll into {0}, enrollment is overlapping."
+argument_list|)
+name|String
+name|exceptionEnrollmentOverlapping
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to enroll into {0}, enrollment is invalid."
+argument_list|)
+name|String
+name|exceptionEnrollmentInvalid
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to enroll into {0}, enrollment is conflicting."
+argument_list|)
+name|String
+name|exceptionEnrollmentConflicting
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"This feature is not supported in the current environment."
 argument_list|)
 name|String
