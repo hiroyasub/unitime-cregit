@@ -719,18 +719,6 @@ name|InvalidProtocolBufferException
 name|e
 parameter_list|)
 block|{
-name|helper
-operator|.
-name|warn
-argument_list|(
-literal|"Failed to parse course request options: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 block|}
