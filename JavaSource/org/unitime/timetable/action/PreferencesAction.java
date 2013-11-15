@@ -2930,6 +2930,17 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|(
+name|frm
+operator|.
+name|getAvailability
+argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|336
+operator|||
 name|frm
 operator|.
 name|getAvailability
@@ -2939,6 +2950,7 @@ name|length
 argument_list|()
 operator|==
 literal|2016
+operator|)
 condition|)
 block|{
 name|TimePref
