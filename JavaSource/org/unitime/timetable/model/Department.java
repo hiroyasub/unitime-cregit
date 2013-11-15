@@ -2162,6 +2162,14 @@ name|isAllowEvents
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|d
+operator|.
+name|setInheritInstructorPreferences
+argument_list|(
+name|isInheritInstructorPreferences
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|d
 return|;

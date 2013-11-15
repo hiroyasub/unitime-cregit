@@ -491,9 +491,9 @@ argument_list|(
 operator|(
 name|dispLastChanges
 condition|?
-literal|10
+literal|12
 else|:
-literal|9
+literal|11
 operator|)
 argument_list|,
 literal|"Department List - "
@@ -546,6 +546,8 @@ literal|"Dist Pref\nPriority"
 block|,
 literal|"Allow\nRequired"
 block|,
+literal|"Instructor\nPref"
+block|,
 literal|"Events"
 block|,
 literal|"Last\nChange"
@@ -573,6 +575,8 @@ literal|"Dist Pref\nPriority"
 block|,
 literal|"Allow\nRequired"
 block|,
+literal|"Instructor\nPref"
+block|,
 literal|"Events"
 block|}
 operator|)
@@ -596,6 +600,8 @@ block|,
 literal|"left"
 block|,
 literal|"right"
+block|,
+literal|"left"
 block|,
 literal|"left"
 block|,
@@ -1097,6 +1103,15 @@ name|allowReq
 block|,
 name|d
 operator|.
+name|isInheritInstructorPreferences
+argument_list|()
+condition|?
+literal|"Yes"
+else|:
+literal|"No"
+block|,
+name|d
+operator|.
 name|isAllowEvents
 argument_list|()
 condition|?
@@ -1188,6 +1203,11 @@ argument_list|)
 block|,
 name|d
 operator|.
+name|isInheritInstructorPreferences
+argument_list|()
+block|,
+name|d
+operator|.
 name|isAllowEvents
 argument_list|()
 block|,
@@ -1230,9 +1250,9 @@ argument_list|(
 operator|(
 name|dispLastChanges
 condition|?
-literal|10
+literal|12
 else|:
-literal|9
+literal|11
 operator|)
 argument_list|,
 literal|""
@@ -1260,13 +1280,15 @@ literal|"Rooms"
 block|,
 literal|"Status"
 block|,
-literal|"Dist&nbsp;Pref Priority"
+literal|"Dist&nbsp;Pref<br>Priority"
 block|,
-literal|"Allow Required"
+literal|"Allow<br>Required"
+block|,
+literal|"Instructor<br>Preferences"
 block|,
 literal|"Events"
 block|,
-literal|"Last Change"
+literal|"Last<br>Change"
 block|}
 else|:
 operator|new
@@ -1287,9 +1309,11 @@ literal|"Rooms"
 block|,
 literal|"Status"
 block|,
-literal|"Dist Pref Priority"
+literal|"Dist&nbsp;Pref<br>Priority"
 block|,
-literal|"Allow Required"
+literal|"Allow<br>Required"
+block|,
+literal|"Instructor<br>Preferences"
 block|,
 literal|"Events"
 block|}
@@ -1320,12 +1344,16 @@ block|,
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"left"
 block|}
 argument_list|,
 operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -1909,6 +1937,17 @@ block|,
 operator|(
 name|d
 operator|.
+name|isInheritInstructorPreferences
+argument_list|()
+condition|?
+literal|"<IMG border='0' title='Instructor preferences are to be inherited.' alt='Inherit Instructor Preferences' align='absmiddle' src='images/tick.gif'>"
+else|:
+literal|""
+operator|)
+block|,
+operator|(
+name|d
+operator|.
 name|isAllowEvents
 argument_list|()
 condition|?
@@ -2007,6 +2046,11 @@ name|Integer
 argument_list|(
 name|allowReqOrd
 argument_list|)
+block|,
+name|d
+operator|.
+name|isInheritInstructorPreferences
+argument_list|()
 block|,
 name|d
 operator|.

@@ -256,6 +256,10 @@ name|Boolean
 name|iAllowEvents
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iInheritInstructorPreferences
+decl_stmt|;
+specifier|private
 name|String
 name|iRoomSharingColor
 decl_stmt|;
@@ -384,6 +388,13 @@ name|String
 name|PROP_ALLOW_EVENTS
 init|=
 literal|"allowEvents"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_INSTRUCTOR_PREF
+init|=
+literal|"inheritInstructorPreferences"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -660,6 +671,37 @@ block|{
 name|iAllowEvents
 operator|=
 name|allowEvents
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isInheritInstructorPreferences
+parameter_list|()
+block|{
+return|return
+name|iInheritInstructorPreferences
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getInheritInstructorPreferences
+parameter_list|()
+block|{
+return|return
+name|iInheritInstructorPreferences
+return|;
+block|}
+specifier|public
+name|void
+name|setInheritInstructorPreferences
+parameter_list|(
+name|boolean
+name|inheritInstructorPreferences
+parameter_list|)
+block|{
+name|iInheritInstructorPreferences
+operator|=
+name|inheritInstructorPreferences
 expr_stmt|;
 block|}
 specifier|public
@@ -1371,6 +1413,11 @@ operator|+
 literal|"\n	ExternalUniqueId: "
 operator|+
 name|getExternalUniqueId
+argument_list|()
+operator|+
+literal|"\n InheritInstructorPreferences: "
+operator|+
+name|getInheritInstructorPreferences
 argument_list|()
 operator|+
 literal|"\n	Name: "
