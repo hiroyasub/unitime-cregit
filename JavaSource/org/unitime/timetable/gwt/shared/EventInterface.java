@@ -7737,6 +7737,9 @@ argument_list|()
 else|:
 literal|""
 argument_list|)
+operator|.
+name|trim
+argument_list|()
 return|;
 block|}
 specifier|public

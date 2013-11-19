@@ -2702,6 +2702,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Reset"
+argument_list|)
+name|String
+name|buttonResetMainContact
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Standard&nbsp;<u>N</u>otes..."
 argument_list|)
 name|String
@@ -5026,6 +5035,48 @@ argument_list|)
 name|String
 name|checkSendEmailConfirmation
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Please confirm the change in your contact information."
+argument_list|)
+name|String
+name|checkYourContactChange
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your contact information will be updated."
+argument_list|)
+name|String
+name|confirmYourContactChange
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Please confirm the change in the contact information for {0}."
+argument_list|)
+name|String
+name|checkMainContactChange
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The contact information for {0} will be updated."
+argument_list|)
+name|String
+name|confirmMainContactChange
+parameter_list|(
+name|String
+name|name
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
