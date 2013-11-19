@@ -2700,11 +2700,11 @@ argument_list|)
 operator|+
 literal|"% ("
 operator|+
-name|nrVars
+name|assgnVars
 operator|+
 literal|"/"
 operator|+
-name|assgnVars
+name|nrVars
 operator|+
 literal|")"
 argument_list|)
