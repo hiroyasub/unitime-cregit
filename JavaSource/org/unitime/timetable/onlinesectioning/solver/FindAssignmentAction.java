@@ -1116,11 +1116,11 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 decl_stmt|;
-name|StudentSectioningModel
+name|OnlineSectioningModel
 name|model
 init|=
 operator|new
-name|StudentSectioningModel
+name|OnlineSectioningModel
 argument_list|(
 name|server
 operator|.
