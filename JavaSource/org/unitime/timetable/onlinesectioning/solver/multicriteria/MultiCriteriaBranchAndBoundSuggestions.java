@@ -257,7 +257,7 @@ parameter_list|,
 name|Date
 name|firstDate
 parameter_list|,
-name|int
+name|double
 name|maxSectionsWithPenalty
 parameter_list|,
 name|boolean

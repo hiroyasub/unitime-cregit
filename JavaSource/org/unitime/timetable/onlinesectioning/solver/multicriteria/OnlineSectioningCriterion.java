@@ -1238,7 +1238,7 @@ comment|// higher priority request assigned
 block|}
 block|}
 comment|// 1. minimize number of penalties
-name|int
+name|double
 name|bestPenalties
 init|=
 literal|0
@@ -1305,12 +1305,12 @@ operator|.
 name|getSections
 argument_list|()
 control|)
-if|if
-condition|(
+name|bestPenalties
+operator|+=
 name|getModel
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
@@ -1322,9 +1322,6 @@ operator|.
 name|getRequest
 argument_list|()
 argument_list|)
-condition|)
-name|bestPenalties
-operator|++
 expr_stmt|;
 for|for
 control|(
@@ -1339,12 +1336,12 @@ operator|.
 name|getSections
 argument_list|()
 control|)
-if|if
-condition|(
+name|currentPenalties
+operator|+=
 name|getModel
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
@@ -1356,9 +1353,6 @@ operator|.
 name|getRequest
 argument_list|()
 argument_list|)
-condition|)
-name|currentPenalties
-operator|++
 expr_stmt|;
 block|}
 block|}
@@ -2871,7 +2865,7 @@ block|}
 block|}
 block|}
 comment|// 1. maximize number of penalties
-name|int
+name|double
 name|bestPenalties
 init|=
 literal|0
@@ -2920,12 +2914,12 @@ operator|.
 name|getSections
 argument_list|()
 control|)
-if|if
-condition|(
+name|bestPenalties
+operator|+=
 name|getModel
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
@@ -2937,9 +2931,6 @@ operator|.
 name|getRequest
 argument_list|()
 argument_list|)
-condition|)
-name|bestPenalties
-operator|++
 expr_stmt|;
 block|}
 if|if
@@ -2969,12 +2960,12 @@ operator|.
 name|getSections
 argument_list|()
 control|)
-if|if
-condition|(
+name|currentPenalties
+operator|+=
 name|getModel
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
@@ -2986,9 +2977,6 @@ operator|.
 name|getRequest
 argument_list|()
 argument_list|)
-condition|)
-name|currentPenalties
-operator|++
 expr_stmt|;
 block|}
 block|}
@@ -4555,7 +4543,7 @@ return|return
 literal|1
 return|;
 comment|// 2. maximize number of penalties
-name|int
+name|double
 name|p1
 init|=
 literal|0
@@ -4574,12 +4562,12 @@ operator|.
 name|getSections
 argument_list|()
 control|)
-if|if
-condition|(
+name|p1
+operator|+=
 name|getModel
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
@@ -4588,9 +4576,6 @@ operator|.
 name|getRequest
 argument_list|()
 argument_list|)
-condition|)
-name|p1
-operator|++
 expr_stmt|;
 for|for
 control|(
@@ -4602,12 +4587,12 @@ operator|.
 name|getSections
 argument_list|()
 control|)
-if|if
-condition|(
+name|p2
+operator|+=
 name|getModel
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
@@ -4616,9 +4601,6 @@ operator|.
 name|getRequest
 argument_list|()
 argument_list|)
-condition|)
-name|p2
-operator|++
 expr_stmt|;
 if|if
 condition|(

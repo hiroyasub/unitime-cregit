@@ -61,8 +61,8 @@ interface|interface
 name|OverExpectedCriterion
 block|{
 specifier|public
-name|boolean
-name|isOverExpected
+name|double
+name|getOverExpected
 parameter_list|(
 name|Section
 name|section

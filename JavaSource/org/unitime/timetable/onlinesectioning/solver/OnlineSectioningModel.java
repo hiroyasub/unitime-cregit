@@ -61,7 +61,7 @@ name|solver
 operator|.
 name|expectations
 operator|.
-name|MoreSpaceThanExpected
+name|PercentageOverExpected
 import|;
 end_import
 
@@ -192,7 +192,7 @@ name|getProperty
 argument_list|(
 literal|"OverExpectedCriterion.Class"
 argument_list|,
-name|MoreSpaceThanExpected
+name|PercentageOverExpected
 operator|.
 name|class
 operator|.
@@ -243,7 +243,7 @@ expr_stmt|;
 name|iOverExpectedCriterion
 operator|=
 operator|new
-name|MoreSpaceThanExpected
+name|PercentageOverExpected
 argument_list|(
 name|properties
 argument_list|)
@@ -273,8 +273,8 @@ name|overExpectedCriterion
 expr_stmt|;
 block|}
 specifier|public
-name|boolean
-name|isOverExpected
+name|double
+name|getOverExpected
 parameter_list|(
 name|Section
 name|section
@@ -287,7 +287,7 @@ return|return
 name|getOverExpectedCriterion
 argument_list|()
 operator|.
-name|isOverExpected
+name|getOverExpected
 argument_list|(
 name|section
 argument_list|,
