@@ -660,6 +660,16 @@ range|:
 name|ret
 control|)
 block|{
+if|if
+condition|(
+name|rsp
+operator|.
+name|getValue
+argument_list|()
+operator|==
+literal|null
+condition|)
+continue|continue;
 for|for
 control|(
 name|String

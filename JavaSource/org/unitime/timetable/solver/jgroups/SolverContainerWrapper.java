@@ -465,6 +465,13 @@ name|rsp
 operator|.
 name|getValue
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|rsp
+operator|.
+name|getValue
+argument_list|()
 condition|)
 name|senders
 operator|.
