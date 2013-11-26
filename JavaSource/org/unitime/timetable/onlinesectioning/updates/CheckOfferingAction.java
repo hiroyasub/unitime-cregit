@@ -2427,6 +2427,8 @@ argument_list|)
 operator|.
 name|getAssignment
 argument_list|()
+argument_list|,
+name|offering
 argument_list|)
 expr_stmt|;
 name|server

@@ -3657,6 +3657,10 @@ argument_list|)
 operator|.
 name|getAssignment
 argument_list|()
+argument_list|,
+name|newOffering
+argument_list|,
+name|oldOffering
 argument_list|)
 expr_stmt|;
 name|server
