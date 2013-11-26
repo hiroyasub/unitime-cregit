@@ -59,6 +59,14 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|MoreSpaceThanExpected
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 end_class
 
