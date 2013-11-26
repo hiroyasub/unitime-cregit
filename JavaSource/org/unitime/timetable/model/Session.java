@@ -3895,6 +3895,12 @@ operator|(
 name|server
 operator|==
 literal|null
+operator|||
+operator|!
+name|server
+operator|.
+name|isReady
+argument_list|()
 condition|?
 literal|null
 else|:
