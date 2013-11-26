@@ -1032,6 +1032,16 @@ operator|.
 name|getId
 argument_list|()
 expr_stmt|;
+name|iInstructionalType
+operator|=
+name|section
+operator|.
+name|getSubpart
+argument_list|()
+operator|.
+name|getInstructionalType
+argument_list|()
+expr_stmt|;
 name|iNote
 operator|=
 name|section
