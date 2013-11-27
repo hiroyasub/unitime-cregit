@@ -6392,7 +6392,7 @@ init|=
 operator|new
 name|DecimalFormat
 argument_list|(
-literal|"0.00"
+literal|"0.0000"
 argument_list|)
 decl_stmt|;
 name|boolean
@@ -6597,8 +6597,6 @@ name|df
 operator|.
 name|format
 argument_list|(
-literal|100.0
-operator|*
 name|model
 argument_list|()
 operator|.
@@ -6686,8 +6684,6 @@ name|df
 operator|.
 name|format
 argument_list|(
-literal|100.0
-operator|*
 name|get
 argument_list|(
 literal|"[S] Probability that a class has suggestions [%]"
@@ -6728,8 +6724,6 @@ name|df
 operator|.
 name|format
 argument_list|(
-literal|100.0
-operator|*
 name|get
 argument_list|(
 literal|"[S] Suggestion acceptance rate [%]"
