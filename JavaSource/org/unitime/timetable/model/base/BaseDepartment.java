@@ -674,7 +674,7 @@ name|allowEvents
 expr_stmt|;
 block|}
 specifier|public
-name|boolean
+name|Boolean
 name|isInheritInstructorPreferences
 parameter_list|()
 block|{
