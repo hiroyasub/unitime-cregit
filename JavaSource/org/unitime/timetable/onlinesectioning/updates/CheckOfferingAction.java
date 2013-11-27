@@ -1817,7 +1817,7 @@ condition|)
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Deleting "
 operator|+
@@ -2256,7 +2256,7 @@ argument_list|)
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Adding "
 operator|+

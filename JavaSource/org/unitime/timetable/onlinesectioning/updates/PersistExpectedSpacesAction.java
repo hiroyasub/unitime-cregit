@@ -795,7 +795,7 @@ name|expectation
 condition|)
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 name|info
 operator|.
@@ -832,7 +832,7 @@ name|expectation
 condition|)
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 name|info
 operator|.
@@ -987,7 +987,7 @@ name|expectation
 condition|)
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 name|clazz
 operator|.

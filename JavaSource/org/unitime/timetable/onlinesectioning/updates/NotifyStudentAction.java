@@ -777,7 +777,7 @@ block|}
 block|}
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 name|message
 argument_list|)
@@ -1255,7 +1255,7 @@ block|}
 block|}
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 name|message
 argument_list|)

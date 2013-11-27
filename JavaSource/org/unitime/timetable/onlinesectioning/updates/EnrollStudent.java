@@ -3920,7 +3920,7 @@ literal|true
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Check offering for "
 operator|+
@@ -4000,7 +4000,7 @@ literal|true
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Check offering for "
 operator|+
@@ -4095,7 +4095,7 @@ literal|true
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Check offering for "
 operator|+
@@ -4189,7 +4189,7 @@ literal|true
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Check offering for "
 operator|+

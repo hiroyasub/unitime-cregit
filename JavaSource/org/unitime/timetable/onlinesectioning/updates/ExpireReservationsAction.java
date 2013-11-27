@@ -684,7 +684,7 @@ argument_list|)
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Expiring reservation "
 operator|+

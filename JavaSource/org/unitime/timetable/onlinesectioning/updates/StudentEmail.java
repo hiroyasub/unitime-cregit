@@ -2481,7 +2481,7 @@ else|else
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Email notification failed to generate for student "
 operator|+
@@ -2499,7 +2499,7 @@ else|else
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Email notification is disabled for student "
 operator|+
@@ -2517,7 +2517,7 @@ else|else
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Student "
 operator|+

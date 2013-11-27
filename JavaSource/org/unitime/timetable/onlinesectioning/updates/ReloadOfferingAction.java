@@ -2658,7 +2658,7 @@ control|)
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Resectioning "
 operator|+
@@ -2832,7 +2832,7 @@ expr_stmt|;
 block|}
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"New: "
 operator|+
@@ -2998,7 +2998,7 @@ condition|)
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Deleting "
 operator|+
@@ -3468,7 +3468,7 @@ expr_stmt|;
 comment|/* 						if (cr != null) { 							if (cr.getClassEnrollments() == null) cr.setClassEnrollments(new HashSet<StudentClassEnrollment>()); 							cr.getClassEnrollments().add(enrl); 						} 						*/
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Adding "
 operator|+

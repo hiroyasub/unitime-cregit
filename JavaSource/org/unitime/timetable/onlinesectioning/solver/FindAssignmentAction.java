@@ -2401,7 +2401,7 @@ argument_list|)
 throw|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Using "
 operator|+
@@ -2469,7 +2469,7 @@ argument_list|)
 expr_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Solution: "
 operator|+
@@ -2608,7 +2608,7 @@ argument_list|()
 decl_stmt|;
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Sectioning took "
 operator|+
