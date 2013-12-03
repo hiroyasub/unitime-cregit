@@ -3826,6 +3826,18 @@ argument_list|(
 literal|"  -- creating initial assignment"
 argument_list|)
 expr_stmt|;
+name|boolean
+name|precise
+init|=
+name|cfg
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"Curriculum.Initial.PreciseSelection"
+argument_list|,
+literal|true
+argument_list|)
+decl_stmt|;
 while|while
 condition|(
 operator|!
@@ -3869,6 +3881,9 @@ block|}
 name|CurValue
 name|student
 init|=
+operator|(
+name|precise
+condition|?
 name|vs
 operator|.
 name|selectValueSlow
@@ -3877,6 +3892,16 @@ name|solution
 argument_list|,
 name|course
 argument_list|)
+else|:
+name|vs
+operator|.
+name|selectValueFast
+argument_list|(
+name|solution
+argument_list|,
+name|course
+argument_list|)
+operator|)
 decl_stmt|;
 if|if
 condition|(
