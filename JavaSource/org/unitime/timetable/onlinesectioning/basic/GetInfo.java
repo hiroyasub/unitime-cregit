@@ -2838,6 +2838,21 @@ name|disb10Sections
 init|=
 literal|0
 decl_stmt|;
+name|boolean
+name|balanceUnlimited
+init|=
+name|server
+operator|.
+name|getConfig
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.BalanceUnlimited"
+argument_list|,
+literal|false
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|Offering
@@ -2993,7 +3008,10 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-else|else
+if|else if
+condition|(
+name|balanceUnlimited
+condition|)
 block|{
 comment|// unlimited sections -> desired size is total enrollment / number of sections
 for|for

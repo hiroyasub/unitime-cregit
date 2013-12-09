@@ -1463,6 +1463,22 @@ name|double
 name|perc
 parameter_list|)
 block|{
+name|boolean
+name|balanceUnlimited
+init|=
+name|model
+argument_list|()
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.BalanceUnlimited"
+argument_list|,
+literal|false
+argument_list|)
+decl_stmt|;
 name|double
 name|disb10Sections
 init|=
@@ -1616,7 +1632,10 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-else|else
+if|else if
+condition|(
+name|balanceUnlimited
+condition|)
 block|{
 comment|// unlimited sections -> desired size is total enrollment / number of sections
 for|for

@@ -100,6 +100,12 @@ name|iDisbalance
 init|=
 literal|0.1
 decl_stmt|;
+specifier|private
+name|boolean
+name|iBalanceUnlimited
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|FractionallyUnbalancedWhenNoExpectations
 parameter_list|(
@@ -121,6 +127,17 @@ argument_list|(
 literal|"OverExpected.Disbalance"
 argument_list|,
 name|iDisbalance
+argument_list|)
+expr_stmt|;
+name|iBalanceUnlimited
+operator|=
+name|config
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.BalanceUnlimited"
+argument_list|,
+name|iBalanceUnlimited
 argument_list|)
 expr_stmt|;
 block|}
@@ -207,6 +224,15 @@ parameter_list|()
 block|{
 return|return
 name|iDisbalance
+return|;
+block|}
+specifier|public
+name|boolean
+name|isBalanceUnlimited
+parameter_list|()
+block|{
+return|return
+name|iBalanceUnlimited
 return|;
 block|}
 specifier|public
@@ -426,7 +452,11 @@ operator|)
 return|;
 block|}
 block|}
-else|else
+if|else if
+condition|(
+name|isBalanceUnlimited
+argument_list|()
+condition|)
 block|{
 comment|// unlimited sections -> desired size is total enrollment / number of sections
 name|double
