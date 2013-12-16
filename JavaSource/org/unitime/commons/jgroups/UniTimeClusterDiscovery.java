@@ -420,7 +420,11 @@ name|log
 operator|.
 name|info
 argument_list|(
-literal|"Hibernate not configured yet, returning empty set for current cluster members."
+literal|"Hibernate not configured yet, returning empty set for "
+operator|+
+name|group_addr
+operator|+
+literal|" cluster members."
 argument_list|)
 expr_stmt|;
 return|return
@@ -928,7 +932,11 @@ name|log
 operator|.
 name|info
 argument_list|(
-literal|"Hibernate not configured yet, ignoring view change."
+literal|"Hibernate not configured yet, ignoring view change for cluster "
+operator|+
+name|group_addr
+operator|+
+literal|"."
 argument_list|)
 expr_stmt|;
 return|return;
