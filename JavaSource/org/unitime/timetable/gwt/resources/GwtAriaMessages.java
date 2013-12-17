@@ -1548,6 +1548,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Selected all class days for {0}"
+argument_list|)
+name|String
+name|datesSelectedAllClassDays
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected all class days for {0} starting today"
+argument_list|)
+name|String
+name|datesSelectedAllClassDaysFuture
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Dates selection"
 argument_list|)
 name|String

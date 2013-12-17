@@ -16866,6 +16866,8 @@ block|,
 name|DATE_MAPPING_CLASS
 block|,
 name|DATE_MAPPING_EVENT
+block|,
+name|CLASSES
 block|;
 specifier|public
 name|int
