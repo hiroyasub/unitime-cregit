@@ -358,6 +358,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sExportRegister
+operator|.
+name|put
+argument_list|(
+literal|"lastLikeCourseDemand"
+argument_list|,
+name|LastLikeCourseDemandExport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 name|sImportRegister
 operator|=
 operator|new
