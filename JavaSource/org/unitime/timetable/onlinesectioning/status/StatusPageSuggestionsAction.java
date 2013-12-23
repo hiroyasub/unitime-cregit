@@ -6704,6 +6704,12 @@ name|enrollment
 argument_list|()
 operator|==
 literal|null
+operator|&&
+name|request
+argument_list|()
+operator|.
+name|isWaitlist
+argument_list|()
 return|;
 else|else
 return|return

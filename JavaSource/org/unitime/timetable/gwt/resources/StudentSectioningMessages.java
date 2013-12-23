@@ -2609,7 +2609,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Wait-Listed"
+literal|"Not-Enrolled"
 argument_list|)
 name|String
 name|colWaitListed
@@ -2748,6 +2748,15 @@ literal|"<sup><font color='#2066CE'>r)</font></sup>"
 argument_list|)
 name|String
 name|htmlReservationSign
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<sup><font color='#2066CE'>w)</font></sup>"
+argument_list|)
+name|String
+name|htmlWaitListSign
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2908,7 +2917,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"r) Space available only with a reservation."
+literal|"r) Space available only with a reservation.<br>w) Wait-listed requests."
 argument_list|)
 name|String
 name|sectioningStatusReservationHint
