@@ -6173,6 +6173,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student Sectioning Solver Reports"
+argument_list|)
+name|String
+name|pageBatchSectioningReports
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Online Student Scheduling Reports"
+argument_list|)
+name|String
+name|pageOnlineSectioningReports
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
