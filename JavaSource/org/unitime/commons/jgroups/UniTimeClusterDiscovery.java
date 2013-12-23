@@ -617,6 +617,29 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|e
+parameter_list|)
+block|{
+name|log
+operator|.
+name|info
+argument_list|(
+literal|"Failed to read  all members of cluster "
+operator|+
+name|group_addr
+operator|+
+literal|": "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 finally|finally
 block|{
 name|hibSession
@@ -853,6 +876,29 @@ name|hibSession
 operator|.
 name|flush
 argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|e
+parameter_list|)
+block|{
+name|log
+operator|.
+name|info
+argument_list|(
+literal|"Failed to update my data for cluster "
+operator|+
+name|group_addr
+operator|+
+literal|": "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 finally|finally
