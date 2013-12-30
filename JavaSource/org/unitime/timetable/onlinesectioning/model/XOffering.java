@@ -3576,6 +3576,11 @@ name|getConfigId
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|boolean
+name|configStudent
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
 name|XEnrollment
@@ -3610,6 +3615,10 @@ block|{
 name|configEnrl
 operator|--
 expr_stmt|;
+name|configStudent
+operator|=
+literal|true
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -3632,6 +3641,18 @@ condition|)
 name|configLimit
 operator|=
 literal|0
+expr_stmt|;
+if|if
+condition|(
+name|configStudent
+operator|&&
+name|configLimit
+operator|==
+literal|0
+condition|)
+name|configLimit
+operator|=
+literal|1
 expr_stmt|;
 block|}
 name|OnlineConfig
@@ -3794,6 +3815,11 @@ name|getSectionId
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|boolean
+name|std
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
 name|XEnrollment
@@ -3828,6 +3854,10 @@ block|{
 name|enrl
 operator|--
 expr_stmt|;
+name|std
+operator|=
+literal|true
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -3853,6 +3883,19 @@ operator|=
 literal|0
 expr_stmt|;
 comment|// over-enrolled, but not unlimited
+if|if
+condition|(
+name|std
+operator|&&
+name|limit
+operator|==
+literal|0
+condition|)
+name|limit
+operator|=
+literal|1
+expr_stmt|;
+comment|// allow enrolled student in
 block|}
 name|String
 name|instructorIds

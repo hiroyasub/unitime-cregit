@@ -2950,6 +2950,11 @@ name|getConfigId
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|boolean
+name|configStudent
+init|=
+literal|false
+decl_stmt|;
 if|if
 condition|(
 name|studentId
@@ -2987,6 +2992,10 @@ block|{
 name|configEnrl
 operator|--
 expr_stmt|;
+name|configStudent
+operator|=
+literal|true
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -2996,6 +3005,7 @@ operator|>=
 literal|0
 condition|)
 block|{
+comment|// limited configuration, deduct enrollments
 name|configLimit
 operator|-=
 name|configEnrl
@@ -3010,6 +3020,20 @@ name|configLimit
 operator|=
 literal|0
 expr_stmt|;
+comment|// over-enrolled, but not unlimited
+if|if
+condition|(
+name|configStudent
+operator|&&
+name|configLimit
+operator|==
+literal|0
+condition|)
+name|configLimit
+operator|=
+literal|1
+expr_stmt|;
+comment|// allow enrolled student in
 block|}
 name|OnlineConfig
 name|clonedConfig
@@ -3171,6 +3195,11 @@ name|getSectionId
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|boolean
+name|student
+init|=
+literal|false
+decl_stmt|;
 if|if
 condition|(
 name|studentId
@@ -3208,6 +3237,10 @@ block|{
 name|enrl
 operator|--
 expr_stmt|;
+name|student
+operator|=
+literal|true
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -3233,6 +3266,19 @@ operator|=
 literal|0
 expr_stmt|;
 comment|// over-enrolled, but not unlimited
+if|if
+condition|(
+name|student
+operator|&&
+name|limit
+operator|==
+literal|0
+condition|)
+name|limit
+operator|=
+literal|1
+expr_stmt|;
+comment|// allow enrolled student in
 block|}
 name|String
 name|instructorIds
