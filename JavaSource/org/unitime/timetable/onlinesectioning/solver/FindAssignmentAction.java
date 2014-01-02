@@ -5146,6 +5146,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|r
+operator|.
+name|isWaitlist
+argument_list|()
+condition|)
+name|nrUnassignedCourses
+operator|++
+expr_stmt|;
+if|if
+condition|(
 name|computeOverlaps
 condition|)
 block|{
@@ -5575,9 +5586,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|nrUnassignedCourses
-operator|++
-expr_stmt|;
 name|int
 name|alt
 init|=
