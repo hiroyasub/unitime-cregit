@@ -987,7 +987,7 @@ argument_list|,
 name|server
 argument_list|)
 operator|.
-name|getEnrollmentsSkipSameTime
+name|getAvaiableEnrollmentsSkipSameTime
 argument_list|()
 decl_stmt|;
 for|for
