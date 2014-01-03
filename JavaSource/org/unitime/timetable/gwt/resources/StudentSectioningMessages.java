@@ -3541,6 +3541,15 @@ name|String
 name|arrangeHours
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-List"
+argument_list|)
+name|String
+name|toggleWaitList
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

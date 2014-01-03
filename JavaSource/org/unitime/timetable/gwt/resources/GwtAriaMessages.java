@@ -474,6 +474,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Check to wait list for {0} course request."
+argument_list|)
+name|String
+name|titleRequestedWaitListForCourse
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Opens Course Finder dialog for priority {0, number} course or free time request."
 argument_list|)
 name|String
