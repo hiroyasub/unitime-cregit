@@ -2774,47 +2774,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Filter course, enrollments, and wait-listed course requests by any word<br>from the course name or title."
-operator|+
-literal|"<br><br>You can also use the following tags:"
-operator|+
-literal|"<ul>"
-operator|+
-literal|"<li><i>area:</i> academic area abbreviation"
-operator|+
-literal|"<li><i>classification:</i> academic classification code"
-operator|+
-literal|"<li><i>consent:</i> offering consent"
-operator|+
-literal|"<li><i>course:</i> course offering name"
-operator|+
-literal|"<li><i>department:</i> course controlling department code or abbreviation"
-operator|+
-literal|"<li><i>group:</i> student group abbreviation"
-operator|+
-literal|"<li><i>major:</i> academic major code"
-operator|+
-literal|"<li><i>reserved:</i> enrollments with a reservation"
-operator|+
-literal|"<li><i>student:</i> student name or external id"
-operator|+
-literal|"<li><i>subject:</i> subject area abbreviation"
-operator|+
-literal|"<li><i>waitlist:</i> wait-listed course requests"
-operator|+
-literal|"<li><i>status:</i> student scheduling status"
-operator|+
-literal|"</ul>Use<i>or</i>,<i>and</i>,<i>not</i>, and brackets to build a boolean query."
-operator|+
-literal|"<br><br>Example: subject:AAE and (waitlist:true or consent:waiting)"
-argument_list|)
-name|String
-name|sectioningStatusFilterHint
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Loading enrollments for {0}..."
 argument_list|)
 name|String
@@ -3548,6 +3507,24 @@ literal|"Wait-List"
 argument_list|)
 name|String
 name|toggleWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course:"
+argument_list|)
+name|String
+name|propCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student:"
+argument_list|)
+name|String
+name|propStudent
 parameter_list|()
 function_decl|;
 block|}

@@ -658,6 +658,20 @@ else|:
 literal|""
 operator|)
 operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"accommodation"
+argument_list|)
+condition|?
+literal|"left outer join s.accomodations a "
+else|:
+literal|""
+operator|)
+operator|+
 literal|"where l.session.uniqueId = :sessionId and l.session = s.session and l.student = s.externalUniqueId "
 operator|+
 literal|"and ("
@@ -3098,6 +3112,27 @@ return|;
 block|}
 if|else if
 condition|(
+literal|"accommodation"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"lower(a.abbreviation) = '"
+operator|+
+name|body
+operator|.
+name|toLowerCase
+argument_list|()
+operator|+
+literal|"'"
+return|;
+block|}
+if|else if
+condition|(
 literal|"user"
 operator|.
 name|equalsIgnoreCase
@@ -3195,6 +3230,40 @@ return|;
 else|else
 return|return
 literal|"1 = 1"
+return|;
+block|}
+if|else if
+condition|(
+literal|"status"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+literal|"Not Set"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|body
+argument_list|)
+condition|)
+return|return
+literal|"s.sectioningStatus is null"
+return|;
+else|else
+return|return
+literal|"s.sectioningStatus.reference = '"
+operator|+
+name|body
+operator|.
+name|toLowerCase
+argument_list|()
+operator|+
+literal|"'"
 return|;
 block|}
 if|else if

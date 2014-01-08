@@ -1820,6 +1820,14 @@ name|ReservationFilterRpcRequest
 extends|extends
 name|FilterRpcRequest
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|public
 name|ReservationFilterRpcRequest
 parameter_list|()
