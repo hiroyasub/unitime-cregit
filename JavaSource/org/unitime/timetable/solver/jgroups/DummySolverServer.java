@@ -2631,6 +2631,25 @@ name|input
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isCoordinator
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|reset
+parameter_list|()
+block|{
+block|}
 block|}
 end_class
 

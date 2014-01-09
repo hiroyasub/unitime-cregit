@@ -154,6 +154,11 @@ name|isLocal
 parameter_list|()
 function_decl|;
 specifier|public
+name|boolean
+name|isCoordinator
+parameter_list|()
+function_decl|;
+specifier|public
 name|Address
 name|getAddress
 parameter_list|()
@@ -272,6 +277,11 @@ parameter_list|,
 name|Long
 name|examTypeId
 parameter_list|)
+function_decl|;
+specifier|public
+name|void
+name|reset
+parameter_list|()
 function_decl|;
 block|}
 end_interface
