@@ -2165,6 +2165,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No details are available for course {0} {1}."
+argument_list|)
+name|String
+name|infoCourseDetailsNotAvailable
+parameter_list|(
+name|String
+name|subject
+parameter_list|,
+name|String
+name|courseNbr
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load course details: {0}"
+argument_list|)
+name|String
+name|failedLoadCourseDetails
+parameter_list|(
+name|String
+name|error
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Last academic session failed ({0})."
 argument_list|)
 name|String
@@ -2631,6 +2658,15 @@ literal|"Consent"
 argument_list|)
 name|String
 name|colConsent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Coordinator"
+argument_list|)
+name|String
+name|colCoordinator
 parameter_list|()
 function_decl|;
 annotation|@
