@@ -687,6 +687,13 @@ name|DataProperties
 name|config
 parameter_list|)
 block|{
+name|unload
+argument_list|(
+name|academicSessionId
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 name|iGlobalLock
 operator|.
 name|writeLock
@@ -1017,6 +1024,21 @@ name|s
 operator|!=
 literal|null
 condition|)
+block|{
+name|sLog
+operator|.
+name|info
+argument_list|(
+literal|"Unloading "
+operator|+
+name|u
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|+
+literal|"..."
+argument_list|)
+expr_stmt|;
 name|s
 operator|.
 name|unload
@@ -1024,6 +1046,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+block|}
 name|iInstances
 operator|.
 name|remove

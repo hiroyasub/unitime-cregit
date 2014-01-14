@@ -1564,6 +1564,7 @@ if|if
 condition|(
 name|interrupt
 condition|)
+block|{
 name|interrupt
 argument_list|()
 expr_stmt|;
@@ -1581,6 +1582,7 @@ name|InterruptedException
 name|e
 parameter_list|)
 block|{
+block|}
 block|}
 block|}
 block|}

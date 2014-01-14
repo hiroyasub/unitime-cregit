@@ -3271,56 +3271,20 @@ name|void
 name|reset
 parameter_list|()
 block|{
-name|boolean
-name|reload
-init|=
-literal|"true"
+name|sLog
 operator|.
-name|equals
+name|info
 argument_list|(
-name|ApplicationProperties
-operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.enrollment.server.reloadOnMerge"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|reload
-condition|)
-block|{
-comment|// pause updating
-name|iUpdater
-operator|.
-name|pauseUpading
-argument_list|()
-expr_stmt|;
-comment|// stop -- this will unload all servers
 name|iOnlineStudentSchedulingContainer
 operator|.
-name|stop
+name|getLockService
 argument_list|()
-expr_stmt|;
-comment|// start again
-name|iOnlineStudentSchedulingContainer
 operator|.
-name|start
+name|printLocks
 argument_list|()
+argument_list|)
 expr_stmt|;
-comment|// resume updating
-name|iUpdater
-operator|.
-name|resumeUpading
-argument_list|()
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|// Release and re-acquire coordinator / master locks
+comment|// For each of my online student sectioning solvers
 for|for
 control|(
 name|String
@@ -3345,15 +3309,60 @@ decl_stmt|;
 if|if
 condition|(
 name|server
-operator|!=
+operator|==
 literal|null
+condition|)
+continue|continue;
+comment|// mark server for reload and release the lock
+if|if
+condition|(
+name|server
+operator|.
+name|isMaster
+argument_list|()
 condition|)
 block|{
 name|sLog
 operator|.
 name|info
 argument_list|(
-literal|"  releasing master lock for "
+literal|"Marking "
+operator|+
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|+
+literal|" for reload"
+argument_list|)
+expr_stmt|;
+name|server
+operator|.
+name|setProperty
+argument_list|(
+literal|"ReadyToServe"
+argument_list|,
+name|Boolean
+operator|.
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|server
+operator|.
+name|setProperty
+argument_list|(
+literal|"ReloadIsNeeded"
+argument_list|,
+name|Boolean
+operator|.
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|sLog
+operator|.
+name|info
+argument_list|(
+literal|"Releasing master lock for "
 operator|+
 name|server
 operator|.
@@ -3368,7 +3377,6 @@ operator|.
 name|releaseMasterLockIfHeld
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
