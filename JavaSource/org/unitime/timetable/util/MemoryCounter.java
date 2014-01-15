@@ -79,9 +79,11 @@ name|org
 operator|.
 name|infinispan
 operator|.
-name|manager
+name|commons
 operator|.
-name|EmbeddedCacheManager
+name|marshall
+operator|.
+name|Marshaller
 import|;
 end_import
 
@@ -91,9 +93,9 @@ name|org
 operator|.
 name|infinispan
 operator|.
-name|marshall
+name|manager
 operator|.
-name|Marshaller
+name|EmbeddedCacheManager
 import|;
 end_import
 

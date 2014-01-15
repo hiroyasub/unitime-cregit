@@ -53,6 +53,8 @@ name|org
 operator|.
 name|infinispan
 operator|.
+name|commons
+operator|.
 name|marshall
 operator|.
 name|Externalizer
@@ -64,6 +66,8 @@ import|import
 name|org
 operator|.
 name|infinispan
+operator|.
+name|commons
 operator|.
 name|marshall
 operator|.

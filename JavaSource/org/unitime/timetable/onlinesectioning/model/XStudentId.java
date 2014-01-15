@@ -73,9 +73,25 @@ name|org
 operator|.
 name|infinispan
 operator|.
+name|commons
+operator|.
 name|marshall
 operator|.
 name|Externalizer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|infinispan
+operator|.
+name|commons
+operator|.
+name|marshall
+operator|.
+name|SerializeWith
 import|;
 end_import
 
@@ -112,6 +128,15 @@ comment|/**  * @author Tomas Muller  */
 end_comment
 
 begin_class
+annotation|@
+name|SerializeWith
+argument_list|(
+name|XStudentId
+operator|.
+name|XStudentIdSerializer
+operator|.
+name|class
+argument_list|)
 specifier|public
 class|class
 name|XStudentId
