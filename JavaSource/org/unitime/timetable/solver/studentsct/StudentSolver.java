@@ -6722,10 +6722,7 @@ name|Override
 specifier|public
 name|void
 name|unload
-parameter_list|(
-name|boolean
-name|remove
-parameter_list|)
+parameter_list|()
 block|{
 block|}
 specifier|public

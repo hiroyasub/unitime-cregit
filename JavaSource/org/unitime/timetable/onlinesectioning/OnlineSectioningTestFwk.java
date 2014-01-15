@@ -955,9 +955,7 @@ expr_stmt|;
 name|iServer
 operator|.
 name|unload
-argument_list|(
-literal|true
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 name|iServer

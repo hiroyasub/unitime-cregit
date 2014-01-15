@@ -1042,9 +1042,7 @@ expr_stmt|;
 name|s
 operator|.
 name|unload
-argument_list|(
-literal|true
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 name|iInstances
@@ -1428,10 +1426,7 @@ block|}
 specifier|public
 name|void
 name|unloadAll
-parameter_list|(
-name|boolean
-name|remove
-parameter_list|)
+parameter_list|()
 block|{
 name|iGlobalLock
 operator|.
@@ -1496,9 +1491,7 @@ condition|)
 name|s
 operator|.
 name|unload
-argument_list|(
-name|remove
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -1540,9 +1533,7 @@ literal|"Student Sectioning Service is going down ..."
 argument_list|)
 expr_stmt|;
 name|unloadAll
-argument_list|(
-literal|false
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|OnlineSectioningLogger
 operator|.
