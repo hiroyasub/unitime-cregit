@@ -6178,7 +6178,7 @@ literal|"not assigned"
 else|:
 name|ini
 operator|.
-name|getName
+name|getLongName
 argument_list|()
 operator|)
 operator|+
@@ -6186,7 +6186,7 @@ literal|"&rarr; "
 operator|+
 name|p
 operator|.
-name|getName
+name|getLongName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -6341,7 +6341,7 @@ literal|": "
 operator|+
 name|p
 operator|.
-name|getName
+name|getLongName
 argument_list|()
 operator|+
 literal|"&rarr; not assigned"
