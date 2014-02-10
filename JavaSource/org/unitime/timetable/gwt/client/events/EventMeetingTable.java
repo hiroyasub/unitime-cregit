@@ -16344,6 +16344,11 @@ condition|(
 name|iEvent
 operator|!=
 literal|null
+operator|&&
+name|iEvent
+operator|.
+name|hasMeetings
+argument_list|()
 condition|)
 block|{
 for|for
