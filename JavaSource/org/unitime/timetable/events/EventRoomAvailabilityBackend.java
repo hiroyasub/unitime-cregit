@@ -792,15 +792,17 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select m from Meeting m "
+literal|"select m from Meeting m, Location l "
 operator|+
 literal|"where m.startPeriod<:stopTime and m.stopPeriod>:startTime and m.approvalStatus<= 1 and "
 operator|+
-literal|"m.locationPermanentId in ("
+literal|"l.session.uniqueId = :sessionId and l.permanentId in ("
 operator|+
 name|locations
 operator|+
-literal|") and m.meetingDate in ("
+literal|") and l.ignoreRoomCheck = false and "
+operator|+
+literal|"m.locationPermanentId = l.permanentId and m.meetingDate in ("
 operator|+
 name|dates
 operator|+
@@ -828,6 +830,18 @@ argument_list|,
 name|request
 operator|.
 name|getEndSlot
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|request
+operator|.
+name|getSessionId
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2749,6 +2763,14 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|location
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+condition|)
 for|for
 control|(
 name|Meeting
@@ -3661,6 +3683,16 @@ name|getEventMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|resource
+operator|.
+name|setIgnoreRoomCheck
+argument_list|(
+name|location
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Calendar
 name|calendar
 init|=
@@ -4189,6 +4221,16 @@ argument_list|(
 name|location
 operator|.
 name|getEventMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|resource
+operator|.
+name|setIgnoreRoomCheck
+argument_list|(
+name|location
+operator|.
+name|isIgnoreRoomCheck
 argument_list|()
 argument_list|)
 expr_stmt|;

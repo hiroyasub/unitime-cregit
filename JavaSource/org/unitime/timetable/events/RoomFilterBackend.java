@@ -5259,6 +5259,17 @@ name|location
 operator|.
 name|getEventMessage
 argument_list|()
+argument_list|,
+literal|"ignoreRoomCheck"
+argument_list|,
+name|location
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+condition|?
+literal|"1"
+else|:
+literal|"0"
 argument_list|)
 argument_list|)
 expr_stmt|;

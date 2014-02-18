@@ -1442,9 +1442,12 @@ argument_list|(
 literal|"Meeting mx"
 argument_list|)
 operator|.
+name|joinWithLocation
+argument_list|()
+operator|.
 name|where
 argument_list|(
-literal|"mx.uniqueId!=m.uniqueId and m.meetingDate=mx.meetingDate and m.startPeriod< mx.stopPeriod and m.stopPeriod> mx.startPeriod and m.locationPermanentId = mx.locationPermanentId and m.approvalStatus<= 1 and mx.approvalStatus<= 1"
+literal|"mx.uniqueId!=m.uniqueId and m.meetingDate=mx.meetingDate and m.startPeriod< mx.stopPeriod and m.stopPeriod> mx.startPeriod and m.locationPermanentId = mx.locationPermanentId and m.approvalStatus<= 1 and mx.approvalStatus<= 1 and l.ignoreRoomCheck = false"
 argument_list|)
 operator|.
 name|exclude
@@ -3652,7 +3655,7 @@ name|addFrom
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"Meeting Xm"
+literal|"Meeting Xm, Location Xl"
 argument_list|)
 expr_stmt|;
 name|query
@@ -3662,6 +3665,8 @@ argument_list|(
 literal|"mode"
 argument_list|,
 literal|"Xm.uniqueId != m.uniqueId and m.meetingDate = Xm.meetingDate and m.startPeriod< Xm.stopPeriod and m.stopPeriod> Xm.startPeriod and m.locationPermanentId = Xm.locationPermanentId and m.approvalStatus<= 1 and Xm.approvalStatus<= 1"
+operator|+
+literal|" and Xl.permanentId = m.locationPermanentId and Xl.session.uniqueId = :sessionId and Xl.ignoreRoomCheck = false"
 argument_list|)
 expr_stmt|;
 block|}

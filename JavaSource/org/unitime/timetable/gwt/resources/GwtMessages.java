@@ -7733,6 +7733,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No Room Check"
+argument_list|)
+name|String
+name|ignoreRoomCheck
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} m"
 argument_list|)
 name|String

@@ -827,6 +827,16 @@ name|getEffectiveBreakTime
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|response
+operator|.
+name|setIgnoreRoomCheck
+argument_list|(
+name|location
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|response
 return|;
