@@ -4870,7 +4870,7 @@ name|createQuery
 argument_list|(
 literal|"select m from Meeting m, Location l "
 operator|+
-literal|"where m.startPeriod< :stopTime and m.stopPeriod> :startTime and "
+literal|"where m.startPeriod< :stopTime and m.stopPeriod> :startTime and l.ignoreRoomCheck = false and "
 operator|+
 literal|"m.locationPermanentId = l.permanentId and l.uniqueId = :locationdId and m.meetingDate = :meetingDate and m.uniqueId != :meetingId and m.event.uniqueId != :eventId and m.approvalStatus<= 1"
 argument_list|)
