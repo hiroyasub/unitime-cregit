@@ -1330,6 +1330,15 @@ operator|.
 name|init
 argument_list|()
 expr_stmt|;
+name|getModel
+argument_list|()
+operator|.
+name|clearAssignmentContexts
+argument_list|(
+name|getAssignment
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|checkConsistency
 argument_list|()
 expr_stmt|;
