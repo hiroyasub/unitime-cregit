@@ -21,9 +21,21 @@ end_package
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -37,9 +49,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -53,9 +63,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -117,9 +125,27 @@ operator|.
 name|getModel
 argument_list|()
 decl_stmt|;
+name|Assignment
+argument_list|<
+name|CurVariable
+argument_list|,
+name|CurValue
+argument_list|>
+name|assignment
+init|=
+name|currentSolution
+operator|.
+name|getAssignment
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|m
+operator|.
+name|getContext
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|getAssignedWeight
 argument_list|()
@@ -143,6 +169,11 @@ if|if
 condition|(
 name|m
 operator|.
+name|getContext
+argument_list|(
+name|assignment
+argument_list|)
+operator|.
 name|getAssignedWeight
 argument_list|()
 operator|<
@@ -165,7 +196,9 @@ return|return
 name|m
 operator|.
 name|getTotalValue
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|<
 name|currentSolution
 operator|.

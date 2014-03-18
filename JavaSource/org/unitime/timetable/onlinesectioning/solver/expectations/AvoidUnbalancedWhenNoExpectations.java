@@ -21,9 +21,21 @@ end_package
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -37,9 +49,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Enrollment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -53,9 +77,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -69,9 +91,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -212,6 +232,14 @@ specifier|public
 name|double
 name|getOverExpected
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Section
 name|section
 parameter_list|,
@@ -246,6 +274,8 @@ name|super
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|request
@@ -276,6 +306,8 @@ argument_list|()
 operator|+
 name|getEnrollment
 argument_list|(
+name|assignment
+argument_list|,
 name|subpart
 operator|.
 name|getConfig
@@ -319,6 +351,8 @@ argument_list|()
 operator|+
 name|getEnrollment
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|request

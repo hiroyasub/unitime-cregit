@@ -234,9 +234,7 @@ block|}
 specifier|public
 name|XStudentId
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

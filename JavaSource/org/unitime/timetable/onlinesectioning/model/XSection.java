@@ -119,9 +119,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -133,9 +131,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -149,9 +145,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -165,9 +159,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -181,9 +173,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -197,9 +187,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -213,9 +201,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1301,7 +1287,7 @@ argument_list|()
 operator|)
 return|;
 block|}
-comment|/**      * Room placement -- list of      * {@link net.sf.cpsolver.coursett.model.RoomLocation}      */
+comment|/**      * Room placement -- list of      * {@link org.cpsolver.coursett.model.RoomLocation}      */
 specifier|public
 name|List
 argument_list|<

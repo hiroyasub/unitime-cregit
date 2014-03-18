@@ -21,9 +21,21 @@ end_package
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -37,9 +49,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -53,9 +63,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -69,9 +77,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -85,9 +91,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -101,9 +105,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -184,6 +186,19 @@ operator|)
 name|solution
 operator|.
 name|getModel
+argument_list|()
+decl_stmt|;
+name|Assignment
+argument_list|<
+name|CurVariable
+argument_list|,
+name|CurValue
+argument_list|>
+name|assignment
+init|=
+name|solution
+operator|.
+name|getAssignment
 argument_list|()
 decl_stmt|;
 name|CurCourse
@@ -289,6 +304,8 @@ name|course
 operator|.
 name|getValue
 argument_list|(
+name|assignment
+argument_list|,
 name|student
 argument_list|)
 expr_stmt|;
@@ -301,7 +318,9 @@ operator|&&
 name|student
 operator|.
 name|getCourses
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -324,7 +343,9 @@ operator|&&
 name|student
 operator|.
 name|getCourses
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -348,7 +369,9 @@ operator|&&
 name|student
 operator|.
 name|getCourses
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -373,7 +396,9 @@ operator|&&
 name|student
 operator|.
 name|getCourses
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -462,7 +487,9 @@ condition|(
 name|course
 operator|.
 name|getStudents
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|contains
 argument_list|(
@@ -475,7 +502,9 @@ condition|(
 name|newStudent
 operator|.
 name|getCourses
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -494,7 +523,9 @@ condition|(
 name|course
 operator|.
 name|getSize
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|+
 name|newStudent
 operator|.
@@ -517,7 +548,9 @@ condition|(
 name|course
 operator|.
 name|getSize
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|+
 name|newStudent
 operator|.
@@ -562,7 +595,9 @@ condition|(
 name|newStudent
 operator|.
 name|getCourses
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -581,7 +616,9 @@ condition|(
 name|course
 operator|.
 name|getSize
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|+
 name|student
 operator|.
@@ -604,7 +641,9 @@ condition|(
 name|course
 operator|.
 name|getSize
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|+
 name|student
 operator|.
@@ -633,6 +672,8 @@ name|course
 operator|.
 name|getValue
 argument_list|(
+name|assignment
+argument_list|,
 name|newStudent
 argument_list|)
 expr_stmt|;

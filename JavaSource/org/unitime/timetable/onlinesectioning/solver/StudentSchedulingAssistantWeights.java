@@ -41,25 +41,19 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|cpsolver
 operator|.
-name|timetable
+name|ifs
 operator|.
-name|onlinesectioning
+name|assignment
 operator|.
-name|solver
-operator|.
-name|expectations
-operator|.
-name|MoreSpaceThanExpected
+name|Assignment
 import|;
 end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -73,9 +67,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -89,9 +81,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -105,9 +95,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -121,9 +109,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -137,9 +123,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -153,9 +137,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -169,9 +151,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -185,9 +165,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -201,9 +179,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -217,9 +193,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -233,9 +207,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -249,9 +221,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -265,9 +235,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -276,6 +244,24 @@ operator|.
 name|weights
 operator|.
 name|StudentWeights
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|solver
+operator|.
+name|expectations
+operator|.
+name|MoreSpaceThanExpected
 import|;
 end_import
 
@@ -465,6 +451,14 @@ specifier|private
 name|double
 name|getOverExpected
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Section
 name|section
 parameter_list|,
@@ -498,6 +492,8 @@ argument_list|()
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|request
@@ -516,6 +512,8 @@ operator|)
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|request
@@ -527,6 +525,14 @@ name|double
 index|[]
 name|best
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|CourseRequest
 name|cr
 parameter_list|)
@@ -745,6 +751,8 @@ name|oexp
 init|=
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|cr
@@ -910,6 +918,14 @@ specifier|public
 name|double
 name|getBaseWeight
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Enrollment
 name|enrollment
 parameter_list|)
@@ -919,6 +935,8 @@ name|iParent
 operator|.
 name|getWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|enrollment
 argument_list|)
 return|;
@@ -929,6 +947,14 @@ specifier|public
 name|double
 name|getWeight
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Enrollment
 name|enrollment
 parameter_list|)
@@ -944,6 +970,8 @@ condition|)
 return|return
 name|getBaseWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|enrollment
 argument_list|)
 return|;
@@ -965,6 +993,8 @@ name|base
 init|=
 name|getBaseWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|enrollment
 argument_list|)
 decl_stmt|;
@@ -1001,6 +1031,8 @@ name|best
 init|=
 name|best
 argument_list|(
+name|assignment
+argument_list|,
 name|cr
 argument_list|)
 decl_stmt|;
@@ -1046,6 +1078,8 @@ name|oexp
 operator|+=
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|cr
@@ -1322,6 +1356,14 @@ specifier|public
 name|double
 name|getWeight
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Enrollment
 name|enrollment
 parameter_list|,
@@ -1360,6 +1402,8 @@ name|weight
 init|=
 name|getWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|enrollment
 argument_list|)
 decl_stmt|;
@@ -1426,6 +1470,8 @@ name|weight
 operator|-=
 name|getDistanceConflictWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|c
 argument_list|)
 expr_stmt|;
@@ -1450,6 +1496,8 @@ name|weight
 operator|-=
 name|getTimeOverlapConflictWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|enrollment
 argument_list|,
 name|c
@@ -1530,6 +1578,14 @@ specifier|public
 name|double
 name|getDistanceConflictWeight
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|DistanceConflict
 operator|.
 name|Conflict
@@ -1541,6 +1597,8 @@ name|iParent
 operator|.
 name|getDistanceConflictWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|distanceConflict
 argument_list|)
 return|;
@@ -1551,6 +1609,14 @@ specifier|public
 name|double
 name|getTimeOverlapConflictWeight
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Enrollment
 name|enrollment
 parameter_list|,
@@ -1565,6 +1631,8 @@ name|iParent
 operator|.
 name|getTimeOverlapConflictWeight
 argument_list|(
+name|assignment
+argument_list|,
 name|enrollment
 argument_list|,
 name|timeOverlap

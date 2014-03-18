@@ -1240,9 +1240,6 @@ name|offering
 argument_list|,
 name|oldEnrollment
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
 argument_list|,
 name|offering
 argument_list|)

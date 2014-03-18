@@ -29,22 +29,6 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
-operator|.
-name|cpsolver
-operator|.
-name|ifs
-operator|.
-name|util
-operator|.
-name|DataProperties
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -68,6 +52,20 @@ operator|.
 name|logging
 operator|.
 name|LogFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|util
+operator|.
+name|DataProperties
 import|;
 end_import
 

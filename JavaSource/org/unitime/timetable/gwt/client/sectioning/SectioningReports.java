@@ -819,7 +819,7 @@ name|TIME_CONFLICTS
 argument_list|(
 literal|"Time Conflicts"
 argument_list|,
-literal|"net.sf.cpsolver.studentsct.report.SectionConflictTable"
+literal|"org.cpsolver.studentsct.report.SectionConflictTable"
 argument_list|,
 literal|"type"
 argument_list|,
@@ -834,7 +834,7 @@ name|AVAILABLE_CONFLICTS
 argument_list|(
 literal|"Availability Conflicts"
 argument_list|,
-literal|"net.sf.cpsolver.studentsct.report.SectionConflictTable"
+literal|"org.cpsolver.studentsct.report.SectionConflictTable"
 argument_list|,
 literal|"type"
 argument_list|,
@@ -849,7 +849,7 @@ name|SECTION_CONFLICTS
 argument_list|(
 literal|"Time& Availability Conflicts"
 argument_list|,
-literal|"net.sf.cpsolver.studentsct.report.SectionConflictTable"
+literal|"org.cpsolver.studentsct.report.SectionConflictTable"
 argument_list|,
 literal|"type"
 argument_list|,
@@ -864,21 +864,21 @@ name|UNBALANCED_SECTIONS
 argument_list|(
 literal|"Unbalanced Classes"
 argument_list|,
-literal|"net.sf.cpsolver.studentsct.report.UnbalancedSectionsTable"
+literal|"org.cpsolver.studentsct.report.UnbalancedSectionsTable"
 argument_list|)
 block|,
 name|DISTANCE_CONFLICTS
 argument_list|(
 literal|"Distance Conflicts"
 argument_list|,
-literal|"net.sf.cpsolver.studentsct.report.DistanceConflictTable"
+literal|"org.cpsolver.studentsct.report.DistanceConflictTable"
 argument_list|)
 block|,
 name|TIME_OVERLAPS
 argument_list|(
 literal|"Time Overlaps"
 argument_list|,
-literal|"net.sf.cpsolver.studentsct.report.TimeOverlapConflictTable"
+literal|"org.cpsolver.studentsct.report.TimeOverlapConflictTable"
 argument_list|)
 block|, 		;
 name|String

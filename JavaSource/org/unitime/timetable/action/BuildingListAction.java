@@ -51,22 +51,6 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
-operator|.
-name|cpsolver
-operator|.
-name|ifs
-operator|.
-name|util
-operator|.
-name|DistanceMetric
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|hibernate
@@ -226,6 +210,20 @@ operator|.
 name|action
 operator|.
 name|ActionMapping
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|util
+operator|.
+name|DistanceMetric
 import|;
 end_import
 

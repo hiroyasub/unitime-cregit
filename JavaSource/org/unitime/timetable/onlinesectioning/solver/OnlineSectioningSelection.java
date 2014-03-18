@@ -39,9 +39,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -57,9 +69,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -73,9 +83,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Enrollment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -89,9 +111,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Request
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -105,9 +139,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -185,6 +217,14 @@ operator|.
 name|BranchBoundNeighbour
 name|select
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Student
 name|student
 parameter_list|)

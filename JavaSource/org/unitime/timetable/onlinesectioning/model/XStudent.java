@@ -159,9 +159,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -175,9 +187,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -191,9 +201,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Enrollment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -207,9 +229,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1551,9 +1571,7 @@ block|}
 specifier|public
 name|XStudent
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1563,6 +1581,14 @@ name|model
 operator|.
 name|Student
 name|student
+parameter_list|,
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
 parameter_list|)
 block|{
 name|super
@@ -1753,6 +1779,19 @@ operator|(
 name|CourseRequest
 operator|)
 name|request
+argument_list|,
+name|assignment
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|assignment
+operator|.
+name|getValue
+argument_list|(
+name|request
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

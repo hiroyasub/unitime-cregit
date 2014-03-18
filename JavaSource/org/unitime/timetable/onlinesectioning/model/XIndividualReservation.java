@@ -69,9 +69,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -260,9 +258,7 @@ block|}
 specifier|public
 name|XIndividualReservation
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

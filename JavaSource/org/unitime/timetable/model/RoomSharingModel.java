@@ -236,9 +236,7 @@ specifier|public
 class|class
 name|RoomSharingModel
 extends|extends
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

@@ -323,9 +323,7 @@ block|}
 specifier|public
 name|XCurriculumReservation
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

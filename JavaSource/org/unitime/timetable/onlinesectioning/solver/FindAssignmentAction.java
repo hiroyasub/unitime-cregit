@@ -139,9 +139,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -153,9 +151,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -169,9 +165,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -185,9 +179,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -201,9 +193,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -217,9 +207,49 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|AssignmentComparator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|AssignmentMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -233,9 +263,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -247,9 +275,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -263,9 +289,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -279,9 +303,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -299,25 +321,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
-operator|.
-name|cpsolver
-operator|.
-name|studentsct
-operator|.
-name|model
-operator|.
-name|Assignment
-import|;
-end_import
-
-begin_import
-import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -331,9 +335,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -347,9 +349,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -363,9 +363,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -379,9 +377,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -395,9 +391,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -411,9 +405,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -427,9 +419,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|SctAssignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -443,9 +447,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -459,9 +461,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -475,9 +475,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1160,6 +1158,23 @@ name|getConfig
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+init|=
+operator|new
+name|AssignmentMap
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+argument_list|()
+decl_stmt|;
 name|OnlineSectioningLog
 operator|.
 name|Action
@@ -1535,6 +1550,8 @@ name|server
 argument_list|,
 name|model
 argument_list|,
+name|assignment
+argument_list|,
 name|student
 argument_list|,
 name|original
@@ -1588,6 +1605,8 @@ argument_list|(
 name|server
 argument_list|,
 name|model
+argument_list|,
+name|assignment
 argument_list|,
 name|student
 argument_list|,
@@ -1773,6 +1792,29 @@ argument_list|<
 name|Section
 argument_list|>
 argument_list|>
+name|requiredOrSavedSectionsForCourse
+init|=
+operator|new
+name|Hashtable
+argument_list|<
+name|CourseRequest
+argument_list|,
+name|Set
+argument_list|<
+name|Section
+argument_list|>
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|Hashtable
+argument_list|<
+name|CourseRequest
+argument_list|,
+name|Set
+argument_list|<
+name|Section
+argument_list|>
+argument_list|>
 name|requiredSectionsForCourse
 init|=
 operator|new
@@ -1847,14 +1889,14 @@ control|(
 name|ClassAssignmentInterface
 operator|.
 name|ClassAssignment
-name|assignment
+name|a
 range|:
 name|getAssignment
 argument_list|()
 control|)
 if|if
 condition|(
-name|assignment
+name|a
 operator|!=
 literal|null
 condition|)
@@ -1866,7 +1908,7 @@ name|OnlineSectioningHelper
 operator|.
 name|toProto
 argument_list|(
-name|assignment
+name|a
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1966,6 +2008,19 @@ name|Section
 argument_list|>
 argument_list|()
 decl_stmt|;
+name|HashSet
+argument_list|<
+name|Section
+argument_list|>
+name|requiredOrSavedSections
+init|=
+operator|new
+name|HashSet
+argument_list|<
+name|Section
+argument_list|>
+argument_list|()
+decl_stmt|;
 name|a
 label|:
 for|for
@@ -2056,6 +2111,31 @@ argument_list|(
 name|section
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|a
+operator|.
+name|isPinned
+argument_list|()
+operator|||
+name|a
+operator|.
+name|isSaved
+argument_list|()
+operator|||
+name|getRequest
+argument_list|()
+operator|.
+name|isNoChange
+argument_list|()
+condition|)
+name|requiredOrSavedSections
+operator|.
+name|add
+argument_list|(
+name|section
+argument_list|)
+expr_stmt|;
 name|preferredSections
 operator|.
 name|add
@@ -2140,6 +2220,15 @@ argument_list|(
 name|cr
 argument_list|,
 name|requiredSections
+argument_list|)
+expr_stmt|;
+name|requiredOrSavedSectionsForCourse
+operator|.
+name|put
+argument_list|(
+name|cr
+argument_list|,
+name|requiredOrSavedSections
 argument_list|)
 expr_stmt|;
 block|}
@@ -2395,7 +2484,7 @@ name|selection
 operator|.
 name|setRequiredSections
 argument_list|(
-name|requiredSectionsForCourse
+name|requiredOrSavedSectionsForCourse
 argument_list|)
 expr_stmt|;
 name|selection
@@ -2412,6 +2501,8 @@ name|selection
 operator|.
 name|select
 argument_list|(
+name|assignment
+argument_list|,
 name|student
 argument_list|)
 decl_stmt|;
@@ -2496,6 +2587,8 @@ name|neighbour
 operator|.
 name|assign
 argument_list|(
+name|assignment
+argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
@@ -2543,7 +2636,9 @@ operator|-
 name|neighbour
 operator|.
 name|value
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2572,7 +2667,7 @@ literal|null
 condition|)
 for|for
 control|(
-name|Assignment
+name|SctAssignment
 name|section
 range|:
 name|e
@@ -2618,6 +2713,8 @@ argument_list|(
 name|server
 argument_list|,
 name|model
+argument_list|,
+name|assignment
 argument_list|,
 name|student
 argument_list|,
@@ -2737,6 +2834,9 @@ name|sections
 parameter_list|,
 name|OnlineSectioningServer
 name|server
+parameter_list|,
+name|StudentSectioningModel
+name|model
 parameter_list|)
 block|{
 name|Offering
@@ -2756,6 +2856,13 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|clonedOffering
+operator|.
+name|setModel
+argument_list|(
+name|model
+argument_list|)
+expr_stmt|;
 name|XExpectations
 name|expectations
 init|=
@@ -4111,6 +4218,14 @@ parameter_list|,
 name|StudentSectioningModel
 name|model
 parameter_list|,
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Student
 name|student
 parameter_list|,
@@ -4400,6 +4515,8 @@ argument_list|,
 name|classTable
 argument_list|,
 name|server
+argument_list|,
+name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4494,6 +4611,8 @@ argument_list|,
 name|classTable
 argument_list|,
 name|server
+argument_list|,
+name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4591,6 +4710,8 @@ argument_list|,
 name|classTable
 argument_list|,
 name|server
+argument_list|,
+name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4736,6 +4857,8 @@ argument_list|()
 operator|.
 name|getUnreservedSpace
 argument_list|(
+name|assignment
+argument_list|,
 name|clonnedRequest
 argument_list|)
 operator|<
@@ -4779,6 +4902,8 @@ name|clonnedSection
 operator|.
 name|getUnreservedSpace
 argument_list|(
+name|assignment
+argument_list|,
 name|clonnedRequest
 argument_list|)
 operator|<
@@ -4806,6 +4931,8 @@ argument_list|()
 operator|.
 name|getUnreservedSpace
 argument_list|(
+name|assignment
+argument_list|,
 name|clonnedRequest
 argument_list|)
 operator|<
@@ -4908,6 +5035,14 @@ name|convert
 parameter_list|(
 name|OnlineSectioningServer
 name|server
+parameter_list|,
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
 parameter_list|,
 name|Enrollment
 index|[]
@@ -5240,7 +5375,9 @@ init|=
 name|r
 operator|.
 name|getAvaiableEnrollmentsSkipSameTime
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -5311,7 +5448,7 @@ for|for
 control|(
 name|Iterator
 argument_list|<
-name|Assignment
+name|SctAssignment
 argument_list|>
 name|i
 init|=
@@ -5330,7 +5467,7 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Assignment
+name|SctAssignment
 name|a
 init|=
 name|i
@@ -5406,7 +5543,20 @@ name|TreeSet
 argument_list|<
 name|Section
 argument_list|>
-argument_list|()
+argument_list|(
+operator|new
+name|AssignmentComparator
+argument_list|<
+name|Section
+argument_list|,
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+argument_list|(
+name|assignment
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|overlapingSections
 operator|.
@@ -5779,7 +5929,7 @@ for|for
 control|(
 name|Iterator
 argument_list|<
-name|Assignment
+name|SctAssignment
 argument_list|>
 name|i
 init|=
@@ -5798,7 +5948,7 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Assignment
+name|SctAssignment
 name|a
 init|=
 name|i
@@ -6020,10 +6170,14 @@ operator|.
 name|isAlternative
 argument_list|()
 operator|&&
-name|r
+name|assignment
 operator|.
-name|isAssigned
-argument_list|()
+name|getValue
+argument_list|(
+name|r
+argument_list|)
+operator|!=
+literal|null
 condition|)
 name|nrAssignedAlt
 operator|++
@@ -7377,6 +7531,14 @@ parameter_list|,
 name|StudentSectioningModel
 name|model
 parameter_list|,
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Student
 name|student
 parameter_list|,
@@ -7550,6 +7712,8 @@ argument_list|,
 name|c
 argument_list|,
 literal|null
+argument_list|,
+name|assignment
 argument_list|)
 expr_stmt|;
 block|}
@@ -7560,6 +7724,8 @@ init|=
 name|convert
 argument_list|(
 name|server
+argument_list|,
+name|assignment
 argument_list|,
 name|enrollments
 argument_list|,
@@ -7585,7 +7751,9 @@ operator|-
 name|neighbour
 operator|.
 name|value
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

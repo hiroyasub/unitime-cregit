@@ -101,22 +101,6 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
-operator|.
-name|cpsolver
-operator|.
-name|coursett
-operator|.
-name|model
-operator|.
-name|RoomLocation
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -168,6 +152,20 @@ operator|.
 name|action
 operator|.
 name|ActionMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|coursett
+operator|.
+name|model
+operator|.
+name|RoomLocation
 import|;
 end_import
 

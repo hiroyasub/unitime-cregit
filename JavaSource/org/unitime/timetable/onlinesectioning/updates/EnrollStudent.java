@@ -119,9 +119,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -135,9 +133,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -151,9 +147,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -5395,9 +5389,6 @@ name|offering
 argument_list|,
 name|newEnrollment
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
 argument_list|,
 name|oldEnrollment
 operator|==
@@ -5422,9 +5413,6 @@ name|offering
 argument_list|,
 name|oldEnrollment
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
 argument_list|,
 name|offering
 argument_list|)
@@ -5684,9 +5672,6 @@ name|offering
 argument_list|,
 name|newEnrollment
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
 argument_list|,
 literal|null
 argument_list|,
@@ -6274,9 +6259,7 @@ operator|!
 operator|(
 name|otherRequest
 operator|instanceof
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -6630,9 +6613,7 @@ operator|!
 operator|(
 name|otherRequest
 operator|instanceof
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -6644,6 +6625,11 @@ name|CourseRequest
 operator|)
 condition|)
 continue|continue;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 name|Enrollment
 name|otherErollment
 init|=

@@ -119,9 +119,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -135,9 +133,35 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|AssignmentMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -151,9 +175,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -167,9 +189,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -183,9 +203,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -199,9 +217,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -215,9 +231,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -231,9 +245,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -247,9 +259,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -263,9 +273,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -279,9 +287,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -295,9 +301,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -311,9 +315,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -327,9 +329,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -343,9 +343,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -359,9 +357,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -375,9 +371,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -391,9 +385,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -407,9 +399,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1840,6 +1830,23 @@ name|Student
 argument_list|>
 argument_list|()
 decl_stmt|;
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+init|=
+operator|new
+name|AssignmentMap
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|XStudentId
@@ -2048,7 +2055,7 @@ literal|0
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|ftr
+name|assignment
 operator|.
 name|assign
 argument_list|(
@@ -2294,7 +2301,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
-name|clonnedRequest
+name|assignment
 operator|.
 name|assign
 argument_list|(
@@ -2470,12 +2477,19 @@ operator|instanceof
 name|FreeTimeRequest
 condition|)
 continue|continue;
+name|Enrollment
+name|enrollment
+init|=
+name|assignment
+operator|.
+name|getValue
+argument_list|(
+name|request
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
-name|request
-operator|.
-name|getAssignment
-argument_list|()
+name|enrollment
 operator|!=
 literal|null
 condition|)
@@ -2492,10 +2506,9 @@ name|w
 operator|.
 name|getWeight
 argument_list|(
-name|request
-operator|.
-name|getAssignment
-argument_list|()
+name|assignment
+argument_list|,
+name|enrollment
 argument_list|)
 expr_stmt|;
 block|}
@@ -2505,6 +2518,8 @@ name|student
 operator|.
 name|canAssign
 argument_list|(
+name|assignment
+argument_list|,
 name|request
 argument_list|)
 condition|)
@@ -2554,6 +2569,10 @@ block|{
 name|Enrollment
 name|e1
 init|=
+name|assignment
+operator|.
+name|getValue
+argument_list|(
 name|student
 operator|.
 name|getRequests
@@ -2563,9 +2582,7 @@ name|get
 argument_list|(
 name|i
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -2644,10 +2661,12 @@ continue|continue;
 name|Enrollment
 name|e2
 init|=
-name|r2
+name|assignment
 operator|.
-name|getAssignment
-argument_list|()
+name|getValue
+argument_list|(
+name|r2
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -2881,7 +2900,9 @@ init|=
 name|config
 operator|.
 name|getEnrollments
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -2961,7 +2982,9 @@ argument_list|(
 name|section
 operator|.
 name|getEnrollments
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -2983,7 +3006,9 @@ operator|-
 name|section
 operator|.
 name|getEnrollments
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -3047,7 +3072,9 @@ argument_list|(
 name|section
 operator|.
 name|getEnrollments
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()
@@ -3069,7 +3096,9 @@ operator|-
 name|section
 operator|.
 name|getEnrollments
-argument_list|()
+argument_list|(
+name|assignment
+argument_list|)
 operator|.
 name|size
 argument_list|()

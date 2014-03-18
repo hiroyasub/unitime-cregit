@@ -119,22 +119,6 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
-operator|.
-name|cpsolver
-operator|.
-name|ifs
-operator|.
-name|util
-operator|.
-name|Progress
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -186,6 +170,20 @@ operator|.
 name|action
 operator|.
 name|ActionMessage
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|util
+operator|.
+name|Progress
 import|;
 end_import
 

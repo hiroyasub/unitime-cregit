@@ -266,9 +266,7 @@ specifier|public
 class|class
 name|Constants
 extends|extends
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

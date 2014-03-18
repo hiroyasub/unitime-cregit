@@ -51,9 +51,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -67,9 +79,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -83,9 +93,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Enrollment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -99,9 +121,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -115,9 +135,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -131,9 +149,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -217,6 +233,14 @@ parameter_list|,
 name|Student
 name|student
 parameter_list|,
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Hashtable
 argument_list|<
 name|CourseRequest
@@ -270,6 +294,8 @@ name|properties
 argument_list|,
 name|student
 argument_list|,
+name|assignment
+argument_list|,
 name|requiredSections
 argument_list|,
 name|requiredFreeTimes
@@ -306,6 +332,8 @@ operator|.
 name|getModel
 argument_list|()
 argument_list|,
+name|assignment
+argument_list|,
 name|preferredSections
 argument_list|)
 expr_stmt|;
@@ -325,6 +353,8 @@ operator|.
 name|getModel
 argument_list|()
 argument_list|,
+name|assignment
+argument_list|,
 name|preferredSections
 argument_list|)
 expr_stmt|;
@@ -335,6 +365,14 @@ specifier|protected
 name|int
 name|compare
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Suggestion
 name|s1
 parameter_list|,
@@ -352,6 +390,8 @@ operator|)
 operator|.
 name|compare
 argument_list|(
+name|assignment
+argument_list|,
 name|s1
 operator|.
 name|getEnrollments

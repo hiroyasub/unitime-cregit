@@ -139,9 +139,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -155,9 +153,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -166,6 +162,20 @@ operator|.
 name|model
 operator|.
 name|Course
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Enrollment
 import|;
 end_import
 
@@ -902,9 +912,7 @@ block|}
 specifier|public
 name|XCourseRequest
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -914,6 +922,9 @@ name|model
 operator|.
 name|CourseRequest
 name|request
+parameter_list|,
+name|Enrollment
+name|enrollment
 parameter_list|)
 block|{
 name|super
@@ -971,10 +982,7 @@ argument_list|)
 expr_stmt|;
 name|iEnrollment
 operator|=
-name|request
-operator|.
-name|getAssignment
-argument_list|()
+name|enrollment
 operator|==
 literal|null
 condition|?
@@ -983,10 +991,7 @@ else|:
 operator|new
 name|XEnrollment
 argument_list|(
-name|request
-operator|.
-name|getAssignment
-argument_list|()
+name|enrollment
 argument_list|)
 expr_stmt|;
 block|}
@@ -1269,9 +1274,7 @@ specifier|public
 name|void
 name|fillChoicesIn
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

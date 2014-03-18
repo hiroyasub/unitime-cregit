@@ -77,9 +77,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -93,9 +91,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -109,9 +105,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -125,9 +119,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -141,9 +133,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -157,9 +147,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -173,9 +161,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -189,9 +175,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -205,9 +189,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -221,9 +203,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -237,9 +217,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -253,9 +231,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|assignment
+operator|.
+name|Assignment
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -269,9 +259,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -434,6 +422,17 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
+name|Assignment
+argument_list|<
+name|Lecture
+argument_list|,
+name|Placement
+argument_list|>
+name|iAssignment
+init|=
+literal|null
+decl_stmt|;
+specifier|private
 name|int
 name|iMessageLevel
 init|=
@@ -455,6 +454,14 @@ parameter_list|(
 name|TimetableModel
 name|model
 parameter_list|,
+name|Assignment
+argument_list|<
+name|Lecture
+argument_list|,
+name|Placement
+argument_list|>
+name|assignment
+parameter_list|,
 name|int
 name|msgLevel
 parameter_list|)
@@ -462,6 +469,10 @@ block|{
 name|iModel
 operator|=
 name|model
+expr_stmt|;
+name|iAssignment
+operator|=
+name|assignment
 expr_stmt|;
 name|setMessageLevel
 argument_list|(
@@ -1664,12 +1675,16 @@ condition|(
 name|sc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|!=
 name|sc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1688,7 +1703,9 @@ operator|+
 name|sc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|", actual="
 operator|+
@@ -1696,6 +1713,8 @@ name|sc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1728,12 +1747,16 @@ condition|(
 name|shc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|!=
 name|shc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1752,7 +1775,9 @@ operator|+
 name|shc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|", actual="
 operator|+
@@ -1760,6 +1785,8 @@ name|shc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1792,12 +1819,16 @@ condition|(
 name|sdc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|!=
 name|sdc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1816,7 +1847,9 @@ operator|+
 name|sdc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|", actual="
 operator|+
@@ -1824,6 +1857,8 @@ name|sdc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1856,12 +1891,16 @@ condition|(
 name|scc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|!=
 name|scc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1880,7 +1919,9 @@ operator|+
 name|scc
 operator|.
 name|getValue
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|", actual="
 operator|+
@@ -1888,6 +1929,8 @@ name|scc
 operator|.
 name|getValue
 argument_list|(
+name|iAssignment
+argument_list|,
 name|iModel
 operator|.
 name|variables
@@ -1962,7 +2005,9 @@ operator|+
 name|lecture
 operator|.
 name|classLimit
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|" ("
 operator|+
@@ -2062,7 +2107,9 @@ operator|>
 name|lecture
 operator|.
 name|classLimit
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 condition|)
 block|{
 if|if
@@ -2102,7 +2149,9 @@ operator|+
 name|lecture
 operator|.
 name|classLimit
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|")."
 argument_list|)
@@ -2138,7 +2187,9 @@ operator|+
 name|lecture
 operator|.
 name|classLimit
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 operator|+
 literal|")."
 argument_list|)

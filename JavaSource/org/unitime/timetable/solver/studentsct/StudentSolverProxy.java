@@ -51,22 +51,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|onlinesectioning
-operator|.
-name|OnlineSectioningServer
-import|;
-end_import
-
-begin_import
-import|import
-name|net
-operator|.
-name|sf
-operator|.
 name|cpsolver
 operator|.
 name|ifs
@@ -79,9 +63,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -90,6 +72,20 @@ operator|.
 name|util
 operator|.
 name|DataProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningServer
 import|;
 end_import
 

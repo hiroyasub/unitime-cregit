@@ -151,9 +151,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -167,9 +165,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -183,9 +179,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -199,9 +193,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -215,9 +207,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -231,9 +221,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -247,9 +235,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -263,9 +249,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -279,9 +263,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -295,9 +277,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -311,9 +291,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -327,9 +305,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -337,15 +313,13 @@ name|ifs
 operator|.
 name|extension
 operator|.
-name|Assignment
+name|AssignedValue
 import|;
 end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -359,9 +333,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -370,6 +342,20 @@ operator|.
 name|model
 operator|.
 name|Constraint
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|solver
+operator|.
+name|Solver
 import|;
 end_import
 
@@ -572,12 +558,22 @@ specifier|public
 name|void
 name|load
 parameter_list|(
+name|Solver
+argument_list|<
+name|Lecture
+argument_list|,
+name|Placement
+argument_list|>
+name|solver
+parameter_list|,
 name|ConflictStatistics
 name|cbs
 parameter_list|)
 block|{
 name|load
 argument_list|(
+name|solver
+argument_list|,
 name|cbs
 argument_list|,
 literal|null
@@ -696,6 +692,14 @@ specifier|public
 name|void
 name|load
 parameter_list|(
+name|Solver
+argument_list|<
+name|Lecture
+argument_list|,
+name|Placement
+argument_list|>
+name|solver
+parameter_list|,
 name|ConflictStatistics
 name|cbs
 parameter_list|,
@@ -746,11 +750,11 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|Assignment
+name|AssignedValue
 name|assignment
 init|=
 operator|(
-name|Assignment
+name|AssignedValue
 operator|)
 name|entry
 operator|.
@@ -827,6 +831,14 @@ name|SolverGridModel
 operator|.
 name|hardConflicts2pref
 argument_list|(
+name|solver
+operator|.
+name|currentSolution
+argument_list|()
+operator|.
+name|getAssignment
+argument_list|()
+argument_list|,
 name|lecture
 argument_list|,
 literal|null
@@ -1004,11 +1016,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Assignment
+name|AssignedValue
 name|noGood
 init|=
 operator|(
-name|Assignment
+name|AssignedValue
 operator|)
 name|e2
 operator|.
@@ -1509,11 +1521,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Assignment
+name|AssignedValue
 name|ass
 init|=
 operator|(
-name|Assignment
+name|AssignedValue
 operator|)
 name|e3
 operator|.
@@ -1549,6 +1561,14 @@ name|SolverGridModel
 operator|.
 name|hardConflicts2pref
 argument_list|(
+name|solver
+operator|.
+name|currentSolution
+argument_list|()
+operator|.
+name|getAssignment
+argument_list|()
+argument_list|,
 name|l
 argument_list|,
 name|p

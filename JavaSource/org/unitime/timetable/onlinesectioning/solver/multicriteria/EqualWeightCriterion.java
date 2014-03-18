@@ -43,23 +43,19 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|cpsolver
 operator|.
-name|timetable
+name|ifs
 operator|.
-name|onlinesectioning
+name|assignment
 operator|.
-name|solver
-operator|.
-name|OnlineSectioningModel
+name|Assignment
 import|;
 end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -73,9 +69,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -89,9 +83,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -105,9 +97,21 @@ end_import
 
 begin_import
 import|import
-name|net
+name|org
 operator|.
-name|sf
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|model
+operator|.
+name|Request
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -121,9 +125,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -137,9 +139,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -148,6 +148,22 @@ operator|.
 name|model
 operator|.
 name|Subpart
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|solver
+operator|.
+name|OnlineSectioningModel
 import|;
 end_import
 
@@ -171,6 +187,14 @@ parameter_list|,
 name|OnlineSectioningModel
 name|model
 parameter_list|,
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Hashtable
 argument_list|<
 name|CourseRequest
@@ -189,6 +213,8 @@ name|student
 argument_list|,
 name|model
 argument_list|,
+name|assignment
+argument_list|,
 name|preferredSections
 argument_list|)
 expr_stmt|;
@@ -199,6 +225,14 @@ specifier|public
 name|int
 name|compare
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|Enrollment
 index|[]
 name|current
@@ -553,6 +587,8 @@ argument_list|()
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|best
@@ -613,6 +649,8 @@ argument_list|()
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|current
@@ -1964,6 +2002,14 @@ specifier|public
 name|boolean
 name|canImprove
 parameter_list|(
+name|Assignment
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+name|assignment
+parameter_list|,
 name|int
 name|maxIdx
 parameter_list|,
@@ -2375,6 +2421,8 @@ argument_list|()
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|best
@@ -2421,6 +2469,8 @@ argument_list|()
 operator|.
 name|getOverExpected
 argument_list|(
+name|assignment
+argument_list|,
 name|section
 argument_list|,
 name|current

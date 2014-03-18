@@ -163,9 +163,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -179,9 +177,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -195,9 +191,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -211,9 +205,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -227,9 +219,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -243,9 +233,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -259,9 +247,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -275,9 +261,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -285,15 +269,13 @@ name|ifs
 operator|.
 name|extension
 operator|.
-name|Assignment
+name|AssignedValue
 import|;
 end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -307,9 +289,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -656,11 +636,11 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|Assignment
+name|AssignedValue
 name|assignment
 init|=
 operator|(
-name|Assignment
+name|AssignedValue
 operator|)
 name|entry
 operator|.
@@ -991,11 +971,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Assignment
+name|AssignedValue
 name|noGood
 init|=
 operator|(
-name|Assignment
+name|AssignedValue
 operator|)
 name|e2
 operator|.
@@ -1334,11 +1314,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Assignment
+name|AssignedValue
 name|ass
 init|=
 operator|(
-name|Assignment
+name|AssignedValue
 operator|)
 name|e3
 operator|.

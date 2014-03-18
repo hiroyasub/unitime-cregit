@@ -1271,9 +1271,7 @@ argument_list|(
 name|idx
 argument_list|)
 else|:
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1293,9 +1291,7 @@ if|if
 condition|(
 name|pref
 operator|==
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1325,9 +1321,7 @@ if|else if
 condition|(
 name|pref
 operator|==
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1693,9 +1687,7 @@ argument_list|(
 operator|-
 literal|1l
 argument_list|,
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -1715,9 +1707,7 @@ argument_list|(
 operator|-
 literal|2l
 argument_list|,
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

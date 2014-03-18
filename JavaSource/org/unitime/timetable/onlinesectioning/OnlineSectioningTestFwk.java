@@ -530,7 +530,7 @@ name|props
 operator|.
 name|setProperty
 argument_list|(
-literal|"log4j.logger.net.sf.cpsolver.ifs.util.JProf"
+literal|"log4j.logger.org.cpsolver.ifs.util.JProf"
 argument_list|,
 literal|"INFO"
 argument_list|)

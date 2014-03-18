@@ -221,9 +221,7 @@ block|}
 specifier|public
 name|XCourseReservation
 parameter_list|(
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.

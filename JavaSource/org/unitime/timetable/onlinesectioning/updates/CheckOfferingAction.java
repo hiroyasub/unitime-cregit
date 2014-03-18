@@ -109,9 +109,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -125,9 +123,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -141,9 +137,7 @@ end_import
 
 begin_import
 import|import
-name|net
-operator|.
-name|sf
+name|org
 operator|.
 name|cpsolver
 operator|.
@@ -2388,9 +2382,6 @@ operator|.
 name|getEnrollment
 argument_list|()
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
 argument_list|,
 name|r
 operator|.
@@ -2424,9 +2415,6 @@ operator|.
 name|getLastEnrollment
 argument_list|()
 argument_list|)
-operator|.
-name|getAssignment
-argument_list|()
 argument_list|,
 name|offering
 argument_list|)
