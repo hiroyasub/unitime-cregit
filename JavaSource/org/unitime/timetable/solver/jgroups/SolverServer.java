@@ -202,6 +202,11 @@ name|getAvailableMemory
 parameter_list|()
 function_decl|;
 specifier|public
+name|int
+name|getAvailableProcessors
+parameter_list|()
+function_decl|;
+specifier|public
 name|long
 name|getMemoryLimit
 parameter_list|()

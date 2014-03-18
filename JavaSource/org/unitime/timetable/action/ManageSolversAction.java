@@ -3328,6 +3328,8 @@ literal|"Started"
 block|,
 literal|"Available Memory"
 block|,
+literal|"NrCores"
+block|,
 literal|"Ping"
 block|,
 literal|"Usage"
@@ -3347,6 +3349,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -3451,6 +3455,8 @@ block|,
 literal|""
 block|,
 literal|""
+block|,
+literal|""
 block|}
 argument_list|,
 operator|new
@@ -3468,6 +3474,13 @@ literal|null
 block|,
 operator|new
 name|Long
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+block|,
+operator|new
+name|Integer
 argument_list|(
 operator|-
 literal|1
@@ -3718,6 +3731,14 @@ operator|.
 name|isLocal
 argument_list|()
 decl_stmt|;
+name|int
+name|cores
+init|=
+name|server
+operator|.
+name|getAvailableProcessors
+argument_list|()
+decl_stmt|;
 name|String
 name|op
 init|=
@@ -3947,6 +3968,13 @@ argument_list|)
 operator|+
 literal|" MB"
 block|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|cores
+argument_list|)
+block|,
 operator|(
 name|t1
 operator|-
@@ -4014,6 +4042,12 @@ argument_list|(
 name|t1
 operator|-
 name|t0
+argument_list|)
+block|,
+operator|new
+name|Integer
+argument_list|(
+name|cores
 argument_list|)
 block|,
 operator|new
