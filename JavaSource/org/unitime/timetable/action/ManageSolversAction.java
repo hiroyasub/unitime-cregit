@@ -1684,7 +1684,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|20
+literal|21
 argument_list|,
 literal|"Manage Course Solvers"
 argument_list|,
@@ -1709,6 +1709,8 @@ block|,
 literal|"Owner"
 block|,
 literal|"Mem"
+block|,
+literal|"Cores"
 block|,
 literal|"Assign"
 block|,
@@ -1739,6 +1741,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -3034,6 +3038,23 @@ literal|"';"
 operator|+
 literal|" event.cancelBubble=true;\">"
 expr_stmt|;
+name|int
+name|nrCores
+init|=
+name|Math
+operator|.
+name|abs
+argument_list|(
+name|properties
+operator|.
+name|getPropertyInt
+argument_list|(
+literal|"Parallel.NrSolvers"
+argument_list|,
+literal|4
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|webTable
 operator|.
 name|addLine
@@ -3095,6 +3116,13 @@ name|getUser
 argument_list|()
 operator|+
 literal|"</span>"
+block|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|nrCores
+argument_list|)
 block|,
 name|assigned
 block|,
@@ -3163,6 +3191,8 @@ block|,
 name|ownerName
 block|,
 literal|null
+block|,
+name|nrCores
 block|,
 name|assigned
 block|,
@@ -3310,7 +3340,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|11
+literal|12
 argument_list|,
 literal|"Available Servers"
 argument_list|,
@@ -4193,7 +4223,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|21
+literal|22
 argument_list|,
 literal|"Manage Examination Solvers"
 argument_list|,
@@ -4218,6 +4248,8 @@ block|,
 literal|"Owner"
 block|,
 literal|"Mem"
+block|,
+literal|"Cores"
 block|,
 literal|"Type"
 block|,
@@ -4250,6 +4282,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -4986,6 +5020,23 @@ name|examTypeId
 argument_list|)
 operator|)
 decl_stmt|;
+name|int
+name|nrCores
+init|=
+name|Math
+operator|.
+name|abs
+argument_list|(
+name|properties
+operator|.
+name|getPropertyInt
+argument_list|(
+literal|"Parallel.NrSolvers"
+argument_list|,
+literal|4
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|webTable
 operator|.
 name|addLine
@@ -5047,6 +5098,13 @@ name|getUser
 argument_list|()
 operator|+
 literal|"</span>"
+block|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|nrCores
+argument_list|)
 block|,
 operator|(
 name|examType
@@ -5401,6 +5459,8 @@ name|runnerName
 block|,
 literal|null
 block|,
+name|nrCores
+block|,
 name|examTypeId
 block|,
 operator|(
@@ -5623,7 +5683,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|14
+literal|15
 argument_list|,
 literal|"Manage Student Sectioning Solvers"
 argument_list|,
@@ -5649,6 +5709,8 @@ literal|"Owner"
 block|,
 literal|"Mem"
 block|,
+literal|"Cores"
+block|,
 literal|"Assign"
 block|,
 literal|"Total"
@@ -5666,6 +5728,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -6143,6 +6207,23 @@ literal|"';"
 operator|+
 literal|" event.cancelBubble=true;\">"
 expr_stmt|;
+name|int
+name|nrCores
+init|=
+name|Math
+operator|.
+name|abs
+argument_list|(
+name|properties
+operator|.
+name|getPropertyInt
+argument_list|(
+literal|"Parallel.NrSolvers"
+argument_list|,
+literal|4
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|webTable
 operator|.
 name|addLine
@@ -6204,6 +6285,13 @@ name|getUser
 argument_list|()
 operator|+
 literal|"</span>"
+block|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|nrCores
+argument_list|)
 block|,
 operator|(
 name|assigned
@@ -6346,6 +6434,8 @@ block|,
 name|runnerName
 block|,
 literal|null
+block|,
+name|nrCores
 block|,
 operator|(
 name|assigned
@@ -6507,7 +6597,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|14
+literal|15
 argument_list|,
 literal|"Manage Online Scheduling Servers"
 argument_list|,
