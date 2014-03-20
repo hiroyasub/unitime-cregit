@@ -1805,6 +1805,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Conflict"
+argument_list|)
+name|String
+name|colConflict
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Conflicts with {0}"
 argument_list|)
 name|String
