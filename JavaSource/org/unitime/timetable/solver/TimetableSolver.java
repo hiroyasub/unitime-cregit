@@ -5429,6 +5429,8 @@ argument_list|,
 name|startDay
 argument_list|,
 name|bgMode
+argument_list|,
+name|showEvents
 argument_list|)
 argument_list|)
 expr_stmt|;
