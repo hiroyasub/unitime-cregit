@@ -548,6 +548,28 @@ argument_list|(
 name|sessionId
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|sessionId
+operator|==
+literal|null
+condition|)
+block|{
+name|sLog
+operator|.
+name|error
+argument_list|(
+literal|"Server "
+operator|+
+name|sessionId
+operator|+
+literal|" does not exist."
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 try|try
 block|{
 name|instance
