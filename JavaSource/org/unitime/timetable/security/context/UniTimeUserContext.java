@@ -2760,6 +2760,8 @@ argument_list|()
 argument_list|,
 name|key
 argument_list|)
+argument_list|,
+name|hibSession
 argument_list|)
 decl_stmt|;
 if|if
