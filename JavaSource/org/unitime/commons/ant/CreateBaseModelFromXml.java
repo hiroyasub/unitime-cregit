@@ -1609,7 +1609,7 @@ name|pw
 operator|.
 name|println
 argument_list|(
-literal|" * Copyright (C) 2010 - 2013, UniTime LLC, and individual contributors"
+literal|" * Copyright (C) 2010 - 2014, UniTime LLC, and individual contributors"
 argument_list|)
 expr_stmt|;
 name|pw
@@ -4264,6 +4264,34 @@ name|pw
 operator|.
 name|println
 argument_list|(
+literal|"/**"
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|" * Do not change this class. It has been automatically generated using ant create-model."
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|" * @see org.unitime.commons.ant.CreateBaseModelFromXml"
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|" */"
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
 literal|"public abstract class Base"
 operator|+
 name|className
@@ -5482,6 +5510,34 @@ name|pw
 operator|.
 name|println
 argument_list|()
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|"/**"
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|" * Do not change this class. It has been automatically generated using ant create-model."
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|" * @see org.unitime.commons.ant.CreateBaseModelFromXml"
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|" */"
+argument_list|)
 expr_stmt|;
 name|pw
 operator|.
