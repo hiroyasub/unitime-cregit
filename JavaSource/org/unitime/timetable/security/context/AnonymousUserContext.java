@@ -237,7 +237,9 @@ name|getInstance
 argument_list|()
 operator|.
 name|findAll
-argument_list|()
+argument_list|(
+name|hibSession
+argument_list|)
 argument_list|)
 control|)
 block|{
