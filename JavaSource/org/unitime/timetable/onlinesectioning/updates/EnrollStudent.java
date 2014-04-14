@@ -1513,9 +1513,14 @@ argument_list|(
 name|r
 argument_list|)
 expr_stmt|;
-operator|new
+name|server
+operator|.
+name|createAction
+argument_list|(
 name|CheckAssignmentAction
-argument_list|()
+operator|.
+name|class
+argument_list|)
 operator|.
 name|forStudent
 argument_list|(

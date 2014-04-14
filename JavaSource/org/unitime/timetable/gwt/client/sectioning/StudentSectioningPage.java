@@ -815,6 +815,8 @@ argument_list|,
 name|mode
 argument_list|,
 literal|true
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|initWidget
@@ -930,7 +932,7 @@ argument_list|()
 expr_stmt|;
 name|widget
 operator|.
-name|lastRequest
+name|checkEligibility
 argument_list|(
 name|event
 operator|.
@@ -1028,7 +1030,7 @@ argument_list|)
 expr_stmt|;
 name|widget
 operator|.
-name|lastRequest
+name|checkEligibility
 argument_list|(
 name|sessionSelector
 operator|.
