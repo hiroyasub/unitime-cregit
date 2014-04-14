@@ -447,6 +447,7 @@ name|iFts
 decl_stmt|;
 specifier|public
 name|CalendarExport
+name|withParams
 parameter_list|(
 name|String
 name|classIds
@@ -463,6 +464,9 @@ name|iFts
 operator|=
 name|fts
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 annotation|@
 name|Override

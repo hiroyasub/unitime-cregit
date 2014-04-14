@@ -380,6 +380,7 @@ name|iApproval
 decl_stmt|;
 specifier|public
 name|RejectEnrollmentsAction
+name|withParams
 parameter_list|(
 name|Long
 name|offeringId
@@ -416,6 +417,9 @@ name|iApproval
 operator|=
 name|approval
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|Long
@@ -961,14 +965,25 @@ name|server
 operator|.
 name|execute
 argument_list|(
-operator|new
+name|server
+operator|.
+name|createAction
+argument_list|(
 name|NotifyStudentAction
+operator|.
+name|class
+argument_list|)
+operator|.
+name|forStudent
 argument_list|(
 name|enrollment
 operator|.
 name|getStudentId
 argument_list|()
-argument_list|,
+argument_list|)
+operator|.
+name|oldEnrollment
+argument_list|(
 name|offering
 argument_list|,
 name|enrollment
@@ -996,7 +1011,6 @@ operator|.
 name|commitTransaction
 argument_list|()
 expr_stmt|;
-comment|/* 			server.execute(new UpdateEnrollmentCountsAction(getOfferingId()), helper.getUser(), new OnlineSectioningServer.ServerCallback<Boolean>() { 				@Override 				public void onFailure(Throwable exception) { 				} 				@Override 				public void onSuccess(Boolean result) { 				} 			}); 			*/
 return|return
 literal|true
 return|;

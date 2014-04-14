@@ -6836,9 +6836,14 @@ name|solver
 operator|.
 name|execute
 argument_list|(
-operator|new
+name|solver
+operator|.
+name|createAction
+argument_list|(
 name|GetInfo
-argument_list|()
+operator|.
+name|class
+argument_list|)
 argument_list|,
 literal|null
 argument_list|)

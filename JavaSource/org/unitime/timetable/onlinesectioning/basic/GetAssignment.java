@@ -657,6 +657,7 @@ name|iStudentId
 decl_stmt|;
 specifier|public
 name|GetAssignment
+name|forStudent
 parameter_list|(
 name|Long
 name|studentId
@@ -666,6 +667,9 @@ name|iStudentId
 operator|=
 name|studentId
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 annotation|@
 name|Override

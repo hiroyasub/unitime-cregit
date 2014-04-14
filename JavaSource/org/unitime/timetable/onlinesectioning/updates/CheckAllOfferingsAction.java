@@ -303,14 +303,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|public
-name|CheckAllOfferingsAction
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
 annotation|@
 name|Override
 specifier|public

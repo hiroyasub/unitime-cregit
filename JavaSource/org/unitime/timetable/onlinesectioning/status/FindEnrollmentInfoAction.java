@@ -677,6 +677,7 @@ name|iCoursesIcanApprove
 decl_stmt|;
 specifier|public
 name|FindEnrollmentInfoAction
+name|withParams
 parameter_list|(
 name|String
 name|query
@@ -759,6 +760,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|Query

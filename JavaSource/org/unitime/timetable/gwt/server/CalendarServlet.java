@@ -1475,8 +1475,16 @@ name|server
 operator|.
 name|execute
 argument_list|(
-operator|new
+name|server
+operator|.
+name|createAction
+argument_list|(
 name|CalendarExport
+operator|.
+name|class
+argument_list|)
+operator|.
+name|withParams
 argument_list|(
 name|classIds
 argument_list|,

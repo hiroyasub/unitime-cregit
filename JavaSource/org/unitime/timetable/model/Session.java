@@ -4016,8 +4016,16 @@ name|server
 operator|.
 name|execute
 argument_list|(
-operator|new
+name|server
+operator|.
+name|createAction
+argument_list|(
 name|ReloadOfferingAction
+operator|.
+name|class
+argument_list|)
+operator|.
+name|forOfferings
 argument_list|(
 name|offering
 operator|.

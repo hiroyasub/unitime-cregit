@@ -532,8 +532,16 @@ name|server
 operator|.
 name|execute
 argument_list|(
-operator|new
+name|server
+operator|.
+name|createAction
+argument_list|(
 name|GenerateSectioningReport
+operator|.
+name|class
+argument_list|)
+operator|.
+name|withParameters
 argument_list|(
 name|parameters
 argument_list|)

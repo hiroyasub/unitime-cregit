@@ -418,6 +418,7 @@ name|iStudentId
 decl_stmt|;
 specifier|public
 name|ListClasses
+name|forCourseAndStudent
 parameter_list|(
 name|String
 name|course
@@ -434,6 +435,9 @@ name|iStudentId
 operator|=
 name|studentId
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|String

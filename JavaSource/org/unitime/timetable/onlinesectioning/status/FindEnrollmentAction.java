@@ -474,6 +474,7 @@ name|iConsentToDoCourse
 decl_stmt|;
 specifier|public
 name|FindEnrollmentAction
+name|withParams
 parameter_list|(
 name|String
 name|query
@@ -508,6 +509,9 @@ name|iConsentToDoCourse
 operator|=
 name|isConsentToDoCourse
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|Query

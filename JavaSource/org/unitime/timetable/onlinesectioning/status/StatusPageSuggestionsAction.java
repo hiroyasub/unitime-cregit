@@ -873,6 +873,7 @@ name|iUserName
 decl_stmt|;
 specifier|public
 name|StatusPageSuggestionsAction
+name|withParams
 parameter_list|(
 name|String
 name|userId
@@ -911,6 +912,9 @@ name|iLimit
 operator|=
 name|limit
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 annotation|@
 name|Override

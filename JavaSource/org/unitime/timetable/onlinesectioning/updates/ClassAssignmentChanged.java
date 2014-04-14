@@ -341,6 +341,7 @@ literal|null
 decl_stmt|;
 specifier|public
 name|ClassAssignmentChanged
+name|forClasses
 parameter_list|(
 name|Long
 modifier|...
@@ -370,9 +371,13 @@ argument_list|(
 name|classId
 argument_list|)
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|ClassAssignmentChanged
+name|forClasses
 parameter_list|(
 name|Collection
 argument_list|<
@@ -385,6 +390,9 @@ name|iClassIds
 operator|=
 name|classIds
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|Collection

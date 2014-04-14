@@ -278,6 +278,7 @@ argument_list|)
 decl_stmt|;
 specifier|public
 name|PersistExpectedSpacesAction
+name|forOfferings
 parameter_list|(
 name|Long
 modifier|...
@@ -307,9 +308,13 @@ argument_list|(
 name|offeringId
 argument_list|)
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|PersistExpectedSpacesAction
+name|forOfferings
 parameter_list|(
 name|Collection
 argument_list|<
@@ -322,6 +327,9 @@ name|iOfferingIds
 operator|=
 name|offeringIds
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|Collection

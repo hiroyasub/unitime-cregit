@@ -373,6 +373,7 @@ literal|null
 decl_stmt|;
 specifier|public
 name|SectioningStatusFilterAction
+name|forRequest
 parameter_list|(
 name|FilterRpcRequest
 name|request
@@ -382,6 +383,9 @@ name|iRequest
 operator|=
 name|request
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 annotation|@
 name|Override
