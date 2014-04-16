@@ -133,6 +133,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ApplicationConfig
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|SolverInfo
 import|;
 end_import
@@ -305,16 +319,11 @@ operator|.
 name|initialize
 argument_list|()
 expr_stmt|;
-comment|// Now, when hibernate is initialized, we can re-initialize logging with application configuration included
-name|Debug
+comment|// Update logging according to the changes recorded in the application config
+name|ApplicationConfig
 operator|.
-name|init
-argument_list|(
-name|ApplicationProperties
-operator|.
-name|getProperties
+name|configureLogging
 argument_list|()
-argument_list|)
 expr_stmt|;
 if|if
 condition|(

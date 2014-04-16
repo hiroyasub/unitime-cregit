@@ -2680,6 +2680,20 @@ name|value
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|setLoggingLevel
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|Integer
+name|level
+parameter_list|)
+block|{
+block|}
 block|}
 end_class
 
