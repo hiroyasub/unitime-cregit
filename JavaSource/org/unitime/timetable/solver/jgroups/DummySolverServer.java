@@ -2663,6 +2663,23 @@ name|reset
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|setApplicationProperty
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|,
+name|String
+name|key
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+block|{
+block|}
 block|}
 end_class
 
