@@ -9853,12 +9853,22 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+comment|// Reset the event, but keep the original contact
+name|ContactInterface
+name|original
+init|=
+name|iOriginalContact
+decl_stmt|;
 name|setEvent
 argument_list|(
 name|event
 argument_list|,
 literal|false
 argument_list|)
+expr_stmt|;
+name|iOriginalContact
+operator|=
+name|original
 expr_stmt|;
 if|if
 condition|(
@@ -9878,6 +9888,10 @@ name|setText
 argument_list|(
 name|notes
 argument_list|)
+expr_stmt|;
+comment|// Re-check the change in the main contact
+name|checkMainContactChanged
+argument_list|()
 expr_stmt|;
 block|}
 name|EventType
