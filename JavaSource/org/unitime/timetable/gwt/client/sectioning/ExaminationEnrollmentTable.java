@@ -1055,6 +1055,11 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
+name|GWT
+operator|.
+name|getHostPageBaseURL
+argument_list|()
+operator|+
 name|event
 operator|.
 name|getData
