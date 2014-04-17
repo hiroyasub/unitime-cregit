@@ -93,7 +93,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|CourseOffering
 import|;
 end_import
 
@@ -156,8 +156,8 @@ name|SchedulingSubpart
 name|iSubpartOwner
 decl_stmt|;
 specifier|private
-name|InstructionalOffering
-name|iInstructionalOfferingOwner
+name|CourseOffering
+name|iCourseOwner
 decl_stmt|;
 specifier|public
 specifier|static
@@ -345,25 +345,25 @@ name|subpartOwner
 expr_stmt|;
 block|}
 specifier|public
-name|InstructionalOffering
-name|getInstructionalOfferingOwner
+name|CourseOffering
+name|getCourseOwner
 parameter_list|()
 block|{
 return|return
-name|iInstructionalOfferingOwner
+name|iCourseOwner
 return|;
 block|}
 specifier|public
 name|void
-name|setInstructionalOfferingOwner
+name|setCourseOwner
 parameter_list|(
-name|InstructionalOffering
-name|instructionalOfferingOwner
+name|CourseOffering
+name|courseOwner
 parameter_list|)
 block|{
-name|iInstructionalOfferingOwner
+name|iCourseOwner
 operator|=
-name|instructionalOfferingOwner
+name|courseOwner
 expr_stmt|;
 block|}
 specifier|public
@@ -483,6 +483,11 @@ operator|+
 name|getCourseCreditFormat
 argument_list|()
 operator|+
+literal|"\n	CourseOwner: "
+operator|+
+name|getCourseOwner
+argument_list|()
+operator|+
 literal|"\n	CreditType: "
 operator|+
 name|getCreditType
@@ -496,11 +501,6 @@ operator|+
 literal|"\n	DefinesCreditAtCourseLevel: "
 operator|+
 name|getDefinesCreditAtCourseLevel
-argument_list|()
-operator|+
-literal|"\n	InstructionalOfferingOwner: "
-operator|+
-name|getInstructionalOfferingOwner
 argument_list|()
 operator|+
 literal|"\n	SubpartOwner: "

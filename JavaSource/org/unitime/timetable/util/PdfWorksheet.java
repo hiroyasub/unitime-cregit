@@ -3570,7 +3570,7 @@ literal|" "
 operator|+
 name|rpad
 argument_list|(
-name|offering
+name|co
 operator|.
 name|getCredit
 argument_list|()
@@ -3579,7 +3579,7 @@ literal|null
 condition|?
 literal|""
 else|:
-name|offering
+name|co
 operator|.
 name|getCredit
 argument_list|()

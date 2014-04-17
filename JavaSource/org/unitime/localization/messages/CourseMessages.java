@@ -1052,7 +1052,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Offering Credit"
+literal|"Course Credit"
 argument_list|)
 name|String
 name|columnOfferingCredit
@@ -1847,6 +1847,15 @@ literal|"Type"
 argument_list|)
 name|String
 name|columnCourseType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Credit"
+argument_list|)
+name|String
+name|columnCredit
 parameter_list|()
 function_decl|;
 annotation|@

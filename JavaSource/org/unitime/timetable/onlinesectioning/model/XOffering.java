@@ -3730,7 +3730,9 @@ argument_list|(
 name|subpart
 operator|.
 name|getCredit
-argument_list|()
+argument_list|(
+name|courseId
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|subparts

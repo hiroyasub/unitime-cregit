@@ -309,7 +309,7 @@ name|List
 argument_list|<
 name|CourseCreditUnitConfig
 argument_list|>
-name|findByInstructionalOfferingOwner
+name|findByCourseOwner
 parameter_list|(
 name|org
 operator|.
@@ -319,7 +319,7 @@ name|Session
 name|hibSession
 parameter_list|,
 name|Long
-name|instructionalOfferingOwnerId
+name|courseOwnerId
 parameter_list|)
 block|{
 return|return
@@ -327,14 +327,14 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseCreditUnitConfig x where x.instructionalOfferingOwner.uniqueId = :instructionalOfferingOwnerId"
+literal|"from CourseCreditUnitConfig x where x.courseOwner.uniqueId = :courseOwnerId"
 argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"instructionalOfferingOwnerId"
+literal|"courseOwnerId"
 argument_list|,
-name|instructionalOfferingOwnerId
+name|courseOwnerId
 argument_list|)
 operator|.
 name|list

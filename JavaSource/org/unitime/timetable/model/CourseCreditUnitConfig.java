@@ -591,8 +591,8 @@ specifier|public
 name|void
 name|setOwner
 parameter_list|(
-name|InstructionalOffering
-name|instructionalOffering
+name|CourseOffering
+name|courseOffering
 parameter_list|)
 block|{
 if|if
@@ -604,9 +604,9 @@ name|booleanValue
 argument_list|()
 condition|)
 block|{
-name|setInstructionalOfferingOwner
+name|setCourseOwner
 argument_list|(
-name|instructionalOffering
+name|courseOffering
 argument_list|)
 expr_stmt|;
 block|}

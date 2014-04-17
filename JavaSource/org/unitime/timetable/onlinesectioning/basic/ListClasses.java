@@ -873,7 +873,12 @@ argument_list|(
 name|subpart
 operator|.
 name|getCredit
+argument_list|(
+name|c
+operator|.
+name|getCourseId
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

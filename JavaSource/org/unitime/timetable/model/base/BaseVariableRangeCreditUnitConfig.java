@@ -266,6 +266,11 @@ operator|+
 name|getCourseCreditFormat
 argument_list|()
 operator|+
+literal|"\n	CourseOwner: "
+operator|+
+name|getCourseOwner
+argument_list|()
+operator|+
 literal|"\n	CreditType: "
 operator|+
 name|getCreditType
@@ -284,11 +289,6 @@ operator|+
 literal|"\n	FractionalIncrementsAllowed: "
 operator|+
 name|getFractionalIncrementsAllowed
-argument_list|()
-operator|+
-literal|"\n	InstructionalOfferingOwner: "
-operator|+
-name|getInstructionalOfferingOwner
 argument_list|()
 operator|+
 literal|"\n	MaxUnits: "

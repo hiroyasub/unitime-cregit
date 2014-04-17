@@ -2064,7 +2064,12 @@ argument_list|(
 name|subpart
 operator|.
 name|getCredit
+argument_list|(
+name|course
+operator|.
+name|getCourseId
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|int
