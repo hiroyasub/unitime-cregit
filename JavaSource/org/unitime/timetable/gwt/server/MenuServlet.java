@@ -2810,16 +2810,6 @@ name|sessionContext
 operator|.
 name|isAuthenticated
 argument_list|()
-operator|&&
-name|sessionContext
-operator|.
-name|getUser
-argument_list|()
-operator|.
-name|getCurrentAuthority
-argument_list|()
-operator|!=
-literal|null
 condition|?
 name|sessionContext
 operator|.
