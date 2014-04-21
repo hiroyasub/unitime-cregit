@@ -206,6 +206,8 @@ argument_list|(
 name|Roles
 operator|.
 name|ROLE_ANONYMOUS
+argument_list|,
+name|hibSession
 argument_list|)
 decl_stmt|;
 if|if

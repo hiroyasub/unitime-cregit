@@ -1141,6 +1141,8 @@ argument_list|(
 name|Roles
 operator|.
 name|ROLE_INSTRUCTOR
+argument_list|,
+name|hibSession
 argument_list|)
 decl_stmt|;
 if|if
@@ -1454,6 +1456,8 @@ argument_list|(
 name|Roles
 operator|.
 name|ROLE_STUDENT
+argument_list|,
+name|hibSession
 argument_list|)
 decl_stmt|;
 if|if
@@ -1717,6 +1721,8 @@ argument_list|(
 name|Roles
 operator|.
 name|ROLE_NONE
+argument_list|,
+name|hibSession
 argument_list|)
 decl_stmt|;
 if|if
