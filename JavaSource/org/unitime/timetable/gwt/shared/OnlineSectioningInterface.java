@@ -321,7 +321,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|setStudentIt
+name|setStudentId
 parameter_list|(
 name|Long
 name|studentId
@@ -334,7 +334,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|Long
-name|getStudentIt
+name|getStudentId
 parameter_list|()
 block|{
 return|return
