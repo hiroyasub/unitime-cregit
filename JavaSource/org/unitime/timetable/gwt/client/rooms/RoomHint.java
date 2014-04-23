@@ -928,6 +928,8 @@ argument_list|,
 name|prefix
 argument_list|,
 name|distance
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -951,6 +953,10 @@ parameter_list|,
 specifier|final
 name|String
 name|distance
+parameter_list|,
+specifier|final
+name|boolean
+name|showRelativeToTheObject
 parameter_list|)
 block|{
 name|sLastLocationId
@@ -1032,6 +1038,8 @@ name|prefix
 argument_list|,
 name|distance
 argument_list|)
+argument_list|,
+name|showRelativeToTheObject
 argument_list|)
 expr_stmt|;
 block|}
