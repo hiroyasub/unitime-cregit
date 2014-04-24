@@ -7154,6 +7154,17 @@ return|return
 name|pattern
 return|;
 block|}
+specifier|public
+specifier|abstract
+name|Set
+argument_list|<
+name|?
+extends|extends
+name|LocationPicture
+argument_list|>
+name|getPictures
+parameter_list|()
+function_decl|;
 block|}
 end_class
 

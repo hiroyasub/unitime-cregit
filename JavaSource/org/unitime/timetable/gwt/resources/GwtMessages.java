@@ -1814,6 +1814,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Picture"
+argument_list|)
+name|String
+name|colPicture
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Conflicts with {0}"
 argument_list|)
 name|String
@@ -2535,6 +2544,15 @@ literal|"Instructor:"
 argument_list|)
 name|String
 name|propInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"New Picture:"
+argument_list|)
+name|String
+name|propNewPicture
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3512,6 +3530,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Loading room pictures..."
+argument_list|)
+name|String
+name|waitLoadingRoomPictures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load {0}: {1}"
 argument_list|)
 name|String
@@ -4289,6 +4316,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load room pictures: {0}"
+argument_list|)
+name|String
+name|failedToLoadRoomPictures
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update room pictures: {0}"
+argument_list|)
+name|String
+name|failedToSaveRoomPictures
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to upload room picture: {0}"
+argument_list|)
+name|String
+name|failedToUploadRoomPicture
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -4879,6 +4942,18 @@ argument_list|)
 name|String
 name|errorExpirationDateInPast
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room {0} does not exist."
+argument_list|)
+name|String
+name|errorRoomDoesNotExist
+parameter_list|(
+name|String
+name|name
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -6195,6 +6270,15 @@ literal|"Online Student Scheduling Reports"
 argument_list|)
 name|String
 name|pageOnlineSectioningReports
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Pictures"
+argument_list|)
+name|String
+name|pageRoomPictures
 parameter_list|()
 function_decl|;
 annotation|@

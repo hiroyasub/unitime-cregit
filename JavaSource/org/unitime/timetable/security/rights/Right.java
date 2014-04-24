@@ -1032,6 +1032,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|RoomEditChangePicture
+argument_list|(
+name|Location
+operator|.
+name|class
+argument_list|)
+block|,
 name|RoomAvailability
 argument_list|(
 name|Session
