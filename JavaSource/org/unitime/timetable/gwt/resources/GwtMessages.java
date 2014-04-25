@@ -2558,6 +2558,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Applies To:"
+argument_list|)
+name|String
+name|propAppliesTo
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -7248,6 +7257,33 @@ literal|"Select..."
 argument_list|)
 name|String
 name|itemSelect
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This academic session only"
+argument_list|)
+name|String
+name|itemThisSessionOnly
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This academic session and all future sessions"
+argument_list|)
+name|String
+name|itemAllFutureSessions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All academic sessions"
+argument_list|)
+name|String
+name|itemAllSessions
 parameter_list|()
 function_decl|;
 annotation|@
