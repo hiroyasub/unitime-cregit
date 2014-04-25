@@ -1484,6 +1484,7 @@ argument_list|()
 operator|<
 name|deadline
 condition|)
+block|{
 name|log
 operator|.
 name|debug
@@ -1509,6 +1510,7 @@ argument_list|(
 name|cluster
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|hibSession
 operator|.
