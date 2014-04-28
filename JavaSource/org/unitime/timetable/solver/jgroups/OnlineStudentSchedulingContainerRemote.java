@@ -627,6 +627,11 @@ argument_list|(
 literal|"OnlineSchedulingCacheManager"
 argument_list|)
 operator|.
+name|allowDuplicateDomains
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|disable
 argument_list|()
 operator|.
