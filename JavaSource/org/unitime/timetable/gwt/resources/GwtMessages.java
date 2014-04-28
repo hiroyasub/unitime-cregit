@@ -74,7 +74,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&copy; 2008 - 2013 UniTime LLC,<br>distributed under GNU General Public License."
+literal|"&copy; 2008 - 2014 UniTime LLC,<br>distributed under GNU General Public License."
 argument_list|)
 name|String
 name|pageCopyright
