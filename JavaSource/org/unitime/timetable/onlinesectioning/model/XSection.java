@@ -928,9 +928,6 @@ name|getInstructor
 argument_list|()
 argument_list|,
 name|helper
-operator|.
-name|getInstructorNameFormat
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

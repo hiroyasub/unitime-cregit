@@ -1756,14 +1756,14 @@ name|warn
 argument_list|(
 literal|"Student "
 operator|+
-name|s
-operator|.
-name|getName
-argument_list|(
 name|helper
 operator|.
 name|getStudentNameFormat
 argument_list|()
+operator|.
+name|format
+argument_list|(
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -2026,14 +2026,14 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
-operator|.
-name|getName
-argument_list|(
 name|helper
 operator|.
 name|getStudentNameFormat
 argument_list|()
+operator|.
+name|format
+argument_list|(
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -2133,14 +2133,14 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
-operator|.
-name|getName
-argument_list|(
 name|helper
 operator|.
 name|getStudentNameFormat
 argument_list|()
+operator|.
+name|format
+argument_list|(
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -2211,14 +2211,14 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
-operator|.
-name|getName
-argument_list|(
 name|helper
 operator|.
 name|getStudentNameFormat
 argument_list|()
+operator|.
+name|format
+argument_list|(
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -2252,14 +2252,14 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
-operator|.
-name|getName
-argument_list|(
 name|helper
 operator|.
 name|getStudentNameFormat
 argument_list|()
+operator|.
+name|format
+argument_list|(
+name|s
 argument_list|)
 operator|+
 literal|" ("

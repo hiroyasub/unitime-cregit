@@ -807,20 +807,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|DepartmentalInstructor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|DistributionObject
 import|;
 end_import
@@ -1288,6 +1274,20 @@ operator|.
 name|util
 operator|.
 name|Formats
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|NameFormat
 import|;
 end_import
 
@@ -4705,13 +4705,14 @@ argument_list|()
 operator|+
 literal|", name="
 operator|+
-name|s
+name|NameFormat
 operator|.
-name|getName
+name|defaultFormat
+argument_list|()
+operator|.
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatLastFist
+name|s
 argument_list|)
 operator|+
 literal|")"
@@ -5574,6 +5575,28 @@ return|return
 literal|null
 return|;
 block|}
+name|NameFormat
+name|nameFormat
+init|=
+name|NameFormat
+operator|.
+name|fromReference
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"unitime.enrollment.student.name"
+argument_list|,
+name|NameFormat
+operator|.
+name|LAST_FIRST_MIDDLE
+operator|.
+name|reference
+argument_list|()
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|iProgress
 operator|.
 name|debug
@@ -5594,13 +5617,11 @@ argument_list|()
 operator|+
 literal|", name="
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatLastFist
+name|s
 argument_list|)
 operator|+
 literal|")"
@@ -5635,20 +5656,11 @@ name|student
 operator|.
 name|setName
 argument_list|(
+name|nameFormat
+operator|.
+name|format
+argument_list|(
 name|s
-operator|.
-name|getName
-argument_list|(
-name|ApplicationProperties
-operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.enrollment.student.name"
-argument_list|,
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatLastFirstMiddle
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6099,13 +6111,11 @@ name|warn
 argument_list|(
 literal|"Student "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -6360,13 +6370,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -6420,13 +6428,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -6456,13 +6462,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -6642,13 +6646,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -6836,13 +6838,11 @@ name|warn
 argument_list|(
 literal|"Student "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -6945,13 +6945,11 @@ name|warn
 argument_list|(
 literal|"Student "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -7294,13 +7292,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -7357,13 +7353,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -7396,13 +7390,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -7582,13 +7574,11 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
-name|s
+name|nameFormat
 operator|.
-name|getName
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("
@@ -7922,13 +7912,14 @@ operator|.
 name|getId
 argument_list|()
 else|:
-name|s
+name|NameFormat
 operator|.
-name|getName
+name|defaultFormat
+argument_list|()
+operator|.
+name|format
 argument_list|(
-name|DepartmentalInstructor
-operator|.
-name|sNameFormatInitialLast
+name|s
 argument_list|)
 operator|+
 literal|" ("

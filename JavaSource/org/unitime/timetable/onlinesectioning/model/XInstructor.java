@@ -109,6 +109,20 @@ name|DepartmentalInstructor
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -183,8 +197,8 @@ parameter_list|(
 name|DepartmentalInstructor
 name|instructor
 parameter_list|,
-name|String
-name|nameFormat
+name|OnlineSectioningHelper
+name|helper
 parameter_list|)
 block|{
 name|iUniqueId
@@ -203,11 +217,14 @@ argument_list|()
 expr_stmt|;
 name|iName
 operator|=
-name|instructor
+name|helper
 operator|.
-name|getName
+name|getInstructorNameFormat
+argument_list|()
+operator|.
+name|format
 argument_list|(
-name|nameFormat
+name|instructor
 argument_list|)
 expr_stmt|;
 name|iEmail
