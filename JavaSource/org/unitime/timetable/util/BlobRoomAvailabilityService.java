@@ -171,7 +171,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -234,27 +236,23 @@ specifier|private
 name|String
 name|iRequestSql
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.room.availability.request"
-argument_list|,
-literal|"{ call room_avail_interface.request(?) }"
-argument_list|)
+name|BlobRoomAvailabilityRequestSQL
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 specifier|private
 name|String
 name|iResponseSql
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.room.availability.response"
-argument_list|,
-literal|"{? = call room_avail_interface.response()}"
-argument_list|)
+name|BlobRoomAvailabilityResponseSQL
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 specifier|protected
 name|void

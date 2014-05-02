@@ -225,7 +225,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1309,12 +1311,12 @@ decl_stmt|;
 name|String
 name|className
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.external.course_offering.remove_action.class"
-argument_list|)
+name|ExternalActionCourseOfferingRemove
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -2898,12 +2900,12 @@ block|}
 name|String
 name|className
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.external.class.edit_action.class"
-argument_list|)
+name|ExternalActionClassEdit
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

@@ -265,7 +265,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1781,14 +1783,12 @@ else|:
 operator|new
 name|DecimalFormat
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.room.area.units.format"
-argument_list|,
-literal|"#,##0.00"
-argument_list|)
+name|RoomAreaUnitsFormat
+operator|.
+name|value
+argument_list|()
 argument_list|)
 operator|.
 name|format

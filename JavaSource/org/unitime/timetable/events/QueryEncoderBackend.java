@@ -163,7 +163,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -447,14 +449,12 @@ init|=
 operator|new
 name|PBEKeySpec
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.encode.secret"
-argument_list|,
-literal|"ThisIs8Secret"
-argument_list|)
+name|UrlEncoderSecret
+operator|.
+name|value
+argument_list|()
 operator|.
 name|toCharArray
 argument_list|()

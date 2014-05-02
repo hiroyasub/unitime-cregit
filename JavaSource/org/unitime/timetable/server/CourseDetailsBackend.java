@@ -33,7 +33,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -516,12 +518,12 @@ block|{
 name|String
 name|providerClass
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.custom.CourseDetailsProvider"
-argument_list|)
+name|CustomizationCourseDetails
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -586,12 +588,12 @@ block|{
 name|String
 name|providerClass
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.custom.CourseUrlProvider"
-argument_list|)
+name|CustomizationCourseLink
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

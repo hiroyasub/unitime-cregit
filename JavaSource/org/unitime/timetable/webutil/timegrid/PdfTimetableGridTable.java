@@ -660,7 +660,7 @@ name|firstSlot
 argument_list|()
 operator|)
 return|;
-comment|/* 		int nrCols = (iTable.isDispModePerWeekVertical()?1:12); 		if (iTable.isDispModePerWeekVertical()) { 			for (int day=iTable.startDay(); day<=iTable.endDay(); day++)  				nrCols++; 		} else {//isDispModeInRow() || isDispModePerWeekVertical() 			for (int day=iTable.startDay();(iTable.isDispModeInRow()&& day<=iTable.endDay()) || (iTable.isDispModePerWeek()&& day==iTable.startDay());day++) { 				for (int slot=iTable.firstSlot();slot<=iTable.lastSlot();slot+=TimetableGridTable.sNrSlotsPerPeriod) { 					nrCols+=TimetableGridTable.sNrSlotsPerPeriod; 				} 			} 		} 		return nrCols; 		*/
+comment|/* 		int nrCols = (iTable.isDispModePerWeekVertical()?1:12); 		if (iTable.isDispModePerWeekVertical()) { 			for (int day=iTable.startDay(); day<=iTable.endDay(); day++)  				nrCols++; 		} else {//isDispModeInRow() || isDispModePerWeekVertical() 			for (int day=iTable.startDay();(iTable.isDispModeInRow()&& day<=iTable.endDay()) || (iTable.isDispModePerWeek()&& day==iTable.startDay());day++) { 				for (int slot=iTable.firstSlot();slot<=iTable.lastSlot();slot+=iTable.nrSlotsPerPeriod()) { 					nrCols+=iTable.nrSlotsPerPeriod(); 				} 			} 		} 		return nrCols; 		*/
 block|}
 specifier|private
 specifier|static
@@ -1296,9 +1296,10 @@ argument_list|()
 condition|;
 name|slot
 operator|-=
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 control|)
 block|{
 name|int
@@ -1307,9 +1308,10 @@ init|=
 operator|(
 name|slot
 operator|-
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 operator|+
 literal|1
 operator|)
@@ -1332,9 +1334,10 @@ name|c
 operator|.
 name|setColspan
 argument_list|(
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -1530,9 +1533,10 @@ argument_list|()
 condition|;
 name|slot
 operator|+=
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 control|)
 block|{
 name|int
@@ -1564,9 +1568,10 @@ name|c
 operator|.
 name|setColspan
 argument_list|(
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|addText
@@ -2164,9 +2169,10 @@ name|firstSlot
 argument_list|()
 operator|)
 operator|%
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 operator|)
 operator|!=
 literal|0
@@ -2800,9 +2806,10 @@ name|firstSlot
 argument_list|()
 operator|)
 operator|%
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 operator|)
 operator|!=
 literal|0
@@ -3590,9 +3597,10 @@ name|firstSlot
 argument_list|()
 operator|)
 operator|%
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 operator|)
 operator|!=
 literal|0
@@ -4122,9 +4130,10 @@ name|firstSlot
 argument_list|()
 operator|)
 operator|%
-name|TimetableGridTable
+name|iTable
 operator|.
-name|sNrSlotsPerPeriod
+name|nrSlotsPerPeriod
+argument_list|()
 operator|)
 operator|!=
 literal|0
@@ -4467,7 +4476,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* 			int step = TimetableGridTable.sNrSlotsPerPeriod; 			for (int slot=iTable.firstSlot();slot<=iTable.lastSlot();slot+=step) { 				int time = slot * Constants.SLOT_LENGTH_MIN + Constants.FIRST_SLOT_TIME_MIN;                 int slotsToEnd = iTable.lastSlot()-slot+1;                 if ((slot%TimetableGridTable.sNrSlotsPerPeriod) == 0) {     				c = createCell("TimetableHeadCell"+(slot==iTable.firstSlot()?"":"In")+"Vertical");     				addText(c, Constants.toTime(time), true);     				iPdfTable.addCell(c);                 } else {                 	c = createCell("TimetableHeadCellInVertical");                 	iPdfTable.addCell(c);                 }                 for (int day=iTable.startDay();day<=iTable.endDay();day++) {                 	int maxIdx = model.getMaxIdxForDay(day,iTable.firstSlot(),iTable.lastSlot());                 	for (int idx=0;idx<=maxIdx;idx++) {                     	TimetableGridCell cell = model.getCell(day,slot, idx);                     	if (model.isRendered(day,slot,idx)) continue; 						int rowSpan = (cell==null?1:Math.min(cell.getLength()+cell.getSlot()-slot,slotsToEnd)); 						int colSpan = (iTable.getResourceType()==TimetableGridModel.sResourceTypeDepartment&& cell!=null?1:model.getDepth(day,slot,idx,maxIdx,rowSpan));  						model.setRendered(day,slot,idx,colSpan,rowSpan); 						int rowSpanDivStep = (int)Math.ceil(((double)rowSpan)/step);                     	                     	if (cell==null) { 							String bgColor = model.getBackground(day,slot); 							if (bgColor==null&& !model.isAvailable(day,slot)) 								bgColor=TimetableGridCell.sBgColorNotAvailable;                             boolean eol = (day==iTable.endDay()&& (idx+colSpan-1)==maxIdx); 							c = createCell("TimetableCell"+(slot==iTable.firstSlot()?"":"In")+"Vertical"+(eol?"EOL":"")); 							c.setColspan(colSpan); 							//c.setRowspan(rowSpanDivStep); 							if (bgColor!=null) 								c.setBackgroundColor(getColor(bgColor)); 							iPdfTable.addCell(c);                     	} else {                     		String bgColor = cell.getBackground();                     		if (iTable.getBgMode()==TimetableGridModel.sBgModeNone) {                         		for (int i=0;i<cell.getLength();i++)                         			if (!model.isAvailable(day,slot+i)) {                         				bgColor = TimetableGridCell.sBgColorNotAvailableButAssigned;                         				break;                         			}                     		}                     		boolean eol = (day==iTable.endDay());                     		c = createCell("TimetableCell"+(slot==iTable.firstSlot()?"":"In")+"Vertical" + (eol?"EOL":"")); 							c.setColspan(colSpan); 							//c.setRowspan(rowSpanDivStep); 							if (bgColor!=null) 								c.setBackgroundColor(getColor(bgColor)); 							addText(c, cell.getName()); 							if (iTable.getResourceType()!=TimetableGridModel.sResourceTypeRoom) 								addText(c, cell.getRoomName()); 							if (iTable.getShowComments()) 								addText(c, cell.getShortComment()==null?"":cell.getShortComment()); 							if (iTable.getWeek()==-100&& cell.hasDays()&& !cell.getDays().equals(iTable.getDefaultDatePatternName())) 								addText(c, cell.getDays()); 							iPdfTable.addCell(c);                     	}                     }                 } 			} 			*/
+comment|/* 			int step = iTable.nrSlotsPerPeriod(); 			for (int slot=iTable.firstSlot();slot<=iTable.lastSlot();slot+=step) { 				int time = slot * Constants.SLOT_LENGTH_MIN + Constants.FIRST_SLOT_TIME_MIN;                 int slotsToEnd = iTable.lastSlot()-slot+1;                 if ((slot%iTable.nrSlotsPerPeriod()) == 0) {     				c = createCell("TimetableHeadCell"+(slot==iTable.firstSlot()?"":"In")+"Vertical");     				addText(c, Constants.toTime(time), true);     				iPdfTable.addCell(c);                 } else {                 	c = createCell("TimetableHeadCellInVertical");                 	iPdfTable.addCell(c);                 }                 for (int day=iTable.startDay();day<=iTable.endDay();day++) {                 	int maxIdx = model.getMaxIdxForDay(day,iTable.firstSlot(),iTable.lastSlot());                 	for (int idx=0;idx<=maxIdx;idx++) {                     	TimetableGridCell cell = model.getCell(day,slot, idx);                     	if (model.isRendered(day,slot,idx)) continue; 						int rowSpan = (cell==null?1:Math.min(cell.getLength()+cell.getSlot()-slot,slotsToEnd)); 						int colSpan = (iTable.getResourceType()==TimetableGridModel.sResourceTypeDepartment&& cell!=null?1:model.getDepth(day,slot,idx,maxIdx,rowSpan));  						model.setRendered(day,slot,idx,colSpan,rowSpan); 						int rowSpanDivStep = (int)Math.ceil(((double)rowSpan)/step);                     	                     	if (cell==null) { 							String bgColor = model.getBackground(day,slot); 							if (bgColor==null&& !model.isAvailable(day,slot)) 								bgColor=TimetableGridCell.sBgColorNotAvailable;                             boolean eol = (day==iTable.endDay()&& (idx+colSpan-1)==maxIdx); 							c = createCell("TimetableCell"+(slot==iTable.firstSlot()?"":"In")+"Vertical"+(eol?"EOL":"")); 							c.setColspan(colSpan); 							//c.setRowspan(rowSpanDivStep); 							if (bgColor!=null) 								c.setBackgroundColor(getColor(bgColor)); 							iPdfTable.addCell(c);                     	} else {                     		String bgColor = cell.getBackground();                     		if (iTable.getBgMode()==TimetableGridModel.sBgModeNone) {                         		for (int i=0;i<cell.getLength();i++)                         			if (!model.isAvailable(day,slot+i)) {                         				bgColor = TimetableGridCell.sBgColorNotAvailableButAssigned;                         				break;                         			}                     		}                     		boolean eol = (day==iTable.endDay());                     		c = createCell("TimetableCell"+(slot==iTable.firstSlot()?"":"In")+"Vertical" + (eol?"EOL":"")); 							c.setColspan(colSpan); 							//c.setRowspan(rowSpanDivStep); 							if (bgColor!=null) 								c.setBackgroundColor(getColor(bgColor)); 							addText(c, cell.getName()); 							if (iTable.getResourceType()!=TimetableGridModel.sResourceTypeRoom) 								addText(c, cell.getRoomName()); 							if (iTable.getShowComments()) 								addText(c, cell.getShortComment()==null?"":cell.getShortComment()); 							if (iTable.getWeek()==-100&& cell.hasDays()&& !cell.getDays().equals(iTable.getDefaultDatePatternName())) 								addText(c, cell.getDays()); 							iPdfTable.addCell(c);                     	}                     }                 } 			} 			*/
 block|}
 if|if
 condition|(

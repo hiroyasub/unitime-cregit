@@ -123,7 +123,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -832,21 +834,12 @@ parameter_list|)
 block|{
 name|iInstructorAvailabilityEnabled
 operator|=
-operator|(
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|ApplicationProperties
+name|RoomAvailabilityIncludeInstructors
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.events.instructorUnavailability"
-argument_list|,
-literal|"false"
-argument_list|)
-argument_list|)
-operator|)
+name|isTrue
+argument_list|()
 expr_stmt|;
 name|TimeFrame
 name|time

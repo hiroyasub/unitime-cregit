@@ -317,7 +317,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -3615,26 +3617,14 @@ argument_list|()
 condition|)
 block|{
 comment|// Offering exists - redirect to offering detail
-name|String
-name|courseNumbersMustBeUnique
-init|=
-name|ApplicationProperties
-operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.courseNumber.unique"
-argument_list|,
-literal|"true"
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
-name|courseNumbersMustBeUnique
+name|ApplicationProperty
 operator|.
-name|equalsIgnoreCase
-argument_list|(
-literal|"true"
-argument_list|)
+name|CourseOfferingNumberMustBeUnique
+operator|.
+name|isTrue
+argument_list|()
 condition|)
 block|{
 name|CourseOffering

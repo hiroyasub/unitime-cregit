@@ -109,7 +109,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -294,21 +296,12 @@ name|Ellipsoid
 operator|.
 name|valueOf
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.distance.ellipsoid"
-argument_list|,
-name|DistanceMetric
+name|DistanceEllipsoid
 operator|.
-name|Ellipsoid
-operator|.
-name|LEGACY
-operator|.
-name|name
+name|value
 argument_list|()
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|WebTable

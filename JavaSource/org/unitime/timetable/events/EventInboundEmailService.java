@@ -227,7 +227,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -765,23 +767,21 @@ name|matches
 argument_list|(
 literal|"(?i)[0-9]+/[0-9]+/[0-9]+ "
 operator|+
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.email.sender.name"
-argument_list|,
-literal|"UniTime Application"
-argument_list|)
+name|EmailSenderName
+operator|.
+name|value
+argument_list|()
 operator|+
 literal|"<"
 operator|+
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.email.sender"
-argument_list|)
+name|EmailSenderAddress
+operator|.
+name|value
+argument_list|()
 operator|+
 literal|">"
 argument_list|)

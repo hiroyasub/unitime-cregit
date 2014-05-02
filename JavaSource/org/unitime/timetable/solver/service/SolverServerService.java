@@ -163,7 +163,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -438,20 +440,12 @@ try|try
 block|{
 if|if
 condition|(
-operator|!
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|SolverClusterEnabled
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.solver.cluster"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
+name|isFalse
+argument_list|()
 condition|)
 block|{
 name|iServer

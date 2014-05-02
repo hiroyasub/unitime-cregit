@@ -211,7 +211,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -2550,19 +2552,12 @@ expr_stmt|;
 name|boolean
 name|changePast
 init|=
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|ClassAssignmentChangePastMeetings
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.classAssign.changePastMeetings"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 decl_stmt|;
 name|Calendar
 name|cal

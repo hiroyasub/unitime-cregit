@@ -651,7 +651,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -5582,19 +5584,12 @@ name|NameFormat
 operator|.
 name|fromReference
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.enrollment.student.name"
-argument_list|,
-name|NameFormat
+name|OnlineSchedulingStudentNameFormat
 operator|.
-name|LAST_FIRST_MIDDLE
-operator|.
-name|reference
+name|value
 argument_list|()
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|iProgress

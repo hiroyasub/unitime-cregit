@@ -169,7 +169,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1063,14 +1065,12 @@ block|{
 name|String
 name|suffix
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.email.event.suffix"
-argument_list|,
-literal|null
-argument_list|)
+name|EmailDefaultAddressSuffix
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 for|for
 control|(

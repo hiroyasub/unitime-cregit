@@ -103,7 +103,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -3399,16 +3401,12 @@ argument_list|()
 operator|.
 name|getName
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.enrollment.student.name"
-argument_list|,
-name|DepartmentalInstructor
+name|OnlineSchedulingStudentNameFormat
 operator|.
-name|sNameFormatLastFirstMiddle
-argument_list|)
+name|value
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

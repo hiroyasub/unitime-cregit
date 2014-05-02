@@ -107,7 +107,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -256,12 +258,12 @@ name|attributeValue
 argument_list|(
 literal|"manager"
 argument_list|,
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.xml.manager"
-argument_list|)
+name|DataExchangeXmlManager
+operator|.
+name|value
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|DataExchangeHelper

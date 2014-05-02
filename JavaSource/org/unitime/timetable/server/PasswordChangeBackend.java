@@ -199,7 +199,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1049,14 +1051,12 @@ name|put
 argument_list|(
 literal|"sender"
 argument_list|,
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.email.sender.name"
-argument_list|,
-literal|"The UniTime Team"
-argument_list|)
+name|EmailSenderName
+operator|.
+name|value
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|StringWriter

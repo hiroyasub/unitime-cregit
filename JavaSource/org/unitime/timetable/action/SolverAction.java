@@ -199,7 +199,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -485,9 +487,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|isLocalSolverEnabled
+name|SolverLocalEnabled
+operator|.
+name|isTrue
 argument_list|()
 condition|)
 name|hosts

@@ -135,7 +135,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -256,19 +258,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|PasswordReset
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.password.reset"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 operator|&&
 name|User
 operator|.

@@ -57,7 +57,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -224,12 +226,12 @@ name|sInstance
 return|;
 if|if
 condition|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.room.availability.class"
-argument_list|)
+name|RoomAvailabilityImplementation
+operator|.
+name|value
+argument_list|()
 operator|==
 literal|null
 condition|)
@@ -247,12 +249,12 @@ name|Class
 operator|.
 name|forName
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.room.availability.class"
-argument_list|)
+name|RoomAvailabilityImplementation
+operator|.
+name|value
+argument_list|()
 argument_list|)
 operator|.
 name|getConstructor

@@ -119,7 +119,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -310,14 +312,12 @@ literal|null
 condition|)
 name|locale
 operator|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.locale"
-argument_list|,
-literal|"en"
-argument_list|)
+name|Locale
+operator|.
+name|value
+argument_list|()
 expr_stmt|;
 name|Localization
 operator|.

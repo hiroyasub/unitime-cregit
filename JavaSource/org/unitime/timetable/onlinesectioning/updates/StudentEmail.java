@@ -287,7 +287,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -3677,12 +3679,12 @@ block|{
 name|String
 name|url
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.url"
-argument_list|)
+name|UniTimeUrl
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

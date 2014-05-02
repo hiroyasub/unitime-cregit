@@ -79,7 +79,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1388,19 +1390,12 @@ if|if
 condition|(
 name|iEmail
 operator|&&
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|OnlineSchedulingEmailConfirmation
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.enrollment.email"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 condition|)
 block|{
 name|StudentEmail

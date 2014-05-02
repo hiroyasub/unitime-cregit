@@ -205,7 +205,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -2835,19 +2837,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|ConfigEditCheckLimits
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.instrOfferingConfig.checkConfigLimit"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 condition|)
 name|validateSubpartClassLimits
 argument_list|(

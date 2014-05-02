@@ -198,6 +198,8 @@ comment|/**  * Authenticates a user by looking up username/password in the datab
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|DbAuthenticateModule

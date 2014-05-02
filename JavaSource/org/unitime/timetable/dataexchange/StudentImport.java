@@ -93,7 +93,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -301,19 +303,12 @@ block|{
 name|boolean
 name|trimLeadingZerosFromExternalId
 init|=
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|DataExchangeTrimLeadingZerosFromExternalIds
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.data.exchange.trim.externalId"
-argument_list|,
-literal|"false"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 decl_stmt|;
 name|String
 name|campus

@@ -127,7 +127,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -2637,12 +2639,12 @@ name|canLookupInstructor
 parameter_list|()
 block|{
 return|return
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.instructor.external_id.lookup.class"
-argument_list|)
+name|InstructorExternalIdLookupClass
+operator|.
+name|value
+argument_list|()
 operator|!=
 literal|null
 return|;
@@ -2666,12 +2668,12 @@ decl_stmt|;
 name|String
 name|className
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.instructor.external_id.lookup.class"
-argument_list|)
+name|InstructorExternalIdLookupClass
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

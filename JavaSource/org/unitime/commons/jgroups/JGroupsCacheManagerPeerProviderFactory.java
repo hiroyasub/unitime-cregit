@@ -101,7 +101,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -138,14 +140,12 @@ name|JGroupsUtils
 operator|.
 name|getConfigurationString
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.hibernate.jgroups.config"
-argument_list|,
-literal|"hibernate-jgroups-tcp.xml"
-argument_list|)
+name|HibernateClusterConfiguration
+operator|.
+name|value
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|JGroupsCacheManagerPeerProvider

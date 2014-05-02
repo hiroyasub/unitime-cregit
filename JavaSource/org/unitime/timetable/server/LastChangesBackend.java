@@ -43,7 +43,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -754,19 +756,12 @@ name|q
 operator|.
 name|setMaxResults
 argument_list|(
-name|Integer
+name|ApplicationProperty
 operator|.
-name|valueOf
-argument_list|(
-name|ApplicationProperties
+name|LastChangesLimit
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.changelog.limit"
-argument_list|,
-literal|"1000"
-argument_list|)
-argument_list|)
+name|intValue
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if

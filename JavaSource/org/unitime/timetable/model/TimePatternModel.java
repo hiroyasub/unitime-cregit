@@ -199,7 +199,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -963,17 +965,20 @@ block|{
 name|String
 name|mode
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
+name|RoomSharingMode
+operator|.
+name|value
 argument_list|(
-literal|"unitime.room.sharingMode"
-operator|+
-operator|(
+name|String
+operator|.
+name|valueOf
+argument_list|(
 literal|1
 operator|+
 name|i
-operator|)
+argument_list|)
 argument_list|,
 name|i
 operator|<

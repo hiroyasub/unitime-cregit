@@ -105,7 +105,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -2136,19 +2138,12 @@ name|getItype
 argument_list|()
 argument_list|)
 operator|&&
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|PreferencesHierarchicalInheritance
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.preferences.hierarchicalInheritance"
-argument_list|,
-literal|"false"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 return|;
 block|}
 specifier|public

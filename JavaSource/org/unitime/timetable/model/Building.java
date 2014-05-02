@@ -89,7 +89,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1272,12 +1274,12 @@ decl_stmt|;
 name|String
 name|minimap
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.minimap.hint"
-argument_list|)
+name|RoomHintMinimapUrl
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

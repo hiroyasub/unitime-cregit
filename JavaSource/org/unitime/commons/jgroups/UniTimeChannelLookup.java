@@ -81,7 +81,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -130,14 +132,12 @@ name|JGroupsUtils
 operator|.
 name|getConfigurator
 argument_list|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.solver.jgroups.config"
-argument_list|,
-literal|"solver-jgroups-tcp.xml"
-argument_list|)
+name|SolverClusterConfiguration
+operator|.
+name|value
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

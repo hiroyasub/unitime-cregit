@@ -441,7 +441,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -708,19 +710,12 @@ block|{
 name|int
 name|limit
 init|=
-name|Integer
+name|ApplicationProperty
 operator|.
-name|parseInt
-argument_list|(
-name|ApplicationProperties
+name|TestHQLMaxLines
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.test_hql.max_line"
-argument_list|,
-literal|"100"
-argument_list|)
-argument_list|)
+name|intValue
+argument_list|()
 decl_stmt|;
 name|String
 name|query

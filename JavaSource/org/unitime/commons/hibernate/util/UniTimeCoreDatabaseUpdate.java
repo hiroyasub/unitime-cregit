@@ -35,7 +35,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -84,16 +86,12 @@ name|findDbUpdateFileName
 parameter_list|()
 block|{
 return|return
-operator|(
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.db.update"
-argument_list|,
-literal|"dbupdate.xml"
-argument_list|)
-operator|)
+name|DatabaseUpdateFile
+operator|.
+name|value
+argument_list|()
 return|;
 block|}
 annotation|@

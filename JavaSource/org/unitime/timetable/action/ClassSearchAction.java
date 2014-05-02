@@ -355,7 +355,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -2703,19 +2705,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"true"
+name|ApplicationProperty
 operator|.
-name|equals
-argument_list|(
-name|ApplicationProperties
+name|CourseOfferingNumberUpperCase
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.courseNumber.upperCase"
-argument_list|,
-literal|"true"
-argument_list|)
-argument_list|)
+name|isTrue
+argument_list|()
 condition|)
 name|courseNbr
 operator|=

@@ -343,7 +343,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1475,19 +1477,12 @@ argument_list|)
 expr_stmt|;
 name|iLogLimit
 operator|=
-name|Integer
+name|ApplicationProperty
 operator|.
-name|parseInt
-argument_list|(
-name|ApplicationProperties
+name|QueryLogLimit
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.query.log.limit"
-argument_list|,
-literal|"5000"
-argument_list|)
-argument_list|)
+name|intValue
+argument_list|()
 expr_stmt|;
 name|setDaemon
 argument_list|(

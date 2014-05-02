@@ -125,7 +125,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -281,19 +283,12 @@ argument_list|)
 expr_stmt|;
 name|iSleepTimeInMinutes
 operator|=
-name|Long
+name|ApplicationProperty
 operator|.
-name|parseLong
-argument_list|(
-name|ApplicationProperties
+name|EventExpirationServiceUpdateInterval
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.events.expiration.updateIntervalInMinutes"
-argument_list|,
-literal|"5"
-argument_list|)
-argument_list|)
+name|intValue
+argument_list|()
 expr_stmt|;
 block|}
 specifier|protected

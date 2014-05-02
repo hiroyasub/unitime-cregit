@@ -325,7 +325,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -2419,12 +2421,12 @@ expr_stmt|;
 name|String
 name|override
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.sectioning.allowOverExpected"
-argument_list|)
+name|OnlineSchedulingAllowOverExpected
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

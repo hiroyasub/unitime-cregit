@@ -83,7 +83,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -3443,19 +3445,12 @@ block|}
 name|int
 name|tooEarly
 init|=
-name|Integer
+name|ApplicationProperty
 operator|.
-name|valueOf
-argument_list|(
-name|ApplicationProperties
+name|EventTooEarlySlot
 operator|.
-name|getProperty
-argument_list|(
-literal|"unitime.event.tooEarly"
-argument_list|,
-literal|"-1"
-argument_list|)
-argument_list|)
+name|intValue
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

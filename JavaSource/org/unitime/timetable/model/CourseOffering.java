@@ -119,7 +119,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -999,12 +1001,12 @@ expr_stmt|;
 name|String
 name|className
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.external.instr_offr.add_action.class"
-argument_list|)
+name|ExternalActionInstructionalOfferingAdd
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

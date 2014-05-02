@@ -91,7 +91,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|ApplicationProperties
+name|defaults
+operator|.
+name|ApplicationProperty
 import|;
 end_import
 
@@ -137,12 +139,12 @@ expr_stmt|;
 name|String
 name|m
 init|=
-name|ApplicationProperties
+name|ApplicationProperty
 operator|.
-name|getProperty
-argument_list|(
-literal|"tmtbl.authenticate.modules"
-argument_list|)
+name|AuthenticationModules
+operator|.
+name|value
+argument_list|()
 decl_stmt|;
 name|String
 index|[]
