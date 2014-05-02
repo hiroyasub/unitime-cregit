@@ -825,6 +825,11 @@ argument_list|)
 decl_stmt|,
 comment|/** 	 * Default application menu style. Values:<ul> 	 *<li>Static On Top ... Horizontal menu bar on the top of the page (takes 100% width of the page, does not move with the page) 	 *<li>Dynamic On Top ... Horizontal menu bar on the top of the page (takes 100% width of the client window, moves with the page as it is scrolled) 	 *<li>Tree On Side ... Tree on the left side of the page content (moves with the page, resembles the UniTime 3.1 menu the most) 	 *<li>Stack On Side ... Tree on the left side of the page content, but the first level of the tree is a StackPanel (only one top level item can be opened at a time) 	 *</ul> 	 * If manager setting for this property is created, each user (timetable manager) can change his/her menu style. 	 * See http://help34.unitime.org/Customizations for more details. 	 */
 decl_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"Dynamic On Top"
+argument_list|)
+decl|@
 name|Values
 argument_list|(
 block|{
@@ -923,7 +928,9 @@ name|LoginFailedAttemptDelay
 argument_list|(
 literal|"tmtbl.login.failed.delay.milliseconds"
 argument_list|)
-decl_stmt|,  	@
+decl_stmt|,
+comment|/** 	 * Access Level: all | {dept code}(:{dept code})* 	 */
+decl_stmt|@
 name|Description
 argument_list|(
 literal|"Login: application access level (deprecated)"
@@ -6048,7 +6055,7 @@ name|Description
 argument_list|(
 literal|"Contact Us: email"
 argument_list|)
-name|ContactUsOfficeEmail
+name|ContactUsEmail
 argument_list|(
 literal|"tmtbl.contact.email"
 argument_list|)
@@ -6058,7 +6065,7 @@ name|Description
 argument_list|(
 literal|"Contact Us: mailto anchor (e.g., timetabling@universty.edu?subject=TIMETABLING:&lt;add subject here&gt)"
 argument_list|)
-name|ContactUsOfficeMailTo
+name|ContactUsMailTo
 argument_list|(
 literal|"tmtbl.contact.email_mailto"
 argument_list|)
