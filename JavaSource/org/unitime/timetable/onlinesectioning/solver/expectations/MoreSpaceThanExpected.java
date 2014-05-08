@@ -53,6 +53,11 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
+name|setPercentage
+argument_list|(
 literal|1.0
 argument_list|)
 expr_stmt|;

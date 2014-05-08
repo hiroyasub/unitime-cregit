@@ -248,6 +248,8 @@ comment|// ignore unlimited& not available
 name|double
 name|expected
 init|=
+name|round
+argument_list|(
 name|getPercentage
 argument_list|()
 operator|*
@@ -255,6 +257,7 @@ name|section
 operator|.
 name|getSpaceExpected
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|double
 name|enrolled

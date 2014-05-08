@@ -16567,14 +16567,6 @@ name|getLabel
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//TODO: Do we want to populate expected space?
-name|a
-operator|.
-name|setExpected
-argument_list|(
-literal|0.0
-argument_list|)
-expr_stmt|;
 name|results
 operator|.
 name|add

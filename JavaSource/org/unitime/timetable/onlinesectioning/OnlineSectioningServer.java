@@ -337,6 +337,24 @@ name|Master
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|solver
+operator|.
+name|expectations
+operator|.
+name|OverExpectedCriterion
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -386,6 +404,11 @@ function_decl|;
 specifier|public
 name|DataProperties
 name|getConfig
+parameter_list|()
+function_decl|;
+specifier|public
+name|OverExpectedCriterion
+name|getOverExpectedCriterion
 parameter_list|()
 function_decl|;
 specifier|public

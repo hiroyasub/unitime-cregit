@@ -814,9 +814,6 @@ operator|new
 name|OnlineSectioningModel
 argument_list|(
 name|server
-operator|.
-name|getConfig
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|Assignment
