@@ -700,7 +700,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -709,12 +709,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Section   Date    Time   Name                      Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -723,14 +723,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time"
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -740,7 +740,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"--------- ------- ------ ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -750,7 +750,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -1059,7 +1059,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1075,7 +1075,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1113,7 +1113,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1124,12 +1124,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -1172,7 +1172,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1184,7 +1184,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1214,7 +1214,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1269,7 +1269,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1285,7 +1285,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1323,7 +1323,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1334,12 +1334,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -1391,7 +1391,7 @@ operator|.
 name|getSubjectAreaAbbv
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1412,7 +1412,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1481,7 +1481,7 @@ operator|.
 name|getSectionNumberString
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1508,7 +1508,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1524,7 +1524,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1562,7 +1562,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1573,12 +1573,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -1624,9 +1624,9 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|24
+literal|33
 else|:
-literal|17
+literal|26
 operator|)
 argument_list|)
 operator|+
@@ -1734,7 +1734,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1750,7 +1750,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1788,7 +1788,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1799,12 +1799,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -1847,7 +1847,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1859,7 +1859,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1889,7 +1889,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1988,7 +1988,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -2004,7 +2004,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -2042,7 +2042,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -2053,12 +2053,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -2101,7 +2101,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -2113,7 +2113,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -2143,7 +2143,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "

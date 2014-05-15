@@ -607,7 +607,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Bldg  Room  Capacity  ExCap Period Date And Time                          Subj Crsnbr "
+literal|"Bldg  Room  Capacity  ExCap Period Date And Time                          Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -616,14 +616,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect   Enrl"
+literal|"Section    Enrl"
 block|,
-literal|"----- ----- -------- ------ ------ -------------------------------------- ---- ------ "
+literal|"----- ----- -------- ------ ------ -------------------------------------- ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -633,7 +633,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- -----"
+literal|"--------- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -1042,7 +1042,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1058,7 +1058,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1092,7 +1092,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "

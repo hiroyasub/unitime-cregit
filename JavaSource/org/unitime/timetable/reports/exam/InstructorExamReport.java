@@ -1134,7 +1134,7 @@ name|put
 argument_list|(
 name|location
 operator|.
-name|getUniqueId
+name|getPermanentId
 argument_list|()
 argument_list|,
 name|location
@@ -1204,7 +1204,7 @@ name|put
 argument_list|(
 name|location
 operator|.
-name|getUniqueId
+name|getPermanentId
 argument_list|()
 argument_list|,
 name|location
@@ -2442,7 +2442,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -2451,14 +2451,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect   Dates                     Time            Room       Chk  Share"
+literal|"Section   Dates                     Time            Room        Chk  Share"
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -2468,7 +2468,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ------------------------- --------------- ----------- ---- -----"
+literal|"--------- ------------------------- --------------- ----------- ---- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -2575,6 +2575,17 @@ name|itype
 init|=
 name|getItype
 argument_list|(
+name|ci
+operator|.
+name|getClassInstructing
+argument_list|()
+operator|.
+name|getSchedulingSubpart
+argument_list|()
+operator|.
+name|getControllingCourseOffering
+argument_list|()
+argument_list|,
 name|ci
 operator|.
 name|getClassInstructing
@@ -2691,7 +2702,7 @@ name|rpad
 argument_list|(
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -2700,7 +2711,7 @@ name|rpad
 argument_list|(
 name|course
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -2724,7 +2735,7 @@ name|lpad
 argument_list|(
 name|section
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -2814,7 +2825,7 @@ name|rpad
 argument_list|(
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -2823,7 +2834,7 @@ name|rpad
 argument_list|(
 name|course
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -2847,7 +2858,7 @@ name|lpad
 argument_list|(
 name|section
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -2861,7 +2872,7 @@ name|rpad
 argument_list|(
 literal|""
 argument_list|,
-literal|18
+literal|27
 operator|+
 operator|(
 name|iItype
@@ -3083,9 +3094,12 @@ condition|)
 block|{
 name|line
 operator|+=
+name|rpad
+argument_list|(
 name|loc
-operator|+
-literal|" "
+argument_list|,
+literal|12
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -3277,13 +3291,13 @@ argument_list|()
 decl_stmt|;
 name|println
 argument_list|(
-literal|"            CROSS-LISTED WITH "
+literal|"  "
 operator|+
 name|rpad
 argument_list|(
 name|xsubject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -3292,7 +3306,7 @@ name|rpad
 argument_list|(
 name|xcourse
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -3316,8 +3330,10 @@ name|lpad
 argument_list|(
 name|section
 argument_list|,
-literal|5
+literal|9
 argument_list|)
+operator|+
+literal|" CROSS-LIST"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3336,7 +3352,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -3345,14 +3361,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect    Meeting Times                         Enrl    Date And Time                   Room         Cap ExCap"
+literal|"Section   Meeting Times                        Enrl   Date And Time                  Room        Cap   ExCap"
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -3362,7 +3378,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- -------------------------------------- -----  -------------------------------- ----------- ----- -----"
+literal|"--------- ------------------------------------ -----  ------------------------------ ----------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -3622,7 +3638,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -3638,7 +3654,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -3676,7 +3692,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -3688,7 +3704,7 @@ argument_list|(
 name|section
 argument_list|)
 argument_list|,
-literal|38
+literal|36
 argument_list|)
 operator|+
 literal|" "
@@ -3731,7 +3747,7 @@ name|getPeriodNameFixedLength
 argument_list|()
 operator|)
 argument_list|,
-literal|32
+literal|30
 argument_list|)
 operator|+
 literal|" "
@@ -3809,7 +3825,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -3828,7 +3844,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -3872,7 +3888,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -3889,7 +3905,7 @@ argument_list|(
 name|section
 argument_list|)
 argument_list|,
-literal|38
+literal|36
 argument_list|)
 operator|+
 literal|" "
@@ -3942,7 +3958,7 @@ name|getPeriodNameFixedLength
 argument_list|()
 operator|)
 argument_list|,
-literal|32
+literal|30
 argument_list|)
 operator|+
 literal|" "
@@ -4244,7 +4260,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -4253,12 +4269,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Type   Subj Crsnbr "
+literal|"Section   Date And Time             Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -4267,14 +4283,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -4284,7 +4300,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------ ---- ------ "
+literal|"--------- ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -4294,7 +4310,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -4362,7 +4378,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -4378,7 +4394,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -4416,7 +4432,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -4432,7 +4448,7 @@ operator|.
 name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
-literal|28
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -4457,7 +4473,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -4469,7 +4485,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -4499,7 +4515,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -4582,7 +4598,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -4591,12 +4607,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Type   Subj Crsnbr "
+literal|"Section   Date And Time             Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -4605,14 +4621,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -4622,7 +4638,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------ ---- ------ "
+literal|"--------- ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -4632,7 +4648,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -4708,7 +4724,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -4724,7 +4740,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -4762,7 +4778,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -4778,7 +4794,7 @@ operator|.
 name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
-literal|28
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -4812,7 +4828,7 @@ operator|.
 name|getSubjectAreaAbbv
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -4833,7 +4849,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -4902,7 +4918,7 @@ operator|.
 name|getSectionNumberString
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -4932,7 +4948,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -4948,7 +4964,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -4986,7 +5002,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -5002,7 +5018,7 @@ operator|.
 name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
-literal|28
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -5030,9 +5046,9 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|24
+literal|33
 else|:
-literal|17
+literal|26
 operator|)
 argument_list|)
 operator|+
@@ -5179,7 +5195,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -5188,12 +5204,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Type   Subj Crsnbr "
+literal|"Section   Date And Time             Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -5202,14 +5218,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -5219,7 +5235,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------ ---- ------ "
+literal|"--------- ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -5229,7 +5245,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -5297,7 +5313,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -5313,7 +5329,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -5351,7 +5367,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -5367,7 +5383,7 @@ operator|.
 name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
-literal|28
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -5392,7 +5408,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -5404,7 +5420,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -5434,7 +5450,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -5575,7 +5591,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -5584,12 +5600,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Type   Subj Crsnbr "
+literal|"Section   Date And Time             Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -5598,14 +5614,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -5615,7 +5631,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------ ---- ------ "
+literal|"--------- ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -5625,7 +5641,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"---- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -5693,7 +5709,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -5709,7 +5725,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -5747,7 +5763,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -5763,7 +5779,7 @@ operator|.
 name|getPeriodNameFixedLength
 argument_list|()
 argument_list|,
-literal|28
+literal|25
 argument_list|)
 operator|+
 literal|" "
@@ -5788,7 +5804,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -5800,7 +5816,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -5830,7 +5846,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|4
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -6135,7 +6151,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -6144,12 +6160,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Section   Date    Time   Name                      Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -6158,14 +6174,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -6175,7 +6191,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"--------- ------- ------ ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -6185,7 +6201,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -6253,7 +6269,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -6269,7 +6285,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -6307,7 +6323,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -6318,12 +6334,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -6364,7 +6380,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -6376,7 +6392,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -6406,7 +6422,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -6490,7 +6506,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -6499,12 +6515,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Section   Date    Time   Name                      Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -6513,14 +6529,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -6530,7 +6546,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"--------- ------- ------ ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -6540,7 +6556,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -6616,7 +6632,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -6632,7 +6648,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -6670,7 +6686,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -6681,12 +6697,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -6736,7 +6752,7 @@ operator|.
 name|getSubjectAreaAbbv
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -6757,7 +6773,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -6826,7 +6842,7 @@ operator|.
 name|getSectionNumberString
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -6856,7 +6872,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -6872,7 +6888,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -6910,7 +6926,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -6921,12 +6937,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -6970,9 +6986,9 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|24
+literal|33
 else|:
-literal|17
+literal|26
 operator|)
 argument_list|)
 operator|+
@@ -7117,7 +7133,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -7126,12 +7142,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Section   Date    Time   Name                      Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -7140,14 +7156,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -7157,7 +7173,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"--------- ------- ------ ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -7167,7 +7183,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -7235,7 +7251,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -7251,7 +7267,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -7289,7 +7305,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -7300,12 +7316,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -7346,7 +7362,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -7358,7 +7374,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -7388,7 +7404,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -7524,7 +7540,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -7533,12 +7549,12 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Date And Time                Name                      Type   Subj Crsnbr "
+literal|"Section   Date    Time   Name                      Type   Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -7547,14 +7563,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect  Time                 "
+literal|"Section   Time           "
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -7564,7 +7580,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------------- ------------------------- ------ ---- ------ "
+literal|"--------- ------- ------ ------------------------- ------ ------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -7574,7 +7590,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- ---------------------"
+literal|"--------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -7642,7 +7658,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -7658,7 +7674,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -7696,7 +7712,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -7707,12 +7723,12 @@ name|iCoursePrinted
 condition|?
 literal|""
 else|:
+name|formatShortPeriodNoEndTime
+argument_list|(
 name|exam
-operator|.
-name|getPeriodNameFixedLength
-argument_list|()
+argument_list|)
 argument_list|,
-literal|28
+literal|14
 argument_list|)
 operator|+
 literal|" "
@@ -7753,7 +7769,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -7765,7 +7781,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -7795,7 +7811,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "

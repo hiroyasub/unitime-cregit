@@ -630,7 +630,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -646,7 +646,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|5
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -690,17 +690,14 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|3
+literal|9
 argument_list|)
 operator|+
-literal|" "
+literal|"  "
 operator|+
-name|formatShortPeriod
+name|formatPeriod
 argument_list|(
-name|section
-operator|.
-name|getExamAssignment
-argument_list|()
+name|exam
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -722,7 +719,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -738,12 +735,12 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|5
+literal|8
 argument_list|)
 operator|+
 literal|" "
 operator|+
-name|rpad
+name|lpad
 argument_list|(
 name|sameSct
 condition|?
@@ -766,12 +763,12 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|3
+literal|9
 argument_list|)
 operator|+
 literal|"  "
 operator|+
-name|formatPeriod
+name|formatShortPeriodNoEndTime
 argument_list|(
 name|exam
 argument_list|)
@@ -862,7 +859,7 @@ operator|.
 name|length
 argument_list|()
 operator|<
-literal|20
+literal|32
 condition|)
 name|w
 operator|=
@@ -870,7 +867,7 @@ name|lpad
 argument_list|(
 name|w
 argument_list|,
-literal|20
+literal|32
 argument_list|)
 expr_stmt|;
 name|lines
@@ -944,7 +941,7 @@ operator|.
 name|length
 argument_list|()
 operator|<
-literal|14
+literal|26
 condition|)
 name|w
 operator|=
@@ -952,7 +949,7 @@ name|lpad
 argument_list|(
 name|w
 argument_list|,
-literal|14
+literal|26
 argument_list|)
 expr_stmt|;
 name|lines
@@ -979,28 +976,16 @@ if|if
 condition|(
 name|iExternal
 condition|)
+block|{
 name|setHeader
 argument_list|(
 operator|new
 name|String
 index|[]
 block|{
-literal|"Subj CrsNr ExtID Sct Date    Time          | Subj CrsNr ExtID Sct Date    Time          | Subj CrsNr ExtID Sct Date    Time         "
+literal|"Subject Course   ExtID Section    Date      Time            | Subject Course   ExtID Section    Date      Time           "
 block|,
-literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- -------------"
-block|}
-argument_list|)
-expr_stmt|;
-else|else
-name|setHeader
-argument_list|(
-operator|new
-name|String
-index|[]
-block|{
-literal|"Subj CrsNr InsTp Sct Date    Time          | Subj CrsNr InsTp Sct Date    Time          | Subj CrsNr InsTp Sct Date    Time         "
-block|,
-literal|"---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- ------------- | ---- ----- ----- --- ------- -------------"
+literal|"------- -------- ----- ---------  --------- --------------- | ------- -------- ----- ---------  --------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
@@ -1013,16 +998,160 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"  Subj CrsNr Sct  Date      Time            | Subj CrsNr Sct  Date      Time            | Subj CrsNr Sct  Date      Time           "
+literal|"Subject Course   Type  Section    Date      Time            | Subject Course   Type  Section    Date      Time           "
 block|,
-literal|"  ---- ----- ---  --------- --------------- | ---- ----- ---  --------- --------------- | ---- ----- ---  --------- ---------------"
+literal|"------- -------- ----- ---------  --------- --------------- | ------- -------- ----- ---------  --------- ---------------"
 block|}
 argument_list|)
 expr_stmt|;
+comment|//	".........1.........2.........3.........4.........5.........6"
+block|}
+block|}
+else|else
+block|{
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subject Course   Section    Date    Time   | Subject Course   Section    Date    Time   | Subject Course   Section    Date    Time  "
+block|,
+literal|"------- -------- ---------  ------- ------ | ------- -------- ---------  ------- ------ | ------- -------- ---------  ------- ------"
+block|}
+argument_list|)
+expr_stmt|;
+comment|//	".........1.........2.........3.........4123"
 block|}
 name|printHeader
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|iItype
+condition|)
+block|{
+for|for
+control|(
+name|int
+name|idx
+init|=
+literal|0
+init|;
+name|idx
+operator|<
+name|lines
+operator|.
+name|size
+argument_list|()
+condition|;
+name|idx
+operator|+=
+literal|2
+operator|*
+name|n
+control|)
+block|{
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|n
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|String
+name|a
+init|=
+operator|(
+name|i
+operator|+
+name|idx
+operator|+
+literal|0
+operator|*
+name|n
+operator|<
+name|lines
+operator|.
+name|size
+argument_list|()
+condition|?
+name|lines
+operator|.
+name|elementAt
+argument_list|(
+name|i
+operator|+
+name|idx
+operator|+
+literal|0
+operator|*
+name|n
+argument_list|)
+else|:
+literal|""
+operator|)
+decl_stmt|;
+name|String
+name|b
+init|=
+operator|(
+name|i
+operator|+
+name|idx
+operator|+
+literal|1
+operator|*
+name|n
+operator|<
+name|lines
+operator|.
+name|size
+argument_list|()
+condition|?
+name|lines
+operator|.
+name|elementAt
+argument_list|(
+name|i
+operator|+
+name|idx
+operator|+
+literal|1
+operator|*
+name|n
+argument_list|)
+else|:
+literal|""
+operator|)
+decl_stmt|;
+name|println
+argument_list|(
+name|rpad
+argument_list|(
+name|a
+argument_list|,
+literal|60
+argument_list|)
+operator|+
+literal|"| "
+operator|+
+name|b
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+else|else
+block|{
 for|for
 control|(
 name|int
@@ -1158,59 +1287,30 @@ else|:
 literal|""
 operator|)
 decl_stmt|;
-if|if
-condition|(
-name|iItype
-condition|)
 name|println
 argument_list|(
 name|rpad
 argument_list|(
 name|a
 argument_list|,
-literal|42
+literal|43
 argument_list|)
 operator|+
-literal|" | "
+literal|"| "
 operator|+
 name|rpad
 argument_list|(
 name|b
 argument_list|,
-literal|42
+literal|43
 argument_list|)
 operator|+
-literal|" | "
+literal|"| "
 operator|+
 name|c
 argument_list|)
 expr_stmt|;
-else|else
-name|println
-argument_list|(
-literal|"  "
-operator|+
-name|rpad
-argument_list|(
-name|a
-argument_list|,
-literal|41
-argument_list|)
-operator|+
-literal|" | "
-operator|+
-name|rpad
-argument_list|(
-name|b
-argument_list|,
-literal|41
-argument_list|)
-operator|+
-literal|" | "
-operator|+
-name|c
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -1461,16 +1561,10 @@ name|Math
 operator|.
 name|max
 argument_list|(
-operator|(
 name|rooms
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|1
-operator|)
-operator|/
-literal|2
 argument_list|,
 name|sections
 operator|.
@@ -1486,11 +1580,7 @@ name|String
 name|a
 init|=
 operator|(
-literal|2
-operator|*
 name|i
-operator|+
-literal|0
 operator|<
 name|rooms
 operator|.
@@ -1501,45 +1591,7 @@ name|rooms
 operator|.
 name|elementAt
 argument_list|(
-literal|2
-operator|*
 name|i
-operator|+
-literal|0
-argument_list|)
-else|:
-name|rpad
-argument_list|(
-literal|""
-argument_list|,
-literal|11
-argument_list|)
-operator|)
-decl_stmt|;
-name|String
-name|b
-init|=
-operator|(
-literal|2
-operator|*
-name|i
-operator|+
-literal|1
-operator|<
-name|rooms
-operator|.
-name|size
-argument_list|()
-condition|?
-name|rooms
-operator|.
-name|elementAt
-argument_list|(
-literal|2
-operator|*
-name|i
-operator|+
-literal|1
 argument_list|)
 else|:
 name|rpad
@@ -1715,7 +1767,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1731,7 +1783,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|5
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -1775,7 +1827,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|3
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -1791,10 +1843,6 @@ operator|+
 literal|" "
 operator|+
 name|a
-operator|+
-literal|" "
-operator|+
-name|b
 argument_list|)
 expr_stmt|;
 block|}
@@ -1804,19 +1852,6 @@ name|lines
 operator|.
 name|add
 argument_list|(
-operator|(
-name|iItype
-condition|?
-name|rpad
-argument_list|(
-name|section
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-literal|14
-argument_list|)
-else|:
 name|rpad
 argument_list|(
 name|sameSubj
@@ -1828,7 +1863,7 @@ operator|.
 name|getSubject
 argument_list|()
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -1844,12 +1879,12 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|5
+literal|8
 argument_list|)
 operator|+
 literal|" "
 operator|+
-name|rpad
+name|lpad
 argument_list|(
 name|sameSct
 condition|?
@@ -1872,11 +1907,10 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|3
+literal|9
 argument_list|)
-operator|)
 operator|+
-literal|"  "
+literal|" "
 operator|+
 name|formatPeriod
 argument_list|(
@@ -1889,10 +1923,6 @@ operator|+
 literal|" "
 operator|+
 name|a
-operator|+
-literal|" "
-operator|+
-name|b
 argument_list|)
 expr_stmt|;
 block|}
@@ -1985,7 +2015,7 @@ operator|.
 name|length
 argument_list|()
 operator|<
-literal|20
+literal|32
 condition|)
 name|w
 operator|=
@@ -1993,7 +2023,7 @@ name|lpad
 argument_list|(
 name|w
 argument_list|,
-literal|20
+literal|32
 argument_list|)
 expr_stmt|;
 name|lines
@@ -2004,14 +2034,10 @@ name|rpad
 argument_list|(
 name|w
 argument_list|,
-literal|43
+literal|55
 argument_list|)
 operator|+
 name|a
-operator|+
-literal|" "
-operator|+
-name|b
 argument_list|)
 expr_stmt|;
 block|}
@@ -2078,7 +2104,7 @@ operator|.
 name|length
 argument_list|()
 operator|<
-literal|14
+literal|26
 condition|)
 name|w
 operator|=
@@ -2086,7 +2112,7 @@ name|lpad
 argument_list|(
 name|w
 argument_list|,
-literal|14
+literal|26
 argument_list|)
 expr_stmt|;
 name|lines
@@ -2097,14 +2123,10 @@ name|rpad
 argument_list|(
 name|w
 argument_list|,
-literal|42
+literal|53
 argument_list|)
 operator|+
 name|a
-operator|+
-literal|" "
-operator|+
-name|b
 argument_list|)
 expr_stmt|;
 block|}
@@ -2122,17 +2144,13 @@ argument_list|,
 operator|(
 name|iItype
 condition|?
-literal|43
+literal|55
 else|:
-literal|42
+literal|53
 operator|)
 argument_list|)
 operator|+
 name|a
-operator|+
-literal|" "
-operator|+
-name|b
 argument_list|)
 expr_stmt|;
 block|}
@@ -2150,31 +2168,20 @@ if|if
 condition|(
 name|iExternal
 condition|)
+block|{
 name|setHeader
 argument_list|(
 operator|new
 name|String
 index|[]
 block|{
-literal|"Subj CrsNr ExtID Sct Date    Time          Bldg  Room  Bldg  Room | Subj CrsNr ExtID Sct Date    Time          Bldg  Room  Bldg  Room"
+literal|"Subject Course   ExtID Section   Date    Time          Bldg  Room |Subject Course   ExtID Section   Date    Time          Bldg  Room"
 block|,
-literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---- ----- ----- --- ------- ------------- ----- ----- ----- ----"
+literal|"------- -------- ----- --------- ------- ------------- ----- -----|------- -------- ----- --------- ------- ------------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
-else|else
-name|setHeader
-argument_list|(
-operator|new
-name|String
-index|[]
-block|{
-literal|"Subj CrsNr InsTp Sct Date    Time          Bldg  Room  Bldg  Room | Subj CrsNr InsTp Sct Date    Time          Bldg  Room  Bldg  Room"
-block|,
-literal|"---- ----- ----- --- ------- ------------- ----- ----- ----- ---- | ---- ----- ----- --- ------- ------------- ----- ----- ----- ----"
-block|}
-argument_list|)
-expr_stmt|;
+comment|//	".........1.........2.........3.........4.........5.........6123456"
 block|}
 else|else
 block|{
@@ -2184,12 +2191,29 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj CrsNr Sct  Date      Time            Bldg  Room  Bldg  Room  | Subj CrsNr Sct  Date      Time            Bldg  Room  Bldg  Room "
+literal|"Subject Course   Type  Section   Date    Time          Bldg  Room |Subject Course   Type  Section   Date    Time          Bldg  Room"
 block|,
-literal|"---- ----- ---  --------- --------------- ----- ----- ----- ----- | ---- ----- ---  --------- --------------- ----- ----- ----- -----"
+literal|"------- -------- ----- --------- ------- ------------- ----- -----|------- -------- ----- --------- ------- ------------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|setHeader
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"Subject Course   Section   Date      Time            Bldg  Room  | Subject Course   Section   Date      Time            Bldg  Room "
+block|,
+literal|"------- -------- --------- --------- --------------- ----- ----- | ------- -------- --------- --------- --------------- ----- -----"
+block|}
+argument_list|)
+expr_stmt|;
+comment|//	".........1.........2.........3.........4.........5.........612345"
 block|}
 name|printHeader
 argument_list|()
@@ -2306,6 +2330,10 @@ literal|65
 argument_list|)
 operator|)
 decl_stmt|;
+if|if
+condition|(
+name|iItype
+condition|)
 name|println
 argument_list|(
 name|rpad
@@ -2315,13 +2343,33 @@ argument_list|,
 literal|66
 argument_list|)
 operator|+
+literal|"|"
+operator|+
+name|rpad
+argument_list|(
+name|b
+argument_list|,
+literal|66
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|println
+argument_list|(
+name|rpad
+argument_list|(
+name|a
+argument_list|,
+literal|65
+argument_list|)
+operator|+
 literal|"| "
 operator|+
 name|rpad
 argument_list|(
 name|b
 argument_list|,
-literal|65
+literal|64
 argument_list|)
 argument_list|)
 expr_stmt|;

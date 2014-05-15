@@ -414,7 +414,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Subj Crsnbr "
+literal|"Subject Course   "
 operator|+
 operator|(
 name|iItype
@@ -423,14 +423,14 @@ name|iExternal
 condition|?
 literal|"ExtnID "
 else|:
-literal|"InsTyp "
+literal|"Type   "
 else|:
 literal|""
 operator|)
 operator|+
-literal|"Sect    Meeting Times                         Enrl    Date And Time                   Room         Cap ExCap "
+literal|"Section     Meeting Times                       Enrl    Date And Time                 Room         Cap ExCap"
 block|,
-literal|"---- ------ "
+literal|"------- -------- "
 operator|+
 operator|(
 name|iItype
@@ -440,7 +440,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"----- -------------------------------------- -----  -------------------------------- ----------- ----- -----"
+literal|"--------- ------------------------------------ -----  ------------------------------ ----------- ----- -----"
 block|}
 argument_list|)
 expr_stmt|;
@@ -636,7 +636,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -652,7 +652,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -686,7 +686,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -698,7 +698,7 @@ argument_list|(
 name|section
 argument_list|)
 argument_list|,
-literal|38
+literal|36
 argument_list|)
 operator|+
 literal|" "
@@ -741,7 +741,7 @@ name|getPeriodNameFixedLength
 argument_list|()
 operator|)
 argument_list|,
-literal|32
+literal|30
 argument_list|)
 operator|+
 literal|" "
@@ -816,7 +816,7 @@ literal|""
 else|:
 name|subject
 argument_list|,
-literal|4
+literal|7
 argument_list|)
 operator|+
 literal|" "
@@ -835,7 +835,7 @@ operator|.
 name|getCourseNbr
 argument_list|()
 argument_list|,
-literal|6
+literal|8
 argument_list|)
 operator|+
 literal|" "
@@ -877,7 +877,7 @@ operator|.
 name|getSection
 argument_list|()
 argument_list|,
-literal|5
+literal|9
 argument_list|)
 operator|+
 literal|" "
@@ -894,7 +894,7 @@ argument_list|(
 name|section
 argument_list|)
 argument_list|,
-literal|38
+literal|36
 argument_list|)
 operator|+
 literal|" "
@@ -947,7 +947,7 @@ name|getPeriodNameFixedLength
 argument_list|()
 operator|)
 argument_list|,
-literal|32
+literal|30
 argument_list|)
 operator|+
 literal|" "
