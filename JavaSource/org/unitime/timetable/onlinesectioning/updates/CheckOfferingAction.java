@@ -755,11 +755,6 @@ name|offeringId
 argument_list|)
 condition|)
 continue|continue;
-name|helper
-operator|.
-name|beginTransaction
-argument_list|()
-expr_stmt|;
 comment|// lock and check the offering
 name|Lock
 name|lock
@@ -777,6 +772,11 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
+name|helper
+operator|.
+name|beginTransaction
+argument_list|()
+expr_stmt|;
 name|XOffering
 name|offering
 init|=
@@ -835,6 +835,11 @@ argument_list|,
 name|offering
 argument_list|)
 expr_stmt|;
+name|helper
+operator|.
+name|commitTransaction
+argument_list|()
+expr_stmt|;
 block|}
 finally|finally
 block|{
@@ -844,11 +849,6 @@ name|release
 argument_list|()
 expr_stmt|;
 block|}
-name|helper
-operator|.
-name|commitTransaction
-argument_list|()
-expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
