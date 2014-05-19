@@ -197,6 +197,12 @@ name|sessions
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|showAll
+init|=
+literal|false
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -297,6 +303,10 @@ expr_stmt|;
 name|sessions
 operator|=
 literal|null
+expr_stmt|;
+name|showAll
+operator|=
+literal|false
 expr_stmt|;
 block|}
 comment|/**       * Returns the key.      * @return String      */
@@ -712,6 +722,30 @@ else|:
 literal|null
 operator|)
 return|;
+block|}
+specifier|public
+name|boolean
+name|getShowAll
+parameter_list|()
+block|{
+return|return
+name|showAll
+return|;
+block|}
+specifier|public
+name|void
+name|setShowAll
+parameter_list|(
+name|boolean
+name|showAll
+parameter_list|)
+block|{
+name|this
+operator|.
+name|showAll
+operator|=
+name|showAll
+expr_stmt|;
 block|}
 block|}
 end_class
