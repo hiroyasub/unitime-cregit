@@ -125,7 +125,7 @@ name|org
 operator|.
 name|hibernate
 operator|.
-name|service
+name|engine
 operator|.
 name|jdbc
 operator|.
