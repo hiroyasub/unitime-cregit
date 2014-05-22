@@ -272,6 +272,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Pin number"
+argument_list|)
+name|String
+name|propPinNumber
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"User authentication dialog opened, please enter your user name and password."
 argument_list|)
 name|String

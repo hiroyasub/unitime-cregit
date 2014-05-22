@@ -1058,7 +1058,7 @@ comment|// a.setProto(action.toString().replace("<", "&lt;").replace(">", "&gt;"
 name|String
 name|html
 init|=
-literal|"<table>"
+literal|"<table class='unitime-ChangeLog'>"
 decl_stmt|;
 name|html
 operator|+=
@@ -1261,7 +1261,7 @@ name|getKey
 argument_list|()
 argument_list|)
 operator|+
-literal|":</b></td><td>"
+literal|":</b></td><td><div class='property'>"
 operator|+
 operator|(
 name|p
@@ -1277,7 +1277,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"</td></tr>"
+literal|"</div></td></tr>"
 expr_stmt|;
 block|}
 if|if
@@ -2472,7 +2472,7 @@ literal|"</td></tr>"
 expr_stmt|;
 name|html
 operator|+=
-literal|"<tr><td colspan='2'>"
+literal|"<tr><td colspan='2' class='proto'>"
 operator|+
 name|action
 operator|.

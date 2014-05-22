@@ -368,6 +368,9 @@ name|userName
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|String
+name|pin
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -403,6 +406,9 @@ name|sessionId
 parameter_list|,
 name|Long
 name|studentId
+parameter_list|,
+name|String
+name|pin
 parameter_list|)
 throws|throws
 name|SectioningException

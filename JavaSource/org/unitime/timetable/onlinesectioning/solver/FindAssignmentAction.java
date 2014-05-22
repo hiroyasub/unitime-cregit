@@ -1341,6 +1341,14 @@ operator|.
 name|getExternalId
 argument_list|()
 argument_list|)
+operator|.
+name|setName
+argument_list|(
+name|original
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 expr_stmt|;
 name|enrolled
 operator|=
@@ -1940,6 +1948,11 @@ condition|(
 name|a
 operator|!=
 literal|null
+operator|&&
+name|a
+operator|.
+name|isAssigned
+argument_list|()
 condition|)
 name|requested
 operator|.

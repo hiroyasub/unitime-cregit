@@ -1298,6 +1298,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Please enter your PIN ..."
+argument_list|)
+name|String
+name|dialogPin
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Username:"
 argument_list|)
 name|String
@@ -1311,6 +1320,15 @@ literal|"Password:"
 argument_list|)
 name|String
 name|password
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"PIN:"
+argument_list|)
+name|String
+name|pin
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1338,6 +1356,15 @@ literal|"Lookup"
 argument_list|)
 name|String
 name|buttonUserLookup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>O</u>k"
+argument_list|)
+name|String
+name|buttonSetPin
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2486,6 +2513,39 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to create enrollment provider: {0}"
+argument_list|)
+name|String
+name|exceptionStudentEnrollmentProvider
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Eligibility check failed: {0}"
+argument_list|)
+name|String
+name|exceptionFailedEligibilityCheck
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Checking eligibility..."
+argument_list|)
+name|String
+name|waitEligibilityCheck
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter assignments of the selected class by name, day, start time, date, room or instructor."
 operator|+
 literal|"<br><br>You can also use the following tags:"
@@ -2943,6 +3003,24 @@ literal|"Enrollment disabled."
 argument_list|)
 name|String
 name|exceptionEnrollmentDisabled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Authentication PIN is required."
+argument_list|)
+name|String
+name|exceptionAuthenticationPinRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Authentication PIN was not provided."
+argument_list|)
+name|String
+name|exceptionAuthenticationPinNotProvided
 parameter_list|()
 function_decl|;
 annotation|@

@@ -392,6 +392,9 @@ parameter_list|,
 name|String
 name|password
 parameter_list|,
+name|String
+name|pin
+parameter_list|,
 name|AsyncCallback
 argument_list|<
 name|String
@@ -442,6 +445,9 @@ name|sessionId
 parameter_list|,
 name|Long
 name|studentId
+parameter_list|,
+name|String
+name|pin
 parameter_list|,
 name|AsyncCallback
 argument_list|<

@@ -493,6 +493,15 @@ name|boolean
 name|tryAuthenticationWhenGuest
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+name|boolean
+name|hasAuthenticationPin
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

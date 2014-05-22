@@ -119,6 +119,8 @@ block|,
 name|CAN_USE_ASSISTANT
 block|,
 name|CAN_ENROLL
+block|,
+name|PIN_REQUIRED
 block|, 			 			;
 specifier|public
 name|int
