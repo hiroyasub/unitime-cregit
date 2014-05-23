@@ -294,6 +294,13 @@ argument_list|,
 literal|"Curricula"
 argument_list|)
 block|,
+name|STUDENTS
+argument_list|(
+literal|"students"
+argument_list|,
+literal|"Students"
+argument_list|)
+block|,
 name|STUDENT_ENRL
 argument_list|(
 literal|"studentEnrollments"
@@ -301,11 +308,11 @@ argument_list|,
 literal|"Student class enrollments"
 argument_list|)
 block|,
-name|STUDENTS
+name|REQUESTS
 argument_list|(
-literal|"students"
+literal|"request"
 argument_list|,
-literal|"Students"
+literal|"Student course requests"
 argument_list|)
 block|,
 name|RESERVATIONS

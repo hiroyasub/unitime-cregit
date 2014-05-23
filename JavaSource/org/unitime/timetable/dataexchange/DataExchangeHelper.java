@@ -369,6 +369,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sExportRegister
+operator|.
+name|put
+argument_list|(
+literal|"request"
+argument_list|,
+name|StudentSectioningExport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 name|sImportRegister
 operator|=
 operator|new
