@@ -851,6 +851,9 @@ name|boolean
 name|online
 parameter_list|,
 name|Long
+name|sessionId
+parameter_list|,
+name|Long
 name|studentId
 parameter_list|,
 name|AsyncCallback
@@ -869,6 +872,9 @@ name|savedResult
 parameter_list|(
 name|boolean
 name|online
+parameter_list|,
+name|Long
+name|sessionId
 parameter_list|,
 name|Long
 name|studentId

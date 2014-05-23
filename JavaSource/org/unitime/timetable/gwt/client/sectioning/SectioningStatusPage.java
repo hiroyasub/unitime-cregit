@@ -4296,6 +4296,13 @@ name|Throwable
 name|caught
 parameter_list|)
 block|{
+name|ToolBox
+operator|.
+name|checkAccess
+argument_list|(
+name|caught
+argument_list|)
+expr_stmt|;
 name|UniTimePageHeader
 name|header
 init|=

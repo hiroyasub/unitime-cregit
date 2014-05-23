@@ -815,8 +815,6 @@ argument_list|,
 name|mode
 argument_list|,
 literal|true
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|initWidget
@@ -938,6 +936,12 @@ name|event
 operator|.
 name|getNewAcademicSessionId
 argument_list|()
+argument_list|,
+literal|null
+argument_list|,
+literal|false
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|userAuthentication
@@ -1036,6 +1040,12 @@ name|sessionSelector
 operator|.
 name|getAcademicSessionId
 argument_list|()
+argument_list|,
+literal|null
+argument_list|,
+literal|false
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|userAuthentication
