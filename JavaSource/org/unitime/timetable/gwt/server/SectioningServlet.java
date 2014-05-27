@@ -3947,6 +3947,11 @@ argument_list|()
 operator|.
 name|canOnlineSectionStudents
 argument_list|()
+operator|&&
+name|CustomStudentEnrollmentHolder
+operator|.
+name|isAllowWaitListing
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4056,7 +4061,10 @@ name|getAcademicInitiative
 argument_list|()
 argument_list|)
 argument_list|,
-literal|true
+name|CustomStudentEnrollmentHolder
+operator|.
+name|isAllowWaitListing
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6816,6 +6824,11 @@ name|s
 operator|.
 name|isSectioningEnabled
 argument_list|()
+operator|&&
+name|CustomStudentEnrollmentHolder
+operator|.
+name|isAllowWaitListing
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -6941,7 +6954,10 @@ name|getAcademicInitiative
 argument_list|()
 argument_list|)
 argument_list|,
-literal|true
+name|CustomStudentEnrollmentHolder
+operator|.
+name|isAllowWaitListing
+argument_list|()
 argument_list|)
 return|;
 block|}
