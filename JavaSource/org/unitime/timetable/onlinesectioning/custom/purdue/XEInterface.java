@@ -101,6 +101,7 @@ decl_stmt|;
 name|String
 name|courseTitle
 decl_stmt|;
+comment|/** 		 * 40	CEC 40% refund 		 * 60	CEC 60% refund 		 * 80	CEC 80% refund 		 * AA	Auditor Access 		 * AU	Audit 		 * CA	Cancel Administratively 		 * DB	Boiler Gold Rush Drop Course 		 * DC	Drop Course 		 * DD	Drop/Delete 		 * DT	Drop Course-TSW 		 * DW	Drop (Web) 		 * RC	**ReAdd Course** 		 * RE	**Registered** 		 * RT	**Web Registered** 		 * RW	**Web Registered** 		 * W	Withdrawn-W 		 * W1	Withdrawn 		 * W2	Withdrawn 		 * W3	Withdrawn 		 * W4	Withdrawn 		 * W5	Withdrawn 		 * WF	Withdrawn-WF 		 * WG	Withdrawn-pending grade 		 * WN	Withdrawn-WN 		 * WT	Withdrawn-W 		 * WU	Withdrawn-WU 		 * WL	Waitlist 		 */
 name|String
 name|courseRegistrationStatus
 decl_stmt|;
@@ -137,7 +138,7 @@ decl_stmt|;
 name|String
 name|statusDescription
 decl_stmt|;
-comment|// R for registered, F for failure, D for deleted
+comment|/** 		 * P = pending 		 * R = registered 		 * D = dropped 		 * L = waitlisted 		 * F = fatal error prevented registration 		 * W = withdrawn  		 */
 name|String
 name|statusIndicator
 decl_stmt|;
