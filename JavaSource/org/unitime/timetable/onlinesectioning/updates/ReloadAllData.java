@@ -1030,6 +1030,10 @@ literal|"left join fetch c.classInstructors i "
 operator|+
 literal|"left join fetch io.reservations x "
 operator|+
+literal|"left join fetch co.creditConfigs cc "
+operator|+
+literal|"left join fetch ss.creditConfigs sc "
+operator|+
 literal|"where io.session.uniqueId = :sessionId and io.notOffered = false"
 argument_list|)
 operator|.
