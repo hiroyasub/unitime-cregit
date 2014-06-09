@@ -5608,12 +5608,9 @@ return|return
 operator|new
 name|Integer
 argument_list|(
-operator|(
-name|int
-operator|)
 name|Math
 operator|.
-name|ceil
+name|round
 argument_list|(
 name|expCap
 operator|<=

@@ -7383,12 +7383,9 @@ decl_stmt|;
 name|int
 name|roomCapacity
 init|=
-operator|(
-name|int
-operator|)
 name|Math
 operator|.
-name|ceil
+name|round
 argument_list|(
 name|minClassLimit
 operator|<=
