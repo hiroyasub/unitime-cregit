@@ -956,7 +956,7 @@ operator|&&
 operator|!
 name|studentIds
 operator|.
-name|remove
+name|contains
 argument_list|(
 name|request
 operator|.
@@ -1987,6 +1987,16 @@ range|:
 name|studentIds
 control|)
 block|{
+if|if
+condition|(
+name|students
+operator|.
+name|containsKey
+argument_list|(
+name|id
+argument_list|)
+condition|)
+continue|continue;
 name|XStudent
 name|student
 init|=
