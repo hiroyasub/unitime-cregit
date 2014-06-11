@@ -2119,6 +2119,13 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|metadata
+operator|==
+literal|null
+condition|)
+return|return;
 name|PersistentClass
 name|mapping
 init|=
