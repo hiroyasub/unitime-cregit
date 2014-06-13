@@ -495,20 +495,6 @@ name|cpsolver
 operator|.
 name|ifs
 operator|.
-name|model
-operator|.
-name|Value
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|cpsolver
-operator|.
-name|ifs
-operator|.
 name|solver
 operator|.
 name|ParallelSolver
@@ -2986,6 +2972,9 @@ name|placement
 operator|.
 name|getTimeLocation
 argument_list|()
+operator|.
+name|getLongName
+argument_list|()
 operator|+
 literal|" is no longer valid for class "
 operator|+
@@ -3251,7 +3240,7 @@ literal|"&larr; "
 operator|+
 name|placement
 operator|.
-name|getName
+name|getLongName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3308,11 +3297,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|Value
+name|Placement
 name|v
 init|=
 operator|(
-name|Value
+name|Placement
 operator|)
 name|j
 operator|.
@@ -3337,7 +3326,7 @@ literal|" = "
 operator|+
 name|v
 operator|.
-name|getName
+name|getLongName
 argument_list|()
 argument_list|)
 expr_stmt|;
