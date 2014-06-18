@@ -652,6 +652,15 @@ literal|null
 operator|&&
 name|imp
 operator|.
+name|isApplicable
+argument_list|(
+name|first
+argument_list|,
+name|second
+argument_list|)
+operator|&&
+name|imp
+operator|.
 name|inConflict
 argument_list|(
 name|firstPl
