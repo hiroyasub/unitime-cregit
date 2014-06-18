@@ -6416,6 +6416,28 @@ argument_list|(
 literal|"log4j.logger.%"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructor Add/Edit: allow editation of external id"
+argument_list|)
+name|InstructorAllowEditExternalId
+argument_list|(
+literal|"tmtbl.instructor.allowExternalIdEdit"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
