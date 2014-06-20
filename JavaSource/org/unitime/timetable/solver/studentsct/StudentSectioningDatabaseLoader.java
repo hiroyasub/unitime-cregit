@@ -14122,10 +14122,12 @@ expr_stmt|;
 name|getModel
 argument_list|()
 operator|.
-name|clearAssignmentContexts
+name|createAssignmentContexts
 argument_list|(
 name|getAssignment
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
