@@ -354,7 +354,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|int
+name|long
 name|iNrTries
 decl_stmt|;
 specifier|private
@@ -2013,12 +2013,16 @@ condition|?
 name|lecture
 operator|.
 name|values
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 else|:
 name|lecture
 operator|.
 name|computeValues
 argument_list|(
+name|iAssignment
+argument_list|,
 literal|true
 argument_list|)
 operator|)
@@ -2065,7 +2069,9 @@ range|:
 name|lecture
 operator|.
 name|values
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 control|)
 block|{
 name|vals
@@ -2092,6 +2098,8 @@ name|lecture
 operator|.
 name|computeValues
 argument_list|(
+name|iAssignment
+argument_list|,
 literal|true
 argument_list|)
 control|)
@@ -3147,7 +3155,9 @@ range|:
 name|iLecture
 operator|.
 name|values
-argument_list|()
+argument_list|(
+name|iAssignment
+argument_list|)
 control|)
 block|{
 if|if
@@ -3307,7 +3317,7 @@ name|iAllAssignments
 return|;
 block|}
 specifier|public
-name|int
+name|long
 name|getNrTries
 parameter_list|()
 block|{
