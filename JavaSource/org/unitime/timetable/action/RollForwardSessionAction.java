@@ -560,13 +560,6 @@ name|sessionContext
 operator|.
 name|checkPermission
 argument_list|(
-name|rollForwardSessionForm
-operator|.
-name|getSessionToRollForwardTo
-argument_list|()
-argument_list|,
-literal|"Session"
-argument_list|,
 name|Right
 operator|.
 name|SessionRollForward
