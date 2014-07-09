@@ -937,6 +937,11 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 decl_stmt|;
+name|GwtRpcLogging
+name|logging
+init|=
+literal|null
+decl_stmt|;
 comment|// create helper
 try|try
 block|{
@@ -957,6 +962,21 @@ argument_list|(
 name|request
 argument_list|)
 decl_stmt|;
+comment|// get logging
+name|logging
+operator|=
+name|implementation
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getAnnotation
+argument_list|(
+name|GwtRpcLogging
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 comment|// execute request
 name|T
 name|response
@@ -989,6 +1009,8 @@ name|t0
 argument_list|,
 name|getSessionContext
 argument_list|()
+argument_list|,
+name|logging
 argument_list|)
 expr_stmt|;
 comment|// return response
@@ -1020,6 +1042,8 @@ name|t0
 argument_list|,
 name|getSessionContext
 argument_list|()
+argument_list|,
+name|logging
 argument_list|)
 expr_stmt|;
 comment|// re-throw exception as GwtRpcException or IsSerializable runtime exception
@@ -1186,6 +1210,9 @@ name|time
 parameter_list|,
 name|SessionContext
 name|context
+parameter_list|,
+name|GwtRpcLogging
+name|logging
 parameter_list|)
 block|{
 try|try
@@ -1197,6 +1224,37 @@ operator|==
 literal|null
 condition|)
 return|return;
+if|if
+condition|(
+name|logging
+operator|!=
+literal|null
+condition|)
+block|{
+switch|switch
+condition|(
+name|logging
+operator|.
+name|value
+argument_list|()
+condition|)
+block|{
+case|case
+name|DISABLED
+case|:
+return|return;
+case|case
+name|ON_EXCEPTION
+case|:
+if|if
+condition|(
+name|exception
+operator|!=
+literal|null
+condition|)
+return|return;
+block|}
+block|}
 name|QueryLog
 name|q
 init|=
@@ -1212,36 +1270,9 @@ operator|.
 name|getClass
 argument_list|()
 operator|.
-name|getName
+name|getSimpleName
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|requestName
-operator|.
-name|indexOf
-argument_list|(
-literal|'.'
-argument_list|)
-operator|>=
-literal|0
-condition|)
-name|requestName
-operator|=
-name|requestName
-operator|.
-name|substring
-argument_list|(
-name|requestName
-operator|.
-name|lastIndexOf
-argument_list|(
-literal|'.'
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
 name|q
 operator|.
 name|setUri
@@ -2036,6 +2067,11 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 decl_stmt|;
+name|GwtRpcLogging
+name|logging
+init|=
+literal|null
+decl_stmt|;
 try|try
 block|{
 comment|// retrieve implementation from given request
@@ -2055,6 +2091,21 @@ argument_list|(
 name|iRequest
 argument_list|)
 decl_stmt|;
+comment|// get logging
+name|logging
+operator|=
+name|implementation
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getAnnotation
+argument_list|(
+name|GwtRpcLogging
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 comment|// execute request
 name|iResponse
 operator|=
@@ -2084,6 +2135,8 @@ operator|-
 name|t0
 argument_list|,
 name|iContext
+argument_list|,
+name|logging
 argument_list|)
 expr_stmt|;
 block|}
@@ -2110,9 +2163,10 @@ operator|-
 name|t0
 argument_list|,
 name|iContext
+argument_list|,
+name|logging
 argument_list|)
 expr_stmt|;
-comment|// re-throw exception as GwtRpcException or IsSerializable runtime exception
 comment|// re-throw exception as GwtRpcException or IsSerializable runtime exception
 if|if
 condition|(

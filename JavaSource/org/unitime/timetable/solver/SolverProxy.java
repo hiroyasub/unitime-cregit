@@ -513,8 +513,6 @@ specifier|public
 name|DataProperties
 name|getProperties
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 specifier|public
 name|void
@@ -564,8 +562,6 @@ specifier|public
 name|Map
 name|getProgress
 parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 specifier|public
 name|String
