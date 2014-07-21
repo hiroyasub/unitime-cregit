@@ -2650,7 +2650,7 @@ expr_stmt|;
 block|}
 name|a
 operator|.
-name|addNote
+name|setOverlapNote
 argument_list|(
 name|note
 argument_list|)
