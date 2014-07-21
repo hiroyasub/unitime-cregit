@@ -30112,6 +30112,9 @@ if|if
 condition|(
 name|automaticHierarchicalConstraints
 operator|.
+name|toLowerCase
+argument_list|()
+operator|.
 name|startsWith
 argument_list|(
 name|p
@@ -30127,6 +30130,9 @@ argument_list|)
 operator|||
 name|automaticHierarchicalConstraints
 operator|.
+name|toLowerCase
+argument_list|()
+operator|.
 name|startsWith
 argument_list|(
 name|p
@@ -30141,6 +30147,9 @@ literal|","
 argument_list|)
 operator|||
 name|automaticHierarchicalConstraints
+operator|.
+name|toLowerCase
+argument_list|()
 operator|.
 name|startsWith
 argument_list|(
