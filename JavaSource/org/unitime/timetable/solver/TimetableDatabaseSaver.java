@@ -1003,6 +1003,12 @@ name|BATCH_SIZE
 init|=
 literal|100
 decl_stmt|;
+specifier|private
+name|boolean
+name|iUseAmPm
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 name|TimetableDatabaseSaver
 parameter_list|(
@@ -1126,6 +1132,21 @@ argument_list|(
 literal|"General.RunStudentSectioningOnSave"
 argument_list|,
 name|iStudentSectioning
+argument_list|)
+expr_stmt|;
+name|iUseAmPm
+operator|=
+name|getModel
+argument_list|()
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.UseAmPm"
+argument_list|,
+name|iUseAmPm
 argument_list|)
 expr_stmt|;
 block|}
@@ -3015,7 +3036,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|") -- class (id:"
 operator|+
@@ -3094,7 +3117,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|") -- room (id:"
 operator|+
@@ -3177,7 +3202,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|") -- room (id:"
 operator|+
@@ -3351,7 +3378,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|") -- time pattern (id:"
 operator|+
@@ -3398,7 +3427,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|") -- none or wrong solution group assigned to the class"
 argument_list|)

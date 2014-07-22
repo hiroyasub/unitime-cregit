@@ -7495,7 +7495,12 @@ name|getTimeLocation
 argument_list|()
 operator|.
 name|getStartTimeHeader
+argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sb
@@ -7515,7 +7520,12 @@ name|getTimeLocation
 argument_list|()
 operator|.
 name|getEndTimeHeader
+argument_list|(
+name|CONSTANTS
+operator|.
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|addText

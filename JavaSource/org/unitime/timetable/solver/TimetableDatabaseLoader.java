@@ -2025,6 +2025,12 @@ name|iClassWeightProvider
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|iUseAmPm
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 specifier|static
 enum|enum
@@ -2926,6 +2932,21 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|iUseAmPm
+operator|=
+name|getModel
+argument_list|()
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.UseAmPm"
+argument_list|,
+name|iUseAmPm
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|int
@@ -9395,7 +9416,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 decl_stmt|;
 name|warn
 operator|+=
@@ -9455,7 +9478,9 @@ operator|+
 name|v
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 expr_stmt|;
 block|}
 name|warn
@@ -9606,6 +9631,8 @@ name|getNotValidReason
 argument_list|(
 name|getAssignment
 argument_list|()
+argument_list|,
+name|iUseAmPm
 argument_list|)
 expr_stmt|;
 block|}
@@ -10198,7 +10225,9 @@ name|getTimeLocation
 argument_list|()
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|" "
 argument_list|)
@@ -10615,7 +10644,9 @@ operator|+
 name|p
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|" (in constraint "
 operator|+
@@ -10666,7 +10697,9 @@ operator|+
 name|initialPlacement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 operator|(
 name|reason
@@ -10772,7 +10805,9 @@ operator|+
 name|initialPlacement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 decl_stmt|;
 name|warn
 operator|+=
@@ -10832,7 +10867,9 @@ operator|+
 name|v
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 expr_stmt|;
 block|}
 name|warn
@@ -18982,7 +19019,9 @@ operator|+
 name|committedPlacement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 decl_stmt|;
 name|warn
 operator|+=
@@ -19042,7 +19081,9 @@ operator|+
 name|v
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 expr_stmt|;
 block|}
 name|warn
@@ -26456,7 +26497,9 @@ operator|+
 name|p1
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
 operator|+
@@ -26470,7 +26513,9 @@ operator|+
 name|p2
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -26561,7 +26606,9 @@ operator|+
 name|p1
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
 operator|+
@@ -26575,7 +26622,9 @@ operator|+
 name|p2
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -26718,7 +26767,9 @@ operator|+
 name|p1
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
 operator|+
@@ -26732,7 +26783,9 @@ operator|+
 name|p2
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -27026,7 +27079,9 @@ operator|+
 name|p
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|" (in constraint "
 operator|+
@@ -27077,7 +27132,9 @@ operator|+
 name|placement
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 operator|(
 name|reason

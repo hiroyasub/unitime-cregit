@@ -1426,6 +1426,12 @@ name|iStudentCourseDemands
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|iUseAmPm
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 name|StudentSectioningDatabaseLoader
 parameter_list|(
@@ -1817,6 +1823,20 @@ literal|"StudentSctBasic.Mode"
 argument_list|,
 literal|"Initial"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|iUseAmPm
+operator|=
+name|model
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.UseAmPm"
+argument_list|,
+name|iUseAmPm
 argument_list|)
 expr_stmt|;
 block|}
@@ -3094,7 +3114,9 @@ operator|+
 name|p
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -8094,7 +8116,9 @@ name|getTime
 argument_list|()
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|+
 literal|" overlaps with "
 operator|+
@@ -8137,7 +8161,9 @@ name|getTime
 argument_list|()
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|hasOverlap
@@ -8215,7 +8241,9 @@ name|getTime
 argument_list|()
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|)
 operator|+
 literal|" has no space available (limit is "
@@ -8313,7 +8341,9 @@ name|getTime
 argument_list|()
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -8698,7 +8728,9 @@ name|getTime
 argument_list|()
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+name|iUseAmPm
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;

@@ -2752,6 +2752,23 @@ name|afterFinalSectioning
 parameter_list|()
 block|{
 block|}
+specifier|protected
+name|boolean
+name|useAmPm
+parameter_list|()
+block|{
+return|return
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"General.UseAmPm"
+argument_list|,
+literal|true
+argument_list|)
+return|;
+block|}
 specifier|public
 class|class
 name|ReloadingDoneCallback
@@ -3009,7 +3026,10 @@ name|getTimeLocation
 argument_list|()
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 operator|+
 literal|" is no longer valid for class "
 operator|+
@@ -3276,7 +3296,10 @@ operator|+
 name|placement
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iProgress
@@ -3362,7 +3385,10 @@ operator|+
 name|v
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3645,7 +3671,10 @@ operator|+
 name|p
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 operator|+
 literal|" (in constraint "
 operator|+
@@ -3687,7 +3716,10 @@ operator|+
 name|placement
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 operator|+
 operator|(
 name|reason
@@ -6412,7 +6444,10 @@ else|:
 name|ini
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 operator|)
 operator|+
 literal|"&rarr; "
@@ -6420,7 +6455,10 @@ operator|+
 name|p
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6664,7 +6702,10 @@ operator|+
 name|p
 operator|.
 name|getLongName
+argument_list|(
+name|useAmPm
 argument_list|()
+argument_list|)
 operator|+
 literal|"&rarr; not assigned"
 argument_list|)
@@ -11252,7 +11293,10 @@ block|}
 specifier|public
 name|CSVFile
 name|export
-parameter_list|()
+parameter_list|(
+name|boolean
+name|useAmPm
+parameter_list|)
 block|{
 name|Lock
 name|lock
@@ -11751,7 +11795,9 @@ name|getTimeLocation
 argument_list|()
 operator|.
 name|getStartTimeHeader
-argument_list|()
+argument_list|(
+name|useAmPm
+argument_list|)
 argument_list|)
 block|,
 operator|new
@@ -11769,7 +11815,9 @@ name|getTimeLocation
 argument_list|()
 operator|.
 name|getEndTimeHeader
-argument_list|()
+argument_list|(
+name|useAmPm
+argument_list|)
 argument_list|)
 block|,
 operator|new
