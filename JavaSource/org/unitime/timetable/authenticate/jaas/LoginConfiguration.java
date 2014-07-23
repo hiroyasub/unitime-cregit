@@ -102,6 +102,8 @@ comment|/**  * Configure JAAS using tmtbl.authenticate.modules rather than  * .j
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|LoginConfiguration

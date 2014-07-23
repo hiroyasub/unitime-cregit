@@ -5589,7 +5589,9 @@ return|return
 name|iTime
 operator|.
 name|getLongName
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 operator|+
 literal|" ("
 operator|+

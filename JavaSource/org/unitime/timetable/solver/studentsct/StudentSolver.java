@@ -7321,6 +7321,11 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+name|fis
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
