@@ -16255,8 +16255,10 @@ operator|new
 name|int
 index|[]
 block|{
-operator|-
-literal|1
+name|clazz
+operator|.
+name|getEnrollment
+argument_list|()
 block|,
 name|limit
 block|}
