@@ -285,7 +285,7 @@ name|pageVersion
 argument_list|(
 name|result
 operator|.
-name|getBuildNumber
+name|getVersion
 argument_list|()
 argument_list|,
 name|result
