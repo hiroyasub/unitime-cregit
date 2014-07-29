@@ -2727,9 +2727,10 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|OnlineSectioningServer
+name|action
 operator|.
-name|class
+name|getClass
+argument_list|()
 operator|.
 name|getName
 argument_list|()
@@ -3247,6 +3248,13 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+name|iLog
+operator|.
+name|isDebugEnabled
+argument_list|()
+condition|)
 name|iLog
 operator|.
 name|debug
