@@ -380,6 +380,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sExportRegister
+operator|.
+name|put
+argument_list|(
+literal|"roomSharing"
+argument_list|,
+name|RoomSharingExport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 name|sImportRegister
 operator|=
 operator|new

@@ -342,6 +342,13 @@ literal|"traveltimes"
 argument_list|,
 literal|"Travel Times"
 argument_list|)
+block|,
+name|ROOM_SHARING
+argument_list|(
+literal|"roomSharing"
+argument_list|,
+literal|"Room Sharing"
+argument_list|)
 block|,     	;
 specifier|private
 name|String
