@@ -247,6 +247,17 @@ name|getAcademicTerm
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|document
+operator|.
+name|addDocType
+argument_list|(
+literal|"students"
+argument_list|,
+literal|"-//UniTime//UniTime Students DTD/EN"
+argument_list|,
+literal|"http://www.unitime.org/interface/Student.dtd"
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Student

@@ -336,6 +336,17 @@ name|getAcademicTerm
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|document
+operator|.
+name|addDocType
+argument_list|(
+literal|"request"
+argument_list|,
+literal|"-//UniTime//UniTime Student Sectioning DTD/EN"
+argument_list|,
+literal|"http://www.unitime.org/interface/StudentSectioning.dtd"
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Student
