@@ -807,6 +807,18 @@ argument_list|(
 name|queryInLowerCase
 argument_list|)
 operator|&&
+operator|(
+name|getTitle
+argument_list|()
+operator|.
+name|toLowerCase
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+name|queryInLowerCase
+argument_list|)
+operator|||
 name|getTitle
 argument_list|()
 operator|.
@@ -815,8 +827,11 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
+literal|" "
+operator|+
 name|queryInLowerCase
 argument_list|)
+operator|)
 condition|)
 return|return
 literal|true
