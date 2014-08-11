@@ -1459,6 +1459,17 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+name|check
+operator|.
+name|setFlag
+argument_list|(
+name|EligibilityFlag
+operator|.
+name|CAN_ENROLL
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|pin
