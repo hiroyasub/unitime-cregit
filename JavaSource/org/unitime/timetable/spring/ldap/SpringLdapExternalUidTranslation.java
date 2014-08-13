@@ -366,7 +366,7 @@ name|externalIdAttribute
 init|=
 name|ApplicationProperty
 operator|.
-name|AuthenticationLdapLogin2UserId
+name|AuthenticationLdapIdAttribute
 operator|.
 name|value
 argument_list|()
