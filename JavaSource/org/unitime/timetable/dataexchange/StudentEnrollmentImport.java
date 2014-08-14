@@ -1250,7 +1250,7 @@ argument_list|>
 name|remaining
 init|=
 operator|new
-name|TreeSet
+name|HashSet
 argument_list|<
 name|CourseDemand
 argument_list|>
@@ -1696,11 +1696,10 @@ decl_stmt|;
 if|if
 condition|(
 name|enrollment
-operator|!=
+operator|==
 literal|null
 condition|)
-continue|continue;
-comment|// enrollment already exists
+block|{
 name|enrollment
 operator|=
 operator|new
@@ -1808,6 +1807,26 @@ name|demands
 break|;
 block|}
 block|}
+block|}
+if|if
+condition|(
+name|student
+operator|.
+name|getUniqueId
+argument_list|()
+operator|!=
+literal|null
+condition|)
+name|updatedStudents
+operator|.
+name|add
+argument_list|(
+name|student
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1988,7 +2007,6 @@ name|fixCourseDemands
 operator|=
 literal|true
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|student
@@ -2008,6 +2026,7 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
