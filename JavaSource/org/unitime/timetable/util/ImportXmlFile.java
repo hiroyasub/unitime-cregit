@@ -129,10 +129,15 @@ name|apache
 operator|.
 name|log4j
 operator|.
-name|BasicConfigurator
+name|PropertyConfigurator
 operator|.
 name|configure
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperties
 argument_list|()
+argument_list|)
 expr_stmt|;
 comment|// Configure hibernate
 name|HibernateUtil
