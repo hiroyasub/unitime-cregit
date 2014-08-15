@@ -1691,7 +1691,7 @@ name|ret
 operator|.
 name|append
 argument_list|(
-literal|"<A href='back.do?uri="
+literal|"<span class='item'><A href='back.do?uri="
 operator|+
 name|encodeURL
 argument_list|(
@@ -1708,7 +1708,7 @@ index|[
 literal|1
 index|]
 operator|+
-literal|"</A>"
+literal|"</A></span>"
 argument_list|)
 expr_stmt|;
 block|}

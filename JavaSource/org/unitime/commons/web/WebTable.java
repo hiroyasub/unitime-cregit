@@ -1816,7 +1816,7 @@ name|wtline
 operator|.
 name|iUniqueId
 operator|+
-literal|"\" />"
+literal|"\"></A>"
 argument_list|)
 expr_stmt|;
 block|}

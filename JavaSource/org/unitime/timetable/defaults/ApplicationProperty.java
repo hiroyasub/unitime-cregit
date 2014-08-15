@@ -6394,6 +6394,8 @@ name|Description
 argument_list|(
 literal|"Main Page: when Internet Explorer is used, show \"the UniTime application may run very slow in Internet Explorer\" warning"
 argument_list|)
+expr|@
+name|Deprecated
 name|ChromeFrameWarning
 argument_list|(
 literal|"unitime.warn.chromeframe"

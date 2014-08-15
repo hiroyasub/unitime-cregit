@@ -1379,21 +1379,11 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"<table width='100%' border='0' cellpadding='3' cellspacing='0'><tr>"
-argument_list|)
-expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"<td class=\""
+literal|"<div class=\""
 operator|+
 name|style
 operator|+
-literal|"\" style='padding-left:10px' "
+literal|"\""
 operator|+
 operator|(
 name|link
@@ -1461,7 +1451,7 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"</td></tr></table>"
+literal|"</div>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1547,7 +1537,7 @@ literal|null
 condition|)
 name|printWarning
 argument_list|(
-literal|"unitime-MessageYellow"
+literal|"unitime-PageWarn"
 argument_list|,
 name|warn
 argument_list|,
@@ -1569,7 +1559,7 @@ literal|null
 condition|)
 name|printWarning
 argument_list|(
-literal|"unitime-MessageBlue"
+literal|"unitime-PageMessage"
 argument_list|,
 name|awarn
 index|[
@@ -1609,7 +1599,7 @@ condition|)
 block|{
 name|printWarning
 argument_list|(
-literal|"unitime-MessageBlue"
+literal|"unitime-PageMessage"
 argument_list|,
 name|awarn
 index|[
@@ -1640,7 +1630,7 @@ literal|null
 condition|)
 name|printWarning
 argument_list|(
-literal|"unitime-MessageBlue"
+literal|"unitime-PageMessage"
 argument_list|,
 name|xwarn
 index|[
@@ -1681,7 +1671,7 @@ literal|null
 condition|)
 name|printWarning
 argument_list|(
-literal|"unitime-MessageBlue"
+literal|"unitime-PageMessage"
 argument_list|,
 name|awarn
 index|[

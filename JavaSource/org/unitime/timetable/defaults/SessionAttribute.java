@@ -142,6 +142,13 @@ literal|"Exam.Type"
 argument_list|,
 literal|"Examination type"
 argument_list|)
+block|,
+name|FormFactor
+argument_list|(
+literal|"mgwt.formfactor"
+argument_list|,
+literal|"Device from factor"
+argument_list|)
 block|, 	;
 name|String
 name|iKey

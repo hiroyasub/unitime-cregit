@@ -127,7 +127,7 @@ name|google
 operator|.
 name|gwt
 operator|.
-name|user
+name|dom
 operator|.
 name|client
 operator|.

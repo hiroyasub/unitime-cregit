@@ -1622,7 +1622,7 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|setTitle
+name|setPageName
 argument_list|(
 name|p
 operator|.

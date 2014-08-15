@@ -9623,6 +9623,45 @@ name|String
 name|solverCourse
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Navigation"
+argument_list|)
+name|String
+name|navigation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Click here to change the session / role."
+argument_list|)
+name|String
+name|hintClickToChangeSession
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Page generated in {0} sec."
+argument_list|)
+name|String
+name|pageGeneratedIn
+parameter_list|(
+name|String
+name|seconds
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"If the pop-up window was blocked, you can follow this link to retrieve the exported file."
+argument_list|)
+name|String
+name|pageBlockedPopup
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

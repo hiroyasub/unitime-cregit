@@ -604,27 +604,7 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"<table width='100%' border='0' cellpadding='3' cellspacing='0'><tr>"
-argument_list|)
-expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"<td class=\"unitime-MessageYellow\" width='5'>&nbsp;</td>"
-argument_list|)
-expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"<td class=\"unitime-MessageYellow\">"
+literal|"<div class='unitime-PageWarn'>"
 argument_list|)
 expr_stmt|;
 name|pageContext
@@ -644,7 +624,7 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"</td></tr></table>"
+literal|"</div>"
 argument_list|)
 expr_stmt|;
 block|}

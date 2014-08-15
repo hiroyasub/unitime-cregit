@@ -143,6 +143,22 @@ name|dom
 operator|.
 name|client
 operator|.
+name|Element
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|dom
+operator|.
+name|client
+operator|.
 name|Style
 import|;
 end_import
@@ -210,38 +226,6 @@ operator|.
 name|DateTimeFormat
 operator|.
 name|PredefinedFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|user
-operator|.
-name|client
-operator|.
-name|DOM
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|user
-operator|.
-name|client
-operator|.
-name|Element
 import|;
 end_import
 
@@ -363,15 +347,13 @@ name|content
 operator|+=
 literal|"<div class=\"unitime-PrintedComponent\">"
 operator|+
-name|DOM
-operator|.
-name|toString
-argument_list|(
 name|w
 operator|.
 name|getElement
 argument_list|()
-argument_list|)
+operator|.
+name|getString
+argument_list|()
 operator|+
 literal|"</div>"
 expr_stmt|;
@@ -420,66 +402,94 @@ literal|"| University Timetabling Application</title>"
 operator|+
 literal|"</header><body class='unitime-Body'>"
 operator|+
-literal|"<table align=\"center\"><tr><td>"
+literal|"<span class='unitime-Page'>"
 operator|+
-literal|"<table class=\"unitime-Page\"><tr><td>"
+literal|"<span class='body'>"
 operator|+
-literal|"<table id=\"header\" class=\"unitime-MainTable\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">"
+literal|"<span class='unitime-PageHeader'>"
 operator|+
-literal|"<tr><td rowspan=\"2\"><img src=\""
+literal|"<span class='row'>"
+operator|+
+literal|"<span class='logo'><img src='"
 operator|+
 name|GWT
 operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"images/unitime.png\" border=\"0\"/></td>"
+literal|"images/unitime.png' border='0'/></span>"
 operator|+
-literal|"<td nowrap=\"nowrap\" class=\"unitime-Title\" width=\"100%\" align=\"center\" colspan=\"2\">"
+literal|"<span class='content'>"
+operator|+
+literal|"<span id='UniTimeGWT:Title' class='title'>"
 operator|+
 name|title
 operator|+
-literal|"</td></tr>"
+literal|"</span>"
 operator|+
-literal|"<tr><td nowrap=\"nowrap\" class=\"unitime-SubTitle\" width=\"50%\" align=\"center\">"
+literal|"<span class='unitime-Header'>"
+operator|+
+literal|"<span class='unitime-InfoPanel'>"
+operator|+
+literal|"<span class='row'>"
+operator|+
+literal|"<span class='cell middle'>"
 operator|+
 name|user
 operator|+
-literal|"</td>"
+literal|"</span>"
 operator|+
-literal|"<td nowrap=\"nowrap\" class=\"unitime-SubTitle\" width=\"50%\" align=\"center\">"
+literal|"<span class='cell right'>"
 operator|+
 name|session
 operator|+
-literal|"</td></tr></table>"
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"<span class='content'>"
 operator|+
 name|content
 operator|+
-literal|"</td></tr></table>"
+literal|"</span>"
 operator|+
-literal|"</td></tr><tr><td>"
+literal|"</span>"
 operator|+
-literal|"<table class=\"unitime-Footer\"><tr>"
+literal|"<span class='footer'>"
 operator|+
-literal|"<td width=\"33%\" align=\"left\" nowrap=\"nowrap\">Printed from UniTime "
+literal|"<span class='unitime-Footer'>"
+operator|+
+literal|"<span class='row'>"
+operator|+
+literal|"<span class='cell left'>Printed from UniTime "
 operator|+
 name|CONSTANTS
 operator|.
 name|version
 argument_list|()
 operator|+
-literal|" | University Timetabling Application</td>"
+literal|" | University Timetabling Application</span>"
 operator|+
-literal|"<td width=\"34%\" align=\"center\">"
+literal|"<span class='cell middle'>"
 operator|+
 name|CONSTANTS
 operator|.
 name|copyright
 argument_list|()
 operator|+
-literal|"</td>"
+literal|"</span>"
 operator|+
-literal|"<td width=\"33%\" align=\"right\">"
+literal|"<span class='cell right'>"
 operator|+
 name|DateTimeFormat
 operator|.
@@ -497,11 +507,15 @@ name|Date
 argument_list|()
 argument_list|)
 operator|+
-literal|"</td>"
+literal|"</span>"
 operator|+
-literal|"</tr></table></td></tr></table>"
+literal|"</span>"
 operator|+
-literal|"</body></html>"
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span></body></html>"
 decl_stmt|;
 name|printf
 argument_list|(
@@ -576,83 +590,111 @@ control|)
 block|{
 name|html
 operator|+=
-literal|"<table class=\"unitime-PrintedPage\" align=\"center\"><tr><td>"
+literal|"<span class='unitime-PrintedPage'>"
 operator|+
-literal|"<table class=\"unitime-Page\"><tr><td>"
+literal|"<span class='unitime-Page'>"
 operator|+
-literal|"<table id=\"header\" class=\"unitime-MainTable\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">"
+literal|"<span class='body'>"
 operator|+
-literal|"<tr><td rowspan=\"2\"><img src=\""
+literal|"<span class='unitime-PageHeader'>"
+operator|+
+literal|"<span class='row'>"
+operator|+
+literal|"<span class='logo'><img src='"
 operator|+
 name|GWT
 operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"images/unitime.png\" border=\"0\"/></td>"
+literal|"images/unitime.png' border='0'/></span>"
 operator|+
-literal|"<td nowrap=\"nowrap\" class=\"unitime-Title\" width=\"100%\" align=\"center\" colspan=\"2\">"
+literal|"<span class='content'>"
+operator|+
+literal|"<span id='UniTimeGWT:Title' class='title'>"
 operator|+
 name|p
 operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"</td></tr>"
+literal|"</span>"
 operator|+
-literal|"<tr><td nowrap=\"nowrap\" class=\"unitime-SubTitle\" width=\"50%\" align=\"center\">"
+literal|"<span class='unitime-Header'>"
+operator|+
+literal|"<span class='unitime-InfoPanel'>"
+operator|+
+literal|"<span class='row'>"
+operator|+
+literal|"<span class='cell middle'>"
 operator|+
 name|p
 operator|.
 name|getUser
 argument_list|()
 operator|+
-literal|"</td>"
+literal|"</span>"
 operator|+
-literal|"<td nowrap=\"nowrap\" class=\"unitime-SubTitle\" width=\"50%\" align=\"center\">"
+literal|"<span class='cell right'>"
 operator|+
 name|p
 operator|.
 name|getSession
 argument_list|()
 operator|+
-literal|"</td></tr></table>"
+literal|"</span>"
 operator|+
-name|DOM
-operator|.
-name|toString
-argument_list|(
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"<span class='content'>"
+operator|+
 name|p
 operator|.
 name|getBody
 argument_list|()
-argument_list|)
+operator|.
+name|getString
+argument_list|()
 operator|+
-literal|"</td></tr></table>"
+literal|"</span>"
 operator|+
-literal|"</td></tr><tr><td>"
+literal|"</span>"
 operator|+
-literal|"<table class=\"unitime-Footer\"><tr>"
+literal|"<span class='footer'>"
 operator|+
-literal|"<td width=\"33%\" align=\"left\" nowrap=\"nowrap\">Printed from UniTime "
+literal|"<span class='unitime-Footer'>"
+operator|+
+literal|"<span class='row'>"
+operator|+
+literal|"<span class='cell left'>Printed from UniTime "
 operator|+
 name|CONSTANTS
 operator|.
 name|version
 argument_list|()
 operator|+
-literal|" | University Timetabling Application</td>"
+literal|" | University Timetabling Application</span>"
 operator|+
-literal|"<td width=\"34%\" align=\"center\">"
+literal|"<span class='cell middle'>"
 operator|+
 name|CONSTANTS
 operator|.
 name|copyright
 argument_list|()
 operator|+
-literal|"</td>"
+literal|"</span>"
 operator|+
-literal|"<td width=\"33%\" align=\"right\">"
+literal|"<span class='cell right'>"
 operator|+
 name|DateTimeFormat
 operator|.
@@ -670,9 +712,17 @@ name|Date
 argument_list|()
 argument_list|)
 operator|+
-literal|"</td>"
+literal|"</span>"
 operator|+
-literal|"</tr></table></td></tr></table>"
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
+operator|+
+literal|"</span>"
 expr_stmt|;
 block|}
 name|html
@@ -899,7 +949,7 @@ specifier|static
 name|int
 name|getClientWidth
 parameter_list|()
-comment|/*-{ 		var sideMenu = $doc.getElementById("unitime-SideMenu").getElementsByTagName("span");     	if (sideMenu.length> 0) {     		return $doc.body.clientWidth - sideMenu[0].clientWidth;     	} else {     		return $doc.body.clientWidth;     	} 	}-*/
+comment|/*-{ 		var sideMenu = $doc.getElementById("unitime-SideMenu"); 		if (!sideMenu) return $doc.body.clientWidth; 		var sideMenuSpans = sideMenu.getElementsByTagName("span");     	if (sideMenuSpans.length> 0) {     		return $doc.body.clientWidth - sideMenuSpans[0].clientWidth;     	} else {     		return $doc.body.clientWidth;     	} 	}-*/
 function_decl|;
 specifier|public
 specifier|native

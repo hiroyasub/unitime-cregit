@@ -587,8 +587,9 @@ name|RootPanel
 name|panel
 parameter_list|)
 block|{
-operator|new
 name|UniTimePageHeader
+operator|.
+name|getInstance
 argument_list|()
 operator|.
 name|insert

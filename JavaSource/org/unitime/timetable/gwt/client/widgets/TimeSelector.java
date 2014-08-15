@@ -2774,13 +2774,11 @@ argument_list|(
 literal|"item"
 argument_list|)
 expr_stmt|;
-name|DOM
-operator|.
-name|setStyleAttribute
-argument_list|(
 name|getElement
 argument_list|()
-argument_list|,
+operator|.
+name|setAttribute
+argument_list|(
 literal|"whiteSpace"
 argument_list|,
 literal|"nowrap"

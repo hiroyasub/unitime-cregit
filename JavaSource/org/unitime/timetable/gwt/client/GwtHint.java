@@ -41,11 +41,11 @@ name|google
 operator|.
 name|gwt
 operator|.
-name|i18n
+name|dom
 operator|.
 name|client
 operator|.
-name|LocaleInfo
+name|Element
 import|;
 end_import
 
@@ -57,11 +57,11 @@ name|google
 operator|.
 name|gwt
 operator|.
-name|user
+name|i18n
 operator|.
 name|client
 operator|.
-name|Element
+name|LocaleInfo
 import|;
 end_import
 

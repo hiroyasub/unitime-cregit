@@ -438,12 +438,10 @@ init|=
 operator|(
 name|char
 operator|)
-name|DOM
-operator|.
-name|eventGetKeyCode
-argument_list|(
 name|event
-argument_list|)
+operator|.
+name|getKeyCode
+argument_list|()
 decl_stmt|;
 switch|switch
 condition|(
