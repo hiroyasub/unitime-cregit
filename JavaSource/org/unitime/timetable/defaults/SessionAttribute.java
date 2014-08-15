@@ -147,7 +147,7 @@ name|FormFactor
 argument_list|(
 literal|"mgwt.formfactor"
 argument_list|,
-literal|"Device from factor"
+literal|"Device form factor"
 argument_list|)
 block|, 	;
 name|String

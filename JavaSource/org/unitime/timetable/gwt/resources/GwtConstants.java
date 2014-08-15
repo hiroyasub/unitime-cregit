@@ -699,6 +699,24 @@ name|String
 name|timeFormatShort
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MMM d, yyyy"
+argument_list|)
+name|String
+name|sessionDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MM/dd/yyyy"
+argument_list|)
+name|String
+name|dateEntryFormat
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

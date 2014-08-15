@@ -371,6 +371,13 @@ name|getTitle
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|getTitle
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|?
 literal|" - "
 operator|+

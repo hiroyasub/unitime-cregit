@@ -415,7 +415,7 @@ argument_list|()
 operator|+
 literal|"</span>"
 operator|+
-literal|"<img style=\"cursor: pointer;\" src=\"scripts/jscalendar/calendar_1.gif\" border=\"0\" "
+literal|"<img style=\"cursor: pointer;\" src=\"images/calendar.png\" border=\"0\" "
 operator|+
 literal|"onclick=\"showGwtDialog('Preview of "
 operator|+
