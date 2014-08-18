@@ -1416,7 +1416,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-mapping-3.0.dtd"
+literal|"org/hibernate/hibernate-mapping-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -1444,7 +1444,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-mapping-3.0.dtd"
+literal|"org/hibernate/hibernate-mapping-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -1472,7 +1472,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-configuration-3.0.dtd"
+literal|"org/hibernate/hibernate-configuration-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -1500,7 +1500,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-configuration-3.0.dtd"
+literal|"org/hibernate/hibernate-configuration-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -1919,7 +1919,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-mapping-3.0.dtd"
+literal|"org/hibernate/hibernate-mapping-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -1947,7 +1947,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-mapping-3.0.dtd"
+literal|"org/hibernate/hibernate-mapping-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -1975,7 +1975,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-configuration-3.0.dtd"
+literal|"org/hibernate/hibernate-configuration-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -2003,7 +2003,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-configuration-3.0.dtd"
+literal|"org/hibernate/hibernate-configuration-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -2243,7 +2243,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-mapping-3.0.dtd"
+literal|"org/hibernate/hibernate-mapping-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -2271,7 +2271,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-mapping-3.0.dtd"
+literal|"org/hibernate/hibernate-mapping-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -2299,7 +2299,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-configuration-3.0.dtd"
+literal|"org/hibernate/hibernate-configuration-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
@@ -2327,7 +2327,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"hibernate-configuration-3.0.dtd"
+literal|"org/hibernate/hibernate-configuration-3.0.dtd"
 argument_list|)
 argument_list|)
 return|;
