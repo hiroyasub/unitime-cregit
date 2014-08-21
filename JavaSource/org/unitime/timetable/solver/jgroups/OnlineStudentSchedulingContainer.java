@@ -584,22 +584,9 @@ name|instance
 operator|==
 literal|null
 condition|)
-block|{
-name|sLog
-operator|.
-name|warn
-argument_list|(
-literal|"Server "
-operator|+
-name|sessionId
-operator|+
-literal|" does not exist."
-argument_list|)
-expr_stmt|;
 return|return
 literal|null
 return|;
-block|}
 try|try
 block|{
 name|instance
