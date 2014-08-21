@@ -263,6 +263,9 @@ decl_stmt|;
 name|Boolean
 name|validStudent
 decl_stmt|;
+name|String
+name|registrationException
+decl_stmt|;
 block|}
 specifier|public
 specifier|static
