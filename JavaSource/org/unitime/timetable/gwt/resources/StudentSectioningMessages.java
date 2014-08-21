@@ -1240,6 +1240,15 @@ name|String
 name|noSchedule
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There is no schedule."
+argument_list|)
+name|String
+name|emptySchedule
+parameter_list|()
+function_decl|;
 comment|/* User Authentication messages 	 */
 annotation|@
 name|DefaultMessage
