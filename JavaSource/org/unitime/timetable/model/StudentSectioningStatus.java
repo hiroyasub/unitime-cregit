@@ -121,6 +121,16 @@ name|nobatch
 argument_list|(
 literal|"Do Not Schedule in Batch Solver"
 argument_list|)
+block|,
+name|enrollment
+argument_list|(
+literal|"Enrollment Enabled"
+argument_list|)
+block|,
+name|admin
+argument_list|(
+literal|"Admin Can Enroll"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

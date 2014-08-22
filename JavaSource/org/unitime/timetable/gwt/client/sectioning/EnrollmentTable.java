@@ -2008,6 +2008,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|assignments
+operator|.
+name|setEmptyMessage
+argument_list|(
+name|MESSAGES
+operator|.
+name|emptySchedule
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|ArrayList
 argument_list|<
 name|WebTable

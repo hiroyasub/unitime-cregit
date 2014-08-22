@@ -3017,6 +3017,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Access disabled."
+argument_list|)
+name|String
+name|exceptionAccessDisabled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Authentication PIN is required."
 argument_list|)
 name|String
