@@ -3567,16 +3567,8 @@ name|reg
 operator|.
 name|statusDescription
 argument_list|)
-operator|&&
-name|added
-operator|.
-name|contains
-argument_list|(
-name|id
-argument_list|)
 condition|)
 block|{
-comment|// skip successfully registered enrollments
 name|external
 operator|.
 name|addSectionBuilder
@@ -3641,6 +3633,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|added
+operator|.
+name|contains
+argument_list|(
+name|id
+argument_list|)
+condition|)
+block|{
+comment|// skip successfully registered enrollments
+if|if
+condition|(
 name|error
 operator|!=
 literal|null
@@ -3693,6 +3696,7 @@ argument_list|)
 expr_stmt|;
 block|}
 continue|continue;
+block|}
 block|}
 if|if
 condition|(
