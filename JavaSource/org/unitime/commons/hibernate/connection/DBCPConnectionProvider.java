@@ -244,15 +244,6 @@ name|DBCP_PS_MAXACTIVE
 init|=
 literal|"hibernate.dbcp.ps.maxActive"
 decl_stmt|;
-comment|// Property doesn't exists in Hibernate2
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|AUTOCOMMIT
-init|=
-literal|"hibernate.connection.autocommit"
-decl_stmt|;
 specifier|public
 name|void
 name|configure
@@ -418,6 +409,8 @@ name|props
 operator|.
 name|getProperty
 argument_list|(
+name|Environment
+operator|.
 name|AUTOCOMMIT
 argument_list|)
 decl_stmt|;
