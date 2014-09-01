@@ -22011,7 +22011,15 @@ expr_stmt|;
 else|else
 name|courseLimit
 operator|=
-literal|0
+name|offeringLimit
+operator|/
+name|offering
+operator|.
+name|getCourseOfferings
+argument_list|()
+operator|.
+name|size
+argument_list|()
 expr_stmt|;
 block|}
 block|}
