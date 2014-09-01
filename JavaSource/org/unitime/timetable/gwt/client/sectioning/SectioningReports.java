@@ -1778,6 +1778,10 @@ literal|"true"
 else|:
 literal|"false"
 operator|)
+operator|+
+literal|"&sort="
+operator|+
+name|iLastSort
 decl_stmt|;
 for|for
 control|(
@@ -4270,7 +4274,7 @@ name|getRow
 argument_list|()
 operator|.
 name|length
-operator|<
+operator|<=
 name|col
 operator|||
 name|getRow
