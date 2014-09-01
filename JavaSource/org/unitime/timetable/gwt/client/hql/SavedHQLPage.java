@@ -2851,6 +2851,10 @@ operator|+
 literal|"&params="
 operator|+
 name|params
+operator|+
+literal|"&sort="
+operator|+
+name|iLastSort
 argument_list|)
 argument_list|,
 operator|new
