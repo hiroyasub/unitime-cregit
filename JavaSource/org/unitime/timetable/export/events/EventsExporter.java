@@ -389,6 +389,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|PageAccessException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|security
 operator|.
 name|UserAuthority
@@ -511,9 +527,9 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|RuntimeException
+name|IllegalArgumentException
 argument_list|(
-literal|"No academic session provided."
+literal|"Academic session not provided, please set the term parameter."
 argument_list|)
 throw|;
 name|EventLookupRpcRequest
@@ -591,6 +607,19 @@ argument_list|(
 literal|"type"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|type
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Resource type not provided, please set the type parameter."
+argument_list|)
+throw|;
 name|request
 operator|.
 name|setResourceType
@@ -988,6 +1017,32 @@ operator|.
 name|EventLookupSchedule
 argument_list|)
 expr_stmt|;
+block|}
+if|else if
+condition|(
+operator|!
+name|helper
+operator|.
+name|isRequestEncoded
+argument_list|()
+operator|&&
+name|request
+operator|.
+name|getResourceType
+argument_list|()
+operator|==
+name|ResourceType
+operator|.
+name|PERSON
+condition|)
+block|{
+throw|throw
+operator|new
+name|PageAccessException
+argument_list|(
+literal|"Request parameters must be encrypted."
+argument_list|)
+throw|;
 block|}
 name|List
 argument_list|<

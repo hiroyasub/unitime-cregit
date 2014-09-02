@@ -459,6 +459,29 @@ block|{
 comment|// Check rights
 comment|// FIXME: helper.getSessionContext().checkPermission(Right.???);
 comment|// Retrive report
+name|String
+name|report
+init|=
+name|helper
+operator|.
+name|getParameter
+argument_list|(
+literal|"report"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|report
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"No report provided, please set the report parameter."
+argument_list|)
+throw|;
 name|SavedHQL
 name|hql
 init|=
@@ -473,12 +496,7 @@ name|Long
 operator|.
 name|valueOf
 argument_list|(
-name|helper
-operator|.
-name|getParameter
-argument_list|(
-literal|"report"
-argument_list|)
+name|report
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -490,9 +508,13 @@ literal|null
 condition|)
 throw|throw
 operator|new
-name|SavedHQLException
+name|IllegalArgumentException
 argument_list|(
-literal|"No report provided."
+literal|"Report "
+operator|+
+name|report
+operator|+
+literal|" does not exist."
 argument_list|)
 throw|;
 name|SavedHQLInterface
