@@ -1211,7 +1211,7 @@ condition|)
 block|{
 name|delete
 operator|=
-literal|"<img src='images/Delete16.gif' border='0' onClick=\"if (confirm('Do you really want to remove this data exchange?')) document.location='dataImport.do?remove="
+literal|"<img src='images/action_delete.png' border='0' onClick=\"if (confirm('Do you really want to remove this data exchange?')) document.location='dataImport.do?remove="
 operator|+
 name|item
 operator|.

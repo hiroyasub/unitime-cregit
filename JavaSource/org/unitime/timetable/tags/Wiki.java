@@ -269,7 +269,7 @@ operator|.
 name|getContextPath
 argument_list|()
 operator|+
-literal|"/images/help_icon.gif"
+literal|"/images/help.png"
 decl_stmt|;
 name|String
 name|url

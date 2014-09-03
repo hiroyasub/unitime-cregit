@@ -2216,7 +2216,7 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-literal|"<IMG border='0' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' alt='true' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)
@@ -2281,7 +2281,7 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-literal|"<IMG border='0' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' alt='true' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)

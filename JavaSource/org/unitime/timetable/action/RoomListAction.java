@@ -5808,7 +5808,7 @@ operator|=
 operator|(
 name|itf
 condition|?
-literal|"<IMG border='0' title='Ignore too far distances' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='Ignore too far distances' alt='true' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|"&nbsp;"
 operator|)
@@ -5861,7 +5861,7 @@ operator|=
 operator|(
 name|con
 condition|?
-literal|"<IMG border='0' title='Create Constraint' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='Create Constraint' alt='true' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|"&nbsp;"
 operator|)
@@ -6432,7 +6432,7 @@ index|[
 name|idx
 index|]
 operator|=
-literal|"<IMG border='0' title='Selected department is controlling this room.' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='Selected department is controlling this room.' alt='true' align='absmiddle' src='images/accept.png'>"
 expr_stmt|;
 name|comp
 index|[
@@ -7181,7 +7181,7 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|"' align='absmiddle' src='images/tick.gif'>"
+literal|"' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|"&nbsp;"
 expr_stmt|;
@@ -7311,7 +7311,7 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|"' align='absmiddle' src='images/tick.gif'>"
+literal|"' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|"&nbsp;"
 expr_stmt|;

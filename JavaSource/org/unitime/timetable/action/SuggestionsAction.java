@@ -3351,7 +3351,7 @@ operator|.
 name|getTime
 argument_list|()
 operator|+
-literal|"'><img src='images/Delete16.gif' border='0'></a>&nbsp;"
+literal|"'><img src='images/action_delete.png' border='0'></a>&nbsp;"
 expr_stmt|;
 name|String
 name|line

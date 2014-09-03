@@ -319,7 +319,7 @@ name|html
 operator|.
 name|append
 argument_list|(
-literal|"<img border='0' align='top' src='images/help_icon.gif' alt='"
+literal|"<img border='0' align='top' src='images/help.png' alt='"
 operator|+
 name|pageName
 operator|.

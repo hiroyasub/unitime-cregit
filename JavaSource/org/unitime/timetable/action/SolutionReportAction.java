@@ -6732,7 +6732,7 @@ operator|.
 name|isHard
 argument_list|()
 condition|?
-literal|"<img src='images/checkmark.gif' border='0'/>"
+literal|"<img src='images/accept.png' border='0'/>"
 else|:
 literal|""
 operator|)
@@ -6826,7 +6826,7 @@ operator|.
 name|isFixed
 argument_list|()
 condition|?
-literal|"<img src='images/checkmark.gif' border='0'/>"
+literal|"<img src='images/accept.png' border='0'/>"
 else|:
 literal|""
 operator|)
@@ -6874,7 +6874,7 @@ operator|.
 name|isCommited
 argument_list|()
 condition|?
-literal|"<img src='images/checkmark.gif' border='0'/>"
+literal|"<img src='images/accept.png' border='0'/>"
 else|:
 literal|""
 operator|)
@@ -6927,7 +6927,7 @@ operator|.
 name|isImportant
 argument_list|()
 condition|?
-literal|"<img src='images/checkmark.gif' border='0'/>"
+literal|"<img src='images/accept.png' border='0'/>"
 else|:
 literal|""
 operator|)
@@ -6981,7 +6981,7 @@ operator|.
 name|isInstructor
 argument_list|()
 condition|?
-literal|"<img src='images/checkmark.gif' border='0'/>"
+literal|"<img src='images/accept.png' border='0'/>"
 else|:
 literal|""
 operator|)

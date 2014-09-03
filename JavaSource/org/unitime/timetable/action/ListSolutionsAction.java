@@ -4426,7 +4426,7 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-literal|"<IMG border='0' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)

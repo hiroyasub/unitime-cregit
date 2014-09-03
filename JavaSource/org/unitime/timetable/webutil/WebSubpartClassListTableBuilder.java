@@ -173,7 +173,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"<IMG src=\"images/Delete16.gif\" border=\"0\" alt=\"Delete Class\" title=\"Delete Class\" align=\"top\">"
+literal|"<IMG src=\"images/action_delete.png\" border=\"0\" alt=\"Delete Class\" title=\"Delete Class\" align=\"top\">"
 argument_list|)
 expr_stmt|;
 name|sb

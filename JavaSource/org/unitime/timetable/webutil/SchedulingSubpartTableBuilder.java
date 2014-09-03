@@ -1876,7 +1876,7 @@ operator|+
 operator|(
 name|hasError
 condition|?
-literal|"&nbsp;<IMG align=\"absmiddle\" src=\"images/Error16.jpg\">"
+literal|"&nbsp;<IMG align=\"absmiddle\" src=\"images/cancel.png\">"
 else|:
 literal|""
 operator|)
@@ -1905,7 +1905,7 @@ operator|(
 name|notOwned
 operator|)
 condition|?
-literal|"<img border=\"0\" src=\"images/lock.gif\">"
+literal|"<img border=\"0\" src=\"images/lock.png\">"
 else|:
 literal|""
 block|,
@@ -2835,7 +2835,7 @@ operator|.
 name|titleDeleteInstructionalType
 argument_list|()
 operator|+
-literal|"\" align=\"top\" src=\"images/Delete16.gif\" "
+literal|"\" align=\"top\" src=\"images/action_delete.png\" "
 operator|+
 literal|"onClick=\"doClick('delete', "
 operator|+

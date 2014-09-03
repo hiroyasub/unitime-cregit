@@ -858,7 +858,7 @@ literal|"<td nowrap>"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<img src='images/Delete16.gif' border='0' onclick=\"document.location='classInfo.do?delete="
+literal|"<img src='images/action_delete.png' border='0' onclick=\"document.location='classInfo.do?delete="
 operator|+
 name|current
 operator|.

@@ -97,7 +97,7 @@ function_decl|;
 annotation|@
 name|Source
 argument_list|(
-literal|"org/unitime/timetable/gwt/resources/icons/help_icon.gif"
+literal|"org/unitime/timetable/gwt/resources/icons/help.png"
 argument_list|)
 name|ImageResource
 name|help

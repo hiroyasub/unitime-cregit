@@ -4827,7 +4827,7 @@ block|,
 operator|(
 name|isUsed
 condition|?
-literal|"<IMG border='0' title='This time pattern is being used.' alt='Default' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='This time pattern is being used.' alt='Default' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)

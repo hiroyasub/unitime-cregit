@@ -749,7 +749,7 @@ expr_stmt|;
 else|else
 name|puid
 operator|=
-literal|"<center><IMG src='images/Error16.jpg' border='0' alt='"
+literal|"<center><IMG src='images/error.png' border='0' alt='"
 operator|+
 name|MSG
 operator|.
@@ -1684,7 +1684,7 @@ operator|.
 name|titleIgnoreTooFarDistances
 argument_list|()
 operator|+
-literal|"' alt='true' align='absmiddle' src='images/tick.gif'>"
+literal|"' alt='true' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|"&nbsp;"
 operator|)

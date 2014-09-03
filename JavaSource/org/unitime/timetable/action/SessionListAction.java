@@ -724,7 +724,7 @@ argument_list|(
 name|defaultSession
 argument_list|)
 condition|?
-literal|"<img src='images/tick.gif'> "
+literal|"<img src='images/accept.png'> "
 else|:
 literal|"&nbsp; "
 block|,
@@ -997,7 +997,7 @@ argument_list|(
 name|defaultSession
 argument_list|)
 condition|?
-literal|"<img src='images/tick.gif'>"
+literal|"<img src='images/accept.png'>"
 else|:
 literal|""
 block|,

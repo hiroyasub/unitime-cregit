@@ -1504,7 +1504,7 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-literal|"<IMG border='0' title='This group is default group.' alt='Default' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='This group is default group.' alt='Default' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)

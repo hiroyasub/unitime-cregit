@@ -1940,7 +1940,7 @@ operator|.
 name|isInheritInstructorPreferences
 argument_list|()
 condition|?
-literal|"<IMG border='0' title='Instructor preferences are to be inherited.' alt='Inherit Instructor Preferences' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='Instructor preferences are to be inherited.' alt='Inherit Instructor Preferences' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)
@@ -1951,7 +1951,7 @@ operator|.
 name|isAllowEvents
 argument_list|()
 condition|?
-literal|"<IMG border='0' title='This department has event management enabled.' alt='Event Management' align='absmiddle' src='images/tick.gif'>"
+literal|"<IMG border='0' title='This department has event management enabled.' alt='Event Management' align='absmiddle' src='images/accept.png'>"
 else|:
 literal|""
 operator|)

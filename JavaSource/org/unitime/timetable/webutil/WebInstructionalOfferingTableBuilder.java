@@ -5982,7 +5982,7 @@ operator|.
 name|getSchedulePrintNote
 argument_list|()
 operator|+
-literal|"' align='absmiddle' src='images/Notes.png'>"
+literal|"' align='absmiddle' src='images/note.png'>"
 argument_list|,
 name|isEditable
 argument_list|)
@@ -7010,7 +7010,7 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|+
-literal|"' align='absmiddle' src='images/Notes.png'>"
+literal|"' align='absmiddle' src='images/note.png'>"
 argument_list|,
 name|isEditable
 argument_list|)
@@ -7255,7 +7255,7 @@ operator|.
 name|getNotes
 argument_list|()
 operator|+
-literal|"' align='absmiddle' src='images/Notes.png'>"
+literal|"' align='absmiddle' src='images/note.png'>"
 argument_list|,
 name|isEditable
 argument_list|)
