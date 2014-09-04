@@ -1806,7 +1806,7 @@ operator|++
 control|)
 name|indent
 operator|+=
-literal|"\n<IMG width=\"10\" align=\"absmiddle\" src=\"images/blank.gif\">"
+literal|"\n<IMG width=\"16\" align=\"absmiddle\" src=\"images/blank.png\">"
 expr_stmt|;
 if|if
 condition|(
@@ -1819,7 +1819,7 @@ literal|0
 condition|)
 name|indent
 operator|+=
-literal|"\n<IMG align=\"absmiddle\" src=\"images/dot_line.gif\">&nbsp;"
+literal|"\n<IMG align=\"absmiddle\" src=\"images/indent.png\">&nbsp;"
 expr_stmt|;
 if|if
 condition|(
@@ -1905,7 +1905,7 @@ operator|(
 name|notOwned
 operator|)
 condition|?
-literal|"<img border=\"0\" src=\"images/lock.png\">"
+literal|"<img align=\"absmiddle\" border=\"0\" src=\"images/lock.png\">"
 else|:
 literal|""
 block|,
@@ -2659,7 +2659,7 @@ operator|.
 name|titleMoveToChildLevel
 argument_list|()
 operator|+
-literal|"\" align=\"top\" src=\"images/arrow_r.gif\" "
+literal|"\" align=\"absmiddle\" src=\"images/arrow_right.png\" "
 operator|+
 literal|"onClick=\"doClick('shiftRight', "
 operator|+
@@ -2673,7 +2673,7 @@ expr_stmt|;
 else|else
 name|html
 operator|+=
-literal|"<IMG align=\"top\" src=\"images/blank.gif\">"
+literal|"<IMG align=\"top\" src=\"images/blank.png\">"
 expr_stmt|;
 comment|// Left Arrow
 if|if
@@ -2698,7 +2698,7 @@ operator|.
 name|titleMoveToParentLevel
 argument_list|()
 operator|+
-literal|"\" align=\"top\" src=\"images/arrow_l.gif\" "
+literal|"\" align=\"absmiddle\" src=\"images/arrow_left.png\" "
 operator|+
 literal|"onClick=\"doClick('shiftLeft', "
 operator|+
@@ -2712,7 +2712,7 @@ expr_stmt|;
 else|else
 name|html
 operator|+=
-literal|"<IMG align=\"top\" src=\"images/blank.gif\">"
+literal|"<IMG align=\"top\" src=\"images/blank.png\">"
 expr_stmt|;
 comment|// Up Arrow
 if|if
@@ -2746,7 +2746,7 @@ operator|.
 name|altMoveUp
 argument_list|()
 operator|+
-literal|"\" align=\"absmiddle\" src=\"images/arrow_u.gif\" "
+literal|"\" align=\"absmiddle\" src=\"images/arrow_up.png\" "
 operator|+
 literal|"onClick=\"doClick('shiftUp', "
 operator|+
@@ -2760,7 +2760,7 @@ expr_stmt|;
 else|else
 name|html
 operator|+=
-literal|"<IMG align=\"absmiddle\" src=\"images/blank.gif\">"
+literal|"<IMG align=\"absmiddle\" src=\"images/blank.png\">"
 expr_stmt|;
 comment|// Down Arrow
 if|if
@@ -2802,7 +2802,7 @@ operator|.
 name|altMoveDown
 argument_list|()
 operator|+
-literal|"\" align=\"absmiddle\" src=\"images/arrow_d.gif\" "
+literal|"\" align=\"absmiddle\" src=\"images/arrow_down.png\" "
 operator|+
 literal|"onClick=\"doClick('shiftDown', "
 operator|+
@@ -2816,7 +2816,7 @@ expr_stmt|;
 else|else
 name|html
 operator|+=
-literal|"<IMG align=\"absmiddle\" src=\"images/blank.gif\">"
+literal|"<IMG align=\"absmiddle\" src=\"images/blank.png\">"
 expr_stmt|;
 comment|// Delete
 name|html
@@ -2835,7 +2835,7 @@ operator|.
 name|titleDeleteInstructionalType
 argument_list|()
 operator|+
-literal|"\" align=\"top\" src=\"images/action_delete.png\" "
+literal|"\" align=\"absmiddle\" src=\"images/action_delete.png\" "
 operator|+
 literal|"onClick=\"doClick('delete', "
 operator|+

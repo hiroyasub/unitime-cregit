@@ -2221,7 +2221,7 @@ condition|)
 block|{
 name|ops
 operator|+=
-literal|"<img src='images/arrow_u.gif' border='0' align='absmiddle' title='Move Up' "
+literal|"<img src='images/arrow_up.png' border='0' align='absmiddle' title='Move Up' "
 operator|+
 literal|"onclick=\"deptStatusTypeEditForm.op2.value='Move Up';deptStatusTypeEditForm.uniqueId.value='"
 operator|+
@@ -2236,7 +2236,7 @@ block|}
 else|else
 name|ops
 operator|+=
-literal|"<img src='images/blank.gif' border='0' align='absmiddle'>"
+literal|"<img src='images/blank.png' border='0' align='absmiddle'>"
 expr_stmt|;
 if|if
 condition|(
@@ -2248,7 +2248,7 @@ condition|)
 block|{
 name|ops
 operator|+=
-literal|"<img src='images/arrow_d.gif' border='0' align='absmiddle' title='Move Down' "
+literal|"<img src='images/arrow_down.png' border='0' align='absmiddle' title='Move Down' "
 operator|+
 literal|"onclick=\"deptStatusTypeEditForm.op2.value='Move Down';deptStatusTypeEditForm.uniqueId.value='"
 operator|+
@@ -2263,7 +2263,7 @@ block|}
 else|else
 name|ops
 operator|+=
-literal|"<img src='images/blank.gif' border='0' align='absmiddle'>"
+literal|"<img src='images/blank.png' border='0' align='absmiddle'>"
 expr_stmt|;
 name|webTable
 operator|.
