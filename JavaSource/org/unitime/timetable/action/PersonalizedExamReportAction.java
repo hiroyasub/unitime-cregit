@@ -4218,13 +4218,13 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"calendar?q="
+literal|"export?q="
 operator|+
 name|QueryEncoderBackend
 operator|.
 name|encode
 argument_list|(
-literal|"uid="
+literal|"output=events.ics&type=person&ext="
 operator|+
 name|externalId
 operator|+

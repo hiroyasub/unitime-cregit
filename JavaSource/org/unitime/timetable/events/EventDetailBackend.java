@@ -775,6 +775,20 @@ name|Constants
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|NameFormat
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1049,6 +1063,11 @@ expr_stmt|;
 name|String
 name|nameFormat
 init|=
+operator|(
+name|context
+operator|!=
+literal|null
+condition|?
 name|context
 operator|.
 name|getUser
@@ -1060,6 +1079,14 @@ name|UserProperty
 operator|.
 name|NameFormat
 argument_list|)
+else|:
+name|NameFormat
+operator|.
+name|LAST_FIRST_MIDDLE
+operator|.
+name|reference
+argument_list|()
+operator|)
 decl_stmt|;
 if|if
 condition|(
