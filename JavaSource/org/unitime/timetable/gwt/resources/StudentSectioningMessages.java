@@ -2285,7 +2285,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Your are not authenticated, please log in first."
+literal|"You are not authenticated, please log in first."
 argument_list|)
 name|String
 name|exceptionEnrollNotAuthenticated
@@ -2294,7 +2294,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Your are not registered as a student in {0}."
+literal|"You are not registered as a student in {0}."
 argument_list|)
 name|String
 name|exceptionEnrollNotStudent
