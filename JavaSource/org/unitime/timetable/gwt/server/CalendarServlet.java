@@ -1298,6 +1298,7 @@ argument_list|,
 literal|"Academic session does not exist."
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 name|String
 name|classIds
