@@ -2786,15 +2786,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|h
 operator|.
 name|getAction
 argument_list|()
 operator|.
-name|getResult
+name|hasResult
 argument_list|()
-operator|==
-literal|null
 condition|)
 block|{
 if|if
