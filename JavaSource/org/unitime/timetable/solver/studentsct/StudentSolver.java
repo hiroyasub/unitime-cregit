@@ -6382,6 +6382,16 @@ name|getAction
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|h
+operator|.
+name|getAction
+argument_list|()
+operator|.
+name|getResult
+argument_list|()
+operator|==
+literal|null
 condition|)
 block|{
 if|if
