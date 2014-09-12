@@ -271,21 +271,21 @@ specifier|static
 name|String
 name|sUrl
 init|=
-literal|"https://esa-oas-prod-wl.itap.purdue.edu/prod/bzwsrch.p_catalog_detail?term=:year:term&subject=:subject&cnbr=:courseNbr&enhanced=Y"
+literal|"https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=:year:term&subject=:subject&cnbr=:courseNbr&enhanced=Y"
 decl_stmt|;
 specifier|public
 specifier|static
 name|String
 name|sDummyUrl
 init|=
-literal|"https://esa-oas-prod-wl.itap.purdue.edu/prod/bzwsrch.p_catalog_detail?term=201020&subject=AAE&cnbr=20300&enhanced=Y"
+literal|"https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=201020&subject=AAE&cnbr=20300&enhanced=Y"
 decl_stmt|;
 specifier|public
 specifier|static
 name|String
 name|sContentRE
 init|=
-literal|"(<table [ ]*class=\"[a-z]*\" summary=\"This table lists the course detail for the selected term.\" .*)<table [ ]*class=\"[a-z]*\" summary=\"This is for formatting of the bottom links.\""
+literal|"(<table [ ]*class=\"[a-z]*\" summary=\"This table lists the course detail for the selected term.\" .*)<table [ ]*class=\"[a-z]*\" summary=\"This is table displays line separator at end of the page.\""
 decl_stmt|;
 specifier|public
 specifier|static
