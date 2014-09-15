@@ -3618,6 +3618,22 @@ range|:
 name|iMessages
 control|)
 block|{
+for|for
+control|(
+name|String
+name|fm
+range|:
+name|f
+operator|.
+name|getMessage
+argument_list|()
+operator|.
+name|split
+argument_list|(
+literal|"\n"
+argument_list|)
+control|)
+block|{
 name|String
 name|message
 init|=
@@ -3668,10 +3684,7 @@ argument_list|)
 operator|+
 literal|": "
 operator|+
-name|f
-operator|.
-name|getMessage
-argument_list|()
+name|fm
 decl_stmt|;
 if|if
 condition|(
@@ -3689,6 +3702,7 @@ argument_list|(
 name|message
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return
