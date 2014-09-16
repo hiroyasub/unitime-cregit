@@ -3695,6 +3695,18 @@ name|String
 name|queryLeaveChanges
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Total Credit: {0,number,0.#}"
+argument_list|)
+name|String
+name|totalCredit
+parameter_list|(
+name|float
+name|total
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
