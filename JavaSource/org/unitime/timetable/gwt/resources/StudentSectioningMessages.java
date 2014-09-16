@@ -3671,7 +3671,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are not registered for any classes yet. Please click the Enroll button to make the registration."
+literal|"You are not registered for any classes yet. Please click the Enroll button in order to complete your registration.."
 argument_list|)
 name|String
 name|warnScheduleEmpty
