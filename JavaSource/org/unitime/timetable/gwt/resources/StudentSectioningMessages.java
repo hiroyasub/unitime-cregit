@@ -3668,6 +3668,33 @@ name|String
 name|propStudent
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are not registered for any classes yet. Please click the Enroll button to make the registration."
+argument_list|)
+name|String
+name|warnScheduleEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You have made some changes in your schedule. Please click the Enroll button to update your registration."
+argument_list|)
+name|String
+name|warnScheduleChanged
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are unsaved changes in your schedule. Do you really want to discard these changes without updating your registration?"
+argument_list|)
+name|String
+name|queryLeaveChanges
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

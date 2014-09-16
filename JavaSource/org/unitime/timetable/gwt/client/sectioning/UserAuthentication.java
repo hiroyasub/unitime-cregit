@@ -2888,6 +2888,15 @@ name|sAuthenticateCallback
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|boolean
+name|isLoggedIn
+parameter_list|()
+block|{
+return|return
+name|iLoggedIn
+return|;
+block|}
 specifier|private
 specifier|native
 name|JavaScriptObject
