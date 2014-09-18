@@ -814,11 +814,18 @@ parameter_list|()
 function_decl|;
 comment|/** Reservation priority (e.g., individual reservations first) */
 specifier|public
-specifier|abstract
 name|int
 name|getPriority
 parameter_list|()
-function_decl|;
+block|{
+return|return
+name|getType
+argument_list|()
+operator|.
+name|getPriority
+argument_list|()
+return|;
+block|}
 comment|/**      * Returns true if the student is applicable for the reservation      * @param student a student       * @return true if student can use the reservation to get into the course / configuration / section      */
 specifier|public
 specifier|abstract

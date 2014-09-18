@@ -163,18 +163,6 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/**      * Dummy reservation has low priority      */
-annotation|@
-name|Override
-specifier|public
-name|int
-name|getPriority
-parameter_list|()
-block|{
-return|return
-literal|4
-return|;
-block|}
 comment|/**      * Dummy reservation is not applicable to any students      */
 annotation|@
 name|Override

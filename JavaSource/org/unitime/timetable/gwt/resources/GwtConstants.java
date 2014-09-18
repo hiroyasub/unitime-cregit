@@ -717,6 +717,38 @@ name|String
 name|dateEntryFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Override: Allow Time Conflict"
+block|,
+literal|"Override: Can Assign Over Limit"
+block|,
+literal|"Override: Time Conflict& Over Limit"
+block|}
+argument_list|)
+name|String
+index|[]
+name|reservationOverrideTypeName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Time Conflict"
+block|,
+literal|"Over Limit"
+block|,
+literal|"Time& Limit"
+block|}
+argument_list|)
+name|String
+index|[]
+name|reservationOverrideTypeAbbv
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

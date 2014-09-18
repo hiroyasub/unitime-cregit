@@ -9155,6 +9155,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Override"
+argument_list|)
+name|String
+name|reservationOverrideAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Unknown"
 argument_list|)
 name|String

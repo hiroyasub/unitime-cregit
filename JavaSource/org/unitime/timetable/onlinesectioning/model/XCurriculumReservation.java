@@ -441,18 +441,6 @@ return|return
 name|iLimit
 return|;
 block|}
-comment|/**      * Reservation priority (lower than individual and group reservations)      */
-annotation|@
-name|Override
-specifier|public
-name|int
-name|getPriority
-parameter_list|()
-block|{
-return|return
-literal|3
-return|;
-block|}
 comment|/**      * Academic area      */
 specifier|public
 name|String

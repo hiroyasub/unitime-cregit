@@ -141,6 +141,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|reservation
+operator|.
+name|ReservationOverride
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|infinispan
 operator|.
 name|commons
@@ -343,6 +357,18 @@ operator|)
 operator|.
 name|getType
 argument_list|()
+expr_stmt|;
+if|else if
+condition|(
+name|reservation
+operator|instanceof
+name|ReservationOverride
+condition|)
+name|iType
+operator|=
+name|XReservationType
+operator|.
+name|Override
 expr_stmt|;
 if|else if
 condition|(

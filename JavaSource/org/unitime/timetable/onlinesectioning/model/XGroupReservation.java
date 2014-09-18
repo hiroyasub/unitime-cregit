@@ -213,18 +213,6 @@ return|return
 name|iGroup
 return|;
 block|}
-comment|/**      * Group reservations are of the second highest priority      */
-annotation|@
-name|Override
-specifier|public
-name|int
-name|getPriority
-parameter_list|()
-block|{
-return|return
-literal|1
-return|;
-block|}
 comment|/**      * Group reservations can not be assigned over the limit.      */
 annotation|@
 name|Override
