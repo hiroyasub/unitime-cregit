@@ -762,6 +762,15 @@ name|getStudentClassEnrollments
 argument_list|()
 argument_list|,
 literal|null
+argument_list|,
+name|context
+operator|.
+name|hasPermission
+argument_list|(
+name|Right
+operator|.
+name|EnrollmentsShowExternalId
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|Formats

@@ -534,6 +534,12 @@ specifier|private
 name|boolean
 name|iConsentToDoCourse
 decl_stmt|;
+specifier|private
+name|boolean
+name|iCanShowExtIds
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|FindEnrollmentAction
 name|withParams
@@ -549,6 +555,9 @@ name|classId
 parameter_list|,
 name|boolean
 name|isConsentToDoCourse
+parameter_list|,
+name|boolean
+name|canShowExtIds
 parameter_list|)
 block|{
 name|iQuery
@@ -570,6 +579,10 @@ expr_stmt|;
 name|iConsentToDoCourse
 operator|=
 name|isConsentToDoCourse
+expr_stmt|;
+name|iCanShowExtIds
+operator|=
+name|canShowExtIds
 expr_stmt|;
 return|return
 name|this
@@ -1006,6 +1019,13 @@ name|student
 operator|.
 name|getExternalId
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|st
+operator|.
+name|setCanShowExternalId
+argument_list|(
+name|iCanShowExtIds
 argument_list|)
 expr_stmt|;
 name|st

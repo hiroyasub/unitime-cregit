@@ -1855,6 +1855,8 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EnrollmentsShowExternalId
+block|,
 comment|/** Individual page rights: Events */
 name|Events
 argument_list|(
