@@ -810,13 +810,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-if|if
-condition|(
-name|iExternalTermProvider
-operator|==
-literal|null
-condition|)
-block|{
 name|String
 name|clazz
 init|=
@@ -863,7 +856,6 @@ operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
