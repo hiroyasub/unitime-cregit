@@ -497,6 +497,22 @@ name|onlinesectioning
 operator|.
 name|custom
 operator|.
+name|ExternalTermProvider
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|custom
+operator|.
 name|SectionUrlProvider
 import|;
 end_import
@@ -3989,6 +4005,35 @@ argument_list|)
 expr|@
 name|Implements
 argument_list|(
+name|ExternalTermProvider
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Customization: external term provider (interface ExternalTermProvider converting academic session info into an external term string etc.)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|3.5
+argument_list|)
+name|CustomizationExternalTerm
+argument_list|(
+literal|"unitime.custom.ExternalTermProvider"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Class
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Implements
+argument_list|(
 name|ExternalLinkLookup
 operator|.
 name|class
@@ -6512,6 +6557,111 @@ argument_list|)
 name|SessionRestoreInterface
 argument_list|(
 literal|"unitime.session_restore.class"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=:xterm&subject=:subject&cnbr=:courseNbr&enhanced=Y"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"DefaultCourseDetailsProvider: course url\n"
+operator|+
+literal|"Use:\n"
+operator|+
+literal|" - :campus, :term, :year for academic session identification or\n"
+operator|+
+literal|" - :xcampus, :xterm when ExternalTermProvider is configured,\n"
+operator|+
+literal|" - :subject for subject area abbreviation and :courseNbr for course number or\n"
+operator|+
+literal|" - :xsubject, :xcourseNbr when ExternalTermProvider is configured.\n"
+operator|+
+literal|"Example: https://www.university.edu/catalog?term=:term:year&amp;subject=:subject&cnbr=:courseNbr"
+argument_list|)
+name|CustomizationDefaultCourseUrl
+argument_list|(
+literal|"unitime.custom.default.course_url"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"DefaultCourseDetailsProvider: downloads course details (unitime.custom.default.course_url must be set)"
+argument_list|)
+name|CustomizationDefaultCourseDetailsDownload
+argument_list|(
+literal|"unitime.custom.default.course_download"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"(?idm)<body[^>]*>(.*)</body>"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"DefaultCourseDetailsProvider: if course details are downloaded (unitime.custom.default.course_download is true), "
+operator|+
+literal|"this property contains regular expression that is used to get the content of the downloaded page"
+argument_list|)
+name|CustomizationDefaultCourseDetailsContent
+argument_list|(
+literal|"unitime.custom.default.course_regexp"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"DefaultCourseDetailsProvider: if course details are downloaded (unitime.custom.default.course_download is true), "
+operator|+
+literal|"this property contains a list of regular expressions that are used to reformat the content. This property "
+operator|+
+literal|"can contain multiple lines with the following sequence:"
+operator|+
+literal|"\n  1st regural expression,\n  1st replacement,\n  2nd regular expression,\n  2nd replacement,\n  ...\n"
+operator|+
+literal|"Example:\n  (?i)<a href=\"[^>]*\">\n<b>\n  (?i)</a>\n</b>"
+argument_list|)
+name|CustomizationDefaultCourseDetailsModifiers
+argument_list|(
+literal|"unitime.custom.default.course_modifiers"
 argument_list|)
 operator|,
 expr_stmt|;
