@@ -1138,6 +1138,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Start Over"
+argument_list|)
+name|String
+name|buttonStartOver
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>L</u>ist of Classes"
 argument_list|)
 name|String
