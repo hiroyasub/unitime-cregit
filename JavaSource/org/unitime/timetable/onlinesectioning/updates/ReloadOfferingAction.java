@@ -874,15 +874,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct s.uniqueId from Student s "
+literal|"select distinct cr.courseDemand.student.uniqueId from CourseRequest cr "
 operator|+
-literal|"left outer join s.classEnrollments e "
-operator|+
-literal|"left outer join s.courseDemands d left outer join d.courseRequests r left outer join r.courseOffering co "
-operator|+
-literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId or "
-operator|+
-literal|"co.instructionalOffering.uniqueId = :offeringId"
+literal|"where cr.courseOffering.instructionalOffering.uniqueId = :offeringId"
 argument_list|)
 operator|.
 name|setLong
@@ -895,6 +889,34 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
+name|studentIds
+operator|.
+name|addAll
+argument_list|(
+name|helper
+operator|.
+name|getHibSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select distinct e.student.uniqueId from StudentClassEnrollment e "
+operator|+
+literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId and e.courseRequest is null"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"offeringId"
+argument_list|,
+name|offeringId
+argument_list|)
+operator|.
+name|list
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|/* 			List<Long> studentIds = (List<Long>)helper.getHibSession().createQuery( 					"select distinct s.uniqueId from Student s " + 					"left outer join s.classEnrollments e " + 					"left outer join s.courseDemands d left outer join d.courseRequests r left outer join r.courseOffering co " + 					"where e.courseOffering.instructionalOffering.uniqueId = :offeringId or " + 					"co.instructionalOffering.uniqueId = :offeringId").setLong("offeringId", offeringId).list(); 			*/
 name|Lock
 name|lock
 init|=
@@ -1037,6 +1059,7 @@ name|Student
 argument_list|>
 argument_list|()
 decl_stmt|;
+comment|/* 		for (org.unitime.timetable.model.Student student : (List<org.unitime.timetable.model.Student>)helper.getHibSession().createQuery(                 "select s from Student s " +                 "left join fetch s.courseDemands as cd " +                 "left join fetch cd.courseRequests as cr " +                 "left join fetch cr.courseOffering as co " +                 "left join fetch cr.classWaitLists as cwl " +                  "left join fetch s.classEnrollments as e " +                 "left join fetch s.academicAreaClassifications as a " +                 "left join fetch s.posMajors as mj " +                 "left join fetch s.waitlists as w " +                 "left join fetch s.groups as g " +                 "where s.uniqueId in (select xe.student.uniqueId from StudentClassEnrollment xe where xe.courseOffering.instructionalOffering.uniqueId = :offeringId) " +                 "or s.uniqueId in (select xr.courseDemand.student.uniqueId from CourseRequest xr where xr.courseOffering.instructionalOffering.uniqueId = :offeringId)"                 ).setLong("offeringId", offeringId).list()) { 			newStudents.put(student.getUniqueId(), student); 		} 		*/
 for|for
 control|(
 name|org
@@ -1071,7 +1094,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select s from Student s "
+literal|"select distinct s from Student s "
 operator|+
 literal|"left join fetch s.courseDemands as cd "
 operator|+
@@ -1091,9 +1114,88 @@ literal|"left join fetch s.waitlists as w "
 operator|+
 literal|"left join fetch s.groups as g "
 operator|+
-literal|"where s.uniqueId in (select xe.student.uniqueId from StudentClassEnrollment xe where xe.courseOffering.instructionalOffering.uniqueId = :offeringId) "
+literal|"where cr.courseOffering.instructionalOffering.uniqueId = :offeringId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"offeringId"
+argument_list|,
+name|offeringId
+argument_list|)
+operator|.
+name|list
+argument_list|()
+control|)
+block|{
+name|newStudents
+operator|.
+name|put
+argument_list|(
+name|student
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
+name|student
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+name|student
+range|:
+operator|(
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|Student
+argument_list|>
+operator|)
+name|helper
+operator|.
+name|getHibSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select distinct s from Student s "
 operator|+
-literal|"or s.uniqueId in (select xr.courseDemand.student.uniqueId from CourseRequest xr where xr.courseOffering.instructionalOffering.uniqueId = :offeringId)"
+literal|"left join fetch s.courseDemands as cd "
+operator|+
+literal|"left join fetch cd.courseRequests as cr "
+operator|+
+literal|"left join fetch cr.courseOffering as co "
+operator|+
+literal|"left join fetch cr.classWaitLists as cwl "
+operator|+
+literal|"left join fetch s.classEnrollments as e "
+operator|+
+literal|"left join fetch s.academicAreaClassifications as a "
+operator|+
+literal|"left join fetch s.posMajors as mj "
+operator|+
+literal|"left join fetch s.waitlists as w "
+operator|+
+literal|"left join fetch s.groups as g "
+operator|+
+literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId and e.courseRequest is null"
 argument_list|)
 operator|.
 name|setLong
