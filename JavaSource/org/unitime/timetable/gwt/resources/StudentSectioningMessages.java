@@ -3725,6 +3725,42 @@ name|float
 name|total
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request Update"
+argument_list|)
+name|String
+name|requestStudentUpdate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requesting student update..."
+argument_list|)
+name|String
+name|requestingStudentUpdate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student update request not allowed."
+argument_list|)
+name|String
+name|exceptionRequestStudentUpdateNotAllowed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student update successfully requested. Please wait a while for the synchronization to take place."
+argument_list|)
+name|String
+name|requestStudentUpdateSuccess
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

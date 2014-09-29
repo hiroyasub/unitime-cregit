@@ -1841,6 +1841,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSchedulingRequestStudentUpdate
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingEnrollments
 argument_list|(
 name|InstructionalOffering

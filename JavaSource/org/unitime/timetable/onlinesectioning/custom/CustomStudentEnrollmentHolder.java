@@ -253,6 +253,25 @@ name|isAllowWaitListing
 argument_list|()
 return|;
 block|}
+specifier|public
+specifier|synchronized
+specifier|static
+name|boolean
+name|isCanRequestUpdates
+parameter_list|()
+block|{
+return|return
+operator|!
+name|hasProvider
+argument_list|()
+operator|||
+name|getProvider
+argument_list|()
+operator|.
+name|isCanRequestUpdates
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

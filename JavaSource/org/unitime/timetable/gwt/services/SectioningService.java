@@ -868,6 +868,20 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|Boolean
+name|requestStudentUpdate
+parameter_list|(
+name|List
+argument_list|<
+name|Long
+argument_list|>
+name|studentIds
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 
