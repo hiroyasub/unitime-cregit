@@ -1146,6 +1146,12 @@ name|XCourseId
 argument_list|>
 argument_list|(
 name|limit
+argument_list|,
+operator|new
+name|CourseComparator
+argument_list|(
+name|query
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|String
@@ -4200,6 +4206,12 @@ name|XCourseId
 argument_list|>
 argument_list|(
 name|iLimit
+argument_list|,
+operator|new
+name|CourseComparator
+argument_list|(
+name|iQuery
+argument_list|)
 argument_list|)
 decl_stmt|;
 for|for
