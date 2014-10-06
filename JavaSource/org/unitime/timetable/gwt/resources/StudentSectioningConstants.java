@@ -511,6 +511,15 @@ name|boolean
 name|allowEmptySchedule
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|true
+argument_list|)
+name|boolean
+name|allowUserLogin
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -1298,6 +1298,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Click here to lookup a student."
+argument_list|)
+name|String
+name|userHintLookup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You can close the window now."
 argument_list|)
 name|String

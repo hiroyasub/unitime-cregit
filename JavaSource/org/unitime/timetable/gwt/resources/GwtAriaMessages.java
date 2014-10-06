@@ -227,6 +227,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Logged in as {0}, click here to lookup a student."
+argument_list|)
+name|String
+name|userAuthenticatedLookup
+parameter_list|(
+name|String
+name|user
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No academic session selected, click here to change the session."
 argument_list|)
 name|String
