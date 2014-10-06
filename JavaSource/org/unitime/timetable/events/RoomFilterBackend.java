@@ -483,6 +483,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|TimetableManagerDAO
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|security
 operator|.
 name|rights
@@ -592,7 +608,7 @@ argument_list|)
 decl_stmt|;
 name|Set
 argument_list|<
-name|String
+name|Long
 argument_list|>
 name|userDepts
 init|=
@@ -600,10 +616,12 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-name|context
+name|request
 operator|.
-name|isAuthenticated
-argument_list|()
+name|hasOption
+argument_list|(
+literal|"user"
+argument_list|)
 condition|)
 block|{
 name|userDepts
@@ -611,32 +629,52 @@ operator|=
 operator|new
 name|HashSet
 argument_list|<
-name|String
+name|Long
 argument_list|>
-argument_list|()
-expr_stmt|;
-for|for
-control|(
-name|Department
-name|d
-range|:
-name|Department
-operator|.
-name|getUserDepartments
 argument_list|(
-name|context
+name|TimetableManagerDAO
 operator|.
-name|getUser
+name|getInstance
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select d.uniqueId from TimetableManager m inner join m.departments d where "
+operator|+
+literal|"m.externalUniqueId = :user and d.session.uniqueId = :sessionId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|request
+operator|.
+name|getSessionId
 argument_list|()
 argument_list|)
-control|)
-name|userDepts
 operator|.
-name|add
+name|setString
 argument_list|(
-name|d
+literal|"user"
+argument_list|,
+name|request
 operator|.
-name|getDeptCode
+name|getOption
+argument_list|(
+literal|"user"
+argument_list|)
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
+name|list
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1691,6 +1729,29 @@ operator|.
 name|incCount
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|userDepts
+operator|!=
+literal|null
+operator|&&
+name|userDepts
+operator|.
+name|contains
+argument_list|(
+name|location
+operator|.
+name|getEventDepartment
+argument_list|()
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+condition|)
+name|isManaged
+operator|=
+literal|true
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -1845,7 +1906,7 @@ operator|.
 name|getDepartment
 argument_list|()
 operator|.
-name|getDeptCode
+name|getUniqueId
 argument_list|()
 argument_list|)
 condition|)
@@ -2922,64 +2983,10 @@ name|Location
 argument_list|>
 name|locations
 init|=
-operator|(
-name|department
-operator|!=
 literal|null
-operator|&&
-name|department
-operator|.
-name|contains
-argument_list|(
-literal|"Event"
-argument_list|)
-condition|?
-operator|(
-name|List
-argument_list|<
-name|Location
-argument_list|>
-operator|)
-name|hibSession
-operator|.
-name|createQuery
-argument_list|(
-literal|"select distinct l from"
-operator|+
-literal|" Location l "
-operator|+
-literal|" left outer join l.roomType t "
-operator|+
-literal|" left outer join l.roomGroups g "
-operator|+
-literal|" left outer join l.features f "
-operator|+
-literal|" left outer join l.examTypes x "
-operator|+
-literal|" ,RoomTypeOption o"
-operator|+
-literal|" where"
-operator|+
-literal|" l.session.uniqueId = :sessionId and"
-operator|+
-literal|" l.eventDepartment.allowEvents = true and ((l.eventStatus is null and o.status != 0 and o.roomType = l.roomType and o.department = l.eventDepartment) or l.eventStatus != 0)"
-argument_list|)
-operator|.
-name|setLong
-argument_list|(
-literal|"sessionId"
-argument_list|,
-name|sessionId
-argument_list|)
-operator|.
-name|setCacheable
-argument_list|(
-literal|true
-argument_list|)
-operator|.
-name|list
-argument_list|()
-else|:
+decl_stmt|;
+if|if
+condition|(
 name|department
 operator|!=
 literal|null
@@ -3000,7 +3007,10 @@ name|user
 operator|.
 name|isEmpty
 argument_list|()
-condition|?
+condition|)
+block|{
+name|locations
+operator|=
 operator|(
 name|List
 argument_list|<
@@ -3011,21 +3021,67 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct l from"
+literal|"select distinct l from Location l"
 operator|+
-literal|" Location l inner join l.roomDepts rd"
+operator|(
+name|eventRooms
+condition|?
+literal|" inner join l.eventDepartment.timetableManagers m"
+else|:
+literal|" inner join l.roomDepts rd inner join rd.department.timetableManagers m"
+operator|)
 operator|+
-literal|" left outer join l.roomType t "
+operator|(
+name|group
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|group
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|" left join fetch l.roomGroups g"
+else|:
+literal|""
+operator|)
 operator|+
-literal|" left outer join l.roomGroups g "
+operator|(
+name|feature
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|feature
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|" left join fetch l.features f"
+else|:
+literal|""
+operator|)
 operator|+
-literal|" left outer join l.features f "
-operator|+
-literal|" left outer join l.examTypes x "
-operator|+
-literal|" inner join rd.department.timetableManagers m"
-operator|+
-literal|" left outer join m.managerRoles mr "
+operator|(
+name|department
+operator|.
+name|contains
+argument_list|(
+literal|"Final"
+argument_list|)
+operator|||
+name|department
+operator|.
+name|contains
+argument_list|(
+literal|"Midterm"
+argument_list|)
+condition|?
+literal|" left join fetch l.examTypes x"
+else|:
+literal|""
+operator|)
 operator|+
 operator|(
 name|eventRooms
@@ -3035,9 +3091,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|" where"
-operator|+
-literal|" l.session.uniqueId = :sessionId and m.externalUniqueId = :user"
+literal|" where l.session.uniqueId = :sessionId and m.externalUniqueId = :user"
 operator|+
 operator|(
 name|eventRooms
@@ -3075,7 +3129,12 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
-else|:
+expr_stmt|;
+block|}
+else|else
+block|{
+name|locations
+operator|=
 operator|(
 name|List
 argument_list|<
@@ -3086,21 +3145,73 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct l from"
+literal|"select distinct l from Location l"
 operator|+
-literal|" Location l left outer join l.roomDepts rd"
+operator|(
+name|department
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|department
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+operator|(
+name|department
+operator|.
+name|contains
+argument_list|(
+literal|"Final"
+argument_list|)
+operator|||
+name|department
+operator|.
+name|contains
+argument_list|(
+literal|"Midterm"
+argument_list|)
+condition|?
+literal|" left join fetch l.examTypes x"
+else|:
+literal|" left join fetch l.roomDepts rd"
+operator|)
+else|:
+literal|""
+operator|)
 operator|+
-literal|" left outer join l.roomType t "
+operator|(
+name|group
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|group
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|" left join fetch l.roomGroups g"
+else|:
+literal|""
+operator|)
 operator|+
-literal|" left outer join l.roomGroups g "
-operator|+
-literal|" left outer join l.features f "
-operator|+
-literal|" left outer join l.examTypes x "
-operator|+
-literal|" left outer join rd.department.timetableManagers m"
-operator|+
-literal|" left outer join m.managerRoles mr "
+operator|(
+name|feature
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|feature
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|" left join fetch l.features f"
+else|:
+literal|""
+operator|)
 operator|+
 operator|(
 name|eventRooms
@@ -3110,9 +3221,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|" where"
-operator|+
-literal|" l.session.uniqueId = :sessionId"
+literal|" where l.session.uniqueId = :sessionId"
 operator|+
 operator|(
 name|eventRooms
@@ -3137,8 +3246,8 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
-operator|)
-decl_stmt|;
+expr_stmt|;
+block|}
 name|Set
 argument_list|<
 name|String
@@ -3442,6 +3551,16 @@ condition|)
 block|{
 if|if
 condition|(
+name|f
+operator|.
+name|equals
+argument_list|(
+name|rf
+operator|.
+name|getLabel
+argument_list|()
+argument_list|)
+operator|&&
 name|groupFeaturedept
 operator|.
 name|contains
@@ -3457,16 +3576,6 @@ name|getDepartment
 argument_list|()
 operator|.
 name|getDeptCode
-argument_list|()
-argument_list|)
-operator|&&
-name|f
-operator|.
-name|equals
-argument_list|(
-name|rf
-operator|.
-name|getLabel
 argument_list|()
 argument_list|)
 condition|)
@@ -3556,19 +3665,6 @@ name|groupFeaturedept
 operator|.
 name|isEmpty
 argument_list|()
-operator|&&
-name|groupFeaturedept
-operator|.
-name|contains
-argument_list|(
-name|rg
-operator|.
-name|getDepartment
-argument_list|()
-operator|.
-name|getDeptCode
-argument_list|()
-argument_list|)
 condition|)
 block|{
 if|if
@@ -3580,6 +3676,19 @@ argument_list|(
 name|rg
 operator|.
 name|getName
+argument_list|()
+argument_list|)
+operator|&&
+name|groupFeaturedept
+operator|.
+name|contains
+argument_list|(
+name|rg
+operator|.
+name|getDepartment
+argument_list|()
+operator|.
+name|getDeptCode
 argument_list|()
 argument_list|)
 condition|)
@@ -3654,14 +3763,6 @@ continue|continue;
 block|}
 if|else if
 condition|(
-operator|!
-name|department
-operator|.
-name|contains
-argument_list|(
-literal|"Event"
-argument_list|)
-operator|&&
 operator|!
 name|department
 operator|.
@@ -4423,14 +4524,6 @@ continue|continue;
 block|}
 if|else if
 condition|(
-operator|!
-name|department
-operator|.
-name|contains
-argument_list|(
-literal|"Event"
-argument_list|)
-operator|&&
 operator|!
 name|department
 operator|.
