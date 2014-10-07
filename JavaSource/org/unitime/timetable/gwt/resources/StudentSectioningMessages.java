@@ -2135,6 +2135,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Unable to compute alternatives ({0})."
+argument_list|)
+name|String
+name|exceptionSuggestionsFailed
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Too many bad attempts, login disabled."
 argument_list|)
 name|String
