@@ -1350,6 +1350,16 @@ name|getAssignments
 argument_list|()
 control|)
 block|{
+comment|// Skip incomplete assignments (that have no time assigned yet)
+if|if
+condition|(
+operator|!
+name|assignment
+operator|.
+name|hasTime
+argument_list|()
+condition|)
+continue|continue;
 comment|// Check for room conflicts
 if|if
 condition|(
@@ -3083,6 +3093,27 @@ name|getTime
 argument_list|()
 operator|)
 decl_stmt|;
+name|Collection
+argument_list|<
+name|ClassRoomInfo
+argument_list|>
+name|rooms
+init|=
+operator|(
+name|getSelectedAssignment
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|getSelectedAssignment
+argument_list|()
+operator|.
+name|getRooms
+argument_list|()
+operator|)
+decl_stmt|;
 for|for
 control|(
 name|ClassAssignment
@@ -3142,7 +3173,7 @@ operator|.
 name|getDate
 argument_list|()
 argument_list|,
-literal|null
+name|rooms
 argument_list|,
 name|iChange
 operator|.
