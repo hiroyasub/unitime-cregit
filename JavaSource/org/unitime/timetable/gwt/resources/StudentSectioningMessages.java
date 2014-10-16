@@ -1066,7 +1066,7 @@ comment|/* Student Sectioning widget messages 	 */
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>R</u>equests"
+literal|"Add/Drop<u>C</u>ourses"
 argument_list|)
 name|String
 name|buttonRequests
@@ -1075,7 +1075,16 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Re&#8209;schedule"
+literal|"Go back to the Course Requests."
+argument_list|)
+name|String
+name|hintRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Rearrange Schedule"
 argument_list|)
 name|String
 name|buttonReset
@@ -1084,7 +1093,16 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>S</u>chedule"
+literal|"Compute a brand new schedule, ignoring current class selection and/or registration."
+argument_list|)
+name|String
+name|hintReset
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>B</u>uild Schedule"
 argument_list|)
 name|String
 name|buttonSchedule
@@ -1093,10 +1111,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>E</u>nroll"
+literal|"Compute class schedule using the entered course requests."
+argument_list|)
+name|String
+name|hintSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>S</u>ubmit Schedule"
 argument_list|)
 name|String
 name|buttonEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Register for the above schedule."
+argument_list|)
+name|String
+name|hintEnroll
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1111,6 +1147,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Print the currently selected schedule."
+argument_list|)
+name|String
+name|hintPrint
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"E<u>x</u>port"
 argument_list|)
 name|String
@@ -1120,10 +1165,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>S</u>ave"
+literal|"Export the currently selected schedule in iCalendar format."
+argument_list|)
+name|String
+name|hintExport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>S</u>ubmit Requests"
 argument_list|)
 name|String
 name|buttonSave
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Submit course requests."
+argument_list|)
+name|String
+name|hintSave
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1138,10 +1201,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Start Over"
+literal|"Current Registration"
 argument_list|)
 name|String
 name|buttonStartOver
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Discard all changes and go back to your current registration."
+argument_list|)
+name|String
+name|hintStartOver
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1195,7 +1267,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Enrollment failed: {0}"
+literal|"Registration failed: {0}"
 argument_list|)
 name|String
 name|enrollFailed
@@ -1586,7 +1658,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are currently enrolled in {0}."
+literal|"You are currently registered for {0}."
 argument_list|)
 name|String
 name|saved
@@ -1598,7 +1670,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are currently enrolled in {0}, this enrollment will get dropped."
+literal|"You are currently registered for {0}, this enrollment will get dropped."
 argument_list|)
 name|String
 name|unassignment
@@ -1610,7 +1682,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are currently not enrolled in {0}."
+literal|"You are currently not registered for {0}. Please click the Submit Schedule button to update your registration."
 argument_list|)
 name|String
 name|assignment
@@ -2345,7 +2417,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, the class is no longer available."
+literal|"Unable to register for {0}, the class is no longer available."
 argument_list|)
 name|String
 name|exceptionEnrollNotAvailable
@@ -2357,7 +2429,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, the class is no longer available (it is after the deadline)."
+literal|"Unable to register for {0}, the class is no longer available (it is after the deadline)."
 argument_list|)
 name|String
 name|exceptionEnrollDeadlineChange
@@ -2369,7 +2441,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, the class is no longer available (it is after the deadline)."
+literal|"Unable to register for {0}, the class is no longer available (it is after the deadline)."
 argument_list|)
 name|String
 name|exceptionEnrollDeadlineNew
@@ -2393,7 +2465,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, enrollment is incomplete."
+literal|"Unable to register for {0}, registration is incomplete."
 argument_list|)
 name|String
 name|exceptionEnrollmentIncomplete
@@ -2405,7 +2477,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, enrollment is overlapping."
+literal|"Unable to register for {0}, registration is overlapping."
 argument_list|)
 name|String
 name|exceptionEnrollmentOverlapping
@@ -2417,7 +2489,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, enrollment is invalid."
+literal|"Unable to register for {0}, registration is invalid."
 argument_list|)
 name|String
 name|exceptionEnrollmentInvalid
@@ -2429,7 +2501,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to enroll into {0}, enrollment is conflicting."
+literal|"Unable to register for {0}, registration is conflicting."
 argument_list|)
 name|String
 name|exceptionEnrollmentConflicting
@@ -2581,6 +2653,15 @@ parameter_list|(
 name|String
 name|message
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Processing..."
+argument_list|)
+name|String
+name|waitEnroll
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -3710,7 +3791,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are not registered for any classes yet. Please click the Enroll button in order to complete your registration.."
+literal|"You are not registered for any classes yet. Please click the Submit Schedule button in order to complete your registration.."
 argument_list|)
 name|String
 name|warnScheduleEmpty
@@ -3719,7 +3800,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You have made some changes in your schedule. Please click the Enroll button to update your registration."
+literal|"You have made some changes in your schedule. Please click the Submit Schedule button to update your registration."
 argument_list|)
 name|String
 name|warnScheduleChanged
@@ -3780,6 +3861,24 @@ literal|"Student update successfully requested. Please wait a while for the sync
 argument_list|)
 name|String
 name|requestStudentUpdateSuccess
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Click to lock the class. Alternatives cannot change classes that are locked, except of the one that was clicked."
+argument_list|)
+name|String
+name|hintUnlocked
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The class is locked. Alternatives cannot change classes that are locked, except of the one that was clicked."
+argument_list|)
+name|String
+name|hintLocked
 parameter_list|()
 function_decl|;
 block|}
