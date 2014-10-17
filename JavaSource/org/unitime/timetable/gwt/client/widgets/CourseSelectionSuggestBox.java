@@ -2202,6 +2202,17 @@ name|iFreeTimeParser
 return|;
 block|}
 specifier|public
+name|boolean
+name|isAllowFreeTime
+parameter_list|()
+block|{
+return|return
+name|iFreeTimeParser
+operator|!=
+literal|null
+return|;
+block|}
+specifier|public
 class|class
 name|SuggestCallback
 implements|implements

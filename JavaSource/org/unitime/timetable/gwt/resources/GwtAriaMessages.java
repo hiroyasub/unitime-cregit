@@ -610,6 +610,20 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Delete priority {0, number} course request including alternatives and wait list information."
+argument_list|)
+name|String
+name|altDeleteRequest
+parameter_list|(
+annotation|@
+name|PluralCount
+name|int
+name|p1
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Swaps priority {0, number} alternate course request with priority {1, number} alternate course request including alternatives and wait list information."
 argument_list|)
 name|String
@@ -643,6 +657,20 @@ annotation|@
 name|PluralCount
 name|int
 name|p2
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete priority {0, number} alternate course request including alternatives and wait list information."
+argument_list|)
+name|String
+name|altDeleteAlternateRequest
+parameter_list|(
+annotation|@
+name|PluralCount
+name|int
+name|p1
 parameter_list|)
 function_decl|;
 annotation|@
