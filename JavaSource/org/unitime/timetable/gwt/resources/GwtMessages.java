@@ -2981,7 +2981,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0} timetable for {1}"
+literal|"{0} schedule for {1}"
 argument_list|)
 name|String
 name|sectTimetable
@@ -3164,7 +3164,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Loading {0} timetable for {1} ..."
+literal|"Loading {0} schedule for {1} ..."
 argument_list|)
 name|String
 name|waitLoadingTimetable

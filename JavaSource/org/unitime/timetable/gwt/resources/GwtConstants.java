@@ -503,17 +503,17 @@ annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
-literal|"Room Timetable"
+literal|"Room Schedule"
 block|,
-literal|"Subject Timetable"
+literal|"Subject Schedule"
 block|,
-literal|"Curriculum Timetable"
+literal|"Curriculum Schedule"
 block|,
-literal|"Departmental Timetable"
+literal|"Departmental Schedule"
 block|,
-literal|"Personal Timetable"
+literal|"Personal Schedule"
 block|,
-literal|"Course Timetable"
+literal|"Course Schedule"
 block|}
 argument_list|)
 name|String
