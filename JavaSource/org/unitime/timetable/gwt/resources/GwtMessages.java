@@ -5033,7 +5033,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>T</u>imetable"
+literal|"<u>T</u>ime Grid"
 argument_list|)
 name|String
 name|tabGrid
