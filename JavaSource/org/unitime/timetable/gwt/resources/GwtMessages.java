@@ -6140,7 +6140,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Event Timetable"
+literal|"Event Schedule"
 argument_list|)
 name|String
 name|pageEventTimetable
@@ -6149,7 +6149,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room Timetable"
+literal|"Room Schedule"
 argument_list|)
 name|String
 name|pageRoomTimetable
@@ -6194,7 +6194,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Class Timetable"
+literal|"Lookup Classes"
 argument_list|)
 name|String
 name|pageClasses
@@ -6203,7 +6203,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Exam Timetable"
+literal|"Lookup Examinations"
 argument_list|)
 name|String
 name|pageExaminations
@@ -6212,7 +6212,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Personal Timetable"
+literal|"Personal Schedule"
 argument_list|)
 name|String
 name|pagePersonalTimetable
