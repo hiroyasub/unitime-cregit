@@ -4235,11 +4235,6 @@ operator|.
 name|isFreeTime
 argument_list|()
 operator|&&
-name|clazz
-operator|.
-name|isAssigned
-argument_list|()
-operator|&&
 operator|!
 name|clazz
 operator|.
@@ -4278,6 +4273,10 @@ name|print
 argument_list|(
 operator|(
 name|allSaved
+operator|&&
+operator|!
+name|isChanged
+argument_list|()
 condition|?
 name|MESSAGES
 operator|.
