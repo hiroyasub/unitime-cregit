@@ -21,6 +21,24 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|MenuInterface
+operator|.
+name|PageNameInterface
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -33,7 +51,7 @@ name|client
 operator|.
 name|ui
 operator|.
-name|HasText
+name|HasValue
 import|;
 end_import
 
@@ -64,24 +82,13 @@ specifier|public
 interface|interface
 name|PageLabelDisplay
 extends|extends
-name|HasText
+name|HasValue
+argument_list|<
+name|PageNameInterface
+argument_list|>
 extends|,
 name|IsWidget
-block|{
-specifier|public
-name|String
-name|getHelpUrl
-parameter_list|()
-function_decl|;
-specifier|public
-name|void
-name|setHelpUrl
-parameter_list|(
-name|String
-name|url
-parameter_list|)
-function_decl|;
-block|}
+block|{ }
 end_interface
 
 end_unit
