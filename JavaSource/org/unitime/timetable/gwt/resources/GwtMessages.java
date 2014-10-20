@@ -452,15 +452,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Copy iCalendar URL"
-argument_list|)
-name|String
-name|opCopyToClipboardICalendar
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Expand All"
 argument_list|)
 name|String
@@ -9688,6 +9679,48 @@ argument_list|)
 name|String
 name|pageBlockedPopup
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>ownload"
+argument_list|)
+name|String
+name|buttonDownload
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You can subscribe to the following iCalendar URL in your favourite calendar application. It will always return your up-to-date schedule."
+argument_list|)
+name|String
+name|exportICalendarDescriptionPersonal
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You can subscribe to the following iCalendar URL in your favourite calendar application. It will always return an up-to-date calendar for {0} and your current filter selection."
+argument_list|)
+name|String
+name|exportICalendarDescriptionOther
+parameter_list|(
+name|String
+name|term
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Or you can download an iCalendar file by clicking the {0} button bellow. While it is often easier to import an iCalendar file, such a&nbsp;calendar will not get updated automatically."
+argument_list|)
+name|String
+name|exportICalendarDownload
+parameter_list|(
+name|String
+name|button
+parameter_list|)
 function_decl|;
 block|}
 end_interface
