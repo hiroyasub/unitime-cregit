@@ -2981,7 +2981,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0} schedule for {1}"
+literal|"{0} time grid for {1}"
 argument_list|)
 name|String
 name|sectTimetable
@@ -6140,7 +6140,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Event Schedule"
+literal|"Event Timetable"
 argument_list|)
 name|String
 name|pageEventTimetable
@@ -6149,7 +6149,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room Schedule"
+literal|"Room Timetable"
 argument_list|)
 name|String
 name|pageRoomTimetable

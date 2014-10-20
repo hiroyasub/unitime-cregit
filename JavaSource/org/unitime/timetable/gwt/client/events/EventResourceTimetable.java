@@ -3256,7 +3256,7 @@ name|addItem
 argument_list|(
 name|resource
 operator|.
-name|getPageTitle
+name|getResourceType
 argument_list|(
 name|CONSTANTS
 argument_list|)
@@ -16531,10 +16531,8 @@ name|pageName
 operator|=
 name|resource
 operator|.
-name|getPageTitle
-argument_list|(
-name|CONSTANTS
-argument_list|)
+name|getPageName
+argument_list|()
 expr_stmt|;
 return|return
 name|pageName

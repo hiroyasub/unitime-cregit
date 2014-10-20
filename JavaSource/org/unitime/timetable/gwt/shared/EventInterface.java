@@ -410,6 +410,8 @@ name|IsSerializable
 block|{
 name|ROOM
 argument_list|(
+literal|"Room Timetable"
+argument_list|,
 literal|"room"
 argument_list|,
 literal|true
@@ -417,6 +419,8 @@ argument_list|)
 block|,
 name|SUBJECT
 argument_list|(
+literal|"Subject Timetable"
+argument_list|,
 literal|"subject"
 argument_list|,
 literal|true
@@ -424,6 +428,8 @@ argument_list|)
 block|,
 name|CURRICULUM
 argument_list|(
+literal|"Curriculum Timetable"
+argument_list|,
 literal|"curriculum"
 argument_list|,
 literal|true
@@ -431,6 +437,8 @@ argument_list|)
 block|,
 name|DEPARTMENT
 argument_list|(
+literal|"Departmental Timetable"
+argument_list|,
 literal|"department"
 argument_list|,
 literal|true
@@ -438,6 +446,8 @@ argument_list|)
 block|,
 name|PERSON
 argument_list|(
+literal|"Personal Timetable"
+argument_list|,
 literal|"person"
 argument_list|,
 literal|true
@@ -445,11 +455,17 @@ argument_list|)
 block|,
 name|COURSE
 argument_list|(
+literal|"Course Timetable"
+argument_list|,
 literal|"course"
 argument_list|,
 literal|false
 argument_list|)
 block|;
+specifier|private
+name|String
+name|iPage
+decl_stmt|;
 specifier|private
 name|String
 name|iLabel
@@ -461,12 +477,19 @@ decl_stmt|;
 name|ResourceType
 parameter_list|(
 name|String
+name|page
+parameter_list|,
+name|String
 name|label
 parameter_list|,
 name|boolean
 name|visible
 parameter_list|)
 block|{
+name|iPage
+operator|=
+name|page
+expr_stmt|;
 name|iLabel
 operator|=
 name|label
@@ -487,7 +510,16 @@ return|;
 block|}
 specifier|public
 name|String
-name|getPageTitle
+name|getPageName
+parameter_list|()
+block|{
+return|return
+name|iPage
+return|;
+block|}
+specifier|public
+name|String
+name|getResourceType
 parameter_list|(
 name|GwtConstants
 name|constants
