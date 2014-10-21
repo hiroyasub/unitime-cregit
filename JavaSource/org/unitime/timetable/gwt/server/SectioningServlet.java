@@ -17085,6 +17085,14 @@ name|getLastSessionId
 argument_list|()
 expr_stmt|;
 block|}
+else|else
+block|{
+name|setLastSessionId
+argument_list|(
+name|sessionId
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|sessionId
