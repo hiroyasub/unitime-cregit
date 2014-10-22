@@ -405,6 +405,7 @@ init|=
 literal|1L
 decl_stmt|;
 specifier|private
+specifier|transient
 name|ExternalTermProvider
 name|iExternalTermProvider
 init|=
