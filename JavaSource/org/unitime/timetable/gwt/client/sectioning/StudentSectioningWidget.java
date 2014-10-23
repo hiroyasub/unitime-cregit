@@ -3475,6 +3475,9 @@ name|ClickEvent
 name|event
 parameter_list|)
 block|{
+name|clearMessage
+argument_list|()
+expr_stmt|;
 name|clear
 argument_list|()
 expr_stmt|;
@@ -4074,6 +4077,9 @@ name|ClickEvent
 name|event
 parameter_list|)
 block|{
+name|clearMessage
+argument_list|()
+expr_stmt|;
 name|LoadingWidget
 operator|.
 name|getInstance
@@ -4925,6 +4931,9 @@ operator|.
 name|getSuggestion
 argument_list|()
 decl_stmt|;
+name|clearMessage
+argument_list|()
+expr_stmt|;
 name|fillIn
 argument_list|(
 name|result
@@ -4974,9 +4983,6 @@ block|{
 name|iLastResult
 operator|.
 name|clear
-argument_list|()
-expr_stmt|;
-name|clearMessage
 argument_list|()
 expr_stmt|;
 name|iLastAssignment
@@ -6886,6 +6892,9 @@ argument_list|>
 name|event
 parameter_list|)
 block|{
+name|clearMessage
+argument_list|()
+expr_stmt|;
 name|iCourseRequests
 operator|.
 name|setWaitList
@@ -10703,9 +10712,6 @@ name|prev
 argument_list|()
 expr_stmt|;
 block|}
-name|clearMessage
-argument_list|()
-expr_stmt|;
 block|}
 specifier|public
 name|void
