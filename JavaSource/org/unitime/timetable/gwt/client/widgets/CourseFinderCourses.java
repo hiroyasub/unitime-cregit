@@ -1349,6 +1349,9 @@ name|courseSelectionNoCourseFilter
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|updateCourseDetails
+argument_list|()
+expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1425,6 +1428,9 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|updateCourseDetails
+argument_list|()
 expr_stmt|;
 name|ResponseEvent
 operator|.
@@ -2091,6 +2097,22 @@ operator|.
 name|getSelectedRow
 argument_list|()
 operator|<
+literal|0
+operator|||
+name|iCourses
+operator|.
+name|getRows
+argument_list|()
+operator|==
+literal|null
+operator|||
+name|iCourses
+operator|.
+name|getRows
+argument_list|()
+operator|.
+name|length
+operator|==
 literal|0
 condition|)
 block|{
