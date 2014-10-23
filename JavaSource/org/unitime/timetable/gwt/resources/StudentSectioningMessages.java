@@ -1469,6 +1469,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>C</u>ancel"
+argument_list|)
+name|String
+name|buttonCancelPin
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Guest"
 argument_list|)
 name|String
