@@ -3800,7 +3800,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are not registered for any classes yet. Please click the Submit Schedule button in order to complete your registration.."
+literal|"You are not registered for any classes yet. Please click the Submit Schedule button in order to complete your registration."
 argument_list|)
 name|String
 name|warnScheduleEmpty

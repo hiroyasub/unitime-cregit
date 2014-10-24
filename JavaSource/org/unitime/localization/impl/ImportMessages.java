@@ -291,7 +291,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"# UniTime 3.4 (University Timetabling Application)"
+literal|"# UniTime 3.5 (University Timetabling Application)"
 argument_list|)
 expr_stmt|;
 name|out
