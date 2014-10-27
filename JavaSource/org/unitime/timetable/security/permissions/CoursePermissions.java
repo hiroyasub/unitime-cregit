@@ -690,7 +690,7 @@ name|DepartmentStatusType
 operator|.
 name|Status
 operator|.
-name|OwnerEdit
+name|OwnerLimitedEdit
 argument_list|)
 condition|)
 return|return
@@ -789,7 +789,7 @@ name|DepartmentStatusType
 operator|.
 name|Status
 operator|.
-name|ManagerEdit
+name|ManagerLimitedEdit
 argument_list|)
 condition|)
 return|return
