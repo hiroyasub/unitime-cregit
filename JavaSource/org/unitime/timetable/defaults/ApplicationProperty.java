@@ -832,7 +832,7 @@ argument_list|(
 literal|"tmtbl.login_url"
 argument_list|)
 decl_stmt|,
-comment|/** 	 * Custom login page header, see http://help34.unitime.org/Customizations for more details.  	 */
+comment|/** 	 * Custom login page header, see http://help35.unitime.org/Customizations for more details.  	 */
 decl_stmt|@
 name|Description
 argument_list|(
@@ -843,7 +843,7 @@ argument_list|(
 literal|"tmtbl.header.external"
 argument_list|)
 decl_stmt|,
-comment|/** 	 * Custom login page footer, see http://help34.unitime.org/Customizations for more details.  	 */
+comment|/** 	 * Custom login page footer, see http://help35.unitime.org/Customizations for more details.  	 */
 decl_stmt|@
 name|Description
 argument_list|(
@@ -892,7 +892,7 @@ argument_list|(
 literal|"tmtbl.custom.css"
 argument_list|)
 decl_stmt|,
-comment|/** 	 * Default application menu style. Values:<ul> 	 *<li>Static On Top ... Horizontal menu bar on the top of the page (takes 100% width of the page, does not move with the page) 	 *<li>Dynamic On Top ... Horizontal menu bar on the top of the page (takes 100% width of the client window, moves with the page as it is scrolled) 	 *<li>Tree On Side ... Tree on the left side of the page content (moves with the page, resembles the UniTime 3.1 menu the most) 	 *<li>Stack On Side ... Tree on the left side of the page content, but the first level of the tree is a StackPanel (only one top level item can be opened at a time) 	 *</ul> 	 * If manager setting for this property is created, each user (timetable manager) can change his/her menu style. 	 * See http://help34.unitime.org/Customizations for more details. 	 */
+comment|/** 	 * Default application menu style. Values:<ul> 	 *<li>Static On Top ... Horizontal menu bar on the top of the page (takes 100% width of the page, does not move with the page) 	 *<li>Dynamic On Top ... Horizontal menu bar on the top of the page (takes 100% width of the client window, moves with the page as it is scrolled) 	 *<li>Tree On Side ... Tree on the left side of the page content (moves with the page, resembles the UniTime 3.1 menu the most) 	 *<li>Stack On Side ... Tree on the left side of the page content, but the first level of the tree is a StackPanel (only one top level item can be opened at a time) 	 *</ul> 	 * If manager setting for this property is created, each user (timetable manager) can change his/her menu style. 	 * See http://help35.unitime.org/Customizations for more details. 	 */
 decl_stmt|@
 name|DefaultValue
 argument_list|(
@@ -1129,7 +1129,7 @@ argument_list|(
 literal|"tmtbl.authenticate.modules"
 argument_list|)
 decl_stmt|,
-comment|/** 	 * LDAP Authentication. See http://help34.unitime.org/LDAP for more details. 	 */
+comment|/** 	 * LDAP Authentication. See http://help35.unitime.org/LDAP for more details. 	 */
 decl_stmt|@
 name|Description
 argument_list|(
@@ -1327,7 +1327,7 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"https://sites.google.com/a/unitime.org/help34/"
+literal|"https://sites.google.com/a/unitime.org/help35/"
 argument_list|)
 expr|@
 name|Description
@@ -2259,7 +2259,7 @@ argument_list|(
 literal|"unitime.sectioning.config.%"
 argument_list|)
 operator|,
-comment|/** 	 * Room availability. By default, use the included event management system. 	 * See http://help34.unitime.org/Custom_Room_Availability for more details. 	 */
+comment|/** 	 * Room availability. By default, use the included event management system. 	 * See http://help35.unitime.org/Custom_Room_Availability for more details. 	 */
 expr_stmt|@
 name|Type
 argument_list|(
@@ -2594,7 +2594,7 @@ argument_list|(
 literal|"tmtbl.instructor.external_id.lookup.enabled"
 argument_list|)
 operator|,
-comment|/** 	 * Use {@link SpringLdapExternalUidLookup} when LDAP authentication is enabled. 	 * See http://help34.unitime.org/LDAP for more details. 	 */
+comment|/** 	 * Use {@link SpringLdapExternalUidLookup} when LDAP authentication is enabled. 	 * See http://help35.unitime.org/LDAP for more details. 	 */
 expr_stmt|@
 name|Type
 argument_list|(
@@ -2641,7 +2641,7 @@ argument_list|(
 literal|"tmtbl.manager.external_id.lookup.enabled"
 argument_list|)
 operator|,
-comment|/** 	 * Use {@link SpringLdapExternalUidLookup} when LDAP authentication is enabled. 	 * See http://help34.unitime.org/LDAP for more details. 	 */
+comment|/** 	 * Use {@link SpringLdapExternalUidLookup} when LDAP authentication is enabled. 	 * See http://help35.unitime.org/LDAP for more details. 	 */
 expr_stmt|@
 name|Type
 argument_list|(
@@ -3002,7 +3002,7 @@ argument_list|(
 literal|"tmtbl.external.reservation.edit_action.class"
 argument_list|)
 operator|,
-comment|/** 	 * Use {@link SpringLdapExternalUidTranslation} when LDAP authentication is enabled. 	 * See http://help34.unitime.org/LDAP for more details. 	 */
+comment|/** 	 * Use {@link SpringLdapExternalUidTranslation} when LDAP authentication is enabled. 	 * See http://help35.unitime.org/LDAP for more details. 	 */
 expr_stmt|@
 name|Type
 argument_list|(
@@ -3567,7 +3567,7 @@ argument_list|(
 literal|"tmtbl.exam.name.expandCrosslistedOfferingToCourses"
 argument_list|)
 operator|,
-comment|/** 	 * See http://help34.unitime.org/Exam_Naming_Convention for more details. 	 */
+comment|/** 	 * See http://help35.unitime.org/Exam_Naming_Convention for more details. 	 */
 expr_stmt|@
 name|Type
 argument_list|(
@@ -6298,7 +6298,7 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"http://help34.unitime.org/Frequently_Asked_Questions"
+literal|"http://help35.unitime.org/Frequently_Asked_Questions"
 argument_list|)
 expr|@
 name|Description
@@ -6373,7 +6373,7 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"http://help34.unitime.org/Timetabling"
+literal|"http://help35.unitime.org/Timetabling"
 argument_list|)
 expr|@
 name|Description
@@ -6388,7 +6388,7 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"http://help34.unitime.org/Tips_and_Tricks"
+literal|"http://help35.unitime.org/Tips_and_Tricks"
 argument_list|)
 expr|@
 name|Description
