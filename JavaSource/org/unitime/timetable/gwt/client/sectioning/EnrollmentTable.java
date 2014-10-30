@@ -2428,6 +2428,20 @@ if|if
 condition|(
 name|course
 operator|.
+name|hasEnrollmentMessage
+argument_list|()
+condition|)
+name|unassignedMessage
+operator|=
+name|course
+operator|.
+name|getEnrollmentMessage
+argument_list|()
+expr_stmt|;
+if|else if
+condition|(
+name|course
+operator|.
 name|getOverlaps
 argument_list|()
 operator|!=
