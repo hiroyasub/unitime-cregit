@@ -1746,7 +1746,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The selected offering has no students enrolled."
+literal|"The selected offering has no students."
 argument_list|)
 name|String
 name|offeringHasNoEnrollments
@@ -3889,6 +3889,39 @@ argument_list|)
 name|String
 name|hintLocked
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Students"
+argument_list|)
+name|String
+name|studentsTable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Students"
+argument_list|)
+name|String
+name|enrollmentTableFilter
+parameter_list|(
+name|String
+name|filter
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The selected offering has no {0} students."
+argument_list|)
+name|String
+name|offeringHasNoEnrollmentsOfType
+parameter_list|(
+name|String
+name|type
+parameter_list|)
 function_decl|;
 block|}
 end_interface

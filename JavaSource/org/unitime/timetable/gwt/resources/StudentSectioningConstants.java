@@ -529,6 +529,24 @@ name|boolean
 name|allowCalendarExport
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"All"
+block|,
+literal|"Enrolled"
+block|,
+literal|"Not Enrolled"
+block|,
+literal|"Wait-Listed"
+block|}
+argument_list|)
+name|String
+index|[]
+name|enrollmentFilterValues
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

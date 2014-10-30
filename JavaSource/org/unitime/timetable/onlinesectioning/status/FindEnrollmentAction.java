@@ -1212,6 +1212,16 @@ name|isWaitlist
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|e
+operator|.
+name|setEnrollmentMessage
+argument_list|(
+name|request
+operator|.
+name|getEnrollmentMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
