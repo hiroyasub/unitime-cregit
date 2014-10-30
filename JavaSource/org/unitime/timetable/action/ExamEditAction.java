@@ -1824,6 +1824,9 @@ argument_list|()
 operator|.
 name|remove
 argument_list|(
+operator|(
+name|int
+operator|)
 name|deleteId
 argument_list|)
 expr_stmt|;
