@@ -3710,6 +3710,11 @@ literal|60
 operator|+
 name|min
 operator|+
+operator|(
+name|Constants
+operator|.
+name|SLOT_LENGTH_MIN
+operator|*
 name|Integer
 operator|.
 name|parseInt
@@ -3717,6 +3722,7 @@ argument_list|(
 name|getSlotsPerMtg
 argument_list|()
 argument_list|)
+operator|)
 decl_stmt|;
 if|if
 condition|(
@@ -3729,7 +3735,7 @@ operator|-
 name|Constants
 operator|.
 name|FIRST_SLOT_TIME_MIN
-operator|>=
+operator|>
 name|Constants
 operator|.
 name|SLOTS_PER_DAY
@@ -3742,23 +3748,7 @@ literal|"Invalid time '"
 operator|+
 name|token
 operator|+
-literal|"' -- end time ("
-operator|+
-operator|(
-literal|100
-operator|*
-operator|(
-name|endTime
-operator|/
-literal|60
-operator|)
-operator|+
-name|endTime
-operator|%
-literal|60
-operator|)
-operator|+
-literal|") exceeds maximum available time."
+literal|"' -- the time cannot go over midnight)."
 argument_list|)
 throw|;
 block|}
