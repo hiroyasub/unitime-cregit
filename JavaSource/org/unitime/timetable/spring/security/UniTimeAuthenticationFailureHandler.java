@@ -191,7 +191,7 @@ parameter_list|()
 block|{
 name|setDefaultFailureUrl
 argument_list|(
-literal|"/login.jsp"
+literal|"/login.do"
 argument_list|)
 expr_stmt|;
 block|}
