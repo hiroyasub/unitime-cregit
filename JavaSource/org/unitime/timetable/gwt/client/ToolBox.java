@@ -873,7 +873,7 @@ argument_list|()
 operator|+
 literal|"| Log In"
 argument_list|,
-literal|"login.jsp?menu=hide&m="
+literal|"login.do?menu=hide&m="
 operator|+
 name|URL
 operator|.

@@ -591,7 +591,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"login.jsp?target="
+literal|"login.do?target="
 operator|+
 name|URL
 operator|.
@@ -1008,7 +1008,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"login.jsp?target="
+literal|"login.do?target="
 operator|+
 name|URL
 operator|.
