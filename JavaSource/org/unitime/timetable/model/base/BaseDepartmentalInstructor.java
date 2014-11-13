@@ -217,6 +217,10 @@ name|iLastName
 decl_stmt|;
 specifier|private
 name|String
+name|iAcademicTitle
+decl_stmt|;
+specifier|private
+name|String
 name|iNote
 decl_stmt|;
 specifier|private
@@ -301,6 +305,13 @@ name|String
 name|PROP_LNAME
 init|=
 literal|"lastName"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_ACAD_TITLE
+init|=
+literal|"academicTitle"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -461,6 +472,28 @@ block|{
 name|iLastName
 operator|=
 name|lastName
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getAcademicTitle
+parameter_list|()
+block|{
+return|return
+name|iAcademicTitle
+return|;
+block|}
+specifier|public
+name|void
+name|setAcademicTitle
+parameter_list|(
+name|String
+name|academicTitle
+parameter_list|)
+block|{
+name|iAcademicTitle
+operator|=
+name|academicTitle
 expr_stmt|;
 block|}
 specifier|public
@@ -951,6 +984,11 @@ parameter_list|()
 block|{
 return|return
 literal|"DepartmentalInstructor["
+operator|+
+literal|"\n	AcademicTitle: "
+operator|+
+name|getAcademicTitle
+argument_list|()
 operator|+
 literal|"\n	CareerAcct: "
 operator|+

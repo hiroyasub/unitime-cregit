@@ -2099,6 +2099,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Academic Title:"
+argument_list|)
+name|String
+name|propAcademicTitle
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Email:"
 argument_list|)
 name|String

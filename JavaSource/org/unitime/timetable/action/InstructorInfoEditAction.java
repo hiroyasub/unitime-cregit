@@ -1754,6 +1754,16 @@ name|trim
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setTitle
+argument_list|(
+name|inst
+operator|.
+name|getAcademicTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|String
 name|puid
 init|=

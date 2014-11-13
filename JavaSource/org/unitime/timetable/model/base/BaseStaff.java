@@ -104,6 +104,10 @@ name|String
 name|iEmail
 decl_stmt|;
 specifier|private
+name|String
+name|iAcademicTitle
+decl_stmt|;
+specifier|private
 name|PositionType
 name|iPositionType
 decl_stmt|;
@@ -155,6 +159,13 @@ name|String
 name|PROP_EMAIL
 init|=
 literal|"email"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_ACAD_TITLE
+init|=
+literal|"academicTitle"
 decl_stmt|;
 specifier|public
 name|BaseStaff
@@ -341,6 +352,28 @@ name|email
 expr_stmt|;
 block|}
 specifier|public
+name|String
+name|getAcademicTitle
+parameter_list|()
+block|{
+return|return
+name|iAcademicTitle
+return|;
+block|}
+specifier|public
+name|void
+name|setAcademicTitle
+parameter_list|(
+name|String
+name|academicTitle
+parameter_list|)
+block|{
+name|iAcademicTitle
+operator|=
+name|academicTitle
+expr_stmt|;
+block|}
+specifier|public
 name|PositionType
 name|getPositionType
 parameter_list|()
@@ -473,6 +506,11 @@ parameter_list|()
 block|{
 return|return
 literal|"Staff["
+operator|+
+literal|"\n	AcademicTitle: "
+operator|+
+name|getAcademicTitle
+argument_list|()
 operator|+
 literal|"\n	Dept: "
 operator|+

@@ -1358,6 +1358,16 @@ argument_list|)
 expr_stmt|;
 name|instructor
 operator|.
+name|setAcademicTitle
+argument_list|(
+name|i
+operator|.
+name|getAcademicTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|instructor
+operator|.
 name|setExternalId
 argument_list|(
 name|i

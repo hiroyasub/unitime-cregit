@@ -2033,6 +2033,8 @@ name|EventEditPast
 block|,
 name|EventSetExpiration
 block|,
+name|EventCanEditAcademicTitle
+block|,
 comment|/** Administration: Academic Sessions */
 name|AcademicSessions
 block|,

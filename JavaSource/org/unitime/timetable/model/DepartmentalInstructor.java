@@ -2316,6 +2316,14 @@ argument_list|)
 expr_stmt|;
 name|newDepartmentalInstructor
 operator|.
+name|setAcademicTitle
+argument_list|(
+name|getAcademicTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|newDepartmentalInstructor
+operator|.
 name|setIgnoreToFar
 argument_list|(
 name|isIgnoreToFar

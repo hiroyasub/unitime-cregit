@@ -5301,6 +5301,16 @@ operator|,
 expr_stmt|@
 name|Description
 argument_list|(
+literal|"People Lookup LDAP: academic title attribute"
+argument_list|)
+name|PeopleLookupLdapAcademicTitleAttribute
+argument_list|(
+literal|"tmtbl.lookup.ldap.title"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
 literal|"Reservations: default reservation expiration date for all reservation types (given either in the number of days relative to the academic session begin date, or as a date in yyyy-mm-dd format)"
 argument_list|)
 name|ReservationExpirationDateGlobal
