@@ -481,14 +481,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|coDao
-operator|.
-name|getSession
-argument_list|()
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
 block|}
 specifier|public
 name|void
