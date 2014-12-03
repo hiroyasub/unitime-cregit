@@ -376,18 +376,6 @@ if|else if
 condition|(
 name|reservation
 operator|instanceof
-name|IndividualReservation
-condition|)
-name|iType
-operator|=
-name|XReservationType
-operator|.
-name|Individual
-expr_stmt|;
-if|else if
-condition|(
-name|reservation
-operator|instanceof
 name|GroupReservation
 condition|)
 name|iType
@@ -395,6 +383,18 @@ operator|=
 name|XReservationType
 operator|.
 name|Group
+expr_stmt|;
+if|else if
+condition|(
+name|reservation
+operator|instanceof
+name|IndividualReservation
+condition|)
+name|iType
+operator|=
+name|XReservationType
+operator|.
+name|Individual
 expr_stmt|;
 if|else if
 condition|(
