@@ -4363,6 +4363,12 @@ condition|(
 name|reservationLimit
 operator|<=
 literal|0
+operator|&&
+operator|!
+name|reservation
+operator|.
+name|mustBeUsed
+argument_list|()
 condition|)
 continue|continue;
 block|}
