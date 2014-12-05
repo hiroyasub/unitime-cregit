@@ -178,30 +178,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Dummy reservation cannot go over the limit      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|canAssignOverLimit
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
-comment|/**      * Dummy reservation do not need to be used      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|mustBeUsed
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
 specifier|public
 specifier|static
 class|class

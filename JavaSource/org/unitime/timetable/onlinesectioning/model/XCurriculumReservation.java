@@ -405,30 +405,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Curriculum reservation cannot go over the limit      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|canAssignOverLimit
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
-comment|/**      * Curriculum reservation do not need to be used      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|mustBeUsed
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
 comment|/**      * Reservation limit (-1 for unlimited)      */
 annotation|@
 name|Override

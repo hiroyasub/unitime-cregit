@@ -213,18 +213,6 @@ return|return
 name|iGroup
 return|;
 block|}
-comment|/**      * Group reservations can not be assigned over the limit.      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|canAssignOverLimit
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
 comment|/**      * Reservation limit      */
 annotation|@
 name|Override
@@ -235,18 +223,6 @@ parameter_list|()
 block|{
 return|return
 name|iLimit
-return|;
-block|}
-comment|/**      * Overlaps are allowed for individual reservations.       */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|isAllowOverlap
-parameter_list|()
-block|{
-return|return
-literal|false
 return|;
 block|}
 annotation|@
@@ -269,18 +245,6 @@ name|contains
 argument_list|(
 name|iGroup
 argument_list|)
-return|;
-block|}
-comment|/**      * Individual or group reservation must be used (unless it is expired)      * @return true if not expired, false if expired      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|mustBeUsed
-parameter_list|()
-block|{
-return|return
-literal|true
 return|;
 block|}
 annotation|@
