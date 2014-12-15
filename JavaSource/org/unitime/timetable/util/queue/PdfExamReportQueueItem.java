@@ -5672,42 +5672,10 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|log
+name|fatal
 argument_list|(
-literal|"<font color='red'>Process failed: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|" (exception "
-operator|+
-name|e
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|")</font>"
-argument_list|)
-expr_stmt|;
-name|sLog
-operator|.
-name|error
-argument_list|(
-name|e
-operator|.
-name|getMessage
-argument_list|()
+literal|"Process failed."
 argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-name|setError
-argument_list|(
 name|e
 argument_list|)
 expr_stmt|;

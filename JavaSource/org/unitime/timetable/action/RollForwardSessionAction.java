@@ -1591,7 +1591,9 @@ name|sessionRollForward
 init|=
 operator|new
 name|SessionRollForward
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 decl_stmt|;
 name|Session
 name|toAcadSession
@@ -2460,6 +2462,14 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|log
+argument_list|(
+literal|"All done."
 argument_list|)
 expr_stmt|;
 block|}

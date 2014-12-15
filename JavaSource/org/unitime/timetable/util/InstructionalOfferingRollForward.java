@@ -49,9 +49,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|hibernate
+name|apache
 operator|.
-name|Transaction
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
 import|;
 end_import
 
@@ -59,11 +63,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|unitime
+name|hibernate
 operator|.
-name|commons
-operator|.
-name|Debug
+name|Transaction
 import|;
 end_import
 
@@ -378,6 +380,18 @@ name|InstructionalOfferingRollForward
 extends|extends
 name|SessionRollForward
 block|{
+name|InstructionalOfferingRollForward
+parameter_list|(
+name|Log
+name|log
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|log
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|rollForwardInstructionalOfferingsForASubjectArea
@@ -929,25 +943,23 @@ name|Session
 name|toSession
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|info
 argument_list|(
-literal|"subject_area = '"
+literal|"Creating "
 operator|+
 name|courseCatalogEntry
 operator|.
 name|getSubject
 argument_list|()
 operator|+
-literal|"' crs nbr = '"
+literal|" "
 operator|+
 name|courseCatalogEntry
 operator|.
 name|getCourseNumber
 argument_list|()
-operator|+
-literal|"'"
 argument_list|)
 expr_stmt|;
 name|InstructionalOffering
@@ -1235,34 +1247,16 @@ operator|.
 name|getSession
 argument_list|()
 decl_stmt|;
-name|Debug
+name|iLog
 operator|.
 name|info
 argument_list|(
-literal|"subj = '"
+literal|"Rolling "
 operator|+
 name|fromInstructionalOffering
 operator|.
-name|getControllingCourseOffering
+name|getCourseNameWithTitle
 argument_list|()
-operator|.
-name|getSubjectArea
-argument_list|()
-operator|.
-name|getSubjectAreaAbbreviation
-argument_list|()
-operator|+
-literal|"' crs nbr = '"
-operator|+
-name|fromInstructionalOffering
-operator|.
-name|getControllingCourseOffering
-argument_list|()
-operator|.
-name|getCourseNbr
-argument_list|()
-operator|+
-literal|"'"
 argument_list|)
 expr_stmt|;
 name|Transaction
@@ -1543,20 +1537,19 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
-name|info
+name|error
 argument_list|(
-name|e
+literal|"Failed to roll "
+operator|+
+name|fromInstructionalOffering
 operator|.
-name|getMessage
+name|getCourseName
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
-expr_stmt|;
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
 expr_stmt|;
 if|if
 condition|(

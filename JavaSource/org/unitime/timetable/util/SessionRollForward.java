@@ -161,6 +161,20 @@ name|org
 operator|.
 name|apache
 operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|struts
 operator|.
 name|action
@@ -190,18 +204,6 @@ operator|.
 name|hibernate
 operator|.
 name|Transaction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|commons
-operator|.
-name|Debug
 import|;
 end_import
 
@@ -1722,6 +1724,10 @@ specifier|public
 class|class
 name|SessionRollForward
 block|{
+specifier|protected
+name|Log
+name|iLog
+decl_stmt|;
 specifier|private
 specifier|static
 name|HashMap
@@ -1810,6 +1816,18 @@ name|EXAMS_ALL_PREF
 init|=
 literal|"rollAllPrefs"
 decl_stmt|;
+specifier|public
+name|SessionRollForward
+parameter_list|(
+name|Log
+name|log
+parameter_list|)
+block|{
+name|iLog
+operator|=
+name|log
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|setSubpartLocationPrefRollForwardParameters
@@ -2234,10 +2252,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all room groups forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -2630,10 +2650,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all room features forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -4029,10 +4051,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all rooms forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -4872,10 +4896,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all non university locations forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -5613,10 +5639,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all buildings forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -6000,10 +6028,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all timetable managers forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -6446,10 +6476,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all departments forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -6950,10 +6982,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all date patterns forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -7777,10 +7811,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all subject areas forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -11468,9 +11504,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Debug
+name|iLog
 operator|.
-name|warning
+name|warn
 argument_list|(
 literal|"To Time Pattern not found:  "
 operator|+
@@ -11612,9 +11648,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Debug
+name|iLog
 operator|.
-name|warning
+name|warn
 argument_list|(
 literal|"To Time Pattern not found:  "
 operator|+
@@ -12062,9 +12098,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Debug
+name|iLog
 operator|.
-name|warning
+name|warn
 argument_list|(
 literal|"To Time Pattern not found:  "
 operator|+
@@ -12259,9 +12295,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Debug
+name|iLog
 operator|.
-name|warning
+name|warn
 argument_list|(
 literal|"To Time Pattern not found:  "
 operator|+
@@ -13816,10 +13852,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all midterm exams forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -13930,10 +13968,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all final exams forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -14023,10 +14063,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll exam configuration forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -14512,10 +14554,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all instructors forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -14663,7 +14707,9 @@ name|instrOffrRollFwd
 init|=
 operator|new
 name|InstructionalOfferingRollForward
-argument_list|()
+argument_list|(
+name|iLog
+argument_list|)
 decl_stmt|;
 name|instrOffrRollFwd
 operator|.
@@ -14851,7 +14897,9 @@ name|instrOffrRollFwd
 init|=
 operator|new
 name|InstructionalOfferingRollForward
-argument_list|()
+argument_list|(
+name|iLog
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -16292,10 +16340,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|error
 argument_list|(
+literal|"Failed to roll all time patterns forward."
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -16486,7 +16536,7 @@ name|Session
 name|toSession
 parameter_list|)
 block|{
-name|Debug
+name|iLog
 operator|.
 name|info
 argument_list|(
