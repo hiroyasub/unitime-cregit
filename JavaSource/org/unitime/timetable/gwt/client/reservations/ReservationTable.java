@@ -4112,6 +4112,11 @@ name|unlimited
 operator|=
 literal|true
 expr_stmt|;
+else|else
+name|total
+operator|+=
+name|limit
+expr_stmt|;
 if|if
 condition|(
 name|reservation
