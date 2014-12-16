@@ -1300,6 +1300,7 @@ operator|.
 name|EventLookupContact
 argument_list|)
 condition|)
+block|{
 name|eventCookieFlags
 operator|=
 name|EventFlag
@@ -1311,6 +1312,18 @@ argument_list|(
 name|eventCookieFlags
 argument_list|)
 expr_stmt|;
+name|eventCookieFlags
+operator|=
+name|EventFlag
+operator|.
+name|SHOW_LAST_CHANGE
+operator|.
+name|clear
+argument_list|(
+name|eventCookieFlags
+argument_list|)
+expr_stmt|;
+block|}
 name|eventCookieFlags
 operator|=
 name|EventFlag
