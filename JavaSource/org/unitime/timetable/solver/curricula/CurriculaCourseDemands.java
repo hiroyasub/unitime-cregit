@@ -898,6 +898,10 @@ block|}
 if|if
 condition|(
 name|nrCourses
+operator|>
+literal|0
+operator|&&
+name|nrCourses
 operator|<=
 literal|1000
 condition|)
