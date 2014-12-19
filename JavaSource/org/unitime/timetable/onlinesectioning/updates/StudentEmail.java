@@ -3164,6 +3164,15 @@ name|getOfferingId
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|newRequest
+operator|.
+name|getEnrollment
+argument_list|()
+operator|!=
+literal|null
+condition|)
 name|course
 operator|=
 name|newOffering
