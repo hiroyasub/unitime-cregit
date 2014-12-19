@@ -1928,7 +1928,7 @@ name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c inner join c.subjectArea s where s.session.uniqueId = :sessionId and ("
 operator|+
-literal|"lower(s.subjectAreaAbbreviation || '.' || c.courseNbr) like :name or lower(' ' || c.title) like :title) and c.instructionalOffering.notOffered = false "
+literal|"lower(s.subjectAreaAbbreviation || ' ' || c.courseNbr) like :name or lower(' ' || c.title) like :title) and c.instructionalOffering.notOffered = false "
 operator|+
 literal|"order by s.subjectAreaAbbreviation, c.courseNbr"
 argument_list|)
