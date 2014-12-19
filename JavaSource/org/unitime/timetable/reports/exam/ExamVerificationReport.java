@@ -2491,6 +2491,9 @@ block|}
 name|String
 name|title
 init|=
+operator|(
+name|iDispNote
+condition|?
 name|same
 operator|.
 name|firstElement
@@ -2498,6 +2501,9 @@ argument_list|()
 operator|.
 name|getSchedulePrintNote
 argument_list|()
+else|:
+literal|null
+operator|)
 decl_stmt|;
 comment|/*             if (title!=null&& title.equals(same.firstElement().getSchedulingSubpart().getControllingCourseOffering().getTitle()))                 title = null;                 */
 name|boolean
@@ -2539,7 +2545,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 operator|-
 name|formatSection
@@ -2565,7 +2571,7 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" classes)"
+literal|")"
 else|:
 literal|""
 operator|)
@@ -2615,7 +2621,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 operator|-
 name|formatSection
@@ -2641,7 +2647,7 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" classes)"
+literal|")"
 else|:
 literal|""
 operator|)
@@ -2710,8 +2716,11 @@ argument_list|()
 operator|.
 name|getItypeDesc
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 operator|+
 literal|" "
@@ -2738,7 +2747,7 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" classes)"
+literal|")"
 else|:
 literal|""
 operator|)
@@ -2768,11 +2777,9 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 argument_list|)
-operator|+
-literal|" "
 operator|+
 operator|(
 name|iDispLimits
@@ -2802,8 +2809,6 @@ argument_list|,
 literal|9
 argument_list|)
 operator|+
-literal|" "
-operator|+
 name|lpad
 argument_list|(
 name|maxEnrl
@@ -2831,7 +2836,7 @@ argument_list|)
 operator|+
 literal|" "
 else|:
-literal|""
+literal|" "
 operator|)
 operator|+
 literal|"         "
@@ -2849,7 +2854,7 @@ name|lpad
 argument_list|(
 literal|""
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 operator|+
 literal|"  "
@@ -2860,7 +2865,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|120
+literal|118
 condition|?
 name|title
 operator|.
@@ -2868,7 +2873,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|117
+literal|115
 argument_list|)
 operator|+
 literal|"..."
@@ -2887,7 +2892,7 @@ name|lpad
 argument_list|(
 literal|""
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 operator|+
 literal|"  Meets with "
@@ -2898,7 +2903,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|109
+literal|107
 condition|?
 name|cmw
 operator|.
@@ -2906,7 +2911,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|106
+literal|104
 argument_list|)
 operator|+
 literal|"..."
@@ -3929,6 +3934,9 @@ decl_stmt|;
 name|String
 name|title
 init|=
+operator|(
+name|iDispNote
+condition|?
 name|same
 operator|.
 name|firstElement
@@ -3936,6 +3944,9 @@ argument_list|()
 operator|.
 name|getSchedulePrintNote
 argument_list|()
+else|:
+literal|null
+operator|)
 decl_stmt|;
 comment|/*             if (title!=null&& title.equals(same.firstElement().getSchedulingSubpart().getControllingCourseOffering().getTitle()))                 title = null;                 */
 name|boolean
@@ -3980,7 +3991,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 operator|-
 name|formatSection
@@ -4006,7 +4017,7 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" classes)"
+literal|")"
 else|:
 literal|""
 operator|)
@@ -4041,7 +4052,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 decl_stmt|;
 name|boolean
@@ -4091,7 +4102,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 operator|-
 name|formatSection
@@ -4117,7 +4128,7 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" classes)"
+literal|")"
 else|:
 literal|""
 operator|)
@@ -4155,7 +4166,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 decl_stmt|;
 name|boolean
@@ -4186,7 +4197,7 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 decl_stmt|;
 name|boolean
@@ -4341,8 +4352,11 @@ argument_list|()
 operator|.
 name|getItypeDesc
 argument_list|()
+operator|.
+name|trim
+argument_list|()
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 operator|+
 literal|" "
@@ -4419,7 +4433,7 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" classes)"
+literal|")"
 else|:
 literal|""
 operator|)
@@ -4449,11 +4463,9 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 argument_list|)
-operator|+
-literal|" "
 operator|+
 operator|(
 name|iDispLimits
@@ -4489,8 +4501,6 @@ argument_list|,
 literal|9
 argument_list|)
 operator|+
-literal|" "
-operator|+
 name|lpad
 argument_list|(
 name|iPeriodPrinted
@@ -4524,7 +4534,7 @@ argument_list|)
 operator|+
 literal|" "
 else|:
-literal|""
+literal|" "
 operator|)
 operator|+
 name|lpad
@@ -4595,7 +4605,7 @@ name|lpad
 argument_list|(
 literal|""
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 operator|+
 literal|"  "
@@ -4606,7 +4616,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|120
+literal|118
 condition|?
 name|title
 operator|.
@@ -4614,7 +4624,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|117
+literal|115
 argument_list|)
 operator|+
 literal|"..."
@@ -4637,7 +4647,7 @@ name|lpad
 argument_list|(
 literal|""
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 operator|+
 literal|"  Meets with "
@@ -4648,7 +4658,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|109
+literal|107
 condition|?
 name|cmw
 operator|.
@@ -4656,7 +4666,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|106
+literal|104
 argument_list|)
 operator|+
 literal|"..."
@@ -5510,38 +5520,38 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Course      Title                       "
+literal|"Course        Title                       "
 operator|+
 operator|(
 name|iDispLimits
 condition|?
-literal|"                    "
+literal|"                  "
 else|:
-literal|"                    "
+literal|"                  "
 operator|)
 operator|+
 literal|" Alt  Len                                                  "
 block|,
-literal|"   InsType    Sections                  "
+literal|"   InsType      Sections                  "
 operator|+
 operator|(
 name|iDispLimits
 condition|?
-literal|" Limit     Enrollmnt"
+literal|" Limit    Enrollmt"
 else|:
-literal|"                    "
+literal|"                  "
 operator|)
 operator|+
 literal|" Seat gth Date& Time               Room         Cap ExCap Exam with"
 block|,
-literal|"----------- ----------------------------"
+literal|"------------- ----------------------------"
 operator|+
 operator|(
 name|iDispLimits
 condition|?
-literal|" --------- ---------"
+literal|" -------- --------"
 else|:
-literal|"--------------------"
+literal|"------------------"
 operator|)
 operator|+
 literal|" ---- --- ------------------------- ----------- ---- ----- --------------"
@@ -5936,10 +5946,8 @@ name|rpad
 argument_list|(
 name|courseName
 argument_list|,
-literal|11
+literal|14
 argument_list|)
-operator|+
-literal|" "
 operator|+
 name|rpad
 argument_list|(
@@ -5962,11 +5970,9 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 argument_list|)
-operator|+
-literal|" "
 operator|+
 operator|(
 name|iDispLimits
@@ -5993,8 +5999,6 @@ argument_list|,
 literal|9
 argument_list|)
 operator|+
-literal|" "
-operator|+
 name|lpad
 argument_list|(
 name|enrl
@@ -6019,7 +6023,7 @@ argument_list|)
 operator|+
 literal|" "
 else|:
-literal|""
+literal|" "
 operator|)
 operator|+
 literal|"         "
@@ -7135,10 +7139,8 @@ literal|""
 else|:
 name|courseName
 argument_list|,
-literal|11
+literal|14
 argument_list|)
-operator|+
-literal|" "
 operator|+
 name|rpad
 argument_list|(
@@ -7169,11 +7171,9 @@ name|iDispLimits
 condition|?
 literal|28
 else|:
-literal|48
+literal|46
 operator|)
 argument_list|)
-operator|+
-literal|" "
 operator|+
 operator|(
 name|iDispLimits
@@ -7208,8 +7208,6 @@ argument_list|,
 literal|9
 argument_list|)
 operator|+
-literal|" "
-operator|+
 name|lpad
 argument_list|(
 name|idx
@@ -7240,7 +7238,7 @@ argument_list|)
 operator|+
 literal|" "
 else|:
-literal|""
+literal|" "
 operator|)
 operator|+
 name|lpad
@@ -7701,6 +7699,10 @@ name|getSectionNumber
 argument_list|()
 operator|)
 operator|&&
+operator|(
+operator|!
+name|iDispNote
+operator|||
 name|ToolBox
 operator|.
 name|equals
@@ -7718,6 +7720,7 @@ operator|.
 name|getSchedulePrintNote
 argument_list|()
 argument_list|)
+operator|)
 operator|&&
 name|exams
 operator|.
