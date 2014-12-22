@@ -240,6 +240,10 @@ specifier|private
 name|int
 name|iSlot
 decl_stmt|;
+specifier|private
+name|String
+name|iTime
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -369,6 +373,9 @@ name|weekCode
 parameter_list|,
 name|String
 name|instructor
+parameter_list|,
+name|String
+name|time
 parameter_list|)
 block|{
 name|iDay
@@ -439,6 +446,10 @@ name|iInstructor
 operator|=
 name|instructor
 expr_stmt|;
+name|iTime
+operator|=
+name|time
+expr_stmt|;
 block|}
 specifier|public
 name|TimetableGridCell
@@ -490,6 +501,8 @@ argument_list|,
 name|iWeekCode
 argument_list|,
 name|iInstructor
+argument_list|,
+name|iTime
 argument_list|)
 decl_stmt|;
 name|cell
@@ -659,6 +672,15 @@ literal|""
 else|:
 name|iInstructor
 operator|)
+return|;
+block|}
+specifier|public
+name|String
+name|getTime
+parameter_list|()
+block|{
+return|return
+name|iTime
 return|;
 block|}
 specifier|public
