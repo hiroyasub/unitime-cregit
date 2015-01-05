@@ -2568,6 +2568,9 @@ name|findByIdRolledForwardFrom
 parameter_list|(
 name|Long
 name|uidRolledForwardFrom
+parameter_list|,
+name|Long
+name|sessionId
 parameter_list|)
 block|{
 return|return
@@ -2583,9 +2586,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select dp from DistributionPref dp where "
+literal|"select dp from DistributionPref dp, Department d where "
 operator|+
-literal|"dp.uniqueIdRolledForwardFrom=:uidRolledFrom"
+literal|"dp.uniqueIdRolledForwardFrom=:uidRolledFrom and dp.owner=d and d.session.uniqueId=:sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -2593,6 +2596,13 @@ argument_list|(
 literal|"uidRolledFrom"
 argument_list|,
 name|uidRolledForwardFrom
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|sessionId
 argument_list|)
 operator|.
 name|setCacheable
