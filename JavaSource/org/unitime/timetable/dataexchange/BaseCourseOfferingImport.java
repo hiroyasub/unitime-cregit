@@ -8047,6 +8047,8 @@ argument_list|(
 name|credit
 argument_list|,
 literal|"fractionalCreditAllowed"
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|String
