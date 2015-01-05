@@ -2644,6 +2644,13 @@ name|vfcuc
 decl_stmt|;
 if|if
 condition|(
+name|vrcuc
+operator|.
+name|isFractionalIncrementsAllowed
+argument_list|()
+operator|==
+literal|null
+operator|||
 operator|!
 name|vrcuc
 operator|.
