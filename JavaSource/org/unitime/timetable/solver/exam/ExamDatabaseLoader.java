@@ -4908,7 +4908,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct e.uniqueId, p.uniqueId, m from ClassEvent e inner join e.meetings m, ExamPeriod p where "
 operator|+
-literal|"p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and "
+literal|"p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and m.approvalStatus = 1 and "
 operator|+
 literal|"p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -5072,7 +5072,7 @@ name|createQuery
 argument_list|(
 literal|"select e.uniqueId, s.student.uniqueId from ClassEvent e inner join e.meetings m inner join e.clazz.studentEnrollments s, ExamPeriod p where "
 operator|+
-literal|"p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and "
+literal|"p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and m.approvalStatus = 1 and "
 operator|+
 literal|"p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
@@ -5262,7 +5262,7 @@ name|createQuery
 argument_list|(
 literal|"select e.uniqueId, i.instructor from ClassEvent e inner join e.meetings m inner join e.clazz.classInstructors i, ExamPeriod p where "
 operator|+
-literal|"p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and i.lead=true and "
+literal|"p.session.uniqueId=:sessionId and p.examType.uniqueId=:examTypeId and m.approvalStatus = 1 and i.lead=true and "
 operator|+
 literal|"p.startSlot - :travelTime< m.stopPeriod and m.startPeriod< p.startSlot + p.length + :travelTime and "
 operator|+
