@@ -8048,7 +8048,7 @@ name|credit
 argument_list|,
 literal|"fractionalCreditAllowed"
 argument_list|,
-literal|false
+literal|true
 argument_list|)
 decl_stmt|;
 name|String
@@ -8262,6 +8262,8 @@ argument_list|(
 name|credit
 argument_list|,
 literal|"fractionalCreditAllowed"
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|String
