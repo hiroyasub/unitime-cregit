@@ -1193,6 +1193,14 @@ name|getCurrentSuggestion
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|model
+operator|.
+name|getCurrentSuggestion
+argument_list|()
+operator|.
+name|isCanAssign
+argument_list|()
 condition|)
 name|model
 operator|.
@@ -2263,6 +2271,11 @@ condition|(
 name|selectedInfo
 operator|!=
 literal|null
+operator|&&
+name|s
+operator|.
+name|isCanAssign
+argument_list|()
 condition|)
 name|request
 operator|.
