@@ -831,6 +831,20 @@ name|LoginPage
 argument_list|(
 literal|"tmtbl.login_url"
 argument_list|)
+decl_stmt|, 	 	@
+name|DefaultValue
+argument_list|(
+literal|"forward"
+argument_list|)
+decl|@
+name|Description
+argument_list|(
+literal|"Login: if set to \"forward\" login.do will be forwarded to the login page url, if set to \"redirect\" the page will be redirected instead"
+argument_list|)
+name|LoginMethod
+argument_list|(
+literal|"tmtbl.login_method"
+argument_list|)
 decl_stmt|,
 comment|/** 	 * Custom login page header, see http://help35.unitime.org/Customizations for more details.  	 */
 decl_stmt|@
