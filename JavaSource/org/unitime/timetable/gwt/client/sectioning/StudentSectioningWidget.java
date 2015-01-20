@@ -3481,6 +3481,9 @@ expr_stmt|;
 name|clear
 argument_list|()
 expr_stmt|;
+name|addHistory
+argument_list|()
+expr_stmt|;
 name|lastRequest
 argument_list|(
 name|iSessionSelector
@@ -4516,9 +4519,6 @@ block|}
 block|}
 block|}
 argument_list|)
-expr_stmt|;
-name|addHistory
-argument_list|()
 expr_stmt|;
 block|}
 name|iSessionSelector
@@ -11395,7 +11395,7 @@ argument_list|(
 name|saved
 argument_list|)
 expr_stmt|;
-name|addHistory
+name|updateHistory
 argument_list|()
 expr_stmt|;
 block|}
@@ -11532,7 +11532,7 @@ argument_list|(
 name|result
 argument_list|)
 expr_stmt|;
-name|addHistory
+name|updateHistory
 argument_list|()
 expr_stmt|;
 block|}
