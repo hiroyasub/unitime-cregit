@@ -4716,6 +4716,28 @@ literal|"unitime.email.event.coordinator"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Event Email Confirmations: include event managers"
+argument_list|)
+name|EmailConfirmationEventManagers
+argument_list|(
+literal|"unitime.email.event.managers"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Description
 argument_list|(
 literal|"Event Email Confirmations: default email suffix (e.g., @unitime.org)"
