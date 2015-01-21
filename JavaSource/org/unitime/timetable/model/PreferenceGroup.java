@@ -975,7 +975,36 @@ literal|"<span onmouseover=\"showGwtHint(this, "
 operator|+
 name|hint
 operator|+
-literal|");\" onmouseout=\"hideGwtHint();\">"
+literal|");\" onmouseout=\"hideGwtHint();\" "
+operator|+
+operator|(
+name|tp
+operator|.
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|tp
+operator|.
+name|getOwner
+argument_list|()
+operator|instanceof
+name|Class_
+operator|&&
+name|ApplicationProperty
+operator|.
+name|PreferencesHighlighClassPreferences
+operator|.
+name|isTrue
+argument_list|()
+condition|?
+literal|" style='background: #ffa;'"
+else|:
+literal|""
+operator|)
+operator|+
+literal|">"
 operator|+
 name|rtt
 operator|.
