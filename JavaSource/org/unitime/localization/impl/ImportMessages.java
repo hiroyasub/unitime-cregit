@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * UniTime 3.3 - 3.5 (University Timetabling Application)  * Copyright (C) 2011 - 2013, UniTime LLC, and individual contributors  * as indicated by the @authors tag.  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *   * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *   * You should have received a copy of the GNU General Public License along  * with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+comment|/*  * Licensed to The Apereo Foundation under one or more contributor license  * agreements. See the NOTICE file distributed with this work for  * additional information regarding copyright ownership.  *  * The Apereo Foundation licenses this file to you under the Apache License,  * Version 2.0 (the "License"); you may not use this file except in  * compliance with the License. You may obtain a copy of the License at:  *  * http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  * See the License for the specific language governing permissions and  * limitations under the License.  *  */
 end_comment
 
 begin_package
@@ -291,119 +291,119 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"# UniTime 3.5 (University Timetabling Application)"
+literal|"# Licensed to The Apereo Foundation under one or more contributor license"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# Copyright (C) 2012 - 2014, UniTime LLC, and individual contributors"
+literal|"# agreements. See the NOTICE file distributed with this work for"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# as indicated by the @authors tag."
+literal|"# additional information regarding copyright ownership."
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# "
+literal|"#"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# This program is free software; you can redistribute it and/or modify"
+literal|"# The Apereo Foundation licenses this file to you under the Apache License,"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# it under the terms of the GNU General Public License as published by"
+literal|"# Version 2.0 (the \"License\"); you may not use this file except in"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# the Free Software Foundation; either version 3 of the License, or"
+literal|"# compliance with the License. You may obtain a copy of the License at:"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# (at your option) any later version."
+literal|"#"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# "
+literal|"# http://www.apache.org/licenses/LICENSE-2.0"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# This program is distributed in the hope that it will be useful,"
+literal|"#"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# but WITHOUT ANY WARRANTY; without even the implied warranty of"
+literal|"# Unless required by applicable law or agreed to in writing, software"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the"
+literal|"# distributed under the License is distributed on an \"AS IS\" BASIS,"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# GNU General Public License for more details."
+literal|"# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# "
+literal|"#"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# You should have received a copy of the GNU General Public License along"
+literal|"# See the License for the specific language governing permissions and"
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# with this program.  If not, see<http://www.gnu.org/licenses/>."
+literal|"# limitations under the License."
 argument_list|)
 expr_stmt|;
 name|out
 operator|.
 name|println
 argument_list|(
-literal|"# "
+literal|"#"
 argument_list|)
 expr_stmt|;
 name|CSVFile
