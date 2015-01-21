@@ -23,6 +23,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|defaults
+operator|.
+name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|model
 operator|.
 name|base
@@ -122,6 +136,11 @@ argument_list|(
 literal|"<span "
 argument_list|)
 decl_stmt|;
+name|String
+name|style
+init|=
+literal|"font-weight:bold;"
+decl_stmt|;
 if|if
 condition|(
 name|this
@@ -138,11 +157,9 @@ operator|!=
 literal|4
 condition|)
 block|{
-name|sb
-operator|.
-name|append
-argument_list|(
-literal|"style='color:"
+name|style
+operator|+=
+literal|"color:"
 operator|+
 name|this
 operator|.
@@ -152,18 +169,160 @@ operator|.
 name|prefcolor
 argument_list|()
 operator|+
-literal|";font-weight:bold;' "
-argument_list|)
+literal|";"
 expr_stmt|;
 block|}
-else|else
+if|if
+condition|(
+name|this
+operator|.
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|this
+operator|.
+name|getOwner
+argument_list|()
+operator|instanceof
+name|Class_
+operator|&&
+name|ApplicationProperty
+operator|.
+name|PreferencesHighlighClassPreferences
+operator|.
+name|isTrue
+argument_list|()
+condition|)
 block|{
+name|style
+operator|+=
+literal|"background: #ffa;"
+expr_stmt|;
+block|}
 name|sb
 operator|.
 name|append
 argument_list|(
-literal|"style='font-weight:bold;' "
+literal|"style='"
+operator|+
+name|style
+operator|+
+literal|"' "
 argument_list|)
+expr_stmt|;
+name|String
+name|owner
+init|=
+literal|""
+decl_stmt|;
+if|if
+condition|(
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOwner
+argument_list|()
+operator|instanceof
+name|Class_
+condition|)
+block|{
+name|owner
+operator|=
+literal|" (class)"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOwner
+argument_list|()
+operator|instanceof
+name|SchedulingSubpart
+condition|)
+block|{
+name|owner
+operator|=
+literal|" (scheduling subpart)"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOwner
+argument_list|()
+operator|instanceof
+name|DepartmentalInstructor
+condition|)
+block|{
+name|owner
+operator|=
+literal|" (instructor)"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOwner
+argument_list|()
+operator|instanceof
+name|Exam
+condition|)
+block|{
+name|owner
+operator|=
+literal|" (examination)"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOwner
+argument_list|()
+operator|instanceof
+name|Department
+condition|)
+block|{
+name|owner
+operator|=
+literal|" (department)"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|getOwner
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOwner
+argument_list|()
+operator|instanceof
+name|Session
+condition|)
+block|{
+name|owner
+operator|=
+literal|" (session)"
 expr_stmt|;
 block|}
 name|sb
@@ -174,6 +333,8 @@ literal|"onmouseover=\"showGwtHint(this, '"
 operator|+
 name|preferenceTitle
 argument_list|()
+operator|+
+name|owner
 operator|+
 literal|"');\" onmouseout=\"hideGwtHint();\">"
 argument_list|)
