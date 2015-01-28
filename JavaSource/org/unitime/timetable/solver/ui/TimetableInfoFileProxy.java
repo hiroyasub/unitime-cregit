@@ -27,7 +27,7 @@ interface|interface
 name|TimetableInfoFileProxy
 block|{
 specifier|public
-name|void
+name|boolean
 name|saveToFile
 parameter_list|(
 name|String
@@ -36,8 +36,6 @@ parameter_list|,
 name|TimetableInfo
 name|info
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 specifier|public
 name|TimetableInfo
@@ -46,18 +44,14 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 specifier|public
-name|void
+name|boolean
 name|deleteFile
 parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 block|}
 end_interface
