@@ -710,6 +710,8 @@ argument_list|(
 name|channel
 argument_list|,
 name|SCOPE_COURSE
+argument_list|,
+name|local
 argument_list|)
 expr_stmt|;
 name|iExamSolverContainer
