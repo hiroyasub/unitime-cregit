@@ -7219,6 +7219,28 @@ argument_list|(
 literal|"unitime.authentication.cas.name-attribute"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Conflict-statistics: save to file"
+argument_list|)
+name|ConflictStatisticsSaveToFile
+argument_list|(
+literal|"unitime.cbs.saveToFile"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
