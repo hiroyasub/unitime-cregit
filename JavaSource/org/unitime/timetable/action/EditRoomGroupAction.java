@@ -1334,6 +1334,16 @@ argument_list|(
 name|location
 argument_list|)
 expr_stmt|;
+name|location
+operator|.
+name|getRoomGroups
+argument_list|()
+operator|.
+name|remove
+argument_list|(
+name|rg
+argument_list|)
+expr_stmt|;
 name|hibSession
 operator|.
 name|saveOrUpdate

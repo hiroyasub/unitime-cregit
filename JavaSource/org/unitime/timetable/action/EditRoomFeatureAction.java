@@ -1381,6 +1381,16 @@ argument_list|()
 argument_list|)
 condition|)
 continue|continue;
+name|location
+operator|.
+name|getFeatures
+argument_list|()
+operator|.
+name|remove
+argument_list|(
+name|rf
+argument_list|)
+expr_stmt|;
 name|rf
 operator|.
 name|getRooms
