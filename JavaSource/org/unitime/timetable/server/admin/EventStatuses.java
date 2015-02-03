@@ -790,7 +790,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.roomType from Room r where r.eventDepartment.uniqueId = :departmentId order by r.roomType.ord, r.roomType.label"
+literal|"select distinct t from Room r inner join r.roomType t where r.eventDepartment.uniqueId = :departmentId order by t.ord, t.label"
 argument_list|)
 operator|.
 name|setLong
@@ -1189,7 +1189,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.roomType from NonUniversityLocation r where r.eventDepartment.uniqueId = :departmentId order by r.roomType.ord, r.roomType.label"
+literal|"select distinct t from NonUniversityLocation r inner join r.roomType t where r.eventDepartment.uniqueId = :departmentId order by t.ord, t.label"
 argument_list|)
 operator|.
 name|setLong
@@ -1653,7 +1653,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.roomType from Room r where r.eventDepartment.uniqueId = :departmentId order by r.roomType.ord, r.roomType.label"
+literal|"select distinct t from Room r inner join r.roomType t where r.eventDepartment.uniqueId = :departmentId order by t.ord, t.label"
 argument_list|)
 operator|.
 name|setLong
@@ -1961,7 +1961,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.roomType from NonUniversityLocation r where r.eventDepartment.uniqueId = :departmentId order by r.roomType.ord, r.roomType.label"
+literal|"select distinct t from NonUniversityLocation r inner join r.roomType t where r.eventDepartment.uniqueId = :departmentId order by t.ord, t.label"
 argument_list|)
 operator|.
 name|setLong
@@ -2809,7 +2809,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.roomType from Room r where r.eventDepartment.uniqueId = :departmentId order by r.roomType.ord, r.roomType.label"
+literal|"select distinct t from Room r inner join r.roomType t where r.eventDepartment.uniqueId = :departmentId order by t.ord, t.label"
 argument_list|)
 operator|.
 name|setLong
@@ -3091,7 +3091,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct r.roomType from NonUniversityLocation r where r.eventDepartment.uniqueId = :departmentId order by r.roomType.ord, r.roomType.label"
+literal|"select distinct t from NonUniversityLocation r inner join r.roomType t where r.eventDepartment.uniqueId = :departmentId order by t.ord, t.label"
 argument_list|)
 operator|.
 name|setLong
