@@ -21892,6 +21892,13 @@ name|getProjectedDemand
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|offering
+operator|.
+name|getProjectedDemand
+argument_list|()
+operator|>
+literal|0
 condition|)
 name|courseLimit
 operator|=
@@ -21908,6 +21915,13 @@ name|getDemand
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|offering
+operator|.
+name|getDemand
+argument_list|()
+operator|>
+literal|0
 condition|)
 name|courseLimit
 operator|=

@@ -352,6 +352,12 @@ specifier|protected
 name|EligibilityCheck
 name|iCheck
 decl_stmt|;
+specifier|protected
+name|boolean
+name|iCustomCheck
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 name|CheckEligibility
 name|forStudent
@@ -379,6 +385,22 @@ block|{
 name|iCheck
 operator|=
 name|check
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
+name|CheckEligibility
+name|includeCustomCheck
+parameter_list|(
+name|boolean
+name|customCheck
+parameter_list|)
+block|{
+name|iCustomCheck
+operator|=
+name|customCheck
 expr_stmt|;
 return|return
 name|this
@@ -1077,7 +1099,10 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|iCustomCheck
+condition|)
 block|{
 if|if
 condition|(
