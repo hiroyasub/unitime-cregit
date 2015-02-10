@@ -3896,7 +3896,22 @@ operator|)
 operator|+
 literal|" / "
 operator|+
+operator|(
 name|minRoomSize
+operator|==
+name|Integer
+operator|.
+name|MAX_VALUE
+condition|?
+literal|"-"
+else|:
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|minRoomSize
+argument_list|)
+operator|)
 operator|+
 literal|" / "
 operator|+
@@ -3947,7 +3962,22 @@ operator|)
 operator|+
 literal|" / "
 operator|+
+operator|(
 name|minRoomSize
+operator|==
+name|Integer
+operator|.
+name|MAX_VALUE
+condition|?
+literal|"-"
+else|:
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|minRoomSize
+argument_list|)
+operator|)
 operator|+
 literal|" / "
 operator|+
