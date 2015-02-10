@@ -2806,6 +2806,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// Next, try to enroll student into the given courses
+name|boolean
+name|changed
+init|=
+literal|false
+decl_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -3178,12 +3183,19 @@ name|getCourseId
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
 name|registered
 operator|.
 name|remove
 argument_list|(
 name|id
 argument_list|)
+condition|)
+name|changed
+operator|=
+literal|true
 expr_stmt|;
 if|if
 condition|(
@@ -3268,6 +3280,10 @@ range|:
 name|registered
 control|)
 block|{
+name|changed
+operator|=
+literal|true
+expr_stmt|;
 name|req
 operator|.
 name|drop
@@ -3493,16 +3509,14 @@ name|req
 operator|.
 name|isEmpty
 argument_list|()
+operator|||
+operator|!
+name|changed
 condition|)
 block|{
 comment|// no classes to add or drop -> return no failures
 return|return
-operator|new
-name|ArrayList
-argument_list|<
-name|EnrollmentFailure
-argument_list|>
-argument_list|()
+name|fails
 return|;
 block|}
 name|resource
