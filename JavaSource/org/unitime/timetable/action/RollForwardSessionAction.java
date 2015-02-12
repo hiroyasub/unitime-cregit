@@ -1011,6 +1011,8 @@ decl_stmt|;
 name|long
 name|timeToShow
 init|=
+literal|24
+operator|*
 literal|1000
 operator|*
 literal|60
