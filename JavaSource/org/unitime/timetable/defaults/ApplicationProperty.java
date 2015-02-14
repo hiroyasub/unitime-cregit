@@ -7359,6 +7359,27 @@ argument_list|(
 literal|"unitime.custom.CourseMatcherProvider"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Online Student Scheduling: call custom eligibility check before enrollment"
+argument_list|)
+name|OnlineSchedulingCustomEligibilityRecheck
+argument_list|(
+literal|"unitime.enrollment.recheckCustomEligibility"
+argument_list|)
 expr_stmt|;
 end_expr_stmt
 

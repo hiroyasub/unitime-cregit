@@ -15847,7 +15847,12 @@ name|studentId
 argument_list|,
 literal|null
 argument_list|,
-literal|false
+name|ApplicationProperty
+operator|.
+name|OnlineSchedulingCustomEligibilityRecheck
+operator|.
+name|isTrue
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
