@@ -522,7 +522,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course {0} does not exist."
+literal|"Course {0} is not allowed or does not exist."
 argument_list|)
 name|String
 name|validationCourseNotExists
