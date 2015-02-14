@@ -123,6 +123,8 @@ block|,
 name|PIN_REQUIRED
 block|,
 name|CAN_WAITLIST
+block|,
+name|RECHECK_AFTER_ENROLLMENT
 block|, 			 			;
 specifier|public
 name|int
