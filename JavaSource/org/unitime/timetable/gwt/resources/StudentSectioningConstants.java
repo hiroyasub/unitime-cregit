@@ -556,6 +556,15 @@ name|boolean
 name|showCourseTitle
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+name|boolean
+name|courseFinderSuggestWhenEmpty
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -549,6 +549,11 @@ name|CONSTANTS
 operator|.
 name|showCourseTitle
 argument_list|()
+argument_list|,
+name|CONSTANTS
+operator|.
+name|courseFinderSuggestWhenEmpty
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iAcademicSessionProvider
@@ -602,6 +607,11 @@ argument_list|(
 name|CONSTANTS
 operator|.
 name|showCourseTitle
+argument_list|()
+argument_list|,
+name|CONSTANTS
+operator|.
+name|courseFinderSuggestWhenEmpty
 argument_list|()
 argument_list|)
 decl_stmt|;
