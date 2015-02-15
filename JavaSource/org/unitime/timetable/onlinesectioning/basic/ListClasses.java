@@ -639,6 +639,16 @@ argument_list|)
 expr_stmt|;
 name|courseAssign
 operator|.
+name|setTitle
+argument_list|(
+name|c
+operator|.
+name|getTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|courseAssign
+operator|.
 name|setSubject
 argument_list|(
 name|c

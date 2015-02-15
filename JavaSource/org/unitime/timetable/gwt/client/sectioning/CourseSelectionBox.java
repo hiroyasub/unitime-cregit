@@ -543,6 +543,14 @@ name|boolean
 name|allowFreeTime
 parameter_list|)
 block|{
+name|super
+argument_list|(
+name|CONSTANTS
+operator|.
+name|showCourseTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|iAcademicSessionProvider
 operator|=
 name|acadSession
@@ -590,7 +598,12 @@ name|courses
 init|=
 operator|new
 name|CourseFinderCourses
+argument_list|(
+name|CONSTANTS
+operator|.
+name|showCourseTitle
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|courses
 operator|.
