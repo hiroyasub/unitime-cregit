@@ -3258,7 +3258,7 @@ expr_stmt|;
 continue|continue;
 block|}
 name|status
-operator|=
+operator|+=
 operator|(
 name|status
 operator|.
