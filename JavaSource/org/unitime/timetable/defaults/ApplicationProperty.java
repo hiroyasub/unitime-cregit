@@ -7469,6 +7469,22 @@ argument_list|(
 literal|"unitime.enrollment.email.message"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Online Student Scheduling: confirmation email CC addresses (comma separated)"
+argument_list|)
+name|OnlineSchedulingEmailCarbonCopy
+argument_list|(
+literal|"unitime.enrollment.email.cc"
+argument_list|)
 expr_stmt|;
 end_expr_stmt
 
