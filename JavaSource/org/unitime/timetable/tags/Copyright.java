@@ -135,7 +135,7 @@ else|:
 literal|" "
 operator|)
 operator|+
-literal|"<a class='unitime-FooterLink' href='http://www.unitime.org/uct_license.php' tabIndex='-1'>distributed&nbsp;under&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.</a>"
+literal|"<a class='unitime-FooterLink' href='http://www.unitime.org/uct_license.php' tabIndex='-1'>distributed&nbsp;under&nbsp;the&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.</a>"
 decl_stmt|;
 try|try
 block|{
