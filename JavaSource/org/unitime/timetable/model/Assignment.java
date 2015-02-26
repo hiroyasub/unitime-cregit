@@ -2536,7 +2536,9 @@ argument_list|(
 name|clazz
 operator|.
 name|getClassLimit
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|event
@@ -2546,7 +2548,9 @@ argument_list|(
 name|clazz
 operator|.
 name|getClassLimit
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|boolean
