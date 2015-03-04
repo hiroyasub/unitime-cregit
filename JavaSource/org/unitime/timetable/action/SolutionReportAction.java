@@ -4565,7 +4565,7 @@ init|=
 operator|new
 name|PdfWebTable
 argument_list|(
-literal|5
+literal|6
 argument_list|,
 literal|"Violated Distribution Preferences"
 argument_list|,
@@ -4578,6 +4578,8 @@ block|{
 literal|"Type"
 block|,
 literal|"Preference"
+block|,
+literal|"Violations"
 block|,
 literal|"Class"
 block|,
@@ -4593,6 +4595,8 @@ block|{
 literal|"left"
 block|,
 literal|"left"
+block|,
+literal|"right"
 block|,
 literal|"left"
 block|,
@@ -5025,6 +5029,16 @@ else|:
 literal|"</font>"
 operator|)
 block|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|g
+operator|.
+name|getNrViolations
+argument_list|()
+argument_list|)
+block|,
 name|cSB
 operator|.
 name|toString
@@ -5058,6 +5072,11 @@ operator|.
 name|getPreference
 argument_list|()
 argument_list|)
+block|,
+name|g
+operator|.
+name|getNrViolations
+argument_list|()
 block|,
 name|ord
 block|,
