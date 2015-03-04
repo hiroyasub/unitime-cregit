@@ -880,7 +880,14 @@ literal|"Time Overlaps"
 argument_list|,
 literal|"org.cpsolver.studentsct.report.TimeOverlapConflictTable"
 argument_list|)
-block|, 		;
+block|,
+name|REQUEST_GROUPS
+argument_list|(
+literal|"Request Groups"
+argument_list|,
+literal|"org.cpsolver.studentsct.report.RequestGroupTable"
+argument_list|)
+block|;
 name|String
 name|iName
 decl_stmt|,
