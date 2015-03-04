@@ -490,7 +490,7 @@ specifier|static
 name|String
 name|VERSION
 init|=
-literal|"4.0"
+literal|"4.1"
 decl_stmt|;
 comment|/** release date */
 specifier|private
