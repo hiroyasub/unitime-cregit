@@ -579,6 +579,9 @@ function_decl|;
 name|void
 name|enroll
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|CourseRequestInterface
 name|request
 parameter_list|,

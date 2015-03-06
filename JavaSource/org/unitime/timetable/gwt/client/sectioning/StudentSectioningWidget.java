@@ -4100,6 +4100,8 @@ name|iSectioningService
 operator|.
 name|enroll
 argument_list|(
+name|iOnline
+argument_list|,
 name|iCourseRequests
 operator|.
 name|getRequest
@@ -10755,9 +10757,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|iOnline
-operator|||
 operator|!
 name|iMode
 operator|.
