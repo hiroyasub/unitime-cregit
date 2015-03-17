@@ -2414,7 +2414,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are not registered as a student in {0}."
+literal|"You are not eligible to register in {0}."
 argument_list|)
 name|String
 name|exceptionEnrollNotStudent

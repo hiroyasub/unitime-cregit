@@ -711,6 +711,14 @@ name|EligibilityFlag
 operator|.
 name|IS_ADVISOR
 argument_list|)
+operator|&&
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|isSectioningEnabled
+argument_list|()
 condition|)
 name|iCheck
 operator|.
