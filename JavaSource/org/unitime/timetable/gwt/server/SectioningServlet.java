@@ -17548,6 +17548,17 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+name|check
+operator|.
+name|setFlag
+argument_list|(
+name|EligibilityFlag
+operator|.
+name|CAN_WAITLIST
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 return|return
 name|check
 return|;
