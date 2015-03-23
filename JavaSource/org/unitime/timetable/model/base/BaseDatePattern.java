@@ -134,6 +134,10 @@ name|Boolean
 name|iVisible
 decl_stmt|;
 specifier|private
+name|Integer
+name|iNumberOfWeeks
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -192,6 +196,13 @@ name|String
 name|PROP_VISIBLE
 init|=
 literal|"visible"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_NR_WEEKS
+init|=
+literal|"numberOfWeeks"
 decl_stmt|;
 specifier|public
 name|BaseDatePattern
@@ -362,6 +373,28 @@ block|{
 name|iVisible
 operator|=
 name|visible
+expr_stmt|;
+block|}
+specifier|public
+name|Integer
+name|getNumberOfWeeks
+parameter_list|()
+block|{
+return|return
+name|iNumberOfWeeks
+return|;
+block|}
+specifier|public
+name|void
+name|setNumberOfWeeks
+parameter_list|(
+name|Integer
+name|numberOfWeeks
+parameter_list|)
+block|{
+name|iNumberOfWeeks
+operator|=
+name|numberOfWeeks
 expr_stmt|;
 block|}
 specifier|public
@@ -624,6 +657,11 @@ operator|+
 literal|"\n	Name: "
 operator|+
 name|getName
+argument_list|()
+operator|+
+literal|"\n	NumberOfWeeks: "
+operator|+
+name|getNumberOfWeeks
 argument_list|()
 operator|+
 literal|"\n	Offset: "
