@@ -9092,6 +9092,240 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Distribution Type"
+argument_list|)
+name|String
+name|optionDistributionType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Distribution Types"
+argument_list|)
+name|String
+name|optionDistributionTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Demand Offering Type"
+argument_list|)
+name|String
+name|optionDemandOfferingType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Demand Offering Types"
+argument_list|)
+name|String
+name|optionDemandOfferingTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Offering Consent Type"
+argument_list|)
+name|String
+name|optionOfferingConsentType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Offering Consent Types"
+argument_list|)
+name|String
+name|optionOfferingConsentTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Credit Format"
+argument_list|)
+name|String
+name|optionCourseCreditFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Credit Formats"
+argument_list|)
+name|String
+name|optionCourseCreditFormats
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Credit Type"
+argument_list|)
+name|String
+name|optionCourseCreditType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Credit Types"
+argument_list|)
+name|String
+name|optionCourseCreditTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Credit Unit Type"
+argument_list|)
+name|String
+name|optionCourseCreditUnitType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Credit Unit Types"
+argument_list|)
+name|String
+name|optionCourseCreditUnitTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Position Type"
+argument_list|)
+name|String
+name|optionPositionType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Position Types"
+argument_list|)
+name|String
+name|optionPositionTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department Status Type"
+argument_list|)
+name|String
+name|optionDepartmentStatusType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department Status Types"
+argument_list|)
+name|String
+name|optionDepartmentStatusTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Type"
+argument_list|)
+name|String
+name|optionRoomType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Types"
+argument_list|)
+name|String
+name|optionRoomTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Sectioning Status"
+argument_list|)
+name|String
+name|optionStudentSectioningStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Sectioning Statuses"
+argument_list|)
+name|String
+name|optionStudentSectioningStatuses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Exam Type"
+argument_list|)
+name|String
+name|optionExamType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Exam Types"
+argument_list|)
+name|String
+name|optionExamTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Feature Type"
+argument_list|)
+name|String
+name|optionRoomFeatureType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Feature Types"
+argument_list|)
+name|String
+name|optionRoomFeatureTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Type"
+argument_list|)
+name|String
+name|optionCourseType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Types"
+argument_list|)
+name|String
+name|optionCourseTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Individual Reservation"
 argument_list|)
 name|String
