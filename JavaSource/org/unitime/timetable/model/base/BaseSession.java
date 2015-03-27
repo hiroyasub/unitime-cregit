@@ -81,6 +81,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ClassDurationType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|DatePattern
 import|;
 end_import
@@ -282,6 +296,10 @@ decl_stmt|;
 specifier|private
 name|StudentSectioningStatus
 name|iDefaultSectioningStatus
+decl_stmt|;
+specifier|private
+name|ClassDurationType
+name|iDefaultClassDurationType
 decl_stmt|;
 specifier|private
 name|Set
@@ -792,6 +810,28 @@ name|defaultSectioningStatus
 expr_stmt|;
 block|}
 specifier|public
+name|ClassDurationType
+name|getDefaultClassDurationType
+parameter_list|()
+block|{
+return|return
+name|iDefaultClassDurationType
+return|;
+block|}
+specifier|public
+name|void
+name|setDefaultClassDurationType
+parameter_list|(
+name|ClassDurationType
+name|defaultClassDurationType
+parameter_list|)
+block|{
+name|iDefaultClassDurationType
+operator|=
+name|defaultClassDurationType
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|SubjectArea
@@ -1216,6 +1256,11 @@ operator|+
 literal|"\n	ClassesEndDateTime: "
 operator|+
 name|getClassesEndDateTime
+argument_list|()
+operator|+
+literal|"\n	DefaultClassDurationType: "
+operator|+
+name|getDefaultClassDurationType
 argument_list|()
 operator|+
 literal|"\n	DefaultDatePattern: "

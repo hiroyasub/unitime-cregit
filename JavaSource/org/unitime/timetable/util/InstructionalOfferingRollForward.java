@@ -1456,6 +1456,16 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|toInstrOffrConfig
+operator|.
+name|setClassDurationType
+argument_list|(
+name|fromInstrOffrConfig
+operator|.
+name|getClassDurationType
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|toInstructionalOffering
 operator|.
 name|addToinstrOfferingConfigs

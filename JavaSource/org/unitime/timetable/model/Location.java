@@ -5414,7 +5414,7 @@ parameter_list|,
 name|int
 name|length
 parameter_list|,
-name|Vector
+name|List
 argument_list|<
 name|Date
 argument_list|>
@@ -5675,7 +5675,7 @@ name|getEventDate
 argument_list|(
 name|dates
 operator|.
-name|elementAt
+name|get
 argument_list|(
 name|i
 argument_list|)
@@ -5819,7 +5819,7 @@ parameter_list|,
 name|int
 name|length
 parameter_list|,
-name|Vector
+name|List
 argument_list|<
 name|Date
 argument_list|>
@@ -6082,7 +6082,7 @@ name|getEventDate
 argument_list|(
 name|dates
 operator|.
-name|elementAt
+name|get
 argument_list|(
 name|i
 argument_list|)

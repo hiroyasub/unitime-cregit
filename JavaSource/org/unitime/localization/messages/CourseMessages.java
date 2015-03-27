@@ -6561,6 +6561,36 @@ name|String
 name|columnAreaPDF
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"System Default (Minutes per Week)"
+argument_list|)
+name|String
+name|systemDefaultDurationType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Session Default ({0})"
+argument_list|)
+name|String
+name|sessionDefault
+parameter_list|(
+name|String
+name|value
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Duration:"
+argument_list|)
+name|String
+name|propertyClassDurationType
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

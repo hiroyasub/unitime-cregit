@@ -2495,6 +2495,10 @@ name|EventDefaults
 block|,
 name|EventDefaultsEditOther
 block|,
+name|DurationTypes
+block|,
+name|DurationTypeEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

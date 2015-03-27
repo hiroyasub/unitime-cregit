@@ -134,7 +134,7 @@ name|Boolean
 name|iVisible
 decl_stmt|;
 specifier|private
-name|Integer
+name|Float
 name|iNumberOfWeeks
 decl_stmt|;
 specifier|private
@@ -376,7 +376,7 @@ name|visible
 expr_stmt|;
 block|}
 specifier|public
-name|Integer
+name|Float
 name|getNumberOfWeeks
 parameter_list|()
 block|{
@@ -388,7 +388,7 @@ specifier|public
 name|void
 name|setNumberOfWeeks
 parameter_list|(
-name|Integer
+name|Float
 name|numberOfWeeks
 parameter_list|)
 block|{

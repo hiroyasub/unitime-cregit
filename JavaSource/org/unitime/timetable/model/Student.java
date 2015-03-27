@@ -77,16 +77,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Vector
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|hibernate
@@ -904,7 +894,7 @@ parameter_list|,
 name|int
 name|length
 parameter_list|,
-name|Vector
+name|List
 argument_list|<
 name|Date
 argument_list|>
@@ -1060,7 +1050,7 @@ name|i
 argument_list|,
 name|dates
 operator|.
-name|elementAt
+name|get
 argument_list|(
 name|i
 argument_list|)

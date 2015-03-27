@@ -288,6 +288,9 @@ name|createAsNew
 parameter_list|,
 name|boolean
 name|unlimitedEnroll
+parameter_list|,
+name|String
+name|durationColumnName
 parameter_list|)
 throws|throws
 name|Exception
@@ -545,10 +548,11 @@ operator|.
 name|columnSubpartNumberOfClasses
 argument_list|()
 block|,
-name|MSG
-operator|.
-name|columnSubpartMinutesPerWeek
-argument_list|()
+literal|"<span id='durationColumn' style='max-width:65px; display: inherit;'>"
+operator|+
+name|durationColumnName
+operator|+
+literal|"</span>"
 block|,
 name|MSG
 operator|.
