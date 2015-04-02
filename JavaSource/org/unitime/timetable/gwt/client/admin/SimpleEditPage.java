@@ -8434,14 +8434,14 @@ name|multi
 operator|.
 name|setStyleName
 argument_list|(
-literal|"unitime-TextBox"
+literal|"unitime-TextArea"
 argument_list|)
 expr_stmt|;
 name|multi
 operator|.
 name|setVisibleItemCount
 argument_list|(
-literal|3
+literal|5
 argument_list|)
 expr_stmt|;
 for|for

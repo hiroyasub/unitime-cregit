@@ -6014,6 +6014,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Examination Status"
+argument_list|)
+name|String
+name|pageExaminationStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Examination Statuses"
+argument_list|)
+name|String
+name|pageExaminationStatuses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Curriculum"
 argument_list|)
 name|String
@@ -10027,6 +10045,15 @@ parameter_list|(
 name|String
 name|button
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Session Default"
+argument_list|)
+name|String
+name|examStatusDefault
+parameter_list|()
 function_decl|;
 block|}
 end_interface

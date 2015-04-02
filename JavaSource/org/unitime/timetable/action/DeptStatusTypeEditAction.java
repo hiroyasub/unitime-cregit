@@ -1495,10 +1495,24 @@ operator|.
 name|applySession
 argument_list|()
 condition|)
+block|{
+if|if
+condition|(
+name|s
+operator|.
+name|applyExamStatus
+argument_list|()
+condition|)
 name|apply
 operator|=
-literal|"Both"
+literal|"All"
 expr_stmt|;
+else|else
+name|apply
+operator|=
+literal|"Session&amp; Department"
+expr_stmt|;
+block|}
 else|else
 name|apply
 operator|=
@@ -1515,6 +1529,17 @@ condition|)
 name|apply
 operator|=
 literal|"Session"
+expr_stmt|;
+if|else if
+condition|(
+name|s
+operator|.
+name|applyExamStatus
+argument_list|()
+condition|)
+name|apply
+operator|=
+literal|"Examinations"
 expr_stmt|;
 if|if
 condition|(

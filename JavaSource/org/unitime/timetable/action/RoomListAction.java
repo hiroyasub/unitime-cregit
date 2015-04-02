@@ -573,6 +573,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|DepartmentStatusType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|ExamType
 import|;
 end_import
@@ -1263,9 +1277,18 @@ name|sessionContext
 operator|.
 name|getUser
 argument_list|()
+argument_list|,
+name|DepartmentStatusType
 operator|.
-name|getCurrentAcademicSessionId
-argument_list|()
+name|Status
+operator|.
+name|ExamView
+argument_list|,
+name|DepartmentStatusType
+operator|.
+name|Status
+operator|.
+name|ExamTimetable
 argument_list|)
 expr_stmt|;
 comment|// Validate input
@@ -1620,7 +1643,7 @@ literal|"Location l"
 operator|+
 literal|" left join l.roomDepts rd"
 operator|+
-literal|" left join fetch l.examTypes xt"
+literal|" left join l.examTypes xt"
 operator|+
 literal|" left join fetch l.features f"
 operator|+

@@ -1575,6 +1575,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ExaminationView
+argument_list|(
+name|Exam
+operator|.
+name|class
+argument_list|)
+block|,
 name|ExaminationDetail
 argument_list|(
 name|Exam
@@ -2498,6 +2505,10 @@ block|,
 name|DurationTypes
 block|,
 name|DurationTypeEdit
+block|,
+name|ExaminationStatuses
+block|,
+name|ExaminationStatusEdit
 block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig

@@ -694,16 +694,10 @@ operator|&&
 operator|(
 name|s
 operator|.
-name|getStatusType
-argument_list|()
-operator|.
 name|canNoRoleReportExamFinal
 argument_list|()
 operator|||
 name|s
-operator|.
-name|getStatusType
-argument_list|()
 operator|.
 name|canNoRoleReportExamMidterm
 argument_list|()

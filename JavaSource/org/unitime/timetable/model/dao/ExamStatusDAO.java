@@ -12,6 +12,8 @@ operator|.
 name|timetable
 operator|.
 name|model
+operator|.
+name|dao
 package|;
 end_package
 
@@ -27,88 +29,22 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseClassWaitList
+name|BaseExamStatusDAO
 import|;
 end_import
-
-begin_comment
-comment|/**  * @author Tomas Muller  */
-end_comment
 
 begin_class
 specifier|public
 class|class
-name|ClassWaitList
+name|ExamStatusDAO
 extends|extends
-name|BaseClassWaitList
+name|BaseExamStatusDAO
 block|{
 specifier|public
-specifier|static
-name|Integer
-name|TYPE_WAITLIST
-init|=
-operator|new
-name|Integer
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-specifier|public
-specifier|static
-name|Integer
-name|TYPE_SELECTION
-init|=
-operator|new
-name|Integer
-argument_list|(
-literal|1
-argument_list|)
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|1L
-decl_stmt|;
-comment|/*[CONSTRUCTOR MARKER BEGIN]*/
-specifier|public
-name|ClassWaitList
+name|ExamStatusDAO
 parameter_list|()
 block|{
-name|super
-argument_list|()
-expr_stmt|;
 block|}
-comment|/** 	 * Constructor for primary key 	 */
-specifier|public
-name|ClassWaitList
-parameter_list|(
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|uniqueId
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|uniqueId
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*[CONSTRUCTOR MARKER END]*/
-specifier|public
-specifier|static
-enum|enum
-name|Type
-block|{
-name|LOCKED
-block|,
-name|LEGACY
-block|, 	}
 block|}
 end_class
 
