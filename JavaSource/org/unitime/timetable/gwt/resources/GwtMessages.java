@@ -6647,6 +6647,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Midterms"
+argument_list|)
+name|String
+name|legendMidterms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Holiday"
 argument_list|)
 name|String
@@ -6741,6 +6750,15 @@ literal|"Too Early?"
 argument_list|)
 name|String
 name|hintTooEarly
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Midterms"
+argument_list|)
+name|String
+name|hintMidterms
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8403,6 +8421,15 @@ literal|"Visible"
 argument_list|)
 name|String
 name|fieldVisible
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Highlight In Events"
+argument_list|)
+name|String
+name|fieldHighlightInEvents
 parameter_list|()
 function_decl|;
 annotation|@

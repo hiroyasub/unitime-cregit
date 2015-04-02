@@ -17533,6 +17533,8 @@ block|,
 name|DATE_MAPPING_EVENT
 block|,
 name|CLASSES
+block|,
+name|MIDTERMS
 block|;
 specifier|public
 name|int
