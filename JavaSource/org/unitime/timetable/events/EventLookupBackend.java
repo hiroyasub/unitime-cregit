@@ -15028,7 +15028,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co where c.committedAssignment is null and "
+literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co where c.committedAssignment is null and c.cancelled = false and "
 operator|+
 operator|(
 name|request
@@ -15074,7 +15074,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c inner join c.managingDept d where c.committedAssignment is null and d.uniqueId = :resourceId"
+literal|"select c from Class_ c inner join c.managingDept d where c.committedAssignment is null and c.cancelled = false and d.uniqueId = :resourceId"
 argument_list|)
 operator|.
 name|setLong
@@ -15107,7 +15107,7 @@ name|createQuery
 argument_list|(
 literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co, CurriculumCourse cc "
 operator|+
-literal|"where c.committedAssignment is null and co = cc.course and (cc.classification.curriculum.uniqueId = :resourceId or cc.classification.uniqueId = :resourceId)"
+literal|"where c.committedAssignment is null and c.cancelled = false and co = cc.course and (cc.classification.curriculum.uniqueId = :resourceId or cc.classification.uniqueId = :resourceId)"
 argument_list|)
 operator|.
 name|setLong
@@ -15138,7 +15138,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from StudentClassEnrollment e inner join e.clazz c where c.committedAssignment is null and e.student.session.uniqueId = :sessionId and e.student.externalUniqueId = :externalId"
+literal|"select c from StudentClassEnrollment e inner join e.clazz c where c.committedAssignment is null and c.cancelled = false and e.student.session.uniqueId = :sessionId and e.student.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|setString
@@ -15177,7 +15177,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from ClassInstructor ci inner join ci.classInstructing c where c.committedAssignment is null and ci.instructor.department.session.uniqueId = :sessionId and  ci.instructor.externalUniqueId = :externalId"
+literal|"select c from ClassInstructor ci inner join ci.classInstructing c where c.committedAssignment is null and c.cancelled = false and ci.instructor.department.session.uniqueId = :sessionId and  ci.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|setString

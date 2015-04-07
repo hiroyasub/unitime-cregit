@@ -13080,6 +13080,13 @@ argument_list|(
 name|suffix
 argument_list|)
 expr_stmt|;
+name|clazz
+operator|.
+name|setCancelled
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|clazz

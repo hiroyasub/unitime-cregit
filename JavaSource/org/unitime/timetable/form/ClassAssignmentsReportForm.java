@@ -2104,6 +2104,17 @@ operator|=
 name|showCrossListedClasses
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|getIncludeCancelledClasses
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 

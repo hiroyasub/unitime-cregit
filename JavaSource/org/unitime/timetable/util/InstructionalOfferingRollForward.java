@@ -2132,6 +2132,16 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|toClass
+operator|.
+name|setCancelled
+argument_list|(
+name|fromClass
+operator|.
+name|isCancelled
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|toSubpart
 operator|.
 name|addToclasses

@@ -9888,6 +9888,12 @@ argument_list|,
 name|indentSpaces
 argument_list|,
 name|isEditable
+operator|&&
+operator|!
+name|aClass
+operator|.
+name|isCancelled
+argument_list|()
 argument_list|,
 name|prevLabel
 argument_list|,

@@ -6764,6 +6764,13 @@ argument_list|(
 name|subpart
 argument_list|)
 expr_stmt|;
+name|clazz
+operator|.
+name|setCancelled
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|x

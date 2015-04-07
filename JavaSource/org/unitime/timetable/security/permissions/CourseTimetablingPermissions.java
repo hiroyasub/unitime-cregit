@@ -976,6 +976,17 @@ name|Class_
 name|source
 parameter_list|)
 block|{
+comment|// cancelled classes cannot be assigned
+if|if
+condition|(
+name|source
+operator|.
+name|isCancelled
+argument_list|()
+condition|)
+return|return
+literal|false
+return|;
 comment|// Must have a committed solution (not the class per se, but the managing department)
 if|if
 condition|(

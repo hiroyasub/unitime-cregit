@@ -164,6 +164,11 @@ name|boolean
 name|showCrossListedClasses
 parameter_list|)
 function_decl|;
+specifier|public
+name|boolean
+name|getIncludeCancelledClasses
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

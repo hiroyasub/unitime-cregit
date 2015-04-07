@@ -10228,6 +10228,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|c
+operator|.
+name|setCancelled
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|subpart
 operator|.
 name|addToclasses

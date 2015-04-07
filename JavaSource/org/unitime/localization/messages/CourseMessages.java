@@ -4747,6 +4747,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Cancel this class."
+argument_list|)
+name|String
+name|titleCancelClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reopen this class."
+argument_list|)
+name|String
+name|titleReopenClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course numbers can be specified using wildcard (*). E.g. 2*"
 argument_list|)
 name|String
@@ -6590,6 +6608,30 @@ argument_list|)
 name|String
 name|propertyClassDurationType
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class {0} is cancelled."
+argument_list|)
+name|String
+name|classNoteCancelled
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class {0} is reopened."
+argument_list|)
+name|String
+name|classNoteReopened
+parameter_list|(
+name|String
+name|name
+parameter_list|)
 function_decl|;
 block|}
 end_interface

@@ -2753,6 +2753,23 @@ literal|" and co.isControl = true "
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|form
+operator|.
+name|getIncludeCancelledClasses
+argument_list|()
+condition|)
+block|{
+name|query
+operator|.
+name|append
+argument_list|(
+literal|" and c.cancelled = false"
+argument_list|)
+expr_stmt|;
+block|}
 name|Query
 name|q
 init|=
