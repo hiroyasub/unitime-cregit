@@ -1142,6 +1142,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class"
+argument_list|)
+name|String
+name|columnClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} {1} Examination"
 argument_list|)
 name|String
@@ -6060,6 +6069,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Conflicting Classes"
+argument_list|)
+name|String
+name|sectionTitleClassConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructor Displayed"
 argument_list|)
 name|String
@@ -6631,6 +6649,21 @@ name|classNoteReopened
 parameter_list|(
 name|String
 name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class {0} conflicts with {1}."
+argument_list|)
+name|String
+name|classIsConflicting
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|conflicts
 parameter_list|)
 function_decl|;
 block|}

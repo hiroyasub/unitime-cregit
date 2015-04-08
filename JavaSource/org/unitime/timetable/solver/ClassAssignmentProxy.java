@@ -37,6 +37,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -144,6 +154,19 @@ name|getAssignmentInfoTable
 parameter_list|(
 name|Collection
 name|classesOrClassIds
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+specifier|public
+name|Set
+argument_list|<
+name|Assignment
+argument_list|>
+name|getConflicts
+parameter_list|(
+name|Class_
+name|clazz
 parameter_list|)
 throws|throws
 name|Exception

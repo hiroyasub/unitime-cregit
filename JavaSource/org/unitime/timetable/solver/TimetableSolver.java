@@ -13029,6 +13029,25 @@ name|hasFinalSectioning
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|Set
+argument_list|<
+name|Assignment
+argument_list|>
+name|getConflicts
+parameter_list|(
+name|Class_
+name|clazz
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 
