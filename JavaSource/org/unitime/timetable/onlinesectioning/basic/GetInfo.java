@@ -1423,6 +1423,16 @@ name|getNote
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|clonedSection
+operator|.
+name|setCancelled
+argument_list|(
+name|section
+operator|.
+name|isCancelled
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|XDistribution

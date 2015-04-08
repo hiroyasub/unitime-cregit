@@ -2438,6 +2438,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Unable to register for {0}, the class is no longer available (it has been cancelled)."
+argument_list|)
+name|String
+name|exceptionEnrollCancelled
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Unable to register for {0}, the class is no longer available (it is after the deadline)."
 argument_list|)
 name|String

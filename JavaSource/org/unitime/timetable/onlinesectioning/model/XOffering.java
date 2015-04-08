@@ -3946,6 +3946,16 @@ argument_list|(
 name|enrl
 argument_list|)
 expr_stmt|;
+name|clonedSection
+operator|.
+name|setCancelled
+argument_list|(
+name|section
+operator|.
+name|isCancelled
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|distributions
