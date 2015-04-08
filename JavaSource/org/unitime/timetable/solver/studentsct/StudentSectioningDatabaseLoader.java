@@ -4186,6 +4186,16 @@ argument_list|,
 name|parentSection
 argument_list|)
 decl_stmt|;
+name|section
+operator|.
+name|setCancelled
+argument_list|(
+name|c
+operator|.
+name|isCancelled
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|class2section
 operator|.
 name|put
