@@ -3064,6 +3064,40 @@ literal|"tmtbl.externalUid.translation"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Description
+argument_list|(
+literal|"Custom SQL User Id Translation: SQL to translate the user name (as returned by the authentication) to the external user id that is used by UniTime.\n"
+operator|+
+literal|"This parameter is used by the CustomSQLExternalUidTranslation. You also need to set tmtbl.externalUid.translation to org.unitime.timetable.spring.security.CustomSQLExternalUidTranslation"
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"select external_uid from %SCHEMA%.users where username = ?"
+argument_list|)
+name|CustomSQLUidToExternalTranslation
+argument_list|(
+literal|"unitime.custom.sql.uid2ext"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Custom SQL User Id Translation: SQL to translate the external user id that is used by UniTime to the user name (as returned by the authentication).\n"
+operator|+
+literal|"This parameter is used by the CustomSQLExternalUidTranslation. You also need to set tmtbl.externalUid.translation to org.unitime.timetable.spring.security.CustomSQLExternalUidTranslation"
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"select username from %SCHEMA%.users where external_uid = ?"
+argument_list|)
+name|CustomSQLExternalToUidTranslation
+argument_list|(
+literal|"unitime.custom.sql.ext2uid"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Type
 argument_list|(
 name|Class
