@@ -9508,8 +9508,7 @@ name|room
 operator|.
 name|getAssignments
 argument_list|(
-name|getUniqueId
-argument_list|()
+name|this
 argument_list|)
 control|)
 if|if

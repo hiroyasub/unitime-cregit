@@ -4297,23 +4297,10 @@ name|Assignment
 argument_list|>
 name|getAssignments
 parameter_list|(
-name|Long
-modifier|...
-name|solutionId
+name|Solution
+name|solution
 parameter_list|)
 block|{
-if|if
-condition|(
-name|solutionId
-operator|.
-name|length
-operator|==
-literal|0
-condition|)
-return|return
-name|getCommitedAssignments
-argument_list|()
-return|;
 name|List
 argument_list|<
 name|Assignment
@@ -4337,7 +4324,7 @@ name|createQuery
 argument_list|(
 literal|"select a from Assignment a inner join a.rooms r where "
 operator|+
-literal|"r.uniqueId = :locationId and a.solution.uniqueId in :solutionIds"
+literal|"r.uniqueId = :locationId and a.solution.uniqueId = :solutionId"
 argument_list|)
 operator|.
 name|setLong
@@ -4348,14 +4335,13 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
-name|setParameterList
+name|setLong
 argument_list|(
-literal|"solutionIds"
+literal|"solutionId"
 argument_list|,
-name|solutionId
-argument_list|,
-operator|new
-name|LongType
+name|solution
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
@@ -4381,11 +4367,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a from Assignment a inner join a.rooms r where "
+literal|"select a from Assignment a, Solution x inner join a.rooms r where "
 operator|+
 literal|"r.uniqueId = :locationId and a.solution.commited = true and "
 operator|+
-literal|"a.solution.owner.uniqueId not in (select s.owner.uniqueId from Solution s where s.uniqueId in :solutionIds)"
+literal|"x.uniqueId = :solutionId and a.solution.owner != x.owner"
 argument_list|)
 operator|.
 name|setLong
@@ -4396,14 +4382,13 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
-name|setParameterList
+name|setLong
 argument_list|(
-literal|"solutionIds"
+literal|"solutionId"
 argument_list|,
-name|solutionId
-argument_list|,
-operator|new
-name|LongType
+name|solution
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.
