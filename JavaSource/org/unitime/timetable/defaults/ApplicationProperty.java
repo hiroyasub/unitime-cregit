@@ -7224,6 +7224,28 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"CAS Authentication: always translate the id-attribute using the provided external user id translation class (see tmtbl.externalUid.translation property)"
+argument_list|)
+name|AuthenticationCasIdAlwaysTranslate
+argument_list|(
+literal|"unitime.authentication.cas.id-translate"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"CAS Authentication: trim leading zeros from the user external id"
 argument_list|)
 name|AuthenticationCasIdTrimLeadingZerosFrom
