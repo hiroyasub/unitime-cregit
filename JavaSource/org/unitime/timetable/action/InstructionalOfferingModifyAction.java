@@ -2379,9 +2379,6 @@ name|getUser
 argument_list|()
 argument_list|)
 argument_list|,
-operator|!
-name|readOnlyClass
-operator|&&
 name|sessionContext
 operator|.
 name|hasPermission

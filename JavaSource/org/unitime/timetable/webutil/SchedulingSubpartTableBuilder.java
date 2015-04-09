@@ -1903,6 +1903,9 @@ argument_list|,
 name|spRowNum
 argument_list|,
 name|maxSp
+argument_list|,
+operator|!
+name|notOwned
 argument_list|)
 else|:
 operator|(
@@ -2617,6 +2620,9 @@ name|spRowNum
 parameter_list|,
 name|int
 name|maxSp
+parameter_list|,
+name|boolean
+name|canDelete
 parameter_list|)
 block|{
 name|String
@@ -2823,6 +2829,11 @@ operator|+=
 literal|"<IMG align=\"absmiddle\" src=\"images/blank.png\">"
 expr_stmt|;
 comment|// Delete
+if|if
+condition|(
+name|canDelete
+condition|)
+block|{
 name|html
 operator|+=
 literal|"<IMG border=\"0\" alt=\""
@@ -2850,6 +2861,7 @@ argument_list|()
 operator|+
 literal|");\" onMouseOver=\"this.style.cursor='hand';this.style.cursor='pointer';\">&nbsp; "
 expr_stmt|;
+block|}
 name|html
 operator|+=
 literal|"&nbsp;&nbsp;"
