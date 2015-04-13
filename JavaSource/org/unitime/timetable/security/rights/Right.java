@@ -790,6 +790,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ClassDeleteNoEnrollmentCheck
+argument_list|(
+name|Class_
+operator|.
+name|class
+argument_list|)
+block|,
 name|ClassCancel
 argument_list|(
 name|Class_
