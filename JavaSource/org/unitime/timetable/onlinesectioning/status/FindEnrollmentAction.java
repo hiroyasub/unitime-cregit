@@ -1195,6 +1195,16 @@ name|getCourseNumber
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|c
+operator|.
+name|setTitle
+argument_list|(
+name|course
+operator|.
+name|getTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|e
 operator|.
 name|setCourse

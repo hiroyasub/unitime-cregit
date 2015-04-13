@@ -1154,6 +1154,16 @@ argument_list|)
 expr_stmt|;
 name|ca
 operator|.
+name|setTitle
+argument_list|(
+name|course
+operator|.
+name|getTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|ca
+operator|.
 name|setEnrollmentMessage
 argument_list|(
 name|r
