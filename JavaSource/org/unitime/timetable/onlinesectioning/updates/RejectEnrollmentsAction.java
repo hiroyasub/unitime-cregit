@@ -986,6 +986,16 @@ name|oldEnrollment
 argument_list|(
 name|offering
 argument_list|,
+name|offering
+operator|.
+name|getCourse
+argument_list|(
+name|enrollment
+operator|.
+name|getCourseId
+argument_list|()
+argument_list|)
+argument_list|,
 name|enrollment
 argument_list|)
 argument_list|,

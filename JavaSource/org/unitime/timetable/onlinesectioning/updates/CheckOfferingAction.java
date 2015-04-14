@@ -2584,6 +2584,11 @@ name|offering
 argument_list|,
 name|r
 operator|.
+name|getCourseId
+argument_list|()
+argument_list|,
+name|r
+operator|.
 name|getLastEnrollment
 argument_list|()
 argument_list|)
