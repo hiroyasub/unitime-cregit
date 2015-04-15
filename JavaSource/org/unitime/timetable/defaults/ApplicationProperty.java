@@ -894,14 +894,32 @@ name|SystemMessage
 argument_list|(
 literal|"tmtbl.system_message"
 argument_list|)
+decl_stmt|, 	 	@
+name|Description
+argument_list|(
+literal|"All Pages: an info message can be included at the top of each page (yellow stripe on the top of the page)"
+argument_list|)
+name|GlobalInfoMessage
+argument_list|(
+literal|"tmtbl.global.info"
+argument_list|)
 decl_stmt|,  	@
 name|Description
 argument_list|(
-literal|"All Pages: a (warning) message can be included at the top of each page"
+literal|"All Pages: a warning message can be included at the top of each page (yellow stripe on the top of the page)"
 argument_list|)
 name|GlobalWarningMessage
 argument_list|(
 literal|"tmtbl.global.warn"
+argument_list|)
+decl_stmt|, 	 	@
+name|Description
+argument_list|(
+literal|"All Pages: an error message can be included at the top of each page (red stripe on the top of the page)"
+argument_list|)
+name|GlobalErrorMessage
+argument_list|(
+literal|"tmtbl.global.error"
 argument_list|)
 decl_stmt|,  	@
 name|Description
@@ -1397,6 +1415,21 @@ argument_list|)
 name|PageInfo
 argument_list|(
 literal|"tmtbl.page.info.%"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Page %: error message (red stripe on the top of the page)"
+argument_list|)
+expr|@
+name|Parameter
+argument_list|(
+literal|"page name"
+argument_list|)
+name|PageError
+argument_list|(
+literal|"tmtbl.page.error.%"
 argument_list|)
 operator|,
 expr_stmt|@
