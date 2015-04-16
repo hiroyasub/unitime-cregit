@@ -122,6 +122,8 @@ name|IS_ADMIN
 block|,
 name|IS_ADVISOR
 block|,
+name|IS_GUEST
+block|,
 name|CAN_USE_ASSISTANT
 block|,
 name|CAN_ENROLL

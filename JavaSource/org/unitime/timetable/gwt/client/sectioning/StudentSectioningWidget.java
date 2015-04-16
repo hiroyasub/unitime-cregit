@@ -12072,6 +12072,9 @@ operator|.
 name|hide
 argument_list|()
 expr_stmt|;
+name|clear
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void

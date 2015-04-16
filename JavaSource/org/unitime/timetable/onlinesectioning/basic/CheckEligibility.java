@@ -712,6 +712,16 @@ operator|.
 name|IS_ADVISOR
 argument_list|)
 operator|&&
+operator|!
+name|iCheck
+operator|.
+name|hasFlag
+argument_list|(
+name|EligibilityFlag
+operator|.
+name|IS_GUEST
+argument_list|)
+operator|&&
 name|server
 operator|.
 name|getAcademicSession
