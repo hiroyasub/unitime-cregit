@@ -2528,6 +2528,10 @@ argument_list|,
 name|startHour
 argument_list|,
 name|endHour
+argument_list|,
+name|EventRoomAvailability
+operator|.
+name|this
 argument_list|)
 decl_stmt|;
 name|grid
@@ -3184,6 +3188,10 @@ argument_list|,
 name|startHour
 argument_list|,
 name|endHour
+argument_list|,
+name|EventRoomAvailability
+operator|.
+name|this
 argument_list|)
 decl_stmt|;
 name|grid
@@ -8227,6 +8235,8 @@ argument_list|,
 name|startHour
 argument_list|,
 name|endHour
+argument_list|,
+name|this
 argument_list|)
 decl_stmt|;
 name|grid
@@ -9030,6 +9040,8 @@ argument_list|,
 name|startHour
 argument_list|,
 name|endHour
+argument_list|,
+name|this
 argument_list|)
 decl_stmt|;
 name|grid

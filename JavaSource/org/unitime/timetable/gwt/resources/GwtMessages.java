@@ -10082,6 +10082,18 @@ name|String
 name|examStatusDefault
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<i>{0} -- not approved</i>"
+argument_list|)
+name|String
+name|gridEventHeaderNotApproved
+parameter_list|(
+name|String
+name|header
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
