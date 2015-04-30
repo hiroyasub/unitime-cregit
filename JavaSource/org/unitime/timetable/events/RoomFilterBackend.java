@@ -6711,6 +6711,9 @@ argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
+name|id
+operator|++
+expr_stmt|;
 block|}
 name|query
 operator|.
