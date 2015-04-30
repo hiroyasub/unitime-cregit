@@ -758,6 +758,74 @@ name|boolean
 name|displayMidtermPeriodPreferencesAsCalendar
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"No Event Management"
+block|,
+literal|"Authenticated Users Can Request Events Managers Can Approve"
+block|,
+literal|"Departmental Users Can Request Events Managers Can Approve"
+block|,
+literal|"Event Managers Can Request Or Approve Events"
+block|,
+literal|"Authenticated Users Can Request Events No Approval"
+block|,
+literal|"Departmental Users Can Request Events No Approval"
+block|,
+literal|"Event Managers Can Request Events No Approval"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventStatusName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Disabled"
+block|,
+literal|"Enabled"
+block|,
+literal|"Only Department"
+block|,
+literal|"Only Managers"
+block|,
+literal|"Enabled<br>No Approval"
+block|,
+literal|"Only Department<br>No Approval"
+block|,
+literal|"Only Managers<br>No Approval"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventStatusAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"#,##0.##"
+argument_list|)
+name|String
+name|roomAreaFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"#0.0###"
+argument_list|)
+name|String
+name|roomCoordinateFormat
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -210,7 +210,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|private
+specifier|protected
 name|TreeSet
 argument_list|<
 name|Integer
@@ -224,7 +224,7 @@ name|Integer
 argument_list|>
 argument_list|()
 decl_stmt|;
-specifier|private
+specifier|protected
 name|TreeSet
 argument_list|<
 name|Integer
@@ -238,7 +238,7 @@ name|Integer
 argument_list|>
 argument_list|()
 decl_stmt|;
-specifier|private
+specifier|protected
 name|Hashtable
 argument_list|<
 name|Integer
@@ -266,7 +266,7 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
-specifier|private
+specifier|protected
 name|Hashtable
 argument_list|<
 name|Integer
@@ -300,7 +300,7 @@ name|iLastDate
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|boolean
 name|iLocation
 init|=
