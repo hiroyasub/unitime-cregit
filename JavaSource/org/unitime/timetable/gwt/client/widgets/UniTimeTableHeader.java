@@ -1072,6 +1072,17 @@ parameter_list|()
 function_decl|;
 block|}
 specifier|public
+specifier|static
+interface|interface
+name|HasColumnName
+block|{
+specifier|public
+name|String
+name|getColumnName
+parameter_list|()
+function_decl|;
+block|}
+specifier|public
 name|String
 name|getHint
 parameter_list|()

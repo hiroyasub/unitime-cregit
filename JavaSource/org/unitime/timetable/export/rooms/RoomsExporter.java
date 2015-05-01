@@ -1776,6 +1776,9 @@ name|FeatureInterface
 argument_list|>
 name|features
 parameter_list|,
+name|int
+name|deptMode
+parameter_list|,
 name|String
 name|separator
 parameter_list|)
@@ -1875,13 +1878,15 @@ argument_list|()
 operator|+
 literal|" ("
 operator|+
+name|dept2string
+argument_list|(
 name|f
 operator|.
 name|getDepartment
 argument_list|()
-operator|.
-name|getExtAbbreviationWhenExist
-argument_list|()
+argument_list|,
+name|deptMode
+argument_list|)
 operator|+
 literal|")"
 expr_stmt|;
@@ -1918,6 +1923,9 @@ argument_list|<
 name|GroupInterface
 argument_list|>
 name|groups
+parameter_list|,
+name|int
+name|deptMode
 parameter_list|,
 name|String
 name|separator
@@ -1980,13 +1988,15 @@ literal|""
 else|:
 literal|" ("
 operator|+
+name|dept2string
+argument_list|(
 name|g
 operator|.
 name|getDepartment
 argument_list|()
-operator|.
-name|getExtAbbreviationWhenExist
-argument_list|()
+argument_list|,
+name|deptMode
+argument_list|)
 operator|+
 literal|")"
 operator|)

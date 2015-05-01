@@ -1082,6 +1082,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Columns"
+argument_list|)
+name|String
+name|opColumns
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sort By"
+argument_list|)
+name|String
+name|opSort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department"
+argument_list|)
+name|String
+name|opDepartmentFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Press Ctrl + C to copy the selected URL, and Escape to hide this dialog."
 argument_list|)
 name|String

@@ -1152,6 +1152,8 @@ operator|.
 name|getGroups
 argument_list|()
 argument_list|,
+name|deptMode
+argument_list|,
 literal|"\n"
 argument_list|)
 argument_list|,
@@ -1161,6 +1163,8 @@ name|room
 operator|.
 name|getFeatures
 argument_list|()
+argument_list|,
+name|deptMode
 argument_list|,
 literal|"\n"
 argument_list|)
