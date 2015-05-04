@@ -785,7 +785,7 @@ literal|"unable to parse<a href='"
 operator|+
 name|courseUrl
 operator|+
-literal|"'>course detial page</a>"
+literal|"'>course detail page</a>"
 argument_list|)
 argument_list|)
 throw|;

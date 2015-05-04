@@ -903,7 +903,7 @@ literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
-literal|"'>class detial page</a>"
+literal|"'>class detail page</a>"
 argument_list|)
 argument_list|)
 throw|;
@@ -946,7 +946,7 @@ literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
-literal|"'>class detial page</a>"
+literal|"'>class detail page</a>"
 argument_list|)
 argument_list|)
 throw|;
@@ -985,7 +985,7 @@ literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
-literal|"'>class detial page</a>"
+literal|"'>class detail page</a>"
 argument_list|)
 argument_list|)
 throw|;
@@ -1024,7 +1024,7 @@ literal|"unable to parse<a href='"
 operator|+
 name|secionUrl
 operator|+
-literal|"'>class detial page</a>"
+literal|"'>class detail page</a>"
 argument_list|)
 argument_list|)
 throw|;
@@ -1058,7 +1058,7 @@ literal|"unable to read<a href='"
 operator|+
 name|secionUrl
 operator|+
-literal|"'>class detial page</a>"
+literal|"'>class detail page</a>"
 argument_list|)
 argument_list|)
 throw|;

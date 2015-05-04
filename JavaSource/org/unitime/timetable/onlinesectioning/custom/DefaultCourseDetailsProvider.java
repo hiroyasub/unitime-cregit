@@ -1191,7 +1191,7 @@ literal|"unable to parse<a href='"
 operator|+
 name|url
 operator|+
-literal|"'>course detial page</a>"
+literal|"'>course detail page</a>"
 argument_list|)
 operator|+
 literal|"</div>"
