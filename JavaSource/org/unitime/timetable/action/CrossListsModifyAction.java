@@ -1056,6 +1056,8 @@ operator|.
 name|getDepartment
 argument_list|()
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|frm
@@ -1736,6 +1738,17 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|sessionContext
+operator|.
+name|checkPermission
+argument_list|(
+name|co1
+argument_list|,
+name|Right
+operator|.
+name|CourseOfferingDeleteFromCrossList
+argument_list|)
+expr_stmt|;
 comment|// Copy attributes of old instr offering - make not offered
 name|io1
 operator|.
@@ -3606,6 +3619,17 @@ name|co1
 operator|.
 name|getDepartment
 argument_list|()
+argument_list|)
+argument_list|,
+name|sessionContext
+operator|.
+name|hasPermission
+argument_list|(
+name|co1
+argument_list|,
+name|Right
+operator|.
+name|CourseOfferingDeleteFromCrossList
 argument_list|)
 argument_list|)
 expr_stmt|;

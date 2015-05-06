@@ -664,6 +664,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|CourseOfferingDeleteFromCrossList
+argument_list|(
+name|CourseOffering
+operator|.
+name|class
+argument_list|)
+block|,
 name|InstrOfferingConfigAdd
 argument_list|(
 name|InstructionalOffering
