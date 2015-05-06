@@ -2048,6 +2048,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Map"
+argument_list|)
+name|String
+name|colMap
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Pictures"
+argument_list|)
+name|String
+name|colPictures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Last Change"
 argument_list|)
 name|String
@@ -10417,6 +10435,18 @@ argument_list|)
 name|String
 name|exportTrue
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Location of {0}."
+argument_list|)
+name|String
+name|titleRoomMap
+parameter_list|(
+name|String
+name|roomLabel
+parameter_list|)
 function_decl|;
 block|}
 end_interface
