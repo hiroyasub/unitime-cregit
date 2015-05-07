@@ -1109,6 +1109,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Availability"
+argument_list|)
+name|String
+name|opOrientation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show as Text"
+argument_list|)
+name|String
+name|opOrientationAsText
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Vertical"
+argument_list|)
+name|String
+name|opOrientationVertical
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show as Table"
+argument_list|)
+name|String
+name|opOrientationAsGrid
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Horizontal"
+argument_list|)
+name|String
+name|opOrientationHorizontal
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Press Ctrl + C to copy the selected URL, and Escape to hide this dialog."
 argument_list|)
 name|String
@@ -1877,11 +1922,14 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Area [ft&sup2;]"
+literal|"Area [{0}]"
 argument_list|)
 name|String
 name|colArea
-parameter_list|()
+parameter_list|(
+name|String
+name|units
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -10382,7 +10430,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0,number,#,##0.##} ft&sup2;"
+literal|"{0,number,#,##0.##}"
 argument_list|)
 name|String
 name|roomArea

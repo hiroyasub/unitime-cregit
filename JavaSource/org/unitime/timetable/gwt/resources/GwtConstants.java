@@ -826,6 +826,33 @@ name|String
 name|roomCoordinateFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"square feet"
+argument_list|)
+name|String
+name|roomAreaUnitsLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"ft&sup2;"
+argument_list|)
+name|String
+name|roomAreaUnitsShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"ft2;"
+argument_list|)
+name|String
+name|roomAreaUnitsShortPlainText
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
