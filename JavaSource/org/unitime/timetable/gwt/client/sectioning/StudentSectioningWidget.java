@@ -2272,6 +2272,13 @@ name|iInRestore
 operator|||
 operator|!
 name|iTrackHistory
+operator|||
+name|iUserAuthentication
+operator|.
+name|getUser
+argument_list|()
+operator|==
+literal|null
 condition|)
 return|return;
 name|iHistory
@@ -2314,6 +2321,13 @@ name|iInRestore
 operator|||
 operator|!
 name|iTrackHistory
+operator|||
+name|iUserAuthentication
+operator|.
+name|getUser
+argument_list|()
+operator|==
+literal|null
 condition|)
 return|return;
 if|if
