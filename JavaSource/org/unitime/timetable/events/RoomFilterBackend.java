@@ -7024,7 +7024,7 @@ operator|!=
 literal|null
 operator|&&
 operator|!
-name|groups
+name|ids
 operator|.
 name|isEmpty
 argument_list|()
@@ -7090,7 +7090,7 @@ literal|"id"
 argument_list|,
 literal|"l.uniqueId in ("
 operator|+
-name|ids
+name|list
 operator|+
 literal|")"
 argument_list|)

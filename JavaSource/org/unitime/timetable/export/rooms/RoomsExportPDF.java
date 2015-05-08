@@ -781,7 +781,7 @@ name|context
 parameter_list|)
 block|{
 return|return
-literal|23
+literal|24
 operator|+
 name|context
 operator|.
@@ -830,7 +830,7 @@ case|:
 return|return
 name|MESSAGES
 operator|.
-name|colType
+name|colExternalId
 argument_list|()
 operator|.
 name|replace
@@ -846,7 +846,7 @@ case|:
 return|return
 name|MESSAGES
 operator|.
-name|colCapacity
+name|colType
 argument_list|()
 operator|.
 name|replace
@@ -862,7 +862,7 @@ case|:
 return|return
 name|MESSAGES
 operator|.
-name|colExaminationCapacity
+name|colCapacity
 argument_list|()
 operator|.
 name|replace
@@ -874,6 +874,22 @@ argument_list|)
 return|;
 case|case
 literal|4
+case|:
+return|return
+name|MESSAGES
+operator|.
+name|colExaminationCapacity
+argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
+return|;
+case|case
+literal|5
 case|:
 return|return
 name|MESSAGES
@@ -894,7 +910,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|5
+literal|6
 case|:
 return|return
 name|MESSAGES
@@ -910,7 +926,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|6
+literal|7
 case|:
 return|return
 name|MESSAGES
@@ -926,7 +942,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|7
+literal|8
 case|:
 return|return
 name|MESSAGES
@@ -942,7 +958,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|8
+literal|9
 case|:
 return|return
 name|MESSAGES
@@ -958,7 +974,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|9
+literal|10
 case|:
 return|return
 name|MESSAGES
@@ -974,7 +990,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|10
+literal|11
 case|:
 return|return
 name|MESSAGES
@@ -990,7 +1006,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|11
+literal|12
 case|:
 return|return
 name|MESSAGES
@@ -1006,7 +1022,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|12
+literal|13
 case|:
 return|return
 name|MESSAGES
@@ -1022,7 +1038,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|13
+literal|14
 case|:
 return|return
 name|MESSAGES
@@ -1038,7 +1054,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|14
+literal|15
 case|:
 return|return
 name|MESSAGES
@@ -1054,7 +1070,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|15
+literal|16
 case|:
 return|return
 name|MESSAGES
@@ -1070,7 +1086,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|16
+literal|17
 case|:
 return|return
 name|MESSAGES
@@ -1086,7 +1102,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|17
+literal|18
 case|:
 return|return
 name|MESSAGES
@@ -1102,7 +1118,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|18
+literal|19
 case|:
 return|return
 name|MESSAGES
@@ -1118,7 +1134,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|19
+literal|20
 case|:
 return|return
 name|MESSAGES
@@ -1134,7 +1150,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|20
+literal|21
 case|:
 return|return
 name|MESSAGES
@@ -1150,7 +1166,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|21
+literal|22
 case|:
 return|return
 name|MESSAGES
@@ -1166,7 +1182,7 @@ literal|"\n"
 argument_list|)
 return|;
 case|case
-literal|22
+literal|23
 case|:
 return|return
 name|MESSAGES
@@ -1192,7 +1208,7 @@ name|get
 argument_list|(
 name|column
 operator|-
-literal|23
+literal|24
 argument_list|)
 operator|.
 name|getAbbreviation
@@ -1230,7 +1246,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|TYPE
+name|EXTERNAL_ID
 operator|.
 name|in
 argument_list|(
@@ -1243,7 +1259,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|CAPACITY
+name|TYPE
 operator|.
 name|in
 argument_list|(
@@ -1256,7 +1272,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|EXAM_CAPACITY
+name|CAPACITY
 operator|.
 name|in
 argument_list|(
@@ -1269,7 +1285,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|AREA
+name|EXAM_CAPACITY
 operator|.
 name|in
 argument_list|(
@@ -1282,7 +1298,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|COORDINATES
+name|AREA
 operator|.
 name|in
 argument_list|(
@@ -1295,7 +1311,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|DISTANCE_CHECK
+name|COORDINATES
 operator|.
 name|in
 argument_list|(
@@ -1308,7 +1324,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|ROOM_CHECK
+name|DISTANCE_CHECK
 operator|.
 name|in
 argument_list|(
@@ -1321,7 +1337,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|PREFERENCE
+name|ROOM_CHECK
 operator|.
 name|in
 argument_list|(
@@ -1334,7 +1350,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|MAP
+name|PREFERENCE
 operator|.
 name|in
 argument_list|(
@@ -1347,7 +1363,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|PICTURES
+name|MAP
 operator|.
 name|in
 argument_list|(
@@ -1360,7 +1376,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|AVAILABILITY
+name|PICTURES
 operator|.
 name|in
 argument_list|(
@@ -1373,7 +1389,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|DEPARTMENTS
+name|AVAILABILITY
 operator|.
 name|in
 argument_list|(
@@ -1386,7 +1402,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|CONTROL_DEPT
+name|DEPARTMENTS
 operator|.
 name|in
 argument_list|(
@@ -1399,7 +1415,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|EXAM_TYPES
+name|CONTROL_DEPT
 operator|.
 name|in
 argument_list|(
@@ -1412,7 +1428,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|PERIOD_PREF
+name|EXAM_TYPES
 operator|.
 name|in
 argument_list|(
@@ -1425,7 +1441,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|EVENT_DEPARTMENT
+name|PERIOD_PREF
 operator|.
 name|in
 argument_list|(
@@ -1438,7 +1454,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|EVENT_STATUS
+name|EVENT_DEPARTMENT
 operator|.
 name|in
 argument_list|(
@@ -1451,7 +1467,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|EVENT_AVAILABILITY
+name|EVENT_STATUS
 operator|.
 name|in
 argument_list|(
@@ -1464,7 +1480,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|EVENT_MESSAGE
+name|EVENT_AVAILABILITY
 operator|.
 name|in
 argument_list|(
@@ -1477,7 +1493,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|BREAK_TIME
+name|EVENT_MESSAGE
 operator|.
 name|in
 argument_list|(
@@ -1490,7 +1506,7 @@ case|:
 return|return
 name|RoomsColumn
 operator|.
-name|GROUPS
+name|BREAK_TIME
 operator|.
 name|in
 argument_list|(
@@ -1499,6 +1515,19 @@ argument_list|)
 return|;
 case|case
 literal|22
+case|:
+return|return
+name|RoomsColumn
+operator|.
+name|GROUPS
+operator|.
+name|in
+argument_list|(
+name|flags
+argument_list|)
+return|;
+case|case
+literal|23
 case|:
 return|return
 name|RoomsColumn
@@ -1515,7 +1544,7 @@ if|if
 condition|(
 name|column
 operator|>
-literal|22
+literal|23
 condition|)
 block|{
 name|int
@@ -1527,7 +1556,7 @@ operator|<<
 operator|(
 name|column
 operator|-
-literal|23
+literal|24
 operator|+
 name|RoomsColumn
 operator|.
@@ -1667,6 +1696,26 @@ name|A
 argument_list|(
 name|room
 operator|.
+name|hasExternalId
+argument_list|()
+condition|?
+name|room
+operator|.
+name|getExternalId
+argument_list|()
+else|:
+literal|""
+argument_list|)
+return|;
+case|case
+literal|2
+case|:
+return|return
+operator|new
+name|A
+argument_list|(
+name|room
+operator|.
 name|getRoomType
 argument_list|()
 operator|.
@@ -1675,7 +1724,7 @@ argument_list|()
 argument_list|)
 return|;
 case|case
-literal|2
+literal|3
 case|:
 return|return
 operator|new
@@ -1703,7 +1752,7 @@ name|right
 argument_list|()
 return|;
 case|case
-literal|3
+literal|4
 case|:
 return|return
 operator|new
@@ -1731,7 +1780,7 @@ name|right
 argument_list|()
 return|;
 case|case
-literal|4
+literal|5
 case|:
 return|return
 operator|new
@@ -1764,7 +1813,7 @@ name|right
 argument_list|()
 return|;
 case|case
-literal|5
+literal|6
 case|:
 return|return
 operator|new
@@ -1807,7 +1856,7 @@ literal|""
 argument_list|)
 return|;
 case|case
-literal|6
+literal|7
 case|:
 return|return
 operator|new
@@ -1830,7 +1879,7 @@ argument_list|()
 argument_list|)
 return|;
 case|case
-literal|7
+literal|8
 case|:
 return|return
 operator|new
@@ -1853,7 +1902,7 @@ argument_list|()
 argument_list|)
 return|;
 case|case
-literal|8
+literal|9
 case|:
 if|if
 condition|(
@@ -1942,7 +1991,7 @@ return|return
 name|a
 return|;
 case|case
-literal|9
+literal|10
 case|:
 if|if
 condition|(
@@ -2044,7 +2093,7 @@ argument_list|()
 return|;
 block|}
 case|case
-literal|10
+literal|11
 case|:
 if|if
 condition|(
@@ -2186,7 +2235,7 @@ argument_list|()
 return|;
 block|}
 case|case
-literal|11
+literal|12
 case|:
 return|return
 name|availability
@@ -2199,7 +2248,7 @@ name|context
 argument_list|)
 return|;
 case|case
-literal|12
+literal|13
 case|:
 if|if
 condition|(
@@ -2282,8 +2331,9 @@ return|return
 name|a
 return|;
 case|case
-literal|13
+literal|14
 case|:
+return|return
 operator|new
 name|A
 argument_list|(
@@ -2317,9 +2367,9 @@ operator|.
 name|getColor
 argument_list|()
 argument_list|)
-expr_stmt|;
+return|;
 case|case
-literal|14
+literal|15
 case|:
 if|if
 condition|(
@@ -2370,7 +2420,7 @@ return|return
 name|a
 return|;
 case|case
-literal|15
+literal|16
 case|:
 return|return
 name|periodPreferences
@@ -2381,7 +2431,7 @@ name|context
 argument_list|)
 return|;
 case|case
-literal|16
+literal|17
 case|:
 return|return
 operator|new
@@ -2419,7 +2469,7 @@ argument_list|()
 argument_list|)
 return|;
 case|case
-literal|17
+literal|18
 case|:
 return|return
 name|room
@@ -2474,7 +2524,7 @@ name|A
 argument_list|()
 return|;
 case|case
-literal|18
+literal|19
 case|:
 return|return
 name|availability
@@ -2487,7 +2537,7 @@ name|context
 argument_list|)
 return|;
 case|case
-literal|19
+literal|20
 case|:
 return|return
 name|room
@@ -2519,7 +2569,7 @@ name|italic
 argument_list|()
 return|;
 case|case
-literal|20
+literal|21
 case|:
 return|return
 name|room
@@ -2568,7 +2618,7 @@ name|A
 argument_list|()
 return|;
 case|case
-literal|21
+literal|22
 case|:
 if|if
 condition|(
@@ -2664,7 +2714,7 @@ return|return
 name|a
 return|;
 case|case
-literal|22
+literal|23
 case|:
 return|return
 name|features
@@ -2697,7 +2747,7 @@ name|get
 argument_list|(
 name|column
 operator|-
-literal|23
+literal|24
 argument_list|)
 argument_list|,
 name|context
