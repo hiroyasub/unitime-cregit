@@ -2058,6 +2058,11 @@ operator|.
 name|setHint
 argument_list|(
 name|iGuest
+operator|||
+name|getUser
+argument_list|()
+operator|==
+literal|null
 condition|?
 name|MESSAGES
 operator|.
