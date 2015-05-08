@@ -2135,6 +2135,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"External Id"
+argument_list|)
+name|String
+name|colExternalId
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -3227,6 +3236,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>E</u>dit Room"
+argument_list|)
+name|String
+name|buttonEditRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter"
 argument_list|)
 name|String
@@ -3861,6 +3879,15 @@ literal|"Loading rooms..."
 argument_list|)
 name|String
 name|waitLoadingRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading room details..."
+argument_list|)
+name|String
+name|waitLoadingRoomDetails
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4566,6 +4593,18 @@ literal|"Failed to load rooms: {0}"
 argument_list|)
 name|String
 name|failedToLoadRooms
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load room details: {0}"
+argument_list|)
+name|String
+name|failedToLoadRoomDetails
 parameter_list|(
 name|String
 name|reason
@@ -6680,6 +6719,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Room Detail"
+argument_list|)
+name|String
+name|pageRoomDetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -8198,6 +8246,153 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"External Id:"
+argument_list|)
+name|String
+name|propExternalId
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Capacity:"
+argument_list|)
+name|String
+name|propCapacity
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Examination Seating Capacity:"
+argument_list|)
+name|String
+name|propExamCapacity
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling Department:"
+argument_list|)
+name|String
+name|propControllingDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Coordinates:"
+argument_list|)
+name|String
+name|propCoordinates
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Distance Check:"
+argument_list|)
+name|String
+name|propDistanceCheck
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Check:"
+argument_list|)
+name|String
+name|propRoomCheck
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Department:"
+argument_list|)
+name|String
+name|propEventDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Status:"
+argument_list|)
+name|String
+name|propEventStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Message:"
+argument_list|)
+name|String
+name|propEventNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Break Time:"
+argument_list|)
+name|String
+name|propBreakTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Groups:"
+argument_list|)
+name|String
+name|propGlobalGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department Groups:"
+argument_list|)
+name|String
+name|propDepartmenalGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Features:"
+argument_list|)
+name|String
+name|propFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Preference:"
+argument_list|)
+name|String
+name|propPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Preferences:"
+argument_list|)
+name|String
+name|propExaminationPreferences
+parameter_list|(
+name|String
+name|problem
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} ({1})"
 argument_list|)
 name|String
@@ -9126,6 +9321,42 @@ literal|"Course Projections"
 argument_list|)
 name|String
 name|headerCourseProjections
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Sharing"
+argument_list|)
+name|String
+name|headerRoomSharing
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Examination Period Preferences"
+argument_list|)
+name|String
+name|headerExaminationPeriodPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Availability"
+argument_list|)
+name|String
+name|headerEventAvailability
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Pictures"
+argument_list|)
+name|String
+name|headerRoomPictures
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10452,6 +10683,24 @@ name|x
 parameter_list|,
 name|Double
 name|y
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0,number,#0.0###}, {1,number,#0.0###}&nbsp;&nbsp;&nbsp;<i>{2}</i>"
+argument_list|)
+name|String
+name|coordinatesWithEllipsoid
+parameter_list|(
+name|Double
+name|x
+parameter_list|,
+name|Double
+name|y
+parameter_list|,
+name|String
+name|ellipsoid
 parameter_list|)
 function_decl|;
 annotation|@
