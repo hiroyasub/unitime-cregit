@@ -631,7 +631,7 @@ argument_list|)
 expr_stmt|;
 name|response
 operator|.
-name|setCanAddEvent
+name|setCanAddSpecialEvent
 argument_list|(
 name|context
 operator|.
