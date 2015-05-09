@@ -493,6 +493,13 @@ name|iDepartmentIds
 operator|.
 name|isEmpty
 argument_list|()
+operator|&&
+name|getTypeInt
+argument_list|()
+operator|!=
+name|DatePattern
+operator|.
+name|sTypePatternSet
 condition|)
 name|errors
 operator|.
@@ -505,7 +512,7 @@ name|ActionMessage
 argument_list|(
 literal|"errors.generic"
 argument_list|,
-literal|"Only extended pattern can contain relations with departments."
+literal|"Only extended pattern and alternative pattern set can contain relations with departments."
 argument_list|)
 argument_list|)
 expr_stmt|;
