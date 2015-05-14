@@ -2122,6 +2122,12 @@ index|]
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|room
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+operator|&&
 name|a
 operator|.
 name|getTimeLocation

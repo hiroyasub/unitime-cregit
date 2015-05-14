@@ -12517,7 +12517,7 @@ literal|") and a.solution.owner.session.uniqueId=:sessionId and a.solution.commi
 operator|+
 name|iSolverGroupIds
 operator|+
-literal|")"
+literal|") and r.ignoreRoomCheck = false"
 argument_list|)
 decl_stmt|;
 name|q
@@ -28104,6 +28104,15 @@ operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|room
+operator|.
+name|getConstraint
+argument_list|()
+condition|)
+continue|continue;
 name|Collection
 argument_list|<
 name|TimeBlock
