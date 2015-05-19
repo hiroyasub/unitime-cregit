@@ -13918,6 +13918,13 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|curriculum
+operator|.
+name|hasClassifications
+argument_list|()
+condition|)
 for|for
 control|(
 name|CurriculumClassificationInterface
