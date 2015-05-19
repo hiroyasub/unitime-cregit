@@ -1190,7 +1190,7 @@ operator|.
 name|getDurationModel
 argument_list|()
 argument_list|,
-literal|true
+literal|false
 argument_list|,
 name|ss
 operator|.

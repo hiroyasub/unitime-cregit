@@ -1216,12 +1216,6 @@ argument_list|()
 operator|==
 name|sTypeExtended
 condition|)
-continue|continue;
-if|if
-condition|(
-operator|!
-name|includeExtended
-condition|)
 block|{
 if|if
 condition|(
