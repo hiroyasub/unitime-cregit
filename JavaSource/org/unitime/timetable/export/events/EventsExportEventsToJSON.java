@@ -227,7 +227,7 @@ name|reference
 parameter_list|()
 block|{
 return|return
-literal|"events.ics"
+literal|"events.json"
 return|;
 block|}
 annotation|@
