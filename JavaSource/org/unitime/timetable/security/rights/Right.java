@@ -997,6 +997,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|RoomsExportJson
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
+block|,
 name|RoomDetail
 argument_list|(
 name|Location
