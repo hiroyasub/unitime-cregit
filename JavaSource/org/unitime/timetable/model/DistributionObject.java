@@ -83,7 +83,10 @@ comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
 name|String
 name|preferenceText
-parameter_list|()
+parameter_list|(
+name|boolean
+name|includeSuffix
+parameter_list|)
 block|{
 name|PreferenceGroup
 name|prefGroup
@@ -134,7 +137,9 @@ return|return
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|includeSuffix
+argument_list|)
 return|;
 block|}
 if|else if
@@ -173,6 +178,18 @@ name|getName
 argument_list|()
 return|;
 block|}
+block|}
+specifier|public
+name|String
+name|preferenceText
+parameter_list|()
+block|{
+return|return
+name|preferenceText
+argument_list|(
+literal|false
+argument_list|)
+return|;
 block|}
 comment|/** Ordering based on sequence numbers or preference groups */
 specifier|public

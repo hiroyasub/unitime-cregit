@@ -7602,6 +7602,34 @@ name|OnlineSchedulingEmailCarbonCopy
 argument_list|(
 literal|"unitime.enrollment.email.cc"
 argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Distribution Preferences: show class suffix (external id) next to the class section number"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.1
+argument_list|)
+name|DistributionsShowClassSufix
+argument_list|(
+literal|"unitime.distributions.showClassSuffixes"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
