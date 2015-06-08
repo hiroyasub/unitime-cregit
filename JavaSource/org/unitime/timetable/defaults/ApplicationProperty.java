@@ -1266,6 +1266,48 @@ name|AuthorizationLdapUpCase
 argument_list|(
 literal|"unitime.authentication.ldap.group-convert-to-uppercase"
 argument_list|)
+decl_stmt|, 	 	@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+decl|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+decl|@
+name|Description
+argument_list|(
+literal|"LDAP Authentication: translate the id-attribute using the provided external user id translation class (see tmtbl.externalUid.translation property)"
+argument_list|)
+name|AuthenticationLdapIdTranslate
+argument_list|(
+literal|"unitime.authentication.ldap.id-translate"
+argument_list|)
+decl_stmt|, 	 	@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+decl|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+decl|@
+name|Description
+argument_list|(
+literal|"LDAP Authentication: trim leading zeros from the user external id"
+argument_list|)
+name|AuthenticationLdapIdTrimLeadingZeros
+argument_list|(
+literal|"unitime.authentication.ldap.id-trim"
+argument_list|)
 decl_stmt|,
 comment|/** 	 * Translation between LDAP uid and UniTime's external user id. 	 */
 decl_stmt|@
