@@ -5427,6 +5427,29 @@ literal|"unitime.pattern.nrExcessMoths"
 argument_list|)
 operator|,
 expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"alternate"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Date Pattern Display Format: display the start and end date of a class instead of the date pattern name when:\n"
+operator|+
+literal|" never ... always use date pattern name,\n"
+operator|+
+literal|" external ... when the date pattern is of external type,\n"
+operator|+
+literal|" alternate ... when the date pattern is NOT of alternative weeks type,\n"
+operator|+
+literal|" always ... always use first date - last date format instead of the date pattern name"
+argument_list|)
+name|DatePatternFormatUseDates
+argument_list|(
+literal|"unitime.pattern.format.useDates"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Type
 argument_list|(
 name|Integer

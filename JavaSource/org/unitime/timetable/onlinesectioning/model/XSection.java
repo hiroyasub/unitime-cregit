@@ -982,6 +982,11 @@ name|helper
 operator|.
 name|getExactTimeConversion
 argument_list|()
+argument_list|,
+name|helper
+operator|.
+name|getDatePatternFormat
+argument_list|()
 argument_list|)
 expr_stmt|;
 for|for
