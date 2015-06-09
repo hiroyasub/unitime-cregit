@@ -2682,6 +2682,8 @@ argument_list|)
 block|,
 name|ApiJsonConnector
 block|,
+name|ApiDataExchangeConnector
+block|,
 comment|/** Obsolete */
 name|SolutionInformationDefinitions
 block|,  	;
