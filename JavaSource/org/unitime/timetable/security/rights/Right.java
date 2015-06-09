@@ -2665,6 +2665,23 @@ name|Scripts
 block|,
 name|ScriptEdit
 block|,
+comment|/** API */
+name|ApiRetrieveEvents
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|ApiRetrieveRooms
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|ApiJsonConnector
+block|,
 comment|/** Obsolete */
 name|SolutionInformationDefinitions
 block|,  	;
