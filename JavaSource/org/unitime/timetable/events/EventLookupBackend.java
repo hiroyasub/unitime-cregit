@@ -4569,6 +4569,67 @@ argument_list|(
 literal|"All Sessions"
 argument_list|)
 decl_stmt|;
+name|String
+name|role
+init|=
+name|request
+operator|.
+name|getEventFilter
+argument_list|()
+operator|.
+name|getOption
+argument_list|(
+literal|"role"
+argument_list|)
+decl_stmt|;
+name|boolean
+name|student
+init|=
+operator|(
+name|role
+operator|==
+literal|null
+operator|||
+literal|"student"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|role
+argument_list|)
+operator|)
+decl_stmt|;
+name|boolean
+name|instructor
+init|=
+operator|(
+name|role
+operator|==
+literal|null
+operator|||
+literal|"instructor"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|role
+argument_list|)
+operator|)
+decl_stmt|;
+name|boolean
+name|contact
+init|=
+operator|(
+name|role
+operator|==
+literal|null
+operator|||
+literal|"contact"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|role
+argument_list|)
+operator|)
+decl_stmt|;
 name|curriculumCourses
 operator|=
 operator|new
@@ -4583,6 +4644,10 @@ condition|(
 name|allSessions
 condition|)
 block|{
+if|if
+condition|(
+name|student
+condition|)
 name|curriculumCourses
 operator|.
 name|addAll
@@ -4608,6 +4673,10 @@ name|list
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|instructor
+condition|)
 name|curriculumCourses
 operator|.
 name|addAll
@@ -4636,6 +4705,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|student
+condition|)
 name|curriculumCourses
 operator|.
 name|addAll
@@ -4671,6 +4744,10 @@ name|list
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|instructor
+condition|)
 name|curriculumCourses
 operator|.
 name|addAll
@@ -4723,6 +4800,9 @@ condition|)
 block|{
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -4733,6 +4813,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -4805,6 +4886,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -4815,6 +4899,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -4890,6 +4975,9 @@ else|else
 block|{
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -4900,6 +4988,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -4972,6 +5061,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -4982,6 +5074,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5060,6 +5153,9 @@ condition|)
 block|{
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5070,6 +5166,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5156,6 +5253,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5166,6 +5266,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5252,6 +5353,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5262,6 +5366,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5348,6 +5453,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5358,6 +5466,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5444,6 +5553,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5454,6 +5566,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5529,6 +5642,9 @@ else|else
 block|{
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5539,6 +5655,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5625,6 +5742,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5635,6 +5755,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5721,6 +5842,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5731,6 +5855,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5817,6 +5942,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5827,6 +5955,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -5913,6 +6042,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -5923,6 +6055,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6001,6 +6134,9 @@ condition|)
 block|{
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6011,6 +6147,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6092,6 +6229,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6102,6 +6242,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6183,6 +6324,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6193,6 +6337,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6274,6 +6419,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6284,6 +6432,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6365,6 +6514,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6375,6 +6527,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6456,6 +6609,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6466,6 +6622,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6547,6 +6704,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6557,6 +6717,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6638,6 +6799,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6648,6 +6812,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6732,6 +6897,9 @@ else|else
 block|{
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6742,6 +6910,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6828,6 +6997,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6838,6 +7010,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -6924,6 +7097,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -6934,6 +7110,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7020,6 +7197,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|student
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7030,6 +7210,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7116,6 +7297,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7126,6 +7310,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7212,6 +7397,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7222,6 +7410,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7308,6 +7497,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7318,6 +7510,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7404,6 +7597,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|instructor
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7414,6 +7610,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7501,6 +7698,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|contact
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7511,6 +7711,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7573,6 +7774,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|contact
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7583,6 +7787,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
@@ -7645,6 +7850,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|contact
+operator|&&
+operator|(
 name|limit
 operator|<=
 literal|0
@@ -7655,6 +7863,7 @@ name|size
 argument_list|()
 operator|<
 name|limit
+operator|)
 condition|)
 name|meetings
 operator|.
