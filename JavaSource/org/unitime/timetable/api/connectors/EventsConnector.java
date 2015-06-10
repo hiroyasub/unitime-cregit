@@ -63,22 +63,6 @@ name|org
 operator|.
 name|springframework
 operator|.
-name|security
-operator|.
-name|access
-operator|.
-name|prepost
-operator|.
-name|PreAuthorize
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
 name|stereotype
 operator|.
 name|Service
@@ -279,6 +263,22 @@ name|SessionDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|rights
+operator|.
+name|Right
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -297,11 +297,6 @@ name|ApiConnector
 block|{
 annotation|@
 name|Override
-annotation|@
-name|PreAuthorize
-argument_list|(
-literal|"checkPermission(#helper.academicSessionId, 'Session', 'ApiRetrieveEvents')"
-argument_list|)
 specifier|public
 name|void
 name|doGet
@@ -359,6 +354,20 @@ argument_list|(
 literal|"Given academic session no longer exists."
 argument_list|)
 throw|;
+name|helper
+operator|.
+name|getSessionContext
+argument_list|()
+operator|.
+name|checkPermission
+argument_list|(
+name|session
+argument_list|,
+name|Right
+operator|.
+name|ApiRetrieveEvents
+argument_list|)
+expr_stmt|;
 name|EventLookupRpcRequest
 name|request
 init|=
