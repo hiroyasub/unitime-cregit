@@ -466,6 +466,20 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
+name|ThreadDeath
+name|e
+parameter_list|)
+block|{
+name|fatal
+argument_list|(
+literal|"Execution stopped."
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
@@ -514,6 +528,18 @@ name|iException
 operator|!=
 literal|null
 condition|)
+block|{
+if|if
+condition|(
+name|iException
+operator|instanceof
+name|ThreadDeath
+condition|)
+name|iStatus
+operator|=
+literal|"Killed"
+expr_stmt|;
+else|else
 name|iStatus
 operator|=
 literal|"Failed ("
@@ -525,6 +551,7 @@ argument_list|()
 operator|+
 literal|")"
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|boolean
