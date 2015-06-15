@@ -756,6 +756,10 @@ name|iRoles
 operator|=
 name|roles
 expr_stmt|;
+name|iSelected
+operator|=
+name|selected
+expr_stmt|;
 block|}
 block|}
 class|class
