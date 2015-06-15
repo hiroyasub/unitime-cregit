@@ -7744,6 +7744,28 @@ argument_list|(
 literal|"unitime.api.canUseToken"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"API: trim leading zeros from extednal user id"
+argument_list|)
+name|ApiTrimLeadingZerosFromUserExternalIds
+argument_list|(
+literal|"unitime.api.user.id-trim"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
