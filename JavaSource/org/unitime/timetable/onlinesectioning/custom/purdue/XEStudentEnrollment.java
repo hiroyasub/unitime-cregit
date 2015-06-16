@@ -1267,7 +1267,7 @@ parameter_list|)
 throws|throws
 name|SectioningException
 block|{
-comment|// Cannot enroll -> no additional check is needed
+comment|// Cannot enroll -> no additional check is needed (unless it is the case when UniTime does not know about the student)
 if|if
 condition|(
 operator|!
@@ -1279,6 +1279,13 @@ name|EligibilityFlag
 operator|.
 name|CAN_ENROLL
 argument_list|)
+operator|&&
+name|student
+operator|.
+name|getStudentId
+argument_list|()
+operator|!=
+literal|null
 condition|)
 return|return;
 name|ClientResource
