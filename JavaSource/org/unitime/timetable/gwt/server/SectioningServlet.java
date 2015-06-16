@@ -2298,7 +2298,7 @@ literal|"select c from CourseOffering c where "
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and ("
 operator|+
-literal|"lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like :q || '%' "
+literal|"(lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like :q || '%' or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr || ' - ' || c.title) like :q || '%') "
 operator|+
 operator|(
 name|query
@@ -3373,7 +3373,7 @@ literal|"select c from CourseOffering c where "
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and "
 operator|+
-literal|"lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) = :course"
+literal|"(lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) = :course or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr || ' - ' || c.title) = :course)"
 argument_list|)
 operator|.
 name|setString
@@ -5618,7 +5618,9 @@ literal|"select cr.courseOffering from CourseRequest cr where "
 operator|+
 literal|"cr.courseDemand.student.uniqueId = :studentId and "
 operator|+
-literal|"lower(cr.courseOffering.subjectArea.subjectAreaAbbreviation || ' ' || cr.courseOffering.courseNbr) = :course"
+literal|"(lower(cr.courseOffering.subjectArea.subjectAreaAbbreviation || ' ' || cr.courseOffering.courseNbr) = :course or "
+operator|+
+literal|"lower(cr.courseOffering.subjectArea.subjectAreaAbbreviation || ' ' || cr.courseOffering.courseNbr || ' - ' || cr.courseOffering.title) = :course)"
 argument_list|)
 operator|.
 name|setString
@@ -5676,7 +5678,7 @@ literal|"select c from CourseOffering c where "
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and "
 operator|+
-literal|"lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) = :course"
+literal|"(lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) = :course or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr || ' - ' || c.title) = :course)"
 argument_list|)
 operator|.
 name|setString
