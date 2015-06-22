@@ -2696,6 +2696,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ApiRetrieveClassInfo
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|ApiJsonConnector
 block|,
 name|ApiDataExchangeConnector

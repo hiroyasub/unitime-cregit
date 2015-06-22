@@ -2787,6 +2787,20 @@ name|ApiRetrieveInstructorSchedule
 extends|extends
 name|SimpleSessionPermission
 block|{}
+annotation|@
+name|PermissionForRight
+argument_list|(
+name|Right
+operator|.
+name|ApiRetrieveClassInfo
+argument_list|)
+specifier|public
+specifier|static
+class|class
+name|ApiRetrieveClassInfo
+extends|extends
+name|SimpleSessionPermission
+block|{}
 block|}
 end_class
 
