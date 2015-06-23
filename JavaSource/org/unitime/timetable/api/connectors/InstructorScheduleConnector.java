@@ -1920,6 +1920,9 @@ decl_stmt|;
 name|String
 name|iName
 decl_stmt|;
+name|String
+name|iType
+decl_stmt|;
 name|Integer
 name|iSize
 decl_stmt|;
@@ -1963,6 +1966,16 @@ operator|=
 name|exam
 operator|.
 name|getName
+argument_list|()
+expr_stmt|;
+name|iType
+operator|=
+name|exam
+operator|.
+name|getExamType
+argument_list|()
+operator|.
+name|getReference
 argument_list|()
 expr_stmt|;
 for|for
