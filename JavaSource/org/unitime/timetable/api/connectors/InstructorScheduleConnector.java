@@ -957,6 +957,9 @@ name|Long
 name|iInstructorId
 decl_stmt|;
 name|String
+name|iExternalId
+decl_stmt|;
+name|String
 name|iFirstName
 decl_stmt|;
 name|String
@@ -988,6 +991,13 @@ operator|=
 name|instructor
 operator|.
 name|getUniqueId
+argument_list|()
+expr_stmt|;
+name|iExternalId
+operator|=
+name|instructor
+operator|.
+name|getExternalUniqueId
 argument_list|()
 expr_stmt|;
 name|iFirstName
