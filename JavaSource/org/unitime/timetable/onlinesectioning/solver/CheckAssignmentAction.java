@@ -738,7 +738,7 @@ name|getAssignment
 argument_list|()
 control|)
 block|{
-comment|// Skip free times
+comment|// Skip free times and dummy sections
 if|if
 condition|(
 name|ca
@@ -756,6 +756,11 @@ name|getClassId
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|ca
+operator|.
+name|isDummy
+argument_list|()
 condition|)
 continue|continue;
 name|XCourse
