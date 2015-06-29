@@ -2885,6 +2885,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Room Type:"
+argument_list|)
+name|String
+name|propRoomType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Building:"
+argument_list|)
+name|String
+name|propBuilding
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Name:"
+argument_list|)
+name|String
+name|propRoomName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Number:"
+argument_list|)
+name|String
+name|propRoomNumber
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display Name:"
+argument_list|)
+name|String
+name|propDisplayName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -3240,6 +3285,33 @@ literal|"<u>E</u>dit Room"
 argument_list|)
 name|String
 name|buttonEditRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>reate Room"
+argument_list|)
+name|String
+name|buttonCreateRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>U</u>pdate Room"
+argument_list|)
+name|String
+name|buttonUpdateRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>elete Room"
+argument_list|)
+name|String
+name|buttonDeleteRoom
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6728,6 +6800,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Room"
+argument_list|)
+name|String
+name|pageAddRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Room"
+argument_list|)
+name|String
+name|pageEditRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -7751,6 +7841,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No controlling department"
+argument_list|)
+name|String
+name|itemNoControlDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No event department"
+argument_list|)
+name|String
+name|itemNoEventDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|itemDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} seats"
 argument_list|)
 name|String
@@ -8264,6 +8381,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Examination Rooms:"
+argument_list|)
+name|String
+name|propExamRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Examination Seating Capacity:"
 argument_list|)
 name|String
@@ -8389,6 +8515,15 @@ parameter_list|(
 name|String
 name|problem
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Sharing Note:"
+argument_list|)
+name|String
+name|propRoomSharingNote
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -9357,6 +9492,24 @@ literal|"Room Pictures"
 argument_list|)
 name|String
 name|headerRoomPictures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Features"
+argument_list|)
+name|String
+name|headerRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Groups"
+argument_list|)
+name|String
+name|headerRoomGroups
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10744,6 +10897,15 @@ parameter_list|(
 name|String
 name|roomLabel
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default break time is used when left empty."
+argument_list|)
+name|String
+name|useDefaultBreakTimeWhenEmpty
+parameter_list|()
 function_decl|;
 block|}
 end_interface
