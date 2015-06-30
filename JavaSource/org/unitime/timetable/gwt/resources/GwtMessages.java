@@ -3317,6 +3317,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Geocode"
+argument_list|)
+name|String
+name|buttonGeocode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter"
 argument_list|)
 name|String
