@@ -3952,9 +3952,13 @@ name|iProperties
 operator|.
 name|isCanAddRoom
 argument_list|()
+operator|||
+name|iProperties
+operator|.
+name|isCanAddNonUniversity
+argument_list|()
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|History

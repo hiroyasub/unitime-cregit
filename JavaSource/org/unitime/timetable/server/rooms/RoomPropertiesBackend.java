@@ -723,7 +723,12 @@ name|Right
 operator|.
 name|AddRoom
 argument_list|)
-operator|||
+argument_list|)
+expr_stmt|;
+name|response
+operator|.
+name|setCanAddNonUniversity
+argument_list|(
 name|context
 operator|.
 name|hasPermission
