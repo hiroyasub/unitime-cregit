@@ -133,7 +133,9 @@ block|,
 name|CAN_WAITLIST
 block|,
 name|RECHECK_AFTER_ENROLLMENT
-block|, 			;
+block|,
+name|RECHECK_BEFORE_ENROLLMENT
+block|;
 specifier|public
 name|int
 name|flag
