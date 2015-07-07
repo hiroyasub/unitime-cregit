@@ -5429,6 +5429,63 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Room type must be selected."
+argument_list|)
+name|String
+name|errorRoomTypeMustBeSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Building must be selected for room type {0}."
+argument_list|)
+name|String
+name|errorBuildingMustBeSelected
+parameter_list|(
+name|String
+name|roomType
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room number must be provided."
+argument_list|)
+name|String
+name|errorRoomNumberIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Location name must be provided."
+argument_list|)
+name|String
+name|errorLocationNameIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room capacity must be provided."
+argument_list|)
+name|String
+name|errorRoomCapacityIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room examination capacity must be provided."
+argument_list|)
+name|String
+name|errorRoomExamCapacityIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Success (no row returned)"
 argument_list|)
 name|String

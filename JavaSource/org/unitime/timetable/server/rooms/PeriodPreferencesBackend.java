@@ -355,6 +355,22 @@ name|SessionContext
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|rights
+operator|.
+name|Right
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -511,6 +527,17 @@ name|getExamTypeId
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|context
+operator|.
+name|checkPermission
+argument_list|(
+name|location
+argument_list|,
+name|Right
+operator|.
+name|RoomDetailPeriodPreferences
+argument_list|)
+expr_stmt|;
 return|return
 name|loadPeriodPreferences
 argument_list|(
