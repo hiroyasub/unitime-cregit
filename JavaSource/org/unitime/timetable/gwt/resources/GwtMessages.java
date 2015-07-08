@@ -5450,7 +5450,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room number must be provided."
+literal|"Room number is required."
 argument_list|)
 name|String
 name|errorRoomNumberIsEmpty
@@ -5459,7 +5459,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Location name must be provided."
+literal|"Location name is required."
 argument_list|)
 name|String
 name|errorLocationNameIsEmpty
@@ -5468,7 +5468,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room capacity must be provided."
+literal|"Room capacity is required."
 argument_list|)
 name|String
 name|errorRoomCapacityIsEmpty
@@ -5477,10 +5477,37 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room examination capacity must be provided."
+literal|"Room examination capacity is required."
 argument_list|)
 name|String
 name|errorRoomExamCapacityIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event note is too long."
+argument_list|)
+name|String
+name|errorEventNoteTooLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"At least one department must be selected."
+argument_list|)
+name|String
+name|errorRoomHasNoDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling department must be included in the room sharing."
+argument_list|)
+name|String
+name|errorControllingDepartmentNotAmongRoomSharing
 parameter_list|()
 function_decl|;
 annotation|@

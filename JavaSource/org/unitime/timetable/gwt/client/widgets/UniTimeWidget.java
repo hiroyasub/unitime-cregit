@@ -258,7 +258,7 @@ name|iWidget
 operator|.
 name|addStyleName
 argument_list|(
-literal|"content"
+literal|"widget"
 argument_list|)
 expr_stmt|;
 name|add
