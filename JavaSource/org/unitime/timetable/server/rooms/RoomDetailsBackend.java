@@ -2575,15 +2575,10 @@ argument_list|()
 argument_list|,
 name|location
 argument_list|,
-name|location
-operator|.
-name|getRoomPreferenceLevel
-argument_list|(
 name|rd
 operator|.
-name|getDepartment
+name|getPreference
 argument_list|()
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|response
