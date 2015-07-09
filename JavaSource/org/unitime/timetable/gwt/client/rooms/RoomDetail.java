@@ -1050,7 +1050,18 @@ name|getLabel
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// iHeader.setEnabled("edit", iRoom.isCanChange());
+name|iHeader
+operator|.
+name|setEnabled
+argument_list|(
+literal|"edit"
+argument_list|,
+name|iRoom
+operator|.
+name|isCanChange
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|iHeader
 operator|.
 name|setEnabled
@@ -1246,15 +1257,9 @@ name|propExamCapacity
 argument_list|()
 argument_list|,
 operator|new
-name|Label
+name|ExamSeatingCapacityLabel
 argument_list|(
 name|iRoom
-operator|.
-name|getExamCapacity
-argument_list|()
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 argument_list|,
 literal|1

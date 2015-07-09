@@ -3974,6 +3974,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Saving room ..."
+argument_list|)
+name|String
+name|waitSavingRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating room ..."
+argument_list|)
+name|String
+name|waitUpdatingRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Deleting room ..."
+argument_list|)
+name|String
+name|waitDeletingRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load {0}: {1}"
 argument_list|)
 name|String
@@ -5513,6 +5540,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to delete the room: {0}"
+argument_list|)
+name|String
+name|errorFailedToDeleteRoom
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to save the room: {0}"
+argument_list|)
+name|String
+name|errorFailedToSaveRoom
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update the room: {0}"
+argument_list|)
+name|String
+name|errorFailedToUpdateRoom
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Success (no row returned)"
 argument_list|)
 name|String
@@ -5704,6 +5767,15 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change future sessions as well."
+argument_list|)
+name|String
+name|checkApplyToFutureSessions
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -9838,6 +9910,15 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you realy want to delete this room?"
+argument_list|)
+name|String
+name|confirmDeleteRoom
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage

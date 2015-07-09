@@ -3206,6 +3206,14 @@ name|picture
 operator|.
 name|getContentType
 argument_list|()
+argument_list|,
+name|picture
+operator|.
+name|getTimeStamp
+argument_list|()
+operator|.
+name|getTime
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
