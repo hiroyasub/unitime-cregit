@@ -380,6 +380,17 @@ name|helper
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|String
+name|getName
+parameter_list|()
+block|{
+return|return
+literal|"json"
+return|;
+block|}
 block|}
 end_class
 
