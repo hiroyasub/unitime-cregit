@@ -154,6 +154,20 @@ argument_list|>
 name|getParameterNames
 parameter_list|()
 function_decl|;
+specifier|public
+name|org
+operator|.
+name|hibernate
+operator|.
+name|Session
+name|getHibSession
+parameter_list|()
+function_decl|;
+specifier|public
+name|void
+name|close
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

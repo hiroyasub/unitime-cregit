@@ -151,6 +151,16 @@ begin_import
 import|import
 name|org
 operator|.
+name|hibernate
+operator|.
+name|CacheMode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|timetable
@@ -183,6 +193,9 @@ name|response
 parameter_list|,
 name|SessionContext
 name|context
+parameter_list|,
+name|CacheMode
+name|cacheMode
 parameter_list|)
 block|{
 name|super
@@ -192,6 +205,8 @@ argument_list|,
 name|response
 argument_list|,
 name|context
+argument_list|,
+name|cacheMode
 argument_list|)
 expr_stmt|;
 block|}
