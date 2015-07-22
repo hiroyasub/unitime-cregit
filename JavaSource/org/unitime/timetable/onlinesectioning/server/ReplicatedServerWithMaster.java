@@ -2576,8 +2576,8 @@ name|Long
 argument_list|>
 name|offeringIds
 parameter_list|,
-name|boolean
-name|excludeLockedOfferings
+name|String
+name|actionName
 parameter_list|)
 block|{
 if|if
@@ -2616,7 +2616,7 @@ name|studentId
 argument_list|,
 name|offeringIds
 argument_list|,
-name|excludeLockedOfferings
+name|actionName
 argument_list|)
 argument_list|)
 return|;
@@ -2636,8 +2636,8 @@ name|Long
 argument_list|>
 name|studentIds
 parameter_list|,
-name|boolean
-name|excludeLockedOffering
+name|String
+name|actionName
 parameter_list|)
 block|{
 if|if
@@ -2676,7 +2676,7 @@ name|offeringId
 argument_list|,
 name|studentIds
 argument_list|,
-name|excludeLockedOffering
+name|actionName
 argument_list|)
 argument_list|)
 return|;
@@ -2689,6 +2689,9 @@ name|lockRequest
 parameter_list|(
 name|CourseRequestInterface
 name|request
+parameter_list|,
+name|String
+name|actionName
 parameter_list|)
 block|{
 if|if
@@ -2727,6 +2730,8 @@ operator|.
 name|lockRequest
 argument_list|(
 name|request
+argument_list|,
+name|actionName
 argument_list|)
 argument_list|)
 return|;

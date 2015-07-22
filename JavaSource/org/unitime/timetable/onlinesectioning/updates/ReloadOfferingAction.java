@@ -984,7 +984,8 @@ name|offeringId
 argument_list|,
 name|studentIds
 argument_list|,
-literal|true
+name|name
+argument_list|()
 argument_list|)
 decl_stmt|;
 try|try

@@ -784,8 +784,8 @@ name|Long
 argument_list|>
 name|offeringIds
 parameter_list|,
-name|boolean
-name|excludeLockedOfferings
+name|String
+name|actionName
 parameter_list|)
 function_decl|;
 annotation|@
@@ -808,8 +808,8 @@ name|Long
 argument_list|>
 name|studentIds
 parameter_list|,
-name|boolean
-name|excludeLockedOffering
+name|String
+name|actionName
 parameter_list|)
 function_decl|;
 annotation|@
@@ -825,6 +825,9 @@ name|lockRequest
 parameter_list|(
 name|CourseRequestInterface
 name|request
+parameter_list|,
+name|String
+name|actionName
 parameter_list|)
 function_decl|;
 specifier|public
