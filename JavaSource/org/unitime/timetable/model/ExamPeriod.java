@@ -869,6 +869,9 @@ block|}
 specifier|public
 specifier|static
 name|TreeSet
+argument_list|<
+name|ExamPeriod
+argument_list|>
 name|findAll
 parameter_list|(
 name|Long
@@ -899,6 +902,9 @@ block|}
 specifier|public
 specifier|static
 name|TreeSet
+argument_list|<
+name|ExamPeriod
+argument_list|>
 name|findAll
 parameter_list|(
 name|Long
@@ -909,10 +915,16 @@ name|examTypeId
 parameter_list|)
 block|{
 name|TreeSet
+argument_list|<
+name|ExamPeriod
+argument_list|>
 name|ret
 init|=
 operator|new
 name|TreeSet
+argument_list|<
+name|ExamPeriod
+argument_list|>
 argument_list|()
 decl_stmt|;
 if|if

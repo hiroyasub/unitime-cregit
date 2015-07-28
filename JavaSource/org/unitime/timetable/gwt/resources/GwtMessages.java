@@ -2885,6 +2885,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Room Type:"
+argument_list|)
+name|String
+name|propRoomType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Building:"
+argument_list|)
+name|String
+name|propBuilding
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Name:"
+argument_list|)
+name|String
+name|propRoomName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Number:"
+argument_list|)
+name|String
+name|propRoomNumber
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Display Name:"
+argument_list|)
+name|String
+name|propDisplayName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -3240,6 +3285,42 @@ literal|"<u>E</u>dit Room"
 argument_list|)
 name|String
 name|buttonEditRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>reate Room"
+argument_list|)
+name|String
+name|buttonCreateRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>U</u>pdate Room"
+argument_list|)
+name|String
+name|buttonUpdateRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>elete Room"
+argument_list|)
+name|String
+name|buttonDeleteRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Geocode"
+argument_list|)
+name|String
+name|buttonGeocode
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3888,6 +3969,33 @@ literal|"Loading room details..."
 argument_list|)
 name|String
 name|waitLoadingRoomDetails
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Saving room ..."
+argument_list|)
+name|String
+name|waitSavingRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating room ..."
+argument_list|)
+name|String
+name|waitUpdatingRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Deleting room ..."
+argument_list|)
+name|String
+name|waitDeletingRoom
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5348,6 +5456,126 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Room type must be selected."
+argument_list|)
+name|String
+name|errorRoomTypeMustBeSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Building must be selected for room type {0}."
+argument_list|)
+name|String
+name|errorBuildingMustBeSelected
+parameter_list|(
+name|String
+name|roomType
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room number is required."
+argument_list|)
+name|String
+name|errorRoomNumberIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Location name is required."
+argument_list|)
+name|String
+name|errorLocationNameIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room capacity is required."
+argument_list|)
+name|String
+name|errorRoomCapacityIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room examination capacity is required."
+argument_list|)
+name|String
+name|errorRoomExamCapacityIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event note is too long."
+argument_list|)
+name|String
+name|errorEventNoteTooLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"At least one department must be selected."
+argument_list|)
+name|String
+name|errorRoomHasNoDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Controlling department must be included in the room sharing."
+argument_list|)
+name|String
+name|errorControllingDepartmentNotAmongRoomSharing
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to delete the room: {0}"
+argument_list|)
+name|String
+name|errorFailedToDeleteRoom
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to save the room: {0}"
+argument_list|)
+name|String
+name|errorFailedToSaveRoom
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update the room: {0}"
+argument_list|)
+name|String
+name|errorFailedToUpdateRoom
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Success (no row returned)"
 argument_list|)
 name|String
@@ -5539,6 +5767,15 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change future sessions as well."
+argument_list|)
+name|String
+name|checkApplyToFutureSessions
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -6728,6 +6965,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Room"
+argument_list|)
+name|String
+name|pageAddRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Room"
+argument_list|)
+name|String
+name|pageEditRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -7751,6 +8006,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No controlling department"
+argument_list|)
+name|String
+name|itemNoControlDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No event department"
+argument_list|)
+name|String
+name|itemNoEventDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|itemDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} seats"
 argument_list|)
 name|String
@@ -8264,6 +8546,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Examination Rooms:"
+argument_list|)
+name|String
+name|propExamRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Examination Seating Capacity:"
 argument_list|)
 name|String
@@ -8389,6 +8680,15 @@ parameter_list|(
 name|String
 name|problem
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Sharing Note:"
+argument_list|)
+name|String
+name|propRoomSharingNote
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -9362,6 +9662,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Room Features"
+argument_list|)
+name|String
+name|headerRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Groups"
+argument_list|)
+name|String
+name|headerRoomGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The selected offering has no curricula."
 argument_list|)
 name|String
@@ -9592,6 +9910,15 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you realy want to delete this room?"
+argument_list|)
+name|String
+name|confirmDeleteRoom
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -10744,6 +11071,15 @@ parameter_list|(
 name|String
 name|roomLabel
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default break time is used when left empty."
+argument_list|)
+name|String
+name|useDefaultBreakTimeWhenEmpty
+parameter_list|()
 function_decl|;
 block|}
 end_interface

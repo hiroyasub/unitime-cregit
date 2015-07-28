@@ -4187,6 +4187,9 @@ name|room
 operator|.
 name|getFeatures
 argument_list|(
+operator|(
+name|Long
+operator|)
 literal|null
 argument_list|)
 decl_stmt|;
