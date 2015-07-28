@@ -3622,6 +3622,11 @@ argument_list|(
 name|type
 argument_list|)
 expr_stmt|;
+name|setTimeStamp
+argument_list|(
+name|timeStamp
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|Long
