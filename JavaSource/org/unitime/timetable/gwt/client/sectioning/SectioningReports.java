@@ -887,7 +887,51 @@ literal|"Request Groups"
 argument_list|,
 literal|"org.cpsolver.studentsct.report.RequestGroupTable"
 argument_list|)
-block|;
+block|,
+name|INDIVIDUAL_TIME_OVERLAPS
+argument_list|(
+literal|"Individual Student Time Overlaps"
+argument_list|,
+literal|"org.unitime.timetable.reports.studentsct.IndividualStudentTimeOverlaps"
+argument_list|)
+block|,
+name|NOT_ALLOWED_TIME_OVERLAPS
+argument_list|(
+literal|"Not Allowed Time Overlaps"
+argument_list|,
+literal|"org.unitime.timetable.reports.studentsct.IndividualStudentTimeOverlaps"
+argument_list|,
+literal|"includeAllowedOverlaps"
+argument_list|,
+literal|"false"
+argument_list|)
+block|,
+name|INDIVIDUAL_TIME_OVERLAPS_BT
+argument_list|(
+literal|"Individual Student Time Overlaps (Exclude Break Times)"
+argument_list|,
+literal|"org.unitime.timetable.reports.studentsct.IndividualStudentTimeOverlaps"
+argument_list|,
+literal|"ignoreBreakTimeConflicts"
+argument_list|,
+literal|"true"
+argument_list|)
+block|,
+name|NOT_ALLOWED_TIME_OVERLAPS_BT
+argument_list|(
+literal|"Not Allowed Time Overlaps (Exclude Break Times)"
+argument_list|,
+literal|"org.unitime.timetable.reports.studentsct.IndividualStudentTimeOverlaps"
+argument_list|,
+literal|"ignoreBreakTimeConflicts"
+argument_list|,
+literal|"true"
+argument_list|,
+literal|"includeAllowedOverlaps"
+argument_list|,
+literal|"false"
+argument_list|)
+block|, 		;
 name|String
 name|iName
 decl_stmt|,
