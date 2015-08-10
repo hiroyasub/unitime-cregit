@@ -1719,6 +1719,13 @@ argument_list|)
 decl_stmt|;
 name|table
 operator|.
+name|setProperties
+argument_list|(
+name|iProperties
+argument_list|)
+expr_stmt|;
+name|table
+operator|.
 name|setDepartment
 argument_list|(
 name|iDepartment

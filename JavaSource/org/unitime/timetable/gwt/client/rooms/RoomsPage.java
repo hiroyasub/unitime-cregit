@@ -3884,6 +3884,9 @@ name|detail
 parameter_list|,
 name|boolean
 name|canShowDetail
+parameter_list|,
+name|String
+name|message
 parameter_list|)
 block|{
 if|if
@@ -3955,7 +3958,9 @@ expr_stmt|;
 name|iRoomDetail
 operator|.
 name|show
-argument_list|()
+argument_list|(
+name|message
+argument_list|)
 expr_stmt|;
 block|}
 name|changeUrl

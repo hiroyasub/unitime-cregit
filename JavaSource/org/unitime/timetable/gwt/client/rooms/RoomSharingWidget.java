@@ -1075,6 +1075,13 @@ operator|new
 name|ListBox
 argument_list|()
 expr_stmt|;
+name|iModeSelection
+operator|.
+name|setStyleName
+argument_list|(
+literal|"unitime-TextBox"
+argument_list|)
+expr_stmt|;
 name|hp
 operator|.
 name|add
@@ -2260,6 +2267,13 @@ operator|new
 name|ListBox
 argument_list|()
 decl_stmt|;
+name|pref
+operator|.
+name|setStyleName
+argument_list|(
+literal|"unitime-TextBox"
+argument_list|)
+expr_stmt|;
 name|pref
 operator|.
 name|addStyleName
