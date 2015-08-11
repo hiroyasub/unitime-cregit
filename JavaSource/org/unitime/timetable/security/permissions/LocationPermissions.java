@@ -2642,7 +2642,7 @@ specifier|static
 class|class
 name|RoomEditEventAvailability
 extends|extends
-name|RoomDetailEventAvailability
+name|RoomEditChangeEventProperties
 block|{}
 annotation|@
 name|PermissionForRight
