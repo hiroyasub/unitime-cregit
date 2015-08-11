@@ -2132,6 +2132,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|f
+operator|.
+name|setDisplayName
+argument_list|(
+name|loc
+operator|.
+name|getDisplayName
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|EventContext
 name|cx
 init|=
