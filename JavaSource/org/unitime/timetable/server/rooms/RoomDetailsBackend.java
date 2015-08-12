@@ -2127,7 +2127,17 @@ operator|.
 name|getSession
 argument_list|()
 operator|.
-name|getLabel
+name|getAcademicTerm
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|loc
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|getAcademicYear
 argument_list|()
 argument_list|)
 argument_list|)

@@ -2290,7 +2290,14 @@ argument_list|()
 argument_list|,
 name|session
 operator|.
-name|getLabel
+name|getAcademicTerm
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|session
+operator|.
+name|getAcademicYear
 argument_list|()
 argument_list|)
 decl_stmt|;
