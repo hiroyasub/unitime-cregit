@@ -1181,6 +1181,27 @@ name|UrlEncoderSecret
 argument_list|(
 literal|"unitime.encode.secret"
 argument_list|)
+decl_stmt|, 	 	@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+decl|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+decl|@
+name|Description
+argument_list|(
+literal|"Configuration: hash calendar queries to make the iCalendar URL short"
+argument_list|)
+name|UrlEncoderHashQueryWhenAsked
+argument_list|(
+literal|"unitime.encode.hash"
+argument_list|)
 decl_stmt|,  	@
 name|Description
 argument_list|(
@@ -6126,6 +6147,28 @@ argument_list|)
 name|LogCleanupOnlineSchedulingQueue
 argument_list|(
 literal|"unitime.cleanup.sectioningQueue"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"92"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Configuration: automatically remove hashed calendar queries that have not been used for the given number of days"
+argument_list|)
+name|LogCleanupHashedQueries
+argument_list|(
+literal|"unitime.cleanup.hashedQueries"
 argument_list|)
 operator|,
 expr_stmt|@
