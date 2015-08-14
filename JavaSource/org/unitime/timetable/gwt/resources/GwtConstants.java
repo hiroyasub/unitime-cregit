@@ -847,7 +847,7 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"ft2;"
+literal|"ft2"
 argument_list|)
 name|String
 name|roomAreaUnitsShortPlainText

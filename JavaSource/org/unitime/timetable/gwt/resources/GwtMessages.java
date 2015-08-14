@@ -1388,6 +1388,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Content Type"
+argument_list|)
+name|String
+name|colContentType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Picture Type"
+argument_list|)
+name|String
+name|colPictureType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Title"
 argument_list|)
 name|String
@@ -7175,6 +7193,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Attachement Type"
+argument_list|)
+name|String
+name|pageAttachementType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Attachement Types"
+argument_list|)
+name|String
+name|pageAttachementTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -11362,6 +11398,42 @@ parameter_list|,
 name|String
 name|lastItem
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Image"
+argument_list|)
+name|String
+name|attachementFlagIsImage
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Picture Type"
+argument_list|)
+name|String
+name|attachementTypeFlagRoomPicture
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show in Rooms Table"
+argument_list|)
+name|String
+name|attachementTypeFlagShowRoomsTable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show in Room Tooltip"
+argument_list|)
+name|String
+name|attachementTypeFlagShowRoomTooltip
+parameter_list|()
 function_decl|;
 block|}
 end_interface

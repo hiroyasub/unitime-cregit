@@ -3502,6 +3502,16 @@ argument_list|()
 operator|.
 name|getTime
 argument_list|()
+argument_list|,
+name|RoomPicturesBackend
+operator|.
+name|getPictureType
+argument_list|(
+name|picture
+operator|.
+name|getType
+argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

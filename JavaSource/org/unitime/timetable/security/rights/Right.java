@@ -2545,6 +2545,10 @@ name|ExaminationStatuses
 block|,
 name|ExaminationStatusEdit
 block|,
+name|AttachementTypes
+block|,
+name|AttachementTypeEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

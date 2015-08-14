@@ -284,6 +284,11 @@ operator|+
 name|getTimeStamp
 argument_list|()
 operator|+
+literal|"\n	Type: "
+operator|+
+name|getType
+argument_list|()
+operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId
