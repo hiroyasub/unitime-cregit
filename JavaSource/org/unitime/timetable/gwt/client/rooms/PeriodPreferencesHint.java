@@ -177,6 +177,13 @@ literal|1
 decl_stmt|;
 specifier|private
 specifier|static
+name|boolean
+name|sShowHint
+init|=
+literal|false
+decl_stmt|;
+specifier|private
+specifier|static
 name|GwtRpcServiceAsync
 name|RPC
 init|=
@@ -279,6 +286,10 @@ name|sLastLocationId
 operator|=
 name|locationId
 expr_stmt|;
+name|sShowHint
+operator|=
+literal|true
+expr_stmt|;
 name|RPC
 operator|.
 name|execute
@@ -332,6 +343,8 @@ name|locationId
 operator|==
 name|sLastLocationId
 operator|&&
+name|sShowHint
+operator|&&
 name|result
 operator|!=
 literal|null
@@ -359,6 +372,10 @@ name|void
 name|hideHint
 parameter_list|()
 block|{
+name|sShowHint
+operator|=
+literal|false
+expr_stmt|;
 name|GwtHint
 operator|.
 name|hideHint
