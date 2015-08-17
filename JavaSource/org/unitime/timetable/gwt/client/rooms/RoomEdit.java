@@ -405,7 +405,7 @@ name|shared
 operator|.
 name|RoomInterface
 operator|.
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 import|;
 end_import
 
@@ -1810,7 +1810,10 @@ condition|(
 name|future
 operator|!=
 literal|null
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|Window
 operator|.
 name|confirm
@@ -1838,7 +1841,6 @@ name|future
 argument_list|)
 argument_list|)
 condition|)
-block|{
 name|fillFutureFlags
 argument_list|(
 name|request
@@ -1846,9 +1848,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 return|return;
 block|}
 name|LoadingWidget
@@ -10362,7 +10362,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|t
 range|:
 name|iProperties
@@ -10446,7 +10446,7 @@ block|}
 else|else
 block|{
 specifier|final
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|last
 init|=
 name|picture
@@ -10456,7 +10456,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|t
 range|:
 name|iProperties

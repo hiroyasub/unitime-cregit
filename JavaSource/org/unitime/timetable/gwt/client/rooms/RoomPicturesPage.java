@@ -245,7 +245,7 @@ name|shared
 operator|.
 name|RoomInterface
 operator|.
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 import|;
 end_import
 
@@ -650,7 +650,7 @@ decl_stmt|;
 specifier|private
 name|List
 argument_list|<
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 argument_list|>
 name|iPictureTypes
 decl_stmt|;
@@ -1654,7 +1654,7 @@ literal|null
 condition|)
 for|for
 control|(
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|t
 range|:
 name|iPictureTypes
@@ -1742,7 +1742,7 @@ block|}
 else|else
 block|{
 specifier|final
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|last
 init|=
 name|picture
@@ -1758,7 +1758,7 @@ literal|null
 condition|)
 for|for
 control|(
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|t
 range|:
 name|iPictureTypes
@@ -2098,7 +2098,7 @@ name|line
 return|;
 block|}
 specifier|protected
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|getPictureType
 parameter_list|(
 name|Long
@@ -2116,7 +2116,7 @@ literal|null
 return|;
 for|for
 control|(
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|type
 range|:
 name|iPictureTypes

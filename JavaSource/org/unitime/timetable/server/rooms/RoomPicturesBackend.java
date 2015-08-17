@@ -239,7 +239,7 @@ name|shared
 operator|.
 name|RoomInterface
 operator|.
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 import|;
 end_import
 
@@ -517,7 +517,7 @@ argument_list|)
 decl_stmt|;
 specifier|public
 specifier|static
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 name|getPictureType
 parameter_list|(
 name|AttachementType
@@ -535,7 +535,7 @@ literal|null
 return|;
 return|return
 operator|new
-name|AttachementTypeInterface
+name|AttachmentTypeInterface
 argument_list|(
 name|type
 operator|.
