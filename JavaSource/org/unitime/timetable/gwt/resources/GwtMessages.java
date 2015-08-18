@@ -8357,6 +8357,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Horizontal"
+argument_list|)
+name|String
+name|periodPreferenceHorizontal
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Free For All"
 argument_list|)
 name|String
