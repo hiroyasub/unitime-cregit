@@ -4679,10 +4679,10 @@ block|{
 return|return
 name|isColumnVisible
 argument_list|(
+name|getCellIndex
+argument_list|(
 name|column
-operator|.
-name|ordinal
-argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}
