@@ -2243,6 +2243,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"&otimes;"
+argument_list|)
+name|String
+name|colSelection
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -3425,6 +3434,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>A</u>dd New"
+argument_list|)
+name|String
+name|buttonAddNewRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>E</u>dit Room Sharing"
+argument_list|)
+name|String
+name|buttonEditRoomSharing
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter"
 argument_list|)
 name|String
@@ -4095,6 +4122,15 @@ literal|"Deleting room ..."
 argument_list|)
 name|String
 name|waitDeletingRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating room departments ..."
+argument_list|)
+name|String
+name|waitUpdatingRoomDepartments
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5729,6 +5765,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to update room departments: {0}"
+argument_list|)
+name|String
+name|errorFailedToUpdateRoomDepartments
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Building {0} does not exist."
 argument_list|)
 name|String
@@ -7206,6 +7254,15 @@ literal|"Attachement Types"
 argument_list|)
 name|String
 name|pageAttachementTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Room Departments"
+argument_list|)
+name|String
+name|pageEditRoomsDepartments
 parameter_list|()
 function_decl|;
 annotation|@
