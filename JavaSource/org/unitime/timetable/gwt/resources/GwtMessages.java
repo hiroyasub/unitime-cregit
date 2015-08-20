@@ -2252,6 +2252,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Abbreviation"
+argument_list|)
+name|String
+name|colAbbreviation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|colDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Rooms"
+argument_list|)
+name|String
+name|colRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Description"
+argument_list|)
+name|String
+name|colDescription
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -3452,6 +3488,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>A</u>dd New"
+argument_list|)
+name|String
+name|buttonAddNewRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>reate Room Group"
+argument_list|)
+name|String
+name|buttonCreateRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>U</u>pdate Room Group"
+argument_list|)
+name|String
+name|buttonUpdateRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>elete Room Group"
+argument_list|)
+name|String
+name|buttonDeleteRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter"
 argument_list|)
 name|String
@@ -4131,6 +4203,42 @@ literal|"Updating room departments ..."
 argument_list|)
 name|String
 name|waitUpdatingRoomDepartments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading room groups..."
+argument_list|)
+name|String
+name|waitLoadingRoomGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Saving room group ..."
+argument_list|)
+name|String
+name|waitSavingRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating room group ..."
+argument_list|)
+name|String
+name|waitUpdatingRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Deleting room group ..."
+argument_list|)
+name|String
+name|waitDeletingRoomGroup
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5039,6 +5147,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load room groups: {0}"
+argument_list|)
+name|String
+name|failedToLoadRoomGroups
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -5777,6 +5897,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to delete the room group: {0}"
+argument_list|)
+name|String
+name|errorFailedToDeleteRoomGroup
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to save the room group: {0}"
+argument_list|)
+name|String
+name|errorFailedToSaveRoomGroup
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update the room group: {0}"
+argument_list|)
+name|String
+name|errorFailedToUpdateRoomGroup
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Building {0} does not exist."
 argument_list|)
 name|String
@@ -5829,6 +5985,75 @@ name|regExp
 parameter_list|,
 name|String
 name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are no room groups created."
+argument_list|)
+name|String
+name|errorNoRoomGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Name is required."
+argument_list|)
+name|String
+name|errorNameIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Abbreviation is required."
+argument_list|)
+name|String
+name|errorAbbreviationIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department must be selected."
+argument_list|)
+name|String
+name|errorNoDepartmentSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Description is too long."
+argument_list|)
+name|String
+name|errorDescriptionTooLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room group {0} does not exist."
+argument_list|)
+name|String
+name|errorRoomGroupDoesNotExist
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room group {0} already exists."
+argument_list|)
+name|String
+name|errorRoomGroupAlreadyExists
+parameter_list|(
+name|String
+name|name
 parameter_list|)
 function_decl|;
 annotation|@
@@ -7263,6 +7488,33 @@ literal|"Edit Room Departments"
 argument_list|)
 name|String
 name|pageEditRoomsDepartments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Room Group"
+argument_list|)
+name|String
+name|pageAddRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Room Group"
+argument_list|)
+name|String
+name|pageEditRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Groups"
+argument_list|)
+name|String
+name|pageRoomGroups
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8987,6 +9239,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Global:"
+argument_list|)
+name|String
+name|propGlobalGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default:"
+argument_list|)
+name|String
+name|propDefaultGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} ({1})"
 argument_list|)
 name|String
@@ -9983,6 +10253,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Global Room Groups"
+argument_list|)
+name|String
+name|headerGlobalRoomGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Departmental Room Groups"
+argument_list|)
+name|String
+name|headerDepartmentalRoomGroups
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Rooms"
+argument_list|)
+name|String
+name|headerRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The selected offering has no curricula."
 argument_list|)
 name|String
@@ -10258,6 +10555,15 @@ parameter_list|(
 name|String
 name|futureSessions
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you realy want to delete this room group?"
+argument_list|)
+name|String
+name|confirmDeleteRoomGroup
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -11397,6 +11703,24 @@ literal|"Yes"
 argument_list|)
 name|String
 name|exportTrue
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|exportDefaultRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Global"
+argument_list|)
+name|String
+name|exportGlobalRoomGroup
 parameter_list|()
 function_decl|;
 annotation|@

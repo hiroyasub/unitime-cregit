@@ -1309,6 +1309,13 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+name|setSelected
+argument_list|(
+name|row
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 annotation|@
@@ -1481,6 +1488,13 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+name|setSelected
+argument_list|(
+name|row
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 annotation|@
