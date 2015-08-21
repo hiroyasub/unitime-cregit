@@ -3497,6 +3497,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>A</u>dd New"
+argument_list|)
+name|String
+name|buttonAddNewRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>C</u>reate Room Group"
 argument_list|)
 name|String
@@ -3519,6 +3528,33 @@ literal|"<u>D</u>elete Room Group"
 argument_list|)
 name|String
 name|buttonDeleteRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>reate Room Feature"
+argument_list|)
+name|String
+name|buttonCreateRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>U</u>pdate Room Feature"
+argument_list|)
+name|String
+name|buttonUpdateRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>elete Room Feature"
+argument_list|)
+name|String
+name|buttonDeleteRoomFeature
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4239,6 +4275,42 @@ literal|"Deleting room group ..."
 argument_list|)
 name|String
 name|waitDeletingRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading room features..."
+argument_list|)
+name|String
+name|waitLoadingRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Saving room feature ..."
+argument_list|)
+name|String
+name|waitSavingRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating room feature ..."
+argument_list|)
+name|String
+name|waitUpdatingRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Deleting room feature ..."
+argument_list|)
+name|String
+name|waitDeletingRoomFeature
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5159,6 +5231,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load room features: {0}"
+argument_list|)
+name|String
+name|failedToLoadRoomFeatures
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -5933,6 +6017,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to delete the room feature: {0}"
+argument_list|)
+name|String
+name|errorFailedToDeleteRoomFeature
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to save the room feature: {0}"
+argument_list|)
+name|String
+name|errorFailedToSaveRoomFeature
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update the room feature: {0}"
+argument_list|)
+name|String
+name|errorFailedToUpdateRoomFeature
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Building {0} does not exist."
 argument_list|)
 name|String
@@ -5999,6 +6119,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"There are no room features created."
+argument_list|)
+name|String
+name|errorNoRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Name is required."
 argument_list|)
 name|String
@@ -6051,6 +6180,30 @@ literal|"Room group {0} already exists."
 argument_list|)
 name|String
 name|errorRoomGroupAlreadyExists
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room feature {0} does not exist."
+argument_list|)
+name|String
+name|errorRoomFeatureDoesNotExist
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room feature {0} already exists."
+argument_list|)
+name|String
+name|errorRoomFeatureAlreadyExists
 parameter_list|(
 name|String
 name|name
@@ -7520,6 +7673,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Room Feature"
+argument_list|)
+name|String
+name|pageAddRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Room Feature"
+argument_list|)
+name|String
+name|pageEditRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room Features"
+argument_list|)
+name|String
+name|pageRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -7542,6 +7722,15 @@ literal|"None"
 argument_list|)
 name|String
 name|itemNone
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No Type"
+argument_list|)
+name|String
+name|itemNoFeatureType
 parameter_list|()
 function_decl|;
 annotation|@
@@ -9257,6 +9446,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Type:"
+argument_list|)
+name|String
+name|propFeatureType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Global:"
+argument_list|)
+name|String
+name|propGlobalFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} ({1})"
 argument_list|)
 name|String
@@ -10271,6 +10478,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Global Room Features"
+argument_list|)
+name|String
+name|headerGlobalRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Departmental Room Features"
+argument_list|)
+name|String
+name|headerDepartmentalRoomFeatures
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Rooms"
 argument_list|)
 name|String
@@ -10563,6 +10788,15 @@ literal|"Do you realy want to delete this room group?"
 argument_list|)
 name|String
 name|confirmDeleteRoomGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you realy want to delete this room feature?"
+argument_list|)
+name|String
+name|confirmDeleteRoomFeature
 parameter_list|()
 function_decl|;
 annotation|@
