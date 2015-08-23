@@ -473,7 +473,16 @@ literal|"course"
 argument_list|,
 literal|false
 argument_list|)
-block|;
+block|,
+name|GROUP
+argument_list|(
+literal|"Student Group Timetable"
+argument_list|,
+literal|"group"
+argument_list|,
+literal|true
+argument_list|)
+block|, 		;
 specifier|private
 name|String
 name|iPage

@@ -7848,6 +7848,38 @@ argument_list|(
 literal|"unitime.api.user.id-trim"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Student Group Timetable: minimal enrollment for a class event to appear in the table (given as % of the group size or as an absolute number)"
+argument_list|)
+name|StudentGroupsTimetableMinimalEnrollment
+argument_list|(
+literal|"unitime.events.group.minimalEnrollment"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Student Group Timetable: count enrollments within the group"
+argument_list|)
+name|StudentGroupsTimetableGroupEnrollments
+argument_list|(
+literal|"unitime.events.group.showGroupEnrollment"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

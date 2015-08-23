@@ -514,6 +514,8 @@ block|,
 literal|"Personal Timetable"
 block|,
 literal|"Course Timetable"
+block|,
+literal|"Student Group Timetable"
 block|}
 argument_list|)
 name|String
@@ -536,6 +538,8 @@ block|,
 literal|"Person"
 block|,
 literal|"Course"
+block|,
+literal|"Student Group"
 block|}
 argument_list|)
 name|String
@@ -851,6 +855,15 @@ literal|"ft2"
 argument_list|)
 name|String
 name|roomAreaUnitsShortPlainText
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+name|boolean
+name|timeGridStudentGroupDoesNotOverlap
 parameter_list|()
 function_decl|;
 block|}
