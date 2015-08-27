@@ -1046,9 +1046,6 @@ operator|.
 name|equals
 argument_list|(
 name|course
-operator|.
-name|getCourseId
-argument_list|()
 argument_list|)
 condition|)
 name|e
