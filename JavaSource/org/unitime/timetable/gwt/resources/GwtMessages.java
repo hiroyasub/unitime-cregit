@@ -6176,13 +6176,16 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room group {0} already exists."
+literal|"Room group {0} already exists in {1}."
 argument_list|)
 name|String
 name|errorRoomGroupAlreadyExists
 parameter_list|(
 name|String
 name|name
+parameter_list|,
+name|String
+name|session
 parameter_list|)
 function_decl|;
 annotation|@
@@ -6200,13 +6203,16 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Room feature {0} already exists."
+literal|"Room feature {0} already exists in {1}."
 argument_list|)
 name|String
 name|errorRoomFeatureAlreadyExists
 parameter_list|(
 name|String
 name|name
+parameter_list|,
+name|String
+name|session
 parameter_list|)
 function_decl|;
 annotation|@
@@ -9464,6 +9470,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Applies To:"
+argument_list|)
+name|String
+name|propApplyToFutureSessions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} ({1})"
 argument_list|)
 name|String
@@ -10798,6 +10813,78 @@ argument_list|)
 name|String
 name|confirmDeleteRoomFeature
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to create the room feature in {0} as well?"
+argument_list|)
+name|String
+name|confirmCreateRoomFeatureInFutureSessions
+parameter_list|(
+name|String
+name|futureSessions
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to update the room feature in {0} as well?"
+argument_list|)
+name|String
+name|confirmUpdateRoomFeatureInFutureSessions
+parameter_list|(
+name|String
+name|futureSessions
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you realy want to delete this room feature (including {0} as well)?"
+argument_list|)
+name|String
+name|confirmDeleteRoomFeatureInFutureSessions
+parameter_list|(
+name|String
+name|futureSessions
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to create the room group in {0} as well?"
+argument_list|)
+name|String
+name|confirmCreateRoomGroupInFutureSessions
+parameter_list|(
+name|String
+name|futureSessions
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to update the room group in {0} as well?"
+argument_list|)
+name|String
+name|confirmUpdateRoomGroupInFutureSessions
+parameter_list|(
+name|String
+name|futureSessions
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you realy want to delete this room group (including {0} as well)?"
+argument_list|)
+name|String
+name|confirmDeleteRoomGroupInFutureSessions
+parameter_list|(
+name|String
+name|futureSessions
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage

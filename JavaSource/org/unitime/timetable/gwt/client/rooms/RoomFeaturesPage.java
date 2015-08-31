@@ -3558,7 +3558,7 @@ name|setPageName
 argument_list|(
 name|MESSAGES
 operator|.
-name|pageRooms
+name|pageRoomFeatures
 argument_list|()
 argument_list|)
 expr_stmt|;
