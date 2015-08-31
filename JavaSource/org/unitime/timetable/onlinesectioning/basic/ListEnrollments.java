@@ -1155,6 +1155,12 @@ name|getTimeStamp
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|enrollment
+operator|==
+literal|null
+condition|)
 name|e
 operator|.
 name|setEnrollmentMessage
