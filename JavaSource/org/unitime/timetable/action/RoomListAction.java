@@ -1926,8 +1926,6 @@ name|sessionContext
 operator|.
 name|checkPermission
 argument_list|(
-name|department
-argument_list|,
 name|Right
 operator|.
 name|RoomsExportPdf
@@ -1948,8 +1946,6 @@ name|sessionContext
 operator|.
 name|checkPermission
 argument_list|(
-name|department
-argument_list|,
 name|Right
 operator|.
 name|RoomsExportCsv
@@ -1962,8 +1958,6 @@ name|sessionContext
 operator|.
 name|checkPermission
 argument_list|(
-name|department
-argument_list|,
 name|Right
 operator|.
 name|Rooms

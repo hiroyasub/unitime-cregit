@@ -277,16 +277,7 @@ index|[
 name|i
 index|]
 operator|=
-name|RoomsPageMode
-operator|.
-name|values
-argument_list|()
-index|[
-name|i
-index|]
-operator|.
-name|getQuery
-argument_list|()
+literal|""
 expr_stmt|;
 block|}
 try|try
