@@ -31,16 +31,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|dom4j
-operator|.
-name|Document
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -90,8 +80,9 @@ name|Long
 name|iUniqueId
 decl_stmt|;
 specifier|private
-name|Document
-name|iValue
+name|byte
+index|[]
+name|iData
 decl_stmt|;
 specifier|private
 name|String
@@ -113,7 +104,7 @@ specifier|static
 name|String
 name|PROP_VALUE
 init|=
-literal|"value"
+literal|"data"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -175,25 +166,27 @@ name|uniqueId
 expr_stmt|;
 block|}
 specifier|public
-name|Document
-name|getValue
+name|byte
+index|[]
+name|getData
 parameter_list|()
 block|{
 return|return
-name|iValue
+name|iData
 return|;
 block|}
 specifier|public
 name|void
-name|setValue
+name|setData
 parameter_list|(
-name|Document
-name|value
+name|byte
+index|[]
+name|data
 parameter_list|)
 block|{
-name|iValue
+name|iData
 operator|=
-name|value
+name|data
 expr_stmt|;
 block|}
 specifier|public
@@ -352,6 +345,11 @@ block|{
 return|return
 literal|"SolverInfo["
 operator|+
+literal|"\n	Data: "
+operator|+
+name|getData
+argument_list|()
+operator|+
 literal|"\n	Definition: "
 operator|+
 name|getDefinition
@@ -365,11 +363,6 @@ operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId
-argument_list|()
-operator|+
-literal|"\n	Value: "
-operator|+
-name|getValue
 argument_list|()
 operator|+
 literal|"]"

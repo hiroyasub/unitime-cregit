@@ -259,6 +259,11 @@ block|{
 return|return
 literal|"SolutionInfo["
 operator|+
+literal|"\n	Data: "
+operator|+
+name|getData
+argument_list|()
+operator|+
 literal|"\n	Definition: "
 operator|+
 name|getDefinition
@@ -277,11 +282,6 @@ operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId
-argument_list|()
-operator|+
-literal|"\n	Value: "
-operator|+
-name|getValue
 argument_list|()
 operator|+
 literal|"]"
