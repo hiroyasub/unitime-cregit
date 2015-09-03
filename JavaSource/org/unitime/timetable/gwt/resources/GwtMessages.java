@@ -12146,6 +12146,42 @@ name|String
 name|attachementTypeFlagShowRoomTooltip
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Distance conflicts will be checked."
+argument_list|)
+name|String
+name|infoDistanceCheckOn
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Distance conflict checking is disabled."
+argument_list|)
+name|String
+name|infoDistanceCheckOff
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room conflicts are not allowed."
+argument_list|)
+name|String
+name|infoRoomCheckOn
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Room conflict checking is disabled."
+argument_list|)
+name|String
+name|infoRoomCheckOff
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
