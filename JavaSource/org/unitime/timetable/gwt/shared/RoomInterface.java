@@ -9572,6 +9572,9 @@ argument_list|()
 operator|||
 name|isCanDelete
 argument_list|()
+operator|||
+name|isCanChangeEventProperties
+argument_list|()
 return|;
 block|}
 specifier|public
