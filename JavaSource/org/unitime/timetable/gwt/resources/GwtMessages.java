@@ -12182,6 +12182,15 @@ name|String
 name|infoRoomCheckOff
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"link"
+argument_list|)
+name|String
+name|roomPictureLink
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
