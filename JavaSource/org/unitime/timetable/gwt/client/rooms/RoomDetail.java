@@ -1156,7 +1156,7 @@ literal|"edit"
 argument_list|,
 name|iRoom
 operator|.
-name|isCanChange
+name|isCanEdit
 argument_list|()
 argument_list|)
 expr_stmt|;
