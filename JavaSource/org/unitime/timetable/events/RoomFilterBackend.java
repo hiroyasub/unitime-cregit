@@ -1780,11 +1780,6 @@ name|context
 operator|.
 name|hasPermission
 argument_list|(
-name|request
-operator|.
-name|getSessionId
-argument_list|()
-argument_list|,
 name|Right
 operator|.
 name|DepartmentIndependent
