@@ -1252,6 +1252,10 @@ control|)
 block|{
 if|if
 condition|(
+name|other
+operator|!=
+literal|null
+operator|&&
 name|distance
 argument_list|(
 name|color
