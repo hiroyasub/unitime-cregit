@@ -1568,10 +1568,7 @@ name|d
 operator|.
 name|getRoomSharingColor
 argument_list|(
-name|location
-operator|.
-name|getRoomDepts
-argument_list|()
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
