@@ -3184,9 +3184,9 @@ argument_list|>
 name|departments
 parameter_list|)
 block|{
-name|addStyleName
+name|super
 argument_list|(
-literal|"departments"
+literal|true
 argument_list|)
 expr_stmt|;
 for|for

@@ -1207,6 +1207,8 @@ return|return
 operator|new
 name|DepartmentCell
 argument_list|(
+literal|true
+argument_list|,
 name|feature
 operator|.
 name|getDepartment

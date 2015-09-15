@@ -1285,6 +1285,8 @@ operator|.
 name|dept2string
 argument_list|(
 name|d
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 operator|.
@@ -1638,6 +1640,8 @@ operator|.
 name|dept2string
 argument_list|(
 name|d
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 operator|.
@@ -1692,6 +1696,8 @@ name|room
 operator|.
 name|getControlDepartment
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 operator|.
@@ -1792,6 +1798,8 @@ name|room
 operator|.
 name|getEventDepartment
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 operator|.
@@ -2029,6 +2037,8 @@ name|g
 operator|.
 name|getDepartment
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 operator|+
 literal|")"
@@ -2517,6 +2527,8 @@ name|f
 operator|.
 name|getDepartment
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 operator|+
 literal|")"

@@ -12191,6 +12191,18 @@ name|String
 name|roomPictureLink
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event status changes apply only to {0}."
+argument_list|)
+name|String
+name|eventStatusHint
+parameter_list|(
+name|String
+name|session
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

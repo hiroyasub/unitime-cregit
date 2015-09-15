@@ -865,6 +865,8 @@ name|room
 operator|.
 name|getDepartments
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 return|;
 case|case
@@ -879,6 +881,8 @@ name|room
 operator|.
 name|getControlDepartment
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 return|;
 case|case
@@ -916,6 +920,8 @@ name|room
 operator|.
 name|getEventDepartment
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 return|;
 case|case
