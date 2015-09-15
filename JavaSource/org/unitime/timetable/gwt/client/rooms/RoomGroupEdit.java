@@ -1202,6 +1202,8 @@ expr_stmt|;
 name|hide
 argument_list|(
 literal|true
+argument_list|,
+name|result
 argument_list|)
 expr_stmt|;
 block|}
@@ -1460,6 +1462,8 @@ expr_stmt|;
 name|hide
 argument_list|(
 literal|true
+argument_list|,
+name|result
 argument_list|)
 expr_stmt|;
 block|}
@@ -1500,6 +1504,8 @@ block|{
 name|hide
 argument_list|(
 literal|false
+argument_list|,
+name|iGroup
 argument_list|)
 expr_stmt|;
 block|}
@@ -2196,6 +2202,9 @@ name|hide
 parameter_list|(
 name|boolean
 name|refresh
+parameter_list|,
+name|GroupInterface
+name|group
 parameter_list|)
 block|{
 name|setVisible
@@ -2206,6 +2215,8 @@ expr_stmt|;
 name|onHide
 argument_list|(
 name|refresh
+argument_list|,
+name|group
 argument_list|)
 expr_stmt|;
 name|Window
@@ -2224,6 +2235,9 @@ name|onHide
 parameter_list|(
 name|boolean
 name|refresh
+parameter_list|,
+name|GroupInterface
+name|group
 parameter_list|)
 block|{
 block|}
