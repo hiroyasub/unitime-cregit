@@ -7643,6 +7643,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"InstructionalMethod"
+argument_list|)
+name|String
+name|pageInstructionalMethod
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Methods"
+argument_list|)
+name|String
+name|pageInstructionalMethods
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Edit Room Departments"
 argument_list|)
 name|String

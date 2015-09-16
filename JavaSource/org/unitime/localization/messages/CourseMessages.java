@@ -2021,6 +2021,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Configuration {0} ({1})"
+argument_list|)
+name|String
+name|labelConfigurationWithInstructionalMethod
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|instructionalMethod
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} Not Offered Courses"
 argument_list|)
 name|String
@@ -6665,6 +6680,24 @@ parameter_list|,
 name|String
 name|conflicts
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Method:"
+argument_list|)
+name|String
+name|propertyInstructionalMethod
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Selected"
+argument_list|)
+name|String
+name|selectNoInstructionalMethod
+parameter_list|()
 function_decl|;
 block|}
 end_interface

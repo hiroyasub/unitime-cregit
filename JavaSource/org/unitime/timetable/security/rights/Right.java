@@ -2549,6 +2549,10 @@ name|AttachementTypes
 block|,
 name|AttachementTypeEdit
 block|,
+name|InstructionalMethods
+block|,
+name|InstructionalMethodEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

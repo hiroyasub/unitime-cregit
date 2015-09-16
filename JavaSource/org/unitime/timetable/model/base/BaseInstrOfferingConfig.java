@@ -85,6 +85,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|InstructionalMethod
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|InstructionalOffering
 import|;
 end_import
@@ -150,6 +164,10 @@ decl_stmt|;
 specifier|private
 name|ClassDurationType
 name|iClassDurationType
+decl_stmt|;
+specifier|private
+name|InstructionalMethod
+name|iInstructionalMethod
 decl_stmt|;
 specifier|private
 name|Set
@@ -387,6 +405,28 @@ name|classDurationType
 expr_stmt|;
 block|}
 specifier|public
+name|InstructionalMethod
+name|getInstructionalMethod
+parameter_list|()
+block|{
+return|return
+name|iInstructionalMethod
+return|;
+block|}
+specifier|public
+name|void
+name|setInstructionalMethod
+parameter_list|(
+name|InstructionalMethod
+name|instructionalMethod
+parameter_list|)
+block|{
+name|iInstructionalMethod
+operator|=
+name|instructionalMethod
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|SchedulingSubpart
@@ -565,6 +605,11 @@ operator|+
 literal|"\n	ClassDurationType: "
 operator|+
 name|getClassDurationType
+argument_list|()
+operator|+
+literal|"\n	InstructionalMethod: "
+operator|+
+name|getInstructionalMethod
 argument_list|()
 operator|+
 literal|"\n	InstructionalOffering: "
