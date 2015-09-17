@@ -1494,6 +1494,14 @@ name|getClassDurationType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|newInstrOffrConfig
+operator|.
+name|setInstructionalMethod
+argument_list|(
+name|getInstructionalMethod
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|newInstrOffrConfig
