@@ -629,6 +629,14 @@ begin_import
 import|import
 name|biweekly
 operator|.
+name|ICalVersion
+import|;
+end_import
+
+begin_import
+import|import
+name|biweekly
+operator|.
 name|ICalendar
 import|;
 end_import
@@ -660,16 +668,6 @@ operator|.
 name|property
 operator|.
 name|Status
-import|;
-end_import
-
-begin_import
-import|import
-name|biweekly
-operator|.
-name|property
-operator|.
-name|Version
 import|;
 end_import
 
@@ -2706,10 +2704,9 @@ name|ical
 operator|.
 name|setVersion
 argument_list|(
-name|Version
+name|ICalVersion
 operator|.
-name|v2_0
-argument_list|()
+name|V2_0
 argument_list|)
 expr_stmt|;
 name|ical
