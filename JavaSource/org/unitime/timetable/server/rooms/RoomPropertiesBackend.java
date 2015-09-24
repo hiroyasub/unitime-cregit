@@ -1296,6 +1296,11 @@ name|type
 operator|.
 name|isRoom
 argument_list|()
+argument_list|,
+name|type
+operator|.
+name|getOrd
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

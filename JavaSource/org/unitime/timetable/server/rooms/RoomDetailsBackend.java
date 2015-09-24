@@ -2456,6 +2456,14 @@ argument_list|()
 operator|.
 name|isRoom
 argument_list|()
+argument_list|,
+name|location
+operator|.
+name|getRoomType
+argument_list|()
+operator|.
+name|getOrd
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
