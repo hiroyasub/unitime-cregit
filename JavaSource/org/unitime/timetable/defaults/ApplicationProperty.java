@@ -1220,6 +1220,11 @@ name|Description
 argument_list|(
 literal|"LDAP Authentication: ldap url"
 argument_list|)
+decl|@
+name|DefaultValue
+argument_list|(
+literal|"ldap://null"
+argument_list|)
 name|AuthenticationLdapUrl
 argument_list|(
 literal|"unitime.authentication.ldap.url"
