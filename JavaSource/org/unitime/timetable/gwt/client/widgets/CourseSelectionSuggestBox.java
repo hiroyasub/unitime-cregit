@@ -2981,14 +2981,14 @@ argument_list|>
 name|event
 parameter_list|)
 block|{
-name|iSuggest
-operator|.
 name|setValue
 argument_list|(
 name|event
 operator|.
 name|getSelectedItem
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
