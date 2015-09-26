@@ -2715,6 +2715,19 @@ name|ApiJsonConnector
 block|,
 name|ApiDataExchangeConnector
 block|,
+comment|/** People Lookup limitations */
+name|CanLookupStudents
+block|,
+name|CanLookupInstructors
+block|,
+name|CanLookupStaff
+block|,
+name|CanLookupManagers
+block|,
+name|CanLookupEventContacts
+block|,
+name|CanLookupLdap
+block|,
 comment|/** Obsolete */
 name|SolutionInformationDefinitions
 block|,  	;
