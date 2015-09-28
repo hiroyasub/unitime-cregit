@@ -3062,10 +3062,31 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course<u>R</u>equests"
+argument_list|)
+name|String
+name|buttonRegistration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Student Scheduling Assistant for {0}"
 argument_list|)
 name|String
 name|dialogAssistant
+parameter_list|(
+name|String
+name|student
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Course Requests for {0}"
+argument_list|)
+name|String
+name|dialogRegistration
 parameter_list|(
 name|String
 name|student

@@ -442,7 +442,7 @@ name|checkPermission
 argument_list|(
 name|Right
 operator|.
-name|SchedulingDashboard
+name|SchedulingReports
 argument_list|)
 expr_stmt|;
 name|OnlineSectioningServer

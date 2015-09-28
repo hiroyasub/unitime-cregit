@@ -4114,7 +4114,7 @@ if|if
 condition|(
 name|iProperties
 operator|.
-name|isAdmin
+name|isChangeLog
 argument_list|()
 condition|)
 name|iTabPanel

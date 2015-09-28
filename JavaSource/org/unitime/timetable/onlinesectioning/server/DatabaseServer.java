@@ -249,27 +249,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
+name|onlinesectioning
 operator|.
-name|dao
-operator|.
-name|InstructionalOfferingDAO
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|dao
-operator|.
-name|StudentDAO
+name|AcademicSessionInfo
 import|;
 end_import
 
@@ -502,6 +484,24 @@ block|{
 name|super
 argument_list|(
 name|context
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|DatabaseServer
+parameter_list|(
+name|AcademicSessionInfo
+name|session
+parameter_list|,
+name|boolean
+name|allowAsyncCalls
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|session
+argument_list|,
+name|allowAsyncCalls
 argument_list|)
 expr_stmt|;
 block|}
@@ -1051,21 +1051,50 @@ block|{
 name|Student
 name|s
 init|=
-name|StudentDAO
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|studentId
-argument_list|,
+operator|(
+name|Student
+operator|)
 name|getCurrentHelper
 argument_list|()
 operator|.
 name|getHibSession
 argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select s from Student s "
+operator|+
+literal|"left join fetch s.courseDemands as cd "
+operator|+
+literal|"left join fetch cd.courseRequests as cr "
+operator|+
+literal|"left join fetch cd.freeTime as ft "
+operator|+
+literal|"left join fetch cr.courseOffering as co "
+operator|+
+literal|"left join fetch cr.courseRequestOptions as cro "
+operator|+
+literal|"left join fetch cr.classWaitLists as cwl "
+operator|+
+literal|"left join fetch s.classEnrollments as e "
+operator|+
+literal|"where s.uniqueId = :studentId"
 argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"studentId"
+argument_list|,
+name|studentId
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
 decl_stmt|;
 return|return
 name|s
@@ -1296,21 +1325,56 @@ block|}
 name|InstructionalOffering
 name|o
 init|=
-name|InstructionalOfferingDAO
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|offeringId
-argument_list|,
+operator|(
+name|InstructionalOffering
+operator|)
 name|getCurrentHelper
 argument_list|()
 operator|.
 name|getHibSession
 argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select io from InstructionalOffering io "
+operator|+
+literal|"left join fetch io.courseOfferings co "
+operator|+
+literal|"left join fetch io.instrOfferingConfigs cf "
+operator|+
+literal|"left join fetch cf.schedulingSubparts ss "
+operator|+
+literal|"left join fetch ss.classes c "
+operator|+
+literal|"left join fetch c.assignments a "
+operator|+
+literal|"left join fetch a.rooms r "
+operator|+
+literal|"left join fetch c.classInstructors i "
+operator|+
+literal|"left join fetch io.reservations x "
+operator|+
+literal|"left join fetch co.creditConfigs cc "
+operator|+
+literal|"left join fetch ss.creditConfigs sc "
+operator|+
+literal|"where io.uniqueId = :offeringId"
 argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"offeringId"
+argument_list|,
+name|offeringId
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
+name|uniqueResult
+argument_list|()
 decl_stmt|;
 return|return
 name|o
@@ -1376,7 +1440,17 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct d from CourseRequest r inner join r.courseDemand d where r.courseOffering.instructionalOffering = :offeringId"
+literal|"select distinct cd from CourseRequest r inner join r.courseDemand cd "
+operator|+
+literal|"left join fetch cd.courseRequests as cr "
+operator|+
+literal|"left join fetch cr.classWaitLists as cwl "
+operator|+
+literal|"left join fetch cd.student as s "
+operator|+
+literal|"left join fetch s.classEnrollments as e "
+operator|+
+literal|"where r.courseOffering.instructionalOffering = :offeringId"
 argument_list|)
 operator|.
 name|setLong
