@@ -6711,7 +6711,7 @@ if|else if
 condition|(
 name|eq
 argument_list|(
-literal|"Not Assigned"
+literal|"Wait-Listed"
 argument_list|,
 name|term
 argument_list|)
@@ -7076,12 +7076,13 @@ operator|!=
 literal|null
 operator|&&
 operator|(
-operator|(
 name|enrollment
 argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|(
+operator|(
 name|enrollment
 argument_list|()
 operator|.
@@ -7131,6 +7132,7 @@ argument_list|()
 argument_list|,
 name|term
 argument_list|)
+operator|)
 operator|)
 return|;
 block|}
