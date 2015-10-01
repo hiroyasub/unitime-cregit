@@ -3506,7 +3506,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This email was send on behalf of {0}."
+literal|"This email was sent on behalf of {0}."
 argument_list|)
 name|String
 name|emailSentBy
