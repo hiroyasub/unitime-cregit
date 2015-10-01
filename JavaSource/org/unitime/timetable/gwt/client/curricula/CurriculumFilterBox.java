@@ -412,6 +412,11 @@ name|iDepartments
 operator|=
 operator|new
 name|ListBox
+argument_list|()
+expr_stmt|;
+name|iDepartments
+operator|.
+name|setMultipleSelect
 argument_list|(
 literal|false
 argument_list|)

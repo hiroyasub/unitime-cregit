@@ -3160,6 +3160,11 @@ name|iClassifications
 operator|=
 operator|new
 name|ListBox
+argument_list|()
+expr_stmt|;
+name|iClassifications
+operator|.
+name|setMultipleSelect
 argument_list|(
 literal|true
 argument_list|)
@@ -3208,6 +3213,11 @@ name|iMajors
 operator|=
 operator|new
 name|ListBox
+argument_list|()
+expr_stmt|;
+name|iMajors
+operator|.
+name|setMultipleSelect
 argument_list|(
 literal|true
 argument_list|)

@@ -834,7 +834,11 @@ name|cfg
 init|=
 operator|new
 name|Configuration
-argument_list|()
+argument_list|(
+name|Configuration
+operator|.
+name|VERSION_2_3_0
+argument_list|)
 decl_stmt|;
 name|cfg
 operator|.

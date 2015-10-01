@@ -1068,6 +1068,11 @@ name|iSponsors
 operator|=
 operator|new
 name|ListBox
+argument_list|()
+expr_stmt|;
+name|iSponsors
+operator|.
+name|setMultipleSelect
 argument_list|(
 literal|true
 argument_list|)
