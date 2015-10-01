@@ -17,22 +17,6 @@ name|resources
 package|;
 end_package
 
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|i18n
-operator|.
-name|client
-operator|.
-name|Constants
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller, Stephanie Schluttenhofer  */
 end_comment
@@ -178,6 +162,8 @@ block|,
 literal|"7:30p"
 block|}
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 index|[]
 name|freeTimePeriods
@@ -276,6 +262,8 @@ block|,
 literal|"20"
 block|}
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 index|[]
 name|freeTimeOneDay150
@@ -398,6 +386,8 @@ block|,
 literal|"brown"
 block|}
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 index|[]
 name|meetingColors
@@ -408,6 +398,8 @@ name|DefaultStringValue
 argument_list|(
 literal|"red"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|freeTimeColor
 parameter_list|()
@@ -417,6 +409,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|printReportShowUserName
 parameter_list|()
@@ -426,6 +420,8 @@ name|DefaultIntValue
 argument_list|(
 literal|12
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|numberOfCourses
 parameter_list|()
@@ -435,6 +431,8 @@ name|DefaultIntValue
 argument_list|(
 literal|3
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|numberOfAlternatives
 parameter_list|()
@@ -462,6 +460,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|true
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|useAmPm
 parameter_list|()
@@ -480,6 +480,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|isAuthenticationRequired
 parameter_list|()
@@ -489,6 +491,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|true
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|tryAuthenticationWhenGuest
 parameter_list|()
@@ -498,6 +502,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|hasAuthenticationPin
 parameter_list|()
@@ -507,6 +513,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|true
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|allowEmptySchedule
 parameter_list|()
@@ -516,6 +524,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|true
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|allowUserLogin
 parameter_list|()
@@ -525,6 +535,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|allowCalendarExport
 parameter_list|()
@@ -552,6 +564,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|showCourseTitle
 parameter_list|()
@@ -561,6 +575,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|courseFinderSuggestWhenEmpty
 parameter_list|()

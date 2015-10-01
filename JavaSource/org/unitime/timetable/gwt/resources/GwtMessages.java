@@ -17,22 +17,6 @@ name|resources
 package|;
 end_package
 
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|i18n
-operator|.
-name|client
-operator|.
-name|Messages
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -6784,6 +6768,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add Event"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAddEvent
 parameter_list|()
@@ -6793,6 +6779,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Event"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditEvent
 parameter_list|()
@@ -6802,6 +6790,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Detail"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventDetail
 parameter_list|()
@@ -6811,6 +6801,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Room Event Availability"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditRoomEventAvailability
 parameter_list|()
@@ -6820,6 +6812,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit {0}"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEdit
 parameter_list|(
@@ -6832,6 +6826,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add {0}"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAdd
 parameter_list|(
@@ -6844,6 +6840,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Academic Area"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAcademicArea
 parameter_list|()
@@ -6853,6 +6851,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Academic Areas"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAcademicAreas
 parameter_list|()
@@ -6862,6 +6862,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Academic Classification"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAcademicClassification
 parameter_list|()
@@ -6871,6 +6873,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Academic Classifications"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAcademicClassifications
 parameter_list|()
@@ -6880,6 +6884,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Credit Format"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseCreditFormat
 parameter_list|()
@@ -6889,6 +6895,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Credit Formats"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseCreditFormats
 parameter_list|()
@@ -6898,6 +6906,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Credit Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseCreditType
 parameter_list|()
@@ -6907,6 +6917,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Credit Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseCreditTypes
 parameter_list|()
@@ -6916,6 +6928,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Credit Unit"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseCreditUnit
 parameter_list|()
@@ -6925,6 +6939,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Credit Units"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseCreditUnits
 parameter_list|()
@@ -6934,6 +6950,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseType
 parameter_list|()
@@ -6943,6 +6961,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseTypes
 parameter_list|()
@@ -6952,6 +6972,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Date Mapping"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventDateMapping
 parameter_list|()
@@ -6961,6 +6983,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Date Mappings"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventDateMappings
 parameter_list|()
@@ -6970,6 +6994,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Status"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventStatus
 parameter_list|()
@@ -6979,6 +7005,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Statuses"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventStatuses
 parameter_list|()
@@ -6988,6 +7016,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Default"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventDefault
 parameter_list|()
@@ -6997,6 +7027,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Defaults"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventDefaults
 parameter_list|()
@@ -7006,6 +7038,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Examination Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageExaminationType
 parameter_list|()
@@ -7015,6 +7049,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Examination Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageExaminationTypes
 parameter_list|()
@@ -7024,6 +7060,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Instructor Role"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageInstructorRole
 parameter_list|()
@@ -7033,6 +7071,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Instructor Roles"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageInstructorRoles
 parameter_list|()
@@ -7042,6 +7082,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Logging Level"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageLoggingLevel
 parameter_list|()
@@ -7051,6 +7093,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Logging Levels"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageLoggingLevels
 parameter_list|()
@@ -7060,6 +7104,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Major"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageMajor
 parameter_list|()
@@ -7069,6 +7115,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Majors"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageMajors
 parameter_list|()
@@ -7078,6 +7126,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Minor"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageMinor
 parameter_list|()
@@ -7087,6 +7137,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Minors"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageMinors
 parameter_list|()
@@ -7096,6 +7148,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Offering Consent Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageOfferingConsentType
 parameter_list|()
@@ -7105,6 +7159,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Offering Consent Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageOfferingConsentTypes
 parameter_list|()
@@ -7114,6 +7170,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Permission"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pagePermission
 parameter_list|()
@@ -7123,6 +7181,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Permissions"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pagePermissions
 parameter_list|()
@@ -7132,6 +7192,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Position Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pagePositionType
 parameter_list|()
@@ -7141,6 +7203,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Position Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pagePositionTypes
 parameter_list|()
@@ -7150,6 +7214,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Feature Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomFeatureType
 parameter_list|()
@@ -7159,6 +7225,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Feature Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomFeatureTypes
 parameter_list|()
@@ -7168,6 +7236,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Standard Event Note"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStandardEventNote
 parameter_list|()
@@ -7177,6 +7247,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Standard Event Notes"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStandardEventNotes
 parameter_list|()
@@ -7186,6 +7258,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Group"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentGroup
 parameter_list|()
@@ -7195,6 +7269,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Groups"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentGroups
 parameter_list|()
@@ -7204,6 +7280,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Scheduling Status Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentSchedulingStatusType
 parameter_list|()
@@ -7213,6 +7291,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Scheduling Status Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentSchedulingStatusTypes
 parameter_list|()
@@ -7222,6 +7302,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Role"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRole
 parameter_list|()
@@ -7231,6 +7313,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Roles"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoles
 parameter_list|()
@@ -7276,6 +7360,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add Curriculum"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAddCurriculum
 parameter_list|()
@@ -7285,6 +7371,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Curriculum"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditCurriculum
 parameter_list|()
@@ -7294,6 +7382,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Curriculum Details"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCurriculumDetails
 parameter_list|()
@@ -7303,6 +7393,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Curricula"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCurricula
 parameter_list|()
@@ -7312,6 +7404,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Course Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCourseReports
 parameter_list|()
@@ -7321,6 +7415,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Examination Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageExaminationReports
 parameter_list|()
@@ -7330,6 +7426,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Sectioning Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentSectioningReports
 parameter_list|()
@@ -7339,6 +7437,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventReports
 parameter_list|()
@@ -7348,6 +7448,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Administration Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAdministrationReports
 parameter_list|()
@@ -7357,6 +7459,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Curriculum Requested Enrollments"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCurriculumRequestedEnrollments
 parameter_list|()
@@ -7366,6 +7470,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Reservations"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageReservations
 parameter_list|()
@@ -7375,6 +7481,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add Reservation"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAddReservation
 parameter_list|()
@@ -7384,6 +7492,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Reservation"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditReservation
 parameter_list|()
@@ -7393,6 +7503,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Curriculum Projection Rules"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageCurriculumProjectionRules
 parameter_list|()
@@ -7402,6 +7514,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Scheduling Assistant"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentSchedulingAssistant
 parameter_list|()
@@ -7411,6 +7525,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Course Requests"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentCourseRequests
 parameter_list|()
@@ -7420,6 +7536,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Administration"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAdministration
 parameter_list|()
@@ -7429,6 +7547,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Events"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEvents
 parameter_list|()
@@ -7438,6 +7558,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Timetable"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventTimetable
 parameter_list|()
@@ -7447,6 +7569,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Timetable"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomTimetable
 parameter_list|()
@@ -7456,6 +7580,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Online Student Sectioning Test"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageOnlineStudentSectioningTest
 parameter_list|()
@@ -7465,6 +7591,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Online Student Scheduling Dashboard"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageOnlineStudentSchedulingDashboard
 parameter_list|()
@@ -7474,6 +7602,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Sectioning Dashboard"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentSectioningDashboard
 parameter_list|()
@@ -7483,6 +7613,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Travel Times"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageTravelTimes
 parameter_list|()
@@ -7492,6 +7624,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Lookup Classes"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageClasses
 parameter_list|()
@@ -7501,6 +7635,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Lookup Examinations"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageExaminations
 parameter_list|()
@@ -7510,6 +7646,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Personal Schedule"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pagePersonalTimetable
 parameter_list|()
@@ -7519,6 +7657,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Room Availability"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditRoomAvailability
 parameter_list|()
@@ -7528,6 +7668,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Scripts"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageScripts
 parameter_list|()
@@ -7537,6 +7679,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Event Room Availability"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEventRoomAvailability
 parameter_list|()
@@ -7546,6 +7690,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Accommodation"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentAccommodation
 parameter_list|()
@@ -7555,6 +7701,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Accommodations"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageStudentAccommodations
 parameter_list|()
@@ -7564,6 +7712,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Student Sectioning Solver Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageBatchSectioningReports
 parameter_list|()
@@ -7573,6 +7723,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Online Student Scheduling Reports"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageOnlineSectioningReports
 parameter_list|()
@@ -7582,6 +7734,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Pictures"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomPictures
 parameter_list|()
@@ -11536,6 +11690,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Password"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageChangePassword
 parameter_list|()

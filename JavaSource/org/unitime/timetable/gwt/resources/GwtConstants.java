@@ -17,22 +17,6 @@ name|resources
 package|;
 end_package
 
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|i18n
-operator|.
-name|client
-operator|.
-name|Constants
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -49,6 +33,8 @@ name|DefaultStringValue
 argument_list|(
 literal|"4.1"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|version
 parameter_list|()
@@ -58,6 +44,8 @@ name|DefaultStringValue
 argument_list|(
 literal|"&copy; 2008 - 2015 The Apereo Foundation"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|copyright
 parameter_list|()
@@ -67,6 +55,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|true
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|useAmPm
 parameter_list|()
@@ -76,6 +66,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|firstDayThenMonth
 parameter_list|()
@@ -186,6 +178,8 @@ name|DefaultIntValue
 argument_list|(
 literal|3
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|eventSlotIncrement
 parameter_list|()
@@ -195,6 +189,8 @@ name|DefaultIntValue
 argument_list|(
 literal|90
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|eventStartDefault
 parameter_list|()
@@ -204,6 +200,8 @@ name|DefaultIntValue
 argument_list|(
 literal|210
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|eventStopDefault
 parameter_list|()
@@ -213,6 +211,8 @@ name|DefaultIntValue
 argument_list|(
 literal|12
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|eventLengthDefault
 parameter_list|()
@@ -222,6 +222,8 @@ name|DefaultIntValue
 argument_list|(
 literal|10000
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|int
 name|maxMeetings
 parameter_list|()
@@ -494,6 +496,8 @@ block|,
 literal|"red"
 block|}
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 index|[]
 name|meetingColors
@@ -758,6 +762,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|displayMidtermPeriodPreferencesAsCalendar
 parameter_list|()
@@ -862,6 +868,8 @@ name|DefaultBooleanValue
 argument_list|(
 literal|false
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|boolean
 name|timeGridStudentGroupDoesNotOverlap
 parameter_list|()
