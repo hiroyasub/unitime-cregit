@@ -1481,6 +1481,16 @@ argument_list|)
 expr_stmt|;
 name|a
 operator|.
+name|setCancelled
+argument_list|(
+name|section
+operator|.
+name|isCancelled
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|a
+operator|.
 name|setLimit
 argument_list|(
 operator|new

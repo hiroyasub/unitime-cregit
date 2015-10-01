@@ -1703,6 +1703,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class {0} has been cancelled."
+argument_list|)
+name|String
+name|classCancelled
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Show unassignments"
 argument_list|)
 name|String
