@@ -7324,6 +7324,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Class Duration Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageDurationType
 parameter_list|()
@@ -7333,6 +7335,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Class Duration Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageDurationTypes
 parameter_list|()
@@ -7342,6 +7346,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Examination Status"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageExaminationStatus
 parameter_list|()
@@ -7351,6 +7357,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Examination Statuses"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageExaminationStatuses
 parameter_list|()
@@ -7745,6 +7753,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Rooms"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRooms
 parameter_list|()
@@ -7754,6 +7764,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Detail"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomDetail
 parameter_list|()
@@ -7763,6 +7775,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add Room"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAddRoom
 parameter_list|()
@@ -7772,6 +7786,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Room"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditRoom
 parameter_list|()
@@ -7781,6 +7797,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Attachement Type"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAttachementType
 parameter_list|()
@@ -7790,6 +7808,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Attachement Types"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAttachementTypes
 parameter_list|()
@@ -7799,6 +7819,8 @@ name|DefaultMessage
 argument_list|(
 literal|"InstructionalMethod"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageInstructionalMethod
 parameter_list|()
@@ -7808,6 +7830,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Instructional Methods"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageInstructionalMethods
 parameter_list|()
@@ -7817,6 +7841,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Room Departments"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditRoomsDepartments
 parameter_list|()
@@ -7826,6 +7852,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add Room Group"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAddRoomGroup
 parameter_list|()
@@ -7835,6 +7863,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Room Group"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditRoomGroup
 parameter_list|()
@@ -7844,6 +7874,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Groups"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomGroups
 parameter_list|()
@@ -7853,6 +7885,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Add Room Feature"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageAddRoomFeature
 parameter_list|()
@@ -7862,6 +7896,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Edit Room Feature"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageEditRoomFeature
 parameter_list|()
@@ -7871,6 +7907,8 @@ name|DefaultMessage
 argument_list|(
 literal|"Room Features"
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|pageRoomFeatures
 parameter_list|()
@@ -9053,6 +9091,8 @@ name|DefaultMessage
 argument_list|(
 literal|""
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|codeFreeForAll
 parameter_list|()
@@ -9089,6 +9129,8 @@ name|DefaultMessage
 argument_list|(
 literal|""
 argument_list|)
+annotation|@
+name|DoNotTranslate
 name|String
 name|codeAvailable
 parameter_list|()
