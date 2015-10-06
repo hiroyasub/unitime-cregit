@@ -11103,6 +11103,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Do you realy want to delete this reservation?"
+argument_list|)
+name|String
+name|confirmDeleteReservation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"&nbsp;(of&nbsp;{0})"
 argument_list|)
 name|String
