@@ -169,6 +169,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|EventInterface
+operator|.
+name|EventLookupRpcRequest
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -286,6 +304,9 @@ name|print
 parameter_list|(
 name|ExportHelper
 name|helper
+parameter_list|,
+name|EventLookupRpcRequest
+name|request
 parameter_list|,
 name|List
 argument_list|<

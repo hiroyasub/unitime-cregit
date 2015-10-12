@@ -1518,6 +1518,8 @@ name|print
 argument_list|(
 name|helper
 argument_list|,
+name|request
+argument_list|,
 name|events
 argument_list|,
 name|eventCookieFlags
@@ -1535,6 +1537,9 @@ name|print
 parameter_list|(
 name|ExportHelper
 name|helper
+parameter_list|,
+name|EventLookupRpcRequest
+name|request
 parameter_list|,
 name|List
 argument_list|<

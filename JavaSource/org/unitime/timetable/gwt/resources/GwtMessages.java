@@ -12428,6 +12428,45 @@ name|String
 name|session
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"UniTime Schedule"
+argument_list|)
+name|String
+name|scheduleNameDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Schedule"
+argument_list|)
+name|String
+name|scheduleNameForResource
+parameter_list|(
+name|String
+name|resource
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} for {1} {2}"
+argument_list|)
+name|String
+name|scheduleNameForSession
+parameter_list|(
+name|String
+name|scheduleName
+parameter_list|,
+name|String
+name|acadTerm
+parameter_list|,
+name|String
+name|acadYear
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
