@@ -18454,6 +18454,16 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|newCurriculum
+operator|.
+name|setMultipleMajors
+argument_list|(
+name|curriculum
+operator|.
+name|isMultipleMajors
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|AcademicArea
 name|area
 init|=

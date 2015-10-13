@@ -3916,7 +3916,7 @@ literal|0
 argument_list|,
 name|col
 argument_list|,
-literal|"100px"
+literal|"150px"
 argument_list|)
 expr_stmt|;
 name|col
@@ -5246,7 +5246,7 @@ argument_list|()
 operator|*
 name|cx
 operator|.
-name|getShare
+name|getDisplayedShare
 argument_list|()
 argument_list|)
 operator|)

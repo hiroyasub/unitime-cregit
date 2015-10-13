@@ -150,6 +150,10 @@ name|String
 name|iName
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iMultipleMajors
+decl_stmt|;
+specifier|private
 name|AcademicArea
 name|iAcademicArea
 decl_stmt|;
@@ -191,6 +195,13 @@ name|String
 name|PROP_NAME
 init|=
 literal|"name"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_MULTIPLE_MAJORS
+init|=
+literal|"multipleMajors"
 decl_stmt|;
 specifier|public
 name|BaseCurriculum
@@ -286,6 +297,37 @@ block|{
 name|iName
 operator|=
 name|name
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isMultipleMajors
+parameter_list|()
+block|{
+return|return
+name|iMultipleMajors
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getMultipleMajors
+parameter_list|()
+block|{
+return|return
+name|iMultipleMajors
+return|;
+block|}
+specifier|public
+name|void
+name|setMultipleMajors
+parameter_list|(
+name|Boolean
+name|multipleMajors
+parameter_list|)
+block|{
+name|iMultipleMajors
+operator|=
+name|multipleMajors
 expr_stmt|;
 block|}
 specifier|public
@@ -580,6 +622,11 @@ operator|+
 literal|"\n	Department: "
 operator|+
 name|getDepartment
+argument_list|()
+operator|+
+literal|"\n	MultipleMajors: "
+operator|+
+name|getMultipleMajors
 argument_list|()
 operator|+
 literal|"\n	Name: "

@@ -2815,6 +2815,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Multiple Majors:"
+argument_list|)
+name|String
+name|propMultipleMajors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Major:"
 argument_list|)
 name|String
@@ -12431,6 +12440,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"A student must have all of the selected majors."
+argument_list|)
+name|String
+name|infoMultipleMajorsOn
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"A student must have at least one of the selected majors."
+argument_list|)
+name|String
+name|infoMultipleMajorsOff
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"UniTime Schedule"
 argument_list|)
 name|String
@@ -12465,6 +12492,42 @@ name|acadTerm
 parameter_list|,
 name|String
 name|acadYear
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Common"
+argument_list|)
+name|String
+name|abbvCommonTemplate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Defaults to {0} ({1})"
+argument_list|)
+name|String
+name|hintDefaultPercentShare
+parameter_list|(
+name|String
+name|defaultSharing
+parameter_list|,
+name|String
+name|template
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Taken from {0}"
+argument_list|)
+name|String
+name|hintTakenFromTemplate
+parameter_list|(
+name|String
+name|template
 parameter_list|)
 function_decl|;
 block|}

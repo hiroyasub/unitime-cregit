@@ -966,7 +966,7 @@ expr_stmt|;
 if|if
 condition|(
 name|exp
-operator|<=
+operator|<
 literal|0
 condition|)
 block|{

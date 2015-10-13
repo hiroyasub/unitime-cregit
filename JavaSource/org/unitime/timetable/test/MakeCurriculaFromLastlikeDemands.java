@@ -2135,6 +2135,13 @@ argument_list|)
 expr_stmt|;
 name|curriculum
 operator|.
+name|setMultipleMajors
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+name|curriculum
+operator|.
 name|setClassifications
 argument_list|(
 operator|new
