@@ -31,6 +31,24 @@ name|CurriculumCourse
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|curricula
+operator|.
+name|CurriculaCourseDemands
+operator|.
+name|CurriculumCourseGroupsProvider
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -47,6 +65,9 @@ name|getEnrollmentPriority
 parameter_list|(
 name|CurriculumCourse
 name|course
+parameter_list|,
+name|CurriculumCourseGroupsProvider
+name|course2groups
 parameter_list|)
 function_decl|;
 block|}

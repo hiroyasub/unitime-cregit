@@ -290,8 +290,6 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|curriculum
-operator|.
 name|getAcademicArea
 argument_list|()
 argument_list|)
