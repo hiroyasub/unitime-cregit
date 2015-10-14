@@ -463,7 +463,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|event
 operator|.
@@ -547,7 +547,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|clazz
 operator|.
@@ -634,7 +634,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|exam
 operator|.
@@ -718,7 +718,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|course
 operator|.
@@ -826,7 +826,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|offering
 operator|.
@@ -931,7 +931,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|config
 operator|.

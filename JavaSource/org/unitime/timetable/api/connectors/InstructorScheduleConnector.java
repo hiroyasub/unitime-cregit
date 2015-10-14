@@ -503,7 +503,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|sessionId
 argument_list|,

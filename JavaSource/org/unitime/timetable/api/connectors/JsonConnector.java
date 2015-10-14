@@ -342,7 +342,7 @@ operator|.
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnyAuthority
 argument_list|(
 name|Right
 operator|.
