@@ -51,16 +51,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|dom4j
-operator|.
-name|Document
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -150,7 +140,7 @@ name|Integer
 name|iOrd
 decl_stmt|;
 specifier|private
-name|Document
+name|String
 name|iStudents
 decl_stmt|;
 specifier|private
@@ -322,7 +312,7 @@ name|ord
 expr_stmt|;
 block|}
 specifier|public
-name|Document
+name|String
 name|getStudents
 parameter_list|()
 block|{
@@ -334,7 +324,7 @@ specifier|public
 name|void
 name|setStudents
 parameter_list|(
-name|Document
+name|String
 name|students
 parameter_list|)
 block|{
