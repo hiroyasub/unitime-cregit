@@ -7885,6 +7885,28 @@ argument_list|(
 literal|"unitime.events.group.showGroupEnrollment"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Legacy: switch the user interface back to the old (Struts-based) rooms pages"
+argument_list|)
+name|LegacyRooms
+argument_list|(
+literal|"unitime.legacy.rooms"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
