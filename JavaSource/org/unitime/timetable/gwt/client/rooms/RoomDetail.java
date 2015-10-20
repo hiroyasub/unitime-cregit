@@ -1591,10 +1591,26 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|iProperties
+operator|!=
+literal|null
+operator|&&
+name|iProperties
+operator|.
+name|isRoomAreaInMetricUnits
+argument_list|()
+condition|?
+name|CONSTANTS
+operator|.
+name|roomAreaMetricUnitsShort
+argument_list|()
+else|:
 name|CONSTANTS
 operator|.
 name|roomAreaUnitsShort
 argument_list|()
+operator|)
 argument_list|)
 argument_list|,
 literal|1

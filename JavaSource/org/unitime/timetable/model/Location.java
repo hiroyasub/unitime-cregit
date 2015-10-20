@@ -6826,10 +6826,24 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
+operator|(
+name|ApplicationProperty
+operator|.
+name|RoomAreaUnitsMetric
+operator|.
+name|isTrue
+argument_list|()
+condition|?
+name|MSG
+operator|.
+name|roomAreaMetricUnitsShort
+argument_list|()
+else|:
 name|MSG
 operator|.
 name|roomAreaUnitsShort
 argument_list|()
+operator|)
 operator|+
 literal|"</td></tr>"
 expr_stmt|;

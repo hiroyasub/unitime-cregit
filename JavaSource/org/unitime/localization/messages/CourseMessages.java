@@ -6615,6 +6615,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"square meters"
+argument_list|)
+name|String
+name|roomAreaMetricUnitsLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"m&sup2;"
+argument_list|)
+name|String
+name|roomAreaMetricUnitsShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Area [m&sup2;]"
+argument_list|)
+name|String
+name|columnAreaMetric
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Area [m2]"
+argument_list|)
+name|String
+name|columnAreaMetricPDF
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"System Default (Minutes per Week)"
 argument_list|)
 name|String
