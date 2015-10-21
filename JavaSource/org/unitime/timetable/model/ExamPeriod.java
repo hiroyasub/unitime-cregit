@@ -1022,6 +1022,9 @@ name|dateOffset
 parameter_list|,
 name|int
 name|startSlot
+parameter_list|,
+name|Long
+name|examTypeId
 parameter_list|)
 block|{
 return|return
@@ -1039,7 +1042,7 @@ name|createQuery
 argument_list|(
 literal|"select ep from ExamPeriod ep where "
 operator|+
-literal|"ep.session.uniqueId=:sessionId and ep.dateOffset=:dateOffset and ep.startSlot=:startSlot"
+literal|"ep.session.uniqueId = :sessionId and ep.dateOffset = :dateOffset and ep.startSlot = :startSlot and ep.examType.uniqueId = :typeId"
 argument_list|)
 operator|.
 name|setLong
@@ -1061,6 +1064,13 @@ argument_list|(
 literal|"startSlot"
 argument_list|,
 name|startSlot
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"typeId"
+argument_list|,
+name|examTypeId
 argument_list|)
 operator|.
 name|setCacheable

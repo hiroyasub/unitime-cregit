@@ -2462,6 +2462,8 @@ argument_list|,
 name|dateOffset
 argument_list|,
 name|slot
+argument_list|,
+name|iType
 argument_list|)
 decl_stmt|;
 if|if
