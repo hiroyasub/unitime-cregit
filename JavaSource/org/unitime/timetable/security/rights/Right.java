@@ -2722,6 +2722,13 @@ name|ApiJsonConnector
 block|,
 name|ApiDataExchangeConnector
 block|,
+name|ApiOnlineStudentScheduliung
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** People Lookup limitations */
 name|CanLookupStudents
 block|,
