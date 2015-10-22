@@ -739,6 +739,10 @@ name|ProjectionsProvider
 name|projections
 parameter_list|)
 block|{
+name|iStudentId
+operator|=
+name|studentId
+expr_stmt|;
 name|Curriculum
 name|curriculum
 init|=
