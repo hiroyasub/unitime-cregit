@@ -2342,8 +2342,6 @@ name|q
 operator|.
 name|getName
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2358,8 +2356,6 @@ name|q
 operator|.
 name|getStatus
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2374,8 +2370,6 @@ name|q
 operator|.
 name|getProgress
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2390,8 +2384,6 @@ name|q
 operator|.
 name|getOwner
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2406,8 +2398,6 @@ name|q
 operator|.
 name|getSession
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2436,8 +2426,6 @@ operator|.
 name|getCreated
 argument_list|()
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2466,8 +2454,6 @@ operator|.
 name|getStarted
 argument_list|()
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2496,8 +2482,6 @@ operator|.
 name|getFinished
 argument_list|()
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
