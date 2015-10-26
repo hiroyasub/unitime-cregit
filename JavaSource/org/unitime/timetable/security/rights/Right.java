@@ -2695,6 +2695,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ApiRoomPictureUpload
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|ApiRetrieveRoles
 block|,
 name|ApiRetrieveEnrollments

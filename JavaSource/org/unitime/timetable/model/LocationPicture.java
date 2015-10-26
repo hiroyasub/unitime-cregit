@@ -111,6 +111,12 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|abstract
+name|Location
+name|getLocation
+parameter_list|()
+function_decl|;
+specifier|public
 name|int
 name|compareTo
 parameter_list|(
