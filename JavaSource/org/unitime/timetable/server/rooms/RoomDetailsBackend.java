@@ -2446,6 +2446,14 @@ operator|.
 name|getRoomType
 argument_list|()
 operator|.
+name|getReference
+argument_list|()
+argument_list|,
+name|location
+operator|.
+name|getRoomType
+argument_list|()
+operator|.
 name|getLabel
 argument_list|()
 argument_list|,

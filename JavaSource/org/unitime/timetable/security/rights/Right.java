@@ -2702,6 +2702,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ApiRoomEdit
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|ApiRetrieveRoles
 block|,
 name|ApiRetrieveEnrollments

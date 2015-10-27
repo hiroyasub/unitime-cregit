@@ -1289,6 +1289,11 @@ argument_list|()
 argument_list|,
 name|type
 operator|.
+name|getReference
+argument_list|()
+argument_list|,
+name|type
+operator|.
 name|getLabel
 argument_list|()
 argument_list|,
