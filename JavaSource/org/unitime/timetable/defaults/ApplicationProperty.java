@@ -2674,30 +2674,6 @@ literal|"tmtbl.class.naming.helper"
 argument_list|)
 operator|,
 expr_stmt|@
-name|Description
-argument_list|(
-literal|"Classes: text of a blue message on the top of the page"
-argument_list|)
-expr|@
-name|Deprecated
-name|ClassesMessage
-argument_list|(
-literal|"tmtbl.classes.message"
-argument_list|)
-operator|,
-expr_stmt|@
-name|Description
-argument_list|(
-literal|"Examinations: text of a blue message on the top of the page"
-argument_list|)
-expr|@
-name|Deprecated
-name|ExamsMessage
-argument_list|(
-literal|"tmtbl.exams.message"
-argument_list|)
-operator|,
-expr_stmt|@
 name|Type
 argument_list|(
 name|Boolean

@@ -703,13 +703,6 @@ name|String
 name|classification
 parameter_list|)
 block|{
-if|if
-condition|(
-literal|true
-condition|)
-return|return
-literal|0
-return|;
 return|return
 operator|(
 operator|(

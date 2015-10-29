@@ -3246,6 +3246,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// Catalog Link
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 name|String
 name|linkLookupClass
 init|=

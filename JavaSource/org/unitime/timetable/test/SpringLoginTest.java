@@ -37,18 +37,6 @@ name|springframework
 operator|.
 name|context
 operator|.
-name|ApplicationContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|context
-operator|.
 name|support
 operator|.
 name|ClassPathXmlApplicationContext
@@ -180,7 +168,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Setup application context
-name|ApplicationContext
+name|ClassPathXmlApplicationContext
 name|context
 init|=
 operator|new
@@ -322,6 +310,11 @@ operator|.
 name|getAuthorities
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|close
+argument_list|()
 expr_stmt|;
 block|}
 catch|catch

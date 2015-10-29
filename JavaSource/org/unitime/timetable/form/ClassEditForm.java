@@ -433,7 +433,6 @@ specifier|private
 name|Integer
 name|enrollment
 decl_stmt|;
-comment|//TODO Reservations Bypass - to be removed later
 specifier|private
 name|Boolean
 name|isCrosslisted
@@ -442,7 +441,6 @@ specifier|private
 name|String
 name|accommodation
 decl_stmt|;
-comment|//End Bypass
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Instructors */
 specifier|protected
@@ -1062,12 +1060,10 @@ name|unlimitedEnroll
 operator|=
 literal|null
 expr_stmt|;
-comment|//TODO Reservations Bypass - to be removed later
 name|isCrosslisted
 operator|=
 literal|null
 expr_stmt|;
-comment|// End Bypass
 name|instructors
 operator|=
 name|DynamicList
@@ -2094,7 +2090,6 @@ operator|=
 name|unlimitedEnroll
 expr_stmt|;
 block|}
-comment|//TODO Reservations Bypass - to be removed later
 specifier|public
 name|Boolean
 name|getIsCrosslisted
@@ -2119,7 +2114,6 @@ operator|=
 name|isCrosslisted
 expr_stmt|;
 block|}
-comment|// End Bypass
 comment|/**      * @param date      * @return String representation of the date formatted as mm/dd/yyyy      */
 specifier|public
 name|String

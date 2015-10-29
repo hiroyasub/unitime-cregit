@@ -276,7 +276,6 @@ specifier|public
 name|EventRelatedImports
 parameter_list|()
 block|{
-comment|// TODO Auto-generated constructor stub
 block|}
 specifier|protected
 name|void

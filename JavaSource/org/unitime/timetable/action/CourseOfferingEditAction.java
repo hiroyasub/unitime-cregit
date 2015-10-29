@@ -4987,6 +4987,11 @@ argument_list|()
 condition|)
 block|{
 comment|// Catalog Link
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 name|String
 name|linkLookupClass
 init|=

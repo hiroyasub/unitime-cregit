@@ -20,6 +20,11 @@ package|;
 end_package
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 specifier|final
 class|class

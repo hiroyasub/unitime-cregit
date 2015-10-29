@@ -84,8 +84,6 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * Parse a string to give a Date object 	 * @param date 	 * @param dateFormat format of the date e.g. MM/dd/yyyy - see SimpleDateFormat 	 * @return null if not a valid date 	 * Use {@link Formats.Format.parse(String)} instead. 	 */
-annotation|@
-name|Deprecated
 specifier|public
 specifier|static
 name|Date

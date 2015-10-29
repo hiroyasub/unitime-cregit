@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @author Stephanie Schluttenhofer  *  * TODO To change the template for this generated type comment go to  * Window - Preferences - Java - Code Style - Code Templates  */
+comment|/**  * @author Stephanie Schluttenhofer  *  * Window - Preferences - Java - Code Style - Code Templates  */
 end_comment
 
 begin_class
