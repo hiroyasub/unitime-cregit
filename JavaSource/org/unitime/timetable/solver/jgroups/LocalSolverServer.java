@@ -883,6 +883,24 @@ name|void
 name|checkForNewServers
 parameter_list|()
 block|{
+if|if
+condition|(
+operator|!
+name|SessionDAO
+operator|.
+name|isConfigured
+argument_list|()
+condition|)
+block|{
+name|iLog
+operator|.
+name|info
+argument_list|(
+literal|"Hibernate is not yet configured, waiting..."
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|org
 operator|.
 name|hibernate
