@@ -712,14 +712,6 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
-name|String
-name|lastStatusQuery
-parameter_list|()
-throws|throws
-name|SectioningException
-throws|,
-name|PageAccessException
-function_decl|;
 name|Long
 name|canEnroll
 parameter_list|(
