@@ -2829,6 +2829,20 @@ name|ApiRetrieveClassInfo
 extends|extends
 name|SimpleSessionPermission
 block|{}
+annotation|@
+name|PermissionForRight
+argument_list|(
+name|Right
+operator|.
+name|ApiOnlineStudentScheduliung
+argument_list|)
+specifier|public
+specifier|static
+class|class
+name|ApiOnlineStudentScheduliung
+extends|extends
+name|SimpleSessionPermission
+block|{}
 block|}
 end_class
 
