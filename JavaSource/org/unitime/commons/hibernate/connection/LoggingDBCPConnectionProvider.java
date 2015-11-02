@@ -350,14 +350,14 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|close
+name|destroy
 parameter_list|()
 throws|throws
 name|HibernateException
 block|{
 name|super
 operator|.
-name|close
+name|destroy
 argument_list|()
 expr_stmt|;
 name|iLogger

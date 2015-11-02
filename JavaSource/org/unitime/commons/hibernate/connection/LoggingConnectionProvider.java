@@ -137,6 +137,20 @@ name|ConnectionProvider
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|springframework
+operator|.
+name|beans
+operator|.
+name|factory
+operator|.
+name|DisposableBean
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -147,6 +161,8 @@ class|class
 name|LoggingConnectionProvider
 implements|implements
 name|ConnectionProvider
+implements|,
+name|DisposableBean
 block|{
 specifier|private
 specifier|static
@@ -326,6 +342,19 @@ operator|.
 name|supportsAggressiveRelease
 argument_list|()
 return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|destroy
+parameter_list|()
+block|{
+name|iLogger
+operator|.
+name|interrupt
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 specifier|static
