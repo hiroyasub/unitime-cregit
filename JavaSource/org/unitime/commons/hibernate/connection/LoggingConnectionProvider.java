@@ -137,20 +137,6 @@ name|ConnectionProvider
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|springframework
-operator|.
-name|beans
-operator|.
-name|factory
-operator|.
-name|DisposableBean
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -160,9 +146,7 @@ specifier|public
 class|class
 name|LoggingConnectionProvider
 implements|implements
-name|ConnectionProvider
-implements|,
-name|DisposableBean
+name|DisposableConnectionProvider
 block|{
 specifier|private
 specifier|static

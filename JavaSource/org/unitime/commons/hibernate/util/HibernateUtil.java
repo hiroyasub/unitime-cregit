@@ -395,13 +395,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|beans
+name|commons
 operator|.
-name|factory
-operator|.
-name|DisposableBean
+name|LocalContext
 import|;
 end_import
 
@@ -413,7 +411,11 @@ name|unitime
 operator|.
 name|commons
 operator|.
-name|LocalContext
+name|hibernate
+operator|.
+name|connection
+operator|.
+name|DisposableConnectionProvider
 import|;
 end_import
 
@@ -2177,14 +2179,14 @@ if|if
 condition|(
 name|cp
 operator|instanceof
-name|DisposableBean
+name|DisposableConnectionProvider
 condition|)
 block|{
 try|try
 block|{
 operator|(
 operator|(
-name|DisposableBean
+name|DisposableConnectionProvider
 operator|)
 name|cp
 operator|)
