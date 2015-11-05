@@ -77,24 +77,6 @@ name|timetable
 operator|.
 name|gwt
 operator|.
-name|client
-operator|.
-name|widgets
-operator|.
-name|UniTimeFrameDialog
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
 name|command
 operator|.
 name|client
@@ -911,19 +893,13 @@ operator|instanceof
 name|PageAccessException
 condition|)
 block|{
-name|UniTimeFrameDialog
-operator|.
-name|openDialog
+name|open
 argument_list|(
-literal|"UniTime "
-operator|+
-name|CONSTANTS
+name|GWT
 operator|.
-name|version
+name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"| Log In"
-argument_list|,
 literal|"login.do?menu=hide&m="
 operator|+
 name|URL
@@ -949,12 +925,9 @@ operator|.
 name|getHref
 argument_list|()
 argument_list|)
-argument_list|,
-literal|"700px"
-argument_list|,
-literal|"420px"
 argument_list|)
 expr_stmt|;
+comment|/* 			UniTimeFrameDialog.openDialog("UniTime " + CONSTANTS.version() + "| Log In", "login.do?menu=hide&m=" + URL.encodeQueryString(t.getMessage()) 					+"&target=" + URL.encodeQueryString(Window.Location.getHref()), "700px", "420px"); 			*/
 block|}
 block|}
 specifier|public
