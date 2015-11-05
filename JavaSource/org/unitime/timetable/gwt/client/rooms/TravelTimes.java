@@ -1792,7 +1792,7 @@ name|iShow
 argument_list|,
 name|HasVerticalAlignment
 operator|.
-name|ALIGN_MIDDLE
+name|ALIGN_TOP
 argument_list|)
 expr_stmt|;
 name|iShow

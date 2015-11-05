@@ -901,6 +901,17 @@ name|boolean
 name|timeGridStudentGroupDoesNotOverlap
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|boolean
+name|searchWhenPageIsLoaded
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
