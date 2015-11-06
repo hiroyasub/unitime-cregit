@@ -791,6 +791,8 @@ operator|.
 name|getExternalUserId
 argument_list|()
 argument_list|,
+name|studentId
+argument_list|,
 name|user
 operator|.
 name|getName
