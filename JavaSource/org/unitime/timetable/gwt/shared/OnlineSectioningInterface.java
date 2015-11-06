@@ -135,7 +135,11 @@ block|,
 name|RECHECK_AFTER_ENROLLMENT
 block|,
 name|RECHECK_BEFORE_ENROLLMENT
-block|;
+block|,
+name|CAN_RESET
+block|,
+name|CONFIRM_DROP
+block|, 			;
 specifier|public
 name|int
 name|flag

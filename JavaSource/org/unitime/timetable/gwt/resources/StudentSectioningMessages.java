@@ -3980,6 +3980,27 @@ name|String
 name|type
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This schedule only displays classes with assigned time. To see your full list of classes, please open the List of classes tab."
+argument_list|)
+name|String
+name|timeGridNotAssignedTimes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Together with other registration changes, the course {0} will be dropped. Do you want to proceed?"
+argument_list|)
+name|String
+name|confirmEnrollmentCourseDrop
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
