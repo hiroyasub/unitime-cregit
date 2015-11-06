@@ -9920,8 +9920,15 @@ argument_list|(
 name|isShowingResults
 argument_list|()
 operator|||
+operator|(
 operator|!
 name|isDefault
+operator|&&
+name|CONSTANTS
+operator|.
+name|searchWhenPageIsLoaded
+argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
