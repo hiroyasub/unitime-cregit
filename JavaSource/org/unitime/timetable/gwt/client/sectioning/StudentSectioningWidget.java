@@ -1566,9 +1566,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -1589,9 +1586,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -1611,9 +1605,6 @@ name|hasSecondAlternative
 argument_list|()
 operator|&&
 name|course
-operator|.
-name|getCourseName
-argument_list|()
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -1652,9 +1643,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -1675,9 +1663,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -1697,9 +1682,6 @@ name|hasSecondAlternative
 argument_list|()
 operator|&&
 name|course
-operator|.
-name|getCourseName
-argument_list|()
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -13801,9 +13783,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -13824,9 +13803,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -13846,9 +13822,6 @@ name|hasSecondAlternative
 argument_list|()
 operator|&&
 name|course
-operator|.
-name|getCourseName
-argument_list|()
 operator|.
 name|equalsIgnoreCase
 argument_list|(
@@ -13884,9 +13857,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -13907,9 +13877,6 @@ argument_list|()
 operator|&&
 name|course
 operator|.
-name|getCourseName
-argument_list|()
-operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|r
@@ -13929,9 +13896,6 @@ name|hasSecondAlternative
 argument_list|()
 operator|&&
 name|course
-operator|.
-name|getCourseName
-argument_list|()
 operator|.
 name|equalsIgnoreCase
 argument_list|(
