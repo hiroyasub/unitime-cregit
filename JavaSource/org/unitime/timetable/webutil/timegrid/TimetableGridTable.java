@@ -8117,6 +8117,40 @@ decl_stmt|;
 name|Query
 name|q
 init|=
+literal|null
+decl_stmt|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|TimetableGridUseClassInstructors
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
+name|q
+operator|=
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"select distinct i.instructor from "
+operator|+
+literal|"ClassInstructor as i inner join i.classInstructing.assignments as a where "
+operator|+
+literal|"a.solution.uniqueId in ("
+operator|+
+name|solutionIdsStr
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|q
+operator|=
 name|hibSession
 operator|.
 name|createQuery
@@ -8131,7 +8165,8 @@ name|solutionIdsStr
 operator|+
 literal|")"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
 name|q
 operator|.
 name|setCacheable

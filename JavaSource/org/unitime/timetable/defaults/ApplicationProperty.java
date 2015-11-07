@@ -6612,6 +6612,76 @@ literal|"tmtbl.timeGrid.maxCellWidthVertical"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Timetable Grid: Use class instructors instead of solution instructors (when set to true)."
+argument_list|)
+name|TimetableGridUseClassInstructors
+argument_list|(
+literal|"tmtbl.timeGrid.useClassInstructors"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Timetable Grid: When class instructors are used (instead of solution instructors), consider Display Instructors flag on the class."
+operator|+
+literal|" That is, hide instructors on classes that does not show instructors when set to true."
+argument_list|)
+name|TimetableGridUseClassInstructorsCheckClassDisplayInstructors
+argument_list|(
+literal|"tmtbl.timeGrid.useClassInstructors.checkDisplayInstructor"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Timetable Grid: When class instructors are used (instead of solution instructors), display only instructors with the Check Conflicts toggle set."
+operator|+
+literal|" That is, show all instructors that are assigned on a class (including those that are not checked for conflicts in course timetabling) when set to false."
+argument_list|)
+name|TimetableGridUseClassInstructorsCheckLead
+argument_list|(
+literal|"tmtbl.timeGrid.useClassInstructors.checkConflicts"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Description
 argument_list|(
 literal|"Contact Us: address"
