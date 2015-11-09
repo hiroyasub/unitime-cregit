@@ -274,6 +274,24 @@ name|ImageResource
 name|starSelected
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/confirm.png"
+argument_list|)
+name|ImageResource
+name|confirm
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/alert.png"
+argument_list|)
+name|ImageResource
+name|alert
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
