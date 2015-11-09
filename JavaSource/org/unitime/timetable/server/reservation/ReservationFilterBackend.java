@@ -2759,7 +2759,7 @@ expr_stmt|;
 name|String
 name|fetch
 init|=
-literal|"inner join fetch r.instructionalOffering io inner join fetch io.courseOfferings co "
+literal|"inner join fetch r.instructionalOffering io inner join io.courseOfferings co "
 operator|+
 literal|"left join fetch r.classes xclz left join fetch r.configurations xcfg "
 operator|+
