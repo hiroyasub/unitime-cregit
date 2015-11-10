@@ -245,6 +245,11 @@ name|void
 name|hideHint
 parameter_list|()
 block|{
+name|iShowHint
+operator|.
+name|cancel
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|iHint
@@ -252,11 +257,13 @@ operator|.
 name|isShowing
 argument_list|()
 condition|)
+block|{
 name|iHint
 operator|.
 name|hide
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
