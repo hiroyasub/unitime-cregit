@@ -7245,7 +7245,13 @@ argument_list|(
 literal|"request"
 argument_list|)
 expr_stmt|;
-else|else
+if|else if
+condition|(
+name|request
+operator|.
+name|isUpdateLastRequest
+argument_list|()
+condition|)
 name|getSessionContext
 argument_list|()
 operator|.

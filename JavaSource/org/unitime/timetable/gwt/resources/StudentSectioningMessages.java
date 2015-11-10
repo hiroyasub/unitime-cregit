@@ -4001,6 +4001,69 @@ name|String
 name|course
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Quick<u>A</u>dd / Drop"
+argument_list|)
+name|String
+name|buttonQuickAdd
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Select a new course to add to the schedulue, or an existing course to drop from the schedule"
+argument_list|)
+name|String
+name|dialogQuickAdd
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Quick add failed."
+argument_list|)
+name|String
+name|quickAddFailed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Quick add failed: {0}"
+argument_list|)
+name|String
+name|quickAddFailedWithMessage
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>rop {0}"
+argument_list|)
+name|String
+name|buttonQuickDrop
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you want to drop {0} from your schedule?"
+argument_list|)
+name|String
+name|confirmQuickDrop
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

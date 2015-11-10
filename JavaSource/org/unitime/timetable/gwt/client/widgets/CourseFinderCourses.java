@@ -1232,6 +1232,13 @@ name|getSelectedRow
 argument_list|()
 operator|<
 literal|0
+operator|||
+name|iCourses
+operator|.
+name|getRowsCount
+argument_list|()
+operator|==
+literal|0
 condition|)
 block|{
 return|return
