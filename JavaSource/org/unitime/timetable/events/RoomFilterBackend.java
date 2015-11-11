@@ -830,6 +830,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|"type"
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -991,6 +993,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -1271,6 +1275,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|"group"
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -1435,6 +1441,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|"building"
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -1810,6 +1818,8 @@ argument_list|,
 literal|null
 argument_list|,
 literal|"department"
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -1933,6 +1943,9 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|deptIndep
+operator|||
+operator|(
 name|userDepts
 operator|!=
 literal|null
@@ -1949,6 +1962,7 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|)
+operator|)
 condition|)
 name|isManaged
 operator|=
@@ -2126,6 +2140,9 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|deptIndep
+operator|||
+operator|(
 name|userDepts
 operator|!=
 literal|null
@@ -2142,6 +2159,7 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|)
+operator|)
 condition|)
 name|isManaged
 operator|=
@@ -2236,6 +2254,30 @@ name|department
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|deptIndep
+operator|||
+operator|(
+name|userDepts
+operator|!=
+literal|null
+operator|&&
+name|userDepts
+operator|.
+name|contains
+argument_list|(
+name|evtDept
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+operator|)
+condition|)
+name|isManaged
+operator|=
+literal|true
+expr_stmt|;
 name|department
 operator|.
 name|incCount
@@ -2488,6 +2530,9 @@ argument_list|,
 name|Double
 argument_list|>
 name|room2distance
+parameter_list|,
+name|EventContext
+name|context
 parameter_list|)
 block|{
 name|fixRoomFeatureTypes
@@ -2519,6 +2564,8 @@ argument_list|,
 name|room2distance
 argument_list|,
 literal|null
+argument_list|,
+name|context
 argument_list|)
 return|;
 block|}
@@ -2559,6 +2606,9 @@ name|room2distance
 parameter_list|,
 name|String
 name|ignoreCommand
+parameter_list|,
+name|EventContext
+name|context
 parameter_list|)
 block|{
 name|org
@@ -2584,6 +2634,8 @@ argument_list|(
 name|sessionId
 argument_list|,
 name|options
+argument_list|,
+name|context
 argument_list|)
 decl_stmt|;
 name|org
@@ -3573,6 +3625,8 @@ argument_list|,
 name|distances
 argument_list|,
 literal|null
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -3718,6 +3772,8 @@ argument_list|,
 name|distances
 argument_list|,
 literal|null
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
@@ -5653,6 +5709,9 @@ name|String
 argument_list|>
 argument_list|>
 name|options
+parameter_list|,
+name|EventContext
+name|context
 parameter_list|)
 block|{
 name|RoomQuery
@@ -6888,19 +6947,60 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|context
+operator|.
+name|hasPermission
+argument_list|(
+name|Right
+operator|.
+name|DepartmentIndependent
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|eventRooms
+condition|)
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"l.eventDepartment is not null"
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+operator|!
+name|allRooms
+condition|)
 name|query
 operator|.
 name|addFrom
 argument_list|(
 literal|"department"
 argument_list|,
-operator|(
+literal|"inner join l.roomDepts rd"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
 name|eventRooms
-condition|?
+condition|)
+block|{
+name|query
+operator|.
+name|addFrom
+argument_list|(
+literal|"department"
+argument_list|,
 literal|"inner join l.eventDepartment.timetableManagers m"
-else|:
-literal|"inner join l.roomDepts rd inner join rd.department.timetableManagers m"
-operator|)
 argument_list|)
 expr_stmt|;
 name|query
@@ -6912,6 +7012,52 @@ argument_list|,
 literal|"m.externalUniqueId = :Xu"
 argument_list|)
 expr_stmt|;
+block|}
+if|else if
+condition|(
+name|allRooms
+condition|)
+block|{
+name|query
+operator|.
+name|addFrom
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"left outer join l.eventDepartment.timetableManagers m1 left outer join l.roomDepts rd left outer join rd.department.timetableManagers m2"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"m1.externalUniqueId = :Xu or m2.externalUniqueId = :Xu"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|query
+operator|.
+name|addFrom
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"inner join l.roomDepts rd inner join rd.department.timetableManagers m"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"m.externalUniqueId = :Xu"
+argument_list|)
+expr_stmt|;
+block|}
 name|query
 operator|.
 name|addParameter
@@ -6924,7 +7070,13 @@ name|user
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
+block|{
+if|if
+condition|(
+name|eventRooms
+condition|)
 block|{
 name|query
 operator|.
@@ -6932,33 +7084,9 @@ name|addFrom
 argument_list|(
 literal|"department"
 argument_list|,
-literal|"left outer join l.examTypes x "
-operator|+
-operator|(
-name|eventRooms
-condition|?
-literal|""
-else|:
-literal|"left outer join l.roomDepts rd"
-operator|)
+literal|"left outer join l.examTypes x"
 argument_list|)
 expr_stmt|;
-name|query
-operator|.
-name|addParameter
-argument_list|(
-literal|"department"
-argument_list|,
-literal|"Xd"
-argument_list|,
-name|department
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|eventRooms
-condition|)
-block|{
 name|query
 operator|.
 name|addWhere
@@ -6976,16 +7104,34 @@ condition|)
 block|{
 name|query
 operator|.
+name|addFrom
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"left outer join l.examTypes x left outer join l.roomDepts rd left outer join rd.department rdd left outer join l.eventDepartment ed"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
 name|addWhere
 argument_list|(
 literal|"department"
 argument_list|,
-literal|"rd.department.deptCode = :Xd or l.eventDepartment.deptCode = :Xd or x.reference = :Xd"
+literal|"rdd.deptCode = :Xd or ed.deptCode = :Xd or x.reference = :Xd"
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
+name|query
+operator|.
+name|addFrom
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"left outer join l.examTypes x left outer join l.roomDepts rd"
+argument_list|)
+expr_stmt|;
 name|query
 operator|.
 name|addWhere
@@ -6996,6 +7142,17 @@ literal|"rd.department.deptCode = :Xd or x.reference = :Xd"
 argument_list|)
 expr_stmt|;
 block|}
+name|query
+operator|.
+name|addParameter
+argument_list|(
+literal|"department"
+argument_list|,
+literal|"Xd"
+argument_list|,
+name|department
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 if|if
@@ -8168,7 +8325,7 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-comment|//System.out.println("Q: " + query());
+comment|// System.out.println("Q: " + query());
 name|org
 operator|.
 name|hibernate

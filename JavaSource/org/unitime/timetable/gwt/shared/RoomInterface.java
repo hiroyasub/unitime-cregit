@@ -14428,7 +14428,7 @@ argument_list|)
 block|,
 name|EVENTS
 argument_list|(
-literal|"q=flag:Events+department:Managed"
+literal|"q=flag:Event+department:Managed"
 argument_list|,
 literal|true
 argument_list|,

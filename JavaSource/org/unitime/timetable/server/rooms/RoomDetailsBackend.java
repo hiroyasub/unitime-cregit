@@ -846,6 +846,9 @@ name|String
 argument_list|>
 argument_list|>
 name|options
+parameter_list|,
+name|EventContext
+name|context
 parameter_list|)
 block|{
 name|RoomQuery
@@ -858,6 +861,8 @@ argument_list|(
 name|sessionId
 argument_list|,
 name|options
+argument_list|,
+name|context
 argument_list|)
 decl_stmt|;
 name|Set
@@ -1174,6 +1179,8 @@ argument_list|,
 name|distances
 argument_list|,
 literal|null
+argument_list|,
+name|context
 argument_list|)
 control|)
 block|{
