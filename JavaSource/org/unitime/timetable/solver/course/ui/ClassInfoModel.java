@@ -373,6 +373,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|form
+operator|.
+name|ClassInfoForm
+operator|.
+name|RoomBase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|interfaces
 operator|.
 name|RoomAvailabilityInterface
@@ -7277,6 +7293,9 @@ name|findAllRooms
 parameter_list|(
 name|Long
 name|sessionId
+parameter_list|,
+name|boolean
+name|roomDepts
 parameter_list|)
 block|{
 name|String
@@ -7516,14 +7535,37 @@ block|}
 name|String
 name|query
 init|=
+literal|null
+decl_stmt|;
+if|if
+condition|(
+name|roomDepts
+condition|)
+block|{
+name|query
+operator|=
+literal|"select distinct r from Location r inner join r.roomDepts rd "
+operator|+
+name|a
+operator|+
+literal|" where r.session.uniqueId = :sessionId "
+operator|+
+name|b
+expr_stmt|;
+block|}
+else|else
+block|{
+name|query
+operator|=
 literal|"select r from Location r "
 operator|+
 name|a
 operator|+
-literal|" where r.session.uniqueId=:sessionId "
+literal|" where r.session.uniqueId = :sessionId "
 operator|+
 name|b
-decl_stmt|;
+expr_stmt|;
+block|}
 return|return
 name|LocationDAO
 operator|.
@@ -7576,7 +7618,7 @@ parameter_list|,
 name|boolean
 name|allowConflicts
 parameter_list|,
-name|boolean
+name|RoomBase
 name|showAllRooms
 parameter_list|)
 block|{
@@ -8121,6 +8163,10 @@ decl_stmt|;
 if|if
 condition|(
 name|showAllRooms
+operator|!=
+name|RoomBase
+operator|.
+name|Departmental
 condition|)
 block|{
 name|allRooms
@@ -8145,6 +8191,12 @@ argument_list|()
 operator|.
 name|getSessionId
 argument_list|()
+argument_list|,
+name|showAllRooms
+operator|==
+name|RoomBase
+operator|.
+name|Timetabling
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8273,6 +8325,10 @@ decl_stmt|;
 if|if
 condition|(
 name|showAllRooms
+operator|!=
+name|RoomBase
+operator|.
+name|Departmental
 operator|&&
 operator|!
 name|availRooms
@@ -8416,6 +8472,10 @@ block|{
 if|if
 condition|(
 name|showAllRooms
+operator|!=
+name|RoomBase
+operator|.
+name|Departmental
 condition|)
 block|{
 name|pref
@@ -8501,6 +8561,10 @@ block|{
 if|if
 condition|(
 name|showAllRooms
+operator|!=
+name|RoomBase
+operator|.
+name|Departmental
 condition|)
 block|{
 name|pref
@@ -11411,7 +11475,7 @@ argument_list|()
 argument_list|,
 name|iForm
 operator|.
-name|getAllRooms
+name|getRoomBaseEnum
 argument_list|()
 argument_list|)
 expr_stmt|;
