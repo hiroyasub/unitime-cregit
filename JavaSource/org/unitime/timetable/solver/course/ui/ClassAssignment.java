@@ -389,6 +389,11 @@ name|ClassTimeInfo
 argument_list|(
 name|assignment
 operator|.
+name|getClassId
+argument_list|()
+argument_list|,
+name|assignment
+operator|.
 name|getDays
 argument_list|()
 operator|.

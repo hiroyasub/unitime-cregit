@@ -180,12 +180,6 @@ name|boolean
 name|iIgnoreRoomChecks
 decl_stmt|;
 specifier|private
-name|String
-name|iRoomType
-init|=
-literal|null
-decl_stmt|;
-specifier|private
 specifier|transient
 specifier|static
 name|DistanceMetric
@@ -261,13 +255,6 @@ operator|=
 name|location
 operator|.
 name|isIgnoreRoomCheck
-argument_list|()
-expr_stmt|;
-name|iRoomType
-operator|=
-name|location
-operator|.
-name|getRoomTypeLabel
 argument_list|()
 expr_stmt|;
 block|}
@@ -476,7 +463,11 @@ argument_list|)
 operator|+
 literal|";' "
 operator|+
-literal|"title='"
+literal|"onmouseover=\"showGwtRoomHint(this, '"
+operator|+
+name|iId
+operator|+
+literal|"', '"
 operator|+
 name|PreferenceLevel
 operator|.
@@ -490,33 +481,30 @@ name|pref
 argument_list|)
 argument_list|)
 operator|+
-literal|" "
-operator|+
-name|getName
-argument_list|()
-operator|+
-literal|" ("
+literal|"'"
 operator|+
 operator|(
 name|hasNote
 argument_list|()
 condition|?
+literal|", null, '"
+operator|+
 name|getNote
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"'"
+argument_list|,
+literal|"\\'"
+argument_list|)
 operator|+
-literal|", "
+literal|"'"
 else|:
 literal|""
 operator|)
 operator|+
-name|getCapacity
-argument_list|()
-operator|+
-literal|" seats, "
-operator|+
-name|iRoomType
-operator|+
-literal|")'>"
+literal|");\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 operator|(
 name|s
@@ -768,7 +756,11 @@ name|getNameHtml
 parameter_list|()
 block|{
 return|return
-literal|"<span title='"
+literal|"<span onmouseover=\"showGwtRoomHint(this, '"
+operator|+
+name|iId
+operator|+
+literal|"', '"
 operator|+
 name|PreferenceLevel
 operator|.
@@ -778,27 +770,9 @@ name|getPreference
 argument_list|()
 argument_list|)
 operator|+
-literal|" "
+literal|"'"
 operator|+
-name|getName
-argument_list|()
-operator|+
-literal|" ("
-operator|+
-name|getCapacity
-argument_list|()
-operator|+
-literal|" seats)' style='color:"
-operator|+
-name|PreferenceLevel
-operator|.
-name|int2color
-argument_list|(
-name|getPreference
-argument_list|()
-argument_list|)
-operator|+
-literal|";'>"
+literal|");\" onmouseout=\"hideGwtRoomHint();\">"
 operator|+
 name|getName
 argument_list|()

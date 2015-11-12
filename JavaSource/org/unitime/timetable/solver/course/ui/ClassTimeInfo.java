@@ -249,6 +249,10 @@ operator|-
 literal|342155197631035341L
 decl_stmt|;
 specifier|private
+name|Long
+name|iClassId
+decl_stmt|;
+specifier|private
 name|int
 name|iStartSlot
 decl_stmt|;
@@ -311,6 +315,9 @@ decl_stmt|;
 specifier|public
 name|ClassTimeInfo
 parameter_list|(
+name|Long
+name|classId
+parameter_list|,
 name|int
 name|dayCode
 parameter_list|,
@@ -342,6 +349,10 @@ argument_list|>
 name|dates
 parameter_list|)
 block|{
+name|iClassId
+operator|=
+name|classId
+expr_stmt|;
 name|iPreference
 operator|=
 name|pref
@@ -471,6 +482,11 @@ name|this
 argument_list|(
 name|assignment
 operator|.
+name|getClassId
+argument_list|()
+argument_list|,
+name|assignment
+operator|.
 name|getDays
 argument_list|()
 operator|.
@@ -576,6 +592,12 @@ argument_list|>
 name|dates
 parameter_list|)
 block|{
+name|iClassId
+operator|=
+name|time
+operator|.
+name|iClassId
+expr_stmt|;
 name|iPreference
 operator|=
 name|time
@@ -1204,22 +1226,21 @@ name|getNameHtml
 parameter_list|()
 block|{
 return|return
-literal|"<span title='"
+literal|"<span onmouseover=\"showGwtTimeHint(this, '"
 operator|+
-name|PreferenceLevel
-operator|.
-name|int2string
-argument_list|(
-name|getPreference
-argument_list|()
-argument_list|)
+name|iClassId
 operator|+
-literal|" "
+literal|","
 operator|+
-name|getLongName
-argument_list|()
+name|iDayCode
 operator|+
-literal|"' style='color:"
+literal|","
+operator|+
+name|iStartSlot
+operator|+
+literal|"');\" onmouseout=\"hideGwtTimeHint();\""
+operator|+
+literal|" style='color:"
 operator|+
 name|PreferenceLevel
 operator|.
@@ -1243,22 +1264,21 @@ name|getLongNameHtml
 parameter_list|()
 block|{
 return|return
-literal|"<span title='"
+literal|"<span onmouseover=\"showGwtTimeHint(this, '"
 operator|+
-name|PreferenceLevel
-operator|.
-name|int2string
-argument_list|(
-name|getPreference
-argument_list|()
-argument_list|)
+name|iClassId
 operator|+
-literal|" "
+literal|","
 operator|+
-name|getLongName
-argument_list|()
+name|iDayCode
 operator|+
-literal|"' style='color:"
+literal|","
+operator|+
+name|iStartSlot
+operator|+
+literal|"');\" onmouseout=\"hideGwtTimeHint();\""
+operator|+
+literal|" style='color:"
 operator|+
 name|PreferenceLevel
 operator|.

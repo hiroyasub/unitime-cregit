@@ -6656,6 +6656,11 @@ init|=
 operator|new
 name|ClassTimeInfo
 argument_list|(
+name|clazz
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
 name|pattern
 operator|.
 name|getExactDays
@@ -6885,6 +6890,11 @@ init|=
 operator|new
 name|ClassTimeInfo
 argument_list|(
+name|clazz
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
 name|pattern
 operator|.
 name|getDayCode
