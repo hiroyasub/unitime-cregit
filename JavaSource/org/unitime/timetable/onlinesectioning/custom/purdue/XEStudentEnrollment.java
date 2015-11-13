@@ -4038,7 +4038,9 @@ operator|!
 name|reg
 operator|.
 name|canDrop
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 condition|)
 name|nodrop
 operator|.
@@ -7306,7 +7308,9 @@ operator|!
 name|reg
 operator|.
 name|canDrop
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 condition|)
 throw|throw
 operator|new
