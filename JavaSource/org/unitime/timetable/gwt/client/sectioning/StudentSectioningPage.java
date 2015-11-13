@@ -993,6 +993,11 @@ name|UniTimeConfirmationDialog
 operator|.
 name|confirm
 argument_list|(
+name|widget
+operator|.
+name|useDefaultConfirmDialog
+argument_list|()
+argument_list|,
 name|MESSAGES
 operator|.
 name|queryLeaveChanges
@@ -1075,6 +1080,11 @@ name|UniTimeConfirmationDialog
 operator|.
 name|confirm
 argument_list|(
+name|widget
+operator|.
+name|useDefaultConfirmDialog
+argument_list|()
+argument_list|,
 name|MESSAGES
 operator|.
 name|queryLeaveChanges

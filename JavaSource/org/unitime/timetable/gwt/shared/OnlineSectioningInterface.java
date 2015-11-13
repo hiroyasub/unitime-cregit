@@ -139,6 +139,12 @@ block|,
 name|CAN_RESET
 block|,
 name|CONFIRM_DROP
+block|,
+name|QUICK_ADD_DROP
+block|,
+name|ALTERNATIVES_DROP
+block|,
+name|GWT_CONFIRMATIONS
 block|, 			;
 specifier|public
 name|int
