@@ -1726,6 +1726,9 @@ operator|.
 name|getRoomAvailability
 argument_list|(
 name|location
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|bounds
 index|[
@@ -2552,6 +2555,9 @@ operator|.
 name|getRoomAvailability
 argument_list|(
 name|location
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|bounds
 index|[

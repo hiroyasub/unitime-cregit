@@ -1242,6 +1242,9 @@ operator|.
 name|getRoomAvailability
 argument_list|(
 name|room
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|startDateCal
 operator|.
@@ -2952,6 +2955,9 @@ operator|.
 name|getInstructorAvailability
 argument_list|(
 name|instructor
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|startDateCal
 operator|.

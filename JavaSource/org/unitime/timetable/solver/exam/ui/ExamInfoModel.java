@@ -6256,6 +6256,9 @@ operator|.
 name|getRoomAvailability
 argument_list|(
 name|room
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|period
 operator|.
