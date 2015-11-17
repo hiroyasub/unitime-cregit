@@ -158,7 +158,7 @@ name|SectioningException
 argument_list|(
 name|MSG
 operator|.
-name|exceptionStudentEnrollmentProvider
+name|exceptionCourseRequestProvider
 argument_list|(
 name|e
 operator|.
