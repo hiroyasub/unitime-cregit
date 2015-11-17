@@ -1071,7 +1071,7 @@ specifier|public
 name|void
 name|setCourseId
 parameter_list|(
-name|long
+name|Long
 name|courseId
 parameter_list|)
 block|{

@@ -2438,6 +2438,13 @@ condition|(
 name|xc
 operator|!=
 literal|null
+operator|&&
+name|xc
+operator|.
+name|getCourseId
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|course
