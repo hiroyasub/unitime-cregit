@@ -145,6 +145,8 @@ block|,
 name|ALTERNATIVES_DROP
 block|,
 name|GWT_CONFIRMATIONS
+block|,
+name|DEGREE_PLANS
 block|, 			;
 specifier|public
 name|int
