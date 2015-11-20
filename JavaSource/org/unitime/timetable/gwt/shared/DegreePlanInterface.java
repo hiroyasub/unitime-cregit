@@ -1283,7 +1283,7 @@ return|return
 name|iCourses
 operator|!=
 literal|null
-operator|||
+operator|&&
 operator|!
 name|iCourses
 operator|.

@@ -4127,15 +4127,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"School"
-argument_list|)
-name|String
-name|colDegreePlanSchool
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Degree"
 argument_list|)
 name|String
@@ -4158,6 +4149,15 @@ literal|"Modified"
 argument_list|)
 name|String
 name|colDegreePlanLastModified
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Modified By"
+argument_list|)
+name|String
+name|colDegreePlanModifiedBy
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4252,6 +4252,24 @@ parameter_list|(
 name|String
 name|reason
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This plan is locked."
+argument_list|)
+name|String
+name|hintLockedPlan
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This plan is active."
+argument_list|)
+name|String
+name|hintActivePlan
+parameter_list|()
 function_decl|;
 block|}
 end_interface

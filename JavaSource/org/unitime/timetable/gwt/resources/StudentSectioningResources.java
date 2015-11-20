@@ -402,6 +402,15 @@ name|ImageResource
 name|indentBlankSpace
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/black_star.png"
+argument_list|)
+name|ImageResource
+name|activePlan
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
