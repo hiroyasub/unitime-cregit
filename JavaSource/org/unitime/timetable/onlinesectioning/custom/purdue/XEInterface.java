@@ -904,7 +904,7 @@ name|String
 name|description
 decl_stmt|;
 specifier|public
-name|Student
+name|Person
 name|student
 decl_stmt|;
 specifier|public
@@ -926,6 +926,12 @@ decl_stmt|,
 name|modifyDate
 decl_stmt|;
 specifier|public
+name|Person
+name|createdWho
+decl_stmt|,
+name|modifyWho
+decl_stmt|;
+specifier|public
 name|List
 argument_list|<
 name|Year
@@ -936,7 +942,7 @@ block|}
 specifier|public
 specifier|static
 class|class
-name|Student
+name|Person
 block|{
 specifier|public
 name|String
@@ -1013,6 +1019,10 @@ specifier|static
 class|class
 name|Group
 block|{
+specifier|public
+name|String
+name|id
+decl_stmt|;
 specifier|public
 name|CodeDescription
 name|groupType
