@@ -4373,6 +4373,30 @@ name|String
 name|group
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} is not offered."
+argument_list|)
+name|String
+name|plannedCourseNotOffered
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Select {0}"
+argument_list|)
+name|String
+name|hintChoiceGroupSelection
+parameter_list|(
+name|String
+name|courseOrGroup
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
