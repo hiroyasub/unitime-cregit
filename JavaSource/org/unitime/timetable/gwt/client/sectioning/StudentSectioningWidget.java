@@ -2950,6 +2950,9 @@ name|DegreePlanInterface
 name|plan
 parameter_list|)
 block|{
+name|addHistory
+argument_list|()
+expr_stmt|;
 name|super
 operator|.
 name|doSubmit

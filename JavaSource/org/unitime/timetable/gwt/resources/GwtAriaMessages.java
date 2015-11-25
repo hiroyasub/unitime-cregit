@@ -1969,7 +1969,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Degree plan {0, number} of {1, number}. {2} of {3}. Last modified {4,date,MMMM dd} by {5}"
+literal|"Degree plan {0, number} of {1, number}. {2} of {3}. Last modified {4,localdatetime,MMMM dd} by {5}"
 argument_list|)
 name|String
 name|showingDegreePlan
