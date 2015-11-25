@@ -8231,6 +8231,28 @@ argument_list|(
 literal|"unitime.legacy.rooms"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"998"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Maximum number of classes a scheduling subpart can contain.  Defaults to 998."
+argument_list|)
+name|SubpartMaxNumClasses
+argument_list|(
+literal|"unitime.subpart.max_num_classes"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

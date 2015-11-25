@@ -49,6 +49,17 @@ interface|interface
 name|ExternalInstrOffrConfigChangeAction
 block|{
 specifier|public
+name|boolean
+name|validateConfigChangeCanOccur
+parameter_list|(
+name|InstructionalOffering
+name|instructionalOffering
+parameter_list|,
+name|Session
+name|hibSession
+parameter_list|)
+function_decl|;
+specifier|public
 name|void
 name|performExternalInstrOffrConfigChangeAction
 parameter_list|(
