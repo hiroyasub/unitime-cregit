@@ -912,6 +912,130 @@ name|boolean
 name|searchWhenPageIsLoaded
 parameter_list|()
 function_decl|;
+annotation|@
+name|DoNotTranslate
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MM/dd/yyyy"
+argument_list|)
+name|String
+name|filterDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"All"
+block|,
+literal|"My"
+block|,
+literal|"Approved"
+block|,
+literal|"Unapproved"
+block|,
+literal|"Awaiting"
+block|,
+literal|"Conflicting"
+block|,
+literal|"My Awaiting"
+block|,
+literal|"Cancelled"
+block|,
+literal|"Expiring"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventModeAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"All Events"
+block|,
+literal|"My Events"
+block|,
+literal|"Approved Events"
+block|,
+literal|"Not Approved Events"
+block|,
+literal|"Awaiting Events"
+block|,
+literal|"Conflicting Events"
+block|,
+literal|"Awaiting My Approval"
+block|,
+literal|"Cancelled / Rejected"
+block|,
+literal|"Expiring Events"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventModeLabel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"All"
+block|,
+literal|"Student"
+block|,
+literal|"Instructor"
+block|,
+literal|"Coordinator"
+block|,
+literal|"Contact"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|eventRole
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"All"
+block|,
+literal|"Expired"
+block|,
+literal|"Not Expired"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|reservationModeAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"All Reservations"
+block|,
+literal|"Expired"
+block|,
+literal|"Not Expired"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|reservationModeLabel
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -581,6 +581,67 @@ name|boolean
 name|courseFinderSuggestWhenEmpty
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Assigned"
+block|,
+literal|"Reserved"
+block|,
+literal|"Not Assigned"
+block|,
+literal|"Wait-Listed"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|assignmentType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Consent"
+block|,
+literal|"No Consent"
+block|,
+literal|"Waiting"
+block|,
+literal|"Approved"
+block|,
+literal|"To Do"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|consentTypeAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Any Consent Needed"
+block|,
+literal|"Consent Not Needed"
+block|,
+literal|"Consent Waiting Approval"
+block|,
+literal|"Consent Approved"
+block|,
+literal|"Waiting My Approval"
+block|,
+block|}
+argument_list|)
+name|String
+index|[]
+name|consentTypeLabel
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

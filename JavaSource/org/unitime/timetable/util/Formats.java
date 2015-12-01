@@ -525,6 +525,27 @@ return|;
 block|}
 block|}
 argument_list|)
+block|,
+name|FILTER_DATE
+argument_list|(
+operator|new
+name|PatternHolder
+argument_list|()
+block|{
+specifier|public
+name|String
+name|getPattern
+parameter_list|()
+block|{
+return|return
+name|GWT_CONSTANTS
+operator|.
+name|filterDateFormat
+argument_list|()
+return|;
+block|}
+block|}
+argument_list|)
 block|, 		;
 specifier|private
 name|PatternHolder

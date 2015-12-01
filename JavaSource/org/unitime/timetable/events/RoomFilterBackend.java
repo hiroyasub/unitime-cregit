@@ -1563,7 +1563,17 @@ literal|0l
 argument_list|,
 literal|"Managed"
 argument_list|,
-literal|"Managed Rooms"
+name|MESSAGES
+operator|.
+name|labelDepartmentManagedRooms
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|attrDepartmentManagedRooms
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Map
