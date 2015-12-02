@@ -3842,12 +3842,27 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-literal|"My Events"
+operator|(
+literal|"my"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|1
+index|]
 operator|.
 name|equals
 argument_list|(
 name|mode
 argument_list|)
+operator|)
 operator|&&
 name|context
 operator|.
@@ -3884,7 +3899,20 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Approved Events"
+literal|"approved"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|2
+index|]
 operator|.
 name|equals
 argument_list|(
@@ -3904,7 +3932,20 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Not Approved Events"
+literal|"unapproved"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|3
+index|]
 operator|.
 name|equals
 argument_list|(
@@ -3924,7 +3965,20 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Awaiting Events"
+literal|"awaiting"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|4
+index|]
 operator|.
 name|equals
 argument_list|(
@@ -3955,12 +4009,27 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Awaiting My Approval"
+operator|(
+literal|"my awaiting"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|6
+index|]
 operator|.
 name|equals
 argument_list|(
 name|mode
 argument_list|)
+operator|)
 operator|&&
 name|context
 operator|.
@@ -4017,7 +4086,20 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Conflicting Events"
+literal|"conflicting"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|5
+index|]
 operator|.
 name|equals
 argument_list|(
@@ -4048,7 +4130,20 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Cancelled / Rejected"
+literal|"cancelled"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|7
+index|]
 operator|.
 name|equals
 argument_list|(
@@ -4068,7 +4163,20 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"Expiring Events"
+literal|"expiring"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|mode
+argument_list|)
+operator|||
+name|CONSTANTS
+operator|.
+name|eventModeLabel
+argument_list|()
+index|[
+literal|8
+index|]
 operator|.
 name|equals
 argument_list|(

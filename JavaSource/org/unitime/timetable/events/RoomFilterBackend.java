@@ -901,6 +901,16 @@ operator|.
 name|getOrd
 argument_list|()
 argument_list|)
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|location
+operator|.
+name|getRoomType
+argument_list|()
+operator|.
+name|getLabel
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|types
@@ -1159,6 +1169,13 @@ name|rf
 operator|.
 name|getLabel
 argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|rf
+operator|.
+name|getLabel
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|features
@@ -1352,6 +1369,13 @@ name|rg
 operator|.
 name|getAbbv
 argument_list|()
+argument_list|,
+name|rg
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"translated-value"
 argument_list|,
 name|rg
 operator|.
@@ -5829,6 +5853,10 @@ literal|"l.roomType.label in ("
 operator|+
 name|type
 operator|+
+literal|") or l.roomType.reference in ("
+operator|+
+name|type
+operator|+
 literal|")"
 argument_list|)
 expr_stmt|;
@@ -5972,7 +6000,7 @@ else|:
 literal|" and "
 operator|)
 operator|+
-literal|" f"
+literal|" (f"
 operator|+
 name|id
 operator|+
@@ -5980,7 +6008,15 @@ literal|".label = :Xf"
 operator|+
 name|id
 operator|+
-literal|" and f"
+literal|" or f"
+operator|+
+name|id
+operator|+
+literal|".abbv = :Xf"
+operator|+
+name|id
+operator|+
+literal|") and f"
 operator|+
 name|id
 operator|+
@@ -6027,7 +6063,7 @@ else|:
 literal|" and "
 operator|)
 operator|+
-literal|" f"
+literal|" (f"
 operator|+
 name|id
 operator|+
@@ -6035,7 +6071,15 @@ literal|".label = :Xf"
 operator|+
 name|id
 operator|+
-literal|" and (f"
+literal|" or f"
+operator|+
+name|id
+operator|+
+literal|".abbv = :Xf"
+operator|+
+name|id
+operator|+
+literal|") and (f"
 operator|+
 name|id
 operator|+
@@ -6206,11 +6250,15 @@ name|addWhere
 argument_list|(
 literal|"group"
 argument_list|,
-literal|"g.name in ("
+literal|"(g.name in ("
 operator|+
 name|group
 operator|+
-literal|") and g.global = true"
+literal|") or g.abbv in ("
+operator|+
+name|group
+operator|+
+literal|")) and g.global = true"
 argument_list|)
 expr_stmt|;
 else|else
@@ -6221,11 +6269,15 @@ name|addWhere
 argument_list|(
 literal|"group"
 argument_list|,
-literal|"g.name in ("
+literal|"(g.name in ("
 operator|+
 name|group
 operator|+
-literal|") and (g.global = true or gd.deptCode = :Xgd)"
+literal|") or g.abbv in ("
+operator|+
+name|group
+operator|+
+literal|")) and (g.global = true or gd.deptCode = :Xgd)"
 argument_list|)
 expr_stmt|;
 name|query

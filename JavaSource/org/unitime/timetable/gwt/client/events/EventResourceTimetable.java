@@ -2830,6 +2830,8 @@ literal|"events"
 argument_list|,
 literal|""
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 comment|// Room filter
@@ -2845,6 +2847,8 @@ literal|"rooms"
 argument_list|,
 literal|""
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 comment|// Resource type
