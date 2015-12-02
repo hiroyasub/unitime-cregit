@@ -6735,6 +6735,15 @@ name|String
 name|selectNoInstructionalMethod
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No matching date pattern!"
+argument_list|)
+name|String
+name|warnNoMatchingDatePattern
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -6048,6 +6048,8 @@ name|size
 argument_list|()
 operator|>
 literal|0
+operator|&&
+name|editable
 condition|)
 block|{
 name|Vector
@@ -6820,7 +6822,14 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"<font color=\\'red\\'>No matching date pattern!</font>"
+literal|"<font color=\\'red\\'>"
+operator|+
+name|MSG
+operator|.
+name|warnNoMatchingDatePattern
+argument_list|()
+operator|+
+literal|"</font>"
 expr_stmt|;
 if|else if
 condition|(
@@ -6864,7 +6873,14 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"<font color=\\'red\\'>No matching date pattern!</font>"
+literal|"<font color=\\'red\\'>"
+operator|+
+name|MSG
+operator|.
+name|warnNoMatchingDatePattern
+argument_list|()
+operator|+
+literal|"</font>"
 expr_stmt|;
 block|}
 block|}
