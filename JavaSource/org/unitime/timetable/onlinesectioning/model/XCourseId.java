@@ -370,6 +370,13 @@ operator|.
 name|getTitle
 argument_list|()
 expr_stmt|;
+name|iType
+operator|=
+name|course
+operator|.
+name|getType
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|XCourseId
