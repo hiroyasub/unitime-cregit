@@ -2118,9 +2118,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a from Class_ c inner join c.committedAssignment a where c.committedAssignment.solution.owner.session.uniqueId = :sessionId"
+literal|"select a from Class_ c inner join c.assignments a inner join a.solution s where s.commited = true and s.owner.session.uniqueId = :sessionId "
 operator|+
-literal|" and (select count(e) from ClassEvent e where e.clazz = c) = 0"
+literal|"and c.uniqueId not in (select e.clazz.uniqueId from ClassEvent e where e.clazz.controllingDept.session.uniqueId = :sessionId)"
 argument_list|)
 operator|.
 name|setLong
@@ -2224,9 +2224,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from Exam x where x.session.uniqueId = :sessionId and x.assignedPeriod != null and"
+literal|"from Exam x where x.session.uniqueId = :sessionId and x.assignedPeriod != null "
 operator|+
-literal|" (select count(e) from ExamEvent e where e.exam = x) = 0"
+literal|"and x.uniqueId not in (select e.exam.uniqueId from ExamEvent e where e.exam.session.uniqueId = :sessionId)"
 argument_list|)
 operator|.
 name|setLong
