@@ -4509,7 +4509,7 @@ argument_list|)
 expr|@
 name|DefaultValue
 argument_list|(
-literal|"false"
+literal|"true"
 argument_list|)
 expr|@
 name|Description
