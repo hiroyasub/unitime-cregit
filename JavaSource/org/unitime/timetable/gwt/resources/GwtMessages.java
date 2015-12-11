@@ -13064,6 +13064,27 @@ name|String
 name|attrFlagShowConflicts
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"For an up to date version of the {0} event, please visit<a href='{1}/selectPrimaryRole.do?target=gwt.jsp%3Fpage%3Devents%23event%3D{2}%26term%3D{3}' style='color: inherit; background-color : transparent;'>{1}</a>."
+argument_list|)
+name|String
+name|emailOpenEventOnline
+parameter_list|(
+name|String
+name|eventName
+parameter_list|,
+name|String
+name|uniTimeUrl
+parameter_list|,
+name|Long
+name|eventId
+parameter_list|,
+name|Long
+name|sessionId
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
