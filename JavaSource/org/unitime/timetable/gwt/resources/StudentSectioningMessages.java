@@ -3554,7 +3554,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"For an up to date schedule, please visit<a href='{0}/gwt.jsp?page=sectioning' style='color: inherit; background-color : transparent;'>{0}</a>."
+literal|"For an up to date schedule, please visit<a href='{0}/selectPrimaryRole.do?target=gwt.jsp%3Fpage%3Dsectioning' style='color: inherit; background-color : transparent;'>{0}</a>."
 argument_list|)
 name|String
 name|emailLinkToUniTime
