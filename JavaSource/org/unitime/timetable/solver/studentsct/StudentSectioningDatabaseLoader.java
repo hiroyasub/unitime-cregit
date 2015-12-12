@@ -3459,6 +3459,15 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|co
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+condition|)
+continue|continue;
 name|int
 name|projected
 init|=
@@ -13847,7 +13856,7 @@ literal|"left join fetch io.reservations as r "
 operator|+
 literal|"where "
 operator|+
-literal|"io.session.uniqueId = :sessionId and io.notOffered = false"
+literal|"io.session.uniqueId = :sessionId and io.notOffered = false and co.subjectArea.department.allowStudentScheduling = true"
 argument_list|)
 operator|.
 name|setLong

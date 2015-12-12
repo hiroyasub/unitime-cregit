@@ -2132,6 +2132,14 @@ name|isInheritInstructorPreferences
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|d
+operator|.
+name|setAllowStudentScheduling
+argument_list|(
+name|isAllowStudentScheduling
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|d
 return|;

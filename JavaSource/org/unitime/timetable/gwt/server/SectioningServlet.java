@@ -2557,7 +2557,7 @@ name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and ("
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and ("
 operator|+
 literal|"(lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like :q || '%' or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr || ' - ' || c.title) like :q || '%') "
 operator|+
@@ -3480,7 +3480,7 @@ name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and "
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and "
 operator|+
 literal|"(lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) = :course or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr || ' - ' || c.title) = :course)"
 argument_list|)
@@ -4637,9 +4637,7 @@ block|{
 name|CourseOffering
 name|courseOffering
 init|=
-name|SaveStudentRequests
-operator|.
-name|getCourse
+name|lookupCourse
 argument_list|(
 name|CourseOfferingDAO
 operator|.
@@ -4651,7 +4649,11 @@ argument_list|()
 argument_list|,
 name|sessionId
 argument_list|,
+literal|null
+argument_list|,
 name|course
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -4788,9 +4790,7 @@ block|{
 name|CourseOffering
 name|courseOffering
 init|=
-name|SaveStudentRequests
-operator|.
-name|getCourse
+name|lookupCourse
 argument_list|(
 name|CourseOfferingDAO
 operator|.
@@ -4802,7 +4802,11 @@ argument_list|()
 argument_list|,
 name|sessionId
 argument_list|,
+literal|null
+argument_list|,
 name|course
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -5860,7 +5864,7 @@ name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and "
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and "
 operator|+
 literal|"(lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) = :course or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr || ' - ' || c.title) = :course)"
 argument_list|)
@@ -9218,6 +9222,12 @@ condition|(
 name|server
 operator|==
 literal|null
+operator|||
+operator|!
+name|offering
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
 condition|)
 block|{
 name|NameFormat
@@ -13834,7 +13844,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators i where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and i.externalUniqueId = :extId"
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and i.externalUniqueId = :extId"
 argument_list|)
 operator|.
 name|setLong
@@ -13942,7 +13952,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators i where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and c.consentType.reference = :reference and "
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and c.consentType.reference = :reference and "
 operator|+
 literal|"i.externalUniqueId = :extId"
 argument_list|)
@@ -14029,7 +14039,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c.uniqueId from CourseOffering c where c.subjectArea.session.uniqueId = :sessionId and c.consentType is not null"
+literal|"select c.uniqueId from CourseOffering c where c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and c.consentType is not null"
 argument_list|)
 operator|.
 name|setLong
@@ -14077,7 +14087,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct c.uniqueId from CourseOffering c where "
 operator|+
-literal|"c.subjectArea.department.uniqueId = :departmentId and c.consentType is not null"
+literal|"c.subjectArea.department.uniqueId = :departmentId and c.subjectArea.department.allowStudentScheduling = true and c.consentType is not null"
 argument_list|)
 operator|.
 name|setLong

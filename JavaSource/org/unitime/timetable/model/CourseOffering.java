@@ -2082,6 +2082,22 @@ block|{
 comment|//course already contains this config so we do not need to add it again.
 block|}
 block|}
+specifier|public
+name|boolean
+name|isAllowStudentScheduling
+parameter_list|()
+block|{
+return|return
+name|getSubjectArea
+argument_list|()
+operator|.
+name|getDepartment
+argument_list|()
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

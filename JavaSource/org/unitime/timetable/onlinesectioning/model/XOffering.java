@@ -717,6 +717,13 @@ operator|.
 name|getCourseOfferings
 argument_list|()
 control|)
+if|if
+condition|(
+name|course
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+condition|)
 name|iCourses
 operator|.
 name|add

@@ -392,6 +392,12 @@ name|source
 operator|.
 name|isNotOffered
 argument_list|()
+operator|||
+operator|!
+name|source
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
 condition|)
 return|return
 literal|false
@@ -546,6 +552,12 @@ condition|(
 name|source
 operator|.
 name|isNotOffered
+argument_list|()
+operator|||
+operator|!
+name|source
+operator|.
+name|isAllowStudentScheduling
 argument_list|()
 condition|)
 return|return

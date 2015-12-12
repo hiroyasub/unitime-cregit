@@ -257,6 +257,10 @@ name|iAllowEvents
 decl_stmt|;
 specifier|private
 name|Boolean
+name|iAllowStudentScheduling
+decl_stmt|;
+specifier|private
+name|Boolean
 name|iInheritInstructorPreferences
 decl_stmt|;
 specifier|private
@@ -388,6 +392,13 @@ name|String
 name|PROP_ALLOW_EVENTS
 init|=
 literal|"allowEvents"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_ALLOW_STUDENT_SCHD
+init|=
+literal|"allowStudentScheduling"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -671,6 +682,37 @@ block|{
 name|iAllowEvents
 operator|=
 name|allowEvents
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isAllowStudentScheduling
+parameter_list|()
+block|{
+return|return
+name|iAllowStudentScheduling
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getAllowStudentScheduling
+parameter_list|()
+block|{
+return|return
+name|iAllowStudentScheduling
+return|;
+block|}
+specifier|public
+name|void
+name|setAllowStudentScheduling
+parameter_list|(
+name|Boolean
+name|allowStudentScheduling
+parameter_list|)
+block|{
+name|iAllowStudentScheduling
+operator|=
+name|allowStudentScheduling
 expr_stmt|;
 block|}
 specifier|public
@@ -1383,6 +1425,11 @@ operator|+
 literal|"\n	AllowReqTime: "
 operator|+
 name|getAllowReqTime
+argument_list|()
+operator|+
+literal|"\n	AllowStudentScheduling: "
+operator|+
+name|getAllowStudentScheduling
 argument_list|()
 operator|+
 literal|"\n	DeptCode: "

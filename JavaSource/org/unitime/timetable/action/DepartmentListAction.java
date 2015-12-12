@@ -491,9 +491,9 @@ argument_list|(
 operator|(
 name|dispLastChanges
 condition|?
-literal|12
+literal|13
 else|:
-literal|11
+literal|12
 operator|)
 argument_list|,
 literal|"Department List - "
@@ -550,6 +550,8 @@ literal|"Instructor\nPref"
 block|,
 literal|"Events"
 block|,
+literal|"Student\nScheduling"
+block|,
 literal|"Last\nChange"
 block|}
 else|:
@@ -578,6 +580,8 @@ block|,
 literal|"Instructor\nPref"
 block|,
 literal|"Events"
+block|,
+literal|"Student\nScheduling"
 block|}
 operator|)
 argument_list|,
@@ -1119,6 +1123,15 @@ literal|"Yes"
 else|:
 literal|"No"
 block|,
+name|d
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+condition|?
+literal|"Yes"
+else|:
+literal|"No"
+block|,
 name|lastChangeStr
 block|}
 argument_list|,
@@ -1211,6 +1224,11 @@ operator|.
 name|isAllowEvents
 argument_list|()
 block|,
+name|d
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+block|,
 name|lastChangeCmp
 block|}
 argument_list|)
@@ -1250,9 +1268,9 @@ argument_list|(
 operator|(
 name|dispLastChanges
 condition|?
-literal|12
+literal|13
 else|:
-literal|11
+literal|12
 operator|)
 argument_list|,
 literal|""
@@ -1288,6 +1306,8 @@ literal|"Instructor<br>Preferences"
 block|,
 literal|"Events"
 block|,
+literal|"Student<br>Scheduling"
+block|,
 literal|"Last<br>Change"
 block|}
 else|:
@@ -1316,6 +1336,8 @@ block|,
 literal|"Instructor<br>Preferences"
 block|,
 literal|"Events"
+block|,
+literal|"Student<br>Scheduling"
 block|}
 operator|)
 argument_list|,
@@ -1956,6 +1978,17 @@ else|:
 literal|""
 operator|)
 block|,
+operator|(
+name|d
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+condition|?
+literal|"<IMG border='0' title='This department has student scheduling enabled.' alt='Student Scheduling' align='absmiddle' src='images/accept.png'>"
+else|:
+literal|""
+operator|)
+block|,
 name|lastChangeStr
 block|}
 argument_list|,
@@ -2055,6 +2088,11 @@ block|,
 name|d
 operator|.
 name|isAllowEvents
+argument_list|()
+block|,
+name|d
+operator|.
+name|isAllowStudentScheduling
 argument_list|()
 block|,
 name|lastChangeCmp

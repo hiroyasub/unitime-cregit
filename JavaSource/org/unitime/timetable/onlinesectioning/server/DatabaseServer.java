@@ -1380,6 +1380,12 @@ return|return
 name|o
 operator|==
 literal|null
+operator|||
+operator|!
+name|o
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
 condition|?
 literal|null
 else|:

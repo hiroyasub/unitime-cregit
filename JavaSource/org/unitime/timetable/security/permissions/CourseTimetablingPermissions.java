@@ -1224,6 +1224,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|source
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
+operator|&&
 name|hasInstance
 argument_list|(
 name|user

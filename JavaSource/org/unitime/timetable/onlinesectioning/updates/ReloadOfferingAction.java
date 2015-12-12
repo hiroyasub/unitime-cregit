@@ -1361,6 +1361,11 @@ condition|(
 name|io
 operator|!=
 literal|null
+operator|&&
+name|io
+operator|.
+name|isAllowStudentScheduling
+argument_list|()
 condition|)
 block|{
 comment|// Load linked sections and ignore student conflict constraints

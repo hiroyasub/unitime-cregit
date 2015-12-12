@@ -434,6 +434,13 @@ argument_list|)
 expr_stmt|;
 name|department
 operator|.
+name|setAllowStudentScheduling
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|department
+operator|.
 name|setInheritInstructorPreferences
 argument_list|(
 literal|true
