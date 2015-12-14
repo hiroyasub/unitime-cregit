@@ -678,7 +678,7 @@ name|hasRight
 argument_list|(
 name|Right
 operator|.
-name|SessionIndependent
+name|StatusIndependent
 argument_list|)
 operator|||
 operator|!

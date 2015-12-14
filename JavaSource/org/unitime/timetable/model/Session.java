@@ -4407,11 +4407,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(x) from Exam x "
+literal|"select count(x) from Exam x left join x.statusType t "
 operator|+
 literal|"where x.session.uniqueId = :sessionId and x.assignedPeriod != null and x.examType.type = :examType and "
 operator|+
-literal|"((x.statusType is null and bit_and(x.session.statusType.status, :flag)> 0) or bit_and(x.statusType.status, :flag)> 0)"
+literal|"((t is null and bit_and(x.session.statusType.status, :flag)> 0) or bit_and(t.status, :flag)> 0)"
 argument_list|)
 operator|.
 name|setLong
@@ -4479,11 +4479,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(x) from Exam x "
+literal|"select count(x) from Exam x left join x.statusType t "
 operator|+
 literal|"where x.session.uniqueId = :sessionId and x.assignedPeriod != null and x.examType.type = :examType and "
 operator|+
-literal|"((x.statusType is null and bit_and(x.session.statusType.status, :flag)> 0) or bit_and(x.statusType.status, :flag)> 0)"
+literal|"((t is null and bit_and(x.session.statusType.status, :flag)> 0) or bit_and(t.status, :flag)> 0)"
 argument_list|)
 operator|.
 name|setLong
