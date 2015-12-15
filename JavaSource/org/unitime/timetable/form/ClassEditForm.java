@@ -441,6 +441,10 @@ specifier|private
 name|String
 name|accommodation
 decl_stmt|;
+specifier|private
+name|Boolean
+name|isCancelled
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Instructors */
 specifier|protected
@@ -1061,6 +1065,10 @@ operator|=
 literal|null
 expr_stmt|;
 name|isCrosslisted
+operator|=
+literal|null
+expr_stmt|;
+name|isCancelled
 operator|=
 literal|null
 expr_stmt|;
@@ -2112,6 +2120,30 @@ operator|.
 name|isCrosslisted
 operator|=
 name|isCrosslisted
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|getIsCancelled
+parameter_list|()
+block|{
+return|return
+name|isCancelled
+return|;
+block|}
+specifier|public
+name|void
+name|setIsCancelled
+parameter_list|(
+name|Boolean
+name|isCancelled
+parameter_list|)
+block|{
+name|this
+operator|.
+name|isCancelled
+operator|=
+name|isCancelled
 expr_stmt|;
 block|}
 comment|/**      * @param date      * @return String representation of the date formatted as mm/dd/yyyy      */

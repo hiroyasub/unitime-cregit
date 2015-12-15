@@ -2633,6 +2633,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setIsCancelled
+argument_list|(
+name|c
+operator|.
+name|isCancelled
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// Load from class
 name|frm
 operator|.
