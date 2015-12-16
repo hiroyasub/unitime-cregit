@@ -777,6 +777,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|DepartmentStatusType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|InstrOfferingConfig
 import|;
 end_import
@@ -1054,6 +1068,24 @@ operator|.
 name|security
 operator|.
 name|UserContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|security
+operator|.
+name|permissions
+operator|.
+name|Permission
+operator|.
+name|PermissionDepartment
 import|;
 end_import
 
@@ -16686,7 +16718,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView') or checkPermission('Reservations')"
 argument_list|)
 specifier|public
 name|TreeSet
@@ -18303,9 +18335,14 @@ name|filter
 return|;
 block|}
 annotation|@
+name|Autowired
+name|PermissionDepartment
+name|permissionDepartment
+decl_stmt|;
+annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView') or checkPermission('Reservations')"
 argument_list|)
 specifier|public
 name|Collection
@@ -18321,6 +18358,12 @@ name|query
 parameter_list|,
 name|Integer
 name|limit
+parameter_list|,
+name|boolean
+name|includeNotOffered
+parameter_list|,
+name|boolean
+name|checkDepartment
 parameter_list|)
 throws|throws
 name|CurriculaException
@@ -18409,6 +18452,14 @@ name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c where "
 operator|+
+operator|(
+name|includeNotOffered
+condition|?
+literal|""
+else|:
+literal|"c.instructionalOffering.notOffered = false and "
+operator|)
+operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and ("
 operator|+
 literal|"lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like :q || '%' or lower(c.courseNbr) like :q || '%' "
@@ -18467,6 +18518,8 @@ operator|||
 name|limit
 operator|<
 literal|0
+operator|||
+name|checkDepartment
 condition|?
 name|Integer
 operator|.
@@ -18479,6 +18532,39 @@ name|list
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|checkDepartment
+operator|&&
+operator|!
+name|permissionDepartment
+operator|.
+name|check
+argument_list|(
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|c
+operator|.
+name|getDepartment
+argument_list|()
+argument_list|,
+name|DepartmentStatusType
+operator|.
+name|Status
+operator|.
+name|OwnerEdit
+argument_list|,
+name|DepartmentStatusType
+operator|.
+name|Status
+operator|.
+name|ManagerEdit
+argument_list|)
+condition|)
+continue|continue;
 name|CourseAssignment
 name|course
 init|=
@@ -18826,7 +18912,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView') or checkPermission('Reservations')"
 argument_list|)
 specifier|public
 name|String
@@ -19035,7 +19121,7 @@ block|}
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('CurriculumView')"
+literal|"checkPermission('CurriculumView') or checkPermission('Reservations')"
 argument_list|)
 specifier|public
 name|Collection

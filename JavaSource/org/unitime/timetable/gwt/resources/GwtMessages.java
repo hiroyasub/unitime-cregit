@@ -6766,6 +6766,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} is locked, it must be unlocked first."
+argument_list|)
+name|String
+name|hintOfferingIsLocked
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Configuration {0} ({1})"
 argument_list|)
 name|String

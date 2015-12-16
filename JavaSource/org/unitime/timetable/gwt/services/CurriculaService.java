@@ -502,6 +502,12 @@ name|query
 parameter_list|,
 name|Integer
 name|limit
+parameter_list|,
+name|boolean
+name|includeNotOffered
+parameter_list|,
+name|boolean
+name|checkDepartment
 parameter_list|)
 throws|throws
 name|CurriculaException
