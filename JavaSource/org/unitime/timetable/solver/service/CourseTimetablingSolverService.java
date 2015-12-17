@@ -1076,13 +1076,6 @@ argument_list|(
 literal|"Suggestions.model"
 argument_list|)
 expr_stmt|;
-name|sessionContext
-operator|.
-name|removeAttribute
-argument_list|(
-literal|"Timetable.table"
-argument_list|)
-expr_stmt|;
 name|SolverProxy
 name|solver
 init|=
