@@ -947,10 +947,31 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Waiting for choices ..."
+argument_list|)
+name|String
+name|suggestionsLoadingChoices
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Alternatives for {0}"
 argument_list|)
 name|String
 name|suggestionsAlternatives
+parameter_list|(
+name|String
+name|source
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Choices for {0}"
+argument_list|)
+name|String
+name|suggestionsChoices
 parameter_list|(
 name|String
 name|source
@@ -981,6 +1002,18 @@ name|source
 parameter_list|,
 name|String
 name|filter
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} is not available."
+argument_list|)
+name|String
+name|suggestionsNoChoices
+parameter_list|(
+name|String
+name|source
 parameter_list|)
 function_decl|;
 annotation|@
@@ -2801,6 +2834,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Choices for the new course {0} are in<font color='blue'>blue</font>. Courses to be removed from the schedule are in<font color='red'>red</font>. Changes to other courses or free times are in<font color='black'>black</font>."
+argument_list|)
+name|String
+name|suggestionsLegendOnNewCourse
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>S</u>earch"
 argument_list|)
 name|String
@@ -4016,7 +4061,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Quick<u>A</u>dd / Drop"
+literal|"<u>N</u>ew Course"
 argument_list|)
 name|String
 name|buttonQuickAdd

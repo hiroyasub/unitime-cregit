@@ -411,6 +411,15 @@ name|ImageResource
 name|activePlan
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/add.png"
+argument_list|)
+name|ImageResource
+name|quickAddCourse
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
