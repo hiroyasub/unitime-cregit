@@ -4070,6 +4070,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add a new course to the schedule or drop an existing course from the schedule without going back to the Course Requests."
+argument_list|)
+name|String
+name|hintQuickAdd
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Select a new course to add to the schedulue, or an existing course to drop from the schedule"
 argument_list|)
 name|String

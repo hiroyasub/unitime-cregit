@@ -2561,6 +2561,16 @@ argument_list|)
 expr_stmt|;
 name|iQuickAdd
 operator|.
+name|setTitle
+argument_list|(
+name|MESSAGES
+operator|.
+name|hintQuickAdd
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|iQuickAdd
+operator|.
 name|setStyleName
 argument_list|(
 literal|"unitime-QuickAddButton"
