@@ -1387,6 +1387,17 @@ name|item
 operator|!=
 literal|null
 condition|)
+block|{
+name|event
+operator|.
+name|stopPropagation
+argument_list|()
+expr_stmt|;
+name|event
+operator|.
+name|preventDefault
+argument_list|()
+expr_stmt|;
 name|item
 operator|.
 name|getScheduledCommand
@@ -1395,6 +1406,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|super
 operator|.
