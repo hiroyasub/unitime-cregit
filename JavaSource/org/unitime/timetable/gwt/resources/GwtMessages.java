@@ -13097,6 +13097,40 @@ name|Long
 name|sessionId
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} ({1})"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|roomPreference
+parameter_list|(
+name|String
+name|department
+parameter_list|,
+name|String
+name|preference
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{1} {0}"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|roomPreferenceShort
+parameter_list|(
+name|String
+name|department
+parameter_list|,
+name|String
+name|preference
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
