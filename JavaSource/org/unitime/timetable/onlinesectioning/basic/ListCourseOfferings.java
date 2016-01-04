@@ -489,6 +489,11 @@ name|getOfferingId
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|int
+name|enrl
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|requests
@@ -496,11 +501,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|int
-name|enrl
-init|=
-literal|0
-decl_stmt|;
 for|for
 control|(
 name|XCourseRequest
@@ -536,6 +536,7 @@ condition|)
 name|enrl
 operator|++
 expr_stmt|;
+block|}
 name|course
 operator|.
 name|setEnrollment
@@ -543,7 +544,6 @@ argument_list|(
 name|enrl
 argument_list|)
 expr_stmt|;
-block|}
 name|ret
 operator|.
 name|add
