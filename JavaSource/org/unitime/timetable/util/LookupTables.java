@@ -2216,7 +2216,7 @@ literal|"examTypes"
 argument_list|,
 name|ExamType
 operator|.
-name|findAllApplicable
+name|findAllUsedApplicable
 argument_list|(
 name|user
 argument_list|,
