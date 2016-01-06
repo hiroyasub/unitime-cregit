@@ -411,6 +411,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|defaults
+operator|.
+name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|gwt
 operator|.
 name|resources
@@ -2430,6 +2444,16 @@ return|return
 name|getPeriodName
 argument_list|()
 return|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|LegacyPeriodPreferences
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
 return|return
 literal|"<span style='color:"
 operator|+
@@ -2458,6 +2482,37 @@ operator|+
 literal|"</span>"
 return|;
 block|}
+else|else
+block|{
+return|return
+literal|"<span style='color:"
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|iPeriodPref
+argument_list|)
+operator|+
+literal|";' onmouseover=\"showGwtExamPeriodPreferencesHint(this,'"
+operator|+
+name|getExamId
+argument_list|()
+operator|+
+literal|"','"
+operator|+
+name|getPeriodId
+argument_list|()
+operator|+
+literal|"');\" onmouseout=\"hideGwtPeriodPreferencesHint();\">"
+operator|+
+name|getPeriodName
+argument_list|()
+operator|+
+literal|"</span>"
+return|;
+block|}
+block|}
 specifier|public
 name|String
 name|getPeriodAbbreviationWithPref
@@ -2473,6 +2528,16 @@ return|return
 name|getPeriodAbbreviation
 argument_list|()
 return|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|LegacyPeriodPreferences
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
 return|return
 literal|"<span style='color:"
 operator|+
@@ -2500,6 +2565,37 @@ argument_list|()
 operator|+
 literal|"</span>"
 return|;
+block|}
+else|else
+block|{
+return|return
+literal|"<span style='color:"
+operator|+
+name|PreferenceLevel
+operator|.
+name|prolog2color
+argument_list|(
+name|iPeriodPref
+argument_list|)
+operator|+
+literal|";' onmouseover=\"showGwtExamPeriodPreferencesHint(this,'"
+operator|+
+name|getExamId
+argument_list|()
+operator|+
+literal|"','"
+operator|+
+name|getPeriodId
+argument_list|()
+operator|+
+literal|"');\" onmouseout=\"hideGwtPeriodPreferencesHint();\">"
+operator|+
+name|getPeriodAbbreviation
+argument_list|()
+operator|+
+literal|"</span>"
+return|;
+block|}
 block|}
 specifier|public
 name|String

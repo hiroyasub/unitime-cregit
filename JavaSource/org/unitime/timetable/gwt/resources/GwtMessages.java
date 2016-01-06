@@ -8129,7 +8129,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alert"
+literal|"Warning"
 argument_list|)
 name|String
 name|dialogAlert
@@ -13130,6 +13130,24 @@ parameter_list|,
 name|String
 name|preference
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Application of required preference will remove all not required preferences."
+argument_list|)
+name|String
+name|warnPreferenceUseRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Application of this preference will remove all required preferences."
+argument_list|)
+name|String
+name|warnPreferenceUseNotRequired
+parameter_list|()
 function_decl|;
 block|}
 end_interface

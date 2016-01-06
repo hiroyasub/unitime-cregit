@@ -682,6 +682,13 @@ case|:
 return|return
 literal|'P'
 return|;
+case|case
+operator|-
+literal|8
+case|:
+return|return
+literal|'N'
+return|;
 default|default:
 return|return
 literal|'2'
@@ -749,6 +756,13 @@ case|:
 return|return
 operator|-
 literal|7l
+return|;
+case|case
+literal|'N'
+case|:
+return|return
+operator|-
+literal|8l
 return|;
 default|default:
 return|return
