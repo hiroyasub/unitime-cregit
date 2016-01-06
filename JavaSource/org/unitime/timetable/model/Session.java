@@ -71,6 +71,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Locale
 import|;
 end_import
@@ -4407,11 +4417,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(x) from Exam x left join x.statusType t "
+literal|"select count(e) from FinalExamEvent e inner join e.exam.session s where s.uniqueId = :sessionId and "
 operator|+
-literal|"where x.session.uniqueId = :sessionId and x.assignedPeriod != null and x.examType.type = :examType and "
-operator|+
-literal|"((t is null and bit_and(x.session.statusType.status, :flag)> 0) or bit_and(t.status, :flag)> 0)"
+literal|"((e.examStatus is null and bit_and(s.statusType.status, :flag)> 0) or bit_and(e.examStatus, :flag)> 0)"
 argument_list|)
 operator|.
 name|setLong
@@ -4420,15 +4428,6 @@ literal|"sessionId"
 argument_list|,
 name|getUniqueId
 argument_list|()
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"examType"
-argument_list|,
-name|ExamType
-operator|.
-name|sExamTypeFinal
 argument_list|)
 operator|.
 name|setInteger
@@ -4479,11 +4478,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(x) from Exam x left join x.statusType t "
+literal|"select count(e) from MidtermExamEvent e inner join e.exam.session s where s.uniqueId = :sessionId and "
 operator|+
-literal|"where x.session.uniqueId = :sessionId and x.assignedPeriod != null and x.examType.type = :examType and "
-operator|+
-literal|"((t is null and bit_and(x.session.statusType.status, :flag)> 0) or bit_and(t.status, :flag)> 0)"
+literal|"((e.examStatus is null and bit_and(s.statusType.status, :flag)> 0) or bit_and(e.examStatus, :flag)> 0)"
 argument_list|)
 operator|.
 name|setLong
@@ -4492,15 +4489,6 @@ literal|"sessionId"
 argument_list|,
 name|getUniqueId
 argument_list|()
-argument_list|)
-operator|.
-name|setInteger
-argument_list|(
-literal|"examType"
-argument_list|,
-name|ExamType
-operator|.
-name|sExamTypeMidterm
 argument_list|)
 operator|.
 name|setInteger
