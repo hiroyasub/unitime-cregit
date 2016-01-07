@@ -1822,7 +1822,7 @@ parameter_list|,
 name|PreferenceGroup
 name|prefGroup
 parameter_list|,
-name|String
+name|int
 name|indentSpaces
 parameter_list|,
 name|boolean
@@ -1848,6 +1848,8 @@ argument_list|,
 name|isEditable
 argument_list|,
 name|prevLabel
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if

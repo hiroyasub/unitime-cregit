@@ -310,6 +310,10 @@ specifier|private
 name|String
 name|accommodation
 decl_stmt|;
+specifier|private
+name|boolean
+name|hasConflict
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Course Offerings */
 specifier|protected
@@ -489,6 +493,10 @@ expr_stmt|;
 name|accommodation
 operator|=
 literal|null
+expr_stmt|;
+name|hasConflict
+operator|=
+literal|false
 expr_stmt|;
 block|}
 specifier|public
@@ -1630,6 +1638,30 @@ return|;
 return|return
 literal|false
 return|;
+block|}
+specifier|public
+name|boolean
+name|isHasConflict
+parameter_list|()
+block|{
+return|return
+name|hasConflict
+return|;
+block|}
+specifier|public
+name|void
+name|setHasConflict
+parameter_list|(
+name|boolean
+name|hasConflict
+parameter_list|)
+block|{
+name|this
+operator|.
+name|hasConflict
+operator|=
+name|hasConflict
+expr_stmt|;
 block|}
 block|}
 end_class

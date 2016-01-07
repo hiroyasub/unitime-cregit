@@ -4453,7 +4453,7 @@ name|createQuery
 argument_list|(
 literal|"select a from Assignment a inner join a.rooms r where "
 operator|+
-literal|"r.uniqueId = :locationId and a.solution.uniqueId in :solutionIds"
+literal|"r.uniqueId = :locationId and a.solution.uniqueId in (:solutionIds)"
 argument_list|)
 operator|.
 name|setLong
@@ -4501,7 +4501,7 @@ literal|"select a from Assignment a inner join a.rooms r where "
 operator|+
 literal|"r.uniqueId = :locationId and a.solution.commited = true and "
 operator|+
-literal|"a.solution.owner.uniqueId not in (select s.owner.uniqueId from Solution s where s.uniqueId in :solutionIds)"
+literal|"a.solution.owner.uniqueId not in (select s.owner.uniqueId from Solution s where s.uniqueId in (:solutionIds))"
 argument_list|)
 operator|.
 name|setLong
