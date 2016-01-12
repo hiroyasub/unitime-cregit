@@ -58,7 +58,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&copy; 2008 - 2015 The Apereo Foundation,<br>distributed under the Apache License, Version 2."
+literal|"&copy; 2008 - 2016 The Apereo Foundation,<br>distributed under the Apache License, Version 2."
 argument_list|)
 name|String
 name|pageCopyright
@@ -67,7 +67,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"UniTime {0}, \u00A9 2008 - 2015 The Apereo Foundation, distributed under the Apache License."
+literal|"UniTime {0}, \u00A9 2008 - 2016 The Apereo Foundation, distributed under the Apache License."
 argument_list|)
 name|String
 name|pdfCopyright
