@@ -5628,18 +5628,6 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// Consent Type and Credit can be edited only on the controlling course offering
-if|if
-condition|(
-name|frm
-operator|.
-name|getIsControl
-argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
-condition|)
-block|{
 name|LookupTables
 operator|.
 name|setupConsentType
@@ -5671,7 +5659,6 @@ name|request
 argument_list|)
 expr_stmt|;
 comment|//Course Credit Unit Types
-block|}
 name|CourseOffering
 name|co
 init|=
