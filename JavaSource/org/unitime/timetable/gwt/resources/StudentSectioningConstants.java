@@ -642,6 +642,21 @@ index|[]
 name|consentTypeLabel
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"[0-9]+"
+block|,
+block|}
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+index|[]
+name|freeTimeDoNotParse
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
