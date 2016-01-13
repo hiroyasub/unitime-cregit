@@ -2113,6 +2113,11 @@ operator|=
 operator|new
 name|AriaButton
 argument_list|(
+name|RESOURCES
+operator|.
+name|arrowBack
+argument_list|()
+argument_list|,
 name|MESSAGES
 operator|.
 name|buttonRequests
@@ -2315,6 +2320,11 @@ argument_list|(
 name|MESSAGES
 operator|.
 name|buttonSchedule
+argument_list|()
+argument_list|,
+name|RESOURCES
+operator|.
+name|arrowForward
 argument_list|()
 argument_list|)
 expr_stmt|;
