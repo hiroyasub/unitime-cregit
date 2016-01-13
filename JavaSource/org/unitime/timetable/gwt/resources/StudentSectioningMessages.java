@@ -4523,6 +4523,15 @@ name|int
 name|priority
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Schedule"
+argument_list|)
+name|String
+name|headerClassSchedule
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
