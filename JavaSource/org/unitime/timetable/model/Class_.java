@@ -7464,7 +7464,8 @@ name|newClass
 operator|.
 name|setCancelled
 argument_list|(
-literal|false
+name|isCancelled
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
