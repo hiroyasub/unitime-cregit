@@ -126,6 +126,15 @@ function_decl|;
 annotation|@
 name|Source
 argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/search_picker_Assigned.png"
+argument_list|)
+name|ImageResource
+name|search_picker_Assigned
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
 literal|"org/unitime/timetable/gwt/resources/icons/search_picker_Down.png"
 argument_list|)
 name|ImageResource

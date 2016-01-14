@@ -4375,10 +4375,8 @@ operator|)
 name|cd
 operator|)
 operator|.
-name|getEnrollment
+name|getEnrolledCourseIndex
 argument_list|()
-operator|!=
-literal|null
 argument_list|)
 expr_stmt|;
 if|if
