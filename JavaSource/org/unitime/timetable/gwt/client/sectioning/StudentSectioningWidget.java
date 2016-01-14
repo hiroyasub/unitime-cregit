@@ -14048,7 +14048,14 @@ condition|)
 block|{
 if|if
 condition|(
+operator|(
 name|changeViewIfNeeded
+operator|||
+name|CONSTANTS
+operator|.
+name|startOverCanChangeView
+argument_list|()
+operator|)
 operator|||
 name|iRequests
 operator|.
@@ -14145,6 +14152,9 @@ name|setEnabled
 argument_list|(
 literal|true
 argument_list|)
+expr_stmt|;
+name|updateScheduleChangedNoteIfNeeded
+argument_list|()
 expr_stmt|;
 name|LoadingWidget
 operator|.
