@@ -5481,6 +5481,13 @@ block|{
 comment|// Must have a committed solution (not the class per se, but the managing department)
 if|if
 condition|(
+operator|!
+name|source
+operator|.
+name|isCancelled
+argument_list|()
+operator|&&
+operator|(
 name|source
 operator|.
 name|getManagingDept
@@ -5510,6 +5517,7 @@ name|getCommittedSolution
 argument_list|()
 operator|==
 literal|null
+operator|)
 condition|)
 return|return
 literal|false
