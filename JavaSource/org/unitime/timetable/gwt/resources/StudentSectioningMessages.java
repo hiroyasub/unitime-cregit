@@ -2798,7 +2798,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Changes to the selected free time {0} are in<font color='blue'>blue</font>, classes to be removed from the schedule are in<font color='red'>red</font>. Changes to other classes or free times are in<font color='black'>black</font>."
+literal|"<span class='item' style='color:blue;'>Changes to the selected free time {0} are in blue,</span><span class='item' style='color:red;'> classes to be removed from the schedule are in red.</span><span class='item'> Changes to other classes or free times are in black.</span>"
 argument_list|)
 name|String
 name|suggestionsLegendOnFreeTime
@@ -2810,7 +2810,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Changes to the selected class {0} are in<font color='blue'>blue</font>, classes to be removed from the schedule are in<font color='red'>red</font>. Changes to other classes or free times are in<font color='black'>black</font>."
+literal|"<span class='item' style='color:blue;'>Changes to the selected class {0} are in blue,</span><span class='item' style='color:red;'> classes to be removed from the schedule are in red.</span><span class='item'> Changes to other classes or free times are in black.</span>"
 argument_list|)
 name|String
 name|suggestionsLegendOnClass
@@ -2822,7 +2822,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Changes to the selected course {0} are in<font color='blue'>blue</font>, classes to be removed from the schedule are in<font color='red'>red</font>. Changes to other courses or free times are in<font color='black'>black</font>."
+literal|"<span class='item' style='color:blue;'>Changes to the selected course {0} are in blue,</span><span class='item' style='color:red;'> classes to be removed from the schedule are in red.</span><span class='item'> Changes to other courses or free times are in black.</span>"
 argument_list|)
 name|String
 name|suggestionsLegendOnCourse
@@ -2834,7 +2834,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Choices for the new course {0} are in<font color='blue'>blue</font>. Courses to be removed from the schedule are in<font color='red'>red</font>. Changes to other courses or free times are in<font color='black'>black</font>."
+literal|"<span class='item' style='color:blue;'>Choices for the new course {0} are in blue.</span><span class='item' style='color:red;'> Courses to be removed from the schedule are in red.</span><span class='item'> Changes to other courses or free times are in black.</span>"
 argument_list|)
 name|String
 name|suggestionsLegendOnNewCourse
