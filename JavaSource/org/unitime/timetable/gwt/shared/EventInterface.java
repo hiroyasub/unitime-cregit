@@ -5125,7 +5125,7 @@ condition|)
 return|return
 name|constants
 operator|.
-name|timeMidnight
+name|timeMidnightEnd
 argument_list|()
 return|;
 if|if

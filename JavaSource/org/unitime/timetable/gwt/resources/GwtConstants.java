@@ -298,6 +298,15 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
+literal|"midnight"
+argument_list|)
+name|String
+name|timeMidnightEnd
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
 literal|"noon"
 argument_list|)
 name|String
