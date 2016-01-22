@@ -7117,7 +7117,7 @@ operator|.
 name|currentSolution
 argument_list|()
 operator|.
-name|getInfo
+name|getExtendedInfo
 argument_list|()
 return|;
 block|}
