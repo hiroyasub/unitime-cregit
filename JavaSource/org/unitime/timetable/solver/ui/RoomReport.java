@@ -350,6 +350,9 @@ name|startDayDayOfWeek
 parameter_list|,
 name|Long
 name|roomType
+parameter_list|,
+name|Float
+name|nrWeeks
 parameter_list|)
 block|{
 name|TimetableModel
@@ -394,6 +397,13 @@ name|iRoomType
 operator|=
 name|roomType
 expr_stmt|;
+if|if
+condition|(
+name|nrWeeks
+operator|==
+literal|null
+condition|)
+block|{
 comment|// count number of weeks as a number of working days / 5
 comment|// (this is to avoid problems when the default date pattern does not contain Saturdays and/or Sundays)
 name|int
@@ -514,6 +524,14 @@ name|DAY_FRI
 index|]
 operator|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|iNrWeeks
+operator|=
+name|nrWeeks
+expr_stmt|;
+block|}
 for|for
 control|(
 name|int

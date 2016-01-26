@@ -6831,6 +6831,28 @@ literal|"tmtbl.timeGrid.useClassInstructors.checkConflicts"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Timetable Grid: skip holidays in room utilization computations"
+argument_list|)
+name|TimetableGridUtilizationSkipHolidays
+argument_list|(
+literal|"tmtbl.timeGrid.utilizationSkipHolidays"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Description
 argument_list|(
 literal|"Contact Us: address"

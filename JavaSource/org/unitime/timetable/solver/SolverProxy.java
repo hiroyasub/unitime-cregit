@@ -363,6 +363,22 @@ name|ViolatedDistrPreferencesReport
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|webutil
+operator|.
+name|timegrid
+operator|.
+name|TimetableGridContext
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -613,20 +629,8 @@ specifier|public
 name|Vector
 name|getTimetableGridTables
 parameter_list|(
-name|String
-name|findString
-parameter_list|,
-name|int
-name|resourceType
-parameter_list|,
-name|int
-name|startDay
-parameter_list|,
-name|int
-name|bgMode
-parameter_list|,
-name|boolean
-name|showEvents
+name|TimetableGridContext
+name|context
 parameter_list|)
 throws|throws
 name|Exception
@@ -785,6 +789,9 @@ name|startDayDayOfWeek
 parameter_list|,
 name|Long
 name|roomType
+parameter_list|,
+name|Float
+name|nrWeeks
 parameter_list|)
 throws|throws
 name|Exception
