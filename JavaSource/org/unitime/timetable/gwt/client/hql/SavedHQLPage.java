@@ -4036,7 +4036,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"roomDetail.do?id="
+literal|"gwt.jsp?page=rooms&back=1&id="
 operator|+
 name|event
 operator|.
