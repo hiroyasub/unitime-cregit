@@ -1143,6 +1143,8 @@ name|feature
 operator|.
 name|getLabel
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 return|;
 case|case
@@ -1165,6 +1167,8 @@ name|feature
 operator|.
 name|getAbbreviation
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 return|;
 case|case
@@ -1197,6 +1201,8 @@ argument_list|()
 operator|.
 name|getAbbreviation
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|type
