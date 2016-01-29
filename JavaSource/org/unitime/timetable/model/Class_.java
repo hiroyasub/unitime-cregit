@@ -8120,7 +8120,7 @@ name|setUser
 argument_list|(
 name|user
 operator|.
-name|getName
+name|getTrueName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -8130,7 +8130,7 @@ name|setUserId
 argument_list|(
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -8508,7 +8508,7 @@ name|setUser
 argument_list|(
 name|user
 operator|.
-name|getName
+name|getTrueName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -8518,7 +8518,7 @@ name|setUserId
 argument_list|(
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -9500,7 +9500,7 @@ name|setUser
 argument_list|(
 name|user
 operator|.
-name|getName
+name|getTrueName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -9510,7 +9510,7 @@ name|setUserId
 argument_list|(
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 argument_list|)
 expr_stmt|;

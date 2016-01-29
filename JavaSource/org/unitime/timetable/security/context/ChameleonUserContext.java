@@ -445,6 +445,36 @@ operator|+
 literal|" (A)"
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getTrueName
+parameter_list|()
+block|{
+return|return
+name|getOriginalUserContext
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getTrueExternalUserId
+parameter_list|()
+block|{
+return|return
+name|getOriginalUserContext
+argument_list|()
+operator|.
+name|getExternalUserId
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

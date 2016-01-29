@@ -1801,7 +1801,7 @@ operator|.
 name|getUser
 argument_list|()
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 else|:
 literal|null

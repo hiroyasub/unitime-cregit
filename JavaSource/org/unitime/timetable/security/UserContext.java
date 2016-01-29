@@ -280,6 +280,16 @@ name|getOriginalUserContext
 parameter_list|()
 function_decl|;
 block|}
+specifier|public
+name|String
+name|getTrueExternalUserId
+parameter_list|()
+function_decl|;
+specifier|public
+name|String
+name|getTrueName
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

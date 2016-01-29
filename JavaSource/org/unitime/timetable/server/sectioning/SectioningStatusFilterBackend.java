@@ -1122,7 +1122,7 @@ name|setExternalId
 argument_list|(
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 argument_list|)
 operator|.
@@ -1130,7 +1130,7 @@ name|setName
 argument_list|(
 name|user
 operator|.
-name|getName
+name|getTrueName
 argument_list|()
 operator|==
 literal|null
@@ -1142,7 +1142,7 @@ argument_list|()
 else|:
 name|user
 operator|.
-name|getName
+name|getTrueName
 argument_list|()
 argument_list|)
 operator|.

@@ -630,7 +630,7 @@ name|userId
 operator|=
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 expr_stmt|;
 block|}
@@ -924,7 +924,7 @@ name|setUid
 argument_list|(
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -333,7 +333,7 @@ literal|"uid:"
 operator|+
 name|user
 operator|.
-name|getExternalUserId
+name|getTrueExternalUserId
 argument_list|()
 argument_list|)
 expr_stmt|;
