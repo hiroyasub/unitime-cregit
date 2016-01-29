@@ -886,6 +886,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Export"
+argument_list|)
+name|String
+name|opQueryExport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Save"
 argument_list|)
 name|String
