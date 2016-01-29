@@ -3009,6 +3009,14 @@ argument_list|()
 operator|.
 name|getAcademicTitle
 argument_list|()
+argument_list|,
+name|event
+operator|.
+name|getValue
+argument_list|()
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

@@ -8406,6 +8406,28 @@ argument_list|(
 literal|"unitime.subpart.max_num_classes"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Chameleon: allow to swith into any user (not just timetable managers), using the People Lookup dialog"
+argument_list|)
+name|ChameleonAllowLookup
+argument_list|(
+literal|"unitime.chameleon.lookup"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

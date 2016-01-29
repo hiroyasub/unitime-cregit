@@ -144,6 +144,9 @@ parameter_list|(
 name|String
 name|userId
 parameter_list|,
+name|String
+name|userName
+parameter_list|,
 name|UserContext
 name|originalUser
 parameter_list|)
@@ -157,12 +160,14 @@ operator|.
 name|getUsername
 argument_list|()
 argument_list|,
-name|originalUser
-operator|.
-name|getName
-argument_list|()
+name|userName
 argument_list|,
 literal|null
+argument_list|,
+name|originalUser
+operator|.
+name|getCurrentAcademicSessionId
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Original user is session dependent -> remove all session independent authorities from the new user
