@@ -1019,6 +1019,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} is not available (course is full)."
+argument_list|)
+name|String
+name|suggestionsNoChoicesCourseIsFull
+parameter_list|(
+name|String
+name|source
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} conflicts with {1}."
+argument_list|)
+name|String
+name|suggestionsNoChoicesCourseIsConflicting
+parameter_list|(
+name|String
+name|course
+parameter_list|,
+name|String
+name|conflict
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Free Time {0} {1} - {2}"
 argument_list|)
 name|String
@@ -1581,6 +1608,15 @@ literal|"Not available."
 argument_list|)
 name|String
 name|classNotAvailable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not available (course is full)."
+argument_list|)
+name|String
+name|courseIsFull
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3989,7 +4025,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Click to lock the class. Alternatives cannot change classes that are locked, except of the one that was clicked."
+literal|"Click to lock the class. Any course changes will not affect locked course."
 argument_list|)
 name|String
 name|hintUnlocked
@@ -3998,7 +4034,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The class is locked. Alternatives cannot change classes that are locked, except of the one that was clicked."
+literal|"The class is locked. Any course changes will not affect locked course."
 argument_list|)
 name|String
 name|hintLocked
@@ -4079,7 +4115,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Select a new course to add to the schedulue, or an existing course to drop from the schedule"
+literal|"Select a new course to add to the schedule or an existing course to drop from the schedule"
 argument_list|)
 name|String
 name|dialogQuickAdd

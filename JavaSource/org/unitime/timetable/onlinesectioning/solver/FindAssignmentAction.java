@@ -6303,6 +6303,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
+block|{
 name|ca
 operator|.
 name|setNotAvailable
@@ -6310,6 +6311,19 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|ca
+operator|.
+name|setFull
+argument_list|(
+name|course
+operator|.
+name|getLimit
+argument_list|()
+operator|==
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|ret
 operator|.
