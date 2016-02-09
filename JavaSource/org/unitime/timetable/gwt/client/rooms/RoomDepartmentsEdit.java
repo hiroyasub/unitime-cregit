@@ -1087,6 +1087,17 @@ name|iLastScrollTop
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|hide
+parameter_list|()
+block|{
+name|hide
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 specifier|protected
 name|void
 name|onHide

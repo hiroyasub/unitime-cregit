@@ -5764,9 +5764,18 @@ block|}
 if|else if
 condition|(
 name|iRoomDetail
+operator|!=
+literal|null
+operator|&&
+name|iRoomDetail
 operator|.
-name|isVisible
+name|equals
+argument_list|(
+name|iRootPanel
+operator|.
+name|getWidget
 argument_list|()
+argument_list|)
 condition|)
 block|{
 name|iRoomDetail
@@ -5778,9 +5787,18 @@ block|}
 if|else if
 condition|(
 name|iRoomEdit
+operator|!=
+literal|null
+operator|&&
+name|iRoomEdit
 operator|.
-name|isVisible
+name|equals
+argument_list|(
+name|iRootPanel
+operator|.
+name|getWidget
 argument_list|()
+argument_list|)
 condition|)
 block|{
 name|iRoomEdit
@@ -5796,6 +5814,29 @@ literal|false
 argument_list|,
 literal|null
 argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|iRoomDepartmentsEdit
+operator|!=
+literal|null
+operator|&&
+name|iRoomDepartmentsEdit
+operator|.
+name|equals
+argument_list|(
+name|iRootPanel
+operator|.
+name|getWidget
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|iRoomDepartmentsEdit
+operator|.
+name|hide
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
