@@ -4204,6 +4204,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|iRoomGroupEdit
+operator|.
+name|isVisible
+argument_list|()
+condition|)
+name|iRoomGroupEdit
+operator|.
+name|hide
+argument_list|()
+expr_stmt|;
+if|else if
+condition|(
 name|search
 condition|)
 name|search
