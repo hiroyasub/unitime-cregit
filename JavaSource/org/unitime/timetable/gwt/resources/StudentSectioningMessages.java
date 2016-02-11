@@ -3950,10 +3950,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"You are not registered for any classes yet. Please click the Build Schedule button in order to complete your registration."
+argument_list|)
+name|String
+name|warnScheduleEmptyOnCourseRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You have made some changes in your schedule. Please click the Build Schedule button to update your registration."
+argument_list|)
+name|String
+name|warnScheduleChangedOnCourseRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are not registered for any classes yet. Please click the Submit Schedule button in order to complete your registration."
 argument_list|)
 name|String
-name|warnScheduleEmpty
+name|warnScheduleEmptyOnClassSchedule
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3962,7 +3980,7 @@ argument_list|(
 literal|"You have made some changes in your schedule. Please click the Submit Schedule button to update your registration."
 argument_list|)
 name|String
-name|warnScheduleChanged
+name|warnScheduleChangedOnClassSchedule
 parameter_list|()
 function_decl|;
 annotation|@
