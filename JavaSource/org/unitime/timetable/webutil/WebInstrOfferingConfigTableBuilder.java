@@ -1812,6 +1812,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|TableCell
 name|buildPrefGroupLabel
@@ -1830,6 +1832,9 @@ name|isEditable
 parameter_list|,
 name|String
 name|prevLabel
+parameter_list|,
+name|String
+name|icon
 parameter_list|)
 block|{
 name|TableCell
@@ -1849,7 +1854,7 @@ name|isEditable
 argument_list|,
 name|prevLabel
 argument_list|,
-literal|null
+name|icon
 argument_list|)
 decl_stmt|;
 if|if
