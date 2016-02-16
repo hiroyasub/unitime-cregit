@@ -3574,6 +3574,27 @@ argument_list|(
 literal|"tmtbl.exam.report.meeting_time.use_events"
 argument_list|)
 operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"none"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Examination Reports: include different subject sections (set to none if disabled, "
+operator|+
+literal|"set to cross-list if only cross-listed sections under the controlling course are to be included, "
+operator|+
+literal|"set to cross-list all if all cross-listed sections under any cross-listed course are to be included, "
+operator|+
+literal|"set to all if all different subject sections are to be included)"
+argument_list|)
+name|ExaminationReportsIncludeDifferentSubject
+argument_list|(
+literal|"tmtbl.exam.report.differentSubjectSections"
+argument_list|)
+operator|,
 comment|/** 	 * Exams default start and stop offsets. This is to be used to reserve time for 	 * students entering the exam room before the exam begins and time for students 	 * to leave the exam after the exam has finished. The start offset must be a 	 * positive number that is not greater than the number of minutes in the exam 	 * period. 	 */
 expr_stmt|@
 name|Type
