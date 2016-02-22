@@ -790,7 +790,7 @@ name|setPriority
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationPriorityIndividual
+name|ReservationPriorityGroup
 operator|.
 name|intValue
 argument_list|()
@@ -800,7 +800,7 @@ name|setCanAssignOverLimit
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationCanOverLimitIndividual
+name|ReservationCanOverLimitGroup
 operator|.
 name|isTrue
 argument_list|()
@@ -810,7 +810,7 @@ name|setMustBeUsed
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationMustBeUsedIndividual
+name|ReservationMustBeUsedGroup
 operator|.
 name|isTrue
 argument_list|()
@@ -820,7 +820,7 @@ name|setAllowOverlap
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationAllowOverlapIndividual
+name|ReservationAllowOverlapGroup
 operator|.
 name|isTrue
 argument_list|()
@@ -834,7 +834,7 @@ name|setPriority
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationPriorityIndividual
+name|ReservationPriorityCurriculum
 operator|.
 name|intValue
 argument_list|()
@@ -844,7 +844,7 @@ name|setCanAssignOverLimit
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationCanOverLimitIndividual
+name|ReservationCanOverLimitCurriculum
 operator|.
 name|isTrue
 argument_list|()
@@ -854,7 +854,7 @@ name|setMustBeUsed
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationMustBeUsedIndividual
+name|ReservationMustBeUsedCurriculum
 operator|.
 name|isTrue
 argument_list|()
@@ -864,7 +864,7 @@ name|setAllowOverlap
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationAllowOverlapIndividual
+name|ReservationAllowOverlapCurriculum
 operator|.
 name|isTrue
 argument_list|()
@@ -878,7 +878,7 @@ name|setPriority
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationPriorityIndividual
+name|ReservationPriorityCourse
 operator|.
 name|intValue
 argument_list|()
@@ -888,7 +888,7 @@ name|setCanAssignOverLimit
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationCanOverLimitIndividual
+name|ReservationCanOverLimitCourse
 operator|.
 name|isTrue
 argument_list|()
@@ -898,7 +898,7 @@ name|setMustBeUsed
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationMustBeUsedIndividual
+name|ReservationMustBeUsedCourse
 operator|.
 name|isTrue
 argument_list|()
@@ -908,7 +908,7 @@ name|setAllowOverlap
 argument_list|(
 name|ApplicationProperty
 operator|.
-name|ReservationAllowOverlapIndividual
+name|ReservationAllowOverlapCourse
 operator|.
 name|isTrue
 argument_list|()
