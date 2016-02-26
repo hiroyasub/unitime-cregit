@@ -9634,7 +9634,7 @@ argument_list|)
 expr_stmt|;
 name|addSortOperation
 argument_list|(
-name|hMajor
+name|hGroup
 argument_list|,
 name|StudentComparator
 operator|.
@@ -9680,7 +9680,7 @@ argument_list|)
 expr_stmt|;
 name|addSortOperation
 argument_list|(
-name|hMajor
+name|hAcmd
 argument_list|,
 name|StudentComparator
 operator|.
