@@ -3550,7 +3550,7 @@ name|reg
 operator|.
 name|canDrop
 argument_list|(
-literal|true
+name|admin
 argument_list|)
 condition|)
 name|nodrop
