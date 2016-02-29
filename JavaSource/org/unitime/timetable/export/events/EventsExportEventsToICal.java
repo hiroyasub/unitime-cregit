@@ -3120,17 +3120,6 @@ return|return
 literal|true
 return|;
 block|}
-annotation|@
-name|Override
-specifier|protected
-name|boolean
-name|checkRights
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
 specifier|public
 class|class
 name|ICalendarMeeting

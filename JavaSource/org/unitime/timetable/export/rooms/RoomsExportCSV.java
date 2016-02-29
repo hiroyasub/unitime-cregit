@@ -187,13 +187,6 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-if|if
-condition|(
-name|checkRights
-argument_list|(
-name|helper
-argument_list|)
-condition|)
 name|helper
 operator|.
 name|getSessionContext
