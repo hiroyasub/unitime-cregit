@@ -2363,18 +2363,13 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|rp
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -2454,18 +2449,13 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|bp
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -2545,18 +2535,13 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|rfp
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -2636,18 +2621,13 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|rgp
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -2915,18 +2895,13 @@ argument_list|)
 operator|+
 literal|" "
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|dp
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+

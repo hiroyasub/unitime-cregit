@@ -10239,15 +10239,10 @@ argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|roomPref
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|")"
 operator|+
@@ -10340,15 +10335,10 @@ argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|roomPref
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|")"
 operator|+
@@ -14203,15 +14193,10 @@ argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|roomPref
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|")"
 argument_list|)
@@ -14254,15 +14239,10 @@ argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|roomPref
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|")"
 argument_list|)

@@ -21748,15 +21748,10 @@ name|iAutoPrecedence
 operator|.
 name|equals
 argument_list|(
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|p
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 argument_list|)
 condition|)
 block|{

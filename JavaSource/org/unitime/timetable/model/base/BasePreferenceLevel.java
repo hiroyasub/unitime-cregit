@@ -77,6 +77,10 @@ specifier|private
 name|String
 name|iPrefName
 decl_stmt|;
+specifier|private
+name|String
+name|iPrefAbbv
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -104,6 +108,13 @@ name|String
 name|PROP_PREF_NAME
 init|=
 literal|"prefName"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_PREF_ABBV
+init|=
+literal|"prefAbbv"
 decl_stmt|;
 specifier|public
 name|BasePreferenceLevel
@@ -224,6 +235,28 @@ name|prefName
 expr_stmt|;
 block|}
 specifier|public
+name|String
+name|getPrefAbbv
+parameter_list|()
+block|{
+return|return
+name|iPrefAbbv
+return|;
+block|}
+specifier|public
+name|void
+name|setPrefAbbv
+parameter_list|(
+name|String
+name|prefAbbv
+parameter_list|)
+block|{
+name|iPrefAbbv
+operator|=
+name|prefAbbv
+expr_stmt|;
+block|}
+specifier|public
 name|boolean
 name|equals
 parameter_list|(
@@ -334,6 +367,11 @@ parameter_list|()
 block|{
 return|return
 literal|"PreferenceLevel["
+operator|+
+literal|"\n	PrefAbbv: "
+operator|+
+name|getPrefAbbv
+argument_list|()
 operator|+
 literal|"\n	PrefId: "
 operator|+

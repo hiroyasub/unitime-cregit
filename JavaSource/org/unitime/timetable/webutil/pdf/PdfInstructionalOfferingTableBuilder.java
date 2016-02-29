@@ -4453,18 +4453,13 @@ name|addText
 argument_list|(
 name|cell
 argument_list|,
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|pref
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -5179,18 +5174,13 @@ name|addText
 argument_list|(
 name|cell
 argument_list|,
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|pref
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -5299,18 +5289,13 @@ name|addText
 argument_list|(
 name|cell
 argument_list|,
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|pref
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+
@@ -5552,18 +5537,13 @@ name|addText
 argument_list|(
 name|cell
 argument_list|,
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|pref
 operator|.
 name|getPrefLevel
 argument_list|()
 operator|.
-name|getPrefProlog
+name|getAbbreviation
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+

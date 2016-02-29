@@ -1258,18 +1258,13 @@ argument_list|(
 operator|new
 name|A
 argument_list|(
-name|PreferenceLevel
-operator|.
-name|prolog2abbv
-argument_list|(
 name|d
 operator|.
 name|getPreference
 argument_list|()
 operator|.
-name|getCode
+name|getAbbv
 argument_list|()
-argument_list|)
 operator|+
 literal|" "
 operator|+

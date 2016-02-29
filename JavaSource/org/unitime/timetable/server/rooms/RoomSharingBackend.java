@@ -1187,6 +1187,11 @@ operator|.
 name|getPrefName
 argument_list|()
 argument_list|,
+name|pref
+operator|.
+name|getAbbreviation
+argument_list|()
+argument_list|,
 name|prefEditable
 argument_list|)
 argument_list|)

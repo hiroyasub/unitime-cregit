@@ -7973,6 +7973,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Preference Level"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pagePreferenceLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Preference Levels"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pagePreferenceLevels
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String

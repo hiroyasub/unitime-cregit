@@ -2560,6 +2560,10 @@ name|InstructionalMethods
 block|,
 name|InstructionalMethodEdit
 block|,
+name|PreferenceLevels
+block|,
+name|PreferenceLevelEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,
