@@ -1534,6 +1534,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Configuration / Class"
+argument_list|)
+name|String
+name|colConfigOrClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class Number"
 argument_list|)
 name|String
@@ -6797,6 +6806,18 @@ name|name
 parameter_list|,
 name|String
 name|limit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Configuration {0}"
+argument_list|)
+name|String
+name|labelConfiguration
+parameter_list|(
+name|String
+name|name
 parameter_list|)
 function_decl|;
 annotation|@
@@ -13178,6 +13199,15 @@ literal|"Application of this preference will remove all required preferences."
 argument_list|)
 name|String
 name|warnPreferenceUseNotRequired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancelled"
+argument_list|)
+name|String
+name|reservationCancelledClass
 parameter_list|()
 function_decl|;
 block|}
