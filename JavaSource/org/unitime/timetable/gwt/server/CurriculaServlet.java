@@ -24678,13 +24678,6 @@ name|demand
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|courses
-operator|!=
-literal|null
-condition|)
-block|{
 name|Map
 argument_list|<
 name|Long
@@ -24826,6 +24819,12 @@ block|}
 block|}
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|courses
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|CurriculumCourse
@@ -25614,7 +25613,6 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
