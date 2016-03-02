@@ -1720,30 +1720,6 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Uploaded file "
-operator|+
-name|name
-operator|+
-literal|" of type "
-operator|+
-name|type
-operator|+
-literal|" and size "
-operator|+
-name|file
-operator|.
-name|getBytes
-argument_list|()
-operator|.
-name|length
-argument_list|)
-expr_stmt|;
 name|LocationPicture
 name|picture
 init|=

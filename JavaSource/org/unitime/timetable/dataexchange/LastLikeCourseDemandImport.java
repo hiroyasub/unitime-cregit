@@ -1000,11 +1000,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
+name|warn
 argument_list|(
 literal|"Course not found "
 operator|+
@@ -1034,11 +1030,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
+name|warn
 argument_list|(
 literal|"Subject area "
 operator|+

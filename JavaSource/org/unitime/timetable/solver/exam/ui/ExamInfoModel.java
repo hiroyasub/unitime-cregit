@@ -6315,11 +6315,9 @@ name|time
 argument_list|)
 condition|)
 block|{
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"Room "
 operator|+

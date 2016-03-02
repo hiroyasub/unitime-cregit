@@ -490,11 +490,9 @@ block|{
 break|break;
 block|}
 block|}
-name|System
+name|sLog
 operator|.
-name|out
-operator|.
-name|println
+name|info
 argument_list|(
 literal|"Solver passivation thread finished."
 argument_list|)
@@ -506,11 +504,9 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|System
+name|sLog
 operator|.
-name|err
-operator|.
-name|print
+name|error
 argument_list|(
 literal|"Solver passivation thread failed, reason: "
 operator|+
@@ -518,12 +514,9 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
-expr_stmt|;
+argument_list|,
 name|e
-operator|.
-name|printStackTrace
-argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 block|}
