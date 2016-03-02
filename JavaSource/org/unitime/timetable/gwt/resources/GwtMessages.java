@@ -2500,7 +2500,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Conflicts with: "
+literal|"Conflicts with:"
 argument_list|)
 name|String
 name|propConflicts

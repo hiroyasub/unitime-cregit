@@ -1573,7 +1573,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|" Type "
+literal|"Type"
 argument_list|)
 name|String
 name|columnDistrPrefType
@@ -1582,7 +1582,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|" Structure "
+literal|"Structure"
 argument_list|)
 name|String
 name|columnDistrPrefStructure
@@ -1591,7 +1591,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|" Owner "
+literal|"Owner"
 argument_list|)
 name|String
 name|columnDistrPrefOwner
@@ -1600,7 +1600,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|" Class "
+literal|"Class"
 argument_list|)
 name|String
 name|columnDistrPrefClass
@@ -4982,7 +4982,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid room group: Check for duplicate / blank selection. "
+literal|"Invalid room group: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidRoomGroup
@@ -4991,7 +4991,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid room group level. "
+literal|"Invalid room group level."
 argument_list|)
 name|String
 name|errorInvalidRoomGroupLevel
@@ -5000,7 +5000,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid building preference: Check for duplicate / blank selection. "
+literal|"Invalid building preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidBuildingPreference
@@ -5009,7 +5009,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid building preference level. "
+literal|"Invalid building preference level."
 argument_list|)
 name|String
 name|errorInvalidBuildingPreferenceLevel
@@ -5018,7 +5018,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid distribution preference: Check for duplicate / blank selection. "
+literal|"Invalid distribution preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidDistributionPreference
@@ -5027,7 +5027,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid date pattern preference: Check for duplicate / blank selection. "
+literal|"Invalid date pattern preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidDatePatternPreference
@@ -5045,7 +5045,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid room feature preference: Check for duplicate / blank selection. "
+literal|"Invalid room feature preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidRoomFeaturePreference
@@ -5054,7 +5054,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid room feature preference level. "
+literal|"Invalid room feature preference level."
 argument_list|)
 name|String
 name|errorInvalidRoomFeaturePreferenceLevel
@@ -5063,7 +5063,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid instructor preference: Check for duplicate / blank selection. "
+literal|"Invalid instructor preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidInstructorPreference
@@ -5072,7 +5072,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Time pattern not selected. "
+literal|"Time pattern not selected."
 argument_list|)
 name|String
 name|errorTimePatternNotSelected
@@ -5081,7 +5081,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid room preference: Check for duplicate / blank selection. "
+literal|"Invalid room preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidRoomPreference
@@ -5090,7 +5090,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid room preference level. "
+literal|"Invalid room preference level."
 argument_list|)
 name|String
 name|errorInvalidRoomPreferenceLevel
@@ -5348,7 +5348,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unique Id needed for operation. "
+literal|"Unique Id needed for operation."
 argument_list|)
 name|String
 name|errorUniqueIdNeeded
@@ -5669,7 +5669,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course Offering Id need for operation. "
+literal|"Course Offering Id need for operation."
 argument_list|)
 name|String
 name|exceptionCourseOfferingIdNeeded
@@ -5678,7 +5678,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You do not have any department to manage. "
+literal|"You do not have any department to manage."
 argument_list|)
 name|String
 name|exceptionNoDepartmentToManage
@@ -6075,7 +6075,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Configuration "
+literal|"Configuration"
 argument_list|)
 name|String
 name|sectionTitleConfiguration
