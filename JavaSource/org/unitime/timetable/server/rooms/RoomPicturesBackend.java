@@ -343,7 +343,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -443,7 +443,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 import|;
 end_import
 
@@ -536,7 +536,7 @@ specifier|static
 name|AttachmentTypeInterface
 name|getPictureType
 parameter_list|(
-name|AttachementType
+name|AttachmentType
 name|type
 parameter_list|)
 block|{
@@ -568,7 +568,7 @@ operator|.
 name|getLabel
 argument_list|()
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -582,7 +582,7 @@ name|getVisibility
 argument_list|()
 argument_list|)
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -596,7 +596,7 @@ name|getVisibility
 argument_list|()
 argument_list|)
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -1178,14 +1178,14 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|AttachementType
+name|AttachmentType
 name|type
 range|:
-name|AttachementType
+name|AttachmentType
 operator|.
 name|listTypes
 argument_list|(
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -1404,7 +1404,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -1452,7 +1452,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()

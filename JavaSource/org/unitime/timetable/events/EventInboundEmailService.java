@@ -577,7 +577,7 @@ expr_stmt|;
 block|}
 block|}
 name|BodyPart
-name|attachement
+name|attachment
 init|=
 literal|null
 decl_stmt|;
@@ -652,7 +652,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|attachement
+name|attachment
 operator|=
 name|multi
 operator|.
@@ -866,7 +866,7 @@ name|text
 operator|==
 literal|null
 operator|&&
-name|attachement
+name|attachment
 operator|==
 literal|null
 condition|)
@@ -1045,7 +1045,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|attachement
+name|attachment
 operator|!=
 literal|null
 condition|)
@@ -1054,7 +1054,7 @@ name|note
 operator|.
 name|setAttachedName
 argument_list|(
-name|attachement
+name|attachment
 operator|.
 name|getFileName
 argument_list|()
@@ -1064,7 +1064,7 @@ name|note
 operator|.
 name|setAttachedContentType
 argument_list|(
-name|attachement
+name|attachment
 operator|.
 name|getContentType
 argument_list|()
@@ -1073,7 +1073,7 @@ expr_stmt|;
 name|InputStream
 name|input
 init|=
-name|attachement
+name|attachment
 operator|.
 name|getInputStream
 argument_list|()

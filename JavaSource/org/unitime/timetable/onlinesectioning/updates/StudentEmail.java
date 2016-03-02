@@ -2293,7 +2293,7 @@ argument_list|()
 expr_stmt|;
 name|email
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 operator|new
 name|DataSource
@@ -2383,7 +2383,7 @@ condition|)
 block|{
 name|email
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 operator|new
 name|DataSource
@@ -2482,7 +2482,7 @@ literal|null
 condition|)
 name|email
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 operator|new
 name|DataSource

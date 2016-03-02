@@ -37,7 +37,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -63,7 +63,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseAttachementType
+name|BaseAttachmentType
 extends|extends
 name|RefTableEntry
 implements|implements
@@ -100,7 +100,7 @@ init|=
 literal|"visibility"
 decl_stmt|;
 specifier|public
-name|BaseAttachementType
+name|BaseAttachmentType
 parameter_list|()
 block|{
 name|initialize
@@ -108,7 +108,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|BaseAttachementType
+name|BaseAttachmentType
 parameter_list|(
 name|Long
 name|uniqueId
@@ -191,7 +191,7 @@ operator|!
 operator|(
 name|o
 operator|instanceof
-name|AttachementType
+name|AttachmentType
 operator|)
 condition|)
 return|return
@@ -206,7 +206,7 @@ literal|null
 operator|||
 operator|(
 operator|(
-name|AttachementType
+name|AttachmentType
 operator|)
 name|o
 operator|)
@@ -227,7 +227,7 @@ name|equals
 argument_list|(
 operator|(
 operator|(
-name|AttachementType
+name|AttachmentType
 operator|)
 name|o
 operator|)
@@ -269,7 +269,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-literal|"AttachementType["
+literal|"AttachmentType["
 operator|+
 name|getUniqueId
 argument_list|()
@@ -288,7 +288,7 @@ name|toDebugString
 parameter_list|()
 block|{
 return|return
-literal|"AttachementType["
+literal|"AttachmentType["
 operator|+
 literal|"\n	Abbreviation: "
 operator|+

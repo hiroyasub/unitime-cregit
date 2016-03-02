@@ -399,7 +399,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -2387,14 +2387,14 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|AttachementType
+name|AttachmentType
 name|type
 range|:
-name|AttachementType
+name|AttachmentType
 operator|.
 name|listTypes
 argument_list|(
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.

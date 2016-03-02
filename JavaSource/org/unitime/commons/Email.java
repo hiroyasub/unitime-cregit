@@ -347,7 +347,7 @@ block|}
 specifier|protected
 specifier|abstract
 name|void
-name|addAttachement
+name|addAttachment
 parameter_list|(
 name|String
 name|name
@@ -360,7 +360,7 @@ name|Exception
 function_decl|;
 specifier|public
 name|void
-name|addAttachement
+name|addAttachment
 parameter_list|(
 name|File
 name|file
@@ -371,7 +371,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|name
 operator|==
@@ -398,7 +398,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|addAttachement
+name|addAttachment
 parameter_list|(
 specifier|final
 name|FormFile
@@ -407,7 +407,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|file
 operator|.
@@ -489,7 +489,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|addAttachement
+name|addAttachment
 parameter_list|(
 name|DataSource
 name|source
@@ -497,7 +497,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|source
 operator|.

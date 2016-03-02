@@ -29,19 +29,19 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseAttachementTypeDAO
+name|BaseAttachmentTypeDAO
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 extends|extends
-name|BaseAttachementTypeDAO
+name|BaseAttachmentTypeDAO
 block|{
 specifier|public
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 parameter_list|()
 block|{
 block|}

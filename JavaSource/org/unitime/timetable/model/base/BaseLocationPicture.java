@@ -47,7 +47,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -107,7 +107,7 @@ name|Date
 name|iTimeStamp
 decl_stmt|;
 specifier|private
-name|AttachementType
+name|AttachmentType
 name|iType
 decl_stmt|;
 specifier|public
@@ -288,7 +288,7 @@ name|timeStamp
 expr_stmt|;
 block|}
 specifier|public
-name|AttachementType
+name|AttachmentType
 name|getType
 parameter_list|()
 block|{
@@ -300,7 +300,7 @@ specifier|public
 name|void
 name|setType
 parameter_list|(
-name|AttachementType
+name|AttachmentType
 name|type
 parameter_list|)
 block|{

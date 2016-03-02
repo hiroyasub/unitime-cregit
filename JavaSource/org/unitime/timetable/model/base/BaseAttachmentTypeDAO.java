@@ -27,7 +27,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -59,7 +59,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 import|;
 end_import
 
@@ -71,23 +71,23 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseAttachementTypeDAO
+name|BaseAttachmentTypeDAO
 extends|extends
 name|_RootDAO
 argument_list|<
-name|AttachementType
+name|AttachmentType
 argument_list|,
 name|Long
 argument_list|>
 block|{
 specifier|private
 specifier|static
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 name|sInstance
 decl_stmt|;
 specifier|public
 specifier|static
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 name|getInstance
 parameter_list|()
 block|{
@@ -100,7 +100,7 @@ condition|)
 name|sInstance
 operator|=
 operator|new
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 argument_list|()
 expr_stmt|;
 return|return
@@ -110,13 +110,13 @@ block|}
 specifier|public
 name|Class
 argument_list|<
-name|AttachementType
+name|AttachmentType
 argument_list|>
 name|getReferenceClass
 parameter_list|()
 block|{
 return|return
-name|AttachementType
+name|AttachmentType
 operator|.
 name|class
 return|;

@@ -333,7 +333,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -1898,7 +1898,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementType
+name|AttachmentType
 operator|.
 name|findByReference
 argument_list|(

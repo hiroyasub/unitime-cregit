@@ -7873,23 +7873,23 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Attachement Type"
+literal|"Attachment Type"
 argument_list|)
 annotation|@
 name|DoNotTranslate
 name|String
-name|pageAttachementType
+name|pageAttachmentType
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Attachement Types"
+literal|"Attachment Types"
 argument_list|)
 annotation|@
 name|DoNotTranslate
 name|String
-name|pageAttachementTypes
+name|pageAttachmentTypes
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8601,7 +8601,7 @@ argument_list|(
 literal|"<i>File {0} attached.</i>"
 argument_list|)
 name|String
-name|noteAttachement
+name|noteAttachment
 parameter_list|(
 name|String
 name|fileName
@@ -12459,7 +12459,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 name|String
-name|attachementFlagIsImage
+name|attachmentFlagIsImage
 parameter_list|()
 function_decl|;
 annotation|@
@@ -12468,7 +12468,7 @@ argument_list|(
 literal|"Room Picture Type"
 argument_list|)
 name|String
-name|attachementTypeFlagRoomPicture
+name|attachmentTypeFlagRoomPicture
 parameter_list|()
 function_decl|;
 annotation|@
@@ -12477,7 +12477,7 @@ argument_list|(
 literal|"Show in Rooms Table"
 argument_list|)
 name|String
-name|attachementTypeFlagShowRoomsTable
+name|attachmentTypeFlagShowRoomsTable
 parameter_list|()
 function_decl|;
 annotation|@
@@ -12486,7 +12486,7 @@ argument_list|(
 literal|"Show in Room Tooltip"
 argument_list|)
 name|String
-name|attachementTypeFlagShowRoomTooltip
+name|attachmentTypeFlagShowRoomTooltip
 parameter_list|()
 function_decl|;
 annotation|@

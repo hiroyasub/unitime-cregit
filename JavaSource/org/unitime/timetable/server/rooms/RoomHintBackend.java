@@ -211,7 +211,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -958,7 +958,7 @@ literal|null
 operator|&&
 operator|(
 operator|!
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -976,7 +976,7 @@ argument_list|()
 argument_list|)
 operator|||
 operator|!
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.

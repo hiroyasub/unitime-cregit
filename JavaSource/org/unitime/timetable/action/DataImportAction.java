@@ -2281,7 +2281,7 @@ argument_list|()
 condition|)
 name|mail
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|output
 argument_list|()

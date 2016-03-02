@@ -1783,7 +1783,7 @@ condition|)
 block|{
 name|email
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 operator|new
 name|DataSource
@@ -1864,7 +1864,7 @@ literal|null
 condition|)
 name|email
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|attachment
 argument_list|()
@@ -1886,7 +1886,7 @@ condition|)
 block|{
 name|email
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 operator|new
 name|DataSource

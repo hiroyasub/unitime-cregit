@@ -230,7 +230,7 @@ argument_list|()
 operator|==
 literal|null
 operator|||
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.

@@ -5887,7 +5887,7 @@ control|)
 block|{
 name|mail
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|entry
 operator|.
@@ -6213,7 +6213,7 @@ control|)
 block|{
 name|mail
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|entry
 operator|.
@@ -6565,7 +6565,7 @@ argument_list|)
 expr_stmt|;
 name|mail
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|report
 argument_list|,
@@ -6959,7 +6959,7 @@ argument_list|)
 expr_stmt|;
 name|mail
 operator|.
-name|addAttachement
+name|addAttachment
 argument_list|(
 name|report
 argument_list|,

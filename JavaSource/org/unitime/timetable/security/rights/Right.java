@@ -2552,9 +2552,9 @@ name|ExaminationStatuses
 block|,
 name|ExaminationStatusEdit
 block|,
-name|AttachementTypes
+name|AttachmentTypes
 block|,
-name|AttachementTypeEdit
+name|AttachmentTypeEdit
 block|,
 name|InstructionalMethods
 block|,

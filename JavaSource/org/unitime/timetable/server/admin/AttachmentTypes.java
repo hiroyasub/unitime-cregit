@@ -215,7 +215,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AttachementType
+name|AttachmentType
 import|;
 end_import
 
@@ -277,7 +277,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 import|;
 end_import
 
@@ -319,11 +319,11 @@ begin_class
 annotation|@
 name|Service
 argument_list|(
-literal|"gwtAdminTable[type=attachementType]"
+literal|"gwtAdminTable[type=attachmentType]"
 argument_list|)
 specifier|public
 class|class
-name|AttachementTypes
+name|AttachmentTypes
 implements|implements
 name|AdminTable
 block|{
@@ -355,12 +355,12 @@ name|PageName
 argument_list|(
 name|MESSAGES
 operator|.
-name|pageAttachementType
+name|pageAttachmentType
 argument_list|()
 argument_list|,
 name|MESSAGES
 operator|.
-name|pageAttachementTypes
+name|pageAttachmentTypes
 argument_list|()
 argument_list|)
 return|;
@@ -370,7 +370,7 @@ name|Override
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('AttachementTypes')"
+literal|"checkPermission('AttachmentTypes')"
 argument_list|)
 specifier|public
 name|SimpleEditInterface
@@ -469,7 +469,7 @@ name|Field
 argument_list|(
 name|MESSAGES
 operator|.
-name|attachementFlagIsImage
+name|attachmentFlagIsImage
 argument_list|()
 argument_list|,
 name|FieldType
@@ -484,7 +484,7 @@ name|Field
 argument_list|(
 name|MESSAGES
 operator|.
-name|attachementTypeFlagRoomPicture
+name|attachmentTypeFlagRoomPicture
 argument_list|()
 argument_list|,
 name|FieldType
@@ -499,7 +499,7 @@ name|Field
 argument_list|(
 name|MESSAGES
 operator|.
-name|attachementTypeFlagShowRoomsTable
+name|attachmentTypeFlagShowRoomsTable
 argument_list|()
 argument_list|,
 name|FieldType
@@ -514,7 +514,7 @@ name|Field
 argument_list|(
 name|MESSAGES
 operator|.
-name|attachementTypeFlagShowRoomTooltip
+name|attachmentTypeFlagShowRoomTooltip
 argument_list|()
 argument_list|,
 name|FieldType
@@ -534,10 +534,10 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|AttachementType
+name|AttachmentType
 name|atype
 range|:
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -601,7 +601,7 @@ name|setField
 argument_list|(
 literal|3
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -626,7 +626,7 @@ name|setField
 argument_list|(
 literal|4
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -651,7 +651,7 @@ name|setField
 argument_list|(
 literal|5
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -676,7 +676,7 @@ name|setField
 argument_list|(
 literal|6
 argument_list|,
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -746,7 +746,7 @@ name|hasPermission
 argument_list|(
 name|Right
 operator|.
-name|AttachementTypeEdit
+name|AttachmentTypeEdit
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -783,7 +783,7 @@ argument_list|)
 condition|)
 name|flags
 operator|=
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -810,7 +810,7 @@ argument_list|)
 condition|)
 name|flags
 operator|=
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -837,7 +837,7 @@ argument_list|)
 condition|)
 name|flags
 operator|=
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -864,7 +864,7 @@ argument_list|)
 condition|)
 name|flags
 operator|=
-name|AttachementType
+name|AttachmentType
 operator|.
 name|VisibilityFlag
 operator|.
@@ -884,7 +884,7 @@ name|Override
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('AttachementTypeEdit')"
+literal|"checkPermission('AttachmentTypeEdit')"
 argument_list|)
 specifier|public
 name|void
@@ -902,10 +902,10 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|AttachementType
+name|AttachmentType
 name|type
 range|:
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -982,7 +982,7 @@ name|Override
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('AttachementTypeEdit')"
+literal|"checkPermission('AttachmentTypeEdit')"
 argument_list|)
 specifier|public
 name|void
@@ -998,11 +998,11 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-name|AttachementType
+name|AttachmentType
 name|type
 init|=
 operator|new
-name|AttachementType
+name|AttachmentType
 argument_list|()
 decl_stmt|;
 name|type
@@ -1099,7 +1099,7 @@ specifier|protected
 name|void
 name|update
 parameter_list|(
-name|AttachementType
+name|AttachmentType
 name|type
 parameter_list|,
 name|Record
@@ -1270,7 +1270,7 @@ name|Override
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('AttachementTypeEdit')"
+literal|"checkPermission('AttachmentTypeEdit')"
 argument_list|)
 specifier|public
 name|void
@@ -1288,7 +1288,7 @@ parameter_list|)
 block|{
 name|update
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -1315,7 +1315,7 @@ specifier|protected
 name|void
 name|delete
 parameter_list|(
-name|AttachementType
+name|AttachmentType
 name|type
 parameter_list|,
 name|SessionContext
@@ -1373,7 +1373,7 @@ name|Override
 annotation|@
 name|PreAuthorize
 argument_list|(
-literal|"checkPermission('AttachementTypeEdit')"
+literal|"checkPermission('AttachmentTypeEdit')"
 argument_list|)
 specifier|public
 name|void
@@ -1391,7 +1391,7 @@ parameter_list|)
 block|{
 name|delete
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()

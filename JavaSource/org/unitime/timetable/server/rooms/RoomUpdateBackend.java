@@ -827,7 +827,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 import|;
 end_import
 
@@ -5984,7 +5984,7 @@ literal|null
 condition|?
 literal|null
 else|:
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -6350,7 +6350,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -6408,7 +6408,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -9808,7 +9808,7 @@ literal|null
 condition|?
 literal|null
 else|:
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -10137,7 +10137,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -10261,7 +10261,7 @@ name|np
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -10320,7 +10320,7 @@ name|picture
 operator|.
 name|setType
 argument_list|(
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()

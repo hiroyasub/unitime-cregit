@@ -37,7 +37,7 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseAttachementType
+name|BaseAttachmentType
 import|;
 end_import
 
@@ -53,20 +53,20 @@ name|model
 operator|.
 name|dao
 operator|.
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|AttachementType
+name|AttachmentType
 extends|extends
-name|BaseAttachementType
+name|BaseAttachmentType
 implements|implements
 name|Comparable
 argument_list|<
-name|AttachementType
+name|AttachmentType
 argument_list|>
 block|{
 specifier|private
@@ -171,7 +171,7 @@ return|;
 block|}
 block|}
 specifier|public
-name|AttachementType
+name|AttachmentType
 parameter_list|()
 block|{
 name|super
@@ -184,7 +184,7 @@ specifier|public
 name|int
 name|compareTo
 parameter_list|(
-name|AttachementType
+name|AttachmentType
 name|a
 parameter_list|)
 block|{
@@ -228,7 +228,7 @@ specifier|public
 specifier|static
 name|List
 argument_list|<
-name|AttachementType
+name|AttachmentType
 argument_list|>
 name|listTypes
 parameter_list|(
@@ -243,7 +243,7 @@ operator|==
 literal|0
 condition|)
 return|return
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -253,7 +253,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AttachementType order by label"
+literal|"from AttachmentType order by label"
 argument_list|)
 operator|.
 name|setCacheable
@@ -266,7 +266,7 @@ argument_list|()
 return|;
 else|else
 return|return
-name|AttachementTypeDAO
+name|AttachmentTypeDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -276,7 +276,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AttachementType where bit_and(visibility, :flag) = :flag order by label"
+literal|"from AttachmentType where bit_and(visibility, :flag) = :flag order by label"
 argument_list|)
 operator|.
 name|setInteger
@@ -299,7 +299,7 @@ specifier|public
 specifier|static
 name|List
 argument_list|<
-name|AttachementType
+name|AttachmentType
 argument_list|>
 name|listTypes
 parameter_list|(
@@ -340,7 +340,7 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|AttachementType
+name|AttachmentType
 name|findByReference
 parameter_list|(
 name|org
@@ -365,13 +365,13 @@ literal|null
 return|;
 return|return
 operator|(
-name|AttachementType
+name|AttachmentType
 operator|)
 name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AttachementType t where t.reference = :reference"
+literal|"from AttachmentType t where t.reference = :reference"
 argument_list|)
 operator|.
 name|setString
