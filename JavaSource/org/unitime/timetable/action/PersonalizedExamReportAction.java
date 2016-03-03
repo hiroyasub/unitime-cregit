@@ -5296,9 +5296,10 @@ literal|0
 condition|)
 name|days
 operator|+=
-name|Constants
+name|CONSTANTS
 operator|.
-name|DAY_NAMES_SHORT
+name|shortDays
+argument_list|()
 index|[
 name|i
 index|]
@@ -12522,9 +12523,10 @@ literal|0
 condition|)
 name|days
 operator|+=
-name|Constants
+name|CONSTANTS
 operator|.
-name|DAY_NAMES_SHORT
+name|shortDays
+argument_list|()
 index|[
 name|i
 index|]
