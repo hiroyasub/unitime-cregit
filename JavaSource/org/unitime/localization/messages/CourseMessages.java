@@ -1283,6 +1283,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Date"
+argument_list|)
+name|String
+name|columnAssignedDatePattern
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Name"
 argument_list|)
 name|String
@@ -1739,6 +1748,15 @@ literal|"Enroll"
 argument_list|)
 name|String
 name|columnEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrollment"
+argument_list|)
+name|String
+name|columnEnrollment
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2269,6 +2287,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Edit Instructor"
+argument_list|)
+name|String
+name|actionEditInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Preferences"
+argument_list|)
+name|String
+name|actionEditInstructorPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Distribution Preference"
 argument_list|)
 name|String
@@ -2390,6 +2426,15 @@ literal|"Back"
 argument_list|)
 name|String
 name|actionBackSubpartDetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Back"
+argument_list|)
+name|String
+name|actionBackInstructorDetail
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2678,6 +2723,24 @@ literal|"Delete"
 argument_list|)
 name|String
 name|actionRemoveInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show Preferences"
+argument_list|)
+name|String
+name|actionDisplayInstructorPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Hide Preferences"
+argument_list|)
+name|String
+name|actionHideInstructorPreferences
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3025,6 +3088,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"I"
+argument_list|)
+name|String
+name|accessEditInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"P"
+argument_list|)
+name|String
+name|accessEditInstructorPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"A"
 argument_list|)
 name|String
@@ -3358,6 +3439,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"H"
+argument_list|)
+name|String
+name|accessHideInstructorPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"S"
+argument_list|)
+name|String
+name|accessShowInstructorPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"X"
 argument_list|)
 name|String
@@ -3583,6 +3682,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"B"
+argument_list|)
+name|String
+name|accessBackInstructorDetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Search/Display Offerings (Alt+{0})"
 argument_list|)
 name|String
@@ -3659,6 +3767,30 @@ literal|"Edit Class (Alt+{0})"
 argument_list|)
 name|String
 name|titleEditClass
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Instructor (Alt+{0})"
+argument_list|)
+name|String
+name|titleEditInstructor
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Instructor Preferences(Alt+{0})"
+argument_list|)
+name|String
+name|titleEditInstructorPreferences
 parameter_list|(
 name|String
 name|accessKey
@@ -3755,6 +3887,18 @@ literal|"Update and go to previous Instructional Offering (Alt+{0})"
 argument_list|)
 name|String
 name|titlePreviousIOWithUpdate
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Go to previous Instructor (Alt+{0})"
+argument_list|)
+name|String
+name|titlePreviousInstructor
 parameter_list|(
 name|String
 name|accessKey
@@ -3863,6 +4007,18 @@ literal|"Update and go to next Instructor (Alt+{0})"
 argument_list|)
 name|String
 name|titleNextInstructorWithUpdate
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Go to next Instructor (Alt+{0})"
+argument_list|)
+name|String
+name|titleNextInstructor
 parameter_list|(
 name|String
 name|accessKey
@@ -4798,6 +4954,18 @@ argument_list|(
 literal|"Back to Instructors (Alt+{0})"
 argument_list|)
 name|String
+name|titleBackInstructorDetail
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Back to Instructors (Alt+{0})"
+argument_list|)
+name|String
 name|titleBackToInstructors
 parameter_list|(
 name|String
@@ -4923,6 +5091,15 @@ literal|"ERRORS"
 argument_list|)
 name|String
 name|errorsClassDetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ERRORS"
+argument_list|)
+name|String
+name|errorsInstructorDetail
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5597,6 +5774,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"This instructor is allowed to teach two back-to-back classes that are too far away."
+argument_list|)
+name|String
+name|descriptionInstructorIgnoreTooFar
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructor Info not supplied."
 argument_list|)
 name|String
@@ -6129,6 +6315,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class Assignments"
+argument_list|)
+name|String
+name|sectionTitleClassAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Conflicting Meetings"
 argument_list|)
 name|String
@@ -6152,6 +6347,30 @@ argument_list|)
 name|String
 name|titleInstructorNotDisplayed
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Hide Instructor Preferences (Alt+{0})"
+argument_list|)
+name|String
+name|titleHideInstructorPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show Instructor Preferences (Alt+{0})"
+argument_list|)
+name|String
+name|titleShowInstructorPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
