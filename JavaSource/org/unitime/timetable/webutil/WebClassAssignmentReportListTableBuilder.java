@@ -402,7 +402,12 @@ parameter_list|()
 block|{
 return|return
 operator|(
-literal|" Room Assignments"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|classAssignmentsAdditionalNote
+argument_list|()
 operator|)
 return|;
 block|}

@@ -7786,9 +7786,10 @@ name|sb
 operator|.
 name|append
 argument_list|(
-name|Constants
+name|CONSTANTS
 operator|.
-name|DAY_NAMES_SHORT
+name|shortDays
+argument_list|()
 index|[
 name|e
 operator|.
