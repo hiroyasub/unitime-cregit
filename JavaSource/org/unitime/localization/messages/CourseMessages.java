@@ -899,6 +899,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Name"
+argument_list|)
+name|String
+name|columnName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"External Id"
 argument_list|)
 name|String
@@ -2250,6 +2259,20 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Export CSV"
+argument_list|)
+annotation|@
+name|StrutsAction
+argument_list|(
+literal|"exportCsv"
+argument_list|)
+name|String
+name|actionExportCsv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Worksheet PDF"
 argument_list|)
 annotation|@
@@ -3061,6 +3084,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"C"
+argument_list|)
+name|String
+name|accessExportCsv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"W"
 argument_list|)
 name|String
@@ -3731,6 +3763,18 @@ literal|"Export PDF (Alt+{0})"
 argument_list|)
 name|String
 name|titleExportPdf
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export CSV (Alt+{0})"
+argument_list|)
+name|String
+name|titleExportCsv
 parameter_list|(
 name|String
 name|accessKey
@@ -7015,6 +7059,36 @@ literal|"One or more classes of this instructional offering are in a conflict."
 argument_list|)
 name|String
 name|warnOfferingHasConflictingClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Managed As {0}"
+argument_list|)
+name|String
+name|crossListManagedAs
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Assignments"
+argument_list|)
+name|String
+name|classAssignmentsAdditionalNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancelled"
+argument_list|)
+name|String
+name|statusCancelled
 parameter_list|()
 function_decl|;
 block|}
