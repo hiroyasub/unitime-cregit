@@ -404,6 +404,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Distribution Type:"
+argument_list|)
+name|String
+name|propertyDistributionType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Structure:"
+argument_list|)
+name|String
+name|propertyDistributionStructure
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Preference:"
+argument_list|)
+name|String
+name|propertyDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Initial Assignment:"
 argument_list|)
 name|String
@@ -872,6 +899,15 @@ literal|"All"
 argument_list|)
 name|String
 name|dropDeptAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All"
+argument_list|)
+name|String
+name|dropDistrPrefAll
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1641,6 +1677,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Preference"
+argument_list|)
+name|String
+name|columnDistrPrefLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Min Limit<br>per Class"
 argument_list|)
 name|String
@@ -2161,6 +2206,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No preferences found"
+argument_list|)
+name|String
+name|errorNoDistributionPreferencesFound
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Sort By:"
 argument_list|)
 name|String
@@ -2223,6 +2277,15 @@ name|class
 argument_list|)
 name|String
 name|actionSearchInstructionalOfferings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Search"
+argument_list|)
+name|String
+name|actionSearchDistributionPreferences
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2373,6 +2436,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add New Distribution Preference"
+argument_list|)
+name|String
+name|actionAddNewDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Class"
+argument_list|)
+name|String
+name|actionAddClassToDistribution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Assign"
 argument_list|)
 name|String
@@ -2484,6 +2565,15 @@ argument_list|(
 literal|"Back"
 argument_list|)
 name|String
+name|actionBackDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Back"
+argument_list|)
+name|String
 name|actionBackSubpartDetail
 parameter_list|()
 function_decl|;
@@ -2521,6 +2611,24 @@ literal|"Update"
 argument_list|)
 name|String
 name|actionUpdatePreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update"
+argument_list|)
+name|String
+name|actionUpdateDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Save"
+argument_list|)
+name|String
+name|actionSaveNewDistributionPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2787,6 +2895,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionDeleteDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Show Preferences"
 argument_list|)
 name|String
@@ -2926,6 +3043,15 @@ literal|"Delete"
 argument_list|)
 name|String
 name|actionDeleteIO
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionDelete
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3106,6 +3232,15 @@ literal|"S"
 argument_list|)
 name|String
 name|accessSearchInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"S"
+argument_list|)
+name|String
+name|accessSearchDistributionPreferences
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3294,6 +3429,15 @@ argument_list|(
 literal|"B"
 argument_list|)
 name|String
+name|accessBackDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"B"
+argument_list|)
+name|String
 name|accessBackSubpartDetail
 parameter_list|()
 function_decl|;
@@ -3372,6 +3516,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"U"
+argument_list|)
+name|String
+name|accessUpdateDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"S"
+argument_list|)
+name|String
+name|accessSaveNewDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -3403,6 +3565,15 @@ literal|"C"
 argument_list|)
 name|String
 name|accessClearClassPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"C"
+argument_list|)
+name|String
+name|accessAddClassToDistribution
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3507,6 +3678,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"A"
+argument_list|)
+name|String
+name|accessAddNewDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"H"
 argument_list|)
 name|String
@@ -3547,6 +3727,15 @@ literal|"D"
 argument_list|)
 name|String
 name|accessDeleteConfiguration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"D"
+argument_list|)
+name|String
+name|accessDeleteDistributionPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3771,6 +3960,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Search Distribution Preferences (Alt+{0})"
+argument_list|)
+name|String
+name|titleSearchDistributionPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Search/Display Classes (Alt+{0})"
 argument_list|)
 name|String
@@ -3855,6 +4056,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Class (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddClassToDistribution
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Edit Instructor (Alt+{0})"
 argument_list|)
 name|String
@@ -3879,10 +4092,40 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Move Up"
+argument_list|)
+name|String
+name|titleMoveUp
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Move Down"
+argument_list|)
+name|String
+name|titleMoveDown
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Distribution Preference (Alt+{0})"
 argument_list|)
 name|String
 name|titleAddDistributionPreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add New Distribution Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddNewDistributionPreference
 parameter_list|(
 name|String
 name|accessKey
@@ -4191,6 +4434,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Update Distribution Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleUpdateDistributionPreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Save New Distribution Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleSaveNewDistributionPreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Return to %% (Alt+{0})"
 argument_list|)
 name|String
@@ -4441,6 +4708,18 @@ literal|"Delete Configuration (Alt+{0})"
 argument_list|)
 name|String
 name|titleDeleteConfiguration
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete Distribution Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleDeleteDistributionPreference
 parameter_list|(
 name|String
 name|accessKey
@@ -4839,6 +5118,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Return to %% (Alt+{0})"
+argument_list|)
+name|String
+name|titleBackDistributionPreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Controlling Course"
 argument_list|)
 name|String
@@ -5157,11 +5448,83 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Select a distribution type."
+argument_list|)
+name|String
+name|errorSelectDistributionType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Select a preference level."
+argument_list|)
+name|String
+name|errorSelectDistributionPreferenceLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid class selections: Check for duplicate / blank selection."
+argument_list|)
+name|String
+name|errorInvalidClassSelectionDP
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid class selections: Select at least one subpart."
+argument_list|)
+name|String
+name|errorInvalidClassSelectionDPSubpart
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid class selections: Select at least two classes."
+argument_list|)
+name|String
+name|errorInvalidClassSelectionDPMinTwoClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid class selections: An individual class cannot be selected if the entire subpart has been selected."
+argument_list|)
+name|String
+name|errorInvalidClassSelectionDPIndividualClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"ERRORS"
 argument_list|)
 comment|//preferable to use this than errors for each page
 name|String
 name|errors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No classes exist for the given subpart"
+argument_list|)
+name|String
+name|errorNoClassesExist
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No subparts exist for the given course"
+argument_list|)
+name|String
+name|errorNoSupbartsExist
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6073,6 +6436,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Distribution Preferences"
+argument_list|)
+name|String
+name|backDistributionPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class Assignments ({0})"
 argument_list|)
 name|String
@@ -6254,6 +6626,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Classes in Distribution"
+argument_list|)
+name|String
+name|sectionTitleClassesInDistribution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Room Preferences"
 argument_list|)
 name|String
@@ -6294,6 +6675,24 @@ literal|"Distribution Preferences"
 argument_list|)
 name|String
 name|sectionTitleDistributionPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Distribution Preference"
+argument_list|)
+name|String
+name|sectionTitleAddDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Distribution Preference"
+argument_list|)
+name|String
+name|sectionTitleEditDistributionPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -7137,6 +7536,393 @@ literal|"Cancelled"
 argument_list|)
 name|String
 name|statusCancelled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The constraint will apply to all classes in the selected distribution set. "
+operator|+
+literal|"For example, a Back-to-Back constraint among three classes seeks to place all three classes "
+operator|+
+literal|"sequentially in time such that there are no intervening class times (transition time between "
+operator|+
+literal|"classes is taken into account, e.g., if the first class ends at 8:20, the second has to start at 8:30)."
+argument_list|)
+name|String
+name|distributionStructureDescriptionAllClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is created between classes in one scheduling subpart and the "
+operator|+
+literal|"appropriate class(es) in one or more other subparts. This structure links child and parent "
+operator|+
+literal|"classes together if subparts have been grouped. Otherwise the first class in one subpart is "
+operator|+
+literal|"linked to the the first class in the second subpart, etc."
+argument_list|)
+name|String
+name|distributionStructureDescriptionProgressive
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is applied only on subsets containing two classes in the selected "
+operator|+
+literal|"distribution set.  A constraint is posted between the first two classes (in the order listed), "
+operator|+
+literal|"then between the second two classes, etc."
+argument_list|)
+name|String
+name|distributionStructureDescriptionGroupsOfTwo
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is applied only on subsets containing three classes in the selected "
+operator|+
+literal|"distribution set.  A constraint is posted between the first three classes (in the order listed), "
+operator|+
+literal|"then between the second three classes, etc."
+argument_list|)
+name|String
+name|distributionStructureDescriptionGroupsOfThree
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is applied only on subsets containing four classes in the selected "
+operator|+
+literal|"distribution set.  A constraint is posted between the first four classes (in the order listed), "
+operator|+
+literal|"then between the second four classes, etc."
+argument_list|)
+name|String
+name|distributionStructureDescriptionGroupsOfFour
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is applied only on subsets containing five classes in the selected "
+operator|+
+literal|"distribution set.  A constraint is posted between the first five classes (in the order listed), "
+operator|+
+literal|"then between the second five classes, etc."
+argument_list|)
+name|String
+name|distributionStructureDescriptionGroupsOfFive
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is created between every pair of classes in the selected distribution set. "
+operator|+
+literal|"Therefore, if n classes are in the set, n(n-1)/2 constraints will be posted among the classes. "
+operator|+
+literal|"This structure should not be used with \"required\" or \"prohibited\" preferences on sets containing "
+operator|+
+literal|"more than a few classes."
+argument_list|)
+name|String
+name|distributionStructureDescriptionPairwise
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The distribution constraint is created for each combination of classes such that one class is taken from each "
+operator|+
+literal|"line representing a class or a scheduling subpart. "
+operator|+
+literal|"For instance, if the constraint is put between three scheduling subparts, a constraint will be posted between "
+operator|+
+literal|"each combination of three classes, each from one of the three subparts. If a constraint is put between a class and "
+operator|+
+literal|"a scheduling subpart, there will be a binary constraint posted between the class and each of the classes of the scheduling subpart."
+argument_list|)
+name|String
+name|distributionStructureDescriptionOneOfEach
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All Classes"
+argument_list|)
+name|String
+name|distributionStructureNameAllClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Progressive"
+argument_list|)
+name|String
+name|distributionStructureNameProgressive
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Groups of Two"
+argument_list|)
+name|String
+name|distributionStructureNameGroupsOfTwo
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Groups of Three"
+argument_list|)
+name|String
+name|distributionStructureNameGroupsOfThree
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Groups of Four"
+argument_list|)
+name|String
+name|distributionStructureNameGroupsOfFour
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Groups Of Five"
+argument_list|)
+name|String
+name|distributionStructureNameGroupsOfFive
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Pairwise"
+argument_list|)
+name|String
+name|distributionStructureNamePairwise
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"One Of Each"
+argument_list|)
+name|String
+name|distributionStructureNameOneOfEach
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0}"
+argument_list|)
+name|String
+name|distributionStructureLabelAllClasses
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Progressive"
+argument_list|)
+name|String
+name|distributionStructureLabelProgressive
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Groups of Two"
+argument_list|)
+name|String
+name|distributionStructureLabelGroupsOfTwo
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Groups of Three"
+argument_list|)
+name|String
+name|distributionStructureLabelGroupsOfThree
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Groups of Four"
+argument_list|)
+name|String
+name|distributionStructureLabelGroupsOfFour
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Groups Of Five"
+argument_list|)
+name|String
+name|distributionStructureLabelGroupsOfFive
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Pairwise"
+argument_list|)
+name|String
+name|distributionStructureLabelPairwise
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} One Of Each"
+argument_list|)
+name|String
+name|distributionStructureLabelOneOfEach
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0}"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationAllClasses
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Prg"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationProgressive
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Go2"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationGroupsOfTwo
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Go3"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationGroupsOfThree
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Go4"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationGroupsOfFour
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Go5"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationGroupsOfFive
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Pair"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationPairwise
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} OoE"
+argument_list|)
+name|String
+name|distributionStructureAbbreviationOneOfEach
+parameter_list|(
+name|String
+name|content
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Distribution Preferences"
+argument_list|)
+name|String
+name|pageTitleDistributionPreferencesPdf
 parameter_list|()
 function_decl|;
 block|}

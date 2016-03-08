@@ -4754,17 +4754,7 @@ literal|" "
 operator|+
 name|dp
 operator|.
-name|getDistributionType
-argument_list|()
-operator|.
 name|getLabel
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|dp
-operator|.
-name|getGroupingSufix
 argument_list|()
 operator|+
 literal|" between"

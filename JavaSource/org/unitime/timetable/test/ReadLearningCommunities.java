@@ -1311,11 +1311,13 @@ argument_list|)
 expr_stmt|;
 name|dpLinkedSections
 operator|.
-name|setGrouping
+name|setStructure
 argument_list|(
 name|DistributionPref
 operator|.
-name|sGroupingNone
+name|Structure
+operator|.
+name|AllClasses
 argument_list|)
 expr_stmt|;
 name|dpLinkedSections

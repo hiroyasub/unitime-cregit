@@ -1049,7 +1049,12 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" Distribution Preferences"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|pageTitleDistributionPreferencesPdf
+argument_list|()
 expr_stmt|;
 else|else
 name|title
@@ -1061,7 +1066,12 @@ operator|.
 name|getLabel
 argument_list|()
 operator|+
-literal|" Distribution Preferences"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|pageTitleDistributionPreferencesPdf
+argument_list|()
 expr_stmt|;
 name|toPdfTable
 argument_list|(
@@ -1652,7 +1662,37 @@ literal|"</DIV>"
 operator|+
 literal|"</td><td style='padding-bottom: 2px'>"
 operator|+
-literal|"<input type=\"submit\" name=\"op\" class=\"btn\" accesskey='A' title='Add New Distribution Preference (Alt+A)' value=\"Add Distribution Preference\">"
+literal|"<input type=\"submit\" name=\"op\" class=\"btn\" accesskey=\""
+operator|+
+name|MSG
+operator|.
+name|accessAddDistributionPreference
+argument_list|()
+operator|+
+literal|"\" "
+operator|+
+literal|"title=\""
+operator|+
+name|MSG
+operator|.
+name|titleAddDistributionPreference
+argument_list|(
+name|MSG
+operator|.
+name|accessAddDistributionPreference
+argument_list|()
+argument_list|)
+operator|+
+literal|"\" "
+operator|+
+literal|"value=\""
+operator|+
+name|MSG
+operator|.
+name|actionAddDistributionPreference
+argument_list|()
+operator|+
+literal|"\">"
 operator|+
 literal|"</td></tr></table>"
 expr_stmt|;
@@ -1898,7 +1938,7 @@ name|groupingText
 init|=
 name|dp
 operator|.
-name|getGroupingName
+name|getStructureName
 argument_list|()
 decl_stmt|;
 name|Comparable
@@ -2102,7 +2142,12 @@ argument_list|()
 expr_stmt|;
 name|groupingText
 operator|=
-literal|"Instructor "
+name|MSG
+operator|.
+name|columnInstructor
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|instructor
 operator|.
@@ -2498,15 +2543,30 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Preference"
+name|MSG
+operator|.
+name|columnDistrPrefLevel
+argument_list|()
 block|,
-literal|"Type"
+name|MSG
+operator|.
+name|columnDistrPrefType
+argument_list|()
 block|,
-literal|"Structure"
+name|MSG
+operator|.
+name|columnDistrPrefStructure
+argument_list|()
 block|,
-literal|"Owner"
+name|MSG
+operator|.
+name|columnDistrPrefOwner
+argument_list|()
 block|,
-literal|"Class"
+name|MSG
+operator|.
+name|columnDistrPrefClass
+argument_list|()
 block|}
 argument_list|,
 operator|new
@@ -2699,7 +2759,7 @@ name|groupingText
 init|=
 name|dp
 operator|.
-name|getGroupingName
+name|getStructureName
 argument_list|()
 decl_stmt|;
 name|Comparable
@@ -2851,7 +2911,12 @@ expr_stmt|;
 block|}
 name|groupingText
 operator|=
-literal|"Instructor "
+name|MSG
+operator|.
+name|columnInstructor
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|instructor
 operator|.
@@ -2951,7 +3016,10 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"No preferences found"
+name|MSG
+operator|.
+name|errorNoDistributionPreferencesFound
+argument_list|()
 block|,
 literal|""
 block|,
