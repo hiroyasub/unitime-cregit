@@ -846,7 +846,7 @@ argument_list|)
 decl|@
 name|Description
 argument_list|(
-literal|"All Pages: default locale (e.g., en for english)"
+literal|"All Pages: default locale (e.g., en for English)"
 argument_list|)
 name|Locale
 argument_list|(
@@ -2102,7 +2102,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Data Exchange: trim leading zeros from extednal user id"
+literal|"Data Exchange: trim leading zeros from external user id"
 argument_list|)
 name|DataExchangeTrimLeadingZerosFromExternalIds
 argument_list|(
@@ -2365,7 +2365,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Online Student Scheduling: save course requests during the scheduling assistent mode"
+literal|"Online Student Scheduling: save course requests during the scheduling assistant mode"
 argument_list|)
 name|OnlineSchedulingSaveRequests
 argument_list|(
@@ -2404,7 +2404,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Online Student Scheduling: allow student to select over-expected sections (even if there is a choise avoiding them)"
+literal|"Online Student Scheduling: allow student to select over-expected sections (even if there is a choice avoiding them)"
 argument_list|)
 name|OnlineSchedulingAllowOverExpected
 argument_list|(
@@ -2644,7 +2644,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Room Availability: enable instructor unavailabilty; instructor unavailabilty includes special and course-related events that are approved and where the instructor is the main contact or he/she is present in the additional contacts of the event"
+literal|"Room Availability: enable instructor unavailability; instructor unavailability includes special and course-related events that are approved and where the instructor is the main contact or he/she is present in the additional contacts of the event"
 argument_list|)
 name|RoomAvailabilityIncludeInstructors
 argument_list|(
@@ -2762,7 +2762,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Scheduling Subpart Credit: editation allowed"
+literal|"Scheduling Subpart Credit: edit allowed"
 argument_list|)
 name|SubpartCreditEditable
 argument_list|(
@@ -3312,7 +3312,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Examination Reports: text to be displayed when an exam has no room assinged (e.g., INSTR OFFC)"
+literal|"Examination Reports: text to be displayed when an exam has no room assigned (e.g., INSTR OFFC)"
 argument_list|)
 name|ExaminationsNoRoomText
 argument_list|(
@@ -3729,7 +3729,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Examinations: use class / course limits to compute examination size instead of the actuall enrollment (defaults to false, except of final exams where it is true)"
+literal|"Examinations: use class / course limits to compute examination size instead of the actual enrollment (defaults to false, except of final exams where it is true)"
 argument_list|)
 expr|@
 name|Parameter
@@ -3812,7 +3812,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Examination Name: if there is an examiantion for a cross-listed instructional offering, name the examination after all the courses (not just after the controlling one)"
+literal|"Examination Name: if there is an examination for a cross-listed instructional offering, name the examination after all the courses (not just after the controlling one)"
 argument_list|)
 name|ExaminationNameExpandCrossListedOfferingsToCourses
 argument_list|(
@@ -4061,7 +4061,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Examination Preferences: default prefence for an evening class exam of % examination type (R for required, -2 strongly preferred, -1 preferred, 0 rule disabled, 1 discouraged, 2 strongly discouraged, P prohibited)"
+literal|"Examination Preferences: default preference for an evening class exam of % examination type (R for required, -2 strongly preferred, -1 preferred, 0 rule disabled, 1 discouraged, 2 strongly discouraged, P prohibited)"
 argument_list|)
 expr|@
 name|Parameter
@@ -4109,7 +4109,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Examination Preferences: default room prefence for a class exam of % examination type (R for required, -2 strongly preferred, -1 preferred, 0 rule disabled, 1 discouraged, 2 strongly discouraged, P prohibited)"
+literal|"Examination Preferences: default room preference for a class exam of % examination type (R for required, -2 strongly preferred, -1 preferred, 0 rule disabled, 1 discouraged, 2 strongly discouraged, P prohibited)"
 argument_list|)
 expr|@
 name|Parameter
@@ -4130,7 +4130,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Examination Preferences: default building prefence for a class exam of % examination type (R for required, -2 strongly preferred, -1 preferred, 0 rule disabled, 1 discouraged, 2 strongly discouraged, P prohibited)"
+literal|"Examination Preferences: default building preference for a class exam of % examination type (R for required, -2 strongly preferred, -1 preferred, 0 rule disabled, 1 discouraged, 2 strongly discouraged, P prohibited)"
 argument_list|)
 expr|@
 name|Parameter
@@ -4512,7 +4512,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Makup Curriculum: minimal procentual projection across all the classifications (for a course to show up)"
+literal|"Re-Create Curriculum: minimal percentual projection across all the classifications (for a course to show up)"
 argument_list|)
 name|CurriculumLastLikeDemandsTotalShareLimit
 argument_list|(
@@ -4534,7 +4534,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Makup Curriculum: minimal procentual projection"
+literal|"Re-Create Curriculum: minimal percentual projection"
 argument_list|)
 name|CurriculumLastLikeDemandsShareLimit
 argument_list|(
@@ -4556,7 +4556,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Makup Curriculum: minimal number of last-like students"
+literal|"Re-Create Curriculum: minimal number of last-like students"
 argument_list|)
 name|CurriculumLastLikeDemandsEnrollmentLimit
 argument_list|(
@@ -4578,7 +4578,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Events: indicate that a meeting is on an unusual time (too early); the value is the last time slot that is considered too early (e.g., 72 means 6 am)"
+literal|"Events: indicate that a meeting is at an unusual time (too early); the value is the last time slot that is considered too early (e.g., 72 means 6 am)"
 argument_list|)
 name|EventTooEarlySlot
 argument_list|(
@@ -5038,7 +5038,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Contact Us: also send an autoreply message back to the user (if false, the user is CC-ed in the original message); this is handy when sending emails to users can fail (e.g., because of an invalid email address)"
+literal|"Contact Us: send an autoreply message back to the user (if false, the user is CC-ed in the original message); this is handy when sending emails to users can fail (e.g., because of an invalid email address)"
 argument_list|)
 name|EmailInquiryAutoreply
 argument_list|(
@@ -5416,7 +5416,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Clustering: form solver cluster to communitace between solver servers"
+literal|"Clustering: form solver cluster to communicate between solver servers"
 argument_list|)
 expr|@
 name|Since
@@ -5676,7 +5676,7 @@ literal|"Date Pattern Display Format: display the start and end date of a class 
 operator|+
 literal|" never ... always use date pattern name,\n"
 operator|+
-literal|" external ... when the date pattern is of external type,\n"
+literal|" external ... when the date pattern is of the external type,\n"
 operator|+
 literal|" alternate ... when the date pattern is NOT of alternative weeks type,\n"
 operator|+
@@ -5866,7 +5866,7 @@ operator|,
 expr_stmt|@
 name|Description
 argument_list|(
-literal|"Reservations: default reservation expiration date for all reservation types (given either in the number of days relative to the academic session begin date, or as a date in yyyy-mm-dd format)"
+literal|"Reservations: default reservation expiration date for all reservation types (given either in the number of days relative to the academic session begin date or as a date in yyyy-mm-dd format)"
 argument_list|)
 name|ReservationExpirationDateGlobal
 argument_list|(
@@ -5876,7 +5876,7 @@ operator|,
 expr_stmt|@
 name|Description
 argument_list|(
-literal|"Reservations: default reservation expiration date for reservation of type % (given either in the number of days relative to the academic session begin date, or as a date in yyyy-mm-dd format)"
+literal|"Reservations: default reservation expiration date for reservation of type % (given either in the number of days relative to the academic session begin date or as a date in yyyy-mm-dd format)"
 argument_list|)
 expr|@
 name|Parameter
@@ -6062,7 +6062,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Solver: serialize uniuqe ids in the XML Export"
+literal|"Solver: serialize unique ids in the XML Export"
 argument_list|)
 name|SolverXMLExportConvertIds
 argument_list|(
@@ -6820,7 +6820,7 @@ name|Description
 argument_list|(
 literal|"Timetable Grid: When class instructors are used (instead of solution instructors), consider Display Instructors flag on the class."
 operator|+
-literal|" That is, hide instructors on classes that does not show instructors when set to true."
+literal|" That is, hide instructors on classes that do not show instructors when set to true."
 argument_list|)
 name|TimetableGridUseClassInstructorsCheckClassDisplayInstructors
 argument_list|(
@@ -6844,7 +6844,7 @@ name|Description
 argument_list|(
 literal|"Timetable Grid: When class instructors are used (instead of solution instructors), display only instructors with the Check Conflicts toggle set."
 operator|+
-literal|" That is, show all instructors that are assigned on a class (including those that are not checked for conflicts in course timetabling) when set to false."
+literal|" That is, show all instructors that are assigned to a class (including those that are not checked for conflicts in course timetabling) when set to false."
 argument_list|)
 name|TimetableGridUseClassInstructorsCheckLead
 argument_list|(
@@ -7157,7 +7157,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Instructor Add/Edit: allow editation of external id"
+literal|"Instructor Add/Edit: allow edit of external id"
 argument_list|)
 name|InstructorAllowEditExternalId
 argument_list|(
@@ -7334,7 +7334,7 @@ literal|"this property contains a list of regular expressions that are used to r
 operator|+
 literal|"can contain multiple lines with the following sequence:"
 operator|+
-literal|"\n  1st regural expression,\n  1st replacement,\n  2nd regular expression,\n  2nd replacement,\n  ...\n"
+literal|"\n  1st regular expression,\n  1st replacement,\n  2nd regular expression,\n  2nd replacement,\n  ...\n"
 operator|+
 literal|"Example:\n  (?i)<a href=\"[^>]*\">\n<b>\n  (?i)</a>\n</b>"
 argument_list|)
@@ -7710,7 +7710,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Reservations: Individual reservation allow time conflicts"
+literal|"Reservations: Individual reservation allows time conflicts"
 argument_list|)
 name|ReservationAllowOverlapIndividual
 argument_list|(
@@ -7732,7 +7732,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Reservations: Group reservation allow time conflicts"
+literal|"Reservations: Group reservation allows time conflicts"
 argument_list|)
 name|ReservationAllowOverlapGroup
 argument_list|(
@@ -7754,7 +7754,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Reservations: Course reservation allow time conflicts"
+literal|"Reservations: Course reservation allows time conflicts"
 argument_list|)
 name|ReservationAllowOverlapCourse
 argument_list|(
@@ -7776,7 +7776,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Reservations: Curriculum reservation allow time conflicts"
+literal|"Reservations: Curriculum reservation allows time conflicts"
 argument_list|)
 name|ReservationAllowOverlapCurriculum
 argument_list|(
@@ -7952,7 +7952,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Online Student Scheduling: confirmation email attach ICS (iCalendar) file"
+literal|"Online Student Scheduling: confirmation email has the ICS (iCalendar) file attached"
 argument_list|)
 name|OnlineSchedulingEmailICalendar
 argument_list|(
@@ -7974,7 +7974,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Online Student Scheduling: confirmation email attach timetable grid as image"
+literal|"Online Student Scheduling: confirmation email has the timetable grid as image attached"
 argument_list|)
 name|OnlineSchedulingEmailIncludeImage
 argument_list|(
@@ -7996,7 +7996,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Online Student Scheduling: confirmation email attach message as html file"
+literal|"Online Student Scheduling: confirmation email has the message as html file"
 argument_list|)
 name|OnlineSchedulingEmailIncludeMessage
 argument_list|(
@@ -8295,7 +8295,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"API: hiberna cache mode for the % API connector"
+literal|"API: hibernate cache mode for the % API connector"
 argument_list|)
 expr|@
 name|Parameter
@@ -8322,7 +8322,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"API: trim leading zeros from extednal user id"
+literal|"API: trim leading zeros from external user id"
 argument_list|)
 name|ApiTrimLeadingZerosFromUserExternalIds
 argument_list|(
@@ -8420,7 +8420,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Maximum number of classes a scheduling subpart can contain.  Defaults to 998."
+literal|"Instructional Offering Config: maximum number of classes a scheduling subpart can contain.  Defaults to 998."
 argument_list|)
 name|SubpartMaxNumClasses
 argument_list|(
@@ -8442,7 +8442,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Chameleon: allow to swith into any user (not just timetable managers), using the People Lookup dialog"
+literal|"Chameleon: allow to switch into any user (not just timetable managers), using the People Lookup dialog"
 argument_list|)
 name|ChameleonAllowLookup
 argument_list|(
