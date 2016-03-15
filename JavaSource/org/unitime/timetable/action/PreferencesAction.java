@@ -1282,16 +1282,6 @@ name|request
 argument_list|)
 expr_stmt|;
 comment|// Preference Levels
-name|LookupTables
-operator|.
-name|setupInstructorDistribTypes
-argument_list|(
-name|request
-argument_list|,
-name|sessionContext
-argument_list|)
-expr_stmt|;
-comment|// Distribution Types
 return|return
 name|mapping
 operator|.

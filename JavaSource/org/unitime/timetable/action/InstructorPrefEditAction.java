@@ -891,6 +891,17 @@ name|instructorId
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|LookupTables
+operator|.
+name|setupInstructorDistribTypes
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+argument_list|,
+name|inst
+argument_list|)
+expr_stmt|;
 comment|// Cancel - Go back to Instructors Detail Screen
 if|if
 condition|(

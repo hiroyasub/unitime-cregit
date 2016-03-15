@@ -183,6 +183,22 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|commons
+operator|.
+name|web
+operator|.
+name|WebTable
+operator|.
+name|WebTableLine
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -325,6 +341,8 @@ argument_list|(
 literal|false
 argument_list|,
 literal|false
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -339,6 +357,8 @@ argument_list|(
 literal|false
 argument_list|,
 literal|true
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -348,7 +368,7 @@ init|=
 operator|new
 name|WebTable
 argument_list|(
-literal|10
+literal|11
 argument_list|,
 literal|"Distribution Types"
 argument_list|,
@@ -368,6 +388,8 @@ literal|"Name"
 block|,
 literal|"Type"
 block|,
+literal|"Visible"
+block|,
 literal|"Allow Instructor Preference"
 block|,
 literal|"Sequencing Required"
@@ -383,6 +405,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"left"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -408,6 +432,8 @@ operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
@@ -693,6 +719,9 @@ literal|","
 expr_stmt|;
 block|}
 block|}
+name|WebTableLine
+name|line
+init|=
 name|webTable
 operator|.
 name|addLine
@@ -748,6 +777,15 @@ condition|?
 literal|"Examination"
 else|:
 literal|"Course"
+block|,
+name|d
+operator|.
+name|isVisible
+argument_list|()
+condition|?
+literal|"Yes"
+else|:
+literal|"No"
 block|,
 name|d
 operator|.
@@ -841,6 +879,11 @@ else|:
 literal|0
 argument_list|)
 block|,
+name|d
+operator|.
+name|isVisible
+argument_list|()
+block|,
 operator|new
 name|Integer
 argument_list|(
@@ -881,6 +924,21 @@ argument_list|()
 block|}
 argument_list|,
 literal|null
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|d
+operator|.
+name|isVisible
+argument_list|()
+condition|)
+name|line
+operator|.
+name|setStyle
+argument_list|(
+literal|"color:gray;"
 argument_list|)
 expr_stmt|;
 block|}

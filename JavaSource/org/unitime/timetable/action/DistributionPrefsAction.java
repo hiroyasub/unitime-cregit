@@ -1110,17 +1110,6 @@ expr_stmt|;
 comment|//in case no back is available
 block|}
 comment|// Set lookup tables lists
-comment|//LookupTables.setupPrefLevels(request);	 // Preference Levels
-name|LookupTables
-operator|.
-name|setupDistribTypes
-argument_list|(
-name|request
-argument_list|,
-name|sessionContext
-argument_list|)
-expr_stmt|;
-comment|// Distribution Types
 name|Vector
 name|subjectAreaList
 init|=
@@ -2203,6 +2192,17 @@ argument_list|,
 name|prefs
 argument_list|)
 expr_stmt|;
+name|LookupTables
+operator|.
+name|setupDistribTypes
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+argument_list|,
+name|dist
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2226,6 +2226,17 @@ operator|.
 name|setDescription
 argument_list|(
 literal|""
+argument_list|)
+expr_stmt|;
+name|LookupTables
+operator|.
+name|setupDistribTypes
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
