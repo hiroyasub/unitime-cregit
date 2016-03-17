@@ -10471,6 +10471,8 @@ argument_list|,
 literal|"0"
 argument_list|)
 argument_list|)
+operator|&&
+name|selected
 condition|)
 block|{
 name|Set
