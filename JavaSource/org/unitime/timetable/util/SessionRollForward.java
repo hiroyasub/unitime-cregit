@@ -4302,6 +4302,9 @@ condition|(
 operator|!
 name|fromRoomPrefLevel
 operator|.
+name|getPrefProlog
+argument_list|()
+operator|.
 name|equals
 argument_list|(
 name|PreferenceLevel
