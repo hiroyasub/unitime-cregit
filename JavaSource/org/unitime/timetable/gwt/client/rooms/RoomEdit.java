@@ -13446,6 +13446,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|CONSTANTS
+operator|.
+name|checkRoomHasNoDepartment
+argument_list|()
+operator|&&
+operator|(
 name|iProperties
 operator|.
 name|isCanEditDepartments
@@ -13469,6 +13475,7 @@ name|iRoom
 operator|.
 name|isCanChangeAvailability
 argument_list|()
+operator|)
 condition|)
 block|{
 name|boolean

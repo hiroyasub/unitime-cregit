@@ -1045,6 +1045,17 @@ index|[]
 name|reservationModeLabel
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|false
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|boolean
+name|checkRoomHasNoDepartment
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
