@@ -388,16 +388,6 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|Element
-name|flagsEl
-init|=
-name|reportEl
-operator|.
-name|addElement
-argument_list|(
-literal|"flags"
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|SavedHQL
@@ -422,7 +412,7 @@ argument_list|(
 name|flag
 argument_list|)
 condition|)
-name|flagsEl
+name|reportEl
 operator|.
 name|addElement
 argument_list|(
