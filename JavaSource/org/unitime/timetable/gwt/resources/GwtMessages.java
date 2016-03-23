@@ -1336,6 +1336,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Name"
+argument_list|)
+name|String
+name|colNamePerson
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course"
 argument_list|)
 name|String

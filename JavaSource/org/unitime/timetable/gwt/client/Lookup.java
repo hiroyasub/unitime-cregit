@@ -1181,7 +1181,7 @@ name|UniTimeTableHeader
 argument_list|(
 name|MESSAGES
 operator|.
-name|colName
+name|colNamePerson
 argument_list|()
 argument_list|)
 argument_list|)
