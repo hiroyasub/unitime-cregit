@@ -428,6 +428,14 @@ specifier|public
 name|String
 name|registrationException
 decl_stmt|;
+specifier|public
+name|Integer
+name|minHours
+decl_stmt|;
+specifier|public
+name|Integer
+name|maxHours
+decl_stmt|;
 block|}
 specifier|public
 specifier|static
