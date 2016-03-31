@@ -8025,6 +8025,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor Attribute Type"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor Attribute Types"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageInstructorAttributes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -10385,6 +10407,24 @@ literal|"Highlight In Events"
 argument_list|)
 name|String
 name|fieldHighlightInEvents
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Conjunctive"
+argument_list|)
+name|String
+name|fieldConjunctive
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Required Attribute"
+argument_list|)
+name|String
+name|fieldRequiredAttribute
 parameter_list|()
 function_decl|;
 annotation|@
