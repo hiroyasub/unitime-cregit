@@ -17383,6 +17383,14 @@ operator|.
 name|next
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|fromClassInstr
+operator|.
+name|isTentative
+argument_list|()
+condition|)
+continue|continue;
 name|toDeptInstr
 operator|=
 name|fromClassInstr

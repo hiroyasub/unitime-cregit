@@ -210,6 +210,10 @@ name|Long
 name|iUniqueIdRolledForwardFrom
 decl_stmt|;
 specifier|private
+name|Float
+name|iTeachingLoad
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -284,6 +288,13 @@ name|String
 name|PROP_UID_ROLLED_FWD_FROM
 init|=
 literal|"uniqueIdRolledForwardFrom"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_TEACHING_LOAD
+init|=
+literal|"teachingLoad"
 decl_stmt|;
 specifier|public
 name|BaseSchedulingSubpart
@@ -485,6 +496,28 @@ block|{
 name|iUniqueIdRolledForwardFrom
 operator|=
 name|uniqueIdRolledForwardFrom
+expr_stmt|;
+block|}
+specifier|public
+name|Float
+name|getTeachingLoad
+parameter_list|()
+block|{
+return|return
+name|iTeachingLoad
+return|;
+block|}
+specifier|public
+name|void
+name|setTeachingLoad
+parameter_list|(
+name|Float
+name|teachingLoad
+parameter_list|)
+block|{
+name|iTeachingLoad
+operator|=
+name|teachingLoad
 expr_stmt|;
 block|}
 specifier|public
@@ -924,6 +957,11 @@ operator|+
 literal|"\n	StudentAllowOverlap: "
 operator|+
 name|getStudentAllowOverlap
+argument_list|()
+operator|+
+literal|"\n	TeachingLoad: "
+operator|+
+name|getTeachingLoad
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

@@ -7655,6 +7655,16 @@ name|getPercentShare
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|newCi
+operator|.
+name|setTentative
+argument_list|(
+name|ci
+operator|.
+name|isTentative
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|ci
 operator|.
 name|getInstructor

@@ -4633,6 +4633,14 @@ name|isStudentAllowOverlap
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|newSchedulingSubpart
+operator|.
+name|setTeachingLoad
+argument_list|(
+name|getTeachingLoad
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|newSchedulingSubpart
