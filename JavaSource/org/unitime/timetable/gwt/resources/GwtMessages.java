@@ -13219,6 +13219,24 @@ name|String
 name|reservationCancelledClass
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All"
+argument_list|)
+name|String
+name|departmentsAllLabel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All Departments"
+argument_list|)
+name|String
+name|departmentsAllTitle
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
