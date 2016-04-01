@@ -1056,6 +1056,15 @@ name|boolean
 name|checkRoomHasNoDepartment
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"#0.###"
+argument_list|)
+name|String
+name|teachingLoadFormat
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -355,12 +355,12 @@ name|PageName
 argument_list|(
 name|MESSAGES
 operator|.
-name|pageInstructorAttribute
+name|pageInstructorAttributeType
 argument_list|()
 argument_list|,
 name|MESSAGES
 operator|.
-name|pageInstructorAttributes
+name|pageInstructorAttributeTypes
 argument_list|()
 argument_list|)
 return|;

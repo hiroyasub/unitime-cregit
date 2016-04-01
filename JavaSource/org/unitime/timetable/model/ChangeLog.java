@@ -558,6 +558,11 @@ name|OFFERING_DETAIL
 argument_list|(
 literal|"Instructional Offering Detail"
 argument_list|)
+block|,
+name|INSTRUCTOR_ATTRIBUTE_EDIT
+argument_list|(
+literal|"Instructor Attribute Edit"
+argument_list|)
 block|,         ;
 specifier|private
 name|String

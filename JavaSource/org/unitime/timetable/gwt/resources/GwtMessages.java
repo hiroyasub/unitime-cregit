@@ -2299,6 +2299,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructors"
+argument_list|)
+name|String
+name|colInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Position"
+argument_list|)
+name|String
+name|colPosition
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Preference"
+argument_list|)
+name|String
+name|colTeachingPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximal Load"
+argument_list|)
+name|String
+name|colMaxLoad
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Parent"
+argument_list|)
+name|String
+name|colParentAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -3580,6 +3625,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>A</u>dd New"
+argument_list|)
+name|String
+name|buttonAddNewInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>reate Attribute"
+argument_list|)
+name|String
+name|buttonCreateInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>U</u>pdate Attribute"
+argument_list|)
+name|String
+name|buttonUpdateInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>D</u>elete Attribute"
+argument_list|)
+name|String
+name|buttonDeleteInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"OK"
 argument_list|)
 name|String
@@ -4358,6 +4439,51 @@ literal|"Deleting room feature ..."
 argument_list|)
 name|String
 name|waitDeletingRoomFeature
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading instructor attributes..."
+argument_list|)
+name|String
+name|waitLoadingInstructorAttributes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Saving instructor attribute ..."
+argument_list|)
+name|String
+name|waitSavingInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Updating instructor attribute ..."
+argument_list|)
+name|String
+name|waitUpdatingInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Deleting instructor attribute ..."
+argument_list|)
+name|String
+name|waitDeletingInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading instructors..."
+argument_list|)
+name|String
+name|waitLoadingInstructors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5290,6 +5416,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load instructor attributes: {0}"
+argument_list|)
+name|String
+name|failedToLoadInstructorAttributes
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -5396,6 +5534,18 @@ name|warnMeetingTooEarly
 parameter_list|(
 name|String
 name|time
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} has no external id."
+argument_list|)
+name|String
+name|warnInstructorHasNoExternalId
+parameter_list|(
+name|String
+name|name
 parameter_list|)
 function_decl|;
 annotation|@
@@ -6100,6 +6250,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to delete the instructor attribute: {0}"
+argument_list|)
+name|String
+name|errorFailedToDeleteInstructorAttribute
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to save the instructor attribute: {0}"
+argument_list|)
+name|String
+name|errorFailedToSaveInstructorAttribute
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update the instructor attribute: {0}"
+argument_list|)
+name|String
+name|errorFailedToUpdateInstructorAttribute
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Building {0} does not exist."
 argument_list|)
 name|String
@@ -6175,6 +6361,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"There are no instructor attributes created."
+argument_list|)
+name|String
+name|errorNoInstructorAttributes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Name is required."
 argument_list|)
 name|String
@@ -6188,6 +6383,15 @@ literal|"Abbreviation is required."
 argument_list|)
 name|String
 name|errorAbbreviationIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Attribute type must be selected."
+argument_list|)
+name|String
+name|errorNoAttributeTypeSelected
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6254,6 +6458,33 @@ literal|"Room feature {0} already exists in {1}."
 argument_list|)
 name|String
 name|errorRoomFeatureAlreadyExists
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|session
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor attribute {0} does not exist."
+argument_list|)
+name|String
+name|errorInstructorAttributeDoesNotExist
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor attribute {0} already exists in {1}."
+argument_list|)
+name|String
+name|errorInstructorAttributeAlreadyExists
 parameter_list|(
 name|String
 name|name
@@ -8030,13 +8261,46 @@ argument_list|)
 annotation|@
 name|DoNotTranslate
 name|String
-name|pageInstructorAttribute
+name|pageInstructorAttributeType
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
 literal|"Instructor Attribute Types"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageInstructorAttributeTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Instructor Attribute"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageAddInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Instructor Attribute"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageEditInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor Attributes"
 argument_list|)
 annotation|@
 name|DoNotTranslate
@@ -9124,6 +9388,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No Parent"
+argument_list|)
+name|String
+name|itemInstructorAttributeNoParent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} seats"
 argument_list|)
 name|String
@@ -9837,6 +10110,33 @@ literal|"Applies To:"
 argument_list|)
 name|String
 name|propApplyToFutureSessions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Type:"
+argument_list|)
+name|String
+name|propInstructorAttributeType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Parent:"
+argument_list|)
+name|String
+name|propInstructorAttributeParent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Global:"
+argument_list|)
+name|String
+name|propGlobalInstructorAttribute
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10896,6 +11196,33 @@ literal|"Rooms"
 argument_list|)
 name|String
 name|headerRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Global Instructor Attributes"
+argument_list|)
+name|String
+name|headerGlobalInstructorAttributes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Departmental Instructor Attributes"
+argument_list|)
+name|String
+name|headerDepartmentalInstructorAttributes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructors"
+argument_list|)
+name|String
+name|headerInstructors
 parameter_list|()
 function_decl|;
 annotation|@
