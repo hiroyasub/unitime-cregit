@@ -429,11 +429,11 @@ name|String
 name|registrationException
 decl_stmt|;
 specifier|public
-name|Integer
+name|Float
 name|minHours
 decl_stmt|;
 specifier|public
-name|Integer
+name|Float
 name|maxHours
 decl_stmt|;
 block|}
