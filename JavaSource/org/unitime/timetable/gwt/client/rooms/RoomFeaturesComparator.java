@@ -752,7 +752,6 @@ name|n2
 operator|==
 literal|null
 condition|?
-operator|-
 literal|1
 else|:
 name|Double
@@ -802,7 +801,6 @@ name|b2
 operator|==
 literal|null
 condition|?
-operator|-
 literal|1
 else|:
 operator|(
