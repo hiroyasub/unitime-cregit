@@ -284,19 +284,22 @@ name|preferenceTitle
 parameter_list|()
 block|{
 return|return
+name|MSG
+operator|.
+name|prefTitleRoomFeature
+argument_list|(
 name|getPrefLevel
 argument_list|()
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|" Room Feature "
-operator|+
+argument_list|,
 name|getRoomFeature
 argument_list|()
 operator|.
 name|getLabelWithType
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}

@@ -208,19 +208,22 @@ name|preferenceTitle
 parameter_list|()
 block|{
 return|return
+name|MSG
+operator|.
+name|prefTitleRoomGroup
+argument_list|(
 name|getPrefLevel
 argument_list|()
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|" Room Group "
-operator|+
+argument_list|,
 name|getRoomGroup
 argument_list|()
 operator|.
 name|getNameWithTitle
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}

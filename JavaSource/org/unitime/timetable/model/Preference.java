@@ -21,6 +21,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|defaults
@@ -66,6 +94,21 @@ name|long
 name|serialVersionUID
 init|=
 literal|1L
+decl_stmt|;
+specifier|protected
+specifier|final
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 comment|/** Blank Pref Value **/
 specifier|public
@@ -232,7 +275,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (class)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerClass
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -250,7 +300,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (scheduling subpart)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerSchedulingSubpart
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -268,7 +325,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (instructor)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerInstructor
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -286,7 +350,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (examination)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerExamination
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -304,7 +375,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (department)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerDepartment
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -322,7 +400,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (session)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerSession
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 name|sb

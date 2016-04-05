@@ -375,7 +375,12 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|", class"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|prefOwnerClass
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -393,7 +398,12 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|", scheduling subpart"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|prefOwnerSchedulingSubpart
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -411,7 +421,12 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|", instructor"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|prefOwnerInstructor
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -429,7 +444,12 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|", examination"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|prefOwnerExamination
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -447,7 +467,12 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|", department"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|prefOwnerDepartment
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -465,7 +490,12 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|", session"
+literal|", "
+operator|+
+name|MSG
+operator|.
+name|prefOwnerSession
+argument_list|()
 expr_stmt|;
 block|}
 name|sb
@@ -488,7 +518,14 @@ operator|.
 name|getPrefName
 argument_list|()
 operator|+
-literal|" Room {0} ({1}"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|prefRoom
+argument_list|()
+operator|+
+literal|" {0} ({1}"
 operator|+
 name|owner
 operator|+
@@ -527,19 +564,22 @@ name|preferenceTitle
 parameter_list|()
 block|{
 return|return
+name|MSG
+operator|.
+name|prefTitleRoom
+argument_list|(
 name|getPrefLevel
 argument_list|()
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|" Room "
-operator|+
+argument_list|,
 name|getRoom
 argument_list|()
 operator|.
 name|getLabel
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}

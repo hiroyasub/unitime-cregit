@@ -375,7 +375,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (class)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerClass
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -393,7 +400,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (scheduling subpart)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerSchedulingSubpart
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -411,7 +425,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (instructor)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerInstructor
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -429,7 +450,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (examination)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerExamination
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -447,7 +475,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (department)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerDepartment
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 if|else if
@@ -465,7 +500,14 @@ condition|)
 block|{
 name|owner
 operator|=
-literal|" (session)"
+literal|" ("
+operator|+
+name|MSG
+operator|.
+name|prefOwnerSession
+argument_list|()
+operator|+
+literal|")"
 expr_stmt|;
 block|}
 name|sb
@@ -488,7 +530,14 @@ operator|.
 name|getPrefName
 argument_list|()
 operator|+
-literal|" Building {0}"
+literal|" "
+operator|+
+name|MSG
+operator|.
+name|prefBuilding
+argument_list|()
+operator|+
+literal|" {0}"
 operator|+
 name|owner
 operator|+
@@ -527,19 +576,22 @@ name|preferenceTitle
 parameter_list|()
 block|{
 return|return
+name|MSG
+operator|.
+name|prefTitleBuilding
+argument_list|(
 name|getPrefLevel
 argument_list|()
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|" Building "
-operator|+
+argument_list|,
 name|getBuilding
 argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
