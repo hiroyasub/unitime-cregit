@@ -690,7 +690,7 @@ argument_list|()
 argument_list|,
 name|PreferenceLevel
 operator|.
-name|prolog2bgColor
+name|prolog2color
 argument_list|(
 name|pref
 operator|.
