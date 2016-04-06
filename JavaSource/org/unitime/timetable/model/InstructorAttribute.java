@@ -88,6 +88,13 @@ init|=
 literal|331064011983395675L
 decl_stmt|;
 specifier|public
+specifier|static
+name|String
+name|ATTRIBUTES_LIST_ATTR_NAME
+init|=
+literal|"attributesList"
+decl_stmt|;
+specifier|public
 name|InstructorAttribute
 parameter_list|()
 block|{

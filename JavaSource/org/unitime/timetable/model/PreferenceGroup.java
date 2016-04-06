@@ -1838,6 +1838,17 @@ return|;
 block|}
 specifier|public
 name|Set
+name|getAvailableCourses
+parameter_list|()
+block|{
+return|return
+operator|new
+name|TreeSet
+argument_list|()
+return|;
+block|}
+specifier|public
+name|Set
 name|getExamPeriodPreferences
 parameter_list|()
 block|{

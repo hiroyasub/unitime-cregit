@@ -52,6 +52,13 @@ init|=
 literal|1L
 decl_stmt|;
 specifier|public
+specifier|static
+name|String
+name|ATTRIBUTE_TYPES_LIST_ATTR_NAME
+init|=
+literal|"attributeTypesList"
+decl_stmt|;
+specifier|public
 name|InstructorAttributeType
 parameter_list|()
 block|{

@@ -846,6 +846,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Teaching Preference:"
+argument_list|)
+name|String
+name|propertyTeachingPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximal Teaching Load:"
+argument_list|)
+name|String
+name|propertyMaxLoad
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course:"
+argument_list|)
+name|String
+name|propertyCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"units"
+argument_list|)
+name|String
+name|teachingLoadUnits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"this one"
 argument_list|)
 name|String
@@ -2886,6 +2922,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Course Preference"
+argument_list|)
+name|String
+name|actionAddCoursePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionRemoveCoursePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Delete"
 argument_list|)
 name|String
@@ -3988,6 +4042,15 @@ literal|"B"
 argument_list|)
 name|String
 name|accessBackInstructorDetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"C"
+argument_list|)
+name|String
+name|accessAddCoursePreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5409,6 +5472,27 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Course Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddCoursePreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove Course Preference"
+argument_list|)
+name|String
+name|titleRemoveCoursePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course numbers can be specified using wildcard (*). E.g. 2*"
 argument_list|)
 name|String
@@ -5759,6 +5843,24 @@ literal|"Invalid room preference level."
 argument_list|)
 name|String
 name|errorInvalidRoomPreferenceLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid course preference: Check for duplicate / blank selection."
+argument_list|)
+name|String
+name|errorInvalidCoursePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid course preference level."
+argument_list|)
+name|String
+name|errorInvalidCoursePreferenceLevel
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6864,6 +6966,24 @@ literal|"Conflicting Meetings"
 argument_list|)
 name|String
 name|sectionTitleEventConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teaching Properties"
+argument_list|)
+name|String
+name|sectionTeachingProperties
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Preferences"
+argument_list|)
+name|String
+name|sectionTitleCoursePreferences
 parameter_list|()
 function_decl|;
 annotation|@
