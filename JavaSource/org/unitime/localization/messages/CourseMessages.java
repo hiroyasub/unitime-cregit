@@ -873,6 +873,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor:"
+argument_list|)
+name|String
+name|propertyInstructorAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Need Instructor Assignment:"
+argument_list|)
+name|String
+name|propertyNeedInstructorAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teaching Load:"
+argument_list|)
+name|String
+name|propertyTeachingLoad
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"units"
 argument_list|)
 name|String
@@ -2940,6 +2967,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Instructor Preference"
+argument_list|)
+name|String
+name|actionAddInstructorAttributePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionRemoveInstructorAttributePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Delete"
 argument_list|)
 name|String
@@ -4051,6 +4096,15 @@ literal|"C"
 argument_list|)
 name|String
 name|accessAddCoursePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"I"
+argument_list|)
+name|String
+name|accessAddInstructorAttributePreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5484,10 +5538,31 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Instructor Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddInstructorAttributePreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Remove Course Preference"
 argument_list|)
 name|String
 name|titleRemoveCoursePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove Instructor Preference"
+argument_list|)
+name|String
+name|titleRemoveInstructorAttributePreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5861,6 +5936,24 @@ literal|"Invalid course preference level."
 argument_list|)
 name|String
 name|errorInvalidCoursePreferenceLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid instructor preference: Check for duplicate / blank selection."
+argument_list|)
+name|String
+name|errorInvalidAttributePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid instructor preference level."
+argument_list|)
+name|String
+name|errorInvalidAttributePreferenceLevel
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6359,6 +6452,15 @@ literal|"No instructor was selected from the list"
 argument_list|)
 name|String
 name|errorNoInstructorSelectedFromList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<b>Teaching Load</b> is required."
+argument_list|)
+name|String
+name|errorNoTeachingLoad
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6989,6 +7091,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor Preferences"
+argument_list|)
+name|String
+name|sectionTitleInstructorAttributePreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructor Displayed"
 argument_list|)
 name|String
@@ -7224,6 +7335,15 @@ literal|"Only students meeting reservations are allowed to enroll into this offe
 argument_list|)
 name|String
 name|descriptionByReservationOnly2
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"If checked, classes from this subpart will be included in the Instructor Scheduling problem."
+argument_list|)
+name|String
+name|descriptionNeedInstructorAssignment
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8229,6 +8349,33 @@ literal|"Building"
 argument_list|)
 name|String
 name|prefBuilding
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<font color='red'><B>DISABLED</B></font><i> -- Classes of this subpart may be timetabled during overlapping times.</i>"
+argument_list|)
+name|String
+name|classDetailNoSpread
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<font color='red'><B>ENABLED</B></font><i> -- Students are allowed to take classes from this subpart even when they overlap with other classes.</i>"
+argument_list|)
+name|String
+name|classDetailAllowOverlap
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<font color='red'><B>ENABLED</B></font><i> -- Classes from this subpart will be included in the Instructor Scheduling problem.</i>"
+argument_list|)
+name|String
+name|classDetailNeedInstructorAssignment
 parameter_list|()
 function_decl|;
 block|}

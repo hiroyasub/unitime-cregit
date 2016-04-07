@@ -1680,6 +1680,33 @@ name|c
 argument_list|)
 expr_stmt|;
 comment|// Room Groups
+name|LookupTables
+operator|.
+name|setupInstructorAttributes
+argument_list|(
+name|request
+argument_list|,
+name|c
+argument_list|)
+expr_stmt|;
+comment|// Instructor Attributes
+name|LookupTables
+operator|.
+name|setupInstructors
+argument_list|(
+name|request
+argument_list|,
+name|sessionContext
+argument_list|,
+name|c
+operator|.
+name|getDepartmentForSubjectArea
+argument_list|()
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 if|if
@@ -3107,6 +3134,21 @@ name|c
 operator|.
 name|isCancelled
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|frm
+operator|.
+name|setInstructorAssignment
+argument_list|(
+name|c
+operator|.
+name|getSchedulingSubpart
+argument_list|()
+operator|.
+name|getTeachingLoad
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 comment|// Load from class

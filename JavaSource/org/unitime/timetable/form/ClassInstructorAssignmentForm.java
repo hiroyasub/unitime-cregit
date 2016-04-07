@@ -2230,6 +2230,13 @@ argument_list|)
 expr_stmt|;
 name|classInstr
 operator|.
+name|setTentative
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+name|classInstr
+operator|.
 name|setPercentShare
 argument_list|(
 operator|new

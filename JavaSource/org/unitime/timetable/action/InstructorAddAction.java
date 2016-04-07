@@ -493,6 +493,15 @@ argument_list|)
 expr_stmt|;
 name|LookupTables
 operator|.
+name|setupInstructorAttributeTypes
+argument_list|(
+name|request
+argument_list|,
+name|d
+argument_list|)
+expr_stmt|;
+name|LookupTables
+operator|.
 name|setupInstructorAttributes
 argument_list|(
 name|request

@@ -71,6 +71,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|TreeSet
 import|;
 end_import
@@ -2522,7 +2532,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|List
+name|Set
 argument_list|<
 name|InstructorAttributeType
 argument_list|>
@@ -2530,12 +2540,12 @@ name|getAvailableAttributeTypes
 parameter_list|()
 block|{
 return|return
-operator|(
-name|List
+operator|new
+name|TreeSet
 argument_list|<
 name|InstructorAttributeType
 argument_list|>
-operator|)
+argument_list|(
 name|DepartmentDAO
 operator|.
 name|getInstance
@@ -2548,9 +2558,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct t from InstructorAttribute a inner join a.type t "
 operator|+
-literal|"where a.session.uniqueId = :sessionId and (a.department is null or a.department.uniqueId = :departmentId) "
-operator|+
-literal|"order by t.label"
+literal|"where a.session.uniqueId = :sessionId and (a.department is null or a.department.uniqueId = :departmentId)"
 argument_list|)
 operator|.
 name|setLong
@@ -2576,10 +2584,11 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public
-name|List
+name|Set
 argument_list|<
 name|InstructorAttribute
 argument_list|>
@@ -2587,12 +2596,12 @@ name|getAvailableAttributes
 parameter_list|()
 block|{
 return|return
-operator|(
-name|List
+operator|new
+name|TreeSet
 argument_list|<
 name|InstructorAttribute
 argument_list|>
-operator|)
+argument_list|(
 name|DepartmentDAO
 operator|.
 name|getInstance
@@ -2605,9 +2614,7 @@ name|createQuery
 argument_list|(
 literal|"select a from InstructorAttribute a "
 operator|+
-literal|"where a.session.uniqueId = :sessionId and (a.department is null or a.department.uniqueId = :departmentId) "
-operator|+
-literal|"order by a.name"
+literal|"where a.session.uniqueId = :sessionId and (a.department is null or a.department.uniqueId = :departmentId)"
 argument_list|)
 operator|.
 name|setLong
@@ -2633,6 +2640,7 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}

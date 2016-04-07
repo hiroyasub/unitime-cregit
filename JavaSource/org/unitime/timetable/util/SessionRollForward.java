@@ -17447,6 +17447,16 @@ argument_list|)
 expr_stmt|;
 name|toClassInstr
 operator|.
+name|setTentative
+argument_list|(
+name|fromClassInstr
+operator|.
+name|isTentative
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toClassInstr
+operator|.
 name|setPercentShare
 argument_list|(
 name|fromClassInstr
