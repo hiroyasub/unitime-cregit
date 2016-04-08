@@ -3126,7 +3126,7 @@ name|getAvailableAttributeTypes
 parameter_list|()
 block|{
 return|return
-name|getManagingDept
+name|getControllingDept
 argument_list|()
 operator|.
 name|getAvailableAttributeTypes
@@ -3139,7 +3139,7 @@ name|getAvailableAttributes
 parameter_list|()
 block|{
 return|return
-name|getManagingDept
+name|getControllingDept
 argument_list|()
 operator|.
 name|getAvailableAttributes

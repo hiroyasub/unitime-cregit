@@ -855,7 +855,7 @@ name|equals
 argument_list|(
 name|MSG
 operator|.
-name|actionAddInstructorAttributePreference
+name|actionAddAttributePreference
 argument_list|()
 argument_list|)
 operator|||
@@ -865,7 +865,7 @@ name|equals
 argument_list|(
 name|MSG
 operator|.
-name|actionAddCoursePreference
+name|actionAddInstructorPreference
 argument_list|()
 argument_list|)
 comment|// || op.equals(rsc.getMessage("button.cancel"))
@@ -946,7 +946,7 @@ name|equals
 argument_list|(
 name|MSG
 operator|.
-name|actionRemoveInstructorAttributePreference
+name|actionRemoveAttributePreference
 argument_list|()
 argument_list|)
 operator|||
@@ -956,7 +956,7 @@ name|equals
 argument_list|(
 name|MSG
 operator|.
-name|actionRemoveCoursePreference
+name|actionRemoveInstructorPreference
 argument_list|()
 argument_list|)
 operator|||

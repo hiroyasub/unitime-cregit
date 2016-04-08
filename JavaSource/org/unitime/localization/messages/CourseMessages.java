@@ -864,19 +864,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course:"
+literal|"Courses:"
 argument_list|)
 name|String
-name|propertyCourse
+name|propertyCoursePrefs
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Instructor:"
+literal|"Instructors:"
 argument_list|)
 name|String
-name|propertyInstructorAttribute
+name|propertyInstructorPrefs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Attributes:"
+argument_list|)
+name|String
+name|propertyAttributePrefs
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1156,6 +1165,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor Scheduling"
+argument_list|)
+name|String
+name|includeInstructorScheduling
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Timetable"
 argument_list|)
 name|String
@@ -1364,6 +1382,15 @@ literal|"Distribution"
 argument_list|)
 name|String
 name|columnDistributionPref
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Attribute"
+argument_list|)
+name|String
+name|columnInstructorAttributePref
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2970,7 +2997,7 @@ argument_list|(
 literal|"Add Instructor Preference"
 argument_list|)
 name|String
-name|actionAddInstructorAttributePreference
+name|actionAddInstructorPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2979,7 +3006,25 @@ argument_list|(
 literal|"Delete"
 argument_list|)
 name|String
-name|actionRemoveInstructorAttributePreference
+name|actionRemoveInstructorPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Attribute Preference"
+argument_list|)
+name|String
+name|actionAddAttributePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete"
+argument_list|)
+name|String
+name|actionRemoveAttributePreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4101,10 +4146,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"A"
+argument_list|)
+name|String
+name|accessAddAttributePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"I"
 argument_list|)
 name|String
-name|accessAddInstructorAttributePreference
+name|accessAddInstructorPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5538,10 +5592,22 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Attribute Preference (Alt+{0})"
+argument_list|)
+name|String
+name|titleAddAttributePreference
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add Instructor Preference (Alt+{0})"
 argument_list|)
 name|String
-name|titleAddInstructorAttributePreference
+name|titleAddInstructorPreference
 parameter_list|(
 name|String
 name|accessKey
@@ -5559,10 +5625,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Remove Attribute Preference"
+argument_list|)
+name|String
+name|titleRemoveAttributePreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Remove Instructor Preference"
 argument_list|)
 name|String
-name|titleRemoveInstructorAttributePreference
+name|titleRemoveInstructorPreference
 parameter_list|()
 function_decl|;
 annotation|@
@@ -7091,10 +7166,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Attribute Preferences"
+argument_list|)
+name|String
+name|sectionTitleAttributePreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructor Preferences"
 argument_list|)
 name|String
-name|sectionTitleInstructorAttributePreferences
+name|sectionTitleInstructorPreferences
 parameter_list|()
 function_decl|;
 annotation|@

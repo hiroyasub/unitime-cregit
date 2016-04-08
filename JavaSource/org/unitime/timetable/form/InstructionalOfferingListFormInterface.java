@@ -120,6 +120,11 @@ name|getExams
 parameter_list|()
 function_decl|;
 specifier|public
+name|Boolean
+name|getInstructorAssignment
+parameter_list|()
+function_decl|;
+specifier|public
 name|String
 name|getSortBy
 parameter_list|()
