@@ -268,7 +268,10 @@ name|Override
 specifier|public
 name|String
 name|preferenceHtml
-parameter_list|()
+parameter_list|(
+name|String
+name|nameFormat
+parameter_list|)
 block|{
 name|StringBuffer
 name|sb

@@ -909,10 +909,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Number of Instructors:"
+argument_list|)
+name|String
+name|propertyNbrInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"units"
 argument_list|)
 name|String
 name|teachingLoadUnits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"N/A"
+argument_list|)
+name|String
+name|cellNoInstructorAssignment
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1391,6 +1409,15 @@ literal|"Attribute"
 argument_list|)
 name|String
 name|columnInstructorAttributePref
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor"
+argument_list|)
+name|String
+name|columnInstructorPref
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2131,6 +2158,15 @@ literal|"Maximal\nLoad"
 argument_list|)
 name|String
 name|columnMaxTeachingLoadPDF
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teaching Load"
+argument_list|)
+name|String
+name|columnTeachingLoad
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5962,10 +5998,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid instructor preference: Check for duplicate / blank selection."
+literal|"Invalid instructors: Check for duplicate / blank selection."
 argument_list|)
 name|String
-name|errorInvalidInstructorPreference
+name|errorInvalidInstructors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6016,7 +6052,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid instructor preference: Check for duplicate / blank selection."
+literal|"Invalid attribute preference: Check for duplicate / blank selection."
 argument_list|)
 name|String
 name|errorInvalidAttributePreference
@@ -6025,10 +6061,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Invalid instructor preference level."
+literal|"Invalid attribute preference level."
 argument_list|)
 name|String
 name|errorInvalidAttributePreferenceLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid instructor preference: Check for duplicate / blank selection."
+argument_list|)
+name|String
+name|errorInvalidInstructorPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Invalid instructor preference level."
+argument_list|)
+name|String
+name|errorInvalidInstructorPreferenceLevel
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6536,6 +6590,15 @@ literal|"<b>Teaching Load</b> is required."
 argument_list|)
 name|String
 name|errorNoTeachingLoad
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<b>Number of Instructors</b> is required."
+argument_list|)
+name|String
+name|errorNoNbrInstructors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8456,11 +8519,53 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<font color='red'><B>ENABLED</B></font><i> -- Classes from this subpart will be included in the Instructor Scheduling problem.</i>"
+literal|"<font color='green'><B>ENABLED</B></font><i> -- Classes from this subpart will be included in the Instructor Scheduling problem.</i>"
+argument_list|)
+name|String
+name|subpartDetailNeedInstructorAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<font color='green'><B>ENABLED</B></font><i> -- This class will be included in the Instructor Scheduling problem.</i>"
 argument_list|)
 name|String
 name|classDetailNeedInstructorAssignment
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<font color='red'><B>DISABLED</B></font><i> -- This class will NOT be included in the Instructor Scheduling problem.</i>"
+argument_list|)
+name|String
+name|classDetailNoInstructorAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"(defaults to {0} when blank)"
+argument_list|)
+name|String
+name|classEditNbrRoomsDefault
+parameter_list|(
+name|String
+name|defaultValue
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"(defaults to {0} when blank)"
+argument_list|)
+name|String
+name|classEditTeachingLoadDefault
+parameter_list|(
+name|String
+name|defaultValue
+parameter_list|)
 function_decl|;
 block|}
 end_interface

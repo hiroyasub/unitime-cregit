@@ -1238,6 +1238,8 @@ argument_list|,
 name|s
 argument_list|,
 name|timeVertical
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|ChangeLog

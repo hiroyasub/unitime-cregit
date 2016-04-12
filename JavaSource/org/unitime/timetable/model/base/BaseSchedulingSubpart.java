@@ -214,6 +214,10 @@ name|Float
 name|iTeachingLoad
 decl_stmt|;
 specifier|private
+name|Integer
+name|iNbrInstructors
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -295,6 +299,13 @@ name|String
 name|PROP_TEACHING_LOAD
 init|=
 literal|"teachingLoad"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_NBR_INSTRUCTORS
+init|=
+literal|"nbrInstructors"
 decl_stmt|;
 specifier|public
 name|BaseSchedulingSubpart
@@ -518,6 +529,28 @@ block|{
 name|iTeachingLoad
 operator|=
 name|teachingLoad
+expr_stmt|;
+block|}
+specifier|public
+name|Integer
+name|getNbrInstructors
+parameter_list|()
+block|{
+return|return
+name|iNbrInstructors
+return|;
+block|}
+specifier|public
+name|void
+name|setNbrInstructors
+parameter_list|(
+name|Integer
+name|nbrInstructors
+parameter_list|)
+block|{
+name|iNbrInstructors
+operator|=
+name|nbrInstructors
 expr_stmt|;
 block|}
 specifier|public
@@ -942,6 +975,11 @@ operator|+
 literal|"\n	MinutesPerWk: "
 operator|+
 name|getMinutesPerWk
+argument_list|()
+operator|+
+literal|"\n	NbrInstructors: "
+operator|+
+name|getNbrInstructors
 argument_list|()
 operator|+
 literal|"\n	ParentSubpart: "
