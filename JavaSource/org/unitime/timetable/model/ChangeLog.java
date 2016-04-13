@@ -563,6 +563,11 @@ name|INSTRUCTOR_ATTRIBUTE_EDIT
 argument_list|(
 literal|"Instructor Attribute Edit"
 argument_list|)
+block|,
+name|INSTRUCTOR_ASSIGNMENT_PREF_EDIT
+argument_list|(
+literal|"Instructor Assignment Preferences Edit"
+argument_list|)
 block|,         ;
 specifier|private
 name|String

@@ -3067,6 +3067,17 @@ name|getAvailableAttributes
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isInstructorAssignmentNeeded
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 

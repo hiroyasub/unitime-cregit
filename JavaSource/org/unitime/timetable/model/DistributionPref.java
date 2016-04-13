@@ -3152,6 +3152,17 @@ name|abbv
 argument_list|)
 return|;
 block|}
+specifier|public
+name|Type
+name|getType
+parameter_list|()
+block|{
+return|return
+name|Type
+operator|.
+name|DISTRIBUTION
+return|;
+block|}
 block|}
 end_class
 

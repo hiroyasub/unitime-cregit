@@ -403,6 +403,17 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|Type
+name|getType
+parameter_list|()
+block|{
+return|return
+name|Type
+operator|.
+name|INSTRUCTOR
+return|;
+block|}
 block|}
 end_class
 

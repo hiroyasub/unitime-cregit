@@ -3435,6 +3435,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Edit Assignment Preferences"
+argument_list|)
+name|String
+name|actionEditInstructorAssignmentPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -4195,6 +4204,15 @@ literal|"I"
 argument_list|)
 name|String
 name|accessAddInstructorPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"A"
+argument_list|)
+name|String
+name|accessEditInstructorAssignmentPreferences
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5675,6 +5693,18 @@ argument_list|)
 name|String
 name|titleRemoveInstructorPreference
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Instructor Assignment Preferences (Alt+{0})"
+argument_list|)
+name|String
+name|titleEditInstructorAssignmentPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -7265,6 +7295,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Attributes"
+argument_list|)
+name|String
+name|sectionAttributes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Hide Instructor Preferences (Alt+{0})"
 argument_list|)
 name|String
@@ -7491,6 +7530,15 @@ literal|"If checked, classes from this subpart will be included in the Instructo
 argument_list|)
 name|String
 name|descriptionNeedInstructorAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Set to Prohibited when disabled for Instructor Scheduling."
+argument_list|)
+name|String
+name|descriptionTeachingPreference
 parameter_list|()
 function_decl|;
 annotation|@

@@ -597,6 +597,17 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+specifier|public
+name|Type
+name|getType
+parameter_list|()
+block|{
+return|return
+name|Type
+operator|.
+name|BUILDING
+return|;
+block|}
 block|}
 end_class
 

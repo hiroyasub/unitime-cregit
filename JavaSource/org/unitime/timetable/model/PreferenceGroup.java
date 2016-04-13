@@ -1947,6 +1947,15 @@ name|Department
 name|getDepartment
 parameter_list|()
 function_decl|;
+specifier|public
+name|boolean
+name|isInstructorAssignmentNeeded
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 
