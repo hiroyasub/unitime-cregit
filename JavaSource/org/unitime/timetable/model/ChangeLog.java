@@ -566,7 +566,7 @@ argument_list|)
 block|,
 name|INSTRUCTOR_ASSIGNMENT_PREF_EDIT
 argument_list|(
-literal|"Instructor Assignment Preferences Edit"
+literal|"Instructor Assignment Preferences"
 argument_list|)
 block|,         ;
 specifier|private
