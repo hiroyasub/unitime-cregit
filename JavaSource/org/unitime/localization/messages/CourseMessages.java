@@ -2413,6 +2413,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Cancelled Classes:"
+argument_list|)
+name|String
+name|filterCancelledClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show cancelled classes"
+argument_list|)
+name|String
+name|showCancelledClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Need Instructor Assignment:"
+argument_list|)
+name|String
+name|filterNeedInstructorAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show only classes that need instructor assignent"
+argument_list|)
+name|String
+name|showNeedInstructorClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Subject:"
 argument_list|)
 name|String
