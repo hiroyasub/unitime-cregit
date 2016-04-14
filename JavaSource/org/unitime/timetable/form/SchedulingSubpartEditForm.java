@@ -220,6 +220,10 @@ specifier|private
 name|String
 name|teachingLoad
 decl_stmt|;
+specifier|private
+name|Long
+name|controllingDept
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**       * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -436,6 +440,10 @@ expr_stmt|;
 name|nbrInstructors
 operator|=
 literal|1
+expr_stmt|;
+name|controllingDept
+operator|=
+literal|null
 expr_stmt|;
 name|super
 operator|.
@@ -1155,6 +1163,28 @@ operator|.
 name|teachingLoad
 operator|=
 name|teachingLoad
+expr_stmt|;
+block|}
+specifier|public
+name|Long
+name|getControllingDept
+parameter_list|()
+block|{
+return|return
+name|controllingDept
+return|;
+block|}
+specifier|public
+name|void
+name|setControllingDept
+parameter_list|(
+name|Long
+name|deptId
+parameter_list|)
+block|{
+name|controllingDept
+operator|=
+name|deptId
 expr_stmt|;
 block|}
 block|}

@@ -3489,6 +3489,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor Assignment Preferences"
+argument_list|)
+name|String
+name|actionEditSubpartInstructorAssignmentPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -4263,6 +4272,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"I"
+argument_list|)
+name|String
+name|accessEditClassInstructorAssignmentPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"I"
+argument_list|)
+name|String
+name|accessEditSubpartInstructorAssignmentPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Search/Display Offerings (Alt+{0})"
 argument_list|)
 name|String
@@ -4885,6 +4912,18 @@ literal|"Delete all Subpart Preferences (Alt+{0})"
 argument_list|)
 name|String
 name|titleClearSubpartPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete all attribute and instructor preferences that are on this scheduling subpart (Alt+{0})"
+argument_list|)
+name|String
+name|titleClearSubpartInstructorAssignmentPreferences
 parameter_list|(
 name|String
 name|accessKey
@@ -5758,6 +5797,30 @@ literal|"Edit Instructor Assignment Preferences (Alt+{0})"
 argument_list|)
 name|String
 name|titleEditInstructorAssignmentPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Instructor Assignment Preferences (Alt+{0})"
+argument_list|)
+name|String
+name|titleEditClassInstructorAssignmentPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Edit Instructor Assignment Preferences (Alt+{0})"
+argument_list|)
+name|String
+name|titleEditSubpartInstructorAssignmentPreferences
 parameter_list|(
 name|String
 name|accessKey

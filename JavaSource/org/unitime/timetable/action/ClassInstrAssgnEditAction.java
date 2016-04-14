@@ -911,31 +911,6 @@ name|op
 operator|=
 literal|"init"
 expr_stmt|;
-comment|// Check op exists
-if|if
-condition|(
-name|op
-operator|==
-literal|null
-operator|||
-name|op
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-throw|throw
-operator|new
-name|Exception
-argument_list|(
-name|MSG
-operator|.
-name|errorNullOperationNotSupported
-argument_list|()
-argument_list|)
-throw|;
 comment|// Check class exists
 if|if
 condition|(
@@ -1221,7 +1196,7 @@ argument_list|()
 argument_list|,
 name|Right
 operator|.
-name|InstructorAssignmentPreferences
+name|InstructorClearAssignmentPreferences
 argument_list|)
 expr_stmt|;
 name|doClear
