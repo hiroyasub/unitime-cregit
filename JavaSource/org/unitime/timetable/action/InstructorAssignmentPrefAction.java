@@ -761,19 +761,6 @@ name|exceptionInstructorInfoNotSupplied
 argument_list|()
 argument_list|)
 throw|;
-name|sessionContext
-operator|.
-name|checkPermission
-argument_list|(
-name|instructorId
-argument_list|,
-literal|"DepartmentalInstructor"
-argument_list|,
-name|Right
-operator|.
-name|InstructorAssignmentPreferences
-argument_list|)
-expr_stmt|;
 comment|// Set screen name
 name|frm
 operator|.
@@ -813,6 +800,21 @@ argument_list|,
 name|sessionContext
 argument_list|,
 name|inst
+argument_list|)
+expr_stmt|;
+comment|// Check permissions
+name|sessionContext
+operator|.
+name|checkPermission
+argument_list|(
+name|inst
+operator|.
+name|getDepartment
+argument_list|()
+argument_list|,
+name|Right
+operator|.
+name|InstructorAssignmentPreferences
 argument_list|)
 expr_stmt|;
 comment|// Cancel - Go back to Instructors Detail Screen

@@ -992,14 +992,14 @@ argument_list|)
 block|,
 name|InstructorAssignmentPreferences
 argument_list|(
-name|DepartmentalInstructor
+name|Department
 operator|.
 name|class
 argument_list|)
 block|,
 name|InstructorClearAssignmentPreferences
 argument_list|(
-name|DepartmentalInstructor
+name|Department
 operator|.
 name|class
 argument_list|)

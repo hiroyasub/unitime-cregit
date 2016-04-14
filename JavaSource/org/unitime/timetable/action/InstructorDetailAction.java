@@ -1419,9 +1419,10 @@ name|sessionContext
 operator|.
 name|checkPermission
 argument_list|(
-name|instructorId
-argument_list|,
-literal|"DepartmentalInstructor"
+name|inst
+operator|.
+name|getDepartment
+argument_list|()
 argument_list|,
 name|Right
 operator|.

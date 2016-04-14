@@ -3480,6 +3480,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor Assignment Preferences"
+argument_list|)
+name|String
+name|actionEditClassInstructorAssignmentPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"S"
 argument_list|)
 name|String
@@ -4852,6 +4861,18 @@ literal|"Delete all Class Preferences. Preferences will be inherited from the su
 argument_list|)
 name|String
 name|titleClearClassPreferences
+parameter_list|(
+name|String
+name|accessKey
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete all attribute and instructor preferences that are set directly on this class. Instructor assignment preferences will be inherited from the subpart (Alt+{0})"
+argument_list|)
+name|String
+name|titleClearClassInstructorAssignmentPreferences
 parameter_list|(
 name|String
 name|accessKey
