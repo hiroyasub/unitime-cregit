@@ -1200,6 +1200,9 @@ if|if
 condition|(
 name|isShowPreferences
 argument_list|()
+operator|||
+name|getDisplayInstructorPrefs
+argument_list|()
 condition|)
 name|ret
 operator|+=
@@ -1672,6 +1675,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 if|if
 condition|(
 name|getDisplayInstructorPrefs
@@ -1718,7 +1722,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -6752,6 +6755,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 if|if
 condition|(
 name|getDisplayInstructorPrefs
@@ -6794,7 +6798,6 @@ name|isEditable
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -7899,6 +7902,9 @@ if|if
 condition|(
 name|isShowPreferences
 argument_list|()
+operator|||
+name|getDisplayInstructorPrefs
+argument_list|()
 condition|)
 block|{
 for|for
@@ -8917,6 +8923,9 @@ block|}
 if|if
 condition|(
 name|isShowPreferences
+argument_list|()
+operator|||
+name|getDisplayInstructorPrefs
 argument_list|()
 condition|)
 block|{
