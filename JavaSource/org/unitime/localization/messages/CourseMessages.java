@@ -7649,7 +7649,16 @@ argument_list|(
 literal|"If checked, classes from this subpart will be included in the Instructor Scheduling problem."
 argument_list|)
 name|String
-name|descriptionNeedInstructorAssignment
+name|descriptionSubpartNeedInstructorAssignment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"If checked, this class will be included in the Instructor Scheduling problem."
+argument_list|)
+name|String
+name|descriptionClassNeedInstructorAssignment
 parameter_list|()
 function_decl|;
 annotation|@
