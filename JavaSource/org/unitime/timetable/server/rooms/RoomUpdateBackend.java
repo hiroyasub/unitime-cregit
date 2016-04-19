@@ -1644,6 +1644,17 @@ name|Right
 operator|.
 name|Events
 argument_list|)
+operator|||
+name|context
+operator|.
+name|hasPermission
+argument_list|(
+name|location
+argument_list|,
+name|Right
+operator|.
+name|RoomEditChangeEventProperties
+argument_list|)
 argument_list|,
 literal|true
 argument_list|)
