@@ -5567,6 +5567,13 @@ condition|(
 name|element
 operator|==
 literal|null
+operator|||
+name|element
+operator|.
+name|getValueCount
+argument_list|()
+operator|==
+literal|0
 condition|)
 continue|continue;
 name|Object
