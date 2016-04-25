@@ -450,6 +450,11 @@ specifier|public
 name|String
 name|courseRegistrationStatus
 decl_stmt|;
+comment|/** 		 * The administrator is allowed to submit the Course Registration Status and a Permit Override code. 		 * The course override must be a valid code on the permit override table (STVROVR) with valid rules for the term (SFAROVR). 		 */
+specifier|public
+name|String
+name|courseOverride
+decl_stmt|;
 specifier|public
 name|CourseReferenceNumber
 parameter_list|()
@@ -551,22 +556,37 @@ specifier|static
 class|class
 name|RegisterRequest
 block|{
+comment|/** Identification number used to access a person */
 specifier|public
 name|String
 name|bannerId
 decl_stmt|;
+comment|/** Code value to identify the term */
 specifier|public
 name|String
 name|term
 decl_stmt|;
+comment|/** Students alternate Personal Identification Number */
 specifier|public
 name|String
 name|altPin
 decl_stmt|;
+comment|/** Registration persona value, SB is administrator, WA is the default for student.	*/
 specifier|public
 name|String
 name|systemIn
 decl_stmt|;
+comment|/** 		 * Administrator back date registration. 		 * Must be in format YYYYMMDD, 20150201 for Feb 1, 2015. 		 **/
+specifier|public
+name|String
+name|registrationDate
+decl_stmt|;
+comment|/** 		 * Indicator (Y/N) to conditionally process registration add and drops if errors exists. 		 * Default is N and will process successes but not errors. 		 * Value of Y will conditionally process successes if there are no errors. 		 **/
+specifier|public
+name|String
+name|conditionalAddDrop
+decl_stmt|;
+comment|/** 		 * Course Reference Numbers to add new classes to existing registration. 		 * This parameter includes the list of CRN that needs to be added to existing registrations. 		 * Any invalid CRN will be returned back in the failedRegistration object. 		 **/
 specifier|public
 name|List
 argument_list|<
@@ -574,12 +594,18 @@ name|CourseReferenceNumber
 argument_list|>
 name|courseReferenceNumbers
 decl_stmt|;
+comment|/** 		 * List by course reference number for action changes and updates. 		 * This parameter list includes selected inputs including drop actions. 		 * The selectedAction is the field within the map for status actions and must be set to the valid drop code within the registrationActions for dropping the registration. 		 **/
 specifier|public
 name|List
 argument_list|<
 name|RegisterAction
 argument_list|>
 name|actionsAndOptions
+decl_stmt|;
+comment|/** 		 * The administrator is allowed to override the hold eligibility by submitting with the hold password. 		 */
+specifier|public
+name|String
+name|holdPassword
 decl_stmt|;
 specifier|public
 name|RegisterRequest
@@ -870,6 +896,43 @@ name|isEmpty
 argument_list|()
 operator|)
 return|;
+block|}
+specifier|public
+name|void
+name|setConditionalAddDrop
+parameter_list|(
+name|boolean
+name|cond
+parameter_list|)
+block|{
+name|conditionalAddDrop
+operator|=
+operator|(
+name|cond
+condition|?
+literal|"Y"
+else|:
+literal|"N"
+operator|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setRegistrationDate
+parameter_list|(
+name|DateTime
+name|date
+parameter_list|)
+block|{
+name|registrationDate
+operator|=
+name|date
+operator|.
+name|toString
+argument_list|(
+literal|"yyyyMMdd"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 specifier|public
