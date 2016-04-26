@@ -930,7 +930,7 @@ name|date
 operator|.
 name|toString
 argument_list|(
-literal|"yyyyMMdd"
+literal|"yyyy-MM-dd"
 argument_list|)
 expr_stmt|;
 block|}
