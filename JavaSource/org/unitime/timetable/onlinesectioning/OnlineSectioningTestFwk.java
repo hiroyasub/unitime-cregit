@@ -1686,6 +1686,11 @@ operator|+
 literal|" tasks..."
 argument_list|)
 expr_stmt|;
+name|iCounters
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 name|iRunners
 operator|=
 operator|new
