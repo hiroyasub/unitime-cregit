@@ -657,6 +657,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|OfferingMakeNotOfferedNoEnrollmentCheck
+argument_list|(
+name|InstructionalOffering
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingMakeOffered
 argument_list|(
 name|InstructionalOffering
@@ -679,6 +686,13 @@ name|class
 argument_list|)
 block|,
 name|CourseOfferingDeleteFromCrossList
+argument_list|(
+name|CourseOffering
+operator|.
+name|class
+argument_list|)
+block|,
+name|CourseOfferingDeleteFromCrossListNoEnrollmentCheck
 argument_list|(
 name|CourseOffering
 operator|.
