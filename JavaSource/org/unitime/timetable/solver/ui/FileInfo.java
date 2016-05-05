@@ -106,8 +106,6 @@ parameter_list|(
 name|TimetableInfoFileProxy
 name|proxy
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|proxy
@@ -128,8 +126,6 @@ parameter_list|,
 name|TimetableInfoFileProxy
 name|proxy
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|proxy
 operator|.
@@ -148,8 +144,6 @@ parameter_list|(
 name|TimetableInfoFileProxy
 name|proxy
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|proxy
 operator|.
@@ -166,8 +160,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|int
 name|version
@@ -209,8 +201,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|root
 operator|.

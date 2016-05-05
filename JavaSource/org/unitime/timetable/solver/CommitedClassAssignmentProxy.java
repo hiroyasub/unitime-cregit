@@ -531,8 +531,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|getAssignment
@@ -557,8 +555,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|clazz
@@ -574,8 +570,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|sCommitedAssignmentPreferenceInfo
@@ -588,8 +582,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|sCommitedAssignmentPreferenceInfo
@@ -602,8 +594,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|assignments
@@ -726,8 +716,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|infos
@@ -852,8 +840,6 @@ parameter_list|(
 name|Long
 name|offeringId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|InstructionalOffering
 name|offering
@@ -1860,8 +1846,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -2415,8 +2399,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

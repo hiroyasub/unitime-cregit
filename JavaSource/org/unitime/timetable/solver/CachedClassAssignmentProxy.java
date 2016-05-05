@@ -194,8 +194,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Object
 name|cached
@@ -270,8 +268,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Object
 name|cached
@@ -352,8 +348,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Object
 name|cached
@@ -428,8 +422,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Object
 name|cached
@@ -510,8 +502,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|assignments
@@ -780,8 +770,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|infos
@@ -1050,8 +1038,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Vector
 name|classesOrClassIdsVect
@@ -1233,8 +1219,6 @@ parameter_list|(
 name|Long
 name|offeringId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|iProxy
@@ -1257,8 +1241,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|iProxy
@@ -1281,8 +1263,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|iProxy

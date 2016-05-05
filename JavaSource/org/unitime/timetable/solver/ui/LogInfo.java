@@ -390,8 +390,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 comment|/* 		XMLWriter writer = new XMLWriter(System.out, OutputFormat.createPrettyPrint()); 		writer.write(root.getDocument()); 		writer.flush(); 		*/
 name|iLog
@@ -467,8 +465,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|root
 operator|.

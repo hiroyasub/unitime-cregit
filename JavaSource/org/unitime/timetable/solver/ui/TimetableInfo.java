@@ -43,8 +43,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 specifier|public
 name|void
@@ -53,8 +51,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 specifier|public
 name|boolean

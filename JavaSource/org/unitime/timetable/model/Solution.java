@@ -713,8 +713,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -774,8 +772,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|SolutionInfo
 name|sinfo
@@ -812,8 +808,6 @@ operator|.
 name|Session
 name|hibSession
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|uncommitSolution
 argument_list|(
@@ -837,8 +831,6 @@ parameter_list|,
 name|String
 name|sendNotificationPuid
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -1352,8 +1344,6 @@ operator|.
 name|Session
 name|hibSession
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|commitSolution
@@ -1948,8 +1938,6 @@ parameter_list|,
 name|String
 name|sendNotificationPuid
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|List
 name|solutions
@@ -8707,8 +8695,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -8785,8 +8771,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -8828,8 +8812,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|getAssignmentInfo
@@ -8848,8 +8830,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Assignment
 name|a
@@ -8886,8 +8866,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|assignments
@@ -9010,8 +8988,6 @@ parameter_list|(
 name|Collection
 name|classesOrClassIds
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|infos
@@ -9474,8 +9450,6 @@ parameter_list|(
 name|Long
 name|offeringId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|InstructionalOffering
 name|offering
@@ -9937,8 +9911,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -10494,8 +10466,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 literal|null

@@ -748,8 +748,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Long
 name|solutionId
@@ -869,8 +867,6 @@ parameter_list|(
 name|Class_
 name|clazz
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Long
 name|solutionId
@@ -1015,8 +1011,6 @@ parameter_list|(
 name|Long
 name|offeringId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|InstructionalOffering
 name|offering
@@ -1813,8 +1807,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -2370,8 +2362,6 @@ parameter_list|(
 name|Long
 name|classId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

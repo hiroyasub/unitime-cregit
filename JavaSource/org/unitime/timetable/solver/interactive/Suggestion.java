@@ -3482,8 +3482,6 @@ parameter_list|(
 name|SolverProxy
 name|solver
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -3506,8 +3504,6 @@ parameter_list|(
 name|SolverProxy
 name|solver
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 name|solver
@@ -4322,8 +4318,6 @@ parameter_list|,
 name|SolverProxy
 name|solver
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -5019,8 +5013,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -5442,8 +5434,6 @@ parameter_list|,
 name|SolverProxy
 name|solver
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -6183,8 +6173,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -6249,8 +6237,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|StudentConflictInfo
 name|s
@@ -6952,8 +6938,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -7031,8 +7015,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|DistributionInfo
 name|s
@@ -7136,8 +7118,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|element
 operator|.
@@ -7621,8 +7601,6 @@ parameter_list|(
 name|Element
 name|element
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Suggestion
 name|s

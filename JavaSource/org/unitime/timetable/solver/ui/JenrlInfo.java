@@ -1787,8 +1787,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|int
 name|version
@@ -2039,8 +2037,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|root
 operator|.

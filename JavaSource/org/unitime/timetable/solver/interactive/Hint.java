@@ -953,8 +953,6 @@ parameter_list|,
 name|boolean
 name|includeConstraints
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -1039,8 +1037,6 @@ parameter_list|,
 name|boolean
 name|includeConstraints
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

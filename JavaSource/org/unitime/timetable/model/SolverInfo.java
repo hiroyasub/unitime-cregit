@@ -349,8 +349,6 @@ specifier|public
 name|TimetableInfo
 name|getInfo
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 return|return
 name|getInfo
@@ -369,8 +367,8 @@ parameter_list|(
 name|TimetableInfoFileProxy
 name|proxy
 parameter_list|)
-throws|throws
-name|Exception
+block|{
+try|try
 block|{
 name|TimetableInfo
 name|info
@@ -519,6 +517,29 @@ return|return
 name|info
 return|;
 block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|Debug
+operator|.
+name|warning
+argument_list|(
+literal|"Failed to retrieve info: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
+block|}
 specifier|public
 name|String
 name|generateId
@@ -539,8 +560,6 @@ parameter_list|(
 name|TimetableInfo
 name|info
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|setInfo
 argument_list|(
@@ -563,8 +582,6 @@ parameter_list|,
 name|TimetableInfoFileProxy
 name|proxy
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

@@ -110,6 +110,11 @@ specifier|public
 name|PropertiesInfo
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|info
 parameter_list|)
 block|{
@@ -189,8 +194,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|clear
 argument_list|()
@@ -272,8 +275,6 @@ parameter_list|(
 name|Element
 name|root
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|root
 operator|.

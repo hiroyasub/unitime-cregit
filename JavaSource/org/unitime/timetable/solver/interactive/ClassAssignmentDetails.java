@@ -2851,8 +2851,6 @@ parameter_list|,
 name|String
 name|instructorNameFormat
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -3881,8 +3879,6 @@ parameter_list|,
 name|boolean
 name|includeConstraints
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|AssignmentDAO
 name|dao
@@ -3980,8 +3976,6 @@ parameter_list|,
 name|boolean
 name|includeConstraints
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|String
 name|instructorNameFormat
@@ -6491,8 +6485,6 @@ parameter_list|,
 name|SolverProxy
 name|solver
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

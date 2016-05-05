@@ -41,6 +41,20 @@ name|DataProperties
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|CommonSolverInterface
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -51,6 +65,8 @@ interface|interface
 name|SolverService
 parameter_list|<
 name|T
+extends|extends
+name|CommonSolverInterface
 parameter_list|>
 block|{
 specifier|public

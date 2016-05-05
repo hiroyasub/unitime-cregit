@@ -551,8 +551,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|TimetableInfo
 name|tInfo
@@ -788,8 +786,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Vector
 name|infos
@@ -830,8 +826,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Vector
 name|tInfos
@@ -1077,8 +1071,6 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|Hashtable
 name|ret
