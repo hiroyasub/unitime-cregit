@@ -138,6 +138,8 @@ block|,
 literal|"Examination Solver"
 block|,
 literal|"Student Sectioning Solver"
+block|,
+literal|"Instructor Scheduling Solver"
 block|}
 decl_stmt|;
 specifier|public
@@ -171,6 +173,14 @@ name|int
 name|APPEARANCE_STUDENT_SOLVER
 init|=
 literal|3
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|APPEARANCE_INSTRUCTOR_SOLVER
+init|=
+literal|4
 decl_stmt|;
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public

@@ -1065,6 +1065,24 @@ name|String
 name|teachingLoadFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Course Timetabling Solver"
+block|,
+literal|"Examination Solver"
+block|,
+literal|"Student Scheduling Solver"
+block|,
+literal|"Instructor Scheduling Solver"
+block|}
+argument_list|)
+name|String
+index|[]
+name|solverType
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

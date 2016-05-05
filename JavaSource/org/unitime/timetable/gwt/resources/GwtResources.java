@@ -301,6 +301,15 @@ name|ImageResource
 name|warning
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/help_small.png"
+argument_list|)
+name|ImageResource
+name|helpIcon
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -55,11 +55,41 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|defaults
 operator|.
 name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
 import|;
 end_import
 
@@ -202,6 +232,20 @@ specifier|public
 class|class
 name|RoomAvailability
 block|{
+specifier|protected
+specifier|static
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|RoomAvailabilityInterface
@@ -404,8 +448,10 @@ name|Constants
 operator|.
 name|REQUEST_WARN
 argument_list|,
-literal|"Room availability is not available for "
-operator|+
+name|MESSAGES
+operator|.
+name|warnExamSolverNoRoomAvailability
+argument_list|(
 name|type
 operator|.
 name|getLabel
@@ -413,8 +459,7 @@ argument_list|()
 operator|.
 name|toLowerCase
 argument_list|()
-operator|+
-literal|" examinations."
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -426,8 +471,10 @@ name|Constants
 operator|.
 name|REQUEST_MSSG
 argument_list|,
-literal|"Room availability for "
-operator|+
+name|MESSAGES
+operator|.
+name|infoExamSolverRoomAvailabilityLastUpdated
+argument_list|(
 name|type
 operator|.
 name|getLabel
@@ -435,12 +482,9 @@ argument_list|()
 operator|.
 name|toLowerCase
 argument_list|()
-operator|+
-literal|" examination solver was updated on "
-operator|+
+argument_list|,
 name|ts
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -541,8 +585,10 @@ name|Constants
 operator|.
 name|REQUEST_WARN
 argument_list|,
-literal|"Room availability is not available for "
-operator|+
+name|MESSAGES
+operator|.
+name|warnExamSolverNoRoomAvailability
+argument_list|(
 name|type
 operator|.
 name|getLabel
@@ -550,8 +596,7 @@ argument_list|()
 operator|.
 name|toLowerCase
 argument_list|()
-operator|+
-literal|" examinations."
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -563,8 +608,10 @@ name|Constants
 operator|.
 name|REQUEST_MSSG
 argument_list|,
-literal|"Room availability for "
-operator|+
+name|MESSAGES
+operator|.
+name|infoExamSolverRoomAvailabilityLastUpdated
+argument_list|(
 name|type
 operator|.
 name|getLabel
@@ -572,12 +619,9 @@ argument_list|()
 operator|.
 name|toLowerCase
 argument_list|()
-operator|+
-literal|" examinations was updated on "
-operator|+
+argument_list|,
 name|ts
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -678,7 +722,10 @@ name|Constants
 operator|.
 name|REQUEST_WARN
 argument_list|,
-literal|"Room availability is not available for classes."
+name|MESSAGES
+operator|.
+name|warnCourseSolverNoRoomAvailability
+argument_list|()
 argument_list|)
 expr_stmt|;
 else|else
@@ -690,11 +737,12 @@ name|Constants
 operator|.
 name|REQUEST_MSSG
 argument_list|,
-literal|"Room availability for course timetabling solver was updated on "
-operator|+
+name|MESSAGES
+operator|.
+name|infoCourseSolverRoomAvailabilityLastUpdated
+argument_list|(
 name|ts
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -756,7 +804,10 @@ name|Constants
 operator|.
 name|REQUEST_WARN
 argument_list|,
-literal|"Room availability is not available for classes."
+name|MESSAGES
+operator|.
+name|warnCourseSolverNoRoomAvailability
+argument_list|()
 argument_list|)
 expr_stmt|;
 else|else
@@ -768,11 +819,12 @@ name|Constants
 operator|.
 name|REQUEST_MSSG
 argument_list|,
-literal|"Room availability for classes was updated on "
-operator|+
+name|MESSAGES
+operator|.
+name|infoCourseSolverRoomAvailabilityLastUpdated
+argument_list|(
 name|ts
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
