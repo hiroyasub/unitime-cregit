@@ -811,7 +811,9 @@ literal|"Save.StudentSectioningStatusToSet"
 argument_list|,
 name|SolverParameterGroup
 operator|.
-name|sTypeStudent
+name|SolverType
+operator|.
+name|STUDENT
 argument_list|)
 decl_stmt|;
 if|if

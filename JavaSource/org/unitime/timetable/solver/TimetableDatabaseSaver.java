@@ -2804,7 +2804,9 @@ name|name
 argument_list|,
 name|SolverParameterGroup
 operator|.
-name|sTypeCourse
+name|SolverType
+operator|.
+name|COURSE
 argument_list|)
 decl_stmt|;
 if|if

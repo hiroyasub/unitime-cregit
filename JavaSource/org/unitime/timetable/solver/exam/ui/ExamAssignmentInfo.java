@@ -12765,7 +12765,9 @@ literal|"Exams.BackToBackDistance"
 argument_list|,
 name|SolverParameterGroup
 operator|.
-name|sTypeExam
+name|SolverType
+operator|.
+name|EXAM
 argument_list|)
 decl_stmt|;
 if|if
@@ -12804,7 +12806,9 @@ literal|"Exams.IsDayBreakBackToBack"
 argument_list|,
 name|SolverParameterGroup
 operator|.
-name|sTypeExam
+name|SolverType
+operator|.
+name|EXAM
 argument_list|)
 decl_stmt|;
 if|if

@@ -489,7 +489,7 @@ init|=
 operator|new
 name|Vector
 argument_list|(
-literal|3
+literal|4
 argument_list|)
 decl_stmt|;
 name|ret
@@ -504,7 +504,12 @@ name|Long
 argument_list|(
 name|SolverParameterGroup
 operator|.
-name|sTypeCourse
+name|SolverType
+operator|.
+name|COURSE
+operator|.
+name|ordinal
+argument_list|()
 argument_list|)
 argument_list|,
 literal|"Course Timetabling"
@@ -523,7 +528,12 @@ name|Long
 argument_list|(
 name|SolverParameterGroup
 operator|.
-name|sTypeExam
+name|SolverType
+operator|.
+name|EXAM
+operator|.
+name|ordinal
+argument_list|()
 argument_list|)
 argument_list|,
 literal|"Examination Timetabling"
@@ -542,10 +552,39 @@ name|Long
 argument_list|(
 name|SolverParameterGroup
 operator|.
-name|sTypeStudent
+name|SolverType
+operator|.
+name|STUDENT
+operator|.
+name|ordinal
+argument_list|()
 argument_list|)
 argument_list|,
 literal|"Student Sectioning"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|ret
+operator|.
+name|add
+argument_list|(
+operator|new
+name|IdValue
+argument_list|(
+operator|new
+name|Long
+argument_list|(
+name|SolverParameterGroup
+operator|.
+name|SolverType
+operator|.
+name|INSTRUCTOR
+operator|.
+name|ordinal
+argument_list|()
+argument_list|)
+argument_list|,
+literal|"Instructor Scheduling"
 argument_list|)
 argument_list|)
 expr_stmt|;

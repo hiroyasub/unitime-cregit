@@ -6091,6 +6091,28 @@ argument_list|(
 literal|"unitime.solution.export.id-conv"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Solver: include solver configuration in the XML Export"
+argument_list|)
+name|SolverXMLExportConfiguration
+argument_list|(
+literal|"unitime.solution.export.configuration"
+argument_list|)
+operator|,
 comment|/** 	 * Solution passivation time. 	 * Number of minutes after which an inactive solution can be passivated to disk to save memory. 	 * Passivation is disabled if set to zero, default is 30 minutes. 	 */
 expr_stmt|@
 name|Type
