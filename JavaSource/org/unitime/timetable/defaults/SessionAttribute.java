@@ -80,6 +80,20 @@ argument_list|,
 literal|"User id of the solver I am looking at (if different from user id, admin only)"
 argument_list|)
 block|,
+name|InstructorSchedulingSolver
+argument_list|(
+literal|"InstructorSchedulingProxy"
+argument_list|,
+literal|"Last used instructor scheduling solver."
+argument_list|)
+block|,
+name|InstructorSchedulingUser
+argument_list|(
+literal|"ManageSolver.instrPuid"
+argument_list|,
+literal|"User id of the solver I am looking at (if different from user id, admin only)"
+argument_list|)
+block|,
 name|OfferingsSubjectArea
 argument_list|(
 literal|"subjectAreaId"

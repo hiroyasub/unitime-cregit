@@ -1870,6 +1870,35 @@ operator|.
 name|class
 argument_list|)
 block|,
+comment|/** Individual page rights: Instructor Scheduling */
+name|InstructorScheduling
+argument_list|(
+name|SolverGroup
+operator|.
+name|class
+argument_list|)
+block|,
+name|InstructorSchedulingSolver
+argument_list|(
+name|SolverGroup
+operator|.
+name|class
+argument_list|)
+block|,
+name|InstructorSchedulingSolverLog
+argument_list|(
+name|SolverGroup
+operator|.
+name|class
+argument_list|)
+block|,
+name|InstructorSchedulingSolutionExportXml
+argument_list|(
+name|SolverGroup
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Individual page rights: Students Scheduling */
 name|StudentScheduling
 argument_list|(

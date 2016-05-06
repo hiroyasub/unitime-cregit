@@ -13166,6 +13166,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor Scheduling Solver"
+argument_list|)
+name|String
+name|solverInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Navigation"
 argument_list|)
 name|String

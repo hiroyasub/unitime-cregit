@@ -146,6 +146,8 @@ block|,
 name|AllowNoRole
 block|,
 name|AllowRollForward
+block|,
+name|InstructorScheduling
 block|, 		;
 specifier|public
 name|int
@@ -1044,6 +1046,20 @@ argument_list|(
 name|Status
 operator|.
 name|AllowRollForward
+argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|isAllowInstructorScheduling
+parameter_list|()
+block|{
+return|return
+name|can
+argument_list|(
+name|Status
+operator|.
+name|InstructorScheduling
 argument_list|)
 return|;
 block|}
