@@ -1264,6 +1264,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Save& Uncommit"
+argument_list|)
+name|String
+name|opSolverSaveUncommit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Export XML"
 argument_list|)
 name|String
@@ -12187,6 +12196,15 @@ literal|"Do you really want to save and commit your current timetable? This will
 argument_list|)
 name|String
 name|confirmSolverSaveCommit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to save and uncommit your current timetable? This will uncommit and overwrite your previous solution."
+argument_list|)
+name|String
+name|confirmSolverSaveUncommit
 parameter_list|()
 function_decl|;
 annotation|@

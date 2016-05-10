@@ -183,6 +183,8 @@ block|,
 name|SAVE_COMMIT
 block|,
 name|SAVE_AS_NEW_COMMIT
+block|,
+name|SAVE_UNCOMMIT
 block|, 		;
 specifier|public
 name|int

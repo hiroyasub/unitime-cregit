@@ -270,9 +270,12 @@ argument_list|>
 name|solver
 parameter_list|)
 block|{
-comment|// FIXME: Write database saver
 return|return
-literal|null
+operator|new
+name|InstructorSchedulingDatabaseSaver
+argument_list|(
+name|solver
+argument_list|)
 return|;
 block|}
 annotation|@

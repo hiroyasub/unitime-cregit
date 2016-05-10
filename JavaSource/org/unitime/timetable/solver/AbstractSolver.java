@@ -1038,6 +1038,35 @@ annotation|@
 name|Override
 specifier|public
 name|void
+name|setProperty
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+block|{
+name|activateIfNeeded
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|setProperty
+argument_list|(
+name|name
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
 name|dispose
 parameter_list|()
 block|{
@@ -1836,6 +1865,8 @@ name|M
 argument_list|>
 argument_list|(
 name|this
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
@@ -3581,6 +3612,11 @@ operator|new
 name|Hashtable
 argument_list|()
 decl_stmt|;
+name|boolean
+name|iRestoreInitial
+init|=
+literal|false
+decl_stmt|;
 name|String
 name|iSolutionId
 init|=
@@ -3613,6 +3649,9 @@ argument_list|,
 name|M
 argument_list|>
 name|solver
+parameter_list|,
+name|boolean
+name|restoreInitial
 parameter_list|)
 block|{
 name|iSolver
@@ -3819,7 +3858,7 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"WARNING: Assignment "
+literal|"Assignment "
 operator|+
 name|old
 operator|.
@@ -3832,6 +3871,8 @@ name|v
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|"."
 argument_list|)
 expr_stmt|;
 return|return
@@ -4190,6 +4231,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|iRestoreInitial
+operator|&&
 operator|!
 name|iInitialAssignmentTable
 operator|.

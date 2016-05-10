@@ -242,6 +242,17 @@ parameter_list|)
 function_decl|;
 specifier|public
 name|void
+name|setProperty
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+function_decl|;
+specifier|public
+name|void
 name|load
 parameter_list|(
 name|DataProperties
