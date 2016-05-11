@@ -1781,7 +1781,7 @@ name|createQuery
 argument_list|(
 literal|"select s from Student s where s.session.uniqueId = :sessionId and "
 operator|+
-literal|"s.externalUniqueId = :name or lower(s.email) = lower(:name)"
+literal|"s.externalUniqueId = :name"
 argument_list|)
 operator|.
 name|setString
@@ -1903,7 +1903,7 @@ name|createQuery
 argument_list|(
 literal|"select i from DepartmentalInstructor i where i.department.session.uniqueId = :sessionId and "
 operator|+
-literal|"i.externalUniqueId = :name or lower(i.careerAcct) = lower(:name) or lower(i.email) = lower(:name)"
+literal|"i.externalUniqueId = :name"
 argument_list|)
 operator|.
 name|setString
@@ -2025,7 +2025,7 @@ name|createQuery
 argument_list|(
 literal|"select c from EventContact c where "
 operator|+
-literal|"c.externalUniqueId = :name or lower(c.emailAddress) = lower(:name)"
+literal|"c.externalUniqueId = :name"
 argument_list|)
 operator|.
 name|setString
