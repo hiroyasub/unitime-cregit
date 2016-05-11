@@ -3923,6 +3923,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<i>No Dates</i>"
+argument_list|)
+name|String
+name|noDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<i>No Room</i>"
+argument_list|)
+name|String
+name|noRoom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Wait-List"
 argument_list|)
 name|String
