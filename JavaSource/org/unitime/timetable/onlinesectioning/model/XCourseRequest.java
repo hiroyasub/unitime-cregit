@@ -1538,6 +1538,16 @@ name|getTime
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|section
+operator|.
+name|getTime
+argument_list|()
+operator|.
+name|getDays
+argument_list|()
+operator|==
+literal|0
 condition|?
 literal|null
 else|:
