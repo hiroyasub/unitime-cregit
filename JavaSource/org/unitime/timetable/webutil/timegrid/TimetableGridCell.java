@@ -1203,7 +1203,7 @@ argument_list|()
 return|;
 if|if
 condition|(
-literal|"external"
+literal|"extended"
 operator|.
 name|equals
 argument_list|(

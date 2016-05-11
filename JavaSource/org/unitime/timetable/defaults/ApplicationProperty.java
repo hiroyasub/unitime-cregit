@@ -5698,7 +5698,7 @@ literal|"Date Pattern Display Format: display the start and end date of a class 
 operator|+
 literal|" never ... always use date pattern name,\n"
 operator|+
-literal|" external ... when the date pattern is of the external type,\n"
+literal|" extended ... when the date pattern is of the extended type,\n"
 operator|+
 literal|" alternate ... when the date pattern is NOT of alternative weeks type,\n"
 operator|+
