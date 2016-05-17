@@ -21018,12 +21018,6 @@ condition|(
 name|pattern
 operator|!=
 literal|null
-operator|&&
-operator|!
-name|pattern
-operator|.
-name|isDefault
-argument_list|()
 condition|)
 block|{
 if|if
