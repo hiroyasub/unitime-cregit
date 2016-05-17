@@ -416,6 +416,10 @@ specifier|private
 name|String
 name|courseTypeId
 decl_stmt|;
+specifier|private
+name|String
+name|externalId
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -942,6 +946,10 @@ expr_stmt|;
 name|add
 operator|=
 literal|false
+expr_stmt|;
+name|externalId
+operator|=
+literal|null
 expr_stmt|;
 block|}
 specifier|public
@@ -1793,6 +1801,30 @@ operator|.
 name|courseTypeId
 operator|=
 name|courseTypeId
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getExternalId
+parameter_list|()
+block|{
+return|return
+name|externalId
+return|;
+block|}
+specifier|public
+name|void
+name|setExternalId
+parameter_list|(
+name|String
+name|externalId
+parameter_list|)
+block|{
+name|this
+operator|.
+name|externalId
+operator|=
+name|externalId
 expr_stmt|;
 block|}
 block|}
