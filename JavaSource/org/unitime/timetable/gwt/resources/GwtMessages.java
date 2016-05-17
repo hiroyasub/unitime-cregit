@@ -1219,7 +1219,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Refresh"
+literal|"<u>R</u>efresh"
 argument_list|)
 name|String
 name|opSolverRefresh
@@ -1295,6 +1295,15 @@ literal|"Restore From Best"
 argument_list|)
 name|String
 name|opSolverRestorBest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>R</u>efresh"
+argument_list|)
+name|String
+name|opSolverLogRefresh
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3355,6 +3364,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Message Level:"
+argument_list|)
+name|String
+name|propSolverLogLevel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -4142,6 +4160,15 @@ literal|"Problems"
 argument_list|)
 name|String
 name|sectSolverWarnings
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Solver Log"
+argument_list|)
+name|String
+name|sectSolverLog
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6820,6 +6847,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Neither a solver is started nor solution is selected."
+argument_list|)
+name|String
+name|warnSolverNotStartedSolutionNotSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Solver is working, stop it first."
 argument_list|)
 name|String
@@ -8781,6 +8817,17 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Solver Log"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageSolverLog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course Timetabling Solver"
 argument_list|)
 annotation|@
@@ -8820,6 +8867,50 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageInstructorSchedulingSolver
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Timetabling Solver Log"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageCourseTimetablingSolverLog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Examination Timetabling Solver Log"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageExaminationTimetablingSolverLog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Scheduling Solver Log"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageStudentSchedulingSolverLog
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor Scheduling Solver Log"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageInstructorSchedulingSolverLog
 parameter_list|()
 function_decl|;
 annotation|@
