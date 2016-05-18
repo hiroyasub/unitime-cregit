@@ -393,6 +393,15 @@ operator|&&
 name|result
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|result
+operator|.
+name|getPeriods
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 name|GwtHint
 operator|.

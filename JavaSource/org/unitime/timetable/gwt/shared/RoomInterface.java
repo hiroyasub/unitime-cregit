@@ -9304,7 +9304,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|addExamRype
+name|addExamType
 parameter_list|(
 name|ExamTypeInterface
 name|type

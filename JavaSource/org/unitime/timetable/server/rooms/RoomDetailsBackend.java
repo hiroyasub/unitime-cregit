@@ -3351,7 +3351,7 @@ expr_stmt|;
 block|}
 name|response
 operator|.
-name|addExamRype
+name|addExamType
 argument_list|(
 operator|new
 name|ExamTypeInterface

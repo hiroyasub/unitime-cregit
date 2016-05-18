@@ -2669,6 +2669,17 @@ argument_list|(
 name|result
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|result
+operator|.
+name|getPeriods
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
 name|iForm
 operator|.
 name|getRowFormatter
