@@ -7244,7 +7244,7 @@ name|addFrom
 argument_list|(
 literal|"department"
 argument_list|,
-literal|"left outer join l.examTypes x left outer join l.roomDepts rd"
+literal|"left outer join l.examTypes x left outer join l.roomDepts rd left outer join rd.department rdd"
 argument_list|)
 expr_stmt|;
 name|query
@@ -7253,7 +7253,7 @@ name|addWhere
 argument_list|(
 literal|"department"
 argument_list|,
-literal|"rd.department.deptCode = :Xd or x.reference = :Xd"
+literal|"rdd.deptCode = :Xd or x.reference = :Xd"
 argument_list|)
 expr_stmt|;
 block|}
