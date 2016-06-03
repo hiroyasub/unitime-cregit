@@ -4347,6 +4347,23 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+comment|//has strongly discouraged, no room preference, but a room is in a required group -> can use the room
+if|if
+condition|(
+name|hasStrongDisc
+operator|&&
+name|reqGroup
+operator|&&
+name|roomPref
+operator|==
+literal|null
+condition|)
+name|roomPref
+operator|=
+name|PreferenceLevel
+operator|.
+name|sNeutral
+expr_stmt|;
 comment|//all strongly discouraged and not overridden by room preference -> do not use this room
 if|if
 condition|(
