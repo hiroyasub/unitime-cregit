@@ -2524,6 +2524,33 @@ argument_list|(
 literal|"unitime.sectioning.config.%"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Student Scheduling: provide default alternatice course when there is no alternative provided by student"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.2
+argument_list|)
+name|StudentSchedulingAlternativeCourse
+argument_list|(
+literal|"unitime.sectioning.alternativeCourse"
+argument_list|)
+operator|,
 comment|/** 	 * Room availability. By default, use the included event management system. 	 * See http://help.unitime.org/Custom_Room_Availability for more details. 	 */
 expr_stmt|@
 name|Type

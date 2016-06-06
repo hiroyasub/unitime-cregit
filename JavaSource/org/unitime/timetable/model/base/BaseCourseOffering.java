@@ -246,6 +246,10 @@ name|OfferingConsentType
 name|iConsentType
 decl_stmt|;
 specifier|private
+name|CourseOffering
+name|iAlternativeOffering
+decl_stmt|;
+specifier|private
 name|Set
 argument_list|<
 name|CourseCreditUnitConfig
@@ -816,6 +820,28 @@ name|consentType
 expr_stmt|;
 block|}
 specifier|public
+name|CourseOffering
+name|getAlternativeOffering
+parameter_list|()
+block|{
+return|return
+name|iAlternativeOffering
+return|;
+block|}
+specifier|public
+name|void
+name|setAlternativeOffering
+parameter_list|(
+name|CourseOffering
+name|alternativeOffering
+parameter_list|)
+block|{
+name|iAlternativeOffering
+operator|=
+name|alternativeOffering
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|CourseCreditUnitConfig
@@ -985,6 +1011,11 @@ parameter_list|()
 block|{
 return|return
 literal|"CourseOffering["
+operator|+
+literal|"\n	AlternativeOffering: "
+operator|+
+name|getAlternativeOffering
+argument_list|()
 operator|+
 literal|"\n	ConsentType: "
 operator|+

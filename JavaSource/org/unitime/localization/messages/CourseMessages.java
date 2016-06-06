@@ -674,6 +674,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Default Alternative Course Offering:"
+argument_list|)
+name|String
+name|propertyAlternativeCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructional Offering Limit:"
 argument_list|)
 name|String
@@ -2050,6 +2059,15 @@ literal|"Demands From"
 argument_list|)
 name|String
 name|columnDemandsFrom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Alternative"
+argument_list|)
+name|String
+name|columnAlternativeCourse
 parameter_list|()
 function_decl|;
 annotation|@
