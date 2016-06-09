@@ -234,60 +234,44 @@ literal|null
 operator|)
 return|;
 block|}
-name|StaffDAO
-name|sdao
-init|=
-operator|new
-name|StaffDAO
-argument_list|()
-decl_stmt|;
-name|String
-name|sql
-init|=
-literal|"select distinct s "
-operator|+
-literal|"from Staff s "
-operator|+
-literal|"where s.dept='"
-operator|+
-name|deptCode
-operator|+
-literal|"'"
-operator|+
-literal|"  and ( "
-operator|+
-literal|"select di.externalUniqueId "
-operator|+
-literal|"from DepartmentalInstructor di "
-operator|+
-literal|"where di.department.deptCode='"
-operator|+
-name|deptCode
-operator|+
-literal|"' "
-operator|+
-literal|"  and di.department.session.uniqueId="
-operator|+
-name|acadSessionId
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|"  and di.externalUniqueId = s.externalUniqueId ) is null"
-decl_stmt|;
 name|Query
 name|q
 init|=
-name|sdao
+name|StaffDAO
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|getSession
 argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-name|sql
+literal|"select distinct s from Staff s where s.dept=:deptCode and "
+operator|+
+literal|"(select di.externalUniqueId from DepartmentalInstructor di "
+operator|+
+literal|"where di.department.deptCode=:deptCode and di.department.session.uniqueId=:sessionId and di.externalUniqueId = s.externalUniqueId ) is null"
 argument_list|)
 decl_stmt|;
+name|q
+operator|.
+name|setString
+argument_list|(
+literal|"deptCode"
+argument_list|,
+name|deptCode
+argument_list|)
+expr_stmt|;
+name|q
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|acadSessionId
+argument_list|)
+expr_stmt|;
 name|q
 operator|.
 name|setCacheable
