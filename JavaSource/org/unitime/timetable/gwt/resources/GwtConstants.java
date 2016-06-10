@@ -1118,6 +1118,15 @@ index|[]
 name|progressLogLevel
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"Back-to-Back"
+argument_list|)
+name|String
+name|instructorBackToBack
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

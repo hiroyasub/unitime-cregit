@@ -480,7 +480,12 @@ range|:
 name|PreferenceLevel
 operator|.
 name|getPreferenceLevelList
+argument_list|(
+name|request
+operator|.
+name|isIncludeNotAvailable
 argument_list|()
+argument_list|)
 control|)
 block|{
 if|if
