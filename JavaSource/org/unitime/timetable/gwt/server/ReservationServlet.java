@@ -4617,6 +4617,16 @@ argument_list|(
 name|offering
 argument_list|)
 expr_stmt|;
+name|boolean
+name|showClassSuffixes
+init|=
+name|ApplicationProperty
+operator|.
+name|ReservationsShowClassSufix
+operator|.
+name|isTrue
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|CourseOffering
@@ -4903,7 +4913,7 @@ name|c
 operator|.
 name|getClassLabel
 argument_list|(
-name|hibSession
+name|showClassSuffixes
 argument_list|)
 argument_list|)
 expr_stmt|;
