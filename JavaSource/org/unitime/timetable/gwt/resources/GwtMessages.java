@@ -4909,6 +4909,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Loading teaching assignments ..."
+argument_list|)
+name|String
+name|waitLoadingTeachingAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load {0}: {1}"
 argument_list|)
 name|String
@@ -5852,6 +5861,18 @@ literal|"Failed to load teaching requests: {0}"
 argument_list|)
 name|String
 name|failedToLoadTeachingRequests
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load teaching assignments: {0}"
+argument_list|)
+name|String
+name|failedToLoadTeachingAssignments
 parameter_list|(
 name|String
 name|reason
@@ -9044,6 +9065,17 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageUnassignedTeachingRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teaching Assignments"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageTeachingAssignments
 parameter_list|()
 function_decl|;
 annotation|@
