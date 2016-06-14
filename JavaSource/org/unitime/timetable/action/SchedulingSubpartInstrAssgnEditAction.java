@@ -1030,7 +1030,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"schedulingSubpartEdit.do?ssuid="
+literal|"schedulingSubpartInstrAssgnEdit.do?ssuid="
 operator|+
 name|frm
 operator|.
@@ -1064,7 +1064,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"schedulingSubpartEdit.do?ssuid="
+literal|"schedulingSubpartInstrAssgnEdit.do?ssuid="
 operator|+
 name|frm
 operator|.
