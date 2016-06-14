@@ -4081,9 +4081,12 @@ argument_list|)
 expr_stmt|;
 name|request
 operator|.
-name|setInstructorIndex
+name|setNrInstructors
 argument_list|(
-literal|0
+name|nrInstructorsNeeded
+argument_list|(
+name|clazz
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|request

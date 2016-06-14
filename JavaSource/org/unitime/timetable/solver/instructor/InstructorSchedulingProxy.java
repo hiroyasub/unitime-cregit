@@ -113,6 +113,14 @@ name|Long
 name|departmentId
 parameter_list|)
 function_decl|;
+specifier|public
+name|TeachingRequestInfo
+name|getTeachingRequestInfo
+parameter_list|(
+name|Long
+name|requestId
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

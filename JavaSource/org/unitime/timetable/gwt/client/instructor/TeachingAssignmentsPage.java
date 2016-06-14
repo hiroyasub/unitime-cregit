@@ -6569,6 +6569,17 @@ name|request
 expr_stmt|;
 block|}
 specifier|public
+name|boolean
+name|hasInstructor
+parameter_list|()
+block|{
+return|return
+name|iInstructor
+operator|!=
+literal|null
+return|;
+block|}
+specifier|public
 name|InstructorInfo
 name|getInstructor
 parameter_list|()

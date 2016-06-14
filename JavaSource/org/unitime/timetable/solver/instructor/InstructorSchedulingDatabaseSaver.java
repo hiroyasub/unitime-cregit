@@ -351,6 +351,8 @@ extends|extends
 name|ProblemSaver
 argument_list|<
 name|TeachingRequest
+operator|.
+name|Variable
 argument_list|,
 name|TeachingAssignment
 argument_list|,
@@ -895,7 +897,17 @@ literal|"'>"
 operator|+
 name|request
 operator|.
-name|getName
+name|getCourse
+argument_list|()
+operator|.
+name|getCourseName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|request
+operator|.
+name|getSections
 argument_list|()
 operator|+
 literal|"</a>"
@@ -1360,6 +1372,8 @@ expr_stmt|;
 for|for
 control|(
 name|TeachingRequest
+operator|.
+name|Variable
 name|request
 range|:
 name|getModel
