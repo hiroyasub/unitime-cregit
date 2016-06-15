@@ -2289,7 +2289,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|settingsId
+name|setting
 operator|!=
 literal|null
 condition|)
