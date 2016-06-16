@@ -966,12 +966,7 @@ name|p
 operator|!=
 literal|null
 condition|)
-name|Progress
-operator|.
-name|getInstance
-argument_list|(
-name|this
-argument_list|)
+name|p
 operator|.
 name|save
 argument_list|(

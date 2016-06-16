@@ -712,7 +712,7 @@ name|SolverParameterGroup
 operator|.
 name|SolverType
 operator|.
-name|EXAM
+name|INSTRUCTOR
 argument_list|)
 argument_list|)
 decl_stmt|;
