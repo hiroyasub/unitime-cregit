@@ -1388,6 +1388,16 @@ name|getCoordinateY
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|building
+operator|.
+name|setExternalId
+argument_list|(
+name|b
+operator|.
+name|getExternalUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|response
 operator|.
 name|addBuilding

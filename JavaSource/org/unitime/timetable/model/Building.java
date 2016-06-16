@@ -347,8 +347,6 @@ parameter_list|,
 name|Long
 name|sessionId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|List
 name|bldgs
@@ -420,8 +418,6 @@ parameter_list|,
 name|Long
 name|sessionId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 operator|(
