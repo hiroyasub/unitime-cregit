@@ -2587,10 +2587,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Idx"
+argument_list|)
+name|String
+name|colIndex
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Assigned<br>Instructors"
 argument_list|)
 name|String
 name|colAssignedInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Conflicts"
+argument_list|)
+name|String
+name|colConflictingRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -3467,6 +3485,60 @@ literal|"Subject Area:"
 argument_list|)
 name|String
 name|propSubjectArea
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sections:"
+argument_list|)
+name|String
+name|propSections
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Load:"
+argument_list|)
+name|String
+name|propRequestLoad
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Attribute Preferences:"
+argument_list|)
+name|String
+name|propAttributePrefs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor Pregerences:"
+argument_list|)
+name|String
+name|propInstructorPrefs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Assigned Instructors:"
+argument_list|)
+name|String
+name|propAssignedInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Objectives:"
+argument_list|)
+name|String
+name|propObjectives
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4927,6 +4999,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Loading teaching request detail ..."
+argument_list|)
+name|String
+name|waitLoadTeachingRequestDetail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load {0}: {1}"
 argument_list|)
 name|String
@@ -5882,6 +5963,18 @@ literal|"Failed to load teaching assignments: {0}"
 argument_list|)
 name|String
 name|failedToLoadTeachingAssignments
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load teaching request: {0}"
+argument_list|)
+name|String
+name|failedToLoadTeachingRequestDetaul
 parameter_list|(
 name|String
 name|reason
@@ -9276,6 +9369,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Details of {0} {1}"
+argument_list|)
+name|String
+name|dialogTeachingRequestDetail
+parameter_list|(
+name|String
+name|course
+parameter_list|,
+name|String
+name|section
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0}<br>{1}<br>{2} seats"
 argument_list|)
 name|String
@@ -12007,6 +12115,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Teaching Request"
+argument_list|)
+name|String
+name|headerTeachingRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Available Instructors"
+argument_list|)
+name|String
+name|headerAvailableInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The selected offering has no curricula."
 argument_list|)
 name|String
@@ -14498,6 +14624,15 @@ literal|"Solver not started."
 argument_list|)
 name|String
 name|solverStatusNotStarted
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No instructor assigned."
+argument_list|)
+name|String
+name|notAssignedInstructor
 parameter_list|()
 function_decl|;
 block|}
