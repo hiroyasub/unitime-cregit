@@ -264,6 +264,15 @@ block|{
 if|if
 condition|(
 name|datePattern
+operator|==
+literal|null
+condition|)
+return|return
+literal|0
+return|;
+if|if
+condition|(
+name|datePattern
 operator|.
 name|getType
 argument_list|()
@@ -338,6 +347,10 @@ condition|(
 name|hours
 operator|<=
 literal|0
+operator|||
+name|datePattern
+operator|==
+literal|null
 condition|)
 return|return
 literal|null
