@@ -4616,6 +4616,22 @@ expr_stmt|;
 block|}
 block|}
 block|}
+specifier|protected
+name|M
+name|getModel
+parameter_list|()
+block|{
+return|return
+operator|(
+name|M
+operator|)
+name|currentSolution
+argument_list|()
+operator|.
+name|getModel
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

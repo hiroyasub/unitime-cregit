@@ -1075,6 +1075,15 @@ name|teachingLoadFormat
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"+#,##0.00;-#,##0.00"
+argument_list|)
+name|String
+name|suggestionScoreFormat
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
