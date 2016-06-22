@@ -3790,6 +3790,14 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|students
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
 name|iDirects
 operator|.
 name|add
