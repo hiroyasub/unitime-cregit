@@ -303,7 +303,7 @@ name|assign
 argument_list|(
 name|request
 operator|.
-name|getSuggestion
+name|getAssignments
 argument_list|()
 argument_list|)
 expr_stmt|;
