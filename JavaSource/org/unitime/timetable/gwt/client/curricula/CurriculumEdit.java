@@ -2153,7 +2153,9 @@ argument_list|(
 operator|new
 name|UniTimeTextBox
 argument_list|(
-literal|20
+literal|40
+argument_list|,
+literal|300
 argument_list|,
 name|ValueBoxBase
 operator|.
@@ -2220,9 +2222,9 @@ argument_list|(
 operator|new
 name|UniTimeTextBox
 argument_list|(
-literal|60
+literal|100
 argument_list|,
-literal|500
+literal|700
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2863,7 +2865,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|60
+literal|100
 condition|)
 name|defaultName
 operator|=
@@ -2873,7 +2875,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|60
+literal|100
 argument_list|)
 expr_stmt|;
 if|if
@@ -2883,7 +2885,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|20
+literal|40
 condition|)
 name|defaultAbbv
 operator|=
@@ -2893,7 +2895,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|20
+literal|40
 argument_list|)
 expr_stmt|;
 if|if
@@ -4884,7 +4886,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|60
+literal|100
 condition|)
 name|defaultName
 operator|=
@@ -4894,7 +4896,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|60
+literal|100
 argument_list|)
 expr_stmt|;
 if|if
@@ -4904,7 +4906,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|20
+literal|40
 condition|)
 name|defaultAbbv
 operator|=
@@ -4914,7 +4916,7 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-literal|20
+literal|40
 argument_list|)
 expr_stmt|;
 name|iDefaultAbbv

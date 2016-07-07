@@ -2611,7 +2611,7 @@ argument_list|()
 operator|.
 name|setMaxLength
 argument_list|(
-literal|20
+literal|40
 argument_list|)
 expr_stmt|;
 name|iName
@@ -2621,7 +2621,7 @@ argument_list|()
 operator|.
 name|setWidth
 argument_list|(
-literal|"150px"
+literal|"300px"
 argument_list|)
 expr_stmt|;
 name|iName
