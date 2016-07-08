@@ -3598,6 +3598,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Compare with:"
+argument_list|)
+name|String
+name|propAssignmentChangesBase
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -9271,6 +9280,17 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageTeachingAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teaching Assignment Changes"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageTeachingAssignmentChanges
 parameter_list|()
 function_decl|;
 annotation|@

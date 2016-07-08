@@ -1136,6 +1136,22 @@ name|String
 name|instructorBackToBack
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Initial Solution"
+block|,
+literal|"Best Solution"
+block|,
+literal|"Saved Assignments"
+block|}
+argument_list|)
+name|String
+index|[]
+name|assignmentChangesBase
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

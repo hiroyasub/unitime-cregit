@@ -1020,7 +1020,7 @@ return|return
 literal|false
 return|;
 block|}
-specifier|protected
+specifier|public
 name|List
 argument_list|<
 name|DepartmentalInstructor
@@ -3708,7 +3708,7 @@ return|return
 name|commonItypes
 return|;
 block|}
-specifier|protected
+specifier|public
 name|InstructorInfo
 name|getInstructorInfo
 parameter_list|(
