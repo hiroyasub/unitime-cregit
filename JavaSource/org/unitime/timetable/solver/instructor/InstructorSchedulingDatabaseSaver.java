@@ -1531,6 +1531,16 @@ name|effectiveNbrInstructors
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|ci
+operator|.
+name|setAssignmentIndex
+argument_list|(
+name|request
+operator|.
+name|getInstructorIndex
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|clazz
 operator|.
 name|getClassInstructors

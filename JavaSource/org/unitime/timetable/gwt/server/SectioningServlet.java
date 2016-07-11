@@ -13942,9 +13942,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators i where "
+literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators oc where "
 operator|+
-literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and i.externalUniqueId = :extId"
+literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and oc.instructor.externalUniqueId = :extId"
 argument_list|)
 operator|.
 name|setLong
@@ -14050,11 +14050,11 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators i where "
+literal|"select distinct c.uniqueId from CourseOffering c inner join c.instructionalOffering.coordinators oc where "
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and c.consentType.reference = :reference and "
 operator|+
-literal|"i.externalUniqueId = :extId"
+literal|"oc.instructor.externalUniqueId = :extId"
 argument_list|)
 operator|.
 name|setLong

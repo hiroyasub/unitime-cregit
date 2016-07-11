@@ -183,7 +183,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|DepartmentalInstructor
+name|InstrOfferingConfig
 import|;
 end_import
 
@@ -197,7 +197,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstrOfferingConfig
+name|OfferingCoordinator
 import|;
 end_import
 
@@ -625,9 +625,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct co.subjectArea from CourseOffering co inner join co.instructionalOffering.coordinators i "
+literal|"select distinct co.subjectArea from CourseOffering co inner join co.instructionalOffering.coordinators oc "
 operator|+
-literal|"where co.subjectArea.session.uniqueId = :sessionId and i.externalUniqueId = :externalId"
+literal|"where co.subjectArea.session.uniqueId = :sessionId and oc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|setLong
@@ -770,9 +770,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct co from CourseOffering co inner join co.instructionalOffering.coordinators i "
+literal|"select distinct co from CourseOffering co inner join co.instructionalOffering.coordinators oc "
 operator|+
-literal|"where co.subjectArea.uniqueId = :subjectAreaId and i.externalUniqueId = :externalId"
+literal|"where co.subjectArea.uniqueId = :subjectAreaId and oc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|setLong
@@ -1152,15 +1152,15 @@ literal|false
 decl_stmt|;
 for|for
 control|(
-name|DepartmentalInstructor
-name|instructor
+name|OfferingCoordinator
+name|oc
 range|:
 name|course
 operator|.
 name|getInstructionalOffering
 argument_list|()
 operator|.
-name|getCoordinators
+name|getOfferingCoordinators
 argument_list|()
 control|)
 block|{
@@ -1176,7 +1176,10 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|instructor
+name|oc
+operator|.
+name|getInstructor
+argument_list|()
 operator|.
 name|getExternalUniqueId
 argument_list|()
@@ -2189,15 +2192,15 @@ literal|false
 expr_stmt|;
 for|for
 control|(
-name|DepartmentalInstructor
-name|instructor
+name|OfferingCoordinator
+name|oc
 range|:
 name|course
 operator|.
 name|getInstructionalOffering
 argument_list|()
 operator|.
-name|getCoordinators
+name|getOfferingCoordinators
 argument_list|()
 control|)
 block|{
@@ -2213,7 +2216,10 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|instructor
+name|oc
+operator|.
+name|getInstructor
+argument_list|()
 operator|.
 name|getExternalUniqueId
 argument_list|()

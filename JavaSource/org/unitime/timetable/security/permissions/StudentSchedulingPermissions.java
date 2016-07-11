@@ -85,7 +85,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|DepartmentalInstructor
+name|InstructionalOffering
 import|;
 end_import
 
@@ -99,7 +99,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|InstructionalOffering
+name|OfferingCoordinator
 import|;
 end_import
 
@@ -697,15 +697,15 @@ literal|false
 return|;
 for|for
 control|(
-name|DepartmentalInstructor
-name|instructor
+name|OfferingCoordinator
+name|coordinator
 range|:
 name|source
 operator|.
 name|getInstructionalOffering
 argument_list|()
 operator|.
-name|getCoordinators
+name|getOfferingCoordinators
 argument_list|()
 control|)
 block|{
@@ -718,7 +718,10 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|instructor
+name|coordinator
+operator|.
+name|getInstructor
+argument_list|()
 operator|.
 name|getExternalUniqueId
 argument_list|()
@@ -830,12 +833,12 @@ condition|)
 block|{
 for|for
 control|(
-name|DepartmentalInstructor
-name|instructor
+name|OfferingCoordinator
+name|coordinator
 range|:
 name|source
 operator|.
-name|getCoordinators
+name|getOfferingCoordinators
 argument_list|()
 control|)
 block|{
@@ -848,7 +851,10 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|instructor
+name|coordinator
+operator|.
+name|getInstructor
+argument_list|()
 operator|.
 name|getExternalUniqueId
 argument_list|()

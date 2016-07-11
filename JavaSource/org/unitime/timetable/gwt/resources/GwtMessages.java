@@ -9296,6 +9296,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Teaching Responsibility"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageTeachingResponsibility
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Teaching Responsibilities"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageTeachingResponsibilities
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -11779,6 +11801,15 @@ literal|"Required Attribute"
 argument_list|)
 name|String
 name|fieldRequiredAttribute
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Coordinator"
+argument_list|)
+name|String
+name|fieldCoordinator
 parameter_list|()
 function_decl|;
 annotation|@

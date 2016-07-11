@@ -567,6 +567,20 @@ name|WebSolver
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|LookupTables
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller, Zuzana Mullerova, Stephanie Schluttenhofer  */
 end_comment
@@ -927,6 +941,13 @@ operator|.
 name|INSTR_LIST_ATTR_NAME
 argument_list|,
 name|instructors
+argument_list|)
+expr_stmt|;
+name|LookupTables
+operator|.
+name|setupInstructorTeachingResponsibilities
+argument_list|(
+name|request
 argument_list|)
 expr_stmt|;
 comment|// First access to screen

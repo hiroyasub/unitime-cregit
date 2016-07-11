@@ -5485,12 +5485,12 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|set
@@ -5746,7 +5746,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -5761,7 +5761,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|limit
@@ -6324,7 +6324,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -6353,7 +6353,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -6424,7 +6424,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -6453,7 +6453,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -6524,7 +6524,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -6553,7 +6553,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -6624,7 +6624,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -6653,7 +6653,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -7213,7 +7213,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -7242,7 +7242,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|limit
@@ -7313,7 +7313,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -7342,7 +7342,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|limit
@@ -7413,7 +7413,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -7442,7 +7442,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|limit
@@ -7513,7 +7513,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -7542,7 +7542,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|limit
@@ -8419,7 +8419,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -8448,7 +8448,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -8519,7 +8519,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -8548,7 +8548,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -8619,7 +8619,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -8648,7 +8648,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -8719,7 +8719,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -8748,7 +8748,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session.uniqueId = s.uniqueId"
+literal|"cc.instructor.department.session.uniqueId = s.uniqueId"
 argument_list|)
 operator|.
 name|limit
@@ -9622,7 +9622,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -9642,7 +9642,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|set
@@ -9722,7 +9722,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -9742,7 +9742,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|set
@@ -9822,7 +9822,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -9842,7 +9842,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|set
@@ -9922,7 +9922,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.externalUniqueId = :externalId"
+literal|"cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|set
@@ -9942,7 +9942,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cc.department.session = s"
+literal|"cc.instructor.department.session = s"
 argument_list|)
 operator|.
 name|set
@@ -20156,7 +20156,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc where c.committedAssignment is null and c.cancelled = false and cc.department.session.uniqueId = :sessionId and  cc.externalUniqueId = :externalId"
+literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc where c.committedAssignment is null and c.cancelled = false and cc.instructor.department.session.uniqueId = :sessionId and cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|setString

@@ -3558,7 +3558,7 @@ name|setCompareBy
 argument_list|(
 name|ic
 operator|.
-name|COMPARE_BY_LEAD
+name|COMPARE_BY_INDEX
 argument_list|)
 expr_stmt|;
 name|Collections
@@ -3871,6 +3871,13 @@ argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|LookupTables
+operator|.
+name|setupInstructorTeachingResponsibilities
+argument_list|(
+name|request
 argument_list|)
 expr_stmt|;
 name|Vector

@@ -2681,6 +2681,10 @@ name|InstructorAttributeTypes
 block|,
 name|InstructorAttributeTypeEdit
 block|,
+name|TeachingResponsibilities
+block|,
+name|TeachingResponsibilityEdit
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,
