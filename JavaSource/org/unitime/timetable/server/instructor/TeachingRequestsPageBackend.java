@@ -644,7 +644,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co "
+literal|"select distinct c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co "
+operator|+
+literal|"left join fetch c.schedulingSubpart as ss left join fetch c.classInstructors as ci left join fetch ci.instructor as di "
+operator|+
+literal|"left join fetch c.preferences as cp left join fetch ss.preferences as sp left join fetch di.preferences as dip "
 operator|+
 literal|"where co.subjectArea.uniqueId in :subjectAreaIds and co.isControl = true and c.cancelled = false and "
 operator|+
@@ -683,7 +687,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co "
+literal|"select distinct c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co "
+operator|+
+literal|"left join fetch c.schedulingSubpart as ss left join fetch c.classInstructors as ci left join fetch ci.instructor as di "
+operator|+
+literal|"left join fetch c.preferences as cp left join fetch ss.preferences as sp left join fetch di.preferences as dip "
 operator|+
 literal|"where co.subjectArea.uniqueId = :subjectAreaId and co.isControl = true and c.cancelled = false and "
 operator|+

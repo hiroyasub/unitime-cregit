@@ -568,7 +568,12 @@ name|INSTRUCTOR_ASSIGNMENT_PREF_EDIT
 argument_list|(
 literal|"Instructor Assignment Preferences"
 argument_list|)
-block|,         ;
+block|,
+name|INSTRUCTOR_ASSIGNMENT
+argument_list|(
+literal|"Instructor Assignment"
+argument_list|)
+block|;
 specifier|private
 name|String
 name|iTitle

@@ -648,9 +648,13 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i from DepartmentalInstructor i where "
+literal|"select distinct i from DepartmentalInstructor i "
 operator|+
-literal|"i.department.uniqueId in :departmentIds and i.teachingPreference.prefProlog != :prohibited and i.maxLoad> 0.0"
+literal|"left join fetch i.classes as ci left join fetch ci.classInstructing as c left join fetch c.schedulingSubpart as ss "
+operator|+
+literal|"left join fetch c.preferences as cp left join fetch ss.preferences as sp left join fetch i.preferences as ip "
+operator|+
+literal|"where i.department.uniqueId in :departmentIds and i.teachingPreference.prefProlog != :prohibited and i.maxLoad> 0.0"
 argument_list|)
 operator|.
 name|setParameterList
@@ -667,6 +671,11 @@ argument_list|,
 name|PreferenceLevel
 operator|.
 name|sProhibited
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|list
@@ -687,9 +696,13 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i from DepartmentalInstructor i where "
+literal|"select distinct i from DepartmentalInstructor i "
 operator|+
-literal|"i.department.uniqueId = :departmentId and i.teachingPreference.prefProlog != :prohibited and i.maxLoad> 0.0"
+literal|"left join fetch i.classes as ci left join fetch ci.classInstructing as c left join fetch c.schedulingSubpart as ss "
+operator|+
+literal|"left join fetch c.preferences as cp left join fetch ss.preferences as sp left join fetch i.preferences as ip "
+operator|+
+literal|"where i.department.uniqueId = :departmentId and i.teachingPreference.prefProlog != :prohibited and i.maxLoad> 0.0"
 argument_list|)
 operator|.
 name|setLong
@@ -709,6 +722,11 @@ argument_list|,
 name|PreferenceLevel
 operator|.
 name|sProhibited
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
 argument_list|)
 operator|.
 name|list
