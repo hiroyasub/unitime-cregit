@@ -4174,6 +4174,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Show<u>M</u>ore"
+argument_list|)
+name|String
+name|buttonMoreAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>A</u>ssign"
 argument_list|)
 name|String
@@ -7496,6 +7505,15 @@ literal|"Please confirm the change in your contact information."
 argument_list|)
 name|String
 name|checkYourContactChange
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do not unassign conflicting assignments."
+argument_list|)
+name|String
+name|checkIgnoreInstructorAssignmentConflicts
 parameter_list|()
 function_decl|;
 annotation|@
@@ -12844,6 +12862,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"The selected assignment will be done directly in the database. Are you sure?"
+argument_list|)
+name|String
+name|confirmInstructorAssignmentChangesNoSolver
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"&nbsp;(of&nbsp;{0})"
 argument_list|)
 name|String
@@ -15020,6 +15047,36 @@ name|depth
 parameter_list|,
 name|int
 name|nrResults
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"(best {0} available instructor assignments out of {1} displayed)"
+argument_list|)
+name|String
+name|domainNinstructors
+parameter_list|(
+name|int
+name|nrResults
+parameter_list|,
+name|int
+name|domainSize
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"(best {0} available teaching assignments out of {1} displayed)"
+argument_list|)
+name|String
+name|domainNassignments
+parameter_list|(
+name|int
+name|nrResults
+parameter_list|,
+name|int
+name|domainSize
 parameter_list|)
 function_decl|;
 annotation|@
