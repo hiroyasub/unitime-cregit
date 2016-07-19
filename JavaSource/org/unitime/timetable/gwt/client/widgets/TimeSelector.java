@@ -4070,7 +4070,7 @@ if|if
 condition|(
 name|slot
 operator|==
-literal|0
+literal|288
 condition|)
 return|return
 name|CONSTANTS
