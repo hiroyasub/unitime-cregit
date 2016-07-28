@@ -136,6 +136,8 @@ specifier|public
 specifier|static
 enum|enum
 name|SolverType
+implements|implements
+name|IsSerializable
 block|{
 name|COURSE
 block|,
@@ -149,6 +151,8 @@ specifier|public
 specifier|static
 enum|enum
 name|SolverOperation
+implements|implements
+name|IsSerializable
 block|{
 name|INIT
 block|,
@@ -1038,6 +1042,8 @@ specifier|public
 specifier|static
 enum|enum
 name|PageMessageType
+implements|implements
+name|IsSerializable
 block|{
 name|INFO
 block|,
@@ -2696,6 +2702,8 @@ specifier|public
 specifier|static
 enum|enum
 name|ProgressLogLevel
+implements|implements
+name|IsSerializable
 block|{
 name|TRACE
 block|,

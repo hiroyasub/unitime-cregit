@@ -2716,6 +2716,8 @@ specifier|public
 specifier|static
 enum|enum
 name|InstructorsColumn
+implements|implements
+name|IsSerializable
 block|{
 name|SELECTION
 block|,
@@ -2735,6 +2737,8 @@ specifier|public
 specifier|static
 enum|enum
 name|AttributesColumn
+implements|implements
+name|IsSerializable
 block|{
 name|CODE
 block|,
@@ -9242,6 +9246,8 @@ specifier|public
 specifier|static
 enum|enum
 name|ChangesType
+implements|implements
+name|IsSerializable
 block|{
 name|INITIAL
 block|,
