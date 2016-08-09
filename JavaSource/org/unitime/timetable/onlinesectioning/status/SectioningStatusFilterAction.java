@@ -2694,7 +2694,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i from CourseOffering c inner join c.instructionalOffering.coordinators oc inner join oc.instructor i where "
+literal|"select distinct i from CourseOffering c inner join c.instructionalOffering.offeringCoordinators oc inner join oc.instructor i where "
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and c.consentType.reference != :reference and "
 operator|+

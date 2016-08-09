@@ -625,7 +625,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct co.subjectArea from CourseOffering co inner join co.instructionalOffering.coordinators oc "
+literal|"select distinct co.subjectArea from CourseOffering co inner join co.instructionalOffering.offeringCoordinators oc "
 operator|+
 literal|"where co.subjectArea.session.uniqueId = :sessionId and oc.instructor.externalUniqueId = :externalId"
 argument_list|)
@@ -770,7 +770,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct co from CourseOffering co inner join co.instructionalOffering.coordinators oc "
+literal|"select distinct co from CourseOffering co inner join co.instructionalOffering.offeringCoordinators oc "
 operator|+
 literal|"where co.subjectArea.uniqueId = :subjectAreaId and oc.instructor.externalUniqueId = :externalId"
 argument_list|)

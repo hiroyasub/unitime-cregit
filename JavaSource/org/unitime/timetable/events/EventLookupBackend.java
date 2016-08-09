@@ -5480,7 +5480,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc"
+literal|"inner join e.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -5741,7 +5741,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc"
+literal|"inner join e.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -6319,7 +6319,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -6419,7 +6419,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -6519,7 +6519,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -6619,7 +6619,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -7208,7 +7208,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -7308,7 +7308,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -7408,7 +7408,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -7508,7 +7508,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.exam.owners o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.coordinators cc"
+literal|"inner join e.exam.owners o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -8414,7 +8414,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -8514,7 +8514,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -8614,7 +8614,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -8714,7 +8714,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -9617,7 +9617,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -9717,7 +9717,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, CourseOffering co inner join co.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -9817,7 +9817,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -9917,7 +9917,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"inner join e.relatedCourses o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.coordinators cc"
+literal|"inner join e.relatedCourses o, InstrOfferingConfig cfg inner join cfg.instructionalOffering.offeringCoordinators cc"
 argument_list|)
 operator|.
 name|where
@@ -20156,7 +20156,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.coordinators cc where c.committedAssignment is null and c.cancelled = false and cc.instructor.department.session.uniqueId = :sessionId and cc.instructor.externalUniqueId = :externalId"
+literal|"select c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.offeringCoordinators cc where c.committedAssignment is null and c.cancelled = false and cc.instructor.department.session.uniqueId = :sessionId and cc.instructor.externalUniqueId = :externalId"
 argument_list|)
 operator|.
 name|setString
