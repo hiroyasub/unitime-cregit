@@ -6500,11 +6500,6 @@ name|in
 argument_list|(
 name|types
 argument_list|)
-operator|&&
-name|pg
-operator|.
-name|isInstructorAssignmentNeeded
-argument_list|()
 condition|)
 block|{
 name|List
@@ -6677,11 +6672,6 @@ name|in
 argument_list|(
 name|types
 argument_list|)
-operator|&&
-name|pg
-operator|.
-name|isInstructorAssignmentNeeded
-argument_list|()
 condition|)
 block|{
 name|List
@@ -7021,11 +7011,6 @@ name|in
 argument_list|(
 name|types
 argument_list|)
-operator|&&
-name|pg
-operator|.
-name|isInstructorAssignmentNeeded
-argument_list|()
 condition|)
 block|{
 name|List

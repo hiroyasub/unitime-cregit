@@ -49,16 +49,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|springframework
@@ -478,15 +468,6 @@ argument_list|)
 return|;
 else|else
 block|{
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|commonItypes
-init|=
-name|getCommonItypes
-argument_list|()
-decl_stmt|;
 name|String
 name|nameFormat
 init|=
@@ -750,8 +731,6 @@ argument_list|(
 name|instructor
 argument_list|,
 name|nameFormat
-argument_list|,
-name|commonItypes
 argument_list|)
 argument_list|)
 expr_stmt|;

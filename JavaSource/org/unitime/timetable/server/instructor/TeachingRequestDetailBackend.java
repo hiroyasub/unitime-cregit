@@ -129,7 +129,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Class_
+name|TeachingRequest
 import|;
 end_import
 
@@ -145,7 +145,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|Class_DAO
+name|TeachingRequestDAO
 import|;
 end_import
 
@@ -295,10 +295,10 @@ return|;
 block|}
 else|else
 block|{
-name|Class_
-name|clazz
+name|TeachingRequest
+name|tr
 init|=
-name|Class_DAO
+name|TeachingRequestDAO
 operator|.
 name|getInstance
 argument_list|()
@@ -313,7 +313,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|clazz
+name|tr
 operator|==
 literal|null
 condition|)
@@ -321,12 +321,9 @@ return|return
 literal|null
 return|;
 return|return
-name|getRequestForClass
+name|getRequest
 argument_list|(
-name|clazz
-argument_list|,
-name|getCommonItypes
-argument_list|()
+name|tr
 argument_list|,
 name|UserProperty
 operator|.
@@ -339,6 +336,8 @@ operator|.
 name|getUser
 argument_list|()
 argument_list|)
+argument_list|,
+literal|null
 argument_list|)
 return|;
 block|}

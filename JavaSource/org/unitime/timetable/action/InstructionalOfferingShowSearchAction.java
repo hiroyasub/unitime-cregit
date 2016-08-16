@@ -640,6 +640,16 @@ control|)
 block|{
 if|if
 condition|(
+literal|"-1"
+operator|.
+name|equals
+argument_list|(
+name|id
+argument_list|)
+condition|)
+continue|continue;
+if|if
+condition|(
 name|names
 operator|.
 name|length

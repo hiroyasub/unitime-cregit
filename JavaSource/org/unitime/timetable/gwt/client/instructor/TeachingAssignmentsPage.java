@@ -3764,6 +3764,8 @@ argument_list|()
 operator|.
 name|getCourseName
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 return|;
 case|case

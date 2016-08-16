@@ -1525,6 +1525,11 @@ argument_list|(
 name|hasInstructorAssignments
 argument_list|)
 expr_stmt|;
+name|setDisplayInstructorPrefs
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|ClassDurationType
 name|dtype
 init|=

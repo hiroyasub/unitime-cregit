@@ -5117,6 +5117,7 @@ name|isEditable
 argument_list|)
 operator|)
 return|;
+comment|/*     	} else if (InstructorAttributePref.class.equals(prefType) || InstructorPref.class.equals(prefType)) {     		TableCell cell = this.initNormalCell("", isEditable);     		if (prefGroup instanceof Class_) {     			for (TeachingClassRequest cr: ((Class_)prefGroup).getTeachingRequests()) {     				if (!cr.isAssignInstructor()) continue;     				cell.addContent(cr.getTeachingRequest().getEffectivePrefHtmlForPrefType(prefType, getInstructorNameFormat()));     			}     			return cell;     		} else {     			return initNormalCell("", false);     		}     	*/
 block|}
 else|else
 block|{
@@ -6207,6 +6208,7 @@ name|Class_
 operator|)
 name|prefGroup
 decl_stmt|;
+comment|/*     		for (TeachingClassRequest cr: c.getTeachingRequests()) {     			if (!cr.isAssignInstructor()) continue;     			cell.addContent(Formats.getNumberFormat("0.##").format(cr.getTeachingRequest().getTeachingLoad()) + " " + MSG.teachingLoadUnits()     				+ (cr.getTeachingRequest().getResponsibility() == null ? "" : " (" + cr.getTeachingRequest().getResponsibility().getAbbreviation() + ")")     				);     			*/
 if|if
 condition|(
 name|c
@@ -6333,13 +6335,6 @@ operator|.
 name|addContent
 argument_list|(
 operator|(
-name|ss
-operator|.
-name|getNbrInstructors
-argument_list|()
-operator|!=
-literal|null
-operator|&&
 name|ss
 operator|.
 name|getNbrInstructors

@@ -137,6 +137,18 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|commons
+operator|.
+name|Debug
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|gwt
@@ -2248,6 +2260,20 @@ operator|.
 name|rollback
 argument_list|()
 expr_stmt|;
+name|error
+argument_list|(
+literal|"Execution failed: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+name|Debug
+operator|.
 name|error
 argument_list|(
 literal|"Execution failed: "

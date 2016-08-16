@@ -49,16 +49,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|springframework
@@ -183,20 +173,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|Class_
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|DepartmentalInstructor
 import|;
 end_import
@@ -239,9 +215,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|comparators
-operator|.
-name|ClassComparator
+name|TeachingRequest
 import|;
 end_import
 
@@ -443,6 +417,13 @@ condition|(
 name|solver
 operator|!=
 literal|null
+operator|&&
+name|request
+operator|.
+name|getOfferingId
+argument_list|()
+operator|==
+literal|null
 condition|)
 return|return
 operator|new
@@ -456,28 +437,11 @@ operator|.
 name|getTeachingRequests
 argument_list|(
 name|request
-operator|.
-name|getSubjectAreaId
-argument_list|()
-argument_list|,
-name|request
-operator|.
-name|isAssigned
-argument_list|()
 argument_list|)
 argument_list|)
 return|;
 else|else
 block|{
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|commonItypes
-init|=
-name|getCommonItypes
-argument_list|()
-decl_stmt|;
 name|String
 name|nameFormat
 init|=
@@ -523,13 +487,57 @@ argument_list|()
 decl_stmt|;
 name|List
 argument_list|<
-name|Class_
+name|TeachingRequest
 argument_list|>
-name|classes
+name|requests
 init|=
 literal|null
 decl_stmt|;
 if|if
+condition|(
+name|request
+operator|.
+name|getOfferingId
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|requests
+operator|=
+operator|(
+name|List
+argument_list|<
+name|TeachingRequest
+argument_list|>
+operator|)
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"from TeachingRequest r where r.offering.uniqueId = :offeringId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"offeringId"
+argument_list|,
+name|request
+operator|.
+name|getOfferingId
+argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
+name|list
+argument_list|()
+expr_stmt|;
+block|}
+if|else if
 condition|(
 name|request
 operator|.
@@ -632,29 +640,19 @@ condition|)
 return|return
 name|ret
 return|;
-name|classes
+name|requests
 operator|=
 operator|(
 name|List
 argument_list|<
-name|Class_
+name|TeachingRequest
 argument_list|>
 operator|)
 name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co "
-operator|+
-literal|"left join fetch c.schedulingSubpart as ss left join fetch c.classInstructors as ci left join fetch ci.instructor as di "
-operator|+
-literal|"left join fetch c.preferences as cp left join fetch ss.preferences as sp left join fetch di.preferences as dip "
-operator|+
-literal|"where co.subjectArea.uniqueId in :subjectAreaIds and co.isControl = true and c.cancelled = false and "
-operator|+
-literal|"(c.teachingLoad is not null or c.schedulingSubpart.teachingLoad is not null) and "
-operator|+
-literal|"((c.nbrInstructors is null and c.schedulingSubpart.nbrInstructors> 0) or c.nbrInstructors> 0)"
+literal|"select r from TeachingRequest r inner join r.offering.courseOfferings co where co.isControl = true and co.subjectArea.uniqueId in :subjectAreaIds"
 argument_list|)
 operator|.
 name|setParameterList
@@ -675,29 +673,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|classes
+name|requests
 operator|=
 operator|(
 name|List
 argument_list|<
-name|Class_
+name|TeachingRequest
 argument_list|>
 operator|)
 name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c from Class_ c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings co "
-operator|+
-literal|"left join fetch c.schedulingSubpart as ss left join fetch c.classInstructors as ci left join fetch ci.instructor as di "
-operator|+
-literal|"left join fetch c.preferences as cp left join fetch ss.preferences as sp left join fetch di.preferences as dip "
-operator|+
-literal|"where co.subjectArea.uniqueId = :subjectAreaId and co.isControl = true and c.cancelled = false and "
-operator|+
-literal|"(c.teachingLoad is not null or c.schedulingSubpart.teachingLoad is not null) and "
-operator|+
-literal|"((c.nbrInstructors is null and c.schedulingSubpart.nbrInstructors> 0) or c.nbrInstructors> 0)"
+literal|"select r from TeachingRequest r inner join r.offering.courseOfferings co where co.isControl = true and co.subjectArea.uniqueId = :subjectAreaId"
 argument_list|)
 operator|.
 name|setLong
@@ -719,48 +707,25 @@ name|list
 argument_list|()
 expr_stmt|;
 block|}
-name|Collections
-operator|.
-name|sort
-argument_list|(
-name|classes
-argument_list|,
-operator|new
-name|ClassComparator
-argument_list|(
-name|ClassComparator
-operator|.
-name|COMPARE_BY_HIERARCHY
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|// Collections.sort(classes, new ClassComparator(ClassComparator.COMPARE_BY_HIERARCHY));
 for|for
 control|(
-name|Class_
-name|clazz
+name|TeachingRequest
+name|tr
 range|:
-name|classes
+name|requests
 control|)
 block|{
-if|if
-condition|(
-operator|!
-name|clazz
-operator|.
-name|isInstructorAssignmentNeeded
-argument_list|()
-condition|)
-continue|continue;
 name|TeachingRequestInfo
 name|info
 init|=
-name|getRequestForClass
+name|getRequest
 argument_list|(
-name|clazz
-argument_list|,
-name|commonItypes
+name|tr
 argument_list|,
 name|nameFormat
+argument_list|,
+name|solver
 argument_list|)
 decl_stmt|;
 if|if
@@ -771,6 +736,22 @@ literal|null
 condition|)
 block|{
 if|if
+condition|(
+name|request
+operator|.
+name|getOfferingId
+argument_list|()
+operator|!=
+literal|null
+condition|)
+name|ret
+operator|.
+name|add
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
+if|else if
 condition|(
 name|request
 operator|.

@@ -336,9 +336,6 @@ operator|.
 name|getUser
 argument_list|()
 argument_list|)
-argument_list|,
-name|getCommonItypes
-argument_list|()
 argument_list|)
 return|;
 block|}

@@ -740,11 +740,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c.uniqueId from Class_ c where c.controllingDept.solverGroup.uniqueId in :solverGroupId and c.cancelled = false and "
-operator|+
-literal|"(c.teachingLoad is not null or c.schedulingSubpart.teachingLoad is not null) and "
-operator|+
-literal|"((c.nbrInstructors is null and c.schedulingSubpart.nbrInstructors> 0) or c.nbrInstructors> 0)"
+literal|"select distinct c.uniqueId from Class_ c inner join c.teachingRequests r where c.controllingDept.solverGroup.uniqueId in :solverGroupId and c.cancelled = false"
 argument_list|)
 operator|.
 name|setParameterList
