@@ -716,6 +716,14 @@ range|:
 name|requests
 control|)
 block|{
+if|if
+condition|(
+name|tr
+operator|.
+name|isCancelled
+argument_list|()
+condition|)
+continue|continue;
 name|TeachingRequestInfo
 name|info
 init|=
