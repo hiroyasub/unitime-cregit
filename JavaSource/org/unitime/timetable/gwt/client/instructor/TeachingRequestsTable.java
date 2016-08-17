@@ -689,6 +689,10 @@ argument_list|>
 name|assignments
 parameter_list|)
 block|{
+name|TeachingRequestsTable
+operator|.
+name|this
+operator|.
 name|onAssignmentChanged
 argument_list|(
 name|assignments
