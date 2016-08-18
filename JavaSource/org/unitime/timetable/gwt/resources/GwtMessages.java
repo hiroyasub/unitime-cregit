@@ -3700,7 +3700,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Simple:"
+literal|"Select Scheduling Subpart:"
 argument_list|)
 name|String
 name|propSetupTeachingRequestMulti
