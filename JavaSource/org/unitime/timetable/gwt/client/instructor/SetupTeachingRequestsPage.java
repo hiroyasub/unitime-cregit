@@ -6218,6 +6218,13 @@ name|ch
 operator|.
 name|setValue
 argument_list|(
+name|clazz
+operator|.
+name|isCancelled
+argument_list|()
+condition|?
+literal|0
+else|:
 literal|1
 argument_list|)
 expr_stmt|;
