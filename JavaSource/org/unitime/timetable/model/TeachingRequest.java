@@ -1542,6 +1542,26 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getOffering
+argument_list|()
+operator|.
+name|getCourseName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|getClassRequests
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

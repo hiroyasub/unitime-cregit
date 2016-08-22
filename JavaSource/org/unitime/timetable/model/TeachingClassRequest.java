@@ -132,6 +132,32 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getTeachingClass
+argument_list|()
+operator|.
+name|getItypeDesc
+argument_list|()
+operator|.
+name|trim
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|getTeachingClass
+argument_list|()
+operator|.
+name|getSectionNumberString
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
