@@ -3041,6 +3041,13 @@ operator|.
 name|setManagingDept
 argument_list|(
 name|dept
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 name|hibSession

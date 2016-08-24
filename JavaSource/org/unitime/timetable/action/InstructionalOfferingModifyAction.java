@@ -5419,6 +5419,13 @@ operator|.
 name|setManagingDept
 argument_list|(
 name|managingDept
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 if|if
@@ -6280,6 +6287,13 @@ operator|.
 name|setManagingDept
 argument_list|(
 name|managingDept
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 name|Set

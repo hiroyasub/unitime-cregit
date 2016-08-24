@@ -8602,6 +8602,13 @@ argument_list|(
 name|mdId
 argument_list|)
 argument_list|)
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 comment|// Remove from distribution prefs
@@ -10572,6 +10579,13 @@ argument_list|(
 name|md
 argument_list|)
 argument_list|)
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 name|c

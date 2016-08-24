@@ -1016,6 +1016,13 @@ name|clazz
 operator|.
 name|getControllingDept
 argument_list|()
+argument_list|,
+name|sessionContext
+operator|.
+name|getUser
+argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 expr_stmt|;
 comment|// Clear all room preferences from the class
