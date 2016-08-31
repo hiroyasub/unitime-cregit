@@ -2199,6 +2199,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Enrollment Conflict"
+argument_list|)
+name|String
+name|columnEnrollmentConflict
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Total"
 argument_list|)
 name|String
