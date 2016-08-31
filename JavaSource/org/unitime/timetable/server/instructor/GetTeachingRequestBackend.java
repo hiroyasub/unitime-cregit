@@ -2404,6 +2404,16 @@ argument_list|)
 expr_stmt|;
 name|req
 operator|.
+name|setNbrInstructors
+argument_list|(
+name|r
+operator|.
+name|getNbrInstructors
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|req
+operator|.
 name|setAssignCoordinator
 argument_list|(
 name|r
