@@ -707,6 +707,8 @@ operator|new
 name|Context
 argument_list|(
 name|context
+argument_list|,
+name|solver
 argument_list|)
 decl_stmt|;
 name|Suggestion
