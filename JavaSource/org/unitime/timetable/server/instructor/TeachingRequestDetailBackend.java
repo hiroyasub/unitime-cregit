@@ -249,7 +249,7 @@ name|checkPermission
 argument_list|(
 name|Right
 operator|.
-name|InstructorSchedulingSolver
+name|InstructorScheduling
 argument_list|)
 expr_stmt|;
 name|InstructorSchedulingProxy
