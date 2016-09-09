@@ -2068,6 +2068,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EventDetailArrangeHourClass
+argument_list|(
+name|Class_
+operator|.
+name|class
+argument_list|)
+block|,
 name|EventEdit
 argument_list|(
 name|Event
