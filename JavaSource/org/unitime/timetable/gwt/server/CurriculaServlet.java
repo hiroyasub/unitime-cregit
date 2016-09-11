@@ -1310,7 +1310,7 @@ name|Autowired
 name|SessionContext
 name|sessionContext
 decl_stmt|;
-specifier|private
+specifier|protected
 name|SessionContext
 name|getSessionContext
 parameter_list|()
@@ -1479,7 +1479,8 @@ name|ci
 operator|.
 name|setEditable
 argument_list|(
-name|sessionContext
+name|getSessionContext
+argument_list|()
 operator|.
 name|hasPermission
 argument_list|(
@@ -3076,7 +3077,8 @@ name|curriculumIfc
 operator|.
 name|setEditable
 argument_list|(
-name|sessionContext
+name|getSessionContext
+argument_list|()
 operator|.
 name|hasPermission
 argument_list|(
@@ -18541,7 +18543,8 @@ name|permissionDepartment
 operator|.
 name|check
 argument_list|(
-name|sessionContext
+name|getSessionContext
+argument_list|()
 operator|.
 name|getUser
 argument_list|()
@@ -19212,7 +19215,8 @@ name|NameFormat
 operator|.
 name|get
 argument_list|(
-name|sessionContext
+name|getSessionContext
+argument_list|()
 operator|.
 name|getUser
 argument_list|()
@@ -27380,7 +27384,7 @@ throw|;
 block|}
 block|}
 comment|/* Support functions (lookups etc.) */
-specifier|private
+specifier|protected
 name|Long
 name|getAcademicSessionId
 parameter_list|()
