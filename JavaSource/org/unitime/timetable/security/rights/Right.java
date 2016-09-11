@@ -2875,6 +2875,27 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ApiRetrieveInstructors
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|ApiRetrieveCurricula
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|ApiRetrieveStudentGroups
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** People Lookup limitations */
 name|CanLookupStudents
 block|,

@@ -983,6 +983,9 @@ decl_stmt|;
 name|DepartmentInfo
 name|iDepartment
 decl_stmt|;
+name|String
+name|iAcademicTitle
+decl_stmt|;
 name|InstructorInfo
 parameter_list|(
 name|DepartmentalInstructor
@@ -1068,6 +1071,13 @@ operator|.
 name|getDepartment
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|iAcademicTitle
+operator|=
+name|instructor
+operator|.
+name|getAcademicTitle
+argument_list|()
 expr_stmt|;
 block|}
 block|}

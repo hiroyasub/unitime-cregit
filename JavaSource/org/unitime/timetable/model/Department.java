@@ -297,6 +297,9 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|TreeSet
+argument_list|<
+name|Department
+argument_list|>
 name|findAll
 parameter_list|(
 name|Long
@@ -306,6 +309,9 @@ block|{
 return|return
 operator|new
 name|TreeSet
+argument_list|<
+name|Department
+argument_list|>
 argument_list|(
 operator|(
 operator|new
