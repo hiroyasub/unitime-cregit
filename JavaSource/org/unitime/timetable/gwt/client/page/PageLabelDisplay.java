@@ -88,7 +88,15 @@ name|PageNameInterface
 argument_list|>
 extends|,
 name|IsWidget
-block|{ }
+block|{
+specifier|public
+specifier|static
+interface|interface
+name|Mobile
+extends|extends
+name|PageLabelDisplay
+block|{}
+block|}
 end_interface
 
 end_unit

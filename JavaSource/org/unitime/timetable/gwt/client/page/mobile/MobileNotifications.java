@@ -13,11 +13,11 @@ name|timetable
 operator|.
 name|gwt
 operator|.
-name|mobile
-operator|.
 name|client
 operator|.
 name|page
+operator|.
+name|mobile
 package|;
 end_package
 

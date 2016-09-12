@@ -13,11 +13,11 @@ name|timetable
 operator|.
 name|gwt
 operator|.
-name|mobile
-operator|.
 name|client
 operator|.
 name|widgets
+operator|.
+name|mobile
 package|;
 end_package
 
@@ -920,7 +920,7 @@ parameter_list|(
 name|FrameElement
 name|element
 parameter_list|)
-comment|/*-{ 		element.onload = function() { 			@org.unitime.timetable.gwt.mobile.client.widgets.MobileUniTimeFrameDialogImpl::notifyFrameLoaded()(); 		} 		if (element.addEventListener) { 			element.addEventListener("load", function() { 				@org.unitime.timetable.gwt.mobile.client.widgets.MobileUniTimeFrameDialogImpl::notifyFrameLoaded()(); 			}, false); 		} else if (element.attachEvent) { 			element.attachEvent("onload", function() { 				@org.unitime.timetable.gwt.mobile.client.widgets.MobileUniTimeFrameDialogImpl::notifyFrameLoaded()(); 			}); 		} 	}-*/
+comment|/*-{ 		element.onload = function() { 			@org.unitime.timetable.gwt.client.widgets.mobile.MobileUniTimeFrameDialogImpl::notifyFrameLoaded()(); 		} 		if (element.addEventListener) { 			element.addEventListener("load", function() { 				@org.unitime.timetable.gwt.client.widgets.mobile.MobileUniTimeFrameDialogImpl::notifyFrameLoaded()(); 			}, false); 		} else if (element.attachEvent) { 			element.attachEvent("onload", function() { 				@org.unitime.timetable.gwt.client.widgets.mobile.MobileUniTimeFrameDialogImpl::notifyFrameLoaded()(); 			}); 		} 	}-*/
 function_decl|;
 block|}
 end_class

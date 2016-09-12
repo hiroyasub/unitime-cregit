@@ -75,6 +75,13 @@ name|boolean
 name|isShowing
 parameter_list|()
 function_decl|;
+specifier|public
+specifier|static
+interface|interface
+name|Mobile
+extends|extends
+name|UniTimeFrameDialogDisplay
+block|{}
 block|}
 end_interface
 
