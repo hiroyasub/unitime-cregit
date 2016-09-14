@@ -277,7 +277,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"50px"
+literal|"7%"
 argument_list|)
 argument_list|,
 operator|new
@@ -292,7 +292,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"90px"
+literal|"10%"
 argument_list|)
 argument_list|,
 operator|new
@@ -307,7 +307,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"60px"
+literal|"7%"
 argument_list|)
 argument_list|,
 operator|new
@@ -322,7 +322,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"60px"
+literal|"7%"
 argument_list|)
 argument_list|,
 operator|new
@@ -337,7 +337,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"60px"
+literal|"7%"
 argument_list|)
 argument_list|,
 operator|new
@@ -352,7 +352,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"60px"
+literal|"7%"
 argument_list|)
 argument_list|,
 operator|new
@@ -367,7 +367,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"100px"
+literal|"12%"
 argument_list|)
 argument_list|,
 operator|new
@@ -382,7 +382,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"100px"
+literal|"12%"
 argument_list|)
 argument_list|,
 operator|new
@@ -397,7 +397,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"120px"
+literal|"15%"
 argument_list|)
 argument_list|,
 operator|new
@@ -412,7 +412,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"90px"
+literal|"10%"
 argument_list|)
 argument_list|,
 operator|new
@@ -427,7 +427,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"10px"
+literal|"3%"
 argument_list|)
 argument_list|,
 operator|new
@@ -442,7 +442,7 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|,
-literal|"10px"
+literal|"3%"
 argument_list|)
 argument_list|)
 argument_list|)
