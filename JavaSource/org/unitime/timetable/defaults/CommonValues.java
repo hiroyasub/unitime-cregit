@@ -118,6 +118,11 @@ name|SortAsDisplayed
 argument_list|(
 literal|"Natural Order (as displayed)"
 argument_list|)
+block|,
+name|UseSystemDefault
+argument_list|(
+literal|"not set"
+argument_list|)
 block|, 	 	;
 name|String
 name|iValue

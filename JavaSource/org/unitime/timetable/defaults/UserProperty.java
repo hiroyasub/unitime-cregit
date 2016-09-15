@@ -207,7 +207,18 @@ name|Yes
 argument_list|,
 literal|"Display Room Features In One Column"
 argument_list|)
-block|; 	;
+block|,
+name|HighlighClassPreferences
+argument_list|(
+literal|"highlightClassPrefs"
+argument_list|,
+name|CommonValues
+operator|.
+name|UseSystemDefault
+argument_list|,
+literal|"Highlight preferences that are set directly on classes"
+argument_list|)
+block|, 	;
 name|String
 name|iKey
 decl_stmt|,
