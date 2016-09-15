@@ -1737,6 +1737,12 @@ operator|.
 name|Type
 operator|.
 name|BUILDING
+argument_list|,
+name|Preference
+operator|.
+name|Type
+operator|.
+name|DATE
 argument_list|)
 expr_stmt|;
 name|c
@@ -1983,6 +1989,12 @@ operator|.
 name|Type
 operator|.
 name|BUILDING
+argument_list|,
+name|Preference
+operator|.
+name|Type
+operator|.
+name|DATE
 argument_list|)
 expr_stmt|;
 comment|// Save class data
@@ -2041,6 +2053,12 @@ operator|.
 name|Type
 operator|.
 name|BUILDING
+argument_list|,
+name|Preference
+operator|.
+name|Type
+operator|.
+name|DATE
 argument_list|)
 expr_stmt|;
 name|hibSession
