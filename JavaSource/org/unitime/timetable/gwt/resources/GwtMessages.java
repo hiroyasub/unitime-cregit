@@ -43,6 +43,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Close {0}"
+argument_list|)
+name|String
+name|pageClose
+parameter_list|(
+name|String
+name|pageTitle
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Version {0} built on {1}"
 argument_list|)
 name|String
@@ -15474,28 +15486,6 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|mobileMenuSymbol
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"?"
-argument_list|)
-annotation|@
-name|DoNotTranslate
-name|String
-name|mobileHelpSymbol
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"\u00d7"
-argument_list|)
-annotation|@
-name|DoNotTranslate
-name|String
-name|mobileCloseSymbol
 parameter_list|()
 function_decl|;
 block|}
