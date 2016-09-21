@@ -1184,14 +1184,11 @@ argument_list|)
 expr_stmt|;
 name|iFooter
 operator|.
-name|getPanel
-argument_list|()
-operator|.
-name|insert
+name|insertLeft
 argument_list|(
 name|iBack
 argument_list|,
-literal|0
+literal|true
 argument_list|)
 expr_stmt|;
 name|iForm

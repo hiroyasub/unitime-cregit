@@ -1861,8 +1861,6 @@ name|caught
 operator|.
 name|getMessage
 argument_list|()
-argument_list|,
-literal|true
 argument_list|)
 expr_stmt|;
 name|LoadingWidget
@@ -7740,8 +7738,6 @@ name|caught
 operator|.
 name|getMessage
 argument_list|()
-argument_list|,
-literal|true
 argument_list|)
 expr_stmt|;
 name|LoadingWidget

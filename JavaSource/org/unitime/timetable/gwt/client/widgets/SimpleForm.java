@@ -204,11 +204,6 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
-name|setWidth
-argument_list|(
-literal|"100%"
-argument_list|)
-expr_stmt|;
 block|}
 specifier|public
 name|SimpleForm

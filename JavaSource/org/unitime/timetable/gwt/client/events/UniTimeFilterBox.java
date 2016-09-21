@@ -749,6 +749,13 @@ argument_list|)
 expr_stmt|;
 name|iFilter
 operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-FilterBoxContainer"
+argument_list|)
+expr_stmt|;
+name|iFilter
+operator|.
 name|getWidget
 argument_list|()
 operator|.
