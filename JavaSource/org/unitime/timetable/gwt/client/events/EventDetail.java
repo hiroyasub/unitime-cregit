@@ -3768,8 +3768,6 @@ operator|.
 name|getDate
 argument_list|()
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3800,8 +3798,6 @@ name|note
 operator|.
 name|getUser
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3865,8 +3861,6 @@ name|note
 operator|.
 name|getMeetings
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3897,8 +3891,6 @@ literal|"\n"
 argument_list|,
 literal|"<br>"
 argument_list|)
-argument_list|,
-literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4314,8 +4306,6 @@ operator|new
 name|Label
 argument_list|(
 name|type
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4417,8 +4407,6 @@ operator|new
 name|HTML
 argument_list|(
 name|title
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4441,8 +4429,6 @@ name|obj
 operator|.
 name|getDate
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4478,8 +4464,6 @@ name|obj
 operator|.
 name|getTime
 argument_list|()
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4576,8 +4560,6 @@ literal|"<br>"
 argument_list|,
 name|MESSAGES
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
