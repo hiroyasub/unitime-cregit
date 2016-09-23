@@ -319,6 +319,15 @@ name|ImageResource
 name|close
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/info.png"
+argument_list|)
+name|ImageResource
+name|info
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

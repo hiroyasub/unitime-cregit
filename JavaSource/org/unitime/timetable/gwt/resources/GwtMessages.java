@@ -9776,6 +9776,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Information"
+argument_list|)
+name|String
+name|dialogInfo
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Details of {0}"
 argument_list|)
 name|String
