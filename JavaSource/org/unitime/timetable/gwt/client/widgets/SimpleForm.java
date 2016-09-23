@@ -367,7 +367,7 @@ if|if
 condition|(
 name|widget
 operator|instanceof
-name|UniTimeTable
+name|HasMobileScroll
 condition|)
 block|{
 name|ScrollPanel
@@ -651,7 +651,7 @@ if|if
 condition|(
 name|widget
 operator|instanceof
-name|UniTimeTable
+name|HasMobileScroll
 condition|)
 block|{
 name|ScrollPanel
@@ -1027,6 +1027,11 @@ operator|-
 literal|1
 return|;
 block|}
+specifier|public
+specifier|static
+interface|interface
+name|HasMobileScroll
+block|{}
 block|}
 end_class
 

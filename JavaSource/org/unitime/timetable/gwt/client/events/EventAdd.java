@@ -5464,7 +5464,7 @@ argument_list|)
 expr_stmt|;
 name|iStandardNotesBox
 operator|.
-name|setStyleName
+name|addStyleName
 argument_list|(
 literal|"unitime-StandardNotesBox"
 argument_list|)
