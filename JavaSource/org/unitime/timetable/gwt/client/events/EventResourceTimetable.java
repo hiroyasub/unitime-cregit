@@ -5354,6 +5354,13 @@ argument_list|)
 decl_stmt|;
 name|tg
 operator|.
+name|setShowRoomNote
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|tg
+operator|.
 name|setResourceType
 argument_list|(
 name|getResourceType
@@ -8698,6 +8705,13 @@ literal|18
 operator|)
 argument_list|,
 name|this
+argument_list|)
+expr_stmt|;
+name|iTimeGrid
+operator|.
+name|setShowRoomNote
+argument_list|(
+literal|true
 argument_list|)
 expr_stmt|;
 name|iTimeGrid

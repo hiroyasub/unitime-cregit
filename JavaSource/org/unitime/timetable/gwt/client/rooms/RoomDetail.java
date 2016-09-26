@@ -2027,6 +2027,13 @@ name|getDefaultEventNote
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|note
+operator|.
+name|addStyleName
+argument_list|(
+literal|"note"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
