@@ -271,12 +271,14 @@ specifier|public
 interface|interface
 name|CourseFinderCourseDetails
 parameter_list|<
+name|T
+parameter_list|,
 name|E
 parameter_list|>
 extends|extends
 name|TakesValue
 argument_list|<
-name|String
+name|T
 argument_list|>
 extends|,
 name|IsWidget
@@ -287,7 +289,7 @@ name|setDataProvider
 parameter_list|(
 name|DataProvider
 argument_list|<
-name|String
+name|T
 argument_list|,
 name|E
 argument_list|>

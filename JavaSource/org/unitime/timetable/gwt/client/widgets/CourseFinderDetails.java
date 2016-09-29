@@ -37,6 +37,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|ClassAssignmentInterface
+operator|.
+name|CourseAssignment
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -120,6 +138,8 @@ name|CourseFinder
 operator|.
 name|CourseFinderCourseDetails
 argument_list|<
+name|CourseAssignment
+argument_list|,
 name|String
 argument_list|>
 block|{
@@ -141,7 +161,7 @@ decl_stmt|;
 specifier|private
 name|DataProvider
 argument_list|<
-name|String
+name|CourseAssignment
 argument_list|,
 name|String
 argument_list|>
@@ -150,7 +170,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|String
+name|CourseAssignment
 name|iValue
 init|=
 literal|null
@@ -181,7 +201,7 @@ name|setDataProvider
 parameter_list|(
 name|DataProvider
 argument_list|<
-name|String
+name|CourseAssignment
 argument_list|,
 name|String
 argument_list|>
@@ -210,7 +230,7 @@ specifier|public
 name|void
 name|setValue
 parameter_list|(
-name|String
+name|CourseAssignment
 name|value
 parameter_list|)
 block|{
@@ -219,11 +239,6 @@ condition|(
 name|value
 operator|==
 literal|null
-operator|||
-name|value
-operator|.
-name|isEmpty
-argument_list|()
 condition|)
 block|{
 name|iValue
@@ -338,7 +353,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|String
+name|CourseAssignment
 name|getValue
 parameter_list|()
 block|{

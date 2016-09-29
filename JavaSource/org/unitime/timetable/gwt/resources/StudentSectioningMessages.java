@@ -340,6 +340,15 @@ name|String
 name|colNoteIcon
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&nbsp;"
+argument_list|)
+name|String
+name|colClassSelection
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage

@@ -1173,6 +1173,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Check to prefer {0}"
+argument_list|)
+name|String
+name|courseFinderPreferClass
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Showing List of Classes. Use Alt + Up and Alt + Down to navigate, Alt + Enter to open Suggestions for the selected class."
 argument_list|)
 name|String
