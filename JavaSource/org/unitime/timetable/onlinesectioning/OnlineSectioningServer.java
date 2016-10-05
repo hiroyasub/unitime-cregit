@@ -471,6 +471,17 @@ name|course
 parameter_list|)
 function_decl|;
 specifier|public
+name|XCourseId
+name|getCourse
+parameter_list|(
+name|Long
+name|courseId
+parameter_list|,
+name|String
+name|courseName
+parameter_list|)
+function_decl|;
+specifier|public
 name|String
 name|getCourseDetails
 parameter_list|(

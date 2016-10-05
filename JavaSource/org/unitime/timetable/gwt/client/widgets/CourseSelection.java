@@ -47,6 +47,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|CourseRequestInterface
+operator|.
+name|RequestedCourse
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -124,7 +142,7 @@ name|CourseSelection
 extends|extends
 name|HasValue
 argument_list|<
-name|String
+name|RequestedCourse
 argument_list|>
 extends|,
 name|IsWidget
@@ -189,11 +207,6 @@ parameter_list|,
 name|String
 name|finderTitle
 parameter_list|)
-function_decl|;
-specifier|public
-name|boolean
-name|isFreeTime
-parameter_list|()
 function_decl|;
 specifier|public
 name|void

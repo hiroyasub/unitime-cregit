@@ -45,7 +45,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|Map
 import|;
 end_import
 
@@ -201,9 +201,11 @@ name|class
 argument_list|)
 decl_stmt|;
 specifier|private
-name|Set
+name|Map
 argument_list|<
 name|String
+argument_list|,
+name|?
 argument_list|>
 name|iValidCourseNames
 init|=
@@ -260,9 +262,11 @@ specifier|public
 name|void
 name|setValidCourseNames
 parameter_list|(
-name|Set
+name|Map
 argument_list|<
 name|String
+argument_list|,
+name|?
 argument_list|>
 name|validCourseNames
 parameter_list|)
@@ -295,9 +299,12 @@ literal|null
 operator|&&
 name|iValidCourseNames
 operator|.
-name|contains
+name|containsKey
 argument_list|(
 name|text
+operator|.
+name|toLowerCase
+argument_list|()
 argument_list|)
 condition|)
 throw|throw
