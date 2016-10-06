@@ -7856,7 +7856,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"if (showGwtLoading) { showGwtLoading('Locking {0}...'); } return true;"
+literal|"displayLoading('Locking {0}...'); return true;"
 argument_list|)
 name|String
 name|jsSubmitLockIO
@@ -7868,7 +7868,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"if (showGwtLoading) { showGwtLoading('Unlocking {0}...'); } return true;"
+literal|"displayLoading('Unlocking {0}...'); return true;"
 argument_list|)
 name|String
 name|jsSubmitUnlockIO

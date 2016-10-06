@@ -15497,6 +15497,15 @@ name|String
 name|mobileMenuSymbol
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Please wait ..."
+argument_list|)
+name|String
+name|waitPlease
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
