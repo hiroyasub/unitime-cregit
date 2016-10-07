@@ -6432,6 +6432,10 @@ name|UniTimeWidget
 argument_list|<
 name|CurriculaClassifications
 argument_list|>
+implements|implements
+name|SimpleForm
+operator|.
+name|HasMobileScroll
 block|{
 specifier|private
 name|Label

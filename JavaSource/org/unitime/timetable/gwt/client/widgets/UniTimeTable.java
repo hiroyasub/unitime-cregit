@@ -135,26 +135,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|client
-operator|.
-name|widgets
-operator|.
-name|SimpleForm
-operator|.
-name|HasMobileScroll
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|google
@@ -503,6 +483,8 @@ parameter_list|>
 extends|extends
 name|FlexTable
 implements|implements
+name|SimpleForm
+operator|.
 name|HasMobileScroll
 block|{
 specifier|private
