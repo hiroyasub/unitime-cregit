@@ -48,7 +48,7 @@ specifier|public
 class|class
 name|TableStream
 extends|extends
-name|Table
+name|ScrollTable
 block|{
 name|JspWriter
 name|outStream

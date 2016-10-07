@@ -395,6 +395,13 @@ name|html
 operator|.
 name|append
 argument_list|(
+literal|"<div class='unitime-ScrollTable'>"
+argument_list|)
+expr_stmt|;
+name|html
+operator|.
+name|append
+argument_list|(
 literal|"<table cellspacing='1' cellpadding='1' border='0'><tr>"
 argument_list|)
 expr_stmt|;
@@ -699,6 +706,13 @@ operator|.
 name|append
 argument_list|(
 literal|"</tr></table>"
+argument_list|)
+expr_stmt|;
+name|html
+operator|.
+name|append
+argument_list|(
+literal|"</div>"
 argument_list|)
 expr_stmt|;
 name|html

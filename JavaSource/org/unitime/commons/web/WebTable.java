@@ -1217,6 +1217,17 @@ literal|"</div></td></tr>"
 argument_list|)
 expr_stmt|;
 block|}
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|"<tr><td colspan='"
+operator|+
+name|iColumns
+operator|+
+literal|"'><div class='unitime-LegacyWebTable'><table width='100%' border='0' cellspacing='0' cellpadding='3'>"
+argument_list|)
+expr_stmt|;
 name|boolean
 name|asc
 init|=
@@ -2076,6 +2087,13 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|"</table></div></td></tr>"
+argument_list|)
+expr_stmt|;
 return|return
 name|sb
 operator|.

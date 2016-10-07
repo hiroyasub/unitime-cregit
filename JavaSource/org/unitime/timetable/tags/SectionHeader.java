@@ -127,17 +127,7 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"<table class='BottomBorder' width='100%'><tr><td width='100%' nowrap>"
-argument_list|)
-expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"<DIV class='WelcomeRowHeadNoLine'>"
+literal|"<div class='unitime-MainTableHeader'><div class='unitime-HeaderPanel' style='margin-bottom: 0px;'>"
 argument_list|)
 expr_stmt|;
 if|if
@@ -146,6 +136,7 @@ name|iTitle
 operator|!=
 literal|null
 condition|)
+block|{
 name|pageContext
 operator|.
 name|getOut
@@ -153,29 +144,14 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
+literal|"<div class='left'><div class='title'>"
+operator|+
 name|iTitle
+operator|+
+literal|"</div></div>"
 argument_list|)
 expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"</DIV>"
-argument_list|)
-expr_stmt|;
-name|pageContext
-operator|.
-name|getOut
-argument_list|()
-operator|.
-name|println
-argument_list|(
-literal|"</td><td style='padding-bottom: 3px' nowrap>"
-argument_list|)
-expr_stmt|;
+block|}
 name|String
 name|body
 init|=
@@ -200,6 +176,17 @@ name|body
 operator|!=
 literal|null
 condition|)
+block|{
+name|pageContext
+operator|.
+name|getOut
+argument_list|()
+operator|.
+name|println
+argument_list|(
+literal|"<div class='right unitime-NoPrint' style='line-height: 29px; vertical-align: bottom; font-size: small;'>"
+argument_list|)
+expr_stmt|;
 name|pageContext
 operator|.
 name|getOut
@@ -217,9 +204,21 @@ argument_list|()
 operator|.
 name|println
 argument_list|(
-literal|"</td></tr></table>"
+literal|"</div>"
 argument_list|)
 expr_stmt|;
+block|}
+name|pageContext
+operator|.
+name|getOut
+argument_list|()
+operator|.
+name|println
+argument_list|(
+literal|"</div></div>"
+argument_list|)
+expr_stmt|;
+comment|/* 			pageContext.getOut().println("<table class='BottomBorder' width='100%'><tr><td width='100%' nowrap>"); 			pageContext.getOut().println("<DIV class='WelcomeRowHeadNoLine'>"); 			if (iTitle!=null) 				pageContext.getOut().println(iTitle); 			pageContext.getOut().println("</DIV>"); 			pageContext.getOut().println("</td><td style='padding-bottom: 3px' nowrap>"); 			String body = (getBodyContent()==null?null:getBodyContent().getString()); 			if (body!=null) 				pageContext.getOut().println(body); 			pageContext.getOut().println("</td></tr></table>"); 			*/
 block|}
 catch|catch
 parameter_list|(

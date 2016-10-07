@@ -565,8 +565,6 @@ operator|new
 name|P
 argument_list|(
 literal|"left"
-argument_list|,
-literal|"unitime-NoPrint"
 argument_list|)
 expr_stmt|;
 name|add
@@ -644,6 +642,13 @@ argument_list|(
 literal|"open-close"
 argument_list|)
 expr_stmt|;
+name|iOpenCloseImage
+operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-NoPrint"
+argument_list|)
+expr_stmt|;
 name|iLeft
 operator|.
 name|add
@@ -667,6 +672,13 @@ operator|.
 name|addStyleName
 argument_list|(
 literal|"loading"
+argument_list|)
+expr_stmt|;
+name|iLoadingImage
+operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-NoPrint"
 argument_list|)
 expr_stmt|;
 name|iLoadingImage

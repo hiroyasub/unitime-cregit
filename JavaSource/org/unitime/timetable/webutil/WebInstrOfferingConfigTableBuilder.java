@@ -527,14 +527,14 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<table class='BottomBorder' width='100%'><tr><td width='100%' nowrap>"
+literal|"<div class='unitime-MainTableHeader'><div class='unitime-HeaderPanel' style='margin-bottom: 0px;'>"
 argument_list|)
 expr_stmt|;
 name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<DIV class='WelcomeRowHeadNoLine'>"
+literal|"<div class='left'><div class='title'>"
 argument_list|)
 expr_stmt|;
 name|String
@@ -617,14 +617,7 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"</DIV>"
-argument_list|)
-expr_stmt|;
-name|btnTable
-operator|.
-name|append
-argument_list|(
-literal|"</td><td style='padding-bottom: 3px' nowrap>"
+literal|"</div></div>"
 argument_list|)
 expr_stmt|;
 name|boolean
@@ -651,7 +644,14 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<table border='0' align='right' cellspacing='1' cellpadding='0'>"
+literal|"<div class='right unitime-NoPrint' style='line-height: 29px; vertical-align: bottom; font-size: small;'>"
+argument_list|)
+expr_stmt|;
+name|btnTable
+operator|.
+name|append
+argument_list|(
+literal|"<table border='0' align='right' cellspacing='1' cellpadding='0'><tr>"
 argument_list|)
 expr_stmt|;
 if|if
@@ -901,14 +901,14 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"</tr>"
+literal|"</tr></table>"
 argument_list|)
 expr_stmt|;
 name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"</table>"
+literal|"</div>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -916,7 +916,7 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"</td></tr></table>"
+literal|"</div></div>"
 argument_list|)
 expr_stmt|;
 return|return
