@@ -714,6 +714,15 @@ operator|==
 literal|null
 condition|)
 block|{
+name|delete
+argument_list|(
+name|role
+argument_list|,
+name|context
+argument_list|,
+name|hibSession
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|update
