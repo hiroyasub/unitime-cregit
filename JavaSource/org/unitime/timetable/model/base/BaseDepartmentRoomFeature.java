@@ -274,6 +274,11 @@ operator|+
 name|getDepartment
 argument_list|()
 operator|+
+literal|"\n	Description: "
+operator|+
+name|getDescription
+argument_list|()
+operator|+
 literal|"\n	FeatureType: "
 operator|+
 name|getFeatureType

@@ -122,6 +122,10 @@ name|String
 name|iAbbv
 decl_stmt|;
 specifier|private
+name|String
+name|iDescription
+decl_stmt|;
+specifier|private
 name|RoomFeatureType
 name|iFeatureType
 decl_stmt|;
@@ -152,6 +156,13 @@ name|String
 name|PROP_ABBV
 init|=
 literal|"abbv"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_DESCRIPTION
+init|=
+literal|"description"
 decl_stmt|;
 specifier|public
 name|BaseRoomFeature
@@ -247,6 +258,28 @@ block|{
 name|iAbbv
 operator|=
 name|abbv
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getDescription
+parameter_list|()
+block|{
+return|return
+name|iDescription
+return|;
+block|}
+specifier|public
+name|void
+name|setDescription
+parameter_list|(
+name|String
+name|description
+parameter_list|)
+block|{
+name|iDescription
+operator|=
+name|description
 expr_stmt|;
 block|}
 specifier|public
@@ -450,6 +483,11 @@ operator|+
 literal|"\n	Abbv: "
 operator|+
 name|getAbbv
+argument_list|()
+operator|+
+literal|"\n	Description: "
+operator|+
+name|getDescription
 argument_list|()
 operator|+
 literal|"\n	FeatureType: "
