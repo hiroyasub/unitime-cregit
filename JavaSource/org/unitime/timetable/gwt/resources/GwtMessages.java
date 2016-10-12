@@ -10736,6 +10736,36 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0}: {1}"
+argument_list|)
+name|String
+name|hintRoomFeatureWithDescription
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|String
+name|description
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0}: {1}"
+argument_list|)
+name|String
+name|hintRoomGroupWithDescription
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|String
+name|description
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Press ENTER or double click a standard note to add it to additional information."
 argument_list|)
 name|String
