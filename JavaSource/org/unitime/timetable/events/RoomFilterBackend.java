@@ -1190,6 +1190,13 @@ name|rf
 operator|.
 name|getLabel
 argument_list|()
+argument_list|,
+literal|"hint"
+argument_list|,
+name|rf
+operator|.
+name|getDescription
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|features
@@ -1394,6 +1401,13 @@ argument_list|,
 name|rg
 operator|.
 name|getName
+argument_list|()
+argument_list|,
+literal|"hint"
+argument_list|,
+name|rg
+operator|.
+name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3725,14 +3739,31 @@ operator|.
 name|getRoomTypeLabel
 argument_list|()
 operator|+
-literal|", "
-operator|+
+operator|(
 name|location
 operator|.
 name|getCapacity
 argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+literal|", "
 operator|+
-literal|" seats"
+name|MESSAGES
+operator|.
+name|hintRoomCapacity
+argument_list|(
+name|location
+operator|.
+name|getCapacity
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+operator|)
 decl_stmt|;
 name|Double
 name|dist
@@ -3757,14 +3788,22 @@ name|hint
 operator|+=
 literal|", "
 operator|+
+name|MESSAGES
+operator|.
+name|hintRoomDistance
+argument_list|(
+name|String
+operator|.
+name|valueOf
+argument_list|(
 name|Math
 operator|.
 name|round
 argument_list|(
 name|dist
 argument_list|)
-operator|+
-literal|" m"
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|response
 operator|.

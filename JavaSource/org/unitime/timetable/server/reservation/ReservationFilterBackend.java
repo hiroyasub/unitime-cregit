@@ -2304,7 +2304,10 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|"Course"
+name|MESSAGES
+operator|.
+name|reservationCourseAbbv
+argument_list|()
 else|:
 name|course
 operator|.
@@ -2461,7 +2464,10 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|"Course"
+name|MESSAGES
+operator|.
+name|reservationCourseAbbv
+argument_list|()
 else|:
 name|course
 operator|.
@@ -2501,7 +2507,10 @@ name|getProperty
 argument_list|(
 literal|"hint"
 argument_list|,
-literal|"Course"
+name|MESSAGES
+operator|.
+name|reservationCourseAbbv
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
