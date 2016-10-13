@@ -2711,7 +2711,7 @@ name|addWhere
 argument_list|(
 literal|"xstatus"
 argument_list|,
-literal|"(e.class != ClassEvent or bit_and(s.statusType.status, :XstClass)> 0 or e.departmentId in :XstDepts)"
+literal|"(e.class != ClassEvent or bit_and(s.statusType.status, :XstClass)> 0 or e.departmentId in (:XstDepts))"
 argument_list|)
 expr_stmt|;
 name|query
