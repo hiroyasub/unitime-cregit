@@ -237,6 +237,21 @@ operator|.
 name|ROOM_GROUP
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|preferenceDescription
+parameter_list|()
+block|{
+return|return
+name|getRoomGroup
+argument_list|()
+operator|.
+name|getDescription
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

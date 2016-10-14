@@ -313,6 +313,21 @@ operator|.
 name|ROOM_FEATURE
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|preferenceDescription
+parameter_list|()
+block|{
+return|return
+name|getRoomFeature
+argument_list|()
+operator|.
+name|getDescription
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
