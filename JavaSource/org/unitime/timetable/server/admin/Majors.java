@@ -735,6 +735,14 @@ name|getExternalUniqueId
 argument_list|()
 operator|==
 literal|null
+operator|&&
+operator|!
+name|major
+operator|.
+name|isUsed
+argument_list|(
+name|hibSession
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

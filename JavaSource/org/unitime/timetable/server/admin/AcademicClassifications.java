@@ -561,6 +561,14 @@ name|getExternalUniqueId
 argument_list|()
 operator|==
 literal|null
+operator|&&
+operator|!
+name|clasf
+operator|.
+name|isUsed
+argument_list|(
+name|hibSession
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
