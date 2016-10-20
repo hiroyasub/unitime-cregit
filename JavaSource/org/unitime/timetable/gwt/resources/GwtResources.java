@@ -328,6 +328,15 @@ name|ImageResource
 name|info
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/finder.png"
+argument_list|)
+name|ImageResource
+name|finder
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

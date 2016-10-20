@@ -13803,6 +13803,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Clear course request"
+argument_list|)
+name|String
+name|altClearCourseRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Password"
 argument_list|)
 annotation|@

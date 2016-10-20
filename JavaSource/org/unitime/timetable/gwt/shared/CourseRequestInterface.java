@@ -1534,14 +1534,14 @@ decl_stmt|;
 specifier|private
 name|Set
 argument_list|<
-name|Long
+name|String
 argument_list|>
 name|iSelectedIntructionalMethods
 decl_stmt|;
 specifier|private
 name|Set
 argument_list|<
-name|Long
+name|String
 argument_list|>
 name|iSelectedClasses
 decl_stmt|;
@@ -1830,7 +1830,7 @@ block|}
 specifier|public
 name|Set
 argument_list|<
-name|Long
+name|String
 argument_list|>
 name|getSelectedIntructionalMethods
 parameter_list|()
@@ -1843,7 +1843,7 @@ specifier|public
 name|void
 name|setSelectedIntructionalMethod
 parameter_list|(
-name|Long
+name|String
 name|id
 parameter_list|,
 name|boolean
@@ -1861,7 +1861,7 @@ operator|=
 operator|new
 name|HashSet
 argument_list|<
-name|Long
+name|String
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -1889,7 +1889,7 @@ specifier|public
 name|boolean
 name|isSelectedIntructionalMethod
 parameter_list|(
-name|Long
+name|String
 name|id
 parameter_list|)
 block|{
@@ -1931,7 +1931,7 @@ block|}
 specifier|public
 name|Set
 argument_list|<
-name|Long
+name|String
 argument_list|>
 name|getSelectedClasses
 parameter_list|()
@@ -1946,7 +1946,7 @@ name|setSelectedClasses
 parameter_list|(
 name|Set
 argument_list|<
-name|Long
+name|String
 argument_list|>
 name|classes
 parameter_list|)
@@ -1962,7 +1962,7 @@ operator|=
 operator|new
 name|HashSet
 argument_list|<
-name|Long
+name|String
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -1990,7 +1990,7 @@ specifier|public
 name|void
 name|setSelectedClass
 parameter_list|(
-name|Long
+name|String
 name|id
 parameter_list|,
 name|boolean
@@ -2008,7 +2008,7 @@ operator|=
 operator|new
 name|HashSet
 argument_list|<
-name|Long
+name|String
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -2036,7 +2036,7 @@ specifier|public
 name|boolean
 name|isSelectedClass
 parameter_list|(
-name|Long
+name|String
 name|id
 parameter_list|)
 block|{
@@ -2096,10 +2096,36 @@ condition|(
 name|isCourse
 argument_list|()
 condition|)
+block|{
 return|return
 name|getCourseName
 argument_list|()
+operator|+
+operator|(
+name|hasSelectedIntructionalMethods
+argument_list|()
+condition|?
+literal|" method:"
+operator|+
+name|getSelectedIntructionalMethods
+argument_list|()
+else|:
+literal|""
+operator|)
+operator|+
+operator|(
+name|hasSelectedClasses
+argument_list|()
+condition|?
+literal|" section:"
+operator|+
+name|getSelectedClasses
+argument_list|()
+else|:
+literal|""
+operator|)
 return|;
+block|}
 if|if
 condition|(
 name|isFreeTime

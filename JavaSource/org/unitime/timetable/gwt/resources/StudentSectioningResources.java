@@ -474,6 +474,15 @@ name|ImageResource
 name|statusError
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/finder_assigned.png"
+argument_list|)
+name|ImageResource
+name|finderAssigned
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
