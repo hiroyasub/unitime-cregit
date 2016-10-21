@@ -2036,11 +2036,6 @@ operator|.
 name|ORIGINAL_ENROLLMENT
 argument_list|,
 literal|null
-argument_list|,
-name|helper
-operator|.
-name|getHibSession
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|cr
@@ -2064,11 +2059,6 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|)
-argument_list|,
-name|helper
-operator|.
-name|getHibSession
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|cr
