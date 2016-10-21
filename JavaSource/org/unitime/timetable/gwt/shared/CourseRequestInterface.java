@@ -2045,6 +2045,10 @@ condition|(
 name|iSelectedClasses
 operator|==
 literal|null
+operator|||
+name|id
+operator|==
+literal|null
 condition|)
 return|return
 literal|false

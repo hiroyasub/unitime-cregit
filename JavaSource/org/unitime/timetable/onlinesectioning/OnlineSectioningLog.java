@@ -20,11 +20,6 @@ package|;
 end_package
 
 begin_class
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unused"
-argument_list|)
 specifier|public
 specifier|final
 class|class
@@ -55,6 +50,7 @@ specifier|public
 interface|interface
 name|EntityOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Entity)
 name|com
 operator|.
 name|google
@@ -63,7 +59,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// optional int64 unique_id = 1;
 comment|/**      *<code>optional int64 unique_id = 1;</code>      */
 name|boolean
 name|hasUniqueId
@@ -74,7 +69,6 @@ name|long
 name|getUniqueId
 parameter_list|()
 function_decl|;
-comment|// optional .Entity.EntityType type = 2;
 comment|/**      *<code>optional .Entity.EntityType type = 2;</code>      */
 name|boolean
 name|hasType
@@ -97,7 +91,6 @@ name|EntityType
 name|getType
 parameter_list|()
 function_decl|;
-comment|// optional string external_id = 3;
 comment|/**      *<code>optional string external_id = 3;</code>      */
 name|boolean
 name|hasExternalId
@@ -123,7 +116,6 @@ name|ByteString
 name|getExternalIdBytes
 parameter_list|()
 function_decl|;
-comment|// optional string name = 4;
 comment|/**      *<code>optional string name = 4;</code>      */
 name|boolean
 name|hasName
@@ -149,7 +141,6 @@ name|ByteString
 name|getNameBytes
 parameter_list|()
 function_decl|;
-comment|// repeated .Property parameter = 5;
 comment|/**      *<code>repeated .Property parameter = 5;</code>      */
 name|java
 operator|.
@@ -253,6 +244,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Entity)
 name|EntityOrBuilder
 block|{
 comment|// Use Entity.newBuilder() to construct.
@@ -587,16 +579,27 @@ case|case
 literal|26
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000004
 expr_stmt|;
 name|externalId_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -604,16 +607,27 @@ case|case
 literal|34
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000008
 expr_stmt|;
 name|name_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -1571,7 +1585,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// optional int64 unique_id = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -1612,7 +1625,6 @@ return|return
 name|uniqueId_
 return|;
 block|}
-comment|// optional .Entity.EntityType type = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -1677,7 +1689,6 @@ return|return
 name|type_
 return|;
 block|}
-comment|// optional string external_id = 3;
 specifier|public
 specifier|static
 specifier|final
@@ -1890,7 +1901,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// optional string name = 4;
 specifier|public
 specifier|static
 specifier|final
@@ -2103,7 +2113,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// repeated .Property parameter = 5;
 specifier|public
 specifier|static
 specifier|final
@@ -2326,14 +2335,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 for|for
 control|(
@@ -3359,6 +3374,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Entity)
 name|org
 operator|.
 name|unitime
@@ -4492,7 +4508,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// optional int64 unique_id = 1;
 specifier|private
 name|long
 name|uniqueId_
@@ -4575,7 +4590,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional .Entity.EntityType type = 2;
 specifier|private
 name|org
 operator|.
@@ -4737,7 +4751,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional string external_id = 3;
 specifier|private
 name|java
 operator|.
@@ -4799,14 +4812,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -4817,15 +4831,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|externalId_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -5039,7 +5070,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional string name = 4;
 specifier|private
 name|java
 operator|.
@@ -5101,14 +5131,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -5119,15 +5150,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|name_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -5341,7 +5389,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// repeated .Property parameter = 5;
 specifier|private
 name|java
 operator|.
@@ -6054,7 +6101,15 @@ block|{
 name|ensureParameterIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -6586,6 +6641,7 @@ specifier|public
 interface|interface
 name|TimeOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Time)
 name|com
 operator|.
 name|google
@@ -6594,7 +6650,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required int32 days = 1;
 comment|/**      *<code>required int32 days = 1;</code>      */
 name|boolean
 name|hasDays
@@ -6605,7 +6660,6 @@ name|int
 name|getDays
 parameter_list|()
 function_decl|;
-comment|// required int32 start = 2;
 comment|/**      *<code>required int32 start = 2;</code>      */
 name|boolean
 name|hasStart
@@ -6616,7 +6670,6 @@ name|int
 name|getStart
 parameter_list|()
 function_decl|;
-comment|// required int32 length = 3;
 comment|/**      *<code>required int32 length = 3;</code>      */
 name|boolean
 name|hasLength
@@ -6627,7 +6680,6 @@ name|int
 name|getLength
 parameter_list|()
 function_decl|;
-comment|// optional string pattern = 4;
 comment|/**      *<code>optional string pattern = 4;</code>      */
 name|boolean
 name|hasPattern
@@ -6653,7 +6705,6 @@ name|ByteString
 name|getPatternBytes
 parameter_list|()
 function_decl|;
-comment|// optional .Section.Preference preference = 5;
 comment|/**      *<code>optional .Section.Preference preference = 5;</code>      */
 name|boolean
 name|hasPreference
@@ -6692,6 +6743,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Time)
 name|TimeOrBuilder
 block|{
 comment|// Use Time.newBuilder() to construct.
@@ -6984,16 +7036,27 @@ case|case
 literal|34
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000008
 expr_stmt|;
 name|pattern_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -7332,7 +7395,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required int32 days = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -7373,7 +7435,6 @@ return|return
 name|days_
 return|;
 block|}
-comment|// required int32 start = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -7414,7 +7475,6 @@ return|return
 name|start_
 return|;
 block|}
-comment|// required int32 length = 3;
 specifier|public
 specifier|static
 specifier|final
@@ -7455,7 +7515,6 @@ return|return
 name|length_
 return|;
 block|}
-comment|// optional string pattern = 4;
 specifier|public
 specifier|static
 specifier|final
@@ -7668,7 +7727,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// optional .Section.Preference preference = 5;
 specifier|public
 specifier|static
 specifier|final
@@ -7794,14 +7852,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -8813,6 +8877,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Time)
 name|org
 operator|.
 name|unitime
@@ -9755,7 +9820,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required int32 days = 1;
 specifier|private
 name|int
 name|days_
@@ -9838,7 +9902,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// required int32 start = 2;
 specifier|private
 name|int
 name|start_
@@ -9921,7 +9984,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// required int32 length = 3;
 specifier|private
 name|int
 name|length_
@@ -10004,7 +10066,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional string pattern = 4;
 specifier|private
 name|java
 operator|.
@@ -10066,14 +10127,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -10084,15 +10146,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|pattern_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -10306,7 +10385,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional .Section.Preference preference = 5;
 specifier|private
 name|org
 operator|.
@@ -10492,6 +10570,7 @@ specifier|public
 interface|interface
 name|SectionOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Section)
 name|com
 operator|.
 name|google
@@ -10500,7 +10579,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// optional .Entity clazz = 1;
 comment|/**      *<code>optional .Entity clazz = 1;</code>      */
 name|boolean
 name|hasClazz
@@ -10536,7 +10614,6 @@ name|EntityOrBuilder
 name|getClazzOrBuilder
 parameter_list|()
 function_decl|;
-comment|// optional .Time time = 2;
 comment|/**      *<code>optional .Time time = 2;</code>      */
 name|boolean
 name|hasTime
@@ -10572,7 +10649,6 @@ name|TimeOrBuilder
 name|getTimeOrBuilder
 parameter_list|()
 function_decl|;
-comment|// repeated .Entity instructor = 3;
 comment|/**      *<code>repeated .Entity instructor = 3;</code>      */
 name|java
 operator|.
@@ -10660,7 +10736,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Entity location = 4;
 comment|/**      *<code>repeated .Entity location = 4;</code>      */
 name|java
 operator|.
@@ -10748,7 +10823,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// optional .Section.Preference preference = 5;
 comment|/**      *<code>optional .Section.Preference preference = 5;</code>      */
 name|boolean
 name|hasPreference
@@ -10771,7 +10845,6 @@ name|Preference
 name|getPreference
 parameter_list|()
 function_decl|;
-comment|// optional .Entity course = 6;
 comment|/**      *<code>optional .Entity course = 6;</code>      */
 name|boolean
 name|hasCourse
@@ -10807,7 +10880,6 @@ name|EntityOrBuilder
 name|getCourseOrBuilder
 parameter_list|()
 function_decl|;
-comment|// optional .Entity reservation = 7;
 comment|/**      *<code>optional .Entity reservation = 7;</code>      */
 name|boolean
 name|hasReservation
@@ -10843,7 +10915,6 @@ name|EntityOrBuilder
 name|getReservationOrBuilder
 parameter_list|()
 function_decl|;
-comment|// optional int64 time_stamp = 8;
 comment|/**      *<code>optional int64 time_stamp = 8;</code>      */
 name|boolean
 name|hasTimeStamp
@@ -10854,7 +10925,6 @@ name|long
 name|getTimeStamp
 parameter_list|()
 function_decl|;
-comment|// optional .Entity subpart = 9;
 comment|/**      *<code>optional .Entity subpart = 9;</code>      */
 name|boolean
 name|hasSubpart
@@ -10906,6 +10976,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Section)
 name|SectionOrBuilder
 block|{
 comment|// Use Section.newBuilder() to construct.
@@ -12526,7 +12597,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// optional .Entity clazz = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -12607,7 +12677,6 @@ return|return
 name|clazz_
 return|;
 block|}
-comment|// optional .Time time = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -12688,7 +12757,6 @@ return|return
 name|time_
 return|;
 block|}
-comment|// repeated .Entity instructor = 3;
 specifier|public
 specifier|static
 specifier|final
@@ -12843,7 +12911,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Entity location = 4;
 specifier|public
 specifier|static
 specifier|final
@@ -12998,7 +13065,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// optional .Section.Preference preference = 5;
 specifier|public
 specifier|static
 specifier|final
@@ -13063,7 +13129,6 @@ return|return
 name|preference_
 return|;
 block|}
-comment|// optional .Entity course = 6;
 specifier|public
 specifier|static
 specifier|final
@@ -13144,7 +13209,6 @@ return|return
 name|course_
 return|;
 block|}
-comment|// optional .Entity reservation = 7;
 specifier|public
 specifier|static
 specifier|final
@@ -13225,7 +13289,6 @@ return|return
 name|reservation_
 return|;
 block|}
-comment|// optional int64 time_stamp = 8;
 specifier|public
 specifier|static
 specifier|final
@@ -13266,7 +13329,6 @@ return|return
 name|timeStamp_
 return|;
 block|}
-comment|// optional .Entity subpart = 9;
 specifier|public
 specifier|static
 specifier|final
@@ -13503,14 +13565,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -14930,6 +14998,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Section)
 name|org
 operator|.
 name|unitime
@@ -16853,7 +16922,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// optional .Entity clazz = 1;
 specifier|private
 name|org
 operator|.
@@ -17458,7 +17526,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|clazz_
+name|getClazz
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -17476,7 +17545,6 @@ return|return
 name|clazzBuilder_
 return|;
 block|}
-comment|// optional .Time time = 2;
 specifier|private
 name|org
 operator|.
@@ -18081,7 +18149,8 @@ operator|.
 name|TimeOrBuilder
 argument_list|>
 argument_list|(
-name|time_
+name|getTime
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -18099,7 +18168,6 @@ return|return
 name|timeBuilder_
 return|;
 block|}
-comment|// repeated .Entity instructor = 3;
 specifier|private
 name|java
 operator|.
@@ -18812,7 +18880,15 @@ block|{
 name|ensureInstructorIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -19320,7 +19396,6 @@ return|return
 name|instructorBuilder_
 return|;
 block|}
-comment|// repeated .Entity location = 4;
 specifier|private
 name|java
 operator|.
@@ -20033,7 +20108,15 @@ block|{
 name|ensureLocationIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -20541,7 +20624,6 @@ return|return
 name|locationBuilder_
 return|;
 block|}
-comment|// optional .Section.Preference preference = 5;
 specifier|private
 name|org
 operator|.
@@ -20703,7 +20785,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional .Entity course = 6;
 specifier|private
 name|org
 operator|.
@@ -21308,7 +21389,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|course_
+name|getCourse
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -21326,7 +21408,6 @@ return|return
 name|courseBuilder_
 return|;
 block|}
-comment|// optional .Entity reservation = 7;
 specifier|private
 name|org
 operator|.
@@ -21931,7 +22012,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|reservation_
+name|getReservation
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -21949,7 +22031,6 @@ return|return
 name|reservationBuilder_
 return|;
 block|}
-comment|// optional int64 time_stamp = 8;
 specifier|private
 name|long
 name|timeStamp_
@@ -22032,7 +22113,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional .Entity subpart = 9;
 specifier|private
 name|org
 operator|.
@@ -22637,7 +22717,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|subpart_
+name|getSubpart
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -22679,6 +22760,7 @@ specifier|public
 interface|interface
 name|RequestOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Request)
 name|com
 operator|.
 name|google
@@ -22687,7 +22769,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// optional int64 id = 1;
 comment|/**      *<code>optional int64 id = 1;</code>      */
 name|boolean
 name|hasId
@@ -22698,7 +22779,6 @@ name|long
 name|getId
 parameter_list|()
 function_decl|;
-comment|// required int32 priority = 2;
 comment|/**      *<code>required int32 priority = 2;</code>      */
 name|boolean
 name|hasPriority
@@ -22709,7 +22789,6 @@ name|int
 name|getPriority
 parameter_list|()
 function_decl|;
-comment|// optional bool alternative = 3 [default = false];
 comment|/**      *<code>optional bool alternative = 3 [default = false];</code>      */
 name|boolean
 name|hasAlternative
@@ -22720,7 +22799,6 @@ name|boolean
 name|getAlternative
 parameter_list|()
 function_decl|;
-comment|// repeated .Time free_time = 4;
 comment|/**      *<code>repeated .Time free_time = 4;</code>      */
 name|java
 operator|.
@@ -22808,7 +22886,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Entity course = 5;
 comment|/**      *<code>repeated .Entity course = 5;</code>      */
 name|java
 operator|.
@@ -22896,7 +22973,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Section section = 6;
 comment|/**      *<code>repeated .Section section = 6;</code>      */
 name|java
 operator|.
@@ -22984,7 +23060,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// optional int64 time_stamp = 8;
 comment|/**      *<code>optional int64 time_stamp = 8;</code>      */
 name|boolean
 name|hasTimeStamp
@@ -22995,7 +23070,6 @@ name|long
 name|getTimeStamp
 parameter_list|()
 function_decl|;
-comment|// optional bool wait_list = 9 [default = false];
 comment|/**      *<code>optional bool wait_list = 9 [default = false];</code>      */
 name|boolean
 name|hasWaitList
@@ -23022,6 +23096,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Request)
 name|RequestOrBuilder
 block|{
 comment|// Use Request.newBuilder() to construct.
@@ -23906,7 +23981,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// optional int64 id = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -23947,7 +24021,6 @@ return|return
 name|id_
 return|;
 block|}
-comment|// required int32 priority = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -23988,7 +24061,6 @@ return|return
 name|priority_
 return|;
 block|}
-comment|// optional bool alternative = 3 [default = false];
 specifier|public
 specifier|static
 specifier|final
@@ -24029,7 +24101,6 @@ return|return
 name|alternative_
 return|;
 block|}
-comment|// repeated .Time free_time = 4;
 specifier|public
 specifier|static
 specifier|final
@@ -24184,7 +24255,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Entity course = 5;
 specifier|public
 specifier|static
 specifier|final
@@ -24339,7 +24409,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Section section = 6;
 specifier|public
 specifier|static
 specifier|final
@@ -24494,7 +24563,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// optional int64 time_stamp = 8;
 specifier|public
 specifier|static
 specifier|final
@@ -24535,7 +24603,6 @@ return|return
 name|timeStamp_
 return|;
 block|}
-comment|// optional bool wait_list = 9 [default = false];
 specifier|public
 specifier|static
 specifier|final
@@ -24656,14 +24723,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -25970,6 +26043,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Request)
 name|org
 operator|.
 name|unitime
@@ -27690,7 +27764,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// optional int64 id = 1;
 specifier|private
 name|long
 name|id_
@@ -27773,7 +27846,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// required int32 priority = 2;
 specifier|private
 name|int
 name|priority_
@@ -27856,7 +27928,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional bool alternative = 3 [default = false];
 specifier|private
 name|boolean
 name|alternative_
@@ -27939,7 +28010,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// repeated .Time free_time = 4;
 specifier|private
 name|java
 operator|.
@@ -28652,7 +28722,15 @@ block|{
 name|ensureFreeTimeIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -29160,7 +29238,6 @@ return|return
 name|freeTimeBuilder_
 return|;
 block|}
-comment|// repeated .Entity course = 5;
 specifier|private
 name|java
 operator|.
@@ -29873,7 +29950,15 @@ block|{
 name|ensureCourseIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -30381,7 +30466,6 @@ return|return
 name|courseBuilder_
 return|;
 block|}
-comment|// repeated .Section section = 6;
 specifier|private
 name|java
 operator|.
@@ -31094,7 +31178,15 @@ block|{
 name|ensureSectionIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -31602,7 +31694,6 @@ return|return
 name|sectionBuilder_
 return|;
 block|}
-comment|// optional int64 time_stamp = 8;
 specifier|private
 name|long
 name|timeStamp_
@@ -31685,7 +31776,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional bool wait_list = 9 [default = false];
 specifier|private
 name|boolean
 name|waitList_
@@ -31792,6 +31882,7 @@ specifier|public
 interface|interface
 name|EnrollmentOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Enrollment)
 name|com
 operator|.
 name|google
@@ -31800,7 +31891,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required .Enrollment.EnrollmentType type = 1;
 comment|/**      *<code>required .Enrollment.EnrollmentType type = 1;</code>      */
 name|boolean
 name|hasType
@@ -31823,7 +31913,6 @@ name|EnrollmentType
 name|getType
 parameter_list|()
 function_decl|;
-comment|// repeated .Section section = 2;
 comment|/**      *<code>repeated .Section section = 2;</code>      */
 name|java
 operator|.
@@ -31911,7 +32000,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// optional double value = 3;
 comment|/**      *<code>optional double value = 3;</code>      */
 name|boolean
 name|hasValue
@@ -31938,6 +32026,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Enrollment)
 name|EnrollmentOrBuilder
 block|{
 comment|// Use Enrollment.newBuilder() to construct.
@@ -33084,7 +33173,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required .Enrollment.EnrollmentType type = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -33149,7 +33237,6 @@ return|return
 name|type_
 return|;
 block|}
-comment|// repeated .Section section = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -33304,7 +33391,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// optional double value = 3;
 specifier|public
 specifier|static
 specifier|final
@@ -33405,14 +33491,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -34341,6 +34433,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Enrollment)
 name|org
 operator|.
 name|unitime
@@ -35367,7 +35460,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required .Enrollment.EnrollmentType type = 1;
 specifier|private
 name|org
 operator|.
@@ -35529,7 +35621,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// repeated .Section section = 2;
 specifier|private
 name|java
 operator|.
@@ -36242,7 +36333,15 @@ block|{
 name|ensureSectionIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -36750,7 +36849,6 @@ return|return
 name|sectionBuilder_
 return|;
 block|}
-comment|// optional double value = 3;
 specifier|private
 name|double
 name|value_
@@ -36857,6 +36955,7 @@ specifier|public
 interface|interface
 name|ActionOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Action)
 name|com
 operator|.
 name|google
@@ -36865,7 +36964,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required string operation = 1;
 comment|/**      *<code>required string operation = 1;</code>      */
 name|boolean
 name|hasOperation
@@ -36891,7 +36989,6 @@ name|ByteString
 name|getOperationBytes
 parameter_list|()
 function_decl|;
-comment|// required .Entity session = 2;
 comment|/**      *<code>required .Entity session = 2;</code>      */
 name|boolean
 name|hasSession
@@ -36927,7 +37024,6 @@ name|EntityOrBuilder
 name|getSessionOrBuilder
 parameter_list|()
 function_decl|;
-comment|// optional .Entity student = 3;
 comment|/**      *<code>optional .Entity student = 3;</code>      */
 name|boolean
 name|hasStudent
@@ -36963,7 +37059,6 @@ name|EntityOrBuilder
 name|getStudentOrBuilder
 parameter_list|()
 function_decl|;
-comment|// optional int64 start_time = 4;
 comment|/**      *<code>optional int64 start_time = 4;</code>      */
 name|boolean
 name|hasStartTime
@@ -36974,7 +37069,6 @@ name|long
 name|getStartTime
 parameter_list|()
 function_decl|;
-comment|// optional int64 end_time = 5;
 comment|/**      *<code>optional int64 end_time = 5;</code>      */
 name|boolean
 name|hasEndTime
@@ -36985,7 +37079,6 @@ name|long
 name|getEndTime
 parameter_list|()
 function_decl|;
-comment|// optional int64 cpu_time = 6;
 comment|/**      *<code>optional int64 cpu_time = 6;</code>      */
 name|boolean
 name|hasCpuTime
@@ -36996,7 +37089,6 @@ name|long
 name|getCpuTime
 parameter_list|()
 function_decl|;
-comment|// repeated .Request request = 7;
 comment|/**      *<code>repeated .Request request = 7;</code>      */
 name|java
 operator|.
@@ -37084,7 +37176,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Enrollment enrollment = 8;
 comment|/**      *<code>repeated .Enrollment enrollment = 8;</code>      */
 name|java
 operator|.
@@ -37172,7 +37263,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Entity other = 9;
 comment|/**      *<code>repeated .Entity other = 9;</code>      */
 name|java
 operator|.
@@ -37260,7 +37350,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Message message = 10;
 comment|/**      *<code>repeated .Message message = 10;</code>      */
 name|java
 operator|.
@@ -37348,7 +37437,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// optional .Action.ResultType result = 11;
 comment|/**      *<code>optional .Action.ResultType result = 11;</code>      */
 name|boolean
 name|hasResult
@@ -37371,7 +37459,6 @@ name|ResultType
 name|getResult
 parameter_list|()
 function_decl|;
-comment|// optional .Entity user = 12;
 comment|/**      *<code>optional .Entity user = 12;</code>      */
 name|boolean
 name|hasUser
@@ -37407,7 +37494,6 @@ name|EntityOrBuilder
 name|getUserOrBuilder
 parameter_list|()
 function_decl|;
-comment|// repeated .Property option = 13;
 comment|/**      *<code>repeated .Property option = 13;</code>      */
 name|java
 operator|.
@@ -37511,6 +37597,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Action)
 name|ActionOrBuilder
 block|{
 comment|// Use Action.newBuilder() to construct.
@@ -37752,16 +37839,27 @@ case|case
 literal|10
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000001
 expr_stmt|;
 name|operation_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -39345,7 +39443,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required string operation = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -39558,7 +39655,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// required .Entity session = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -39639,7 +39735,6 @@ return|return
 name|session_
 return|;
 block|}
-comment|// optional .Entity student = 3;
 specifier|public
 specifier|static
 specifier|final
@@ -39720,7 +39815,6 @@ return|return
 name|student_
 return|;
 block|}
-comment|// optional int64 start_time = 4;
 specifier|public
 specifier|static
 specifier|final
@@ -39761,7 +39855,6 @@ return|return
 name|startTime_
 return|;
 block|}
-comment|// optional int64 end_time = 5;
 specifier|public
 specifier|static
 specifier|final
@@ -39802,7 +39895,6 @@ return|return
 name|endTime_
 return|;
 block|}
-comment|// optional int64 cpu_time = 6;
 specifier|public
 specifier|static
 specifier|final
@@ -39843,7 +39935,6 @@ return|return
 name|cpuTime_
 return|;
 block|}
-comment|// repeated .Request request = 7;
 specifier|public
 specifier|static
 specifier|final
@@ -39998,7 +40089,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Enrollment enrollment = 8;
 specifier|public
 specifier|static
 specifier|final
@@ -40153,7 +40243,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Entity other = 9;
 specifier|public
 specifier|static
 specifier|final
@@ -40308,7 +40397,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Message message = 10;
 specifier|public
 specifier|static
 specifier|final
@@ -40463,7 +40551,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// optional .Action.ResultType result = 11;
 specifier|public
 specifier|static
 specifier|final
@@ -40528,7 +40615,6 @@ return|return
 name|result_
 return|;
 block|}
-comment|// optional .Entity user = 12;
 specifier|public
 specifier|static
 specifier|final
@@ -40609,7 +40695,6 @@ return|return
 name|user_
 return|;
 block|}
-comment|// repeated .Property option = 13;
 specifier|public
 specifier|static
 specifier|final
@@ -40931,14 +41016,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -42720,6 +42811,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Action)
 name|org
 operator|.
 name|unitime
@@ -45390,7 +45482,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required string operation = 1;
 specifier|private
 name|java
 operator|.
@@ -45452,14 +45543,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -45470,15 +45562,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|operation_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -45692,7 +45801,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// required .Entity session = 2;
 specifier|private
 name|org
 operator|.
@@ -46297,7 +46405,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|session_
+name|getSession
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -46315,7 +46424,6 @@ return|return
 name|sessionBuilder_
 return|;
 block|}
-comment|// optional .Entity student = 3;
 specifier|private
 name|org
 operator|.
@@ -46920,7 +47028,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|student_
+name|getStudent
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -46938,7 +47047,6 @@ return|return
 name|studentBuilder_
 return|;
 block|}
-comment|// optional int64 start_time = 4;
 specifier|private
 name|long
 name|startTime_
@@ -47021,7 +47129,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional int64 end_time = 5;
 specifier|private
 name|long
 name|endTime_
@@ -47104,7 +47211,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional int64 cpu_time = 6;
 specifier|private
 name|long
 name|cpuTime_
@@ -47187,7 +47293,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// repeated .Request request = 7;
 specifier|private
 name|java
 operator|.
@@ -47900,7 +48005,15 @@ block|{
 name|ensureRequestIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -48408,7 +48521,6 @@ return|return
 name|requestBuilder_
 return|;
 block|}
-comment|// repeated .Enrollment enrollment = 8;
 specifier|private
 name|java
 operator|.
@@ -49121,7 +49233,15 @@ block|{
 name|ensureEnrollmentIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -49629,7 +49749,6 @@ return|return
 name|enrollmentBuilder_
 return|;
 block|}
-comment|// repeated .Entity other = 9;
 specifier|private
 name|java
 operator|.
@@ -50342,7 +50461,15 @@ block|{
 name|ensureOtherIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -50850,7 +50977,6 @@ return|return
 name|otherBuilder_
 return|;
 block|}
-comment|// repeated .Message message = 10;
 specifier|private
 name|java
 operator|.
@@ -51563,7 +51689,15 @@ block|{
 name|ensureMessageIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -52071,7 +52205,6 @@ return|return
 name|messageBuilder_
 return|;
 block|}
-comment|// optional .Action.ResultType result = 11;
 specifier|private
 name|org
 operator|.
@@ -52233,7 +52366,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional .Entity user = 12;
 specifier|private
 name|org
 operator|.
@@ -52838,7 +52970,8 @@ operator|.
 name|EntityOrBuilder
 argument_list|>
 argument_list|(
-name|user_
+name|getUser
+argument_list|()
 argument_list|,
 name|getParentForChildren
 argument_list|()
@@ -52856,7 +52989,6 @@ return|return
 name|userBuilder_
 return|;
 block|}
-comment|// repeated .Property option = 13;
 specifier|private
 name|java
 operator|.
@@ -53569,7 +53701,15 @@ block|{
 name|ensureOptionIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -54101,6 +54241,7 @@ specifier|public
 interface|interface
 name|MessageOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Message)
 name|com
 operator|.
 name|google
@@ -54109,7 +54250,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required .Message.Level level = 1;
 comment|/**      *<code>required .Message.Level level = 1;</code>      */
 name|boolean
 name|hasLevel
@@ -54132,7 +54272,6 @@ name|Level
 name|getLevel
 parameter_list|()
 function_decl|;
-comment|// required string text = 2;
 comment|/**      *<code>required string text = 2;</code>      */
 name|boolean
 name|hasText
@@ -54158,7 +54297,6 @@ name|ByteString
 name|getTextBytes
 parameter_list|()
 function_decl|;
-comment|// optional string exception = 3;
 comment|/**      *<code>optional string exception = 3;</code>      */
 name|boolean
 name|hasException
@@ -54184,7 +54322,6 @@ name|ByteString
 name|getExceptionBytes
 parameter_list|()
 function_decl|;
-comment|// optional int64 time_stamp = 4;
 comment|/**      *<code>optional int64 time_stamp = 4;</code>      */
 name|boolean
 name|hasTimeStamp
@@ -54211,6 +54348,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Message)
 name|MessageOrBuilder
 block|{
 comment|// Use Message.newBuilder() to construct.
@@ -54528,16 +54666,27 @@ case|case
 literal|18
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000002
 expr_stmt|;
 name|text_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -54545,16 +54694,27 @@ case|case
 literal|26
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000004
 expr_stmt|;
 name|exception_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -55244,7 +55404,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required .Message.Level level = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -55309,7 +55468,6 @@ return|return
 name|level_
 return|;
 block|}
-comment|// required string text = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -55522,7 +55680,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// optional string exception = 3;
 specifier|public
 specifier|static
 specifier|final
@@ -55735,7 +55892,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// optional int64 time_stamp = 4;
 specifier|public
 specifier|static
 specifier|final
@@ -55833,14 +55989,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -56785,6 +56947,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Message)
 name|org
 operator|.
 name|unitime
@@ -57667,7 +57830,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required .Message.Level level = 1;
 specifier|private
 name|org
 operator|.
@@ -57829,7 +57991,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// required string text = 2;
 specifier|private
 name|java
 operator|.
@@ -57891,14 +58052,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -57909,15 +58071,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|text_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -58131,7 +58310,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional string exception = 3;
 specifier|private
 name|java
 operator|.
@@ -58193,14 +58371,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -58211,15 +58390,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|exception_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -58433,7 +58629,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// optional int64 time_stamp = 4;
 specifier|private
 name|long
 name|timeStamp_
@@ -58540,6 +58735,7 @@ specifier|public
 interface|interface
 name|PropertyOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Property)
 name|com
 operator|.
 name|google
@@ -58548,7 +58744,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required string key = 1;
 comment|/**      *<code>required string key = 1;</code>      */
 name|boolean
 name|hasKey
@@ -58574,7 +58769,6 @@ name|ByteString
 name|getKeyBytes
 parameter_list|()
 function_decl|;
-comment|// required string value = 2;
 comment|/**      *<code>required string value = 2;</code>      */
 name|boolean
 name|hasValue
@@ -58616,6 +58810,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Property)
 name|PropertyOrBuilder
 block|{
 comment|// Use Property.newBuilder() to construct.
@@ -58857,16 +59052,27 @@ case|case
 literal|10
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000001
 expr_stmt|;
 name|key_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -58874,16 +59080,27 @@ case|case
 literal|18
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000002
 expr_stmt|;
 name|value_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -59146,7 +59363,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required string key = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -59359,7 +59575,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// required string value = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -59607,14 +59822,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -60445,6 +60666,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Property)
 name|org
 operator|.
 name|unitime
@@ -61205,7 +61427,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required string key = 1;
 specifier|private
 name|java
 operator|.
@@ -61267,14 +61488,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -61285,15 +61507,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|key_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -61507,7 +61746,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// required string value = 2;
 specifier|private
 name|java
 operator|.
@@ -61569,14 +61807,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -61587,15 +61826,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|value_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -61833,6 +62089,7 @@ specifier|public
 interface|interface
 name|LogOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:Log)
 name|com
 operator|.
 name|google
@@ -61841,7 +62098,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// repeated .Action action = 1;
 comment|/**      *<code>repeated .Action action = 1;</code>      */
 name|java
 operator|.
@@ -61929,7 +62185,6 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|// repeated .Message message = 2;
 comment|/**      *<code>repeated .Message message = 2;</code>      */
 name|java
 operator|.
@@ -62033,6 +62288,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:Log)
 name|LogOrBuilder
 block|{
 comment|// Use Log.newBuilder() to construct.
@@ -62727,7 +62983,6 @@ return|return
 name|PARSER
 return|;
 block|}
-comment|// repeated .Action action = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -62882,7 +63137,6 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|// repeated .Message message = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -63086,14 +63340,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 for|for
 control|(
@@ -64004,6 +64264,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:Log)
 name|org
 operator|.
 name|unitime
@@ -65159,7 +65420,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// repeated .Action action = 1;
 specifier|private
 name|java
 operator|.
@@ -65872,7 +66132,15 @@ block|{
 name|ensureActionIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -66380,7 +66648,6 @@ return|return
 name|actionBuilder_
 return|;
 block|}
-comment|// repeated .Message message = 2;
 specifier|private
 name|java
 operator|.
@@ -67093,7 +67360,15 @@ block|{
 name|ensureMessageIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -67625,6 +67900,7 @@ specifier|public
 interface|interface
 name|CourseRequestOptionOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:CourseRequestOption)
 name|com
 operator|.
 name|google
@@ -67633,7 +67909,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required .CourseRequestOption.OptionType type = 1;
 comment|/**      *<code>required .CourseRequestOption.OptionType type = 1;</code>      */
 name|boolean
 name|hasType
@@ -67656,7 +67931,6 @@ name|OptionType
 name|getType
 parameter_list|()
 function_decl|;
-comment|// repeated .Section section = 2;
 comment|/**      *<code>repeated .Section section = 2;</code>      */
 name|java
 operator|.
@@ -67744,6 +68018,93 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+name|getInstructionalMethodList
+parameter_list|()
+function_decl|;
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|getInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+function_decl|;
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+name|int
+name|getInstructionalMethodCount
+parameter_list|()
+function_decl|;
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|?
+extends|extends
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+argument_list|>
+name|getInstructionalMethodOrBuilderList
+parameter_list|()
+function_decl|;
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+name|getInstructionalMethodOrBuilder
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+function_decl|;
 block|}
 comment|/**    * Protobuf type {@code CourseRequestOption}    */
 specifier|public
@@ -67760,6 +68121,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:CourseRequestOption)
 name|CourseRequestOptionOrBuilder
 block|{
 comment|// Use CourseRequestOption.newBuilder() to construct.
@@ -68147,6 +68509,80 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+case|case
+literal|26
+case|:
+block|{
+if|if
+condition|(
+operator|!
+operator|(
+operator|(
+name|mutable_bitField0_
+operator|&
+literal|0x00000004
+operator|)
+operator|==
+literal|0x00000004
+operator|)
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+operator|new
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+argument_list|()
+expr_stmt|;
+name|mutable_bitField0_
+operator||=
+literal|0x00000004
+expr_stmt|;
+block|}
+name|instructionalMethod_
+operator|.
+name|add
+argument_list|(
+name|input
+operator|.
+name|readMessage
+argument_list|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|PARSER
+argument_list|,
+name|extensionRegistry
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 block|}
 block|}
 block|}
@@ -68229,6 +68665,33 @@ operator|.
 name|unmodifiableList
 argument_list|(
 name|section_
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|mutable_bitField0_
+operator|&
+literal|0x00000004
+operator|)
+operator|==
+literal|0x00000004
+operator|)
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|unmodifiableList
+argument_list|(
+name|instructionalMethod_
 argument_list|)
 expr_stmt|;
 block|}
@@ -68449,6 +68912,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
+block|,
+comment|/**        *<code>REQUEST_PREFERENCE = 1;</code>        */
+name|REQUEST_PREFERENCE
+argument_list|(
+literal|1
+argument_list|,
+literal|1
+argument_list|)
 block|,       ;
 comment|/**        *<code>ORIGINAL_ENROLLMENT = 0;</code>        */
 specifier|public
@@ -68458,6 +68929,15 @@ name|int
 name|ORIGINAL_ENROLLMENT_VALUE
 init|=
 literal|0
+decl_stmt|;
+comment|/**        *<code>REQUEST_PREFERENCE = 1;</code>        */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|REQUEST_PREFERENCE_VALUE
+init|=
+literal|1
 decl_stmt|;
 specifier|public
 specifier|final
@@ -68488,6 +68968,12 @@ literal|0
 case|:
 return|return
 name|ORIGINAL_ENROLLMENT
+return|;
+case|case
+literal|1
+case|:
+return|return
+name|REQUEST_PREFERENCE
 return|;
 default|default:
 return|return
@@ -68751,7 +69237,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required .CourseRequestOption.OptionType type = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -68816,7 +69301,6 @@ return|return
 name|type_
 return|;
 block|}
-comment|// repeated .Section section = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -68971,6 +69455,160 @@ name|index
 argument_list|)
 return|;
 block|}
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|INSTRUCTIONALMETHOD_FIELD_NUMBER
+init|=
+literal|3
+decl_stmt|;
+specifier|private
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+name|instructionalMethod_
+decl_stmt|;
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+name|getInstructionalMethodList
+parameter_list|()
+block|{
+return|return
+name|instructionalMethod_
+return|;
+block|}
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|?
+extends|extends
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+argument_list|>
+name|getInstructionalMethodOrBuilderList
+parameter_list|()
+block|{
+return|return
+name|instructionalMethod_
+return|;
+block|}
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+specifier|public
+name|int
+name|getInstructionalMethodCount
+parameter_list|()
+block|{
+return|return
+name|instructionalMethod_
+operator|.
+name|size
+argument_list|()
+return|;
+block|}
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|getInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+return|return
+name|instructionalMethod_
+operator|.
+name|get
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
+comment|/**      *<code>repeated .Entity instructionalMethod = 3;</code>      */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+name|getInstructionalMethodOrBuilder
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+return|return
+name|instructionalMethod_
+operator|.
+name|get
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
 specifier|private
 name|void
 name|initFields
@@ -69005,6 +69643,17 @@ operator|.
 name|emptyList
 argument_list|()
 expr_stmt|;
+name|instructionalMethod_
+operator|=
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+expr_stmt|;
 block|}
 specifier|private
 name|byte
@@ -69027,14 +69676,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -69071,6 +69726,43 @@ if|if
 condition|(
 operator|!
 name|getSection
+argument_list|(
+name|i
+argument_list|)
+operator|.
+name|isInitialized
+argument_list|()
+condition|)
+block|{
+name|memoizedIsInitialized
+operator|=
+literal|0
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
+block|}
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|getInstructionalMethodCount
+argument_list|()
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+operator|!
+name|getInstructionalMethod
 argument_list|(
 name|i
 argument_list|)
@@ -69170,6 +69862,39 @@ argument_list|(
 literal|2
 argument_list|,
 name|section_
+operator|.
+name|get
+argument_list|(
+name|i
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|instructionalMethod_
+operator|.
+name|size
+argument_list|()
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|output
+operator|.
+name|writeMessage
+argument_list|(
+literal|3
+argument_list|,
+name|instructionalMethod_
 operator|.
 name|get
 argument_list|(
@@ -69285,6 +70010,47 @@ argument_list|(
 literal|2
 argument_list|,
 name|section_
+operator|.
+name|get
+argument_list|(
+name|i
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|instructionalMethod_
+operator|.
+name|size
+argument_list|()
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|size
+operator|+=
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|CodedOutputStream
+operator|.
+name|computeMessageSize
+argument_list|(
+literal|3
+argument_list|,
+name|instructionalMethod_
 operator|.
 name|get
 argument_list|(
@@ -69909,6 +70675,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:CourseRequestOption)
 name|org
 operator|.
 name|unitime
@@ -70064,6 +70831,9 @@ block|{
 name|getSectionFieldBuilder
 argument_list|()
 expr_stmt|;
+name|getInstructionalMethodFieldBuilder
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 specifier|private
@@ -70146,6 +70916,42 @@ block|}
 else|else
 block|{
 name|sectionBuilder_
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000004
+operator|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
 operator|.
 name|clear
 argument_list|()
@@ -70416,6 +71222,68 @@ operator|.
 name|section_
 operator|=
 name|sectionBuilder_
+operator|.
+name|build
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000004
+operator|)
+operator|==
+literal|0x00000004
+operator|)
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|unmodifiableList
+argument_list|(
+name|instructionalMethod_
+argument_list|)
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000004
+operator|)
+expr_stmt|;
+block|}
+name|result
+operator|.
+name|instructionalMethod_
+operator|=
+name|instructionalMethod_
+expr_stmt|;
+block|}
+else|else
+block|{
+name|result
+operator|.
+name|instructionalMethod_
+operator|=
+name|instructionalMethodBuilder_
 operator|.
 name|build
 argument_list|()
@@ -70695,6 +71563,145 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|other
+operator|.
+name|instructionalMethod_
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|instructionalMethod_
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+name|other
+operator|.
+name|instructionalMethod_
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000004
+operator|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|addAll
+argument_list|(
+name|other
+operator|.
+name|instructionalMethod_
+argument_list|)
+expr_stmt|;
+block|}
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+operator|!
+name|other
+operator|.
+name|instructionalMethod_
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|dispose
+argument_list|()
+expr_stmt|;
+name|instructionalMethodBuilder_
+operator|=
+literal|null
+expr_stmt|;
+name|instructionalMethod_
+operator|=
+name|other
+operator|.
+name|instructionalMethod_
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000004
+operator|)
+expr_stmt|;
+name|instructionalMethodBuilder_
+operator|=
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|GeneratedMessage
+operator|.
+name|alwaysUseFieldBuilders
+condition|?
+name|getInstructionalMethodFieldBuilder
+argument_list|()
+else|:
+literal|null
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|addAllMessages
+argument_list|(
+name|other
+operator|.
+name|instructionalMethod_
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
 name|this
 operator|.
 name|mergeUnknownFields
@@ -70746,6 +71753,39 @@ if|if
 condition|(
 operator|!
 name|getSection
+argument_list|(
+name|i
+argument_list|)
+operator|.
+name|isInitialized
+argument_list|()
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+block|}
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|getInstructionalMethodCount
+argument_list|()
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+operator|!
+name|getInstructionalMethod
 argument_list|(
 name|i
 argument_list|)
@@ -70881,7 +71921,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required .CourseRequestOption.OptionType type = 1;
 specifier|private
 name|org
 operator|.
@@ -71043,7 +72082,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// repeated .Section section = 2;
 specifier|private
 name|java
 operator|.
@@ -71756,7 +72794,15 @@ block|{
 name|ensureSectionIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -72264,6 +73310,1234 @@ return|return
 name|sectionBuilder_
 return|;
 block|}
+specifier|private
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+name|instructionalMethod_
+init|=
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+decl_stmt|;
+specifier|private
+name|void
+name|ensureInstructionalMethodIsMutable
+parameter_list|()
+block|{
+if|if
+condition|(
+operator|!
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000004
+operator|)
+operator|==
+literal|0x00000004
+operator|)
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+operator|new
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+argument_list|(
+name|instructionalMethod_
+argument_list|)
+expr_stmt|;
+name|bitField0_
+operator||=
+literal|0x00000004
+expr_stmt|;
+block|}
+block|}
+specifier|private
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|RepeatedFieldBuilder
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+argument_list|>
+name|instructionalMethodBuilder_
+decl_stmt|;
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+name|getInstructionalMethodList
+parameter_list|()
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|unmodifiableList
+argument_list|(
+name|instructionalMethod_
+argument_list|)
+return|;
+block|}
+else|else
+block|{
+return|return
+name|instructionalMethodBuilder_
+operator|.
+name|getMessageList
+argument_list|()
+return|;
+block|}
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|int
+name|getInstructionalMethodCount
+parameter_list|()
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|instructionalMethod_
+operator|.
+name|size
+argument_list|()
+return|;
+block|}
+else|else
+block|{
+return|return
+name|instructionalMethodBuilder_
+operator|.
+name|getCount
+argument_list|()
+return|;
+block|}
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|getInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|instructionalMethod_
+operator|.
+name|get
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
+else|else
+block|{
+return|return
+name|instructionalMethodBuilder_
+operator|.
+name|getMessage
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|setInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|value
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|value
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|()
+throw|;
+block|}
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|set
+argument_list|(
+name|index
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|setMessage
+argument_list|(
+name|index
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|setInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+name|builderForValue
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|set
+argument_list|(
+name|index
+argument_list|,
+name|builderForValue
+operator|.
+name|build
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|setMessage
+argument_list|(
+name|index
+argument_list|,
+name|builderForValue
+operator|.
+name|build
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|addInstructionalMethod
+parameter_list|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|value
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|value
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|()
+throw|;
+block|}
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|add
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|addMessage
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|addInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+name|value
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|value
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|()
+throw|;
+block|}
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|add
+argument_list|(
+name|index
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|addMessage
+argument_list|(
+name|index
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|addInstructionalMethod
+parameter_list|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+name|builderForValue
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|add
+argument_list|(
+name|builderForValue
+operator|.
+name|build
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|addMessage
+argument_list|(
+name|builderForValue
+operator|.
+name|build
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|addInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+name|builderForValue
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|add
+argument_list|(
+name|index
+argument_list|,
+name|builderForValue
+operator|.
+name|build
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|addMessage
+argument_list|(
+name|index
+argument_list|,
+name|builderForValue
+operator|.
+name|build
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|addAllInstructionalMethod
+parameter_list|(
+name|java
+operator|.
+name|lang
+operator|.
+name|Iterable
+argument_list|<
+name|?
+extends|extends
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|>
+name|values
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
+operator|.
+name|addAll
+argument_list|(
+name|values
+argument_list|,
+name|instructionalMethod_
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|addAllMessages
+argument_list|(
+name|values
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|clearInstructionalMethod
+parameter_list|()
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|instructionalMethod_
+operator|=
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000004
+operator|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|Builder
+name|removeInstructionalMethod
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|ensureInstructionalMethodIsMutable
+argument_list|()
+expr_stmt|;
+name|instructionalMethod_
+operator|.
+name|remove
+argument_list|(
+name|index
+argument_list|)
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|instructionalMethodBuilder_
+operator|.
+name|remove
+argument_list|(
+name|index
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+name|getInstructionalMethodBuilder
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+return|return
+name|getInstructionalMethodFieldBuilder
+argument_list|()
+operator|.
+name|getBuilder
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+name|getInstructionalMethodOrBuilder
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|instructionalMethod_
+operator|.
+name|get
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
+else|else
+block|{
+return|return
+name|instructionalMethodBuilder_
+operator|.
+name|getMessageOrBuilder
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|?
+extends|extends
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+argument_list|>
+name|getInstructionalMethodOrBuilderList
+parameter_list|()
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+name|instructionalMethodBuilder_
+operator|.
+name|getMessageOrBuilderList
+argument_list|()
+return|;
+block|}
+else|else
+block|{
+return|return
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|unmodifiableList
+argument_list|(
+name|instructionalMethod_
+argument_list|)
+return|;
+block|}
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+name|addInstructionalMethodBuilder
+parameter_list|()
+block|{
+return|return
+name|getInstructionalMethodFieldBuilder
+argument_list|()
+operator|.
+name|addBuilder
+argument_list|(
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|getDefaultInstance
+argument_list|()
+argument_list|)
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+name|addInstructionalMethodBuilder
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+return|return
+name|getInstructionalMethodFieldBuilder
+argument_list|()
+operator|.
+name|addBuilder
+argument_list|(
+name|index
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|getDefaultInstance
+argument_list|()
+argument_list|)
+return|;
+block|}
+comment|/**        *<code>repeated .Entity instructionalMethod = 3;</code>        */
+specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|List
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+argument_list|>
+name|getInstructionalMethodBuilderList
+parameter_list|()
+block|{
+return|return
+name|getInstructionalMethodFieldBuilder
+argument_list|()
+operator|.
+name|getBuilderList
+argument_list|()
+return|;
+block|}
+specifier|private
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|RepeatedFieldBuilder
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+argument_list|>
+name|getInstructionalMethodFieldBuilder
+parameter_list|()
+block|{
+if|if
+condition|(
+name|instructionalMethodBuilder_
+operator|==
+literal|null
+condition|)
+block|{
+name|instructionalMethodBuilder_
+operator|=
+operator|new
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|RepeatedFieldBuilder
+argument_list|<
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|Entity
+operator|.
+name|Builder
+argument_list|,
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|OnlineSectioningLog
+operator|.
+name|EntityOrBuilder
+argument_list|>
+argument_list|(
+name|instructionalMethod_
+argument_list|,
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000004
+operator|)
+operator|==
+literal|0x00000004
+operator|)
+argument_list|,
+name|getParentForChildren
+argument_list|()
+argument_list|,
+name|isClean
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|instructionalMethod_
+operator|=
+literal|null
+expr_stmt|;
+block|}
+return|return
+name|instructionalMethodBuilder_
+return|;
+block|}
 comment|// @@protoc_insertion_point(builder_scope:CourseRequestOption)
 block|}
 static|static
@@ -72288,6 +74562,7 @@ specifier|public
 interface|interface
 name|ExportedLogOrBuilder
 extends|extends
+comment|// @@protoc_insertion_point(interface_extends:ExportedLog)
 name|com
 operator|.
 name|google
@@ -72296,7 +74571,6 @@ name|protobuf
 operator|.
 name|MessageOrBuilder
 block|{
-comment|// required string student = 1;
 comment|/**      *<code>required string student = 1;</code>      */
 name|boolean
 name|hasStudent
@@ -72322,7 +74596,6 @@ name|ByteString
 name|getStudentBytes
 parameter_list|()
 function_decl|;
-comment|// repeated .Action action = 2;
 comment|/**      *<code>repeated .Action action = 2;</code>      */
 name|java
 operator|.
@@ -72426,6 +74699,7 @@ name|protobuf
 operator|.
 name|GeneratedMessage
 implements|implements
+comment|// @@protoc_insertion_point(message_implements:ExportedLog)
 name|ExportedLogOrBuilder
 block|{
 comment|// Use ExportedLog.newBuilder() to construct.
@@ -72667,16 +74941,27 @@ case|case
 literal|10
 case|:
 block|{
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|ByteString
+name|bs
+init|=
+name|input
+operator|.
+name|readBytes
+argument_list|()
+decl_stmt|;
 name|bitField0_
 operator||=
 literal|0x00000001
 expr_stmt|;
 name|student_
 operator|=
-name|input
-operator|.
-name|readBytes
-argument_list|()
+name|bs
 expr_stmt|;
 break|break;
 block|}
@@ -73040,7 +75325,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required string student = 1;
 specifier|public
 specifier|static
 specifier|final
@@ -73253,7 +75537,6 @@ name|ref
 return|;
 block|}
 block|}
-comment|// repeated .Action action = 2;
 specifier|public
 specifier|static
 specifier|final
@@ -73450,14 +75733,20 @@ decl_stmt|;
 if|if
 condition|(
 name|isInitialized
-operator|!=
-operator|-
+operator|==
 literal|1
 condition|)
 return|return
+literal|true
+return|;
+if|if
+condition|(
 name|isInitialized
 operator|==
-literal|1
+literal|0
+condition|)
+return|return
+literal|false
 return|;
 if|if
 condition|(
@@ -74328,6 +76617,7 @@ argument_list|<
 name|Builder
 argument_list|>
 implements|implements
+comment|// @@protoc_insertion_point(builder_implements:ExportedLog)
 name|org
 operator|.
 name|unitime
@@ -75291,7 +77581,6 @@ specifier|private
 name|int
 name|bitField0_
 decl_stmt|;
-comment|// required string student = 1;
 specifier|private
 name|java
 operator|.
@@ -75353,14 +77642,15 @@ name|String
 operator|)
 condition|)
 block|{
-name|java
+name|com
 operator|.
-name|lang
+name|google
 operator|.
-name|String
-name|s
+name|protobuf
+operator|.
+name|ByteString
+name|bs
 init|=
-operator|(
 operator|(
 name|com
 operator|.
@@ -75371,15 +77661,32 @@ operator|.
 name|ByteString
 operator|)
 name|ref
-operator|)
+decl_stmt|;
+name|java
+operator|.
+name|lang
+operator|.
+name|String
+name|s
+init|=
+name|bs
 operator|.
 name|toStringUtf8
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|bs
+operator|.
+name|isValidUtf8
+argument_list|()
+condition|)
+block|{
 name|student_
 operator|=
 name|s
 expr_stmt|;
+block|}
 return|return
 name|s
 return|;
@@ -75593,7 +77900,6 @@ return|return
 name|this
 return|;
 block|}
-comment|// repeated .Action action = 2;
 specifier|private
 name|java
 operator|.
@@ -76306,7 +78612,15 @@ block|{
 name|ensureActionIsMutable
 argument_list|()
 expr_stmt|;
-name|super
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|AbstractMessageLite
+operator|.
+name|Builder
 operator|.
 name|addAll
 argument_list|(
@@ -76836,6 +79150,7 @@ comment|// @@protoc_insertion_point(class_scope:ExportedLog)
 block|}
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -76862,6 +79177,7 @@ name|internal_static_Entity_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -76888,6 +79204,7 @@ name|internal_static_Time_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -76914,6 +79231,7 @@ name|internal_static_Section_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -76940,6 +79258,7 @@ name|internal_static_Request_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -76966,6 +79285,7 @@ name|internal_static_Enrollment_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -76992,6 +79312,7 @@ name|internal_static_Action_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -77018,6 +79339,7 @@ name|internal_static_Message_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -77044,6 +79366,7 @@ name|internal_static_Property_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -77070,6 +79393,7 @@ name|internal_static_Log_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -77096,6 +79420,7 @@ name|internal_static_CourseRequestOption_fieldAccessorTable
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|com
 operator|.
 name|google
@@ -77256,19 +79581,21 @@ literal|"\004\"&\n\010Property\022\013\n\003key\030\001 \002(\t\022\r\n\005value
 operator|+
 literal|"\t\"9\n\003Log\022\027\n\006action\030\001 \003(\0132\007.Action\022\031\n\007mes"
 operator|+
-literal|"sage\030\002 \003(\0132\010.Message\"\206\001\n\023CourseRequestOp"
+literal|"sage\030\002 \003(\0132\010.Message\"\304\001\n\023CourseRequestOp"
 operator|+
 literal|"tion\022-\n\004type\030\001 \002(\0162\037.CourseRequestOption"
 operator|+
-literal|".OptionType\022\031\n\007section\030\002 \003(\0132\010.Section\"%"
+literal|".OptionType\022\031\n\007section\030\002 \003(\0132\010.Section\022$"
 block|,
-literal|"\n\nOptionType\022\027\n\023ORIGINAL_ENROLLMENT\020\000\"7\n"
+literal|"\n\023instructionalMethod\030\003 \003(\0132\007.Entity\"=\n\n"
 operator|+
-literal|"\013ExportedLog\022\017\n\007student\030\001 \002(\t\022\027\n\006action\030"
+literal|"OptionType\022\027\n\023ORIGINAL_ENROLLMENT\020\000\022\026\n\022R"
 operator|+
-literal|"\002 \003(\0132\007.ActionB(\n&org.unitime.timetable."
+literal|"EQUEST_PREFERENCE\020\001\"7\n\013ExportedLog\022\017\n\007st"
 operator|+
-literal|"onlinesectioning"
+literal|"udent\030\001 \002(\t\022\027\n\006action\030\002 \003(\0132\007.ActionB(\n&"
+operator|+
+literal|"org.unitime.timetable.onlinesectioning"
 block|}
 decl_stmt|;
 name|com
@@ -77323,6 +79650,42 @@ block|{
 name|descriptor
 operator|=
 name|root
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
+block|}
+decl_stmt|;
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|Descriptors
+operator|.
+name|FileDescriptor
+operator|.
+name|internalBuildGeneratedFileFrom
+argument_list|(
+name|descriptorData
+argument_list|,
+operator|new
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|Descriptors
+operator|.
+name|FileDescriptor
+index|[]
+block|{         }
+argument_list|,
+name|assigner
+argument_list|)
 expr_stmt|;
 name|internal_static_Entity_descriptor
 operator|=
@@ -77807,6 +80170,8 @@ block|{
 literal|"Type"
 block|,
 literal|"Section"
+block|,
+literal|"InstructionalMethod"
 block|, }
 argument_list|)
 expr_stmt|;
@@ -77850,42 +80215,6 @@ literal|"Student"
 block|,
 literal|"Action"
 block|, }
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
-block|}
-decl_stmt|;
-name|com
-operator|.
-name|google
-operator|.
-name|protobuf
-operator|.
-name|Descriptors
-operator|.
-name|FileDescriptor
-operator|.
-name|internalBuildGeneratedFileFrom
-argument_list|(
-name|descriptorData
-argument_list|,
-operator|new
-name|com
-operator|.
-name|google
-operator|.
-name|protobuf
-operator|.
-name|Descriptors
-operator|.
-name|FileDescriptor
-index|[]
-block|{         }
-argument_list|,
-name|assigner
 argument_list|)
 expr_stmt|;
 block|}
