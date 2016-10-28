@@ -1663,6 +1663,10 @@ expr_stmt|;
 if|if
 condition|(
 name|value
+operator|!=
+literal|null
+operator|&&
+name|value
 operator|.
 name|hasSelectedIntructionalMethods
 argument_list|()

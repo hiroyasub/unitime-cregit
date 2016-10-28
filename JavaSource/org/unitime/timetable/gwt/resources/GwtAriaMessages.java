@@ -420,6 +420,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0, number}. alternative to the priority {1, number} course request."
+argument_list|)
+name|String
+name|titleRequestedCourseNAlternative
+parameter_list|(
+name|int
+name|alt
+parameter_list|,
+name|int
+name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Priority {0, number} alternate course request. Access key {1}."
 argument_list|)
 name|String
@@ -452,6 +467,21 @@ argument_list|)
 name|String
 name|titleRequestedAlternateSecondAlternative
 parameter_list|(
+name|int
+name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0, number}. alternative to the priority {1, number} alternate course request."
+argument_list|)
+name|String
+name|titleRequestedAlternateNAlternative
+parameter_list|(
+name|int
+name|alt
+parameter_list|,
 name|int
 name|priority
 parameter_list|)
@@ -519,6 +549,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Opens Course Finder dialog for priority {1, number} {0, number}. alternative course request."
+argument_list|)
+name|String
+name|altRequestedCourseNAlternativeFinder
+parameter_list|(
+name|int
+name|alt
+parameter_list|,
+name|int
+name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Opens Course Finder dialog for priority {0, number} alternate course request."
 argument_list|)
 name|String
@@ -548,6 +593,21 @@ argument_list|)
 name|String
 name|altRequestedAlternateSecondFinder
 parameter_list|(
+name|int
+name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Opens Course Finder dialog for priority {1, number} {0, number}. alternative alternate course request."
+argument_list|)
+name|String
+name|altRequestedNAlternateFinder
+parameter_list|(
+name|int
+name|alt
+parameter_list|,
 name|int
 name|priority
 parameter_list|)

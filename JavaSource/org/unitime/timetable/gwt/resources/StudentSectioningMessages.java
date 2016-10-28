@@ -582,6 +582,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0}. Alternative"
+argument_list|)
+name|String
+name|courseRequestsAlternative
+parameter_list|(
+name|int
+name|i
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Alternate Course Requests"
 argument_list|)
 name|String
@@ -603,7 +615,7 @@ argument_list|(
 literal|"{0}. Alternate"
 argument_list|)
 name|String
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 parameter_list|(
 name|int
 name|i
@@ -628,6 +640,21 @@ literal|"Alt. to {0}& {1}"
 argument_list|)
 name|String
 name|courseRequestsHintAlt2
+parameter_list|(
+name|String
+name|course
+parameter_list|,
+name|String
+name|altCourse
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Alt. to {0}, {1}, ..."
+argument_list|)
+name|String
+name|courseRequestsHintAlt3
 parameter_list|(
 name|String
 name|course
@@ -4656,6 +4683,42 @@ literal|"section"
 argument_list|)
 name|String
 name|tagSection
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Swap this course with its alternative"
+argument_list|)
+name|String
+name|altFilterSwapWithAlternative
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add alernative course"
+argument_list|)
+name|String
+name|altFilterAddAlternative
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove alernative course"
+argument_list|)
+name|String
+name|altFilterRemoveAlternative
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Clear course request"
+argument_list|)
+name|String
+name|altFilterClearCourseRequest
 parameter_list|()
 function_decl|;
 block|}
