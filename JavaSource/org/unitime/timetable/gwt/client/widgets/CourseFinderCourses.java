@@ -2906,7 +2906,7 @@ name|contains
 argument_list|(
 name|m
 operator|.
-name|getId
+name|getValue
 argument_list|()
 argument_list|)
 argument_list|)
