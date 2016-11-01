@@ -2158,7 +2158,10 @@ operator|.
 name|getUser
 argument_list|()
 argument_list|,
-literal|"Default"
+name|MSG
+operator|.
+name|dropDefaultDatePattern
+argument_list|()
 argument_list|,
 operator|(
 name|ss

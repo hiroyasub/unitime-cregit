@@ -378,7 +378,14 @@ decl_stmt|;
 name|String
 name|extDeptsOption
 init|=
-literal|"<OPTION value='-1'>Department</OPTION>"
+literal|"<OPTION value='-1'>"
+operator|+
+name|MSG
+operator|.
+name|dropDeptDepartment
+argument_list|()
+operator|+
+literal|"</OPTION>"
 decl_stmt|;
 for|for
 control|(
