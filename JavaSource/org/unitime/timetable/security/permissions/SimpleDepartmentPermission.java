@@ -533,7 +533,9 @@ init|=
 name|managingDepartment
 operator|.
 name|effectiveStatusType
-argument_list|()
+argument_list|(
+name|controllingDepartment
+argument_list|)
 decl_stmt|;
 if|if
 condition|(

@@ -2373,7 +2373,12 @@ name|getManagingDept
 argument_list|()
 operator|.
 name|effectiveStatusType
+argument_list|(
+name|clazz
+operator|.
+name|getControllingDept
 argument_list|()
+argument_list|)
 operator|.
 name|can
 argument_list|(
