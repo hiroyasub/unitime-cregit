@@ -535,6 +535,17 @@ name|Long
 name|offeringId
 parameter_list|)
 function_decl|;
+specifier|public
+name|Collection
+argument_list|<
+name|Long
+argument_list|>
+name|getInstructedOfferings
+parameter_list|(
+name|String
+name|instructorExternalId
+parameter_list|)
+function_decl|;
 annotation|@
 name|CheckMaster
 argument_list|(
