@@ -2726,6 +2726,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 name|students
 operator|.
 name|put
@@ -2745,7 +2746,6 @@ argument_list|(
 name|clonnedStudent
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|clonnedStudent
