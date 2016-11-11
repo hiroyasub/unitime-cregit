@@ -510,6 +510,15 @@ name|ImageResource
 name|filterRemoveAlternative
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/user_business_boss.png"
+argument_list|)
+name|ImageResource
+name|isInstructing
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

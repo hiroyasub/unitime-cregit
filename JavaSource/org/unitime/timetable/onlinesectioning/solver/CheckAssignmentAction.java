@@ -762,6 +762,11 @@ name|ca
 operator|.
 name|isDummy
 argument_list|()
+operator|||
+name|ca
+operator|.
+name|isTeachingAssignment
+argument_list|()
 condition|)
 continue|continue;
 name|XCourse

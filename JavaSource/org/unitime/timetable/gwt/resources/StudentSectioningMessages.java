@@ -1820,6 +1820,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"You are instructing {0}."
+argument_list|)
+name|String
+name|instructing
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Show unassignments"
 argument_list|)
 name|String

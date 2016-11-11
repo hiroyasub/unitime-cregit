@@ -1514,6 +1514,8 @@ argument_list|,
 literal|true
 argument_list|,
 literal|false
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1581,6 +1583,8 @@ name|u
 operator|.
 name|isAllowOverlap
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;

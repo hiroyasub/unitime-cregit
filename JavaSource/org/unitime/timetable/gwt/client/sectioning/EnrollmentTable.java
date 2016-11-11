@@ -2255,6 +2255,26 @@ else|:
 literal|""
 operator|)
 decl_stmt|;
+if|if
+condition|(
+name|clazz
+operator|.
+name|isTeachingAssignment
+argument_list|()
+condition|)
+name|style
+operator|+=
+operator|(
+name|clazz
+operator|.
+name|isInstructing
+argument_list|()
+condition|?
+literal|" text-steelblue"
+else|:
+literal|" text-steelblue-italic"
+operator|)
+expr_stmt|;
 specifier|final
 name|WebTable
 operator|.

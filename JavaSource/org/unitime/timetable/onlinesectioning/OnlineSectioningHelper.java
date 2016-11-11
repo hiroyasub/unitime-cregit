@@ -4890,6 +4890,10 @@ decl_stmt|;
 if|if
 condition|(
 name|e
+operator|!=
+literal|null
+operator|&&
+name|e
 operator|.
 name|getTimeStamp
 argument_list|()
