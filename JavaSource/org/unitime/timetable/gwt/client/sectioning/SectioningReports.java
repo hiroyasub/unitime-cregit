@@ -931,6 +931,24 @@ literal|"includeAllowedOverlaps"
 argument_list|,
 literal|"false"
 argument_list|)
+block|,
+name|TEACHING_CONFLICTS
+argument_list|(
+literal|"Teaching Conflicts"
+argument_list|,
+literal|"org.unitime.timetable.reports.studentsct.StudentAvailabilityConflicts"
+argument_list|)
+block|,
+name|TEACHING_CONFLICTS_NA
+argument_list|(
+literal|"Teaching Conflicts (Exclude Allowed)"
+argument_list|,
+literal|"org.unitime.timetable.reports.studentsct.StudentAvailabilityConflicts"
+argument_list|,
+literal|"includeAllowedOverlaps"
+argument_list|,
+literal|"false"
+argument_list|)
 block|, 		;
 name|String
 name|iName
