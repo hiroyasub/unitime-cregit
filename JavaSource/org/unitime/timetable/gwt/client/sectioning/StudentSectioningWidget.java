@@ -7589,6 +7589,14 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|clazz
+operator|.
+name|isTeachingAssignment
+argument_list|()
+condition|)
 name|totalCredit
 operator|+=
 name|clazz

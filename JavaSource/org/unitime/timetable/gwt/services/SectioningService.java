@@ -916,6 +916,22 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|ClassAssignmentInterface
+operator|.
+name|Student
+name|lookupStudent
+parameter_list|(
+name|boolean
+name|online
+parameter_list|,
+name|String
+name|studentId
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 
