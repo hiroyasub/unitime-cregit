@@ -147,6 +147,8 @@ block|,
 name|GWT_CONFIRMATIONS
 block|,
 name|DEGREE_PLANS
+block|,
+name|CAN_REGISTER
 block|, 			;
 specifier|public
 name|int

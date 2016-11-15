@@ -530,6 +530,8 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|iOnline
+decl_stmt|,
+name|iSectioning
 decl_stmt|;
 specifier|private
 name|Long
@@ -871,6 +873,8 @@ name|checkEligibility
 argument_list|(
 name|iOnline
 argument_list|,
+name|iSectioning
+argument_list|,
 name|iSessionId
 argument_list|,
 name|iStudentId
@@ -1011,6 +1015,9 @@ parameter_list|(
 name|boolean
 name|online
 parameter_list|,
+name|boolean
+name|sectioning
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|,
@@ -1024,6 +1031,10 @@ block|{
 name|iOnline
 operator|=
 name|online
+expr_stmt|;
+name|iSectioning
+operator|=
+name|sectioning
 expr_stmt|;
 name|iSessionId
 operator|=
