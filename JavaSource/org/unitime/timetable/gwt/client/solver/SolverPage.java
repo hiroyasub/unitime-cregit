@@ -2298,7 +2298,7 @@ name|addRow
 argument_list|(
 name|MESSAGES
 operator|.
-name|propSolverProgress
+name|propSolverConfiguration
 argument_list|()
 argument_list|,
 name|iSolverConfig

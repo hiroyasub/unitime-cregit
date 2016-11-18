@@ -2652,7 +2652,7 @@ name|INSTRUCTOR
 expr_stmt|;
 name|group
 operator|=
-literal|"InstrSchdBasic"
+literal|"InstrSchd.Basic"
 expr_stmt|;
 name|appearance
 operator|=
