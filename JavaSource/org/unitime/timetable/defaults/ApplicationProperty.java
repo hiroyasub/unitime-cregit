@@ -6073,7 +6073,7 @@ comment|/** 	 * Minimap (to be displayed if set, e.g., on the Room Detail page) 
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"https://maps.google.com/maps/api/staticmap?center=%x,%y&zoom=16&size=600x400&maptype=roadmap&sensor=false&markers=color:blue|%x,%y"
+literal|"https://maps.googleapis.com/maps/api/staticmap?center=%x,%y&zoom=16&size=600x400&maptype=roadmap&sensor=false&markers=color:blue%7c%x,%y"
 argument_list|)
 expr|@
 name|Description
@@ -6089,7 +6089,7 @@ comment|/** 	 * Minimap to be used in location's tooltip 	 *<ul> 	 *<li>Strings 
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"https://maps.google.com/maps/api/staticmap?center=%x,%y&zoom=15&size=300x200&maptype=roadmap&sensor=false&markers=color:blue|%x,%y"
+literal|"https://maps.googleapis.com/maps/api/staticmap?center=%x,%y&zoom=15&size=300x200&maptype=roadmap&sensor=false&markers=color:blue%7c%x,%y"
 argument_list|)
 expr|@
 name|Description
@@ -6099,6 +6099,26 @@ argument_list|)
 name|RoomHintMinimapUrl
 argument_list|(
 literal|"unitime.minimap.hint"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Rooms: Google static maps API key (see https://developers.google.com/maps/documentation/static-maps/get-api-key#key for more details)"
+argument_list|)
+name|RoomMapStaticApiKey
+argument_list|(
+literal|"unitime.minimap.apikey"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Rooms: Google static maps API secret (that can be used to provide digital signature, see https://developers.google.com/maps/documentation/static-maps/get-api-key#digital-signature for more details)"
+argument_list|)
+name|RoomMapStaticSecret
+argument_list|(
+literal|"unitime.minimap.secret"
 argument_list|)
 operator|,
 expr_stmt|@
@@ -6121,6 +6141,23 @@ argument_list|)
 name|RoomUseGoogleMap
 argument_list|(
 literal|"unitime.coordinates.googlemap"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Rooms: Google maps optional API key (see https://developers.google.com/maps/documentation/javascript/get-api-key#key for more details)."
+argument_list|)
+name|GoogleMapsApiKey
+argument_list|(
+literal|"unitime.coordinates.googlemap.apikey"
 argument_list|)
 operator|,
 expr_stmt|@
