@@ -4841,14 +4841,14 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
-name|List
+name|Set
 argument_list|<
 name|ClassInfo
 argument_list|>
 name|iEnrollments
 init|=
 operator|new
-name|ArrayList
+name|TreeSet
 argument_list|<
 name|ClassInfo
 argument_list|>
@@ -5364,7 +5364,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|List
+name|Set
 argument_list|<
 name|ClassInfo
 argument_list|>
