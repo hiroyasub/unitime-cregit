@@ -1137,6 +1137,24 @@ name|instructorBackToBack
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"Same Days"
+argument_list|)
+name|String
+name|instructorSameDays
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"Same Room"
+argument_list|)
+name|String
+name|instructorSameRoom
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
