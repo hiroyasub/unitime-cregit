@@ -3620,6 +3620,17 @@ name|helper
 operator|.
 name|getOptinalParameter
 argument_list|(
+literal|"note"
+argument_list|,
+name|request
+operator|.
+name|status
+argument_list|)
+argument_list|,
+name|helper
+operator|.
+name|getOptinalParameter
+argument_list|(
 literal|"status"
 argument_list|,
 name|request

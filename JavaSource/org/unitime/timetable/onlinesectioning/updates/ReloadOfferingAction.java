@@ -1116,7 +1116,7 @@ name|Student
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/* 		for (org.unitime.timetable.model.Student student : (List<org.unitime.timetable.model.Student>)helper.getHibSession().createQuery(                 "select s from Student s " +                 "left join fetch s.courseDemands as cd " +                 "left join fetch cd.courseRequests as cr " +                 "left join fetch cr.courseOffering as co " +                 "left join fetch cr.classWaitLists as cwl " +                  "left join fetch s.classEnrollments as e " +                 "left join fetch s.academicAreaClassifications as a " +                 "left join fetch s.posMajors as mj " +                 "left join fetch s.waitlists as w " +                 "left join fetch s.groups as g " +                 "where s.uniqueId in (select xe.student.uniqueId from StudentClassEnrollment xe where xe.courseOffering.instructionalOffering.uniqueId = :offeringId) " +                 "or s.uniqueId in (select xr.courseDemand.student.uniqueId from CourseRequest xr where xr.courseOffering.instructionalOffering.uniqueId = :offeringId)"                 ).setLong("offeringId", offeringId).list()) { 			newStudents.put(student.getUniqueId(), student); 		} 		*/
+comment|/* 		for (org.unitime.timetable.model.Student student : (List<org.unitime.timetable.model.Student>)helper.getHibSession().createQuery(                 "select s from Student s " +                 "left join fetch s.courseDemands as cd " +                 "left join fetch cd.courseRequests as cr " +                 "left join fetch cr.courseOffering as co " +                 "left join fetch cr.classWaitLists as cwl " +                  "left join fetch s.classEnrollments as e " +                 "left join fetch s.academicAreaClassifications as a " +                 "left join fetch s.posMajors as mj " +                 "left join fetch s.waitlists as w " +                 "left join fetch s.groups as g " +                 "left join fetch s.notes as n " +                 "where s.uniqueId in (select xe.student.uniqueId from StudentClassEnrollment xe where xe.courseOffering.instructionalOffering.uniqueId = :offeringId) " +                 "or s.uniqueId in (select xr.courseDemand.student.uniqueId from CourseRequest xr where xr.courseOffering.instructionalOffering.uniqueId = :offeringId)"                 ).setLong("offeringId", offeringId).list()) { 			newStudents.put(student.getUniqueId(), student); 		} 		*/
 for|for
 control|(
 name|org
@@ -1166,6 +1166,8 @@ operator|+
 literal|"left join fetch s.waitlists as w "
 operator|+
 literal|"left join fetch s.groups as g "
+operator|+
+literal|"left join fetch s.notes as n "
 operator|+
 literal|"where cr.courseOffering.instructionalOffering.uniqueId = :offeringId"
 argument_list|)
@@ -1247,6 +1249,8 @@ operator|+
 literal|"left join fetch s.waitlists as w "
 operator|+
 literal|"left join fetch s.groups as g "
+operator|+
+literal|"left join fetch s.notes as n "
 operator|+
 literal|"where e.courseOffering.instructionalOffering.uniqueId = :offeringId and e.courseRequest is null"
 argument_list|)

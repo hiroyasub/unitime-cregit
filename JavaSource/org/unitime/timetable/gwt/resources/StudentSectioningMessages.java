@@ -3407,6 +3407,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Note"
+argument_list|)
+name|String
+name|colStudentNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Send email..."
 argument_list|)
 name|String
@@ -3436,6 +3445,24 @@ parameter_list|(
 name|String
 name|newStatus
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Changing student note..."
+argument_list|)
+name|String
+name|changingStudentNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Set student note..."
+argument_list|)
+name|String
+name|setStudentNote
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -3926,6 +3953,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Set Note"
+argument_list|)
+name|String
+name|buttonSetNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Cancelling selected students..."
 argument_list|)
 name|String
@@ -4011,6 +4047,15 @@ literal|"Student:"
 argument_list|)
 name|String
 name|propStudent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Note:"
+argument_list|)
+name|String
+name|propNote
 parameter_list|()
 function_decl|;
 annotation|@
