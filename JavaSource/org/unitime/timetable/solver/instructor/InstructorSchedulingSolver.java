@@ -2903,6 +2903,12 @@ name|getOfferingId
 argument_list|()
 operator|!=
 literal|null
+operator|||
+operator|!
+name|r
+operator|.
+name|hasAssigned
+argument_list|()
 condition|)
 name|ret
 operator|.

@@ -4117,6 +4117,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Export&nbsp;<u>P</u>DF"
+argument_list|)
+name|String
+name|buttonExportPDF
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Add&nbsp;<u>R</u>eservation"
 argument_list|)
 name|String
