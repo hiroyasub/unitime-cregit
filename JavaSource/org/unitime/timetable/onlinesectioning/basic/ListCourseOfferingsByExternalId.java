@@ -775,6 +775,11 @@ name|addRoom
 argument_list|(
 name|rm
 operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
+name|rm
+operator|.
 name|getName
 argument_list|()
 argument_list|)

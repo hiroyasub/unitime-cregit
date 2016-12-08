@@ -19793,6 +19793,11 @@ name|addRoom
 argument_list|(
 name|rm
 operator|.
+name|getId
+argument_list|()
+argument_list|,
+name|rm
+operator|.
 name|getName
 argument_list|()
 argument_list|)
@@ -19817,6 +19822,14 @@ name|a
 operator|.
 name|addRoom
 argument_list|(
+name|p
+operator|.
+name|getRoomLocation
+argument_list|()
+operator|.
+name|getId
+argument_list|()
+argument_list|,
 name|p
 operator|.
 name|getRoomLocation

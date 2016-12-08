@@ -1080,6 +1080,11 @@ name|addRoom
 argument_list|(
 name|location
 operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
+name|location
+operator|.
 name|getName
 argument_list|()
 argument_list|)

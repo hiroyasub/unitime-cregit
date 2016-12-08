@@ -2472,6 +2472,11 @@ name|addRoom
 argument_list|(
 name|room
 operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
+name|room
+operator|.
 name|getName
 argument_list|()
 argument_list|)
@@ -3572,6 +3577,11 @@ name|a
 operator|.
 name|addRoom
 argument_list|(
+name|room
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
 name|room
 operator|.
 name|getName
@@ -5323,6 +5333,11 @@ name|a
 operator|.
 name|addRoom
 argument_list|(
+name|room
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|,
 name|room
 operator|.
 name|getName

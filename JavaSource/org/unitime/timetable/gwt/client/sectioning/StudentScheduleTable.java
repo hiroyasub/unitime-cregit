@@ -1838,7 +1838,7 @@ condition|?
 operator|new
 name|WebTable
 operator|.
-name|IconCell
+name|RoomCell
 argument_list|(
 name|RESOURCES
 operator|.
@@ -1863,22 +1863,22 @@ argument_list|,
 name|clazz
 operator|.
 name|getRooms
-argument_list|(
+argument_list|()
+argument_list|,
 literal|", "
-argument_list|)
 argument_list|)
 else|:
 operator|new
 name|WebTable
 operator|.
-name|Cell
+name|RoomCell
 argument_list|(
 name|clazz
 operator|.
 name|getRooms
-argument_list|(
+argument_list|()
+argument_list|,
 literal|", "
-argument_list|)
 argument_list|)
 operator|)
 argument_list|,
