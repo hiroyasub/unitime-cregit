@@ -5407,25 +5407,17 @@ name|String
 name|getClassLabel
 parameter_list|()
 block|{
-comment|/*         SchedulingSubpart ss = getSchedulingSubpart();     	String itypeDesc = ss.getItypeDesc();     	if (ss.getInstrOfferingConfig().getInstructionalOffering().hasMultipleConfigurations())     		itypeDesc += " [" + ss.getInstrOfferingConfig().getName() + "]";         */
+comment|// return getCourseName()+" "+getItypeDesc().trim()+" "+getSectionNumberString();
 return|return
-name|getCourseName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getItypeDesc
+name|getClassLabel
+argument_list|(
+name|getSchedulingSubpart
 argument_list|()
 operator|.
-name|trim
+name|getControllingCourseOffering
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getSectionNumberString
-argument_list|()
+argument_list|)
 return|;
-comment|//    	return(getClassLabel(getSchedulingSubpart().getControllingCourseOffering()));
 block|}
 specifier|public
 name|String
@@ -5498,24 +5490,12 @@ return|;
 block|}
 else|else
 block|{
+comment|// return course.getCourseName() + " " + getItypeDesc().trim() + " " + getSectionNumberString();
 return|return
+name|getClassLabel
+argument_list|(
 name|course
-operator|.
-name|getCourseName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getItypeDesc
-argument_list|()
-operator|.
-name|trim
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getSectionNumberString
-argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
@@ -5552,23 +5532,41 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-return|return
-name|getCourseName
+if|if
+condition|(
+name|getSectionNumberCache
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getItypeDesc
-argument_list|()
-operator|.
-name|trim
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getSectionNumberString
+operator|==
+literal|null
+condition|)
+block|{
+name|getSectionNumber
 argument_list|(
 name|hibSession
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|getSchedulingSubpart
+argument_list|()
+operator|.
+name|getSchedulingSubpartSuffix
+argument_list|(
+name|hibSession
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+comment|// return getCourseName()+" "+getItypeDesc().trim()+" "+getSectionNumberString(hibSession);
+return|return
+name|getClassLabel
+argument_list|(
+name|getSchedulingSubpart
+argument_list|()
+operator|.
+name|getControllingCourseOffering
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -5577,24 +5575,17 @@ name|String
 name|getClassLabelWithTitle
 parameter_list|()
 block|{
+comment|// return getCourseNameWithTitle()+" "+getItypeDesc().trim()+" "+getSectionNumberString();
 return|return
-name|getCourseNameWithTitle
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getItypeDesc
+name|getClassLabelWithTitle
+argument_list|(
+name|getSchedulingSubpart
 argument_list|()
 operator|.
-name|trim
+name|getControllingCourseOffering
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|getSectionNumberString
-argument_list|()
+argument_list|)
 return|;
-comment|//    	return(getClassLabelWithTitle(getSchedulingSubpart().getControllingCourseOffering()));
 block|}
 comment|/**      * @see getClassLabel()      */
 specifier|public
