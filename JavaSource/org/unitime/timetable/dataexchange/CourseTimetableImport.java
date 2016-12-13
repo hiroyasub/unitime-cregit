@@ -706,6 +706,10 @@ name|iPreferExtId
 decl_stmt|,
 name|iNotes
 decl_stmt|;
+specifier|private
+name|boolean
+name|iShowClassSuffix
+decl_stmt|;
 specifier|public
 name|CourseTimetableImport
 parameter_list|()
@@ -888,6 +892,15 @@ name|Locale
 operator|.
 name|US
 argument_list|)
+expr_stmt|;
+name|iShowClassSuffix
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowClassSufix
+operator|.
+name|isTrue
+argument_list|()
 expr_stmt|;
 name|beginTransaction
 argument_list|()
@@ -3564,7 +3577,9 @@ argument_list|(
 name|clazz
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|solution

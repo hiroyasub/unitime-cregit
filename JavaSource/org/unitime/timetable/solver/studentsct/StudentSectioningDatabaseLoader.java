@@ -1704,6 +1704,12 @@ name|iDatePatternFormat
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|iShowClassSuffix
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|StudentSectioningDatabaseLoader
 parameter_list|(
@@ -2257,6 +2263,15 @@ argument_list|,
 name|iUseAmPm
 argument_list|)
 expr_stmt|;
+name|iShowClassSuffix
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowClassSufix
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -2788,7 +2803,9 @@ operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|": no date pattern set"
 argument_list|)
@@ -3100,7 +3117,9 @@ operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|": no time preference set"
 argument_list|)
@@ -3115,7 +3134,9 @@ operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|": no required time set"
 argument_list|)
@@ -3198,7 +3219,9 @@ operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|": preference for "
 operator|+
@@ -3379,7 +3402,9 @@ argument_list|,
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 argument_list|,
 name|times
 argument_list|,
@@ -3458,7 +3483,9 @@ operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|": "
 operator|+
@@ -4253,14 +4280,18 @@ operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|" has parent "
 operator|+
 name|c
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|", but the appropriate parent section is not loaded."
 argument_list|)
@@ -7557,7 +7588,9 @@ name|getClazz
 argument_list|()
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|" not known."
 argument_list|)
@@ -7963,7 +7996,9 @@ name|getClazz
 argument_list|()
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|" not known."
 argument_list|)
@@ -8903,7 +8938,9 @@ name|getClazz
 argument_list|()
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|" not known."
 argument_list|)

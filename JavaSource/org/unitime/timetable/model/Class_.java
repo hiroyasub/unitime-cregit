@@ -9928,7 +9928,14 @@ operator|.
 name|setClassName
 argument_list|(
 name|getClassLabel
+argument_list|(
+name|ApplicationProperty
+operator|.
+name|SolverShowClassSufix
+operator|.
+name|isTrue
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|a

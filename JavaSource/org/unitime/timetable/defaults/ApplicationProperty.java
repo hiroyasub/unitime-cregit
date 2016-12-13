@@ -8506,6 +8506,33 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Course Timetabling Solver: show class suffix (external id) next to the class section number"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.2
+argument_list|)
+name|SolverShowClassSufix
+argument_list|(
+literal|"unitime.solver.showClassSuffixes"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"API: allow API tokens to be used for user authentication"
 argument_list|)
 name|ApiCanUseAPIToken

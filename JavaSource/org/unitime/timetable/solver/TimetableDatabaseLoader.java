@@ -2039,6 +2039,12 @@ name|iUseAmPm
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+name|boolean
+name|iShowClassSuffix
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 specifier|static
 enum|enum
@@ -2975,6 +2981,15 @@ argument_list|,
 name|iUseAmPm
 argument_list|)
 expr_stmt|;
+name|iShowClassSuffix
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowClassSufix
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|int
@@ -3117,7 +3132,9 @@ operator|+
 name|clazz
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 operator|+
 literal|"</A>"
 return|;
@@ -9192,7 +9209,9 @@ init|=
 name|clazz
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 decl_stmt|;
 name|Lecture
 name|lecture
@@ -18138,7 +18157,7 @@ name|isCommitted
 argument_list|()
 condition|)
 block|{
-comment|//iProgress.debug("[A] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+clazz.getClassLabel());
+comment|//iProgress.debug("[A] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+clazz.getClassLabel(iShowClassSuffix));
 for|for
 control|(
 name|Iterator
@@ -18327,7 +18346,7 @@ name|isCommitted
 argument_list|()
 condition|)
 block|{
-comment|//iProgress.debug("[B] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+parent.getClassLabel());
+comment|//iProgress.debug("[B] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+parent.getClassLabel(iShowClassSuffix));
 for|for
 control|(
 name|Iterator
@@ -22273,7 +22292,9 @@ argument_list|,
 name|parentClazz
 operator|.
 name|getClassLabel
-argument_list|()
+argument_list|(
+name|iShowClassSuffix
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|clcs
