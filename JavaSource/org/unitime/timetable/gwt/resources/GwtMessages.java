@@ -15189,6 +15189,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"When multiple rooms are listed, please consult your instructor regarding your class or examination room location."
+argument_list|)
+name|String
+name|warnMultiRoomClassOrExam
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Cancelled"
 argument_list|)
 name|String
