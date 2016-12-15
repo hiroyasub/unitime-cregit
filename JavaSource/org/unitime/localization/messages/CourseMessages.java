@@ -7610,6 +7610,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Do you really want to delete this distribution preference?"
+argument_list|)
+name|String
+name|confirmDeleteDistributionPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Select an instructor"
 argument_list|)
 name|String
