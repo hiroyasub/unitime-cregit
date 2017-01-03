@@ -391,6 +391,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sExportRegister
+operator|.
+name|put
+argument_list|(
+literal|"pointInTimeData"
+argument_list|,
+name|PointInTimeDataExport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 name|sImportRegister
 operator|=
 operator|new
