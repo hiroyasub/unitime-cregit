@@ -732,6 +732,17 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|sImportRegister
+operator|.
+name|put
+argument_list|(
+literal|"pointInTimeData"
+argument_list|,
+name|PointInTimeDataImport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|DataExchangeHelper
