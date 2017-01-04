@@ -211,6 +211,11 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 name|List
@@ -375,6 +380,11 @@ name|ClassDurationType
 name|include
 parameter_list|)
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|Set
 argument_list|<
 name|ClassDurationType

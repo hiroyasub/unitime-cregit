@@ -8748,6 +8748,54 @@ argument_list|(
 literal|"unitime.pointInTimeData.standardClassMeetingLengthInMinutes"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"50"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Point In Time Data: number of minutes that equal an hour in standard reporting.  This is 50 minutes in the US"
+operator|+
+literal|".  Defaults to 50."
+argument_list|)
+name|StandardMinutesInReportingHour
+argument_list|(
+literal|"unitime.pointInTimeData.standardMinutesInReportingHour"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"15"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Point In Time Data: number of weeks in a term used in standard reporting.  This is 15 weeks in the US"
+operator|+
+literal|".  Defaults to 15."
+argument_list|)
+name|StandardWeeksInReportingTerm
+argument_list|(
+literal|"unitime.pointInTimeData.standardWeeksInReportingTerm"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

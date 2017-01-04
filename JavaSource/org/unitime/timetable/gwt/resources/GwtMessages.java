@@ -9611,6 +9611,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Point In Time Data Snapshot"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pagePointInTimeDataSnapshot
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Point In Time Data Snapshots"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pagePointInTimeDataSnapshots
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -13573,6 +13595,24 @@ literal|"Course Types"
 argument_list|)
 name|String
 name|optionCourseTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Saved Successfully"
+argument_list|)
+name|String
+name|fieldSavedSuccessfully
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Timestamp"
+argument_list|)
+name|String
+name|fieldSnapshotTimestamp
 parameter_list|()
 function_decl|;
 annotation|@
