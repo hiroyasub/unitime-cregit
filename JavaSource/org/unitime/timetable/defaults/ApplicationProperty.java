@@ -8726,6 +8726,28 @@ argument_list|(
 literal|"unitime.chameleon.lookup"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"50"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Point In Time Data: number of minutes that is considered to be an hour of class.  Defaults to 50."
+argument_list|)
+name|StandardClassMeetingLengthInMinutes
+argument_list|(
+literal|"unitime.pointInTimeData.standardClassMeetingLengthInMinutes"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

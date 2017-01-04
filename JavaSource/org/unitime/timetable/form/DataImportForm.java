@@ -349,6 +349,13 @@ literal|"roomSharing"
 argument_list|,
 literal|"Room Sharing"
 argument_list|)
+block|,
+name|POINT_IN_TIME_DATA
+argument_list|(
+literal|"pointInTimeData"
+argument_list|,
+literal|"Point-In-Time Data"
+argument_list|)
 block|,     	;
 specifier|private
 name|String
