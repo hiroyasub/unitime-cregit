@@ -7048,7 +7048,7 @@ decl_stmt|;
 name|Location
 name|l
 init|=
-name|locations
+name|locationsByName
 operator|.
 name|get
 argument_list|(
