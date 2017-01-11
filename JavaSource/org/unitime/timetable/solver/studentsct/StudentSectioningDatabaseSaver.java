@@ -333,6 +333,18 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|ApplicationProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|model
 operator|.
 name|Class_
@@ -862,6 +874,16 @@ operator|+
 literal|" not found!"
 argument_list|)
 throw|;
+name|ApplicationProperties
+operator|.
+name|setSessionId
+argument_list|(
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|save
 argument_list|(
 name|session
