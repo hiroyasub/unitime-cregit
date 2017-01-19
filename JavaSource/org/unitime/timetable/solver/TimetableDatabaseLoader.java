@@ -9687,8 +9687,6 @@ name|hasConstantVariables
 argument_list|()
 condition|)
 return|return;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Assigning committed classes ..."
@@ -9715,8 +9713,6 @@ name|constantVariables
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -9916,8 +9912,6 @@ name|void
 name|purgeInvalidValues
 parameter_list|()
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Purging invalid placements ..."
@@ -10160,8 +10154,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -12158,8 +12150,6 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading instructor availabilities ..."
@@ -12298,8 +12288,6 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -12479,8 +12467,6 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading instructor student conflicts ..."
@@ -12602,8 +12588,6 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -12790,8 +12774,6 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading room availabilities ..."
@@ -12916,8 +12898,6 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -16435,8 +16415,6 @@ name|isEmpty
 argument_list|()
 condition|)
 return|return;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading instructor distr. constraints for "
@@ -16489,8 +16467,6 @@ argument_list|,
 name|checkedDistPrefIds
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -18778,8 +18754,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// Make up the appropriate committed placements and propagate those through the course structure
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading student conflicts with commited solutions ..."
@@ -18939,8 +18913,6 @@ argument_list|,
 name|assignment
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -19159,8 +19131,6 @@ argument_list|>
 name|offeringsToAvoid
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Creating student conflicts with commited solutions ..."
@@ -19198,8 +19168,6 @@ name|getId
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -21273,8 +21241,6 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading classes ..."
@@ -21377,8 +21343,6 @@ argument_list|,
 name|clazz
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -21393,8 +21357,6 @@ argument_list|(
 name|hibSession
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading offerings ..."
@@ -21442,8 +21404,6 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -21543,8 +21503,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading distribution preferences ..."
@@ -21606,8 +21564,6 @@ argument_list|(
 name|distributionPref
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -21687,8 +21643,6 @@ condition|(
 name|iAutoSameStudents
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Posting automatic same_students constraints ..."
@@ -21765,8 +21719,6 @@ argument_list|,
 name|iAutoSameStudentsConstraint
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -21891,8 +21843,6 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Posting automatic precedence constraints ..."
@@ -21972,8 +21922,6 @@ name|getPrefProlog
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -21988,8 +21936,6 @@ expr_stmt|;
 name|assignCommited
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Posting class limit constraints ..."
@@ -22483,8 +22429,6 @@ block|}
 block|}
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -22505,8 +22449,6 @@ name|keySet
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading students ..."
@@ -24476,8 +24418,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -24647,8 +24587,6 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading current student enrolments  ..."
@@ -24826,8 +24764,6 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -24961,8 +24897,6 @@ name|list
 argument_list|()
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading student enrolments ["
@@ -25168,8 +25102,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -25232,8 +25164,6 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading other committed student enrolments  ..."
@@ -25410,8 +25340,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -25538,8 +25466,6 @@ argument_list|,
 literal|"Hibernate session not open."
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Initial sectioning ..."
@@ -25651,8 +25577,6 @@ name|offering
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -25697,8 +25621,6 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Checking loaded enrollments ...."
@@ -25730,8 +25652,6 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -25980,8 +25900,6 @@ argument_list|(
 name|hibSession
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Computing jenrl ..."
@@ -26211,8 +26129,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26305,8 +26221,6 @@ operator|==
 literal|null
 condition|)
 continue|continue;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Creating initial assignment ["
@@ -26364,8 +26278,6 @@ argument_list|(
 name|assignment
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26377,8 +26289,6 @@ condition|(
 name|iLoadCommittedAssignments
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Creating initial assignment ..."
@@ -26447,8 +26357,6 @@ name|getCommittedAssignment
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26483,8 +26391,6 @@ condition|(
 name|iSpread
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Posting automatic spread constraints ..."
@@ -26516,8 +26422,6 @@ operator|<=
 literal|1
 condition|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26547,8 +26451,6 @@ name|subpart
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26679,8 +26581,6 @@ argument_list|(
 name|spread
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26691,8 +26591,6 @@ condition|(
 name|iDeptBalancing
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Creating dept. spread constraints ..."
@@ -26827,8 +26725,6 @@ argument_list|(
 name|lecture
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -26839,8 +26735,6 @@ condition|(
 name|iSubjectBalancing
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Creating subject spread constraints ..."
@@ -26998,8 +26892,6 @@ name|lecture
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -27024,8 +26916,6 @@ name|purgeInvalidValues
 argument_list|()
 expr_stmt|;
 comment|/* 		for (Constraint c: getModel().constraints()) { 			if (c instanceof SpreadConstraint) 				((SpreadConstraint)c).init(); 			if (c instanceof DiscouragedRoomConstraint) 				((DiscouragedRoomConstraint)c).setEnabled(true); 			if (c instanceof MinimizeNumberOfUsedRoomsConstraint) 				((MinimizeNumberOfUsedRoomsConstraint)c).setEnabled(true); 			if (c instanceof MinimizeNumberOfUsedGroupsOfTime) 				((MinimizeNumberOfUsedGroupsOfTime)c).setEnabled(true); 		} 		*/
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Checking for inconsistencies..."
@@ -27052,8 +26942,6 @@ name|variables
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -28137,10 +28025,11 @@ name|switchStudents
 argument_list|(
 name|getAssignment
 argument_list|()
+argument_list|,
+name|getTerminationCondition
+argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Done"
@@ -28148,8 +28037,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -28630,8 +28517,6 @@ index|[]
 name|startEnd
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading room availability..."
@@ -28748,8 +28633,6 @@ operator|.
 name|nextElement
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -29631,8 +29514,6 @@ index|[]
 name|startEnd
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading instructor availability..."
@@ -29737,8 +29618,6 @@ name|getInstructorConstraints
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -31868,8 +31747,6 @@ expr_stmt|;
 continue|continue;
 block|}
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Posting automatic "
@@ -31981,8 +31858,6 @@ argument_list|,
 name|pattern
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -33517,8 +33392,6 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Posting automatic "
@@ -33561,8 +33434,6 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -33758,6 +33629,89 @@ block|}
 block|}
 block|}
 block|}
+block|}
+specifier|protected
+name|void
+name|checkTermination
+parameter_list|()
+block|{
+if|if
+condition|(
+name|getTerminationCondition
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|getTerminationCondition
+argument_list|()
+operator|.
+name|canContinue
+argument_list|(
+operator|new
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
+name|solution
+operator|.
+name|Solution
+argument_list|(
+name|getModel
+argument_list|()
+argument_list|,
+name|getAssignment
+argument_list|()
+argument_list|)
+argument_list|)
+condition|)
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"The load was interrupted."
+argument_list|)
+throw|;
+block|}
+specifier|protected
+name|void
+name|setPhase
+parameter_list|(
+name|String
+name|phase
+parameter_list|,
+name|long
+name|progressMax
+parameter_list|)
+block|{
+name|checkTermination
+argument_list|()
+expr_stmt|;
+name|iProgress
+operator|.
+name|setPhase
+argument_list|(
+name|phase
+argument_list|,
+name|progressMax
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|incProgress
+parameter_list|()
+block|{
+name|checkTermination
+argument_list|()
+expr_stmt|;
+name|iProgress
+operator|.
+name|incProgress
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class

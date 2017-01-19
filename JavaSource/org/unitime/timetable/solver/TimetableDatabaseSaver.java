@@ -1439,8 +1439,6 @@ operator|.
 name|getSession
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Committing solution ..."
@@ -1554,8 +1552,6 @@ argument_list|(
 name|solution
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -1659,8 +1655,6 @@ argument_list|(
 name|solution
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -1726,8 +1720,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Refreshing solution ..."
@@ -1803,8 +1795,6 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -1865,8 +1855,6 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -2123,6 +2111,9 @@ operator|.
 name|switchStudents
 argument_list|(
 name|getAssignment
+argument_list|()
+argument_list|,
+name|getTerminationCondition
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2726,8 +2717,6 @@ operator|.
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving solver parameters ..."
@@ -2884,8 +2873,6 @@ name|param
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -2920,8 +2907,6 @@ name|batchIdx
 init|=
 literal|0
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving assignments ..."
@@ -3596,8 +3581,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -3632,8 +3615,6 @@ literal|true
 argument_list|)
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving student enrollments ..."
@@ -3819,8 +3800,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -3840,7 +3819,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/**  // is this needed?     		iProgress.setPhase("Saving joint enrollments ...", getModel().getJenrlConstraints().size());     		for (Enumeration e1=getModel().getJenrlConstraints().elements();e1.hasMoreElements();) {     			JenrlConstraint jenrlConstraint = (JenrlConstraint)e1.nextElement();     			     			Class_ clazz1 = (new Class_DAO()).get(((Lecture)jenrlConstraint.first()).getClassId());     			Class_ clazz2 = (new Class_DAO()).get(((Lecture)jenrlConstraint.second()).getClassId());     			     			JointEnrollment jenrl = new JointEnrollment();     			jenrl.setJenrl(new Double(jenrlConstraint.getJenrl()));     			jenrl.setClass1(clazz1);     			jenrl.setClass2(clazz2);     			jenrl.setSolution(solution);     			hibSession.save(jenrl);     			     			iProgress.incProgress();     		}     		*/
+comment|/**  // is this needed?     		setPhase("Saving joint enrollments ...", getModel().getJenrlConstraints().size());     		for (Enumeration e1=getModel().getJenrlConstraints().elements();e1.hasMoreElements();) {     			JenrlConstraint jenrlConstraint = (JenrlConstraint)e1.nextElement();     			     			Class_ clazz1 = (new Class_DAO()).get(((Lecture)jenrlConstraint.first()).getClassId());     			Class_ clazz2 = (new Class_DAO()).get(((Lecture)jenrlConstraint.second()).getClassId());     			     			JointEnrollment jenrl = new JointEnrollment();     			jenrl.setJenrl(new Double(jenrlConstraint.getJenrl()));     			jenrl.setClass1(clazz1);     			jenrl.setClass2(clazz2);     			jenrl.setSolution(solution);     			hibSession.save(jenrl);     			     			incProgress();     		}     		*/
 name|SolverInfoDef
 name|defGlobalInfo
 init|=
@@ -4115,8 +4094,6 @@ name|lecture
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving global info ..."
@@ -4263,8 +4240,6 @@ argument_list|(
 name|solutionInfo
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -4348,8 +4323,6 @@ argument_list|,
 name|cbs
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving conflict-based statistics ..."
@@ -4487,8 +4460,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -4507,8 +4478,6 @@ name|batchIdx
 operator|=
 literal|0
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving variable infos ..."
@@ -4647,8 +4616,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -4667,8 +4634,6 @@ name|batchIdx
 operator|=
 literal|0
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving btb instructor infos ..."
@@ -4709,8 +4674,6 @@ argument_list|(
 name|lecture1
 argument_list|)
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -5016,8 +4979,6 @@ name|batchIdx
 operator|=
 literal|0
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving group constraint infos ..."
@@ -5240,8 +5201,6 @@ literal|"   NO ASSIGNMENTS !!!"
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -5260,8 +5219,6 @@ name|batchIdx
 operator|=
 literal|0
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving student enrollment infos ..."
@@ -5306,8 +5263,6 @@ name|isOfTheSameProblem
 argument_list|()
 condition|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -5535,8 +5490,6 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -5555,8 +5508,6 @@ name|batchIdx
 operator|=
 literal|0
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving committed student enrollment infos ..."
@@ -5602,18 +5553,14 @@ argument_list|(
 name|hibSession
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
-comment|/*     		iProgress.setPhase("Saving committed student enrollment infos ...", getModel().assignedVariables().size());     		for (Enumeration e1=getModel().assignedVariables().elements();e1.hasMoreElements();) {     			Lecture lecture = (Lecture)e1.nextElement();     			Assignment assignment = (Assignment)iAssignments.get(lecture.getClassId()); 				if (assignment==null) continue; 				Hashtable infos = JenrlInfo.getCommitedJenrlInfos(lecture);     			for (Iterator i2=infos.entrySet().iterator();i2.hasNext();) {     				Map.Entry entry = (Map.Entry)i2.next();     				Integer assignmentId = (Integer)entry.getKey();     				JenrlInfo jInfo = (JenrlInfo)entry.getValue();     				Assignment other = (new AssignmentDAO()).get(assignmentId,hibSession);     				if (other==null) continue;         			ConstraintInfo constraintInfo = new ConstraintInfo();         			constraintInfo.setDefinition(defJenrlInfo);         			constraintInfo.setOpt("C"+(jInfo.isSatisfied()?"S":"")+(jInfo.isHard()?"H":"")+(jInfo.isDistance()?"D":"")+(jInfo.isFixed()?"F":""));         			HashSet jAssignments = new HashSet();         			jAssignments.add(assignment);         			jAssignments.add(other);         			constraintInfo.setAssignments(jAssignments);         			constraintInfo.setInfo(jInfo,getFileProxy());         			hibSession.save(constraintInfo);     				if (++batchIdx % BATCH_SIZE == 0) {     					hibSession.flush(); hibSession.clear();     				}     			}     			iProgress.incProgress();     		}     		*/
+comment|/*     		setPhase("Saving committed student enrollment infos ...", getModel().assignedVariables().size());     		for (Enumeration e1=getModel().assignedVariables().elements();e1.hasMoreElements();) {     			Lecture lecture = (Lecture)e1.nextElement();     			Assignment assignment = (Assignment)iAssignments.get(lecture.getClassId()); 				if (assignment==null) continue; 				Hashtable infos = JenrlInfo.getCommitedJenrlInfos(lecture);     			for (Iterator i2=infos.entrySet().iterator();i2.hasNext();) {     				Map.Entry entry = (Map.Entry)i2.next();     				Integer assignmentId = (Integer)entry.getKey();     				JenrlInfo jInfo = (JenrlInfo)entry.getValue();     				Assignment other = (new AssignmentDAO()).get(assignmentId,hibSession);     				if (other==null) continue;         			ConstraintInfo constraintInfo = new ConstraintInfo();         			constraintInfo.setDefinition(defJenrlInfo);         			constraintInfo.setOpt("C"+(jInfo.isSatisfied()?"S":"")+(jInfo.isHard()?"H":"")+(jInfo.isDistance()?"D":"")+(jInfo.isFixed()?"F":""));         			HashSet jAssignments = new HashSet();         			jAssignments.add(assignment);         			jAssignments.add(other);         			constraintInfo.setAssignments(jAssignments);         			constraintInfo.setInfo(jInfo,getFileProxy());         			hibSession.save(constraintInfo);     				if (++batchIdx % BATCH_SIZE == 0) {     					hibSession.flush(); hibSession.clear();     				}     			}     			incProgress();     		}     		*/
 name|hibSession
 operator|.
 name|flush
@@ -5628,8 +5575,6 @@ name|batchIdx
 operator|=
 literal|0
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Done"
@@ -5637,8 +5582,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -5698,6 +5641,74 @@ expr_stmt|;
 return|return
 name|ret
 return|;
+block|}
+specifier|protected
+name|void
+name|checkTermination
+parameter_list|()
+block|{
+if|if
+condition|(
+name|getTerminationCondition
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|getTerminationCondition
+argument_list|()
+operator|.
+name|canContinue
+argument_list|(
+name|getSolution
+argument_list|()
+argument_list|)
+condition|)
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"The save was interrupted."
+argument_list|)
+throw|;
+block|}
+specifier|protected
+name|void
+name|setPhase
+parameter_list|(
+name|String
+name|phase
+parameter_list|,
+name|long
+name|progressMax
+parameter_list|)
+block|{
+name|checkTermination
+argument_list|()
+expr_stmt|;
+name|iProgress
+operator|.
+name|setPhase
+argument_list|(
+name|phase
+argument_list|,
+name|progressMax
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|incProgress
+parameter_list|()
+block|{
+name|checkTermination
+argument_list|()
+expr_stmt|;
+name|iProgress
+operator|.
+name|incProgress
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
