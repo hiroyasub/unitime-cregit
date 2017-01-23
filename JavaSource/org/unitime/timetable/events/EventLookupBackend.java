@@ -1360,6 +1360,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|hasChild
 parameter_list|(
@@ -1415,6 +1416,7 @@ literal|false
 return|;
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|hasClassRestrictionChild
 parameter_list|(
@@ -1480,6 +1482,7 @@ literal|false
 return|;
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|hasClassRestriction
 parameter_list|(
@@ -1566,7 +1569,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-specifier|protected
+specifier|public
+specifier|static
 name|boolean
 name|hide
 parameter_list|(
