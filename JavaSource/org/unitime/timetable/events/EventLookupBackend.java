@@ -3255,9 +3255,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct cc.course.instructionalOffering.uniqueId, g.uniqueId, z.uniqueId "
+literal|"select distinct cc.course.instructionalOffering.uniqueId, (case when g.uniqueId is null then x.uniqueId else g.uniqueId end), z.uniqueId "
 operator|+
-literal|"from CurriculumReservation r left outer join r.configurations g left outer join r.classes z "
+literal|"from CurriculumReservation r left outer join r.configurations g left outer join r.classes z left outer join z.schedulingSubpart.instrOfferingConfig x "
 operator|+
 literal|"left outer join r.majors rm left outer join r.classifications rc, "
 operator|+
