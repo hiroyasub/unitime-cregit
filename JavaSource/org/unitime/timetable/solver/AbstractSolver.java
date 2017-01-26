@@ -1742,7 +1742,8 @@ name|model
 init|=
 name|createModel
 argument_list|(
-name|properties
+name|getProperties
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Progress
@@ -1884,7 +1885,8 @@ name|model
 init|=
 name|createModel
 argument_list|(
-name|properties
+name|getProperties
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|iWorking
