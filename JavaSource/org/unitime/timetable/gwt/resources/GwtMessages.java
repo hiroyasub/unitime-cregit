@@ -4696,6 +4696,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Teaching Assignments"
+argument_list|)
+name|String
+name|sectTeachingAssignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Loading {0}..."
 argument_list|)
 name|String

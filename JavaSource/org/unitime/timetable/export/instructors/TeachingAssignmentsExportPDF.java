@@ -143,7 +143,7 @@ name|client
 operator|.
 name|instructor
 operator|.
-name|TeachingAssignmentsPage
+name|TeachingAssignmentsTable
 operator|.
 name|COLUMN
 import|;
