@@ -2764,6 +2764,9 @@ name|context
 parameter_list|,
 name|String
 name|deptId
+parameter_list|,
+name|boolean
+name|canHaveImages
 parameter_list|)
 throws|throws
 name|Exception
@@ -3839,6 +3842,9 @@ decl_stmt|;
 if|if
 condition|(
 name|gridAsText
+operator|||
+operator|!
+name|canHaveImages
 condition|)
 block|{
 name|timePref
