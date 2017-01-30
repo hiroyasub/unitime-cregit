@@ -1250,7 +1250,7 @@ name|setName
 argument_list|(
 name|a
 operator|.
-name|getName
+name|getCode
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1283,7 +1283,7 @@ operator|.
 name|getType
 argument_list|()
 operator|.
-name|getLabel
+name|getReference
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3449,7 +3449,7 @@ name|setName
 argument_list|(
 name|a
 operator|.
-name|getName
+name|getCode
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3482,7 +3482,7 @@ operator|.
 name|getType
 argument_list|()
 operator|.
-name|getLabel
+name|getReference
 argument_list|()
 argument_list|)
 expr_stmt|;

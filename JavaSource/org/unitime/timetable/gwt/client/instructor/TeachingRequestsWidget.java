@@ -1024,6 +1024,8 @@ operator|.
 name|populate
 argument_list|(
 name|result
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|iTable

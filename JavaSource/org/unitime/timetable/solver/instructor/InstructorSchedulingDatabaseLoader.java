@@ -1424,7 +1424,7 @@ operator|.
 name|getType
 argument_list|()
 operator|.
-name|getLabel
+name|getReference
 argument_list|()
 argument_list|,
 name|a
@@ -1480,7 +1480,7 @@ argument_list|()
 argument_list|,
 name|a
 operator|.
-name|getName
+name|getCode
 argument_list|()
 argument_list|,
 name|type

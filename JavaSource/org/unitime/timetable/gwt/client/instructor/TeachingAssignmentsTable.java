@@ -1129,6 +1129,15 @@ name|getAssignedRequests
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|request
+operator|.
+name|isMatchingFilter
+argument_list|()
+condition|)
+continue|continue;
 name|SingleTeachingAssingment
 name|assignment
 init|=

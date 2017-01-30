@@ -9660,6 +9660,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"All Subject Areas"
+argument_list|)
+name|String
+name|itemAllSubjectAreas
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"None"
 argument_list|)
 name|String
@@ -12173,6 +12182,15 @@ literal|"Coordinator"
 argument_list|)
 name|String
 name|fieldCoordinator
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course"
+argument_list|)
+name|String
+name|fieldCourse
 parameter_list|()
 function_decl|;
 annotation|@
@@ -15142,6 +15160,15 @@ literal|"course"
 argument_list|)
 name|String
 name|tagCourse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"instructor"
+argument_list|)
+name|String
+name|tagInstructor
 parameter_list|()
 function_decl|;
 annotation|@
