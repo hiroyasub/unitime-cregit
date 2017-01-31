@@ -744,6 +744,13 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|info
+operator|.
+name|hasInstructors
+argument_list|()
+condition|)
 for|for
 control|(
 name|InstructorInfo
