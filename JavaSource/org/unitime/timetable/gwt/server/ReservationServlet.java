@@ -4222,13 +4222,13 @@ literal|"select count(distinct s), m.code, f.code from "
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join s.posMajors m "
 operator|+
-literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co where "
+literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co left outer join co.demandOffering do where "
 operator|+
 literal|"x.subjectArea.session.uniqueId = :sessionId and co.instructionalOffering.uniqueId = :offeringId and "
 operator|+
-literal|"co.subjectArea.uniqueId = x.subjectArea.uniqueId and "
+literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
 operator|+
-literal|"((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr)) "
+literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
 operator|+
 literal|"and r.academicAreaAbbreviation = :areaAbbv"
 operator|+
@@ -4559,13 +4559,13 @@ name|createQuery
 argument_list|(
 literal|"select count(distinct s) from "
 operator|+
-literal|"LastLikeCourseDemand x inner join x.student s inner join s.groups g, CourseOffering co where "
+literal|"LastLikeCourseDemand x inner join x.student s inner join s.groups g, CourseOffering co left outer join co.demandOffering do where "
 operator|+
 literal|"x.subjectArea.session.uniqueId = :sessionId and co.instructionalOffering.uniqueId = :offeringId and "
 operator|+
-literal|"co.subjectArea.uniqueId = x.subjectArea.uniqueId and "
+literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
 operator|+
-literal|"((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr)) "
+literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
 operator|+
 literal|"and g.groupAbbreviation = :groupAbbv"
 argument_list|)

@@ -31144,14 +31144,16 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseOffering co, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
 decl_stmt|;
 name|String
 name|where
 init|=
-literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv"
+literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and "
 operator|+
-literal|" and co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId = x.coursePermId) or (x.coursePermId is null and co.courseNbr = x.courseNbr))"
+literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
+operator|+
+literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
 decl_stmt|;
 name|String
 name|group
@@ -31813,14 +31815,16 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseOffering co, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
 decl_stmt|;
 name|String
 name|where
 init|=
-literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv"
+literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and "
 operator|+
-literal|" and co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))"
+literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
+operator|+
+literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
 decl_stmt|;
 if|if
 condition|(
@@ -32928,13 +32932,13 @@ literal|"select distinct r.academicAreaAbbreviation, m.code, f.code, s.uniqueId 
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a left outer join s.posMajors m "
 operator|+
-literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co where "
+literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co left outer join co.demandOffering do where "
 operator|+
 literal|"x.subjectArea.session.uniqueId = :sessionId and co.uniqueId = :courseId and "
 operator|+
-literal|"co.subjectArea.uniqueId = x.subjectArea.uniqueId and "
+literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
 operator|+
-literal|"((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))"
+literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
 argument_list|)
 operator|.
 name|setLong
@@ -33549,13 +33553,13 @@ literal|"select distinct co.uniqueId, r.academicAreaAbbreviation, m.code, f.code
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a left outer join s.posMajors m "
 operator|+
-literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co where "
+literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co left outer join co.demandOffering do where "
 operator|+
 literal|"x.subjectArea.session.uniqueId = :sessionId and co.subjectArea.session.uniqueId = :sessionId and "
 operator|+
-literal|"co.subjectArea.uniqueId = x.subjectArea.uniqueId and "
+literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
 operator|+
-literal|"((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))"
+literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
 argument_list|)
 operator|.
 name|setLong
