@@ -775,6 +775,8 @@ operator|.
 name|checkPrefs
 argument_list|(
 name|instructors
+argument_list|,
+name|instrResponsibility
 argument_list|)
 condition|)
 name|errors
