@@ -6790,6 +6790,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Duplicate coordinator for a course."
+argument_list|)
+name|String
+name|errorDuplicateCoordinator
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"This instructor is allowed to teach two back-to-back classes that are too far away."
 argument_list|)
 name|String
