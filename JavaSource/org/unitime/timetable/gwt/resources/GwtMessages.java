@@ -12196,6 +12196,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Auxiliary (No Report)"
+argument_list|)
+name|String
+name|fieldAuxiliaryNoReport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No Export"
+argument_list|)
+name|String
+name|fieldNoExport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Hide in Events"
+argument_list|)
+name|String
+name|fieldHideInEvents
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access"
 argument_list|)
 name|String

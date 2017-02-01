@@ -89,6 +89,10 @@ specifier|private
 name|String
 name|iAbbreviation
 decl_stmt|;
+specifier|private
+name|Integer
+name|iOptions
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -109,6 +113,13 @@ name|String
 name|PROP_ABBREVIATION
 init|=
 literal|"abbreviation"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_OPTIONS
+init|=
+literal|"options"
 decl_stmt|;
 specifier|public
 name|BaseTeachingResponsibility
@@ -222,6 +233,28 @@ block|{
 name|iAbbreviation
 operator|=
 name|abbreviation
+expr_stmt|;
+block|}
+specifier|public
+name|Integer
+name|getOptions
+parameter_list|()
+block|{
+return|return
+name|iOptions
+return|;
+block|}
+specifier|public
+name|void
+name|setOptions
+parameter_list|(
+name|Integer
+name|options
+parameter_list|)
+block|{
+name|iOptions
+operator|=
+name|options
 expr_stmt|;
 block|}
 specifier|public
@@ -359,6 +392,11 @@ operator|+
 literal|"\n	Label: "
 operator|+
 name|getLabel
+argument_list|()
+operator|+
+literal|"\n	Options: "
+operator|+
+name|getOptions
 argument_list|()
 operator|+
 literal|"\n	Reference: "
