@@ -2814,7 +2814,29 @@ literal|"Cell"
 operator|+
 name|sfx2
 operator|+
-literal|"'>"
+literal|"' "
+operator|+
+operator|(
+name|getResourceType
+argument_list|()
+operator|==
+name|TimetableGridModel
+operator|.
+name|sResourceTypeRoom
+condition|?
+literal|"onmouseover=\"showGwtRoomHint(this, '"
+operator|+
+name|model
+operator|.
+name|getResourceId
+argument_list|()
+operator|+
+literal|"');\" onmouseout=\"hideGwtRoomHint();\""
+else|:
+literal|""
+operator|)
+operator|+
+literal|">"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3687,7 +3709,29 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Cell'>"
+literal|"Cell' "
+operator|+
+operator|(
+name|getResourceType
+argument_list|()
+operator|==
+name|TimetableGridModel
+operator|.
+name|sResourceTypeRoom
+condition|?
+literal|"onmouseover=\"showGwtRoomHint(this, '"
+operator|+
+name|model
+operator|.
+name|getResourceId
+argument_list|()
+operator|+
+literal|"');\" onmouseout=\"hideGwtRoomHint();\""
+else|:
+literal|""
+operator|)
+operator|+
+literal|">"
 argument_list|)
 expr_stmt|;
 name|out
