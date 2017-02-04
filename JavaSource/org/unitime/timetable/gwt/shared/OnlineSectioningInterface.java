@@ -149,6 +149,8 @@ block|,
 name|DEGREE_PLANS
 block|,
 name|CAN_REGISTER
+block|,
+name|NO_REQUEST_ARROWS
 block|, 			;
 specifier|public
 name|int

@@ -570,6 +570,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Wait-List&darr;"
+argument_list|)
+name|String
+name|courseRequestsWaitListNoArrows
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0}. Priority"
 argument_list|)
 name|String
