@@ -12223,6 +12223,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Expected Size"
+argument_list|)
+name|String
+name|fieldExpectedSize
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access"
 argument_list|)
 name|String

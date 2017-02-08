@@ -3770,6 +3770,16 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|student
+operator|.
+name|getId
+argument_list|()
+operator|<
+literal|0
+condition|)
+continue|continue;
 name|StudentEnrollment
 name|enrl
 init|=

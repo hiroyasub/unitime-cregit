@@ -130,6 +130,10 @@ name|String
 name|iExternalUniqueId
 decl_stmt|;
 specifier|private
+name|Integer
+name|iExpectedSize
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -174,6 +178,13 @@ name|String
 name|PROP_EXTERNAL_UID
 init|=
 literal|"externalUniqueId"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXPECTED_SIZE
+init|=
+literal|"expectedSize"
 decl_stmt|;
 specifier|public
 name|BaseStudentGroup
@@ -313,6 +324,28 @@ block|{
 name|iExternalUniqueId
 operator|=
 name|externalUniqueId
+expr_stmt|;
+block|}
+specifier|public
+name|Integer
+name|getExpectedSize
+parameter_list|()
+block|{
+return|return
+name|iExpectedSize
+return|;
+block|}
+specifier|public
+name|void
+name|setExpectedSize
+parameter_list|(
+name|Integer
+name|expectedSize
+parameter_list|)
+block|{
+name|iExpectedSize
+operator|=
+name|expectedSize
 expr_stmt|;
 block|}
 specifier|public
@@ -507,6 +540,11 @@ parameter_list|()
 block|{
 return|return
 literal|"StudentGroup["
+operator|+
+literal|"\n	ExpectedSize: "
+operator|+
+name|getExpectedSize
+argument_list|()
 operator|+
 literal|"\n	ExternalUniqueId: "
 operator|+
