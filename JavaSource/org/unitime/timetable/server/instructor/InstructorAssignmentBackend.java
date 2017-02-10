@@ -1852,6 +1852,16 @@ argument_list|(
 name|request
 argument_list|)
 expr_stmt|;
+name|oc
+operator|.
+name|setPercentShare
+argument_list|(
+name|request
+operator|.
+name|getPercentShare
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|request
 operator|.
 name|getOffering

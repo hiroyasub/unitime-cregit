@@ -3766,6 +3766,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Coordinator Percent Share:"
+argument_list|)
+name|String
+name|propCoordinatorPercentShare
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Include Subparts:"
 argument_list|)
 name|String

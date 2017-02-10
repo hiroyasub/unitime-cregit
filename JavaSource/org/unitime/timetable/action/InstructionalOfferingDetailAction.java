@@ -2781,7 +2781,25 @@ argument_list|()
 operator|==
 literal|null
 condition|?
+operator|(
+name|coordinator
+operator|.
+name|getPercentShare
+argument_list|()
+operator|!=
+literal|0
+condition|?
+literal|" ("
+operator|+
+name|coordinator
+operator|.
+name|getPercentShare
+argument_list|()
+operator|+
+literal|"%)"
+else|:
 literal|""
+operator|)
 else|:
 literal|" ("
 operator|+
@@ -2792,6 +2810,26 @@ argument_list|()
 operator|.
 name|getLabel
 argument_list|()
+operator|+
+operator|(
+name|coordinator
+operator|.
+name|getPercentShare
+argument_list|()
+operator|>
+literal|0
+condition|?
+literal|", "
+operator|+
+name|coordinator
+operator|.
+name|getPercentShare
+argument_list|()
+operator|+
+literal|"%"
+else|:
+literal|""
+operator|)
 operator|+
 literal|")"
 operator|)

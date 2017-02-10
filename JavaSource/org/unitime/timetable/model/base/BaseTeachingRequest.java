@@ -180,6 +180,10 @@ name|Boolean
 name|iAssignCoordinator
 decl_stmt|;
 specifier|private
+name|Integer
+name|iPercentShare
+decl_stmt|;
+specifier|private
 name|InstructionalOffering
 name|iOffering
 decl_stmt|;
@@ -229,6 +233,13 @@ name|String
 name|PROP_ASSIGN_COORDINATOR
 init|=
 literal|"assignCoordinator"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_PERCENT_SHARE
+init|=
+literal|"percentShare"
 decl_stmt|;
 specifier|public
 name|BaseTeachingRequest
@@ -333,6 +344,28 @@ block|{
 name|iAssignCoordinator
 operator|=
 name|assignCoordinator
+expr_stmt|;
+block|}
+specifier|public
+name|Integer
+name|getPercentShare
+parameter_list|()
+block|{
+return|return
+name|iPercentShare
+return|;
+block|}
+specifier|public
+name|void
+name|setPercentShare
+parameter_list|(
+name|Integer
+name|percentShare
+parameter_list|)
+block|{
+name|iPercentShare
+operator|=
+name|percentShare
 expr_stmt|;
 block|}
 specifier|public
@@ -666,6 +699,11 @@ operator|+
 literal|"\n	Offering: "
 operator|+
 name|getOffering
+argument_list|()
+operator|+
+literal|"\n	PercentShare: "
+operator|+
+name|getPercentShare
 argument_list|()
 operator|+
 literal|"\n	Responsibility: "

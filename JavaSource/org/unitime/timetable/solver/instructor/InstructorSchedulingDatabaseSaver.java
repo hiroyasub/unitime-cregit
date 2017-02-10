@@ -1655,6 +1655,16 @@ argument_list|)
 expr_stmt|;
 name|oc
 operator|.
+name|setPercentShare
+argument_list|(
+name|r
+operator|.
+name|getPercentShare
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|oc
+operator|.
 name|setTeachingRequest
 argument_list|(
 name|r
