@@ -701,6 +701,17 @@ name|boolean
 name|checkLastResult
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"0.000"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|executionTimeFormat
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

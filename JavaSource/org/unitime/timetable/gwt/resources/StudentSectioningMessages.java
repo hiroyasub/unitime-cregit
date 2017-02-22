@@ -3572,6 +3572,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Time [s]"
+argument_list|)
+name|String
+name|colExecutionTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Result"
 argument_list|)
 name|String
@@ -3612,6 +3621,42 @@ literal|"CPU Time [s]"
 argument_list|)
 name|String
 name|colCpuTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Execution Time [s]"
+argument_list|)
+name|String
+name|colWallTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"API GET Time [s]"
+argument_list|)
+name|String
+name|colApiGetTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"API POST Time [s]"
+argument_list|)
+name|String
+name|colApiPostTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"API Exception"
+argument_list|)
+name|String
+name|colApiException
 parameter_list|()
 function_decl|;
 annotation|@
