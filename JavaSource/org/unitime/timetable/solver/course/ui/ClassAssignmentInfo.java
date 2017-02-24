@@ -428,6 +428,15 @@ name|getKey
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|clazz
+operator|.
+name|getCommittedAssignment
+argument_list|()
+operator|!=
+literal|null
+condition|)
 name|iStudentConflicts
 operator|.
 name|add

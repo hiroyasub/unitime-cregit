@@ -1236,7 +1236,7 @@ literal|"m.meetingDate in ("
 operator|+
 name|datesStr
 operator|+
-literal|")"
+literal|") and m.approvalStatus = 1"
 argument_list|)
 operator|.
 name|setLong
