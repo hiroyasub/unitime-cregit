@@ -3768,6 +3768,16 @@ operator|==
 name|maxDay
 condition|)
 break|break;
+if|if
+condition|(
+name|minDay
+operator|<=
+name|maxDay
+condition|)
+name|day
+operator|++
+expr_stmt|;
+else|else
 name|day
 operator|=
 operator|(
