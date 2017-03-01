@@ -7510,6 +7510,13 @@ operator|.
 name|clone
 argument_list|()
 expr_stmt|;
+name|toSubjectArea
+operator|.
+name|setDepartment
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -7996,6 +8003,13 @@ name|fromSubjectArea
 operator|.
 name|clone
 argument_list|()
+expr_stmt|;
+name|toSubjectArea
+operator|.
+name|setDepartment
+argument_list|(
+literal|null
+argument_list|)
 expr_stmt|;
 name|toSubjectArea
 operator|.
