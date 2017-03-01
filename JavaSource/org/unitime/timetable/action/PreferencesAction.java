@@ -2979,9 +2979,9 @@ name|frm2
 operator|.
 name|setCtrlInstrOfferingId
 argument_list|(
-name|io
+name|co
 operator|.
-name|getCtrlCourseId
+name|getUniqueId
 argument_list|()
 operator|.
 name|toString
