@@ -362,6 +362,14 @@ literal|10
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
+name|int
+name|sBgModeStudentGroups
+init|=
+literal|11
+decl_stmt|;
+specifier|public
+specifier|static
 name|String
 index|[]
 name|sBgModes
@@ -391,6 +399,8 @@ block|,
 literal|"Departmental Balancing Penalty"
 block|,
 literal|"Too Big Rooms"
+block|,
+literal|"Student Groups"
 block|}
 decl_stmt|;
 specifier|public
