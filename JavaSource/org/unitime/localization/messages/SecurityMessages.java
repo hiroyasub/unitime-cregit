@@ -212,6 +212,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Access denied for {0}: user is no instructor."
+argument_list|)
+name|String
+name|noDepartmentalInstructor
+parameter_list|(
+name|String
+name|right
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access denied for {0}: academic session check failed for {1}."
 argument_list|)
 name|String
