@@ -436,6 +436,10 @@ specifier|private
 name|boolean
 name|allowAlternativeCourseOfferings
 decl_stmt|;
+specifier|private
+name|String
+name|notes
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -1147,6 +1151,10 @@ operator|=
 literal|null
 expr_stmt|;
 name|alternativeCourseOfferingId
+operator|=
+literal|null
+expr_stmt|;
+name|notes
 operator|=
 literal|null
 expr_stmt|;
@@ -2206,6 +2214,30 @@ operator|.
 name|allowAlternativeCourseOfferings
 operator|=
 name|allowAlternativeCourseOfferings
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getNotes
+parameter_list|()
+block|{
+return|return
+name|notes
+return|;
+block|}
+specifier|public
+name|void
+name|setNotes
+parameter_list|(
+name|String
+name|notes
+parameter_list|)
+block|{
+name|this
+operator|.
+name|notes
+operator|=
+name|notes
 expr_stmt|;
 block|}
 block|}

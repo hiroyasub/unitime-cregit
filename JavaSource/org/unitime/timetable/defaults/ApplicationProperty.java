@@ -8867,6 +8867,28 @@ argument_list|(
 literal|"unitime.pointInTimeData.standardWeeksInReportingTerm"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructional Offering: show class notes"
+argument_list|)
+name|OfferingShowClassNotes
+argument_list|(
+literal|"unitime.offering.showClassNotes"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

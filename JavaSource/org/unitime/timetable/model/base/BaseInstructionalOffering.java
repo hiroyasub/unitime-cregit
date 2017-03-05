@@ -214,6 +214,10 @@ name|Integer
 name|iLastWeekToDrop
 decl_stmt|;
 specifier|private
+name|String
+name|iNotes
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -314,6 +318,13 @@ name|String
 name|PROP_WK_DROP
 init|=
 literal|"lastWeekToDrop"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_NOTES
+init|=
+literal|"notes"
 decl_stmt|;
 specifier|public
 name|BaseInstructionalOffering
@@ -625,6 +636,28 @@ block|{
 name|iLastWeekToDrop
 operator|=
 name|lastWeekToDrop
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getNotes
+parameter_list|()
+block|{
+return|return
+name|iNotes
+return|;
+block|}
+specifier|public
+name|void
+name|setNotes
+parameter_list|(
+name|String
+name|notes
+parameter_list|)
+block|{
+name|iNotes
+operator|=
+name|notes
 expr_stmt|;
 block|}
 specifier|public
@@ -1089,6 +1122,11 @@ operator|+
 literal|"\n	NotOffered: "
 operator|+
 name|getNotOffered
+argument_list|()
+operator|+
+literal|"\n	Notes: "
+operator|+
+name|getNotes
 argument_list|()
 operator|+
 literal|"\n	Session: "
