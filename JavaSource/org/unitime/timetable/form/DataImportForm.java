@@ -356,6 +356,13 @@ literal|"pointInTimeData"
 argument_list|,
 literal|"Point-In-Time Data"
 argument_list|)
+block|,
+name|PREFERENCES
+argument_list|(
+literal|"preferences"
+argument_list|,
+literal|"Course Timetabling Preferences"
+argument_list|)
 block|,     	;
 specifier|private
 name|String

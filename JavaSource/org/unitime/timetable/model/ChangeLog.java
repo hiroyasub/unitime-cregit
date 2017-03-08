@@ -573,7 +573,12 @@ name|INSTRUCTOR_ASSIGNMENT
 argument_list|(
 literal|"Instructor Assignment"
 argument_list|)
-block|;
+block|,
+name|DATA_IMPORT_PREFERENCES
+argument_list|(
+literal|"Data Import: Prerefences"
+argument_list|)
+block|,         ;
 specifier|private
 name|String
 name|iTitle
