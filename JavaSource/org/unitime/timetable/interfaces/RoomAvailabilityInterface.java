@@ -222,6 +222,11 @@ extends|extends
 name|Serializable
 block|{
 specifier|public
+name|Long
+name|getEventId
+parameter_list|()
+function_decl|;
+specifier|public
 name|String
 name|getEventName
 parameter_list|()

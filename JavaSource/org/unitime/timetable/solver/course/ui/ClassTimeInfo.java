@@ -2062,6 +2062,15 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
+name|Long
+name|getEventId
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
 name|String
 name|getEventName
 parameter_list|()

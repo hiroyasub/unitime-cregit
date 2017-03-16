@@ -142,6 +142,15 @@ name|examPeriodDateFormat
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"EEE MM/dd"
+argument_list|)
+name|String
+name|timetableGridDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
@@ -1177,6 +1186,169 @@ literal|", "
 argument_list|)
 name|String
 name|itemSeparator
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Room"
+block|,
+literal|"Instructor"
+block|,
+literal|"Department"
+block|,
+literal|"Curriculum"
+block|,
+literal|"Subject Area"
+block|,
+literal|"Student Group"
+block|}
+argument_list|)
+name|String
+index|[]
+name|timeGridResource
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"1111111|All"
+block|,
+literal|"1111100|All except Weekend"
+block|,
+literal|"1000000|Monday"
+block|,
+literal|"0100000|Tuesday"
+block|,
+literal|"0010000|Wednesday"
+block|,
+literal|"0001000|Thursday"
+block|,
+literal|"0000100|Friday"
+block|,
+literal|"0000010|Saturday"
+block|,
+literal|"0000001|Sunday"
+block|,
+literal|"1111000|Monday - Thursday"
+block|,
+literal|"0000110|Friday& Saturday"
+block|,
+literal|"1010100|Monday, Wednesday, Friday"
+block|,
+literal|"0101000|Tuesday, Thursday"
+block|}
+argument_list|)
+name|String
+index|[]
+name|timeGridDays
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Daytime|90|210|6"
+block|,
+literal|"Evening|210|276|6"
+block|,
+literal|"Daytime& Evening|90|276|6"
+block|,
+literal|"All|0|288|6"
+block|}
+argument_list|)
+name|String
+index|[]
+name|timeGridTimes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"In Row [horizontal]"
+block|,
+literal|"Per Week [horizontal]"
+block|,
+literal|"Per Week [vertical]"
+block|,
+literal|"Per Date [horizontal]"
+block|}
+argument_list|)
+name|String
+index|[]
+name|timeGridDisplayMode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"None"
+block|,
+literal|"Time Preferences"
+block|,
+literal|"Room Preferences"
+block|,
+literal|"Student Conflicts"
+block|,
+literal|"Instructor Back-to-Back Preferences"
+block|,
+literal|"Distribution Preferences"
+block|,
+literal|"Perturbations"
+block|,
+literal|"Perturbation Penalty"
+block|,
+literal|"Hard Conflicts"
+block|,
+literal|"Departmental Balancing Penalty"
+block|,
+literal|"Too Big Rooms"
+block|,
+literal|"Student Groups"
+block|}
+argument_list|)
+name|String
+index|[]
+name|timeGridBackground
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Name [asc]"
+block|,
+literal|"Name [desc]"
+block|,
+literal|"Size [asc]"
+block|,
+literal|"Size [desc]"
+block|,
+literal|"Type [asc]"
+block|,
+literal|"Type [desc]"
+block|,
+literal|"Utilization [asc]"
+block|,
+literal|"Utilization [desc]"
+block|}
+argument_list|)
+name|String
+index|[]
+name|timeGridOrderBy
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"##0.00"
+argument_list|)
+name|String
+name|utilizationFormat
 parameter_list|()
 function_decl|;
 block|}
