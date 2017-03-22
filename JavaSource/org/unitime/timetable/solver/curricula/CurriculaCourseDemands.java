@@ -1761,15 +1761,15 @@ range|:
 name|other
 control|)
 block|{
-comment|// if (student.getAreas().isEmpty()) continue; // ignore students w/o academic area
+comment|// if (student.getMajors().isEmpty()) continue; // ignore students w/o academic area
 for|for
 control|(
-name|AreaCode
-name|area
+name|AreaClasfMajor
+name|acm
 range|:
 name|student
 operator|.
-name|getAreas
+name|getMajors
 argument_list|()
 control|)
 block|{
@@ -1783,7 +1783,7 @@ name|curricula
 operator|.
 name|get
 argument_list|(
-name|area
+name|acm
 operator|.
 name|getArea
 argument_list|()
@@ -1807,7 +1807,7 @@ name|student
 operator|.
 name|match
 argument_list|(
-name|area
+name|acm
 operator|.
 name|getArea
 argument_list|()

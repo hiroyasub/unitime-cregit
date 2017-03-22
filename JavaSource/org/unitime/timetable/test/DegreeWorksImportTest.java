@@ -386,11 +386,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct d.student) from LastLikeCourseDemand d inner join d.student.academicAreaClassifications aac "
+literal|"select count(distinct d.student) from LastLikeCourseDemand d inner join d.student.areaClasfMajors acm "
 operator|+
-literal|"inner join d.student.posMajors m where d.subjectArea.session = :sessionId and "
+literal|"where d.subjectArea.session = :sessionId and "
 operator|+
-literal|"m.code=:major and aac.academicArea.academicAreaAbbreviation = :area and aac.academicClassification.code = :clasf"
+literal|"acm.major.code=:major and acm.academicArea.academicAreaAbbreviation = :area and acm.academicClassification.code = :clasf"
 argument_list|)
 operator|.
 name|setLong
@@ -466,11 +466,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct e.student) from StudentClassEnrollment e inner join e.student.academicAreaClassifications aac "
+literal|"select count(distinct e.student) from StudentClassEnrollment e inner join e.student.areaClasfMajors acm "
 operator|+
-literal|"inner join e.student.posMajors m where e.student.session = :sessionId and "
+literal|"where e.student.session = :sessionId and "
 operator|+
-literal|"m.code=:major and aac.academicArea.academicAreaAbbreviation = :area and aac.academicClassification.code = :clasf"
+literal|"acm.major.code=:major and acm.academicArea.academicAreaAbbreviation = :area and acm.academicClassification.code = :clasf"
 argument_list|)
 operator|.
 name|setLong
@@ -555,11 +555,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct d.student) from LastLikeCourseDemand d inner join d.student.academicAreaClassifications aac "
+literal|"select count(distinct d.student) from LastLikeCourseDemand d inner join d.student.areaClasfMajors acm "
 operator|+
-literal|"inner join d.student.posMajors m where d.subjectArea.uniqueId = :subjectId and d.courseNbr = :courseNbr and "
+literal|"where d.subjectArea.uniqueId = :subjectId and d.courseNbr = :courseNbr and "
 operator|+
-literal|"m.code=:major and aac.academicArea.academicAreaAbbreviation = :area and aac.academicClassification.code = :clasf"
+literal|"acm.major.code=:major and acm.academicArea.academicAreaAbbreviation = :area and acm.academicClassification.code = :clasf"
 argument_list|)
 operator|.
 name|setLong
@@ -623,11 +623,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct d.student) from LastLikeCourseDemand d inner join d.student.academicAreaClassifications aac "
+literal|"select count(distinct d.student) from LastLikeCourseDemand d inner join d.student.areaClasfMajors acm "
 operator|+
-literal|"inner join d.student.posMajors m where d.subjectArea.session.uniqueId = :subjectId and d.coursePermId = :permId and "
+literal|"where d.subjectArea.session.uniqueId = :subjectId and d.coursePermId = :permId and "
 operator|+
-literal|"m.code=:major and aac.academicArea.academicAreaAbbreviation = :area and aac.academicClassification.code = :clasf"
+literal|"acm.major.code=:major and acm.academicArea.academicAreaAbbreviation = :area and acm.academicClassification.code = :clasf"
 argument_list|)
 operator|.
 name|setLong
@@ -716,11 +716,11 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct e.student) from StudentClassEnrollment e inner join e.student.academicAreaClassifications aac "
+literal|"select count(distinct e.student) from StudentClassEnrollment e inner join e.student.areaClasfMajors acm "
 operator|+
-literal|"inner join e.student.posMajors m where e.courseOffering.uniqueId = :courseId and "
+literal|"where e.courseOffering.uniqueId = :courseId and "
 operator|+
-literal|"m.code=:major and aac.academicArea.academicAreaAbbreviation = :area and aac.academicClassification.code = :clasf"
+literal|"acm.major.code=:major and acm.academicArea.academicAreaAbbreviation = :area and acm.academicClassification.code = :clasf"
 argument_list|)
 operator|.
 name|setLong

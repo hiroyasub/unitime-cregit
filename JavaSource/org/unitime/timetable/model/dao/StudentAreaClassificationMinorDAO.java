@@ -12,6 +12,8 @@ operator|.
 name|timetable
 operator|.
 name|model
+operator|.
+name|dao
 package|;
 end_package
 
@@ -27,57 +29,22 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseAcademicAreaClassification
+name|BaseStudentAreaClassificationMinorDAO
 import|;
 end_import
-
-begin_comment
-comment|/**  * @author Tomas Muller  */
-end_comment
 
 begin_class
 specifier|public
 class|class
-name|AcademicAreaClassification
+name|StudentAreaClassificationMinorDAO
 extends|extends
-name|BaseAcademicAreaClassification
+name|BaseStudentAreaClassificationMinorDAO
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|1L
-decl_stmt|;
-comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public
-name|AcademicAreaClassification
+name|StudentAreaClassificationMinorDAO
 parameter_list|()
 block|{
-name|super
-argument_list|()
-expr_stmt|;
 block|}
-comment|/** 	 * Constructor for primary key 	 */
-specifier|public
-name|AcademicAreaClassification
-parameter_list|(
-name|java
-operator|.
-name|lang
-operator|.
-name|Long
-name|uniqueId
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|uniqueId
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*[CONSTRUCTOR MARKER END]*/
 block|}
 end_class
 

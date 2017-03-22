@@ -451,7 +451,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct d.courseNbr, d.coursePermId, s "
 operator|+
-literal|"from LastLikeCourseDemand d inner join d.student s left join fetch s.academicAreaClassifications left join fetch s.posMajors where "
+literal|"from LastLikeCourseDemand d inner join d.student s left join fetch s.areaClasfMajors where "
 operator|+
 literal|"d.subjectArea.uniqueId = :subjectAreaId"
 argument_list|)
@@ -859,7 +859,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct s, co "
 operator|+
-literal|"from LastLikeCourseDemand x inner join x.student s left join fetch s.academicAreaClassifications left join fetch s.posMajors, CourseOffering co left outer join co.demandOffering do where "
+literal|"from LastLikeCourseDemand x inner join x.student s left join fetch s.areaClasfMajors, CourseOffering co left outer join co.demandOffering do where "
 operator|+
 literal|"x.subjectArea.session.uniqueId = :sessionId and "
 operator|+

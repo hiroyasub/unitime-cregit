@@ -29,24 +29,19 @@ name|model
 operator|.
 name|base
 operator|.
-name|BaseAcademicAreaClassificationDAO
+name|BaseStudentAreaClassificationMajorDAO
 import|;
 end_import
-
-begin_comment
-comment|/**  * @author Tomas Muller  */
-end_comment
 
 begin_class
 specifier|public
 class|class
-name|AcademicAreaClassificationDAO
+name|StudentAreaClassificationMajorDAO
 extends|extends
-name|BaseAcademicAreaClassificationDAO
+name|BaseStudentAreaClassificationMajorDAO
 block|{
-comment|/** 	 * Default constructor.  Can be used in place of getInstance() 	 */
 specifier|public
-name|AcademicAreaClassificationDAO
+name|StudentAreaClassificationMajorDAO
 parameter_list|()
 block|{
 block|}

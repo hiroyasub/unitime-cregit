@@ -27490,7 +27490,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"StudentClassEnrollment e inner join e.student s inner join s.academicAreaClassifications a"
+literal|"StudentClassEnrollment e inner join e.student s inner join s.areaClasfMajors a"
 decl_stmt|;
 name|String
 name|where
@@ -27513,7 +27513,15 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|// students with no major
+comment|// students with all majors
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -27531,17 +27539,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -27650,11 +27647,11 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
-literal|" and m.uniqueId in :majorIds group by "
+literal|" and a.major.uniqueId in :majorIds group by "
 operator|+
 name|group
 argument_list|)
@@ -27724,7 +27721,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -27737,22 +27734,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and a.major.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -27887,6 +27905,12 @@ name|Integer
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -27992,7 +28016,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"StudentClassEnrollment e inner join e.student s inner join s.academicAreaClassifications a"
+literal|"StudentClassEnrollment e inner join e.student s inner join s.areaClasfMajors a"
 decl_stmt|;
 name|String
 name|where
@@ -28007,7 +28031,12 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|// students with no major
+comment|// students with all majors
+if|if
+condition|(
+operator|!
+name|multipleMajors
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -28025,14 +28054,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|multipleMajors
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -28087,11 +28108,11 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
-literal|" and m.uniqueId in :majorIds"
+literal|" and a.major.uniqueId in :majorIds"
 argument_list|)
 operator|.
 name|setLong
@@ -28148,7 +28169,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -28158,22 +28179,43 @@ range|:
 name|majors
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and a.major.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -28296,6 +28338,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -28420,7 +28468,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.academicClassification f inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -28443,7 +28491,16 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|// students with no major
+comment|// students with all majors
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
+block|{
 name|select
 operator|=
 literal|"f.code, '', count(distinct s)"
@@ -28469,17 +28526,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -28520,6 +28566,7 @@ operator|.
 name|list
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -28588,7 +28635,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -28670,7 +28717,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -28683,22 +28730,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.code = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".code = :m"
+literal|".academicArea.academicAreaAbbreviation = :acadAbbv and a"
+operator|+
+name|idx
+operator|+
+literal|".major.code = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -28843,6 +28911,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -28991,7 +29065,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.academicClassification f"
 decl_stmt|;
 name|String
 name|where
@@ -29014,7 +29088,15 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|// students with no major
+comment|// students with all majors
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -29032,17 +29114,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -29151,11 +29222,11 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
-literal|" and m.code in :majorCodes group by "
+literal|" and a.major.code in :majorCodes group by "
 operator|+
 name|group
 argument_list|)
@@ -29225,7 +29296,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -29238,22 +29309,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and a.major.code = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".code = :m"
+literal|".academicArea.academicAreaAbbreviation = :acadAbbv and a"
+operator|+
+name|idx
+operator|+
+literal|".major.code = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -29388,6 +29480,12 @@ name|Integer
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -29498,7 +29596,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.academicClassification f inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -29513,7 +29611,13 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|// students with no major
+comment|// students with all majors
+if|if
+condition|(
+operator|!
+name|multipleMajors
+condition|)
+block|{
 name|select
 operator|=
 literal|"f.code, '', s.uniqueId"
@@ -29535,14 +29639,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|multipleMajors
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -29568,6 +29664,7 @@ operator|.
 name|list
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -29627,7 +29724,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -29692,7 +29789,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -29702,22 +29799,43 @@ range|:
 name|majors
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.code = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".code = :m"
+literal|".academicArea.academicAreaAbbreviation = :acadAbbv and a"
+operator|+
+name|idx
+operator|+
+literal|".major.code = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -29853,6 +29971,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -30037,7 +30161,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"StudentClassEnrollment e inner join e.student s inner join s.academicAreaClassifications a"
+literal|"StudentClassEnrollment e inner join e.student s inner join s.areaClasfMajors a inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -30061,6 +30185,14 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -30078,17 +30210,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -30197,7 +30318,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -30271,7 +30392,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -30284,22 +30405,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -30444,6 +30586,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -30609,7 +30757,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"StudentClassEnrollment e inner join e.student s inner join s.academicAreaClassifications a"
+literal|"StudentClassEnrollment e inner join e.student s inner join s.areaClasfMajors a inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -30625,6 +30773,11 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|multipleMajors
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -30642,14 +30795,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|multipleMajors
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -30704,7 +30849,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -30765,7 +30910,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -30775,22 +30920,43 @@ range|:
 name|majors
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -30923,6 +31089,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -31144,7 +31316,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.academicClassification f inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -31172,6 +31344,15 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
+block|{
 name|select
 operator|=
 literal|"f.code, '', co.uniqueId, count(distinct s)"
@@ -31197,17 +31378,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -31248,6 +31418,7 @@ operator|.
 name|list
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -31316,7 +31487,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -31398,7 +31569,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -31411,22 +31582,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.code = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".code = :m"
+literal|".academicArea.academicAreaAbbreviation = :acadAbbv and a"
+operator|+
+name|idx
+operator|+
+literal|".major.code = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -31581,6 +31773,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -31815,7 +32013,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a inner join a.academicClassification f"
+literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.academicClassification f inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -31835,6 +32033,12 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|multipleMajors
+condition|)
+block|{
 name|select
 operator|=
 literal|"f.code, co.uniqueId, co.subjectArea.subjectAreaAbbreviation || ' ' || co.courseNbr, '', s.uniqueId"
@@ -31856,14 +32060,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|multipleMajors
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -31889,6 +32085,7 @@ operator|.
 name|list
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -31948,7 +32145,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -32013,7 +32210,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -32023,22 +32220,43 @@ range|:
 name|majors
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.code = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".code = :m"
+literal|".academicArea.academicAreaAbbreviation = :acadAbbv and a"
+operator|+
+name|idx
+operator|+
+literal|".major.code = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -32184,6 +32402,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -32600,7 +32824,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct a.academicArea.uniqueId, m.uniqueId, a.academicClassification.uniqueId, e.student.uniqueId "
 operator|+
-literal|"from StudentClassEnrollment e inner join e.student.academicAreaClassifications a left outer join e.student.posMajors m where "
+literal|"from StudentClassEnrollment e inner join e.student.areaClasfMajors a left outer join a.major m where "
 operator|+
 literal|"e.courseOffering.uniqueId = :courseId"
 argument_list|)
@@ -32930,7 +33154,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct r.academicAreaAbbreviation, m.code, f.code, s.uniqueId from "
 operator|+
-literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a left outer join s.posMajors m "
+literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a left outer join a.major m "
 operator|+
 literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co left outer join co.demandOffering do where "
 operator|+
@@ -33261,9 +33485,9 @@ name|createQuery
 argument_list|(
 literal|"select a.academicAreaAbbreviation, m.code, f.code, count(distinct s) from LastLikeCourseDemand x inner join x.student s "
 operator|+
-literal|"inner join s.academicAreaClassifications ac inner join ac.academicClassification f inner join ac.academicArea a "
+literal|"inner join s.areaClasfMajors ac inner join ac.academicClassification f inner join ac.academicArea a "
 operator|+
-literal|"inner join s.posMajors m where x.subjectArea.session.uniqueId = :sessionId "
+literal|"inner join ac.major m where x.subjectArea.session.uniqueId = :sessionId "
 operator|+
 literal|"group by a.academicAreaAbbreviation, m.code, f.code"
 argument_list|)
@@ -33551,7 +33775,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct co.uniqueId, r.academicAreaAbbreviation, m.code, f.code, s.uniqueId from "
 operator|+
-literal|"LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a left outer join s.posMajors m "
+literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.major m "
 operator|+
 literal|"inner join a.academicClassification f inner join a.academicArea r, CourseOffering co left outer join co.demandOffering do where "
 operator|+
@@ -33909,7 +34133,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a"
+literal|"CourseRequest r inner join r.courseDemand.student s inner join s.areaClasfMajors a inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -33933,6 +34157,14 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -33950,17 +34182,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -34069,7 +34290,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -34143,7 +34364,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -34156,22 +34377,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -34306,6 +34548,12 @@ name|Integer
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -34411,7 +34659,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a"
+literal|"CourseRequest r inner join r.courseDemand.student s inner join s.areaClasfMajors a inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -34427,6 +34675,11 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|multipleMajors
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -34444,14 +34697,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|multipleMajors
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -34506,7 +34751,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -34567,7 +34812,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -34577,22 +34822,43 @@ range|:
 name|majors
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -34715,6 +34981,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -34839,7 +35111,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a"
+literal|"CourseRequest r inner join r.courseDemand.student s inner join s.areaClasfMajors a inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -34863,6 +35135,14 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -34880,17 +35160,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|c
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 operator|+
 literal|" group by "
 operator|+
@@ -34999,7 +35268,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -35073,7 +35342,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -35086,22 +35355,43 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".academicArea.uniqueId = :areaId and a"
+operator|+
+name|idx
+operator|+
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -35246,6 +35536,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -35411,7 +35707,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a"
+literal|"CourseRequest r inner join r.courseDemand.student s inner join s.areaClasfMajors a inner join a.major m"
 decl_stmt|;
 name|String
 name|where
@@ -35427,6 +35723,11 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|multipleMajors
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -35444,14 +35745,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|multipleMajors
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -35506,7 +35799,7 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
@@ -35567,7 +35860,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -35577,22 +35870,39 @@ range|:
 name|majors
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and m.uniqueId = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a.academicArea.uniqueId = :areaId and a"
 operator|+
 name|idx
 operator|+
-literal|".uniqueId = :m"
+literal|".major.uniqueId = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -35725,6 +36035,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -35994,7 +36310,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct a.academicArea.uniqueId, m.uniqueId, a.academicClassification.uniqueId, s.uniqueId "
 operator|+
-literal|"from CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a left outer join s.posMajors m where "
+literal|"from CourseRequest r inner join r.courseDemand.student s inner join s.areaClasfMajors a inner join a.major m where "
 operator|+
 literal|"r.courseOffering.uniqueId = :courseId"
 argument_list|)

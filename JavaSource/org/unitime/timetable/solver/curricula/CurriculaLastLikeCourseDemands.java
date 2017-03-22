@@ -1355,7 +1355,7 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.academicAreaClassifications a"
+literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a"
 decl_stmt|;
 name|String
 name|where
@@ -1381,6 +1381,17 @@ argument_list|()
 condition|)
 block|{
 comment|// students with no major
+if|if
+condition|(
+operator|!
+name|cc
+operator|.
+name|getCurriculum
+argument_list|()
+operator|.
+name|isMultipleMajors
+argument_list|()
+condition|)
 name|lines
 operator|=
 name|hibSession
@@ -1398,20 +1409,6 @@ operator|+
 literal|" where "
 operator|+
 name|where
-operator|+
-operator|(
-name|cc
-operator|.
-name|getCurriculum
-argument_list|()
-operator|.
-name|isMultipleMajors
-argument_list|()
-condition|?
-literal|" and s.posMajors is empty"
-else|:
-literal|""
-operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -1544,11 +1541,11 @@ literal|" from "
 operator|+
 name|from
 operator|+
-literal|" inner join s.posMajors m where "
+literal|" where "
 operator|+
 name|where
 operator|+
-literal|" and m.code in :majorCodes"
+literal|" and a.major.code in :majorCodes"
 argument_list|)
 operator|.
 name|setLong
@@ -1635,7 +1632,7 @@ decl_stmt|;
 name|int
 name|idx
 init|=
-literal|1
+literal|0
 decl_stmt|;
 for|for
 control|(
@@ -1651,22 +1648,47 @@ name|getMajors
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|idx
+operator|==
+literal|0
+condition|)
+block|{
+name|where
+operator|+=
+literal|" and a.major.code = :m"
+operator|+
+name|idx
+expr_stmt|;
+block|}
+else|else
+block|{
 name|from
 operator|+=
-literal|" inner join s.posMajors m"
+literal|" inner join s.areaClasfMajors a"
 operator|+
 name|idx
 expr_stmt|;
 name|where
 operator|+=
-literal|" and m"
+literal|" and a"
 operator|+
 name|idx
 operator|+
-literal|".code = :m"
+literal|".academicArea.academicAreaAbbreviation = :acadAbbv and a"
+operator|+
+name|idx
+operator|+
+literal|".academicClassification.code = :clasfCode and a"
+operator|+
+name|idx
+operator|+
+literal|".major.code = :m"
 operator|+
 name|idx
 expr_stmt|;
+block|}
 name|params
 operator|.
 name|put
@@ -1822,6 +1844,12 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|lines
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|Object
@@ -1874,6 +1902,16 @@ name|getCurriculum
 argument_list|()
 operator|.
 name|getAbbv
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|cc
+operator|.
+name|getAcademicClassification
+argument_list|()
+operator|.
+name|getCode
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2639,15 +2677,15 @@ range|:
 name|other
 control|)
 block|{
-comment|// if (student.getAreas().isEmpty()) continue; // ignore students w/o academic area
+comment|// if (student.getMajors().isEmpty()) continue; // ignore students w/o academic area
 for|for
 control|(
-name|AreaCode
-name|area
+name|AreaClasfMajor
+name|acm
 range|:
 name|student
 operator|.
-name|getAreas
+name|getMajors
 argument_list|()
 control|)
 block|{
@@ -2661,7 +2699,7 @@ name|iLoadedCurricula
 operator|.
 name|get
 argument_list|(
-name|area
+name|acm
 operator|.
 name|getArea
 argument_list|()
@@ -2685,7 +2723,7 @@ name|student
 operator|.
 name|match
 argument_list|(
-name|area
+name|acm
 operator|.
 name|getArea
 argument_list|()

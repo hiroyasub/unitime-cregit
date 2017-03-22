@@ -216,92 +216,6 @@ expr_stmt|;
 block|}
 comment|/*[CONSTRUCTOR MARKER END]*/
 specifier|public
-name|void
-name|addToPosMajors
-parameter_list|(
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|PosMajor
-name|major
-parameter_list|)
-block|{
-if|if
-condition|(
-literal|null
-operator|==
-name|getPosMajors
-argument_list|()
-condition|)
-name|setPosMajors
-argument_list|(
-operator|new
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|getPosMajors
-argument_list|()
-operator|.
-name|add
-argument_list|(
-name|major
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|addToPosMinors
-parameter_list|(
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
-name|PosMinor
-name|minor
-parameter_list|)
-block|{
-if|if
-condition|(
-literal|null
-operator|==
-name|getPosMinors
-argument_list|()
-condition|)
-name|setPosMinors
-argument_list|(
-operator|new
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|getPosMinors
-argument_list|()
-operator|.
-name|add
-argument_list|(
-name|minor
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
 specifier|static
 name|List
 name|findAll
@@ -430,11 +344,9 @@ literal|"left join fetch cd.courseRequests as cr "
 operator|+
 literal|"left join fetch s.classEnrollments as e "
 operator|+
-literal|"left join fetch s.academicAreaClassifications "
+literal|"left join fetch s.areaClasfMajors "
 operator|+
-literal|"left join fetch s.posMajors "
-operator|+
-literal|"left join fetch s.posMinors "
+literal|"left join fetch s.areaClasfMinors "
 operator|+
 literal|"where "
 operator|+

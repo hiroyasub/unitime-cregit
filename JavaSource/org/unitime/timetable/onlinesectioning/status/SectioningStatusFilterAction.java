@@ -742,27 +742,17 @@ name|query
 operator|.
 name|select
 argument_list|(
-literal|"m.uniqueId, m.code, m.name, count(distinct s)"
-argument_list|)
-operator|.
-name|from
-argument_list|(
-literal|"PosMajor m"
-argument_list|)
-operator|.
-name|where
-argument_list|(
-literal|"m in elements(s.posMajors)"
+literal|"aac.major.uniqueId, aac.major.code, aac.major.name, count(distinct s)"
 argument_list|)
 operator|.
 name|order
 argument_list|(
-literal|"m.code, m.name"
+literal|"aac.major.code, aac.major.name"
 argument_list|)
 operator|.
 name|group
 argument_list|(
-literal|"m.uniqueId, m.code, m.name"
+literal|"aac.major.uniqueId, aac.major.code, aac.major.name"
 argument_list|)
 operator|.
 name|exclude
@@ -3199,15 +3189,6 @@ literal|"major"
 argument_list|)
 condition|)
 block|{
-name|query
-operator|.
-name|addFrom
-argument_list|(
-literal|"major"
-argument_list|,
-literal|"PosMajor m"
-argument_list|)
-expr_stmt|;
 name|String
 name|major
 init|=
@@ -3271,7 +3252,7 @@ name|addWhere
 argument_list|(
 literal|"major"
 argument_list|,
-literal|"m in elements(s.posMajors) and m.code in ("
+literal|"aac.major.code in ("
 operator|+
 name|major
 operator|+
@@ -4793,7 +4774,7 @@ literal|" from "
 operator|+
 name|iType
 operator|+
-literal|" s left outer join s.academicAreaClassifications aac "
+literal|" s left outer join s.areaClasfMajors aac "
 operator|+
 operator|(
 name|iFrom
@@ -5596,7 +5577,7 @@ else|:
 name|iSelect
 operator|)
 operator|+
-literal|" from CourseRequest cr inner join cr.courseOffering co inner join cr.courseDemand cd inner join cd.student s left outer join s.academicAreaClassifications aac "
+literal|" from CourseRequest cr inner join cr.courseOffering co inner join cr.courseDemand cd inner join cd.student s left outer join s.areaClasfMajors aac "
 operator|+
 operator|(
 name|iFrom

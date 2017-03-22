@@ -288,7 +288,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct e.courseOffering, s "
 operator|+
-literal|"from StudentClassEnrollment e inner join e.student s left join fetch s.academicAreaClassifications left join fetch s.posMajors where "
+literal|"from StudentClassEnrollment e inner join e.student s left join fetch s.areaClasfMajors where "
 operator|+
 literal|"e.courseOffering.subjectArea.session.uniqueId = :sessionId"
 argument_list|)

@@ -51,7 +51,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AcademicAreaClassification
+name|AcademicClassification
 import|;
 end_import
 
@@ -65,7 +65,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AcademicClassification
+name|PosMajor
 import|;
 end_import
 
@@ -83,6 +83,20 @@ name|Student
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|StudentAreaClassificationMajor
+import|;
+end_import
+
 begin_comment
 comment|/**  * Do not change this class. It has been automatically generated using ant create-model.  * @see org.unitime.commons.ant.CreateBaseModelFromXml  */
 end_comment
@@ -91,7 +105,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseAcademicAreaClassification
+name|BaseStudentAreaClassificationMajor
 implements|implements
 name|Serializable
 block|{
@@ -112,12 +126,16 @@ name|Student
 name|iStudent
 decl_stmt|;
 specifier|private
+name|AcademicArea
+name|iAcademicArea
+decl_stmt|;
+specifier|private
 name|AcademicClassification
 name|iAcademicClassification
 decl_stmt|;
 specifier|private
-name|AcademicArea
-name|iAcademicArea
+name|PosMajor
+name|iMajor
 decl_stmt|;
 specifier|public
 specifier|static
@@ -127,7 +145,7 @@ init|=
 literal|"uniqueId"
 decl_stmt|;
 specifier|public
-name|BaseAcademicAreaClassification
+name|BaseStudentAreaClassificationMajor
 parameter_list|()
 block|{
 name|initialize
@@ -135,7 +153,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|BaseAcademicAreaClassification
+name|BaseStudentAreaClassificationMajor
 parameter_list|(
 name|Long
 name|uniqueId
@@ -201,28 +219,6 @@ name|student
 expr_stmt|;
 block|}
 specifier|public
-name|AcademicClassification
-name|getAcademicClassification
-parameter_list|()
-block|{
-return|return
-name|iAcademicClassification
-return|;
-block|}
-specifier|public
-name|void
-name|setAcademicClassification
-parameter_list|(
-name|AcademicClassification
-name|academicClassification
-parameter_list|)
-block|{
-name|iAcademicClassification
-operator|=
-name|academicClassification
-expr_stmt|;
-block|}
-specifier|public
 name|AcademicArea
 name|getAcademicArea
 parameter_list|()
@@ -245,6 +241,50 @@ name|academicArea
 expr_stmt|;
 block|}
 specifier|public
+name|AcademicClassification
+name|getAcademicClassification
+parameter_list|()
+block|{
+return|return
+name|iAcademicClassification
+return|;
+block|}
+specifier|public
+name|void
+name|setAcademicClassification
+parameter_list|(
+name|AcademicClassification
+name|academicClassification
+parameter_list|)
+block|{
+name|iAcademicClassification
+operator|=
+name|academicClassification
+expr_stmt|;
+block|}
+specifier|public
+name|PosMajor
+name|getMajor
+parameter_list|()
+block|{
+return|return
+name|iMajor
+return|;
+block|}
+specifier|public
+name|void
+name|setMajor
+parameter_list|(
+name|PosMajor
+name|major
+parameter_list|)
+block|{
+name|iMajor
+operator|=
+name|major
+expr_stmt|;
+block|}
+specifier|public
 name|boolean
 name|equals
 parameter_list|(
@@ -262,7 +302,7 @@ operator|!
 operator|(
 name|o
 operator|instanceof
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 operator|)
 condition|)
 return|return
@@ -277,7 +317,7 @@ literal|null
 operator|||
 operator|(
 operator|(
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 operator|)
 name|o
 operator|)
@@ -298,7 +338,7 @@ name|equals
 argument_list|(
 operator|(
 operator|(
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 operator|)
 name|o
 operator|)
@@ -340,7 +380,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-literal|"AcademicAreaClassification["
+literal|"StudentAreaClassificationMajor["
 operator|+
 name|getUniqueId
 argument_list|()
@@ -354,7 +394,7 @@ name|toDebugString
 parameter_list|()
 block|{
 return|return
-literal|"AcademicAreaClassification["
+literal|"StudentAreaClassificationMajor["
 operator|+
 literal|"\n	AcademicArea: "
 operator|+
@@ -364,6 +404,11 @@ operator|+
 literal|"\n	AcademicClassification: "
 operator|+
 name|getAcademicClassification
+argument_list|()
+operator|+
+literal|"\n	Major: "
+operator|+
+name|getMajor
 argument_list|()
 operator|+
 literal|"\n	Student: "

@@ -5441,12 +5441,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|student
 operator|.
-name|getAcademicClassification
+name|getCurriculum
 argument_list|()
-operator|!=
-literal|null
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 if|if
@@ -5465,21 +5467,22 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+for|for
+control|(
 name|String
 name|c
-init|=
+range|:
 name|student
 operator|.
 name|getCurriculum
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|student
 operator|.
-name|getAcademicClassification
-argument_list|()
-decl_stmt|;
+name|split
+argument_list|(
+literal|"\\|"
+argument_list|)
+control|)
+block|{
 if|if
 condition|(
 name|tested
@@ -5560,6 +5563,7 @@ argument_list|(
 name|student
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -11873,12 +11877,14 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|student
 operator|.
-name|getAcademicClassification
+name|getCurriculum
 argument_list|()
-operator|!=
-literal|null
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 if|if
@@ -11897,21 +11903,22 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+for|for
+control|(
 name|String
 name|c
-init|=
+range|:
 name|student
 operator|.
 name|getCurriculum
 argument_list|()
-operator|+
-literal|" "
-operator|+
-name|student
 operator|.
-name|getAcademicClassification
-argument_list|()
-decl_stmt|;
+name|split
+argument_list|(
+literal|"\\|"
+argument_list|)
+control|)
+block|{
 if|if
 condition|(
 name|tested
@@ -11993,6 +12000,7 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 if|else if
 condition|(
 operator|!
@@ -12031,7 +12039,7 @@ literal|null
 condition|?
 literal|""
 else|:
-literal|" "
+literal|"/"
 operator|+
 name|student
 operator|.

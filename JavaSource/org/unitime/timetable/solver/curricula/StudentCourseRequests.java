@@ -389,7 +389,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct s, r.courseOffering.uniqueId, r.courseDemand.priority, r.courseDemand.alternative, r.order from "
 operator|+
-literal|"CourseRequest r inner join r.courseDemand.student s left join fetch s.academicAreaClassifications left join fetch s.posMajors where "
+literal|"CourseRequest r inner join r.courseDemand.student s left join fetch s.areaClasfMajors where "
 operator|+
 literal|"r.courseOffering.subjectArea.uniqueId = :subjectId"
 argument_list|)

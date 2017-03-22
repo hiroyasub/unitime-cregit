@@ -345,7 +345,7 @@ name|onlinesectioning
 operator|.
 name|model
 operator|.
-name|XAcademicAreaCode
+name|XAreaClassificationMajor
 import|;
 end_import
 
@@ -638,23 +638,11 @@ argument_list|,
 literal|"clasf"
 argument_list|,
 literal|"classification"
-argument_list|)
-condition|?
-literal|"left outer join s.academicAreaClassifications a "
-else|:
-literal|""
-operator|)
-operator|+
-operator|(
-name|getQuery
-argument_list|()
-operator|.
-name|hasAttribute
-argument_list|(
+argument_list|,
 literal|"major"
 argument_list|)
 condition|?
-literal|"left outer join s.posMajors m "
+literal|"left outer join s.areaClasfMajors m "
 else|:
 literal|""
 operator|)
@@ -668,7 +656,7 @@ argument_list|(
 literal|"minor"
 argument_list|)
 condition|?
-literal|"left outer join s.posMinors n "
+literal|"left outer join s.areaClasfMinors n "
 else|:
 literal|""
 operator|)
@@ -871,40 +859,8 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|XAcademicAreaCode
-name|ac
-range|:
-name|student
-operator|.
-name|getAcademicAreaClasiffications
-argument_list|()
-control|)
-block|{
-name|st
-operator|.
-name|addArea
-argument_list|(
-name|ac
-operator|.
-name|getArea
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|st
-operator|.
-name|addClassification
-argument_list|(
-name|ac
-operator|.
-name|getCode
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-for|for
-control|(
-name|XAcademicAreaCode
-name|ac
+name|XAreaClassificationMajor
+name|acm
 range|:
 name|student
 operator|.
@@ -914,11 +870,31 @@ control|)
 block|{
 name|st
 operator|.
+name|addArea
+argument_list|(
+name|acm
+operator|.
+name|getArea
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|st
+operator|.
+name|addClassification
+argument_list|(
+name|acm
+operator|.
+name|getClassification
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|st
+operator|.
 name|addMajor
 argument_list|(
-name|ac
+name|acm
 operator|.
-name|getCode
+name|getMajor
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3213,7 +3189,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"lower(a.academicArea.academicAreaAbbreviation) = '"
+literal|"lower(m.academicArea.academicAreaAbbreviation) = '"
 operator|+
 name|body
 operator|.
@@ -3241,7 +3217,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"lower(a.academicClassification.code) = '"
+literal|"lower(m.academicClassification.code) = '"
 operator|+
 name|body
 operator|.
@@ -3262,7 +3238,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"lower(m.code) = '"
+literal|"lower(m.major.code) = '"
 operator|+
 name|body
 operator|.
@@ -3283,7 +3259,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"lower(n.code) = '"
+literal|"lower(n.minor.code) = '"
 operator|+
 name|body
 operator|.

@@ -37,7 +37,7 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 import|;
 end_import
 
@@ -69,7 +69,7 @@ name|model
 operator|.
 name|dao
 operator|.
-name|AcademicAreaClassificationDAO
+name|StudentAreaClassificationMajorDAO
 import|;
 end_import
 
@@ -81,23 +81,23 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BaseAcademicAreaClassificationDAO
+name|BaseStudentAreaClassificationMajorDAO
 extends|extends
 name|_RootDAO
 argument_list|<
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 argument_list|,
 name|Long
 argument_list|>
 block|{
 specifier|private
 specifier|static
-name|AcademicAreaClassificationDAO
+name|StudentAreaClassificationMajorDAO
 name|sInstance
 decl_stmt|;
 specifier|public
 specifier|static
-name|AcademicAreaClassificationDAO
+name|StudentAreaClassificationMajorDAO
 name|getInstance
 parameter_list|()
 block|{
@@ -110,7 +110,7 @@ condition|)
 name|sInstance
 operator|=
 operator|new
-name|AcademicAreaClassificationDAO
+name|StudentAreaClassificationMajorDAO
 argument_list|()
 expr_stmt|;
 return|return
@@ -120,13 +120,13 @@ block|}
 specifier|public
 name|Class
 argument_list|<
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 argument_list|>
 name|getReferenceClass
 parameter_list|()
 block|{
 return|return
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 operator|.
 name|class
 return|;
@@ -139,7 +139,7 @@ argument_list|)
 specifier|public
 name|List
 argument_list|<
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 argument_list|>
 name|findByStudent
 parameter_list|(
@@ -159,7 +159,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AcademicAreaClassification x where x.student.uniqueId = :studentId"
+literal|"from StudentAreaClassificationMajor x where x.student.uniqueId = :studentId"
 argument_list|)
 operator|.
 name|setLong
@@ -181,7 +181,49 @@ argument_list|)
 specifier|public
 name|List
 argument_list|<
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
+argument_list|>
+name|findByAcademicArea
+parameter_list|(
+name|org
+operator|.
+name|hibernate
+operator|.
+name|Session
+name|hibSession
+parameter_list|,
+name|Long
+name|academicAreaId
+parameter_list|)
+block|{
+return|return
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+literal|"from StudentAreaClassificationMajor x where x.academicArea.uniqueId = :academicAreaId"
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"academicAreaId"
+argument_list|,
+name|academicAreaId
+argument_list|)
+operator|.
+name|list
+argument_list|()
+return|;
+block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|public
+name|List
+argument_list|<
+name|StudentAreaClassificationMajor
 argument_list|>
 name|findByAcademicClassification
 parameter_list|(
@@ -201,7 +243,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AcademicAreaClassification x where x.academicClassification.uniqueId = :academicClassificationId"
+literal|"from StudentAreaClassificationMajor x where x.academicClassification.uniqueId = :academicClassificationId"
 argument_list|)
 operator|.
 name|setLong
@@ -223,9 +265,9 @@ argument_list|)
 specifier|public
 name|List
 argument_list|<
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 argument_list|>
-name|findByAcademicArea
+name|findByMajor
 parameter_list|(
 name|org
 operator|.
@@ -235,7 +277,7 @@ name|Session
 name|hibSession
 parameter_list|,
 name|Long
-name|academicAreaId
+name|majorId
 parameter_list|)
 block|{
 return|return
@@ -243,14 +285,14 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from AcademicAreaClassification x where x.academicArea.uniqueId = :academicAreaId"
+literal|"from StudentAreaClassificationMajor x where x.major.uniqueId = :majorId"
 argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"academicAreaId"
+literal|"majorId"
 argument_list|,
-name|academicAreaId
+name|majorId
 argument_list|)
 operator|.
 name|list

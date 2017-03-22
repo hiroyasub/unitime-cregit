@@ -863,9 +863,7 @@ literal|"left join fetch cr.classWaitLists as cwl "
 operator|+
 literal|"left join fetch s.classEnrollments as e "
 operator|+
-literal|"left join fetch s.academicAreaClassifications as a "
-operator|+
-literal|"left join fetch s.posMajors as mj "
+literal|"left join fetch s.areaClasfMajors as acm "
 operator|+
 literal|"left join fetch s.waitlists as w "
 operator|+

@@ -215,20 +215,6 @@ name|timetable
 operator|.
 name|model
 operator|.
-name|AcademicAreaClassification
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|model
-operator|.
 name|AcademicClassification
 import|;
 end_import
@@ -356,6 +342,20 @@ operator|.
 name|model
 operator|.
 name|Session
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|StudentAreaClassificationMajor
 import|;
 end_import
 
@@ -578,15 +578,15 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a2, f2, m2, c, d.student.uniqueId from LastLikeCourseDemand d inner join d.student.academicAreaClassifications a inner join d.student.posMajors m, CourseOffering c,"
+literal|"select a2, f2, m2, c, d.student.uniqueId from LastLikeCourseDemand d inner join d.student.areaClasfMajors acm, CourseOffering c,"
 operator|+
 literal|"AcademicArea a2, AcademicClassification f2, PosMajor m2 where "
 operator|+
-literal|"a2.session.uniqueId=:sessionId and a2.academicAreaAbbreviation=a.academicArea.academicAreaAbbreviation and "
+literal|"a2.session.uniqueId=:sessionId and a2.academicAreaAbbreviation=acm.academicArea.academicAreaAbbreviation and "
 operator|+
-literal|"f2.session.uniqueId=:sessionId and f2.code=a.academicClassification.code and "
+literal|"f2.session.uniqueId=:sessionId and f2.code=acm.academicClassification.code and "
 operator|+
-literal|"m2.session.uniqueId=:sessionId and m2.code=m.code and "
+literal|"m2.session.uniqueId=:sessionId and m2.code=acm.major.code and "
 operator|+
 literal|"d.subjectArea.session.uniqueId=:sessionId and c.subjectArea=d.subjectArea and "
 operator|+
@@ -970,9 +970,9 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct a, m, c, s.uniqueId from CourseRequest r inner join r.courseDemand.student s inner join s.academicAreaClassifications a "
+literal|"select distinct a, c, s.uniqueId from CourseRequest r inner join r.courseDemand.student s inner join s.areaClasfMajors a "
 operator|+
-literal|"inner join s.posMajors m inner join r.courseOffering c where "
+literal|"inner join r.courseOffering c where "
 operator|+
 literal|"s.session.uniqueId=:sessionId"
 argument_list|)
@@ -1036,26 +1036,15 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 name|a
 init|=
 operator|(
-name|AcademicAreaClassification
+name|StudentAreaClassificationMajor
 operator|)
 name|o
 index|[
 literal|0
-index|]
-decl_stmt|;
-name|PosMajor
-name|m
-init|=
-operator|(
-name|PosMajor
-operator|)
-name|o
-index|[
-literal|1
 index|]
 decl_stmt|;
 name|CourseOffering
@@ -1066,7 +1055,7 @@ name|CourseOffering
 operator|)
 name|o
 index|[
-literal|2
+literal|1
 index|]
 decl_stmt|;
 name|Long
@@ -1077,7 +1066,7 @@ name|Long
 operator|)
 name|o
 index|[
-literal|3
+literal|2
 index|]
 decl_stmt|;
 name|Hashtable
@@ -1157,7 +1146,10 @@ name|curacad
 operator|.
 name|get
 argument_list|(
-name|m
+name|a
+operator|.
+name|getMajor
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -1177,7 +1169,10 @@ name|curacad
 operator|.
 name|put
 argument_list|(
-name|m
+name|a
+operator|.
+name|getMajor
+argument_list|()
 argument_list|,
 name|clasf
 argument_list|)
