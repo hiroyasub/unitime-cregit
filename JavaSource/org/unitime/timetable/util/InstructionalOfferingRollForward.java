@@ -2358,6 +2358,12 @@ argument_list|,
 name|toSession
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|isRollForwardDistributions
+argument_list|()
+condition|)
 name|rollForwardDistributionPrefs
 argument_list|(
 name|fromClass
@@ -2369,7 +2375,6 @@ argument_list|,
 name|hibSession
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 operator|(
 name|toClass
@@ -2904,6 +2909,11 @@ argument_list|,
 name|toSession
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|isRollForwardDistributions
+argument_list|()
+condition|)
 name|rollForwardDistributionPrefs
 argument_list|(
 name|fromSubpart
