@@ -7361,6 +7361,28 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Session Roll Forward: reset class suffixes and external ids"
+argument_list|)
+name|RollForwardResetClassSuffix
+argument_list|(
+literal|"unitime.rollforward.resetClassSufix"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"Main Page: when Internet Explorer is used, show \"the UniTime application may run very slow in Internet Explorer\" warning"
 argument_list|)
 expr|@
