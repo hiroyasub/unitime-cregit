@@ -2083,6 +2083,19 @@ block|,
 name|NONE
 block|, 	}
 specifier|public
+specifier|static
+enum|enum
+name|StudentEnrollmentMode
+block|{
+name|LAST_LIKE
+block|,
+name|STUDENT_CLASS_ENROLLMENTS
+block|,
+name|STUDENT_COURSE_REQUESTS
+block|,
+name|POINT_IN_TIME_CLASS_ENROLLMENTS
+block|}
+specifier|public
 name|SessionRollForward
 parameter_list|(
 name|Log
@@ -19214,21 +19227,24 @@ name|query
 init|=
 literal|null
 decl_stmt|;
-switch|switch
+if|if
 condition|(
 name|rollForwardSessionForm
 operator|.
 name|getRollForwardStudentsMode
 argument_list|()
 operator|.
-name|intValue
+name|equals
+argument_list|(
+name|StudentEnrollmentMode
+operator|.
+name|LAST_LIKE
+operator|.
+name|name
 argument_list|()
+argument_list|)
 condition|)
 block|{
-case|case
-literal|0
-case|:
-comment|// Last-like Course Demands
 name|query
 operator|=
 operator|new
@@ -19244,11 +19260,25 @@ operator|+
 literal|"(d.coursePermId is not null and d.coursePermId=last.permId))"
 block|}
 expr_stmt|;
-break|break;
-case|case
-literal|1
-case|:
-comment|// Student Class Enrollments
+block|}
+if|else if
+condition|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardStudentsMode
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|StudentEnrollmentMode
+operator|.
+name|STUDENT_CLASS_ENROLLMENTS
+operator|.
+name|name
+argument_list|()
+argument_list|)
+condition|)
+block|{
 name|query
 operator|=
 operator|new
@@ -19266,11 +19296,25 @@ operator|+
 literal|"e.courseRequest is null"
 block|}
 expr_stmt|;
-break|break;
-case|case
-literal|2
-case|:
-comment|// Course Requests
+block|}
+if|else if
+condition|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardStudentsMode
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|StudentEnrollmentMode
+operator|.
+name|STUDENT_COURSE_REQUESTS
+operator|.
+name|name
+argument_list|()
+argument_list|)
+condition|)
+block|{
 name|query
 operator|=
 operator|new
@@ -19282,6 +19326,46 @@ operator|+
 literal|"where co.subjectArea.session.uniqueId=:toSessionId and co.uniqueIdRolledForwardFrom=r.courseOffering.uniqueId and "
 operator|+
 literal|"r.order=0 and r.courseDemand.alternative=false"
+block|}
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|rollForwardSessionForm
+operator|.
+name|getRollForwardStudentsMode
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|StudentEnrollmentMode
+operator|.
+name|POINT_IN_TIME_CLASS_ENROLLMENTS
+operator|.
+name|name
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|query
+operator|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"select distinct psce.pitStudent.student, co, -1 from PitStudentClassEnrollment psce, CourseOffering co "
+operator|+
+literal|"where co.subjectArea.session.uniqueId=:toSessionId and co.uniqueIdRolledForwardFrom=psce.pitCourseOffering.courseOffering.uniqueId and "
+operator|+
+literal|"psce.pitStudent.pointInTimeData.uniqueId = "
+operator|+
+name|rollForwardSessionForm
+operator|.
+name|getPointInTimeSnapshotToRollCourseEnrollmentsForwardFrom
+argument_list|()
+operator|.
+name|toString
+argument_list|()
 block|}
 expr_stmt|;
 block|}
