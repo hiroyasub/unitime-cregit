@@ -14570,6 +14570,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Details of {0}"
+argument_list|)
+name|String
+name|courseCatalogDialog
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Student Sectioning Solver"
 argument_list|)
 name|String

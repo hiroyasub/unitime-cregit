@@ -63,6 +63,9 @@ name|width
 parameter_list|,
 name|String
 name|height
+parameter_list|,
+name|boolean
+name|noCacheTS
 parameter_list|)
 function_decl|;
 specifier|public

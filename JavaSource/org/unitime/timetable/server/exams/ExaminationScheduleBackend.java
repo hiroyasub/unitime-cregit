@@ -1070,6 +1070,16 @@ argument_list|)
 expr_stmt|;
 name|related
 operator|.
+name|addCourseId
+argument_list|(
+name|co
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|related
+operator|.
 name|addCourseName
 argument_list|(
 name|co
