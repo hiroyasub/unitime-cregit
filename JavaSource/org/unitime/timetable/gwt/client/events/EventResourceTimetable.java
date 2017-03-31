@@ -3928,7 +3928,7 @@ name|isEmpty
 parameter_list|()
 block|{
 return|return
-name|iMatchingRooms
+name|iMatchingWeeks
 operator|.
 name|isEmpty
 argument_list|()
@@ -12052,6 +12052,13 @@ literal|6
 decl_stmt|;
 if|if
 condition|(
+name|meeting
+operator|.
+name|getMeetingDate
+argument_list|()
+operator|==
+literal|null
+operator|||
 name|meeting
 operator|.
 name|getDayOfYear
