@@ -4712,7 +4712,7 @@ operator|)
 operator|+
 name|loc
 operator|.
-name|getName
+name|getNameWithHint
 argument_list|()
 expr_stmt|;
 block|}
