@@ -9007,6 +9007,27 @@ argument_list|(
 literal|"unitime.timeGrid.startDay"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Events: show academic sessions in the reverse order (latest first)"
+argument_list|)
+name|ListSessionsReverse
+argument_list|(
+literal|"unitime.events.listSessionsLatestFirst"
+argument_list|)
 expr_stmt|;
 end_expr_stmt
 
