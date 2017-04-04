@@ -6493,8 +6493,10 @@ operator|.
 name|getLocation
 argument_list|()
 operator|.
-name|getName
-argument_list|()
+name|getNameWithDisplayName
+argument_list|(
+name|MESSAGES
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|i
@@ -6614,8 +6616,10 @@ operator|.
 name|getLocation
 argument_list|()
 operator|.
-name|getName
-argument_list|()
+name|getNameWithDisplayName
+argument_list|(
+name|MESSAGES
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|prev

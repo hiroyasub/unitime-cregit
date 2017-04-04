@@ -16535,6 +16535,54 @@ name|String
 name|initialAssignmentCurrent
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} ({1})"
+argument_list|)
+name|String
+name|roomLabelWithDisplayName
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|String
+name|displayName
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} ({1})"
+argument_list|)
+name|String
+name|roomLabelWithSize
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|Integer
+name|size
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} ({1}, {2})"
+argument_list|)
+name|String
+name|roomLabelWithDisplayNameAndSize
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|String
+name|displayName
+parameter_list|,
+name|Integer
+name|size
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

@@ -11774,7 +11774,9 @@ operator|=
 name|iResource
 operator|.
 name|getNameWithHint
-argument_list|()
+argument_list|(
+name|MESSAGES
+argument_list|)
 expr_stmt|;
 block|}
 name|String
