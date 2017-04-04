@@ -1960,7 +1960,7 @@ argument_list|()
 argument_list|,
 name|rm
 operator|.
-name|getLabel
+name|getLabelWithDisplayName
 argument_list|()
 argument_list|)
 expr_stmt|;

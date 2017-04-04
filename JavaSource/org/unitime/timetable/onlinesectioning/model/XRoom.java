@@ -236,7 +236,7 @@ name|iName
 operator|=
 name|location
 operator|.
-name|getLabel
+name|getLabelWithDisplayName
 argument_list|()
 expr_stmt|;
 name|iIgnoreTooFar
