@@ -3315,22 +3315,42 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" left join fetch s.areaClasfMajors as ma"
+literal|" left join fetch s.areaClasfMajors as acma"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" left join fetch s.areaClasfMinors as mi"
+literal|" left join fetch s.areaClasfMinors as acmi"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" left join fetch aac.academicArea as aa"
+literal|" left join fetch acma.academicArea as acmaaa"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" left join fetch aac.academicClassification as ac"
+literal|" left join fetch acma.academicClassification as acmaac"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" left join fetch acma.major as acmama"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" left join fetch acmi.academicArea as acmaa"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" left join fetch acmi.academicClassification as acmiac"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" left join fetch acmi.minor as acmimi"
 argument_list|)
 operator|.
 name|append
