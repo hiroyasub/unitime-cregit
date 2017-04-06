@@ -937,9 +937,6 @@ else|:
 name|formatRoom
 argument_list|(
 name|room
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 operator|)
 operator|+

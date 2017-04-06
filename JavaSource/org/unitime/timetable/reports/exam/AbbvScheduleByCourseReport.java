@@ -1586,9 +1586,6 @@ operator|+
 name|formatRoom
 argument_list|(
 name|a
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1672,9 +1669,6 @@ operator|+
 name|formatRoom
 argument_list|(
 name|a
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1702,9 +1696,6 @@ operator|+
 name|formatRoom
 argument_list|(
 name|a
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
