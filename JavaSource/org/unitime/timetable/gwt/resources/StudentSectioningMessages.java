@@ -3191,6 +3191,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|" (r)"
+argument_list|)
+name|String
+name|csvReservationSign
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|" (w)"
+argument_list|)
+name|String
+name|csvWaitListSign
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No results matching filter {0} found."
 argument_list|)
 name|String
@@ -3318,6 +3336,18 @@ literal|"<sup><font color='#2066CE'>({0}p)</font></sup>"
 argument_list|)
 name|String
 name|firstWaitListedPrioritySign
+parameter_list|(
+name|int
+name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|" ({0}p)"
+argument_list|)
+name|String
+name|csvFirstWaitListedPrioritySign
 parameter_list|(
 name|int
 name|priority
