@@ -840,6 +840,31 @@ argument_list|>
 argument_list|>
 argument_list|()
 expr_stmt|;
+name|String
+index|[]
+name|checks
+init|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"x.subjectArea.session.uniqueId = :sessionId and co.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is not null and co.permId=x.coursePermId"
+block|,
+literal|"x.subjectArea.session.uniqueId = :sessionId and co.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is null and co.courseNbr=x.courseNbr"
+block|,
+literal|"x.subjectArea.session.uniqueId = :sessionId and co.demandOffering.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is not null and co.demandOffering.permId=x.coursePermId"
+block|,
+literal|"x.subjectArea.session.uniqueId = :sessionId and co.demandOffering.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is null and co.demandOffering.courseNbr=x.courseNbr"
+block|}
+decl_stmt|;
+for|for
+control|(
+name|String
+name|where
+range|:
+name|checks
+control|)
+block|{
 for|for
 control|(
 name|Object
@@ -861,11 +886,7 @@ literal|"select distinct s, co "
 operator|+
 literal|"from LastLikeCourseDemand x inner join x.student s left join fetch s.areaClasfMajors, CourseOffering co left outer join co.demandOffering do where "
 operator|+
-literal|"x.subjectArea.session.uniqueId = :sessionId and "
-operator|+
-literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
-operator|+
-literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
+name|where
 argument_list|)
 operator|.
 name|setLong
@@ -973,6 +994,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return

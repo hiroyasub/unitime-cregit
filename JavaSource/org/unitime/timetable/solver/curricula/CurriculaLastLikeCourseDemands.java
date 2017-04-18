@@ -1355,15 +1355,6 @@ name|CurriculumClassification
 name|cc
 parameter_list|)
 block|{
-name|List
-argument_list|<
-name|Object
-index|[]
-argument_list|>
-name|lines
-init|=
-literal|null
-decl_stmt|;
 name|String
 name|select
 init|=
@@ -1372,16 +1363,64 @@ decl_stmt|;
 name|String
 name|from
 init|=
-literal|"CourseOffering co left outer join co.demandOffering do, LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a"
+literal|"CourseOffering co, LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a"
 decl_stmt|;
 name|String
-name|where
+index|[]
+name|checks
 init|=
-literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and a.academicClassification.code = :clasfCode and "
-operator|+
-literal|"((co.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and co.permId=x.coursePermId) or (x.coursePermId is null and co.courseNbr=x.courseNbr))) or "
-operator|+
-literal|"(do is not null and do.subjectArea.uniqueId = x.subjectArea.uniqueId and ((x.coursePermId is not null and do.permId=x.coursePermId) or (x.coursePermId is null and do.courseNbr=x.courseNbr))))"
+operator|new
+name|String
+index|[]
+block|{
+literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and a.academicClassification.code = :clasfCode and co.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is not null and co.permId=x.coursePermId"
+block|,
+literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and a.academicClassification.code = :clasfCode and co.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is null and co.courseNbr=x.courseNbr"
+block|,
+literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and a.academicClassification.code = :clasfCode and co.demandOffering.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is not null and co.demandOffering.permId=x.coursePermId"
+block|,
+literal|"x.subjectArea.session.uniqueId = :sessionId and a.academicArea.academicAreaAbbreviation = :acadAbbv and a.academicClassification.code = :clasfCode and co.demandOffering.subjectArea.uniqueId = x.subjectArea.uniqueId and x.coursePermId is null and co.demandOffering.courseNbr=x.courseNbr"
+block|}
+decl_stmt|;
+name|Map
+argument_list|<
+name|CourseOffering
+argument_list|,
+name|Set
+argument_list|<
+name|WeightedStudentId
+argument_list|>
+argument_list|>
+name|course2ll
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|CourseOffering
+argument_list|,
+name|Set
+argument_list|<
+name|WeightedStudentId
+argument_list|>
+argument_list|>
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|String
+name|where
+range|:
+name|checks
+control|)
+block|{
+name|List
+argument_list|<
+name|Object
+index|[]
+argument_list|>
+name|lines
+init|=
+literal|null
 decl_stmt|;
 if|if
 condition|(
@@ -1838,29 +1877,6 @@ name|list
 argument_list|()
 expr_stmt|;
 block|}
-name|Map
-argument_list|<
-name|CourseOffering
-argument_list|,
-name|Set
-argument_list|<
-name|WeightedStudentId
-argument_list|>
-argument_list|>
-name|course2ll
-init|=
-operator|new
-name|HashMap
-argument_list|<
-name|CourseOffering
-argument_list|,
-name|Set
-argument_list|<
-name|WeightedStudentId
-argument_list|>
-argument_list|>
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|lines
@@ -2018,6 +2034,7 @@ argument_list|(
 name|studentId
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|course2ll
