@@ -9699,6 +9699,17 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Point In Time Data Reports"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pagePointInTimeDataReports
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Timetable"
 argument_list|)
 annotation|@
@@ -13747,6 +13758,60 @@ literal|"Rooms"
 argument_list|)
 name|String
 name|optionRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Point In Time Data"
+argument_list|)
+name|String
+name|optionPointInTimeData
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Point In Time Data Comparison"
+argument_list|)
+name|String
+name|optionPointInTimeDataComparison
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Minutes in Reporting Hour"
+argument_list|)
+name|String
+name|optionMinutesInReportingHour
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Weeks in Reporting Term"
+argument_list|)
+name|String
+name|optionWeeksInReportingTerm
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Minimum Location Capacity"
+argument_list|)
+name|String
+name|optionMinimumLocationCapacity
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximum Location Capacity"
+argument_list|)
+name|String
+name|optionMaximumLocationCapacity
 parameter_list|()
 function_decl|;
 annotation|@

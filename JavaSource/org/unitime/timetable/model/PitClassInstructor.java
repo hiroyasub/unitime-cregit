@@ -195,7 +195,7 @@ operator|.
 name|getPitClassInstructing
 argument_list|()
 operator|.
-name|getAllWeeklyContactHours
+name|getAllWeeklyClassHours
 argument_list|(
 name|standardMinutesInReportingHour
 argument_list|,
@@ -252,7 +252,7 @@ operator|.
 name|getPitClassInstructing
 argument_list|()
 operator|.
-name|getOrganizedWeeklyContactHours
+name|getOrganizedWeeklyClassHours
 argument_list|(
 name|standardMinutesInReportingHour
 argument_list|,

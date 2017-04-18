@@ -2697,6 +2697,13 @@ name|PointInTimeData
 block|,
 name|PointInTimeDataEdit
 block|,
+name|PointInTimeDataReports
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

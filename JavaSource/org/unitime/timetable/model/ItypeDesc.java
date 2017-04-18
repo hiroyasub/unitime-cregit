@@ -69,6 +69,9 @@ extends|extends
 name|BaseItypeDesc
 implements|implements
 name|Comparable
+argument_list|<
+name|Object
+argument_list|>
 block|{
 specifier|private
 specifier|static
@@ -112,9 +115,17 @@ init|=
 literal|"itypesList"
 decl_stmt|;
 comment|/**      * @return Returns the itypes.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 name|TreeSet
+argument_list|<
+name|ItypeDesc
+argument_list|>
 name|findAll
 parameter_list|(
 name|boolean
@@ -124,6 +135,9 @@ block|{
 return|return
 operator|new
 name|TreeSet
+argument_list|<
+name|ItypeDesc
+argument_list|>
 argument_list|(
 operator|new
 name|ItypeDescDAO
