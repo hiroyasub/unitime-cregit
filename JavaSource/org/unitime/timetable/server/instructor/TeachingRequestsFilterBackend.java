@@ -4197,6 +4197,9 @@ literal|":Xdpt"
 operator|+
 name|id
 expr_stmt|;
+name|id
+operator|++
+expr_stmt|;
 block|}
 if|if
 condition|(
