@@ -5414,6 +5414,10 @@ operator|.
 name|getInstructor
 argument_list|()
 argument_list|)
+operator|&&
+name|request
+operator|==
+literal|null
 condition|)
 name|request
 operator|=
