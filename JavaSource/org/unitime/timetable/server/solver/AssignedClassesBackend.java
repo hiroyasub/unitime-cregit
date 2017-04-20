@@ -1020,7 +1020,9 @@ name|assignedClasses
 init|=
 operator|new
 name|ArrayList
-argument_list|<>
+argument_list|<
+name|ClassAssignmentDetails
+argument_list|>
 argument_list|()
 decl_stmt|;
 if|if
