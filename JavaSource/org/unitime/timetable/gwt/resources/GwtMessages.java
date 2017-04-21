@@ -16887,6 +16887,18 @@ name|String
 name|notAssignedClassesNote
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} has been deleted."
+argument_list|)
+name|String
+name|eventNoteRoomDeleted
+parameter_list|(
+name|String
+name|room
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

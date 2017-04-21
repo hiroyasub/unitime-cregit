@@ -7259,7 +7259,7 @@ literal|"select count(m) from Meeting m, Location l where "
 operator|+
 literal|"l.uniqueId = :locId and m.locationPermanentId = l.permanentId "
 operator|+
-literal|"and m.meetingDate>= l.session.eventBeginDate and m.meetingDate<= l.session.eventEndDate"
+literal|"and m.meetingDate>= l.session.eventBeginDate and m.meetingDate<= l.session.eventEndDate and m.approvalStatus<= 1"
 argument_list|)
 comment|// and m.approvedDate is not null
 operator|.
