@@ -7708,6 +7708,8 @@ literal|null
 condition|)
 block|{
 comment|// there is an alternative, but it is already requested -> do nothing
+name|demands
+label|:
 for|for
 control|(
 name|CourseDemand
@@ -7750,7 +7752,9 @@ name|alt
 operator|=
 literal|null
 expr_stmt|;
-break|break;
+break|break
+name|demands
+break|;
 block|}
 block|}
 if|if
