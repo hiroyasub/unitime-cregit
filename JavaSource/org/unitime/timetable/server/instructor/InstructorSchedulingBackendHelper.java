@@ -7932,16 +7932,6 @@ if|if
 condition|(
 name|c1
 operator|.
-name|isCommon
-argument_list|()
-operator|&&
-name|c2
-operator|.
-name|isCommon
-argument_list|()
-operator|&&
-name|c1
-operator|.
 name|getTeachingClass
 argument_list|()
 operator|.
