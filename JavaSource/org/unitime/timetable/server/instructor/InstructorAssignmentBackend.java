@@ -1538,6 +1538,7 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
 name|updateConfigs
 operator|.
 name|isEmpty
@@ -1633,6 +1634,7 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
 name|updateOfferings
 operator|.
 name|isEmpty
