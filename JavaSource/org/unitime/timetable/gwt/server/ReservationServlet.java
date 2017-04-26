@@ -7073,9 +7073,15 @@ operator|.
 name|isHttpSessionNew
 argument_list|()
 condition|?
-literal|"Your timetabling session has expired. Please log in again."
+name|MESSAGES
+operator|.
+name|authenticationExpired
+argument_list|()
 else|:
-literal|"Login is required to use this page."
+name|MESSAGES
+operator|.
+name|authenticationRequired
+argument_list|()
 argument_list|)
 throw|;
 if|if
@@ -7091,7 +7097,10 @@ throw|throw
 operator|new
 name|PageAccessException
 argument_list|(
-literal|"Insufficient user privileges."
+name|MESSAGES
+operator|.
+name|authenticationInsufficient
+argument_list|()
 argument_list|)
 throw|;
 name|Long
@@ -7112,7 +7121,10 @@ throw|throw
 operator|new
 name|PageAccessException
 argument_list|(
-literal|"No academic session is selecgted."
+name|MESSAGES
+operator|.
+name|authenticationNoSession
+argument_list|()
 argument_list|)
 throw|;
 return|return
