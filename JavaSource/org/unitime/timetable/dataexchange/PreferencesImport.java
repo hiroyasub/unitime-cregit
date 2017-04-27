@@ -2312,10 +2312,10 @@ name|suffix
 operator|.
 name|equals
 argument_list|(
+name|getClassSuffix
+argument_list|(
 name|clazz
-operator|.
-name|getSectionNumberString
-argument_list|()
+argument_list|)
 argument_list|)
 condition|)
 continue|continue;

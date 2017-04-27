@@ -769,11 +769,26 @@ block|}
 name|String
 name|name
 init|=
+name|course
+operator|.
+name|getCourseName
+argument_list|()
+operator|+
+literal|" "
+operator|+
 name|clazz
 operator|.
-name|getClassLabel
+name|getItypeDesc
+argument_list|()
+operator|.
+name|trim
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|getClassSuffix
 argument_list|(
-name|course
+name|clazz
 argument_list|)
 decl_stmt|;
 name|name2class

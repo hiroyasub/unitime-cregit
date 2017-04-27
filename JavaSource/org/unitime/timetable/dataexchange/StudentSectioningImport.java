@@ -1747,10 +1747,10 @@ argument_list|()
 operator|+
 literal|" "
 operator|+
+name|getClassSuffix
+argument_list|(
 name|clazz
-operator|.
-name|getSectionNumberString
-argument_list|()
+argument_list|)
 decl_stmt|;
 name|Set
 argument_list|<

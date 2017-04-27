@@ -1140,10 +1140,10 @@ name|addAttribute
 argument_list|(
 literal|"suffix"
 argument_list|,
+name|getClassSuffix
+argument_list|(
 name|clazz
-operator|.
-name|getSectionNumberString
-argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -807,12 +807,9 @@ name|addAttribute
 argument_list|(
 literal|"suffix"
 argument_list|,
-name|clazz
-operator|.
-name|getSectionNumberString
+name|getClassSuffix
 argument_list|(
-name|getHibSession
-argument_list|()
+name|clazz
 argument_list|)
 argument_list|)
 expr_stmt|;
