@@ -4860,6 +4860,27 @@ literal|"unitime.events.exams.considerClassInstructors"
 argument_list|)
 operator|,
 expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"always"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Events: this property defines when to show room note on the top of the room grid:\n"
+operator|+
+literal|" never ... never show the room note on the top of the room grid,\n"
+operator|+
+literal|" available ... only show the note when the user can request events in the room,\n"
+operator|+
+literal|" always ... always show the room note"
+argument_list|)
+name|EventGridShowRoomNote
+argument_list|(
+literal|"unitime.events.roomGrid.showRoomNote"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Type
 argument_list|(
 name|Class

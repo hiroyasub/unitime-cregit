@@ -2554,6 +2554,11 @@ name|r
 operator|.
 name|hasMessage
 argument_list|()
+operator|&&
+name|r
+operator|.
+name|isShowMessageInGrid
+argument_list|()
 condition|?
 name|r
 operator|.

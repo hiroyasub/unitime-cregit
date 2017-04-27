@@ -8873,6 +8873,11 @@ name|room
 operator|.
 name|hasMessage
 argument_list|()
+operator|&&
+name|room
+operator|.
+name|isShowMessageInGrid
+argument_list|()
 condition|?
 name|room
 operator|.
