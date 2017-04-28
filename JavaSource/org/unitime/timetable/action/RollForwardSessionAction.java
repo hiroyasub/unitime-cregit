@@ -3605,11 +3605,6 @@ name|PointInTimeData
 argument_list|>
 argument_list|()
 decl_stmt|;
-name|Session
-name|session
-init|=
-literal|null
-decl_stmt|;
 if|if
 condition|(
 name|selectedSessionId

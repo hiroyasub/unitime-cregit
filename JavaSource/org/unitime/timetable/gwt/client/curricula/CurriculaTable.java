@@ -8898,10 +8898,10 @@ block|{
 name|boolean
 name|show
 init|=
-operator|!
 operator|(
 name|iSessionHasSnapshotData
 operator|&&
+operator|!
 name|CurriculumCookie
 operator|.
 name|getInstance
@@ -8928,7 +8928,7 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|setShowExpected
+name|setShowSnapshotExpected
 argument_list|(
 name|show
 argument_list|)

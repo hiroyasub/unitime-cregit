@@ -5937,6 +5937,11 @@ operator|.
 name|next
 argument_list|()
 expr_stmt|;
+name|it25
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|cls1
@@ -6077,6 +6082,11 @@ name|remove
 argument_list|()
 expr_stmt|;
 name|it24
+operator|.
+name|remove
+argument_list|()
+expr_stmt|;
+name|it25
 operator|.
 name|remove
 argument_list|()

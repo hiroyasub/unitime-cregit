@@ -10058,11 +10058,6 @@ name|classLimitDisplayed
 init|=
 literal|false
 decl_stmt|;
-name|boolean
-name|snapshotLimitDisplayed
-init|=
-literal|false
-decl_stmt|;
 if|if
 condition|(
 name|isShowLabel
@@ -10190,10 +10185,6 @@ name|isShowSnapshotLimit
 argument_list|()
 condition|)
 block|{
-name|snapshotLimitDisplayed
-operator|=
-literal|true
-expr_stmt|;
 name|row
 operator|.
 name|addContent
