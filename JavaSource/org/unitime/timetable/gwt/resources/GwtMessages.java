@@ -1954,6 +1954,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Snapshot<br>Projected<br>by&nbsp;Rule"
+argument_list|)
+name|String
+name|colSnapshotProjectedByRule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot<br>Requested<br>Enrollment"
+argument_list|)
+name|String
+name|colSnapshotRequestedEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Requested Enrollment:"
+argument_list|)
+name|String
+name|propSnapshotRequestedEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Projected by Rule:"
+argument_list|)
+name|String
+name|propSnapshotProjectedByRule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructional<br>Offering"
 argument_list|)
 name|String
@@ -3479,6 +3515,60 @@ literal|"Course Registrations:"
 argument_list|)
 name|String
 name|propCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snap Proj"
+argument_list|)
+name|String
+name|abbvSnapshotProjectedByRule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Projected"
+argument_list|)
+name|String
+name|shortSnapshotProjectedByRule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Projected by Rule"
+argument_list|)
+name|String
+name|fieldSnapshotProjectedByRule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snap Req"
+argument_list|)
+name|String
+name|abbvSnapshotRequestedEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Requested"
+argument_list|)
+name|String
+name|shortSnapshotRequestedEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Requested Enrollment"
+argument_list|)
+name|String
+name|fieldSnapshotRequestedEnrollment
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5341,6 +5431,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Storing snapshot..."
+argument_list|)
+name|String
+name|waitStoringSnapshot
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Saving room ..."
 argument_list|)
 name|String
@@ -6557,6 +6656,18 @@ literal|"Failed to load unassigned classes: {0}"
 argument_list|)
 name|String
 name|failedToLoadNotAssignedClasses
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to store snapshot: {0}"
+argument_list|)
+name|String
+name|failedToStoreSnapshot
 parameter_list|(
 name|String
 name|reason
@@ -9933,6 +10044,17 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageNotAssignedClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limit and Projection Snapshot"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageLimitAndProjectionSnapshot
 parameter_list|()
 function_decl|;
 annotation|@
@@ -16898,6 +17020,24 @@ parameter_list|(
 name|String
 name|room
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Current Snapshot Date:"
+argument_list|)
+name|String
+name|labelCurrentSnapshotDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>T</u>ake New Snapshot"
+argument_list|)
+name|String
+name|buttonTakeNewSnapshot
+parameter_list|()
 function_decl|;
 block|}
 end_interface

@@ -197,6 +197,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Snapshot Limit:"
+argument_list|)
+name|String
+name|propertySnapshotLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class Limit:"
 argument_list|)
 name|String
@@ -1960,6 +1969,15 @@ literal|"Enrollment"
 argument_list|)
 name|String
 name|columnEnrollment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot Limit"
+argument_list|)
+name|String
+name|columnSnapshotLimit
 parameter_list|()
 function_decl|;
 annotation|@

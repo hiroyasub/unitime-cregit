@@ -2704,6 +2704,11 @@ operator|.
 name|class
 argument_list|)
 block|,
+comment|/** Limit and Projection Snapshot Data*/
+name|LimitAndProjectionSnapshot
+block|,
+name|LimitAndProjectionSnapshotSave
+block|,
 comment|/** Administration: Defaults */
 name|ApplicationConfig
 block|,

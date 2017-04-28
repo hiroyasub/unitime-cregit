@@ -51,6 +51,11 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|Boolean
+name|getSnapshotLimit
+parameter_list|()
+function_decl|;
+specifier|public
+name|Boolean
 name|getRoomLimit
 parameter_list|()
 function_decl|;

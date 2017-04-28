@@ -242,6 +242,10 @@ name|limit
 decl_stmt|;
 specifier|private
 name|Boolean
+name|snapshotLimit
+decl_stmt|;
+specifier|private
+name|Boolean
 name|roomLimit
 decl_stmt|;
 specifier|private
@@ -562,6 +566,14 @@ literal|false
 argument_list|)
 expr_stmt|;
 name|limit
+operator|=
+operator|new
+name|Boolean
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+name|snapshotLimit
 operator|=
 operator|new
 name|Boolean
@@ -897,6 +909,32 @@ operator|.
 name|limit
 operator|=
 name|limit
+expr_stmt|;
+block|}
+comment|/** 	 * @return Returns the snapshotLimit. 	 */
+specifier|public
+name|Boolean
+name|getSnapshotLimit
+parameter_list|()
+block|{
+return|return
+name|snapshotLimit
+return|;
+block|}
+comment|/** 	 * @param snapshotLimit The snapshotLimit to set. 	 */
+specifier|public
+name|void
+name|setSnapshotLimit
+parameter_list|(
+name|Boolean
+name|snapshotLimit
+parameter_list|)
+block|{
+name|this
+operator|.
+name|snapshotLimit
+operator|=
+name|snapshotLimit
 expr_stmt|;
 block|}
 comment|/** 	 * @return Returns the preferences. 	 */

@@ -3433,6 +3433,16 @@ name|getEnrollment
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|frm
+operator|.
+name|setSnapshotLimit
+argument_list|(
+name|c
+operator|.
+name|getSnapshotLimit
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// Load from class only for initial load or reload
 if|if
 condition|(

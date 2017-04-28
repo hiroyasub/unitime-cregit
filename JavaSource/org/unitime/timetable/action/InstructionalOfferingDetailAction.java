@@ -2586,6 +2586,16 @@ argument_list|)
 expr_stmt|;
 name|frm
 operator|.
+name|setSnapshotLimit
+argument_list|(
+name|io
+operator|.
+name|getSnapshotLimit
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|frm
+operator|.
 name|setProjectedDemand
 argument_list|(
 name|io
