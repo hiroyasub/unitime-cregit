@@ -4113,7 +4113,7 @@ name|sRootElementName
 argument_list|,
 literal|"-//UniTime//DTD University Course Timetabling/EN"
 argument_list|,
-literal|"http://www.unitime.org/interface/PointInTmeData.dtd"
+literal|"http://www.unitime.org/interface/PointInTimeData.dtd"
 argument_list|)
 expr_stmt|;
 name|info
@@ -4269,9 +4269,6 @@ operator|.
 name|getDefaultDatePatternNotNull
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|commitTransaction
-argument_list|()
 expr_stmt|;
 name|timePatterns
 operator|.
@@ -4687,6 +4684,9 @@ name|getTime
 argument_list|()
 operator|)
 argument_list|)
+expr_stmt|;
+name|commitTransaction
+argument_list|()
 expr_stmt|;
 block|}
 catch|catch

@@ -443,7 +443,7 @@ name|FieldType
 operator|.
 name|text
 argument_list|,
-literal|300
+literal|200
 argument_list|,
 literal|100
 argument_list|)
@@ -460,7 +460,7 @@ name|FieldType
 operator|.
 name|textarea
 argument_list|,
-literal|300
+literal|100
 argument_list|,
 literal|1000
 argument_list|)
@@ -477,7 +477,7 @@ name|FieldType
 operator|.
 name|date
 argument_list|,
-literal|300
+literal|80
 argument_list|,
 name|Flag
 operator|.
