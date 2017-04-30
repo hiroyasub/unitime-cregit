@@ -893,6 +893,15 @@ operator|.
 name|optionCourseTypes
 argument_list|()
 return|;
+case|case
+name|PITD
+case|:
+return|return
+name|MESSAGES
+operator|.
+name|optionPointInTimeData
+argument_list|()
+return|;
 default|default:
 return|return
 name|option
