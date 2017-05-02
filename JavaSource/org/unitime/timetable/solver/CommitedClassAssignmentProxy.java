@@ -2172,6 +2172,16 @@ name|equals
 argument_list|(
 name|instructor
 argument_list|)
+operator|||
+name|ci
+operator|.
+name|getClassInstructing
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|clazz
+argument_list|)
 condition|)
 continue|continue;
 name|Assignment
