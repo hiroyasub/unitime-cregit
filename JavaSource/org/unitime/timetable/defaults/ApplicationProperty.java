@@ -9049,6 +9049,29 @@ name|ListSessionsReverse
 argument_list|(
 literal|"unitime.events.listSessionsLatestFirst"
 argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Session Backup: include point in time data"
+argument_list|)
+name|SessionBackupPointInTime
+argument_list|(
+literal|"unitime.session_backup.pointInTimeData"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
