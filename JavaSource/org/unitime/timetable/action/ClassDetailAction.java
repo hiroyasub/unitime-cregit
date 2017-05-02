@@ -2067,6 +2067,11 @@ argument_list|()
 block|,
 name|MSG
 operator|.
+name|columnSnapshotLimit
+argument_list|()
+block|,
+name|MSG
+operator|.
 name|columnInstructor
 argument_list|()
 block|,
@@ -2101,6 +2106,8 @@ literal|"left"
 block|,
 literal|"right"
 block|,
+literal|"right"
+block|,
 literal|"left"
 block|,
 literal|"left"
@@ -2116,6 +2123,8 @@ operator|new
 name|boolean
 index|[]
 block|{
+literal|true
+block|,
 literal|true
 block|,
 literal|true
