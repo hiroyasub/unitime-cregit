@@ -7303,6 +7303,21 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
+literal|"https://docs.google.com/document/d/1JksFtB9ecIoKpuyY0SDdl3dKnATe8UQAPKlGfBWi2JU"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manuals: instructor scheduling manual"
+argument_list|)
+name|ManualInstructorScheduling
+argument_list|(
+literal|"tmtbl.help.manual.instructorScheduling"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
 literal|"help/Release-Notes.xml"
 argument_list|)
 expr|@
