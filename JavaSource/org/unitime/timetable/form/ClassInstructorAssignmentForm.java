@@ -1502,7 +1502,8 @@ name|responsibilities
 operator|.
 name|add
 argument_list|(
-literal|""
+name|getDefaultTeachingResponsibilityId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
