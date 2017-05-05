@@ -12914,6 +12914,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|fieldDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access"
 argument_list|)
 name|String
