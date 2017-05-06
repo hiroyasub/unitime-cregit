@@ -354,6 +354,15 @@ argument_list|(
 name|printer
 argument_list|,
 name|events
+argument_list|,
+name|EventFlag
+operator|.
+name|SHOW_MEETING_CONTACTS
+operator|.
+name|in
+argument_list|(
+name|eventCookieFlags
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -470,7 +479,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_ENROLLMENT
+name|SHOW_MEETING_CONTACTS
 case|:
 name|out
 operator|.
@@ -481,7 +490,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_LIMIT
+name|SHOW_ENROLLMENT
 case|:
 name|out
 operator|.
@@ -492,7 +501,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_SPONSOR
+name|SHOW_LIMIT
 case|:
 name|out
 operator|.
@@ -503,7 +512,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_MAIN_CONTACT
+name|SHOW_SPONSOR
 case|:
 name|out
 operator|.
@@ -514,7 +523,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_APPROVAL
+name|SHOW_MAIN_CONTACT
 case|:
 name|out
 operator|.
@@ -525,13 +534,24 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_LAST_CHANGE
+name|SHOW_APPROVAL
 case|:
 name|out
 operator|.
 name|hideColumn
 argument_list|(
 literal|17
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|SHOW_LAST_CHANGE
+case|:
+name|out
+operator|.
+name|hideColumn
+argument_list|(
+literal|18
 argument_list|)
 expr_stmt|;
 break|break;
@@ -549,6 +569,9 @@ argument_list|<
 name|EventInterface
 argument_list|>
 name|events
+parameter_list|,
+name|boolean
+name|showMeetingContacts
 parameter_list|)
 throws|throws
 name|IOException
@@ -632,34 +655,40 @@ argument_list|,
 comment|/* 12 */
 name|MESSAGES
 operator|.
-name|colEnrollment
+name|colMeetingContacts
 argument_list|()
 argument_list|,
 comment|/* 13 */
 name|MESSAGES
 operator|.
-name|colLimit
+name|colEnrollment
 argument_list|()
 argument_list|,
 comment|/* 14 */
 name|MESSAGES
 operator|.
-name|colSponsorOrInstructor
+name|colLimit
 argument_list|()
 argument_list|,
 comment|/* 15 */
 name|MESSAGES
 operator|.
-name|colMainContact
+name|colSponsorOrInstructor
 argument_list|()
 argument_list|,
 comment|/* 16 */
 name|MESSAGES
 operator|.
-name|colApproval
+name|colMainContact
 argument_list|()
 argument_list|,
 comment|/* 17 */
+name|MESSAGES
+operator|.
+name|colApproval
+argument_list|()
+argument_list|,
+comment|/* 18 */
 name|MESSAGES
 operator|.
 name|colLastChange
@@ -746,6 +775,8 @@ name|getMeetings
 argument_list|()
 argument_list|,
 literal|false
+argument_list|,
+name|showMeetingContacts
 argument_list|)
 control|)
 block|{
@@ -983,6 +1014,18 @@ name|toString
 argument_list|()
 else|:
 literal|null
+argument_list|,
+name|meeting
+operator|.
+name|getMeetingContacts
+argument_list|(
+name|CONSTANTS
+operator|.
+name|meetingContactsSeparator
+argument_list|()
+argument_list|,
+name|MESSAGES
+argument_list|)
 argument_list|,
 name|event
 operator|.

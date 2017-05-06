@@ -9974,6 +9974,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|iMeetings
+operator|.
+name|setShowMeetingContacts
+argument_list|(
+name|properties
+operator|.
+name|isCanViewMeetingContacts
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|event

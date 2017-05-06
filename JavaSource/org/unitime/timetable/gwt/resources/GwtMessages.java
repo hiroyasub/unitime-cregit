@@ -1321,6 +1321,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Meeting Contact ..."
+argument_list|)
+name|String
+name|opAddMeetingContact
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove Meeting Contact ..."
+argument_list|)
+name|String
+name|opRemoveMeetingContact
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Press Ctrl + C to copy the selected URL, and Escape to hide this dialog."
 argument_list|)
 name|String
@@ -2860,6 +2878,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Meeting Contact"
+argument_list|)
+name|String
+name|colMeetingContacts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -2957,6 +2984,15 @@ literal|"Setup / Teardown Times"
 argument_list|)
 name|String
 name|dlgChangeOffsets
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove Meeting Contacts"
+argument_list|)
+name|String
+name|dlgRemoveMeetingContacts
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4004,6 +4040,15 @@ literal|"Assigned Instructor:"
 argument_list|)
 name|String
 name|propAssignedInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Meeting Contact:"
+argument_list|)
+name|String
+name|propMeetingContacts
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6795,6 +6840,15 @@ parameter_list|(
 name|String
 name|name
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected meetings have not meeting contacts."
+argument_list|)
+name|String
+name|warnSelectedMeetingsHaveNoMeetingContacts
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -11394,6 +11448,15 @@ literal|"<u>R</u>emove All"
 argument_list|)
 name|String
 name|buttonRemoveAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove<u>S</u>elected"
+argument_list|)
+name|String
+name|buttonRemoveSelected
 parameter_list|()
 function_decl|;
 annotation|@
@@ -17046,6 +17109,15 @@ literal|"<u>T</u>ake New Snapshot"
 argument_list|)
 name|String
 name|buttonTakeNewSnapshot
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"; "
+argument_list|)
+name|String
+name|meetingContactSeparator
 parameter_list|()
 function_decl|;
 block|}

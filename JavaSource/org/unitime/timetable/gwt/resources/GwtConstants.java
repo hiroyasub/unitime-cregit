@@ -1351,6 +1351,15 @@ name|String
 name|utilizationFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"; "
+argument_list|)
+name|String
+name|meetingContactsSeparator
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

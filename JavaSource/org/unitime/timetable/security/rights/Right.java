@@ -2204,6 +2204,10 @@ name|EventSetExpiration
 block|,
 name|EventCanEditAcademicTitle
 block|,
+name|EventCanViewMeetingContacts
+block|,
+name|EventCanEditMeetingContacts
+block|,
 comment|/** Administration: Academic Sessions */
 name|AcademicSessions
 block|,
