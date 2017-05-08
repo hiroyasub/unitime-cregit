@@ -630,7 +630,7 @@ operator|>
 literal|0
 condition|)
 return|return
-literal|false
+literal|true
 return|;
 if|if
 condition|(
@@ -669,10 +669,10 @@ operator|>
 literal|0
 condition|)
 return|return
-literal|false
+literal|true
 return|;
 return|return
-literal|true
+literal|false
 return|;
 block|}
 block|}
