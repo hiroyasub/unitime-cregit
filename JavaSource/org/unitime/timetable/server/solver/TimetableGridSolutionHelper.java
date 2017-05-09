@@ -1967,8 +1967,16 @@ name|addName
 argument_list|(
 name|assignment
 operator|.
-name|getClassName
+name|getClazz
 argument_list|()
+operator|.
+name|getClassLabel
+argument_list|(
+name|context
+operator|.
+name|isShowClassSuffix
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|cell
