@@ -4894,7 +4894,7 @@ name|cell
 operator|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|CSVField
 name|csvBuildNote
 parameter_list|(

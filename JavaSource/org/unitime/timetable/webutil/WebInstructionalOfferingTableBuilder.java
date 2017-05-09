@@ -8190,7 +8190,7 @@ name|cell
 operator|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|TableCell
 name|buildNote
 parameter_list|(

@@ -7655,7 +7655,7 @@ name|cell
 operator|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|PdfPCell
 name|pdfBuildNote
 parameter_list|(
