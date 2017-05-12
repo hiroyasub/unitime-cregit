@@ -9109,6 +9109,28 @@ argument_list|(
 literal|"unitime.session_backup.pointInTimeData"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"1"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructional Offerings / Classes: maximal number of selected subject areas for the search to start automatically"
+argument_list|)
+name|MaxSubjectsToSearchAutomatically
+argument_list|(
+literal|"unitime.auto_search.maxSubjects"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
