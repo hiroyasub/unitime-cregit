@@ -792,7 +792,7 @@ if|if
 condition|(
 name|result
 operator|.
-name|isAdmin
+name|isAdminOrAdvisor
 argument_list|()
 condition|)
 block|{
