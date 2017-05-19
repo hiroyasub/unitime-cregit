@@ -229,7 +229,7 @@ name|document
 operator|.
 name|addDocType
 argument_list|(
-literal|"curricula"
+literal|"permissions"
 argument_list|,
 literal|"-//UniTime//DTD University Course Timetabling/EN"
 argument_list|,
