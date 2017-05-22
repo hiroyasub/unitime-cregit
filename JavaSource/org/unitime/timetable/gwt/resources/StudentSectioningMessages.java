@@ -4997,6 +4997,18 @@ name|String
 name|reportRequestedPriority
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} (TA)"
+argument_list|)
+name|String
+name|teachingAssignment
+parameter_list|(
+name|String
+name|className
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

@@ -6883,6 +6883,10 @@ name|ca
 operator|.
 name|addOverlap
 argument_list|(
+name|MSG
+operator|.
+name|teachingAssignment
+argument_list|(
 name|unavailability
 operator|.
 name|getSection
@@ -6890,6 +6894,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue

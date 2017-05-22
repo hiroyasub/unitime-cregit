@@ -2964,6 +2964,10 @@ name|add
 argument_list|(
 name|MSG
 operator|.
+name|teachingAssignment
+argument_list|(
+name|MSG
+operator|.
 name|clazz
 argument_list|(
 name|cs
@@ -3004,6 +3008,7 @@ argument_list|()
 operator|.
 name|getCourseId
 argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
