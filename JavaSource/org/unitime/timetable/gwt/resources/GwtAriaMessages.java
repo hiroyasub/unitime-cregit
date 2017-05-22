@@ -900,6 +900,36 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"teaching assignment {0}: {1}"
+argument_list|)
+name|String
+name|teachingAssignment
+parameter_list|(
+name|String
+name|clazz
+parameter_list|,
+name|String
+name|assignment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"teaching assignment {0}: {1} that you are instructing"
+argument_list|)
+name|String
+name|instructingAssignment
+parameter_list|(
+name|String
+name|clazz
+parameter_list|,
+name|String
+name|assignment
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class {0} of {1}: {2}"
 argument_list|)
 name|String
