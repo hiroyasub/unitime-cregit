@@ -524,6 +524,10 @@ operator|.
 name|Student
 name|iStudent
 decl_stmt|;
+specifier|private
+name|boolean
+name|iShowTeachingAssignments
+decl_stmt|;
 specifier|public
 name|StudentScheduleTable
 parameter_list|(
@@ -533,6 +537,9 @@ name|showHeader
 parameter_list|,
 name|boolean
 name|online
+parameter_list|,
+name|boolean
+name|showTeachingAssignments
 parameter_list|)
 block|{
 name|iOnline
@@ -544,6 +551,10 @@ operator|=
 operator|new
 name|SimpleForm
 argument_list|()
+expr_stmt|;
+name|iShowTeachingAssignments
+operator|=
+name|showTeachingAssignments
 expr_stmt|;
 name|iHeader
 operator|=
@@ -1671,6 +1682,13 @@ operator|.
 name|isTeachingAssignment
 argument_list|()
 condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|iShowTeachingAssignments
+condition|)
+continue|continue;
 name|style
 operator|+=
 operator|(
@@ -1684,6 +1702,7 @@ else|:
 literal|" text-steelblue-italic"
 operator|)
 expr_stmt|;
+block|}
 specifier|final
 name|WebTable
 operator|.
@@ -1959,6 +1978,20 @@ operator|.
 name|add
 argument_list|(
 name|row
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|clazz
+operator|.
+name|isTeachingAssignment
+argument_list|()
+condition|)
+name|row
+operator|.
+name|setStyleName
+argument_list|(
+literal|"teaching-assignment"
 argument_list|)
 expr_stmt|;
 for|for
