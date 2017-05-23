@@ -5806,7 +5806,7 @@ operator|.
 name|getAction
 argument_list|()
 operator|.
-name|setApiGetTime
+name|setApiPostTime
 argument_list|(
 name|System
 operator|.
@@ -8442,7 +8442,7 @@ operator|.
 name|getAction
 argument_list|()
 operator|.
-name|setApiGetTime
+name|setApiPostTime
 argument_list|(
 name|System
 operator|.
