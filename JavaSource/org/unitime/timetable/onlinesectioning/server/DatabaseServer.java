@@ -1745,6 +1745,8 @@ name|createQuery
 argument_list|(
 literal|"select distinct ci.classInstructing.schedulingSubpart.instrOfferingConfig.instructionalOffering.uniqueId "
 operator|+
+literal|"from ClassInstructor ci "
+operator|+
 literal|"where ci.instructor.externalUniqueId = :instructorExternalId and ci.instructor.department.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
