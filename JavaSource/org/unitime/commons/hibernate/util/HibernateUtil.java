@@ -3420,15 +3420,19 @@ name|isOracle
 argument_list|()
 condition|)
 return|return
-literal|"to_char("
+literal|"(trunc("
 operator|+
 name|field
 operator|+
-literal|",'D')"
+literal|") - trunc("
+operator|+
+name|field
+operator|+
+literal|", 'IW'))"
 return|;
 else|else
 return|return
-literal|"dayofweek("
+literal|"weekday("
 operator|+
 name|field
 operator|+
