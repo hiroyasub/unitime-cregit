@@ -1127,6 +1127,15 @@ name|note
 init|=
 literal|null
 decl_stmt|;
+if|if
+condition|(
+name|student
+operator|.
+name|getNotes
+argument_list|()
+operator|!=
+literal|null
+condition|)
 for|for
 control|(
 name|StudentNote
