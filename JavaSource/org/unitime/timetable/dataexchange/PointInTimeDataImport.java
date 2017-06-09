@@ -10589,7 +10589,7 @@ name|sShareAttribute
 argument_list|,
 name|PointInTimeDataExport
 operator|.
-name|sClassInstructorElementName
+name|sOfferingCoordinatorElementName
 argument_list|)
 argument_list|)
 expr_stmt|;
