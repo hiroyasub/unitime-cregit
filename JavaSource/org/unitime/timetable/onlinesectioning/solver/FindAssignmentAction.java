@@ -8485,6 +8485,13 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+name|unavailability
+operator|.
+name|getTime
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|section
 operator|.
 name|getTime
