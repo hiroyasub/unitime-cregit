@@ -363,6 +363,13 @@ literal|"preferences"
 argument_list|,
 literal|"Course Timetabling Preferences"
 argument_list|)
+block|,
+name|SESSION_SETUP
+argument_list|(
+literal|"sessionSetup"
+argument_list|,
+literal|"Academic Session Setup"
+argument_list|)
 block|,     	;
 specifier|private
 name|String

@@ -67,6 +67,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|cpsolver
@@ -601,16 +611,14 @@ operator|.
 name|initSolver
 argument_list|()
 expr_stmt|;
-name|sLogger
-operator|.
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|info
-argument_list|(
-literal|"Starting from: "
-operator|+
-name|ToolBox
-operator|.
-name|dict2string
-argument_list|(
+init|=
 name|model
 operator|.
 name|getExtendedInfo
@@ -623,6 +631,18 @@ operator|.
 name|getAssignment
 argument_list|()
 argument_list|)
+decl_stmt|;
+name|sLogger
+operator|.
+name|info
+argument_list|(
+literal|"Starting from: "
+operator|+
+name|ToolBox
+operator|.
+name|dict2string
+argument_list|(
+name|info
 argument_list|,
 literal|2
 argument_list|)
