@@ -4755,6 +4755,10 @@ name|cd
 operator|=
 name|adept
 expr_stmt|;
+name|cr
+operator|=
+name|r
+expr_stmt|;
 name|i
 operator|.
 name|remove
@@ -4860,6 +4864,13 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|cr
+operator|==
+literal|null
+condition|)
+block|{
 name|cr
 operator|=
 operator|new
@@ -4956,6 +4967,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|course2request
 operator|.
 name|put
