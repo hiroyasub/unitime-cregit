@@ -10164,6 +10164,12 @@ literal|0
 operator|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|incremental
+condition|)
+block|{
 name|oco
 operator|.
 name|setScheduleBookNote
@@ -10195,6 +10201,7 @@ name|changed
 operator|=
 literal|true
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -10520,6 +10527,12 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|incremental
+condition|)
+block|{
 name|oco
 operator|.
 name|setConsentType
@@ -10551,6 +10564,7 @@ name|changed
 operator|=
 literal|true
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -10692,6 +10706,12 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|incremental
+condition|)
+block|{
 name|CourseCreditUnitConfig
 name|old
 init|=
@@ -10726,6 +10746,7 @@ name|changed
 operator|=
 literal|true
 expr_stmt|;
+block|}
 block|}
 if|else  if
 condition|(
@@ -10939,6 +10960,12 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|incremental
+condition|)
+block|{
 name|oco
 operator|.
 name|setReservation
@@ -10970,6 +10997,7 @@ name|changed
 operator|=
 literal|true
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
@@ -12177,6 +12205,56 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+if|else if
+condition|(
+name|incremental
+condition|)
+block|{
+comment|// No config elements& incremental mode -> make no changes
+for|for
+control|(
+name|InstrOfferingConfig
+name|ioc
+range|:
+name|io
+operator|.
+name|getInstrOfferingConfigs
+argument_list|()
+control|)
+for|for
+control|(
+name|SchedulingSubpart
+name|subpart
+range|:
+name|ioc
+operator|.
+name|getSchedulingSubparts
+argument_list|()
+control|)
+for|for
+control|(
+name|Class_
+name|clazz
+range|:
+name|subpart
+operator|.
+name|getClasses
+argument_list|()
+control|)
+name|existingClasses
+operator|.
+name|remove
+argument_list|(
+name|clazz
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|changed
+return|;
 block|}
 if|if
 condition|(
@@ -15057,6 +15135,50 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+if|else if
+condition|(
+name|incremental
+operator|&&
+name|parentClass
+operator|==
+literal|null
+condition|)
+block|{
+comment|// No class elements& incremental mode -> make no changes
+for|for
+control|(
+name|SchedulingSubpart
+name|subpart
+range|:
+name|ioc
+operator|.
+name|getSchedulingSubparts
+argument_list|()
+control|)
+for|for
+control|(
+name|Class_
+name|clazz
+range|:
+name|subpart
+operator|.
+name|getClasses
+argument_list|()
+control|)
+name|existingClasses
+operator|.
+name|remove
+argument_list|(
+name|clazz
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|changed
+return|;
 block|}
 if|if
 condition|(
@@ -18543,6 +18665,20 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+if|else if
+condition|(
+name|incremental
+operator|&&
+name|parentSubpart
+operator|==
+literal|null
+condition|)
+block|{
+comment|// No subpart elements& incremental mode -> make no changes
+return|return
+name|changed
+return|;
 block|}
 if|if
 condition|(
@@ -23392,6 +23528,16 @@ block|}
 block|}
 block|}
 block|}
+block|}
+if|else if
+condition|(
+name|incremental
+condition|)
+block|{
+comment|// No exam elements& incremental mode -> make no changes
+return|return
+name|changed
+return|;
 block|}
 if|if
 condition|(
