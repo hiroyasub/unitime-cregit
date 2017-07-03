@@ -2198,6 +2198,28 @@ literal|"tmtbl.export.classMeetings"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Data Exchange: export student group assignments in course offering export"
+argument_list|)
+name|DataExchangeIncludeStudentGroups
+argument_list|(
+literal|"tmtbl.export.studentGroups"
+argument_list|)
+operator|,
+expr_stmt|@
 name|Description
 argument_list|(
 literal|"Data Exchange: default import timetabling manager (e.g., if executed from command line)"

@@ -285,6 +285,15 @@ block|{
 name|beginTransaction
 argument_list|()
 expr_stmt|;
+name|iExportGroupInfos
+operator|=
+name|ApplicationProperty
+operator|.
+name|DataExchangeIncludeStudentGroups
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
 name|document
 operator|.
 name|addDocType
