@@ -520,9 +520,9 @@ name|FieldType
 operator|.
 name|text
 argument_list|,
-literal|80
+literal|200
 argument_list|,
-literal|10
+literal|30
 argument_list|,
 name|Flag
 operator|.
@@ -541,9 +541,9 @@ name|FieldType
 operator|.
 name|text
 argument_list|,
-literal|300
+literal|500
 argument_list|,
-literal|50
+literal|90
 argument_list|,
 name|Flag
 operator|.
