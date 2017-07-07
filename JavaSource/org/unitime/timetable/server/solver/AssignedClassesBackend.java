@@ -2624,6 +2624,13 @@ name|SolverShowClassSufix
 operator|.
 name|isTrue
 argument_list|()
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
+operator|.
+name|isTrue
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -2719,6 +2726,9 @@ name|table
 parameter_list|,
 name|boolean
 name|showClassSuffix
+parameter_list|,
+name|boolean
+name|showConfigNames
 parameter_list|)
 block|{
 name|Map
@@ -2900,6 +2910,8 @@ argument_list|(
 name|course
 argument_list|,
 name|showClassSuffix
+argument_list|,
+name|showConfigNames
 argument_list|)
 argument_list|)
 expr_stmt|;

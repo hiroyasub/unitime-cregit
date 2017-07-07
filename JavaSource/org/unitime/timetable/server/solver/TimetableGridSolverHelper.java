@@ -6300,6 +6300,11 @@ name|context
 operator|.
 name|isShowClassSuffix
 argument_list|()
+argument_list|,
+name|context
+operator|.
+name|isShowConfigName
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

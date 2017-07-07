@@ -820,6 +820,10 @@ name|boolean
 name|iShowClassSuffix
 init|=
 literal|false
+decl_stmt|,
+name|iShowConfigName
+init|=
+literal|false
 decl_stmt|;
 specifier|public
 name|InstructorSchedulingDatabaseLoader
@@ -950,6 +954,15 @@ operator|=
 name|ApplicationProperty
 operator|.
 name|SolverShowClassSufix
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
+name|iShowConfigName
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
 operator|.
 name|isTrue
 argument_list|()
@@ -3676,6 +3689,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|"</A>"

@@ -723,6 +723,8 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|iShowClassSuffix
+decl_stmt|,
+name|iShowConfigName
 decl_stmt|;
 specifier|public
 name|CourseTimetableImport
@@ -912,6 +914,15 @@ operator|=
 name|ApplicationProperty
 operator|.
 name|SolverShowClassSufix
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
+name|iShowConfigName
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
 operator|.
 name|isTrue
 argument_list|()
@@ -3608,6 +3619,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 argument_list|)
 expr_stmt|;

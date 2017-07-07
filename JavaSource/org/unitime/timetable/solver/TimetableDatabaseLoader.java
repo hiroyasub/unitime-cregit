@@ -2142,6 +2142,10 @@ name|boolean
 name|iShowClassSuffix
 init|=
 literal|false
+decl_stmt|,
+name|iShowConfigName
+init|=
+literal|false
 decl_stmt|;
 specifier|public
 specifier|static
@@ -3168,6 +3172,15 @@ operator|.
 name|isTrue
 argument_list|()
 expr_stmt|;
+name|iShowConfigName
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|int
@@ -3312,6 +3325,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|"</A>"
@@ -9389,6 +9404,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 decl_stmt|;
 name|Lecture
@@ -18318,7 +18335,7 @@ name|isCommitted
 argument_list|()
 condition|)
 block|{
-comment|//iProgress.debug("[A] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+clazz.getClassLabel(iShowClassSuffix));
+comment|//iProgress.debug("[A] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+clazz.getClassLabel(iShowClassSuffix, iShowConfigName));
 for|for
 control|(
 name|Iterator
@@ -18507,7 +18524,7 @@ name|isCommitted
 argument_list|()
 condition|)
 block|{
-comment|//iProgress.debug("[B] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+parent.getClassLabel(iShowClassSuffix));
+comment|//iProgress.debug("[B] Students "+students+" cannot enroll "+lecture.getName()+" due to the enrollment of "+parent.getClassLabel(iShowClassSuffix, iShowConfigName));
 for|for
 control|(
 name|Iterator
@@ -22481,6 +22498,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 argument_list|)
 expr_stmt|;

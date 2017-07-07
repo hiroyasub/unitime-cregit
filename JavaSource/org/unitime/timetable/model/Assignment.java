@@ -2131,6 +2131,13 @@ name|SolverShowClassSufix
 operator|.
 name|isTrue
 argument_list|()
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
+operator|.
+name|isTrue
+argument_list|()
 argument_list|)
 return|;
 block|}

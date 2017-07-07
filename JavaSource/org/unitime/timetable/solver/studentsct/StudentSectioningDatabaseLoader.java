@@ -1767,6 +1767,10 @@ name|boolean
 name|iShowClassSuffix
 init|=
 literal|false
+decl_stmt|,
+name|iShowConfigName
+init|=
+literal|false
 decl_stmt|;
 specifier|public
 name|StudentSectioningDatabaseLoader
@@ -2360,6 +2364,15 @@ operator|.
 name|isTrue
 argument_list|()
 expr_stmt|;
+name|iShowConfigName
+operator|=
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
+operator|.
+name|isTrue
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -2903,6 +2916,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|": no date pattern set"
@@ -3217,6 +3232,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|": no time preference set"
@@ -3234,6 +3251,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|": no required time set"
@@ -3319,6 +3338,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|": preference for "
@@ -3502,6 +3523,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 argument_list|,
 name|times
@@ -3583,6 +3606,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|": "
@@ -4380,6 +4405,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|" has parent "
@@ -4389,6 +4416,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|", but the appropriate parent section is not loaded."
@@ -7674,6 +7703,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|" not known."
@@ -8086,6 +8117,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|" not known."
@@ -9028,6 +9061,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|iShowClassSuffix
+argument_list|,
+name|iShowConfigName
 argument_list|)
 operator|+
 literal|" not known."

@@ -9368,6 +9368,16 @@ operator|.
 name|isTrue
 argument_list|()
 decl_stmt|;
+name|boolean
+name|includeConfig
+init|=
+name|ApplicationProperty
+operator|.
+name|SolverShowConfiguratioName
+operator|.
+name|isTrue
+argument_list|()
+decl_stmt|;
 name|List
 argument_list|<
 name|Date
@@ -9892,6 +9902,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|includeSuffix
+argument_list|,
+name|includeConfig
 argument_list|)
 operator|+
 literal|"."
@@ -9958,6 +9970,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|includeSuffix
+argument_list|,
+name|includeConfig
 argument_list|)
 expr_stmt|;
 break|break;
@@ -10048,6 +10062,8 @@ operator|.
 name|getClassLabel
 argument_list|(
 name|includeSuffix
+argument_list|,
+name|includeConfig
 argument_list|)
 operator|+
 literal|"."
