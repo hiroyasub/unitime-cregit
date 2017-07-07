@@ -5603,7 +5603,7 @@ operator|.
 name|getControllingCourseOffering
 argument_list|()
 argument_list|,
-literal|false
+name|includeSuffix
 argument_list|,
 literal|false
 argument_list|)
