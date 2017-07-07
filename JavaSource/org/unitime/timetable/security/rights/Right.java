@@ -1921,6 +1921,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSectioningSolverSave
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|StudentSectioningSolverLog
 argument_list|(
 name|Session

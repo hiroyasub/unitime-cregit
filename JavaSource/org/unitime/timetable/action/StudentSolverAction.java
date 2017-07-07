@@ -800,6 +800,15 @@ argument_list|(
 literal|"Solver is working, stop it first."
 argument_list|)
 throw|;
+name|sessionContext
+operator|.
+name|checkPermission
+argument_list|(
+name|Right
+operator|.
+name|StudentSectioningSolverSave
+argument_list|)
+expr_stmt|;
 name|SolverParameterDef
 name|statusToSet
 init|=
