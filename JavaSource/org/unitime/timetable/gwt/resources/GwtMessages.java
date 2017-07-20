@@ -16062,7 +16062,7 @@ parameter_list|,
 name|Long
 name|eventId
 parameter_list|,
-name|Long
+name|String
 name|sessionId
 parameter_list|)
 function_decl|;
