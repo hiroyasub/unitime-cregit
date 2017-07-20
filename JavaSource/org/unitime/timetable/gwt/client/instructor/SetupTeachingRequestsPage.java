@@ -1595,6 +1595,19 @@ operator|.
 name|getAbbv
 argument_list|()
 operator|+
+operator|(
+name|result
+operator|.
+name|getOffering
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 literal|" - "
 operator|+
 name|result
@@ -1604,6 +1617,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -7438,15 +7452,14 @@ name|setVisible
 argument_list|(
 name|iSubpartsLine
 argument_list|,
+operator|!
 name|config
 operator|.
 name|getSubparts
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|>
-literal|1
 argument_list|)
 expr_stmt|;
 name|getRowFormatter
