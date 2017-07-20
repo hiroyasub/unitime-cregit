@@ -7689,6 +7689,7 @@ argument_list|()
 operator|==
 literal|null
 operator|&&
+operator|(
 name|data
 operator|.
 name|getMeeting
@@ -7696,6 +7697,15 @@ argument_list|()
 operator|.
 name|isCanApprove
 argument_list|()
+operator|||
+name|data
+operator|.
+name|getMeeting
+argument_list|()
+operator|.
+name|isAutomaticallyApproved
+argument_list|()
+operator|)
 operator|&&
 name|data
 operator|.
@@ -7759,6 +7769,14 @@ name|getInstance
 argument_list|()
 operator|.
 name|isAutomaticallyApproveNewMeetings
+argument_list|()
+operator|||
+name|data
+operator|.
+name|getMeeting
+argument_list|()
+operator|.
+name|isAutomaticallyApproved
 argument_list|()
 condition|)
 block|{
@@ -12403,6 +12421,12 @@ literal|"</span>"
 else|:
 name|meeting
 operator|.
+name|isAutomaticallyApproved
+argument_list|()
+operator|||
+operator|(
+name|meeting
+operator|.
 name|isCanApprove
 argument_list|()
 operator|&&
@@ -12413,6 +12437,7 @@ argument_list|()
 operator|.
 name|isAutomaticallyApproveNewMeetings
 argument_list|()
+operator|)
 condition|?
 literal|"<span class='new-approved-meeting'>"
 operator|+
@@ -18318,6 +18343,12 @@ condition|)
 block|{
 if|if
 condition|(
+name|iMeeting
+operator|.
+name|isAutomaticallyApproved
+argument_list|()
+operator|||
+operator|(
 name|EventCookie
 operator|.
 name|getInstance
@@ -18330,6 +18361,7 @@ name|iMeeting
 operator|.
 name|isCanApprove
 argument_list|()
+operator|)
 condition|)
 name|iMeeting
 operator|.

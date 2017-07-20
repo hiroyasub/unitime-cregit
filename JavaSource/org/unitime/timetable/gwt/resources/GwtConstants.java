@@ -813,6 +813,12 @@ literal|"Departmental Users Can Request Events No Approval"
 block|,
 literal|"Event Managers Can Request Events No Approval"
 block|,
+literal|"Authenticated Users Can Request Events Automatically Approved"
+block|,
+literal|"Departmental Users Can Request Events Automatically Approved"
+block|,
+literal|"Event Managers Can Request Events Automatically Approved"
+block|,
 block|}
 argument_list|)
 name|String
