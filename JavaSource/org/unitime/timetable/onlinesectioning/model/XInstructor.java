@@ -302,7 +302,11 @@ argument_list|()
 expr_stmt|;
 name|iAllowOverlap
 operator|=
-literal|false
+operator|!
+name|instructor
+operator|.
+name|isLead
+argument_list|()
 expr_stmt|;
 name|iInstructing
 operator|=
