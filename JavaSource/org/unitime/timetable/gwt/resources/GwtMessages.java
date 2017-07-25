@@ -2887,6 +2887,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Requested Services"
+argument_list|)
+name|String
+name|colRequestedServices
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -4049,6 +4058,15 @@ literal|"Meeting Contact:"
 argument_list|)
 name|String
 name|propMeetingContacts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested Services:"
+argument_list|)
+name|String
+name|propEventRequestedServices
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10114,6 +10132,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Event Service Provider"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageServiceProvider
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Event Service Providers"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageServiceProviders
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -12981,6 +13021,15 @@ literal|"Default"
 argument_list|)
 name|String
 name|fieldDefault
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Email"
+argument_list|)
+name|String
+name|fieldEmailAddress
 parameter_list|()
 function_decl|;
 annotation|@
@@ -16025,6 +16074,15 @@ literal|"instructor"
 argument_list|)
 name|String
 name|tagInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"service"
+argument_list|)
+name|String
+name|tagService
 parameter_list|()
 function_decl|;
 annotation|@

@@ -2710,6 +2710,10 @@ name|TeachingResponsibilities
 block|,
 name|TeachingResponsibilityEdit
 block|,
+name|EventServiceProviders
+block|,
+name|EventServiceProviderEdit
+block|,
 comment|/** Point In Time Data */
 name|PointInTimeData
 block|,

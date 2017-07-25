@@ -544,7 +544,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHOW_MAIN_CONTACT
+name|SHOW_REQUESTED_SERVICES
 case|:
 name|out
 operator|.
@@ -553,11 +553,22 @@ argument_list|(
 literal|21
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|SHOW_MAIN_CONTACT
+case|:
 name|out
 operator|.
 name|hideColumn
 argument_list|(
 literal|22
+argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|hideColumn
+argument_list|(
+literal|23
 argument_list|)
 expr_stmt|;
 break|break;
@@ -568,7 +579,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|23
+literal|24
 argument_list|)
 expr_stmt|;
 break|break;
@@ -579,7 +590,7 @@ name|out
 operator|.
 name|hideColumn
 argument_list|(
-literal|24
+literal|25
 argument_list|)
 expr_stmt|;
 break|break;
@@ -737,22 +748,28 @@ argument_list|,
 comment|/* 21 */
 name|MESSAGES
 operator|.
-name|colMainContact
+name|colRequestedServices
 argument_list|()
 argument_list|,
 comment|/* 22 */
 name|MESSAGES
 operator|.
-name|colEmail
+name|colMainContact
 argument_list|()
 argument_list|,
 comment|/* 23 */
 name|MESSAGES
 operator|.
-name|colApproval
+name|colEmail
 argument_list|()
 argument_list|,
 comment|/* 24 */
+name|MESSAGES
+operator|.
+name|colApproval
+argument_list|()
+argument_list|,
+comment|/* 25 */
 name|MESSAGES
 operator|.
 name|colLastChange
@@ -1171,6 +1188,20 @@ argument_list|()
 operator|.
 name|getEmail
 argument_list|()
+else|:
+literal|null
+argument_list|,
+name|event
+operator|.
+name|hasRequestedServices
+argument_list|()
+condition|?
+name|event
+operator|.
+name|getRequestedServices
+argument_list|(
+literal|"\n"
+argument_list|)
 else|:
 literal|null
 argument_list|,
