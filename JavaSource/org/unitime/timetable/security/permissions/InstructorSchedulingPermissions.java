@@ -203,12 +203,6 @@ name|DepartmentStatusType
 operator|.
 name|Status
 operator|.
-name|InstructorScheduling
-argument_list|,
-name|DepartmentStatusType
-operator|.
-name|Status
-operator|.
 name|OwnerLimitedEdit
 argument_list|)
 condition|)
