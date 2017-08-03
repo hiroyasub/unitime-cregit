@@ -710,7 +710,10 @@ name|editGlobal
 condition|?
 literal|"_global"
 else|:
-literal|"Global"
+name|MESSAGES
+operator|.
+name|levelGlobal
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)

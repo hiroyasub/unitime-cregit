@@ -2054,16 +2054,6 @@ name|getEmail
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|provider
-operator|.
-name|setOptions
-argument_list|(
-name|p
-operator|.
-name|getOptions
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|response
 operator|.
 name|removeService

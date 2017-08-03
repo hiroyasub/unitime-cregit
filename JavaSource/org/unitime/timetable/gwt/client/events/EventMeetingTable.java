@@ -12255,7 +12255,7 @@ name|hasFlag
 argument_list|(
 name|ModeFlag
 operator|.
-name|ShowOptionalColumns
+name|ShowEventDetails
 argument_list|)
 condition|)
 block|{

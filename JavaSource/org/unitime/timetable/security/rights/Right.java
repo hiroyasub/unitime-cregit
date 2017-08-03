@@ -2712,7 +2712,21 @@ name|TeachingResponsibilityEdit
 block|,
 name|EventServiceProviders
 block|,
-name|EventServiceProviderEdit
+name|EventServiceProviderEditGlobal
+block|,
+name|EventServiceProviderEditSession
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|EventServiceProviderEditDepartment
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
 block|,
 comment|/** Point In Time Data */
 name|PointInTimeData

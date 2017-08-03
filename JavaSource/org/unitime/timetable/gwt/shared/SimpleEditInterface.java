@@ -163,6 +163,8 @@ block|,
 name|NEGATIVE
 block|,
 name|SHOW_PARENT_IF_EMPTY
+block|,
+name|DEFAULT_CHECKED
 block|, 		;
 specifier|public
 name|int
@@ -2605,6 +2607,22 @@ return|return
 name|Flag
 operator|.
 name|SHOW_PARENT_IF_EMPTY
+operator|.
+name|has
+argument_list|(
+name|iFlags
+argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|isCheckedByDefault
+parameter_list|()
+block|{
+return|return
+name|Flag
+operator|.
+name|DEFAULT_CHECKED
 operator|.
 name|has
 argument_list|(

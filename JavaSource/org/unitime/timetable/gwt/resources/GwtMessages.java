@@ -2896,6 +2896,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Available<br>Services"
+argument_list|)
+name|String
+name|colAvailableServices
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"pending"
 argument_list|)
 name|String
@@ -12375,6 +12384,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Available Services:"
+argument_list|)
+name|String
+name|propAvailableServices
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} ({1})"
 argument_list|)
 name|String
@@ -13030,6 +13048,15 @@ literal|"Email"
 argument_list|)
 name|String
 name|fieldEmailAddress
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All Rooms"
+argument_list|)
+name|String
+name|fieldAllRooms
 parameter_list|()
 function_decl|;
 annotation|@
@@ -17176,6 +17203,15 @@ literal|"; "
 argument_list|)
 name|String
 name|meetingContactSeparator
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Departmental"
+argument_list|)
+name|String
+name|serviceProviderDepartmental
 parameter_list|()
 function_decl|;
 block|}

@@ -844,6 +844,12 @@ literal|"Only Department<br>No Approval"
 block|,
 literal|"Only Managers<br>No Approval"
 block|,
+literal|"Enabled<br>Auto-Approved"
+block|,
+literal|"Only Department<br>Auto-Approved"
+block|,
+literal|"Only Managers<br>Auto-Approved"
+block|,
 block|}
 argument_list|)
 name|String

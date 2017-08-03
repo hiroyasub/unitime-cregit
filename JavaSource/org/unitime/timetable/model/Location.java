@@ -8084,6 +8084,27 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+specifier|public
+specifier|abstract
+name|Set
+argument_list|<
+name|EventServiceProvider
+argument_list|>
+name|getAllowedServices
+parameter_list|()
+function_decl|;
+specifier|public
+specifier|abstract
+name|void
+name|setAllowedServices
+parameter_list|(
+name|Set
+argument_list|<
+name|EventServiceProvider
+argument_list|>
+name|services
+parameter_list|)
+function_decl|;
 block|}
 end_class
 
