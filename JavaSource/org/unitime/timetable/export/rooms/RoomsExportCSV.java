@@ -921,6 +921,7 @@ case|case
 name|EVENT_STATUS
 case|:
 return|return
+operator|(
 name|room
 operator|.
 name|getEventStatus
@@ -958,6 +959,14 @@ argument_list|()
 index|]
 else|:
 literal|""
+operator|)
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 return|;
 case|case
 name|EVENT_AVAILABILITY

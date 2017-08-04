@@ -1880,6 +1880,10 @@ operator|.
 name|getEventStatus
 argument_list|()
 index|]
+argument_list|,
+name|F
+operator|.
+name|FIX_BR
 argument_list|)
 else|:
 name|room
@@ -1902,6 +1906,10 @@ operator|.
 name|getDefaultEventStatus
 argument_list|()
 index|]
+argument_list|,
+name|F
+operator|.
+name|FIX_BR
 argument_list|)
 operator|.
 name|italic
