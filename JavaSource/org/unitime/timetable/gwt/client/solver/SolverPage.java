@@ -5065,6 +5065,13 @@ name|equalsIgnoreCase
 argument_list|(
 name|value
 argument_list|)
+operator|||
+literal|"on"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
