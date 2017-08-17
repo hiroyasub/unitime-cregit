@@ -649,6 +649,20 @@ name|Constants
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|webutil
+operator|.
+name|BackTracker
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -2603,6 +2617,24 @@ operator|.
 name|COURSE
 argument_list|,
 name|response
+argument_list|)
+expr_stmt|;
+name|BackTracker
+operator|.
+name|markForBack
+argument_list|(
+name|context
+argument_list|,
+literal|"gwt.jsp?page=assignedClasses"
+argument_list|,
+name|MESSAGES
+operator|.
+name|pageAssignedClasses
+argument_list|()
+argument_list|,
+literal|true
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 if|if
