@@ -218,6 +218,13 @@ name|UseSystemDefault
 argument_list|,
 literal|"Highlight preferences that are set directly on classes"
 argument_list|)
+block|,
+name|PrimaryCampus
+argument_list|(
+literal|"primaryAcademicInitiative"
+argument_list|,
+literal|"Primary academic initiative"
+argument_list|)
 block|, 	;
 name|String
 name|iKey
