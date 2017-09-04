@@ -820,7 +820,7 @@ control|(
 name|int
 name|i
 init|=
-name|idx
+literal|0
 init|;
 name|i
 operator|+
@@ -985,7 +985,7 @@ control|(
 name|int
 name|i
 init|=
-name|idx
+literal|0
 init|;
 name|i
 operator|+
@@ -2048,7 +2048,7 @@ control|(
 name|int
 name|i
 init|=
-name|idx
+literal|0
 init|;
 name|i
 operator|+
