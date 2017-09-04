@@ -1390,6 +1390,13 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+name|usages
+operator|.
+name|remove
+argument_list|(
+name|bestAddress
+argument_list|)
+expr_stmt|;
 name|Boolean
 name|created
 init|=
