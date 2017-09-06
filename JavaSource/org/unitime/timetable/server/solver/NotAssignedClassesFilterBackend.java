@@ -227,6 +227,20 @@ name|Right
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|Constants
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -335,6 +349,20 @@ argument_list|(
 name|MESSAGES
 operator|.
 name|propSubjectArea
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|subjectArea
+operator|.
+name|addOption
+argument_list|(
+name|Constants
+operator|.
+name|ALL_OPTION_VALUE
+argument_list|,
+name|MESSAGES
+operator|.
+name|itemAllSubjectAreas
 argument_list|()
 argument_list|)
 expr_stmt|;

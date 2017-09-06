@@ -10132,7 +10132,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"All Subject Areas"
+literal|"All Subjects"
 argument_list|)
 name|String
 name|itemAllSubjectAreas
