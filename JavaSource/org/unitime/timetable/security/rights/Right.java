@@ -2280,6 +2280,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|DepartmentLimitedEdit
+argument_list|(
+name|Department
+operator|.
+name|class
+argument_list|)
+block|,
 name|DepartmentDelete
 argument_list|(
 name|Department
