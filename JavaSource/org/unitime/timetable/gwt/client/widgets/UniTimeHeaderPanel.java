@@ -1169,6 +1169,15 @@ argument_list|()
 return|;
 block|}
 specifier|public
+name|P
+name|getHeaderTitlePanel
+parameter_list|()
+block|{
+return|return
+name|iTitle
+return|;
+block|}
+specifier|public
 name|UniTimeHeaderPanel
 parameter_list|()
 block|{

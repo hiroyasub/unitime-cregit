@@ -81,6 +81,8 @@ name|PreferenceLegend
 parameter_list|(
 name|List
 argument_list|<
+name|?
+extends|extends
 name|PreferenceInterface
 argument_list|>
 name|preferences

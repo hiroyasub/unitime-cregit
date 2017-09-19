@@ -2062,7 +2062,7 @@ operator|.
 name|getClassId
 argument_list|()
 else|:
-literal|"suggestions.do?id="
+literal|"gwt.jsp?page=suggestions&menu=hide&id="
 operator|+
 name|ca
 operator|.
@@ -2071,8 +2071,6 @@ argument_list|()
 operator|.
 name|getClassId
 argument_list|()
-operator|+
-literal|"&op=Reset"
 operator|)
 argument_list|,
 operator|(
@@ -2238,7 +2236,7 @@ operator|.
 name|getClassId
 argument_list|()
 else|:
-literal|"suggestions.do?id="
+literal|"gwt.jsp?page=suggestions&menu=hide&id="
 operator|+
 name|ca
 operator|.
@@ -2247,8 +2245,6 @@ argument_list|()
 operator|.
 name|getClassId
 argument_list|()
-operator|+
-literal|"&op=Reset"
 operator|)
 argument_list|,
 operator|(

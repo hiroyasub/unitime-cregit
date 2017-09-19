@@ -1090,14 +1090,12 @@ operator|.
 name|getId
 argument_list|()
 else|:
-literal|"suggestions.do?id="
+literal|"gwt.jsp?page=suggestions&menu=hide&id="
 operator|+
 name|ucr
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|"&op=Reset"
 operator|)
 argument_list|,
 operator|(

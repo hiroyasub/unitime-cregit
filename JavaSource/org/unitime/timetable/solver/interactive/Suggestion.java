@@ -3463,7 +3463,12 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|Hashtable
+name|Map
+argument_list|<
+name|Long
+argument_list|,
+name|String
+argument_list|>
 name|conflictInfo
 parameter_list|(
 name|SolverProxy

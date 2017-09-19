@@ -7586,15 +7586,13 @@ operator|.
 name|dialogSuggestions
 argument_list|()
 argument_list|,
-literal|"suggestions.do?id="
+literal|"gwt.jsp?page=suggestions&menu=hide&id="
 operator|+
 name|getCell
 argument_list|()
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|"&op=Reset"
 argument_list|,
 literal|"900"
 argument_list|,
