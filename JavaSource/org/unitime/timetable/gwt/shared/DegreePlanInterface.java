@@ -1354,9 +1354,9 @@ literal|""
 else|:
 name|iChoice
 condition|?
-literal|" and "
-else|:
 literal|" or "
+else|:
+literal|" and "
 operator|)
 operator|+
 name|course
@@ -1386,9 +1386,9 @@ literal|""
 else|:
 name|iChoice
 condition|?
-literal|" and "
-else|:
 literal|" or "
+else|:
+literal|" and "
 operator|)
 operator|+
 literal|"("
@@ -1422,9 +1422,9 @@ literal|""
 else|:
 name|iChoice
 condition|?
-literal|" and "
-else|:
 literal|" or "
+else|:
+literal|" and "
 operator|)
 operator|+
 name|ph
