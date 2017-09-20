@@ -2139,6 +2139,15 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Press Enter to accept, Escape to reject."
+argument_list|)
+name|String
+name|confirmationEnterToAcceptEscapeToReject
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
