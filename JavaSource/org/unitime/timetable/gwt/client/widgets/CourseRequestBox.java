@@ -1934,6 +1934,9 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|hideSuggestionList
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 argument_list|)
