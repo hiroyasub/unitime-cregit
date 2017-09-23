@@ -1044,7 +1044,9 @@ literal|"left join fetch co.creditConfigs cc "
 operator|+
 literal|"left join fetch ss.creditConfigs sc "
 operator|+
-literal|"where io.session.uniqueId = :sessionId and io.notOffered = false and co.subjectArea.department.allowStudentScheduling = true"
+literal|"inner join io.courseOfferings cox "
+operator|+
+literal|"where io.session.uniqueId = :sessionId and io.notOffered = false and cox.subjectArea.department.allowStudentScheduling = true"
 argument_list|)
 operator|.
 name|setLong
