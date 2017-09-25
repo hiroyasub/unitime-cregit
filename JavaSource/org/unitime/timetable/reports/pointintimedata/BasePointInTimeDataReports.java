@@ -3901,43 +3901,6 @@ argument_list|()
 operator|)
 return|;
 block|}
-specifier|protected
-name|List
-argument_list|<
-name|PitClass
-argument_list|>
-name|findAllPitClassesWithContactHoursForDepartment
-parameter_list|(
-name|PointInTimeData
-name|pointInTimeData
-parameter_list|,
-name|Department
-name|department
-parameter_list|,
-name|org
-operator|.
-name|hibernate
-operator|.
-name|Session
-name|hibSession
-parameter_list|)
-block|{
-return|return
-operator|(
-name|findAllPitClassesWithContactHoursForDepartment
-argument_list|(
-name|pointInTimeData
-argument_list|,
-name|department
-operator|.
-name|getUniqueId
-argument_list|()
-argument_list|,
-name|hibSession
-argument_list|)
-operator|)
-return|;
-block|}
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -3946,9 +3909,9 @@ argument_list|)
 specifier|protected
 name|List
 argument_list|<
-name|PitClass
+name|Long
 argument_list|>
-name|findAllPitClassesWithContactHoursForDepartment
+name|findAllPitInstructionalOfferingUniqueIdsForDepartment
 parameter_list|(
 name|PointInTimeData
 name|pointInTimeData
@@ -3975,27 +3938,22 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"select pc"
+literal|"select pio.uniqueId"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" from PitClass pc"
+literal|" from PitInstructionalOffering pio"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" inner join pc.pitSchedulingSubpart.pitInstrOfferingConfig.pitInstructionalOffering.pitCourseOfferings as pco"
+literal|" inner join pio.pitCourseOfferings as pco"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" where pc.pitSchedulingSubpart.pitInstrOfferingConfig.pitInstructionalOffering.pointInTimeData.uniqueId = :pitdUid"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" and pc.pitClassEvents is not empty"
+literal|" where pio.pointInTimeData.uniqueId = :pitdUid"
 argument_list|)
 operator|.
 name|append
@@ -4013,7 +3971,7 @@ operator|(
 operator|(
 name|List
 argument_list|<
-name|PitClass
+name|Long
 argument_list|>
 operator|)
 name|hibSession
@@ -4056,6 +4014,164 @@ argument_list|)
 operator|.
 name|list
 argument_list|()
+operator|)
+return|;
+block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|protected
+name|List
+argument_list|<
+name|PitClass
+argument_list|>
+name|findAllPitClassesForPitInstructionalOfferingId
+parameter_list|(
+name|PointInTimeData
+name|pointInTimeData
+parameter_list|,
+name|Long
+name|pitOfferingId
+parameter_list|,
+name|org
+operator|.
+name|hibernate
+operator|.
+name|Session
+name|hibSession
+parameter_list|)
+block|{
+name|StringBuilder
+name|sb
+init|=
+operator|new
+name|StringBuilder
+argument_list|()
+decl_stmt|;
+name|sb
+operator|.
+name|append
+argument_list|(
+literal|"select pc"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" from PitClass pc"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pc.pitClassEvents as pce"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pce.pitClassMeetings as pcm"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pcm.pitClassMeetingUtilPeriods as pcmup"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pc.pitSchedulingSubpart as pss"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pss.pitInstrOfferingConfig as pioc"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pioc.pitInstructionalOffering as pio"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pio.pitCourseOfferings as pco"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" inner join pco.subjectArea as sa"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" where pc.pitSchedulingSubpart.pitInstrOfferingConfig.pitInstructionalOffering.uniqueId = :offrId"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" and pco.isControl = true"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" and pc.pitClassEvents is not empty"
+argument_list|)
+expr_stmt|;
+name|ArrayList
+argument_list|<
+name|PitClass
+argument_list|>
+name|pitClasses
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|PitClass
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|pitClasses
+operator|.
+name|addAll
+argument_list|(
+operator|(
+name|List
+argument_list|<
+name|PitClass
+argument_list|>
+operator|)
+name|hibSession
+operator|.
+name|createQuery
+argument_list|(
+name|sb
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"offrId"
+argument_list|,
+name|pitOfferingId
+operator|.
+name|longValue
+argument_list|()
+argument_list|)
+operator|.
+name|setCacheable
+argument_list|(
+literal|true
+argument_list|)
+operator|.
+name|list
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|pitClasses
 operator|)
 return|;
 block|}
