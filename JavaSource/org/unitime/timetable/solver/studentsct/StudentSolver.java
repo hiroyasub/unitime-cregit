@@ -3065,7 +3065,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseOffering x where x.subjectArea.session.uniqueId = :sessionId"
+literal|"from CourseOffering x where x.subjectArea.session.uniqueId = :sessionId and x.instructionalOffering.notOffered = false"
 argument_list|)
 operator|.
 name|setLong
@@ -3173,6 +3173,10 @@ argument_list|(
 name|limit
 operator|==
 literal|null
+operator|||
+name|limit
+operator|<
+literal|0
 condition|?
 literal|100
 else|:
@@ -3234,11 +3238,15 @@ name|limit
 operator|!=
 literal|null
 operator|&&
+name|limit
+operator|>
+literal|0
+operator|&&
 name|ret
 operator|.
 name|size
 argument_list|()
-operator|==
+operator|>=
 name|limit
 condition|)
 return|return
@@ -3302,11 +3310,15 @@ name|limit
 operator|!=
 literal|null
 operator|&&
+name|limit
+operator|>
+literal|0
+operator|&&
 name|ret
 operator|.
 name|size
 argument_list|()
-operator|==
+operator|>=
 name|limit
 condition|)
 return|return

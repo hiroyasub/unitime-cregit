@@ -663,6 +663,10 @@ name|limit
 operator|!=
 literal|null
 operator|&&
+name|limit
+operator|>
+literal|0
+operator|&&
 name|ret
 operator|.
 name|size
