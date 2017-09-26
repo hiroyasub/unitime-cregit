@@ -10730,6 +10730,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Additional Information is too long."
+argument_list|)
+name|String
+name|eventNoteTooLong
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"an event"
 argument_list|)
 name|String

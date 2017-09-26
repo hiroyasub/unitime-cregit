@@ -7982,6 +7982,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} uncommitted"
+argument_list|)
+name|String
+name|classNoteUncommitted
+parameter_list|(
+name|String
+name|problem
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} committed"
+argument_list|)
+name|String
+name|classNoteCommitted
+parameter_list|(
+name|String
+name|problem
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} committed, class was removed or unassigned"
+argument_list|)
+name|String
+name|classNoteCommittedClassRemoved
+parameter_list|(
+name|String
+name|problem
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Reassigned {0}>> {1}"
 argument_list|)
 name|String
