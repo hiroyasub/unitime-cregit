@@ -853,10 +853,6 @@ operator|.
 name|getStartSlot
 argument_list|()
 operator|+
-name|Constants
-operator|.
-name|SLOT_LENGTH_MIN
-operator|*
 name|cd
 operator|.
 name|getFreeTime
