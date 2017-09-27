@@ -917,6 +917,16 @@ name|getCourseDemands
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|d
+operator|.
+name|getFreeTime
+argument_list|()
+operator|!=
+literal|null
+condition|)
+continue|continue;
 for|for
 control|(
 name|CourseRequest
