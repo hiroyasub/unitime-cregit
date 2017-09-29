@@ -804,7 +804,7 @@ condition|)
 continue|continue;
 name|iInfo
 operator|.
-name|setText
+name|setHTML
 argument_list|(
 name|row
 argument_list|,
