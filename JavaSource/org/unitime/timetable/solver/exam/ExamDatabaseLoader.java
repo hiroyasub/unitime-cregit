@@ -4918,6 +4918,7 @@ argument_list|()
 operator|==
 name|ownerId
 condition|)
+block|{
 name|owner
 operator|.
 name|getStudents
@@ -4928,6 +4929,17 @@ argument_list|(
 name|student
 argument_list|)
 expr_stmt|;
+name|student
+operator|.
+name|getOwners
+argument_list|()
+operator|.
+name|add
+argument_list|(
+name|owner
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 block|}
