@@ -4207,6 +4207,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Mode:"
+argument_list|)
+name|String
+name|propConflictStatisticsMode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Limit:"
+argument_list|)
+name|String
+name|propConflictStatisticsLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -6961,6 +6979,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load conflict-based statistics: {0}"
+argument_list|)
+name|String
+name|failedToLoadConflictStatistics
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -8108,6 +8138,15 @@ literal|"All classes are assigned."
 argument_list|)
 name|String
 name|errorNotAssignedClassesNoDataReturned
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Conflict-based statistics is not available at the moment."
+argument_list|)
+name|String
+name|errorConflictStatisticsNoDataReturned
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10391,6 +10430,17 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageSuggestions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Conflict-Based Statistics"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageConflictBasedStatistics
 parameter_list|()
 function_decl|;
 annotation|@
@@ -17877,6 +17927,24 @@ literal|"Unknown"
 argument_list|)
 name|String
 name|constraintUnknown
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Variable - oriented"
+argument_list|)
+name|String
+name|modeCBSVariables
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Constraints - oriented"
+argument_list|)
+name|String
+name|modeCBSConstraints
 parameter_list|()
 function_decl|;
 block|}

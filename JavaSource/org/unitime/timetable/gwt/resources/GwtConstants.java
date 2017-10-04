@@ -1390,6 +1390,15 @@ name|String
 name|meetingContactsSeparator
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"%"
+argument_list|)
+name|String
+name|percentageSign
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
