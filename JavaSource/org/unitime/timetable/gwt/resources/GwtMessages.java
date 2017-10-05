@@ -2860,6 +2860,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Conf"
+argument_list|)
+name|String
+name|colShortUnassignments
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Students"
 argument_list|)
 name|String
@@ -2927,6 +2936,15 @@ literal|"Distribution Conflicts"
 argument_list|)
 name|String
 name|colDistributionConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Time"
+argument_list|)
+name|String
+name|colTimeStamp
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5218,6 +5236,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"History"
+argument_list|)
+name|String
+name|sectAssignmentHistory
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Loading {0}..."
 argument_list|)
 name|String
@@ -7030,6 +7057,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load assignment history: {0}"
+argument_list|)
+name|String
+name|failedToLoadAssignmentHistory
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -8222,6 +8261,15 @@ literal|"No changes."
 argument_list|)
 name|String
 name|errorSolutionChangesNoDataReturned
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No history."
+argument_list|)
+name|String
+name|errorAssignmentHistoryNoDataReturned
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10539,6 +10587,17 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageSolutionChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Assignment History"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageAssignmentHistory
 parameter_list|()
 function_decl|;
 annotation|@
