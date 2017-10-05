@@ -4225,6 +4225,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Compare with:"
+argument_list|)
+name|String
+name|propCompareSolutionWith
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reversed mode (current \u2192 compared solution):"
+argument_list|)
+name|String
+name|propCompareSolutionReversed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>O</u>k"
 argument_list|)
 name|String
@@ -5186,6 +5204,15 @@ literal|"Legend"
 argument_list|)
 name|String
 name|sectLegend
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Changes"
+argument_list|)
+name|String
+name|sectSolutionChanges
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6991,6 +7018,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to load solution changes: {0}"
+argument_list|)
+name|String
+name|failedToLoadSolutionChanges
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are more than {0} meetings matching the filter. Only {0} meetings are loaded."
 argument_list|)
 name|String
@@ -8148,6 +8187,54 @@ argument_list|)
 name|String
 name|errorConflictStatisticsNoDataReturned
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No timetable is loaded. However, you can load one<a href='listSolutions.do'>here</a>."
+argument_list|)
+name|String
+name|errorNoSolverLoaded
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No best solution saved so far."
+argument_list|)
+name|String
+name|errorNoBestSolutionSaved
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No solution selected. However, you can select one<a href='listSolutions.do'>here"
+argument_list|)
+name|String
+name|errorNoSolutionSelected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No changes."
+argument_list|)
+name|String
+name|errorSolutionChangesNoDataReturned
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class {0} does not exist anymore, please refresh your data."
+argument_list|)
+name|String
+name|errorClassDoesNotExist
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -10441,6 +10528,17 @@ annotation|@
 name|DoNotTranslate
 name|String
 name|pageConflictBasedStatistics
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Changes"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageSolutionChanges
 parameter_list|()
 function_decl|;
 annotation|@
@@ -17945,6 +18043,33 @@ literal|"Constraints - oriented"
 argument_list|)
 name|String
 name|modeCBSConstraints
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Best Solution"
+argument_list|)
+name|String
+name|compareWithBestSolution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Initial Solution"
+argument_list|)
+name|String
+name|compareWithInitialSolution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected Solution"
+argument_list|)
+name|String
+name|compareWithSelectedSolution
 parameter_list|()
 function_decl|;
 block|}
