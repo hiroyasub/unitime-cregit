@@ -1136,7 +1136,7 @@ literal|"Info"
 block|,
 literal|"Stage"
 block|,
-literal|"Warn"
+literal|"Warning"
 block|,
 literal|"Error"
 block|,

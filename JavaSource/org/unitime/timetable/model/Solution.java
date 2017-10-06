@@ -399,6 +399,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|GwtMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|interfaces
 operator|.
 name|RoomAvailabilityInterface
@@ -648,6 +664,20 @@ operator|.
 name|create
 argument_list|(
 name|CourseMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|private
+specifier|static
+name|GwtMessages
+name|MESSAGES
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|GwtMessages
 operator|.
 name|class
 argument_list|)
@@ -2224,15 +2254,15 @@ name|messages
 operator|.
 name|add
 argument_list|(
-literal|"Class "
-operator|+
+name|MESSAGES
+operator|.
+name|failedCommitRoomConflict
+argument_list|(
 name|a
 operator|.
 name|getClassName
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|a
 operator|.
 name|getTimeLocation
@@ -2245,16 +2275,12 @@ operator|.
 name|useAmPm
 argument_list|()
 argument_list|)
-operator|+
-literal|" overlaps with "
-operator|+
+argument_list|,
 name|b
 operator|.
 name|getClassName
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|b
 operator|.
 name|getTimeLocation
@@ -2267,15 +2293,12 @@ operator|.
 name|useAmPm
 argument_list|()
 argument_list|)
-operator|+
-literal|" (room "
-operator|+
+argument_list|,
 name|room
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|isOK
@@ -2423,15 +2446,15 @@ name|messages
 operator|.
 name|add
 argument_list|(
-literal|"Class "
-operator|+
+name|MESSAGES
+operator|.
+name|failedCommitInstructorConflict
+argument_list|(
 name|a
 operator|.
 name|getClassName
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|a
 operator|.
 name|getTimeLocation
@@ -2444,16 +2467,12 @@ operator|.
 name|useAmPm
 argument_list|()
 argument_list|)
-operator|+
-literal|" overlaps with "
-operator|+
+argument_list|,
 name|b
 operator|.
 name|getClassName
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|b
 operator|.
 name|getTimeLocation
@@ -2466,15 +2485,12 @@ operator|.
 name|useAmPm
 argument_list|()
 argument_list|)
-operator|+
-literal|" (instructor "
-operator|+
+argument_list|,
 name|instructor
 operator|.
 name|nameLastNameFirst
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|isOK

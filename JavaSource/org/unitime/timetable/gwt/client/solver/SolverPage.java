@@ -4360,7 +4360,7 @@ return|return
 name|row
 return|;
 block|}
-specifier|protected
+specifier|public
 specifier|static
 class|class
 name|SolverStatus
