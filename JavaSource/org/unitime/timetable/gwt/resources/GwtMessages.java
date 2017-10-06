@@ -18463,6 +18463,18 @@ name|String
 name|listSolutionsUnknown
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Open Class Detail for {0} in a new window."
+argument_list|)
+name|String
+name|titleOpenClassDetail
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
