@@ -336,6 +336,10 @@ specifier|private
 name|String
 name|notes
 decl_stmt|;
+specifier|private
+name|boolean
+name|teachingRequests
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Course Offerings */
 specifier|protected
@@ -527,6 +531,10 @@ expr_stmt|;
 name|notes
 operator|=
 literal|null
+expr_stmt|;
+name|teachingRequests
+operator|=
+literal|false
 expr_stmt|;
 block|}
 specifier|public
@@ -1891,6 +1899,30 @@ operator|.
 name|notes
 operator|=
 name|notes
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getTeachingRequests
+parameter_list|()
+block|{
+return|return
+name|teachingRequests
+return|;
+block|}
+specifier|public
+name|void
+name|setTeachingRequests
+parameter_list|(
+name|boolean
+name|teachingRequests
+parameter_list|)
+block|{
+name|this
+operator|.
+name|teachingRequests
+operator|=
+name|teachingRequests
 expr_stmt|;
 block|}
 block|}
