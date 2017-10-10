@@ -449,11 +449,41 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|defaults
 operator|.
 name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|CPSolverMessages
 import|;
 end_import
 
@@ -534,6 +564,20 @@ argument_list|>
 implements|implements
 name|CommonSolverInterface
 block|{
+specifier|protected
+specifier|static
+name|CPSolverMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CPSolverMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|protected
 name|Log
 name|sLog
@@ -1606,7 +1650,10 @@ argument_list|)
 operator|.
 name|setStatus
 argument_list|(
-literal|"Awaiting commands ..."
+name|MSG
+operator|.
+name|statusReady
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2143,7 +2190,10 @@ argument_list|)
 operator|.
 name|setStatus
 argument_list|(
-literal|"Awaiting commands ..."
+name|MSG
+operator|.
+name|statusReady
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -2262,7 +2312,10 @@ argument_list|)
 operator|.
 name|setStatus
 argument_list|(
-literal|"Awaiting commands ..."
+name|MSG
+operator|.
+name|statusReady
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2801,7 +2854,10 @@ argument_list|)
 operator|.
 name|setStatus
 argument_list|(
-literal|"Awaiting commands ..."
+name|MSG
+operator|.
+name|statusReady
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -4284,7 +4340,10 @@ name|iProgress
 operator|.
 name|setPhase
 argument_list|(
-literal|"Creating best assignment ..."
+name|MSG
+operator|.
+name|phaseCreatingBestAssignment
+argument_list|()
 argument_list|,
 name|iBestAssignmentTable
 operator|.
@@ -4382,7 +4441,10 @@ name|iProgress
 operator|.
 name|setPhase
 argument_list|(
-literal|"Creating initial assignment ..."
+name|MSG
+operator|.
+name|phaseCreatingInitialAssignment
+argument_list|()
 argument_list|,
 name|iInitialAssignmentTable
 operator|.
@@ -4472,7 +4534,10 @@ name|iProgress
 operator|.
 name|setPhase
 argument_list|(
-literal|"Creating current assignment ..."
+name|MSG
+operator|.
+name|phaseCreatingCurrentAssignment
+argument_list|()
 argument_list|,
 name|iCurrentAssignmentTable
 operator|.
@@ -4609,12 +4674,15 @@ argument_list|)
 operator|.
 name|fatal
 argument_list|(
-literal|"Failed to restore previous assignments: "
-operator|+
+name|MSG
+operator|.
+name|fataFailedToRestore
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|,
 name|e
 argument_list|)
@@ -4656,7 +4724,10 @@ argument_list|)
 operator|.
 name|setStatus
 argument_list|(
-literal|"Awaiting commands ..."
+name|MSG
+operator|.
+name|statusReady
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

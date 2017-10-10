@@ -675,9 +675,39 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|CPSolverMessages
 import|;
 end_import
 
@@ -1652,6 +1682,20 @@ operator|.
 name|getLog
 argument_list|(
 name|TimetableDatabaseLoader
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+specifier|protected
+specifier|static
+name|CPSolverMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CPSolverMessages
 operator|.
 name|class
 argument_list|)
@@ -2770,7 +2814,10 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to load custom student course demands class, using last-like course demands instead."
+name|MSG
+operator|.
+name|warnFailedLoadCustomStudentDemands
+argument_list|()
 argument_list|,
 name|e
 argument_list|)
@@ -3154,7 +3201,10 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to load custom class weight provider, using the default one instead."
+name|MSG
+operator|.
+name|warnFauledLoadCustomClassWeights
+argument_list|()
 argument_list|,
 name|e
 argument_list|)
@@ -5191,14 +5241,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnCancelledClass
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" is cancelled (class not loaded)."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5244,11 +5295,14 @@ operator|.
 name|MSGLEVEL_DEBUG
 argument_list|)
 argument_list|,
-literal|"loading class "
-operator|+
+name|MSG
+operator|.
+name|debugLoadingClass
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5530,15 +5584,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnNoTimePattern
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" has no time pattern selected (class not loaded).<i>If not changed, this class will be treated as Arrange "
-operator|+
+argument_list|,
 name|dm
 operator|.
 name|getArrangedHours
@@ -5556,8 +5610,7 @@ operator|.
 name|effectiveDatePattern
 argument_list|()
 argument_list|)
-operator|+
-literal|" Hours.</i>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5600,14 +5653,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnNoDatePattern
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" has no date pattern selected (class not loaded)."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -7121,23 +7175,6 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
-name|getClassLabel
-argument_list|(
-name|clazz
-argument_list|)
-operator|+
-literal|" has no available room"
-operator|+
-operator|(
-name|clazz
-operator|.
-name|getNbrRooms
-argument_list|()
-operator|!=
-literal|null
-operator|&&
 name|clazz
 operator|.
 name|getNbrRooms
@@ -7148,12 +7185,25 @@ argument_list|()
 operator|>
 literal|1
 condition|?
-literal|"s"
+name|MSG
+operator|.
+name|warnNoRooms
+argument_list|(
+name|getClassLabel
+argument_list|(
+name|clazz
+argument_list|)
+argument_list|)
 else|:
-literal|""
-operator|)
-operator|+
-literal|" (class not loaded)."
+name|MSG
+operator|.
+name|warnNoRoom
+argument_list|(
+name|getClassLabel
+argument_list|(
+name|clazz
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -7202,14 +7252,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnZeroRoomsButPref
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" requires no room (number of rooms is set to zero), but it contains some room preferences."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7922,15 +7973,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnWrongTimePattern
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" has "
-operator|+
+argument_list|,
 name|clazz
 operator|.
 name|getSchedulingSubpart
@@ -7938,30 +7989,28 @@ argument_list|()
 operator|.
 name|getMinutesPerWk
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 operator|(
 name|dtype
 operator|==
 literal|null
 condition|?
-literal|"minutes per week"
+name|MSG
+operator|.
+name|defaultDurationTypeName
+argument_list|()
 else|:
 name|dtype
 operator|.
 name|getLabel
 argument_list|()
 operator|)
-operator|+
-literal|" , but "
-operator|+
+argument_list|,
 name|pattern
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" time pattern selected."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|minPerWeek
@@ -8045,32 +8094,27 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Time pattern "
-operator|+
+name|MSG
+operator|.
+name|warnTimeOverMidnight
+argument_list|(
 name|pattern
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" that is used by "
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" has a time that goes over midnight. "
-operator|+
-literal|"This is not allowed and the time "
-operator|+
+argument_list|,
 name|pattern
 operator|.
 name|getStartTime
 argument_list|(
 name|time
 argument_list|)
-operator|+
-literal|" will be ignored."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -9410,14 +9454,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnNoTime
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" has no available time (class not loaded)."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -9598,22 +9643,17 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnHugeDomain
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" has too many possible placements ("
-operator|+
+argument_list|,
 name|estNrValues
-operator|+
-literal|"). "
-operator|+
-literal|"The class was not loaded in order to prevent out of memory exception. "
-operator|+
-literal|"Please restrict the number of available rooms and/or times for this class."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -9661,22 +9701,17 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnBigDomain
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" has quite a lot of possible placements ("
-operator|+
+argument_list|,
 name|estNrValues
-operator|+
-literal|"). "
-operator|+
-literal|"Solver may run too slow. "
-operator|+
-literal|"If possible, please restrict the number of available rooms and/or times for this class."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9713,14 +9748,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnNoPlacement
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" has no available placement (class not loaded)."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -9762,14 +9798,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|MSG
+operator|.
+name|warnNoPlacementInteractive
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" has no available placement."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9851,7 +9888,10 @@ condition|)
 return|return;
 name|setPhase
 argument_list|(
-literal|"Assigning committed classes ..."
+name|MSG
+operator|.
+name|phaseAssignCommitted
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -9964,25 +10004,29 @@ block|{
 name|String
 name|warn
 init|=
-literal|"Unable to assign committed class "
-operator|+
+name|MSG
+operator|.
+name|warnCannotAssignCommitted
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
+argument_list|)
 decl_stmt|;
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;Reason:"
+name|MSG
+operator|.
+name|warnReasonFirstLine
+argument_list|()
 expr_stmt|;
 for|for
 control|(
@@ -10023,8 +10067,10 @@ control|)
 block|{
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+name|MSG
+operator|.
+name|warnReasonConflict
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|v
@@ -10032,22 +10078,29 @@ operator|.
 name|variable
 argument_list|()
 argument_list|)
-operator|+
-literal|" = "
-operator|+
+argument_list|,
 name|v
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;    in constraint "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraint
+argument_list|(
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|iProgress
 operator|.
@@ -10076,7 +10129,10 @@ parameter_list|()
 block|{
 name|setPhase
 argument_list|(
-literal|"Purging invalid placements ..."
+name|MSG
+operator|.
+name|phasePurgeInvalidValues
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -10152,24 +10208,29 @@ block|{
 name|String
 name|warn
 init|=
-literal|"Class "
-operator|+
+operator|(
+name|iInteractiveMode
+condition|?
+name|MSG
+operator|.
+name|warnNoPlacementAfterCommitInteractive
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" has no available placement (after enforcing consistency between the problem and committed solutions"
-operator|+
-operator|(
-name|iInteractiveMode
-condition|?
-literal|""
+argument_list|)
 else|:
-literal|", class not loaded"
+name|MSG
+operator|.
+name|warnNoPlacementAfterCommit
+argument_list|(
+name|getClassLabel
+argument_list|(
+name|lecture
+argument_list|)
+argument_list|)
 operator|)
-operator|+
-literal|")."
 decl_stmt|;
 for|for
 control|(
@@ -10181,16 +10242,21 @@ control|)
 block|{
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
-name|p
+name|MSG
+operator|.
+name|warnReasonNotValid
+argument_list|(
+name|TimetableSolver
 operator|.
 name|getNotValidReason
 argument_list|(
+name|p
+argument_list|,
 name|getAssignment
 argument_list|()
 argument_list|,
 name|iUseAmPm
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -10924,18 +10990,20 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Unable to assign "
-operator|+
+name|MSG
+operator|.
+name|warnPlacementNotValid
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|sb
-operator|+
-literal|" (placement not valid)"
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -10979,14 +11047,15 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;instructor "
-operator|+
+name|MSG
+operator|.
+name|warnReasonInstructorNotAvailable
+argument_list|(
 name|ic
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not available"
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -11043,14 +11112,15 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;room "
-operator|+
+name|MSG
+operator|.
+name|warnReasonRoomNotAvailable
+argument_list|(
 name|roomLocation
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not available"
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11084,8 +11154,10 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;room "
-operator|+
+name|MSG
+operator|.
+name|warnReasonRoomNotAvailable
+argument_list|(
 name|initialPlacement
 operator|.
 name|getRoomLocation
@@ -11093,8 +11165,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not available"
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11188,27 +11259,29 @@ argument_list|()
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;conflict with committed assignment "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraintCommitedAssignment
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|l
 argument_list|)
-operator|+
-literal|" = "
-operator|+
+argument_list|,
 name|p
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|" (in constraint "
-operator|+
+argument_list|,
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -11221,13 +11294,28 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;constraint "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraint
+argument_list|(
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+name|reason
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
 name|iProgress
 operator|.
 name|message
@@ -11241,36 +11329,56 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Unable to assign "
-operator|+
+name|MSG
+operator|.
+name|warnCannotAssignClass
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|initialPlacement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-operator|(
-name|reason
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|iProgress
 operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
-condition|?
-literal|"."
-else|:
-literal|":"
-operator|+
+name|message
+argument_list|(
+name|msglevel
+argument_list|(
+literal|"cannotAssign"
+argument_list|,
+name|Progress
+operator|.
+name|MSGLEVEL_WARN
+argument_list|)
+argument_list|,
+name|MSG
+operator|.
+name|warnCannotAssignClassWithReason
+argument_list|(
+name|getClassLabel
+argument_list|(
+name|lecture
+argument_list|)
+argument_list|,
+name|initialPlacement
+operator|.
+name|getLongName
+argument_list|(
+name|iUseAmPm
+argument_list|)
+argument_list|,
 name|reason
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -11349,25 +11457,29 @@ block|{
 name|String
 name|warn
 init|=
-literal|"Unable to assign "
-operator|+
+name|MSG
+operator|.
+name|warnCannotAssignClass
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|initialPlacement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
+argument_list|)
 decl_stmt|;
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;Reason:"
+name|MSG
+operator|.
+name|warnReasonFirstLine
+argument_list|()
 expr_stmt|;
 for|for
 control|(
@@ -11408,8 +11520,10 @@ control|)
 block|{
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+name|MSG
+operator|.
+name|warnReasonConflict
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|v
@@ -11417,22 +11531,29 @@ operator|.
 name|variable
 argument_list|()
 argument_list|)
-operator|+
-literal|" = "
-operator|+
+argument_list|,
 name|v
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;    in constraint "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraint
+argument_list|(
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|iProgress
 operator|.
@@ -12314,7 +12435,10 @@ parameter_list|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Loading instructor availabilities ..."
+name|MSG
+operator|.
+name|phaseLoadInstructorAvailabilities
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)
@@ -12566,16 +12690,17 @@ name|iProgress
 operator|.
 name|debug
 argument_list|(
-literal|"Instructor "
-operator|+
+name|MSG
+operator|.
+name|debugStudentInstructorPair
+argument_list|(
 name|puid
-operator|+
-literal|" mapped with student "
-operator|+
+argument_list|,
 name|s
 operator|.
 name|getId
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|s
@@ -12631,7 +12756,10 @@ parameter_list|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Loading instructor student conflicts ..."
+name|MSG
+operator|.
+name|phaseLoadInstructorStudentConflicts
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)
@@ -12938,7 +13066,10 @@ parameter_list|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Loading room availabilities ..."
+name|MSG
+operator|.
+name|phaseLoadRoomAvailabilities
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)
@@ -13196,14 +13327,15 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Constraint "
-operator|+
+name|MSG
+operator|.
+name|warnFlexibleConstraintNotLoaded
+argument_list|(
 name|type
 operator|.
 name|getReference
 argument_list|()
-operator|+
-literal|" was not loaded. Inconsistent values."
+argument_list|)
 argument_list|,
 name|e
 argument_list|)
@@ -13222,14 +13354,15 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Constraint "
-operator|+
+name|MSG
+operator|.
+name|warnDistributionConstraintNotKnown
+argument_list|(
 name|type
 operator|.
 name|getReference
 argument_list|()
-operator|+
-literal|" was not recognized."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -13311,7 +13444,10 @@ operator|.
 name|getProperties
 argument_list|()
 argument_list|,
-literal|"spread"
+name|MSG
+operator|.
+name|nameSpreadConstraint
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -13359,7 +13495,10 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Minimize number of used rooms constraint not loaded due to the interactive mode of the solver."
+name|MSG
+operator|.
+name|warnMinRoomUseInteractive
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -13413,7 +13552,10 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Minimize number of used groups of time constraint not loaded due to the interactive mode of the solver."
+name|MSG
+operator|.
+name|warnMinGroupUseInteractive
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -13467,7 +13609,10 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Minimize number of used groups of time constraint not loaded due to the interactive mode of the solver."
+name|MSG
+operator|.
+name|warnMinGroupUseInteractive
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -13521,7 +13666,10 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Minimize number of used groups of time constraint not loaded due to the interactive mode of the solver."
+name|MSG
+operator|.
+name|warnMinGroupUseInteractive
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -13575,7 +13723,10 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Minimize number of used groups of time constraint not loaded due to the interactive mode of the solver."
+name|MSG
+operator|.
+name|warnMinGroupUseInteractive
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -13645,14 +13796,15 @@ name|iProgress
 operator|.
 name|error
 argument_list|(
-literal|"Distribution constraint "
-operator|+
+name|MSG
+operator|.
+name|warnDistributionConstraintNotImplemented
+argument_list|(
 name|type
 operator|.
 name|getReference
 argument_list|()
-operator|+
-literal|" is not implemented."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -13719,19 +13871,20 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Lecture "
-operator|+
+name|MSG
+operator|.
+name|warnClassNotLoadedButUsedInDistPref
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" not found/loaded, but used in distribution preference "
-operator|+
+argument_list|,
 name|pref
 operator|.
 name|getLabel
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -13748,19 +13901,20 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Lecture "
-operator|+
+name|MSG
+operator|.
+name|warnClassNotLoadedButUsedInDistPref
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" not found/loaded, but used in distribution preference "
-operator|+
+argument_list|,
 name|pref
 operator|.
 name|getLabel
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -14004,25 +14158,54 @@ condition|(
 name|allVariablesAreCommitted
 condition|)
 block|{
-name|iProgress
-operator|.
-name|debug
-argument_list|(
-literal|"Not created constraint "
-operator|+
-name|gc
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" between "
-operator|+
+name|String
+name|vars
+init|=
+literal|""
+decl_stmt|;
+for|for
+control|(
+name|Lecture
+name|l
+range|:
 name|gc
 operator|.
 name|variables
 argument_list|()
+control|)
+name|vars
+operator|+=
+operator|(
+name|vars
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+literal|""
+else|:
+literal|", "
+operator|)
 operator|+
-literal|" (all variables are committed)"
+name|getClassLabel
+argument_list|(
+name|l
+argument_list|)
+expr_stmt|;
+name|iProgress
+operator|.
+name|debug
+argument_list|(
+name|MSG
+operator|.
+name|debugDistributionAllCommitted
+argument_list|(
+name|gc
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|vars
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -14661,21 +14844,20 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Distribution preference "
-operator|+
+name|MSG
+operator|.
+name|warnBadDistributionObject
+argument_list|(
 name|pref
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" refers to a scheduling subpart "
-operator|+
+argument_list|,
 name|getSubpartLabel
 argument_list|(
 name|subpart
 argument_list|)
-operator|+
-literal|" with no classes."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -15013,19 +15195,23 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Distribution preference "
-operator|+
+name|MSG
+operator|.
+name|warnBadDistributionObjectNotSupported
+argument_list|(
 name|pref
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" refers to unsupported object "
-operator|+
+argument_list|,
 name|distributionObject
 operator|.
 name|getPrefGroup
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15315,19 +15501,23 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Distribution preference "
-operator|+
+name|MSG
+operator|.
+name|warnBadDistributionObjectNotSupported
+argument_list|(
 name|pref
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" refers to unsupported object "
-operator|+
+argument_list|,
 name|distributionObject
 operator|.
 name|getPrefGroup
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15355,14 +15545,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Distribution preference "
-operator|+
+name|MSG
+operator|.
+name|warnBadDistributionIncomplete
+argument_list|(
 name|pref
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" refers to less than two classes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15708,19 +15899,23 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Distribution preference "
-operator|+
+name|MSG
+operator|.
+name|warnBadDistributionObjectNotSupported
+argument_list|(
 name|pref
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" refers to unsupported object "
-operator|+
+argument_list|,
 name|distributionObject
 operator|.
 name|getPrefGroup
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -16170,19 +16365,23 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Distribution preference "
-operator|+
+name|MSG
+operator|.
+name|warnBadDistributionObjectNotSupported
+argument_list|(
 name|pref
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" refers to unsupported object "
-operator|+
+argument_list|,
 name|distributionObject
 operator|.
 name|getPrefGroup
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -16579,14 +16778,15 @@ condition|)
 return|return;
 name|setPhase
 argument_list|(
-literal|"Loading instructor distr. constraints for "
-operator|+
+name|MSG
+operator|.
+name|phaseLoadInstructorGroupConstraints
+argument_list|(
 name|department
 operator|.
 name|getShortLabel
 argument_list|()
-operator|+
-literal|" ..."
+argument_list|)
 argument_list|,
 name|instructors
 operator|.
@@ -17136,7 +17336,10 @@ operator|==
 literal|null
 condition|)
 return|return
-literal|"class-limit"
+name|MSG
+operator|.
+name|nameClassLimitConstraint
+argument_list|()
 return|;
 name|String
 name|name
@@ -17590,12 +17793,15 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Unable to load input data, reason:"
-operator|+
+name|MSG
+operator|.
+name|fatalLoadFailed
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|,
 name|e
 argument_list|)
@@ -18235,20 +18441,19 @@ name|iProgress
 operator|.
 name|info
 argument_list|(
-literal|"Posted precedence constraint between "
-operator|+
+name|MSG
+operator|.
+name|infoAutomaticPrecedence
+argument_list|(
 name|info
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|PreferenceLevel
 operator|.
 name|prolog2string
 argument_list|(
 name|preference
 argument_list|)
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|addGroupConstraint
@@ -18918,7 +19123,10 @@ block|}
 comment|// Make up the appropriate committed placements and propagate those through the course structure
 name|setPhase
 argument_list|(
-literal|"Loading student conflicts with commited solutions ..."
+name|MSG
+operator|.
+name|phaseLoadCommittedStudentConflicts
+argument_list|()
 argument_list|,
 name|assignments
 operator|.
@@ -19899,7 +20107,10 @@ parameter_list|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Creating student conflicts with commited solutions ..."
+name|MSG
+operator|.
+name|phaseMakeupCommittedStudentConflicts
+argument_list|()
 argument_list|,
 name|iStudents
 operator|.
@@ -20355,11 +20566,14 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Inconsistent course reservations for course "
-operator|+
+name|MSG
+operator|.
+name|warnBadCourseReservations
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|course
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20646,15 +20860,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Manager of class "
-operator|+
+name|MSG
+operator|.
+name|warnNoSolverGroup
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|clazz
 argument_list|)
-operator|+
-literal|" has no solver group ("
-operator|+
+argument_list|,
 name|clazz
 operator|.
 name|getManagingDept
@@ -20662,8 +20876,7 @@ argument_list|()
 operator|.
 name|getManagingDeptAbbv
 argument_list|()
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -20842,25 +21055,29 @@ block|{
 name|String
 name|warn
 init|=
-literal|"Unable to assign committed class "
-operator|+
+name|MSG
+operator|.
+name|warnCannotAssignCommitted
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|committedPlacement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
+argument_list|)
 decl_stmt|;
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;Reason:"
+name|MSG
+operator|.
+name|warnReasonFirstLine
+argument_list|()
 expr_stmt|;
 for|for
 control|(
@@ -20901,8 +21118,10 @@ control|)
 block|{
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+name|MSG
+operator|.
+name|warnReasonConflict
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|v
@@ -20910,22 +21129,29 @@ operator|.
 name|variable
 argument_list|()
 argument_list|)
-operator|+
-literal|" = "
-operator|+
+argument_list|,
 name|v
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 name|warn
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;    in constraint "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraint
+argument_list|(
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|iProgress
 operator|.
@@ -21182,7 +21408,10 @@ name|iProgress
 operator|.
 name|setStatus
 argument_list|(
-literal|"Loading input data ..."
+name|MSG
+operator|.
+name|statusLoadingInputData
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|TravelTime
@@ -21285,14 +21514,15 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Unable to load solver group "
-operator|+
+name|MSG
+operator|.
+name|fatalUnableToLoadSolverGroup
+argument_list|(
 name|iSolverGroupId
 index|[
 name|i
 index|]
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -21348,7 +21578,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"No solver group loaded."
+name|MSG
+operator|.
+name|fatalNoSolverGroupLoaded
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -21541,14 +21774,15 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Unable to load solution "
-operator|+
+name|MSG
+operator|.
+name|fatalUnableToLoadSolution
+argument_list|(
 name|iSolutionId
 index|[
 name|i
 index|]
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -21774,7 +22008,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"No session loaded."
+name|MSG
+operator|.
+name|fatalNoSessionLoaded
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -22046,7 +22283,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"No classes to load."
+name|MSG
+operator|.
+name|fatalNoClassesToLoad
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -22065,7 +22305,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Loading classes ..."
+name|MSG
+operator|.
+name|phaseLoadingClasses
+argument_list|()
 argument_list|,
 name|iAllClasses
 operator|.
@@ -22181,7 +22424,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Loading offerings ..."
+name|MSG
+operator|.
+name|phaseLoadingOfferings
+argument_list|()
 argument_list|,
 name|iAllClasses
 operator|.
@@ -22327,7 +22573,10 @@ expr_stmt|;
 block|}
 name|setPhase
 argument_list|(
-literal|"Loading distribution preferences ..."
+name|MSG
+operator|.
+name|phaseLoadingDistributions
+argument_list|()
 argument_list|,
 name|distPrefs
 operator|.
@@ -22467,7 +22716,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Posting automatic same_students constraints ..."
+name|MSG
+operator|.
+name|phasePostingSameStudents
+argument_list|()
 argument_list|,
 name|iAllClasses
 operator|.
@@ -22641,11 +22893,12 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Preference "
-operator|+
+name|MSG
+operator|.
+name|warnPrecedenceNotRecognized
+argument_list|(
 name|iAutoPrecedence
-operator|+
-literal|" not recognized."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -22667,7 +22920,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Posting automatic precedence constraints ..."
+name|MSG
+operator|.
+name|phasePostingAutomaticPrecedences
+argument_list|()
 argument_list|,
 name|iAllClasses
 operator|.
@@ -22760,7 +23016,10 @@ argument_list|()
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Posting class limit constraints ..."
+name|MSG
+operator|.
+name|phasePostingClassLimits
+argument_list|()
 argument_list|,
 name|iOfferings
 operator|.
@@ -23297,7 +23556,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Loading students ..."
+name|MSG
+operator|.
+name|phaseLoadingStudents
+argument_list|()
 argument_list|,
 name|iOfferings
 operator|.
@@ -23442,14 +23704,15 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Cross-listed course "
-operator|+
+name|MSG
+operator|.
+name|infoCrosslistNoCourseReservations
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|course
 argument_list|)
-operator|+
-literal|" does not have any course reservation."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -23545,22 +23808,19 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Total number of course reservations is below the offering limit for instructional offering "
-operator|+
+name|MSG
+operator|.
+name|warnReservationBelowLimit
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|offering
 argument_list|)
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|totalCourseLimit
-operator|+
-literal|"<"
-operator|+
+argument_list|,
 name|offeringLimit
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -23582,22 +23842,19 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Total number of course reservations exceeds the offering limit for instructional offering "
-operator|+
+name|MSG
+operator|.
+name|warnReservationsOverLimit
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|offering
 argument_list|)
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|totalCourseLimit
-operator|+
-literal|">"
-operator|+
+argument_list|,
 name|offeringLimit
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -23837,14 +24094,15 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"No student enrollments for course "
-operator|+
+name|MSG
+operator|.
+name|infoNoStudentInCourse
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|course
 argument_list|)
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -23879,14 +24137,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"No reserved space for students of course "
-operator|+
+name|MSG
+operator|.
+name|warnNoReservedSpaceForCourse
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|course
 argument_list|)
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -24159,22 +24418,19 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Too little space reserved in for course "
-operator|+
+name|MSG
+operator|.
+name|warnTooLittleSpaceInCourse
+argument_list|(
 name|getOfferingLabel
 argument_list|(
 name|course
 argument_list|)
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|limit
-operator|+
-literal|"<"
-operator|+
+argument_list|,
 name|courseLimit
-operator|+
-literal|")."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|cannotAttendLectures
@@ -25273,7 +25529,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -25331,7 +25590,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|Hashtable
@@ -25407,7 +25669,10 @@ argument_list|()
 decl_stmt|;
 name|setPhase
 argument_list|(
-literal|"Loading current student enrolments  ..."
+name|MSG
+operator|.
+name|phaseLoadingStudentEnrollemnts
+argument_list|()
 argument_list|,
 name|enrollments
 operator|.
@@ -25599,18 +25864,17 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Loaded "
-operator|+
+name|MSG
+operator|.
+name|infoEnrollmentsLoaded
+argument_list|(
 name|totalEnrollments
-operator|+
-literal|" enrollments of "
-operator|+
+argument_list|,
 name|iPreEnrollments
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|" students."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -25717,15 +25981,14 @@ expr_stmt|;
 block|}
 name|setPhase
 argument_list|(
-literal|"Loading student enrolments ["
-operator|+
-operator|(
+name|MSG
+operator|.
+name|phaseLoadingStudentEnrollemntsPhase
+argument_list|(
 name|idx
 operator|+
 literal|1
-operator|)
-operator|+
-literal|"] ..."
+argument_list|)
 argument_list|,
 name|studentEnrls
 operator|.
@@ -25984,7 +26247,10 @@ argument_list|()
 decl_stmt|;
 name|setPhase
 argument_list|(
-literal|"Loading other committed student enrolments  ..."
+name|MSG
+operator|.
+name|phaseLoadingOtherStudentEnrollments
+argument_list|()
 argument_list|,
 name|enrollments
 operator|.
@@ -26186,7 +26452,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|RoomAvailabilityInterface
@@ -26281,12 +26550,18 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Initial sectioning ..."
+name|MSG
+operator|.
+name|phaseInitialSectioning
+argument_list|()
 argument_list|,
 name|iOfferings
 operator|.
@@ -26441,7 +26716,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Checking loaded enrollments ...."
+name|MSG
+operator|.
+name|phaseCheckingLoadedEnrollments
+argument_list|()
 argument_list|,
 name|iPreEnrollments
 operator|.
@@ -26527,18 +26805,19 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Student "
-operator|+
+name|MSG
+operator|.
+name|warnStudentShouldBeInClass
+argument_list|(
 name|student
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|" is supposed to be enrolled to "
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|lecture
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -26626,28 +26905,25 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Student "
-operator|+
+name|MSG
+operator|.
+name|warnStudentShouldNotBeInClassShouldBeInOther
+argument_list|(
 name|student
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|" is NOT supposed to be enrolled to "
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|", he/she should have "
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|instead
 argument_list|)
-operator|+
-literal|" instead."
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -26664,21 +26940,20 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Student "
-operator|+
+name|MSG
+operator|.
+name|warnStudentShouldNotBeInClass
+argument_list|(
 name|student
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|" is NOT supposed to be enrolled to "
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -26706,7 +26981,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -26720,7 +26998,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Computing jenrl ..."
+name|MSG
+operator|.
+name|phaseComputingJenrl
+argument_list|()
 argument_list|,
 name|iStudents
 operator|.
@@ -26972,7 +27253,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -27041,15 +27325,14 @@ condition|)
 continue|continue;
 name|setPhase
 argument_list|(
-literal|"Creating initial assignment ["
-operator|+
-operator|(
+name|MSG
+operator|.
+name|phaseCreatingInitialAssignment
+argument_list|(
 name|idx
 operator|+
 literal|1
-operator|)
-operator|+
-literal|"] ..."
+argument_list|)
 argument_list|,
 name|solution
 operator|.
@@ -27109,7 +27392,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Creating initial assignment ..."
+name|MSG
+operator|.
+name|phaseCreatingCommittedAssignment
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -27201,7 +27487,10 @@ operator|.
 name|MSGLEVEL_FATAL
 argument_list|)
 argument_list|,
-literal|"Hibernate session not open."
+name|MSG
+operator|.
+name|fatalHibernateSessionClosed
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -27211,7 +27500,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Posting automatic spread constraints ..."
+name|MSG
+operator|.
+name|phasePostingAutoSpreads
+argument_list|()
 argument_list|,
 name|subparts
 operator|.
@@ -27382,11 +27674,14 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"No class for course "
-operator|+
+name|MSG
+operator|.
+name|warnCourseWithNoClasses
+argument_list|(
 name|getSubpartLabel
 argument_list|(
 name|subpart
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -27411,7 +27706,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Creating dept. spread constraints ..."
+name|MSG
+operator|.
+name|phasePostingDeptSpreads
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -27555,7 +27853,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Creating subject spread constraints ..."
+name|MSG
+operator|.
+name|phasePostingSubjectSpreads
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -27736,7 +28037,10 @@ expr_stmt|;
 comment|/* 		for (Constraint c: getModel().constraints()) { 			if (c instanceof SpreadConstraint) 				((SpreadConstraint)c).init(); 			if (c instanceof DiscouragedRoomConstraint) 				((DiscouragedRoomConstraint)c).setEnabled(true); 			if (c instanceof MinimizeNumberOfUsedRoomsConstraint) 				((MinimizeNumberOfUsedRoomsConstraint)c).setEnabled(true); 			if (c instanceof MinimizeNumberOfUsedGroupsOfTime) 				((MinimizeNumberOfUsedGroupsOfTime)c).setEnabled(true); 		} 		*/
 name|setPhase
 argument_list|(
-literal|"Checking for inconsistencies..."
+name|MSG
+operator|.
+name|phaseCheckingForInconsistencies
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -27817,21 +28121,20 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Invalid student enrollment of student "
-operator|+
+name|MSG
+operator|.
+name|warnBadStudentEnrollment
+argument_list|(
 name|s
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|" in class "
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" found."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -28036,38 +28339,33 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Same instructor and overlapping time required:"
-operator|+
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+name|MSG
+operator|.
+name|warnSameInstructorTimeConflict
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|p1
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|other
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|p2
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -28121,8 +28419,10 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Same instructor, back-to-back time and rooms too far (distance="
-operator|+
+name|MSG
+operator|.
+name|warnSameInstructorBackToBack
+argument_list|(
 name|Math
 operator|.
 name|round
@@ -28144,39 +28444,30 @@ argument_list|,
 name|p2
 argument_list|)
 argument_list|)
-operator|+
-literal|"m) required:"
-operator|+
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|p1
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|other
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|p2
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -28322,38 +28613,33 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Same room and overlapping time required:"
-operator|+
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+name|MSG
+operator|.
+name|warnSameRoomTimeConflict
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|p1
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;"
-operator|+
+argument_list|,
 name|getClassLabel
 argument_list|(
 name|other
 argument_list|)
-operator|+
-literal|"&larr; "
-operator|+
+argument_list|,
 name|p2
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -28435,14 +28721,15 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;instructor "
-operator|+
+name|MSG
+operator|.
+name|warnReasonInstructorNotAvailable
+argument_list|(
 name|ic
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not available"
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -28499,14 +28786,15 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;room "
-operator|+
+name|MSG
+operator|.
+name|warnReasonRoomNotAvailable
+argument_list|(
 name|roomLocation
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not available"
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -28540,8 +28828,10 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;room "
-operator|+
+name|MSG
+operator|.
+name|warnReasonRoomNotAvailable
+argument_list|(
 name|placement
 operator|.
 name|getRoomLocation
@@ -28549,8 +28839,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" not available"
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -28644,27 +28933,29 @@ argument_list|()
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;conflict with committed assignment "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraintCommitedAssignment
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|l
 argument_list|)
-operator|+
-literal|" = "
-operator|+
+argument_list|,
 name|p
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|" (in constraint "
-operator|+
+argument_list|,
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
-operator|+
-literal|")"
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -28677,9 +28968,17 @@ argument_list|)
 condition|)
 name|reason
 operator|+=
-literal|"<br>&nbsp;&nbsp;&nbsp;&nbsp;constraint "
-operator|+
+name|MSG
+operator|.
+name|warnReasonConstraint
+argument_list|(
+name|TimetableSolver
+operator|.
+name|getConstraintName
+argument_list|(
 name|c
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -28697,36 +28996,46 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Class "
-operator|+
+name|reason
+operator|.
+name|isEmpty
+argument_list|()
+condition|?
+name|MSG
+operator|.
+name|warnRequiresInvalidPlacement
+argument_list|(
 name|getClassLabel
 argument_list|(
 name|lecture
 argument_list|)
-operator|+
-literal|" requires an invalid placement "
-operator|+
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-operator|(
-name|reason
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
-condition|?
-literal|"."
+argument_list|)
 else|:
-literal|":"
-operator|+
+name|MSG
+operator|.
+name|warnRequiresInvalidPlacementWithReason
+argument_list|(
+name|getClassLabel
+argument_list|(
+name|lecture
+argument_list|)
+argument_list|,
+name|placement
+operator|.
+name|getLongName
+argument_list|(
+name|iUseAmPm
+argument_list|)
+argument_list|,
 name|reason
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -28850,7 +29159,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Done"
+name|MSG
+operator|.
+name|phaseDone
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)
@@ -28871,7 +29183,10 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Model successfully loaded."
+name|MSG
+operator|.
+name|infoModelLoaded
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -29049,12 +29364,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Unable to access room availability service, reason:"
-operator|+
+name|MSG
+operator|.
+name|warnRoomAvailableServiceFailed
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -29180,7 +29498,10 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Unable to load room availability, reason: no dates"
+name|MSG
+operator|.
+name|warnRoomAvailableServiceNoDates
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -29337,7 +29658,10 @@ parameter_list|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Loading room availability..."
+name|MSG
+operator|.
+name|phaseLoadingRoomAvailability
+argument_list|()
 argument_list|,
 name|iRooms
 operator|.
@@ -30236,12 +30560,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Unable to access room availability service, reason:"
-operator|+
+name|MSG
+operator|.
+name|warnRoomAvailableServiceFailed
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -30288,11 +30615,12 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Using room availability that was updated on "
-operator|+
+name|MSG
+operator|.
+name|infoUsingRoomAvailability
+argument_list|(
 name|ts
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -30311,7 +30639,10 @@ operator|.
 name|MSGLEVEL_ERROR
 argument_list|)
 argument_list|,
-literal|"Room availability is not available."
+name|MSG
+operator|.
+name|warnRoomAvailableServiceNotAvailable
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -30334,7 +30665,10 @@ parameter_list|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Loading instructor availability..."
+name|MSG
+operator|.
+name|phaseLoadingInstructorAvailability
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -31152,12 +31486,15 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Unable to access room availability service, reason:"
-operator|+
+name|MSG
+operator|.
+name|warnRoomAvailableServiceFailed
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -31204,11 +31541,12 @@ operator|.
 name|MSGLEVEL_INFO
 argument_list|)
 argument_list|,
-literal|"Using room availability that was updated on "
-operator|+
+name|MSG
+operator|.
+name|infoUsingRoomAvailability
+argument_list|(
 name|ts
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -31227,7 +31565,10 @@ operator|.
 name|MSGLEVEL_ERROR
 argument_list|)
 argument_list|,
-literal|"Room availability is not available."
+name|MSG
+operator|.
+name|warnRoomAvailableServiceNotAvailable
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -31944,9 +32285,12 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to parse automatic hierarchical constraint preference "
-operator|+
+name|MSG
+operator|.
+name|warnFailedToParseAutomaticHierarchicalConstraint
+argument_list|(
 name|term
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -32476,9 +32820,12 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to parse automatic hierarchical constraint preference "
-operator|+
+name|MSG
+operator|.
+name|warnFailedToParseAutomaticHierarchicalConstraint
+argument_list|(
 name|term
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -32559,9 +32906,12 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to parse automatic hierarchical constraint preference: unknown date pattern "
-operator|+
+name|MSG
+operator|.
+name|warnFailedToParseAutomaticHierarchicalConstraintBadDatePattern
+argument_list|(
 name|constraint
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -32569,38 +32919,44 @@ block|}
 block|}
 name|setPhase
 argument_list|(
-literal|"Posting automatic "
-operator|+
-name|pref
-operator|.
-name|getPrefName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|type
-operator|.
-name|getLabel
-argument_list|()
-operator|+
-literal|" constraints"
-operator|+
-operator|(
 name|pattern
 operator|==
 literal|null
 condition|?
-literal|""
+name|MSG
+operator|.
+name|phasePostingAutomaticConstraint
+argument_list|(
+name|pref
+operator|.
+name|getPrefName
+argument_list|()
+argument_list|,
+name|type
+operator|.
+name|getLabel
+argument_list|()
+argument_list|)
 else|:
-literal|" between classes of pattern "
-operator|+
+name|MSG
+operator|.
+name|phasePostingAutomaticConstraintDatePattern
+argument_list|(
+name|pref
+operator|.
+name|getPrefName
+argument_list|()
+argument_list|,
+name|type
+operator|.
+name|getLabel
+argument_list|()
+argument_list|,
 name|pattern
 operator|.
 name|getName
 argument_list|()
-operator|)
-operator|+
-literal|"..."
+argument_list|)
 argument_list|,
 name|iAllClasses
 operator|.
@@ -32963,25 +33319,22 @@ name|iProgress
 operator|.
 name|info
 argument_list|(
-literal|"Posted "
-operator|+
+name|MSG
+operator|.
+name|infoPostedConstraint
+argument_list|(
 name|type
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" constraint between "
-operator|+
+argument_list|,
 name|info
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|preference
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|addGroupConstraint
@@ -33860,9 +34213,12 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to parse automatic hierarchical constraint preference "
-operator|+
+name|MSG
+operator|.
+name|warnFailedToParseAutomaticStudentConstraint
+argument_list|(
 name|term
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -34205,30 +34561,32 @@ operator|.
 name|MSGLEVEL_WARN
 argument_list|)
 argument_list|,
-literal|"Failed to parse automatic hierarchical constraint preference "
-operator|+
+name|MSG
+operator|.
+name|warnFailedToParseAutomaticStudentConstraint
+argument_list|(
 name|term
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
 name|setPhase
 argument_list|(
-literal|"Posting automatic "
-operator|+
+name|MSG
+operator|.
+name|phasePostingAutomaticStudentConstraints
+argument_list|(
 name|pref
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|type
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" constraints for students..."
+argument_list|)
 argument_list|,
 name|classes2counts
 operator|.
@@ -34419,25 +34777,22 @@ name|iProgress
 operator|.
 name|info
 argument_list|(
-literal|"Posted "
-operator|+
+name|MSG
+operator|.
+name|infoPostedConstraint
+argument_list|(
 name|type
 operator|.
 name|getLabel
 argument_list|()
-operator|+
-literal|" constraint between "
-operator|+
+argument_list|,
 name|info
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|pref
 operator|.
 name|getPrefName
 argument_list|()
-operator|+
-literal|")"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|addGroupConstraint
@@ -34491,7 +34846,10 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"The load was interrupted."
+name|MSG
+operator|.
+name|fatalLoadInterrupted
+argument_list|()
 argument_list|)
 throw|;
 block|}

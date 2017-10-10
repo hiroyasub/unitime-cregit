@@ -347,6 +347,20 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|ApplicationProperties
@@ -364,6 +378,22 @@ operator|.
 name|defaults
 operator|.
 name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|CPSolverMessages
 import|;
 end_import
 
@@ -950,6 +980,20 @@ name|TimetableDatabaseSaver
 extends|extends
 name|TimetableSaver
 block|{
+specifier|protected
+specifier|static
+name|CPSolverMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CPSolverMessages
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 name|Log
@@ -1471,7 +1515,10 @@ argument_list|()
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Committing solution ..."
+name|MSG
+operator|.
+name|phaseCommittingSolution
+argument_list|()
 argument_list|,
 literal|2
 operator|*
@@ -1672,9 +1719,12 @@ name|iProgress
 operator|.
 name|error
 argument_list|(
-literal|"Unable to commit: "
-operator|+
+name|MSG
+operator|.
+name|errorUnableToCommit
+argument_list|(
 name|m
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1752,7 +1802,10 @@ block|}
 block|}
 name|setPhase
 argument_list|(
-literal|"Refreshing solution ..."
+name|MSG
+operator|.
+name|phaseRefreshingSolution
+argument_list|()
 argument_list|,
 name|solutionIds
 operator|.
@@ -1810,16 +1863,17 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to refresh solution "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToRefreshSolution
+argument_list|(
 name|solutionId
-operator|+
-literal|", reason:"
-operator|+
+argument_list|,
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|,
 name|e
 argument_list|)
@@ -1867,19 +1921,20 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to refresh solution "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToRefreshSolution
+argument_list|(
 name|solutionIds
 index|[
 name|i
 index|]
-operator|+
-literal|", reason:"
-operator|+
+argument_list|,
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|,
 name|e
 argument_list|)
@@ -1913,7 +1968,10 @@ name|iProgress
 operator|.
 name|info
 argument_list|(
-literal|"Solution successfully saved."
+name|MSG
+operator|.
+name|infoSolutionSaved
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -2067,12 +2125,15 @@ name|iProgress
 operator|.
 name|fatal
 argument_list|(
-literal|"Unable to save timetable, reason: "
-operator|+
+name|MSG
+operator|.
+name|fatalUnableToSaveTimetable
+argument_list|(
 name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|,
 name|e
 argument_list|)
@@ -2151,7 +2212,10 @@ name|iProgress
 operator|.
 name|setStatus
 argument_list|(
-literal|"Saving solution ..."
+name|MSG
+operator|.
+name|statusSavingSolution
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -2171,7 +2235,10 @@ name|iProgress
 operator|.
 name|fatal
 argument_list|(
-literal|"No solver group loaded."
+name|MSG
+operator|.
+name|fatalNoSolverGroupLoaded
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -2231,14 +2298,15 @@ name|iProgress
 operator|.
 name|fatal
 argument_list|(
-literal|"Unable to load solver group "
-operator|+
+name|MSG
+operator|.
+name|fatalUnableToLoadSolverGroup
+argument_list|(
 name|iSolverGroupId
 index|[
 name|i
 index|]
-operator|+
-literal|"."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2363,12 +2431,15 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to load solution "
-operator|+
+name|MSG
+operator|.
+name|fatalUnableToLoadSolution
+argument_list|(
 name|iSolutionId
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -2394,14 +2465,15 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Solution "
-operator|+
+name|MSG
+operator|.
+name|warnSolutionIgnored
+argument_list|(
 name|iSolutionId
 index|[
 name|i
 index|]
-operator|+
-literal|" ignored -- it does not match with the owner(s) of the problem"
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -2572,7 +2644,10 @@ name|iProgress
 operator|.
 name|fatal
 argument_list|(
-literal|"No session loaded."
+name|MSG
+operator|.
+name|fatalNoSessionLoaded
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -2749,7 +2824,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving solver parameters ..."
+name|MSG
+operator|.
+name|phaseSavingSolverParameters
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -2939,7 +3017,10 @@ literal|0
 decl_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving assignments ..."
+name|MSG
+operator|.
+name|phaseSavingAssignments
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -3030,27 +3111,27 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to save assignment for class "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToSaveClassAssignmentNotExist
+argument_list|(
 name|lecture
-operator|+
-literal|" ("
-operator|+
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|") -- class (id:"
-operator|+
+argument_list|,
 name|lecture
 operator|.
 name|getClassId
 argument_list|()
-operator|+
-literal|") does not exist."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -3111,27 +3192,27 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to save assignment for class "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToSaveClassAssignmentRoomNotExist
+argument_list|(
 name|lecture
-operator|+
-literal|" ("
-operator|+
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|") -- room (id:"
-operator|+
+argument_list|,
 name|r
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|") does not exist."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -3196,21 +3277,22 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to save assignment for class "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToSaveClassAssignmentRoomNotExist
+argument_list|(
 name|lecture
-operator|+
-literal|" ("
-operator|+
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|") -- room (id:"
-operator|+
+argument_list|,
 name|placement
 operator|.
 name|getRoomLocation
@@ -3218,8 +3300,7 @@ argument_list|()
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|") does not exist."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -3372,21 +3453,22 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to save assignment for class "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToSaveClassAssignmentTimePatternNotExist
+argument_list|(
 name|lecture
-operator|+
-literal|" ("
-operator|+
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|") -- time pattern (id:"
-operator|+
+argument_list|,
 name|placement
 operator|.
 name|getTimeLocation
@@ -3394,8 +3476,7 @@ argument_list|()
 operator|.
 name|getTimePatternId
 argument_list|()
-operator|+
-literal|") does not exist."
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -3421,20 +3502,22 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to save assignment for class "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToSaveClassAssignmentWrongOwner
+argument_list|(
 name|lecture
-operator|+
-literal|" ("
-operator|+
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|placement
 operator|.
 name|getLongName
 argument_list|(
 name|iUseAmPm
 argument_list|)
-operator|+
-literal|") -- none or wrong solution group assigned to the class"
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -3647,7 +3730,10 @@ condition|)
 block|{
 name|setPhase
 argument_list|(
-literal|"Saving student enrollments ..."
+name|MSG
+operator|.
+name|phaseSavingStudentEnrollments
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -3730,11 +3816,15 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to save student enrollments for class "
-operator|+
+name|MSG
+operator|.
+name|warnUnableToSaveClassEnrollmentsWrongOwner
+argument_list|(
 name|lecture
-operator|+
-literal|"  -- none or wrong solution group assigned to the class"
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -4202,7 +4292,10 @@ expr_stmt|;
 block|}
 name|setPhase
 argument_list|(
-literal|"Saving global info ..."
+name|MSG
+operator|.
+name|phaseSavingGlobalInfo
+argument_list|()
 argument_list|,
 name|solverGroups
 operator|.
@@ -4431,7 +4524,10 @@ argument_list|)
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving conflict-based statistics ..."
+name|MSG
+operator|.
+name|phaseSavingCBS
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)
@@ -4586,7 +4682,10 @@ literal|0
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving variable infos ..."
+name|MSG
+operator|.
+name|phaseSavingVariableInfos
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -4742,7 +4841,10 @@ literal|0
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving btb instructor infos ..."
+name|MSG
+operator|.
+name|phaseSavingInstructorBTBInfos
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -5087,7 +5189,10 @@ literal|0
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving group constraint infos ..."
+name|MSG
+operator|.
+name|phaseSavingGroupConstraintInfos
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -5327,7 +5432,10 @@ literal|0
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving student enrollment infos ..."
+name|MSG
+operator|.
+name|phaseSavingStudentEnrollmentInfos
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -5602,7 +5710,10 @@ expr_stmt|;
 block|}
 name|setPhase
 argument_list|(
-literal|"Saving student group infos ..."
+name|MSG
+operator|.
+name|phaseSavingStudentGroupInfos
+argument_list|()
 argument_list|,
 name|getModel
 argument_list|()
@@ -5785,7 +5896,10 @@ literal|0
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Saving committed student enrollment infos ..."
+name|MSG
+operator|.
+name|phaseSavingCommittedStudentEnrollmentInfos
+argument_list|()
 argument_list|,
 name|iSolutions
 operator|.
@@ -5852,7 +5966,10 @@ literal|0
 expr_stmt|;
 name|setPhase
 argument_list|(
-literal|"Done"
+name|MSG
+operator|.
+name|phaseDone
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)
@@ -5943,7 +6060,10 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"The save was interrupted."
+name|MSG
+operator|.
+name|fatalSaveInterrupted
+argument_list|()
 argument_list|)
 throw|;
 block|}
