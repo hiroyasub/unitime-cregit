@@ -522,6 +522,9 @@ argument_list|(
 literal|"unitime-SolutionReportsPage"
 argument_list|)
 expr_stmt|;
+name|createTriggers
+argument_list|()
+expr_stmt|;
 name|init
 argument_list|(
 literal|null
