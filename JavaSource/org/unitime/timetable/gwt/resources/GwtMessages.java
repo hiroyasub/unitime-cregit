@@ -6364,6 +6364,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to send email: {0}"
+argument_list|)
+name|String
+name|failedEmail
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load reservations: {0}"
 argument_list|)
 name|String
@@ -17221,6 +17233,108 @@ literal|"Departmental"
 argument_list|)
 name|String
 name|serviceProviderDepartmental
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Waiting..."
+argument_list|)
+name|String
+name|scriptStatusWaiting
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All done."
+argument_list|)
+name|String
+name|scriptStatusAllDone
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Killed."
+argument_list|)
+name|String
+name|scriptStatusKilled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed: {0}"
+argument_list|)
+name|String
+name|scriptStatusFailed
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Starting up..."
+argument_list|)
+name|String
+name|scriptStatusStartingUp
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Compiling script..."
+argument_list|)
+name|String
+name|scriptStatusCompiling
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Running script..."
+argument_list|)
+name|String
+name|scriptStatusRunning
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Execution Stopped."
+argument_list|)
+name|String
+name|scriptLogExecutionStopped
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Execution Failed."
+argument_list|)
+name|String
+name|scriptLogExecutionFailed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Output already created."
+argument_list|)
+name|String
+name|scriptErrorOutputAlreadyCreated
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Send email when finished"
+argument_list|)
+name|String
+name|scriptSendEmailCheckbox
 parameter_list|()
 function_decl|;
 block|}
