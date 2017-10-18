@@ -2703,12 +2703,6 @@ name|iMode
 operator|.
 name|getStep
 argument_list|()
-operator|*
-operator|(
-name|page
-operator|+
-literal|1
-operator|)
 argument_list|,
 name|iMode
 operator|.
