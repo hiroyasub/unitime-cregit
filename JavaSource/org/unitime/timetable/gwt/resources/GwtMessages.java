@@ -11550,7 +11550,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Add All Departments"
+literal|"Add All Matching Departments"
 argument_list|)
 name|String
 name|buttonAddAllDepartments
