@@ -392,7 +392,7 @@ literal|0
 condition|?
 literal|"o.course.courseNbr like :courseNbr and "
 else|:
-literal|"o.course.courseNbr=:courseNbr and"
+literal|"o.course.courseNbr=:courseNbr and "
 operator|)
 operator|+
 operator|(
@@ -577,7 +577,7 @@ literal|0
 condition|?
 literal|"o.course.courseNbr like :courseNbr and "
 else|:
-literal|"o.course.courseNbr=:courseNbr and"
+literal|"o.course.courseNbr=:courseNbr and "
 operator|)
 operator|+
 operator|(
