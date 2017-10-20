@@ -3501,7 +3501,7 @@ name|setEventNote
 argument_list|(
 name|location
 operator|.
-name|getEventMessage
+name|getNote
 argument_list|()
 argument_list|)
 expr_stmt|;
