@@ -4834,6 +4834,13 @@ control|)
 block|{
 if|if
 condition|(
+name|lecture
+operator|.
+name|getConfiguration
+argument_list|()
+operator|==
+literal|null
+operator|||
 operator|!
 name|student
 operator|.
