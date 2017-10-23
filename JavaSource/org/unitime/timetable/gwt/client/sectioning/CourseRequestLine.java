@@ -824,6 +824,10 @@ name|iValidator
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|iSpecReg
+decl_stmt|;
 specifier|public
 name|CourseRequestLine
 parameter_list|(
@@ -841,6 +845,9 @@ argument_list|<
 name|CourseSelection
 argument_list|>
 name|validator
+parameter_list|,
+name|boolean
+name|specreg
 parameter_list|)
 block|{
 name|super
@@ -863,6 +870,10 @@ expr_stmt|;
 name|iAlternate
 operator|=
 name|alternate
+expr_stmt|;
+name|iSpecReg
+operator|=
+name|specreg
 expr_stmt|;
 name|P
 name|line
@@ -3294,6 +3305,8 @@ name|CONSTANTS
 operator|.
 name|showCourseTitle
 argument_list|()
+argument_list|,
+name|iSpecReg
 argument_list|)
 expr_stmt|;
 if|if
@@ -3480,6 +3493,8 @@ operator|new
 name|CourseFinderClasses
 argument_list|(
 literal|true
+argument_list|,
+name|iSpecReg
 argument_list|)
 decl_stmt|;
 name|classes

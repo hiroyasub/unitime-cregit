@@ -1091,6 +1091,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Include conflicting suggestions"
+argument_list|)
+name|String
+name|suggestionsShowAllChoices
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Free Time {0} {1} - {2}"
 argument_list|)
 name|String
@@ -5007,6 +5016,27 @@ name|teachingAssignment
 parameter_list|(
 name|String
 name|className
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Section is full"
+argument_list|)
+name|String
+name|sectionIsFull
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Section is full, overlaps with {0}"
+argument_list|)
+name|String
+name|noteFullSectionOverlapFirst
+parameter_list|(
+name|String
+name|classOrCourse
 parameter_list|)
 function_decl|;
 block|}

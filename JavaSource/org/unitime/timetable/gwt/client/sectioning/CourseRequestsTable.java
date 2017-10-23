@@ -651,6 +651,10 @@ specifier|private
 name|boolean
 name|iOnline
 decl_stmt|;
+specifier|private
+name|boolean
+name|iSpecReg
+decl_stmt|;
 name|Validator
 argument_list|<
 name|CourseSelection
@@ -693,6 +697,9 @@ name|sessionProvider
 parameter_list|,
 name|boolean
 name|online
+parameter_list|,
+name|boolean
+name|specreg
 parameter_list|)
 block|{
 name|super
@@ -707,6 +714,10 @@ expr_stmt|;
 name|iSessionProvider
 operator|=
 name|sessionProvider
+expr_stmt|;
+name|iSpecReg
+operator|=
+name|specreg
 expr_stmt|;
 name|iHeader
 operator|=
@@ -964,6 +975,8 @@ argument_list|,
 literal|false
 argument_list|,
 name|iCheckForDuplicities
+argument_list|,
+name|iSpecReg
 argument_list|)
 decl_stmt|;
 name|iCourses
@@ -1384,6 +1397,8 @@ argument_list|,
 literal|true
 argument_list|,
 name|iCheckForDuplicities
+argument_list|,
+name|iSpecReg
 argument_list|)
 decl_stmt|;
 name|iAlternatives
@@ -1572,6 +1587,8 @@ argument_list|,
 literal|false
 argument_list|,
 name|iCheckForDuplicities
+argument_list|,
+name|iSpecReg
 argument_list|)
 decl_stmt|;
 name|iCourses
@@ -1771,6 +1788,8 @@ argument_list|,
 literal|true
 argument_list|,
 name|iCheckForDuplicities
+argument_list|,
+name|iSpecReg
 argument_list|)
 decl_stmt|;
 name|iAlternatives
@@ -2527,6 +2546,13 @@ expr_stmt|;
 name|fillInAlternatives
 argument_list|(
 name|cr
+argument_list|)
+expr_stmt|;
+name|cr
+operator|.
+name|setShowAllChoices
+argument_list|(
+name|iSpecReg
 argument_list|)
 expr_stmt|;
 return|return
