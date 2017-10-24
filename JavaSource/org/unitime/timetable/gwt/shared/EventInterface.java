@@ -4596,6 +4596,11 @@ if|if
 condition|(
 name|hasAbbreviation
 argument_list|()
+operator|&&
+name|r
+operator|.
+name|hasAbbreviation
+argument_list|()
 condition|)
 block|{
 name|int
