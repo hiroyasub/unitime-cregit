@@ -3930,6 +3930,30 @@ name|setHint
 argument_list|(
 literal|"<span class='item-hint'>"
 operator|+
+operator|(
+name|clazz
+operator|.
+name|getSelection
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+name|clazz
+operator|.
+name|getSubpart
+argument_list|()
+argument_list|)
+condition|?
+literal|""
+else|:
+name|clazz
+operator|.
+name|getSubpart
+argument_list|()
+operator|+
+literal|" "
+operator|)
+operator|+
 name|clazz
 operator|.
 name|getTimeString
@@ -3949,6 +3973,22 @@ operator|.
 name|emailArrangeHours
 argument_list|()
 argument_list|)
+operator|+
+operator|(
+name|clazz
+operator|.
+name|hasNote
+argument_list|()
+condition|?
+literal|" "
+operator|+
+name|clazz
+operator|.
+name|getNote
+argument_list|()
+else|:
+literal|""
+operator|)
 operator|+
 literal|"</span>"
 argument_list|)
