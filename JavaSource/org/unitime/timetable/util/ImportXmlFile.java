@@ -191,45 +191,6 @@ else|:
 literal|null
 operator|)
 decl_stmt|;
-comment|// Log writer to print messages from the import (can be null)
-name|DataExchangeHelper
-operator|.
-name|LogWriter
-name|logger
-init|=
-operator|new
-name|DataExchangeHelper
-operator|.
-name|LogWriter
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|println
-parameter_list|(
-name|String
-name|message
-parameter_list|)
-block|{
-name|Logger
-operator|.
-name|getLogger
-argument_list|(
-name|ImportXmlFile
-operator|.
-name|class
-argument_list|)
-operator|.
-name|info
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-decl_stmt|;
 comment|// Import document
 name|DataExchangeHelper
 operator|.
@@ -239,7 +200,7 @@ name|document
 argument_list|,
 name|managerId
 argument_list|,
-name|logger
+literal|null
 argument_list|)
 expr_stmt|;
 comment|// Close hibernate

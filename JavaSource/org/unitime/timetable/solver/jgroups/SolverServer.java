@@ -147,6 +147,22 @@ name|StudentSolverProxy
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|queue
+operator|.
+name|QueueProcessor
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -187,6 +203,10 @@ decl_stmt|,
 name|SCOPE_INSTRUCTOR
 init|=
 literal|6
+decl_stmt|,
+name|SCOPE_QUEUE_PROCESSOR
+init|=
+literal|7
 decl_stmt|;
 specifier|public
 name|void
@@ -400,6 +420,11 @@ parameter_list|(
 name|Address
 name|address
 parameter_list|)
+function_decl|;
+specifier|public
+name|QueueProcessor
+name|getQueueProcessor
+parameter_list|()
 function_decl|;
 block|}
 end_interface

@@ -275,7 +275,7 @@ name|util
 operator|.
 name|queue
 operator|.
-name|QueueProcessor
+name|LocalQueueProcessor
 import|;
 end_import
 
@@ -600,7 +600,7 @@ name|stopService
 argument_list|()
 expr_stmt|;
 block|}
-name|QueueProcessor
+name|LocalQueueProcessor
 operator|.
 name|stopProcessor
 argument_list|()

@@ -4626,12 +4626,7 @@ name|RollForwardSessionForm
 name|form
 parameter_list|)
 block|{
-name|form
-operator|.
-name|subjectAreas
-operator|=
-name|subjectAreas
-expr_stmt|;
+comment|// form.subjectAreas = subjectAreas;
 name|form
 operator|.
 name|subjectAreaIds
@@ -4644,18 +4639,8 @@ name|buttonAction
 operator|=
 name|buttonAction
 expr_stmt|;
-name|form
-operator|.
-name|toSessions
-operator|=
-name|toSessions
-expr_stmt|;
-name|form
-operator|.
-name|fromSessions
-operator|=
-name|fromSessions
-expr_stmt|;
+comment|// form.toSessions = toSessions;
+comment|// form.fromSessions = fromSessions;
 name|form
 operator|.
 name|sessionToRollForwardTo
@@ -4716,12 +4701,7 @@ name|rollForwardRoomData
 operator|=
 name|rollForwardRoomData
 expr_stmt|;
-name|form
-operator|.
-name|departments
-operator|=
-name|departments
-expr_stmt|;
+comment|// form.departments = departments;
 name|form
 operator|.
 name|rollForwardDepartmentIds
@@ -4842,12 +4822,7 @@ name|pointInTimeSnapshotToRollCourseEnrollmentsForwardFrom
 operator|=
 name|pointInTimeSnapshotToRollCourseEnrollmentsForwardFrom
 expr_stmt|;
-name|form
-operator|.
-name|fromPointInTimeDataSnapshots
-operator|=
-name|fromPointInTimeDataSnapshots
-expr_stmt|;
+comment|// form.fromPointInTimeDataSnapshots = fromPointInTimeDataSnapshots;
 name|form
 operator|.
 name|subpartLocationPrefsAction

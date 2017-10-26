@@ -2488,7 +2488,7 @@ name|QueueItemInterface
 argument_list|>
 name|queue
 parameter_list|,
-name|Long
+name|String
 name|selectId
 parameter_list|)
 block|{
@@ -2763,11 +2763,9 @@ literal|'.'
 argument_list|)
 argument_list|)
 argument_list|,
-literal|"temp/"
-operator|+
 name|q
 operator|.
-name|getOtuput
+name|getOtuputLink
 argument_list|()
 argument_list|)
 argument_list|)
@@ -2987,11 +2985,11 @@ specifier|private
 name|void
 name|refreshQueue
 parameter_list|(
-name|Long
+name|String
 name|deleteId
 parameter_list|,
 specifier|final
-name|Long
+name|String
 name|selectId
 parameter_list|)
 block|{

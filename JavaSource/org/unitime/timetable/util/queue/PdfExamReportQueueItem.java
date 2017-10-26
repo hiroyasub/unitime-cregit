@@ -592,6 +592,14 @@ name|PdfExamReportQueueItem
 extends|extends
 name|QueueItem
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -610,6 +618,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
+specifier|transient
 name|ExamSolverProxy
 name|iExamSolver
 decl_stmt|;
@@ -882,7 +891,6 @@ name|void
 name|execute
 parameter_list|()
 block|{
-comment|/*         Logger repLog = Logger.getLogger("org.unitime.timetable.reports.exam");         Appender myAppender = new AppenderSkeleton() { 			 			@Override 			public boolean requiresLayout() { 				return false; 			} 			 			@Override 			public void close() { 			} 			 			@Override 			protected void append(LoggingEvent event) { 				if (event.getMessage() == null) return; 				if (event.getLevel().toInt()>= Priority.ERROR_INT) { 					error(event.getMessage().toString()); 				} else if (event.getLevel().toInt()>= Priority.WARN_INT) { 					warn(event.getMessage().toString()); 				} else 					log(event.getMessage().toString()); 			} 		}; 		repLog.addAppender(myAppender); 		*/
 name|org
 operator|.
 name|hibernate
@@ -915,7 +923,6 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
-comment|//repLog.removeAppender(myAppender);
 block|}
 specifier|private
 name|void

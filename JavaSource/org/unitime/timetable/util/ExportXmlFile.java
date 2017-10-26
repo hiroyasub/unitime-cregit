@@ -240,45 +240,6 @@ operator|+
 literal|" not found."
 argument_list|)
 throw|;
-comment|// Log writer to print messages from the export (can be null)
-name|DataExchangeHelper
-operator|.
-name|LogWriter
-name|logger
-init|=
-operator|new
-name|DataExchangeHelper
-operator|.
-name|LogWriter
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|println
-parameter_list|(
-name|String
-name|message
-parameter_list|)
-block|{
-name|Logger
-operator|.
-name|getLogger
-argument_list|(
-name|ImportXmlFile
-operator|.
-name|class
-argument_list|)
-operator|.
-name|info
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-decl_stmt|;
 comment|// Export an XML file
 name|Document
 name|document
@@ -299,7 +260,7 @@ operator|.
 name|getProperties
 argument_list|()
 argument_list|,
-name|logger
+literal|null
 argument_list|)
 decl_stmt|;
 if|if

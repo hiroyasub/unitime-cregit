@@ -385,6 +385,22 @@ name|StudentSolverProxy
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|queue
+operator|.
+name|QueueProcessor
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1766,6 +1782,18 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|public
+name|QueueProcessor
+name|getQueueProcessor
+parameter_list|()
+block|{
+return|return
+name|iServer
+operator|.
+name|getQueueProcessor
+argument_list|()
+return|;
 block|}
 block|}
 end_class
