@@ -4274,6 +4274,8 @@ operator|.
 name|DAY_CODES
 index|[
 name|j
+operator|%
+literal|7
 index|]
 operator|&
 name|ca
@@ -8135,6 +8137,8 @@ operator|.
 name|DAY_CODES
 index|[
 name|j
+operator|%
+literal|7
 index|]
 operator|&
 name|ca

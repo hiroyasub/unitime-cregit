@@ -315,6 +315,16 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|iLastWorkDay
+operator|<
+name|iFirstWorkDay
+condition|)
+name|iLastWorkDay
+operator|+=
+literal|7
+expr_stmt|;
 for|for
 control|(
 name|DepartmentSpreadConstraint
@@ -1011,8 +1021,6 @@ name|iFirstDaySlot
 index|]
 index|[
 name|day
-operator|-
-name|iFirstWorkDay
 index|]
 expr_stmt|;
 return|return
@@ -1073,8 +1081,6 @@ name|iFirstDaySlot
 index|]
 index|[
 name|day
-operator|-
-name|iFirstWorkDay
 index|]
 expr_stmt|;
 return|return
@@ -1141,8 +1147,6 @@ name|iFirstDaySlot
 index|]
 index|[
 name|day
-operator|-
-name|iFirstWorkDay
 index|]
 operator|-
 name|iLimit
@@ -1153,8 +1157,6 @@ name|iFirstDaySlot
 index|]
 index|[
 name|day
-operator|-
-name|iFirstWorkDay
 index|]
 argument_list|)
 expr_stmt|;
@@ -1224,8 +1226,6 @@ name|iFirstDaySlot
 index|]
 index|[
 name|day
-operator|-
-name|iFirstWorkDay
 index|]
 argument_list|)
 expr_stmt|;
