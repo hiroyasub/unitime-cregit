@@ -9202,6 +9202,28 @@ argument_list|(
 literal|"unitime.auto_search.maxSubjects"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"0"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Time Patterns: first day of week (0 is Monday, 1 is Tuesday, etc.)"
+argument_list|)
+name|TimePatternFirstDayOfWeek
+argument_list|(
+literal|"unitime.timePattern.firstDayOfWeek"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
