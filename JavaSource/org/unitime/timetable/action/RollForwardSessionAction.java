@@ -1415,21 +1415,21 @@ argument_list|)
 block|,
 name|item
 operator|.
-name|output
+name|hasOutput
 argument_list|()
-operator|==
+operator|&&
+name|item
+operator|.
+name|finished
+argument_list|()
+operator|!=
 literal|null
 condition|?
-literal|""
-else|:
-literal|"<A href='temp/"
+literal|"<A href='"
 operator|+
 name|item
 operator|.
-name|output
-argument_list|()
-operator|.
-name|getName
+name|getOutputFileLink
 argument_list|()
 operator|+
 literal|"'>"
@@ -1464,6 +1464,8 @@ name|toUpperCase
 argument_list|()
 operator|+
 literal|"</A>"
+else|:
+literal|""
 block|}
 argument_list|,
 operator|new
