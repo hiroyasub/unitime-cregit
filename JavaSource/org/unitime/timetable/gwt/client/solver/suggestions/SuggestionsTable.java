@@ -1240,6 +1240,11 @@ argument_list|,
 operator|new
 name|SuggestionsComparator
 argument_list|(
+name|iProperties
+operator|.
+name|getFirstDay
+argument_list|()
+argument_list|,
 name|iSortBy
 argument_list|,
 literal|true
@@ -1948,6 +1953,11 @@ argument_list|()
 operator|.
 name|getName
 argument_list|(
+name|iProperties
+operator|.
+name|getFirstDay
+argument_list|()
+argument_list|,
 literal|false
 argument_list|,
 name|CONSTANTS
@@ -2283,6 +2293,11 @@ argument_list|()
 operator|.
 name|getName
 argument_list|(
+name|iProperties
+operator|.
+name|getFirstDay
+argument_list|()
+argument_list|,
 literal|false
 argument_list|,
 name|CONSTANTS
@@ -2486,6 +2501,11 @@ argument_list|()
 operator|.
 name|getName
 argument_list|(
+name|iProperties
+operator|.
+name|getFirstDay
+argument_list|()
+argument_list|,
 literal|false
 argument_list|,
 name|CONSTANTS
@@ -4064,6 +4084,10 @@ name|Suggestion
 argument_list|>
 block|{
 specifier|private
+name|Integer
+name|iFirstDay
+decl_stmt|;
+specifier|private
 name|SuggestionColumn
 name|iColumn
 decl_stmt|;
@@ -4074,6 +4098,9 @@ decl_stmt|;
 specifier|public
 name|SuggestionsComparator
 parameter_list|(
+name|Integer
+name|firstDay
+parameter_list|,
 name|SuggestionColumn
 name|column
 parameter_list|,
@@ -4081,6 +4108,10 @@ name|boolean
 name|asc
 parameter_list|)
 block|{
+name|iFirstDay
+operator|=
+name|firstDay
+expr_stmt|;
 name|iColumn
 operator|=
 name|column
@@ -4283,6 +4314,8 @@ name|t1
 operator|.
 name|getName
 argument_list|(
+name|iFirstDay
+argument_list|,
 literal|false
 argument_list|,
 name|CONSTANTS
@@ -4298,6 +4331,8 @@ name|t2
 operator|.
 name|getName
 argument_list|(
+name|iFirstDay
+argument_list|,
 literal|false
 argument_list|,
 name|CONSTANTS

@@ -906,6 +906,11 @@ name|time
 operator|.
 name|getName
 argument_list|(
+name|iProperties
+operator|.
+name|getFirstDay
+argument_list|()
+argument_list|,
 name|endTime
 argument_list|,
 name|CONSTANTS
@@ -4105,6 +4110,11 @@ name|time
 operator|.
 name|getName
 argument_list|(
+name|iProperties
+operator|.
+name|getFirstDay
+argument_list|()
+argument_list|,
 literal|false
 argument_list|,
 name|CONSTANTS
