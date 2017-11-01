@@ -538,13 +538,6 @@ if|if
 condition|(
 name|item
 operator|.
-name|finished
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|item
-operator|.
 name|hasOutput
 argument_list|()
 condition|)
@@ -555,10 +548,7 @@ name|setOutput
 argument_list|(
 name|item
 operator|.
-name|output
-argument_list|()
-operator|.
-name|getName
+name|getOutputName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -568,7 +558,7 @@ name|setOutputLink
 argument_list|(
 name|item
 operator|.
-name|getOutputFileLink
+name|getOutputLink
 argument_list|()
 argument_list|)
 expr_stmt|;

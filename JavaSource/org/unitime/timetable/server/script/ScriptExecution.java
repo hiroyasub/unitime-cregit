@@ -2521,10 +2521,7 @@ argument_list|(
 name|output
 argument_list|()
 argument_list|,
-name|output
-argument_list|()
-operator|.
-name|getName
+name|getOutputName
 argument_list|()
 argument_list|)
 expr_stmt|;
