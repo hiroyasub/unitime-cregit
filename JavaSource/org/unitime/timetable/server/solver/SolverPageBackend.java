@@ -3713,7 +3713,7 @@ name|addPair
 argument_list|(
 name|translatedKey
 argument_list|,
-name|info
+name|best
 operator|.
 name|get
 argument_list|(
@@ -3728,7 +3728,7 @@ name|addPair
 argument_list|(
 name|key
 argument_list|,
-name|info
+name|best
 operator|.
 name|get
 argument_list|(
