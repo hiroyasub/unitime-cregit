@@ -1687,6 +1687,16 @@ name|getBestInfo
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|getSolutionComparator
+argument_list|()
+operator|.
+name|isBetterThanBestSolution
+argument_list|(
+name|currentSolution
+argument_list|()
+argument_list|)
 condition|)
 name|currentSolution
 argument_list|()
