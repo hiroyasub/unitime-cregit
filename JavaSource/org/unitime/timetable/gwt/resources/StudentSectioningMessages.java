@@ -4208,6 +4208,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"You are not registered for any courses yet. Please click the Submit Requests button in order to complete your registration."
+argument_list|)
+name|String
+name|warnRequestsEmptyOnCourseRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You have made some changes in your course requests. Please click the Submit Requests button to update your registration."
+argument_list|)
+name|String
+name|warnRequestsChangedOnCourseRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are unsaved changes in your schedule. Do you really want to discard these changes without updating your registration?"
 argument_list|)
 name|String

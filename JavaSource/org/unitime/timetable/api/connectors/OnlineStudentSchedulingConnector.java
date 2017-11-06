@@ -3299,6 +3299,15 @@ argument_list|,
 literal|true
 argument_list|)
 argument_list|,
+name|helper
+operator|.
+name|getOptinalParameterBoolean
+argument_list|(
+literal|"sectioning"
+argument_list|,
+literal|true
+argument_list|)
+argument_list|,
 name|sessionId
 argument_list|,
 name|studentId

@@ -491,6 +491,9 @@ parameter_list|(
 name|boolean
 name|online
 parameter_list|,
+name|boolean
+name|sectioning
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|)
@@ -750,6 +753,9 @@ name|savedRequest
 parameter_list|(
 name|boolean
 name|online
+parameter_list|,
+name|boolean
+name|sectioning
 parameter_list|,
 name|Long
 name|sessionId
