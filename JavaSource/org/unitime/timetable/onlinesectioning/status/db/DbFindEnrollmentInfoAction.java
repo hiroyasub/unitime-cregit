@@ -840,6 +840,8 @@ name|iCoursesIcoordinate
 argument_list|,
 name|iCoursesIcanApprove
 argument_list|,
+name|iSubjectAreas
+argument_list|,
 name|iQuery
 argument_list|)
 decl_stmt|;
@@ -4553,6 +4555,12 @@ name|Long
 argument_list|>
 name|coursesIcanApprove
 parameter_list|,
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|subjects
+parameter_list|,
 name|Query
 name|query
 parameter_list|)
@@ -4562,6 +4570,8 @@ argument_list|(
 name|coursesIcoordinate
 argument_list|,
 name|coursesIcanApprove
+argument_list|,
+name|subjects
 argument_list|,
 name|query
 argument_list|)
@@ -4616,6 +4626,14 @@ argument_list|(
 name|co
 operator|.
 name|getUniqueId
+argument_list|()
+argument_list|)
+operator|&&
+name|hasMatchingSubjectArea
+argument_list|(
+name|co
+operator|.
+name|getSubjectAreaAbbv
 argument_list|()
 argument_list|)
 operator|&&
