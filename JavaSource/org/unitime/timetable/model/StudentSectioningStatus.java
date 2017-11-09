@@ -131,6 +131,11 @@ name|admin
 argument_list|(
 literal|"Admin Can Enroll"
 argument_list|)
+block|,
+name|registration
+argument_list|(
+literal|"Registration Enabled"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

@@ -14208,6 +14208,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Registration"
+argument_list|)
+name|String
+name|toggleRegistration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Enrollment"
 argument_list|)
 name|String

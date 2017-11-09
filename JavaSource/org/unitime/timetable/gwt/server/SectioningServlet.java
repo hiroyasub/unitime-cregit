@@ -19934,7 +19934,7 @@ name|StudentSectioningStatus
 operator|.
 name|Option
 operator|.
-name|enrollment
+name|registration
 argument_list|)
 operator|||
 operator|(
