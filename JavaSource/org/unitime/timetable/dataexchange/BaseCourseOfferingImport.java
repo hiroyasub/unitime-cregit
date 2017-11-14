@@ -21537,7 +21537,16 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from PreferenceLevel pl where pl.prefName = 'Required'"
+literal|"from PreferenceLevel pl where pl.prefProlog = :pref"
+argument_list|)
+operator|.
+name|setString
+argument_list|(
+literal|"pref"
+argument_list|,
+name|PreferenceLevel
+operator|.
+name|sRequired
 argument_list|)
 operator|.
 name|uniqueResult
