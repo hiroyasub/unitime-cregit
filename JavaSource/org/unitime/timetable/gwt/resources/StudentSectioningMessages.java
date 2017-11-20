@@ -5138,6 +5138,15 @@ name|String
 name|classOrCourse
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you want to submit the enrollment changes to special registration?"
+argument_list|)
+name|String
+name|confirmSpecialRegistrationSubmit
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
