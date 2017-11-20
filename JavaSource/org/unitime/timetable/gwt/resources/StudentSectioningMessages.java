@@ -1243,10 +1243,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Submit Special Registration"
+argument_list|)
+name|String
+name|buttonSubmitSpecReg
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Register for the above schedule."
 argument_list|)
 name|String
 name|hintEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sumbit the above enrollment changes to Special Registration."
+argument_list|)
+name|String
+name|hintSpecialRegistration
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1368,6 +1386,39 @@ parameter_list|(
 name|String
 name|reason
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to retrieve special registration: {0}"
+argument_list|)
+name|String
+name|requestSpecialRegistrationFail
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Special registration failed: {0}"
+argument_list|)
+name|String
+name|submitSpecialRegistrationFail
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Success!"
+argument_list|)
+name|String
+name|submitSecialRegistrationOK
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -2855,6 +2906,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to create special registration provider: {0}"
+argument_list|)
+name|String
+name|exceptionSpecialRegistrationProvider
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Eligibility check failed: {0}"
 argument_list|)
 name|String
@@ -2871,6 +2934,15 @@ literal|"Processing..."
 argument_list|)
 name|String
 name|waitEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Processing..."
+argument_list|)
+name|String
+name|waitSpecialRegistration
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4221,6 +4293,15 @@ literal|"You have made some changes in your course requests. Please click the Su
 argument_list|)
 name|String
 name|warnRequestsChangedOnCourseRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You have made some changes in your special registration. Please click the Submit Special Registration button to update your special registration."
+argument_list|)
+name|String
+name|warnSpecialRegistrationChanged
 parameter_list|()
 function_decl|;
 annotation|@

@@ -151,6 +151,8 @@ block|,
 name|CAN_REGISTER
 block|,
 name|NO_REQUEST_ARROWS
+block|,
+name|CAN_SPECREG
 block|, 			;
 specifier|public
 name|int
