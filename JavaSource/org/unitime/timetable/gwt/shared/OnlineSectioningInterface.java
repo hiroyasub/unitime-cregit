@@ -153,6 +153,8 @@ block|,
 name|NO_REQUEST_ARROWS
 block|,
 name|CAN_SPECREG
+block|,
+name|HAS_SPECREG
 block|, 			;
 specifier|public
 name|int

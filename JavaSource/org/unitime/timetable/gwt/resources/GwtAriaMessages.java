@@ -2001,6 +2001,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"There are {0, number} special registrations available. Use up and down arrows to navigate. To select a registration press Enter. Press Escape to hide registrations."
+argument_list|)
+name|String
+name|showingSpecRegs
+parameter_list|(
+name|int
+name|nbrSpecRegs
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Special registration {0, number} of {1, number}. {2}. Submitted {3,localdatetime,MMMM dd}"
+argument_list|)
+name|String
+name|showingSpecReg
+parameter_list|(
+name|int
+name|index
+parameter_list|,
+name|int
+name|nbrAlternatives
+parameter_list|,
+name|String
+name|description
+parameter_list|,
+name|Date
+name|submitDate
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selected special registration {0}."
+argument_list|)
+name|String
+name|selectedSpecReg
+parameter_list|(
+name|String
+name|description
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Line {0} of {1}."
 argument_list|)
 name|String

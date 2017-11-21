@@ -1351,6 +1351,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Special Registrations"
+argument_list|)
+name|String
+name|buttonGetSpecRegs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Select one of the open special registrations."
+argument_list|)
+name|String
+name|hintGetSpecRegs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>L</u>ist of Classes"
 argument_list|)
 name|String
@@ -1406,6 +1424,18 @@ literal|"Special registration failed: {0}"
 argument_list|)
 name|String
 name|submitSpecialRegistrationFail
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load special registrations: {0}"
+argument_list|)
+name|String
+name|retrieveAllSpecialRegistrationsFail
 parameter_list|(
 name|String
 name|reason
@@ -4535,6 +4565,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Special Registrations"
+argument_list|)
+name|String
+name|dialogSpecialRegistrations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Degree Plan: {0}"
 argument_list|)
 name|String
@@ -4610,6 +4649,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Description"
+argument_list|)
+name|String
+name|colSpecRegName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Submitted"
+argument_list|)
+name|String
+name|colSpecRegSubmitted
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>S</u>elect"
 argument_list|)
 name|String
@@ -4655,6 +4712,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>N</u>ew Request"
+argument_list|)
+name|String
+name|buttonSpecRegCreateNew
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>S</u>elect"
+argument_list|)
+name|String
+name|buttonSpecRegSelect
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>ancel"
+argument_list|)
+name|String
+name|buttonSpecRegCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Retrieving degree plan..."
 argument_list|)
 name|String
@@ -4668,6 +4752,15 @@ literal|"No degree plan is available."
 argument_list|)
 name|String
 name|failedNoDegreePlans
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No special registration is available."
+argument_list|)
+name|String
+name|failedNoSpecialRegistrations
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4698,6 +4791,24 @@ literal|"This plan is active."
 argument_list|)
 name|String
 name|hintActivePlan
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has been submitted for processing."
+argument_list|)
+name|String
+name|hintSpecRegCanNotSubmit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has been processed."
+argument_list|)
+name|String
+name|hintSpecRegCanEnroll
 parameter_list|()
 function_decl|;
 annotation|@
