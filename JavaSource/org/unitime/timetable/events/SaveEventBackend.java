@@ -4197,6 +4197,16 @@ name|attached
 init|=
 literal|false
 decl_stmt|;
+name|int
+name|firstDayOfWeek
+init|=
+name|ApplicationProperty
+operator|.
+name|EventGridStartDay
+operator|.
+name|intValue
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|response
@@ -4333,6 +4343,8 @@ name|EventInterface
 operator|.
 name|toString
 argument_list|(
+name|firstDayOfWeek
+argument_list|,
 name|response
 operator|.
 name|getCreatedMeetings
@@ -4647,6 +4659,8 @@ name|EventInterface
 operator|.
 name|toString
 argument_list|(
+name|firstDayOfWeek
+argument_list|,
 name|response
 operator|.
 name|getUpdatedMeetings
@@ -4923,6 +4937,8 @@ name|EventInterface
 operator|.
 name|toString
 argument_list|(
+name|firstDayOfWeek
+argument_list|,
 name|response
 operator|.
 name|getDeletedMeetings
@@ -5206,6 +5222,8 @@ name|EventInterface
 operator|.
 name|toString
 argument_list|(
+name|firstDayOfWeek
+argument_list|,
 name|response
 operator|.
 name|getCancelledMeetings

@@ -16745,6 +16745,11 @@ name|int
 name|endSlot
 parameter_list|)
 function_decl|;
+specifier|public
+name|int
+name|getFirstDayOfWeek
+parameter_list|()
+function_decl|;
 block|}
 specifier|private
 name|void

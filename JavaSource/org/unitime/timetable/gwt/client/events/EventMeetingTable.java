@@ -6345,6 +6345,11 @@ name|m
 operator|.
 name|getDays
 argument_list|(
+name|iPropertiesProvider
+operator|.
+name|getFirstDayOfWeek
+argument_list|()
+argument_list|,
 name|CONSTANTS
 argument_list|)
 operator|+
@@ -10839,6 +10844,11 @@ name|m
 operator|.
 name|getDays
 argument_list|(
+name|iPropertiesProvider
+operator|.
+name|getFirstDayOfWeek
+argument_list|()
+argument_list|,
 name|CONSTANTS
 argument_list|)
 operator|+
