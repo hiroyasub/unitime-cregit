@@ -2835,6 +2835,8 @@ operator|.
 name|isApplicable
 argument_list|(
 name|student
+argument_list|,
+name|enrollment
 argument_list|)
 condition|)
 block|{
@@ -4372,6 +4374,8 @@ operator|.
 name|isApplicable
 argument_list|(
 name|student
+argument_list|,
+name|course
 argument_list|)
 decl_stmt|;
 if|if
@@ -4698,6 +4702,9 @@ parameter_list|,
 name|Long
 name|configId
 parameter_list|,
+name|XCourseId
+name|course
+parameter_list|,
 name|List
 argument_list|<
 name|XSection
@@ -4726,6 +4733,8 @@ operator|.
 name|isApplicable
 argument_list|(
 name|student
+argument_list|,
+name|course
 argument_list|)
 operator|&&
 name|reservation

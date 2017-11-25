@@ -1669,6 +1669,8 @@ operator|.
 name|isApplicable
 argument_list|(
 name|student
+argument_list|,
+name|course
 argument_list|)
 condition|)
 continue|continue;
@@ -2756,6 +2758,8 @@ operator|.
 name|getConfigId
 argument_list|()
 argument_list|,
+name|course
+argument_list|,
 name|sections
 argument_list|)
 condition|)
@@ -2819,6 +2823,11 @@ argument_list|,
 name|otherConfig
 operator|.
 name|getConfigId
+argument_list|()
+argument_list|,
+name|otherRequest
+operator|.
+name|getCourse
 argument_list|()
 argument_list|,
 name|otherRequest

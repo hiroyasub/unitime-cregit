@@ -4705,6 +4705,8 @@ operator|.
 name|getConfigId
 argument_list|()
 argument_list|,
+name|enrollment
+argument_list|,
 name|sections
 argument_list|)
 condition|)
@@ -4815,6 +4817,11 @@ name|getEnrollment
 argument_list|()
 operator|.
 name|getConfigId
+argument_list|()
+argument_list|,
+name|cr
+operator|.
+name|getEnrollment
 argument_list|()
 argument_list|,
 name|assignment

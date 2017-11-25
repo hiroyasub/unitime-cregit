@@ -462,6 +462,9 @@ name|isApplicable
 parameter_list|(
 name|XStudent
 name|student
+parameter_list|,
+name|XCourseId
+name|course
 parameter_list|)
 block|{
 for|for

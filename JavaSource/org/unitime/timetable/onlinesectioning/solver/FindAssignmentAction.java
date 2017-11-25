@@ -4883,6 +4883,8 @@ operator|.
 name|isApplicable
 argument_list|(
 name|originalStudent
+argument_list|,
+name|course
 argument_list|)
 decl_stmt|;
 if|if

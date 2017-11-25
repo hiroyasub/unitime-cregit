@@ -1188,6 +1188,9 @@ name|isApplicable
 parameter_list|(
 name|XStudent
 name|student
+parameter_list|,
+name|XCourseId
+name|course
 parameter_list|)
 function_decl|;
 comment|/**      * One or more configurations on which the reservation is set (optional).      */

@@ -708,6 +708,11 @@ operator|.
 name|getConfigId
 argument_list|()
 argument_list|,
+name|request
+operator|.
+name|getEnrollment
+argument_list|()
+argument_list|,
 name|sections
 argument_list|)
 condition|)
@@ -813,6 +818,8 @@ name|e
 operator|.
 name|getConfigId
 argument_list|()
+argument_list|,
+name|e
 argument_list|,
 name|assignment
 argument_list|)
