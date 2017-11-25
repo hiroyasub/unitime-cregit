@@ -2723,6 +2723,28 @@ literal|"tmtbl.room.availability.eventType.class"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Room Availability: include events from other academic sessions"
+argument_list|)
+name|RoomAvailabilityIncludeOtherTerms
+argument_list|(
+literal|"tmtbl.room.availability.includeOtherTerms"
+argument_list|)
+operator|,
+expr_stmt|@
 name|DefaultValue
 argument_list|(
 literal|"{ call room_avail_interface.request(?) }"
