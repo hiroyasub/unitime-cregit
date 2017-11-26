@@ -790,12 +790,6 @@ condition|(
 name|variableOriented
 condition|)
 block|{
-if|if
-condition|(
-name|classId
-operator|!=
-literal|null
-condition|)
 name|variables
 operator|=
 name|ConflictStatisticsInfo
