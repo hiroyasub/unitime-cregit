@@ -108,6 +108,10 @@ name|String
 name|iAcademicTitle
 decl_stmt|;
 specifier|private
+name|String
+name|iCampus
+decl_stmt|;
+specifier|private
 name|PositionType
 name|iPositionType
 decl_stmt|;
@@ -166,6 +170,13 @@ name|String
 name|PROP_ACAD_TITLE
 init|=
 literal|"academicTitle"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_CAMPUS
+init|=
+literal|"campus"
 decl_stmt|;
 specifier|public
 name|BaseStaff
@@ -374,6 +385,28 @@ name|academicTitle
 expr_stmt|;
 block|}
 specifier|public
+name|String
+name|getCampus
+parameter_list|()
+block|{
+return|return
+name|iCampus
+return|;
+block|}
+specifier|public
+name|void
+name|setCampus
+parameter_list|(
+name|String
+name|campus
+parameter_list|)
+block|{
+name|iCampus
+operator|=
+name|campus
+expr_stmt|;
+block|}
+specifier|public
 name|PositionType
 name|getPositionType
 parameter_list|()
@@ -510,6 +543,11 @@ operator|+
 literal|"\n	AcademicTitle: "
 operator|+
 name|getAcademicTitle
+argument_list|()
+operator|+
+literal|"\n	Campus: "
+operator|+
+name|getCampus
 argument_list|()
 operator|+
 literal|"\n	Dept: "

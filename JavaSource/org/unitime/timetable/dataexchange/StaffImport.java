@@ -674,6 +674,13 @@ argument_list|(
 name|externalId
 argument_list|)
 expr_stmt|;
+name|staff
+operator|.
+name|setCampus
+argument_list|(
+name|campus
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|dept

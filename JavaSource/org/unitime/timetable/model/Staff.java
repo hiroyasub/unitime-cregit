@@ -249,6 +249,8 @@ name|createQuery
 argument_list|(
 literal|"select distinct s from Staff s where s.dept=:deptCode and "
 operator|+
+literal|"(s.campus is null or s.campus=(select x.academicInitiative from Session x where x.uniqueId = :sessionId)) and "
+operator|+
 literal|"(select di.externalUniqueId from DepartmentalInstructor di "
 operator|+
 literal|"where di.department.deptCode=:deptCode and di.department.session.uniqueId=:sessionId and di.externalUniqueId = s.externalUniqueId ) is null"
@@ -722,6 +724,27 @@ condition|(
 name|d
 operator|!=
 literal|null
+operator|&&
+operator|(
+name|getCampus
+argument_list|()
+operator|==
+literal|null
+operator|||
+name|getCampus
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|d
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|getAcademicInitiative
+argument_list|()
+argument_list|)
+operator|)
 condition|)
 return|return
 literal|"<span title='"
@@ -744,6 +767,22 @@ else|else
 return|return
 name|getDept
 argument_list|()
+operator|+
+operator|(
+name|getCampus
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
+literal|" ("
+operator|+
+name|getCampus
+argument_list|()
+operator|+
+literal|")"
+operator|)
 return|;
 block|}
 specifier|public
