@@ -363,6 +363,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|SpecialRegistrationInterface
+operator|.
+name|SpecialRegistrationContext
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -656,7 +674,7 @@ name|boolean
 name|iOnline
 decl_stmt|;
 specifier|private
-name|boolean
+name|SpecialRegistrationContext
 name|iSpecReg
 decl_stmt|;
 name|Validator
@@ -705,7 +723,7 @@ parameter_list|,
 name|boolean
 name|online
 parameter_list|,
-name|boolean
+name|SpecialRegistrationContext
 name|specreg
 parameter_list|)
 block|{
@@ -2620,6 +2638,9 @@ operator|.
 name|setShowAllChoices
 argument_list|(
 name|iSpecReg
+operator|.
+name|isSpecRegMode
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return

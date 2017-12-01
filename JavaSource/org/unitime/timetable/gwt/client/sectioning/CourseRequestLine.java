@@ -525,6 +525,24 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|SpecialRegistrationInterface
+operator|.
+name|SpecialRegistrationContext
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|google
@@ -825,7 +843,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|boolean
+name|SpecialRegistrationContext
 name|iSpecReg
 decl_stmt|;
 specifier|private
@@ -857,7 +875,7 @@ parameter_list|,
 name|boolean
 name|sectioning
 parameter_list|,
-name|boolean
+name|SpecialRegistrationContext
 name|specreg
 parameter_list|)
 block|{
