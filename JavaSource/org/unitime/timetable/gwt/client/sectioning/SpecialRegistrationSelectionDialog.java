@@ -1006,6 +1006,16 @@ name|iSpecReg
 operator|.
 name|isSpecRegMode
 argument_list|()
+operator|&&
+name|iSpecReg
+operator|.
+name|hasRequestKey
+argument_list|()
+operator|&&
+name|iSpecReg
+operator|.
+name|isSpecRegRequestKeyValid
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iTable

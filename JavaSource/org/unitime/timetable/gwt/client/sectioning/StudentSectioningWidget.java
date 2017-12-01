@@ -15928,6 +15928,13 @@ argument_list|)
 expr_stmt|;
 name|iSpecRegCx
 operator|.
+name|setSpecRegRequestKeyValid
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+name|iSpecRegCx
+operator|.
 name|setCanEnroll
 argument_list|(
 literal|null
@@ -15979,6 +15986,13 @@ block|{
 name|iSpecRegCx
 operator|.
 name|setSpecRegMode
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|iSpecRegCx
+operator|.
+name|setSpecRegRequestKeyValid
 argument_list|(
 literal|true
 argument_list|)
