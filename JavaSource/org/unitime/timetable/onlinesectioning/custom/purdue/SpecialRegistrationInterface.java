@@ -110,7 +110,7 @@ name|SpecialRegistrationRequest
 name|data
 decl_stmt|;
 specifier|public
-name|ResponseStatus
+name|String
 name|status
 decl_stmt|;
 specifier|public

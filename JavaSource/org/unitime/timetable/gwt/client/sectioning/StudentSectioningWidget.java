@@ -19953,6 +19953,13 @@ name|response
 operator|.
 name|getMessage
 argument_list|()
+operator|+
+literal|" "
+operator|+
+name|MESSAGES
+operator|.
+name|confirmSpecialRegistrationSubmit
+argument_list|()
 else|:
 name|MESSAGES
 operator|.
@@ -20049,6 +20056,13 @@ condition|)
 block|{
 name|iSpecRegCx
 operator|.
+name|setSpecRegMode
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|iSpecRegCx
+operator|.
 name|setRequestId
 argument_list|(
 literal|null
@@ -20083,6 +20097,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|iSpecRegCx
+operator|.
+name|setSpecRegMode
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|iSpecRegCx
 operator|.
 name|setRequestId
