@@ -2237,7 +2237,7 @@ name|dept
 operator|.
 name|setInheritInstructorPreferences
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 name|dept
