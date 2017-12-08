@@ -7288,6 +7288,16 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|ApplicationProperty
+operator|.
+name|ClassSuffixDivSecFormat
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
 name|suffix
 operator|!=
 literal|null
@@ -7320,6 +7330,7 @@ argument_list|,
 literal|6
 argument_list|)
 return|;
+block|}
 return|return
 name|suffix
 return|;

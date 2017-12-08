@@ -9339,6 +9339,28 @@ argument_list|(
 literal|"unitime.timePattern.firstDayOfWeek"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Class class suffix / external id: when true for six character class suffixes insert a \'-\' between the first three characters and the last three characters."
+argument_list|)
+name|ClassSuffixDivSecFormat
+argument_list|(
+literal|"unitime.class.classSuffix.divSecDivider"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
