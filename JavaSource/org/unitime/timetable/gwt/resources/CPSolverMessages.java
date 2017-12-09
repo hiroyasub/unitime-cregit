@@ -1067,6 +1067,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to parse automatic instructor constraint preference {0}"
+argument_list|)
+name|String
+name|warnFailedToParseAutomaticInstructorConstraint
+parameter_list|(
+name|String
+name|term
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to parse automatic student constraint preference {0}"
 argument_list|)
 name|String
