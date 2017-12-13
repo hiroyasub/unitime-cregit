@@ -2093,6 +2093,15 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+else|else
+name|setHTML
+argument_list|(
+name|cell
+operator|.
+name|getFormattedValue
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
