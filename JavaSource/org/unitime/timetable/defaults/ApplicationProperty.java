@@ -7417,12 +7417,12 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"http://www.unitime.org/papers/event_documentation.pdf"
+literal|"https://docs.google.com/document/d/1bDzKBMEKOFYN_aBwzA6E4PAsBOGV7Tx-A3i_kuMae6U"
 argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Manuals: event manual"
+literal|"Manuals: event management manual"
 argument_list|)
 name|ManualEvents
 argument_list|(
@@ -7432,7 +7432,22 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"http://www.unitime.org/papers/ttman_data.pdf"
+literal|"https://docs.google.com/document/d/1Aye5LrLiAcTBR7aNOJO6laYg7-eEDlkfd5s0EW3jFZ4"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manuals: event administration manual"
+argument_list|)
+name|ManualEventsAdmin
+argument_list|(
+literal|"tmtbl.help.manual.events_admin"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"https://docs.google.com/document/d/1rjS_6ebwegSTcN5Iw57qui5CHG8_6TWnk8MCwBwAt58"
 argument_list|)
 expr|@
 name|Description
@@ -7447,7 +7462,7 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"http://www.unitime.org/papers/ttman_solver.pdf"
+literal|"https://docs.google.com/document/d/1NZmKnmrjM2Tqg7dO18cWcMIe_GrtilQtKw6d1WGWBtY"
 argument_list|)
 expr|@
 name|Description
@@ -7472,6 +7487,51 @@ argument_list|)
 name|ManualInstructorScheduling
 argument_list|(
 literal|"tmtbl.help.manual.instructorScheduling"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"https://docs.google.com/document/d/1iuj9NwrqkiVeJvKn1Sd41qqaVEJGwO79y1KZo1mtwuw"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manuals: administrative user manual"
+argument_list|)
+name|ManualAdministration
+argument_list|(
+literal|"tmtbl.help.manual.administration"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"https://docs.google.com/document/d/18TH8LtNzbKE7_m99wks2POKsw6hali8xMnCroBK4ylc"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manuals: other UniTime documentation"
+argument_list|)
+name|ManualOtherDocumentation
+argument_list|(
+literal|"tmtbl.help.manual.other"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"https://docs.google.com/document/d/1QTCKwLhU62yGtr6XlW_XM68q3hgohxLpwWXdyajr30g"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manuals: Student Scheduling Asisstant user manual"
+argument_list|)
+name|ManualSchedulingAssistant
+argument_list|(
+literal|"tmtbl.help.manual.schedulingAssistant"
 argument_list|)
 operator|,
 expr_stmt|@
