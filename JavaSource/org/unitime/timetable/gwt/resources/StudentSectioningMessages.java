@@ -5258,6 +5258,42 @@ name|String
 name|confirmSpecialRegistrationSubmit
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Based on your course selections, a conflict-free schedule is not possible. Under extenuating circumstances, the faculty may approve student enrollments that include schedule conflicts."
+argument_list|)
+name|String
+name|disclaimerNoSuggestionsWarning
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you want to explore approval for a schedule with time conflicts?"
+argument_list|)
+name|String
+name|disclaimerSpecRegAllowForTimeConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you want to explore approval for a schedule with limit conflicts?"
+argument_list|)
+name|String
+name|disclaimerSpecRegAllowForSpaceConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you want to explore approval for a schedule with conflicts?"
+argument_list|)
+name|String
+name|disclaimerSpecRegAllowForTimeSpaceConflicts
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

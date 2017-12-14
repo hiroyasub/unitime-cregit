@@ -2707,7 +2707,7 @@ name|exceptionEnrollNotAvailable
 argument_list|(
 name|MSG
 operator|.
-name|courseName
+name|clazz
 argument_list|(
 name|course
 operator|.
@@ -2718,15 +2718,18 @@ name|course
 operator|.
 name|getCourseNumber
 argument_list|()
-argument_list|)
-argument_list|)
-operator|+
-literal|" "
-operator|+
-name|config
+argument_list|,
+name|section
+operator|.
+name|getSubpartName
+argument_list|()
+argument_list|,
+name|section
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2755,13 +2758,6 @@ name|getCourseNumber
 argument_list|()
 argument_list|)
 argument_list|)
-operator|+
-literal|" "
-operator|+
-name|config
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -2901,7 +2897,7 @@ name|exceptionEnrollNotAvailable
 argument_list|(
 name|MSG
 operator|.
-name|courseName
+name|clazz
 argument_list|(
 name|course
 operator|.
@@ -2912,15 +2908,18 @@ name|course
 operator|.
 name|getCourseNumber
 argument_list|()
-argument_list|)
-argument_list|)
-operator|+
-literal|" "
-operator|+
-name|config
+argument_list|,
+name|section
+operator|.
+name|getSubpartName
+argument_list|()
+argument_list|,
+name|section
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2949,13 +2948,6 @@ name|getCourseNumber
 argument_list|()
 argument_list|)
 argument_list|)
-operator|+
-literal|" "
-operator|+
-name|config
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -3081,7 +3073,7 @@ name|exceptionEnrollNotAvailable
 argument_list|(
 name|MSG
 operator|.
-name|courseName
+name|clazz
 argument_list|(
 name|course
 operator|.
@@ -3092,15 +3084,18 @@ name|course
 operator|.
 name|getCourseNumber
 argument_list|()
-argument_list|)
-argument_list|)
-operator|+
-literal|" "
-operator|+
-name|config
+argument_list|,
+name|section
+operator|.
+name|getSubpartName
+argument_list|()
+argument_list|,
+name|section
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

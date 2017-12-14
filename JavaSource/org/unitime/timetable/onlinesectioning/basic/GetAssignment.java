@@ -5159,16 +5159,6 @@ argument_list|(
 name|e
 argument_list|)
 expr_stmt|;
-name|ret
-operator|.
-name|addMessage
-argument_list|(
-name|e
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 if|if

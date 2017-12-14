@@ -1455,7 +1455,13 @@ operator|(
 name|getRequest
 argument_list|()
 operator|.
-name|isShowAllChoices
+name|areTimeConflictsAllowed
+argument_list|()
+operator|||
+name|getRequest
+argument_list|()
+operator|.
+name|areSpaceConflictsAllowed
 argument_list|()
 condition|?
 operator|new
