@@ -2061,6 +2061,27 @@ return|return
 name|iAccomodations
 return|;
 block|}
+specifier|public
+name|boolean
+name|hasAccomodation
+parameter_list|(
+name|String
+name|accomodation
+parameter_list|)
+block|{
+return|return
+name|accomodation
+operator|!=
+literal|null
+operator|&&
+name|iAccomodations
+operator|.
+name|contains
+argument_list|(
+name|accomodation
+argument_list|)
+return|;
+block|}
 comment|/**      * Get student status (online sectioning only)      */
 specifier|public
 name|String

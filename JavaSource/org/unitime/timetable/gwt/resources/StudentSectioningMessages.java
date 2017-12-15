@@ -349,6 +349,33 @@ name|String
 name|colClassSelection
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Distance"
+argument_list|)
+name|String
+name|colDistanceConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Longest Distance [min]"
+argument_list|)
+name|String
+name|colLongestDistance
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Overlap [min]"
+argument_list|)
+name|String
+name|colOverlapMins
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
