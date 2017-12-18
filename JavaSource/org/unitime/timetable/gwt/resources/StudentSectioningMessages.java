@@ -376,6 +376,33 @@ name|String
 name|colOverlapMins
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"FreeTime [min]"
+argument_list|)
+name|String
+name|colFreeTimeOverlapMins
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"IM Pref"
+argument_list|)
+name|String
+name|colPrefInstrMethConfs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Section Pref"
+argument_list|)
+name|String
+name|colPrefSectionConfs
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage

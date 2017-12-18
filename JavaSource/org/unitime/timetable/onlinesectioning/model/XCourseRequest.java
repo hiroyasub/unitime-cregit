@@ -1782,6 +1782,8 @@ operator|.
 name|toProto
 argument_list|(
 name|section
+argument_list|,
+name|course
 argument_list|)
 argument_list|)
 expr_stmt|;
