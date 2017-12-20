@@ -1073,6 +1073,8 @@ name|sql
 init|=
 literal|""
 decl_stmt|;
+try|try
+block|{
 for|for
 control|(
 name|StringTokenizer
@@ -1253,6 +1255,14 @@ argument_list|,
 literal|"&nbsp;"
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
 block|}
 if|if
 condition|(
