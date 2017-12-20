@@ -17381,6 +17381,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"credit"
+argument_list|)
+name|String
+name|tagCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"overlap"
+argument_list|)
+name|String
+name|tagOverlap
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"All Sessions"
 argument_list|)
 name|String

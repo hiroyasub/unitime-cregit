@@ -1568,6 +1568,8 @@ argument_list|,
 name|request
 argument_list|,
 name|isConsentToDoCourse
+argument_list|,
+name|server
 argument_list|)
 decl_stmt|;
 if|if
@@ -3885,6 +3887,8 @@ argument_list|,
 name|request
 argument_list|,
 name|isConsentToDoCourse
+argument_list|,
+name|server
 argument_list|)
 decl_stmt|;
 if|if
@@ -4058,6 +4062,8 @@ argument_list|,
 name|request
 argument_list|,
 name|isConsentToDoCourse
+argument_list|,
+name|server
 argument_list|)
 decl_stmt|;
 comment|//TODO: Do we need this?

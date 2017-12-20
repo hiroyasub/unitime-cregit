@@ -1272,6 +1272,8 @@ argument_list|,
 name|request
 argument_list|,
 name|isConsentToDoCourse
+argument_list|,
+name|server
 argument_list|)
 decl_stmt|;
 if|if
@@ -3238,6 +3240,8 @@ name|isConsentToDoCourse
 argument_list|(
 name|otherCourse
 argument_list|)
+argument_list|,
+name|server
 argument_list|)
 argument_list|)
 condition|)
@@ -3612,6 +3616,13 @@ name|query
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|m
+operator|.
+name|setServer
+argument_list|(
+name|server
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Long
@@ -4636,7 +4647,8 @@ argument_list|(
 literal|"\\d+\\.?\\d*"
 argument_list|)
 decl_stmt|;
-specifier|protected
+specifier|public
+specifier|static
 name|float
 name|guessCredit
 parameter_list|(
@@ -4806,6 +4818,9 @@ argument_list|(
 name|student
 argument_list|,
 name|iDefaultSectioningStatus
+argument_list|,
+name|getServer
+argument_list|()
 argument_list|)
 argument_list|)
 return|;
