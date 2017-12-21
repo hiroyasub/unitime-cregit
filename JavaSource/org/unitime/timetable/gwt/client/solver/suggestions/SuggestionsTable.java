@@ -4241,8 +4241,10 @@ literal|null
 else|:
 name|t1
 operator|.
-name|getDays
-argument_list|()
+name|getDaysOrder
+argument_list|(
+name|iFirstDay
+argument_list|)
 argument_list|,
 name|t2
 operator|==
@@ -4252,8 +4254,10 @@ literal|null
 else|:
 name|t2
 operator|.
-name|getDays
-argument_list|()
+name|getDaysOrder
+argument_list|(
+name|iFirstDay
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
