@@ -6718,7 +6718,7 @@ operator|||
 operator|!
 name|iSpecRegCx
 operator|.
-name|isSpecRegMode
+name|hasRequestKey
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -14961,6 +14961,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|iSpecRegCx
+operator|.
+name|reset
+argument_list|()
+expr_stmt|;
 name|iSectioningService
 operator|.
 name|checkEligibility
@@ -15797,13 +15802,6 @@ expr_stmt|;
 name|iEligibilityCheck
 operator|=
 literal|null
-expr_stmt|;
-name|iSpecRegCx
-operator|.
-name|update
-argument_list|(
-literal|null
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
