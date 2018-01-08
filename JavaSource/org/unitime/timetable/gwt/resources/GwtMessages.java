@@ -11255,6 +11255,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student Advisor"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageStudentAdvisor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Advisors"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageStudentAdvisors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -14203,6 +14225,42 @@ literal|"All Rooms"
 argument_list|)
 name|String
 name|fieldAllRooms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"First Name"
+argument_list|)
+name|String
+name|fieldFirstName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Middle Name"
+argument_list|)
+name|String
+name|fieldMiddleName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last Name"
+argument_list|)
+name|String
+name|fieldLastName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Title"
+argument_list|)
+name|String
+name|fieldAcademicTitle
 parameter_list|()
 function_decl|;
 annotation|@

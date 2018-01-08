@@ -370,6 +370,13 @@ literal|"sessionSetup"
 argument_list|,
 literal|"Academic Session Setup"
 argument_list|)
+block|,
+name|STUDENT_ADVISORS
+argument_list|(
+literal|"studentAdvisors"
+argument_list|,
+literal|"Student Advisors"
+argument_list|)
 block|,     	;
 specifier|private
 name|String
