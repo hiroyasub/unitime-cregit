@@ -5348,6 +5348,15 @@ name|String
 name|disclaimerSpecRegAllowForTimeSpaceConflicts
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"My Students"
+argument_list|)
+name|String
+name|modeMyStudents
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -732,13 +732,7 @@ name|tagSectioningMode
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|mode
-operator|.
-name|setMultipleSelection
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
+comment|// mode.setMultipleSelection(false);
 name|addFilter
 argument_list|(
 name|mode
