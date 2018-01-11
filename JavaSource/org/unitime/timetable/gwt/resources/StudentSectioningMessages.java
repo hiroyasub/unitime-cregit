@@ -3221,6 +3221,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Alternative"
+argument_list|)
+name|String
+name|colUnassignedAlternative
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Reservation"
 argument_list|)
 name|String
