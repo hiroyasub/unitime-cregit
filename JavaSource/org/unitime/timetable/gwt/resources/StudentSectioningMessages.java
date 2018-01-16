@@ -403,6 +403,24 @@ name|String
 name|colPrefSectionConfs
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-List"
+argument_list|)
+name|String
+name|colWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Preferences"
+argument_list|)
+name|String
+name|colPreferences
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
@@ -1423,6 +1441,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>C</u>ourse Requests"
+argument_list|)
+name|String
+name|tabRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>L</u>ist of Classes"
 argument_list|)
 name|String
@@ -1568,6 +1595,15 @@ literal|"Computed schedule is empty."
 argument_list|)
 name|String
 name|noSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are no course requests."
+argument_list|)
+name|String
+name|emptyRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5364,6 +5400,15 @@ literal|"My Students"
 argument_list|)
 name|String
 name|modeMyStudents
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request is wait-listed."
+argument_list|)
+name|String
+name|descriptionRequestWaitListed
 parameter_list|()
 function_decl|;
 block|}

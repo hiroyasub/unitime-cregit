@@ -49,6 +49,24 @@ name|ImageResource
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|resources
+operator|.
+name|client
+operator|.
+name|ClientBundle
+operator|.
+name|Source
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -535,6 +553,15 @@ literal|"org/unitime/timetable/gwt/resources/icons/action_check.png"
 argument_list|)
 name|ImageResource
 name|specRegCanEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/action_check.png"
+argument_list|)
+name|ImageResource
+name|requestsWaitList
 parameter_list|()
 function_decl|;
 block|}

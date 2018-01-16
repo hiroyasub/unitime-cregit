@@ -2607,6 +2607,16 @@ literal|'L'
 operator|)
 condition|)
 block|{
+if|if
+condition|(
+name|iTabPanel
+operator|.
+name|getTabCount
+argument_list|()
+operator|>=
+literal|3
+condition|)
+block|{
 name|iTabPanel
 operator|.
 name|selectTab
@@ -2619,6 +2629,7 @@ operator|.
 name|preventDefault
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}

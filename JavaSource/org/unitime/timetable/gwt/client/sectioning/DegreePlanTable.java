@@ -5197,6 +5197,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|rc
+operator|.
+name|setCourseTitle
+argument_list|(
+name|ca
+operator|.
+name|getTitle
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|r
 operator|.
 name|addRequestedCourse
