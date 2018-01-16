@@ -1815,7 +1815,7 @@ argument_list|(
 literal|"Creating initial assignment [{0}] ..."
 argument_list|)
 name|String
-name|phaseCreatingInitialAssignment
+name|phaseCreatingInitialAssignmentPhase
 parameter_list|(
 name|int
 name|phase
@@ -1824,7 +1824,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Creating initial assignment ..."
+literal|"Creating committed assignment ..."
 argument_list|)
 name|String
 name|phaseCreatingCommittedAssignment

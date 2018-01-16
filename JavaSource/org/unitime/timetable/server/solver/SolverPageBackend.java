@@ -4106,6 +4106,20 @@ operator|.
 name|ordinal
 argument_list|()
 operator|&&
+operator|(
+name|SOLVERMSG
+operator|.
+name|statusLoadingInputData
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|m
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+operator|||
 literal|"Loading input data ..."
 operator|.
 name|equals
@@ -4115,6 +4129,7 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+operator|)
 operator|&&
 name|si
 operator|.
@@ -4317,6 +4332,20 @@ operator|.
 name|ordinal
 argument_list|()
 argument_list|,
+name|request
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|SolverType
+operator|.
+name|COURSE
+condition|?
+name|SOLVERMSG
+operator|.
+name|statusLoadingInputData
+argument_list|()
+else|:
 literal|"Loading input data ..."
 argument_list|,
 literal|null
