@@ -9421,6 +9421,28 @@ argument_list|(
 literal|"unitime.class.classSuffix.divSecDivider"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Authorization: a user with an advisor record must be associated with at least one student to get the advisor role."
+argument_list|)
+name|AuthorizationAdvisorMustHaveStudents
+argument_list|(
+literal|"unitime.authorization.advisor.mustHaveStudents"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
