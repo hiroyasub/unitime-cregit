@@ -4457,6 +4457,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Total Credit: {0,number,0.#} - {1,number,0.#}"
+argument_list|)
+name|String
+name|totalCreditRange
+parameter_list|(
+name|float
+name|minTotal
+parameter_list|,
+name|float
+name|maxTotal
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Request Update"
 argument_list|)
 name|String

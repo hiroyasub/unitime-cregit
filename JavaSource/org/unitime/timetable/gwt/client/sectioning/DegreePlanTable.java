@@ -5207,6 +5207,16 @@ name|getTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|rc
+operator|.
+name|setCredit
+argument_list|(
+name|ca
+operator|.
+name|guessCreditRange
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|r
 operator|.
 name|addRequestedCourse
