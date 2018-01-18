@@ -831,6 +831,13 @@ operator|.
 name|getAssignment
 argument_list|()
 decl_stmt|;
+name|context
+operator|.
+name|setBaseStudentConflicts
+argument_list|(
+name|solution
+argument_list|)
+expr_stmt|;
 name|List
 argument_list|<
 name|Lecture
