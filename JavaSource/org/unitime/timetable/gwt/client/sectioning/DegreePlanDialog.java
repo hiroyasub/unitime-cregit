@@ -764,6 +764,11 @@ decl_stmt|;
 specifier|public
 name|DegreePlanDialog
 parameter_list|(
+name|StudentSectioningPage
+operator|.
+name|Mode
+name|mode
+parameter_list|,
 name|TakesValue
 argument_list|<
 name|CourseRequestInterface
@@ -810,6 +815,8 @@ operator|=
 operator|new
 name|DegreePlanTable
 argument_list|(
+name|mode
+argument_list|,
 name|requests
 argument_list|,
 name|assignments

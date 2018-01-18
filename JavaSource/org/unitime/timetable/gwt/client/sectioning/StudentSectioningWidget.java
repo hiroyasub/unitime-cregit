@@ -3573,6 +3573,8 @@ operator|=
 operator|new
 name|DegreePlanDialog
 argument_list|(
+name|iMode
+argument_list|,
 name|iCourseRequests
 argument_list|,
 operator|new
