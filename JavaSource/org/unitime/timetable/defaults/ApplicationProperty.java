@@ -9443,6 +9443,28 @@ argument_list|(
 literal|"unitime.authorization.advisor.mustHaveStudents"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructional Offering Cross Lists: keep course requests of a course that is added to or dropped from a cross-list."
+argument_list|)
+name|ModifyCrossListKeepCourseRequests
+argument_list|(
+literal|"unitime.crossList.keepCourseRequests"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
