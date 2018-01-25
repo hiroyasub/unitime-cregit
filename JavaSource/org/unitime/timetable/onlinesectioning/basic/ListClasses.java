@@ -657,6 +657,16 @@ name|getSubjectArea
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|courseAssign
+operator|.
+name|setHasCrossList
+argument_list|(
+name|offering
+operator|.
+name|hasCrossList
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|XConfig

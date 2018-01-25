@@ -3685,6 +3685,21 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|boolean
+name|hasCrossList
+parameter_list|()
+block|{
+return|return
+name|getCourseOfferings
+argument_list|()
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|1
+return|;
+block|}
 block|}
 end_class
 

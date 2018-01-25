@@ -660,6 +660,7 @@ name|offering
 operator|!=
 literal|null
 condition|)
+block|{
 for|for
 control|(
 name|XConfig
@@ -707,6 +708,17 @@ operator|.
 name|setHasNoInstructionalMethod
 argument_list|(
 literal|true
+argument_list|)
+expr_stmt|;
+block|}
+name|course
+operator|.
+name|setHasCrossList
+argument_list|(
+name|offering
+operator|.
+name|hasCrossList
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
