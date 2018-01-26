@@ -14275,7 +14275,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Access"
+literal|"Assistant"
 argument_list|)
 name|String
 name|toggleAccess
@@ -14284,7 +14284,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Registration"
+literal|"Student Register"
 argument_list|)
 name|String
 name|toggleRegistration
@@ -14293,7 +14293,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Enrollment"
+literal|"Student Enroll"
 argument_list|)
 name|String
 name|toggleEnrollment
@@ -14302,7 +14302,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor"
+literal|"Advisor Enroll"
 argument_list|)
 name|String
 name|toggleAdvisor
@@ -14311,7 +14311,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Admin"
+literal|"Admin Enroll"
 argument_list|)
 name|String
 name|toggleAdmin
@@ -14351,6 +14351,33 @@ literal|"Other"
 argument_list|)
 name|String
 name|toggleNoCourseType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration"
+argument_list|)
+name|String
+name|toggleRegAccess
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor Register"
+argument_list|)
+name|String
+name|toggleRegAdvisor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Admin Register"
+argument_list|)
+name|String
+name|toggleRegAdmin
 parameter_list|()
 function_decl|;
 annotation|@

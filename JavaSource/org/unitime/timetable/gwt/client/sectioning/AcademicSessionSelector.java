@@ -1236,6 +1236,13 @@ argument_list|)
 expr_stmt|;
 name|iDialog
 operator|.
+name|setAutoHideEnabled
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|iDialog
+operator|.
 name|center
 argument_list|()
 expr_stmt|;

@@ -1736,6 +1736,13 @@ name|getSession
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|authority
+operator|.
+name|addQualifier
+argument_list|(
+name|student
+argument_list|)
+expr_stmt|;
 name|addAuthority
 argument_list|(
 name|authority

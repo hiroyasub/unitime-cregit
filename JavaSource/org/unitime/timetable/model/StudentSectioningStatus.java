@@ -92,49 +92,76 @@ specifier|static
 enum|enum
 name|Option
 block|{
+comment|/*    1 */
 name|enabled
 argument_list|(
-literal|"Access Enabled"
+literal|"Scheduling Assistant Access Enabled"
 argument_list|)
 block|,
+comment|/*    2 */
 name|advisor
 argument_list|(
 literal|"Advisor Can Enroll"
 argument_list|)
 block|,
+comment|/*    4 */
 name|email
 argument_list|(
 literal|"Email Notifications"
 argument_list|)
 block|,
+comment|/*    8 */
 name|notype
 argument_list|(
 literal|"Must Have Course Type"
 argument_list|)
 block|,
+comment|/*   16 */
 name|waitlist
 argument_list|(
 literal|"Wait-Listing Enabled"
 argument_list|)
 block|,
+comment|/*   32 */
 name|nobatch
 argument_list|(
 literal|"Do Not Schedule in Batch Solver"
 argument_list|)
 block|,
+comment|/*   64 */
 name|enrollment
 argument_list|(
-literal|"Enrollment Enabled"
+literal|"Student Can Enrol"
 argument_list|)
 block|,
+comment|/*  128 */
 name|admin
 argument_list|(
 literal|"Admin Can Enroll"
 argument_list|)
 block|,
+comment|/*  256 */
 name|registration
 argument_list|(
-literal|"Registration Enabled"
+literal|"Student Can Register"
+argument_list|)
+block|,
+comment|/*  512 */
+name|regenabled
+argument_list|(
+literal|"Course Requests Access Enabled"
+argument_list|)
+block|,
+comment|/* 1024 */
+name|regadvisor
+argument_list|(
+literal|"Advisor Can Register"
+argument_list|)
+block|,
+comment|/* 2048 */
+name|regadmin
+argument_list|(
+literal|"Admin Can Register"
 argument_list|)
 block|, 		;
 specifier|private
