@@ -4759,6 +4759,7 @@ name|getModel
 argument_list|()
 return|;
 block|}
+specifier|public
 specifier|static
 class|class
 name|InterruptibleThread

@@ -2378,8 +2378,6 @@ name|Class_
 argument_list|>
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading classes..."
@@ -2434,8 +2432,6 @@ name|clazz
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -2458,8 +2454,6 @@ name|CourseOffering
 argument_list|>
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading courses..."
@@ -2512,8 +2506,6 @@ name|course
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -2536,8 +2528,6 @@ name|Student
 argument_list|>
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading students..."
@@ -2616,8 +2606,6 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -2640,8 +2628,6 @@ name|CourseRequest
 argument_list|>
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading course demands..."
@@ -2735,13 +2721,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving student enrollments..."
@@ -2934,8 +2916,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -2976,8 +2956,6 @@ operator|||
 name|iProjections
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Computing expected/held space for online sectioning..."
@@ -2994,8 +2972,6 @@ name|getAssignment
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -3064,8 +3040,6 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Saving expected/held space for online sectioning..."
@@ -3112,8 +3086,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -3302,20 +3274,84 @@ block|}
 block|}
 block|}
 comment|// Update class enrollments
-comment|/*         if (!iProjections) {             iProgress.setPhase("Updating enrollment counts...", getModel().getOfferings().size());             for (Offering offering: getModel().getOfferings()) {                 iProgress.incProgress();                 for (Config config: offering.getConfigs()) {                     for (Subpart subpart: config.getSubparts()) {                         for (Section section: subpart.getSections()) {                             Class_ clazz = iClasses.get(section.getId());                             if (clazz==null) continue;                             int enrl = 0;                             for (Enrollment en: section.getEnrollments())                             	if (!en.getStudent().isDummy()) enrl++;                             clazz.setEnrollment(enrl);                             hibSession.saveOrUpdate(clazz);                             flushIfNeeded(hibSession);                         }                     }                 }                 for (Course course: offering.getCourses()) {                 	CourseOffering co = iCourses.get(course.getId());                 	if (co == null) continue;                     int enrl = 0;                     for (Enrollment en: course.getEnrollments())                     	if (!en.getStudent().isDummy()) enrl++;                     co.setEnrollment(enrl);                     hibSession.saveOrUpdate(co);                     flushIfNeeded(hibSession);                 }             }         }         */
+comment|/*         if (!iProjections) {             setPhase("Updating enrollment counts...", getModel().getOfferings().size());             for (Offering offering: getModel().getOfferings()) {                 incProgress();                 for (Config config: offering.getConfigs()) {                     for (Subpart subpart: config.getSubparts()) {                         for (Section section: subpart.getSections()) {                             Class_ clazz = iClasses.get(section.getId());                             if (clazz==null) continue;                             int enrl = 0;                             for (Enrollment en: section.getEnrollments())                             	if (!en.getStudent().isDummy()) enrl++;                             clazz.setEnrollment(enrl);                             hibSession.saveOrUpdate(clazz);                             flushIfNeeded(hibSession);                         }                     }                 }                 for (Course course: offering.getCourses()) {                 	CourseOffering co = iCourses.get(course.getId());                 	if (co == null) continue;                     int enrl = 0;                     for (Enrollment en: course.getEnrollments())                     	if (!en.getStudent().isDummy()) enrl++;                     co.setEnrollment(enrl);                     hibSession.saveOrUpdate(co);                     flushIfNeeded(hibSession);                 }             }         }         */
 name|flush
 argument_list|(
 name|hibSession
 argument_list|)
 expr_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Done"
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|incProgress
+argument_list|()
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|checkTermination
+parameter_list|()
+block|{
+if|if
+condition|(
+name|getTerminationCondition
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|getTerminationCondition
+argument_list|()
+operator|.
+name|canContinue
+argument_list|(
+name|getSolution
+argument_list|()
+argument_list|)
+condition|)
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"The save was interrupted."
+argument_list|)
+throw|;
+block|}
+specifier|protected
+name|void
+name|setPhase
+parameter_list|(
+name|String
+name|phase
+parameter_list|,
+name|long
+name|progressMax
+parameter_list|)
+block|{
+name|checkTermination
+argument_list|()
+expr_stmt|;
+name|iProgress
+operator|.
+name|setPhase
+argument_list|(
+name|phase
+argument_list|,
+name|progressMax
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|incProgress
+parameter_list|()
+block|{
+name|checkTermination
+argument_list|()
 expr_stmt|;
 name|iProgress
 operator|.

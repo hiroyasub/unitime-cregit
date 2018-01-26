@@ -327,6 +327,20 @@ name|cpsolver
 operator|.
 name|ifs
 operator|.
+name|solution
+operator|.
+name|Solution
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|ifs
+operator|.
 name|util
 operator|.
 name|DataProperties
@@ -11376,8 +11390,6 @@ argument_list|>
 name|courses
 parameter_list|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Computing projected request weights..."
@@ -11396,8 +11408,6 @@ range|:
 name|courses
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -15012,8 +15022,6 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading course offerings..."
@@ -15032,8 +15040,6 @@ range|:
 name|offerings
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -15139,8 +15145,6 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading student requests..."
@@ -15195,8 +15199,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -15708,8 +15710,6 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading distribution preferences..."
@@ -15756,8 +15756,6 @@ range|:
 name|distPrefs
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -15856,8 +15854,6 @@ condition|(
 name|iIncludeUnavailabilities
 condition|)
 block|{
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading unavailabilities..."
@@ -15876,8 +15872,6 @@ range|:
 name|offerings
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -16172,8 +16166,6 @@ block|}
 block|}
 block|}
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Assigning students..."
@@ -16200,8 +16192,6 @@ name|getStudents
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -16211,8 +16201,6 @@ name|student
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Checking for student conflicts..."
@@ -16239,8 +16227,6 @@ name|getStudents
 argument_list|()
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -16360,8 +16346,6 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading projected class assignments..."
@@ -16402,8 +16386,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -16477,8 +16459,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading projected course requests..."
@@ -16503,8 +16483,6 @@ range|:
 name|offerings
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -16865,7 +16843,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*         if (iIncludeLastLikeStudents) {             Hashtable<Long, Set<Long>> classAssignments = null;             if (iIncludeUseCommittedAssignments) {                 classAssignments = new Hashtable();                 List enrollments = hibSession.createQuery("select distinct se.studentId, se.clazz.uniqueId from StudentEnrollment se where "+                     "se.solution.commited=true and se.solution.owner.session.uniqueId=:sessionId").                     setLong("sessionId",session.getUniqueId().longValue()).setFetchSize(1000).list();                 iProgress.setPhase("Loading last-like class assignments...", enrollments.size());                 for (Iterator i=enrollments.iterator();i.hasNext();) {                     Object[] o = (Object[])i.next(); iProgress.incProgress();                     Long studentId = (Long)o[0];                     Long classId = (Long)o[1];                     Set<Long> classIds = classAssignments.get(studentId);                     if (classIds==null) {                         classIds = new HashSet<Long>();                         classAssignments.put(studentId, classIds);                     }                     classIds.add(classId);                 }             }                      Hashtable<Long, org.unitime.timetable.model.Student> students = new Hashtable<Long, org.unitime.timetable.model.Student>();             List enrollments = hibSession.createQuery(                     "select d, c.uniqueId from LastLikeCourseDemand d left join fetch d.student s, CourseOffering c left join c.demandOffering cx " +                     "where d.subjectArea.session.uniqueId=:sessionId and c.subjectArea.session.uniqueId=:sessionId and " +                     "((c.permId=null and d.subjectArea=c.subjectArea and d.courseNbr=c.courseNbr ) or "+                     " (c.permId!=null and c.permId=d.coursePermId) or "+                     " (cx.permId=null and d.subjectArea=cx.subjectArea and d.courseNbr=cx.courseNbr) or "+                     " (cx.permId!=null and cx.permId=d.coursePermId)) "+                     "order by s.uniqueId, d.priority, d.uniqueId").                     setLong("sessionId",session.getUniqueId().longValue()).setFetchSize(1000).list();             iProgress.setPhase("Loading last-like course requests...", enrollments.size());             Hashtable lastLikeStudentTable = new Hashtable();             for (Iterator i=enrollments.iterator();i.hasNext();) {                 Object[] o = (Object[])i.next();iProgress.incProgress();                 LastLikeCourseDemand d = (LastLikeCourseDemand)o[0];                 org.unitime.timetable.model.Student s = (org.unitime.timetable.model.Student)d.getStudent();                 Long courseOfferingId = (Long)o[1];                 if (s.getExternalUniqueId()!=null&& loadedStudentIds.contains(s.getExternalUniqueId())) continue;                 loadLastLikeStudent(hibSession, d, s, courseOfferingId, lastLikeStudentTable, courseTable, classTable, classAssignments);                 students.put(s.getUniqueId(), s);             }             for (Enumeration e=lastLikeStudentTable.elements();e.hasMoreElements();) {                 Student student = (Student)e.nextElement();                 getModel().addStudent(student);             	assignStudent(student, students.get(student.getId()));             }         } 		*/
+comment|/*         if (iIncludeLastLikeStudents) {             Hashtable<Long, Set<Long>> classAssignments = null;             if (iIncludeUseCommittedAssignments) {                 classAssignments = new Hashtable();                 List enrollments = hibSession.createQuery("select distinct se.studentId, se.clazz.uniqueId from StudentEnrollment se where "+                     "se.solution.commited=true and se.solution.owner.session.uniqueId=:sessionId").                     setLong("sessionId",session.getUniqueId().longValue()).setFetchSize(1000).list();                 setPhase("Loading last-like class assignments...", enrollments.size());                 for (Iterator i=enrollments.iterator();i.hasNext();) {                     Object[] o = (Object[])i.next(); incProgress();                     Long studentId = (Long)o[0];                     Long classId = (Long)o[1];                     Set<Long> classIds = classAssignments.get(studentId);                     if (classIds==null) {                         classIds = new HashSet<Long>();                         classAssignments.put(studentId, classIds);                     }                     classIds.add(classId);                 }             }                      Hashtable<Long, org.unitime.timetable.model.Student> students = new Hashtable<Long, org.unitime.timetable.model.Student>();             List enrollments = hibSession.createQuery(                     "select d, c.uniqueId from LastLikeCourseDemand d left join fetch d.student s, CourseOffering c left join c.demandOffering cx " +                     "where d.subjectArea.session.uniqueId=:sessionId and c.subjectArea.session.uniqueId=:sessionId and " +                     "((c.permId=null and d.subjectArea=c.subjectArea and d.courseNbr=c.courseNbr ) or "+                     " (c.permId!=null and c.permId=d.coursePermId) or "+                     " (cx.permId=null and d.subjectArea=cx.subjectArea and d.courseNbr=cx.courseNbr) or "+                     " (cx.permId!=null and cx.permId=d.coursePermId)) "+                     "order by s.uniqueId, d.priority, d.uniqueId").                     setLong("sessionId",session.getUniqueId().longValue()).setFetchSize(1000).list();             setPhase("Loading last-like course requests...", enrollments.size());             Hashtable lastLikeStudentTable = new Hashtable();             for (Iterator i=enrollments.iterator();i.hasNext();) {                 Object[] o = (Object[])i.next();incProgress();                 LastLikeCourseDemand d = (LastLikeCourseDemand)o[0];                 org.unitime.timetable.model.Student s = (org.unitime.timetable.model.Student)d.getStudent();                 Long courseOfferingId = (Long)o[1];                 if (s.getExternalUniqueId()!=null&& loadedStudentIds.contains(s.getExternalUniqueId())) continue;                 loadLastLikeStudent(hibSession, d, s, courseOfferingId, lastLikeStudentTable, courseTable, classTable, classAssignments);                 students.put(s.getUniqueId(), s);             }             for (Enumeration e=lastLikeStudentTable.elements();e.hasMoreElements();) {                 Student student = (Student)e.nextElement();                 getModel().addStudent(student);             	assignStudent(student, students.get(student.getId()));             }         } 		*/
 if|if
 condition|(
 name|iLoadSectioningInfos
@@ -16894,8 +16872,6 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Loading sectioning infos..."
@@ -16914,8 +16890,6 @@ range|:
 name|infos
 control|)
 block|{
-name|iProgress
-operator|.
 name|incProgress
 argument_list|()
 expr_stmt|;
@@ -17064,14 +17038,90 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|iProgress
-operator|.
 name|setPhase
 argument_list|(
 literal|"Done"
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|incProgress
+argument_list|()
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|checkTermination
+parameter_list|()
+block|{
+if|if
+condition|(
+name|getTerminationCondition
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|getTerminationCondition
+argument_list|()
+operator|.
+name|canContinue
+argument_list|(
+operator|new
+name|Solution
+argument_list|<
+name|Request
+argument_list|,
+name|Enrollment
+argument_list|>
+argument_list|(
+name|getModel
+argument_list|()
+argument_list|,
+name|getAssignment
+argument_list|()
+argument_list|)
+argument_list|)
+condition|)
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"The load was interrupted."
+argument_list|)
+throw|;
+block|}
+specifier|protected
+name|void
+name|setPhase
+parameter_list|(
+name|String
+name|phase
+parameter_list|,
+name|long
+name|progressMax
+parameter_list|)
+block|{
+name|checkTermination
+argument_list|()
+expr_stmt|;
+name|iProgress
+operator|.
+name|setPhase
+argument_list|(
+name|phase
+argument_list|,
+name|progressMax
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|incProgress
+parameter_list|()
+block|{
+name|checkTermination
+argument_list|()
 expr_stmt|;
 name|iProgress
 operator|.
