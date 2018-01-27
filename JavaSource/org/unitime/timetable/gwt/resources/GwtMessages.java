@@ -12258,6 +12258,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Show Course Titles:"
+argument_list|)
+name|String
+name|propTimeGridShowCourseTitles
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Order By:"
 argument_list|)
 name|String
