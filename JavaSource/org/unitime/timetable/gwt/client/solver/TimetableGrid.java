@@ -7795,7 +7795,7 @@ name|HTML
 argument_list|(
 name|iCell
 operator|.
-name|getName
+name|getTitle
 argument_list|(
 literal|"<br>&nbsp;&nbsp;&nbsp;"
 argument_list|)

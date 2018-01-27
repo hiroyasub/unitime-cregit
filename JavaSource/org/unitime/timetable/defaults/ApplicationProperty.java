@@ -9326,6 +9326,28 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Time Grid: show class name in two lines (course, section)"
+argument_list|)
+name|TimeGridShowNameInTwoLines
+argument_list|(
+literal|"unitime.timeGrid.classNameTwoLines"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"Events: show academic sessions in the reverse order (latest first)"
 argument_list|)
 name|ListSessionsReverse
