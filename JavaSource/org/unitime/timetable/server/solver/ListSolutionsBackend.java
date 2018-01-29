@@ -1970,7 +1970,7 @@ name|hibSession
 argument_list|)
 decl_stmt|;
 name|solutionIds
-operator|=
+operator|+=
 operator|(
 name|solutionIds
 operator|.
@@ -1988,7 +1988,7 @@ name|getUniqueId
 argument_list|()
 expr_stmt|;
 name|ownerIds
-operator|=
+operator|+=
 operator|(
 name|ownerIds
 operator|.
