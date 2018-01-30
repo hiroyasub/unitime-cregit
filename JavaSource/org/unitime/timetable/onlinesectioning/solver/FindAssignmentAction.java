@@ -1866,6 +1866,11 @@ argument_list|,
 name|classTable
 argument_list|,
 name|distributions
+argument_list|,
+name|getAssignment
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 if|if
@@ -1928,6 +1933,11 @@ argument_list|,
 name|classTable
 argument_list|,
 name|distributions
+argument_list|,
+name|getAssignment
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 if|if
@@ -2162,6 +2172,11 @@ argument_list|,
 name|server
 argument_list|,
 name|model
+argument_list|,
+name|getAssignment
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3900,7 +3915,8 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|protected
+specifier|public
+specifier|static
 name|Course
 name|clone
 parameter_list|(
@@ -3932,6 +3948,9 @@ name|server
 parameter_list|,
 name|StudentSectioningModel
 name|model
+parameter_list|,
+name|boolean
+name|hasAssignment
 parameter_list|)
 block|{
 name|Offering
@@ -5337,10 +5356,7 @@ operator|.
 name|isEmpty
 argument_list|()
 operator|&&
-name|getAssignment
-argument_list|()
-operator|!=
-literal|null
+name|hasAssignment
 condition|)
 for|for
 control|(
@@ -5501,7 +5517,8 @@ return|return
 name|clonedCourse
 return|;
 block|}
-specifier|protected
+specifier|public
+specifier|static
 name|void
 name|addRequest
 parameter_list|(
@@ -5549,6 +5566,9 @@ argument_list|<
 name|XDistribution
 argument_list|>
 name|distributions
+parameter_list|,
+name|boolean
+name|hasAssignment
 parameter_list|)
 block|{
 if|if
@@ -5814,6 +5834,8 @@ argument_list|,
 name|server
 argument_list|,
 name|model
+argument_list|,
+name|hasAssignment
 argument_list|)
 decl_stmt|;
 name|cr

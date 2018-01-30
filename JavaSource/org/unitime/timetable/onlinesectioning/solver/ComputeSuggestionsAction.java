@@ -1510,6 +1510,11 @@ argument_list|,
 name|classTable
 argument_list|,
 name|distributions
+argument_list|,
+name|getAssignment
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 if|if
@@ -1566,6 +1571,11 @@ argument_list|,
 name|classTable
 argument_list|,
 name|distributions
+argument_list|,
+name|getAssignment
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 if|if
@@ -1800,6 +1810,11 @@ argument_list|,
 name|server
 argument_list|,
 name|model
+argument_list|,
+name|getAssignment
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
