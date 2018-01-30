@@ -2876,6 +2876,16 @@ name|query
 argument_list|)
 argument_list|)
 throw|;
+name|boolean
+name|excludeNotOffered
+init|=
+name|ApplicationProperty
+operator|.
+name|CourseRequestsShowNotOffered
+operator|.
+name|isFalse
+argument_list|()
+decl_stmt|;
 name|ArrayList
 argument_list|<
 name|ClassAssignmentInterface
@@ -2942,6 +2952,14 @@ operator|.
 name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c where "
+operator|+
+operator|(
+name|excludeNotOffered
+condition|?
+literal|"c.instructionalOffering.notOffered is false and "
+else|:
+literal|""
+operator|)
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and ("
 operator|+

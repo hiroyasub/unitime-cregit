@@ -9487,6 +9487,28 @@ argument_list|(
 literal|"unitime.crossList.keepCourseRequests"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Student Course Requests: show courses that are not offered (when the online scheduling server is not running)."
+argument_list|)
+name|CourseRequestsShowNotOffered
+argument_list|(
+literal|"unitime.courseRequests.showNotOffered"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
