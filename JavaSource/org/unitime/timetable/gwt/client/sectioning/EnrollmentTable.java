@@ -2678,10 +2678,17 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|(
 name|student
 operator|.
 name|isCanUseAssistant
 argument_list|()
+operator|||
+name|student
+operator|.
+name|isCanRegister
+argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
