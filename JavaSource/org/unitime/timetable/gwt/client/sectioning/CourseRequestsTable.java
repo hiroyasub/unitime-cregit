@@ -2723,7 +2723,7 @@ operator|.
 name|getText
 argument_list|()
 argument_list|,
-literal|" "
+literal|"\n"
 argument_list|)
 decl_stmt|;
 if|if
@@ -2772,7 +2772,7 @@ operator|.
 name|getText
 argument_list|()
 argument_list|,
-literal|" "
+literal|"\n"
 argument_list|)
 decl_stmt|;
 if|if
