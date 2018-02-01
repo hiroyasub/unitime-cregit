@@ -104,6 +104,14 @@ specifier|public
 name|Float
 name|maxCredit
 decl_stmt|;
+specifier|public
+name|String
+name|requestorId
+decl_stmt|;
+specifier|public
+name|String
+name|requestorRole
+decl_stmt|;
 block|}
 specifier|public
 specifier|static
