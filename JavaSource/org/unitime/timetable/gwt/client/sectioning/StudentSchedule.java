@@ -2049,7 +2049,9 @@ name|cell
 operator|.
 name|setStyleName
 argument_list|(
-name|first
+name|priority
+operator|==
+literal|1
 condition|?
 literal|"top-border-solid"
 else|:
@@ -2208,7 +2210,9 @@ name|cell
 operator|.
 name|setStyleName
 argument_list|(
-name|first
+name|priority
+operator|==
+literal|1
 condition|?
 literal|"top-border-solid"
 else|:
