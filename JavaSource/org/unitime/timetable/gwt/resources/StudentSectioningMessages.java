@@ -298,6 +298,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Req. Credit"
+argument_list|)
+name|String
+name|colRequestCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Credit"
 argument_list|)
 name|String
@@ -4482,6 +4491,33 @@ literal|"Total Credit: {0,number,0.#} - {1,number,0.#}"
 argument_list|)
 name|String
 name|totalCreditRange
+parameter_list|(
+name|float
+name|minTotal
+parameter_list|,
+name|float
+name|maxTotal
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested Credit: {0,number,0.#}"
+argument_list|)
+name|String
+name|requestedCredit
+parameter_list|(
+name|float
+name|total
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested Credit: {0,number,0.#} - {1,number,0.#}"
+argument_list|)
+name|String
+name|requestedCreditRange
 parameter_list|(
 name|float
 name|minTotal
