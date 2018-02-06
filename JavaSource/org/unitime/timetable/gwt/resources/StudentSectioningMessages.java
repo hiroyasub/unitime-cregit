@@ -421,6 +421,15 @@ name|String
 name|colPreferences
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Warnings"
+argument_list|)
+name|String
+name|colWarnings
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
