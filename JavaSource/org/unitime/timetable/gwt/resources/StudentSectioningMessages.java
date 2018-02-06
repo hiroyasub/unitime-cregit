@@ -3314,6 +3314,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Override"
+argument_list|)
+name|String
+name|colOverride
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Coordinator"
 argument_list|)
 name|String
@@ -3558,6 +3567,15 @@ literal|"Need<br>Consent"
 argument_list|)
 name|String
 name|colNeedConsent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Need<br>Override"
+argument_list|)
+name|String
+name|colNeedOverride
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4538,6 +4556,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Check Override Status"
+argument_list|)
+name|String
+name|checkOverrideStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requesting student update..."
 argument_list|)
 name|String
@@ -4560,6 +4587,15 @@ literal|"Student update successfully requested. Please wait a while for the sync
 argument_list|)
 name|String
 name|requestStudentUpdateSuccess
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student overrides successfully rechecked."
+argument_list|)
+name|String
+name|checkStudentOverridesSuccess
 parameter_list|()
 function_decl|;
 annotation|@
