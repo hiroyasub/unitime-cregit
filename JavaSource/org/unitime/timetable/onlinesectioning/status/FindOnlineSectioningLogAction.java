@@ -105,6 +105,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|lang
+operator|.
+name|StringEscapeUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|commons
@@ -685,6 +699,20 @@ literal|"accommodation"
 argument_list|)
 condition|?
 literal|"left outer join s.accomodations a "
+else|:
+literal|""
+operator|)
+operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"course"
+argument_list|)
+condition|?
+literal|"left outer join s.courseDemands cd left outer join cd.courseRequests cr "
 else|:
 literal|""
 operator|)
@@ -3083,6 +3111,27 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|body
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|body
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+name|body
+operator|=
+name|StringEscapeUtils
+operator|.
+name|escapeSql
+argument_list|(
+name|body
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 literal|"id"
 operator|.
 name|equalsIgnoreCase
@@ -3436,7 +3485,7 @@ literal|"s.sectioningStatus is null"
 return|;
 else|else
 return|return
-literal|"s.sectioningStatus.reference = '"
+literal|"lower(s.sectioningStatus.reference) = '"
 operator|+
 name|body
 operator|.
@@ -3697,6 +3746,32 @@ block|}
 block|}
 if|else if
 condition|(
+literal|"course"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"cr.courseOffering.subjectAreaAbbv = '"
+operator|+
+name|body
+operator|+
+literal|"' or (cr.courseOffering.subjectAreaAbbv || ' ' || cr.courseOffering.courseNbr) = '"
+operator|+
+name|body
+operator|+
+literal|"'"
+return|;
+block|}
+if|else if
+condition|(
+name|attr
+operator|==
+literal|null
+operator|&&
 operator|!
 name|body
 operator|.

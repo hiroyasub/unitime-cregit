@@ -490,6 +490,20 @@ else|:
 literal|""
 operator|)
 operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"course"
+argument_list|)
+condition|?
+literal|"left outer join s.courseDemands cd left outer join cd.courseRequests cr "
+else|:
+literal|""
+operator|)
+operator|+
 literal|"where l.session.uniqueId = :sessionId and l.session = s.session and l.student = s.externalUniqueId "
 operator|+
 literal|"and ("
