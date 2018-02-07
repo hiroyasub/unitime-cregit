@@ -7604,6 +7604,11 @@ name|iSavedRequest
 operator|=
 name|request
 expr_stmt|;
+name|iCourseRequests
+operator|.
+name|notifySaveSucceeded
+argument_list|()
+expr_stmt|;
 block|}
 name|LoadingWidget
 operator|.
