@@ -4647,11 +4647,6 @@ operator|(
 name|reqCoursesElement
 operator|!=
 literal|null
-operator|||
-name|delCoursesElement
-operator|!=
-literal|null
-operator|)
 operator|&&
 literal|"true"
 operator|.
@@ -4666,6 +4661,11 @@ argument_list|,
 literal|"true"
 argument_list|)
 argument_list|)
+operator|)
+operator|||
+name|delCoursesElement
+operator|!=
+literal|null
 condition|)
 block|{
 name|Hashtable
@@ -7878,6 +7878,7 @@ name|nrSlots
 operator|=
 operator|(
 operator|(
+operator|(
 name|Integer
 operator|.
 name|parseInt
@@ -7922,6 +7923,7 @@ name|startTime
 argument_list|)
 operator|%
 literal|100
+operator|)
 operator|)
 operator|/
 name|Constants
