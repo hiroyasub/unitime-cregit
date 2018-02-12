@@ -1204,6 +1204,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Validate"
+argument_list|)
+name|String
+name|opSolverValidate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Clear"
 argument_list|)
 name|String

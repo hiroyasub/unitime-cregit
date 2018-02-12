@@ -389,6 +389,16 @@ name|void
 name|interrupt
 parameter_list|()
 function_decl|;
+specifier|public
+name|boolean
+name|isCanValidate
+parameter_list|()
+function_decl|;
+specifier|public
+name|void
+name|validate
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

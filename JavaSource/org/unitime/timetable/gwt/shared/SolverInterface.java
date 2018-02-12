@@ -189,6 +189,8 @@ block|,
 name|SAVE_AS_NEW_COMMIT
 block|,
 name|SAVE_UNCOMMIT
+block|,
+name|VALIDATE
 block|, 		;
 specifier|public
 name|int
