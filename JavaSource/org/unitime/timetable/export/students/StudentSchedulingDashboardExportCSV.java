@@ -2612,32 +2612,67 @@ argument_list|,
 comment|// 11
 name|MESSAGES
 operator|.
-name|colOverride
+name|colPendingOverrides
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 12
 name|MESSAGES
 operator|.
 name|colRequestCredit
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 13
 name|MESSAGES
 operator|.
-name|colCredit
+name|colEnrollCredit
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 14
 name|MESSAGES
 operator|.
 name|colDistanceConflicts
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 15
 name|MESSAGES
 operator|.
 name|colLongestDistance
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 16
 name|MESSAGES
@@ -2656,12 +2691,26 @@ name|MESSAGES
 operator|.
 name|colPrefInstrMethConfs
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 19
 name|MESSAGES
 operator|.
 name|colPrefSectionConfs
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"<br>"
+argument_list|,
+literal|"\n"
+argument_list|)
 argument_list|,
 comment|// 20
 name|MESSAGES

@@ -298,10 +298,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Req. Credit"
+literal|"Request<br>Credit"
 argument_list|)
 name|String
 name|colRequestCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrollment<br>Credit"
+argument_list|)
+name|String
+name|colEnrollCredit
 parameter_list|()
 function_decl|;
 annotation|@
@@ -361,7 +370,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Distance"
+literal|"Distance<br>Conflicts"
 argument_list|)
 name|String
 name|colDistanceConflicts
@@ -397,7 +406,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"IM Pref"
+literal|"Instr. Method<br>Preferences"
 argument_list|)
 name|String
 name|colPrefInstrMethConfs
@@ -406,7 +415,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Section Pref"
+literal|"Section<br>Preferences"
 argument_list|)
 name|String
 name|colPrefSectionConfs
@@ -3314,10 +3323,10 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Override"
+literal|"Pending<br>Overrides"
 argument_list|)
 name|String
-name|colOverride
+name|colPendingOverrides
 parameter_list|()
 function_decl|;
 annotation|@
