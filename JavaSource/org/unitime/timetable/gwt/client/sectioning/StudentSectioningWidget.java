@@ -2912,7 +2912,7 @@ name|buttonSubmitSpecReg
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|iSave
+name|iSubmitSpecReg
 operator|.
 name|setTitle
 argument_list|(

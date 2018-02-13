@@ -444,7 +444,7 @@ literal|null
 condition|)
 name|response
 operator|.
-name|addMessage
+name|addError
 argument_list|(
 name|rc
 operator|.
@@ -467,10 +467,6 @@ operator|.
 name|getCourseName
 argument_list|()
 argument_list|)
-argument_list|,
-literal|true
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -526,7 +522,7 @@ literal|null
 condition|)
 name|response
 operator|.
-name|addMessage
+name|addError
 argument_list|(
 name|rc
 operator|.
@@ -549,10 +545,6 @@ operator|.
 name|getCourseName
 argument_list|()
 argument_list|)
-argument_list|,
-literal|true
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
