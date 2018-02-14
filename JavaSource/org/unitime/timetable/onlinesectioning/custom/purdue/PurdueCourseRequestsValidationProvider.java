@@ -4341,7 +4341,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.courseOverlaps"
 argument_list|,
-literal|"Conflists with {other}."
+literal|"Conflicts with {other}."
 argument_list|)
 operator|.
 name|replace
@@ -10484,7 +10484,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.courseOverlaps"
 argument_list|,
-literal|"Conflists with {other}."
+literal|"Conflicts with {other}."
 argument_list|)
 operator|.
 name|replace
@@ -10737,7 +10737,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.courseOverlaps"
 argument_list|,
-literal|"Conflists with {other}."
+literal|"Conflicts with {other}."
 argument_list|)
 operator|.
 name|replace

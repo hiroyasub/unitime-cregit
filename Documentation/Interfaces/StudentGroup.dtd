@@ -28,5 +28,6 @@
 <!ATTLIST studentGroup code CDATA #REQUIRED >
 <!ATTLIST studentGroup name CDATA #REQUIRED >
 <!ATTLIST studentGroup size CDATA #IMPLIED >
+<!ATTLIST studentGroup type CDATA #IMPLIED >
 
 

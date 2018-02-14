@@ -11295,6 +11295,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student Group Type"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageStudentGroupType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Group Types"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageStudentGroupTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String
@@ -11335,6 +11357,15 @@ literal|"No Type"
 argument_list|)
 name|String
 name|itemNoFeatureType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No Type"
+argument_list|)
+name|String
+name|itemNoStudentGroupType
 parameter_list|()
 function_decl|;
 annotation|@
@@ -14288,6 +14319,24 @@ literal|"Title"
 argument_list|)
 name|String
 name|fieldAcademicTitle
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Keep Students Together"
+argument_list|)
+name|String
+name|fieldKeepTogether
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Type"
+argument_list|)
+name|String
+name|fieldStudentGroupType
 parameter_list|()
 function_decl|;
 annotation|@

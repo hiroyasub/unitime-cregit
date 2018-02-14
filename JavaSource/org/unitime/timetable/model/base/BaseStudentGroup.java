@@ -89,6 +89,20 @@ name|StudentGroup
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|StudentGroupType
+import|;
+end_import
+
 begin_comment
 comment|/**  * Do not change this class. It has been automatically generated using ant create-model.  * @see org.unitime.commons.ant.CreateBaseModelFromXml  */
 end_comment
@@ -136,6 +150,10 @@ decl_stmt|;
 specifier|private
 name|Session
 name|iSession
+decl_stmt|;
+specifier|private
+name|StudentGroupType
+name|iType
 decl_stmt|;
 specifier|private
 name|Set
@@ -371,6 +389,28 @@ name|session
 expr_stmt|;
 block|}
 specifier|public
+name|StudentGroupType
+name|getType
+parameter_list|()
+block|{
+return|return
+name|iType
+return|;
+block|}
+specifier|public
+name|void
+name|setType
+parameter_list|(
+name|StudentGroupType
+name|type
+parameter_list|)
+block|{
+name|iType
+operator|=
+name|type
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|Student
@@ -569,6 +609,11 @@ operator|+
 literal|"\n	SessionId: "
 operator|+
 name|getSessionId
+argument_list|()
+operator|+
+literal|"\n	Type: "
+operator|+
+name|getType
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

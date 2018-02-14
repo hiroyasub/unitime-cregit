@@ -2759,6 +2759,10 @@ name|TeachingResponsibilities
 block|,
 name|TeachingResponsibilityEdit
 block|,
+name|StudentGroupTypes
+block|,
+name|StudentGroupTypeEdit
+block|,
 name|EventServiceProviders
 block|,
 name|EventServiceProviderEditGlobal
