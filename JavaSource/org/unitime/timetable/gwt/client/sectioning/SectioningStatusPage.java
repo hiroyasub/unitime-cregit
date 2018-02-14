@@ -4552,6 +4552,8 @@ name|iProperties
 operator|.
 name|isChangeLog
 argument_list|()
+operator|&&
+name|iOnline
 condition|)
 name|iTabPanel
 operator|.

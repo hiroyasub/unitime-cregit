@@ -2528,6 +2528,10 @@ name|setEnabled
 argument_list|(
 literal|"assistant"
 argument_list|,
+operator|!
+name|iOnline
+operator|||
+operator|(
 name|student
 operator|.
 name|getSessionId
@@ -2539,6 +2543,7 @@ name|student
 operator|.
 name|isCanUseAssistant
 argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 if|if
