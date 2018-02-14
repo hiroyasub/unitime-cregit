@@ -18355,6 +18355,15 @@ name|RequestedCourseStatus
 operator|.
 name|OVERRIDE_REJECTED
 else|:
+name|course
+operator|.
+name|isRequestCancelled
+argument_list|()
+condition|?
+name|RequestedCourseStatus
+operator|.
+name|OVERRIDE_CANCELLED
+else|:
 name|RequestedCourseStatus
 operator|.
 name|OVERRIDE_PENDING
