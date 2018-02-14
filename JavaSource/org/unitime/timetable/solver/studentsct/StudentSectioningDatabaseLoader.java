@@ -7011,12 +7011,7 @@ argument_list|)
 argument_list|,
 name|s
 argument_list|,
-name|OnlineSectioningLog
-operator|.
-name|Action
-operator|.
-name|newBuilder
-argument_list|()
+name|action
 argument_list|)
 condition|)
 block|{
