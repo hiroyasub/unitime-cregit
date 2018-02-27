@@ -1318,6 +1318,14 @@ argument_list|)
 expr_stmt|;
 name|ch
 operator|.
+name|setEnabled
+argument_list|(
+name|isEnabled
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|ch
+operator|.
 name|addClickHandler
 argument_list|(
 operator|new

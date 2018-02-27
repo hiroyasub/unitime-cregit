@@ -1066,11 +1066,7 @@ name|ClickEvent
 name|event
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isEnabled
-argument_list|()
-condition|)
+comment|// if (isEnabled())
 name|openDialogAsync
 argument_list|()
 expr_stmt|;
@@ -3145,6 +3141,11 @@ argument_list|>
 name|event
 parameter_list|)
 block|{
+if|if
+condition|(
+name|isEnabled
+argument_list|()
+condition|)
 name|setValue
 argument_list|(
 name|event
@@ -3610,6 +3611,15 @@ name|getValue
 argument_list|()
 argument_list|,
 literal|true
+argument_list|)
+expr_stmt|;
+name|getCourseFinder
+argument_list|()
+operator|.
+name|setEnabled
+argument_list|(
+name|isEnabled
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|getCourseFinder

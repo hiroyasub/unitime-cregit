@@ -829,6 +829,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course Finder -- Not Editable"
+argument_list|)
+name|String
+name|courseSelectionDialogDisabled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No course selected."
 argument_list|)
 name|String
