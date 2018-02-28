@@ -6105,7 +6105,7 @@ argument_list|()
 condition|)
 name|iStatus
 operator|.
-name|info
+name|done
 argument_list|(
 name|MESSAGES
 operator|.
@@ -6786,7 +6786,7 @@ name|iLastAssignment
 expr_stmt|;
 name|iStatus
 operator|.
-name|info
+name|done
 argument_list|(
 name|respose
 operator|.
@@ -7609,6 +7609,16 @@ name|iCourseRequests
 operator|.
 name|notifySaveSucceeded
 argument_list|()
+expr_stmt|;
+name|iStatus
+operator|.
+name|done
+argument_list|(
+name|MESSAGES
+operator|.
+name|saveRequestsOK
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 name|LoadingWidget
