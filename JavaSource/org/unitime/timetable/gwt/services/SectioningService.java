@@ -660,7 +660,7 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
-name|Boolean
+name|CourseRequestInterface
 name|saveRequest
 parameter_list|(
 name|CourseRequestInterface

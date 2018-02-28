@@ -5600,6 +5600,102 @@ name|String
 name|reqStatusRejected
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are already enrolled in {0}.\nThis course request cannot be modified or deleted."
+argument_list|)
+name|String
+name|enrolled
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are currently registered for {0}."
+argument_list|)
+name|String
+name|requested
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The following registration errors have been detected:\n{0}"
+argument_list|)
+name|String
+name|overrideNeeded
+parameter_list|(
+name|String
+name|errors
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The following issues have been detected:\n{0}"
+argument_list|)
+name|String
+name|requestWarnings
+parameter_list|(
+name|String
+name|errors
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested override for {0} has been rejected.\nPlease select a different course or remove this course request."
+argument_list|)
+name|String
+name|overrideRejected
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"An override has been requested for {0}.\nWaiting for approval..."
+argument_list|)
+name|String
+name|overridePending
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested override for {0} has been cancelled.\nClick the Submit Requests button to re-validate this request and request a new override if it is still needed."
+argument_list|)
+name|String
+name|overrideCancelled
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested override for {0} has been approved."
+argument_list|)
+name|String
+name|overrideApproved
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

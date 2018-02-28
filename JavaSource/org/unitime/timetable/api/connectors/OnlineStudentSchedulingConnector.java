@@ -1934,14 +1934,14 @@ argument_list|(
 operator|new
 name|OpExecution
 argument_list|<
-name|Boolean
+name|CourseRequestInterface
 argument_list|>
 argument_list|()
 block|{
 annotation|@
 name|Override
 specifier|public
-name|Boolean
+name|CourseRequestInterface
 name|execute
 parameter_list|(
 name|SectioningService

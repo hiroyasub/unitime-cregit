@@ -733,7 +733,7 @@ name|request
 parameter_list|,
 name|AsyncCallback
 argument_list|<
-name|Boolean
+name|CourseRequestInterface
 argument_list|>
 name|callback
 parameter_list|)

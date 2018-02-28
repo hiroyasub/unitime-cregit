@@ -9337,7 +9337,7 @@ throw|;
 block|}
 block|}
 specifier|public
-name|Boolean
+name|CourseRequestInterface
 name|saveRequest
 parameter_list|(
 name|CourseRequestInterface
@@ -9431,6 +9431,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 throw|;
+return|return
 name|server
 operator|.
 name|execute
@@ -9462,9 +9463,6 @@ argument_list|,
 name|currentUser
 argument_list|()
 argument_list|)
-expr_stmt|;
-return|return
-literal|true
 return|;
 block|}
 else|else
@@ -9639,7 +9637,7 @@ name|flush
 argument_list|()
 expr_stmt|;
 return|return
-literal|true
+name|request
 return|;
 block|}
 catch|catch
@@ -18122,6 +18120,15 @@ name|cd
 operator|.
 name|getPriority
 argument_list|()
+expr_stmt|;
+name|rc
+operator|.
+name|setStatus
+argument_list|(
+name|RequestedCourseStatus
+operator|.
+name|SAVED
+argument_list|)
 expr_stmt|;
 block|}
 block|}

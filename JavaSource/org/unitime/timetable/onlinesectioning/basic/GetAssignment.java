@@ -5895,6 +5895,15 @@ operator|.
 name|getPriority
 argument_list|()
 expr_stmt|;
+name|rc
+operator|.
+name|setStatus
+argument_list|(
+name|RequestedCourseStatus
+operator|.
+name|SAVED
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 if|else if
