@@ -818,6 +818,8 @@ operator|new
 name|EnrollmentComparator
 argument_list|(
 name|sortBy
+argument_list|,
+name|asc
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1027,6 +1029,8 @@ operator|new
 name|StudentComparator
 argument_list|(
 name|sortBy
+argument_list|,
+name|asc
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -33,6 +33,24 @@ name|Messages
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|i18n
+operator|.
+name|client
+operator|.
+name|Messages
+operator|.
+name|DefaultMessage
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1405,6 +1423,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"M<u>o</u>re<span class='unitime-ButtonArrow'>&#9660;</span>"
+argument_list|)
+name|String
+name|buttonMoreOperations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Export the currently selected schedule in iCalendar format."
 argument_list|)
 name|String
@@ -2144,6 +2171,15 @@ parameter_list|(
 name|String
 name|column
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sort By"
+argument_list|)
+name|String
+name|opSort
+parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
