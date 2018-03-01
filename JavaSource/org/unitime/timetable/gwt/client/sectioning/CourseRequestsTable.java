@@ -1439,6 +1439,13 @@ argument_list|(
 literal|"tip"
 argument_list|)
 expr_stmt|;
+name|iTip
+operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-NoPrint"
+argument_list|)
+expr_stmt|;
 name|add
 argument_list|(
 name|iTip
