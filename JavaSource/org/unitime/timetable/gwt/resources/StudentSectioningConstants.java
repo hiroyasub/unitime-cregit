@@ -731,6 +731,17 @@ name|String
 name|executionTimeFormat
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|true
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|boolean
+name|courseRequestAutomaticallyAddFirstAlternative
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
