@@ -7960,6 +7960,7 @@ operator|.
 name|getCredit
 argument_list|()
 expr_stmt|;
+block|}
 name|req
 operator|.
 name|courseCreditHrs
@@ -8487,8 +8488,6 @@ name|cc
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-comment|/*// The following code only adds the courses that show as over the max credit into the request message 			req.courseCreditHrs = new ArrayList<CourseCredit>(); 			for (RequestedCourse rc: getOverCreditRequests(request, maxCredit)) { 				XCourseId cid = server.getCourse(rc.getCourseId(), rc.getCourseName()); 				if (cid == null) continue; 				XCourse course = (cid instanceof XCourse ? (XCourse)cid : server.getCourse(cid.getCourseId())); 				if (course == null) continue; 				CourseCredit cc = new CourseCredit(); 				cc.subject = course.getSubjectArea(); 				cc.courseNbr = course.getCourseNumber(); 				cc.creditHrs = (course.hasCredit() ? course.getMinCredit() : 0f); 				req.courseCreditHrs.add(cc); 			} 			*/
 block|}
 if|if
 condition|(
