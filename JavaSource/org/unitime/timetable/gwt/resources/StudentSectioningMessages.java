@@ -4601,6 +4601,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Validate Overrides"
+argument_list|)
+name|String
+name|validateStudentOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requesting student update..."
 argument_list|)
 name|String
@@ -4632,6 +4641,15 @@ literal|"Student overrides successfully rechecked."
 argument_list|)
 name|String
 name|checkStudentOverridesSuccess
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student overrides successfully validated."
+argument_list|)
+name|String
+name|validateStudentOverridesSuccess
 parameter_list|()
 function_decl|;
 annotation|@

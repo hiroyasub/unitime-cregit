@@ -2034,6 +2034,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSchedulingValidateStudentOverrides
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|StudentSchedulingAdvisorCanModifyMyStudents
 block|,
 name|StudentSchedulingAdvisorCanModifyAllStudents
