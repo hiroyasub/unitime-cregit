@@ -1522,6 +1522,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course requests have been successfully submitted.\nDo you want to print a confirmation?"
+argument_list|)
+name|String
+name|saveRequestsConfirmation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Unable to store requests: {0}"
 argument_list|)
 name|String
@@ -5634,6 +5643,15 @@ literal|"Rejected"
 argument_list|)
 name|String
 name|reqStatusRejected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registered"
+argument_list|)
+name|String
+name|reqStatusRegistered
 parameter_list|()
 function_decl|;
 annotation|@
