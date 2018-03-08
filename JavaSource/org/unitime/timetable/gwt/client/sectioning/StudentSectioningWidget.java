@@ -7713,6 +7713,7 @@ specifier|public
 name|void
 name|onSuccess
 parameter_list|(
+specifier|final
 name|CourseRequestInterface
 name|result
 parameter_list|)
