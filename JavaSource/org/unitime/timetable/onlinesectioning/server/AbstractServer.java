@@ -2801,9 +2801,7 @@ condition|)
 return|return
 operator|new
 name|OnlineSectioningHelper
-argument_list|(
-literal|null
-argument_list|)
+argument_list|()
 return|;
 return|return
 name|h
