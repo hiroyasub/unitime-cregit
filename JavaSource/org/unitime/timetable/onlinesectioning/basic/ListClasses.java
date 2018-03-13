@@ -700,12 +700,11 @@ control|)
 block|{
 if|if
 condition|(
+operator|!
 name|section
 operator|.
-name|getLimit
+name|isEnabledForScheduling
 argument_list|()
-operator|==
-literal|0
 condition|)
 continue|continue;
 name|String
