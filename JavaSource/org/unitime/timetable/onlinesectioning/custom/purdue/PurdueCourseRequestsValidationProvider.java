@@ -11713,6 +11713,7 @@ operator|.
 name|status
 argument_list|)
 condition|)
+block|{
 name|request
 operator|.
 name|addConfirmationError
@@ -11745,6 +11746,21 @@ name|status
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|request
+operator|.
+name|setErrorMessage
+argument_list|(
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"purdue.specreg.messages.deniedOverrideError"
+argument_list|,
+literal|"One or more courses require registration overrides which have been denied.\nYou must remove or replace these courses in order to submit your registration request."
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 name|request
 operator|.
