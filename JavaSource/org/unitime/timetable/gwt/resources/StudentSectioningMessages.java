@@ -5705,7 +5705,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Requested override for {0} has been rejected.\nPlease select a different course or remove this course request."
+literal|"Requested override for {0} has been denied.\nPlease select a different course or remove this course request."
 argument_list|)
 name|String
 name|overrideRejected
