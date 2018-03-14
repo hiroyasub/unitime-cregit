@@ -6460,7 +6460,7 @@ literal|"purdue.specreg.messages.requestOverrides"
 argument_list|,
 literal|"If you have already discussed these courses with your advisor and were advised to request\n"
 operator|+
-literal|"registration in them please select Request Overrides& Submit. If you arenât sure, click Cancel and\n"
+literal|"registration in them please select Request Overrides& Submit. If you arenât sure, click Cancel Submit and\n"
 operator|+
 literal|"consult with your advisor before coming back to your Course Request page."
 argument_list|)
@@ -6713,7 +6713,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.confirm.unitimeNoButton"
 argument_list|,
-literal|"Cancel"
+literal|"Cancel Submit"
 argument_list|)
 argument_list|,
 operator|(
@@ -6794,7 +6794,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.confirm.bannerNoButton"
 argument_list|,
-literal|"Cancel"
+literal|"Cancel Submit"
 argument_list|)
 argument_list|,
 name|ApplicationProperties

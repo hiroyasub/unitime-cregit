@@ -1513,7 +1513,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Requests stored."
+literal|"Course requests have been successfully submitted."
 argument_list|)
 name|String
 name|saveRequestsOK
@@ -4502,7 +4502,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are not registered for any courses yet. Please click the Submit Requests button in order to complete your registration."
+literal|"You have not submitted any courses yet. Please click the Submit Requests button in order to complete your submission."
 argument_list|)
 name|String
 name|warnRequestsEmptyOnCourseRequest
@@ -4511,7 +4511,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You have made some changes in your course requests. Please click the Submit Requests button to update your registration."
+literal|"You have made some changes in your course requests. Please click the Submit Requests button to update your submission."
 argument_list|)
 name|String
 name|warnRequestsChangedOnCourseRequest
@@ -4532,7 +4532,16 @@ argument_list|(
 literal|"There are unsaved changes in your schedule. Do you really want to discard these changes without updating your registration?"
 argument_list|)
 name|String
-name|queryLeaveChanges
+name|queryLeaveChangesOnClassSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are unsaved changes in your course requests.  Do you really want to discard these changes without updating your submission?"
+argument_list|)
+name|String
+name|queryLeaveChangesOnCourseRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5639,7 +5648,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Rejected"
+literal|"Denied"
 argument_list|)
 name|String
 name|reqStatusRejected
@@ -5648,7 +5657,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Registered"
+literal|"Submitted"
 argument_list|)
 name|String
 name|reqStatusRegistered
@@ -5669,7 +5678,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are currently registered for {0}."
+literal|"{0} is already included in your current submission. No registration errors were detected."
 argument_list|)
 name|String
 name|requested
