@@ -14333,6 +14333,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Disabled Sections"
+argument_list|)
+name|String
+name|fieldAllowDisabledSections
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Allowed"
+argument_list|)
+name|String
+name|itemAllowDisabledSectionsNotAllowed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Allowed With Group Reservation"
+argument_list|)
+name|String
+name|itemAllowDisabledSectionsAllowedReservation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Always Allowed"
+argument_list|)
+name|String
+name|itemAllowDisabledSectionsAlwaysAllowed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Type"
 argument_list|)
 name|String
