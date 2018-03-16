@@ -768,20 +768,6 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|clazz
-operator|.
-name|isEnabledForStudentScheduling
-argument_list|()
-condition|)
-block|{
-name|iLimit
-operator|=
-literal|0
-expr_stmt|;
-block|}
-if|else if
-condition|(
 name|clazz
 operator|.
 name|getSchedulingSubpart
@@ -1453,6 +1439,13 @@ operator|=
 name|section
 operator|.
 name|isCancelled
+argument_list|()
+expr_stmt|;
+name|iEnabledForScheduling
+operator|=
+name|section
+operator|.
+name|isEnabled
 argument_list|()
 expr_stmt|;
 if|if

@@ -1214,6 +1214,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|student
+operator|.
+name|setAllowDisabled
+argument_list|(
+name|original
+operator|.
+name|isAllowDisabled
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|action
 operator|.
 name|getStudentBuilder

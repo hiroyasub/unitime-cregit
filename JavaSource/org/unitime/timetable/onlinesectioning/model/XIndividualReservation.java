@@ -477,6 +477,18 @@ name|getReservationLimit
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|reservation
+operator|.
+name|isAllowDisabled
+argument_list|()
+condition|)
+name|setAllowDisabled
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Reservation is applicable for all students in the reservation      */
 annotation|@

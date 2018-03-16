@@ -3421,6 +3421,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|clonnedStudent
+operator|.
+name|setAllowDisabled
+argument_list|(
+name|student
+operator|.
+name|isAllowDisabled
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|CourseRequest
 name|ret
 init|=
