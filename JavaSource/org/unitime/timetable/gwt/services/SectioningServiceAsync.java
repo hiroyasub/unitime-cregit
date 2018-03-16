@@ -451,6 +451,9 @@ function_decl|;
 name|void
 name|listClasses
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|,

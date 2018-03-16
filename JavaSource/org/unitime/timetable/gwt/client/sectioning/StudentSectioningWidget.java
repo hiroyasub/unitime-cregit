@@ -3679,6 +3679,8 @@ name|iSectioningService
 operator|.
 name|listClasses
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionSelector
 operator|.
 name|getAcademicSessionId
@@ -19950,6 +19952,8 @@ name|iSectioningService
 operator|.
 name|listClasses
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionSelector
 operator|.
 name|getAcademicSessionId

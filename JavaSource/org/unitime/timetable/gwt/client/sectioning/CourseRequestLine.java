@@ -914,6 +914,8 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|iSectioning
+decl_stmt|,
+name|iOnline
 decl_stmt|;
 specifier|private
 name|ImageButton
@@ -922,6 +924,9 @@ decl_stmt|;
 specifier|public
 name|CourseRequestLine
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|AcademicSessionProvider
 name|session
 parameter_list|,
@@ -948,6 +953,10 @@ name|super
 argument_list|(
 literal|"unitime-CourseRequestLine"
 argument_list|)
+expr_stmt|;
+name|iOnline
+operator|=
+name|online
 expr_stmt|;
 name|iSessionProvider
 operator|=
@@ -3777,6 +3786,8 @@ name|sSectioningService
 operator|.
 name|listClasses
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionProvider
 operator|.
 name|getAcademicSessionId
@@ -3953,6 +3964,8 @@ name|sSectioningService
 operator|.
 name|listClasses
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionProvider
 operator|.
 name|getAcademicSessionId

@@ -463,6 +463,9 @@ name|ClassAssignment
 argument_list|>
 name|listClasses
 parameter_list|(
+name|boolean
+name|online
+parameter_list|,
 name|Long
 name|sessionId
 parameter_list|,

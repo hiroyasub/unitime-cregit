@@ -1055,6 +1055,8 @@ init|=
 operator|new
 name|CourseRequestLine
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionProvider
 argument_list|,
 name|i
@@ -1532,6 +1534,8 @@ init|=
 operator|new
 name|CourseRequestLine
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionProvider
 argument_list|,
 name|i
@@ -1768,6 +1772,8 @@ init|=
 operator|new
 name|CourseRequestLine
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionProvider
 argument_list|,
 name|i
@@ -2095,6 +2101,8 @@ init|=
 operator|new
 name|CourseRequestLine
 argument_list|(
+name|iOnline
+argument_list|,
 name|iSessionProvider
 argument_list|,
 name|i

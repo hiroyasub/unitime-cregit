@@ -3815,6 +3815,8 @@ name|iSectioningService
 operator|.
 name|listClasses
 argument_list|(
+literal|true
+argument_list|,
 name|iSessionId
 argument_list|,
 name|course

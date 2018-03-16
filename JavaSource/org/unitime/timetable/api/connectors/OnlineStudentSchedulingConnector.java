@@ -1373,6 +1373,15 @@ name|service
 operator|.
 name|listClasses
 argument_list|(
+name|helper
+operator|.
+name|getOptinalParameterBoolean
+argument_list|(
+literal|"online"
+argument_list|,
+literal|true
+argument_list|)
+argument_list|,
 name|sessionId
 argument_list|,
 name|helper
