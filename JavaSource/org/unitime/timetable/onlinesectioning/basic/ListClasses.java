@@ -577,6 +577,8 @@ name|reservation
 operator|.
 name|isIncluded
 argument_list|(
+name|offering
+argument_list|,
 name|config
 operator|.
 name|getConfigId
@@ -585,9 +587,11 @@ argument_list|,
 name|section
 argument_list|)
 condition|)
+block|{
 return|return
 literal|true
 return|;
+block|}
 for|for
 control|(
 name|XEnrollment
@@ -616,9 +620,11 @@ name|getStudentId
 argument_list|()
 argument_list|)
 condition|)
+block|{
 return|return
 literal|true
 return|;
+block|}
 return|return
 literal|false
 return|;
