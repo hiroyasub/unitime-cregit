@@ -900,6 +900,8 @@ name|preferredAuthority
 init|=
 literal|null
 decl_stmt|;
+try|try
+block|{
 for|for
 control|(
 name|AcademicSessionInfo
@@ -1026,6 +1028,14 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|SectioningException
+name|e
+parameter_list|)
+block|{
 block|}
 if|if
 condition|(
