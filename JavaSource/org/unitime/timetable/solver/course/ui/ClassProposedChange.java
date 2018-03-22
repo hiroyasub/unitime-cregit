@@ -75,6 +75,34 @@ name|org
 operator|.
 name|unitime
 operator|.
+name|localization
+operator|.
+name|impl
+operator|.
+name|Localization
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|localization
+operator|.
+name|messages
+operator|.
+name|CourseMessages
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
 name|timetable
 operator|.
 name|model
@@ -136,6 +164,20 @@ name|long
 name|serialVersionUID
 init|=
 literal|1510362646798301408L
+decl_stmt|;
+specifier|protected
+specifier|static
+name|CourseMessages
+name|MSG
+init|=
+name|Localization
+operator|.
+name|create
+argument_list|(
+name|CourseMessages
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 specifier|private
 name|Vector
@@ -771,23 +813,58 @@ literal|"<tr>"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<td><i>Class</i></td>"
+literal|"<td><i>"
+operator|+
+name|MSG
+operator|.
+name|columnClass
+argument_list|()
+operator|+
+literal|"</i></td>"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<td><i>Instructor</i></td>"
+literal|"<td><i>"
+operator|+
+name|MSG
+operator|.
+name|columnInstructor
+argument_list|()
+operator|+
+literal|"</i></td>"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<td><i>Date Change</i></td>"
+literal|"<td><i>"
+operator|+
+name|MSG
+operator|.
+name|columnDateChange
+argument_list|()
+operator|+
+literal|"</i></td>"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<td><i>Time Change</i></td>"
+literal|"<td><i>"
+operator|+
+name|MSG
+operator|.
+name|columnTimeChange
+argument_list|()
+operator|+
+literal|"</i></td>"
 expr_stmt|;
 name|ret
 operator|+=
-literal|"<td><i>Room Change</i></td>"
+literal|"<td><i>"
+operator|+
+name|MSG
+operator|.
+name|columnRoomChange
+argument_list|()
+operator|+
+literal|"</i></td>"
 expr_stmt|;
 name|ret
 operator|+=
@@ -1110,7 +1187,14 @@ argument_list|(
 literal|"P"
 argument_list|)
 operator|+
-literal|"'><i>not-assigned</i></font>&rarr; "
+literal|"'><i>"
+operator|+
+name|MSG
+operator|.
+name|notAssigned
+argument_list|()
+operator|+
+literal|"</i></font>&rarr; "
 expr_stmt|;
 name|ret
 operator|+=
@@ -1169,7 +1253,14 @@ argument_list|(
 literal|"P"
 argument_list|)
 operator|+
-literal|"'><i>not-assigned</i></font>&rarr; "
+literal|"'><i>"
+operator|+
+name|MSG
+operator|.
+name|notAssigned
+argument_list|()
+operator|+
+literal|"</i></font>&rarr; "
 expr_stmt|;
 name|ret
 operator|+=
@@ -1230,7 +1321,14 @@ argument_list|(
 literal|"P"
 argument_list|)
 operator|+
-literal|"'><i>not-assigned</i></font>&rarr; "
+literal|"'><i>"
+operator|+
+name|MSG
+operator|.
+name|notAssigned
+argument_list|()
+operator|+
+literal|"</i></font>&rarr; "
 expr_stmt|;
 name|ret
 operator|+=
@@ -1268,12 +1366,26 @@ argument_list|)
 condition|)
 name|ret
 operator|+=
-literal|"<i>Select below ...</i>"
+literal|"<i>"
+operator|+
+name|MSG
+operator|.
+name|assignmentRoomSelectBelow
+argument_list|()
+operator|+
+literal|"</i>"
 expr_stmt|;
 else|else
 name|ret
 operator|+=
-literal|"<i><font color='red'>Not selected ...</font></i>"
+literal|"<i><font color='red'>"
+operator|+
+name|MSG
+operator|.
+name|assignmentRoomNotSelected
+argument_list|()
+operator|+
+literal|"</font></i>"
 expr_stmt|;
 block|}
 name|ret
@@ -1422,8 +1534,12 @@ name|ret
 operator|+=
 literal|"<img src='images/error.png' border='0' "
 operator|+
-literal|"onclick='if (confirm(\"Course "
+literal|"onclick='if (confirm(\""
 operator|+
+name|MSG
+operator|.
+name|messageCourseNotLocked
+argument_list|(
 name|conflict
 operator|.
 name|getClazz
@@ -1440,8 +1556,9 @@ argument_list|()
 operator|.
 name|getCourseName
 argument_list|()
+argument_list|)
 operator|+
-literal|" is not locked. Do you want to lock it?\")) "
+literal|"\")) "
 operator|+
 literal|"document.location=\"classInfo.do?offering="
 operator|+
@@ -1473,8 +1590,12 @@ argument_list|()
 operator|+
 literal|"\";event.cancelBubble=true;' "
 operator|+
-literal|"title=\"Course "
+literal|"title=\""
 operator|+
+name|MSG
+operator|.
+name|titleCourseNotLocked
+argument_list|(
 name|conflict
 operator|.
 name|getClazz
@@ -1491,8 +1612,9 @@ argument_list|()
 operator|.
 name|getCourseName
 argument_list|()
+argument_list|)
 operator|+
-literal|" is not locked. Click the warning icon to lock it.\" style='cursor: pointer;'>&nbsp;"
+literal|"\" style='cursor: pointer;'>&nbsp;"
 expr_stmt|;
 block|}
 name|ret
@@ -1535,7 +1657,14 @@ argument_list|(
 literal|"P"
 argument_list|)
 operator|+
-literal|"'><i>not-assigned</i></font>"
+literal|"'><i>"
+operator|+
+name|MSG
+operator|.
+name|notAssigned
+argument_list|()
+operator|+
+literal|"</i></font>"
 operator|+
 literal|"</td>"
 expr_stmt|;
@@ -1559,7 +1688,14 @@ argument_list|(
 literal|"P"
 argument_list|)
 operator|+
-literal|"'><i>not-assigned</i></font>"
+literal|"'><i>"
+operator|+
+name|MSG
+operator|.
+name|notAssigned
+argument_list|()
+operator|+
+literal|"</i></font>"
 operator|+
 literal|"</td>"
 expr_stmt|;
@@ -1585,7 +1721,14 @@ argument_list|(
 literal|"P"
 argument_list|)
 operator|+
-literal|"'><i>not-assigned</i></font>"
+literal|"'><i>"
+operator|+
+name|MSG
+operator|.
+name|notAssigned
+argument_list|()
+operator|+
+literal|"</i></font>"
 expr_stmt|;
 name|ret
 operator|+=
@@ -1667,7 +1810,12 @@ argument_list|(
 literal|", "
 argument_list|)
 operator|+
-literal|" -> Not Assigned"
+literal|" -> "
+operator|+
+name|MSG
+operator|.
+name|assignmentNotAssigned
+argument_list|()
 expr_stmt|;
 block|}
 for|for
@@ -1718,7 +1866,10 @@ name|initial
 operator|==
 literal|null
 condition|?
-literal|"Not Assigned"
+name|MSG
+operator|.
+name|assignmentNotAssigned
+argument_list|()
 else|:
 name|initial
 operator|.
