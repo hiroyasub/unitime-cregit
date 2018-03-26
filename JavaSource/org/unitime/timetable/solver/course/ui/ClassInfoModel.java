@@ -1412,6 +1412,10 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|assignment
+operator|==
+literal|null
+operator|||
 operator|!
 name|assignment
 operator|.
