@@ -49,16 +49,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|unitime
@@ -348,6 +338,24 @@ operator|.
 name|OnlineSectioningInterface
 operator|.
 name|SectioningProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|OnlineSectioningInterface
+operator|.
+name|StudentStatusInfo
 import|;
 end_import
 
@@ -943,11 +951,9 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
-name|Map
+name|List
 argument_list|<
-name|String
-argument_list|,
-name|String
+name|StudentStatusInfo
 argument_list|>
 name|lookupStudentSectioningStates
 parameter_list|()
