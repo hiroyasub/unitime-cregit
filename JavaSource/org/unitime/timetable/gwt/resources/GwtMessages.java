@@ -14342,6 +14342,51 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Start Date"
+argument_list|)
+name|String
+name|fieldStudentStatusEffectiveStartDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Start Time"
+argument_list|)
+name|String
+name|fieldStudentStatusEffectiveStartTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"End Date"
+argument_list|)
+name|String
+name|fieldStudentStatusEffectiveEndDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"End Time"
+argument_list|)
+name|String
+name|fieldStudentStatusEffectiveEndTime
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Fallback Status"
+argument_list|)
+name|String
+name|fieldStudentStatusFallback
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Not Allowed"
 argument_list|)
 name|String
@@ -14481,6 +14526,15 @@ literal|"Admin Register"
 argument_list|)
 name|String
 name|toggleRegAdmin
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor Can Set Status"
+argument_list|)
+name|String
+name|toggleAdvisorCanSetStatus
 parameter_list|()
 function_decl|;
 annotation|@
@@ -19524,6 +19578,15 @@ literal|"Difference in back-to-back instructor preferences"
 argument_list|)
 name|String
 name|reportPertDeltaInstructorBTBPref
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Session Default"
+argument_list|)
+name|String
+name|studentStatusDefault
 parameter_list|()
 function_decl|;
 block|}

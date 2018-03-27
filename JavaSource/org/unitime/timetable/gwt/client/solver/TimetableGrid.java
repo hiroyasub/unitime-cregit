@@ -3282,6 +3282,14 @@ operator|*
 name|sLineHeight
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|i
+operator|%
+literal|2
+operator|==
+literal|0
+condition|)
 name|hi
 operator|.
 name|setText
