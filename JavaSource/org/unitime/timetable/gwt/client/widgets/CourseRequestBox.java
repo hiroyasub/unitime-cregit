@@ -807,7 +807,7 @@ name|client
 operator|.
 name|ui
 operator|.
-name|Image
+name|HTML
 import|;
 end_import
 
@@ -825,7 +825,7 @@ name|client
 operator|.
 name|ui
 operator|.
-name|Label
+name|Image
 import|;
 end_import
 
@@ -946,7 +946,7 @@ name|CourseRequestFilterBox
 name|iFilter
 decl_stmt|;
 specifier|private
-name|Label
+name|HTML
 name|iError
 decl_stmt|;
 specifier|private
@@ -1964,7 +1964,7 @@ expr_stmt|;
 name|iError
 operator|=
 operator|new
-name|Label
+name|HTML
 argument_list|()
 expr_stmt|;
 name|iError
@@ -2434,6 +2434,7 @@ name|getCourseName
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|ret
 operator|.
 name|setStatus
@@ -2444,6 +2445,17 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|ret
+operator|.
+name|setStatusNote
+argument_list|(
+name|iLastCourse
+operator|.
+name|getStatusNote
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 name|ret
 operator|.
@@ -2526,6 +2538,16 @@ argument_list|(
 name|iLastCourse
 operator|.
 name|getStatus
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|ret
+operator|.
+name|setStatusNote
+argument_list|(
+name|iLastCourse
+operator|.
+name|getStatusNote
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3447,7 +3469,7 @@ condition|)
 block|{
 name|iError
 operator|.
-name|setText
+name|setHTML
 argument_list|(
 literal|""
 argument_list|)
@@ -3464,7 +3486,7 @@ else|else
 block|{
 name|iError
 operator|.
-name|setText
+name|setHTML
 argument_list|(
 name|error
 argument_list|)
@@ -3515,7 +3537,7 @@ condition|)
 block|{
 name|iError
 operator|.
-name|setText
+name|setHTML
 argument_list|(
 literal|""
 argument_list|)
@@ -3532,7 +3554,7 @@ else|else
 block|{
 name|iError
 operator|.
-name|setText
+name|setHTML
 argument_list|(
 name|error
 argument_list|)

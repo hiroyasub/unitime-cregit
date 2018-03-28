@@ -3947,6 +3947,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Special Registration"
+argument_list|)
+name|String
+name|buttonSpecRegDashboard
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Loading change log for {0}..."
 argument_list|)
 name|String
@@ -5871,6 +5880,18 @@ literal|"Requested override for {0} has been approved."
 argument_list|)
 name|String
 name|overrideApproved
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last Note: {0}"
+argument_list|)
+name|String
+name|overrideNote
 parameter_list|(
 name|String
 name|course

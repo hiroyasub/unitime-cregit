@@ -161,7 +161,6 @@ name|iSectioningEnabled
 init|=
 literal|false
 decl_stmt|;
-empty_stmt|;
 specifier|private
 name|int
 name|iWkEnroll
