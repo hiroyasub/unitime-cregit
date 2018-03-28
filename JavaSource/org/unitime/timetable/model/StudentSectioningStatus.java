@@ -1284,7 +1284,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 else|else
-name|start
+name|stop
 operator|=
 name|Formats
 operator|.
