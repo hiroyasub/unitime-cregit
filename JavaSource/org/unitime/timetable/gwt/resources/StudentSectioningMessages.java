@@ -6143,7 +6143,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Before {0}"
+literal|"before {0}"
 argument_list|)
 name|String
 name|messageEffectivePeriodBefore
@@ -6155,7 +6155,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"After {0}"
+literal|"after {0}"
 argument_list|)
 name|String
 name|messageEffectivePeriodAfter
@@ -6167,7 +6167,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Between {0} and {1}"
+literal|"between {0} and {1}"
 argument_list|)
 name|String
 name|messageEffectivePeriodBetween
@@ -6177,6 +6177,18 @@ name|start
 parameter_list|,
 name|String
 name|end
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your time window is {0}."
+argument_list|)
+name|String
+name|messageTimeWindow
+parameter_list|(
+name|String
+name|effectivePeriod
 parameter_list|)
 function_decl|;
 block|}
