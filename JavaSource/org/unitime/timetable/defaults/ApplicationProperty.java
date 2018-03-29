@@ -9571,6 +9571,36 @@ argument_list|(
 literal|"unitime.courseRequests.showNotOffered"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Calendar: Time zone URL for given time zone %"
+argument_list|)
+expr|@
+name|Parameter
+argument_list|(
+literal|"Time Zone ID"
+argument_list|)
+name|CalendarVTimeZoneID
+argument_list|(
+literal|"unitime.calendar.timezone.%"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Calendar: Time zone URL, where {id} is the time zone id, e.g., Europe/Prague"
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"http://www.tzurl.org/zoneinfo/{id}.ics"
+argument_list|)
+name|CalendarVTimeZone
+argument_list|(
+literal|"unitime.calendar.timezone"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
