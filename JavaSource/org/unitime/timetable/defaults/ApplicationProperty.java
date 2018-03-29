@@ -5556,6 +5556,28 @@ argument_list|(
 literal|"unitime.email.event.suffix"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Event Email Confirmations: Include iCalendar file for the event."
+argument_list|)
+name|EmailConfirmationIncludeCalendar
+argument_list|(
+literal|"unitime.email.event.calendar"
+argument_list|)
+operator|,
 comment|/** 	 * Enable UniTime to receive replies on event confirmation emails. 	 * If a reply message is received, a new note is added to the event's notes and an updated confirmation is sent to all contacts of the event. 	 * If the reply message contains an attachment, it is also added to the new event note and included in the new confirmation email. 	 */
 expr_stmt|@
 name|Type
