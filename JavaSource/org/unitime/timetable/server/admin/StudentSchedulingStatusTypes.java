@@ -906,9 +906,9 @@ argument_list|()
 argument_list|,
 name|FieldType
 operator|.
-name|text
+name|textarea
 argument_list|,
-literal|400
+literal|40
 argument_list|,
 literal|200
 argument_list|)

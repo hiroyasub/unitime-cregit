@@ -377,7 +377,14 @@ literal|"studentAdvisors"
 argument_list|,
 literal|"Student Advisors"
 argument_list|)
-block|,     	;
+block|,
+name|STUDENT_STATUSES
+argument_list|(
+literal|"studentStatuses"
+argument_list|,
+literal|"Student Scheduling Statuses"
+argument_list|)
+block|;
 specifier|private
 name|String
 name|iType
