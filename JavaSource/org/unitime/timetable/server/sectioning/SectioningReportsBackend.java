@@ -672,6 +672,11 @@ operator|new
 name|SectioningReportRpcResponse
 argument_list|()
 decl_stmt|;
+synchronized|synchronized
+init|(
+name|csv
+init|)
+block|{
 name|String
 index|[]
 name|header
@@ -817,6 +822,7 @@ argument_list|(
 name|row
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|response

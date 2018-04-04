@@ -834,6 +834,11 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+synchronized|synchronized
+init|(
+name|csv
+init|)
+block|{
 name|String
 index|[]
 name|header
@@ -1386,6 +1391,7 @@ name|prev
 operator|=
 name|row
 expr_stmt|;
+block|}
 block|}
 name|out
 operator|.
