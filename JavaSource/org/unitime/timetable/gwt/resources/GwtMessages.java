@@ -439,6 +439,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Export XLS"
+argument_list|)
+name|String
+name|opExportXLS
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Export iCalendar"
 argument_list|)
 name|String
@@ -5102,6 +5111,15 @@ literal|"Export&nbsp;<u>P</u>DF"
 argument_list|)
 name|String
 name|buttonExportPDF
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export&nbsp;<u>X</u>LS"
+argument_list|)
+name|String
+name|buttonExportXLS
 parameter_list|()
 function_decl|;
 annotation|@
