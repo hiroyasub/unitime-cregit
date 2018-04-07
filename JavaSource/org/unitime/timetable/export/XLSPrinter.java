@@ -2073,7 +2073,7 @@ operator|.
 name|applyFont
 argument_list|(
 operator|(
-name|int
+name|Integer
 operator|)
 name|font
 operator|.
@@ -2086,7 +2086,7 @@ literal|0
 index|]
 argument_list|,
 operator|(
-name|int
+name|Integer
 operator|)
 name|font
 operator|.
@@ -2101,7 +2101,7 @@ literal|0
 index|]
 argument_list|,
 operator|(
-name|short
+name|Short
 operator|)
 name|font
 operator|.
