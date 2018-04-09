@@ -14360,6 +14360,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Advisors Can Set"
+argument_list|)
+name|String
+name|fieldAdvisorsCanSet
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Start Date"
 argument_list|)
 name|String

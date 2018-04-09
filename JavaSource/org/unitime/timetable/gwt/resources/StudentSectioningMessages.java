@@ -2220,6 +2220,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add To Group"
+argument_list|)
+name|String
+name|opAddToGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Remove From Group"
+argument_list|)
+name|String
+name|opRemoveFromGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Student"
 argument_list|)
 name|String

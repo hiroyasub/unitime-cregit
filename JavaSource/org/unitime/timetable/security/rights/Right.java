@@ -2041,6 +2041,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSchedulingChangeStudentGroup
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|StudentSchedulingAdvisorCanModifyMyStudents
 block|,
 name|StudentSchedulingAdvisorCanModifyAllStudents
