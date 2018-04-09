@@ -1025,7 +1025,7 @@ name|setMessage
 argument_list|(
 name|MSG
 operator|.
-name|exceptionEnrollmentDisabled
+name|exceptionRegistrationDisabled
 argument_list|()
 argument_list|)
 expr_stmt|;

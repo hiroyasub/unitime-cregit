@@ -3749,6 +3749,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Registration disabled."
+argument_list|)
+name|String
+name|exceptionRegistrationDisabled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Access disabled."
 argument_list|)
 name|String
