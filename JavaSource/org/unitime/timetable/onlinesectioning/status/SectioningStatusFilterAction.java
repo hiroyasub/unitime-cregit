@@ -5014,6 +5014,23 @@ literal|"(select coalesce(sum(minUnits),0) from VariableFixedCreditUnitConfig wh
 decl_stmt|;
 if|if
 condition|(
+literal|"!"
+operator|.
+name|equals
+argument_list|(
+name|im
+argument_list|)
+condition|)
+block|{
+name|creditTerm
+operator|=
+literal|"((select coalesce(sum(fixedUnits),0) from FixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod is not null)) + "
+operator|+
+literal|"(select coalesce(sum(minUnits),0) from VariableFixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod is not null)))"
+expr_stmt|;
+block|}
+if|else if
+condition|(
 name|im
 operator|!=
 literal|null
