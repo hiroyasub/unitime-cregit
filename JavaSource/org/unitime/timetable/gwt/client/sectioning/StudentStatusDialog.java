@@ -1719,6 +1719,13 @@ argument_list|,
 name|iStatus
 argument_list|)
 expr_stmt|;
+name|iStatus
+operator|.
+name|setSelectedIndex
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 name|iForm
 operator|.
 name|addBottomRow
@@ -2002,6 +2009,13 @@ name|emailBody
 argument_list|()
 argument_list|,
 name|iMessage
+argument_list|)
+expr_stmt|;
+name|iStatus
+operator|.
+name|setSelectedIndex
+argument_list|(
+literal|0
 argument_list|)
 expr_stmt|;
 for|for
