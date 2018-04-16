@@ -4754,6 +4754,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Requested Credit"
+argument_list|)
+name|String
+name|rowRequestedCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Request Update"
 argument_list|)
 name|String
@@ -5819,6 +5828,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Warning"
+argument_list|)
+name|String
+name|reqStatusWarning
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are already enrolled in {0}.\nThis course request cannot be modified or deleted."
 argument_list|)
 name|String
@@ -6217,6 +6235,51 @@ parameter_list|(
 name|String
 name|effectivePeriod
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The request to increase the maximum credit hours has been denied.\nYou must remove some course requests in order to submit your registration request."
+argument_list|)
+name|String
+name|creditStatusDenied
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You must remove some course requests in order to submit your registration request."
+argument_list|)
+name|String
+name|creditStatusTooHigh
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"A max credit hours override has been requested.\nWaiting for approval..."
+argument_list|)
+name|String
+name|creditStatusPending
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The request to increase the maximum credit hours has been cancelled.\nClick the Submit Requests button to re-validate this request and request a new override if it is still needed."
+argument_list|)
+name|String
+name|creditStatusCancelled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The request to increase the maximum credit hours has been approved."
+argument_list|)
+name|String
+name|creditStatusApproved
+parameter_list|()
 function_decl|;
 block|}
 end_interface
