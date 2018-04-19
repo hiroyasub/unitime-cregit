@@ -5108,6 +5108,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Last Note"
+argument_list|)
+name|String
+name|colSpecRegNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>S</u>elect"
 argument_list|)
 name|String
@@ -5250,6 +5259,51 @@ literal|"This special registration has been processed."
 argument_list|)
 name|String
 name|hintSpecRegCanEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has been approved."
+argument_list|)
+name|String
+name|hintSpecRegApproved
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has been cancelled."
+argument_list|)
+name|String
+name|hintSpecRegCancelled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has been submitted for processing. Waiting for approval..."
+argument_list|)
+name|String
+name|hintSpecRegPending
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has not been submitted for processing. It can still be edited."
+argument_list|)
+name|String
+name|hintSpecRegDraft
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"This special registration has been denied."
+argument_list|)
+name|String
+name|hintSpecRegRejected
 parameter_list|()
 function_decl|;
 annotation|@
