@@ -14567,6 +14567,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course Request Validation"
+argument_list|)
+name|String
+name|toggleCourseRequestValidation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Special Requests"
+argument_list|)
+name|String
+name|toggleSpecialRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Final Examinations"
 argument_list|)
 name|String

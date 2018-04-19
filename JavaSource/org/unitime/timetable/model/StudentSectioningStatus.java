@@ -261,6 +261,18 @@ name|advcanset
 argument_list|(
 literal|"Advisor Can Set Status"
 argument_list|)
+block|,
+comment|/* 8192 */
+name|reqval
+argument_list|(
+literal|"Course Request Validation"
+argument_list|)
+block|,
+comment|/*16384 */
+name|specreg
+argument_list|(
+literal|"Special Registration"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

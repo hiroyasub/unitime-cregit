@@ -4619,6 +4619,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Special Registration:"
+argument_list|)
+name|String
+name|propSpecialRegistration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Request Validation:"
+argument_list|)
+name|String
+name|propCourseRequestValidation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are not registered for any classes yet. Please click the Build Schedule button in order to complete your registration."
 argument_list|)
 name|String
@@ -6237,6 +6255,42 @@ literal|"Email notifications are disabled."
 argument_list|)
 name|String
 name|messageStatusCanNotEmail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Special registration is enabled."
+argument_list|)
+name|String
+name|messageStatusCanSpecialRegistration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Special registration is disabled."
+argument_list|)
+name|String
+name|messageStatusCanNotSpecialRegistration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Custom course request validation is enabled."
+argument_list|)
+name|String
+name|messageStatusCanRequestValidation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Custom course request validation is disabled."
+argument_list|)
+name|String
+name|messageStatusCanNotRequestValidation
 parameter_list|()
 function_decl|;
 annotation|@
