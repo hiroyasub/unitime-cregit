@@ -7599,6 +7599,21 @@ operator|,
 expr_stmt|@
 name|DefaultValue
 argument_list|(
+literal|"https://docs.google.com/document/d/1ap13URaw7UVT0FN9NZtgSROEKoS-V7S1uq0214Sh43M"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manuals: Student Scheduling Dashboard user manual"
+argument_list|)
+name|ManualSchedulinDashboard
+argument_list|(
+literal|"tmtbl.help.manual.schedulingDashboard"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
 literal|"help/Release-Notes.xml"
 argument_list|)
 expr|@
