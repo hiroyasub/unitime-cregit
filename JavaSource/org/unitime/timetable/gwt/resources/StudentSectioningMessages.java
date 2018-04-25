@@ -361,7 +361,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"&nbsp;"
+literal|"Pref"
 argument_list|)
 name|String
 name|colClassSelection
@@ -6387,6 +6387,15 @@ literal|"The request to increase the maximum credit hours has been approved."
 argument_list|)
 name|String
 name|creditStatusApproved
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructional Method Preference:"
+argument_list|)
+name|String
+name|labelInstructionalMethodPreference
 parameter_list|()
 function_decl|;
 block|}
