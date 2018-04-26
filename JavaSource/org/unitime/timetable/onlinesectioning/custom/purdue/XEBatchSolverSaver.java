@@ -5554,15 +5554,13 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
+return|return
 name|list
 operator|.
 name|add
 argument_list|(
 name|override
 argument_list|)
-expr_stmt|;
-return|return
-literal|true
 return|;
 block|}
 block|}
