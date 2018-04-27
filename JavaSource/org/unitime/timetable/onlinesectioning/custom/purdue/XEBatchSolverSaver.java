@@ -6551,12 +6551,12 @@ throw|throw
 operator|new
 name|SectioningException
 argument_list|(
-name|t
+name|exception
 operator|.
 name|getMessage
 argument_list|()
 argument_list|,
-name|t
+name|exception
 argument_list|)
 throw|;
 block|}
