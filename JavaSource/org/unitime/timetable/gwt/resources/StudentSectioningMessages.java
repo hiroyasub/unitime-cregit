@@ -4817,6 +4817,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Checking override status..."
+argument_list|)
+name|String
+name|checkingOverrideStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Validating student overrides..."
+argument_list|)
+name|String
+name|validatingStudentOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Student update request not allowed."
 argument_list|)
 name|String

@@ -10358,7 +10358,7 @@ name|show
 argument_list|(
 name|MESSAGES
 operator|.
-name|requestingStudentUpdate
+name|checkingOverrideStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -10539,7 +10539,7 @@ name|show
 argument_list|(
 name|MESSAGES
 operator|.
-name|requestingStudentUpdate
+name|validatingStudentOverrides
 argument_list|()
 argument_list|)
 expr_stmt|;
