@@ -2255,9 +2255,9 @@ name|ApplicationProperties
 operator|.
 name|getProperty
 argument_list|(
-literal|"purdue.specreg.mode.validation"
+literal|"purdue.specreg.mode.batch"
 argument_list|,
-literal|"STAR"
+literal|"REG"
 argument_list|)
 return|;
 block|}
