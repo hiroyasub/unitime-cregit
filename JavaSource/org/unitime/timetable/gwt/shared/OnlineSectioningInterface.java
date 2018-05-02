@@ -205,8 +205,6 @@ name|CAN_SPECREG
 block|,
 name|HAS_SPECREG
 block|,
-name|SR_ENABLED
-block|,
 name|SR_TIME_CONF
 block|,
 name|SR_LIMIT_CONF

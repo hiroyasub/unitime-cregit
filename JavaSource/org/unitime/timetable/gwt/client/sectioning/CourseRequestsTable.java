@@ -3945,7 +3945,7 @@ name|setTimeConflictsAllowed
 argument_list|(
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 name|iSpecReg
@@ -3965,7 +3965,7 @@ name|setSpaceConflictsAllowed
 argument_list|(
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 name|iSpecReg

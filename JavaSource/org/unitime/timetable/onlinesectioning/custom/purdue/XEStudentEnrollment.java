@@ -6420,6 +6420,17 @@ argument_list|(
 operator|new
 name|EnrollmentError
 argument_list|(
+literal|"Unable to make requested changes so your schedule was not changed."
+operator|.
+name|equals
+argument_list|(
+name|response
+operator|.
+name|registrationException
+argument_list|)
+condition|?
+literal|"IGNORE"
+else|:
 literal|"UNKNOWN"
 argument_list|,
 name|response
@@ -6808,6 +6819,17 @@ argument_list|(
 operator|new
 name|EnrollmentError
 argument_list|(
+literal|"Unable to make requested changes so your schedule was not changed."
+operator|.
+name|equals
+argument_list|(
+name|response
+operator|.
+name|registrationException
+argument_list|)
+condition|?
+literal|"IGNORE"
+else|:
 literal|"UNKNOWN"
 argument_list|,
 name|response
@@ -7009,6 +7031,13 @@ operator|new
 name|SectioningException
 argument_list|(
 name|message
+operator|.
+name|replace
+argument_list|(
+literal|"\n"
+argument_list|,
+literal|" "
+argument_list|)
 argument_list|)
 decl_stmt|;
 for|for
@@ -7074,6 +7103,19 @@ operator|.
 name|getErrors
 argument_list|()
 control|)
+if|if
+condition|(
+operator|!
+literal|"IGNORE"
+operator|.
+name|equals
+argument_list|(
+name|err
+operator|.
+name|getCode
+argument_list|()
+argument_list|)
+condition|)
 name|e
 operator|.
 name|addError

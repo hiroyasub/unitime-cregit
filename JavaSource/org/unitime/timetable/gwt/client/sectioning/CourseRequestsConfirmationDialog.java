@@ -785,7 +785,7 @@ argument_list|)
 decl_stmt|;
 name|m
 operator|.
-name|setText
+name|setHTML
 argument_list|(
 name|cm
 operator|.

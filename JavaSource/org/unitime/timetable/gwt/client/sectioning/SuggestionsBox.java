@@ -2509,7 +2509,7 @@ argument_list|()
 operator|&&
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 operator|(
@@ -2576,7 +2576,7 @@ operator|.
 name|disclaimerNoSuggestionsWarning
 argument_list|()
 operator|+
-literal|" "
+literal|"\n"
 operator|)
 operator|+
 operator|(
@@ -2629,6 +2629,16 @@ expr_stmt|;
 name|iAllChoices
 operator|.
 name|setValue
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|SectioningCookie
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|setAllChoices
 argument_list|(
 literal|true
 argument_list|)
@@ -8331,7 +8341,7 @@ name|setVisible
 argument_list|(
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 operator|(
@@ -8815,7 +8825,7 @@ argument_list|()
 operator|&&
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 name|iSpecReg
@@ -8839,7 +8849,7 @@ argument_list|()
 operator|&&
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 name|iSpecReg
@@ -9046,7 +9056,7 @@ name|setVisible
 argument_list|(
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 operator|&&
 operator|(
@@ -9544,7 +9554,7 @@ operator|.
 name|disclaimerNoSuggestionsWarning
 argument_list|()
 operator|+
-literal|" "
+literal|"\n"
 operator|+
 operator|(
 name|iSpecReg

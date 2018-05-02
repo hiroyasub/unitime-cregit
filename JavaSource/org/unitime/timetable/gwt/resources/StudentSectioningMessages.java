@@ -17,22 +17,6 @@ name|resources
 package|;
 end_package
 
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|i18n
-operator|.
-name|client
-operator|.
-name|Messages
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1396,7 +1380,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Submit Special Registration"
+literal|"Submit Override Requests"
 argument_list|)
 name|String
 name|buttonSubmitSpecReg
@@ -1513,7 +1497,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special Registrations"
+literal|"Override Requests"
 argument_list|)
 name|String
 name|buttonGetSpecRegs
@@ -1522,7 +1506,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Select one of the open special registrations."
+literal|"Select one of the override requests."
 argument_list|)
 name|String
 name|hintGetSpecRegs
@@ -1588,7 +1572,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to retrieve special registration: {0}"
+literal|"Unable to retrieve override requests: {0}"
 argument_list|)
 name|String
 name|requestSpecialRegistrationFail
@@ -1612,7 +1596,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to load special registrations: {0}"
+literal|"Failed to load override requests: {0}"
 argument_list|)
 name|String
 name|retrieveAllSpecialRegistrationsFail
@@ -4691,7 +4675,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You have made some changes in your special registration. Please click the Submit Special Registration button to update your special registration."
+literal|"You have made some changes in your schedule. Please click the Submit Override Requests button to validate your changes and request overrides if needed."
 argument_list|)
 name|String
 name|warnSpecialRegistrationChanged
@@ -5042,7 +5026,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special Registrations"
+literal|"Override Requests"
 argument_list|)
 name|String
 name|dialogSpecialRegistrations
@@ -5139,6 +5123,15 @@ literal|"Submitted"
 argument_list|)
 name|String
 name|colSpecRegSubmitted
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration Errors"
+argument_list|)
+name|String
+name|colSpecRegErrors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5243,7 +5236,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No special registration is available."
+literal|"No override requests are available."
 argument_list|)
 name|String
 name|failedNoSpecialRegistrations
@@ -5282,7 +5275,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has been submitted for processing."
+literal|"These override requests have been submitted for processing."
 argument_list|)
 name|String
 name|hintSpecRegCanNotSubmit
@@ -5291,7 +5284,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has been processed."
+literal|"These override requests have been processed."
 argument_list|)
 name|String
 name|hintSpecRegCanEnroll
@@ -5300,7 +5293,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has been approved."
+literal|"These override requests have been approved."
 argument_list|)
 name|String
 name|hintSpecRegApproved
@@ -5309,7 +5302,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has been cancelled."
+literal|"These override requests have been cancelled."
 argument_list|)
 name|String
 name|hintSpecRegCancelled
@@ -5318,7 +5311,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has been submitted for processing. Waiting for approval..."
+literal|"These override requests have been submitted for processing. Waiting for approval..."
 argument_list|)
 name|String
 name|hintSpecRegPending
@@ -5327,7 +5320,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has not been submitted for processing. It can still be edited."
+literal|"These override requests have not been submitted for processing. It can still be edited."
 argument_list|)
 name|String
 name|hintSpecRegDraft
@@ -5336,7 +5329,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This special registration has been denied."
+literal|"These override requests have been denied."
 argument_list|)
 name|String
 name|hintSpecRegRejected
@@ -5792,16 +5785,9 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Do you want to submit the enrollment changes to special registration?"
-argument_list|)
-name|String
-name|confirmSpecialRegistrationSubmit
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Based on your course selections, a conflict-free schedule is not possible. Under extenuating circumstances, the faculty may approve student enrollments that include schedule conflicts."
+literal|"Based on your course selections, a conflict-free schedule is not possible.\n"
+operator|+
+literal|"Under extenuating circumstances, the faculty may approve student enrollments that include schedule conflicts."
 argument_list|)
 name|String
 name|disclaimerNoSuggestionsWarning
@@ -6414,6 +6400,99 @@ literal|"Instructional Method Preference:"
 argument_list|)
 name|String
 name|labelInstructionalMethodPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request Overrides"
+argument_list|)
+name|String
+name|dialogRequestOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request Overrides"
+argument_list|)
+name|String
+name|buttonRequestOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request overrides for the above registration errors"
+argument_list|)
+name|String
+name|titleRequestOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancel Request"
+argument_list|)
+name|String
+name|buttonCancelRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Go back to explore other scheduling options"
+argument_list|)
+name|String
+name|titleCancelRequest
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The following registration errors have been detected:"
+argument_list|)
+name|String
+name|messageRegistrationErrorsDetected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Please, select Request Overrides to request registration overrides or other approvals required to register\n"
+operator|+
+literal|"for the courses listed above.\n"
+operator|+
+literal|"Click Cancel Request to cancel this request and go back to explore other scheduling options."
+argument_list|)
+name|String
+name|messageRequestOverridesOptions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"\n<b>Disclaimer:</b>\n"
+operator|+
+literal|"I understand that requesting approval does not guarantee that I will be given permission to register for these courses,\n"
+operator|+
+literal|"and even if the approvals are granted, I may not be able to register for these courses due to space limitations,\n"
+operator|+
+literal|"schedule conflicts or other policies. I also understand that if approvals are granted, it may be my responsibility\n"
+operator|+
+literal|"to process the schedule change within the established registration deadlines."
+argument_list|)
+name|String
+name|messageRequestOverridesDisclaimer
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No registration errors have been detected."
+argument_list|)
+name|String
+name|errorNoRegistrationErrorsDetected
 parameter_list|()
 function_decl|;
 block|}

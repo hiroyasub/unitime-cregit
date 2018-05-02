@@ -1099,7 +1099,7 @@ literal|null
 operator|&&
 name|iSpecReg
 operator|.
-name|isSpecRegMode
+name|isEnabled
 argument_list|()
 return|;
 block|}
