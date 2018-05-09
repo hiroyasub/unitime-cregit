@@ -109,6 +109,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|UUID
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|activation
@@ -1441,6 +1451,19 @@ name|getSessionContext
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|item
+operator|.
+name|setId
+argument_list|(
+name|UUID
+operator|.
+name|randomUUID
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|item
 operator|.
 name|executeItem
