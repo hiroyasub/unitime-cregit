@@ -7707,6 +7707,16 @@ literal|"tmtbl.help.manual.schedulingAssistant"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Description
+argument_list|(
+literal|"Manuals: Student Course Requests user manual"
+argument_list|)
+name|ManualCourseRequests
+argument_list|(
+literal|"tmtbl.help.manual.courseRequests"
+argument_list|)
+operator|,
+expr_stmt|@
 name|DefaultValue
 argument_list|(
 literal|"https://docs.google.com/document/d/1ap13URaw7UVT0FN9NZtgSROEKoS-V7S1uq0214Sh43M"
