@@ -6459,11 +6459,11 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Please, select Request Overrides to request registration overrides or other approvals required to register\n"
+literal|"\nPlease, select<b>Request Overrides</b> to request registration overrides or other approvals required to register "
 operator|+
-literal|"for the courses listed above.\n"
+literal|"for the courses listed above. "
 operator|+
-literal|"Click Cancel Request to cancel this request and go back to explore other scheduling options."
+literal|"Click<b>Cancel Request</b> to cancel this request and go back to explore other scheduling options."
 argument_list|)
 name|String
 name|messageRequestOverridesOptions
@@ -6472,15 +6472,26 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<b>Request Note:</b>"
+argument_list|)
+name|String
+name|messageRequestOverridesNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"\n<b>Disclaimer:</b>\n"
 operator|+
-literal|"I understand that requesting approval does not guarantee that I will be given permission to register for these courses,\n"
+literal|"I understand that requesting approval does not guarantee that I will be given permission to register "
 operator|+
-literal|"and even if the approvals are granted, I may not be able to register for these courses due to space limitations,\n"
+literal|"for these courses, and even if the approvals are granted, I may not be able to register for these "
 operator|+
-literal|"schedule conflicts or other policies. I also understand that if approvals are granted, it may be my responsibility\n"
+literal|"courses due to space limitations, schedule conflicts or other policies. I also understand that if "
 operator|+
-literal|"to process the schedule change within the established registration deadlines."
+literal|"approvals are granted, it may be my responsibility to process the schedule change within the established "
+operator|+
+literal|"registration deadlines."
 argument_list|)
 name|String
 name|messageRequestOverridesDisclaimer

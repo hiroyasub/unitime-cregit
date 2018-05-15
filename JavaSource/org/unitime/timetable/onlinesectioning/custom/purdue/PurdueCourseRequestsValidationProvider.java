@@ -7743,9 +7743,9 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.requestOverrides"
 argument_list|,
-literal|"If you have already discussed these courses with your advisor and were advised to request\n"
+literal|"If you have already discussed these courses with your advisor and were advised to request "
 operator|+
-literal|"registration in them please select Request Overrides& Submit. If you arenât sure, click Cancel Submit and\n"
+literal|"registration in them please select Request Overrides& Submit. If you arenât sure, click Cancel Submit and "
 operator|+
 literal|"consult with your advisor before coming back to your Course Request page."
 argument_list|)
@@ -7907,7 +7907,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"One or more of the newly requested courses have no alternatives provided.\nYou may not be able to get a full schedule because you did not provide an alternative course."
+literal|"One or more of the newly requested courses have no alternatives provided. You may not be able to get a full schedule because you did not provide an alternative course."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME
@@ -7939,7 +7939,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"Two or more single section courses are conflicting with each other.\nYou will likely not be able to get the conflicting course, so please provide an alternative course if possible."
+literal|"Two or more single section courses are conflicting with each other. You will likely not be able to get the conflicting course, so please provide an alternative course if possible."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME

@@ -613,7 +613,7 @@ name|iHintPanel
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|HintProvider
 argument_list|<
 name|T
@@ -622,14 +622,14 @@ name|iHintProvider
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|int
 name|iLastHoverRow
 init|=
 operator|-
 literal|1
 decl_stmt|;
-specifier|private
+specifier|protected
 name|Map
 argument_list|<
 name|Integer
