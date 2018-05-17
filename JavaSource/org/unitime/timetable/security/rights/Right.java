@@ -2932,6 +2932,27 @@ name|Scripts
 block|,
 name|ScriptEdit
 block|,
+name|Tasks
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|TaskDetail
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|TaskEdit
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** API */
 name|ApiRetrieveEvents
 argument_list|(

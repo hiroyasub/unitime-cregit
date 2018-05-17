@@ -1399,6 +1399,26 @@ name|String
 name|percentageSign
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultStringArrayValue
+argument_list|(
+block|{
+literal|"Created"
+block|,
+literal|"Queued"
+block|,
+literal|"Running"
+block|,
+literal|"Finished"
+block|,
+literal|"Failed"
+block|}
+argument_list|)
+name|String
+index|[]
+name|taskStatus
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

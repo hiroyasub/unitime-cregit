@@ -55,6 +55,14 @@ name|id
 parameter_list|)
 function_decl|;
 specifier|public
+name|QueueItem
+name|getByExecutionId
+parameter_list|(
+name|Long
+name|id
+parameter_list|)
+function_decl|;
+specifier|public
 name|boolean
 name|remove
 parameter_list|(

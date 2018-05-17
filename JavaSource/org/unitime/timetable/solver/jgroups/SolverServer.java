@@ -229,6 +229,11 @@ name|isCoordinator
 parameter_list|()
 function_decl|;
 specifier|public
+name|boolean
+name|isLocalCoordinator
+parameter_list|()
+function_decl|;
+specifier|public
 name|Address
 name|getAddress
 parameter_list|()

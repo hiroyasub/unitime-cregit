@@ -9920,6 +9920,28 @@ argument_list|(
 literal|"unitime.timeGrid.xls.fontName"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"1"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Task Scheduler: task execution service check interval in minutes"
+argument_list|)
+name|TaskSchedulerCheckIntervalInMinutes
+argument_list|(
+literal|"unitime.taskScheduler.checkIntervalInMinutes"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
