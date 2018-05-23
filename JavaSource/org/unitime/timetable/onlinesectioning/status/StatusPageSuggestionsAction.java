@@ -10943,6 +10943,10 @@ specifier|private
 name|OnlineSectioningServer
 name|iServer
 decl_stmt|;
+specifier|private
+name|boolean
+name|iMyStudent
+decl_stmt|;
 specifier|public
 name|StudentMatcher
 parameter_list|(
@@ -10954,6 +10958,9 @@ name|defaultStatus
 parameter_list|,
 name|OnlineSectioningServer
 name|server
+parameter_list|,
+name|boolean
+name|myStudent
 parameter_list|)
 block|{
 name|iStudent
@@ -10967,6 +10974,10 @@ expr_stmt|;
 name|iServer
 operator|=
 name|server
+expr_stmt|;
+name|iMyStudent
+operator|=
+name|myStudent
 expr_stmt|;
 block|}
 specifier|public
@@ -12747,6 +12758,34 @@ block|}
 block|}
 return|return
 literal|false
+return|;
+block|}
+if|else if
+condition|(
+literal|"mode"
+operator|.
+name|equals
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|eq
+argument_list|(
+literal|"My Students"
+argument_list|,
+name|term
+argument_list|)
+condition|)
+block|{
+return|return
+name|iMyStudent
+return|;
+block|}
+return|return
+literal|true
 return|;
 block|}
 return|return

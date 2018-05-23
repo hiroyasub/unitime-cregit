@@ -825,6 +825,8 @@ name|helper
 operator|.
 name|getStudentNameFormat
 argument_list|()
+argument_list|,
+name|iMyStudents
 argument_list|)
 decl_stmt|;
 name|sm
