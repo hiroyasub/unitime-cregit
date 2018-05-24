@@ -7531,8 +7531,12 @@ name|hasCount
 argument_list|()
 condition|)
 name|html
-operator|+=
-literal|"<span class='item-hint'>("
+operator|=
+literal|"<span class='value-text'>"
+operator|+
+name|html
+operator|+
+literal|"&nbsp;</span><span class='value-hint'>("
 operator|+
 name|value
 operator|.
@@ -7549,8 +7553,12 @@ name|hasToolTip
 argument_list|()
 condition|)
 name|html
-operator|+=
-literal|"<span class='item-hint'>"
+operator|=
+literal|"<span class='value-text'>"
+operator|+
+name|html
+operator|+
+literal|"&nbsp;</span><span class='value-hint'>"
 operator|+
 name|value
 operator|.
