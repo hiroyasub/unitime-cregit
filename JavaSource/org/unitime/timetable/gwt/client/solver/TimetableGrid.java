@@ -1106,7 +1106,7 @@ condition|(
 operator|(
 name|index
 operator|%
-literal|3
+literal|10
 operator|)
 operator|!=
 literal|0
