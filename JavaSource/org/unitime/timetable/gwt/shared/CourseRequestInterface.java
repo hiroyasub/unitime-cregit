@@ -824,6 +824,14 @@ name|iCreditNote
 operator|.
 name|isEmpty
 argument_list|()
+operator|&&
+operator|!
+literal|" "
+operator|.
+name|equals
+argument_list|(
+name|iCreditNote
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -3200,6 +3208,14 @@ name|iStatusNote
 operator|.
 name|isEmpty
 argument_list|()
+operator|&&
+operator|!
+literal|" "
+operator|.
+name|equals
+argument_list|(
+name|iStatusNote
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -7117,6 +7133,14 @@ name|iCreditNote
 operator|.
 name|isEmpty
 argument_list|()
+operator|&&
+operator|!
+literal|" "
+operator|.
+name|equals
+argument_list|(
+name|iCreditNote
+argument_list|)
 return|;
 block|}
 specifier|public
