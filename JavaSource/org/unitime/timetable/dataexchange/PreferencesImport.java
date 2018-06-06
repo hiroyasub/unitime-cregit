@@ -1208,9 +1208,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i from DepartmentalInstructor i left join fetch i.preferences p where i.department.session.uniqueId = :sessionId "
-operator|+
-literal|"order by i.department.deptCode, i.lastName, i.firstName"
+literal|"select distinct i from DepartmentalInstructor i left join fetch i.preferences p where i.department.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -1534,9 +1532,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct i from DepartmentalInstructor i left join fetch i.preferences p where i.department.session.uniqueId = :sessionId "
-operator|+
-literal|"order by i.department.deptCode, i.lastName, i.firstName"
+literal|"select distinct i from DepartmentalInstructor i left join fetch i.preferences p where i.department.session.uniqueId = :sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -1809,9 +1805,7 @@ literal|"left join fetch ss.preferences sp "
 operator|+
 literal|"left join fetch c.preferences cp "
 operator|+
-literal|"where ss.instrOfferingConfig.instructionalOffering.session.uniqueId = :sessionId and co.isControl = true "
-operator|+
-literal|"order by co.subjectAreaAbbv, co.courseNbr, ioc.uniqueId, ss.uniqueId"
+literal|"where ss.instrOfferingConfig.instructionalOffering.session.uniqueId = :sessionId and co.isControl = true"
 argument_list|)
 operator|.
 name|setLong
@@ -2154,9 +2148,7 @@ literal|"left join fetch ss.preferences sp "
 operator|+
 literal|"left join fetch c.preferences cp "
 operator|+
-literal|"where ss.instrOfferingConfig.instructionalOffering.session.uniqueId = :sessionId and co.isControl = true "
-operator|+
-literal|"order by co.subjectAreaAbbv, co.courseNbr, ioc.uniqueId, ss.uniqueId"
+literal|"where ss.instrOfferingConfig.instructionalOffering.session.uniqueId = :sessionId and co.isControl = true"
 argument_list|)
 operator|.
 name|setLong
