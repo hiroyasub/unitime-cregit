@@ -820,7 +820,15 @@ name|student
 operator|.
 name|setStatus
 argument_list|(
-name|getStatus
+name|status
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|status
+operator|.
+name|getReference
 argument_list|()
 argument_list|)
 expr_stmt|;
