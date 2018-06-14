@@ -580,7 +580,10 @@ name|type
 operator|.
 name|equals
 argument_list|(
-name|type
+name|o
+operator|.
+name|getType
+argument_list|()
 argument_list|)
 condition|)
 block|{
