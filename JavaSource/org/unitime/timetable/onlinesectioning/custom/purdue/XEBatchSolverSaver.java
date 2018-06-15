@@ -7218,6 +7218,10 @@ block|,
 literal|"TIME"
 block|,
 literal|"TIME-CNFLT"
+block|,
+literal|"CHRT"
+block|,
+literal|"COHORT"
 block|, 		    }
 decl_stmt|;
 specifier|protected
