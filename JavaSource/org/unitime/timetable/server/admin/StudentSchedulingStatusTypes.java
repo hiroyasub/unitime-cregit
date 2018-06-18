@@ -938,7 +938,7 @@ name|textarea
 argument_list|,
 literal|40
 argument_list|,
-literal|200
+literal|500
 argument_list|)
 expr_stmt|;
 if|if
