@@ -525,6 +525,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|onlinesectioning
+operator|.
+name|server
+operator|.
+name|DatabaseServer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|solver
 operator|.
 name|studentsct
@@ -4905,6 +4921,19 @@ name|server
 operator|instanceof
 name|StudentSolver
 operator|)
+operator|&&
+operator|(
+name|server
+operator|instanceof
+name|DatabaseServer
+operator|||
+name|ApplicationProperty
+operator|.
+name|OnlineSchedulingDashboardCreditFilterUseDatabase
+operator|.
+name|isTrue
+argument_list|()
+operator|)
 condition|)
 block|{
 name|String
@@ -5400,11 +5429,7 @@ block|}
 name|String
 name|creditTerm
 init|=
-literal|"((select coalesce(sum(fixedUnits),0) from FixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s)) + "
-operator|+
-comment|// "(select coalesce(sum(fixedUnits),0) from FixedCreditUnitConfig where subpartOwner in (select clazz.schedulingSubpart.uniqueId from StudentClassEnrollment where student = s)) + " +
-comment|// "(select coalesce(sum(minUnits),0) from VariableFixedCreditUnitConfig where subpartOwner in (select clazz.schedulingSubpart.uniqueId from StudentClassEnrollment where student = s)) + " +
-literal|"(select coalesce(sum(minUnits),0) from VariableFixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s)))"
+literal|"(select coalesce(sum(fixedUnits),0) + coalesce(sum(minUnits),0) from CourseCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s))"
 decl_stmt|;
 if|if
 condition|(
@@ -5418,9 +5443,7 @@ condition|)
 block|{
 name|creditTerm
 operator|=
-literal|"((select coalesce(sum(fixedUnits),0) from FixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod is not null)) + "
-operator|+
-literal|"(select coalesce(sum(minUnits),0) from VariableFixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod is not null)))"
+literal|"(select coalesce(sum(fixedUnits),0) + coalesce(sum(minUnits),0) from CourseCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod is null))"
 expr_stmt|;
 block|}
 if|else if
@@ -5432,9 +5455,7 @@ condition|)
 block|{
 name|creditTerm
 operator|=
-literal|"((select coalesce(sum(fixedUnits),0) from FixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and lower(clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod.reference) = :Xim)) + "
-operator|+
-literal|"(select coalesce(sum(minUnits),0) from VariableFixedCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and lower(clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod.reference) = :Xim)))"
+literal|"(select coalesce(sum(fixedUnits),0) + coalesce(sum(minUnits),0) from CourseCreditUnitConfig where courseOwner in (select courseOffering.uniqueId from StudentClassEnrollment where student = s and lower(clazz.schedulingSubpart.instrOfferingConfig.instructionalMethod.reference) = :Xim))"
 expr_stmt|;
 name|query
 operator|.
@@ -5475,11 +5496,7 @@ literal|"credit"
 argument_list|,
 name|creditTerm
 operator|+
-literal|">= :Xmin and "
-operator|+
-name|creditTerm
-operator|+
-literal|"<= :Xmax"
+literal|" between :Xmin and :Xmax"
 argument_list|)
 expr_stmt|;
 name|query
@@ -6809,6 +6826,18 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Q:"
+operator|+
+name|query
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|org
 operator|.
 name|hibernate
