@@ -4388,7 +4388,12 @@ argument_list|,
 name|section
 operator|.
 name|getName
+argument_list|(
+name|course
+operator|.
+name|getCourseId
 argument_list|()
+argument_list|)
 argument_list|,
 name|clonedSubpart
 argument_list|,
