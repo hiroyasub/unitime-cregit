@@ -4870,6 +4870,16 @@ name|isExpired
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|clonedReservation
+operator|.
+name|setAllowDisabled
+argument_list|(
+name|reservation
+operator|.
+name|isAllowDisabled
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Long
