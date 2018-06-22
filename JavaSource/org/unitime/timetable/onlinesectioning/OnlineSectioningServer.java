@@ -37,6 +37,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|cpsolver
@@ -544,6 +554,17 @@ name|getInstructedOfferings
 parameter_list|(
 name|String
 name|instructorExternalId
+parameter_list|)
+function_decl|;
+specifier|public
+name|Set
+argument_list|<
+name|Long
+argument_list|>
+name|getRequestedCourseIds
+parameter_list|(
+name|Long
+name|studentId
 parameter_list|)
 function_decl|;
 annotation|@
