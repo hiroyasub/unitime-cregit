@@ -1024,29 +1024,17 @@ name|createQuery
 argument_list|(
 literal|"select distinct io from InstructionalOffering io "
 operator|+
-literal|"left join fetch io.courseOfferings co "
+literal|"left join io.courseOfferings co "
 operator|+
 literal|"left join fetch io.instrOfferingConfigs cf "
 operator|+
 literal|"left join fetch cf.schedulingSubparts ss "
 operator|+
-literal|"left join fetch ss.classes c "
-operator|+
-literal|"left join fetch c.assignments a "
-operator|+
-literal|"left join fetch a.rooms r "
-operator|+
-literal|"left join fetch c.classInstructors i "
+literal|"left join fetch ss.classes as c "
 operator|+
 literal|"left join fetch io.reservations x "
 operator|+
-literal|"left join fetch co.creditConfigs cc "
-operator|+
-literal|"left join fetch ss.creditConfigs sc "
-operator|+
-literal|"inner join io.courseOfferings cox "
-operator|+
-literal|"where io.session.uniqueId = :sessionId and io.notOffered = false and cox.subjectArea.department.allowStudentScheduling = true"
+literal|"where io.session.uniqueId = :sessionId and io.notOffered = false and co.subjectArea.department.allowStudentScheduling = true"
 argument_list|)
 operator|.
 name|setLong

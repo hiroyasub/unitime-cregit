@@ -16930,7 +16930,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct io from InstructionalOffering io "
 operator|+
-literal|"left join fetch io.courseOfferings as co "
+literal|"left join io.courseOfferings as co "
 operator|+
 literal|"left join fetch io.instrOfferingConfigs as ioc "
 operator|+
