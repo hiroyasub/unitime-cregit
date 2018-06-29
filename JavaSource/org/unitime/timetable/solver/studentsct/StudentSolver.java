@@ -2316,7 +2316,7 @@ name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"WARNING: Section "
+literal|"Section "
 operator|+
 name|s
 operator|.
@@ -2365,6 +2365,9 @@ name|assign
 parameter_list|(
 name|Enrollment
 name|enrollment
+parameter_list|,
+name|boolean
+name|warn
 parameter_list|)
 block|{
 if|if
@@ -2381,28 +2384,77 @@ name|enrollment
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|warn
+condition|)
 name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to assign "
-operator|+
-name|enrollment
-operator|.
-name|variable
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" := "
+literal|"There is a problem assigning "
 operator|+
 name|enrollment
 operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" (student not available)"
+literal|" to "
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getExternalId
+argument_list|()
+operator|+
+literal|"): Student not available."
+argument_list|)
+expr_stmt|;
+else|else
+name|iProgress
+operator|.
+name|info
+argument_list|(
+literal|"There is a problem assigning "
+operator|+
+name|enrollment
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getExternalId
+argument_list|()
+operator|+
+literal|"): Student not available."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2464,33 +2516,77 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|warn
+condition|)
 name|iProgress
 operator|.
 name|warn
 argument_list|(
-literal|"Unable to assign "
-operator|+
-name|enrollment
-operator|.
-name|variable
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" := "
+literal|"There is a problem assigning "
 operator|+
 name|enrollment
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getExternalId
+argument_list|()
+operator|+
+literal|")"
 argument_list|)
 expr_stmt|;
+else|else
 name|iProgress
 operator|.
-name|warn
+name|info
 argument_list|(
-literal|"&nbsp;&nbsp;Reason:"
+literal|"There is a problem assigning "
+operator|+
+name|enrollment
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getExternalId
+argument_list|()
+operator|+
+literal|")"
 argument_list|)
 expr_stmt|;
 for|for
@@ -2532,36 +2628,65 @@ control|)
 block|{
 name|iProgress
 operator|.
-name|warn
+name|info
 argument_list|(
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;"
+literal|"    conflicts with "
+operator|+
+name|enrl
+operator|.
+name|getName
+argument_list|()
+operator|+
+operator|(
+name|enrl
+operator|.
+name|getRequest
+argument_list|()
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getId
+argument_list|()
+operator|!=
+name|enrollment
+operator|.
+name|getStudent
+argument_list|()
+operator|.
+name|getId
+argument_list|()
+condition|?
+literal|" of a different student ("
 operator|+
 name|enrl
 operator|.
 name|getRequest
 argument_list|()
 operator|.
-name|getName
+name|getStudent
+argument_list|()
+operator|.
+name|getExternalId
 argument_list|()
 operator|+
-literal|" = "
+literal|")"
+else|:
+literal|""
+operator|)
 operator|+
-name|enrl
+literal|" due to "
+operator|+
+name|c
 operator|.
-name|getName
+name|getClass
+argument_list|()
+operator|.
+name|getSimpleName
 argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|iProgress
-operator|.
-name|debug
-argument_list|(
-literal|"&nbsp;&nbsp;&nbsp;&nbsp;in constraint "
-operator|+
-name|c
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 block|}
@@ -2868,6 +2993,8 @@ condition|)
 name|assign
 argument_list|(
 name|enrollment
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -3163,6 +3290,8 @@ condition|)
 name|assign
 argument_list|(
 name|enrollment
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
