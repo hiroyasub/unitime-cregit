@@ -147,6 +147,7 @@ init|=
 literal|7165669008085313647L
 decl_stmt|;
 specifier|private
+specifier|transient
 name|FormFile
 name|iFile
 decl_stmt|;
