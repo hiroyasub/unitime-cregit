@@ -9964,6 +9964,28 @@ argument_list|(
 literal|"unitime.taskScheduler.checkIntervalInMinutes"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Task Scheduler: is task scheduler enabled (set to false to disable automatic task execution)"
+argument_list|)
+name|TaskSchedulerEnabled
+argument_list|(
+literal|"unitime.taskScheduler.enabled"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

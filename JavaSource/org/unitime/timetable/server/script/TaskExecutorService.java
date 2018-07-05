@@ -934,6 +934,13 @@ block|{
 return|return
 name|iActive
 operator|&&
+name|ApplicationProperty
+operator|.
+name|TaskSchedulerEnabled
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
 name|solverServerService
 operator|.
 name|getLocalServer
