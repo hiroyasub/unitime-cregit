@@ -662,6 +662,29 @@ literal|"type"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|iDialectSQL
+operator|==
+literal|null
+condition|)
+block|{
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"Dialect "
+operator|+
+name|dialect
+operator|+
+literal|" not recognized, falling back to mysql."
+argument_list|)
+expr_stmt|;
+name|iDialectSQL
+operator|=
+literal|"mysql"
+expr_stmt|;
+block|}
 for|for
 control|(
 name|Iterator
