@@ -379,6 +379,16 @@ name|Session
 name|getSession
 parameter_list|()
 block|{
+if|if
+condition|(
+name|getRelatedCourses
+argument_list|()
+operator|==
+literal|null
+condition|)
+return|return
+literal|null
+return|;
 for|for
 control|(
 name|RelatedCourseInfo
