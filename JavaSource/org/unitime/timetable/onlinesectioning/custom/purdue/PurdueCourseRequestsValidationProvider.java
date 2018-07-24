@@ -9173,17 +9173,6 @@ operator|.
 name|getCourseNumber
 argument_list|()
 decl_stmt|;
-name|overrides
-operator|.
-name|remove
-argument_list|(
-name|subject
-operator|+
-literal|" "
-operator|+
-name|courseNbr
-argument_list|)
-expr_stmt|;
 name|List
 argument_list|<
 name|ChangeError
@@ -9380,6 +9369,17 @@ operator|.
 name|add
 argument_list|(
 name|ch
+argument_list|)
+expr_stmt|;
+name|overrides
+operator|.
+name|remove
+argument_list|(
+name|subject
+operator|+
+literal|" "
+operator|+
+name|courseNbr
 argument_list|)
 expr_stmt|;
 block|}
@@ -9490,17 +9490,6 @@ operator|.
 name|getCourseNumber
 argument_list|()
 decl_stmt|;
-name|overrides
-operator|.
-name|remove
-argument_list|(
-name|subject
-operator|+
-literal|" "
-operator|+
-name|courseNbr
-argument_list|)
-expr_stmt|;
 name|List
 argument_list|<
 name|ChangeError
@@ -9697,6 +9686,17 @@ operator|.
 name|add
 argument_list|(
 name|ch
+argument_list|)
+expr_stmt|;
+name|overrides
+operator|.
+name|remove
+argument_list|(
+name|subject
+operator|+
+literal|" "
+operator|+
+name|courseNbr
 argument_list|)
 expr_stmt|;
 block|}
@@ -19212,6 +19212,13 @@ name|getOverrideExternalId
 argument_list|()
 operator|!=
 literal|null
+operator|||
+name|cr
+operator|.
+name|getOverrideStatus
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|cr
@@ -19498,6 +19505,13 @@ condition|(
 name|student
 operator|.
 name|getOverrideExternalId
+argument_list|()
+operator|!=
+literal|null
+operator|||
+name|student
+operator|.
+name|getOverrideMaxCredit
 argument_list|()
 operator|!=
 literal|null
