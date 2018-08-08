@@ -22712,9 +22712,9 @@ name|courseRequests
 operator|.
 name|setTimeConflictsAllowed
 argument_list|(
-name|iSpecRegCx
+name|specReg
 operator|.
-name|areSpaceConflictsAllowed
+name|hasTimeConflict
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -22722,9 +22722,9 @@ name|courseRequests
 operator|.
 name|setSpaceConflictsAllowed
 argument_list|(
-name|iSpecRegCx
+name|specReg
 operator|.
-name|areTimeConflictsAllowed
+name|hasSpaceConflict
 argument_list|()
 argument_list|)
 expr_stmt|;
