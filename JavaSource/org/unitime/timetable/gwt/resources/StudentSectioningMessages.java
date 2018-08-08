@@ -1596,6 +1596,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to cancel override request: {0}"
+argument_list|)
+name|String
+name|cancelSpecialRegistrationFail
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load override requests: {0}"
 argument_list|)
 name|String
@@ -6504,6 +6516,15 @@ literal|"No registration errors have been detected."
 argument_list|)
 name|String
 name|errorNoRegistrationErrorsDetected
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you want to cancel this override request?"
+argument_list|)
+name|String
+name|confirmOverrideRequestCancel
 parameter_list|()
 function_decl|;
 block|}

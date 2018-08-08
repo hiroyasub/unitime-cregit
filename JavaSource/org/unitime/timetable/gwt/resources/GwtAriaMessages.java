@@ -2193,6 +2193,15 @@ name|String
 name|confirmationEnterToAcceptEscapeToReject
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Cancel this override request."
+argument_list|)
+name|String
+name|altCancelOverrideRequest
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
