@@ -407,6 +407,10 @@ name|Override
 argument_list|>
 name|overrides
 decl_stmt|;
+specifier|public
+name|String
+name|status
+decl_stmt|;
 block|}
 specifier|public
 specifier|static
