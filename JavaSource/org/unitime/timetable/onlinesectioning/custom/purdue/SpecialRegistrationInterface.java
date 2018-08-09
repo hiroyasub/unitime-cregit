@@ -371,6 +371,8 @@ block|{
 name|ADD
 block|,
 name|DROP
+block|,
+name|KEEP
 block|, 	}
 specifier|public
 specifier|static

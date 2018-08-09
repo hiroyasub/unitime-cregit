@@ -1831,14 +1831,17 @@ argument_list|(
 literal|"icons"
 argument_list|)
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|ca
 operator|.
-name|isCourseAssigned
+name|getSpecRegOperation
 argument_list|()
 condition|)
 block|{
+case|case
+name|Add
+case|:
 name|s
 operator|.
 name|add
@@ -1884,9 +1887,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
+break|break;
+case|case
+name|Drop
+case|:
 name|s
 operator|.
 name|add
@@ -1930,6 +1934,22 @@ name|getSection
 argument_list|()
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|Keep
+case|:
+comment|// s.add(new Icon(RESOURCES.saved(), MESSAGES.saved(ca.getSubject() + " " + ca.getCourseNbr() + " " + ca.getSubpart() + " " + ca.getSection())));
+comment|// break;
+default|default:
+name|s
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Label
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

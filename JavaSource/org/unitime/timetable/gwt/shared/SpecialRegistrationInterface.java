@@ -1260,6 +1260,21 @@ name|Cancelled
 block|, 		; 	}
 specifier|public
 specifier|static
+enum|enum
+name|SpecialRegistrationOperation
+implements|implements
+name|IsSerializable
+implements|,
+name|Serializable
+block|{
+name|Add
+block|,
+name|Drop
+block|,
+name|Keep
+block|, 		; 	}
+specifier|public
+specifier|static
 class|class
 name|RetrieveSpecialRegistrationResponse
 implements|implements
