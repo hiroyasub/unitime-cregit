@@ -160,6 +160,14 @@ specifier|public
 name|String
 name|notes
 decl_stmt|;
+specifier|public
+name|String
+name|requestorNotes
+decl_stmt|;
+specifier|public
+name|String
+name|completionStatus
+decl_stmt|;
 block|}
 specifier|public
 specifier|static
@@ -412,6 +420,10 @@ decl_stmt|;
 specifier|public
 name|String
 name|status
+decl_stmt|;
+specifier|public
+name|String
+name|notes
 decl_stmt|;
 block|}
 specifier|public
