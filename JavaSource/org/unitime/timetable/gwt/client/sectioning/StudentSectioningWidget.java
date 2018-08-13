@@ -21963,6 +21963,11 @@ operator|.
 name|getStudentId
 argument_list|()
 argument_list|,
+name|iSpecRegCx
+operator|.
+name|getRequestId
+argument_list|()
+argument_list|,
 name|iLastEnrollment
 argument_list|,
 name|iLastAssignment

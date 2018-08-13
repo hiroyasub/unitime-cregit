@@ -220,6 +220,12 @@ block|,
 name|denied
 block|,
 name|cancelled
+block|,
+name|completed
+block|,
+name|deferred
+block|,
+name|escalated
 block|, 		 ; 	}
 specifier|public
 specifier|static
