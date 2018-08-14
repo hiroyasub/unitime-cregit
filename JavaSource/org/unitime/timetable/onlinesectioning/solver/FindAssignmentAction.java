@@ -1241,6 +1241,22 @@ name|XSubpart
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|studentsct
+operator|.
+name|StudentSolver
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1731,6 +1747,22 @@ argument_list|(
 name|original
 operator|.
 name|isAllowDisabled
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|server
+operator|instanceof
+name|StudentSolver
+condition|)
+name|student
+operator|.
+name|setMaxCredit
+argument_list|(
+name|original
+operator|.
+name|getMaxCredit
 argument_list|()
 argument_list|)
 expr_stmt|;
