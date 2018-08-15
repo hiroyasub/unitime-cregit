@@ -3211,6 +3211,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Checking overrides..."
+argument_list|)
+name|String
+name|waitOverridesCheck
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Filter assignments of the selected class by name, day, start time, date, room or instructor."
 operator|+
 literal|"<br><br>You can also use the following tags:"
