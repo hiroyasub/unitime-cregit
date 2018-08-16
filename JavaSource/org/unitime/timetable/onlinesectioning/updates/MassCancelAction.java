@@ -818,7 +818,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from StudentSectioningStatus where reference = :ref"
+literal|"from StudentSectioningStatus where reference = :ref and (session is null or session = :sessionId)"
 argument_list|)
 operator|.
 name|setString
@@ -826,6 +826,19 @@ argument_list|(
 literal|"ref"
 argument_list|,
 name|getStatus
+argument_list|()
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.

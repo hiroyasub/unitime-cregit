@@ -147,7 +147,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 name|String
-name|PROP_GROUPING
+name|PROP_DIST_GROUPING
 init|=
 literal|"grouping"
 decl_stmt|;

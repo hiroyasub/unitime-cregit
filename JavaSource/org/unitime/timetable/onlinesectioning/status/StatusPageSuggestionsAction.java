@@ -4976,7 +4976,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a from StudentSectioningStatus a where "
+literal|"select a from StudentSectioningStatus a where (a.session is null or a.session = :sessionId) and "
 operator|+
 literal|" (lower(a.reference) like :q || '%'"
 operator|+
@@ -5015,6 +5015,19 @@ literal|2
 argument_list|)
 operator|.
 name|toLowerCase
+argument_list|()
+argument_list|)
+operator|.
+name|setLong
+argument_list|(
+literal|"sessionId"
+argument_list|,
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getUniqueId
 argument_list|()
 argument_list|)
 operator|.

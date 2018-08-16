@@ -2832,7 +2832,10 @@ name|getStatus
 argument_list|(
 name|statusToSet
 argument_list|,
-literal|null
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|hibSession
 argument_list|)

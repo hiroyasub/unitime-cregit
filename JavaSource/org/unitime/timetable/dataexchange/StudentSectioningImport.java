@@ -4744,7 +4744,10 @@ name|getStatus
 argument_list|(
 name|status
 argument_list|,
-literal|null
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
 argument_list|,
 name|getHibSession
 argument_list|()

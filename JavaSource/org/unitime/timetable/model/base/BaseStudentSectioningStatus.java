@@ -95,6 +95,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|Session
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|StudentSectioningStatus
 import|;
 end_import
@@ -148,6 +162,10 @@ decl_stmt|;
 specifier|private
 name|StudentSectioningStatus
 name|iFallBackStatus
+decl_stmt|;
+specifier|private
+name|Session
+name|iSession
 decl_stmt|;
 specifier|private
 name|Set
@@ -383,6 +401,28 @@ name|fallBackStatus
 expr_stmt|;
 block|}
 specifier|public
+name|Session
+name|getSession
+parameter_list|()
+block|{
+return|return
+name|iSession
+return|;
+block|}
+specifier|public
+name|void
+name|setSession
+parameter_list|(
+name|Session
+name|session
+parameter_list|)
+block|{
+name|iSession
+operator|=
+name|session
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|CourseType
@@ -596,6 +636,11 @@ operator|+
 literal|"\n	Reference: "
 operator|+
 name|getReference
+argument_list|()
+operator|+
+literal|"\n	Session: "
+operator|+
+name|getSession
 argument_list|()
 operator|+
 literal|"\n	Status: "
