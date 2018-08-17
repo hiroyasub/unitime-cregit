@@ -725,6 +725,24 @@ name|shared
 operator|.
 name|SpecialRegistrationInterface
 operator|.
+name|SpecialRegistrationStatus
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|SpecialRegistrationInterface
+operator|.
 name|SubmitSpecialRegistrationRequest
 import|;
 end_import
@@ -9356,6 +9374,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegDraft
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -9393,6 +9413,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegApproved
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -9430,6 +9452,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegCancelled
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -9467,6 +9491,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegPending
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -9504,6 +9530,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegRejected
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -9514,6 +9542,15 @@ name|clazz
 operator|.
 name|hasError
 argument_list|()
+operator|&&
+name|clazz
+operator|.
+name|getSpecRegStatus
+argument_list|()
+operator|!=
+name|SpecialRegistrationStatus
+operator|.
+name|Approved
 condition|)
 block|{
 name|style
@@ -12886,6 +12923,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegDraft
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12923,6 +12962,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegApproved
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12960,6 +13001,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegCancelled
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12997,6 +13040,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegPending
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -13034,6 +13079,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegRejected
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14071,6 +14118,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegDraft
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14108,6 +14157,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegApproved
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14145,6 +14196,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegCancelled
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14182,6 +14235,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegPending
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14219,6 +14274,8 @@ name|MESSAGES
 operator|.
 name|hintSpecRegRejected
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 break|break;

@@ -1771,11 +1771,11 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Label
+name|HTML
 name|errorsLabel
 init|=
 operator|new
-name|Label
+name|HTML
 argument_list|(
 name|ca
 operator|.
