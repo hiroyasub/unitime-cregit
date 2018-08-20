@@ -10874,7 +10874,8 @@ name|maxiNote
 operator|=
 name|change
 operator|.
-name|notes
+name|getLastNote
+argument_list|()
 expr_stmt|;
 block|}
 continue|continue;
@@ -12139,7 +12140,7 @@ name|Rejected
 case|:
 name|message
 operator|=
-literal|"Rejected: "
+literal|"Denied: "
 operator|+
 name|message
 expr_stmt|;
@@ -12154,19 +12155,7 @@ if|if
 condition|(
 name|ch
 operator|.
-name|notes
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|ch
-operator|.
-name|notes
-operator|.
-name|toString
-argument_list|()
-operator|.
-name|isEmpty
+name|hasLastNote
 argument_list|()
 condition|)
 name|message
@@ -12175,9 +12164,7 @@ literal|"\n<span class='note'>"
 operator|+
 name|ch
 operator|.
-name|notes
-operator|.
-name|trim
+name|getLastNote
 argument_list|()
 operator|+
 literal|"</span>"
@@ -12375,7 +12362,7 @@ name|Rejected
 case|:
 name|message
 operator|=
-literal|"Rejected: "
+literal|"Denied: "
 operator|+
 name|message
 expr_stmt|;
@@ -13335,7 +13322,7 @@ name|Rejected
 case|:
 name|message
 operator|=
-literal|"Rejected: "
+literal|"Denied: "
 operator|+
 name|message
 expr_stmt|;
@@ -13350,19 +13337,7 @@ if|if
 condition|(
 name|ch
 operator|.
-name|notes
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|ch
-operator|.
-name|notes
-operator|.
-name|toString
-argument_list|()
-operator|.
-name|isEmpty
+name|hasLastNote
 argument_list|()
 condition|)
 name|message
@@ -13371,9 +13346,7 @@ literal|"\n<span class='note'>"
 operator|+
 name|ch
 operator|.
-name|notes
-operator|.
-name|trim
+name|getLastNote
 argument_list|()
 operator|+
 literal|"</span>"
