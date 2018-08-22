@@ -2777,6 +2777,10 @@ name|StudentGroupTypes
 block|,
 name|StudentGroupTypeEdit
 block|,
+name|OverrideTypes
+block|,
+name|OverrideTypeEdit
+block|,
 name|EventServiceProviders
 block|,
 name|EventServiceProviderEditGlobal

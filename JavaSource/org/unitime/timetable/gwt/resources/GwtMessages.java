@@ -10135,6 +10135,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Override Type"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageOverrideType
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Override Types"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageOverrideTypes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Event Date Mapping"
 argument_list|)
 annotation|@

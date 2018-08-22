@@ -9425,6 +9425,24 @@ name|String
 name|courseName
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not-Allowed Overrides:"
+argument_list|)
+name|String
+name|propertyDisabledOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not-Allowed Overrides"
+argument_list|)
+name|String
+name|columnDisabledOverrides
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
