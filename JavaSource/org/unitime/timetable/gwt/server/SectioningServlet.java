@@ -16018,6 +16018,32 @@ return|return
 literal|null
 return|;
 comment|// only applies to users with a role that is department dependent
+comment|// scheduling advisors and admins can see all courses of a student regardless of whether they have the Department Independent permission or not
+if|if
+condition|(
+name|getSessionContext
+argument_list|()
+operator|.
+name|hasPermission
+argument_list|(
+name|Right
+operator|.
+name|StudentSchedulingAdmin
+argument_list|)
+operator|||
+name|getSessionContext
+argument_list|()
+operator|.
+name|hasPermission
+argument_list|(
+name|Right
+operator|.
+name|StudentSchedulingAdvisor
+argument_list|)
+condition|)
+return|return
+literal|null
+return|;
 name|HashSet
 argument_list|<
 name|String
