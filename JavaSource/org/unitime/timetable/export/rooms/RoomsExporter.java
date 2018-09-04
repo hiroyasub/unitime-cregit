@@ -886,7 +886,7 @@ block|}
 block|}
 name|request
 operator|.
-name|setOption
+name|addOption
 argument_list|(
 literal|"flag"
 argument_list|,
