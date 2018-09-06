@@ -9428,7 +9428,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Not-Allowed Overrides:"
+literal|"Prohibited Overrides:"
 argument_list|)
 name|String
 name|propertyDisabledOverrides
@@ -9437,7 +9437,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Not-Allowed Overrides"
+literal|"Prohibited Overrides"
 argument_list|)
 name|String
 name|columnDisabledOverrides
