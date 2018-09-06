@@ -6530,7 +6530,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No registration errors have been detected."
+literal|"There are no registration errors for which an override can be requested."
 argument_list|)
 name|String
 name|errorNoRegistrationErrorsDetected
