@@ -13829,14 +13829,12 @@ else|else
 block|{
 name|GroupConstraint
 operator|.
-name|ConstraintType
+name|ConstraintTypeInterface
 name|gcType
 init|=
 name|GroupConstraint
 operator|.
-name|ConstraintType
-operator|.
-name|get
+name|getConstraintType
 argument_list|(
 name|type
 operator|.
@@ -18327,9 +18325,7 @@ literal|null
 argument_list|,
 name|GroupConstraint
 operator|.
-name|ConstraintType
-operator|.
-name|get
+name|getConstraintType
 argument_list|(
 name|type
 argument_list|)
