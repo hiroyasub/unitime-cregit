@@ -4811,6 +4811,17 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|applicable
+operator|&&
+name|reservation
+operator|.
+name|isExpired
+argument_list|()
+condition|)
+continue|continue;
 name|org
 operator|.
 name|cpsolver

@@ -6458,6 +6458,17 @@ name|hasMustUse
 operator|=
 literal|true
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|applicable
+operator|&&
+name|reservation
+operator|.
+name|isExpired
+argument_list|()
+condition|)
+continue|continue;
 name|Reservation
 name|clonedReservation
 init|=
