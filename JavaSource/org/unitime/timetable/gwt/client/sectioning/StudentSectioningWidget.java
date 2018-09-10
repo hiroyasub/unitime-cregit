@@ -9550,29 +9550,31 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|style
+operator|+=
+operator|(
+name|specRegStatus
+operator|!=
+name|SpecialRegistrationStatus
+operator|.
+name|Rejected
+condition|?
+literal|" text-blue"
+else|:
+literal|" text-red"
+operator|)
+expr_stmt|;
 if|if
 condition|(
 name|clazz
 operator|.
 name|hasError
 argument_list|()
-operator|&&
-name|specRegStatus
-operator|!=
-name|SpecialRegistrationStatus
-operator|.
-name|Approved
 condition|)
-block|{
-name|style
-operator|+=
-literal|" text-red"
-expr_stmt|;
 name|hasError
 operator|=
 literal|true
 expr_stmt|;
-block|}
 block|}
 if|else if
 condition|(
