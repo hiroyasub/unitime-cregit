@@ -3665,6 +3665,11 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+name|getSpecialRegistration
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 operator|(
 operator|!
 name|specRegDrops
