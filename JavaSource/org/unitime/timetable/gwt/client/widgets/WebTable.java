@@ -5903,7 +5903,7 @@ operator|.
 name|getStyle
 argument_list|()
 operator|.
-name|setPaddingLeft
+name|setMarginLeft
 argument_list|(
 literal|3
 argument_list|,

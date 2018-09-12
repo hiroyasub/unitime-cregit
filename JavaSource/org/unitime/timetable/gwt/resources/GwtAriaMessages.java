@@ -2001,7 +2001,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"There are {0, number} special registrations available. Use up and down arrows to navigate. To select a registration press Enter. Press Escape to hide registrations."
+literal|"There are {0, number} override requests available. Use up and down arrows to navigate. To select an override request press Enter. Press Escape to hide override requests."
 argument_list|)
 name|String
 name|showingSpecRegs
@@ -2013,7 +2013,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special registration {0, number} of {1, number}. {2}. Submitted {3,localdatetime,MMMM dd}"
+literal|"Override request {0, number} of {1, number}. {2}. Submitted {3,localdatetime,MMMM dd}"
 argument_list|)
 name|String
 name|showingSpecReg
@@ -2034,7 +2034,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Selected special registration {0}."
+literal|"Selected override request {0}."
 argument_list|)
 name|String
 name|selectedSpecReg

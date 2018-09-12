@@ -5359,6 +5359,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"These override requests have been already applied."
+argument_list|)
+name|String
+name|hintSpecRegApplied
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0}, {1}"
 argument_list|)
 name|String
@@ -6539,10 +6548,127 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No overrides can be requested at this time."
+argument_list|)
+name|String
+name|errorRegistrationErrorsBadResponse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Do you want to cancel this override request?"
 argument_list|)
 name|String
 name|confirmOverrideRequestCancel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration Errors"
+argument_list|)
+name|String
+name|dialogEnrollmentConfirmation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration failed with the following registration errors:"
+argument_list|)
+name|String
+name|messageEnrollmentFailedWithErrors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration for the selected schedule was partially successful.\n"
+operator|+
+literal|"Some of the changes have been denied due to the following registration errors:"
+argument_list|)
+name|String
+name|messageEnrollmentSucceededWithErrors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Checking overrides ...\nClick<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+argument_list|)
+name|String
+name|messageCheckingOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request Overrides"
+argument_list|)
+name|String
+name|buttonEnrollmentRequestOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Review and request overrides for the above registration errrors."
+argument_list|)
+name|String
+name|titleEnrollmentRequestOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Close Dialog"
+argument_list|)
+name|String
+name|buttonEnrollmentHideConfirmation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Hide the Registration Errors dialog without requesting any overrides."
+argument_list|)
+name|String
+name|titleEnrollmentHideConfirmation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Overrides cannot be requested: {0}\nClick<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+argument_list|)
+name|String
+name|messageCannotRequestOverrides
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"It is possible to request overrides for all of the above registration errors.\n"
+operator|+
+literal|"Click<b>Request Overrides</b> to review and request overrides. Click<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+argument_list|)
+name|String
+name|messageCanRequestOverridesAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"It is possible to request overrides for some of the above registration errors.\n"
+operator|+
+literal|"Click<b>Request Overrides</b> to review and request overrides. Click<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+argument_list|)
+name|String
+name|messageCanRequestOverridesSome
 parameter_list|()
 function_decl|;
 block|}
