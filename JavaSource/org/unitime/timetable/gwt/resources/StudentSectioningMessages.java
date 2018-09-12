@@ -6671,6 +6671,15 @@ name|String
 name|messageCanRequestOverridesSome
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show all changes"
+argument_list|)
+name|String
+name|checkOverridesShowAllChanges
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

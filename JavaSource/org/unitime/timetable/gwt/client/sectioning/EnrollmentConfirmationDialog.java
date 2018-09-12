@@ -1516,7 +1516,7 @@ name|panel
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
+specifier|protected
 name|void
 name|showError
 parameter_list|(
@@ -1549,7 +1549,7 @@ name|center
 argument_list|()
 expr_stmt|;
 block|}
-specifier|public
+specifier|protected
 name|void
 name|showRequestOverrides
 parameter_list|()
@@ -1621,6 +1621,13 @@ name|SpecialRegistrationEligibilityResponse
 name|eligibilityResponse
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|isVisible
+argument_list|()
+condition|)
+return|return;
 name|iResponse
 operator|=
 name|eligibilityResponse
