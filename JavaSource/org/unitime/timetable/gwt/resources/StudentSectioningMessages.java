@@ -6652,6 +6652,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Overrides cannot be requested due to the following registration errors that have been already denied:"
+argument_list|)
+name|String
+name|messageCannotRequestOverridesErrors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Click<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+argument_list|)
+name|String
+name|messageCannotRequestOverridesErrorsBottom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"It is possible to request overrides for all of the above registration errors.\n"
 operator|+
 literal|"Click<b>Request Overrides</b> to review and request overrides. Click<b>Close Dialog</b> to hide this dialog without requesting any overrides."
