@@ -6548,6 +6548,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"If you proceed, the following pending override requests will be canceled:"
+argument_list|)
+name|String
+name|confirmOverrideRequestCancelCancelledErrors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Registration Errors"
 argument_list|)
 name|String
