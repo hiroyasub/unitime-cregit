@@ -5192,11 +5192,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|iSpecRegCx
-operator|.
-name|clearChanges
-argument_list|()
-expr_stmt|;
 name|iSpecialRegAssignment
 operator|=
 name|iSavedAssignment
@@ -5240,13 +5235,6 @@ name|specReg
 operator|.
 name|getNote
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|iSpecRegCx
-operator|.
-name|setChanges
-argument_list|(
-name|specReg
 argument_list|)
 expr_stmt|;
 name|iSpecialRegAssignment
@@ -9840,7 +9828,7 @@ expr_stmt|;
 name|SpecialRegistrationStatus
 name|specRegStatus
 init|=
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|getStatus
 argument_list|(
@@ -9857,7 +9845,7 @@ block|{
 name|String
 name|error
 init|=
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|getError
 argument_list|(
@@ -10090,6 +10078,8 @@ name|clazz
 operator|.
 name|getError
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|style
@@ -11607,7 +11597,7 @@ block|}
 if|else if
 condition|(
 operator|!
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|isDrop
 argument_list|(
@@ -13412,7 +13402,7 @@ decl_stmt|;
 name|SpecialRegistrationStatus
 name|specRegStatus
 init|=
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|getStatus
 argument_list|(
@@ -13429,7 +13419,7 @@ block|{
 name|String
 name|error
 init|=
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|getError
 argument_list|(
@@ -13637,6 +13627,8 @@ name|clazz
 operator|.
 name|getError
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -14643,7 +14635,7 @@ decl_stmt|;
 name|SpecialRegistrationStatus
 name|specRegStatus
 init|=
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|getStatus
 argument_list|(
@@ -14660,7 +14652,7 @@ block|{
 name|String
 name|error
 init|=
-name|iSpecRegCx
+name|iSpecialRegistrationsPanel
 operator|.
 name|getError
 argument_list|(
@@ -14868,6 +14860,8 @@ name|clazz
 operator|.
 name|getError
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -18168,11 +18162,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|iSpecRegCx
-operator|.
-name|clearChanges
-argument_list|()
-expr_stmt|;
 name|fillIn
 argument_list|(
 name|saved
@@ -18244,13 +18233,6 @@ name|specReg
 operator|.
 name|getStatus
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|iSpecRegCx
-operator|.
-name|setChanges
-argument_list|(
-name|specReg
 argument_list|)
 expr_stmt|;
 if|if
@@ -23866,13 +23848,6 @@ argument_list|(
 name|iLastAssignment
 argument_list|)
 expr_stmt|;
-name|iSpecRegCx
-operator|.
-name|setChanges
-argument_list|(
-name|iLastAssignment
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|response
@@ -24208,6 +24183,7 @@ name|iLastEnrollment
 operator|=
 name|lastEnrollment
 expr_stmt|;
+specifier|final
 name|EnrollmentConfirmationDialog
 name|dialog
 init|=

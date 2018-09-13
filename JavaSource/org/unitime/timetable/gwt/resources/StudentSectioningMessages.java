@@ -5296,25 +5296,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"These override requests have been submitted for processing."
-argument_list|)
-name|String
-name|hintSpecRegCanNotSubmit
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"These override requests have been processed."
-argument_list|)
-name|String
-name|hintSpecRegCanEnroll
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"These override requests have been approved."
+literal|"The override request has been approved."
 argument_list|)
 name|String
 name|hintSpecRegApproved
@@ -5323,7 +5305,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"These override requests have been cancelled."
+literal|"The override request has been cancelled."
 argument_list|)
 name|String
 name|hintSpecRegCancelled
@@ -5332,7 +5314,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"These override requests have been submitted for processing. Waiting for approval..."
+literal|"The override request has been submitted for processing. Waiting for approval..."
 argument_list|)
 name|String
 name|hintSpecRegPending
@@ -5341,7 +5323,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"These override requests have not been submitted for processing. It can still be edited."
+literal|"The override request has been submitted for processing. It can still be edited."
 argument_list|)
 name|String
 name|hintSpecRegDraft
@@ -5350,7 +5332,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"These override requests have been denied."
+literal|"One or more of the registration errors have been denied."
 argument_list|)
 name|String
 name|hintSpecRegRejected
@@ -5359,7 +5341,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"These override requests have been already applied."
+literal|"The override request has been already applied."
 argument_list|)
 name|String
 name|hintSpecRegApplied

@@ -61,6 +61,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -737,6 +747,12 @@ control|(
 name|ErrorMessage
 name|cm
 range|:
+operator|new
+name|TreeSet
+argument_list|<
+name|ErrorMessage
+argument_list|>
+argument_list|(
 operator|(
 operator|(
 name|SectioningException
@@ -746,6 +762,7 @@ operator|)
 operator|.
 name|getErrors
 argument_list|()
+argument_list|)
 control|)
 block|{
 if|if
@@ -1017,10 +1034,17 @@ control|(
 name|ErrorMessage
 name|cm
 range|:
+operator|new
+name|TreeSet
+argument_list|<
+name|ErrorMessage
+argument_list|>
+argument_list|(
 name|result
 operator|.
 name|getErrors
 argument_list|()
+argument_list|)
 control|)
 block|{
 if|if
