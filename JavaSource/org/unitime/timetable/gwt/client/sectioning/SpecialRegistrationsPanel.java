@@ -1689,7 +1689,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-name|title
+name|label
 operator|.
 name|addClickHandler
 argument_list|(
@@ -1714,6 +1714,7 @@ operator|.
 name|isVisible
 argument_list|()
 condition|)
+block|{
 name|iOpenCloseImage
 operator|.
 name|setValue
@@ -1727,6 +1728,7 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 argument_list|)

@@ -96,7 +96,7 @@ specifier|private
 name|boolean
 name|iRequestOverridesOpened
 init|=
-literal|false
+literal|true
 decl_stmt|;
 specifier|private
 specifier|static
