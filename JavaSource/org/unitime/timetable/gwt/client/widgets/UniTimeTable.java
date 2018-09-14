@@ -4034,6 +4034,21 @@ condition|)
 block|{
 if|if
 condition|(
+literal|"unitime-TableRowSelectedHover"
+operator|.
+name|equals
+argument_list|(
+name|style
+argument_list|)
+condition|)
+block|{
+name|selected
+operator|=
+literal|true
+expr_stmt|;
+block|}
+if|else if
+condition|(
 literal|"unitime-TableRowSelected"
 operator|.
 name|equals
