@@ -6548,7 +6548,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"If you proceed, the following pending override requests will be canceled:"
+literal|"If you proceed, the following pending overrides will be canceled:"
 argument_list|)
 name|String
 name|confirmOverrideRequestCancelCancelledErrors
