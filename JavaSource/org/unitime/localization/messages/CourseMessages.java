@@ -2494,7 +2494,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Show only classes that need instructor assignent"
+literal|"Show only classes that need instructor assignment"
 argument_list|)
 name|String
 name|showNeedInstructorClasses

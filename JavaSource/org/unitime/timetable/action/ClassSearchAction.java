@@ -3097,14 +3097,7 @@ name|query
 operator|.
 name|append
 argument_list|(
-literal|" and (c.teachingLoad is not null or c.schedulingSubpart.teachingLoad is not null)"
-argument_list|)
-expr_stmt|;
-name|query
-operator|.
-name|append
-argument_list|(
-literal|" and ((c.nbrInstructors is null and c.schedulingSubpart.nbrInstructors> 0) or c.nbrInstructors> 0)"
+literal|" and (select sum(tr.teachingRequest.nbrInstructors) from TeachingClassRequest tr where tr.assignInstructor = true and  tr.teachingClass = c)> 0"
 argument_list|)
 expr_stmt|;
 block|}
