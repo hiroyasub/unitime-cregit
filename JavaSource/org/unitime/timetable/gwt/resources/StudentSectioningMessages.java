@@ -6731,6 +6731,18 @@ name|String
 name|statusOneOrMoreFullyApprovedRequestsNotYetApplied
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximum of {0,number,0.#} credit hours exceeded."
+argument_list|)
+name|String
+name|creditWarning
+parameter_list|(
+name|float
+name|credit
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
