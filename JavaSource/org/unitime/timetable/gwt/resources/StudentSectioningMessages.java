@@ -5305,6 +5305,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"This override request has been fully approved. Click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
+argument_list|)
+name|String
+name|hintSpecRegApprovedNoteApply
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The override request has been cancelled."
 argument_list|)
 name|String
@@ -6687,6 +6696,39 @@ literal|"Show all changes"
 argument_list|)
 name|String
 name|checkOverridesShowAllChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are trying to drop {0} as part of this override request. Once this request is fully approved, click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
+argument_list|)
+name|String
+name|specRegUnassignment
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are trying to add {0} as part of this override request. Once this request is fully approved, click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
+argument_list|)
+name|String
+name|specRegAssignment
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"One or more of your override requests have been fully approved. \nPlease click on the approved request to apply it to your current schedule, review the new schedule, and then click Submit Schedule button to update your registration."
+argument_list|)
+name|String
+name|statusOneOrMoreFullyApprovedRequestsNotYetApplied
 parameter_list|()
 function_decl|;
 block|}
