@@ -6502,9 +6502,16 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"\n<b>Disclaimer:</b>\n"
-operator|+
-literal|"I understand that requesting approval does not guarantee that I will be given permission to register "
+literal|"\n<b>Disclaimer:</b>"
+argument_list|)
+name|String
+name|messageRequestOverridesDisclaimer
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"By checking this box, I understand that requesting approval does not guarantee that I will be given permission to register "
 operator|+
 literal|"for these courses, and even if the approvals are granted, I may not be able to register for these "
 operator|+
@@ -6515,13 +6522,13 @@ operator|+
 literal|"registration deadlines."
 argument_list|)
 name|String
-name|messageRequestOverridesDisclaimer
+name|messageRequestOverridesDisclaimerMessage
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"\nIf you proceed, the following pending override requests will be canceled/replaced:"
+literal|"\n<span class='text-red'>If you proceed, the following pending override requests will be canceled/replaced:</span>"
 argument_list|)
 name|String
 name|messageRequestOverridesCancel
