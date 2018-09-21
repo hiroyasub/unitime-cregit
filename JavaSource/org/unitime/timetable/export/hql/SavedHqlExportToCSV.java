@@ -1137,6 +1137,13 @@ name|name
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|value
+operator|!=
+literal|null
+condition|)
+block|{
 name|SavedHQLInterface
 operator|.
 name|IdValue
@@ -1223,6 +1230,7 @@ argument_list|(
 name|v
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 for|for
