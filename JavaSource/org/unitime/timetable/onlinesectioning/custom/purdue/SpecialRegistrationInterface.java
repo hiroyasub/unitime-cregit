@@ -465,6 +465,10 @@ argument_list|>
 name|notes
 decl_stmt|;
 specifier|public
+name|String
+name|credit
+decl_stmt|;
+specifier|public
 name|boolean
 name|hasLastNote
 parameter_list|()
