@@ -672,6 +672,11 @@ name|config
 operator|.
 name|getInstructionalMethodName
 argument_list|()
+argument_list|,
+name|config
+operator|.
+name|getInstructionalMethodReference
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
