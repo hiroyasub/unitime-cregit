@@ -191,6 +191,10 @@ block|,
 name|SAVE_UNCOMMIT
 block|,
 name|VALIDATE
+block|,
+name|PUBLISH
+block|,
+name|CLONE
 block|, 		;
 specifier|public
 name|int

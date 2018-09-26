@@ -132,6 +132,26 @@ argument_list|>
 name|getReportTypes
 parameter_list|()
 function_decl|;
+specifier|public
+name|byte
+index|[]
+name|backupXml
+parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
+name|restoreXml
+parameter_list|(
+name|byte
+index|[]
+name|data
+parameter_list|)
+function_decl|;
+specifier|public
+name|boolean
+name|isPublished
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

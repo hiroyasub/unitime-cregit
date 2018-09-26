@@ -17,6 +17,24 @@ name|resources
 package|;
 end_package
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|i18n
+operator|.
+name|client
+operator|.
+name|Messages
+operator|.
+name|DefaultMessage
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -2858,6 +2876,15 @@ literal|"Student sectioning solver is not loaded in memory."
 argument_list|)
 name|String
 name|exceptionNoSolver
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No changes are allowed to the published solution."
+argument_list|)
+name|String
+name|exceptionSolverPublished
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6749,6 +6776,24 @@ parameter_list|(
 name|float
 name|credit
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Published"
+argument_list|)
+name|String
+name|infoPublished
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Solver Published"
+argument_list|)
+name|String
+name|statusPublished
+parameter_list|()
 function_decl|;
 block|}
 end_interface

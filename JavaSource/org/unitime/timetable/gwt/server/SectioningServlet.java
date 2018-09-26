@@ -8383,7 +8383,7 @@ name|checkPermission
 argument_list|(
 name|Right
 operator|.
-name|StudentSectioningSolver
+name|StudentSectioningSolverDashboard
 argument_list|)
 expr_stmt|;
 name|OnlineSectioningServer
@@ -23808,7 +23808,7 @@ operator|!
 name|online
 condition|)
 block|{
-name|OnlineSectioningServer
+name|StudentSolverProxy
 name|server
 init|=
 name|getStudentSolver
@@ -23876,7 +23876,11 @@ name|EligibilityFlag
 operator|.
 name|CAN_ENROLL
 argument_list|,
-literal|true
+operator|!
+name|server
+operator|.
+name|isPublished
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|check
