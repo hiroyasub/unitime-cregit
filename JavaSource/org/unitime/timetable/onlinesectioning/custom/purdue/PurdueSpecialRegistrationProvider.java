@@ -4095,6 +4095,13 @@ control|)
 block|{
 if|if
 condition|(
+name|m
+operator|.
+name|getCourse
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|added
 operator|.
 name|add
