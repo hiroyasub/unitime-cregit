@@ -659,6 +659,13 @@ argument_list|)
 expr_stmt|;
 name|st
 operator|.
+name|setCanShowExternalId
+argument_list|(
+name|iCanShowExtIds
+argument_list|)
+expr_stmt|;
+name|st
+operator|.
 name|setName
 argument_list|(
 name|helper
