@@ -378,6 +378,33 @@ operator|.
 name|getDefaultDatePatternNotNull
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|dp
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"No default date pattern is defined for "
+operator|+
+name|session
+operator|.
+name|getLabel
+argument_list|()
+operator|+
+literal|". Use the<a href='sessionEdit.do?doit=editSession&sessionId="
+operator|+
+name|session
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|"'>Edit Academic Session</a> page to set a default date pattern."
+argument_list|)
+throw|;
 name|iFilter
 operator|=
 name|filter
