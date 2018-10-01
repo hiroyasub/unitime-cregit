@@ -5764,6 +5764,8 @@ operator|.
 name|getCode
 argument_list|()
 argument_list|,
+literal|"Overrides are not allowed for: "
+operator|+
 name|error
 operator|.
 name|getMessage
@@ -5863,6 +5865,8 @@ operator|.
 name|getCode
 argument_list|()
 argument_list|,
+literal|"Overrides are not allowed for: "
+operator|+
 name|error
 operator|.
 name|getMessage

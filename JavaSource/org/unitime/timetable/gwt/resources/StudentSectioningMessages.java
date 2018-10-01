@@ -17,24 +17,6 @@ name|resources
 package|;
 end_package
 
-begin_import
-import|import
-name|com
-operator|.
-name|google
-operator|.
-name|gwt
-operator|.
-name|i18n
-operator|.
-name|client
-operator|.
-name|Messages
-operator|.
-name|DefaultMessage
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -6686,7 +6668,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Overrides cannot be requested due to the following registration errors that have been already denied:"
+literal|"Overrides cannot be requested due to the following registration errors:"
 argument_list|)
 name|String
 name|messageCannotRequestOverridesErrors
