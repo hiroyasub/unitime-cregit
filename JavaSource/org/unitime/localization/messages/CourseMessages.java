@@ -8192,6 +8192,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class {0} - Date Pattern: {1} used in commited solution does not match current date pattern: {2}.  Use the 'Assign' button to update the solution."
+argument_list|)
+name|String
+name|datePatternCommittedIsDifferent
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|commitedDatePattern
+parameter_list|,
+name|String
+name|currentDatePattern
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructional Method:"
 argument_list|)
 name|String
