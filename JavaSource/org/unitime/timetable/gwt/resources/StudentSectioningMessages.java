@@ -6777,6 +6777,18 @@ name|String
 name|statusPublished
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"- {0}"
+argument_list|)
+name|String
+name|courseMessage
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
