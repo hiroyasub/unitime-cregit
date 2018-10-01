@@ -8192,7 +8192,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Class {0} - Date Pattern: {1} used in commited solution does not match current date pattern: {2}.  Use the 'Assign' button to update the solution."
+literal|"Class {0} - Date Pattern: {1} used in commited solution does not match current date pattern: {2}.  Use the \u201cAssign\u201d button to update the solution."
 argument_list|)
 name|String
 name|datePatternCommittedIsDifferent
