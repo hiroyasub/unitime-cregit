@@ -2913,6 +2913,8 @@ name|ca
 operator|.
 name|getSubject
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2927,6 +2929,8 @@ name|ca
 operator|.
 name|getCourseNbr
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2963,6 +2967,8 @@ name|ca
 operator|.
 name|getSubpart
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2977,6 +2983,8 @@ name|ca
 operator|.
 name|getSection
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2991,6 +2999,8 @@ name|ca
 operator|.
 name|getLimitString
 argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
