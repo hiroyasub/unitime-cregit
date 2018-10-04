@@ -7787,7 +7787,7 @@ operator|)
 name|caught
 operator|)
 operator|.
-name|hasErrors
+name|isCanRequestOverride
 argument_list|()
 condition|?
 literal|false
@@ -8150,7 +8150,7 @@ argument_list|)
 operator|&&
 name|se
 operator|.
-name|hasErrors
+name|isCanRequestOverride
 argument_list|()
 condition|)
 block|{

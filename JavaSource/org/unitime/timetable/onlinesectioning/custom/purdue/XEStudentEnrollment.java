@@ -3544,6 +3544,11 @@ name|credit
 argument_list|)
 argument_list|)
 argument_list|)
+operator|.
+name|setCanRequestOverride
+argument_list|(
+literal|true
+argument_list|)
 throw|;
 block|}
 block|}
@@ -4422,6 +4427,11 @@ argument_list|(
 name|credit
 argument_list|)
 argument_list|)
+argument_list|)
+operator|.
+name|setCanRequestOverride
+argument_list|(
+literal|true
 argument_list|)
 throw|;
 block|}
@@ -7038,6 +7048,11 @@ literal|"\n"
 argument_list|,
 literal|" "
 argument_list|)
+argument_list|)
+operator|.
+name|setCanRequestOverride
+argument_list|(
+literal|true
 argument_list|)
 decl_stmt|;
 for|for
