@@ -71,6 +71,16 @@ begin_import
 import|import
 name|org
 operator|.
+name|hibernate
+operator|.
+name|NonUniqueResultException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|unitime
 operator|.
 name|timetable
@@ -503,6 +513,8 @@ block|{
 comment|// do nothing
 block|}
 block|}
+try|try
+block|{
 name|staff
 operator|=
 name|findByExternalId
@@ -512,6 +524,24 @@ argument_list|,
 name|dept
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|NonUniqueResultException
+name|e
+parameter_list|)
+block|{
+name|error
+argument_list|(
+literal|"Multiple staff members exist for the external id "
+operator|+
+name|externalId
+operator|+
+literal|", please provide department code."
+argument_list|)
+expr_stmt|;
+continue|continue;
+block|}
 block|}
 if|if
 condition|(
