@@ -3974,18 +3974,52 @@ literal|true
 argument_list|)
 argument_list|)
 block|,
+name|STUDENT_ASSIGNED_CR
+argument_list|(
+name|SolverType
+operator|.
+name|STUDENT
+argument_list|,
+literal|"CourseReqs"
+argument_list|,
+operator|new
+name|InfoSolverProperty
+argument_list|(
+literal|"Assigned course requests"
+argument_list|,
+literal|true
+argument_list|)
+argument_list|)
+block|,
 name|STUDENT_COMPLETE
 argument_list|(
 name|SolverType
 operator|.
 name|STUDENT
 argument_list|,
-literal|"CompSched"
+literal|"CompleteSt"
 argument_list|,
 operator|new
 name|InfoSolverProperty
 argument_list|(
 literal|"Students with complete schedule"
+argument_list|,
+literal|true
+argument_list|)
+argument_list|)
+block|,
+name|STUDENT_SELECTION
+argument_list|(
+name|SolverType
+operator|.
+name|STUDENT
+argument_list|,
+literal|"Selection"
+argument_list|,
+operator|new
+name|InfoSolverProperty
+argument_list|(
+literal|"Selection"
 argument_list|,
 literal|true
 argument_list|)
@@ -3997,7 +4031,7 @@ name|SolverType
 operator|.
 name|STUDENT
 argument_list|,
-literal|"DistConf"
+literal|"DistanceCf"
 argument_list|,
 operator|new
 name|InfoSolverProperty
@@ -4014,7 +4048,7 @@ name|SolverType
 operator|.
 name|STUDENT
 argument_list|,
-literal|"TimeConf"
+literal|"TimeCf"
 argument_list|,
 operator|new
 name|InfoSolverProperty
@@ -4039,7 +4073,7 @@ argument_list|,
 operator|new
 name|InfoSolverProperty
 argument_list|(
-literal|"Perturbation Penalty"
+literal|"Perturbations: Total penalty"
 argument_list|,
 literal|true
 argument_list|)
