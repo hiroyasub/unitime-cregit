@@ -351,6 +351,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|defaults
+operator|.
+name|SessionAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|form
 operator|.
 name|InstructionalOfferingConfigEditForm
@@ -1590,9 +1604,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 name|sp
 argument_list|)
@@ -1651,9 +1665,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 literal|null
 argument_list|)
@@ -1796,9 +1810,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 literal|null
 argument_list|)
@@ -1919,9 +1933,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 literal|null
 argument_list|)
@@ -1989,9 +2003,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 name|sp
 argument_list|)
@@ -2047,9 +2061,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 literal|null
 argument_list|)
@@ -3781,9 +3795,9 @@ name|sessionContext
 operator|.
 name|getAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|)
 decl_stmt|;
 if|if
@@ -3831,9 +3845,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 name|sp
 argument_list|)
@@ -3864,9 +3878,9 @@ name|sessionContext
 operator|.
 name|getAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|)
 decl_stmt|;
 comment|// No subparts
@@ -4749,9 +4763,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 name|sp
 argument_list|)
@@ -4783,9 +4797,9 @@ name|sessionContext
 operator|.
 name|getAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|)
 decl_stmt|;
 comment|// No subparts
@@ -4895,9 +4909,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|,
 name|sp
 argument_list|)
@@ -5409,9 +5423,9 @@ name|sessionContext
 operator|.
 name|getAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|)
 decl_stmt|;
 comment|// No subparts

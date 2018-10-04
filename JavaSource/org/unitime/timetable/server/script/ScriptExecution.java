@@ -175,11 +175,9 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|gwt
+name|defaults
 operator|.
-name|server
-operator|.
-name|UploadServlet
+name|SessionAttribute
 import|;
 end_import
 
@@ -600,9 +598,9 @@ name|context
 operator|.
 name|getAttribute
 argument_list|(
-name|UploadServlet
+name|SessionAttribute
 operator|.
-name|SESSION_LAST_FILE
+name|LastUploadedFile
 argument_list|)
 expr_stmt|;
 block|}

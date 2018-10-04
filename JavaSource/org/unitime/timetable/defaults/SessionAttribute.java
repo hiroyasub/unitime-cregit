@@ -163,7 +163,133 @@ literal|"mgwt.formfactor"
 argument_list|,
 literal|"Device form factor"
 argument_list|)
-block|, 	;
+block|,
+name|InstructionalOfferingConfigList
+argument_list|(
+literal|"configsList"
+argument_list|,
+literal|"Instructional Offering Config: Available ITypes"
+argument_list|)
+block|,
+name|LastUploadedFile
+argument_list|(
+literal|"LAST_FILE"
+argument_list|,
+literal|"Last uploaded file"
+argument_list|)
+block|,
+name|RoomPictures
+argument_list|(
+literal|"ROOM_PICTURES"
+argument_list|,
+literal|"Last uploaded room pictures"
+argument_list|)
+block|,
+name|CallingPage
+argument_list|(
+literal|"callingPage"
+argument_list|,
+literal|"Calling page"
+argument_list|)
+block|,
+name|CurriculaLastFilter
+argument_list|(
+literal|"Curricula.LastFilter"
+argument_list|,
+literal|"Curricula: last used filter"
+argument_list|)
+block|,
+name|ReservationsLastFilter
+argument_list|(
+literal|"Reservations.LastFilter"
+argument_list|,
+literal|"Reservations: last used filter"
+argument_list|)
+block|,
+name|PermissionRoles
+argument_list|(
+literal|"Permissions.roleIds"
+argument_list|,
+literal|"Permissions: last visible roles"
+argument_list|)
+block|,
+name|EventStatusServices
+argument_list|(
+literal|"EventStatuses.Services"
+argument_list|,
+literal|"Event Statuses: last services"
+argument_list|)
+block|,
+name|Back
+argument_list|(
+literal|"BackTracker.back"
+argument_list|,
+literal|"Last back"
+argument_list|)
+block|,
+name|NavigationLastIds
+argument_list|(
+literal|"lastDispIds"
+argument_list|,
+literal|"Navigation: last displayed ids"
+argument_list|)
+block|,
+name|SuggestionsModel
+argument_list|(
+literal|"Suggestions.model"
+argument_list|,
+literal|"Course Timetabling: last suggestions model"
+argument_list|)
+block|,
+name|OnlineSchedulingDummyServer
+argument_list|(
+literal|"OnlineSectioning.DummyServer"
+argument_list|,
+literal|"Online Student Scheduling: database server for academic sessions that are not loaded in"
+argument_list|)
+block|,
+name|OnlineSchedulingUser
+argument_list|(
+literal|"user"
+argument_list|,
+literal|"Online Student Scheduling: looked up user"
+argument_list|)
+block|,
+name|OnlineSchedulingPIN
+argument_list|(
+literal|"pin"
+argument_list|,
+literal|"Online Student Scheduling: last entered PIN"
+argument_list|)
+block|,
+name|OnlineSchedulingEligibility
+argument_list|(
+literal|"eligibility"
+argument_list|,
+literal|"Online Student Scheduling: output of the last eligibility check"
+argument_list|)
+block|,
+name|OnlineSchedulingLastRequest
+argument_list|(
+literal|"request"
+argument_list|,
+literal|"Online Student Scheduling: last course request"
+argument_list|)
+block|,
+name|OnlineSchedulingLastSession
+argument_list|(
+literal|"sessionId"
+argument_list|,
+literal|"Online Student Scheduling: last academic session id"
+argument_list|)
+block|,
+name|OnlineSchedulingLastSpecialRequest
+argument_list|(
+literal|"specreq"
+argument_list|,
+literal|"Online Student Scheduling: last special request id"
+argument_list|)
+block|, 	 	 	;
 name|String
 name|iKey
 decl_stmt|,

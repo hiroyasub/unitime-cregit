@@ -1864,7 +1864,7 @@ name|sLog
 operator|.
 name|error
 argument_list|(
-literal|"Failed to publish the solver: "
+literal|"Failed to clone the solver: "
 operator|+
 name|e
 operator|.

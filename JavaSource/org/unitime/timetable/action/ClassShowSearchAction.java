@@ -463,7 +463,9 @@ name|sessionContext
 operator|.
 name|setAttribute
 argument_list|(
-literal|"callingPage"
+name|SessionAttribute
+operator|.
+name|CallingPage
 argument_list|,
 literal|"classShowSearch"
 argument_list|)

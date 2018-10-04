@@ -35,6 +35,20 @@ name|Vector
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|defaults
+operator|.
+name|SessionAttribute
+import|;
+end_import
+
 begin_comment
 comment|/**  * Config for user manipulations  * Not stored in database till user hits commit   */
 end_comment
@@ -128,7 +142,12 @@ specifier|static
 name|String
 name|CONFIGS_ATTR_NAME
 init|=
-literal|"configsList"
+name|SessionAttribute
+operator|.
+name|InstructionalOfferingConfigList
+operator|.
+name|key
+argument_list|()
 decl_stmt|;
 comment|/** Default Constructor **/
 specifier|public

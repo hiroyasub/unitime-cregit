@@ -955,7 +955,9 @@ name|context
 operator|.
 name|getAttribute
 argument_list|(
-literal|"Suggestions.model"
+name|SessionAttribute
+operator|.
+name|SuggestionsModel
 argument_list|)
 decl_stmt|;
 if|if

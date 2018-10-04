@@ -135,6 +135,20 @@ name|timetable
 operator|.
 name|defaults
 operator|.
+name|SessionAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|defaults
+operator|.
 name|UserProperty
 import|;
 end_import
@@ -322,9 +336,9 @@ name|context
 operator|.
 name|getAttribute
 argument_list|(
-name|SimpleItypeConfig
+name|SessionAttribute
 operator|.
-name|CONFIGS_ATTR_NAME
+name|InstructionalOfferingConfigList
 argument_list|)
 decl_stmt|;
 comment|// Read setting for auto calculation
