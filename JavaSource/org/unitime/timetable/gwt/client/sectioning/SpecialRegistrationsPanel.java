@@ -2329,6 +2329,11 @@ name|reg
 operator|.
 name|canCancel
 argument_list|()
+operator|&&
+name|iSpecReg
+operator|.
+name|isEnabled
+argument_list|()
 condition|)
 block|{
 name|delete

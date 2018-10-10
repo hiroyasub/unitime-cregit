@@ -18778,19 +18778,11 @@ name|hasFlag
 argument_list|(
 name|EligibilityFlag
 operator|.
-name|CAN_SPECREG
-argument_list|)
-operator|&&
-name|iEligibilityCheck
-operator|.
-name|hasFlag
-argument_list|(
-name|EligibilityFlag
-operator|.
 name|HAS_SPECREG
 argument_list|)
 condition|)
 block|{
+comment|//&& iEligibilityCheck.hasFlag(EligibilityFlag.CAN_SPECREG)
 name|iSpecialRegistrationsPanel
 operator|.
 name|showWaiting
