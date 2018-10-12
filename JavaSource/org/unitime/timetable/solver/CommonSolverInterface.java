@@ -217,6 +217,17 @@ throws|throws
 name|IOException
 function_decl|;
 specifier|public
+name|void
+name|importXml
+parameter_list|(
+name|byte
+index|[]
+name|data
+parameter_list|)
+throws|throws
+name|IOException
+function_decl|;
+specifier|public
 name|Map
 name|getProgress
 parameter_list|()
