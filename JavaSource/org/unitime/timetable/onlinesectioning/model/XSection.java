@@ -993,6 +993,19 @@ name|iExternalId
 operator|=
 name|clazz
 operator|.
+name|getSchedulingSubpart
+argument_list|()
+operator|.
+name|getItypeDesc
+argument_list|()
+operator|.
+name|trim
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|clazz
+operator|.
 name|getClassLabel
 argument_list|()
 expr_stmt|;

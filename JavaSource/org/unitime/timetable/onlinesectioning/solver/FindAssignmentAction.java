@@ -7192,7 +7192,7 @@ if|if
 condition|(
 name|config
 operator|.
-name|getInstructionalMethodName
+name|getInstructionalMethodId
 argument_list|()
 operator|!=
 literal|null
@@ -7203,7 +7203,7 @@ name|isSelectedIntructionalMethod
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethodName
+name|getInstructionalMethodId
 argument_list|()
 argument_list|)
 condition|)
@@ -7269,29 +7269,7 @@ name|isSelectedClass
 argument_list|(
 name|section
 operator|.
-name|getName
-argument_list|(
-name|course
-operator|.
 name|getId
-argument_list|()
-argument_list|)
-argument_list|)
-operator|||
-name|rc
-operator|.
-name|isSelectedClass
-argument_list|(
-name|subpart
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|section
-operator|.
-name|getName
 argument_list|()
 argument_list|)
 condition|)

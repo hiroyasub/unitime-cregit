@@ -279,6 +279,24 @@ name|shared
 operator|.
 name|CourseRequestInterface
 operator|.
+name|Preference
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|CourseRequestInterface
+operator|.
 name|Request
 import|;
 end_import
@@ -1855,7 +1873,7 @@ argument_list|)
 expr_stmt|;
 name|Collection
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 name|prefs
 init|=
@@ -1882,7 +1900,7 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -1909,7 +1927,7 @@ argument_list|(
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -1926,7 +1944,7 @@ argument_list|(
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -1944,7 +1962,7 @@ operator|=
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -1968,7 +1986,7 @@ operator|=
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -3144,7 +3162,7 @@ argument_list|)
 expr_stmt|;
 name|Collection
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 name|prefs
 init|=
@@ -3171,7 +3189,7 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -3198,7 +3216,7 @@ argument_list|(
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -3215,7 +3233,7 @@ argument_list|(
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -3233,7 +3251,7 @@ operator|=
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc
@@ -3257,7 +3275,7 @@ operator|=
 operator|new
 name|TreeSet
 argument_list|<
-name|String
+name|Preference
 argument_list|>
 argument_list|(
 name|rc

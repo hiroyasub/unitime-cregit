@@ -5632,6 +5632,27 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Required Instructional Method"
+argument_list|)
+name|String
+name|hintRequiredInstructionalMethod
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Required {0}"
+argument_list|)
+name|String
+name|hintRequiredSection
+parameter_list|(
+name|String
+name|section
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"method"
 argument_list|)
 name|String
@@ -6822,6 +6843,15 @@ parameter_list|(
 name|String
 name|message
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Selection Required"
+argument_list|)
+name|String
+name|checkPreferencesAreRequired
+parameter_list|()
 function_decl|;
 block|}
 end_interface

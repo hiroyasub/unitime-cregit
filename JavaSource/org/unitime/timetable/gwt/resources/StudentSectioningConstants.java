@@ -593,6 +593,17 @@ name|courseFinderSuggestWhenEmpty
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultBooleanValue
+argument_list|(
+literal|true
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|boolean
+name|courseFinderShowRequired
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{

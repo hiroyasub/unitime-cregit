@@ -1116,7 +1116,7 @@ name|toString
 parameter_list|(
 name|Collection
 argument_list|<
-name|String
+name|?
 argument_list|>
 name|items
 parameter_list|)
@@ -1152,6 +1152,9 @@ argument_list|()
 operator|.
 name|next
 argument_list|()
+operator|.
+name|toString
+argument_list|()
 return|;
 if|if
 condition|(
@@ -1165,7 +1168,7 @@ condition|)
 block|{
 name|Iterator
 argument_list|<
-name|String
+name|?
 argument_list|>
 name|i
 init|=
@@ -1183,10 +1186,16 @@ name|i
 operator|.
 name|next
 argument_list|()
+operator|.
+name|toString
+argument_list|()
 argument_list|,
 name|i
 operator|.
 name|next
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 argument_list|)
 return|;
@@ -1195,7 +1204,7 @@ else|else
 block|{
 name|Iterator
 argument_list|<
-name|String
+name|?
 argument_list|>
 name|i
 init|=
@@ -1210,6 +1219,9 @@ init|=
 name|i
 operator|.
 name|next
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 decl_stmt|;
 while|while
@@ -1226,6 +1238,9 @@ init|=
 name|i
 operator|.
 name|next
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 decl_stmt|;
 if|if

@@ -3628,6 +3628,11 @@ name|CONSTANTS
 operator|.
 name|courseFinderSuggestWhenEmpty
 argument_list|()
+argument_list|,
+name|CONSTANTS
+operator|.
+name|courseFinderShowRequired
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|courses
@@ -3761,6 +3766,11 @@ argument_list|(
 literal|true
 argument_list|,
 name|iSpecReg
+argument_list|,
+name|courses
+operator|.
+name|getRequiredCheckbox
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|classes
