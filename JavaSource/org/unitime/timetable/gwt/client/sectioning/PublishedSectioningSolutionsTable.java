@@ -1825,6 +1825,7 @@ argument_list|(
 literal|"operations"
 argument_list|)
 expr_stmt|;
+specifier|final
 name|AsyncCallback
 argument_list|<
 name|GwtRpcResponseList
@@ -1899,6 +1900,7 @@ expr_stmt|;
 block|}
 block|}
 decl_stmt|;
+specifier|final
 name|AsyncCallback
 argument_list|<
 name|GwtRpcResponseList
@@ -2526,6 +2528,10 @@ argument_list|,
 name|callback
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
 name|event
 operator|.
 name|preventDefault
@@ -2535,10 +2541,6 @@ name|event
 operator|.
 name|stopPropagation
 argument_list|()
-expr_stmt|;
-block|}
-block|}
-argument_list|)
 expr_stmt|;
 block|}
 block|}
