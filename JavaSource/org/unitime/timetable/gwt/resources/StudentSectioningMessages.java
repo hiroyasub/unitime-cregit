@@ -1786,6 +1786,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Please enter your {0} {1} PIN ..."
+argument_list|)
+name|String
+name|dialogPinForSession
+parameter_list|(
+name|String
+name|term
+parameter_list|,
+name|String
+name|year
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Username:"
 argument_list|)
 name|String
@@ -1809,6 +1824,21 @@ argument_list|)
 name|String
 name|pin
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} {1} PIN:"
+argument_list|)
+name|String
+name|pinForSession
+parameter_list|(
+name|String
+name|term
+parameter_list|,
+name|String
+name|year
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage

@@ -9208,9 +9208,20 @@ throw|;
 name|Long
 name|sessionId
 init|=
-name|getLastSessionId
+operator|(
+name|Long
+operator|)
+name|getSessionContext
 argument_list|()
+operator|.
+name|getAttribute
+argument_list|(
+name|SessionAttribute
+operator|.
+name|OnlineSchedulingLastSession
+argument_list|)
 decl_stmt|;
+comment|// Long sessionId = getLastSessionId();
 if|if
 condition|(
 name|sessionId

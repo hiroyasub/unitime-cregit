@@ -8047,6 +8047,11 @@ argument_list|,
 literal|null
 argument_list|,
 name|callback
+argument_list|,
+name|iSessionSelector
+operator|.
+name|getAcademicSessionInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -17719,6 +17724,11 @@ argument_list|,
 literal|null
 argument_list|,
 name|callback
+argument_list|,
+name|iSessionSelector
+operator|.
+name|getAcademicSessionInfo
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
