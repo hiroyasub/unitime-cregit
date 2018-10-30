@@ -96,6 +96,17 @@ name|CourseOffering
 name|courseOffering
 parameter_list|)
 function_decl|;
+specifier|public
+name|Float
+name|getClassCredit
+parameter_list|(
+name|Class_
+name|clazz
+parameter_list|,
+name|CourseOffering
+name|courseOffering
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
