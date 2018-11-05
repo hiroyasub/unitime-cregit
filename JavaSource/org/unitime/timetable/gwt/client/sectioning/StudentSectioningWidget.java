@@ -16100,6 +16100,11 @@ name|iSubmitSpecReg
 operator|.
 name|setVisible
 argument_list|(
+name|result
+operator|.
+name|isCanEnroll
+argument_list|()
+operator|&&
 operator|!
 name|iEnroll
 operator|.
@@ -16129,6 +16134,11 @@ name|iSubmitSpecReg
 operator|.
 name|setEnabled
 argument_list|(
+name|result
+operator|.
+name|isCanEnroll
+argument_list|()
+operator|&&
 operator|!
 name|iEnroll
 operator|.
@@ -18952,6 +18962,11 @@ block|}
 block|}
 block|}
 decl_stmt|;
+name|iSpecialRegistrationsPanel
+operator|.
+name|clearRegistrations
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|saved
