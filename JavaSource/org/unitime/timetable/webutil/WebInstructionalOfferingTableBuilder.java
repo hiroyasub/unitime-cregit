@@ -11859,6 +11859,11 @@ literal|null
 operator|&&
 name|a
 operator|.
+name|isCommitted
+argument_list|()
+operator|&&
+name|a
+operator|.
 name|getDatePattern
 argument_list|()
 operator|!=
