@@ -131,21 +131,7 @@ name|studentsct
 operator|.
 name|extension
 operator|.
-name|DistanceConflict
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|cpsolver
-operator|.
-name|studentsct
-operator|.
-name|extension
-operator|.
-name|TimeOverlapsCounter
+name|StudentQuality
 import|;
 end_import
 
@@ -1363,11 +1349,11 @@ argument_list|(
 name|properties
 argument_list|)
 decl_stmt|;
-name|DistanceConflict
-name|dc
+name|StudentQuality
+name|sq
 init|=
 operator|new
-name|DistanceConflict
+name|StudentQuality
 argument_list|(
 name|server
 operator|.
@@ -1377,17 +1363,8 @@ argument_list|,
 name|properties
 argument_list|)
 decl_stmt|;
-name|TimeOverlapsCounter
-name|toc
-init|=
-operator|new
-name|TimeOverlapsCounter
-argument_list|(
-literal|null
-argument_list|,
-name|properties
-argument_list|)
-decl_stmt|;
+comment|// DistanceConflict dc = new DistanceConflict(server.getDistanceMetric(), properties);
+comment|// TimeOverlapsCounter toc = new TimeOverlapsCounter(null, properties);
 name|Date
 name|ts
 init|=
@@ -1423,9 +1400,7 @@ name|server
 argument_list|,
 name|w
 argument_list|,
-name|dc
-argument_list|,
-name|toc
+name|sq
 argument_list|)
 decl_stmt|;
 if|if

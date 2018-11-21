@@ -235,21 +235,7 @@ name|studentsct
 operator|.
 name|extension
 operator|.
-name|DistanceConflict
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|cpsolver
-operator|.
-name|studentsct
-operator|.
-name|extension
-operator|.
-name|TimeOverlapsCounter
+name|StudentQuality
 import|;
 end_import
 
@@ -4974,10 +4960,10 @@ argument_list|)
 expr_stmt|;
 name|model
 operator|.
-name|setDistanceConflict
+name|setStudentQuality
 argument_list|(
 operator|new
-name|DistanceConflict
+name|StudentQuality
 argument_list|(
 name|server
 operator|.
@@ -4991,22 +4977,8 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|model
-operator|.
-name|setTimeOverlaps
-argument_list|(
-operator|new
-name|TimeOverlapsCounter
-argument_list|(
-literal|null
-argument_list|,
-name|model
-operator|.
-name|getProperties
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|// model.setDistanceConflict(new DistanceConflict(server.getDistanceMetric(), model.getProperties()));
+comment|// model.setTimeOverlaps(new TimeOverlapsCounter(null, model.getProperties()));
 for|for
 control|(
 name|XDistribution
@@ -16240,10 +16212,10 @@ argument_list|)
 expr_stmt|;
 name|model
 operator|.
-name|setDistanceConflict
+name|setStudentQuality
 argument_list|(
 operator|new
-name|DistanceConflict
+name|StudentQuality
 argument_list|(
 name|server
 operator|.
@@ -16257,22 +16229,8 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|model
-operator|.
-name|setTimeOverlaps
-argument_list|(
-operator|new
-name|TimeOverlapsCounter
-argument_list|(
-literal|null
-argument_list|,
-name|model
-operator|.
-name|getProperties
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|// model.setDistanceConflict(new DistanceConflict(server.getDistanceMetric(), model.getProperties()));
+comment|// model.setTimeOverlaps(new TimeOverlapsCounter(null, model.getProperties()));
 for|for
 control|(
 name|XDistribution
