@@ -753,6 +753,17 @@ name|boolean
 name|courseRequestAutomaticallyAddFirstAlternative
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultIntValue
+argument_list|(
+literal|500
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|int
+name|dashboardMaxLines
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

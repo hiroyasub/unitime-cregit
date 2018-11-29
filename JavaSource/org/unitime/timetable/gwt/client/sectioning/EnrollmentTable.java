@@ -1433,6 +1433,13 @@ operator|new
 name|SimpleForm
 argument_list|()
 expr_stmt|;
+name|iEnrollmentPanel
+operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-StudentEnrollmentsTable"
+argument_list|)
+expr_stmt|;
 name|iStudentSchedule
 operator|=
 operator|new

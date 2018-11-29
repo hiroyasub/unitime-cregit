@@ -6853,6 +6853,21 @@ name|String
 name|checkPreferencesAreRequired
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} ... {1}"
+argument_list|)
+name|String
+name|pageRange
+parameter_list|(
+name|int
+name|first
+parameter_list|,
+name|int
+name|last
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
