@@ -355,13 +355,7 @@ specifier|static
 class|class
 name|SpecialRegistrationMultipleStatus
 block|{
-specifier|public
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|overrides
-decl_stmt|;
+comment|// public Set<String> overrides;
 specifier|public
 name|List
 argument_list|<
@@ -375,13 +369,7 @@ specifier|static
 class|class
 name|SpecialRegistrationStatus
 block|{
-specifier|public
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|overrides
-decl_stmt|;
+comment|// public Set<String> overrides;
 specifier|public
 name|List
 argument_list|<
