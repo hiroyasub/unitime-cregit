@@ -1259,6 +1259,10 @@ specifier|public
 name|boolean
 name|isGroupSelection
 decl_stmt|;
+specifier|public
+name|Boolean
+name|isCritical
+decl_stmt|;
 block|}
 specifier|public
 specifier|static
@@ -1284,6 +1288,10 @@ decl_stmt|;
 specifier|public
 name|boolean
 name|isGroupSelection
+decl_stmt|;
+specifier|public
+name|Boolean
+name|isCritical
 decl_stmt|;
 block|}
 specifier|public
