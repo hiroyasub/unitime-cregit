@@ -5824,6 +5824,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course Requests"
+argument_list|)
+name|String
+name|reportCourseRequestsWithPriorities
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requested"
 argument_list|)
 name|String
