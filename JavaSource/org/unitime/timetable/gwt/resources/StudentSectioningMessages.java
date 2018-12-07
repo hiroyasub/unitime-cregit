@@ -5833,6 +5833,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Tableau Report"
+argument_list|)
+name|String
+name|reportTableauReport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requested"
 argument_list|)
 name|String
