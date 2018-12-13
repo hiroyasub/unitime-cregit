@@ -90,6 +90,7 @@ specifier|public
 class|class
 name|SpecialRegistrationInterface
 block|{
+comment|// submitRegistration request (PREREG, REG)
 specifier|public
 specifier|static
 class|class
@@ -176,35 +177,7 @@ argument_list|>
 name|cancelledRequests
 decl_stmt|;
 block|}
-specifier|public
-specifier|static
-class|class
-name|SpecialRegistrationEligibility
-block|{
-specifier|public
-name|String
-name|studentId
-decl_stmt|;
-specifier|public
-name|String
-name|term
-decl_stmt|;
-specifier|public
-name|String
-name|campus
-decl_stmt|;
-specifier|public
-name|Boolean
-name|eligible
-decl_stmt|;
-specifier|public
-name|List
-argument_list|<
-name|EligibilityProblem
-argument_list|>
-name|eligibilityProblems
-decl_stmt|;
-block|}
+comment|// possible status values
 specifier|public
 specifier|static
 enum|enum
@@ -234,6 +207,7 @@ name|deferred
 block|,
 name|escalated
 block|, 		 ; 	}
+comment|// retrieveRegistration response (REG)
 specifier|public
 specifier|static
 class|class
@@ -252,6 +226,7 @@ name|String
 name|message
 decl_stmt|;
 block|}
+comment|// submitRegistration response (PREREF, REG)
 specifier|public
 specifier|static
 class|class
@@ -273,6 +248,7 @@ name|String
 name|message
 decl_stmt|;
 block|}
+comment|// checkSpecialRegistrationStatus response (PREREG, REG)
 specifier|public
 specifier|static
 class|class
@@ -291,6 +267,7 @@ name|String
 name|message
 decl_stmt|;
 block|}
+comment|// checkEligibility response (PREREG)
 specifier|public
 specifier|static
 class|class
@@ -309,6 +286,7 @@ name|String
 name|message
 decl_stmt|;
 block|}
+comment|// checkEligibility response (REG)
 specifier|public
 specifier|static
 class|class
@@ -332,6 +310,36 @@ name|Boolean
 name|hasNonCanceledRequest
 decl_stmt|;
 block|}
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationEligibility
+block|{
+specifier|public
+name|String
+name|studentId
+decl_stmt|;
+specifier|public
+name|String
+name|term
+decl_stmt|;
+specifier|public
+name|String
+name|campus
+decl_stmt|;
+specifier|public
+name|Boolean
+name|eligible
+decl_stmt|;
+specifier|public
+name|List
+argument_list|<
+name|EligibilityProblem
+argument_list|>
+name|eligibilityProblems
+decl_stmt|;
+block|}
+comment|// checkAllSpecialRegistrationStatus response (PREREG)
 specifier|public
 specifier|static
 class|class
@@ -386,6 +394,7 @@ name|String
 name|studentId
 decl_stmt|;
 block|}
+comment|// response status possible values
 specifier|public
 specifier|static
 enum|enum
@@ -395,6 +404,7 @@ name|success
 block|,
 name|failure
 block|; 	}
+comment|// Change.operation possible values
 specifier|public
 specifier|static
 enum|enum
@@ -655,6 +665,7 @@ name|String
 name|overrideApplied
 decl_stmt|;
 block|}
+comment|// checkRestrictionsForSTAR request (PREREG)
 specifier|public
 specifier|static
 class|class
@@ -716,6 +727,7 @@ argument_list|>
 name|crns
 decl_stmt|;
 block|}
+comment|// checkRestrictionsForSTAR response (PREREG)
 specifier|public
 specifier|static
 class|class
@@ -799,6 +811,7 @@ argument_list|>
 name|alternatives
 decl_stmt|;
 block|}
+comment|// checkRestrictionsForOPEN request (REG)
 specifier|public
 specifier|static
 class|class
@@ -969,6 +982,7 @@ name|String
 name|crn
 decl_stmt|;
 block|}
+comment|// checkRestrictionsForOPEN response (REG)
 specifier|public
 specifier|static
 class|class
@@ -976,6 +990,7 @@ name|RestrictionsCheckResponse
 extends|extends
 name|ScheduleRestrictions
 block|{ 	}
+comment|// cancelRegistrationRequestFromUniTime response (REG)
 specifier|public
 specifier|static
 class|class
@@ -994,6 +1009,7 @@ name|String
 name|message
 decl_stmt|;
 block|}
+comment|// checkRestrictions request (REG)
 specifier|public
 specifier|static
 class|class
@@ -1020,6 +1036,7 @@ name|RestrictionsCheckRequest
 name|changes
 decl_stmt|;
 block|}
+comment|// checkRestrictions response (REG)
 specifier|public
 specifier|static
 class|class
@@ -1105,24 +1122,6 @@ decl_stmt|;
 specifier|public
 name|String
 name|requestId
-decl_stmt|;
-block|}
-specifier|public
-specifier|static
-class|class
-name|ErrorResponse
-block|{
-specifier|public
-name|String
-name|data
-decl_stmt|;
-specifier|public
-name|String
-name|status
-decl_stmt|;
-specifier|public
-name|String
-name|message
 decl_stmt|;
 block|}
 block|}
