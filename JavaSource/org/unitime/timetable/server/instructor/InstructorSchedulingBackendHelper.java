@@ -6114,7 +6114,7 @@ name|equals
 argument_list|(
 name|tr
 operator|.
-name|getSameCommonPart
+name|getSameCoursePreference
 argument_list|()
 operator|.
 name|getPrefProlog
@@ -6129,7 +6129,7 @@ name|equals
 argument_list|(
 name|tr
 operator|.
-name|getSameCommonPart
+name|getSameCoursePreference
 argument_list|()
 operator|.
 name|getPrefProlog
