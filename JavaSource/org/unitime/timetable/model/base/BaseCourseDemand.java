@@ -168,6 +168,10 @@ name|Date
 name|iTimestamp
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iCritical
+decl_stmt|;
+specifier|private
 name|String
 name|iChangedBy
 decl_stmt|;
@@ -227,6 +231,13 @@ name|String
 name|PROP_TIMESTAMP
 init|=
 literal|"timestamp"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_CRITICAL
+init|=
+literal|"critical"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -391,6 +402,37 @@ block|{
 name|iTimestamp
 operator|=
 name|timestamp
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isCritical
+parameter_list|()
+block|{
+return|return
+name|iCritical
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getCritical
+parameter_list|()
+block|{
+return|return
+name|iCritical
+return|;
+block|}
+specifier|public
+name|void
+name|setCritical
+parameter_list|(
+name|Boolean
+name|critical
+parameter_list|)
+block|{
+name|iCritical
+operator|=
+name|critical
 expr_stmt|;
 block|}
 specifier|public
@@ -697,6 +739,11 @@ operator|+
 literal|"\n	ChangedBy: "
 operator|+
 name|getChangedBy
+argument_list|()
+operator|+
+literal|"\n	Critical: "
+operator|+
+name|getCritical
 argument_list|()
 operator|+
 literal|"\n	FreeTime: "

@@ -297,6 +297,10 @@ name|iMaxCredit
 decl_stmt|;
 specifier|private
 name|Float
+name|iMinCredit
+decl_stmt|;
+specifier|private
+name|Float
 name|iOverrideMaxCredit
 decl_stmt|;
 specifier|private
@@ -455,6 +459,13 @@ name|String
 name|PROP_MAX_CREDIT
 init|=
 literal|"maxCredit"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_MIN_CREDIT
+init|=
+literal|"minCredit"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -717,6 +728,28 @@ block|{
 name|iMaxCredit
 operator|=
 name|maxCredit
+expr_stmt|;
+block|}
+specifier|public
+name|Float
+name|getMinCredit
+parameter_list|()
+block|{
+return|return
+name|iMinCredit
+return|;
+block|}
+specifier|public
+name|void
+name|setMinCredit
+parameter_list|(
+name|Float
+name|minCredit
+parameter_list|)
+block|{
+name|iMinCredit
+operator|=
+name|minCredit
 expr_stmt|;
 block|}
 specifier|public
@@ -1608,6 +1641,11 @@ operator|+
 literal|"\n	MiddleName: "
 operator|+
 name|getMiddleName
+argument_list|()
+operator|+
+literal|"\n	MinCredit: "
+operator|+
+name|getMinCredit
 argument_list|()
 operator|+
 literal|"\n	OverrideExternalId: "
