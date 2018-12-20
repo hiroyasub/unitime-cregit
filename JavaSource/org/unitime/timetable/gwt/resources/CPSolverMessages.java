@@ -935,7 +935,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Same instructor, back-to-back time and rooms too far (distance={0}m) required:<br>&nbsp;&nbsp;&nbsp;&nbsp;{0}&larr; {1}<br>&nbsp;&nbsp;&nbsp;&nbsp;{2}&larr; {3}"
+literal|"Same instructor, back-to-back time and rooms too far (distance={0}m) required:<br>&nbsp;&nbsp;&nbsp;&nbsp;{1}&larr; {2}<br>&nbsp;&nbsp;&nbsp;&nbsp;{3}&larr; {4}"
 argument_list|)
 name|String
 name|warnSameInstructorBackToBack

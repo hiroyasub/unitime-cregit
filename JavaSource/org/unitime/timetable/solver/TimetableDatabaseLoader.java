@@ -28810,8 +28810,6 @@ name|Math
 operator|.
 name|round
 argument_list|(
-literal|10.0
-operator|*
 name|Placement
 operator|.
 name|getDistanceInMeters
