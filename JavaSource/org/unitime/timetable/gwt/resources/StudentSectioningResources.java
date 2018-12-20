@@ -612,6 +612,15 @@ function_decl|;
 annotation|@
 name|Source
 argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/action_check.png"
+argument_list|)
+name|ImageResource
+name|requestsCritical
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
 literal|"org/unitime/timetable/gwt/resources/icons/login.png"
 argument_list|)
 name|ImageResource

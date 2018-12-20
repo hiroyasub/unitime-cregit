@@ -417,6 +417,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Critical"
+argument_list|)
+name|String
+name|colCritical
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Preferences"
 argument_list|)
 name|String
@@ -5935,6 +5944,15 @@ literal|"Request is wait-listed."
 argument_list|)
 name|String
 name|descriptionRequestWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course request is critical."
+argument_list|)
+name|String
+name|descriptionRequestCritical
 parameter_list|()
 function_decl|;
 annotation|@

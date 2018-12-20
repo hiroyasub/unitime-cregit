@@ -19888,6 +19888,16 @@ argument_list|)
 expr_stmt|;
 name|r
 operator|.
+name|setCritical
+argument_list|(
+name|cd
+operator|.
+name|isCritical
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|r
+operator|.
 name|setTimeStamp
 argument_list|(
 name|cd

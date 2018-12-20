@@ -6752,6 +6752,27 @@ name|isWaitlist
 argument_list|()
 return|;
 block|}
+if|else if
+condition|(
+name|eq
+argument_list|(
+literal|"Critical"
+argument_list|,
+name|term
+argument_list|)
+condition|)
+block|{
+return|return
+name|request
+argument_list|()
+operator|.
+name|getCourseDemand
+argument_list|()
+operator|.
+name|isCritical
+argument_list|()
+return|;
+block|}
 block|}
 if|if
 condition|(
