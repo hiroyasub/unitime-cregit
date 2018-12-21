@@ -720,7 +720,7 @@ name|helper
 operator|.
 name|getParameter
 argument_list|(
-literal|"output"
+literal|"log"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -844,7 +844,7 @@ name|helper
 operator|.
 name|getParameter
 argument_list|(
-literal|"output"
+literal|"id"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -931,7 +931,7 @@ name|helper
 operator|.
 name|getParameter
 argument_list|(
-literal|"output"
+literal|"finished"
 argument_list|)
 argument_list|)
 expr_stmt|;
