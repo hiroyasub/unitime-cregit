@@ -24790,7 +24790,7 @@ argument_list|,
 name|getSessionContext
 argument_list|()
 operator|.
-name|hasPermissionAnySession
+name|hasPermissionAnyAuthority
 argument_list|(
 name|student
 argument_list|,
@@ -24868,7 +24868,7 @@ argument_list|(
 name|getSessionContext
 argument_list|()
 operator|.
-name|hasPermissionAnySession
+name|hasPermissionAnyAuthority
 argument_list|(
 name|studentId
 argument_list|,
@@ -24948,7 +24948,7 @@ argument_list|(
 name|getSessionContext
 argument_list|()
 operator|.
-name|hasPermissionAnySession
+name|hasPermissionAnyAuthority
 argument_list|(
 name|studentId
 argument_list|,
