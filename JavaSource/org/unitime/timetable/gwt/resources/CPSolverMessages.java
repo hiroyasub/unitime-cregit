@@ -380,6 +380,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class {0} has an exact time {1} that goes over midnight. This is not allowed and the time will be ignored."
+argument_list|)
+name|String
+name|warnExactTimeOverMidnight
+parameter_list|(
+name|String
+name|classLabel
+parameter_list|,
+name|String
+name|startTime
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Class {0} has no available time (class not loaded)."
 argument_list|)
 name|String
