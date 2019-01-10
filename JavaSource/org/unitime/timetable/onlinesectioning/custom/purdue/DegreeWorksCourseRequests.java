@@ -2051,7 +2051,7 @@ parameter_list|,
 name|OnlineSectioningHelper
 name|helper
 parameter_list|,
-name|XStudent
+name|XStudentId
 name|student
 parameter_list|)
 throws|throws
@@ -2567,6 +2567,8 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}
@@ -3489,6 +3491,8 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}

@@ -89,7 +89,7 @@ name|onlinesectioning
 operator|.
 name|model
 operator|.
-name|XStudent
+name|XStudentId
 import|;
 end_import
 
@@ -112,7 +112,7 @@ parameter_list|,
 name|OnlineSectioningHelper
 name|helper
 parameter_list|,
-name|XStudent
+name|XStudentId
 name|student
 parameter_list|)
 throws|throws
