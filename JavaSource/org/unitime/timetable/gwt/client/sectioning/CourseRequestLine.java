@@ -3372,7 +3372,7 @@ operator|.
 name|getValue
 argument_list|()
 operator|.
-name|isCourse
+name|hasCourseId
 argument_list|()
 operator|&&
 name|iCourses
