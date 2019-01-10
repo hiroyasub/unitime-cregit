@@ -23126,6 +23126,16 @@ name|boolean
 name|getWaitList
 parameter_list|()
 function_decl|;
+comment|/**      *<code>optional bool critical = 10 [default = false];</code>      */
+name|boolean
+name|hasCritical
+parameter_list|()
+function_decl|;
+comment|/**      *<code>optional bool critical = 10 [default = false];</code>      */
+name|boolean
+name|getCritical
+parameter_list|()
+function_decl|;
 block|}
 comment|/**    * Protobuf type {@code Request}    */
 specifier|public
@@ -23679,6 +23689,23 @@ operator||=
 literal|0x00000010
 expr_stmt|;
 name|waitList_
+operator|=
+name|input
+operator|.
+name|readBool
+argument_list|()
+expr_stmt|;
+break|break;
+block|}
+case|case
+literal|80
+case|:
+block|{
+name|bitField0_
+operator||=
+literal|0x00000020
+expr_stmt|;
+name|critical_
 operator|=
 name|input
 operator|.
@@ -24689,6 +24716,46 @@ return|return
 name|waitList_
 return|;
 block|}
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|CRITICAL_FIELD_NUMBER
+init|=
+literal|10
+decl_stmt|;
+specifier|private
+name|boolean
+name|critical_
+decl_stmt|;
+comment|/**      *<code>optional bool critical = 10 [default = false];</code>      */
+specifier|public
+name|boolean
+name|hasCritical
+parameter_list|()
+block|{
+return|return
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000020
+operator|)
+operator|==
+literal|0x00000020
+operator|)
+return|;
+block|}
+comment|/**      *<code>optional bool critical = 10 [default = false];</code>      */
+specifier|public
+name|boolean
+name|getCritical
+parameter_list|()
+block|{
+return|return
+name|critical_
+return|;
+block|}
 specifier|private
 name|void
 name|initFields
@@ -24744,6 +24811,10 @@ operator|=
 literal|0L
 expr_stmt|;
 name|waitList_
+operator|=
+literal|false
+expr_stmt|;
+name|critical_
 operator|=
 literal|false
 expr_stmt|;
@@ -25155,6 +25226,29 @@ name|waitList_
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000020
+operator|)
+operator|==
+literal|0x00000020
+operator|)
+condition|)
+block|{
+name|output
+operator|.
+name|writeBool
+argument_list|(
+literal|10
+argument_list|,
+name|critical_
+argument_list|)
+expr_stmt|;
+block|}
 name|getUnknownFields
 argument_list|()
 operator|.
@@ -25470,6 +25564,37 @@ argument_list|(
 literal|9
 argument_list|,
 name|waitList_
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000020
+operator|)
+operator|==
+literal|0x00000020
+operator|)
+condition|)
+block|{
+name|size
+operator|+=
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|CodedOutputStream
+operator|.
+name|computeBoolSize
+argument_list|(
+literal|10
+argument_list|,
+name|critical_
 argument_list|)
 expr_stmt|;
 block|}
@@ -26448,6 +26573,19 @@ operator|~
 literal|0x00000080
 operator|)
 expr_stmt|;
+name|critical_
+operator|=
+literal|false
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000100
+operator|)
+expr_stmt|;
 return|return
 name|this
 return|;
@@ -26937,6 +27075,30 @@ operator|.
 name|waitList_
 operator|=
 name|waitList_
+expr_stmt|;
+if|if
+condition|(
+operator|(
+operator|(
+name|from_bitField0_
+operator|&
+literal|0x00000100
+operator|)
+operator|==
+literal|0x00000100
+operator|)
+condition|)
+block|{
+name|to_bitField0_
+operator||=
+literal|0x00000020
+expr_stmt|;
+block|}
+name|result
+operator|.
+name|critical_
+operator|=
+name|critical_
 expr_stmt|;
 name|result
 operator|.
@@ -27554,6 +27716,23 @@ argument_list|(
 name|other
 operator|.
 name|getWaitList
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|other
+operator|.
+name|hasCritical
+argument_list|()
+condition|)
+block|{
+name|setCritical
+argument_list|(
+name|other
+operator|.
+name|getCritical
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -31894,6 +32073,88 @@ literal|0x00000080
 operator|)
 expr_stmt|;
 name|waitList_
+operator|=
+literal|false
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|private
+name|boolean
+name|critical_
+decl_stmt|;
+comment|/**        *<code>optional bool critical = 10 [default = false];</code>        */
+specifier|public
+name|boolean
+name|hasCritical
+parameter_list|()
+block|{
+return|return
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000100
+operator|)
+operator|==
+literal|0x00000100
+operator|)
+return|;
+block|}
+comment|/**        *<code>optional bool critical = 10 [default = false];</code>        */
+specifier|public
+name|boolean
+name|getCritical
+parameter_list|()
+block|{
+return|return
+name|critical_
+return|;
+block|}
+comment|/**        *<code>optional bool critical = 10 [default = false];</code>        */
+specifier|public
+name|Builder
+name|setCritical
+parameter_list|(
+name|boolean
+name|value
+parameter_list|)
+block|{
+name|bitField0_
+operator||=
+literal|0x00000100
+expr_stmt|;
+name|critical_
+operator|=
+name|value
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>optional bool critical = 10 [default = false];</code>        */
+specifier|public
+name|Builder
+name|clearCritical
+parameter_list|()
+block|{
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000100
+operator|)
+expr_stmt|;
+name|critical_
 operator|=
 literal|false
 expr_stmt|;
@@ -80800,7 +81061,7 @@ literal|"\001(\0132\007.Entity\"J\n\nPreference\022\014\n\010REQUIRED\020\000"
 block|,
 literal|"\022\r\n\tPREFERRED\020\001\022\014\n\010SELECTED\020\002\022\007\n\003ADD\020\003\022\010"
 operator|+
-literal|"\n\004DROP\020\004\"\277\001\n\007Request\022\n\n\002id\030\001 \001(\003\022\020\n\010prio"
+literal|"\n\004DROP\020\004\"\330\001\n\007Request\022\n\n\002id\030\001 \001(\003\022\020\n\010prio"
 operator|+
 literal|"rity\030\002 \002(\005\022\032\n\013alternative\030\003 \001(\010:\005false\022\030"
 operator|+
@@ -80810,69 +81071,69 @@ literal|"2\007.Entity\022\031\n\007section\030\006 \003(\0132\010.Section\022\02
 operator|+
 literal|"time_stamp\030\010 \001(\003\022\030\n\twait_list\030\t \001(\010:\005fal"
 operator|+
-literal|"se\"\323\001\n\nEnrollment\022(\n\004type\030\001 \002(\0162\032.Enroll"
+literal|"se\022\027\n\010critical\030\n \001(\010:\005false\"\323\001\n\nEnrollme"
 operator|+
-literal|"ment.EnrollmentType\022\031\n\007section\030\002 \003(\0132\010.S"
+literal|"nt\022(\n\004type\030\001 \002(\0162\032.Enrollment.Enrollment"
 operator|+
-literal|"ection\022\r\n\005value\030\003 \001(\001\"q\n\016EnrollmentType\022"
+literal|"Type\022\031\n\007section\030\002 \003(\0132\010.Section\022\r\n\005value"
 operator|+
-literal|"\r\n\tREQUESTED\020\000\022\014\n\010COMPUTED\020\001\022\014\n\010PREVIOUS"
+literal|"\030\003 \001(\001\"q\n\016EnrollmentType\022\r\n\tREQUESTED\020\000\022"
 block|,
-literal|"\020\002\022\n\n\006STORED\020\003\022\014\n\010APPROVED\020\004\022\014\n\010REJECTED"
+literal|"\014\n\010COMPUTED\020\001\022\014\n\010PREVIOUS\020\002\022\n\n\006STORED\020\003\022"
 operator|+
-literal|"\020\005\022\014\n\010EXTERNAL\020\006\"\327\003\n\006Action\022\021\n\toperation"
+literal|"\014\n\010APPROVED\020\004\022\014\n\010REJECTED\020\005\022\014\n\010EXTERNAL\020"
 operator|+
-literal|"\030\001 \002(\t\022\030\n\007session\030\002 \002(\0132\007.Entity\022\030\n\007stud"
+literal|"\006\"\327\003\n\006Action\022\021\n\toperation\030\001 \002(\t\022\030\n\007sessi"
 operator|+
-literal|"ent\030\003 \001(\0132\007.Entity\022\022\n\nstart_time\030\004 \001(\003\022\020"
+literal|"on\030\002 \002(\0132\007.Entity\022\030\n\007student\030\003 \001(\0132\007.Ent"
 operator|+
-literal|"\n\010end_time\030\005 \001(\003\022\020\n\010cpu_time\030\006 \001(\003\022\031\n\007re"
+literal|"ity\022\022\n\nstart_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001("
 operator|+
-literal|"quest\030\007 \003(\0132\010.Request\022\037\n\nenrollment\030\010 \003("
+literal|"\003\022\020\n\010cpu_time\030\006 \001(\003\022\031\n\007request\030\007 \003(\0132\010.R"
 operator|+
-literal|"\0132\013.Enrollment\022\026\n\005other\030\t \003(\0132\007.Entity\022\031"
+literal|"equest\022\037\n\nenrollment\030\010 \003(\0132\013.Enrollment\022"
 operator|+
-literal|"\n\007message\030\n \003(\0132\010.Message\022\"\n\006result\030\013 \001("
+literal|"\026\n\005other\030\t \003(\0132\007.Entity\022\031\n\007message\030\n \003(\013"
 operator|+
-literal|"\0162\022.Action.ResultType\022\025\n\004user\030\014 \001(\0132\007.En"
+literal|"2\010.Message\022\"\n\006result\030\013 \001(\0162\022.Action.Resu"
 operator|+
-literal|"tity\022\031\n\006option\030\r \003(\0132\t.Property\022\024\n\014api_g"
+literal|"ltType\022\025\n\004user\030\014 \001(\0132\007.Entity\022\031\n\006option\030"
 block|,
-literal|"et_time\030\016 \001(\003\022\025\n\rapi_post_time\030\017 \001(\003\022\025\n\r"
+literal|"\r \003(\0132\t.Property\022\024\n\014api_get_time\030\016 \001(\003\022\025"
 operator|+
-literal|"api_exception\030\020 \001(\t\"E\n\nResultType\022\013\n\007SUC"
+literal|"\n\rapi_post_time\030\017 \001(\003\022\025\n\rapi_exception\030\020"
 operator|+
-literal|"CESS\020\000\022\013\n\007FAILURE\020\001\022\010\n\004TRUE\020\002\022\t\n\005FALSE\020\003"
+literal|" \001(\t\"E\n\nResultType\022\013\n\007SUCCESS\020\000\022\013\n\007FAILU"
 operator|+
-literal|"\022\010\n\004NULL\020\004\"\233\001\n\007Message\022\035\n\005level\030\001 \002(\0162\016."
+literal|"RE\020\001\022\010\n\004TRUE\020\002\022\t\n\005FALSE\020\003\022\010\n\004NULL\020\004\"\233\001\n\007"
 operator|+
-literal|"Message.Level\022\014\n\004text\030\002 \002(\t\022\021\n\texception"
+literal|"Message\022\035\n\005level\030\001 \002(\0162\016.Message.Level\022\014"
 operator|+
-literal|"\030\003 \001(\t\022\022\n\ntime_stamp\030\004 \001(\003\"<\n\005Level\022\t\n\005D"
+literal|"\n\004text\030\002 \002(\t\022\021\n\texception\030\003 \001(\t\022\022\n\ntime_"
 operator|+
-literal|"EBUG\020\000\022\010\n\004INFO\020\001\022\010\n\004WARN\020\002\022\t\n\005ERROR\020\003\022\t\n"
+literal|"stamp\030\004 \001(\003\"<\n\005Level\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020"
 operator|+
-literal|"\005FATAL\020\004\"&\n\010Property\022\013\n\003key\030\001 \002(\t\022\r\n\005val"
+literal|"\001\022\010\n\004WARN\020\002\022\t\n\005ERROR\020\003\022\t\n\005FATAL\020\004\"&\n\010Pro"
 operator|+
-literal|"ue\030\002 \002(\t\"9\n\003Log\022\027\n\006action\030\001 \003(\0132\007.Action"
+literal|"perty\022\013\n\003key\030\001 \002(\t\022\r\n\005value\030\002 \002(\t\"9\n\003Log"
 operator|+
-literal|"\022\031\n\007message\030\002 \003(\0132\010.Message\"\304\001\n\023CourseRe"
+literal|"\022\027\n\006action\030\001 \003(\0132\007.Action\022\031\n\007message\030\002 \003"
 block|,
-literal|"questOption\022-\n\004type\030\001 \002(\0162\037.CourseReques"
+literal|"(\0132\010.Message\"\304\001\n\023CourseRequestOption\022-\n\004"
 operator|+
-literal|"tOption.OptionType\022\031\n\007section\030\002 \003(\0132\010.Se"
+literal|"type\030\001 \002(\0162\037.CourseRequestOption.OptionT"
 operator|+
-literal|"ction\022$\n\023instructionalMethod\030\003 \003(\0132\007.Ent"
+literal|"ype\022\031\n\007section\030\002 \003(\0132\010.Section\022$\n\023instru"
 operator|+
-literal|"ity\"=\n\nOptionType\022\027\n\023ORIGINAL_ENROLLMENT"
+literal|"ctionalMethod\030\003 \003(\0132\007.Entity\"=\n\nOptionTy"
 operator|+
-literal|"\020\000\022\026\n\022REQUEST_PREFERENCE\020\001\"7\n\013ExportedLo"
+literal|"pe\022\027\n\023ORIGINAL_ENROLLMENT\020\000\022\026\n\022REQUEST_P"
 operator|+
-literal|"g\022\017\n\007student\030\001 \002(\t\022\027\n\006action\030\002 \003(\0132\007.Act"
+literal|"REFERENCE\020\001\"7\n\013ExportedLog\022\017\n\007student\030\001 "
 operator|+
-literal|"ionB(\n&org.unitime.timetable.onlinesecti"
+literal|"\002(\t\022\027\n\006action\030\002 \003(\0132\007.ActionB(\n&org.unit"
 operator|+
-literal|"oning"
+literal|"ime.timetable.onlinesectioning"
 block|}
 decl_stmt|;
 name|com
@@ -81167,6 +81428,8 @@ block|,
 literal|"TimeStamp"
 block|,
 literal|"WaitList"
+block|,
+literal|"Critical"
 block|, }
 argument_list|)
 expr_stmt|;
