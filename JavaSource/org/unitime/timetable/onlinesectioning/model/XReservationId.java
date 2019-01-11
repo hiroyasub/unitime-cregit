@@ -223,7 +223,7 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-specifier|private
+specifier|protected
 name|XReservationType
 name|iType
 decl_stmt|;

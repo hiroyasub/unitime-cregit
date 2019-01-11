@@ -16413,10 +16413,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Individual Override"
+argument_list|)
+name|String
+name|reservationIndividualOverride
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Student Group Reservation"
 argument_list|)
 name|String
 name|reservationStudentGroup
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Group Override"
+argument_list|)
+name|String
+name|reservationStudentGroupOverride
 parameter_list|()
 function_decl|;
 annotation|@
@@ -16453,6 +16471,24 @@ literal|"Student Group"
 argument_list|)
 name|String
 name|reservationStudentGroupAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Individual Override"
+argument_list|)
+name|String
+name|reservationIndividualOverrideAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Group Override"
+argument_list|)
+name|String
+name|reservationStudentGroupOverrideAbbv
 parameter_list|()
 function_decl|;
 annotation|@
@@ -20164,6 +20200,51 @@ literal|"Unpublish"
 argument_list|)
 name|String
 name|opSolverUnpublish
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Override Properties:"
+argument_list|)
+name|String
+name|propOverrideProperties
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Allow Time Conflict"
+argument_list|)
+name|String
+name|checkCanOverlap
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Can Assign Over Limit"
+argument_list|)
+name|String
+name|checkCanOverLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Must Follow"
+argument_list|)
+name|String
+name|checkMustBeUsed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do Not Reserve Space"
+argument_list|)
+name|String
+name|checkAllwaysExpired
 parameter_list|()
 function_decl|;
 block|}

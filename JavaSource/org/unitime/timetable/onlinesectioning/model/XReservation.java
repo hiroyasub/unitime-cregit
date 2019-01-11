@@ -329,6 +329,8 @@ block|,
 name|AllowOverlap
 block|,
 name|AllowDiabled
+block|,
+name|AlwaysExpired
 block|,     	;
 specifier|public
 name|int
@@ -1292,6 +1294,15 @@ name|iFlags
 argument_list|,
 name|canAssignOverLimit
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|canAssignOverLimit
+condition|)
+name|iLimitCap
+operator|=
+operator|-
+literal|1
 expr_stmt|;
 block|}
 comment|/**      * If true, student must use the reservation (if applicable)      */

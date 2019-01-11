@@ -504,6 +504,15 @@ name|boolean
 name|isAllowOverlap
 parameter_list|()
 function_decl|;
+specifier|public
+name|boolean
+name|isAlwaysExpired
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
