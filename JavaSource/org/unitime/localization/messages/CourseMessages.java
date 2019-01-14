@@ -8228,6 +8228,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Default ({0})"
+argument_list|)
+name|String
+name|defaultInstructionalMethod
+parameter_list|(
+name|String
+name|defaultInstructionalMethod
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No matching date pattern!"
 argument_list|)
 name|String

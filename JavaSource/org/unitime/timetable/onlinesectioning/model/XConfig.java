@@ -529,7 +529,7 @@ if|if
 condition|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|!=
 literal|null
@@ -541,7 +541,7 @@ name|XInstructionalMethod
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 argument_list|)
 expr_stmt|;

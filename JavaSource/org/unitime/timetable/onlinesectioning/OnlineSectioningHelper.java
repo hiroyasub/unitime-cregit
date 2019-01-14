@@ -7765,7 +7765,7 @@ if|if
 condition|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|!=
 literal|null
@@ -7780,7 +7780,7 @@ name|getIntructionalMethodSelection
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getUniqueId
@@ -7812,7 +7812,7 @@ name|setUniqueId
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getUniqueId
@@ -7823,7 +7823,7 @@ name|setExternalId
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getReference
@@ -7834,7 +7834,7 @@ name|setName
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getLabel

@@ -3517,7 +3517,7 @@ operator|.
 name|getInstrOfferingConfig
 argument_list|()
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 decl_stmt|;
 if|if

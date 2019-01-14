@@ -405,6 +405,10 @@ specifier|private
 name|Long
 name|instructionalMethod
 decl_stmt|;
+specifier|private
+name|String
+name|instructionalMethodDefault
+decl_stmt|;
 comment|// Error Codes
 specifier|private
 specifier|final
@@ -1908,6 +1912,10 @@ name|instructionalMethod
 operator|=
 literal|null
 expr_stmt|;
+name|instructionalMethodDefault
+operator|=
+literal|null
+expr_stmt|;
 block|}
 comment|/**      * Get the no. of configs for the course offering      * @return      */
 specifier|public
@@ -2487,6 +2495,30 @@ operator|.
 name|instructionalMethod
 operator|=
 name|instructionalMethod
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getInstructionalMethodDefault
+parameter_list|()
+block|{
+return|return
+name|instructionalMethodDefault
+return|;
+block|}
+specifier|public
+name|void
+name|setInstructionalMethodDefault
+parameter_list|(
+name|String
+name|instructionalMethodDefault
+parameter_list|)
+block|{
+name|this
+operator|.
+name|instructionalMethodDefault
+operator|=
+name|instructionalMethodDefault
 expr_stmt|;
 block|}
 specifier|public

@@ -137,6 +137,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|InstructionalMethod
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|InstructionalOffering
 import|;
 end_import
@@ -300,6 +314,10 @@ decl_stmt|;
 specifier|private
 name|ClassDurationType
 name|iDefaultClassDurationType
+decl_stmt|;
+specifier|private
+name|InstructionalMethod
+name|iDefaultInstructionalMethod
 decl_stmt|;
 specifier|private
 name|Set
@@ -832,6 +850,28 @@ name|defaultClassDurationType
 expr_stmt|;
 block|}
 specifier|public
+name|InstructionalMethod
+name|getDefaultInstructionalMethod
+parameter_list|()
+block|{
+return|return
+name|iDefaultInstructionalMethod
+return|;
+block|}
+specifier|public
+name|void
+name|setDefaultInstructionalMethod
+parameter_list|(
+name|InstructionalMethod
+name|defaultInstructionalMethod
+parameter_list|)
+block|{
+name|iDefaultInstructionalMethod
+operator|=
+name|defaultInstructionalMethod
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|SubjectArea
@@ -1266,6 +1306,11 @@ operator|+
 literal|"\n	DefaultDatePattern: "
 operator|+
 name|getDefaultDatePattern
+argument_list|()
+operator|+
+literal|"\n	DefaultInstructionalMethod: "
+operator|+
+name|getDefaultInstructionalMethod
 argument_list|()
 operator|+
 literal|"\n	DefaultSectioningStatus: "

@@ -3737,7 +3737,7 @@ if|if
 condition|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|!=
 literal|null
@@ -3748,7 +3748,7 @@ name|addInstructionalMethod
 argument_list|(
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getUniqueId
@@ -3756,7 +3756,7 @@ argument_list|()
 argument_list|,
 name|config
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getLabel

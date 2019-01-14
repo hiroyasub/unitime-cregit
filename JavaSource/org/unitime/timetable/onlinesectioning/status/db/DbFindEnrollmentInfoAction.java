@@ -7896,7 +7896,7 @@ operator|.
 name|getInstrOfferingConfig
 argument_list|()
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|==
 literal|null
@@ -7917,7 +7917,7 @@ operator|.
 name|getInstrOfferingConfig
 argument_list|()
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getReference
@@ -11521,7 +11521,7 @@ operator|.
 name|getInstrOfferingConfig
 argument_list|()
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|==
 literal|null
@@ -11542,7 +11542,7 @@ operator|.
 name|getInstrOfferingConfig
 argument_list|()
 operator|.
-name|getInstructionalMethod
+name|getEffectiveInstructionalMethod
 argument_list|()
 operator|.
 name|getReference
