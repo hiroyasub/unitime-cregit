@@ -2196,9 +2196,6 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-operator|!
-name|setReadOnly
-operator|&&
 name|helper
 operator|.
 name|getUser

@@ -3390,6 +3390,10 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|status
+operator|==
+literal|null
+operator|&&
 operator|!
 name|box
 operator|.
