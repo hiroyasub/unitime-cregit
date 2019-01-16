@@ -11321,7 +11321,7 @@ name|getWaitList
 argument_list|(
 name|course
 operator|.
-name|getCourseName
+name|getCourseId
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -11418,7 +11418,7 @@ name|setWaitList
 argument_list|(
 name|course
 operator|.
-name|getCourseName
+name|getCourseId
 argument_list|()
 argument_list|,
 name|event
