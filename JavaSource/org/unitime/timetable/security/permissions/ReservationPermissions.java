@@ -309,7 +309,7 @@ name|Permission
 argument_list|<
 name|InstructionalOffering
 argument_list|>
-name|permissionOfferingLockNeeded
+name|permissionOfferingLockNeededOnlyWhenWaitListing
 decl_stmt|;
 annotation|@
 name|Override
@@ -326,7 +326,7 @@ parameter_list|)
 block|{
 return|return
 operator|!
-name|permissionOfferingLockNeeded
+name|permissionOfferingLockNeededOnlyWhenWaitListing
 operator|.
 name|check
 argument_list|(

@@ -10070,6 +10070,28 @@ argument_list|(
 literal|"unitime.taskScheduler.enabled"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Reservations: only require locking when there is a wait-listed request"
+argument_list|)
+name|ReservationLockCheckWaitList
+argument_list|(
+literal|"unitime.reservation.lockingCheckWaitList"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
