@@ -2538,6 +2538,16 @@ operator|.
 name|getEnrollmentSortBy
 argument_list|()
 operator|+
+literal|"&group="
+operator|+
+name|SectioningCookie
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|getEnrollmentSortByGroup
+argument_list|()
+operator|+
 literal|"&subpart="
 operator|+
 name|SectioningCookie

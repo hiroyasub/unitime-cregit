@@ -2306,7 +2306,9 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|String
+name|XStudent
+operator|.
+name|XGroup
 name|g
 range|:
 name|student
@@ -2326,6 +2328,9 @@ operator|.
 name|get
 argument_list|(
 name|g
+operator|.
+name|getAbbreviation
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

@@ -1823,7 +1823,9 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|String
+name|XStudent
+operator|.
+name|XGroup
 name|gr
 range|:
 name|student
@@ -1837,6 +1839,14 @@ operator|.
 name|addGroup
 argument_list|(
 name|gr
+operator|.
+name|getType
+argument_list|()
+argument_list|,
+name|gr
+operator|.
+name|getAbbreviation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

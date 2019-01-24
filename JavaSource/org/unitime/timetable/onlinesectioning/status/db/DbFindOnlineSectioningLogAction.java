@@ -412,6 +412,38 @@ operator|.
 name|getAcademicSession
 argument_list|()
 decl_stmt|;
+name|SectioningLogQueryFormatter
+name|formatter
+init|=
+operator|new
+name|SectioningLogQueryFormatter
+argument_list|(
+name|helper
+argument_list|)
+decl_stmt|;
+name|String
+name|join
+init|=
+literal|""
+decl_stmt|;
+for|for
+control|(
+name|String
+name|t
+range|:
+name|formatter
+operator|.
+name|getGroupTypes
+argument_list|()
+control|)
+name|join
+operator|+=
+literal|"left outer join s.groups G_"
+operator|+
+name|t
+operator|+
+literal|" "
+expr_stmt|;
 name|org
 operator|.
 name|hibernate
@@ -426,7 +458,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select l, s from OnlineSectioningLog l, Student s "
+literal|"select distinct l, s from OnlineSectioningLog l, Student s "
 operator|+
 operator|(
 name|getQuery
@@ -504,6 +536,8 @@ else|:
 literal|""
 operator|)
 operator|+
+name|join
+operator|+
 literal|"where l.session.uniqueId = :sessionId and l.session = s.session and l.student = s.externalUniqueId "
 operator|+
 literal|"and ("
@@ -513,9 +547,7 @@ argument_list|()
 operator|.
 name|toString
 argument_list|(
-operator|new
-name|SectioningLogQueryFormatter
-argument_list|()
+name|formatter
 argument_list|)
 operator|+
 literal|") "
@@ -770,10 +802,38 @@ name|getGroups
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|gr
+operator|.
+name|getType
+argument_list|()
+operator|==
+literal|null
+condition|)
 name|st
 operator|.
 name|addGroup
 argument_list|(
+name|gr
+operator|.
+name|getGroupAbbreviation
+argument_list|()
+argument_list|)
+expr_stmt|;
+else|else
+name|st
+operator|.
+name|addGroup
+argument_list|(
+name|gr
+operator|.
+name|getType
+argument_list|()
+operator|.
+name|getReference
+argument_list|()
+argument_list|,
 name|gr
 operator|.
 name|getGroupAbbreviation
