@@ -283,6 +283,12 @@ name|specreg
 argument_list|(
 literal|"Special Registration"
 argument_list|)
+block|,
+comment|/*32768 */
+name|canreq
+argument_list|(
+literal|"Can Require Sections / IMs"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

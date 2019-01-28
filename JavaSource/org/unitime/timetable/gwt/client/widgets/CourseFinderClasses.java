@@ -2992,6 +2992,11 @@ literal|null
 operator|&&
 name|iRequired
 operator|.
+name|isEnabled
+argument_list|()
+operator|&&
+name|iRequired
+operator|.
 name|getValue
 argument_list|()
 return|;

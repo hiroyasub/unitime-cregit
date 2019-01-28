@@ -737,6 +737,20 @@ name|Option
 operator|.
 name|specreg
 argument_list|)
+block|,
+name|CanReq
+argument_list|(
+name|MESSAGES
+operator|.
+name|toggleCanRequire
+argument_list|()
+argument_list|,
+name|StudentSectioningStatus
+operator|.
+name|Option
+operator|.
+name|canreq
+argument_list|)
 block|, 		;
 specifier|private
 name|StudentSectioningStatus

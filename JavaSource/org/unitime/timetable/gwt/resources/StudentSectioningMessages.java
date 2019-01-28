@@ -4702,6 +4702,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Require Sections / Instr. Methods:"
+argument_list|)
+name|String
+name|propCanRequire
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are not registered for any classes yet. Please click the Build Schedule button in order to complete your registration."
 argument_list|)
 name|String
@@ -6370,6 +6379,24 @@ literal|"Courses can NOT be wait-listed in UniTime."
 argument_list|)
 name|String
 name|messageStatusCanNotWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sections or Instructional Methods can be required by the student."
+argument_list|)
+name|String
+name|messageStatusCanRequire
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sections or Instructional Methods can NOT be required by the student."
+argument_list|)
+name|String
+name|messageStatusCanNotRequire
 parameter_list|()
 function_decl|;
 annotation|@

@@ -3914,6 +3914,8 @@ name|CONSTANTS
 operator|.
 name|courseFinderShowRequired
 argument_list|()
+argument_list|,
+name|iSpecReg
 argument_list|)
 decl_stmt|;
 name|courses

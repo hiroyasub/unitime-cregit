@@ -22107,6 +22107,8 @@ name|CONSTANTS
 operator|.
 name|courseFinderShowRequired
 argument_list|()
+argument_list|,
+name|iSpecRegCx
 argument_list|)
 decl_stmt|;
 name|courses

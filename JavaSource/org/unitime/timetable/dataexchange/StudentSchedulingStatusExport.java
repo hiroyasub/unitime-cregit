@@ -887,6 +887,12 @@ case|:
 return|return
 literal|"requestValidation"
 return|;
+case|case
+name|canreq
+case|:
+return|return
+literal|"canRequire"
+return|;
 default|default:
 return|return
 name|option

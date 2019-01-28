@@ -14898,6 +14898,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Can Require"
+argument_list|)
+name|String
+name|toggleCanRequire
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Final Examinations"
 argument_list|)
 name|String
