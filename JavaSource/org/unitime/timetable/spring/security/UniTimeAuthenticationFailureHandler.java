@@ -248,7 +248,7 @@ name|request
 operator|.
 name|getParameter
 argument_list|(
-literal|"j_username"
+literal|"username"
 argument_list|)
 argument_list|,
 operator|new
@@ -273,7 +273,7 @@ name|request
 operator|.
 name|getParameter
 argument_list|(
-literal|"j_username"
+literal|"username"
 argument_list|)
 argument_list|)
 operator|!=
