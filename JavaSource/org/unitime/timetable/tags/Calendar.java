@@ -502,6 +502,13 @@ operator|+
 literal|"\""
 operator|)
 operator|+
+literal|" disabled=\""
+operator|+
+name|getDisabled
+argument_list|()
+operator|+
+literal|"\""
+operator|+
 literal|">"
 argument_list|)
 expr_stmt|;
