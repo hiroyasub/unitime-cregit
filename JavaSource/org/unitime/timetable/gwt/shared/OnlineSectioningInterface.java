@@ -1852,6 +1852,10 @@ name|iEmail
 operator|=
 literal|true
 expr_stmt|;
+name|iCanRequire
+operator|=
+literal|true
+expr_stmt|;
 block|}
 specifier|public
 name|void

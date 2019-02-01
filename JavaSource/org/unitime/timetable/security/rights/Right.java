@@ -2080,6 +2080,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSchedulingCanRequirePreferences
+argument_list|(
+name|Student
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingEnrollments
 argument_list|(
 name|InstructionalOffering
