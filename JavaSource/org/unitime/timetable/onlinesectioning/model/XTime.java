@@ -1194,6 +1194,10 @@ name|other
 parameter_list|)
 block|{
 return|return
+name|other
+operator|!=
+literal|null
+operator|&&
 name|shareDays
 argument_list|(
 name|other
