@@ -4215,7 +4215,20 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|iAssignment
+operator|.
+name|getRequest
+argument_list|()
+operator|.
+name|getMaxCreditOverrideStatus
+argument_list|()
+operator|!=
+name|RequestedCourseStatus
+operator|.
+name|SAVED
+condition|)
 block|{
 name|note
 operator|=

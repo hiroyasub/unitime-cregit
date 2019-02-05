@@ -686,6 +686,15 @@ name|overrideType
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"None"
+argument_list|)
+name|String
+name|noOverride
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultStringArrayValue
 argument_list|(
 block|{
