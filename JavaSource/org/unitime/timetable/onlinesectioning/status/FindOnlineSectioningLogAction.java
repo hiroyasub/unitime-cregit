@@ -758,7 +758,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct l, s.uniqueId from OnlineSectioningLog l, Student s "
+literal|"select l, s.uniqueId from OnlineSectioningLog l, Student s "
 operator|+
 operator|(
 name|getQuery
@@ -882,6 +882,19 @@ name|getLimit
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|Set
+argument_list|<
+name|Long
+argument_list|>
+name|processedLogIds
+init|=
+operator|new
+name|HashSet
+argument_list|<
+name|Long
+argument_list|>
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|Object
@@ -951,6 +964,20 @@ condition|(
 name|student
 operator|==
 literal|null
+condition|)
+continue|continue;
+if|if
+condition|(
+operator|!
+name|processedLogIds
+operator|.
+name|add
+argument_list|(
+name|log
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
 condition|)
 continue|continue;
 name|ClassAssignmentInterface
