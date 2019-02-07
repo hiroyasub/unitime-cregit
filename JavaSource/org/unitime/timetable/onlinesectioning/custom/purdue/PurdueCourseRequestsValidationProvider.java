@@ -14082,6 +14082,13 @@ operator|==
 name|RequestedCourseStatus
 operator|.
 name|OVERRIDE_REJECTED
+operator|&&
+name|request
+operator|.
+name|getMaxCreditOverride
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 if|if
