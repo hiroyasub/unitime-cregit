@@ -1353,17 +1353,17 @@ name|query
 operator|.
 name|select
 argument_list|(
-literal|"g.uniqueId, g.groupAbbreviation, g.groupName, count(distinct s)"
+literal|"gt.uniqueId, gt.groupAbbreviation, gt.groupName, count(distinct s)"
 argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"StudentGroup g"
+literal|"StudentGroup gt"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"g in elements(s.groups) and g.type = :groupTypeId"
+literal|"gt in elements(s.groups) and gt.type = :groupTypeId"
 argument_list|)
 operator|.
 name|set
@@ -1378,12 +1378,12 @@ argument_list|)
 operator|.
 name|order
 argument_list|(
-literal|"g.groupAbbreviation, g.groupName"
+literal|"gt.groupAbbreviation, gt.groupName"
 argument_list|)
 operator|.
 name|group
 argument_list|(
-literal|"g.uniqueId, g.groupAbbreviation, g.groupName"
+literal|"gt.uniqueId, gt.groupAbbreviation, gt.groupName"
 argument_list|)
 operator|.
 name|exclude
