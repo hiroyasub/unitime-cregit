@@ -813,6 +813,38 @@ specifier|public
 name|String
 name|errorMessage
 decl_stmt|;
+comment|/** Special Registration API mode (REG or PREREG) */
+specifier|public
+name|ApiMode
+name|mode
+decl_stmt|;
+block|}
+comment|/** Max credit override that have been denied for the student */
+specifier|public
+specifier|static
+class|class
+name|DeniedMaxCredit
+block|{
+comment|/** Registration error code */
+specifier|public
+name|String
+name|code
+decl_stmt|;
+comment|/** Registration error message */
+specifier|public
+name|String
+name|errorMessage
+decl_stmt|;
+comment|/** Max credit denied */
+specifier|public
+name|Float
+name|maxCredit
+decl_stmt|;
+comment|/** Special Registration API mode (REG or PREREG) */
+specifier|public
+name|ApiMode
+name|mode
+decl_stmt|;
 block|}
 comment|/** Request message for the /checkRestrictions call */
 specifier|public
@@ -872,6 +904,14 @@ argument_list|<
 name|DeniedRequest
 argument_list|>
 name|deniedRequests
+decl_stmt|;
+comment|/** Max credit requests that have been denied (student should request that much credit) */
+specifier|public
+name|List
+argument_list|<
+name|DeniedMaxCredit
+argument_list|>
+name|deniedMaxCreditRequests
 decl_stmt|;
 comment|/** Student eligibility check (used only during registration) */
 specifier|public
