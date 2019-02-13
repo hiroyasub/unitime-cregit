@@ -135,6 +135,9 @@ name|getOffering
 parameter_list|(
 name|Long
 name|offeringId
+parameter_list|,
+name|Long
+name|courseId
 parameter_list|)
 throws|throws
 name|ReservationException

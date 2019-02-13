@@ -910,6 +910,8 @@ name|convert
 argument_list|(
 name|offering
 argument_list|,
+literal|null
+argument_list|,
 name|InstructionalOfferingDAO
 operator|.
 name|getInstance

@@ -433,6 +433,20 @@ name|studentsct
 operator|.
 name|reservation
 operator|.
+name|LearningCommunityReservation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|reservation
+operator|.
 name|Reservation
 import|;
 end_import
@@ -575,6 +589,17 @@ if|if
 condition|(
 name|reservation
 operator|instanceof
+name|LearningCommunityReservation
+condition|)
+block|{
+return|return
+literal|"lc"
+return|;
+block|}
+if|else if
+condition|(
+name|reservation
+operator|instanceof
 name|GroupReservation
 condition|)
 block|{
@@ -653,6 +678,17 @@ name|reservation
 parameter_list|)
 block|{
 if|if
+condition|(
+name|reservation
+operator|instanceof
+name|LearningCommunityReservation
+condition|)
+block|{
+return|return
+literal|"lc"
+return|;
+block|}
+if|else if
 condition|(
 name|reservation
 operator|instanceof

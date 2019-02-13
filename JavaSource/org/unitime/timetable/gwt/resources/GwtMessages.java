@@ -16467,6 +16467,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Learning Community Reservation"
+argument_list|)
+name|String
+name|reservationLearningCommunity
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Individual"
 argument_list|)
 name|String
@@ -16534,6 +16543,15 @@ literal|"Unknown"
 argument_list|)
 name|String
 name|reservationUnknownAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Learning Community"
+argument_list|)
+name|String
+name|reservationLearningCommunityAbbv
 parameter_list|()
 function_decl|;
 annotation|@

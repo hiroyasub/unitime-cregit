@@ -147,6 +147,20 @@ name|studentsct
 operator|.
 name|reservation
 operator|.
+name|LearningCommunityReservation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|cpsolver
+operator|.
+name|studentsct
+operator|.
+name|reservation
+operator|.
 name|Reservation
 import|;
 end_import
@@ -370,7 +384,19 @@ name|iType
 operator|=
 name|XReservationType
 operator|.
-name|Override
+name|IndividualOverride
+expr_stmt|;
+if|else if
+condition|(
+name|reservation
+operator|instanceof
+name|LearningCommunityReservation
+condition|)
+name|iType
+operator|=
+name|XReservationType
+operator|.
+name|LearningCommunity
 expr_stmt|;
 if|else if
 condition|(

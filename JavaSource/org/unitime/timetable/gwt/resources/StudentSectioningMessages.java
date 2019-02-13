@@ -2582,6 +2582,15 @@ name|String
 name|reservationCurriculum
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"LC"
+argument_list|)
+name|String
+name|reservationLearningCommunity
+parameter_list|()
+function_decl|;
 comment|/* Enrollment dialog messages (opened from Enrollments table) 	 */
 annotation|@
 name|DefaultMessage
@@ -5849,6 +5858,15 @@ literal|"Not-Used Override Reservations"
 argument_list|)
 name|String
 name|reportUnusedOverrideReservations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not-Used Learning Community Reservations"
+argument_list|)
+name|String
+name|reportUnusedLearningCommunityReservations
 parameter_list|()
 function_decl|;
 annotation|@

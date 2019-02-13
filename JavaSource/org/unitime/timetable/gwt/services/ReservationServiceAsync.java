@@ -109,6 +109,9 @@ parameter_list|(
 name|Long
 name|offeringId
 parameter_list|,
+name|Long
+name|courseId
+parameter_list|,
 name|AsyncCallback
 argument_list|<
 name|ReservationInterface
