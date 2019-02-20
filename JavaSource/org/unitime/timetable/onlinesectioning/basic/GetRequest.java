@@ -1748,12 +1748,6 @@ name|courseId
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|OnlineSectioningHelper
-operator|.
-name|fillPreferencesIn
-argument_list|(
-name|rc
-argument_list|,
 operator|(
 operator|(
 name|XCourseRequest
@@ -1761,10 +1755,11 @@ operator|)
 name|cd
 operator|)
 operator|.
-name|getPreferences
+name|fillPreferencesIn
 argument_list|(
+name|rc
+argument_list|,
 name|courseId
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|r
