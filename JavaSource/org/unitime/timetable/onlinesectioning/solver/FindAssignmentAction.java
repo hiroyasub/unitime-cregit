@@ -1487,6 +1487,11 @@ argument_list|()
 operator|.
 name|areTimeConflictsAllowed
 argument_list|()
+operator|||
+name|getSpecialRegistration
+argument_list|()
+operator|!=
+literal|null
 operator|)
 operator|&&
 name|server
@@ -2494,6 +2499,11 @@ argument_list|()
 operator|.
 name|areSpaceConflictsAllowed
 argument_list|()
+operator|||
+name|getSpecialRegistration
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 comment|// Experimental: provide student with a blank override that allows for overlaps as well as over-limit
@@ -2603,6 +2613,11 @@ condition|(
 name|time
 operator|||
 name|space
+operator|||
+name|getSpecialRegistration
+argument_list|()
+operator|!=
+literal|null
 condition|)
 operator|new
 name|OnlineReservation
