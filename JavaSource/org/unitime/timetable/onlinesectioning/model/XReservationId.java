@@ -481,6 +481,15 @@ return|return
 name|iReservationId
 return|;
 block|}
+specifier|public
+name|boolean
+name|isOverride
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public

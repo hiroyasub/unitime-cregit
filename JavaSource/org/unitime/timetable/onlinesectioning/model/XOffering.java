@@ -5181,6 +5181,11 @@ name|reservation
 operator|.
 name|isExpired
 argument_list|()
+argument_list|,
+name|reservation
+operator|.
+name|isOverride
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|clonedReservation

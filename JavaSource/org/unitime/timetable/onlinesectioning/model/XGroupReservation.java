@@ -175,6 +175,12 @@ specifier|private
 name|Boolean
 name|iExpired
 decl_stmt|;
+specifier|private
+name|boolean
+name|iOverride
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|XGroupReservation
 parameter_list|()
@@ -253,6 +259,10 @@ operator|.
 name|getGroup
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|iOverride
+operator|=
+literal|false
 expr_stmt|;
 if|if
 condition|(
@@ -340,6 +350,13 @@ name|getGroup
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|iOverride
+operator|=
+name|reservation
+operator|.
+name|isAlwaysExpired
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|reservation
@@ -424,6 +441,17 @@ parameter_list|()
 block|{
 return|return
 name|iGroup
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isOverride
+parameter_list|()
+block|{
+return|return
+name|iOverride
 return|;
 block|}
 comment|/**      * Reservation limit      */
