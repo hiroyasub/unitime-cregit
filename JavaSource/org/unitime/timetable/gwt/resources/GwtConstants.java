@@ -761,6 +761,33 @@ block|,
 literal|"Override: Can Assign Over Limit"
 block|,
 literal|"Override: Time Conflict& Over Limit"
+block|,
+literal|"Override: Classification"
+block|,
+literal|"Override: Co-requisite"
+block|,
+literal|"Override: Cohort"
+block|,
+literal|"Override: College Restriction"
+block|,
+literal|"Override: Degree"
+block|,
+literal|"Override: Department Permission"
+block|,
+literal|"Override: Honors Permission"
+block|,
+literal|"Override: Instructor Permission"
+block|,
+literal|"Override: Level"
+block|,
+literal|"Override: Major"
+block|,
+literal|"Override: Pre-requisite"
+block|,
+literal|"Override: Program"
+block|,
+literal|"Override: Other"
+block|,
 block|}
 argument_list|)
 name|String
@@ -777,6 +804,33 @@ block|,
 literal|"Over Limit"
 block|,
 literal|"Time& Limit"
+block|,
+literal|"Classification"
+block|,
+literal|"Co-requisite"
+block|,
+literal|"Cohort"
+block|,
+literal|"College Restriction"
+block|,
+literal|"Degree"
+block|,
+literal|"Department Permission"
+block|,
+literal|"Honors Permission"
+block|,
+literal|"Instructor Permission"
+block|,
+literal|"Level"
+block|,
+literal|"Major"
+block|,
+literal|"Pre-requisite"
+block|,
+literal|"Program"
+block|,
+literal|"Other"
+block|,
 block|}
 argument_list|)
 name|String
