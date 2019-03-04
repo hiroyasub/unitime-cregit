@@ -760,9 +760,6 @@ operator|new
 name|CSVPrinter
 argument_list|(
 name|helper
-operator|.
-name|getWriter
-argument_list|()
 argument_list|,
 literal|false
 argument_list|)
