@@ -740,7 +740,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternate Course Requests"
+literal|"Substitute Course Requests"
 argument_list|)
 name|String
 name|courseRequestsAlternatives
@@ -758,7 +758,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0}. Alternate"
+literal|"{0}. Substitute"
 argument_list|)
 name|String
 name|courseRequestsAlternate
@@ -848,7 +848,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alternate request if course(s) above not available."
+literal|"Substitute request if course(s) above not available."
 argument_list|)
 name|String
 name|courseRequestsHintA0

@@ -435,7 +435,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Priority {0, number} alternate course request. Access key {1}."
+literal|"Priority {0, number} substitute course request. Access key {1}."
 argument_list|)
 name|String
 name|titleRequestedAlternate
@@ -450,7 +450,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"First alternative to the priority {0, number} alternate course request."
+literal|"First alternative to the priority {0, number} substitute course request."
 argument_list|)
 name|String
 name|titleRequestedAlternateFirstAlternative
@@ -462,7 +462,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Second alternative to the priority {0, number} alternate course request."
+literal|"Second alternative to the priority {0, number} substitute course request."
 argument_list|)
 name|String
 name|titleRequestedAlternateSecondAlternative
@@ -474,7 +474,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0, number}. alternative to the priority {1, number} alternate course request."
+literal|"{0, number}. alternative to the priority {1, number} substitute course request."
 argument_list|)
 name|String
 name|titleRequestedAlternateNAlternative
@@ -564,7 +564,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Opens Course Finder dialog for priority {0, number} alternate course request."
+literal|"Opens Course Finder dialog for priority {0, number} substitute course request."
 argument_list|)
 name|String
 name|altRequestedAlternateFinder
@@ -576,7 +576,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Opens Course Finder dialog for priority {0, number} first alternative alternate course request."
+literal|"Opens Course Finder dialog for priority {0, number} first alternative substitute course request."
 argument_list|)
 name|String
 name|altRequestedAlternateFirstFinder
@@ -588,7 +588,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Opens Course Finder dialog for priority {0, number} second alternative alternate course request."
+literal|"Opens Course Finder dialog for priority {0, number} second alternative substitute course request."
 argument_list|)
 name|String
 name|altRequestedAlternateSecondFinder
@@ -600,7 +600,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Opens Course Finder dialog for priority {1, number} {0, number}. alternative alternate course request."
+literal|"Opens Course Finder dialog for priority {1, number} {0, number}. alternative substitute course request."
 argument_list|)
 name|String
 name|altRequestedNAlternateFinder
@@ -642,7 +642,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Swaps priority {0, number} alternate course request with priority {1, number} alternate course request including alternatives and wait list information."
+literal|"Swaps priority {0, number} substitute course request with priority {1, number} substitute course request including alternatives and wait list information."
 argument_list|)
 name|String
 name|altSwapAlternateRequest
@@ -657,7 +657,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Swaps priority {0, number} course request with priority {1, number} alternate course request including alternatives and wait list information."
+literal|"Swaps priority {0, number} course request with priority {1, number} substitute course request including alternatives and wait list information."
 argument_list|)
 name|String
 name|altSwapCourseAlternateRequest
@@ -672,7 +672,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Delete priority {0, number} alternate course request including alternatives and wait list information."
+literal|"Delete priority {0, number} substitute course request including alternatives and wait list information."
 argument_list|)
 name|String
 name|altDeleteAlternateRequest
