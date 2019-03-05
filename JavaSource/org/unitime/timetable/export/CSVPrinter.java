@@ -416,6 +416,16 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|idx
+operator|+
+literal|1
+operator|<
+name|fields
+operator|.
+name|length
+condition|)
 name|iOut
 operator|.
 name|print
