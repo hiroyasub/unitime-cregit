@@ -5890,6 +5890,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Tableau Report (Simplified)"
+argument_list|)
+name|String
+name|reportTableauSimpleReport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requested"
 argument_list|)
 name|String
