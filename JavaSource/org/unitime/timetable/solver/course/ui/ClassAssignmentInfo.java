@@ -743,6 +743,13 @@ argument_list|>
 name|conflicts
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|hasTime
+argument_list|()
+condition|)
+return|return;
 for|for
 control|(
 name|Map
