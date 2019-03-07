@@ -3548,6 +3548,8 @@ operator|.
 name|getLimit
 argument_list|()
 operator|-
+name|config
+operator|.
 name|getEnrollment
 argument_list|()
 expr_stmt|;
