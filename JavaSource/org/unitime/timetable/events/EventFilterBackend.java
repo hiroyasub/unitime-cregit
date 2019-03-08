@@ -2690,6 +2690,27 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|context
+operator|.
+name|hasPermission
+argument_list|(
+name|request
+operator|.
+name|getSessionId
+argument_list|()
+argument_list|,
+literal|"Session"
+argument_list|,
+name|Right
+operator|.
+name|EventCanSeeUnpublishedEvents
+argument_list|)
+condition|)
+block|{
+comment|// no restrictions
+block|}
+if|else if
+condition|(
 operator|!
 name|context
 operator|.

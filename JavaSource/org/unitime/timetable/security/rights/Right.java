@@ -2285,6 +2285,13 @@ name|EventCanViewMeetingContacts
 block|,
 name|EventCanEditMeetingContacts
 block|,
+name|EventCanSeeUnpublishedEvents
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** Administration: Academic Sessions */
 name|AcademicSessions
 block|,

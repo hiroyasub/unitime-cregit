@@ -6010,6 +6010,20 @@ name|class
 return|;
 block|}
 block|}
+annotation|@
+name|PermissionForRight
+argument_list|(
+name|Right
+operator|.
+name|EventCanSeeUnpublishedEvents
+argument_list|)
+specifier|public
+specifier|static
+class|class
+name|EventCanSeeUnpublishedClassEvents
+extends|extends
+name|SimpleSessionPermission
+block|{}
 block|}
 end_class
 
