@@ -12551,17 +12551,6 @@ parameter_list|()
 block|{
 if|if
 condition|(
-operator|!
-name|isEnabledForStudentScheduling
-argument_list|()
-condition|)
-block|{
-return|return
-literal|0
-return|;
-block|}
-if|else if
-condition|(
 name|getSchedulingSubpart
 argument_list|()
 operator|.
@@ -12813,6 +12802,15 @@ name|int
 name|getUnreservedSectionSpace
 parameter_list|()
 block|{
+if|if
+condition|(
+operator|!
+name|isEnabledForStudentScheduling
+argument_list|()
+condition|)
+return|return
+literal|0
+return|;
 comment|// section is unlimited -> there is unreserved space unless there is an unlimited reservation too
 comment|// (in which case there is no unreserved space)
 if|if
