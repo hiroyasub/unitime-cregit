@@ -756,6 +756,12 @@ name|i
 argument_list|)
 operator|==
 literal|'1'
+operator|&&
+name|i
+operator|+
+name|offset
+operator|>=
+literal|0
 condition|)
 name|iCachedPatternBitSet
 operator|.
