@@ -687,6 +687,11 @@ specifier|public
 name|String
 name|term
 decl_stmt|;
+comment|/** Computed credit hours */
+specifier|public
+name|Float
+name|maxHoursCalc
+decl_stmt|;
 block|}
 comment|/** Possible values for the includeReg parameter */
 specifier|public

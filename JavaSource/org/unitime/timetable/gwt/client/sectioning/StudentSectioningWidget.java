@@ -23237,6 +23237,11 @@ name|note
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|eligibilityResponse
+operator|.
+name|getCredit
+argument_list|()
 argument_list|)
 argument_list|,
 operator|new
