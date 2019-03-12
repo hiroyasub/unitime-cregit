@@ -17891,6 +17891,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"override"
+argument_list|)
+name|String
+name|tagReservationOverride
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"subject"
 argument_list|)
 name|String
