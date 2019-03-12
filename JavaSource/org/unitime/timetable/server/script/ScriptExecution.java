@@ -493,6 +493,7 @@ name|ExecuteScriptRpcRequest
 name|iRequest
 decl_stmt|;
 specifier|private
+specifier|transient
 name|FileItem
 name|iFile
 init|=
