@@ -23076,15 +23076,6 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getCode
-argument_list|()
-operator|+
-literal|")"
 argument_list|,
 literal|0
 argument_list|)

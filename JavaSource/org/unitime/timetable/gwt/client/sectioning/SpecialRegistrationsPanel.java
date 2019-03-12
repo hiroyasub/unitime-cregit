@@ -3296,6 +3296,12 @@ name|isFullyApplied
 argument_list|(
 name|saved
 argument_list|)
+operator|&&
+operator|!
+name|reg
+operator|.
+name|isExtended
+argument_list|()
 condition|)
 name|iHasOneOrMoreFullyApproved
 operator|=
@@ -3462,6 +3468,13 @@ name|idx
 argument_list|,
 name|c
 argument_list|,
+name|ca
+operator|.
+name|hasError
+argument_list|()
+condition|?
+literal|"change-drop-with-errors"
+else|:
 literal|"change-drop"
 argument_list|)
 expr_stmt|;
