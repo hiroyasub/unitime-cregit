@@ -3152,6 +3152,7 @@ operator|.
 name|clearHint
 argument_list|()
 expr_stmt|;
+return|return;
 block|}
 comment|// if (iLimit.isReadOnly()) return;
 name|int
