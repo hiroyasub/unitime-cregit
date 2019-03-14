@@ -2946,6 +2946,7 @@ argument_list|(
 literal|"type"
 argument_list|)
 operator|&&
+operator|(
 name|request
 operator|.
 name|getOptions
@@ -2957,6 +2958,19 @@ name|contains
 argument_list|(
 literal|"Individual"
 argument_list|)
+operator|||
+name|request
+operator|.
+name|getOptions
+argument_list|(
+literal|"type"
+argument_list|)
+operator|.
+name|contains
+argument_list|(
+literal|"Override"
+argument_list|)
+operator|)
 condition|)
 block|{
 name|ReservationQuery
