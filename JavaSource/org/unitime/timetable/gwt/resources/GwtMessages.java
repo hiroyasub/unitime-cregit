@@ -18089,6 +18089,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"prefer"
+argument_list|)
+name|String
+name|tagPrefer
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"require"
+argument_list|)
+name|String
+name|tagRequire
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"All Sessions"
 argument_list|)
 name|String
