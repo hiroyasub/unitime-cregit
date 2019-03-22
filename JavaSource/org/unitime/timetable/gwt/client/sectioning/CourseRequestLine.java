@@ -3862,6 +3862,7 @@ parameter_list|(
 name|boolean
 name|allowFreeTime
 parameter_list|,
+specifier|final
 name|boolean
 name|alternative
 parameter_list|)
