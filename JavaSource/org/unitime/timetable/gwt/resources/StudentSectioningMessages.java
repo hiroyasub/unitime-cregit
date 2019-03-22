@@ -3193,6 +3193,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to create custom course lookup: {0}"
+argument_list|)
+name|String
+name|exceptionCustomCourseLookup
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to create critical courses provider: {0}"
 argument_list|)
 name|String
