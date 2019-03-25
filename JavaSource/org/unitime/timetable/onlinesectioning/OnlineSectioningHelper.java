@@ -1757,6 +1757,8 @@ specifier|public
 name|boolean
 name|commitTransaction
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 try|try
 block|{
@@ -1805,9 +1807,9 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-return|return
-literal|false
-return|;
+throw|throw
+name|e
+throw|;
 block|}
 finally|finally
 block|{
