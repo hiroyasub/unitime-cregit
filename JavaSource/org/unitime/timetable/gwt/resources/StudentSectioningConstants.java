@@ -775,6 +775,17 @@ name|int
 name|dashboardMaxLines
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultIntValue
+argument_list|(
+literal|10
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|int
+name|degreePlanMaxAlternatives
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

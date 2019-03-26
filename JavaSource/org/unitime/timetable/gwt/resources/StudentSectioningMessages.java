@@ -5611,7 +5611,22 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alt {0}."
+literal|"{0}{1}."
+argument_list|)
+name|String
+name|degreeRequestedCourseAlt
+parameter_list|(
+name|int
+name|priority
+parameter_list|,
+name|String
+name|alt
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sub {0}."
 argument_list|)
 name|String
 name|degreeRequestedAlternative
@@ -5623,7 +5638,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alt {0}A."
+literal|"Sub {0}A."
 argument_list|)
 name|String
 name|degreeRequestedAlternativeFirstAlt
@@ -5635,13 +5650,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Alt {0}B."
+literal|"Sub {0}B."
 argument_list|)
 name|String
 name|degreeRequestedAlternativeSecondAlt
 parameter_list|(
 name|int
 name|priority
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sub {0}{1}."
+argument_list|)
+name|String
+name|degreeRequestedAlternativeAlt
+parameter_list|(
+name|int
+name|priority
+parameter_list|,
+name|String
+name|alt
 parameter_list|)
 function_decl|;
 annotation|@
