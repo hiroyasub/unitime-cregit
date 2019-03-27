@@ -4306,7 +4306,7 @@ init|=
 operator|new
 name|CourseFinderClasses
 argument_list|(
-literal|true
+literal|false
 argument_list|,
 name|iSpecRegCx
 argument_list|)
