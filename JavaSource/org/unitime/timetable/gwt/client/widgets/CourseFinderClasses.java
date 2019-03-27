@@ -3424,6 +3424,18 @@ name|ALIGN_CENTER
 return|;
 block|}
 block|}
+specifier|public
+name|Set
+argument_list|<
+name|Preference
+argument_list|>
+name|getAllSelectedClasses
+parameter_list|()
+block|{
+return|return
+name|iSelectedClasses
+return|;
+block|}
 block|}
 end_class
 
