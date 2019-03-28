@@ -80,6 +80,10 @@ name|Long
 name|iUniqueId
 decl_stmt|;
 specifier|private
+name|String
+name|iLabel
+decl_stmt|;
+specifier|private
 name|Boolean
 name|iRequired
 decl_stmt|;
@@ -93,6 +97,13 @@ name|String
 name|PROP_UNIQUEID
 init|=
 literal|"uniqueId"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_LABEL
+init|=
+literal|"label"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -151,6 +162,28 @@ block|{
 name|iUniqueId
 operator|=
 name|uniqueId
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getLabel
+parameter_list|()
+block|{
+return|return
+name|iLabel
+return|;
+block|}
+specifier|public
+name|void
+name|setLabel
+parameter_list|(
+name|String
+name|label
+parameter_list|)
+block|{
+name|iLabel
+operator|=
+name|label
 expr_stmt|;
 block|}
 specifier|public
@@ -307,6 +340,11 @@ operator|+
 name|getUniqueId
 argument_list|()
 operator|+
+literal|" "
+operator|+
+name|getLabel
+argument_list|()
+operator|+
 literal|"]"
 return|;
 block|}
@@ -321,6 +359,11 @@ operator|+
 literal|"\n	CourseRequest: "
 operator|+
 name|getCourseRequest
+argument_list|()
+operator|+
+literal|"\n	Label: "
+operator|+
+name|getLabel
 argument_list|()
 operator|+
 literal|"\n	Required: "

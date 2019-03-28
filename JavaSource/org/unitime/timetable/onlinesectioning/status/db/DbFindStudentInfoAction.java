@@ -3663,11 +3663,11 @@ condition|)
 block|{
 name|s
 operator|.
-name|setTotalPrefSectionConflict
+name|setTotalPrefInstrMethConflict
 argument_list|(
 name|s
 operator|.
-name|getTotalPrefSectionConflict
+name|getTotalPrefInstrMethConflict
 argument_list|()
 operator|+
 literal|1

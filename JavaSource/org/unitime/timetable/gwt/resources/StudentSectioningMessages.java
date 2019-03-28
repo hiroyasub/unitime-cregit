@@ -7012,6 +7012,60 @@ name|int
 name|last
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Any Preference"
+argument_list|)
+name|String
+name|termAnyPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Met Preference"
+argument_list|)
+name|String
+name|termMetPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unmet Preference"
+argument_list|)
+name|String
+name|termUnmetPreference
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Any Requirement"
+argument_list|)
+name|String
+name|termAnyRequirement
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Met Requirement"
+argument_list|)
+name|String
+name|termMetRequirement
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unmet Requirement"
+argument_list|)
+name|String
+name|termUnmetRequirement
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

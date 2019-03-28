@@ -2950,6 +2950,200 @@ name|modes
 argument_list|)
 expr_stmt|;
 block|}
+name|List
+argument_list|<
+name|Entity
+argument_list|>
+name|preferences
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|Entity
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|preferences
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Entity
+argument_list|(
+literal|0l
+argument_list|,
+literal|"Any Preference"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termAnyPreference
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termAnyPreference
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|preferences
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Entity
+argument_list|(
+literal|1l
+argument_list|,
+literal|"Met Preference"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termMetPreference
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termMetPreference
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|preferences
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Entity
+argument_list|(
+literal|2l
+argument_list|,
+literal|"Unmet Preference"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termUnmetPreference
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termUnmetPreference
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|response
+operator|.
+name|add
+argument_list|(
+literal|"prefer"
+argument_list|,
+name|preferences
+argument_list|)
+expr_stmt|;
+name|List
+argument_list|<
+name|Entity
+argument_list|>
+name|requires
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|Entity
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|requires
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Entity
+argument_list|(
+literal|0l
+argument_list|,
+literal|"Any Requirement"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termAnyRequirement
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termAnyRequirement
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|requires
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Entity
+argument_list|(
+literal|1l
+argument_list|,
+literal|"Met Requirement"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termMetRequirement
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termMetRequirement
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|requires
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Entity
+argument_list|(
+literal|2l
+argument_list|,
+literal|"Unmet Requirement"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termUnmetRequirement
+argument_list|()
+argument_list|,
+literal|"translated-value"
+argument_list|,
+name|MESSAGES
+operator|.
+name|termUnmetRequirement
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|response
+operator|.
+name|add
+argument_list|(
+literal|"require"
+argument_list|,
+name|requires
+argument_list|)
+expr_stmt|;
 return|return
 name|response
 return|;
@@ -4676,7 +4870,7 @@ name|query
 operator|.
 name|select
 argument_list|(
-literal|"distinct c"
+literal|"distinct c, pcr.courseOffering"
 argument_list|)
 operator|.
 name|exclude
@@ -4696,7 +4890,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"lower(c.classSuffix) like :q || '%' or lower(c.classSuffix) like :q || '%'"
+literal|"lower(pp.label) like :q || '%'"
 argument_list|)
 operator|.
 name|set
@@ -4714,13 +4908,15 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|Class_
-name|c
+name|Object
+index|[]
+name|o
 range|:
 operator|(
 name|List
 argument_list|<
-name|Class_
+name|Object
+index|[]
 argument_list|>
 operator|)
 name|instance
@@ -4742,6 +4938,28 @@ name|list
 argument_list|()
 control|)
 block|{
+name|Class_
+name|c
+init|=
+operator|(
+name|Class_
+operator|)
+name|o
+index|[
+literal|0
+index|]
+decl_stmt|;
+name|CourseOffering
+name|co
+init|=
+operator|(
+name|CourseOffering
+operator|)
+name|o
+index|[
+literal|1
+index|]
+decl_stmt|;
 name|response
 operator|.
 name|addSuggestion
@@ -4750,13 +4968,17 @@ name|c
 operator|.
 name|getClassLabel
 argument_list|(
+name|co
+argument_list|,
 literal|true
 argument_list|)
 argument_list|,
 name|c
 operator|.
-name|getClassSuffix
-argument_list|()
+name|getClassPrefLabel
+argument_list|(
+name|co
+argument_list|)
 argument_list|,
 literal|"Prefer"
 argument_list|,
@@ -4808,7 +5030,7 @@ name|query
 operator|.
 name|select
 argument_list|(
-literal|"distinct c"
+literal|"distinct c, pcr.courseOffering"
 argument_list|)
 operator|.
 name|exclude
@@ -4828,7 +5050,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"lower(c.classSuffix) like :q || '%' or lower(c.classSuffix) like :q || '%'"
+literal|"lower(pp.label) like :q || '%'"
 argument_list|)
 operator|.
 name|where
@@ -4851,13 +5073,15 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|Class_
-name|c
+name|Object
+index|[]
+name|o
 range|:
 operator|(
 name|List
 argument_list|<
-name|Class_
+name|Object
+index|[]
 argument_list|>
 operator|)
 name|instance
@@ -4879,6 +5103,28 @@ name|list
 argument_list|()
 control|)
 block|{
+name|Class_
+name|c
+init|=
+operator|(
+name|Class_
+operator|)
+name|o
+index|[
+literal|0
+index|]
+decl_stmt|;
+name|CourseOffering
+name|co
+init|=
+operator|(
+name|CourseOffering
+operator|)
+name|o
+index|[
+literal|1
+index|]
+decl_stmt|;
 name|response
 operator|.
 name|addSuggestion
@@ -4887,13 +5133,17 @@ name|c
 operator|.
 name|getClassLabel
 argument_list|(
+name|co
+argument_list|,
 literal|true
 argument_list|)
 argument_list|,
 name|c
 operator|.
-name|getClassSuffix
-argument_list|()
+name|getClassPrefLabel
+argument_list|(
+name|co
+argument_list|)
 argument_list|,
 literal|"Require"
 argument_list|,
@@ -6984,6 +7234,30 @@ literal|"prefer"
 argument_list|)
 control|)
 block|{
+if|if
+condition|(
+literal|"Any Preference"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|p
+argument_list|)
+operator|||
+literal|"Met Preference"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|p
+argument_list|)
+operator|||
+literal|"Unmet Preference"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|p
+argument_list|)
+condition|)
+continue|continue;
 name|where
 operator|+=
 operator|(
@@ -7024,24 +7298,26 @@ name|addFrom
 argument_list|(
 literal|"prefer"
 argument_list|,
-literal|"inner join s.courseDemands pcd inner join pcd.courseRequests pcr inner join pcr.preferences pp left outer join pp.clazz pc left outer join pp.instructionalMethod pim"
+literal|"inner join s.courseDemands pcd inner join pcd.courseRequests pcr inner join pcr.preferences pp"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|id
+operator|>
+literal|0
+condition|)
 name|query
 operator|.
 name|addWhere
 argument_list|(
 literal|"prefer"
 argument_list|,
-literal|"(pc is not null and pc.classSuffix in ("
+literal|"pp.label in ("
 operator|+
 name|where
 operator|+
-literal|")) or (pim is not null and pim.label in ("
-operator|+
-name|where
-operator|+
-literal|"))"
+literal|")"
 argument_list|)
 expr_stmt|;
 block|}
@@ -7078,6 +7354,30 @@ literal|"require"
 argument_list|)
 control|)
 block|{
+if|if
+condition|(
+literal|"Any Requirement"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|p
+argument_list|)
+operator|||
+literal|"Met Requirement"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|p
+argument_list|)
+operator|||
+literal|"Unmet Requirement"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|p
+argument_list|)
+condition|)
+continue|continue;
 name|where
 operator|+=
 operator|(
@@ -7118,24 +7418,26 @@ name|addFrom
 argument_list|(
 literal|"require"
 argument_list|,
-literal|"inner join s.courseDemands rcd inner join rcd.courseRequests rcr inner join rcr.preferences rp left outer join rp.clazz rc left outer join rp.instructionalMethod rim"
+literal|"inner join s.courseDemands rcd inner join rcd.courseRequests rcr inner join rcr.preferences rp"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|id
+operator|>
+literal|0
+condition|)
 name|query
 operator|.
 name|addWhere
 argument_list|(
 literal|"require"
 argument_list|,
-literal|"((rc is not null and rc.classSuffix in ("
+literal|"rp.label in ("
 operator|+
 name|where
 operator|+
-literal|")) or (rim is not null and rim.label in ("
-operator|+
-name|where
-operator|+
-literal|"))) and rp.required = true"
+literal|") and rp.required = true"
 argument_list|)
 expr_stmt|;
 block|}
@@ -7355,7 +7657,7 @@ name|where
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|addParameter
 parameter_list|(
@@ -8779,7 +9081,7 @@ name|addFrom
 argument_list|(
 literal|"prefer"
 argument_list|,
-literal|"inner join cr.preferences pp left outer join pp.clazz pc left outer join pp.instructionalMethod pim"
+literal|"inner join cr.preferences pp"
 argument_list|)
 expr_stmt|;
 block|}
@@ -8799,7 +9101,7 @@ name|addFrom
 argument_list|(
 literal|"require"
 argument_list|,
-literal|"inner join cr.preferences rp left outer join rp.clazz rc left outer join rp.instructionalMethod rim"
+literal|"inner join cr.preferences rp"
 argument_list|)
 expr_stmt|;
 block|}
