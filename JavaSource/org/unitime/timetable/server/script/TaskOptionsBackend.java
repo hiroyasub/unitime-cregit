@@ -655,6 +655,11 @@ name|session
 operator|.
 name|getLabel
 argument_list|()
+argument_list|,
+name|session
+operator|.
+name|getSessionBeginDateTime
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
