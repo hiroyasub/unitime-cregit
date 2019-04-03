@@ -6639,7 +6639,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The request to increase the maximum credit hours has been denied.\nYou must remove some course requests in order to submit your registration request."
+literal|"The request to increase the maximum credit hours has been denied.\nYou may not be able to get a full schedule."
 argument_list|)
 name|String
 name|creditStatusDenied
@@ -6648,7 +6648,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You must remove some course requests in order to submit your registration request."
+literal|"You may not be able to get a full schedule."
 argument_list|)
 name|String
 name|creditStatusTooHigh
