@@ -1338,6 +1338,8 @@ condition|(
 name|critical
 operator|==
 literal|null
+operator|||
+name|alternative
 condition|)
 return|return
 literal|false
@@ -1362,6 +1364,7 @@ condition|)
 return|return
 literal|true
 return|;
+break|break;
 block|}
 return|return
 literal|false

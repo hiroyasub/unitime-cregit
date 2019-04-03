@@ -22065,6 +22065,11 @@ condition|(
 name|critical
 operator|==
 literal|null
+operator|||
+name|cd
+operator|.
+name|isAlternative
+argument_list|()
 condition|)
 return|return
 literal|false
@@ -22090,6 +22095,13 @@ control|)
 block|{
 if|if
 condition|(
+name|cr
+operator|.
+name|getOrder
+argument_list|()
+operator|==
+literal|0
+operator|&&
 name|critical
 operator|.
 name|isCritical
