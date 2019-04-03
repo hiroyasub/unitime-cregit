@@ -699,6 +699,15 @@ name|ImageResource
 name|off
 parameter_list|()
 function_decl|;
+annotation|@
+name|Source
+argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/star.png"
+argument_list|)
+name|ImageResource
+name|degreePlanCritical
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

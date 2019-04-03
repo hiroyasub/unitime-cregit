@@ -7129,6 +7129,30 @@ name|String
 name|termUnmetRequirement
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} is marked as critical."
+argument_list|)
+name|String
+name|hintCriticalCourse
+parameter_list|(
+name|String
+name|courseOrGroup
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Elective {0} is marked as critical."
+argument_list|)
+name|String
+name|hintCriticalGroup
+parameter_list|(
+name|String
+name|courseOrGroup
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
