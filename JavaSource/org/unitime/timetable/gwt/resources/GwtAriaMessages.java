@@ -2001,7 +2001,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"There are {0, number} override requests available. Use up and down arrows to navigate. To select an override request press Enter. Press Escape to hide override requests."
+literal|"There are {0, number} approval requests available. Use up and down arrows to navigate. To select an approval request press Enter. Press Escape to hide approval requests."
 argument_list|)
 name|String
 name|showingSpecRegs
@@ -2013,7 +2013,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Override request {0, number} of {1, number}. {2}. Submitted {3,localdatetime,MMMM dd}"
+literal|"Approval request {0, number} of {1, number}. {2}. Submitted {3,localdatetime,MMMM dd}"
 argument_list|)
 name|String
 name|showingSpecReg
@@ -2034,7 +2034,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Selected override request {0}."
+literal|"Selected approval request {0}."
 argument_list|)
 name|String
 name|selectedSpecReg
@@ -2196,7 +2196,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Cancel this override request."
+literal|"Cancel this approval request."
 argument_list|)
 name|String
 name|altCancelOverrideRequest

@@ -1389,7 +1389,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Submit Override Requests"
+literal|"Submit Approval Requests"
 argument_list|)
 name|String
 name|buttonSubmitSpecReg
@@ -1506,24 +1506,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Override Requests"
-argument_list|)
-name|String
-name|buttonGetSpecRegs
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"Select one of the override requests."
-argument_list|)
-name|String
-name|hintGetSpecRegs
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"<u>C</u>ourse Requests"
 argument_list|)
 name|String
@@ -1581,7 +1563,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to retrieve override requests: {0}"
+literal|"Unable to retrieve approval requests: {0}"
 argument_list|)
 name|String
 name|requestSpecialRegistrationFail
@@ -1605,7 +1587,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to cancel override request: {0}"
+literal|"Failed to cancel approval request: {0}"
 argument_list|)
 name|String
 name|cancelSpecialRegistrationFail
@@ -1617,7 +1599,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to load override requests: {0}"
+literal|"Failed to load approval requests: {0}"
 argument_list|)
 name|String
 name|retrieveAllSpecialRegistrationsFail
@@ -3292,7 +3274,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Checking overrides..."
+literal|"Checking approvals..."
 argument_list|)
 name|String
 name|waitOverridesCheck
@@ -4786,7 +4768,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You have made some changes in your schedule. Please click the Submit Override Requests button to validate your changes and request overrides if needed."
+literal|"You have made some changes in your schedule. Please click the Submit Approval Requests button to validate your changes and request approvals if needed."
 argument_list|)
 name|String
 name|warnSpecialRegistrationChanged
@@ -5137,7 +5119,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Override Requests"
+literal|"Approval Requests"
 argument_list|)
 name|String
 name|dialogSpecialRegistrations
@@ -5347,7 +5329,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No override requests are available."
+literal|"No approval requests are available."
 argument_list|)
 name|String
 name|failedNoSpecialRegistrations
@@ -5386,7 +5368,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The override request has been approved."
+literal|"The approval request has been approved."
 argument_list|)
 name|String
 name|hintSpecRegApproved
@@ -5395,7 +5377,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"This override request has been fully approved. Click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
+literal|"This approval request has been fully approved. Click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
 argument_list|)
 name|String
 name|hintSpecRegApprovedNoteApply
@@ -5404,7 +5386,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The override request has been cancelled."
+literal|"The approval request has been cancelled."
 argument_list|)
 name|String
 name|hintSpecRegCancelled
@@ -5413,7 +5395,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The override request has been submitted for processing. Waiting for approval..."
+literal|"The approval request has been submitted for processing. Waiting for approval..."
 argument_list|)
 name|String
 name|hintSpecRegPending
@@ -5422,7 +5404,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The override request has been submitted for processing. It can still be edited."
+literal|"The approval request has been submitted for processing. It can still be edited."
 argument_list|)
 name|String
 name|hintSpecRegDraft
@@ -5440,7 +5422,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"The override request has been already applied."
+literal|"The approval request has been already applied."
 argument_list|)
 name|String
 name|hintSpecRegApplied
@@ -6111,15 +6093,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Do you want to request overrides for these errors?"
-argument_list|)
-name|String
-name|questionRequestOverrides
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Enrolled"
 argument_list|)
 name|String
@@ -6693,7 +6666,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Request Overrides"
+literal|"Request Approvals"
 argument_list|)
 name|String
 name|dialogRequestOverrides
@@ -6702,7 +6675,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Request Overrides"
+literal|"Request Approvals"
 argument_list|)
 name|String
 name|buttonRequestOverrides
@@ -6711,7 +6684,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Request overrides for the above registration errors"
+literal|"Request approvals for the above registration errors"
 argument_list|)
 name|String
 name|titleRequestOverrides
@@ -6747,7 +6720,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"\nPlease, select<b>Request Overrides</b> to request registration overrides or other approvals required to register "
+literal|"\nPlease, select<b>Request Approvals</b> to request registration overrides or other approvals required to register "
 operator|+
 literal|"for the courses listed above. "
 operator|+
@@ -6795,7 +6768,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"\n<span class='text-red'>If you proceed, the following pending override requests will be canceled/replaced:</span>"
+literal|"\n<span class='text-red'>If you proceed, the following pending approval requests will be canceled/replaced:</span>"
 argument_list|)
 name|String
 name|messageRequestOverridesCancel
@@ -6804,7 +6777,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"There are no registration errors for which an override can be requested."
+literal|"There are no registration errors for which an approval can be requested."
 argument_list|)
 name|String
 name|errorNoRegistrationErrorsDetected
@@ -6813,7 +6786,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No overrides can be requested at this time."
+literal|"No approvals can be requested at this time."
 argument_list|)
 name|String
 name|errorRegistrationErrorsBadResponse
@@ -6822,7 +6795,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Do you want to cancel this override request?"
+literal|"Do you want to cancel this approval request?"
 argument_list|)
 name|String
 name|confirmOverrideRequestCancel
@@ -6831,7 +6804,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"If you proceed, the following pending overrides will be canceled:"
+literal|"If you proceed, the following pending approvals will be canceled:"
 argument_list|)
 name|String
 name|confirmOverrideRequestCancelCancelledErrors
@@ -6869,7 +6842,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Checking overrides ...\nClick<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+literal|"Checking approvals ...\nClick<b>Close Dialog</b> to hide this dialog without requesting any approvals."
 argument_list|)
 name|String
 name|messageCheckingOverrides
@@ -6878,7 +6851,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Request Overrides"
+literal|"Request Approvals"
 argument_list|)
 name|String
 name|buttonEnrollmentRequestOverrides
@@ -6887,7 +6860,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Review and request overrides for the above registration errrors."
+literal|"Review and request approvals for the above registration errrors."
 argument_list|)
 name|String
 name|titleEnrollmentRequestOverrides
@@ -6905,7 +6878,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Hide the Registration Errors dialog without requesting any overrides."
+literal|"Hide the Registration Errors dialog without requesting any approvals."
 argument_list|)
 name|String
 name|titleEnrollmentHideConfirmation
@@ -6914,7 +6887,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Overrides cannot be requested: {0}\nClick<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+literal|"Approvals cannot be requested: {0}\nClick<b>Close Dialog</b> to hide this dialog without requesting any approvals."
 argument_list|)
 name|String
 name|messageCannotRequestOverrides
@@ -6926,7 +6899,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Overrides cannot be requested due to the following registration errors:"
+literal|"Approvals cannot be requested due to the following registration errors:"
 argument_list|)
 name|String
 name|messageCannotRequestOverridesErrors
@@ -6935,7 +6908,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Click<b>Close Dialog</b> to hide this dialog without requesting any overrides."
+literal|"Click<b>Close Dialog</b> to hide this dialog without requesting any approvals."
 argument_list|)
 name|String
 name|messageCannotRequestOverridesErrorsBottom
@@ -6944,9 +6917,9 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"It is possible to request overrides for all of the above registration errors.\n"
+literal|"It is possible to request approvals for all of the above registration errors.\n"
 operator|+
-literal|"If you have already discussed these courses with your advisor and were advised to request registration in them, please select<b>Request Overrides</b>. "
+literal|"If you have already discussed these courses with your advisor and were advised to request registration in them, please select<b>Request Approvals</b>. "
 operator|+
 literal|"If you arenât sure, click<b>Close Dialog</b> and consult with your advisor before registering for these courses."
 argument_list|)
@@ -6957,9 +6930,9 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"It is possible to request overrides for some of the above registration errors.\n"
+literal|"It is possible to request approvals for some of the above registration errors.\n"
 operator|+
-literal|"If you have already discussed these courses with your advisor and were advised to request registration in them, please select<b>Request Overrides</b>. "
+literal|"If you have already discussed these courses with your advisor and were advised to request registration in them, please select<b>Request Approvals</b>. "
 operator|+
 literal|"If you arenât sure, click<b>Close Dialog</b> and consult with your advisor before registering for these courses."
 argument_list|)
@@ -6979,7 +6952,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are trying to drop {0} as part of this override request. Once this request is fully approved, click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
+literal|"You are trying to drop {0} as part of this approval request. Once this request is fully approved, click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
 argument_list|)
 name|String
 name|specRegUnassignment
@@ -6991,7 +6964,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"You are trying to add {0} as part of this override request. Once this request is fully approved, click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
+literal|"You are trying to add {0} as part of this approval request. Once this request is fully approved, click on this request to apply it to your current schedule and then click Submit Schedule button to update your registration."
 argument_list|)
 name|String
 name|specRegAssignment
@@ -7003,7 +6976,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"One or more of your override requests have been fully approved. \nPlease click on the approved request to apply it to your current schedule, review the new schedule, and then click Submit Schedule button to update your registration."
+literal|"One or more of your approval requests have been fully approved. \nPlease click on the approved request to apply it to your current schedule, review the new schedule, and then click Submit Schedule button to update your registration."
 argument_list|)
 name|String
 name|statusOneOrMoreFullyApprovedRequestsNotYetApplied

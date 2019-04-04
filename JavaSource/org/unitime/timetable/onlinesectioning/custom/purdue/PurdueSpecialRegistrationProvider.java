@@ -6129,7 +6129,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"No overrides are allowed for "
+literal|"No approvals are allowed for "
 operator|+
 name|error
 operator|+
@@ -6162,7 +6162,7 @@ operator|.
 name|getCode
 argument_list|()
 argument_list|,
-literal|"Overrides are not allowed for: "
+literal|"Approvals are not allowed for: "
 operator|+
 name|error
 operator|.
@@ -6230,7 +6230,7 @@ operator|.
 name|getCourseName
 argument_list|()
 operator|+
-literal|" does not allow overrides for "
+literal|" does not allow approvals for "
 operator|+
 name|error
 operator|+
@@ -6263,7 +6263,7 @@ operator|.
 name|getCode
 argument_list|()
 argument_list|,
-literal|"Overrides are not allowed for: "
+literal|"Approvals are not allowed for: "
 operator|+
 name|error
 operator|.
