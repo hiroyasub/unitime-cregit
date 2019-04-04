@@ -3585,11 +3585,12 @@ operator|.
 name|getLimit
 argument_list|()
 decl_stmt|;
-for|for
-control|(
+name|Collection
+argument_list|<
 name|XCourseRequest
-name|r
-range|:
+argument_list|>
+name|r1
+init|=
 name|server
 operator|.
 name|getRequests
@@ -3599,6 +3600,19 @@ operator|.
 name|getOfferingId
 argument_list|()
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|r1
+operator|!=
+literal|null
+condition|)
+for|for
+control|(
+name|XCourseRequest
+name|r
+range|:
+name|r1
 control|)
 block|{
 if|if
@@ -3674,11 +3688,12 @@ operator|.
 name|getLimit
 argument_list|()
 decl_stmt|;
-for|for
-control|(
+name|Collection
+argument_list|<
 name|XCourseRequest
-name|r
-range|:
+argument_list|>
+name|r2
+init|=
 name|server
 operator|.
 name|getRequests
@@ -3688,6 +3703,19 @@ operator|.
 name|getOfferingId
 argument_list|()
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|r2
+operator|!=
+literal|null
+condition|)
+for|for
+control|(
+name|XCourseRequest
+name|r
+range|:
+name|r2
 control|)
 block|{
 if|if
@@ -4418,9 +4446,6 @@ name|getLimit
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//XOffering offering = server.getOffering(id.getOfferingId());
-comment|//if (offering != null)
-comment|//	ca.setAvailability(offering.getCourseAvailability(server.getRequests(id.getOfferingId()), xc));
 name|int
 name|firstChoiceReqs
 init|=
@@ -4431,11 +4456,12 @@ name|enrl
 init|=
 literal|0
 decl_stmt|;
-for|for
-control|(
+name|Collection
+argument_list|<
 name|XCourseRequest
-name|r
-range|:
+argument_list|>
+name|requests
+init|=
 name|server
 operator|.
 name|getRequests
@@ -4445,6 +4471,19 @@ operator|.
 name|getOfferingId
 argument_list|()
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|requests
+operator|!=
+literal|null
+condition|)
+for|for
+control|(
+name|XCourseRequest
+name|r
+range|:
+name|requests
 control|)
 block|{
 if|if
@@ -5003,9 +5042,6 @@ name|getLimit
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//XOffering offering = server.getOffering(id.getOfferingId());
-comment|//if (offering != null)
-comment|//	ca.setAvailability(offering.getCourseAvailability(server.getRequests(id.getOfferingId()), xc));
 name|int
 name|firstChoiceReqs
 init|=
@@ -5016,11 +5052,12 @@ name|enrl
 init|=
 literal|0
 decl_stmt|;
-for|for
-control|(
+name|Collection
+argument_list|<
 name|XCourseRequest
-name|r
-range|:
+argument_list|>
+name|requests
+init|=
 name|server
 operator|.
 name|getRequests
@@ -5030,6 +5067,19 @@ operator|.
 name|getOfferingId
 argument_list|()
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|requests
+operator|!=
+literal|null
+condition|)
+for|for
+control|(
+name|XCourseRequest
+name|r
+range|:
+name|requests
 control|)
 block|{
 if|if
