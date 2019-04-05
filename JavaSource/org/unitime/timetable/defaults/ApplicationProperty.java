@@ -2747,6 +2747,23 @@ argument_list|(
 literal|"unitime.sectioning.alternativeCourse"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Online Student Scheduling: default publish server (provide regular expression mathing available server name)"
+argument_list|)
+name|OnlineSchedulingPublishHost
+argument_list|(
+literal|"unitime.enrollment.publish.host"
+argument_list|)
+operator|,
 comment|/** 	 * Room availability. By default, use the included event management system. 	 * See http://help.unitime.org/Custom_Room_Availability for more details. 	 */
 expr_stmt|@
 name|Type

@@ -1007,6 +1007,13 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|mySolverProperties
+operator|.
+name|remove
+argument_list|(
+literal|"General.Host"
+argument_list|)
+expr_stmt|;
 name|mySolver
 operator|=
 name|studentSectioningSolverService
