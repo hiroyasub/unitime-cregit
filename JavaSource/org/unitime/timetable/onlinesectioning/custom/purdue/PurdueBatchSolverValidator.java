@@ -2253,7 +2253,7 @@ argument_list|,
 name|getSpecialRegistrationApiSite
 argument_list|()
 operator|+
-literal|"/checkRestrictionsForSTAR"
+literal|"/checkRestrictions"
 argument_list|)
 return|;
 block|}
