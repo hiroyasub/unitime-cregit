@@ -2826,7 +2826,7 @@ name|addCell
 argument_list|(
 name|weekData
 argument_list|,
-name|date
+name|d
 argument_list|,
 name|cell
 operator|.
@@ -2858,6 +2858,16 @@ name|d
 operator|++
 control|)
 block|{
+name|int
+name|date
+init|=
+name|d
+operator|+
+name|model
+operator|.
+name|getFirstSessionDay
+argument_list|()
+decl_stmt|;
 name|int
 name|length
 init|=
@@ -3096,6 +3106,8 @@ name|c
 operator|.
 name|setNrLines
 argument_list|(
+name|date
+argument_list|,
 name|maxLines
 index|[
 name|idx
@@ -3106,6 +3118,8 @@ name|c
 operator|.
 name|setIndex
 argument_list|(
+name|date
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -3246,6 +3260,8 @@ name|c
 operator|.
 name|setNrLines
 argument_list|(
+name|date
+argument_list|,
 name|lines
 argument_list|)
 expr_stmt|;

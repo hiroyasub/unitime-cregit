@@ -8370,7 +8370,9 @@ operator|+
 name|cell
 operator|.
 name|getNrLines
-argument_list|()
+argument_list|(
+name|date
+argument_list|)
 operator|*
 name|sLineHeight
 argument_list|)
@@ -8468,7 +8470,9 @@ operator|+
 name|cell
 operator|.
 name|getIndex
-argument_list|()
+argument_list|(
+name|date
+argument_list|)
 operator|)
 operator|*
 name|sLineHeight
