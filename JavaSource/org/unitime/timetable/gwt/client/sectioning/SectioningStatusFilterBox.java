@@ -4505,7 +4505,12 @@ name|StaticSimpleFilter
 argument_list|(
 name|type
 argument_list|,
-literal|null
+name|result
+operator|.
+name|getTypeLabel
+argument_list|(
+name|type
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
