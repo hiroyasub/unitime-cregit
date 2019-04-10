@@ -470,6 +470,16 @@ operator|.
 name|getGroupTypes
 argument_list|()
 control|)
+if|if
+condition|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+name|t
+argument_list|)
+condition|)
 name|join
 operator|+=
 literal|"left outer join s.groups G_"
