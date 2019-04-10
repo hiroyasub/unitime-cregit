@@ -3920,6 +3920,12 @@ operator|.
 name|getCourses
 argument_list|()
 control|)
+if|if
+condition|(
+name|course
+operator|!=
+literal|null
+condition|)
 name|iCourseInfoCache
 operator|.
 name|put

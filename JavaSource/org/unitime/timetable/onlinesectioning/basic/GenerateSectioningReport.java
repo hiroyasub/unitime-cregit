@@ -2759,6 +2759,11 @@ name|g
 operator|.
 name|getAbbreviation
 argument_list|()
+argument_list|,
+name|g
+operator|.
+name|getTitle
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

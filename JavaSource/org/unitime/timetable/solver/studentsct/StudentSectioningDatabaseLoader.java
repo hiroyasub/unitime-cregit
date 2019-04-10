@@ -16712,6 +16712,11 @@ name|g
 operator|.
 name|getGroupAbbreviation
 argument_list|()
+argument_list|,
+name|g
+operator|.
+name|getGroupName
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16741,6 +16746,11 @@ argument_list|,
 name|a
 operator|.
 name|getAbbreviation
+argument_list|()
+argument_list|,
+name|a
+operator|.
+name|getName
 argument_list|()
 argument_list|)
 argument_list|)

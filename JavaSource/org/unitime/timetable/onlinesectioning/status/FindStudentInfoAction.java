@@ -1908,6 +1908,11 @@ name|gr
 operator|.
 name|getAbbreviation
 argument_list|()
+argument_list|,
+name|gr
+operator|.
+name|getTitle
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -5151,6 +5156,11 @@ name|gr
 operator|.
 name|getAbbreviation
 argument_list|()
+argument_list|,
+name|gr
+operator|.
+name|getTitle
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -5502,6 +5512,11 @@ argument_list|,
 name|gr
 operator|.
 name|getAbbreviation
+argument_list|()
+argument_list|,
+name|gr
+operator|.
+name|getTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
