@@ -10998,6 +10998,8 @@ name|critical
 init|=
 literal|null
 decl_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|CustomCriticalCoursesHolder
@@ -11035,6 +11037,28 @@ name|helper
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|helper
+operator|.
+name|warn
+argument_list|(
+literal|"Failed to lookup critical courses: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
 name|SaveStudentRequests
 operator|.
 name|saveRequest
