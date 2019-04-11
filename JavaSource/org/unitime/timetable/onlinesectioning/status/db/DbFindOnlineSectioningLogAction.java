@@ -438,6 +438,8 @@ init|=
 operator|new
 name|SectioningLogQueryFormatter
 argument_list|(
+name|session
+argument_list|,
 name|helper
 argument_list|)
 decl_stmt|;
@@ -559,6 +561,14 @@ operator|.
 name|hasAttribute
 argument_list|(
 literal|"course"
+argument_list|)
+operator|||
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"lookup"
 argument_list|)
 condition|?
 literal|"left outer join s.courseDemands cd left outer join cd.courseRequests cr "
