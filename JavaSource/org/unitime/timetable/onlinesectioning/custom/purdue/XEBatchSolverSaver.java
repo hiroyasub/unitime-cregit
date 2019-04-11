@@ -2985,13 +2985,14 @@ name|course
 operator|!=
 literal|null
 condition|)
+return|return
 name|clazz
 operator|.
 name|getExternalId
 argument_list|(
 name|course
 argument_list|)
-expr_stmt|;
+return|;
 return|return
 literal|null
 return|;
