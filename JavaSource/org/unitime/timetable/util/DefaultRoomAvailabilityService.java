@@ -223,6 +223,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|ExamType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|FinalExamEvent
 import|;
 end_import
@@ -589,6 +603,11 @@ name|exclude
 init|=
 literal|null
 decl_stmt|;
+name|ExamType
+name|examType
+init|=
+literal|null
+decl_stmt|;
 if|if
 condition|(
 name|excludeType
@@ -641,6 +660,24 @@ name|ClassEvent
 operator|.
 name|class
 expr_stmt|;
+else|else
+block|{
+name|exclude
+operator|=
+name|ExamEvent
+operator|.
+name|class
+expr_stmt|;
+name|examType
+operator|=
+name|ExamType
+operator|.
+name|findByReference
+argument_list|(
+name|excludeType
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 for|for
 control|(
@@ -672,6 +709,19 @@ operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
 operator|+
 operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and m.event.uniqueId not in (select x.uniqueId from ExamEvent x where x.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|")"
+else|:
 name|exclude
 operator|!=
 literal|null
@@ -978,6 +1028,21 @@ operator|+
 literal|"m.meetingDate>=:startDate and m.meetingDate<=:endDate and "
 operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
+operator|+
+operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and e.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+else|:
+literal|""
+operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -1731,6 +1796,11 @@ name|exclude
 init|=
 literal|null
 decl_stmt|;
+name|ExamType
+name|examType
+init|=
+literal|null
+decl_stmt|;
 if|if
 condition|(
 name|iExcludeType
@@ -1783,6 +1853,24 @@ name|ClassEvent
 operator|.
 name|class
 expr_stmt|;
+else|else
+block|{
+name|exclude
+operator|=
+name|ExamEvent
+operator|.
+name|class
+expr_stmt|;
+name|examType
+operator|=
+name|ExamType
+operator|.
+name|findByReference
+argument_list|(
+name|iExcludeType
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|addAll
 argument_list|(
@@ -1805,6 +1893,19 @@ operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
 operator|+
 operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and m.event.uniqueId not in (select x.uniqueId from ExamEvent x where x.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|")"
+else|:
 name|exclude
 operator|==
 literal|null
@@ -2019,6 +2120,21 @@ operator|+
 literal|"m.meetingDate>=:startDate and m.meetingDate<=:endDate and "
 operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
+operator|+
+operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and e.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+else|:
+literal|""
+operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -2115,6 +2231,19 @@ operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
 operator|+
 operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and m.event.uniqueId not in (select x.uniqueId from ExamEvent x where x.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|")"
+else|:
 name|exclude
 operator|!=
 literal|null
@@ -2332,6 +2461,21 @@ operator|+
 literal|"m.meetingDate>=:startDate and m.meetingDate<=:endDate and "
 operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
+operator|+
+operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and e.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+else|:
+literal|""
+operator|)
 argument_list|)
 operator|.
 name|setLong
@@ -3497,6 +3641,11 @@ name|exclude
 init|=
 literal|null
 decl_stmt|;
+name|ExamType
+name|examType
+init|=
+literal|null
+decl_stmt|;
 if|if
 condition|(
 name|excludeType
@@ -3549,6 +3698,24 @@ name|ClassEvent
 operator|.
 name|class
 expr_stmt|;
+else|else
+block|{
+name|exclude
+operator|=
+name|ExamEvent
+operator|.
+name|class
+expr_stmt|;
+name|examType
+operator|=
+name|ExamType
+operator|.
+name|findByReference
+argument_list|(
+name|excludeType
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 for|for
 control|(
@@ -3582,6 +3749,19 @@ operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
 operator|+
 operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and m.event.uniqueId not in (select x.uniqueId from ExamEvent x where x.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+operator|+
+literal|")"
+else|:
 name|exclude
 operator|!=
 literal|null
@@ -3895,6 +4075,21 @@ operator|+
 literal|"m.meetingDate>=:startDate and m.meetingDate<=:endDate and "
 operator|+
 literal|"m.startPeriod<:endSlot and m.stopPeriod>:startSlot"
+operator|+
+operator|(
+name|examType
+operator|!=
+literal|null
+condition|?
+literal|" and e.exam.examType = "
+operator|+
+name|examType
+operator|.
+name|getUniqueId
+argument_list|()
+else|:
+literal|""
+operator|)
 argument_list|)
 operator|.
 name|setString
