@@ -4885,6 +4885,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Check Critical Courses"
+argument_list|)
+name|String
+name|validateReCheckCriticalCourses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requesting student update..."
 argument_list|)
 name|String
@@ -4907,6 +4916,15 @@ literal|"Validating student overrides..."
 argument_list|)
 name|String
 name|validatingStudentOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Checking critical courses..."
+argument_list|)
+name|String
+name|recheckingCriticalCourses
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4943,6 +4961,15 @@ literal|"Student overrides successfully validated."
 argument_list|)
 name|String
 name|validateStudentOverridesSuccess
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Critical courses successfully rechecked."
+argument_list|)
+name|String
+name|recheckCriticalCoursesSuccess
 parameter_list|()
 function_decl|;
 annotation|@
