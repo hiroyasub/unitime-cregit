@@ -5490,6 +5490,8 @@ name|getOption
 argument_list|(
 literal|"lookup"
 argument_list|)
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 if|if
@@ -5653,6 +5655,8 @@ name|getHibSession
 argument_list|()
 argument_list|,
 name|lookup
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 if|if

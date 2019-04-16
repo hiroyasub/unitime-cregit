@@ -3283,6 +3283,8 @@ argument_list|,
 name|hibSession
 argument_list|,
 name|query
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 if|if

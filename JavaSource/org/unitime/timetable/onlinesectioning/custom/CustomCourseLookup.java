@@ -151,6 +151,9 @@ name|helper
 parameter_list|,
 name|String
 name|query
+parameter_list|,
+name|boolean
+name|allowPartialMatch
 parameter_list|)
 function_decl|;
 specifier|public
@@ -172,6 +175,9 @@ name|hibSession
 parameter_list|,
 name|String
 name|query
+parameter_list|,
+name|boolean
+name|allowPartialMatch
 parameter_list|)
 function_decl|;
 specifier|public
@@ -193,6 +199,9 @@ name|hibSession
 parameter_list|,
 name|String
 name|query
+parameter_list|,
+name|boolean
+name|allowPartialMatch
 parameter_list|)
 function_decl|;
 specifier|public

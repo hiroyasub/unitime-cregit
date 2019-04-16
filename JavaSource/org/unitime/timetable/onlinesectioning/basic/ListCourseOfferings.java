@@ -528,6 +528,8 @@ argument_list|,
 name|helper
 argument_list|,
 name|iQuery
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 if|if

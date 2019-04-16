@@ -4505,6 +4505,8 @@ name|getHibSession
 argument_list|()
 argument_list|,
 name|body
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 if|if

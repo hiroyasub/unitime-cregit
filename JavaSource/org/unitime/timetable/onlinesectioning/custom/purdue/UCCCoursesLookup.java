@@ -597,7 +597,7 @@ name|getProperty
 argument_list|(
 literal|"banner.ucc.placeholder.regExp"
 argument_list|,
-literal|" ?UCC:? ?([^-]*[^- ]+)( ?-.*)?"
+literal|"( ?UCC:? ?)?([^-]*[^- ]+)( ?-.*)?"
 argument_list|)
 return|;
 block|}
@@ -613,7 +613,13 @@ name|getProperty
 argument_list|(
 literal|"banner.ucc.placeholder.replacements"
 argument_list|,
-literal|"(?i:Behavioral/Social Science)|Behavior/Social Science\n(?i:Science,? Tech \\& Society( Selective)?)|Science, Tech& Society"
+literal|"(?i:Behavioral/Social Science)|Behavior/Social Science\n"
+operator|+
+literal|"(?i:Science,? Tech \\& Society( Selective)?)|Science, Tech& Society\n"
+operator|+
+literal|"(?i:Oral Communication)|Oral Communications\n"
+operator|+
+literal|"(?i:Written Communications)|Written Communication"
 argument_list|)
 return|;
 block|}
@@ -969,7 +975,7 @@ argument_list|)
 condition|)
 name|query
 operator|=
-literal|"oral communication"
+literal|"oral communications"
 expr_stmt|;
 if|if
 condition|(
@@ -1047,7 +1053,7 @@ name|m
 operator|.
 name|group
 argument_list|(
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 block|}
@@ -1156,6 +1162,9 @@ name|helper
 parameter_list|,
 name|String
 name|query
+parameter_list|,
+name|boolean
+name|allowPartialMatch
 parameter_list|)
 block|{
 name|String
@@ -1282,6 +1291,8 @@ block|}
 block|}
 if|else if
 condition|(
+name|allowPartialMatch
+operator|&&
 operator|!
 name|fullMatch
 operator|&&
@@ -1420,6 +1431,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|allowPartialMatch
+operator|&&
 name|ret
 operator|.
 name|isEmpty
@@ -1549,6 +1562,9 @@ name|hibSession
 parameter_list|,
 name|String
 name|query
+parameter_list|,
+name|boolean
+name|allowPartialMatch
 parameter_list|)
 block|{
 name|String
@@ -1644,6 +1660,8 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+name|allowPartialMatch
+operator|&&
 operator|!
 name|fullMatch
 operator|&&
@@ -1760,6 +1778,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|allowPartialMatch
+operator|&&
+operator|(
 name|courseIds
 operator|==
 literal|null
@@ -1768,6 +1789,7 @@ name|courseIds
 operator|.
 name|isEmpty
 argument_list|()
+operator|)
 condition|)
 block|{
 name|courseIds
@@ -1881,6 +1903,9 @@ name|hibSession
 parameter_list|,
 name|String
 name|query
+parameter_list|,
+name|boolean
+name|allowPartialMatch
 parameter_list|)
 block|{
 name|String
@@ -1976,6 +2001,8 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+name|allowPartialMatch
+operator|&&
 operator|!
 name|fullMatch
 operator|&&
@@ -2063,6 +2090,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|allowPartialMatch
+operator|&&
+operator|(
 name|courseIds
 operator|==
 literal|null
@@ -2071,6 +2101,7 @@ name|courseIds
 operator|.
 name|isEmpty
 argument_list|()
+operator|)
 condition|)
 block|{
 name|courseIds
