@@ -86,6 +86,9 @@ comment|// there was an error, see message for details
 name|failure
 block|,
 comment|//TODO: is this status used?
+name|Failed
+block|,
+comment|// present in outJson.status when the validation failed
 block|; 	}
 comment|/** Possible values for the Spec Reg API mode */
 specifier|public
@@ -691,6 +694,11 @@ comment|/** Computed credit hours */
 specifier|public
 name|Float
 name|maxHoursCalc
+decl_stmt|;
+comment|/** Error message */
+specifier|public
+name|String
+name|message
 decl_stmt|;
 block|}
 comment|/** Possible values for the includeReg parameter */
