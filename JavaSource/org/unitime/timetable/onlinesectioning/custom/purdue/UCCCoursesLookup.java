@@ -619,7 +619,9 @@ literal|"(?i:Science,? Tech \\& Society( Selective)?)|Science, Tech& Society\n"
 operator|+
 literal|"(?i:Oral Communication)|Oral Communications\n"
 operator|+
-literal|"(?i:Written Communications)|Written Communication"
+literal|"(?i:Written Communications)|Written Communication\n"
+operator|+
+literal|"(?i:Oral/Written Communications)|Communication"
 argument_list|)
 return|;
 block|}
