@@ -1087,7 +1087,7 @@ name|replacements
 operator|.
 name|split
 argument_list|(
-literal|"\n"
+literal|"[\r\n]"
 argument_list|)
 control|)
 block|{
