@@ -1536,6 +1536,7 @@ specifier|protected
 name|void
 name|fillInRequests
 parameter_list|(
+specifier|final
 name|OnlineSectioningServer
 name|server
 parameter_list|,
