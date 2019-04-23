@@ -455,7 +455,7 @@ argument_list|)
 argument_list|,
 literal|"code"
 argument_list|,
-literal|10
+literal|40
 argument_list|)
 decl_stmt|;
 name|AcademicArea
@@ -661,7 +661,7 @@ argument_list|)
 argument_list|,
 literal|"name"
 argument_list|,
-literal|50
+literal|100
 argument_list|)
 argument_list|)
 expr_stmt|;
