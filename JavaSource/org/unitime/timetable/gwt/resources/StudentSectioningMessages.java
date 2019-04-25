@@ -4687,6 +4687,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Fallback Status:"
+argument_list|)
+name|String
+name|propFallbackStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Special Registration:"
 argument_list|)
 name|String
