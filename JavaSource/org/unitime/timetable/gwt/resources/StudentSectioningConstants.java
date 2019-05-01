@@ -182,6 +182,10 @@ block|,
 literal|"Thu"
 block|,
 literal|"Fri"
+block|,
+literal|"Sat"
+block|,
+literal|"Sun"
 block|}
 argument_list|)
 name|String
@@ -226,6 +230,10 @@ block|,
 literal|"Thursday"
 block|,
 literal|"Friday"
+block|,
+literal|"Saturday"
+block|,
+literal|"Sunday"
 block|}
 argument_list|)
 name|String
