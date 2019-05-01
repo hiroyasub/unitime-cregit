@@ -1499,6 +1499,15 @@ name|colAssignedPriorityCourseRequests
 argument_list|()
 return|;
 case|case
+name|CRITICAL
+case|:
+return|return
+name|MESSAGES
+operator|.
+name|colAssignedCriticalCourseRequests
+argument_list|()
+return|;
+case|case
 name|TIME
 case|:
 return|return

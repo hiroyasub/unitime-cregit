@@ -564,6 +564,11 @@ argument_list|(
 literal|"Assigned priority course requests"
 argument_list|)
 block|,
+name|CRITICAL
+argument_list|(
+literal|"Assigned critical course requests"
+argument_list|)
+block|,
 name|COMPLETE
 argument_list|(
 literal|"Students with complete schedule"

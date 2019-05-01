@@ -20088,10 +20088,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Priority<br>Course"
+literal|"1st Choice<br>Assigned"
 argument_list|)
 name|String
 name|colAssignedPriorityCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Critical<br>Assignments"
+argument_list|)
+name|String
+name|colAssignedCriticalCourseRequests
 parameter_list|()
 function_decl|;
 annotation|@
