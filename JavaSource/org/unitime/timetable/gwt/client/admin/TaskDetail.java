@@ -1591,7 +1591,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"/taskfile?t="
+literal|"taskfile?t="
 operator|+
 name|iTask
 operator|.

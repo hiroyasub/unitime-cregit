@@ -1471,7 +1471,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"/taskfile?e="
+literal|"taskfile?e="
 operator|+
 name|e
 operator|.
