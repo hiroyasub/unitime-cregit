@@ -1704,6 +1704,11 @@ decl_stmt|;
 name|String
 name|iSessionName
 decl_stmt|;
+name|String
+name|iFileName
+init|=
+literal|null
+decl_stmt|;
 specifier|public
 name|DataExchangeQueueItem
 parameter_list|(
@@ -1787,6 +1792,25 @@ operator|.
 name|getAcademicInitiative
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|iForm
+operator|.
+name|getFile
+argument_list|()
+operator|!=
+literal|null
+condition|)
+name|iFileName
+operator|=
+name|iForm
+operator|.
+name|getFile
+argument_list|()
+operator|.
+name|getFileName
+argument_list|()
+expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -1812,13 +1836,7 @@ name|iImport
 condition|?
 literal|"Import of "
 operator|+
-name|iForm
-operator|.
-name|getFile
-argument_list|()
-operator|.
-name|getFileName
-argument_list|()
+name|iFileName
 else|:
 literal|"Export of "
 operator|+
