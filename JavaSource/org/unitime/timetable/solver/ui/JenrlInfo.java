@@ -1858,6 +1858,13 @@ operator|<
 literal|3
 condition|)
 block|{
+if|if
+condition|(
+name|fraction
+operator|<
+literal|0.01
+condition|)
+break|break;
 name|top
 operator|++
 expr_stmt|;

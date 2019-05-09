@@ -1732,6 +1732,13 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
+name|fraction
+operator|<
+literal|0.01
+condition|)
+break|break;
+if|if
+condition|(
 operator|!
 name|ret
 operator|.

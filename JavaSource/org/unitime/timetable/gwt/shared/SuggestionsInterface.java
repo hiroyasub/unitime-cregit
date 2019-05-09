@@ -3015,7 +3015,7 @@ name|String
 name|iName
 decl_stmt|;
 specifier|private
-name|int
+name|double
 name|iNrStudents
 decl_stmt|;
 specifier|public
@@ -3029,7 +3029,7 @@ parameter_list|(
 name|String
 name|name
 parameter_list|,
-name|int
+name|double
 name|nrStudents
 parameter_list|)
 block|{
@@ -3068,7 +3068,7 @@ specifier|public
 name|void
 name|setNrStudents
 parameter_list|(
-name|int
+name|double
 name|nrStudents
 parameter_list|)
 block|{
@@ -3078,7 +3078,7 @@ name|nrStudents
 expr_stmt|;
 block|}
 specifier|public
-name|int
+name|double
 name|getNrStudents
 parameter_list|()
 block|{
@@ -3106,11 +3106,11 @@ argument_list|()
 condition|)
 return|return
 operator|(
-name|i
-operator|.
 name|getNrStudents
 argument_list|()
 operator|>
+name|i
+operator|.
 name|getNrStudents
 argument_list|()
 condition|?
