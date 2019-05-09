@@ -5378,7 +5378,7 @@ operator|.
 name|getAcademicClassification
 argument_list|()
 operator|.
-name|getId
+name|getCode
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -15346,8 +15346,10 @@ name|clasf2enrl
 operator|.
 name|remove
 argument_list|(
-operator|-
-literal|1l
+name|clasf
+operator|.
+name|getId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -15920,8 +15922,10 @@ name|clasf2ll
 operator|.
 name|remove
 argument_list|(
-operator|-
-literal|1l
+name|clasf
+operator|.
+name|getCode
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -16088,7 +16092,7 @@ name|remove
 argument_list|(
 name|clasf
 operator|.
-name|getId
+name|getCode
 argument_list|()
 argument_list|)
 expr_stmt|;
