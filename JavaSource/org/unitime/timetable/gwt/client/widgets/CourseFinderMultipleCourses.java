@@ -2388,10 +2388,16 @@ name|iCheckedCourses
 operator|.
 name|indexOf
 argument_list|(
+operator|new
+name|RequestedCourse
+argument_list|(
 name|record
+argument_list|,
+name|CONSTANTS
 operator|.
-name|getCourseId
+name|showCourseTitle
 argument_list|()
+argument_list|)
 argument_list|)
 operator|+
 literal|1

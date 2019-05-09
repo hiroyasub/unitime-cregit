@@ -9693,9 +9693,6 @@ operator|.
 name|remove
 argument_list|(
 name|feature
-operator|.
-name|getUniqueId
-argument_list|()
 argument_list|)
 condition|)
 block|{

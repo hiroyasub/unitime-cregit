@@ -12923,7 +12923,7 @@ operator|.
 name|get
 argument_list|(
 operator|new
-name|Integer
+name|Long
 argument_list|(
 name|creditTypeStr
 argument_list|)
@@ -12959,7 +12959,7 @@ operator|.
 name|get
 argument_list|(
 operator|new
-name|Integer
+name|Long
 argument_list|(
 name|creditUnitTypeStr
 argument_list|)

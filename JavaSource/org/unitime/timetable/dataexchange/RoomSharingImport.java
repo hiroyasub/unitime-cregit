@@ -538,7 +538,10 @@ name|avoidRoomId
 operator|.
 name|contains
 argument_list|(
-name|avoidRoomId
+name|location
+operator|.
+name|getExternalUniqueId
+argument_list|()
 argument_list|)
 condition|)
 block|{
