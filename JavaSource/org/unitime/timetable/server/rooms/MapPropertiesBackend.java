@@ -253,6 +253,15 @@ name|setLeafletMapTiles
 argument_list|(
 name|ApplicationProperty
 operator|.
+name|RoomCacheLeafletMapTiles
+operator|.
+name|isTrue
+argument_list|()
+condition|?
+literal|"maps?tile={z},{x},{y}"
+else|:
+name|ApplicationProperty
+operator|.
 name|RoomUseLeafletMapTiles
 operator|.
 name|value
