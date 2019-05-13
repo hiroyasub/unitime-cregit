@@ -6601,7 +6601,7 @@ comment|/** 	 * Minimap (to be displayed if set, e.g., on the Room Detail page) 
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"https://maps.googleapis.com/maps/api/staticmap?center=%x,%y&zoom=16&size=600x400&maptype=roadmap&sensor=false&markers=color:blue%7c%x,%y"
+literal|"maps?center=%x,%y&zoom=16&size=600x400"
 argument_list|)
 expr|@
 name|Description
@@ -6617,7 +6617,7 @@ comment|/** 	 * Minimap to be used in location's tooltip 	 *<ul> 	 *<li>Strings 
 expr_stmt|@
 name|DefaultValue
 argument_list|(
-literal|"https://maps.googleapis.com/maps/api/staticmap?center=%x,%y&zoom=15&size=300x200&maptype=roadmap&sensor=false&markers=color:blue%7c%x,%y"
+literal|"maps?center=%x,%y&zoom=15&size=300x200"
 argument_list|)
 expr|@
 name|Description
@@ -6659,7 +6659,7 @@ argument_list|)
 expr|@
 name|DefaultValue
 argument_list|(
-literal|"true"
+literal|"false"
 argument_list|)
 expr|@
 name|Description
@@ -6698,7 +6698,7 @@ argument_list|)
 expr|@
 name|DefaultValue
 argument_list|(
-literal|"false"
+literal|"true"
 argument_list|)
 expr|@
 name|Description
