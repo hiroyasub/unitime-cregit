@@ -309,6 +309,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Grd"
+argument_list|)
+name|String
+name|colGradingMode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Year"
 argument_list|)
 name|String
