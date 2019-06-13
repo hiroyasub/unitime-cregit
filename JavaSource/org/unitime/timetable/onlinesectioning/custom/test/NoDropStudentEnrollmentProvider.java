@@ -91,7 +91,7 @@ name|shared
 operator|.
 name|OnlineSectioningInterface
 operator|.
-name|GradingModes
+name|GradeModes
 import|;
 end_import
 
@@ -342,8 +342,8 @@ name|Long
 argument_list|>
 name|lockedCourses
 parameter_list|,
-name|GradingModes
-name|gradingModes
+name|GradeModes
+name|gradeModes
 parameter_list|)
 throws|throws
 name|SectioningException

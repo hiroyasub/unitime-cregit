@@ -315,7 +315,7 @@ name|shared
 operator|.
 name|OnlineSectioningInterface
 operator|.
-name|GradingMode
+name|GradeMode
 import|;
 end_import
 
@@ -333,7 +333,7 @@ name|shared
 operator|.
 name|OnlineSectioningInterface
 operator|.
-name|GradingModes
+name|GradeModes
 import|;
 end_import
 
@@ -2990,7 +2990,7 @@ argument_list|()
 condition|)
 name|check
 operator|.
-name|addGradingMode
+name|addGradeMode
 argument_list|(
 name|reg
 operator|.
@@ -3306,8 +3306,8 @@ name|Long
 argument_list|>
 name|lockedCourses
 parameter_list|,
-name|GradingModes
-name|gradingModes
+name|GradeModes
+name|gradeModes
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -6317,7 +6317,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gradingModes
+name|gradeModes
 operator|!=
 literal|null
 operator|&&
@@ -6328,7 +6328,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|gradingModes
+name|gradeModes
 operator|.
 name|add
 argument_list|(
@@ -6337,7 +6337,7 @@ operator|.
 name|courseReferenceNumber
 argument_list|,
 operator|new
-name|GradingMode
+name|GradeMode
 argument_list|(
 name|reg
 operator|.

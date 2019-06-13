@@ -635,7 +635,7 @@ name|shared
 operator|.
 name|OnlineSectioningInterface
 operator|.
-name|GradingMode
+name|GradeMode
 import|;
 end_import
 
@@ -10691,7 +10691,7 @@ literal|null
 operator|&&
 name|last
 operator|.
-name|hasGradingModes
+name|hasGradeModes
 argument_list|()
 condition|)
 for|for
@@ -10715,12 +10715,12 @@ name|getClassAssignments
 argument_list|()
 control|)
 block|{
-name|GradingMode
+name|GradeMode
 name|m
 init|=
 name|last
 operator|.
-name|getGradingMode
+name|getGradeMode
 argument_list|(
 name|a
 argument_list|)
@@ -10733,7 +10733,7 @@ literal|null
 condition|)
 name|a
 operator|.
-name|setGradingMode
+name|setGradeMode
 argument_list|(
 name|m
 argument_list|)
@@ -11580,14 +11580,14 @@ if|if
 condition|(
 name|a
 operator|.
-name|getGradingMode
+name|getGradeMode
 argument_list|()
 operator|!=
 literal|null
 condition|)
 name|last
 operator|.
-name|addGradingMode
+name|addGradeMode
 argument_list|(
 name|a
 operator|.
@@ -11596,7 +11596,7 @@ argument_list|()
 argument_list|,
 name|a
 operator|.
-name|getGradingMode
+name|getGradeMode
 argument_list|()
 operator|.
 name|getCode
@@ -11604,7 +11604,7 @@ argument_list|()
 argument_list|,
 name|a
 operator|.
-name|getGradingMode
+name|getGradeMode
 argument_list|()
 operator|.
 name|getLabel
@@ -21964,7 +21964,7 @@ literal|null
 operator|&&
 name|last
 operator|.
-name|hasGradingModes
+name|hasGradeModes
 argument_list|()
 condition|)
 for|for
@@ -21988,12 +21988,12 @@ name|getClassAssignments
 argument_list|()
 control|)
 block|{
-name|GradingMode
+name|GradeMode
 name|m
 init|=
 name|last
 operator|.
-name|getGradingMode
+name|getGradeMode
 argument_list|(
 name|a
 argument_list|)
@@ -22006,7 +22006,7 @@ literal|null
 condition|)
 name|a
 operator|.
-name|setGradingMode
+name|setGradeMode
 argument_list|(
 name|m
 argument_list|)

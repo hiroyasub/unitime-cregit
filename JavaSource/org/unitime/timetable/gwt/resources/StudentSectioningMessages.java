@@ -309,10 +309,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Grd"
+literal|"Gr Md"
 argument_list|)
 name|String
-name|colGradingMode
+name|colGradeMode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Grade Mode"
+argument_list|)
+name|String
+name|colTitleGradeMode
 parameter_list|()
 function_decl|;
 annotation|@

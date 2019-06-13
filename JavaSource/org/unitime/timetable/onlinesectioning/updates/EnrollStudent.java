@@ -375,7 +375,7 @@ name|shared
 operator|.
 name|OnlineSectioningInterface
 operator|.
-name|GradingMode
+name|GradeMode
 import|;
 end_import
 
@@ -393,7 +393,7 @@ name|shared
 operator|.
 name|OnlineSectioningInterface
 operator|.
-name|GradingModes
+name|GradeModes
 import|;
 end_import
 
@@ -1544,11 +1544,11 @@ name|name
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|GradingModes
-name|gradingModes
+name|GradeModes
+name|gradeModes
 init|=
 operator|new
-name|GradingModes
+name|GradeModes
 argument_list|()
 decl_stmt|;
 try|try
@@ -1972,7 +1972,7 @@ name|enrlCheck
 argument_list|,
 name|lockedCourses
 argument_list|,
-name|gradingModes
+name|gradeModes
 argument_list|)
 expr_stmt|;
 for|for
@@ -7018,9 +7018,9 @@ name|ret
 operator|!=
 literal|null
 operator|&&
-name|gradingModes
+name|gradeModes
 operator|.
-name|hasGradingModes
+name|hasGradeModes
 argument_list|()
 condition|)
 block|{
@@ -7045,10 +7045,10 @@ name|getClassAssignments
 argument_list|()
 control|)
 block|{
-name|GradingMode
+name|GradeMode
 name|m
 init|=
-name|gradingModes
+name|gradeModes
 operator|.
 name|get
 argument_list|(
@@ -7063,7 +7063,7 @@ literal|null
 condition|)
 name|a
 operator|.
-name|setGradingMode
+name|setGradeMode
 argument_list|(
 name|m
 argument_list|)
