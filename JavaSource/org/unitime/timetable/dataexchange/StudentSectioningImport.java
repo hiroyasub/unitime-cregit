@@ -5969,6 +5969,13 @@ name|order
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|cr
+operator|.
+name|setCourseOffering
+argument_list|(
+name|co
+argument_list|)
+expr_stmt|;
 name|importPreferences
 argument_list|(
 name|cr
@@ -6013,13 +6020,6 @@ name|setOrder
 argument_list|(
 name|order
 operator|++
-argument_list|)
-expr_stmt|;
-name|cr
-operator|.
-name|setCourseOffering
-argument_list|(
-name|co
 argument_list|)
 expr_stmt|;
 name|course2request
