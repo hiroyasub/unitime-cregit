@@ -2364,7 +2364,7 @@ name|rooms
 operator|.
 name|getName
 argument_list|(
-name|i
+name|j
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -2376,7 +2376,7 @@ name|rooms
 operator|.
 name|getColor
 argument_list|(
-name|i
+name|j
 argument_list|)
 argument_list|)
 expr_stmt|;
