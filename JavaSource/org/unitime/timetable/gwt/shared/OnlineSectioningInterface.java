@@ -260,6 +260,8 @@ block|,
 name|SR_LIMIT_CONF
 block|,
 name|CAN_REQUIRE
+block|,
+name|CAN_CHANGE_GRADE_MODE
 block|, 			;
 specifier|public
 name|int
@@ -744,6 +746,15 @@ name|get
 argument_list|(
 name|section
 argument_list|)
+return|;
+block|}
+specifier|public
+name|GradeModes
+name|getGradeModes
+parameter_list|()
+block|{
+return|return
+name|iGradeModes
 return|;
 block|}
 block|}
@@ -2435,6 +2446,20 @@ operator|.
 name|getExternalId
 argument_list|()
 argument_list|)
+return|;
+block|}
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|GradeMode
+argument_list|>
+name|toMap
+parameter_list|()
+block|{
+return|return
+name|iModes
 return|;
 block|}
 block|}

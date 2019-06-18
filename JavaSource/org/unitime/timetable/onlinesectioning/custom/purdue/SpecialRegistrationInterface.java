@@ -259,6 +259,9 @@ comment|// sections are being dropped (only during registration)
 name|KEEP
 block|,
 comment|// sections are being unchanged, but a registration error was reported on them (e.g., co-requisite, only during registration)
+name|CHGMODE
+block|,
+comment|// change grade mode
 block|; 	}
 comment|/** Class representing one change (in a signle course) */
 specifier|public
@@ -311,6 +314,21 @@ comment|/** Credit value associated with the course / change, populated by UniTi
 specifier|public
 name|String
 name|credit
+decl_stmt|;
+comment|/** Current grade mode (only used when operation = CHGMODE) */
+specifier|public
+name|String
+name|currentGradeMode
+decl_stmt|;
+comment|/** New grade mode (only used when operation = CHGMODE) */
+specifier|public
+name|String
+name|selectedGradeMode
+decl_stmt|;
+comment|/** New grade mode description (only used when operation = CHGMODE) */
+specifier|public
+name|String
+name|selectedGradeModeDescription
 decl_stmt|;
 block|}
 comment|/** Registration error for which there needs to be an override */
@@ -486,7 +504,16 @@ argument_list|<
 name|SubmitRegistrationResponse
 argument_list|>
 argument_list|>
-block|{ 	}
+block|{
+comment|/** 		 * List of special registrations that have been cancelled (to create these requests). 		 * (only read, never sent; only used in submitRegistration response during grade mode change) 		 */
+specifier|public
+name|List
+argument_list|<
+name|CancelledRequest
+argument_list|>
+name|cancelledRequests
+decl_stmt|;
+block|}
 comment|/* - Check Special Registration Status ------------------------------------ */
 comment|// GET /checkSpecialRegistrationStatus?term=<TERM>&campus=<CAMPUS>&studentId=<PUID>&mode=<REG|PREREG>
 comment|// Returns: SpecialRegistrationStatusResponse
@@ -979,6 +1006,100 @@ argument_list|<
 name|String
 argument_list|>
 block|{ 	}
+comment|/** 	 * Response message for the /checkStudentGradeModes call 	 */
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationCheckGradeModesResponse
+extends|extends
+name|Response
+argument_list|<
+name|SpecialRegistrationCheckGradeModes
+argument_list|>
+block|{ 	}
+comment|/** 	 * List of available grade modes 	 */
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationCheckGradeModes
+block|{
+comment|/** Student PUID including the leading zero */
+specifier|public
+name|String
+name|studentId
+decl_stmt|;
+comment|/** Banner term (e.g., 201910 for Fall 2018) */
+specifier|public
+name|String
+name|term
+decl_stmt|;
+comment|/** Banner campus (e.g., PWL) */
+specifier|public
+name|String
+name|campus
+decl_stmt|;
+comment|/** List of available grade modes */
+name|List
+argument_list|<
+name|SpecialRegistrationCurrentGradeMode
+argument_list|>
+name|gradingModes
+decl_stmt|;
+block|}
+comment|/** 	 * Current grade mode of a section with the list of available grade mode changes 	 */
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationCurrentGradeMode
+block|{
+comment|/** Section CRN */
+specifier|public
+name|String
+name|crn
+decl_stmt|;
+comment|/** Current grade mode code */
+specifier|public
+name|String
+name|gradingMode
+decl_stmt|;
+comment|/** Current grade mode desctiption */
+specifier|public
+name|String
+name|gradingModeDescription
+decl_stmt|;
+comment|/** List of available grading mode changes */
+specifier|public
+name|List
+argument_list|<
+name|SpecialRegistrationAvailableGradeMode
+argument_list|>
+name|availableGradingModes
+decl_stmt|;
+block|}
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationAvailableGradeMode
+block|{
+comment|/** Approvals needed, null or empty when no approvals are not needed */
+specifier|public
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|approvals
+decl_stmt|;
+comment|/** Available grade mode code */
+specifier|public
+name|String
+name|gradingMode
+decl_stmt|;
+comment|/** Available grade mode desctiption */
+specifier|public
+name|String
+name|gradingModeDescription
+decl_stmt|;
+block|}
 block|}
 end_class
 

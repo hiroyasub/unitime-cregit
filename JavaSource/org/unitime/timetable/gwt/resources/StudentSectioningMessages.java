@@ -1407,6 +1407,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>G</u>rade Modes"
+argument_list|)
+name|String
+name|buttonChangeGradeModes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Submit Approval Requests"
 argument_list|)
 name|String
@@ -1420,6 +1429,15 @@ literal|"Register for the above schedule."
 argument_list|)
 name|String
 name|hintEnroll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change grade mode of one or more courses."
+argument_list|)
+name|String
+name|hintChangeGradeModes
 parameter_list|()
 function_decl|;
 annotation|@
@@ -7179,6 +7197,165 @@ parameter_list|(
 name|String
 name|courseOrGroup
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Grade Modes"
+argument_list|)
+name|String
+name|dialogChangeGradeMode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Retrieving available grade modes..."
+argument_list|)
+name|String
+name|waitRetrieveGradeModes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requesting grade mode changes..."
+argument_list|)
+name|String
+name|waitChangeGradeModes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Unable to get available grade modes: {0}"
+argument_list|)
+name|String
+name|exceptionRetrieveGradeModes
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to request grade mode changes: {0}"
+argument_list|)
+name|String
+name|exceptionChangeGradeModes
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No grade mode changes are available."
+argument_list|)
+name|String
+name|statusNoGradeModeChangesAvailable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No grade mode changes have been requested."
+argument_list|)
+name|String
+name|statusNoGradeModeChangesMade
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Grade mode changes have been successfully requested."
+argument_list|)
+name|String
+name|statusGradeModeChangesDone
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are no courses with a grade mode."
+argument_list|)
+name|String
+name|emptyGradeChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Submit Changes"
+argument_list|)
+name|String
+name|buttonSubmitGradeModeChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Close Dialog"
+argument_list|)
+name|String
+name|buttonCloseGradeModeChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The following grade mode changes are being requested:"
+argument_list|)
+name|String
+name|gradeModeListChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"- No approval is needed."
+argument_list|)
+name|String
+name|gradeModeNoApprovalNeeded
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"- {0} approval is needed."
+argument_list|)
+name|String
+name|gradeModeApprovalNeeded
+parameter_list|(
+name|String
+name|approvals
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"\nPlease, select<b>Submit Changes</b> to apply for the selected grade mode changes. "
+operator|+
+literal|"The chosen grade mode changes will be submitted for the required approvals. "
+operator|+
+literal|"If no approval is necessary, grade mode will change immediately. "
+operator|+
+literal|"Click<b>Close Dialog</b> to cancel this request and go back to explore other scheduling options."
+argument_list|)
+name|String
+name|gradeModeChangeOptions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<b>Request Note:</b>"
+argument_list|)
+name|String
+name|gradeModeChangesNote
+parameter_list|()
 function_decl|;
 block|}
 end_interface
