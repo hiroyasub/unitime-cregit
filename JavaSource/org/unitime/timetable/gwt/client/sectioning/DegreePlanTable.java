@@ -2361,7 +2361,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|group
+name|course
 operator|.
 name|isCritical
 argument_list|()
