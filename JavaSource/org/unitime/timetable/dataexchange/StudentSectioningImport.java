@@ -6222,6 +6222,10 @@ condition|(
 name|classExternalId
 operator|!=
 literal|null
+operator|&&
+name|extId2class
+operator|!=
+literal|null
 condition|)
 block|{
 name|classes
@@ -6253,6 +6257,10 @@ if|if
 condition|(
 name|classes
 operator|==
+literal|null
+operator|&&
+name|name2class
+operator|!=
 literal|null
 condition|)
 block|{
@@ -6307,6 +6315,10 @@ if|if
 condition|(
 name|classes
 operator|==
+literal|null
+operator|&&
+name|co
+operator|!=
 literal|null
 condition|)
 block|{
@@ -8729,6 +8741,10 @@ condition|(
 name|classExternalId
 operator|!=
 literal|null
+operator|&&
+name|extId2class
+operator|!=
+literal|null
 condition|)
 block|{
 name|classes
@@ -8760,6 +8776,10 @@ if|if
 condition|(
 name|classes
 operator|==
+literal|null
+operator|&&
+name|name2class
+operator|!=
 literal|null
 condition|)
 block|{
@@ -8814,6 +8834,10 @@ if|if
 condition|(
 name|classes
 operator|==
+literal|null
+operator|&&
+name|course
+operator|!=
 literal|null
 condition|)
 block|{
