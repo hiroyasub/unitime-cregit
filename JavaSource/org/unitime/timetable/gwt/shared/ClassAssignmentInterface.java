@@ -11834,6 +11834,8 @@ block|,
 name|UT_CANCEL
 block|,
 name|UT_DEADLINE
+block|,
+name|UT_GRADE_MODE
 block|, 			;
 specifier|private
 name|String
