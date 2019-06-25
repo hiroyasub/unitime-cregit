@@ -113,7 +113,7 @@ name|shared
 operator|.
 name|SpecialRegistrationInterface
 operator|.
-name|SpecialRegistrationGradeMode
+name|SpecialRegistrationGradeModeChange
 import|;
 end_import
 
@@ -613,7 +613,7 @@ name|getCourseId
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|SpecialRegistrationGradeMode
+name|SpecialRegistrationGradeModeChange
 name|mode
 init|=
 operator|(
@@ -626,7 +626,7 @@ else|:
 name|getRequest
 argument_list|()
 operator|.
-name|get
+name|getChange
 argument_list|(
 name|ext
 argument_list|)
@@ -655,7 +655,7 @@ name|setValue
 argument_list|(
 name|mode
 operator|.
-name|getCode
+name|getSelectedGradeMode
 argument_list|()
 argument_list|)
 expr_stmt|;

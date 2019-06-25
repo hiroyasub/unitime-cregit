@@ -7357,6 +7357,27 @@ name|String
 name|gradeModeChangesNote
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Set"
+argument_list|)
+name|String
+name|gradeModeItemNotSet
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} (Mixed)"
+argument_list|)
+name|String
+name|gradeModeItemNotSame
+parameter_list|(
+name|String
+name|gm
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
