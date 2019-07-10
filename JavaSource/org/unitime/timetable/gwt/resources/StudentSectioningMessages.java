@@ -318,6 +318,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Pending Change"
+argument_list|)
+name|String
+name|colTitlePendingGradeMode
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Grade Mode"
 argument_list|)
 name|String

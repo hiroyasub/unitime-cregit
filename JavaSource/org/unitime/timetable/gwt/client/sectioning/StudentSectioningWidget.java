@@ -8388,6 +8388,11 @@ argument_list|>
 argument_list|(
 name|iLastResult
 argument_list|)
+argument_list|,
+name|iSpecialRegistrationsPanel
+operator|.
+name|getRegistrations
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -28179,6 +28184,12 @@ operator|.
 name|ClassAssignment
 argument_list|>
 name|lastEnrollment
+parameter_list|,
+name|List
+argument_list|<
+name|RetrieveSpecialRegistrationResponse
+argument_list|>
+name|approvals
 parameter_list|)
 block|{
 if|if
@@ -28373,6 +28384,8 @@ name|getStudentId
 argument_list|()
 argument_list|,
 name|lastEnrollment
+argument_list|,
+name|approvals
 argument_list|)
 expr_stmt|;
 block|}
