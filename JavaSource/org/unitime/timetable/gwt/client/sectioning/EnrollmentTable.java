@@ -6314,6 +6314,11 @@ literal|1
 else|:
 literal|0
 operator|)
+operator|+
+name|groupTypes
+operator|.
+name|size
+argument_list|()
 decl_stmt|;
 name|hSubpart
 operator|.
