@@ -7324,20 +7324,26 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"- No approval is needed."
+literal|"- {0}: No approval is needed."
 argument_list|)
 name|String
 name|gradeModeNoApprovalNeeded
-parameter_list|()
+parameter_list|(
+name|String
+name|gradeMode
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"- {0} approval is needed."
+literal|"- {0}: {1} approval is needed."
 argument_list|)
 name|String
 name|gradeModeApprovalNeeded
 parameter_list|(
+name|String
+name|gradeMode
+parameter_list|,
 name|String
 name|approvals
 parameter_list|)
