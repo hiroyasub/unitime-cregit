@@ -7282,7 +7282,16 @@ argument_list|(
 literal|"Grade mode changes have been successfully requested."
 argument_list|)
 name|String
-name|statusGradeModeChangesDone
+name|statusGradeModeChangesRequested
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Grade mode changes have been successfully applied."
+argument_list|)
+name|String
+name|statusGradeModeChangesApplied
 parameter_list|()
 function_decl|;
 annotation|@
