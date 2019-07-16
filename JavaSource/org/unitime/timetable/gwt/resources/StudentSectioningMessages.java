@@ -7402,6 +7402,18 @@ name|String
 name|gm
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are making changes to {0} that has an honors grade mode. This will change the grade mode back to the regular grade mode for this course. Do you want to proceed?"
+argument_list|)
+name|String
+name|confirmEnrollmentHonorsGradeModeChange
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
