@@ -7414,6 +7414,36 @@ name|String
 name|course
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested classes do not match your current schedule. The honors grade mode change cannot be processed. Please request a new grade mode change."
+argument_list|)
+name|String
+name|hintSpecRegHonorsGradeModeNotMatchingSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} is no longer in your schedule."
+argument_list|)
+name|String
+name|specRegRemoved
+parameter_list|(
+name|String
+name|clazz
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All approval requests have been approved and applied."
+argument_list|)
+name|String
+name|specRegAllRequestsFullyApplied
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
