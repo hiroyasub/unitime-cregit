@@ -1176,6 +1176,16 @@ name|cleanupHashedQueries
 argument_list|(
 name|ApplicationProperty
 operator|.
+name|LogCleanupHashedQueries
+operator|.
+name|intValue
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|cleanupSctSolutionLog
+argument_list|(
+name|ApplicationProperty
+operator|.
 name|LogCleanupSectioningSolutionLog
 operator|.
 name|intValue

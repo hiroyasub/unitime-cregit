@@ -7215,7 +7215,7 @@ argument_list|)
 expr|@
 name|DefaultValue
 argument_list|(
-literal|"92"
+literal|"-1"
 argument_list|)
 expr|@
 name|Description
@@ -7224,7 +7224,7 @@ literal|"Configuration: automatically remove published batch student scheduling 
 argument_list|)
 name|LogCleanupSectioningSolutionLog
 argument_list|(
-literal|"unitime.cleanup.hashedQueries"
+literal|"unitime.cleanup.publishedSolutions"
 argument_list|)
 operator|,
 expr_stmt|@
