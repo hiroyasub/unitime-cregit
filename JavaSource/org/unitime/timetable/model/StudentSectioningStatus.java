@@ -289,6 +289,12 @@ name|canreq
 argument_list|(
 literal|"Can Require Sections / IMs"
 argument_list|)
+block|,
+comment|/*65536 */
+name|noschedule
+argument_list|(
+literal|"Do Not Show Personal Schedule"
+argument_list|)
 block|, 		;
 specifier|private
 name|String

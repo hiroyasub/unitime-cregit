@@ -751,6 +751,20 @@ name|Option
 operator|.
 name|canreq
 argument_list|)
+block|,
+name|NoSchedule
+argument_list|(
+name|MESSAGES
+operator|.
+name|toggleNoSchedule
+argument_list|()
+argument_list|,
+name|StudentSectioningStatus
+operator|.
+name|Option
+operator|.
+name|noschedule
+argument_list|)
 block|, 		;
 specifier|private
 name|StudentSectioningStatus

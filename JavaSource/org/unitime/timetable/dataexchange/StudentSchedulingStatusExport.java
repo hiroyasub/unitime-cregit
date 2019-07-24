@@ -893,6 +893,12 @@ case|:
 return|return
 literal|"canRequire"
 return|;
+case|case
+name|noschedule
+case|:
+return|return
+literal|"noSchedule"
+return|;
 default|default:
 return|return
 name|option

@@ -4768,6 +4768,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Personal Schedule:"
+argument_list|)
+name|String
+name|propStatusSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are not registered for any classes yet. Please click the Build Schedule button in order to complete your registration."
 argument_list|)
 name|String
@@ -6583,6 +6592,24 @@ literal|"Sections or Instructional Methods can NOT be required by the student."
 argument_list|)
 name|String
 name|messageStatusCanNotRequire
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student can see his/her personal schedule."
+argument_list|)
+name|String
+name|messageStatusSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student can NOT see his/her personal schedule."
+argument_list|)
+name|String
+name|messageStatusNoSchedule
 parameter_list|()
 function_decl|;
 annotation|@

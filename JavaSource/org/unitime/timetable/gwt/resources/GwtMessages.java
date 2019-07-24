@@ -14907,6 +14907,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No Personal Schedule"
+argument_list|)
+name|String
+name|toggleNoSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Final Examinations"
 argument_list|)
 name|String
