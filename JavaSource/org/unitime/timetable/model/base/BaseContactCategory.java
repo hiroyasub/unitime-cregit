@@ -85,6 +85,10 @@ specifier|private
 name|Boolean
 name|iHasRole
 decl_stmt|;
+specifier|private
+name|String
+name|iEmail
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -98,6 +102,13 @@ name|String
 name|PROP_HAS_ROLE
 init|=
 literal|"hasRole"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EMAIL
+init|=
+literal|"email"
 decl_stmt|;
 specifier|public
 name|BaseContactCategory
@@ -180,6 +191,28 @@ block|{
 name|iHasRole
 operator|=
 name|hasRole
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getEmail
+parameter_list|()
+block|{
+return|return
+name|iEmail
+return|;
+block|}
+specifier|public
+name|void
+name|setEmail
+parameter_list|(
+name|String
+name|email
+parameter_list|)
+block|{
+name|iEmail
+operator|=
+name|email
 expr_stmt|;
 block|}
 specifier|public
@@ -298,6 +331,11 @@ parameter_list|()
 block|{
 return|return
 literal|"ContactCategory["
+operator|+
+literal|"\n	Email: "
+operator|+
+name|getEmail
+argument_list|()
 operator|+
 literal|"\n	HasRole: "
 operator|+
