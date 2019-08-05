@@ -2816,6 +2816,10 @@ name|OverrideTypes
 block|,
 name|OverrideTypeEdit
 block|,
+name|ContactCategories
+block|,
+name|ContactCategoryEdit
+block|,
 name|EventServiceProviders
 block|,
 name|EventServiceProviderEditGlobal

@@ -10196,6 +10196,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Concact Category"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageContactCategory
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Concact Categories"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageContactCategories
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Event Date Mapping"
 argument_list|)
 annotation|@
@@ -14722,6 +14744,15 @@ literal|"Fallback Status"
 argument_list|)
 name|String
 name|fieldStudentStatusFallback
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Restricted"
+argument_list|)
+name|String
+name|fieldHasRole
 parameter_list|()
 function_decl|;
 annotation|@
