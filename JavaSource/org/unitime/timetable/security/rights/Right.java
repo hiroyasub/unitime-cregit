@@ -3093,6 +3093,8 @@ name|CanLookupEventContacts
 block|,
 name|CanLookupLdap
 block|,
+name|CanLookupAdvisors
+block|,
 comment|/** Obsolete */
 name|SolutionInformationDefinitions
 block|,  	;
