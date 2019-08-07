@@ -3858,6 +3858,59 @@ block|}
 block|}
 if|else if
 condition|(
+literal|"advisor"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|DataExchangeTrimLeadingZerosFromExternalIds
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
+name|body
+operator|.
+name|startsWith
+argument_list|(
+literal|"0"
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"s.uniqueId in (select ads.uniqueId from Advisor adv inner join adv.students ads where adv.externalUniqueId = '"
+operator|+
+name|body
+operator|.
+name|replaceFirst
+argument_list|(
+literal|"^0+(?!$)"
+argument_list|,
+literal|""
+argument_list|)
+operator|+
+literal|"' and adv.session.uniqueId = s.session.uniqueId)"
+return|;
+block|}
+else|else
+block|{
+return|return
+literal|"s.uniqueId in (select ads.uniqueId from Advisor adv inner join adv.students ads where adv.externalUniqueId = '"
+operator|+
+name|body
+operator|+
+literal|"' and adv.session.uniqueId = s.session.uniqueId)"
+return|;
+block|}
+block|}
+if|else if
+condition|(
 literal|"operation"
 operator|.
 name|equalsIgnoreCase
