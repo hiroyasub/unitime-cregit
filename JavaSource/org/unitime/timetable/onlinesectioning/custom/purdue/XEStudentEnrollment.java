@@ -3216,7 +3216,17 @@ operator|+
 literal|")"
 argument_list|)
 expr_stmt|;
-comment|// check.setFlag(EligibilityFlag.CAN_ENROLL, false);
+name|check
+operator|.
+name|setFlag
+argument_list|(
+name|EligibilityFlag
+operator|.
+name|CAN_ENROLL
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|isCanRequestUpdates
