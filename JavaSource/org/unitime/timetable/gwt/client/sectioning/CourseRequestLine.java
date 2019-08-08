@@ -3954,9 +3954,17 @@ block|{
 name|CourseFinder
 name|finder
 init|=
+operator|(
+name|alternative
+condition|?
 operator|new
 name|CourseFinderDialog
 argument_list|()
+else|:
+operator|new
+name|SelectAllCourseFinderDialog
+argument_list|()
+operator|)
 decl_stmt|;
 name|CourseFinder
 operator|.

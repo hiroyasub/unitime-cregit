@@ -357,22 +357,6 @@ name|XCourse
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|onlinesectioning
-operator|.
-name|model
-operator|.
-name|XCourseId
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1152,7 +1136,7 @@ name|Override
 specifier|public
 name|List
 argument_list|<
-name|XCourseId
+name|XCourse
 argument_list|>
 name|getCourses
 parameter_list|(
@@ -1188,14 +1172,14 @@ literal|null
 return|;
 name|List
 argument_list|<
-name|XCourseId
+name|XCourse
 argument_list|>
 name|ret
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|XCourseId
+name|XCourse
 argument_list|>
 argument_list|()
 decl_stmt|;

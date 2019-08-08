@@ -1533,6 +1533,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Select<u>A</u>ll"
+argument_list|)
+name|String
+name|buttonSelectAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Current Registration"
 argument_list|)
 name|String

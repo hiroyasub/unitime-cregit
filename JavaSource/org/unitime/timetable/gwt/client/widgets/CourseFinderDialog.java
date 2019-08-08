@@ -641,7 +641,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|private
+specifier|protected
 name|AriaTextBox
 name|iFilter
 init|=
@@ -650,8 +650,10 @@ decl_stmt|;
 specifier|private
 name|AriaButton
 name|iFilterSelect
+init|=
+literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|P
 name|iFilterPanel
 decl_stmt|;
@@ -668,7 +670,7 @@ name|iTabs
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|UniTimeTabPanel
 name|iTabPanel
 init|=

@@ -123,7 +123,7 @@ name|onlinesectioning
 operator|.
 name|model
 operator|.
-name|XCourseId
+name|XCourse
 import|;
 end_import
 
@@ -139,7 +139,7 @@ block|{
 specifier|public
 name|List
 argument_list|<
-name|XCourseId
+name|XCourse
 argument_list|>
 name|getCourses
 parameter_list|(
