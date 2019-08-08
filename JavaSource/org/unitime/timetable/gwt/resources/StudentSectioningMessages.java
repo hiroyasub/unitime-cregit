@@ -7429,6 +7429,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"\n<b>Disclaimer:</b>"
+argument_list|)
+name|String
+name|gradeModeDisclaimers
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Not Set"
 argument_list|)
 name|String
