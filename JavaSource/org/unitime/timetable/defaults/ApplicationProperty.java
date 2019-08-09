@@ -2063,6 +2063,28 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Class Setup: edit snapshot limits"
+argument_list|)
+name|ClassSetupEditSnapshotLimits
+argument_list|(
+literal|"tmtbl.class_setup.edit_snapshot_limits"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"Class Setup: display instructor flags"
 argument_list|)
 name|ClassSetupDisplayInstructorFlags

@@ -719,6 +719,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Snapshot Limits:"
+argument_list|)
+name|String
+name|propertySchedulingSubpartSnapshotLimits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"All:"
 argument_list|)
 comment|//used in Multiple Class Setup, Assign Instructors
@@ -1978,6 +1987,15 @@ literal|"Snapshot Limit"
 argument_list|)
 name|String
 name|columnSnapshotLimit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Snapshot<br>Limit"
+argument_list|)
+name|String
+name|columnSnapshotLimitBr
 parameter_list|()
 function_decl|;
 annotation|@
