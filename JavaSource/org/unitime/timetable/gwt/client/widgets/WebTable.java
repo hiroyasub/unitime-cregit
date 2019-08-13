@@ -5724,6 +5724,15 @@ operator|)
 return|;
 block|}
 specifier|public
+name|Image
+name|getIcon
+parameter_list|()
+block|{
+return|return
+name|iIcon
+return|;
+block|}
+specifier|public
 name|void
 name|setStyleName
 parameter_list|(

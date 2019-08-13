@@ -1361,6 +1361,23 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|Boolean
+name|changeCriticalOverride
+parameter_list|(
+name|Long
+name|studentId
+parameter_list|,
+name|Long
+name|courseId
+parameter_list|,
+name|Boolean
+name|critical
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 

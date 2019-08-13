@@ -6201,6 +6201,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course request is not critical."
+argument_list|)
+name|String
+name|descriptionRequestNotCritical
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Enrolled"
 argument_list|)
 name|String
@@ -7496,6 +7505,33 @@ literal|"All approval requests have been approved and applied."
 argument_list|)
 name|String
 name|specRegAllRequestsFullyApplied
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Critical"
+argument_list|)
+name|String
+name|opSetCritical
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Critical"
+argument_list|)
+name|String
+name|opSetNotCritical
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Use Default"
+argument_list|)
+name|String
+name|opSetCriticalNotSet
 parameter_list|()
 function_decl|;
 block|}

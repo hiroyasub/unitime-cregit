@@ -172,6 +172,10 @@ name|Boolean
 name|iCritical
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iCriticalOverride
+decl_stmt|;
+specifier|private
 name|String
 name|iChangedBy
 decl_stmt|;
@@ -238,6 +242,13 @@ name|String
 name|PROP_CRITICAL
 init|=
 literal|"critical"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_CRITICAL_OVERRIDE
+init|=
+literal|"criticalOverride"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -433,6 +444,37 @@ block|{
 name|iCritical
 operator|=
 name|critical
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isCriticalOverride
+parameter_list|()
+block|{
+return|return
+name|iCriticalOverride
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getCriticalOverride
+parameter_list|()
+block|{
+return|return
+name|iCriticalOverride
+return|;
+block|}
+specifier|public
+name|void
+name|setCriticalOverride
+parameter_list|(
+name|Boolean
+name|criticalOverride
+parameter_list|)
+block|{
+name|iCriticalOverride
+operator|=
+name|criticalOverride
 expr_stmt|;
 block|}
 specifier|public
@@ -744,6 +786,11 @@ operator|+
 literal|"\n	Critical: "
 operator|+
 name|getCritical
+argument_list|()
+operator|+
+literal|"\n	CriticalOverride: "
+operator|+
+name|getCriticalOverride
 argument_list|()
 operator|+
 literal|"\n	FreeTime: "
