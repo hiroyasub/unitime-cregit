@@ -991,11 +991,11 @@ expr_stmt|;
 if|if
 condition|(
 name|p
-operator|!=
+operator|>
 literal|0
 condition|)
 block|{
-comment|//System.out.println(ca.getCourseName() + ", " + p + ", limit: " + ca.getLimit() + ", enrollment: " + ca.getEnrollment() + ", requested: " + ca.getRequested());
+comment|// System.out.println(ca.getCourseName() + ", " + p + ", limit: " + ca.getLimit() + ", enrollment: " + ca.getEnrollment() + ", requested: " + ca.getRequested());
 name|roulette
 operator|.
 name|add
