@@ -187,6 +187,18 @@ name|iMax
 init|=
 literal|0f
 decl_stmt|;
+specifier|private
+specifier|static
+name|Pattern
+name|sCreditPattern
+init|=
+name|Pattern
+operator|.
+name|compile
+argument_list|(
+literal|"(^| )(\\d+\\.?\\d*)([,-]?(\\d+\\.?\\d*))?($| )"
+argument_list|)
+decl_stmt|;
 specifier|public
 name|XCredit
 parameter_list|()
@@ -296,12 +308,7 @@ block|}
 name|Matcher
 name|m
 init|=
-name|Pattern
-operator|.
-name|compile
-argument_list|(
-literal|"(^| )(\\d+\\.?\\d*)([,-]?(\\d+\\.?\\d*))?($| )"
-argument_list|)
+name|sCreditPattern
 operator|.
 name|matcher
 argument_list|(
