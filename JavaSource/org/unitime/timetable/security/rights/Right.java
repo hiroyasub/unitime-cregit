@@ -755,6 +755,8 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|MultipleClassSetupSnapshotLimits
+block|,
 name|AssignInstructors
 argument_list|(
 name|InstrOfferingConfig

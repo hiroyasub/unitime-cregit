@@ -2105,6 +2105,15 @@ name|getSnapshotLimitDate
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|sessionContext
+operator|.
+name|hasPermission
+argument_list|(
+name|Right
+operator|.
+name|MultipleClassSetupSnapshotLimits
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|frm
