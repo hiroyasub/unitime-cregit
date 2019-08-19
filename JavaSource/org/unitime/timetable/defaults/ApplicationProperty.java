@@ -10646,6 +10646,28 @@ argument_list|(
 literal|"unitime.enrollment.listOfferings.limit"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Student Status: include effective period message in the status"
+argument_list|)
+name|StudentStatusEffectivePeriodMessage
+argument_list|(
+literal|"unitime.enrollment.studentStatus.timeWindowMessage"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
