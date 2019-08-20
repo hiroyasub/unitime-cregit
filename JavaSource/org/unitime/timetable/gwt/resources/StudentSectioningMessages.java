@@ -4294,6 +4294,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course Requests"
+argument_list|)
+name|String
+name|emailCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"List of Classes"
 argument_list|)
 name|String

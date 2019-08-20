@@ -1829,26 +1829,8 @@ name|user
 argument_list|,
 name|source
 argument_list|)
-operator|&&
-name|source
-operator|.
-name|getStatusType
-argument_list|()
-operator|.
-name|can
-argument_list|(
-name|Status
-operator|.
-name|StudentsOnline
-argument_list|)
-operator|&&
-name|ApplicationProperty
-operator|.
-name|OnlineSchedulingEmailConfirmation
-operator|.
-name|isTrue
-argument_list|()
 return|;
+comment|//&& source.getStatusType().can(Status.StudentsOnline)&& ApplicationProperty.OnlineSchedulingEmailConfirmation.isTrue();
 block|}
 block|}
 annotation|@
