@@ -1572,6 +1572,13 @@ range|:
 name|iEnrollment
 control|)
 block|{
+if|if
+condition|(
+name|clazz
+operator|==
+literal|null
+condition|)
+continue|continue;
 name|SpecialRegistrationGradeModeChanges
 name|gradeMode
 init|=
