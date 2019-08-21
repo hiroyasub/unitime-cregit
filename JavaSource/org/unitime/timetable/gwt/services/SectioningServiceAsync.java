@@ -1236,6 +1236,12 @@ parameter_list|,
 name|String
 name|cc
 parameter_list|,
+name|Boolean
+name|courseRequests
+parameter_list|,
+name|Boolean
+name|classSchedule
+parameter_list|,
 name|AsyncCallback
 argument_list|<
 name|Boolean

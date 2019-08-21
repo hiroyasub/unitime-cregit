@@ -4057,6 +4057,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Include:"
+argument_list|)
+name|String
+name|emailInclude
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Send"
 argument_list|)
 name|String
@@ -4637,6 +4646,24 @@ literal|"Mass cancellation is an irreversible operation that will delete all cla
 argument_list|)
 name|String
 name|massCancelConfirmation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Requests"
+argument_list|)
+name|String
+name|mailIncludeCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Class Schedule"
+argument_list|)
+name|String
+name|mailIncludeClassSchedule
 parameter_list|()
 function_decl|;
 annotation|@
