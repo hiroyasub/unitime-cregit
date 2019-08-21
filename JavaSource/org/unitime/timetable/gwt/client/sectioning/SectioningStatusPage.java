@@ -25524,9 +25524,11 @@ specifier|final
 name|int
 name|fails
 parameter_list|,
+specifier|final
 name|boolean
 name|courseRequests
 parameter_list|,
+specifier|final
 name|boolean
 name|classSchedule
 parameter_list|)
