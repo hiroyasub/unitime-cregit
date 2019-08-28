@@ -2746,6 +2746,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class schedule is not available at the moment."
+argument_list|)
+name|String
+name|exceptionClassScheduleNotAvaiable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Unable to compute a schedule ({0})."
 argument_list|)
 name|String
