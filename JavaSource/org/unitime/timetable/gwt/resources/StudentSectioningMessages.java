@@ -3301,6 +3301,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to create {0}: {1}"
+argument_list|)
+name|String
+name|exceptionCustomProvider
+parameter_list|(
+name|String
+name|provider
+parameter_list|,
+name|String
+name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Processing..."
 argument_list|)
 name|String
