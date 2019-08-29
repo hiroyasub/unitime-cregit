@@ -1542,6 +1542,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>P</u>ick {0}"
+argument_list|)
+name|String
+name|buttonPickN
+parameter_list|(
+name|int
+name|n
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Current Registration"
 argument_list|)
 name|String
