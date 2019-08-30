@@ -197,7 +197,7 @@ operator|.
 name|getClass
 argument_list|()
 operator|.
-name|getDeclaredMethod
+name|getMethod
 argument_list|(
 literal|"dispose"
 argument_list|)
