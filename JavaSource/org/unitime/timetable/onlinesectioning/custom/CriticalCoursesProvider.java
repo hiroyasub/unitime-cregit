@@ -145,6 +145,11 @@ name|CriticalCourses
 block|{
 specifier|public
 name|boolean
+name|isEmpty
+parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
 name|isCritical
 parameter_list|(
 name|CourseOffering
