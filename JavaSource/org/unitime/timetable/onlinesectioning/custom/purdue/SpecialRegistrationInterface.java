@@ -1017,6 +1017,17 @@ argument_list|<
 name|SpecialRegistrationCheckGradeModes
 argument_list|>
 block|{ 	}
+comment|/** 	 * Response message for the /updateRequestorNote call 	 */
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationUpdateResponse
+extends|extends
+name|Response
+argument_list|<
+name|String
+argument_list|>
+block|{ 	}
 comment|/** 	 * List of available grade modes 	 */
 specifier|public
 specifier|static

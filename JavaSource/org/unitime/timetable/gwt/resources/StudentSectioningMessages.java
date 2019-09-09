@@ -1677,6 +1677,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to update approval request: {0}"
+argument_list|)
+name|String
+name|updateSpecialRegistrationFail
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Success!"
 argument_list|)
 name|String
@@ -6441,6 +6453,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"An override for the following registration issues has been requested:\n{0}"
+argument_list|)
+name|String
+name|requestedWarnings
+parameter_list|(
+name|String
+name|errors
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request Note: {0}"
+argument_list|)
+name|String
+name|requestNote
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Last Note: {0}"
 argument_list|)
 name|String
@@ -7604,6 +7640,72 @@ literal|"Use Default"
 argument_list|)
 name|String
 name|opSetCriticalNotSet
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested Overrides for {0}"
+argument_list|)
+name|String
+name|dialogChangeRequestNote
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested Overrides"
+argument_list|)
+name|String
+name|dialogChangeCreditRequestNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change Note"
+argument_list|)
+name|String
+name|buttonChangeRequestNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change request note for the above registration errors"
+argument_list|)
+name|String
+name|titleChangeRequestNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Close Dialog"
+argument_list|)
+name|String
+name|buttonHideRequestNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Close this dialog without making any changes"
+argument_list|)
+name|String
+name|titleHideRequestNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No request note. Click here to provide a note."
+argument_list|)
+name|String
+name|noRequestNoteClickToChange
 parameter_list|()
 function_decl|;
 block|}

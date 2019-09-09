@@ -262,6 +262,8 @@ block|,
 name|CAN_REQUIRE
 block|,
 name|CAN_CHANGE_GRADE_MODE
+block|,
+name|SR_CHANGE_NOTE
 block|, 			;
 specifier|public
 name|int
