@@ -6356,6 +6356,14 @@ name|CourseRequestInterface
 name|request
 parameter_list|)
 function_decl|;
+specifier|public
+name|boolean
+name|changeRequestorNote
+parameter_list|(
+name|RetrieveSpecialRegistrationResponse
+name|registration
+parameter_list|)
+function_decl|;
 block|}
 specifier|public
 specifier|static

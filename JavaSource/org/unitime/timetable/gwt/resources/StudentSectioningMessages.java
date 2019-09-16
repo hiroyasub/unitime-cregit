@@ -6465,6 +6465,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"The following approvals have been requested:"
+argument_list|)
+name|String
+name|requestedApprovals
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Request Note: {0}"
 argument_list|)
 name|String
@@ -7661,6 +7670,15 @@ literal|"Requested Overrides"
 argument_list|)
 name|String
 name|dialogChangeCreditRequestNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested Approvals"
+argument_list|)
+name|String
+name|dialogChangeSpecRegRequestNote
 parameter_list|()
 function_decl|;
 annotation|@
