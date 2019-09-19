@@ -1572,7 +1572,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"false"
+operator|!
+literal|"true"
 operator|.
 name|equalsIgnoreCase
 argument_list|(
