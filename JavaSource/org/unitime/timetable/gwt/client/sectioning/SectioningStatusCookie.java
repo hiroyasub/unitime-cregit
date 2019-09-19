@@ -136,8 +136,12 @@ decl_stmt|;
 specifier|private
 name|String
 name|iEmailSubject
+init|=
+literal|""
 decl_stmt|,
 name|iEmailCC
+init|=
+literal|""
 decl_stmt|;
 specifier|private
 name|SectioningStatusCookie
