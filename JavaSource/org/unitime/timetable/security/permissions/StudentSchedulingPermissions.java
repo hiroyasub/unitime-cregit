@@ -2024,14 +2024,10 @@ argument_list|,
 name|source
 argument_list|)
 operator|&&
-name|ApplicationProperty
+name|CustomStudentEnrollmentHolder
 operator|.
-name|CustomizationStudentEnrollments
-operator|.
-name|value
+name|isCanRequestUpdates
 argument_list|()
-operator|!=
-literal|null
 return|;
 block|}
 block|}
