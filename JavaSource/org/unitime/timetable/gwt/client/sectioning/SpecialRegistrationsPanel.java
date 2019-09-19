@@ -2787,10 +2787,8 @@ if|if
 condition|(
 name|iSpecReg
 operator|.
-name|getChangeRequestorNoteInterface
+name|isAllowChangeRequestNote
 argument_list|()
-operator|!=
-literal|null
 operator|&&
 name|reg
 operator|.
@@ -3170,10 +3168,8 @@ if|if
 condition|(
 name|iSpecReg
 operator|.
-name|getChangeRequestorNoteInterface
+name|isAllowChangeRequestNote
 argument_list|()
-operator|!=
-literal|null
 operator|&&
 name|reg
 operator|.
