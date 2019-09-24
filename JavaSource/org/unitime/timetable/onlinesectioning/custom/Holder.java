@@ -234,6 +234,10 @@ name|iProvider
 operator|=
 literal|null
 expr_stmt|;
+name|iProviderClass
+operator|=
+literal|null
+expr_stmt|;
 block|}
 specifier|public
 specifier|synchronized
