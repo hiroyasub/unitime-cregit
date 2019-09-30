@@ -11883,6 +11883,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Details of {0} schedule run made by {1}"
+argument_list|)
+name|String
+name|dialogDetailsOfPublishedScheduleRun
+parameter_list|(
+name|String
+name|time
+parameter_list|,
+name|String
+name|owner
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Details of {0} {1}"
 argument_list|)
 name|String
