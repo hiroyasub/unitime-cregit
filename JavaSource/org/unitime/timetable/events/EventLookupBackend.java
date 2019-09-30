@@ -19185,7 +19185,7 @@ name|setOption
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"Conflicting Events"
+literal|"Conflicting"
 argument_list|)
 expr_stmt|;
 name|query
