@@ -9373,6 +9373,30 @@ block|{
 if|if
 condition|(
 name|dpat
+operator|==
+literal|null
+condition|)
+block|{
+name|name
+operator|=
+name|timePattern
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"<font color=\\'red\\'>"
+operator|+
+name|MSG
+operator|.
+name|warnNoMatchingDatePattern
+argument_list|()
+operator|+
+literal|"</font>"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|dpat
 operator|.
 name|getType
 argument_list|()
