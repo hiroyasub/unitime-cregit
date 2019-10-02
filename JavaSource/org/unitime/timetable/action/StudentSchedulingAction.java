@@ -952,7 +952,7 @@ name|request
 argument_list|,
 name|session
 argument_list|,
-name|useDefault
+literal|true
 argument_list|)
 condition|)
 block|{
@@ -1088,7 +1088,7 @@ name|request
 argument_list|,
 name|session
 argument_list|,
-name|useDefault
+literal|true
 argument_list|)
 condition|)
 block|{
