@@ -1218,6 +1218,7 @@ argument_list|>
 name|event
 parameter_list|)
 block|{
+specifier|final
 name|PublishedSectioningSolutionInterface
 name|solution
 init|=
@@ -1240,6 +1241,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+specifier|final
 name|UniTimeDialogBox
 name|dialog
 init|=
