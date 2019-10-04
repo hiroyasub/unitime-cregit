@@ -357,6 +357,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+else|else
+block|{
 name|chain
 operator|.
 name|doFilter
@@ -366,6 +368,7 @@ argument_list|,
 name|response
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 annotation|@
 name|Override
