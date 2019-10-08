@@ -296,15 +296,6 @@ block|{
 if|if
 condition|(
 operator|!
-name|server
-operator|.
-name|getAcademicSession
-argument_list|()
-operator|.
-name|isSectioningEnabled
-argument_list|()
-operator|||
-operator|!
 name|CustomSpecialRegistrationHolder
 operator|.
 name|hasProvider
