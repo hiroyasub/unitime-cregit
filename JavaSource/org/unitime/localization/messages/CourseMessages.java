@@ -9491,6 +9491,24 @@ name|String
 name|columnDisabledOverrides
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Showing projected student conflicts, click here to change to the actual class enrollments."
+argument_list|)
+name|String
+name|studentConflictsShowingSolutionConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Showing the actual student class enrollments, click here to change to projected student conflicts."
+argument_list|)
+name|String
+name|studentConflictsShowingActualConflicts
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
