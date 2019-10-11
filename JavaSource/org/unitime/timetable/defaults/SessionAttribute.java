@@ -289,7 +289,21 @@ literal|"specreq"
 argument_list|,
 literal|"Online Student Scheduling: last special request id"
 argument_list|)
-block|, 	 	 	;
+block|,
+name|ClassInfoModel
+argument_list|(
+literal|"ClassInfo.model"
+argument_list|,
+literal|"Class Assignment page model"
+argument_list|)
+block|,
+name|ExamInfoModel
+argument_list|(
+literal|"ExamInfo.model"
+argument_list|,
+literal|"Examination Assignment page model"
+argument_list|)
+block|, 	;
 name|String
 name|iKey
 decl_stmt|,
