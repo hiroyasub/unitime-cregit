@@ -146,6 +146,10 @@ name|Integer
 name|iLimit
 decl_stmt|;
 specifier|private
+name|Date
+name|iStartDate
+decl_stmt|;
+specifier|private
 name|InstructionalOffering
 name|iInstructionalOffering
 decl_stmt|;
@@ -183,6 +187,13 @@ name|String
 name|PROP_RESERVATION_LIMIT
 init|=
 literal|"limit"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_START_DATE
+init|=
+literal|"startDate"
 decl_stmt|;
 specifier|public
 name|BaseReservation
@@ -278,6 +289,28 @@ block|{
 name|iLimit
 operator|=
 name|limit
+expr_stmt|;
+block|}
+specifier|public
+name|Date
+name|getStartDate
+parameter_list|()
+block|{
+return|return
+name|iStartDate
+return|;
+block|}
+specifier|public
+name|void
+name|setStartDate
+parameter_list|(
+name|Date
+name|startDate
+parameter_list|)
+block|{
+name|iStartDate
+operator|=
+name|startDate
 expr_stmt|;
 block|}
 specifier|public
@@ -545,6 +578,11 @@ operator|+
 literal|"\n	Limit: "
 operator|+
 name|getLimit
+argument_list|()
+operator|+
+literal|"\n	StartDate: "
+operator|+
+name|getStartDate
 argument_list|()
 operator|+
 literal|"\n	UniqueId: "

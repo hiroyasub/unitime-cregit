@@ -267,6 +267,11 @@ operator|+
 name|getLimit
 argument_list|()
 operator|+
+literal|"\n	StartDate: "
+operator|+
+name|getStartDate
+argument_list|()
+operator|+
 literal|"\n	Type: "
 operator|+
 name|getType

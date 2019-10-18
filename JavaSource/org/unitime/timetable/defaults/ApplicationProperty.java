@@ -6641,6 +6641,70 @@ argument_list|(
 literal|"unitime.reservations.%.expires_in_days"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Reservations: default reservation start date for all reservation types (given either in the number of days relative to the academic session begin date or as a date in yyyy-mm-dd format)"
+argument_list|)
+name|ReservationStartDateGlobal
+argument_list|(
+literal|"unitime.reservations.start_date"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
+literal|"Reservations: default reservation start date for reservation of type % (given either in the number of days relative to the academic session begin date or as a date in yyyy-mm-dd format)"
+argument_list|)
+expr|@
+name|Parameter
+argument_list|(
+literal|"reservation type"
+argument_list|)
+name|ReservationStartDate
+argument_list|(
+literal|"unitime.reservations.%.start_date"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Reservations: default start date for all reservation types; it is defined by a number of days after today (e.g., 7 days from now)"
+argument_list|)
+name|ReservationStartInDaysGlobal
+argument_list|(
+literal|"unitime.reservations.expires_in_days"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Reservations: default start date for reservation of type %; it is defined by a number of days after today (e.g., 7 days from now)"
+argument_list|)
+expr|@
+name|Parameter
+argument_list|(
+literal|"reservation type"
+argument_list|)
+name|ReservationStartInDays
+argument_list|(
+literal|"unitime.reservations.%.expires_in_days"
+argument_list|)
+operator|,
 comment|/** 	 * Minimap (to be displayed if set, e.g., on the Room Detail page) 	 *<ul> 	 *<li>Strings %x and %y are replaced by the room's coordinates 	 *<li>String %n is replaced by the room name 	 *<li>String %i is replaced by the room external id  	 *</ul> 	 */
 expr_stmt|@
 name|DefaultValue

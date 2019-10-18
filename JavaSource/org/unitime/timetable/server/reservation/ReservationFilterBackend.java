@@ -1894,7 +1894,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"r.expirationDate< :today"
+literal|"r.expirationDate< :today or :today< r.startDate"
 argument_list|)
 operator|.
 name|set
@@ -4417,7 +4417,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"r.expirationDate< :today"
+literal|"r.expirationDate< :today or :today< r.startDate"
 argument_list|)
 expr_stmt|;
 name|query
@@ -4448,7 +4448,7 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"r.expirationDate is null or r.expirationDate>= :today"
+literal|"(r.expirationDate is null or r.expirationDate>= :today) and (r.startDate is null or r.startDate<= :today)"
 argument_list|)
 expr_stmt|;
 name|query
@@ -7061,6 +7061,30 @@ return|return
 literal|true
 return|;
 block|}
+if|if
+condition|(
+name|iReservation
+operator|.
+name|getStartDate
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|iExpDate
+operator|.
+name|before
+argument_list|(
+name|iReservation
+operator|.
+name|getStartDate
+argument_list|()
+argument_list|)
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 if|if
 condition|(
@@ -7099,6 +7123,46 @@ argument_list|(
 name|iReservation
 operator|.
 name|getExpirationDate
+argument_list|()
+argument_list|)
+argument_list|,
+name|term
+argument_list|)
+condition|)
+return|return
+literal|true
+return|;
+block|}
+if|if
+condition|(
+name|attr
+operator|==
+literal|null
+operator|||
+literal|"start"
+operator|.
+name|equals
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|iReservation
+operator|.
+name|getStartDate
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|eq
+argument_list|(
+name|format
+argument_list|(
+name|iReservation
+operator|.
+name|getStartDate
 argument_list|()
 argument_list|)
 argument_list|,

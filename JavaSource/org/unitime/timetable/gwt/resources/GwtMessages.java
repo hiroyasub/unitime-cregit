@@ -2206,6 +2206,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Start<br>Date"
+argument_list|)
+name|String
+name|colStartDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Source"
 argument_list|)
 name|String
@@ -9811,6 +9820,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Start date is not valid."
+argument_list|)
+name|String
+name|hintStartDateNotValid
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Expiration date must be after the start date."
+argument_list|)
+name|String
+name|hintExpirationDateNotAfterStartDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Reservation limit is not valid."
 argument_list|)
 name|String
@@ -13297,6 +13324,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Start Date:"
+argument_list|)
+name|String
+name|propStartDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Restrictions:"
 argument_list|)
 name|String
@@ -14417,6 +14453,15 @@ literal|"Expiration Date"
 argument_list|)
 name|String
 name|fieldExpirationDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Start Date"
+argument_list|)
+name|String
+name|fieldStartDate
 parameter_list|()
 function_decl|;
 annotation|@
