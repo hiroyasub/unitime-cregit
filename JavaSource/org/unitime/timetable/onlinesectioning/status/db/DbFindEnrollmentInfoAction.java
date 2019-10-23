@@ -261,6 +261,24 @@ name|server
 operator|.
 name|Query
 operator|.
+name|AmbigousTermMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|server
+operator|.
+name|Query
+operator|.
 name|TermMatcher
 import|;
 end_import
@@ -5371,7 +5389,7 @@ specifier|static
 class|class
 name|DbCourseInfoMatcher
 implements|implements
-name|TermMatcher
+name|AmbigousTermMatcher
 implements|,
 name|Serializable
 block|{
@@ -5442,7 +5460,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|boolean
+name|Boolean
 name|match
 parameter_list|(
 name|String
@@ -5862,8 +5880,6 @@ literal|false
 return|;
 block|}
 return|return
-name|attr
-operator|!=
 literal|null
 return|;
 comment|// pass unknown attributes lower
@@ -6507,7 +6523,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|boolean
+name|Boolean
 name|match
 parameter_list|(
 name|String
