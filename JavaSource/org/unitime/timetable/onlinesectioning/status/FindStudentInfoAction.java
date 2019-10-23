@@ -6407,14 +6407,6 @@ name|student
 operator|!=
 literal|null
 operator|&&
-name|student
-operator|.
-name|getRequests
-argument_list|()
-operator|.
-name|isEmpty
-argument_list|()
-operator|&&
 name|iQuery
 operator|.
 name|match
