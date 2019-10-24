@@ -1862,7 +1862,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and co.isControl = 1 and co.subjectArea.uniqueId  = '"
+literal|" and co.isControl = true and co.subjectArea.uniqueId  = '"
 operator|+
 name|getRollForwardSubjectAreaIds
 argument_list|()
@@ -1979,7 +1979,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and co.isControl = 1 and co.subjectArea.uniqueId  = '"
+literal|" and co.isControl = true and co.subjectArea.uniqueId  = '"
 operator|+
 name|getRollForwardClassInstrSubjectIds
 argument_list|()
@@ -2097,7 +2097,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and co.isControl = 1 and co.subjectArea.uniqueId  = '"
+literal|" and co.isControl = true and co.subjectArea.uniqueId  = '"
 operator|+
 name|getRollForwardOfferingCoordinatorsSubjectIds
 argument_list|()

@@ -479,7 +479,7 @@ literal|"from CourseOffering as co where co.subjectArea.subjectAreaAbbreviation 
 operator|+
 name|subjectAreaAbbreviation
 operator|+
-literal|"' and co.isControl = 1"
+literal|"' and co.isControl = true"
 operator|+
 literal|" and co.subjectArea.session.uniqueId = "
 operator|+
@@ -597,7 +597,7 @@ operator|.
 name|longValue
 argument_list|()
 operator|+
-literal|"  and co.isControl = 1"
+literal|"  and co.isControl = true"
 operator|+
 literal|"  and co.instructionalOffering.notOffered = false"
 operator|+
@@ -1190,7 +1190,7 @@ literal|"' and co.getCourseNbr = '"
 operator|+
 name|courseNumber
 operator|+
-literal|"' and co.isControl = 1"
+literal|"' and co.isControl = true"
 operator|+
 literal|" and co.subjectArea.session.uniqueId = "
 operator|+

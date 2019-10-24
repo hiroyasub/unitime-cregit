@@ -1311,7 +1311,7 @@ literal|"delete StudentClassEnrollment e where e.clazz.uniqueId in "
 operator|+
 literal|"(select c.uniqueId from Class_ c, CourseOffering co where "
 operator|+
-literal|"co.isControl=1 and "
+literal|"co.isControl=true and "
 operator|+
 literal|"c.schedulingSubpart.instrOfferingConfig.instructionalOffering=co.instructionalOffering and "
 operator|+

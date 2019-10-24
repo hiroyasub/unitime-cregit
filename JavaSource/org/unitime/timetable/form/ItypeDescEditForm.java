@@ -937,6 +937,10 @@ name|itype
 operator|.
 name|getBasic
 argument_list|()
+condition|?
+literal|1
+else|:
+literal|0
 argument_list|)
 expr_stmt|;
 name|setParent
@@ -1061,6 +1065,8 @@ name|setBasic
 argument_list|(
 name|getBasicType
 argument_list|()
+operator|==
+literal|1
 argument_list|)
 expr_stmt|;
 name|itype

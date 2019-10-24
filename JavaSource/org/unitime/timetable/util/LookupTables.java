@@ -1885,13 +1885,6 @@ argument_list|(
 name|clause
 argument_list|)
 expr_stmt|;
-name|query
-operator|.
-name|append
-argument_list|(
-literal|" order by upper(i.lastName), upper(i.firstName) "
-argument_list|)
-expr_stmt|;
 name|DepartmentalInstructorDAO
 name|idao
 init|=
@@ -1979,6 +1972,13 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|Collections
+operator|.
+name|sort
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Iterator

@@ -2487,7 +2487,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select d from Department d where d.session.uniqueId=:sessionId and d.externalManager=1 and d.externalMgrAbbv=:deptCode"
+literal|"select d from Department d where d.session.uniqueId=:sessionId and d.externalManager=true and d.externalMgrAbbv=:deptCode"
 argument_list|)
 operator|.
 name|setLong

@@ -41,16 +41,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|dom4j
-operator|.
-name|Document
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -98,8 +88,8 @@ name|Integer
 name|iType
 decl_stmt|;
 specifier|private
-name|Document
-name|iMessage
+name|String
+name|iData
 decl_stmt|;
 specifier|public
 specifier|static
@@ -134,7 +124,7 @@ specifier|static
 name|String
 name|PROP_MESSAGE
 init|=
-literal|"message"
+literal|"data"
 decl_stmt|;
 specifier|public
 name|BaseStudentSectioningQueue
@@ -255,25 +245,25 @@ name|type
 expr_stmt|;
 block|}
 specifier|public
-name|Document
-name|getMessage
+name|String
+name|getData
 parameter_list|()
 block|{
 return|return
-name|iMessage
+name|iData
 return|;
 block|}
 specifier|public
 name|void
-name|setMessage
+name|setData
 parameter_list|(
-name|Document
-name|message
+name|String
+name|data
 parameter_list|)
 block|{
-name|iMessage
+name|iData
 operator|=
-name|message
+name|data
 expr_stmt|;
 block|}
 specifier|public
@@ -388,9 +378,9 @@ block|{
 return|return
 literal|"StudentSectioningQueue["
 operator|+
-literal|"\n	Message: "
+literal|"\n	Data: "
 operator|+
-name|getMessage
+name|getData
 argument_list|()
 operator|+
 literal|"\n	SessionId: "

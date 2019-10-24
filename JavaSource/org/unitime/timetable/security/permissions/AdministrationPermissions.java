@@ -558,7 +558,7 @@ name|createQuery
 argument_list|(
 literal|"select count(io) from CourseOffering co inner join co.instructionalOffering io "
 operator|+
-literal|"where co.subjectArea.department.uniqueId=:deptId and io.notOffered = 0"
+literal|"where co.subjectArea.department.uniqueId=:deptId and io.notOffered = false"
 argument_list|)
 operator|.
 name|setLong

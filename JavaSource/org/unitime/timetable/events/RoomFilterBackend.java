@@ -7643,7 +7643,12 @@ literal|"Xi"
 operator|+
 name|id
 argument_list|,
+name|Long
+operator|.
+name|valueOf
+argument_list|(
 name|s
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|id

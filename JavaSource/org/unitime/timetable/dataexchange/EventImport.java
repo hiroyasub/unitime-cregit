@@ -3908,7 +3908,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from Class_ as c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.session as s where s.academicInitiative = :academicInititive and s.academicYear = :aYear and s.academicTerm = :aTerm and c.externalUniqueId = :anExternalId and rownum = 1"
+literal|"select c from Class_ as c inner join c.schedulingSubpart.instrOfferingConfig.instructionalOffering.session as s where s.academicInitiative = :academicInititive and s.academicYear = :aYear and s.academicTerm = :aTerm and c.externalUniqueId = :anExternalId"
 argument_list|)
 operator|.
 name|setString
@@ -3942,6 +3942,11 @@ operator|.
 name|setCacheable
 argument_list|(
 literal|true
+argument_list|)
+operator|.
+name|setMaxResults
+argument_list|(
+literal|1
 argument_list|)
 operator|.
 name|uniqueResult
@@ -4001,7 +4006,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select io from InstructionalOffering as io inner join io.session as s where s.academicInitiative = :academicInititive and s.academicYear = :aYear and s.academicTerm = :aTerm and io.externalUniqueId = :anExternalId and rownum = 1"
+literal|"select io from InstructionalOffering as io inner join io.session as s where s.academicInitiative = :academicInititive and s.academicYear = :aYear and s.academicTerm = :aTerm and io.externalUniqueId = :anExternalId"
 argument_list|)
 operator|.
 name|setString
@@ -4035,6 +4040,11 @@ operator|.
 name|setCacheable
 argument_list|(
 literal|true
+argument_list|)
+operator|.
+name|setMaxResults
+argument_list|(
+literal|1
 argument_list|)
 operator|.
 name|uniqueResult
@@ -4094,7 +4104,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select co from CourseOffering as co inner join co.instructionalOffering.session as s where s.academicInitiative = :academicInititive and s.academicYear = :aYear and s.academicTerm = :aTerm and co.externalUniqueId = :anExternalId and rownum = 1"
+literal|"select co from CourseOffering as co inner join co.instructionalOffering.session as s where s.academicInitiative = :academicInititive and s.academicYear = :aYear and s.academicTerm = :aTerm and co.externalUniqueId = :anExternalId"
 argument_list|)
 operator|.
 name|setString
@@ -4128,6 +4138,11 @@ operator|.
 name|setCacheable
 argument_list|(
 literal|true
+argument_list|)
+operator|.
+name|setMaxResults
+argument_list|(
+literal|1
 argument_list|)
 operator|.
 name|uniqueResult

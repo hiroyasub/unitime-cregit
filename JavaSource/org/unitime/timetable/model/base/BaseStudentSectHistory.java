@@ -41,16 +41,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|dom4j
-operator|.
-name|Document
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|unitime
 operator|.
 name|timetable
@@ -100,7 +90,8 @@ name|Long
 name|iUniqueId
 decl_stmt|;
 specifier|private
-name|Document
+name|byte
+index|[]
 name|iData
 decl_stmt|;
 specifier|private
@@ -196,7 +187,8 @@ name|uniqueId
 expr_stmt|;
 block|}
 specifier|public
-name|Document
+name|byte
+index|[]
 name|getData
 parameter_list|()
 block|{
@@ -208,7 +200,8 @@ specifier|public
 name|void
 name|setData
 parameter_list|(
-name|Document
+name|byte
+index|[]
 name|data
 parameter_list|)
 block|{

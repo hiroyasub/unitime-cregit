@@ -78,7 +78,7 @@ name|String
 name|iSis_ref
 decl_stmt|;
 specifier|private
-name|Integer
+name|Boolean
 name|iBasic
 decl_stmt|;
 specifier|private
@@ -250,7 +250,16 @@ name|sis_ref
 expr_stmt|;
 block|}
 specifier|public
-name|Integer
+name|Boolean
+name|isBasic
+parameter_list|()
+block|{
+return|return
+name|iBasic
+return|;
+block|}
+specifier|public
+name|Boolean
 name|getBasic
 parameter_list|()
 block|{
@@ -262,7 +271,7 @@ specifier|public
 name|void
 name|setBasic
 parameter_list|(
-name|Integer
+name|Boolean
 name|basic
 parameter_list|)
 block|{

@@ -377,7 +377,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct d from Department as d where d.externalManager=1 and d.session.uniqueId=:sessionId"
+literal|"select distinct d from Department as d where d.externalManager=true and d.session.uniqueId=:sessionId"
 argument_list|)
 operator|.
 name|setLong
@@ -424,7 +424,7 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct d from Department as d where d.externalManager=0 and d.session.uniqueId=:sessionId"
+literal|"select distinct d from Department as d where d.externalManager=false and d.session.uniqueId=:sessionId"
 argument_list|)
 operator|.
 name|setLong

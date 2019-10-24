@@ -1707,8 +1707,6 @@ argument_list|()
 operator|.
 name|getBasic
 argument_list|()
-operator|==
-literal|1
 argument_list|)
 expr_stmt|;
 if|if

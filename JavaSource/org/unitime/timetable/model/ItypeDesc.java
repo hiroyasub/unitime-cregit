@@ -153,7 +153,7 @@ operator|+
 operator|(
 name|basic
 condition|?
-literal|" where i.basic=1"
+literal|" where i.basic = true"
 else|:
 literal|""
 operator|)
@@ -174,29 +174,16 @@ name|String
 name|getBasicType
 parameter_list|()
 block|{
-if|if
-condition|(
-name|getBasic
-argument_list|()
-operator|>=
-literal|0
-operator|&&
-name|getBasic
-argument_list|()
-operator|<
-name|sBasicTypes
-operator|.
-name|length
-condition|)
 return|return
 name|sBasicTypes
 index|[
 name|getBasic
 argument_list|()
+condition|?
+literal|1
+else|:
+literal|0
 index|]
-return|;
-return|return
-literal|"Unknown"
 return|;
 block|}
 specifier|public
