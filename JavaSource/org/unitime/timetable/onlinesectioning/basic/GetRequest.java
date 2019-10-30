@@ -391,6 +391,22 @@ name|XStudent
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|solver
+operator|.
+name|studentsct
+operator|.
+name|StudentSolver
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1135,6 +1151,18 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|setInactive
+operator|&&
+name|server
+operator|instanceof
+name|StudentSolver
+condition|)
+name|setInactive
+operator|=
+literal|false
+expr_stmt|;
 for|for
 control|(
 name|XRequest
