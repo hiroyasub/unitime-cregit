@@ -2454,6 +2454,18 @@ name|isExpired
 argument_list|()
 condition|)
 continue|continue;
+comment|// ignore reservations NOT set directly on the section
+if|if
+condition|(
+operator|!
+name|r
+operator|.
+name|hasSectionRestriction
+argument_list|(
+name|sectionId
+argument_list|)
+condition|)
+continue|continue;
 comment|// there is an unlimited reservation -> no unreserved space
 if|if
 condition|(
@@ -2508,6 +2520,18 @@ name|r
 operator|.
 name|isExpired
 argument_list|()
+condition|)
+continue|continue;
+comment|// ignore reservations NOT set directly on the section
+if|if
+condition|(
+operator|!
+name|r
+operator|.
+name|hasSectionRestriction
+argument_list|(
+name|sectionId
+argument_list|)
 condition|)
 continue|continue;
 comment|// unlimited reservation -> all the space is reserved
@@ -2603,6 +2627,18 @@ name|isExpired
 argument_list|()
 condition|)
 continue|continue;
+comment|// ignore reservations NOT set directly on the config
+if|if
+condition|(
+operator|!
+name|r
+operator|.
+name|hasConfigRestriction
+argument_list|(
+name|configId
+argument_list|)
+condition|)
+continue|continue;
 comment|// there is an unlimited reservation -> no unreserved space
 if|if
 condition|(
@@ -2657,6 +2693,18 @@ name|r
 operator|.
 name|isExpired
 argument_list|()
+condition|)
+continue|continue;
+comment|// ignore reservations NOT set directly on the config
+if|if
+condition|(
+operator|!
+name|r
+operator|.
+name|hasConfigRestriction
+argument_list|(
+name|configId
+argument_list|)
 condition|)
 continue|continue;
 comment|// unlimited reservation -> all the space is reserved
