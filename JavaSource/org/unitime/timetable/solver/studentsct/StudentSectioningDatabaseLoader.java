@@ -9086,6 +9086,13 @@ operator|.
 name|addSection
 argument_list|(
 name|section
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|ReservationsAreInclusive
+operator|.
+name|isTrue
+argument_list|()
 argument_list|)
 expr_stmt|;
 continue|continue
