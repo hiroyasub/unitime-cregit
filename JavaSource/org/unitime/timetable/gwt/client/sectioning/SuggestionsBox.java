@@ -9150,6 +9150,13 @@ argument_list|)
 expr_stmt|;
 name|request
 operator|.
+name|dropCourse
+argument_list|(
+name|course
+argument_list|)
+expr_stmt|;
+name|request
+operator|.
 name|addCourse
 argument_list|(
 name|course

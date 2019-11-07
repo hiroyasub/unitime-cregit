@@ -5971,6 +5971,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"This course is not active. Click here to activate."
+argument_list|)
+name|String
+name|altFilterActivate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Student\nId"
 argument_list|)
 name|String
