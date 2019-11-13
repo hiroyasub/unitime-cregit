@@ -1959,7 +1959,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Degree plan {0, number} of {1, number}. {2} of {3}. Last modified {4,localdatetime,MMMM dd} by {5}"
+literal|"Degree plan {0, number} of {1, number}. {2} of {3}."
 argument_list|)
 name|String
 name|showingDegreePlan
@@ -1975,7 +1975,16 @@ name|description
 parameter_list|,
 name|String
 name|degree
-parameter_list|,
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last modified {0,localdatetime,MMMM dd} by {1}"
+argument_list|)
+name|String
+name|lastModified
+parameter_list|(
 name|Date
 name|modifiedDate
 parameter_list|,
