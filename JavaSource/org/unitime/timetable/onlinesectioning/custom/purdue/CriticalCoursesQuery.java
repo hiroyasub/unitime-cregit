@@ -1805,9 +1805,11 @@ name|getProperty
 argument_list|(
 literal|"banner.dgw.plannedCoursesSQL"
 argument_list|,
-literal|"select tmpl_id, tmpl_description, tmpl_conc, course_discipline, course_number, choice_group_id, is_critical as course from timetable.tmpl_course_view where "
+literal|"select tmpl_id, tmpl_description, tmpl_conc, course_discipline, course_number, choice_group_id, trim(is_critical) from timetable.tmpl_course_view where "
 operator|+
-literal|"tmpl_description not like '%Statewide%' and tmpl_college=:area and tmpl_major=:major and tmpl_catyear=:catyear and term_seq=:term"
+literal|"tmpl_description not like '%Statewide%' and tmpl_college=:area and tmpl_major=:major and tmpl_catyear=:catyear and term_seq=:term "
+operator|+
+literal|"order by tmpl_conc, choice_group_id desc, course_discipline, course_number"
 argument_list|)
 return|;
 block|}
@@ -1825,7 +1827,9 @@ literal|"banner.dgw.criticalPlaceholdersSQL"
 argument_list|,
 literal|"select tmpl_id, tmpl_description, tmpl_conc, placeholder_type, placeholder_value from timetable.tmpl_placeholder_view where "
 operator|+
-literal|"tmpl_description not like '%Statewide%' and tmpl_college=:area and tmpl_major=:major and tmpl_catyear=:catyear and term_seq=:term"
+literal|"tmpl_description not like '%Statewide%' and tmpl_college=:area and tmpl_major=:major and tmpl_catyear=:catyear and term_seq=:term "
+operator|+
+literal|"order by tmpl_conc, placeholder_value"
 argument_list|)
 return|;
 block|}
