@@ -55,6 +55,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -606,7 +616,23 @@ argument_list|)
 operator|+
 literal|") "
 operator|+
-literal|"and (l.result is not null or l.operation not in ('reload-offering', 'check-offering')) order by l.timeStamp desc, l.uniqueId desc"
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"operation"
+argument_list|)
+condition|?
+literal|""
+else|:
+literal|"and (l.result is not null or l.operation not in ('reload-offering', 'check-offering', 'reload-student')) "
+operator|+
+literal|"and (l.result != 3 or l.operation not in ('validate-overrides', 'critical-courses', 'banner-update')) "
+operator|)
+operator|+
+literal|"order by l.uniqueId desc"
 argument_list|)
 decl_stmt|;
 name|q
@@ -3271,6 +3297,13 @@ name|helper
 operator|.
 name|commitTransaction
 argument_list|()
+expr_stmt|;
+name|Collections
+operator|.
+name|sort
+argument_list|(
+name|ret
+argument_list|)
 expr_stmt|;
 return|return
 name|ret
