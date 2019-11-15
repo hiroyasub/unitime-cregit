@@ -2134,6 +2134,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Exceeds maximum of {0,number,0.#} credit hours."
+argument_list|)
+name|String
+name|conflictOverMaxCredit
+parameter_list|(
+name|float
+name|maxCredit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load the application ({0})."
 argument_list|)
 name|String

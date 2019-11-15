@@ -2071,6 +2071,25 @@ if|else if
 condition|(
 name|course
 operator|.
+name|isOverMaxCredit
+argument_list|()
+condition|)
+name|unassignedMessage
+operator|=
+name|MESSAGES
+operator|.
+name|conflictOverMaxCredit
+argument_list|(
+name|course
+operator|.
+name|getOverMaxCredit
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|course
+operator|.
 name|getOverlaps
 argument_list|()
 operator|!=
