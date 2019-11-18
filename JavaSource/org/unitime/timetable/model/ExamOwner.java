@@ -6294,7 +6294,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Basic codes      * s ... subject area      * c ... course number      * i ... itype abbv      * n ... section number      * x ... configuration name      * Additional codes      * d ... department abbv      * a ... class suffix (div-sec number)      * y ... itype suffix (a, b etc.)      * e ... class external id      * f ... course external id      * o ... offering external id      * t ... exam type suffix (tmtbl.exam.name.type.Final and tmtbl.exam.name.type.Midterm)      * I ... itype code      * p ... itype parent abbv      * P ... itype parent code      * m ... instructional method reference      * M ... instructional method label      * _ ... space      */
+comment|/**      * Basic codes      * s ... subject area      * c ... course number      * i ... itype abbv      * n ... section number      * x ... configuration name      * Additional codes      * d ... department abbv      * a ... class suffix (div-sec number)      * y ... itype suffix (a, b etc.)      * e ... class external id      * f ... course external id      * o ... offering external id      * t ... exam type suffix (tmtbl.exam.name.type.Final and tmtbl.exam.name.type.Midterm)      * I ... itype code      * p ... itype parent abbv      * P ... itype parent code      * m ... instructional method reference      * M ... instructional method label      * _ ... space      * T ... course title      */
 specifier|protected
 name|String
 name|genName
@@ -6335,6 +6335,16 @@ name|getCourse
 argument_list|()
 operator|.
 name|getCourseNbr
+argument_list|()
+return|;
+case|case
+literal|'T'
+case|:
+return|return
+name|getCourse
+argument_list|()
+operator|.
+name|getTitle
 argument_list|()
 return|;
 case|case
@@ -6923,7 +6933,7 @@ condition|)
 return|return
 name|im
 operator|.
-name|getLabel
+name|getReference
 argument_list|()
 return|;
 block|}
