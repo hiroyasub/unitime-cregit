@@ -519,7 +519,7 @@ literal|"(lower(a.attribute_description) = concat('uc-', :query) or lower(a.cour
 operator|+
 literal|"co.instr_offr_id = io.uniqueid and co.subject_area_id = sa.uniqueid and io.session_id = :sessionId and "
 operator|+
-literal|"io.not_offered = 'f' and sa.subject_area_abbreviation = a.subject and co.course_nbr like concat(a.course_number, '%')"
+literal|"io.not_offered = 0 and sa.subject_area_abbreviation = a.subject and co.course_nbr like concat(a.course_number, '%')"
 argument_list|)
 return|;
 block|}
@@ -545,7 +545,7 @@ literal|"(lower(a.attribute_description) like concat(concat('uc-', :query), '%')
 operator|+
 literal|"co.instr_offr_id = io.uniqueid and co.subject_area_id = sa.uniqueid and io.session_id = :sessionId and "
 operator|+
-literal|"io.not_offered = 'f' and sa.subject_area_abbreviation = a.subject and co.course_nbr like concat(a.course_number, '%')"
+literal|"io.not_offered = 0 and sa.subject_area_abbreviation = a.subject and co.course_nbr like concat(a.course_number, '%')"
 argument_list|)
 return|;
 block|}
