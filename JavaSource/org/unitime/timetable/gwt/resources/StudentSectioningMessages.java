@@ -7747,6 +7747,60 @@ name|String
 name|noRequestNoteClickToChange
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to change note for {0}\u00a0students?"
+argument_list|)
+name|String
+name|confirmNoteChange
+parameter_list|(
+name|int
+name|studentCount
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to send an email to {0}\u00a0students?"
+argument_list|)
+name|String
+name|confirmSendEmail
+parameter_list|(
+name|int
+name|studentCount
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to change status to {0} for {1}\u00a0students?"
+argument_list|)
+name|String
+name|confirmStatusChange
+parameter_list|(
+name|String
+name|newStatus
+parameter_list|,
+name|int
+name|studentCount
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to change note and set status to {0} for {1}\u00a0students?"
+argument_list|)
+name|String
+name|confirmStatusNoteChange
+parameter_list|(
+name|String
+name|newStatus
+parameter_list|,
+name|int
+name|studentCount
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
