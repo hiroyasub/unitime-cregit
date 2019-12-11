@@ -10911,6 +10911,33 @@ argument_list|(
 literal|"unitime.studentScheduling.preferCourseRequests"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Enrollment: check for critical courses with an enrollment is changed (not just when course requests are collected)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.4
+argument_list|)
+name|EnrollmentCheckCritical
+argument_list|(
+literal|"unitime.enrollment.checkCritical"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
