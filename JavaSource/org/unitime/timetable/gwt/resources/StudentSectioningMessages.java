@@ -5224,6 +5224,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Together with other registration changes, the critical course {0} will be dropped. Do you want to proceed?"
+argument_list|)
+name|String
+name|confirmEnrollmentCriticalCourseDrop
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>N</u>ew Course"
 argument_list|)
 name|String
