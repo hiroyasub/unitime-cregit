@@ -1737,7 +1737,7 @@ name|onlinesectioning
 operator|.
 name|model
 operator|.
-name|XStudentId
+name|XStudent
 import|;
 end_import
 
@@ -24405,11 +24405,13 @@ argument_list|,
 name|helper
 argument_list|,
 operator|new
-name|XStudentId
+name|XStudent
 argument_list|(
 name|s
 argument_list|,
 name|helper
+argument_list|,
+name|iFreeTimePattern
 argument_list|)
 argument_list|)
 decl_stmt|;
