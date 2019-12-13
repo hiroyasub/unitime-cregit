@@ -20969,7 +20969,22 @@ name|booleanValue
 argument_list|()
 condition|)
 block|{
-comment|//check.setFlag(EligibilityCheck.EligibilityFlag.CAN_REGISTER, false);
+name|check
+operator|.
+name|setFlag
+argument_list|(
+name|EligibilityCheck
+operator|.
+name|EligibilityFlag
+operator|.
+name|CAN_REGISTER
+argument_list|,
+name|helper
+operator|.
+name|isAdmin
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
