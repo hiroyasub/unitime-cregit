@@ -1066,6 +1066,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Default"
+argument_list|)
+name|String
+name|dropDefaultLearningManagementSystem
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Name"
 argument_list|)
 name|String
@@ -2239,6 +2248,24 @@ literal|"Enrollment Conflict"
 argument_list|)
 name|String
 name|columnEnrollmentConflict
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"LMS Integration"
+argument_list|)
+name|String
+name|columnLms
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"LMS Integration:"
+argument_list|)
+name|String
+name|propertyLms
 parameter_list|()
 function_decl|;
 annotation|@

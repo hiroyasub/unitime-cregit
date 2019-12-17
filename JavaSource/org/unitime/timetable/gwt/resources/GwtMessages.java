@@ -11733,6 +11733,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Learning Management System"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageLearningManagementSystemInfo
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Learning Management Systems"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageLearningManagementSystemInfos
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String

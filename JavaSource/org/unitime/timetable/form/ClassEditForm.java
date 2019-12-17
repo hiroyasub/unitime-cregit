@@ -475,6 +475,10 @@ specifier|private
 name|String
 name|defaultTeachingResponsibilityId
 decl_stmt|;
+specifier|private
+name|String
+name|lms
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Instructors */
 specifier|protected
@@ -1188,6 +1192,10 @@ operator|.
 name|toString
 argument_list|()
 operator|)
+expr_stmt|;
+name|lms
+operator|=
+literal|null
 expr_stmt|;
 name|super
 operator|.
@@ -2811,6 +2819,30 @@ operator|.
 name|defaultTeachingResponsibilityId
 operator|=
 name|defaultTeachingResponsibilityId
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getLms
+parameter_list|()
+block|{
+return|return
+name|lms
+return|;
+block|}
+specifier|public
+name|void
+name|setLms
+parameter_list|(
+name|String
+name|lms
+parameter_list|)
+block|{
+name|this
+operator|.
+name|lms
+operator|=
+name|lms
 expr_stmt|;
 block|}
 block|}

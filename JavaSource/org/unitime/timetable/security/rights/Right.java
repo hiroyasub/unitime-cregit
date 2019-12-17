@@ -2829,6 +2829,10 @@ name|ContactCategories
 block|,
 name|ContactCategoryEdit
 block|,
+name|LearningManagementSystemInfos
+block|,
+name|LearningManagementSystemInfoEdit
+block|,
 name|EventServiceProviders
 block|,
 name|EventServiceProviderEditGlobal

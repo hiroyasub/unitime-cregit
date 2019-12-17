@@ -137,6 +137,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|LearningManagementSystemInfo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|PreferenceGroup
 import|;
 end_import
@@ -292,6 +306,10 @@ decl_stmt|;
 specifier|private
 name|Assignment
 name|iCommittedAssignment
+decl_stmt|;
+specifier|private
+name|LearningManagementSystemInfo
+name|iLmsInfo
 decl_stmt|;
 specifier|private
 name|Set
@@ -975,6 +993,28 @@ name|committedAssignment
 expr_stmt|;
 block|}
 specifier|public
+name|LearningManagementSystemInfo
+name|getLmsInfo
+parameter_list|()
+block|{
+return|return
+name|iLmsInfo
+return|;
+block|}
+specifier|public
+name|void
+name|setLmsInfo
+parameter_list|(
+name|LearningManagementSystemInfo
+name|lmsInfo
+parameter_list|)
+block|{
+name|iLmsInfo
+operator|=
+name|lmsInfo
+expr_stmt|;
+block|}
+specifier|public
 name|Set
 argument_list|<
 name|Class_
@@ -1414,6 +1454,11 @@ operator|+
 literal|"\n	ExternalUniqueId: "
 operator|+
 name|getExternalUniqueId
+argument_list|()
+operator|+
+literal|"\n	LmsInfo: "
+operator|+
+name|getLmsInfo
 argument_list|()
 operator|+
 literal|"\n	ManagingDept: "
