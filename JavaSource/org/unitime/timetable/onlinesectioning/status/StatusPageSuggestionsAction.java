@@ -7435,6 +7435,52 @@ name|isCritical
 argument_list|()
 return|;
 block|}
+if|else if
+condition|(
+name|eq
+argument_list|(
+literal|"Assigned Critical"
+argument_list|,
+name|term
+argument_list|)
+condition|)
+block|{
+return|return
+name|request
+argument_list|()
+operator|.
+name|isCritical
+argument_list|()
+operator|&&
+name|enrollment
+argument_list|()
+operator|!=
+literal|null
+return|;
+block|}
+if|else if
+condition|(
+name|eq
+argument_list|(
+literal|"Not Assigned Critical"
+argument_list|,
+name|term
+argument_list|)
+condition|)
+block|{
+return|return
+name|request
+argument_list|()
+operator|.
+name|isCritical
+argument_list|()
+operator|&&
+name|enrollment
+argument_list|()
+operator|==
+literal|null
+return|;
+block|}
 block|}
 if|if
 condition|(

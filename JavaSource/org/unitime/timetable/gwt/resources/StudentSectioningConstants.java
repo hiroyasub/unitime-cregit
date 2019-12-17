@@ -625,6 +625,10 @@ literal|"Wait-Listed"
 block|,
 literal|"Critical"
 block|,
+literal|"Assigned Critical"
+block|,
+literal|"Not Assigned Critical"
+block|,
 block|}
 argument_list|)
 name|String
