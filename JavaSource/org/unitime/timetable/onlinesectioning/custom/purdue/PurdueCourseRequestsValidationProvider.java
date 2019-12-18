@@ -8325,6 +8325,10 @@ operator|(
 name|creditError
 operator|!=
 literal|null
+operator|||
+name|questionNoAlt
+operator|||
+name|questionDropCritical
 condition|?
 literal|"\n"
 else|:

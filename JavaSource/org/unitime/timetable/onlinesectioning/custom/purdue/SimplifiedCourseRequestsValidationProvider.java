@@ -5313,6 +5313,8 @@ operator|(
 name|creditError
 operator|!=
 literal|null
+operator|||
+name|questionNoAlt
 condition|?
 literal|"\n"
 else|:
