@@ -24215,6 +24215,17 @@ block|}
 block|}
 name|toReservation
 operator|.
+name|setInclusive
+argument_list|(
+name|fromReservation
+operator|.
+name|isInclusive
+argument_list|()
+argument_list|)
+expr_stmt|;
+empty_stmt|;
+name|toReservation
+operator|.
 name|setConfigurations
 argument_list|(
 operator|new

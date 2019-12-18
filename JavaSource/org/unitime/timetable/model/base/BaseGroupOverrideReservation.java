@@ -267,6 +267,11 @@ operator|+
 name|getGroup
 argument_list|()
 operator|+
+literal|"\n	Inclusive: "
+operator|+
+name|getInclusive
+argument_list|()
+operator|+
 literal|"\n	InstructionalOffering: "
 operator|+
 name|getInstructionalOffering

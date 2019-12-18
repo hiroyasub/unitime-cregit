@@ -13400,6 +13400,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Mode:"
+argument_list|)
+name|String
+name|propInclusive
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Type:"
 argument_list|)
 name|String
@@ -20484,6 +20493,60 @@ literal|"Do Not Reserve Space"
 argument_list|)
 name|String
 name|checkAllwaysExpired
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Restriction"
+argument_list|)
+name|String
+name|checkReservationRestriction
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Set: Using application configuration settings"
+argument_list|)
+name|String
+name|reservationInclusiveNotSet
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default: Reservation is enforced on all the levels"
+argument_list|)
+name|String
+name|reservationInclusiveDefaultTrue
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Default: Reservation is only enforced on the selected level"
+argument_list|)
+name|String
+name|reservationInclusiveDefaultFalse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Reservation: Reservation is enforced on all the levels"
+argument_list|)
+name|String
+name|reservationInclusiveTrue
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Restriction: Reservation is only enforced on the selected level"
+argument_list|)
+name|String
+name|reservationInclusiveFalse
 parameter_list|()
 function_decl|;
 block|}

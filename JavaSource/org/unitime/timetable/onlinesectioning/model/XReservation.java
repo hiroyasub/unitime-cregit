@@ -445,11 +445,9 @@ name|offering
 argument_list|,
 name|reservation
 argument_list|,
-name|ApplicationProperty
+name|reservation
 operator|.
-name|ReservationsAreInclusive
-operator|.
-name|isTrue
+name|isReservationInclusive
 argument_list|()
 argument_list|)
 expr_stmt|;

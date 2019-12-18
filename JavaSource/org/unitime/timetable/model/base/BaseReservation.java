@@ -150,6 +150,10 @@ name|Date
 name|iStartDate
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iInclusive
+decl_stmt|;
+specifier|private
 name|InstructionalOffering
 name|iInstructionalOffering
 decl_stmt|;
@@ -194,6 +198,13 @@ name|String
 name|PROP_START_DATE
 init|=
 literal|"startDate"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_INCLUSIVE
+init|=
+literal|"inclusive"
 decl_stmt|;
 specifier|public
 name|BaseReservation
@@ -311,6 +322,37 @@ block|{
 name|iStartDate
 operator|=
 name|startDate
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isInclusive
+parameter_list|()
+block|{
+return|return
+name|iInclusive
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getInclusive
+parameter_list|()
+block|{
+return|return
+name|iInclusive
+return|;
+block|}
+specifier|public
+name|void
+name|setInclusive
+parameter_list|(
+name|Boolean
+name|inclusive
+parameter_list|)
+block|{
+name|iInclusive
+operator|=
+name|inclusive
 expr_stmt|;
 block|}
 specifier|public
@@ -568,6 +610,11 @@ operator|+
 literal|"\n	ExpirationDate: "
 operator|+
 name|getExpirationDate
+argument_list|()
+operator|+
+literal|"\n	Inclusive: "
+operator|+
+name|getInclusive
 argument_list|()
 operator|+
 literal|"\n	InstructionalOffering: "
