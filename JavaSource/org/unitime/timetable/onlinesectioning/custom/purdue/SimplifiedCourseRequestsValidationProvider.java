@@ -5319,7 +5319,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"One or more courses that are marked as critical in your degree plan have been removed. You may not be able to graduate in time."
+literal|"One or more courses that are marked as critical in your degree plan have been removed. This may prohibit progress towards degree. Please consult with your academic advisor."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME
