@@ -850,7 +850,7 @@ literal|0
 condition|)
 name|UniTimeConfirmationDialog
 operator|.
-name|confirm
+name|confirmFocusNo
 argument_list|(
 name|MESSAGES
 operator|.
@@ -878,7 +878,7 @@ expr_stmt|;
 else|else
 name|UniTimeConfirmationDialog
 operator|.
-name|confirm
+name|confirmFocusNo
 argument_list|(
 name|MESSAGES
 operator|.
@@ -969,7 +969,7 @@ condition|)
 block|{
 name|UniTimeConfirmationDialog
 operator|.
-name|confirm
+name|confirmFocusNo
 argument_list|(
 name|MESSAGES
 operator|.
@@ -1084,7 +1084,7 @@ condition|)
 block|{
 name|UniTimeConfirmationDialog
 operator|.
-name|confirm
+name|confirmFocusNo
 argument_list|(
 name|MESSAGES
 operator|.
