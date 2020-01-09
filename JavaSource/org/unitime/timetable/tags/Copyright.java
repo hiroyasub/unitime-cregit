@@ -124,7 +124,7 @@ comment|// If you need a different licensing, please contact us at support@uniti
 name|String
 name|body
 init|=
-literal|"<a class='unitime-FooterLink' href='http://www.unitime.org' tabIndex='-1'>&copy;&nbsp;2008&nbsp;-&nbsp;2019&nbsp;The&nbsp;Apereo&nbsp;Foundation</a>,"
+literal|"<a class='unitime-FooterLink' href='http://www.unitime.org' tabIndex='-1'>&copy;&nbsp;2008&nbsp;-&nbsp;2020&nbsp;The&nbsp;Apereo&nbsp;Foundation</a>,"
 operator|+
 operator|(
 name|isBr
