@@ -73,6 +73,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|StringTokenizer
 import|;
 end_import
@@ -2514,7 +2524,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct cc.classification from "
+literal|"select cc.classification from "
 operator|+
 literal|"CurriculumCourse cc, Assignment a inner join a.clazz.schedulingSubpart.instrOfferingConfig.instructionalOffering.courseOfferings as co where "
 operator|+
@@ -2532,6 +2542,19 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|Set
+argument_list|<
+name|Long
+argument_list|>
+name|infos
+init|=
+operator|new
+name|HashSet
+argument_list|<
+name|Long
+argument_list|>
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -2563,6 +2586,20 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|infos
+operator|.
+name|add
+argument_list|(
+name|cc
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+condition|)
+continue|continue;
 name|String
 name|name
 init|=
@@ -2634,7 +2671,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select distinct c from ConstraintInfo c inner join c.assignments a where a.solution.uniqueId in ("
+literal|"select c from ConstraintInfo c inner join c.assignments a where a.solution.uniqueId in ("
 operator|+
 name|solutionIdsStr
 operator|+
@@ -2648,6 +2685,19 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|Set
+argument_list|<
+name|Long
+argument_list|>
+name|infos
+init|=
+operator|new
+name|HashSet
+argument_list|<
+name|Long
+argument_list|>
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -2679,6 +2729,20 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|infos
+operator|.
+name|add
+argument_list|(
+name|g
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+condition|)
+continue|continue;
 if|if
 condition|(
 operator|!
