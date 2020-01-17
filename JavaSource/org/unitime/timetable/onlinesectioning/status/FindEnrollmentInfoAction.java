@@ -1326,7 +1326,7 @@ literal|"select io.uniqueId, io.snapshotLimit from "
 operator|+
 literal|"InstructionalOffering io where "
 operator|+
-literal|"io.uniqueId = :ids"
+literal|"io.uniqueId in :ids"
 argument_list|)
 operator|.
 name|setParameterList
