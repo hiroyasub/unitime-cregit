@@ -1994,6 +1994,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|AdvisorCourseRequests
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|ConsentApproval
 argument_list|(
 name|CourseOffering

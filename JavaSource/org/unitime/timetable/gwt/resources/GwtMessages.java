@@ -11755,6 +11755,17 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Advisor Course Requests"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageAdvisorCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"N/A"
 argument_list|)
 name|String

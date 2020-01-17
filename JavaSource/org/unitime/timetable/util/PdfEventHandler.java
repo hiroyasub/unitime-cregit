@@ -261,6 +261,8 @@ name|font
 operator|.
 name|getSize
 argument_list|()
+operator|*
+literal|0.8f
 argument_list|)
 expr_stmt|;
 return|return;
