@@ -2510,7 +2510,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"gwt.jsp?page=acrf&term="
+literal|"gwt.jsp?page=acrf&session="
 operator|+
 name|student
 operator|.

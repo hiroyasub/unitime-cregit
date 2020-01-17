@@ -31141,7 +31141,7 @@ expr_stmt|;
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnySession
 argument_list|(
 name|sessionId
 argument_list|,
@@ -32055,7 +32055,7 @@ block|{
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnySession
 argument_list|(
 name|details
 operator|.
