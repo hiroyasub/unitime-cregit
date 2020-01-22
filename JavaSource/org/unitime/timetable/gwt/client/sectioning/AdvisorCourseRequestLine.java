@@ -1550,6 +1550,13 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+name|iCredit
+operator|.
+name|setMaxLength
+argument_list|(
+literal|10
+argument_list|)
+expr_stmt|;
 name|iNotes
 operator|=
 operator|new

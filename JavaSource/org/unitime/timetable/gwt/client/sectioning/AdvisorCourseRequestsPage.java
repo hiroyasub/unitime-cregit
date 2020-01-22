@@ -3760,6 +3760,7 @@ name|void
 name|submit
 parameter_list|()
 block|{
+specifier|final
 name|AdvisingStudentDetails
 name|details
 init|=
@@ -3835,6 +3836,10 @@ argument_list|()
 operator|.
 name|hide
 argument_list|()
+expr_stmt|;
+name|iDetails
+operator|=
+name|details
 expr_stmt|;
 name|download
 argument_list|(

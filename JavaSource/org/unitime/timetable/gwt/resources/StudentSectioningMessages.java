@@ -8020,6 +8020,42 @@ name|String
 name|buttonAdvisorCourseRequests
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} reservation"
+argument_list|)
+name|String
+name|noteHasGroupReservation
+parameter_list|(
+name|String
+name|group
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Individual reservation"
+argument_list|)
+name|String
+name|noteHasIndividualReservation
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrolled in {0} on {1}"
+argument_list|)
+name|String
+name|noteEnrolled
+parameter_list|(
+name|String
+name|course
+parameter_list|,
+name|String
+name|date
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
