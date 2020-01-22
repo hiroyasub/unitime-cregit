@@ -881,6 +881,15 @@ argument_list|(
 name|r
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|getDetails
+argument_list|()
+operator|.
+name|isCanUpdate
+argument_list|()
+condition|)
+block|{
 name|Date
 name|ts
 init|=
@@ -3024,6 +3033,13 @@ operator|.
 name|commitTransaction
 argument_list|()
 expr_stmt|;
+name|ret
+operator|.
+name|setUpdated
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -3073,6 +3089,7 @@ operator|.
 name|release
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|generatePdfConfirmation
 argument_list|(

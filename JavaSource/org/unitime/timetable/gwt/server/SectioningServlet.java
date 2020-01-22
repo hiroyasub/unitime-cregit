@@ -31455,6 +31455,16 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|ret
+operator|.
+name|setDegreePlan
+argument_list|(
+name|CustomDegreePlansHolder
+operator|.
+name|hasProvider
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|getSessionContext

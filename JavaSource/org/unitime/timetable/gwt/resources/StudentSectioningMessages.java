@@ -8056,6 +8056,51 @@ name|String
 name|date
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Success!"
+argument_list|)
+name|String
+name|advisorRequestsSubmitOK
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Submit failed: {0}"
+argument_list|)
+name|String
+name|advisorRequestsSubmitFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load student: {0}"
+argument_list|)
+name|String
+name|advisorRequestsLoadFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Loading data for {0}..."
+argument_list|)
+name|String
+name|loadingAdvisorRequests
+parameter_list|(
+name|String
+name|student
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
