@@ -1543,9 +1543,13 @@ name|enrolled
 operator|||
 name|reserved
 operator|)
+operator|&&
+name|acrs
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
-comment|// acrs.isEmpty()
 if|if
 condition|(
 name|cd

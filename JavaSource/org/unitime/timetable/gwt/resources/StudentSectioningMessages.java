@@ -1470,7 +1470,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>P</u>rint"
+literal|"<u>E</u>xport PDF"
 argument_list|)
 name|String
 name|buttonPrint
@@ -7843,7 +7843,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>S</u>ubmit&amp; Print"
+literal|"<u>S</u>ubmit"
 argument_list|)
 name|String
 name|buttonSubmitPrint
@@ -8100,6 +8100,15 @@ parameter_list|(
 name|String
 name|student
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student Course Requests"
+argument_list|)
+name|String
+name|studentCourseRequests
+parameter_list|()
 function_decl|;
 block|}
 end_interface

@@ -10938,6 +10938,28 @@ argument_list|(
 literal|"unitime.enrollment.checkCritical"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"org/unitime/timetable/onlinesectioning/advisors/unitime.png"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Requests: PDF logo"
+argument_list|)
+name|AdvisorCourseRequestsPDFLogo
+argument_list|(
+literal|"unitime.acrf.pdflogo"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
