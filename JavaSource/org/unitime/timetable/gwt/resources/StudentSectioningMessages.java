@@ -6318,6 +6318,42 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"My Students Advised"
+argument_list|)
+name|String
+name|modeMyStudentsAdvised
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"My Students Not Advised"
+argument_list|)
+name|String
+name|modeMyStudentsNotAdvised
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Advised"
+argument_list|)
+name|String
+name|modeNotAdvised
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advised"
+argument_list|)
+name|String
+name|modeAdvised
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Request is wait-listed."
 argument_list|)
 name|String

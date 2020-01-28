@@ -879,6 +879,13 @@ argument_list|(
 name|server
 argument_list|)
 expr_stmt|;
+name|sm
+operator|.
+name|setHelper
+argument_list|(
+name|helper
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|CourseOffering
