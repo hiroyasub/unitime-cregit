@@ -31,7 +31,7 @@ block|{
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"4.4"
+literal|"4.5"
 argument_list|)
 annotation|@
 name|DoNotTranslate
