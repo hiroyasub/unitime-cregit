@@ -1524,6 +1524,20 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|CourseRequestInterface
+name|getAdvisorRequests
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|,
+name|Long
+name|studentId
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 

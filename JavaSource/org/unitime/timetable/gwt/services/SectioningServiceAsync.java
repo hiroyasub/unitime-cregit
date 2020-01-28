@@ -1837,6 +1837,26 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|void
+name|getAdvisorRequests
+parameter_list|(
+name|Long
+name|sessionId
+parameter_list|,
+name|Long
+name|studentId
+parameter_list|,
+name|AsyncCallback
+argument_list|<
+name|CourseRequestInterface
+argument_list|>
+name|callback
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 

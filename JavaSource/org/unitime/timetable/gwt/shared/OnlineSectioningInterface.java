@@ -284,6 +284,8 @@ block|,
 name|CAN_CHANGE_GRADE_MODE
 block|,
 name|SR_CHANGE_NOTE
+block|,
+name|HAS_ADVISOR_REQUESTS
 block|, 			;
 specifier|public
 name|int

@@ -8110,6 +8110,90 @@ name|String
 name|studentCourseRequests
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor Course Requests"
+argument_list|)
+name|String
+name|dialogAdvisorCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Total Priority Credit Hours"
+argument_list|)
+name|String
+name|rowTotalPriorityCreditHours
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>A</u>pply"
+argument_list|)
+name|String
+name|buttonAdvisorRequestsApply
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>C</u>lose"
+argument_list|)
+name|String
+name|buttonAdvisorRequestsClose
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>A</u>dvisor Requests"
+argument_list|)
+name|String
+name|buttonAdvisorRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show course requests filled in with the advisor."
+argument_list|)
+name|String
+name|hintAdvisorRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Retrieving advisor course requests..."
+argument_list|)
+name|String
+name|waitAdvisorRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load advisor course requests: {0}"
+argument_list|)
+name|String
+name|failedAdvisorRequests
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>A</u>dvisor Requests"
+argument_list|)
+name|String
+name|tabAdvisorRequests
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
