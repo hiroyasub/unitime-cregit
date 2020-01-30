@@ -5105,7 +5105,7 @@ parameter_list|,
 name|String
 name|name
 parameter_list|)
-comment|/*-{ 		var data = new Uint8Array(bytes); 		var blob = new Blob([data], {type: "application/pdf"}); 		var link = $doc.createElement("a"); 		link.href = $wnd.URL.createObjectURL(blob); 		link.download = name + ".pdf"; 		link.click(); 	}-*/
+comment|/*-{ 		var data = new Uint8Array(bytes); 		var blob = new Blob([data], {type: "application/pdf"}); 		if ($wnd.navigator&& $wnd.navigator.msSaveOrOpenBlob) { 			$wnd.navigator.msSaveOrOpenBlob(blob, name + ".pdf"); 		} else { 			var link = $doc.createElement("a"); 			link.href = $wnd.URL.createObjectURL(blob); 			link.download = name + ".pdf"; 			link.target = "_blank"; 			$doc.body.appendChild(link); 			link.click(); 			$doc.body.removeChild(link); 			$wnd.URL.revokeObjectURL(link.href); 		} 	}-*/
 function_decl|;
 specifier|protected
 name|void
