@@ -7933,6 +7933,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Additional Notes:"
+argument_list|)
+name|String
+name|propAdvisorNotes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Lookup Student"
 argument_list|)
 name|String
