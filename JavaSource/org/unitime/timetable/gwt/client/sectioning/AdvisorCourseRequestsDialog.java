@@ -2070,7 +2070,7 @@ name|Cell
 argument_list|(
 name|MESSAGES
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)
@@ -2328,7 +2328,7 @@ name|Cell
 argument_list|(
 name|MESSAGES
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)

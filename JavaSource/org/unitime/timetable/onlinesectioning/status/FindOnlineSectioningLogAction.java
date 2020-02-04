@@ -2046,7 +2046,7 @@ argument_list|)
 else|:
 name|MSG
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 literal|1
 operator|+
@@ -2322,7 +2322,7 @@ argument_list|)
 else|:
 name|MSG
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 literal|1
 operator|+

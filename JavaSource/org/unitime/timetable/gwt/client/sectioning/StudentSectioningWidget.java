@@ -29718,7 +29718,7 @@ name|first
 condition|?
 name|MESSAGES
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)

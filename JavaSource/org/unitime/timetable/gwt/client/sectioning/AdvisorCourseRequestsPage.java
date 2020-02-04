@@ -8155,7 +8155,7 @@ name|first
 condition|?
 name|MESSAGES
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)
@@ -8449,7 +8449,7 @@ name|first
 condition|?
 name|MESSAGES
 operator|.
-name|courseRequestsPriority
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)

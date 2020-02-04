@@ -8483,7 +8483,7 @@ name|first
 condition|?
 name|MSG
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)
@@ -8666,7 +8666,7 @@ name|first
 condition|?
 name|MSG
 operator|.
-name|courseRequestsAlternative
+name|courseRequestsAlternate
 argument_list|(
 name|priority
 argument_list|)
