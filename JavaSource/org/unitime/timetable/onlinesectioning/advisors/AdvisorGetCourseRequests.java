@@ -2180,6 +2180,25 @@ argument_list|(
 name|rc
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|acr
+operator|.
+name|getAlternative
+argument_list|()
+operator|==
+literal|0
+condition|)
+name|r
+operator|.
+name|setCritical
+argument_list|(
+name|acr
+operator|.
+name|getCritical
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 if|else if
 condition|(
