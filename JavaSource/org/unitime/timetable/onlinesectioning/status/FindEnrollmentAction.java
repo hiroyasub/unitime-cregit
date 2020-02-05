@@ -1595,8 +1595,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 argument_list|)
 condition|)

@@ -2233,8 +2233,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 decl_stmt|;
 if|if
@@ -5164,8 +5162,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 decl_stmt|;
 if|if
@@ -5426,8 +5422,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 decl_stmt|;
 if|if

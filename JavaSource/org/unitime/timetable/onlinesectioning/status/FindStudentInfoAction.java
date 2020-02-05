@@ -1740,8 +1740,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 decl_stmt|;
 if|if
@@ -2354,8 +2352,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 argument_list|)
 condition|)
@@ -4451,8 +4447,6 @@ argument_list|,
 name|lookup
 argument_list|,
 name|server
-argument_list|,
-name|helper
 argument_list|)
 argument_list|)
 condition|)
@@ -5037,13 +5031,6 @@ operator|.
 name|setServer
 argument_list|(
 name|server
-argument_list|)
-expr_stmt|;
-name|m
-operator|.
-name|setHelper
-argument_list|(
-name|helper
 argument_list|)
 expr_stmt|;
 for|for
@@ -6475,9 +6462,6 @@ argument_list|,
 name|iDefaultSectioningStatus
 argument_list|,
 name|getServer
-argument_list|()
-argument_list|,
-name|getHelper
 argument_list|()
 argument_list|,
 name|isMyStudent

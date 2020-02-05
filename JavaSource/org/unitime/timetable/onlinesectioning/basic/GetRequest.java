@@ -2120,12 +2120,9 @@ name|AdvisorGetCourseRequests
 operator|.
 name|getRequest
 argument_list|(
-name|iStudentId
+name|student
 argument_list|,
-name|helper
-operator|.
-name|getHibSession
-argument_list|()
+name|server
 argument_list|)
 argument_list|)
 expr_stmt|;
