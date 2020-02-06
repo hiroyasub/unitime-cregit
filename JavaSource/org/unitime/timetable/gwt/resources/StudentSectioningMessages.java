@@ -8401,6 +8401,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Moved to substitute {0}."
+argument_list|)
+name|String
+name|advChangesMovedToSubstitute
+parameter_list|(
+name|int
+name|prio
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0,number,0.#} - {1,number,0.#} ({2,number,0} %)"
 argument_list|)
 name|String
