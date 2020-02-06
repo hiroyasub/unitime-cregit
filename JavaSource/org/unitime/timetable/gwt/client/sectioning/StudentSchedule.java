@@ -9753,6 +9753,20 @@ operator|==
 literal|0
 condition|)
 block|{
+return|return
+literal|""
+return|;
+block|}
+if|else if
+condition|(
+name|iTabs
+operator|.
+name|getSelectedTab
+argument_list|()
+operator|==
+literal|1
+condition|)
+block|{
 name|float
 index|[]
 name|range

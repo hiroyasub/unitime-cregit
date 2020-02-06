@@ -2466,7 +2466,7 @@ name|maxCredit
 operator|<
 name|rc
 operator|.
-name|getCreditMin
+name|getCreditMax
 argument_list|()
 condition|)
 name|maxCredit
