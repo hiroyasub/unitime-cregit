@@ -2685,7 +2685,7 @@ comment|/* Enrollment dialog messages (opened from Enrollments table) 	 */
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Loading classes for {0}..."
+literal|"Loading student details for {0}..."
 argument_list|)
 name|String
 name|loadingEnrollment
@@ -2697,7 +2697,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Classes for {0}"
+literal|"{0}"
 argument_list|)
 name|String
 name|dialogEnrollments
