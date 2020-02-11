@@ -134,6 +134,13 @@ name|subpart
 parameter_list|,
 name|CourseOffering
 name|courseOffering
+parameter_list|,
+name|org
+operator|.
+name|hibernate
+operator|.
+name|Session
+name|hibSession
 parameter_list|)
 function_decl|;
 block|}

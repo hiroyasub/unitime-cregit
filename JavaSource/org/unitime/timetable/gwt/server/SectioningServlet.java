@@ -15198,6 +15198,13 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
+name|ApplicationProperty
+operator|.
+name|OnlineSchedulingGradableIType
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
 name|Class_
 operator|.
 name|getExternalClassNameHelper
@@ -16162,6 +16169,8 @@ name|enrollment
 operator|.
 name|getCourseOffering
 argument_list|()
+argument_list|,
+name|hibSession
 argument_list|)
 condition|)
 block|{

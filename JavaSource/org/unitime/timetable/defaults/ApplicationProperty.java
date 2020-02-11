@@ -2686,6 +2686,28 @@ operator|.
 name|class
 argument_list|)
 expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Online Student Scheduling: check for gradable itypes when checking on which subpart course credit information should be shown"
+argument_list|)
+name|OnlineSchedulingGradableIType
+argument_list|(
+literal|"unitime.enrollment.gradableITypes"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
 name|Description
 argument_list|(
 literal|"Online Student Scheduling: allow student to select over-expected sections (even if there is a choice avoiding them)"
