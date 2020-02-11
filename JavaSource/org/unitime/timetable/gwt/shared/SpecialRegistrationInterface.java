@@ -6099,7 +6099,7 @@ argument_list|()
 expr_stmt|;
 name|iGradeModes
 operator|.
-name|add
+name|addGradeMode
 argument_list|(
 name|sectionId
 argument_list|,
@@ -6135,7 +6135,7 @@ return|;
 return|return
 name|iGradeModes
 operator|.
-name|get
+name|getGradeMode
 argument_list|(
 name|section
 argument_list|)

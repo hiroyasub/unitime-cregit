@@ -137,7 +137,7 @@ name|String
 name|courseRegistrationStatusDescription
 decl_stmt|;
 specifier|public
-name|Double
+name|Float
 name|creditHour
 decl_stmt|;
 specifier|public
