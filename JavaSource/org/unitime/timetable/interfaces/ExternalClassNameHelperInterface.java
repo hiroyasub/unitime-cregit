@@ -43,6 +43,20 @@ name|CourseOffering
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|SchedulingSubpart
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Stephanie Schluttenhofer  *  */
 end_comment
@@ -107,6 +121,22 @@ name|CourseOffering
 name|courseOffering
 parameter_list|)
 function_decl|;
+specifier|public
+interface|interface
+name|HasGradableSubpart
+block|{
+specifier|public
+name|boolean
+name|isGradableSubpart
+parameter_list|(
+name|SchedulingSubpart
+name|subpart
+parameter_list|,
+name|CourseOffering
+name|courseOffering
+parameter_list|)
+function_decl|;
+block|}
 block|}
 end_interface
 
