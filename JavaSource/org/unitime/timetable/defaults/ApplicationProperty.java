@@ -11004,8 +11004,33 @@ argument_list|(
 literal|"unitime.acrf.pdflogo"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"Students are responsible for meeting course prerequisites and fulfilling degree requirements, and are ultimately responsible for their own educational plan and academic success."
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Requests: PDF disclaimer"
+argument_list|)
+name|AdvisorCourseRequestsPDFDisclaimer
+argument_list|(
+literal|"unitime.acrf.pdfdisclaimer"
+argument_list|)
 expr_stmt|;
 end_expr_stmt
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
 
 begin_decl_stmt
 name|String

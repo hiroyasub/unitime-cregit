@@ -8068,15 +8068,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Students are responsible for meeting course prerequisites and fulfilling degree requirements, and are ultimately responsible for their own educational plan and academic success."
-argument_list|)
-name|String
-name|pdfStudentDisclaimer
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"<u>A</u>dvisor Course Requests"
 argument_list|)
 name|String
