@@ -33,16 +33,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Collection
 import|;
 end_import
@@ -64,16 +54,6 @@ operator|.
 name|util
 operator|.
 name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -3088,7 +3068,7 @@ name|StudentStatusInfo
 name|iCurrentStatus
 decl_stmt|;
 specifier|private
-name|List
+name|Set
 argument_list|<
 name|StudentStatusInfo
 argument_list|>
@@ -3452,7 +3432,7 @@ condition|)
 name|iAvailableStatuses
 operator|=
 operator|new
-name|ArrayList
+name|TreeSet
 argument_list|<
 name|StudentStatusInfo
 argument_list|>
@@ -3467,7 +3447,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|List
+name|Set
 argument_list|<
 name|StudentStatusInfo
 argument_list|>

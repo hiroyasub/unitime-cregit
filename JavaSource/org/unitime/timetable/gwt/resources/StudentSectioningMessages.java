@@ -4408,6 +4408,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Advisor Recommendations"
+argument_list|)
+name|String
+name|emailAdvisorRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"List of Classes"
 argument_list|)
 name|String
@@ -4738,6 +4747,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course requests for %session%"
+argument_list|)
+name|String
+name|defaulSubjectCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor recommendations for %session%"
+argument_list|)
+name|String
+name|defaulSubjectAdvisorRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Email notification for %session%"
+argument_list|)
+name|String
+name|defaulSubjectOther
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Mass cancellation is an irreversible operation that will delete all class enrollments and course requests for the selected student(s). Are you sure to do that?"
 argument_list|)
 name|String
@@ -4760,6 +4796,15 @@ literal|"Class Schedule"
 argument_list|)
 name|String
 name|mailIncludeClassSchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor Recommendations"
+argument_list|)
+name|String
+name|mailIncludeAdvisorRequests
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8023,7 +8068,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Student Course Requests"
+literal|"Advisor Recommendations"
 argument_list|)
 name|String
 name|pdfHeaderAdvisorCourseRequests
@@ -8122,10 +8167,31 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Email sent."
+argument_list|)
+name|String
+name|advisorRequestsEmailSent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Submit failed: {0}"
 argument_list|)
 name|String
 name|advisorRequestsSubmitFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Email failed: {0}"
+argument_list|)
+name|String
+name|advisorRequestsEmailFailed
 parameter_list|(
 name|String
 name|reason
@@ -8167,7 +8233,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor Course Requests"
+literal|"Advisor Recommendations"
 argument_list|)
 name|String
 name|dialogAdvisorCourseRequests
@@ -8203,7 +8269,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dvisor Requests"
+literal|"<u>A</u>dvisor Recommendations"
 argument_list|)
 name|String
 name|buttonAdvisorRequests
@@ -8221,7 +8287,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Retrieving advisor course requests..."
+literal|"Retrieving advisor recommendations..."
 argument_list|)
 name|String
 name|waitAdvisorRequests
@@ -8230,7 +8296,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to load advisor course requests: {0}"
+literal|"Failed to load advisor recommendations: {0}"
 argument_list|)
 name|String
 name|failedAdvisorRequests
@@ -8242,7 +8308,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dvisor Requests"
+literal|"<u>A</u>dvisor Recommendations"
 argument_list|)
 name|String
 name|tabAdvisorRequests
@@ -8541,6 +8607,15 @@ parameter_list|(
 name|String
 name|course
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Send email confirmation"
+argument_list|)
+name|String
+name|checkSendEmailConfirmation
+parameter_list|()
 function_decl|;
 block|}
 end_interface

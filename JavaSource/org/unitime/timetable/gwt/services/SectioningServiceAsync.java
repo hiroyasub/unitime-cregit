@@ -1332,6 +1332,9 @@ parameter_list|,
 name|Boolean
 name|classSchedule
 parameter_list|,
+name|Boolean
+name|advisorRequests
+parameter_list|,
 name|AsyncCallback
 argument_list|<
 name|Boolean
@@ -1825,6 +1828,9 @@ name|submitAdvisingDetails
 parameter_list|(
 name|AdvisingStudentDetails
 name|details
+parameter_list|,
+name|boolean
+name|emailStudent
 parameter_list|,
 name|AsyncCallback
 argument_list|<

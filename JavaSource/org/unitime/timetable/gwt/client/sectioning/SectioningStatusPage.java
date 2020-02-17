@@ -11720,6 +11720,11 @@ name|iStudentStatusDialog
 operator|.
 name|getIncludeClassSchedule
 argument_list|()
+argument_list|,
+name|iStudentStatusDialog
+operator|.
+name|getIncludeAdvisorRequests
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -26431,6 +26436,10 @@ parameter_list|,
 specifier|final
 name|boolean
 name|classSchedule
+parameter_list|,
+specifier|final
+name|boolean
+name|advisorRequests
 parameter_list|)
 block|{
 if|if
@@ -26466,6 +26475,8 @@ argument_list|,
 name|courseRequests
 argument_list|,
 name|classSchedule
+argument_list|,
+name|advisorRequests
 argument_list|,
 operator|new
 name|AsyncCallback
@@ -26733,6 +26744,8 @@ argument_list|,
 name|courseRequests
 argument_list|,
 name|classSchedule
+argument_list|,
+name|advisorRequests
 argument_list|)
 expr_stmt|;
 block|}
@@ -26911,6 +26924,8 @@ argument_list|,
 name|courseRequests
 argument_list|,
 name|classSchedule
+argument_list|,
+name|advisorRequests
 argument_list|)
 expr_stmt|;
 block|}

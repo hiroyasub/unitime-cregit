@@ -3578,6 +3578,15 @@ literal|"classSchedule"
 argument_list|,
 literal|null
 argument_list|)
+argument_list|,
+name|helper
+operator|.
+name|getOptinalParameterBoolean
+argument_list|(
+literal|"advisorRequests"
+argument_list|,
+literal|false
+argument_list|)
 argument_list|)
 return|;
 block|}

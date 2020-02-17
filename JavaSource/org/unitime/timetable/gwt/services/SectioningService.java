@@ -1162,6 +1162,9 @@ name|courseRequests
 parameter_list|,
 name|Boolean
 name|classSchedule
+parameter_list|,
+name|Boolean
+name|advisorRequests
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -1518,6 +1521,9 @@ name|submitAdvisingDetails
 parameter_list|(
 name|AdvisingStudentDetails
 name|details
+parameter_list|,
+name|boolean
+name|emailStudent
 parameter_list|)
 throws|throws
 name|SectioningException

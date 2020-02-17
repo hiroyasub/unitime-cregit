@@ -431,7 +431,7 @@ return|return
 name|iDetails
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|generatePdfConfirmation
 parameter_list|(
