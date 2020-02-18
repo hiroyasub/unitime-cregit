@@ -8263,6 +8263,15 @@ argument_list|(
 literal|"Advisor Recommendations"
 argument_list|)
 name|String
+name|advisorCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor Recommendations"
+argument_list|)
+name|String
 name|dialogAdvisorCourseRequests
 parameter_list|()
 function_decl|;
