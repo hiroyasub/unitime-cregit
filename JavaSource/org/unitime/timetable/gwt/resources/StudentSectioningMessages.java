@@ -4276,10 +4276,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advised<br><small>Credit (Missing)</small>"
+literal|"Advised<br>Credit"
 argument_list|)
 name|String
-name|colAdvised
+name|colAdvisedCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Missing<br>Courses"
+argument_list|)
+name|String
+name|colMissingCourses
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4297,7 +4306,7 @@ argument_list|(
 literal|"Missing Courses"
 argument_list|)
 name|String
-name|ordAdvisedCritical
+name|ordAdvisedCourses
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8584,40 +8593,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"{0,number,0.#} - {1,number,0.#} ({2})"
-argument_list|)
-name|String
-name|advisedCreditRangeCritical
-parameter_list|(
-name|float
-name|minCred
-parameter_list|,
-name|float
-name|maxCred
-parameter_list|,
-name|String
-name|crit
-parameter_list|)
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"{0,number,0.#} ({1})"
-argument_list|)
-name|String
-name|advisedCreditCritical
-parameter_list|(
-name|float
-name|cred
-parameter_list|,
-name|String
-name|crit
-parameter_list|)
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"<span style='color:red;font-weight:bold;'>{0}!</span> + {1}"
+literal|"<span style='color:red;font-weight:bold;'>{0}<sup> cr</sup></span> + {1}"
 argument_list|)
 annotation|@
 name|DoNotTranslate
@@ -8634,7 +8610,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<span style='color:red;font-weight:bold;'>{0}!</span>"
+literal|"<span style='color:red;font-weight:bold;'>{0}<sup> critical</sup></span>"
 argument_list|)
 annotation|@
 name|DoNotTranslate
@@ -8653,10 +8629,10 @@ argument_list|)
 annotation|@
 name|DoNotTranslate
 name|String
-name|advisedMissingOther
+name|advisedMissingPrimary
 parameter_list|(
 name|int
-name|other
+name|primary
 parameter_list|)
 function_decl|;
 annotation|@
