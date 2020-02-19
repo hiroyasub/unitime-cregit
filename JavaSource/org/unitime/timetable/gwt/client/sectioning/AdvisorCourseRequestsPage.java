@@ -1923,6 +1923,11 @@ name|result
 operator|.
 name|isCanUpdate
 argument_list|()
+operator|&&
+name|result
+operator|.
+name|isCanEmail
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iEmailConfirmationFooter
@@ -1932,6 +1937,11 @@ argument_list|(
 name|result
 operator|.
 name|isCanUpdate
+argument_list|()
+operator|&&
+name|result
+operator|.
+name|isCanEmail
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -10708,12 +10718,11 @@ name|isSendEmailConformation
 parameter_list|()
 block|{
 return|return
-operator|!
 name|iEmailConfirmationHeader
 operator|.
 name|isVisible
 argument_list|()
-operator|||
+operator|&&
 name|iEmailConfirmationHeader
 operator|.
 name|getValue
