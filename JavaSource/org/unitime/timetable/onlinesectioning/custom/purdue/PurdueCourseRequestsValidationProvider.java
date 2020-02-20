@@ -4863,8 +4863,14 @@ block|}
 block|}
 block|}
 block|}
+name|String
+name|creditError
+init|=
+literal|null
+decl_stmt|;
 if|if
 condition|(
+operator|!
 name|SpecialRegistrationHelper
 operator|.
 name|isEmpty
@@ -4872,7 +4878,7 @@ argument_list|(
 name|req
 argument_list|)
 condition|)
-return|return;
+block|{
 if|if
 condition|(
 name|req
@@ -5575,11 +5581,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|String
-name|creditError
-init|=
-literal|null
-decl_stmt|;
 name|String
 name|maxCreditLimitStr
 init|=
@@ -7717,6 +7718,7 @@ operator|.
 name|CREDIT_LOW
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|Set
 argument_list|<
