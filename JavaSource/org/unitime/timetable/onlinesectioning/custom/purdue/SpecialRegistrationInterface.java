@@ -262,6 +262,9 @@ comment|// sections are being unchanged, but a registration error was reported o
 name|CHGMODE
 block|,
 comment|// change grade mode
+name|CHGVARCR
+block|,
+comment|// change variable credit
 block|; 	}
 comment|/** Class representing one change (in a signle course) */
 specifier|public
@@ -329,6 +332,16 @@ comment|/** New grade mode description (only used when operation = CHGMODE) */
 specifier|public
 name|String
 name|selectedGradeModeDescription
+decl_stmt|;
+comment|/** Current credit hours (only used when operation = CHGVARCR) */
+specifier|public
+name|String
+name|currentCreditHour
+decl_stmt|;
+comment|/** Selected credit hours (only used when operation = CHGVARCR) */
+specifier|public
+name|String
+name|selectedCreditHour
 decl_stmt|;
 block|}
 comment|/** Registration error for which there needs to be an override */
@@ -1056,6 +1069,23 @@ name|SpecialRegistrationCurrentGradeMode
 argument_list|>
 name|gradingModes
 decl_stmt|;
+comment|/** List of available variable credits changes */
+name|List
+argument_list|<
+name|SpecialRegistrationVariableCredit
+argument_list|>
+name|varCredits
+decl_stmt|;
+comment|/** Student's current credit */
+specifier|public
+name|Float
+name|currentCredit
+decl_stmt|;
+comment|/** Student's max credit */
+specifier|public
+name|Float
+name|maxCredit
+decl_stmt|;
 block|}
 comment|/** 	 * Current grade mode of a section with the list of available grade mode changes 	 */
 specifier|public
@@ -1085,6 +1115,41 @@ argument_list|<
 name|SpecialRegistrationAvailableGradeMode
 argument_list|>
 name|availableGradingModes
+decl_stmt|;
+block|}
+comment|/** 	 * Variable credit change 	 */
+specifier|public
+specifier|static
+class|class
+name|SpecialRegistrationVariableCredit
+block|{
+comment|/** Section CRN */
+specifier|public
+name|String
+name|crn
+decl_stmt|;
+comment|/** Credit min */
+specifier|public
+name|String
+name|creditHrLow
+decl_stmt|;
+comment|/** Credit max */
+specifier|public
+name|String
+name|creditHrHigh
+decl_stmt|;
+comment|/** Credit indicator */
+specifier|public
+name|String
+name|creditHrInd
+decl_stmt|;
+comment|/** Approvals needed, null or empty when no approvals are not needed */
+specifier|public
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|approvals
 decl_stmt|;
 block|}
 specifier|public

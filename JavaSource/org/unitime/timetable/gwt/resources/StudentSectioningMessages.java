@@ -318,6 +318,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Pending"
+argument_list|)
+name|String
+name|colPendingCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Gr Md"
 argument_list|)
 name|String
@@ -1452,7 +1461,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>G</u>rade Modes"
+literal|"<u>G</u>rade Modes&amp; Credits"
 argument_list|)
 name|String
 name|buttonChangeGradeModes
@@ -7621,7 +7630,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Grade Modes"
+literal|"Grade Modes& Variable Credits"
 argument_list|)
 name|String
 name|dialogChangeGradeMode
@@ -7630,7 +7639,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Retrieving available grade modes..."
+literal|"Retrieving available grade modes and variable credits..."
 argument_list|)
 name|String
 name|waitRetrieveGradeModes
@@ -7639,7 +7648,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Requesting grade mode changes..."
+literal|"Requesting grade mode and credit changes..."
 argument_list|)
 name|String
 name|waitChangeGradeModes
@@ -7648,7 +7657,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to get available grade modes: {0}"
+literal|"Unable to get available grade modes and variable credits: {0}"
 argument_list|)
 name|String
 name|exceptionRetrieveGradeModes
@@ -7660,7 +7669,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to request grade mode changes: {0}"
+literal|"Failed to request grade mode and/or credit changes: {0}"
 argument_list|)
 name|String
 name|exceptionChangeGradeModes
@@ -7672,7 +7681,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No grade mode changes are available."
+literal|"No grade mode or credit changes are available."
 argument_list|)
 name|String
 name|statusNoGradeModeChangesAvailable
@@ -7681,7 +7690,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"No grade mode changes have been requested."
+literal|"No grade mode or credit changes have been requested."
 argument_list|)
 name|String
 name|statusNoGradeModeChangesMade
@@ -7690,7 +7699,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Grade mode changes have been successfully requested."
+literal|"Grade mode and/or credit changes have been successfully requested."
 argument_list|)
 name|String
 name|statusGradeModeChangesRequested
@@ -7699,7 +7708,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Grade mode changes have been successfully applied."
+literal|"Grade mode and/or credit  changes have been successfully applied."
 argument_list|)
 name|String
 name|statusGradeModeChangesApplied
@@ -7708,7 +7717,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"There are no courses with a grade mode."
+literal|"There are no courses with grade modes and/or variable credits."
 argument_list|)
 name|String
 name|emptyGradeChanges
@@ -7744,6 +7753,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"The following credit changes are being requested:"
+argument_list|)
+name|String
+name|varCreditListChanges
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Maximum of {1,number,0.#} credit hours exceeded. An override for {0,number,0.#} credit hours will be requested."
+argument_list|)
+name|String
+name|varCreditMaxExceeded
+parameter_list|(
+name|float
+name|curent
+parameter_list|,
+name|float
+name|max
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"- {0}: No approval is needed."
 argument_list|)
 name|String
@@ -7771,11 +7804,38 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"\nPlease, select<b>Submit Changes</b> to apply for the selected grade mode changes. "
+literal|"- {0,number,0.#} credit hours: No approval is needed."
+argument_list|)
+name|String
+name|varCreditNoApprovalNeeded
+parameter_list|(
+name|Float
+name|credit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"- {0,number,0.#} credit hours: {1} approval is needed."
+argument_list|)
+name|String
+name|varCreditApprovalNeeded
+parameter_list|(
+name|Float
+name|credit
+parameter_list|,
+name|String
+name|approvals
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"\nPlease, select<b>Submit Changes</b> to apply for the selected grade mode and/or credit changes. "
 operator|+
-literal|"The chosen grade mode changes will be submitted for the required approvals. "
+literal|"The chosen grade mode and/or credit changes will be submitted for the required approvals. "
 operator|+
-literal|"If no approval is necessary, grade mode will change immediately. "
+literal|"If no approval is necessary, grade mode and/or credit will change immediately. "
 operator|+
 literal|"Click<b>Close Dialog</b> to cancel this request and go back to explore other scheduling options."
 argument_list|)
