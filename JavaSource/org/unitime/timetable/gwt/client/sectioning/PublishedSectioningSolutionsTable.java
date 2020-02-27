@@ -3021,6 +3021,15 @@ name|colAssignedCriticalCourseRequests
 argument_list|()
 return|;
 case|case
+name|IMPORTANT
+case|:
+return|return
+name|MESSAGES
+operator|.
+name|colAssignedImportantCourseRequests
+argument_list|()
+return|;
+case|case
 name|TIME
 case|:
 return|return

@@ -20293,6 +20293,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Important<br>Assignments"
+argument_list|)
+name|String
+name|colAssignedImportantCourseRequests
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Complete<br>Schedule"
 argument_list|)
 name|String
