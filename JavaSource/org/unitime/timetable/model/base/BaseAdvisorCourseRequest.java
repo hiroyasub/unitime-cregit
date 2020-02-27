@@ -184,7 +184,7 @@ name|String
 name|iNotes
 decl_stmt|;
 specifier|private
-name|Boolean
+name|Integer
 name|iCritical
 decl_stmt|;
 specifier|private
@@ -514,16 +514,7 @@ name|notes
 expr_stmt|;
 block|}
 specifier|public
-name|Boolean
-name|isCritical
-parameter_list|()
-block|{
-return|return
-name|iCritical
-return|;
-block|}
-specifier|public
-name|Boolean
+name|Integer
 name|getCritical
 parameter_list|()
 block|{
@@ -535,7 +526,7 @@ specifier|public
 name|void
 name|setCritical
 parameter_list|(
-name|Boolean
+name|Integer
 name|critical
 parameter_list|)
 block|{

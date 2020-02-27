@@ -1770,12 +1770,12 @@ parameter_list|,
 name|Long
 name|courseId
 parameter_list|,
-name|Boolean
+name|Integer
 name|critical
 parameter_list|,
 name|AsyncCallback
 argument_list|<
-name|Boolean
+name|Integer
 argument_list|>
 name|callback
 parameter_list|)

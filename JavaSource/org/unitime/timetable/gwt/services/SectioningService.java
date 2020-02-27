@@ -1478,7 +1478,7 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
-name|Boolean
+name|Integer
 name|changeCriticalOverride
 parameter_list|(
 name|Long
@@ -1487,7 +1487,7 @@ parameter_list|,
 name|Long
 name|courseId
 parameter_list|,
-name|Boolean
+name|Integer
 name|critical
 parameter_list|)
 throws|throws

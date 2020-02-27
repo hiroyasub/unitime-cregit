@@ -24556,6 +24556,7 @@ operator|.
 name|isAlternative
 argument_list|()
 operator|||
+operator|(
 operator|!
 name|rp
 operator|.
@@ -24564,6 +24565,16 @@ argument_list|()
 operator|.
 name|isCritical
 argument_list|()
+operator|&&
+operator|!
+name|rp
+operator|.
+name|getRequest
+argument_list|()
+operator|.
+name|isImportant
+argument_list|()
+operator|)
 condition|)
 continue|continue;
 name|boolean

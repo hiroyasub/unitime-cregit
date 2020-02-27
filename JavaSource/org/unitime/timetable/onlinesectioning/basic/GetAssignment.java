@@ -6711,7 +6711,7 @@ operator|)
 name|cd
 operator|)
 operator|.
-name|isCritical
+name|getCritical
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -5887,6 +5887,15 @@ name|iIcon
 return|;
 block|}
 specifier|public
+name|HTML
+name|getLabel
+parameter_list|()
+block|{
+return|return
+name|iLabel
+return|;
+block|}
+specifier|public
 name|void
 name|setStyleName
 parameter_list|(

@@ -1375,7 +1375,7 @@ name|acr
 operator|.
 name|setCritical
 argument_list|(
-literal|false
+literal|0
 argument_list|)
 expr_stmt|;
 name|helper
@@ -1985,7 +1985,7 @@ name|acr
 operator|.
 name|setCritical
 argument_list|(
-literal|false
+literal|0
 argument_list|)
 expr_stmt|;
 name|helper
@@ -2617,7 +2617,7 @@ name|acr
 operator|.
 name|setCritical
 argument_list|(
-literal|false
+literal|0
 argument_list|)
 expr_stmt|;
 name|helper
@@ -2865,7 +2865,7 @@ name|acr
 operator|.
 name|setCritical
 argument_list|(
-literal|false
+literal|0
 argument_list|)
 expr_stmt|;
 name|helper

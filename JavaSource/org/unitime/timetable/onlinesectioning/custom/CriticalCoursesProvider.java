@@ -165,7 +165,7 @@ name|isEmpty
 parameter_list|()
 function_decl|;
 specifier|public
-name|boolean
+name|int
 name|isCritical
 parameter_list|(
 name|CourseOffering
@@ -173,7 +173,7 @@ name|course
 parameter_list|)
 function_decl|;
 specifier|public
-name|boolean
+name|int
 name|isCritical
 parameter_list|(
 name|XCourseId

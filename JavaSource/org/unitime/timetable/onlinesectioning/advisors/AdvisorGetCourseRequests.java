@@ -1511,7 +1511,7 @@ name|setCritical
 argument_list|(
 name|xcr
 operator|.
-name|isCritical
+name|getCritical
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2546,7 +2546,7 @@ if|if
 condition|(
 name|cd
 operator|.
-name|isCriticalOverride
+name|getCriticalOverride
 argument_list|()
 operator|!=
 literal|null
@@ -2557,7 +2557,7 @@ name|setCritical
 argument_list|(
 name|cd
 operator|.
-name|isCriticalOverride
+name|getCriticalOverride
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2568,7 +2568,7 @@ name|setCritical
 argument_list|(
 name|cd
 operator|.
-name|isCritical
+name|getCritical
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3803,7 +3803,7 @@ name|setCritical
 argument_list|(
 name|acr
 operator|.
-name|isCritical
+name|getCritical
 argument_list|()
 argument_list|)
 expr_stmt|;

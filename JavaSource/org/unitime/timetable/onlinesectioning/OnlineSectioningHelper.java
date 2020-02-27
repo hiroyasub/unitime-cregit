@@ -5138,6 +5138,11 @@ name|r
 operator|.
 name|isCritical
 argument_list|()
+operator|||
+name|r
+operator|.
+name|isImportant
+argument_list|()
 argument_list|)
 expr_stmt|;
 for|for
@@ -5526,6 +5531,11 @@ argument_list|(
 name|r
 operator|.
 name|isCritical
+argument_list|()
+operator|||
+name|r
+operator|.
+name|isImportant
 argument_list|()
 argument_list|)
 expr_stmt|;

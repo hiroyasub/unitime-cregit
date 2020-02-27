@@ -629,6 +629,12 @@ literal|"Assigned Critical"
 block|,
 literal|"Not Assigned Critical"
 block|,
+literal|"Important"
+block|,
+literal|"Assigned Important"
+block|,
+literal|"Not Assigned Important"
+block|,
 block|}
 argument_list|)
 name|String
