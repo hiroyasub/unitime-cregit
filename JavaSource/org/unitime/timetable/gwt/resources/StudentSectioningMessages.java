@@ -7897,6 +7897,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"You are making changes to {0} that has variable credit hours. This will change the credit hours back to the minimum for this course. Do you want to proceed?"
+argument_list|)
+name|String
+name|confirmEnrollmentVariableCreditChange
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requested classes do not match your current schedule. The honors grade mode change cannot be processed. Please request a new grade mode change."
 argument_list|)
 name|String
