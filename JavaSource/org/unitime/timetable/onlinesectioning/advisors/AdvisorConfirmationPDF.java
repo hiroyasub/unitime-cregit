@@ -1573,7 +1573,7 @@ name|Paragraph
 argument_list|(
 name|MSG
 operator|.
-name|courseRequestsCourses
+name|advisorRequestsCourses
 argument_list|()
 argument_list|,
 name|font
@@ -1769,7 +1769,7 @@ name|Paragraph
 argument_list|(
 name|MSG
 operator|.
-name|courseRequestsAlternatives
+name|advisorRequestsAlternatives
 argument_list|()
 argument_list|,
 name|font

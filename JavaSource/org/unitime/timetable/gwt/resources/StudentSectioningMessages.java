@@ -743,6 +743,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course Recommendations"
+argument_list|)
+name|String
+name|advisorRequestsCourses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"&darr; Wait-List"
 argument_list|)
 name|String
@@ -789,6 +798,15 @@ literal|"Substitute Course Requests"
 argument_list|)
 name|String
 name|courseRequestsAlternatives
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Substitute Course Recommendations"
+argument_list|)
+name|String
+name|advisorRequestsAlternatives
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8122,7 +8140,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor Recommendations"
+literal|"Advisor Course Recommendations"
 argument_list|)
 name|String
 name|pdfHeaderAdvisorCourseRequests
@@ -8176,7 +8194,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dvisor Course Requests"
+literal|"<u>A</u>dvisor Recommendations"
 argument_list|)
 name|String
 name|buttonAdvisorCourseRequests
@@ -8296,7 +8314,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor Recommendations"
+literal|"Advisor Course Recommendations"
 argument_list|)
 name|String
 name|advisorCourseRequests
@@ -8305,7 +8323,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor Recommendations"
+literal|"Advisor Course Recommendations"
 argument_list|)
 name|String
 name|dialogAdvisorCourseRequests
@@ -8359,7 +8377,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Retrieving advisor recommendations..."
+literal|"Retrieving advisor course recommendations..."
 argument_list|)
 name|String
 name|waitAdvisorRequests
@@ -8368,7 +8386,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to load advisor recommendations: {0}"
+literal|"Failed to load advisor course recommendations: {0}"
 argument_list|)
 name|String
 name|failedAdvisorRequests

@@ -22750,9 +22750,8 @@ decl_stmt|;
 name|boolean
 name|includeAdvisorRequests
 init|=
-operator|!
 name|sectioning
-operator|&&
+operator|||
 operator|(
 name|last
 operator|!=

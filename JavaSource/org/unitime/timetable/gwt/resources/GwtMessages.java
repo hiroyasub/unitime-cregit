@@ -11755,7 +11755,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor Course Requests"
+literal|"Advisor Course Recommendations"
 argument_list|)
 annotation|@
 name|DoNotTranslate
