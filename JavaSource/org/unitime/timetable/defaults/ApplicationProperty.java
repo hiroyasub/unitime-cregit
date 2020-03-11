@@ -10997,7 +10997,12 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Advisor Course Requests: PDF logo"
+literal|"Advisor Course Recommendations: PDF logo"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
 argument_list|)
 name|AdvisorCourseRequestsPDFLogo
 argument_list|(
@@ -11019,18 +11024,74 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Advisor Course Requests: PDF disclaimer"
+literal|"Advisor Course Recommendations: PDF disclaimer"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
 argument_list|)
 name|AdvisorCourseRequestsPDFDisclaimer
 argument_list|(
 literal|"unitime.acrf.pdfdisclaimer"
 argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Recommendations: pre-populate Course Requests with advisor recommendations (when student has not made any changes and is allowed to submit)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|AdvisorCourseRequestsPrepopulateCourseRequests
+argument_list|(
+literal|"unitime.acrf.prepopulate.courseRequests"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Recommendations: pre-populate Scheduling Assistant with advisor recommendations (when student has not made any changes and no class enrollments)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|AdvisorCourseRequestsPrepopulateSchedulingAssistant
+argument_list|(
+literal|"unitime.acrf.prepopulate.schedulingAssistant"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 begin_decl_stmt
 name|String
