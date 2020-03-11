@@ -8587,6 +8587,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Advisor note: {0} ({1} credit hours)"
+argument_list|)
+name|String
+name|advisorNoteWithCredit
+parameter_list|(
+name|String
+name|note
+parameter_list|,
+name|String
+name|credit
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Advisor note: {0}"
+argument_list|)
+name|String
+name|advisorNote
+parameter_list|(
+name|String
+name|note
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Total Priority Credit Hours: {0}"
 argument_list|)
 name|String
