@@ -8041,7 +8041,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"PUID:"
+literal|"Id:"
 argument_list|)
 name|String
 name|propStudentExternalId
