@@ -11090,6 +11090,33 @@ argument_list|(
 literal|"unitime.acrf.prepopulate.schedulingAssistant"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Recommendations: advisors can only change status if the student is in a status that they can use (both current and the new status is available to advisors)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|AdvisorCourseRequestsRestrictedStatusChange
+argument_list|(
+literal|"unitime.acrf.restrictedStatusChange"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
