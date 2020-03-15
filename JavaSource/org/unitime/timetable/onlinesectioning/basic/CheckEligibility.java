@@ -660,6 +660,15 @@ operator|(
 name|iStudentId
 operator|==
 literal|null
+operator|||
+name|server
+operator|.
+name|getStudent
+argument_list|(
+name|iStudentId
+argument_list|)
+operator|==
+literal|null
 condition|?
 literal|null
 else|:
