@@ -446,6 +446,12 @@ argument_list|,
 name|reservation
 argument_list|,
 name|reservation
+operator|==
+literal|null
+condition|?
+literal|true
+else|:
+name|reservation
 operator|.
 name|isReservationInclusive
 argument_list|()
