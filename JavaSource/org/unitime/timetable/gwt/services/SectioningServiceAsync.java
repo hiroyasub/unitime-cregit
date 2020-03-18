@@ -1333,6 +1333,9 @@ name|void
 name|sendEmail
 parameter_list|(
 name|Long
+name|sessionId
+parameter_list|,
+name|Long
 name|studentId
 parameter_list|,
 name|String

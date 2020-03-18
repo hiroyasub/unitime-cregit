@@ -3532,6 +3532,8 @@ name|service
 operator|.
 name|sendEmail
 argument_list|(
+name|sessionId
+argument_list|,
 name|studentId
 argument_list|,
 name|helper

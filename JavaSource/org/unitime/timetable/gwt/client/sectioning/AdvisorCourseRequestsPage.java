@@ -6644,6 +6644,11 @@ name|sendEmail
 argument_list|(
 name|iDetails
 operator|.
+name|getSessionId
+argument_list|()
+argument_list|,
+name|iDetails
+operator|.
 name|getStudentId
 argument_list|()
 argument_list|,
