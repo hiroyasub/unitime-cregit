@@ -24841,7 +24841,7 @@ throw|;
 name|getSessionContext
 argument_list|()
 operator|.
-name|checkPermission
+name|checkPermissionAnySession
 argument_list|(
 name|server
 operator|.
