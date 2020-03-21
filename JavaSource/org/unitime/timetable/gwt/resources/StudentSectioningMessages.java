@@ -8248,6 +8248,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Click<a href=\"{0}\" style='color: inherit; background-color : transparent;' target='_blank'>here</a> to download the Advisor Course Recommendations PDF."
+argument_list|)
+name|String
+name|advisorRequestsPdfLink
+parameter_list|(
+name|String
+name|link
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Email sent."
 argument_list|)
 name|String
