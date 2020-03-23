@@ -16636,6 +16636,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Curriculum Override"
+argument_list|)
+name|String
+name|reservationCurriculumOverride
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course Reservation"
 argument_list|)
 name|String

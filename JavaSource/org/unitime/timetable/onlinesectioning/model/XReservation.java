@@ -1027,6 +1027,9 @@ case|:
 case|case
 name|GroupOverride
 case|:
+case|case
+name|CurriculumOverride
+case|:
 name|setPriority
 argument_list|(
 name|ApplicationProperty

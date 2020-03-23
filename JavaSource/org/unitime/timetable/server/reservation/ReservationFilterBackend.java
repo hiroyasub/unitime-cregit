@@ -3548,7 +3548,7 @@ argument_list|)
 condition|)
 name|type
 operator|+=
-literal|"CurriculumReservation"
+literal|"CurriculumReservation,CurriculumOverrideReservation"
 expr_stmt|;
 if|if
 condition|(

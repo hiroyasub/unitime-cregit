@@ -11,54 +11,42 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|onlinesectioning
-operator|.
 name|model
+operator|.
+name|dao
 package|;
 end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|io
+name|unitime
 operator|.
-name|Serializable
+name|timetable
+operator|.
+name|model
+operator|.
+name|base
+operator|.
+name|BaseCurriculumOverrideReservationDAO
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author Tomas Muller  */
-end_comment
-
-begin_enum
+begin_class
 specifier|public
-enum|enum
-name|XReservationType
-implements|implements
-name|Serializable
+class|class
+name|CurriculumOverrideReservationDAO
+extends|extends
+name|BaseCurriculumOverrideReservationDAO
 block|{
-name|Individual
-block|,
-name|Group
-block|,
-name|IndividualOverride
-block|,
-name|GroupOverride
-block|,
-name|Course
-block|,
-name|Curriculum
-block|,
-name|Dummy
-block|,
-name|None
-block|,
-name|LearningCommunity
-block|,
-name|CurriculumOverride
-block|, 	; }
-end_enum
+specifier|public
+name|CurriculumOverrideReservationDAO
+parameter_list|()
+block|{
+block|}
+block|}
+end_class
 
 end_unit
 
