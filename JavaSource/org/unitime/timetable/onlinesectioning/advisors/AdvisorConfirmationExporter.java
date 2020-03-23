@@ -1067,6 +1067,13 @@ operator|.
 name|reference
 argument_list|()
 argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"[&$\\+,/:;=\\?@<>\\[\\]\\{\\}\\|\\^\\~%#`\\t\\s\\n\\r \\\\]"
+argument_list|,
+literal|""
+argument_list|)
 operator|+
 literal|"-"
 operator|+
