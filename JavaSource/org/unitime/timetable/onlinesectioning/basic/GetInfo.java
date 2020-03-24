@@ -2222,6 +2222,7 @@ name|clonedReservation
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
 case|case
 name|CurriculumOverride
 case|:

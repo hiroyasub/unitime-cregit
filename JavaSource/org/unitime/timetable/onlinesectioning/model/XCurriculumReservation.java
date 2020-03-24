@@ -495,7 +495,7 @@ name|iType
 operator|=
 name|XReservationType
 operator|.
-name|Group
+name|Curriculum
 expr_stmt|;
 block|}
 specifier|public
