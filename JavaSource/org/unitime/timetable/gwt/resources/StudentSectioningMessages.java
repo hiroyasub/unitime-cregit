@@ -4219,6 +4219,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Send<u>E</u>mail"
+argument_list|)
+name|String
+name|buttonSendStudentEmail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Loading change log for {0}..."
 argument_list|)
 name|String
@@ -8212,7 +8221,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dvisor Recommendations"
+literal|"A<u>d</u>visor Recommendations"
 argument_list|)
 name|String
 name|buttonAdvisorCourseRequests
@@ -8428,7 +8437,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dvisor Recommendations"
+literal|"Advisor Recommendations"
 argument_list|)
 name|String
 name|tabAdvisorRequests
