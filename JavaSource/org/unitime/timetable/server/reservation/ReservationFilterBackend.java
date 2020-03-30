@@ -1231,6 +1231,34 @@ argument_list|(
 name|curriculumCnt
 argument_list|)
 expr_stmt|;
+name|Integer
+name|curriculumOverrideCnt
+init|=
+name|type2count
+operator|.
+name|get
+argument_list|(
+literal|8
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|curriculumOverrideCnt
+operator|!=
+literal|null
+condition|)
+name|curriculumType
+operator|.
+name|setCount
+argument_list|(
+name|curriculumType
+operator|.
+name|getCount
+argument_list|()
+operator|+
+name|curriculumOverrideCnt
+argument_list|)
+expr_stmt|;
 name|response
 operator|.
 name|add
@@ -2038,7 +2066,7 @@ argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"r.class = CurriculumReservation"
+literal|"r.class in (CurriculumReservation, CurriculumOverrideReservation)"
 argument_list|)
 operator|.
 name|exclude
