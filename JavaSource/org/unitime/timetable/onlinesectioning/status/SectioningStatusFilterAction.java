@@ -1301,12 +1301,12 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"StudentGroup g"
+literal|"inner join s.groups g"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"g in elements(s.groups) and g.type is null"
+literal|"g.type is null"
 argument_list|)
 operator|.
 name|order
@@ -1476,12 +1476,12 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"StudentGroup gt"
+literal|"inner join s.groups gt"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"gt in elements(s.groups) and gt.type = :groupTypeId"
+literal|"gt.type = :groupTypeId"
 argument_list|)
 operator|.
 name|set
@@ -1694,12 +1694,7 @@ argument_list|)
 operator|.
 name|from
 argument_list|(
-literal|"StudentAccomodation a"
-argument_list|)
-operator|.
-name|where
-argument_list|(
-literal|"a in elements(s.accomodations)"
+literal|"inner join s.accomodations a"
 argument_list|)
 operator|.
 name|order
