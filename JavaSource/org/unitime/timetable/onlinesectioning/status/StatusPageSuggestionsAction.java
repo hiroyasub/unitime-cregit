@@ -7406,6 +7406,13 @@ name|enrollment
 argument_list|()
 operator|==
 literal|null
+operator|&&
+operator|!
+name|request
+argument_list|()
+operator|.
+name|isAlternative
+argument_list|()
 return|;
 block|}
 if|else if
