@@ -6515,6 +6515,28 @@ literal|"tmtbl.lookup.ldap.countLimit"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"People Lookup LDAP: search subtree (not just the current level)"
+argument_list|)
+name|PeopleLookupLdapSearchSubtree
+argument_list|(
+literal|"tmtbl.lookup.ldap.searchSubtree"
+argument_list|)
+operator|,
+expr_stmt|@
 name|DefaultValue
 argument_list|(
 literal|"(|(|(sn=%*)(uid=%))(givenName=%*)(cn=* %* *)(mail=%*))"
