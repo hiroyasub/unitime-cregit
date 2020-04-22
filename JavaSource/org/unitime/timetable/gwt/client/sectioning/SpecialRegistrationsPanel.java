@@ -4017,7 +4017,13 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-else|else
+if|else if
+condition|(
+name|reg
+operator|.
+name|hasErrors
+argument_list|()
+condition|)
 block|{
 name|List
 argument_list|<
