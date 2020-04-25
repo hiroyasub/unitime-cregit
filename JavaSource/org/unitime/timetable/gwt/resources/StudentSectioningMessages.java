@@ -1464,7 +1464,25 @@ argument_list|(
 literal|"<u>G</u>rade Modes&amp; Credits"
 argument_list|)
 name|String
+name|buttonChangeGradeModesAndVariableCredits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>G</u>rade Modes"
+argument_list|)
+name|String
 name|buttonChangeGradeModes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>V</u>ariable Credits"
+argument_list|)
+name|String
+name|buttonChangeVariableCredits
 parameter_list|()
 function_decl|;
 annotation|@
@@ -1492,6 +1510,24 @@ literal|"Change grade mode of one or more courses."
 argument_list|)
 name|String
 name|hintChangeGradeModes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change grade mode or variable credit of one or more courses."
+argument_list|)
+name|String
+name|hintChangeGradeModesAndVariableCredits
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Change variable credit hours of one or more courses."
+argument_list|)
+name|String
+name|hintChangeVariableCredits
 parameter_list|()
 function_decl|;
 annotation|@
@@ -7633,13 +7669,31 @@ argument_list|(
 literal|"Grade Modes& Variable Credits"
 argument_list|)
 name|String
+name|dialogChangeGradeModeAndVariableCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Grade Modes"
+argument_list|)
+name|String
 name|dialogChangeGradeMode
 parameter_list|()
 function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Retrieving available grade modes and variable credits..."
+literal|"Variable Credits"
+argument_list|)
+name|String
+name|dialogChangeVariableCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Retrieving available grade modes and/or variable credits..."
 argument_list|)
 name|String
 name|waitRetrieveGradeModes
@@ -7648,7 +7702,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Requesting grade mode and credit changes..."
+literal|"Requesting grade mode and/or credit changes..."
 argument_list|)
 name|String
 name|waitChangeGradeModes
@@ -7657,7 +7711,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Unable to get available grade modes and variable credits: {0}"
+literal|"Unable to get available grade modes and/or variable credits: {0}"
 argument_list|)
 name|String
 name|exceptionRetrieveGradeModes
@@ -7669,7 +7723,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Failed to request grade mode and/or credit changes: {0}"
+literal|"Failed to request grade mode and/or variable credit changes: {0}"
 argument_list|)
 name|String
 name|exceptionChangeGradeModes

@@ -19784,7 +19784,16 @@ name|hasOverride
 argument_list|(
 literal|"GMODE"
 argument_list|)
-operator|||
+argument_list|)
+expr_stmt|;
+name|check
+operator|.
+name|setFlag
+argument_list|(
+name|EligibilityFlag
+operator|.
+name|CAN_CHANGE_VAR_CREDIT
+argument_list|,
 name|check
 operator|.
 name|hasOverride
