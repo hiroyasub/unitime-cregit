@@ -15503,7 +15503,7 @@ return|;
 block|}
 specifier|protected
 name|boolean
-name|hasPendingOverride
+name|hasOverride
 parameter_list|(
 name|org
 operator|.
@@ -15525,15 +15525,6 @@ name|getOverrideExternalId
 argument_list|()
 operator|!=
 literal|null
-operator|&&
-name|student
-operator|.
-name|getMaxCreditOverrideStatus
-argument_list|()
-operator|==
-name|CourseRequestOverrideStatus
-operator|.
-name|PENDING
 condition|)
 return|return
 literal|true
@@ -15588,15 +15579,6 @@ name|getOverrideExternalId
 argument_list|()
 operator|!=
 literal|null
-operator|&&
-name|cr
-operator|.
-name|getCourseRequestOverrideStatus
-argument_list|()
-operator|==
-name|CourseRequestOverrideStatus
-operator|.
-name|PENDING
 condition|)
 return|return
 literal|true
@@ -15646,7 +15628,7 @@ operator|==
 literal|null
 operator|||
 operator|!
-name|hasPendingOverride
+name|hasOverride
 argument_list|(
 name|student
 argument_list|)
@@ -16646,7 +16628,7 @@ return|;
 comment|// When there is a pending override, try to update student first
 if|if
 condition|(
-name|hasPendingOverride
+name|hasOverride
 argument_list|(
 name|student
 argument_list|)
@@ -22773,7 +22755,7 @@ operator|==
 literal|null
 operator|||
 operator|!
-name|hasPendingOverride
+name|hasOverride
 argument_list|(
 name|student
 argument_list|)
