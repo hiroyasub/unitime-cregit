@@ -1009,6 +1009,13 @@ name|getSchedule
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|task
+operator|.
+name|hasExecutions
+argument_list|()
+condition|)
 for|for
 control|(
 name|TaskExecutionInterface

@@ -2147,6 +2147,18 @@ name|TaskExecutionInterface
 argument_list|>
 name|executionSet
 init|=
+operator|(
+name|executions
+operator|==
+literal|null
+condition|?
+operator|new
+name|HashSet
+argument_list|<
+name|TaskExecutionInterface
+argument_list|>
+argument_list|()
+else|:
 operator|new
 name|HashSet
 argument_list|<
@@ -2155,6 +2167,7 @@ argument_list|>
 argument_list|(
 name|executions
 argument_list|)
+operator|)
 decl_stmt|;
 while|while
 condition|(
