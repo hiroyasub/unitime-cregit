@@ -12312,6 +12312,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Expected attendance is required."
+argument_list|)
+name|String
+name|reqAttendance
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Main contact last name is required."
 argument_list|)
 name|String
