@@ -1186,6 +1186,9 @@ name|classSchedule
 parameter_list|,
 name|Boolean
 name|advisorRequests
+parameter_list|,
+name|Boolean
+name|optional
 parameter_list|)
 throws|throws
 name|SectioningException

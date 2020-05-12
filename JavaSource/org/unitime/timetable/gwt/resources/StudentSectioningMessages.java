@@ -4216,6 +4216,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Custom:"
+argument_list|)
+name|String
+name|emailCustom
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Send"
 argument_list|)
 name|String

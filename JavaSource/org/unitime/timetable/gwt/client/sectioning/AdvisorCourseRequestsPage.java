@@ -6726,6 +6726,11 @@ operator|.
 name|getIncludeAdvisorRequests
 argument_list|()
 argument_list|,
+name|dialog
+operator|.
+name|isOptionalEmailToggle
+argument_list|()
+argument_list|,
 operator|new
 name|AsyncCallback
 argument_list|<
@@ -6791,6 +6796,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+argument_list|,
+name|iDetails
+operator|.
+name|getEmailOptionalToggle
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

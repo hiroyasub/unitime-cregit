@@ -153,6 +153,17 @@ name|ApplicationProperty
 operator|.
 name|CustomizationExternalTerm
 argument_list|)
+block|,
+name|StudentEmailProvider
+argument_list|(
+name|StudentEmailProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationStudentEmail
+argument_list|)
 block|, 	;
 specifier|private
 name|Holder
