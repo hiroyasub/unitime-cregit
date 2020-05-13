@@ -19,11 +19,9 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|timetable
+name|commons
 operator|.
-name|model
-operator|.
-name|Student
+name|Email
 import|;
 end_import
 
@@ -62,17 +60,14 @@ name|StudentEmailProvider
 block|{
 comment|/** 	 * Return student email address 	 * */
 specifier|public
-name|String
-name|getEmailAddress
+name|Email
+name|createEmail
 parameter_list|(
 name|OnlineSectioningServer
 name|server
 parameter_list|,
 name|OnlineSectioningHelper
 name|helper
-parameter_list|,
-name|Student
-name|student
 parameter_list|,
 name|Boolean
 name|optional
