@@ -76,11 +76,13 @@ function_decl|;
 comment|/** 	 * If optional, return display message that needs to be toggled. Return null otherwise. 	 */
 specifier|public
 name|String
-name|isOptional
-parameter_list|(
-name|Long
-name|sessionId
-parameter_list|)
+name|getToggleCaptionIfOptional
+parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
+name|isOptionCheckedByDefault
+parameter_list|()
 function_decl|;
 block|}
 end_interface

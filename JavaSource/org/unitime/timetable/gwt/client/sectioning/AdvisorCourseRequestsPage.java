@@ -6823,7 +6823,12 @@ block|}
 argument_list|,
 name|iDetails
 operator|.
-name|getEmailOptionalToggle
+name|getEmailOptionalToggleCaption
+argument_list|()
+argument_list|,
+name|iDetails
+operator|.
+name|getEmailOptionalToggleDefault
 argument_list|()
 argument_list|)
 expr_stmt|;
