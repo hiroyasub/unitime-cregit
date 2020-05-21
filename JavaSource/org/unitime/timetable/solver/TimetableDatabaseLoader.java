@@ -10098,9 +10098,15 @@ if|if
 condition|(
 name|lecture
 operator|.
-name|values
+name|computeValues
 argument_list|(
 name|getAssignment
+argument_list|()
+argument_list|,
+name|getModel
+argument_list|()
+operator|.
+name|isAllowBreakHard
 argument_list|()
 argument_list|)
 operator|.
