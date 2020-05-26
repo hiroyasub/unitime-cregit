@@ -1610,7 +1610,14 @@ name|getKey
 argument_list|()
 argument_list|)
 operator|+
-literal|":</b></td><td><div class='property'>"
+literal|":</b></td><td><div class='property' onclick='gwtPropertyClick(this);' title='"
+operator|+
+name|MSG
+operator|.
+name|changeLogClickToCopyToClipboard
+argument_list|()
+operator|+
+literal|">"
 operator|+
 operator|(
 name|p
@@ -1618,10 +1625,15 @@ operator|.
 name|hasValue
 argument_list|()
 condition|?
+name|StringEscapeUtils
+operator|.
+name|escapeHtml
+argument_list|(
 name|p
 operator|.
 name|getValue
 argument_list|()
+argument_list|)
 else|:
 literal|""
 operator|)

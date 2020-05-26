@@ -9154,6 +9154,24 @@ name|String
 name|course
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Click to copy to clipboard."
+argument_list|)
+name|String
+name|changeLogClickToCopyToClipboard
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Property value copied to clipboard."
+argument_list|)
+name|String
+name|changeLogPropertyValueCopiedToClipbard
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
