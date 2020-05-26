@@ -2443,6 +2443,12 @@ name|IgnoreNotAssigned
 operator|.
 name|other
 decl_stmt|;
+specifier|private
+name|boolean
+name|iFixAssignedEnrollments
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|StudentSectioningDatabaseLoader
 parameter_list|(
@@ -3678,6 +3684,20 @@ literal|" not assigned)"
 argument_list|)
 expr_stmt|;
 block|}
+name|iFixAssignedEnrollments
+operator|=
+name|model
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|getPropertyBoolean
+argument_list|(
+literal|"Load.FixAssignedEnrollments"
+argument_list|,
+name|iFixAssignedEnrollments
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -14489,6 +14509,17 @@ argument_list|(
 name|enrollment
 argument_list|)
 expr_stmt|;
+if|else if
+condition|(
+name|iFixAssignedEnrollments
+condition|)
+name|request
+operator|.
+name|setFixedValue
+argument_list|(
+name|enrollment
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -15637,6 +15668,17 @@ name|matches
 argument_list|(
 name|iMPPCoursesRegExp
 argument_list|)
+condition|)
+name|request
+operator|.
+name|setFixedValue
+argument_list|(
+name|enrollment
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|iFixAssignedEnrollments
 condition|)
 name|request
 operator|.
@@ -25229,6 +25271,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|iMPPCoursesRegExp
 operator|!=
 literal|null
@@ -25238,6 +25281,9 @@ name|iMPPCoursesRegExp
 operator|.
 name|isEmpty
 argument_list|()
+operator|)
+operator|||
+name|iFixAssignedEnrollments
 condition|)
 block|{
 name|boolean
