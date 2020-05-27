@@ -268,6 +268,8 @@ block|,
 name|SR_CHANGE_NOTE
 block|,
 name|HAS_ADVISOR_REQUESTS
+block|,
+name|SR_LINK_CONF
 block|, 			;
 specifier|public
 name|int

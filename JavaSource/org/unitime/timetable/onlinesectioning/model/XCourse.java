@@ -956,6 +956,18 @@ literal|"CLOS"
 argument_list|)
 return|;
 block|}
+specifier|public
+name|boolean
+name|areLinkedConflictOverridesAllowed
+parameter_list|()
+block|{
+return|return
+name|isOverrideEnabled
+argument_list|(
+literal|"CORQ"
+argument_list|)
+return|;
+block|}
 comment|/** Course note */
 specifier|public
 name|String

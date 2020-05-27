@@ -5816,6 +5816,16 @@ name|neverIncluded
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|clonedReservation
+operator|.
+name|setBreakLinkedSections
+argument_list|(
+name|reservation
+operator|.
+name|canBreakLinkedSections
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Long

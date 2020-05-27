@@ -1649,6 +1649,12 @@ argument_list|()
 operator|.
 name|areSpaceConflictsAllowed
 argument_list|()
+operator|||
+name|getRequest
+argument_list|()
+operator|.
+name|areLinkedConflictsAllowed
+argument_list|()
 condition|?
 operator|new
 name|TreeSet
