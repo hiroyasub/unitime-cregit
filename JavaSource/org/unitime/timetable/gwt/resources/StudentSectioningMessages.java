@@ -752,7 +752,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course Recommendations"
+literal|"Advisor Course Recommendations"
 argument_list|)
 name|String
 name|advisorRequestsCourses
@@ -812,7 +812,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Substitute Course Recommendations"
+literal|"Substitute Advisor Course Recommendations"
 argument_list|)
 name|String
 name|advisorRequestsAlternatives
