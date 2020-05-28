@@ -19816,6 +19816,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Committed Solution"
+argument_list|)
+name|String
+name|compareWithCommittedSolution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"?"
 argument_list|)
 name|String
