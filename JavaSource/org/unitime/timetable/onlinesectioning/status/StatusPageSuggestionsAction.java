@@ -12540,6 +12540,10 @@ block|{
 return|return
 operator|(
 name|iStudent
+operator|==
+literal|null
+operator|||
+name|iStudent
 operator|.
 name|getStatus
 argument_list|()
