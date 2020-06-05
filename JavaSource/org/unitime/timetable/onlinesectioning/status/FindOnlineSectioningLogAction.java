@@ -1617,7 +1617,7 @@ operator|.
 name|changeLogClickToCopyToClipboard
 argument_list|()
 operator|+
-literal|">"
+literal|"'>"
 operator|+
 operator|(
 name|p
