@@ -4304,6 +4304,16 @@ name|isVisible
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|dp
+operator|.
+name|setNumberOfWeeks
+argument_list|(
+name|dp
+operator|.
+name|getNumberOfWeeks
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|dp
 return|;
