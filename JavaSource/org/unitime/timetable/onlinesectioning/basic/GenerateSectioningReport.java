@@ -1772,6 +1772,16 @@ name|isEnabledForScheduling
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|clonedSection
+operator|.
+name|setOnline
+argument_list|(
+name|section
+operator|.
+name|isOnline
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|XDistribution
