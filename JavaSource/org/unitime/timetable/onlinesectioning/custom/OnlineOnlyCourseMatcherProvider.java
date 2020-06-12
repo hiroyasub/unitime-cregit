@@ -351,7 +351,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyStudentFilter"
+literal|"Filter.OnlineOnlyStudentFilter"
 argument_list|,
 literal|null
 argument_list|)
@@ -413,7 +413,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"OnlineOnlyAdminOverride"
+literal|"Filter.OnlineOnlyAdminOverride"
 argument_list|,
 literal|"false"
 argument_list|)
@@ -481,7 +481,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyInstructionalModeRegExp"
+literal|"Filter.OnlineOnlyInstructionalModeRegExp"
 argument_list|)
 argument_list|,
 name|ApplicationProperty
@@ -490,7 +490,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyCourseNameRegExp"
+literal|"Filter.OnlineOnlyCourseNameRegExp"
 argument_list|)
 argument_list|)
 return|;
@@ -506,7 +506,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyExclusiveCourses"
+literal|"Filter.OnlineOnlyExclusiveCourses"
 argument_list|,
 literal|"false"
 argument_list|)
@@ -522,7 +522,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyCourseNameRegExp"
+literal|"Filter.OnlineOnlyCourseNameRegExp"
 argument_list|)
 argument_list|)
 return|;
@@ -583,7 +583,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"OnlineOnlyAdminOverride"
+literal|"Filter.OnlineOnlyAdminOverride"
 argument_list|,
 literal|"false"
 argument_list|)
@@ -620,7 +620,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyInstructionalModeRegExp"
+literal|"Filter.OnlineOnlyInstructionalModeRegExp"
 argument_list|)
 argument_list|,
 name|ApplicationProperty
@@ -629,7 +629,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyCourseNameRegExp"
+literal|"Filter.OnlineOnlyCourseNameRegExp"
 argument_list|)
 argument_list|)
 return|;
@@ -645,7 +645,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyExclusiveCourses"
+literal|"Filter.OnlineOnlyExclusiveCourses"
 argument_list|,
 literal|"false"
 argument_list|)
@@ -661,7 +661,7 @@ name|OnlineSchedulingParameter
 operator|.
 name|value
 argument_list|(
-literal|"Load.OnlineOnlyCourseNameRegExp"
+literal|"Filter.OnlineOnlyCourseNameRegExp"
 argument_list|)
 argument_list|)
 return|;
