@@ -3819,6 +3819,8 @@ literal|true
 argument_list|,
 name|iSessionId
 argument_list|,
+literal|null
+argument_list|,
 name|course
 argument_list|,
 operator|new
@@ -4023,6 +4025,8 @@ operator|.
 name|listCourseOfferings
 argument_list|(
 name|iSessionId
+argument_list|,
+literal|null
 argument_list|,
 name|course
 argument_list|,

@@ -590,6 +590,9 @@ parameter_list|(
 name|Long
 name|sessionId
 parameter_list|,
+name|Long
+name|studentId
+parameter_list|,
 name|String
 name|query
 parameter_list|,
@@ -662,6 +665,9 @@ name|online
 parameter_list|,
 name|Long
 name|sessionId
+parameter_list|,
+name|Long
+name|studentId
 parameter_list|,
 name|String
 name|course

@@ -1202,6 +1202,8 @@ name|listCourseOfferings
 argument_list|(
 name|sessionId
 argument_list|,
+name|studentId
+argument_list|,
 name|helper
 operator|.
 name|getOptinalParameter
@@ -1413,6 +1415,8 @@ literal|true
 argument_list|)
 argument_list|,
 name|sessionId
+argument_list|,
+name|studentId
 argument_list|,
 name|helper
 operator|.

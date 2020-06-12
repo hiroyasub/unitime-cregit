@@ -4610,6 +4610,8 @@ operator|.
 name|getAcademicSessionId
 argument_list|()
 argument_list|,
+literal|null
+argument_list|,
 name|source
 operator|.
 name|hasUniqueName
@@ -26292,6 +26294,8 @@ operator|.
 name|getAcademicSessionId
 argument_list|()
 argument_list|,
+literal|null
+argument_list|,
 name|source
 argument_list|,
 literal|null
@@ -26431,6 +26435,8 @@ name|iSessionSelector
 operator|.
 name|getAcademicSessionId
 argument_list|()
+argument_list|,
+literal|null
 argument_list|,
 name|source
 operator|.
