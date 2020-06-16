@@ -8203,6 +8203,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Email:"
+argument_list|)
+name|String
+name|propStudentEmail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Id:"
 argument_list|)
 name|String

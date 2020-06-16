@@ -571,6 +571,16 @@ name|getLabel
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|details
+operator|.
+name|setStudentEmail
+argument_list|(
+name|student
+operator|.
+name|getEmail
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|isAdvisor
