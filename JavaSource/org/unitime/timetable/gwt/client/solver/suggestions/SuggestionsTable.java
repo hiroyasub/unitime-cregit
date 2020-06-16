@@ -5858,9 +5858,16 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|Math
+operator|.
+name|abs
+argument_list|(
 name|value
-operator|!=
+operator|-
 name|base
+argument_list|)
+operator|>=
+literal|0.001
 condition|)
 block|{
 name|P
