@@ -5865,6 +5865,17 @@ name|limitDisabled
 operator|>
 literal|0
 condition|)
+if|if
+condition|(
+name|reservedDisabledSpace
+operator|<
+literal|0
+condition|)
+name|limit
+operator|+=
+name|limitDisabled
+expr_stmt|;
+else|else
 name|limit
 operator|+=
 name|Math
