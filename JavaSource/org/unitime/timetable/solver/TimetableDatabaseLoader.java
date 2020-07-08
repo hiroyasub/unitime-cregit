@@ -26844,6 +26844,13 @@ condition|(
 name|lecture
 operator|!=
 literal|null
+operator|&&
+name|lecture
+operator|.
+name|getConfiguration
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|Set
