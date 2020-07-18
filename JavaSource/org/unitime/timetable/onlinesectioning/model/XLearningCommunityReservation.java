@@ -699,6 +699,16 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|out
+operator|.
+name|writeBoolean
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
 name|out
 operator|.
 name|writeInt
