@@ -964,7 +964,7 @@ argument_list|()
 operator|==
 name|XReservationType
 operator|.
-name|GroupOverride
+name|CurriculumOverride
 condition|)
 block|{
 switch|switch
