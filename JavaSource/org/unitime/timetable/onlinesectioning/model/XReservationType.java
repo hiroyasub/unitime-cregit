@@ -57,6 +57,8 @@ block|,
 name|LearningCommunity
 block|,
 name|CurriculumOverride
+block|,
+name|IndividualGroup
 block|, 	; }
 end_enum
 
