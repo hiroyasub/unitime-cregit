@@ -4394,6 +4394,10 @@ name|server
 operator|instanceof
 name|StudentSolver
 operator|)
+operator|&&
+name|student
+operator|!=
+literal|null
 condition|)
 block|{
 name|String
