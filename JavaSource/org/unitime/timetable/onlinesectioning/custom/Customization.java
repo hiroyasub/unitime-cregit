@@ -164,6 +164,17 @@ name|ApplicationProperty
 operator|.
 name|CustomizationStudentEmail
 argument_list|)
+block|,
+name|CustomClassAttendanceProvider
+argument_list|(
+name|CustomClassAttendanceProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationCustomClassAttendance
+argument_list|)
 block|, 	;
 specifier|private
 name|Holder
