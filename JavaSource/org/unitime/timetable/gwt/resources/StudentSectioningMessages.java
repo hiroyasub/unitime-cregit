@@ -6436,6 +6436,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Solution Statistics"
+argument_list|)
+name|String
+name|reportSolutionStatistics
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} (TA)"
 argument_list|)
 name|String

@@ -843,6 +843,25 @@ literal|"pritify"
 argument_list|,
 literal|"false"
 argument_list|)
+block|,
+name|STATISTICS
+argument_list|(
+name|SCT_MSG
+operator|.
+name|reportSolutionStatistics
+argument_list|()
+argument_list|,
+name|StudentSchedulingSolutionStatisticsReport
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"pritify"
+argument_list|,
+literal|"false"
+argument_list|)
 block|, 		;
 name|String
 name|iName
