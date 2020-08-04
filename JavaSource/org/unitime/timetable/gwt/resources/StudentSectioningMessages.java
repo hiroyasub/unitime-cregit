@@ -9190,6 +9190,15 @@ name|String
 name|changeLogPropertyValueCopiedToClipbard
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Your UniTime session may have expired. Click here to log in again."
+argument_list|)
+name|String
+name|sessionExpiredClickToLogin
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
