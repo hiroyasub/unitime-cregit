@@ -2050,6 +2050,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSchedulingReloadStudent
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|StudentSchedulingCheckStudentOverrides
 argument_list|(
 name|Session

@@ -5251,6 +5251,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Reload Student"
+argument_list|)
+name|String
+name|reloadStudent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Request Update"
 argument_list|)
 name|String
@@ -5296,6 +5305,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Reloading student(s)..."
+argument_list|)
+name|String
+name|reloadingStudent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Checking override status..."
 argument_list|)
 name|String
@@ -5336,6 +5354,15 @@ literal|"Student update successfully requested. Please wait a while for the sync
 argument_list|)
 name|String
 name|requestStudentUpdateSuccess
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Student(s) successfully reloaded. Click Search to see the changes."
+argument_list|)
+name|String
+name|reloadStudentSuccess
 parameter_list|()
 function_decl|;
 annotation|@
