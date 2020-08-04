@@ -2409,6 +2409,13 @@ decl_stmt|;
 name|StudentClassAttendance
 name|attendance
 init|=
+operator|(
+name|provider
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
 name|provider
 operator|.
 name|getCustomClassAttendanceForStudent
@@ -2435,6 +2442,7 @@ name|helper
 argument_list|,
 literal|null
 argument_list|)
+operator|)
 decl_stmt|;
 name|float
 name|credit

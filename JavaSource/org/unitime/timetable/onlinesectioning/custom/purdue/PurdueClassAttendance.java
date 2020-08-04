@@ -1164,6 +1164,15 @@ name|SessionContext
 name|context
 parameter_list|)
 block|{
+if|if
+condition|(
+name|student
+operator|==
+literal|null
+condition|)
+return|return
+literal|null
+return|;
 name|boolean
 name|logHelper
 init|=
@@ -3875,7 +3884,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.classAttendance.messageFace2FacePlan"
 argument_list|,
-literal|"Face-to-face attendance plan ({group}):"
+literal|"In-person course meetings ({group}):"
 argument_list|)
 operator|.
 name|replace
@@ -3942,9 +3951,28 @@ if|if
 condition|(
 name|hasMessage
 condition|)
+block|{
+if|if
+condition|(
+name|classEvent
+operator|==
+literal|null
+condition|)
+name|message
+operator|+=
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"purdue.classAttendance.footerMessage"
+argument_list|,
+literal|"\nFor more details, see your<a href='gwt.jsp?page=personal' target='_blank'>Personal Schedule</a>."
+argument_list|)
+expr_stmt|;
 return|return
 name|message
 return|;
+block|}
 return|return
 literal|null
 return|;
@@ -4081,7 +4109,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.classAttendance.onlineRoom"
 argument_list|,
-literal|"ONLINE"
+literal|"Remote"
 argument_list|)
 argument_list|)
 expr_stmt|;

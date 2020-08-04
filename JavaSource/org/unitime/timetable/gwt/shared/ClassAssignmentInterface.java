@@ -5853,6 +5853,13 @@ literal|null
 condition|?
 name|getNote
 argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|"\\<[^>]*>"
+argument_list|,
+literal|""
+argument_list|)
 else|:
 name|getNote
 argument_list|()
