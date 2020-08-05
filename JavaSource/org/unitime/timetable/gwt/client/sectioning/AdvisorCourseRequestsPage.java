@@ -5294,7 +5294,7 @@ name|Window
 operator|.
 name|open
 argument_list|(
-literal|"login.do?menu=hide&m="
+literal|"selectPrimaryRole.do?list=Y&m="
 operator|+
 name|URL
 operator|.
@@ -7128,7 +7128,7 @@ name|Window
 operator|.
 name|open
 argument_list|(
-literal|"login.do?menu=hide&target=close.jsp"
+literal|"selectPrimaryRole.do?list=Y&target=close.jsp&menu=hide"
 argument_list|,
 literal|""
 argument_list|,

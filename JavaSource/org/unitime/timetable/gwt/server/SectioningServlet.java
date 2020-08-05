@@ -33947,6 +33947,14 @@ argument_list|()
 operator|.
 name|canPreRegisterStudents
 argument_list|()
+operator|||
+name|session
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|canOnlineSectionStudents
+argument_list|()
 condition|)
 block|{
 if|if
