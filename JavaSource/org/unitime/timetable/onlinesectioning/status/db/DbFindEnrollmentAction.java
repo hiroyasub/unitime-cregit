@@ -659,6 +659,16 @@ return|return
 literal|true
 return|;
 block|}
+else|else
+block|{
+if|if
+condition|(
+name|iCanSelect
+condition|)
+return|return
+literal|true
+return|;
+block|}
 return|return
 literal|false
 return|;
