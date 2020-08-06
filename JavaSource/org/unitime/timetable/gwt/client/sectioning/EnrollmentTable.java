@@ -1512,6 +1512,12 @@ name|iEmail
 init|=
 literal|false
 decl_stmt|;
+specifier|private
+name|boolean
+name|iACR
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|EnrollmentTable
 parameter_list|(
@@ -2155,6 +2161,19 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|setAdvisorRecommendations
+parameter_list|(
+name|boolean
+name|acr
+parameter_list|)
+block|{
+name|iACR
+operator|=
+name|acr
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|showStudentSchedule
 parameter_list|(
 specifier|final
@@ -2529,6 +2548,11 @@ name|getCreditMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|iACR
+condition|)
+block|{
 name|buttons
 operator|.
 name|addButton
@@ -2598,7 +2622,7 @@ operator|!=
 literal|null
 argument_list|)
 expr_stmt|;
-comment|//&& iOnline
+block|}
 name|buttons
 operator|.
 name|addButton

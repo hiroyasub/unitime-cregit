@@ -28785,6 +28785,7 @@ name|session
 operator|!=
 literal|null
 operator|&&
+operator|(
 name|session
 operator|.
 name|getStatusType
@@ -28792,6 +28793,15 @@ argument_list|()
 operator|.
 name|canPreRegisterStudents
 argument_list|()
+operator|||
+name|session
+operator|.
+name|getStatusType
+argument_list|()
+operator|.
+name|canOnlineSectionStudents
+argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 if|if

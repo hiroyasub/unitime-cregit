@@ -6635,6 +6635,16 @@ name|isEmail
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|iEnrollmentTable
+operator|.
+name|setAdvisorRecommendations
+argument_list|(
+name|iProperties
+operator|.
+name|isAdvisorCourseRequests
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|checkLastQuery
 argument_list|()
 expr_stmt|;
