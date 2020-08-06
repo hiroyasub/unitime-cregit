@@ -6674,7 +6674,7 @@ name|UniTimeConfirmationDialog
 operator|.
 name|info
 argument_list|(
-name|text
+name|title
 argument_list|,
 literal|true
 argument_list|)
@@ -6749,7 +6749,7 @@ name|UniTimeConfirmationDialog
 operator|.
 name|info
 argument_list|(
-name|text
+name|title
 argument_list|,
 literal|true
 argument_list|)
