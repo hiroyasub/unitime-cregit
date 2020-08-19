@@ -9187,6 +9187,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|location
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+operator|&&
 name|RoomAvailability
 operator|.
 name|getInstance
