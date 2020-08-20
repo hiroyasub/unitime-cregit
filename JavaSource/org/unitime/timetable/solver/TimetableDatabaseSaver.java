@@ -1698,6 +1698,8 @@ name|getProperty
 argument_list|(
 literal|"General.OwnerPuid"
 argument_list|)
+argument_list|,
+name|iSolverGroupId
 argument_list|)
 expr_stmt|;
 name|touchedSolutions
