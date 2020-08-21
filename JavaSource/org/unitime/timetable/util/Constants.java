@@ -1792,6 +1792,16 @@ name|minutesSinceMidnight
 operator|/
 literal|60
 decl_stmt|;
+if|if
+condition|(
+name|hour
+operator|>
+literal|24
+condition|)
+name|hour
+operator|-=
+literal|24
+expr_stmt|;
 name|int
 name|min
 init|=

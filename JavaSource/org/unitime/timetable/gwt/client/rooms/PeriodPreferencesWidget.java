@@ -1136,6 +1136,16 @@ name|slot
 operator|/
 literal|12
 decl_stmt|;
+if|if
+condition|(
+name|h
+operator|>
+literal|24
+condition|)
+name|h
+operator|-=
+literal|24
+expr_stmt|;
 name|int
 name|m
 init|=
