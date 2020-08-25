@@ -4197,6 +4197,8 @@ argument_list|,
 name|read
 argument_list|,
 name|len
+operator|-
+name|read
 argument_list|)
 expr_stmt|;
 for|for
