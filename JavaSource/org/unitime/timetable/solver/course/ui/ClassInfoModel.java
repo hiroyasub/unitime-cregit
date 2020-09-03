@@ -10381,6 +10381,15 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
+name|room
+operator|.
+name|isIgnoreRoomCheck
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
 name|room2events
 operator|!=
 literal|null
@@ -10679,6 +10688,7 @@ expr_stmt|;
 continue|continue
 name|rooms
 continue|;
+block|}
 block|}
 block|}
 block|}
