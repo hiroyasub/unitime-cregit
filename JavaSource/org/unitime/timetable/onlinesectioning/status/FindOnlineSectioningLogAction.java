@@ -876,8 +876,30 @@ name|hasAttribute
 argument_list|(
 literal|"lookup"
 argument_list|)
+operator|||
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"im"
+argument_list|)
 condition|?
 literal|"left outer join s.courseDemands cd left outer join cd.courseRequests cr "
+else|:
+literal|""
+operator|)
+operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"im"
+argument_list|)
+condition|?
+literal|"left outer join cr.courseOffering.instructionalOffering.instrOfferingConfigs cfg left outer join cfg.instructionalMethod im "
 else|:
 literal|""
 operator|)
@@ -4727,6 +4749,52 @@ block|}
 return|return
 literal|"1 = 1"
 return|;
+block|}
+if|else if
+condition|(
+literal|"im"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|body
+operator|!=
+literal|null
+operator|&&
+name|body
+operator|.
+name|equals
+argument_list|(
+name|iSession
+operator|.
+name|getDefaultInstructionalMethod
+argument_list|()
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"im is null or im.reference = '"
+operator|+
+name|body
+operator|+
+literal|"'"
+return|;
+block|}
+else|else
+block|{
+return|return
+literal|"im.reference = '"
+operator|+
+name|body
+operator|+
+literal|"'"
+return|;
+block|}
 block|}
 if|else if
 condition|(

@@ -18303,6 +18303,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"instructional method"
+argument_list|)
+name|String
+name|tagInstructionalMethod
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"lookup"
 argument_list|)
 name|String

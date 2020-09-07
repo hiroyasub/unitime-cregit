@@ -956,6 +956,15 @@ if|if
 condition|(
 operator|!
 name|match
+operator|&&
+operator|!
+name|crm
+operator|.
+name|enrollment
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 continue|continue;
 block|}

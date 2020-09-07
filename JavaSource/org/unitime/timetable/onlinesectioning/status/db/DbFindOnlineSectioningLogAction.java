@@ -608,8 +608,30 @@ name|hasAttribute
 argument_list|(
 literal|"lookup"
 argument_list|)
+operator|||
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"im"
+argument_list|)
 condition|?
 literal|"left outer join s.courseDemands cd left outer join cd.courseRequests cr "
+else|:
+literal|""
+operator|)
+operator|+
+operator|(
+name|getQuery
+argument_list|()
+operator|.
+name|hasAttribute
+argument_list|(
+literal|"im"
+argument_list|)
+condition|?
+literal|"left outer join cr.courseOffering.instructionalOffering.instrOfferingConfigs cfg left outer join cfg.instructionalMethod im "
 else|:
 literal|""
 operator|)
