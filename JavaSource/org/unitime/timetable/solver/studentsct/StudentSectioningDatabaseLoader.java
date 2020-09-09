@@ -17169,6 +17169,34 @@ name|enrl
 argument_list|)
 condition|)
 block|{
+name|iProgress
+operator|.
+name|info
+argument_list|(
+literal|"Created an override restriction for "
+operator|+
+name|cr
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" of "
+operator|+
+name|student
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|student
+operator|.
+name|getExternalId
+argument_list|()
+operator|+
+literal|") "
+argument_list|)
+expr_stmt|;
 name|IndividualRestriction
 name|restriction
 init|=
@@ -28217,6 +28245,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|static
 class|class
 name|ProjectedStudentMatcher
 implements|implements
