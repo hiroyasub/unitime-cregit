@@ -11295,6 +11295,33 @@ argument_list|(
 literal|"unitime.acrf.restrictedStatusChange"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"You Course Requests have been pre-populated with advisor recommendations. Please review the requested courses and hit the<b>Submit Requests</b> button to finalize your pre-registration."
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Student Course Requests: popup message when the page shows pre-populated course requests based on the advisor recommendations"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|PopupMessageCourseRequestsPrepopulatedWithAdvisorRecommendations
+argument_list|(
+literal|"unitime.acrf.showingRecommendationsPopup"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

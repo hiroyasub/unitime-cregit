@@ -2113,6 +2113,8 @@ name|hasEnrollments
 operator|)
 condition|)
 block|{
+if|if
+condition|(
 name|request
 operator|.
 name|applyAdvisorRequests
@@ -2127,6 +2129,18 @@ name|server
 argument_list|,
 name|helper
 argument_list|)
+argument_list|)
+condition|)
+name|request
+operator|.
+name|setPopupMessage
+argument_list|(
+name|ApplicationProperty
+operator|.
+name|PopupMessageCourseRequestsPrepopulatedWithAdvisorRecommendations
+operator|.
+name|value
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
