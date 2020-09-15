@@ -11219,7 +11219,7 @@ argument_list|)
 expr|@
 name|DefaultValue
 argument_list|(
-literal|"Students are responsible for meeting course prerequisites and fulfilling degree requirements, and are ultimately responsible for their own educational plan and academic success."
+literal|"Students are responsible for reviewing the advisor recommendations and submitting their registration, meeting course prerequisites and fulfilling degree requirements, and are ultimately responsible for their own educational plan and academic success. No changes are automatically made to student registration based on these advisor recommendations. "
 argument_list|)
 expr|@
 name|Description
@@ -11327,7 +11327,7 @@ argument_list|)
 expr|@
 name|DefaultValue
 argument_list|(
-literal|"You Course Requests have been pre-populated with advisor recommendations. Please review the requested courses and hit the<b>Submit Requests</b> button to finalize your pre-registration."
+literal|"Your Course Requests have been pre-populated with advisor recommendations. Please review the requested courses and hit the<b>Submit Requests</b> button to finalize your pre-registration."
 argument_list|)
 expr|@
 name|Description
