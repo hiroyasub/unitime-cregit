@@ -9683,6 +9683,8 @@ literal|false
 else|:
 literal|true
 operator|)
+argument_list|,
+name|caught
 argument_list|)
 expr_stmt|;
 else|else
