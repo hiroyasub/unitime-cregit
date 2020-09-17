@@ -14290,15 +14290,6 @@ block|{
 if|if
 condition|(
 name|r
-operator|.
-name|isAlternative
-argument_list|()
-condition|)
-continue|continue;
-comment|// no alternate course requests
-if|if
-condition|(
-name|r
 operator|instanceof
 name|XCourseRequest
 condition|)
@@ -14613,15 +14604,6 @@ name|getRequests
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
-name|r
-operator|.
-name|isAlternative
-argument_list|()
-condition|)
-continue|continue;
-comment|// no alternate course requests
 if|if
 condition|(
 name|r
@@ -15239,15 +15221,6 @@ block|{
 if|if
 condition|(
 name|r
-operator|.
-name|isAlternative
-argument_list|()
-condition|)
-continue|continue;
-comment|// no alternate course requests
-if|if
-condition|(
-name|r
 operator|instanceof
 name|XCourseRequest
 condition|)
@@ -15564,15 +15537,6 @@ name|getRequests
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
-name|r
-operator|.
-name|isAlternative
-argument_list|()
-condition|)
-continue|continue;
-comment|// no alternate course requests
 if|if
 condition|(
 name|r
