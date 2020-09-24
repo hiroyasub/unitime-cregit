@@ -1542,7 +1542,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>E</u>xport PDF"
+literal|"<u>P</u>rint"
 argument_list|)
 name|String
 name|buttonPrint
@@ -1564,6 +1564,15 @@ literal|"E<u>x</u>port"
 argument_list|)
 name|String
 name|buttonExport
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"E<u>x</u>port PDF"
+argument_list|)
+name|String
+name|buttonExportPdf
 parameter_list|()
 function_decl|;
 annotation|@

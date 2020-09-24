@@ -255,13 +255,6 @@ argument_list|,
 literal|"Online Student Scheduling: looked up user"
 argument_list|)
 block|,
-name|OnlineSchedulingPIN
-argument_list|(
-literal|"pin"
-argument_list|,
-literal|"Online Student Scheduling: last entered PIN"
-argument_list|)
-block|,
 name|OnlineSchedulingEligibility
 argument_list|(
 literal|"eligibility"
@@ -269,25 +262,11 @@ argument_list|,
 literal|"Online Student Scheduling: output of the last eligibility check"
 argument_list|)
 block|,
-name|OnlineSchedulingLastRequest
-argument_list|(
-literal|"request"
-argument_list|,
-literal|"Online Student Scheduling: last course request"
-argument_list|)
-block|,
 name|OnlineSchedulingLastSession
 argument_list|(
 literal|"sessionId"
 argument_list|,
 literal|"Online Student Scheduling: last academic session id"
-argument_list|)
-block|,
-name|OnlineSchedulingLastSpecialRequest
-argument_list|(
-literal|"specreq"
-argument_list|,
-literal|"Online Student Scheduling: last special request id"
 argument_list|)
 block|,
 name|ClassInfoModel

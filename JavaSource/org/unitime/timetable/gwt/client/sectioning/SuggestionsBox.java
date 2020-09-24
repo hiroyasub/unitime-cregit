@@ -1190,10 +1190,6 @@ name|AriaButton
 name|iSearch
 decl_stmt|;
 specifier|private
-name|boolean
-name|iOnline
-decl_stmt|;
-specifier|private
 name|AriaButton
 name|iQuickDrop
 decl_stmt|;
@@ -1243,9 +1239,6 @@ operator|.
 name|ColorProvider
 name|color
 parameter_list|,
-name|boolean
-name|online
-parameter_list|,
 name|SpecialRegistrationContext
 name|specReg
 parameter_list|)
@@ -1261,10 +1254,6 @@ name|addStyleName
 argument_list|(
 literal|"unitime-SuggestionsBox"
 argument_list|)
-expr_stmt|;
-name|iOnline
-operator|=
-name|online
 expr_stmt|;
 name|iSpecReg
 operator|=
@@ -2094,8 +2083,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|iRequest
 argument_list|,
 name|iCurrent
@@ -2192,8 +2179,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|iRequest
 argument_list|,
 name|iCurrent
@@ -2851,8 +2836,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|iRequest
 argument_list|,
 name|iCurrent
@@ -7349,8 +7332,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|iRequest
 argument_list|,
 name|iCurrent
@@ -7463,8 +7444,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|iRequest
 argument_list|,
 name|iCurrent
@@ -9085,8 +9064,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|request
 argument_list|,
 name|rows
@@ -9333,8 +9310,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|request
 argument_list|,
 name|rows
@@ -9694,8 +9669,6 @@ name|iSectioningService
 operator|.
 name|computeSuggestions
 argument_list|(
-name|iOnline
-argument_list|,
 name|request
 argument_list|,
 name|rows
