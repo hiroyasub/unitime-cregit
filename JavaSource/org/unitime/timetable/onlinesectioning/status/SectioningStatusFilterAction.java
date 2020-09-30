@@ -1921,6 +1921,11 @@ argument_list|(
 literal|"status"
 argument_list|)
 operator|.
+name|exclude
+argument_list|(
+literal|"credit"
+argument_list|)
+operator|.
 name|query
 argument_list|(
 name|helper
@@ -2080,6 +2085,11 @@ operator|.
 name|exclude
 argument_list|(
 literal|"status"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
+literal|"credit"
 argument_list|)
 operator|.
 name|query
@@ -3025,6 +3035,11 @@ argument_list|)
 operator|.
 name|exclude
 argument_list|(
+literal|"credit"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
 literal|"override"
 argument_list|)
 operator|.
@@ -3113,6 +3128,11 @@ operator|.
 name|from
 argument_list|(
 literal|"inner join s.courseDemands xcd inner join xcd.courseRequests xcr"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
+literal|"credit"
 argument_list|)
 operator|.
 name|exclude
@@ -3335,6 +3355,11 @@ argument_list|(
 literal|"mode"
 argument_list|)
 operator|.
+name|exclude
+argument_list|(
+literal|"credit"
+argument_list|)
+operator|.
 name|query
 argument_list|(
 name|helper
@@ -3441,6 +3466,11 @@ operator|.
 name|exclude
 argument_list|(
 literal|"mode"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
+literal|"credit"
 argument_list|)
 operator|.
 name|query
@@ -3578,6 +3608,11 @@ argument_list|(
 literal|"mode"
 argument_list|)
 operator|.
+name|exclude
+argument_list|(
+literal|"credit"
+argument_list|)
+operator|.
 name|query
 argument_list|(
 name|helper
@@ -3660,6 +3695,11 @@ operator|.
 name|exclude
 argument_list|(
 literal|"mode"
+argument_list|)
+operator|.
+name|exclude
+argument_list|(
+literal|"credit"
 argument_list|)
 operator|.
 name|query
