@@ -31,6 +31,34 @@ name|ApplicationProperty
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|interfaces
+operator|.
+name|ExternalClassNameHelperInterface
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|util
+operator|.
+name|DefaultExternalClassNameHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -185,6 +213,21 @@ argument_list|,
 name|ApplicationProperty
 operator|.
 name|CustomizationStudentHoldsCheck
+argument_list|)
+block|,
+name|ClassNamingHelper
+argument_list|(
+name|ExternalClassNameHelperInterface
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|ClassNamingHelper
+argument_list|,
+name|DefaultExternalClassNameHelper
+operator|.
+name|class
 argument_list|)
 block|, 	;
 specifier|private
