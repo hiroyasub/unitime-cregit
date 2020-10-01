@@ -22346,6 +22346,25 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|cx
+operator|.
+name|getStudentId
+argument_list|()
+operator|==
+literal|null
+condition|)
+throw|throw
+operator|new
+name|SectioningException
+argument_list|(
+name|MSG
+operator|.
+name|exceptionNoStudent
+argument_list|()
+argument_list|)
+throw|;
+if|if
+condition|(
 operator|!
 name|cx
 operator|.
@@ -26732,7 +26751,7 @@ argument_list|)
 expr_stmt|;
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"ContextCheck: student id "
 operator|+
@@ -26761,7 +26780,7 @@ literal|null
 condition|)
 name|sLog
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"ContextCheck: no student id (assuming guess access)"
 argument_list|)
