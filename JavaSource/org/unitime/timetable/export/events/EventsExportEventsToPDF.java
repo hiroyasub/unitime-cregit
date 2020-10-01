@@ -889,6 +889,13 @@ literal|"<br>"
 argument_list|,
 literal|"\n"
 argument_list|)
+operator|.
+name|replaceAll
+argument_list|(
+literal|"\\<.*?\\>"
+argument_list|,
+literal|""
+argument_list|)
 else|:
 literal|""
 argument_list|,
