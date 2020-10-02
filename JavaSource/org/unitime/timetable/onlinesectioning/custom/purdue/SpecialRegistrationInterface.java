@@ -631,6 +631,11 @@ name|EligibilityProblem
 argument_list|>
 name|eligibilityProblems
 decl_stmt|;
+comment|/** Student PIN (NA when not available) */
+specifier|public
+name|String
+name|PIN
+decl_stmt|;
 block|}
 comment|/** 	 * Detected student eligibility problem 	 */
 specifier|public

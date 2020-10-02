@@ -9235,6 +9235,18 @@ name|String
 name|sessionExpiredClickToLogin
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"PIN: {0}"
+argument_list|)
+name|String
+name|advisorNotePin
+parameter_list|(
+name|String
+name|pin
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
