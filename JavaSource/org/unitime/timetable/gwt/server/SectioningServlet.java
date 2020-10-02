@@ -8720,6 +8720,16 @@ name|CourseMatcher
 name|courseMatcher
 parameter_list|)
 block|{
+name|boolean
+name|excludeNotOffered
+init|=
+name|ApplicationProperty
+operator|.
+name|CourseRequestsShowNotOffered
+operator|.
+name|isFalse
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|studentId
@@ -8745,6 +8755,14 @@ argument_list|(
 literal|"select cr.courseOffering from CourseRequest cr where "
 operator|+
 literal|"cr.courseDemand.student.uniqueId = :studentId and "
+operator|+
+operator|(
+name|excludeNotOffered
+condition|?
+literal|"cr.courseOffering.instructionalOffering.notOffered is false and "
+else|:
+literal|""
+operator|)
 operator|+
 literal|"(lower(cr.courseOffering.subjectArea.subjectAreaAbbreviation || ' ' || cr.courseOffering.courseNbr) = :course or "
 operator|+
@@ -8803,6 +8821,14 @@ operator|.
 name|createQuery
 argument_list|(
 literal|"select c from CourseOffering c where "
+operator|+
+operator|(
+name|excludeNotOffered
+condition|?
+literal|"c.instructionalOffering.notOffered is false and "
+else|:
+literal|""
+operator|)
 operator|+
 literal|"c.subjectArea.session.uniqueId = :sessionId and c.subjectArea.department.allowStudentScheduling = true and "
 operator|+
