@@ -2394,7 +2394,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|Label
+name|HTML
 argument_list|(
 name|record
 operator|.
@@ -3492,6 +3492,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|iRequired
+operator|!=
+literal|null
+condition|)
 name|iInstructionalMethodsPanel
 operator|.
 name|add
