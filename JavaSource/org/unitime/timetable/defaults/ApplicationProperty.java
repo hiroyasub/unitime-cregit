@@ -11389,6 +11389,42 @@ argument_list|(
 literal|"unitime.acrf.showingRecommendationsPopup"
 argument_list|)
 operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"Preferences"
+argument_list|)
+expr|@
+name|Values
+argument_list|(
+block|{
+literal|"Disabled"
+block|,
+literal|"Preferences"
+block|,
+literal|"Assignments"
+block|,
+literal|"Enabled"
+block|}
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructors: alow editing unavailable dates, possible values:\n"
+operator|+
+literal|"- Disabled ... editing of unavailable dates is disabled,\n"
+operator|+
+literal|"- Preferences ... enabled and available on the Instructor Preferences page,\n"
+operator|+
+literal|"- Assignments ... enabled and available on the Instructor Assignment Preferences page,\n"
+operator|+
+literal|"- Enabled ... enabled and available on both Instructor Preferences and Instructor Assignment Preferences pages"
+argument_list|)
+name|InstructorUnavailbeDays
+argument_list|(
+literal|"tmtbl.instructor.unavaibleDates"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
