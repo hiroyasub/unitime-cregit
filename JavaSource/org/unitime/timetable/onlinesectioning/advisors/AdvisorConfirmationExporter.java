@@ -1023,9 +1023,6 @@ operator|.
 name|getRequest
 argument_list|(
 name|student
-operator|.
-name|getUniqueId
-argument_list|()
 argument_list|,
 name|AdvisorCourseRequestDAO
 operator|.

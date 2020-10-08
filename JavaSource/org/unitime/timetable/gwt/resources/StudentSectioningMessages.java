@@ -8293,6 +8293,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"PIN:"
+argument_list|)
+name|String
+name|propStudentPin
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Lookup Student"
 argument_list|)
 name|String
@@ -9246,6 +9255,15 @@ parameter_list|(
 name|String
 name|pin
 parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not released to the student."
+argument_list|)
+name|String
+name|pinNotReleasedToStudent
+parameter_list|()
 function_decl|;
 block|}
 end_interface

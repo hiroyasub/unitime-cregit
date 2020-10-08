@@ -16577,9 +16577,6 @@ operator|.
 name|getRequest
 argument_list|(
 name|student
-operator|.
-name|getUniqueId
-argument_list|()
 argument_list|,
 name|hibSession
 argument_list|)
@@ -22745,9 +22742,6 @@ operator|.
 name|getRequest
 argument_list|(
 name|student
-operator|.
-name|getUniqueId
-argument_list|()
 argument_list|,
 name|hibSession
 argument_list|)
