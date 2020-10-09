@@ -10050,13 +10050,13 @@ name|CREDIT_HIGH
 case|:
 name|icon
 operator|=
-literal|"stop.png"
+literal|"attention.png"
 expr_stmt|;
 name|status
 operator|=
 name|MSG
 operator|.
-name|reqStatusRejected
+name|reqStatusWarning
 argument_list|()
 expr_stmt|;
 name|iconText

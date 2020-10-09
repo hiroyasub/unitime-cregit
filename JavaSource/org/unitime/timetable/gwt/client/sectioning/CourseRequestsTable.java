@@ -2657,7 +2657,7 @@ name|setResource
 argument_list|(
 name|RESOURCES
 operator|.
-name|requestError
+name|requestNeeded
 argument_list|()
 argument_list|)
 expr_stmt|;

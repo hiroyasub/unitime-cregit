@@ -2558,7 +2558,7 @@ name|setResource
 argument_list|(
 name|RESOURCES
 operator|.
-name|requestError
+name|requestNeeded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -30831,14 +30831,14 @@ name|icon
 operator|=
 name|RESOURCES
 operator|.
-name|requestError
+name|requestNeeded
 argument_list|()
 expr_stmt|;
 name|status
 operator|=
 name|MESSAGES
 operator|.
-name|reqStatusRejected
+name|reqStatusWarning
 argument_list|()
 expr_stmt|;
 name|iconText
