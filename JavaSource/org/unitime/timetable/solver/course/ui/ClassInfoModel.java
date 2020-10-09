@@ -1699,6 +1699,15 @@ argument_list|()
 argument_list|)
 condition|)
 continue|continue;
+if|if
+condition|(
+operator|!
+name|ci
+operator|.
+name|isLead
+argument_list|()
+condition|)
+continue|continue;
 name|Assignment
 name|a
 init|=
