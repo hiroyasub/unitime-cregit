@@ -2613,6 +2613,13 @@ name|propStudentPin
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|iPinReleased
+operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-PinToggle"
+argument_list|)
+expr_stmt|;
 name|iPin
 operator|=
 operator|new
