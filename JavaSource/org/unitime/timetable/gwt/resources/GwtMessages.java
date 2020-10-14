@@ -6292,6 +6292,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Loading record ..."
+argument_list|)
+name|String
+name|waitLoadingRecord
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Saving curricula ..."
 argument_list|)
 name|String
