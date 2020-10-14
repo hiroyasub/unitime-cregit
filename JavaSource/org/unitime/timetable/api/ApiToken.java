@@ -57,6 +57,14 @@ name|String
 name|token
 parameter_list|)
 function_decl|;
+specifier|public
+name|String
+name|getUserId
+parameter_list|(
+name|String
+name|token
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
