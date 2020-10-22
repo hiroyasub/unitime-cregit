@@ -5974,7 +5974,7 @@ name|this
 argument_list|,
 name|insertRow
 argument_list|(
-literal|8
+literal|10
 operator|+
 name|iCourses
 operator|.
@@ -6141,7 +6141,7 @@ name|this
 argument_list|,
 name|insertRow
 argument_list|(
-literal|8
+literal|10
 operator|+
 name|iCourses
 operator|.
