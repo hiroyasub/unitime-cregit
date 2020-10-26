@@ -462,6 +462,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No-Subs"
+argument_list|)
+name|String
+name|colNoSubs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Critical"
 argument_list|)
 name|String
@@ -774,6 +783,24 @@ literal|"Wait-List&darr;"
 argument_list|)
 name|String
 name|courseRequestsWaitListNoArrows
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"&darr; No-Subs"
+argument_list|)
+name|String
+name|courseRequestsNoSubstitutions
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No-Subs&darr;"
+argument_list|)
+name|String
+name|courseRequestsNoSubstitutionsNoArrows
 parameter_list|()
 function_decl|;
 annotation|@
@@ -2153,6 +2180,15 @@ literal|"Wait-Listed"
 argument_list|)
 name|String
 name|courseWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No Substitutions"
+argument_list|)
+name|String
+name|courseNoSubs
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4021,7 +4057,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"r) Space available only with a reservation.<br>w) Wait-listed requests."
+literal|"r) Space available only with a reservation.<br>w) Wait-listed or No-Subs requests."
 argument_list|)
 name|String
 name|sectioningStatusReservationHint
@@ -4030,7 +4066,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"(p) denotes priority of the first wait-listed course request."
+literal|"(p) denotes priority of the first wait-listed/no-subs course request."
 argument_list|)
 name|String
 name|sectioningStatusPriorityHint
@@ -5030,6 +5066,15 @@ literal|"Course Wait-Lists:"
 argument_list|)
 name|String
 name|propWaitLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Allow No-Subs:"
+argument_list|)
+name|String
+name|propNoSubs
 parameter_list|()
 function_decl|;
 annotation|@
@@ -6597,7 +6642,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Request is wait-listed."
+literal|"Request is wait-listed or marked as no-subs."
 argument_list|)
 name|String
 name|descriptionRequestWaitListed
@@ -7057,6 +7102,24 @@ literal|"Courses can NOT be wait-listed in UniTime."
 argument_list|)
 name|String
 name|messageStatusCanNotWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show the No-Subs toggle in the Course Requests table."
+argument_list|)
+name|String
+name|messageStatusCanNoSubs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do not show the No-Subs toggle in the Course Requests table."
+argument_list|)
+name|String
+name|messageStatusCanNotNoSubs
 parameter_list|()
 function_decl|;
 annotation|@
@@ -8320,6 +8383,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Wait-List"
+argument_list|)
+name|String
+name|headWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No-Subs"
+argument_list|)
+name|String
+name|headNoSubs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0,number,0.#}"
 argument_list|)
 name|String
@@ -8414,6 +8495,24 @@ literal|"Date:      _______________"
 argument_list|)
 name|String
 name|pdfSignatureDate
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"X"
+argument_list|)
+name|String
+name|pdfCourseWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|""
+argument_list|)
+name|String
+name|pdfCourseNotWaitListed
 parameter_list|()
 function_decl|;
 annotation|@

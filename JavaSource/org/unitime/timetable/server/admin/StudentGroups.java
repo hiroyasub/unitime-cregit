@@ -716,10 +716,7 @@ literal|"null"
 argument_list|)
 expr_stmt|;
 return|return
-name|StudentGroupDAO
-operator|.
-name|getInstance
-argument_list|()
+name|StudentGroup
 operator|.
 name|findByType
 argument_list|(
@@ -755,10 +752,7 @@ index|]
 argument_list|)
 expr_stmt|;
 return|return
-name|StudentGroupDAO
-operator|.
-name|getInstance
-argument_list|()
+name|StudentGroup
 operator|.
 name|findByType
 argument_list|(

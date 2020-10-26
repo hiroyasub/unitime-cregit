@@ -1506,6 +1506,12 @@ case|:
 return|return
 literal|"noSchedule"
 return|;
+case|case
+name|nosubs
+case|:
+return|return
+literal|"noSubs"
+return|;
 default|default:
 return|return
 name|option

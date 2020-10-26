@@ -23784,24 +23784,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct s from Student s "
 operator|+
-literal|"left join fetch s.courseDemands as cd "
-operator|+
-literal|"left join fetch cd.courseRequests as cr "
-operator|+
-literal|"left join fetch cr.classWaitLists as cw "
-operator|+
-literal|"left join fetch s.classEnrollments as e "
-operator|+
-literal|"left join fetch s.waitlists as w "
-operator|+
-operator|(
-name|iLoadStudentInfo
-condition|?
-literal|"left join fetch s.areaClasfMajors as a left join fetch s.groups as g "
-else|:
-literal|""
-operator|)
-operator|+
+comment|/*                    "left join fetch s.courseDemands as cd "+                     "left join fetch cd.courseRequests as cr "+                     "left join fetch cr.classWaitLists as cw " +                     "left join fetch s.classEnrollments as e " +                     "left join fetch s.waitlists as w " +                     (iLoadStudentInfo ? "left join fetch s.areaClasfMajors as a left join fetch s.groups as g " : "") +*/
 literal|"where s.session.uniqueId=:sessionId"
 argument_list|)
 operator|.

@@ -10050,6 +10050,33 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Student Solver Dashboard: allow no-subs toggle)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|SolverDashboardAllowNoSubs
+argument_list|(
+literal|"unitime.solverDashboard.allowNoSubs"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"Distribution Preferences: show class suffix (external id) next to the class section number"
 argument_list|)
 expr|@
@@ -11450,6 +11477,28 @@ argument_list|)
 name|AdminStudentGroupsLazyStudents
 argument_list|(
 literal|"unitime.admin.studentGroups.lazyLoad"
+argument_list|)
+operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"None"
+argument_list|)
+expr|@
+name|Values
+argument_list|(
+block|{
+literal|"None, WaitList, NoSubs"
+block|}
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Recommendation: Allow for wait-lists, no-subs or none of the two."
+argument_list|)
+name|AdvisorRecommendationsWaitListMode
+argument_list|(
+literal|"unitime.acr.waitlist"
 argument_list|)
 operator|,
 expr_stmt|;

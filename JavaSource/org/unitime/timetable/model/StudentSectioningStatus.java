@@ -295,6 +295,12 @@ name|noschedule
 argument_list|(
 literal|"Do Not Show Personal Schedule"
 argument_list|)
+block|,
+comment|/*131072*/
+name|nosubs
+argument_list|(
+literal|"No-Substitutions Enabled"
+argument_list|)
 block|, 		;
 specifier|private
 name|String
