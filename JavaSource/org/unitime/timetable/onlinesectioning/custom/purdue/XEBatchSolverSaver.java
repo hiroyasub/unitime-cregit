@@ -9380,6 +9380,16 @@ operator|+
 literal|" has started."
 argument_list|)
 expr_stmt|;
+name|ApplicationProperties
+operator|.
+name|setSessionId
+argument_list|(
+name|iSession
+operator|.
+name|getUniqueId
+argument_list|()
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 literal|true
@@ -9454,6 +9464,13 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
+name|ApplicationProperties
+operator|.
+name|setSessionId
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 name|_RootDAO
 operator|.
 name|closeCurrentThreadSessions
