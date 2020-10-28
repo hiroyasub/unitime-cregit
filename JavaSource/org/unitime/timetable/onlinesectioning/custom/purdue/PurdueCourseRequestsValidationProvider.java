@@ -2129,6 +2129,13 @@ name|getSpecialRegistrationApiReadTimeout
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|iClient
+operator|.
+name|setContext
+argument_list|(
+name|cx
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|String
