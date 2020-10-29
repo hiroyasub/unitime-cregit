@@ -4313,7 +4313,12 @@ operator|.
 name|AdvisorRecommendationsWaitListMode
 operator|.
 name|value
+argument_list|(
+name|server
+operator|.
+name|getAcademicSession
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4581,7 +4586,12 @@ operator|.
 name|AdvisorRecommendationsWaitListMode
 operator|.
 name|value
+argument_list|(
+name|server
+operator|.
+name|getAcademicSession
 argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

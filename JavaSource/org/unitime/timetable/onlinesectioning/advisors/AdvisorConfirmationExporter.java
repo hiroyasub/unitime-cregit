@@ -1079,7 +1079,12 @@ operator|.
 name|AdvisorRecommendationsWaitListMode
 operator|.
 name|value
+argument_list|(
+name|student
+operator|.
+name|getSession
 argument_list|()
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
