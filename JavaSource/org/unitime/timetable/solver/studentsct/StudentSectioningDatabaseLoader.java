@@ -12618,6 +12618,8 @@ name|getReference
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|priorities
+label|:
 for|for
 control|(
 name|StudentPriority
@@ -12683,7 +12685,9 @@ argument_list|(
 name|priority
 argument_list|)
 expr_stmt|;
-break|break;
+break|break
+name|priorities
+break|;
 block|}
 if|else if
 condition|(
@@ -12723,7 +12727,9 @@ argument_list|(
 name|priority
 argument_list|)
 expr_stmt|;
-break|break;
+break|break
+name|priorities
+break|;
 block|}
 block|}
 block|}
