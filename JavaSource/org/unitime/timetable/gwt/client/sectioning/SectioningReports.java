@@ -1438,6 +1438,19 @@ name|text
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|else if
+condition|(
+name|text
+operator|.
+name|matches
+argument_list|(
+literal|"[\\-]?[0-9]+(,[0-9][0-9][0-9])*(\\.[0-9]+)? ?%?"
+argument_list|)
+condition|)
+name|number
+operator|=
+literal|true
+expr_stmt|;
 name|line
 operator|.
 name|add
@@ -3640,6 +3653,19 @@ argument_list|(
 name|text
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|text
+operator|.
+name|matches
+argument_list|(
+literal|"[\\-]?[0-9]+(,[0-9][0-9][0-9])*(\\.[0-9]+)? ?%?"
+argument_list|)
+condition|)
+name|number
+operator|=
+literal|true
 expr_stmt|;
 name|line
 operator|.
