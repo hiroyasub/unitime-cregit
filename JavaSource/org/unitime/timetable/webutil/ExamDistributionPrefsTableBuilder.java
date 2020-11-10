@@ -99,6 +99,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|defaults
+operator|.
+name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|model
 operator|.
 name|DistributionObject
@@ -346,29 +360,28 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Query
-name|q
+name|String
+name|query
 init|=
-operator|new
-name|DistributionPrefDAO
-argument_list|()
-operator|.
-name|getSession
-argument_list|()
-operator|.
-name|createQuery
-argument_list|(
 literal|"select distinct dp from DistributionPref dp "
 operator|+
 literal|"inner join dp.distributionObjects do, Exam x inner join x.owners o "
 operator|+
 literal|"where "
-operator|+
-operator|(
+decl_stmt|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|CourseOfferingTitleSearch
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
 name|courseNbr
-operator|==
+operator|!=
 literal|null
-operator|||
+operator|&&
 name|courseNbr
 operator|.
 name|trim
@@ -376,11 +389,51 @@ argument_list|()
 operator|.
 name|length
 argument_list|()
-operator|==
+operator|>
+literal|2
+condition|)
+block|{
+name|query
+operator|+=
+literal|"("
+operator|+
+operator|(
+name|courseNbr
+operator|.
+name|indexOf
+argument_list|(
+literal|'*'
+argument_list|)
+operator|>=
 literal|0
 condition|?
-literal|""
+literal|"o.course.courseNbr like :courseNbr "
 else|:
+literal|"o.course.courseNbr=:courseNbr "
+operator|)
+operator|+
+literal|" or lower(o.course.title) like lower('%' || :courseNbr || '%')) and "
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|courseNbr
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|courseNbr
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|query
+operator|+=
+operator|(
 name|courseNbr
 operator|.
 name|indexOf
@@ -394,7 +447,10 @@ literal|"o.course.courseNbr like :courseNbr and "
 else|:
 literal|"o.course.courseNbr=:courseNbr and "
 operator|)
-operator|+
+expr_stmt|;
+block|}
+name|query
+operator|+=
 operator|(
 name|subjectAreaId
 operator|==
@@ -408,6 +464,20 @@ operator|+
 literal|"dp.distributionType.examPref = true and "
 operator|+
 literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
+expr_stmt|;
+name|Query
+name|q
+init|=
+operator|new
+name|DistributionPrefDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+name|query
 argument_list|)
 operator|.
 name|setLong
@@ -451,15 +521,14 @@ name|courseNbr
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|courseNbr
 operator|.
 name|trim
 argument_list|()
 operator|.
-name|length
+name|isEmpty
 argument_list|()
-operator|!=
-literal|0
 condition|)
 name|q
 operator|.
@@ -531,29 +600,28 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Query
-name|q
+name|String
+name|query
 init|=
-operator|new
-name|DistributionPrefDAO
-argument_list|()
-operator|.
-name|getSession
-argument_list|()
-operator|.
-name|createQuery
-argument_list|(
 literal|"select distinct dp from DistributionPref dp "
 operator|+
 literal|"inner join dp.distributionObjects do, Exam x inner join x.owners o "
 operator|+
 literal|"where "
-operator|+
-operator|(
+decl_stmt|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|CourseOfferingTitleSearch
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
 name|courseNbr
-operator|==
+operator|!=
 literal|null
-operator|||
+operator|&&
 name|courseNbr
 operator|.
 name|trim
@@ -561,11 +629,51 @@ argument_list|()
 operator|.
 name|length
 argument_list|()
-operator|==
+operator|>
+literal|2
+condition|)
+block|{
+name|query
+operator|+=
+literal|"("
+operator|+
+operator|(
+name|courseNbr
+operator|.
+name|indexOf
+argument_list|(
+literal|'*'
+argument_list|)
+operator|>=
 literal|0
 condition|?
-literal|""
+literal|"o.course.courseNbr like :courseNbr "
 else|:
+literal|"o.course.courseNbr=:courseNbr "
+operator|)
+operator|+
+literal|" or lower(o.course.title) like lower('%' || :courseNbr || '%')) and "
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|courseNbr
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|courseNbr
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|query
+operator|+=
+operator|(
 name|courseNbr
 operator|.
 name|indexOf
@@ -579,7 +687,10 @@ literal|"o.course.courseNbr like :courseNbr and "
 else|:
 literal|"o.course.courseNbr=:courseNbr and "
 operator|)
-operator|+
+expr_stmt|;
+block|}
+name|query
+operator|+=
 operator|(
 name|subjectAreaId
 operator|==
@@ -593,6 +704,20 @@ operator|+
 literal|"dp.distributionType.examPref = true and "
 operator|+
 literal|"do.prefGroup = x and x.session.uniqueId=:sessionId and x.examType.uniqueId=:examTypeId"
+expr_stmt|;
+name|Query
+name|q
+init|=
+operator|new
+name|DistributionPrefDAO
+argument_list|()
+operator|.
+name|getSession
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+name|query
 argument_list|)
 operator|.
 name|setLong

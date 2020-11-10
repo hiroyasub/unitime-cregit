@@ -53,6 +53,20 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|defaults
+operator|.
+name|ApplicationProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|gwt
 operator|.
 name|client
@@ -481,7 +495,30 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"and co.courseNbr like :q order by co.courseNbr"
+operator|(
+name|ApplicationProperty
+operator|.
+name|CourseOfferingTitleSearch
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
+name|request
+operator|.
+name|getQuery
+argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|2
+condition|?
+literal|"and (co.courseNbr like :q or lower(co.title) like lower('%' || :q))"
+else|:
+literal|"and co.courseNbr like :q"
+operator|)
+operator|+
+literal|" order by co.courseNbr"
 argument_list|)
 operator|.
 name|setLong
@@ -654,7 +691,30 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"and co.courseNbr like :q order by co.courseNbr"
+operator|(
+name|ApplicationProperty
+operator|.
+name|CourseOfferingTitleSearch
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
+name|request
+operator|.
+name|getQuery
+argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|2
+condition|?
+literal|"and (co.courseNbr like :q or lower(co.title) like lower('%' || :q))"
+else|:
+literal|"and co.courseNbr like :q"
+operator|)
+operator|+
+literal|" order by co.courseNbr"
 argument_list|)
 operator|.
 name|setLong
