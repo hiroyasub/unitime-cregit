@@ -18970,6 +18970,11 @@ return|return
 literal|false
 return|;
 comment|// When there is a pending override, try to update student first
+name|boolean
+name|studentUpdated
+init|=
+literal|false
+decl_stmt|;
 if|if
 condition|(
 name|hasOverride
@@ -18977,6 +18982,8 @@ argument_list|(
 name|student
 argument_list|)
 condition|)
+name|studentUpdated
+operator|=
 name|updateStudent
 argument_list|(
 name|server
@@ -23256,6 +23263,8 @@ return|return
 name|changed
 operator|||
 name|studentChanged
+operator|||
+name|studentUpdated
 return|;
 block|}
 annotation|@
