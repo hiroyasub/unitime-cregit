@@ -1915,6 +1915,9 @@ break|break;
 case|case
 name|Curriculum
 case|:
+case|case
+name|CurriculumOverride
+case|:
 name|e
 operator|.
 name|setReservation
@@ -1929,6 +1932,9 @@ break|break;
 case|case
 name|Group
 case|:
+case|case
+name|GroupOverride
+case|:
 name|e
 operator|.
 name|setReservation
@@ -1942,6 +1948,9 @@ expr_stmt|;
 break|break;
 case|case
 name|Individual
+case|:
+case|case
+name|IndividualOverride
 case|:
 name|e
 operator|.
