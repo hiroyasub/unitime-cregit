@@ -25856,6 +25856,22 @@ expr_stmt|;
 block|}
 block|}
 block|}
+for|for
+control|(
+name|LinkedSections
+name|c
+range|:
+name|getModel
+argument_list|()
+operator|.
+name|getLinkedSections
+argument_list|()
+control|)
+name|c
+operator|.
+name|createConstraints
+argument_list|()
+expr_stmt|;
 name|setPhase
 argument_list|(
 literal|"Assigning students..."
