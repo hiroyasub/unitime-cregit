@@ -189,6 +189,8 @@ block|,
 name|DEFAULT_CHECKED
 block|,
 name|LAZY
+block|,
+name|NO_CYCLE
 block|, 		;
 specifier|public
 name|int
@@ -2703,6 +2705,22 @@ return|return
 name|Flag
 operator|.
 name|LAZY
+operator|.
+name|has
+argument_list|(
+name|iFlags
+argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|isNoCycle
+parameter_list|()
+block|{
+return|return
+name|Flag
+operator|.
+name|NO_CYCLE
 operator|.
 name|has
 argument_list|(

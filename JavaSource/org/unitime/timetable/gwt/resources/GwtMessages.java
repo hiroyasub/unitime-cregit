@@ -8185,6 +8185,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} cannot form a cycle."
+argument_list|)
+name|String
+name|errorCanNotCycle
+parameter_list|(
+name|String
+name|field
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No data."
 argument_list|)
 name|String

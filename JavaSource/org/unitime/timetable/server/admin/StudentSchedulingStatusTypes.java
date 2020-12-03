@@ -1282,6 +1282,10 @@ argument_list|,
 literal|100
 argument_list|,
 name|fallbacks
+argument_list|,
+name|Flag
+operator|.
+name|NO_CYCLE
 argument_list|)
 expr_stmt|;
 name|fields
