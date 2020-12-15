@@ -2908,7 +2908,7 @@ operator|==
 literal|null
 condition|)
 return|return
-literal|0f
+literal|null
 return|;
 if|if
 condition|(
@@ -2933,7 +2933,7 @@ argument_list|()
 argument_list|)
 condition|)
 return|return
-literal|0f
+literal|null
 return|;
 return|return
 name|iCreditHours
