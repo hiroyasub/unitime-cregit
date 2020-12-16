@@ -272,6 +272,8 @@ block|,
 name|HAS_ADVISOR_REQUESTS
 block|,
 name|SR_LINK_CONF
+block|,
+name|SR_EXTENDED
 block|, 			;
 specifier|public
 name|int

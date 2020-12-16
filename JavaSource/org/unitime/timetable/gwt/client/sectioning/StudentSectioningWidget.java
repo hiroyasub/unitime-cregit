@@ -7138,6 +7138,16 @@ name|hasLinkedConflict
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|courseRequests
+operator|.
+name|setDeadlineConflictsAllowed
+argument_list|(
+name|specReg
+operator|.
+name|isExtended
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Set
 argument_list|<
 name|Long

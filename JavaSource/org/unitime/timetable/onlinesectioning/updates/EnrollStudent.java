@@ -1282,6 +1282,12 @@ name|includeRequestInTheReturnMessage
 init|=
 literal|false
 decl_stmt|;
+name|getRequest
+argument_list|()
+operator|.
+name|removeDuplicates
+argument_list|()
+expr_stmt|;
 for|for
 control|(
 name|ClassAssignmentInterface
