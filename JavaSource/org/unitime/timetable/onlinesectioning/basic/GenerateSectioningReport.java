@@ -1812,6 +1812,16 @@ name|isOnline
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|clonedSection
+operator|.
+name|setPast
+argument_list|(
+name|section
+operator|.
+name|isPast
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|XDistribution
