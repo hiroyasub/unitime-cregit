@@ -42,7 +42,7 @@ function_decl|;
 annotation|@
 name|DefaultStringValue
 argument_list|(
-literal|"&copy; 2008 - 2020 The Apereo Foundation"
+literal|"&copy; 2008 - 2021 The Apereo Foundation"
 argument_list|)
 annotation|@
 name|DoNotTranslate
