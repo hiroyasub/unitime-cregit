@@ -6526,6 +6526,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Accommodation Conflicts"
+argument_list|)
+name|String
+name|reportAccommodationConflicts
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} (TA)"
 argument_list|)
 name|String
