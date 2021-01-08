@@ -17,22 +17,6 @@ name|custom
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|onlinesectioning
-operator|.
-name|custom
-operator|.
-name|StudentEnrollmentProvider
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class

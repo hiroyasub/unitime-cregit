@@ -57,20 +57,6 @@ name|VariableInfo
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|localization
-operator|.
-name|impl
-operator|.
-name|Localization
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment

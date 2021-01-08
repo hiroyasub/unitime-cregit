@@ -38,6 +38,14 @@ name|AdvisorInstrMthPref
 extends|extends
 name|BaseAdvisorInstrMthPref
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|public
 name|AdvisorInstrMthPref
 parameter_list|()
