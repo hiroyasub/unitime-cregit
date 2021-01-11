@@ -11551,6 +11551,26 @@ argument_list|(
 literal|"unitime.acr.waitlist"
 argument_list|)
 operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Examination Events: generate event's allocated time based on the examination length (instead of the period length)"
+argument_list|)
+expr|@
+name|Parameter
+argument_list|(
+literal|"examination type"
+argument_list|)
+name|ExamEventAllocatedTimeBasedExamLength
+argument_list|(
+literal|"unitime.examEvent.allocatesTimeBasedExamLength.%"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

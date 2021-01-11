@@ -7322,7 +7322,9 @@ argument_list|(
 name|period
 operator|.
 name|getExamEventStopSlot
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|m
@@ -7451,7 +7453,9 @@ argument_list|(
 name|period
 operator|.
 name|getExamEventStopSlot
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|m
