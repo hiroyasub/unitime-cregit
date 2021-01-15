@@ -1096,7 +1096,7 @@ name|reservation
 decl_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"override"
 argument_list|,
@@ -1105,7 +1105,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"expired"
 argument_list|,
@@ -1121,7 +1121,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"allowOverlap"
 argument_list|,
@@ -1137,7 +1137,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"overLimit"
 argument_list|,
@@ -1153,7 +1153,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"mustBeUsed"
 argument_list|,
@@ -1331,7 +1331,7 @@ name|reservation
 decl_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"override"
 argument_list|,
@@ -1340,7 +1340,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"expired"
 argument_list|,
@@ -1356,7 +1356,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"allowOverlap"
 argument_list|,
@@ -1372,7 +1372,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"overLimit"
 argument_list|,
@@ -1388,7 +1388,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"mustBeUsed"
 argument_list|,
@@ -1665,7 +1665,7 @@ name|reservation
 decl_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"override"
 argument_list|,
@@ -1674,7 +1674,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"expired"
 argument_list|,
@@ -1690,7 +1690,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"allowOverlap"
 argument_list|,
@@ -1706,7 +1706,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"overLimit"
 argument_list|,
@@ -1722,7 +1722,7 @@ argument_list|)
 expr_stmt|;
 name|reservationEl
 operator|.
-name|addElement
+name|addAttribute
 argument_list|(
 literal|"mustBeUsed"
 argument_list|,
