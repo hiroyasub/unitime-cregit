@@ -2083,9 +2083,11 @@ name|list
 argument_list|()
 control|)
 block|{
+for|for
+control|(
 name|AcademicArea
-name|acedmicArea
-init|=
+name|academicArea
+range|:
 operator|(
 operator|(
 name|CurriculumReservation
@@ -2093,9 +2095,10 @@ operator|)
 name|reservation
 operator|)
 operator|.
-name|getArea
+name|getAreas
 argument_list|()
-decl_stmt|;
+control|)
+block|{
 name|Entity
 name|area
 init|=
@@ -2103,7 +2106,7 @@ name|areas
 operator|.
 name|get
 argument_list|(
-name|acedmicArea
+name|academicArea
 operator|.
 name|getUniqueId
 argument_list|()
@@ -2121,12 +2124,12 @@ operator|=
 operator|new
 name|Entity
 argument_list|(
-name|acedmicArea
+name|academicArea
 operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-name|acedmicArea
+name|academicArea
 operator|.
 name|getAcademicAreaAbbreviation
 argument_list|()
@@ -2135,7 +2138,7 @@ name|Constants
 operator|.
 name|curriculaToInitialCase
 argument_list|(
-name|acedmicArea
+name|academicArea
 operator|.
 name|getTitle
 argument_list|()
@@ -2160,6 +2163,7 @@ operator|.
 name|incCount
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|response
 operator|.
@@ -3322,7 +3326,7 @@ literal|"inner join fetch r.instructionalOffering io inner join io.courseOfferin
 operator|+
 literal|"left join fetch r.classes xclz left join fetch r.configurations xcfg "
 operator|+
-literal|"left join fetch r.area xarea left join fetch r.majors xmjr left join fetch r.classifications xclf "
+literal|"left join fetch r.areas xarea left join fetch r.majors xmjr left join fetch r.classifications xclf "
 operator|+
 literal|"left join fetch r.course xcrs left join fetch r.students xstd left join fetch r.group xgrp"
 decl_stmt|;
@@ -4565,7 +4569,7 @@ name|addWhere
 argument_list|(
 literal|"area"
 argument_list|,
-literal|"r.area.academicAreaAbbreviation "
+literal|"xarea.academicAreaAbbreviation "
 operator|+
 operator|(
 name|id
@@ -6912,14 +6916,21 @@ name|CurriculumReservation
 operator|)
 name|iReservation
 decl_stmt|;
+for|for
+control|(
+name|AcademicArea
+name|area
+range|:
+name|cr
+operator|.
+name|getAreas
+argument_list|()
+control|)
 if|if
 condition|(
 name|eq
 argument_list|(
-name|cr
-operator|.
-name|getArea
-argument_list|()
+name|area
 operator|.
 name|getAcademicAreaAbbreviation
 argument_list|()
@@ -6929,10 +6940,7 @@ argument_list|)
 operator|||
 name|has
 argument_list|(
-name|cr
-operator|.
-name|getArea
-argument_list|()
+name|area
 operator|.
 name|getTitle
 argument_list|()

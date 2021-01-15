@@ -2009,7 +2009,7 @@ name|clonedOffering
 argument_list|,
 name|curriculumR
 operator|.
-name|getAcademicArea
+name|getAcademicAreas
 argument_list|()
 argument_list|,
 name|curriculumR
@@ -2020,6 +2020,11 @@ argument_list|,
 name|curriculumR
 operator|.
 name|getMajors
+argument_list|()
+argument_list|,
+name|curriculumR
+operator|.
+name|getMinors
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2539,7 +2544,7 @@ name|clonedOffering
 argument_list|,
 name|curR
 operator|.
-name|getAcademicArea
+name|getAcademicAreas
 argument_list|()
 argument_list|,
 name|curR
@@ -2550,6 +2555,11 @@ argument_list|,
 name|curR
 operator|.
 name|getMajors
+argument_list|()
+argument_list|,
+name|curR
+operator|.
+name|getMinors
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2573,7 +2583,7 @@ name|clonedOffering
 argument_list|,
 name|curR
 operator|.
-name|getAcademicArea
+name|getAcademicAreas
 argument_list|()
 argument_list|,
 name|curR
@@ -2584,6 +2594,11 @@ argument_list|,
 name|curR
 operator|.
 name|getMajors
+argument_list|()
+argument_list|,
+name|curR
+operator|.
+name|getMinors
 argument_list|()
 argument_list|)
 expr_stmt|;

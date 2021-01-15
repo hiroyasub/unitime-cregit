@@ -4231,6 +4231,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Minors:"
+argument_list|)
+name|String
+name|propMinors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Academic Classification:"
 argument_list|)
 name|String

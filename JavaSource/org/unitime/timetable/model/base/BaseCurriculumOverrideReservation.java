@@ -252,11 +252,6 @@ block|{
 return|return
 literal|"CurriculumOverrideReservation["
 operator|+
-literal|"\n	Area: "
-operator|+
-name|getArea
-argument_list|()
-operator|+
 literal|"\n	ExpirationDate: "
 operator|+
 name|getExpirationDate
