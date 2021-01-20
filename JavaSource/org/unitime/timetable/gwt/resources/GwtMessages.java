@@ -18090,6 +18090,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"minor"
+argument_list|)
+name|String
+name|tagMinor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"classification"
 argument_list|)
 name|String
