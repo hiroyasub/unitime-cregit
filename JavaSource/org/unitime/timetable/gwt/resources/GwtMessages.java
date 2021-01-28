@@ -10980,7 +10980,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Student Sectioning Dashboard"
+literal|"Batch Student Solver Dashboard"
 argument_list|)
 annotation|@
 name|DoNotTranslate
