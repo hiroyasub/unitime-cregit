@@ -1777,27 +1777,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// has pin but was not advised yet>> set the pin released default to true
-if|if
-condition|(
-name|request
-operator|.
-name|hasPin
-argument_list|()
-operator|&&
-operator|!
-name|student
-operator|.
-name|hasAdvisorRequests
-argument_list|()
-condition|)
-name|request
-operator|.
-name|setPinReleased
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 return|return
 name|request
 return|;
