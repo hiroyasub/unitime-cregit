@@ -3160,7 +3160,9 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|String
+name|XStudent
+operator|.
+name|XGroup
 name|acc
 range|:
 name|student
@@ -3176,6 +3178,9 @@ operator|.
 name|add
 argument_list|(
 name|acc
+operator|.
+name|getAbbreviation
+argument_list|()
 argument_list|)
 expr_stmt|;
 for|for

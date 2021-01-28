@@ -7195,7 +7195,9 @@ condition|)
 block|{
 for|for
 control|(
-name|String
+name|XStudent
+operator|.
+name|XGroup
 name|acc
 range|:
 name|student
@@ -7209,6 +7211,9 @@ condition|(
 name|eq
 argument_list|(
 name|acc
+operator|.
+name|getAbbreviation
+argument_list|()
 argument_list|,
 name|term
 argument_list|)
@@ -13853,7 +13858,9 @@ condition|)
 block|{
 for|for
 control|(
-name|String
+name|XStudent
+operator|.
+name|XGroup
 name|acc
 range|:
 name|student
@@ -13867,6 +13874,9 @@ condition|(
 name|eq
 argument_list|(
 name|acc
+operator|.
+name|getAbbreviation
+argument_list|()
 argument_list|,
 name|term
 argument_list|)
