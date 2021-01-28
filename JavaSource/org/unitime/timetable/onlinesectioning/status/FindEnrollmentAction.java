@@ -2181,6 +2181,16 @@ name|getMajor
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|st
+operator|.
+name|addConcentration
+argument_list|(
+name|acm
+operator|.
+name|getConcentration
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 for|for
 control|(

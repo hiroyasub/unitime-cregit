@@ -2507,6 +2507,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Concentration"
+argument_list|)
+name|String
+name|colConcentration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Minor"
 argument_list|)
 name|String
