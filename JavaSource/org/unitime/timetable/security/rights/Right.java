@@ -2117,6 +2117,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|StudentSchedulingCanLookupAllCourses
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|OfferingEnrollments
 argument_list|(
 name|InstructionalOffering

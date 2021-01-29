@@ -3319,6 +3319,20 @@ name|class
 return|;
 block|}
 block|}
+annotation|@
+name|PermissionForRight
+argument_list|(
+name|Right
+operator|.
+name|StudentSchedulingCanLookupAllCourses
+argument_list|)
+specifier|public
+specifier|static
+class|class
+name|StudentSchedulingCanLookupAllCourses
+extends|extends
+name|StudentSchedulingAdvisor
+block|{}
 block|}
 end_class
 

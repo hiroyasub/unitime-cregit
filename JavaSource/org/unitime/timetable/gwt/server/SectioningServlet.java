@@ -4872,7 +4872,7 @@ argument_list|()
 argument_list|,
 name|Right
 operator|.
-name|StudentSchedulingAdvisor
+name|StudentSchedulingCanLookupAllCourses
 argument_list|)
 condition|)
 block|{
