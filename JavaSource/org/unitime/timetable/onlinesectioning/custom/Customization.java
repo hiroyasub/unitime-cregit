@@ -229,6 +229,17 @@ name|DefaultExternalClassNameHelper
 operator|.
 name|class
 argument_list|)
+block|,
+name|SpecialRegistrationDashboardUrlProvider
+argument_list|(
+name|SpecialRegistrationDashboardUrlProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationSpecialRegistrationDashboardUrl
+argument_list|)
 block|, 	;
 specifier|private
 name|Holder
