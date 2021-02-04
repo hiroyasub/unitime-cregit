@@ -10488,6 +10488,22 @@ argument_list|)
 throw|;
 block|}
 block|}
+specifier|public
+name|ReservationServlet
+name|withSessionContext
+parameter_list|(
+name|SessionContext
+name|cx
+parameter_list|)
+block|{
+name|sessionContext
+operator|=
+name|cx
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 block|}
 end_class
 

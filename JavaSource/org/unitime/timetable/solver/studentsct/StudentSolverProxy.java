@@ -29,6 +29,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|cpsolver
@@ -72,6 +82,22 @@ operator|.
 name|SectioningReports
 operator|.
 name|ReportTypeInterface
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|ReservationInterface
 import|;
 end_import
 
@@ -151,6 +177,17 @@ specifier|public
 name|boolean
 name|isPublished
 parameter_list|()
+function_decl|;
+specifier|public
+name|List
+argument_list|<
+name|ReservationInterface
+argument_list|>
+name|getReservations
+parameter_list|(
+name|Long
+name|offeringId
+parameter_list|)
 function_decl|;
 block|}
 end_interface
