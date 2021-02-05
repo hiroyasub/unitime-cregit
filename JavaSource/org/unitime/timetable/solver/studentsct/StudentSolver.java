@@ -9862,6 +9862,13 @@ argument_list|(
 name|minor
 argument_list|)
 expr_stmt|;
+name|mn
+operator|.
+name|setName
+argument_list|(
+name|minor
+argument_list|)
+expr_stmt|;
 name|curriculum
 operator|.
 name|getMinors
@@ -11319,6 +11326,13 @@ name|res
 argument_list|)
 expr_stmt|;
 block|}
+name|Collections
+operator|.
+name|sort
+argument_list|(
+name|ret
+argument_list|)
+expr_stmt|;
 return|return
 name|ret
 return|;
