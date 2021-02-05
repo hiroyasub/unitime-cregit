@@ -3252,7 +3252,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseRequest where courseOffering.uniqueId = :courseId"
+literal|"select cr from CourseRequest cr inner join fetch cr.courseDemand cd inner join fetch cd.student s where "
+operator|+
+literal|"cr.courseOffering = :courseId"
 argument_list|)
 operator|.
 name|setLong
@@ -3304,7 +3306,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseRequest where courseOffering.uniqueId = :courseId and courseDemand.student.uniqueId in "
+literal|"select cr from CourseRequest cr inner join fetch cr.courseDemand cd inner join fetch cd.student s where "
+operator|+
+literal|"cr.courseOffering = :courseId and s.uniqueId in "
 operator|+
 literal|"(select s.uniqueId from StudentGroupReservation r inner join r.group.students s where r.uniqueId = :reservationId)"
 argument_list|)
@@ -3368,7 +3372,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseRequest where courseOffering.instructionalOffering.uniqueId = :offeringId and courseDemand.student.uniqueId in "
+literal|"select cr from CourseRequest cr inner join fetch cr.courseDemand cd inner join fetch cd.student s where "
+operator|+
+literal|"cr.courseOffering.instructionalOffering = :offeringId and s.uniqueId in "
 operator|+
 literal|"(select s.uniqueId from IndividualReservation r inner join r.students s where r.uniqueId = :reservationId)"
 argument_list|)
@@ -3427,7 +3433,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseRequest where courseOffering.instructionalOffering.uniqueId = :offeringId and courseDemand.student.uniqueId in "
+literal|"select cr from CourseRequest cr inner join fetch cr.courseDemand cd inner join fetch cd.student s where "
+operator|+
+literal|"cr.courseOffering.instructionalOffering = :offeringId and s.uniqueId in "
 operator|+
 literal|"(select s.uniqueId from StudentGroupReservation r inner join r.group.students s where r.uniqueId = :reservationId)"
 argument_list|)
@@ -3481,7 +3489,9 @@ argument_list|()
 operator|.
 name|createQuery
 argument_list|(
-literal|"from CourseRequest where courseOffering.instructionalOffering.uniqueId = :offeringId"
+literal|"select cr from CourseRequest cr inner join fetch cr.courseDemand cd inner join fetch cd.student s where "
+operator|+
+literal|"cr.courseOffering.instructionalOffering = :offeringId"
 argument_list|)
 operator|.
 name|setLong
