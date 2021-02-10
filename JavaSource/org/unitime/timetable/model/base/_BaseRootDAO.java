@@ -569,6 +569,11 @@ operator|.
 name|addAddDateToDialect
 argument_list|()
 expr_stmt|;
+name|HibernateUtil
+operator|.
+name|addReplaceToDialect
+argument_list|()
+expr_stmt|;
 name|DatabaseUpdate
 operator|.
 name|update

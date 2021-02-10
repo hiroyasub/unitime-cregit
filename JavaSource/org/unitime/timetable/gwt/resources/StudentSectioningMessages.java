@@ -5650,6 +5650,33 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>N</u>otes"
+argument_list|)
+name|String
+name|buttonLastNotes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show previous additional notes."
+argument_list|)
+name|String
+name|hintLastNotes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Previous Notes -- Click on a note to select it, Escape to hide the dialog."
+argument_list|)
+name|String
+name|dialogLastNotes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Approval Requests"
 argument_list|)
 name|String
@@ -9389,6 +9416,33 @@ literal|"Not released to the student."
 argument_list|)
 name|String
 name|pinNotReleasedToStudent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Count"
+argument_list|)
+name|String
+name|colAdvisorNotesCount
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Note"
+argument_list|)
+name|String
+name|colAdvisorNotesNote
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last Used"
+argument_list|)
+name|String
+name|colAdvisorNotesTime
 parameter_list|()
 function_decl|;
 block|}
