@@ -5216,7 +5216,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct e.student) "
+literal|"select sum(a.weight) "
 operator|+
 literal|"from StudentClassEnrollment e inner join e.student.areaClasfMajors a inner join a.major m "
 operator|+
@@ -5321,19 +5321,24 @@ if|if
 condition|(
 name|enrollment
 operator|.
-name|intValue
+name|floatValue
 argument_list|()
-operator|>
-literal|0
+operator|>=
+literal|0.5f
 condition|)
 name|r
 operator|.
 name|setEnrollment
 argument_list|(
+name|Math
+operator|.
+name|round
+argument_list|(
 name|enrollment
 operator|.
-name|intValue
+name|floatValue
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5532,7 +5537,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct s), m.code, f.code from "
+literal|"select sum(a.weight), m.code, f.code from "
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.major m "
 operator|+
@@ -5647,7 +5652,7 @@ name|list
 argument_list|()
 control|)
 block|{
-name|int
+name|float
 name|nrStudents
 init|=
 operator|(
@@ -5660,12 +5665,17 @@ literal|0
 index|]
 operator|)
 operator|.
-name|intValue
+name|floatValue
 argument_list|()
 decl_stmt|;
 name|lastLike
 operator|+=
+name|Math
+operator|.
+name|round
+argument_list|(
 name|nrStudents
+argument_list|)
 expr_stmt|;
 name|projection
 operator|+=

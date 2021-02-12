@@ -1367,7 +1367,7 @@ decl_stmt|;
 name|String
 name|select
 init|=
-literal|"distinct co, s"
+literal|"distinct co, s, a.weight"
 decl_stmt|;
 name|String
 name|from
@@ -1894,6 +1894,17 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|Double
+name|weight
+init|=
+operator|(
+name|Double
+operator|)
+name|o
+index|[
+literal|2
+index|]
+decl_stmt|;
 name|WeightedStudentId
 name|studentId
 init|=
@@ -1903,6 +1914,16 @@ argument_list|(
 name|student
 argument_list|)
 decl_stmt|;
+name|studentId
+operator|.
+name|setWeight
+argument_list|(
+name|weight
+operator|.
+name|floatValue
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|iCreateStudentGroups

@@ -136,6 +136,10 @@ name|Long
 name|iUniqueId
 decl_stmt|;
 specifier|private
+name|Double
+name|iWeight
+decl_stmt|;
+specifier|private
 name|Student
 name|iStudent
 decl_stmt|;
@@ -161,6 +165,13 @@ name|String
 name|PROP_UNIQUEID
 init|=
 literal|"uniqueId"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_WEIGHT
+init|=
+literal|"weight"
 decl_stmt|;
 specifier|public
 name|BaseStudentAreaClassificationMajor
@@ -212,6 +223,28 @@ block|{
 name|iUniqueId
 operator|=
 name|uniqueId
+expr_stmt|;
+block|}
+specifier|public
+name|Double
+name|getWeight
+parameter_list|()
+block|{
+return|return
+name|iWeight
+return|;
+block|}
+specifier|public
+name|void
+name|setWeight
+parameter_list|(
+name|Double
+name|weight
+parameter_list|)
+block|{
+name|iWeight
+operator|=
+name|weight
 expr_stmt|;
 block|}
 specifier|public
@@ -464,6 +497,11 @@ operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId
+argument_list|()
+operator|+
+literal|"\n	Weight: "
+operator|+
+name|getWeight
 argument_list|()
 operator|+
 literal|"]"

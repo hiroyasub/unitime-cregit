@@ -97,6 +97,20 @@ name|PosMajor
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|PosMajorConcentration
+import|;
+end_import
+
 begin_comment
 comment|/**  * Do not change this class. It has been automatically generated using ant create-model.  * @see org.unitime.commons.ant.CreateBaseModelFromXml  */
 end_comment
@@ -122,6 +136,10 @@ name|Long
 name|iUniqueId
 decl_stmt|;
 specifier|private
+name|Double
+name|iWeight
+decl_stmt|;
+specifier|private
 name|PitStudent
 name|iPitStudent
 decl_stmt|;
@@ -137,12 +155,23 @@ specifier|private
 name|PosMajor
 name|iMajor
 decl_stmt|;
+specifier|private
+name|PosMajorConcentration
+name|iConcentration
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
 name|PROP_UNIQUEID
 init|=
 literal|"uniqueId"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_WEIGHT
+init|=
+literal|"weight"
 decl_stmt|;
 specifier|public
 name|BasePitStudentAcadAreaMajorClassification
@@ -194,6 +223,28 @@ block|{
 name|iUniqueId
 operator|=
 name|uniqueId
+expr_stmt|;
+block|}
+specifier|public
+name|Double
+name|getWeight
+parameter_list|()
+block|{
+return|return
+name|iWeight
+return|;
+block|}
+specifier|public
+name|void
+name|setWeight
+parameter_list|(
+name|Double
+name|weight
+parameter_list|)
+block|{
+name|iWeight
+operator|=
+name|weight
 expr_stmt|;
 block|}
 specifier|public
@@ -282,6 +333,28 @@ block|{
 name|iMajor
 operator|=
 name|major
+expr_stmt|;
+block|}
+specifier|public
+name|PosMajorConcentration
+name|getConcentration
+parameter_list|()
+block|{
+return|return
+name|iConcentration
+return|;
+block|}
+specifier|public
+name|void
+name|setConcentration
+parameter_list|(
+name|PosMajorConcentration
+name|concentration
+parameter_list|)
+block|{
+name|iConcentration
+operator|=
+name|concentration
 expr_stmt|;
 block|}
 specifier|public
@@ -406,6 +479,11 @@ operator|+
 name|getAcademicClassification
 argument_list|()
 operator|+
+literal|"\n	Concentration: "
+operator|+
+name|getConcentration
+argument_list|()
+operator|+
 literal|"\n	Major: "
 operator|+
 name|getMajor
@@ -419,6 +497,11 @@ operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId
+argument_list|()
+operator|+
+literal|"\n	Weight: "
+operator|+
+name|getWeight
 argument_list|()
 operator|+
 literal|"]"

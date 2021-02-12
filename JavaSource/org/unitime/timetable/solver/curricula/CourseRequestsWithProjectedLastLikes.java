@@ -318,7 +318,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a.academicAreaAbbreviation, m.code, f.code, count(distinct s) from LastLikeCourseDemand x inner join x.student s "
+literal|"select a.academicAreaAbbreviation, m.code, f.code, sum(ac.weight) from LastLikeCourseDemand x inner join x.student s "
 operator|+
 literal|"inner join s.areaClasfMajors ac inner join ac.academicClassification f inner join ac.academicArea a "
 operator|+
@@ -382,6 +382,10 @@ decl_stmt|;
 name|int
 name|students
 init|=
+name|Math
+operator|.
+name|round
+argument_list|(
 operator|(
 operator|(
 name|Number
@@ -392,8 +396,9 @@ literal|3
 index|]
 operator|)
 operator|.
-name|intValue
+name|floatValue
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|Hashtable
 argument_list|<
@@ -518,7 +523,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select a.academicAreaAbbreviation, m.code, f.code, count(distinct s) from CourseRequest x inner join x.courseDemand.student s "
+literal|"select a.academicAreaAbbreviation, m.code, f.code, sum(ac.weight) from CourseRequest x inner join x.courseDemand.student s "
 operator|+
 literal|"inner join s.areaClasfMajors ac inner join ac.academicClassification f inner join ac.academicArea a "
 operator|+
@@ -582,6 +587,10 @@ decl_stmt|;
 name|int
 name|students
 init|=
+name|Math
+operator|.
+name|round
+argument_list|(
 operator|(
 operator|(
 name|Number
@@ -592,8 +601,9 @@ literal|3
 index|]
 operator|)
 operator|.
-name|intValue
+name|floatValue
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|Hashtable
 argument_list|<
