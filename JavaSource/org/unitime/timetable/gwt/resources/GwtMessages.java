@@ -20819,6 +20819,15 @@ name|String
 name|reason
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The building and all its rooms will be deleted. Continue?"
+argument_list|)
+name|String
+name|confirmBuildingDelete
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
