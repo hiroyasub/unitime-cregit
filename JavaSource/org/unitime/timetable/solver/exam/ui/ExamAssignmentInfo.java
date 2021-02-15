@@ -2026,10 +2026,7 @@ name|getExams
 argument_list|(
 name|assignment
 argument_list|,
-name|placement
-operator|.
-name|getPeriod
-argument_list|()
+name|p
 argument_list|)
 operator|.
 name|iterator
