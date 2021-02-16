@@ -303,6 +303,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
+specifier|final
 name|BuildingsColumn
 name|col
 range|:
