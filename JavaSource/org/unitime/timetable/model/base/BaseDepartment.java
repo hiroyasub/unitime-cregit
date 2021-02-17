@@ -298,6 +298,10 @@ name|Integer
 name|iDistributionPrefPriority
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iExternalFundingDept
+decl_stmt|;
+specifier|private
 name|Session
 name|iSession
 decl_stmt|;
@@ -462,6 +466,13 @@ name|String
 name|PROP_DIST_PRIORITY
 init|=
 literal|"distributionPrefPriority"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_EXTERNAL_FUNDING_DEPT
+init|=
+literal|"externalFundingDept"
 decl_stmt|;
 specifier|public
 name|BaseDepartment
@@ -884,6 +895,37 @@ block|{
 name|iDistributionPrefPriority
 operator|=
 name|distributionPrefPriority
+expr_stmt|;
+block|}
+specifier|public
+name|Boolean
+name|isExternalFundingDept
+parameter_list|()
+block|{
+return|return
+name|iExternalFundingDept
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getExternalFundingDept
+parameter_list|()
+block|{
+return|return
+name|iExternalFundingDept
+return|;
+block|}
+specifier|public
+name|void
+name|setExternalFundingDept
+parameter_list|(
+name|Boolean
+name|externalFundingDept
+parameter_list|)
+block|{
+name|iExternalFundingDept
+operator|=
+name|externalFundingDept
 expr_stmt|;
 block|}
 specifier|public
@@ -1520,6 +1562,11 @@ operator|+
 literal|"\n	DistributionPrefPriority: "
 operator|+
 name|getDistributionPrefPriority
+argument_list|()
+operator|+
+literal|"\n	ExternalFundingDept: "
+operator|+
+name|getExternalFundingDept
 argument_list|()
 operator|+
 literal|"\n	ExternalManager: "

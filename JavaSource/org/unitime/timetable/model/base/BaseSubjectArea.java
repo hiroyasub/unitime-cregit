@@ -162,6 +162,10 @@ name|Department
 name|iDepartment
 decl_stmt|;
 specifier|private
+name|Department
+name|iFundingDept
+decl_stmt|;
+specifier|private
 name|Set
 argument_list|<
 name|CourseOffering
@@ -363,6 +367,28 @@ block|{
 name|iDepartment
 operator|=
 name|department
+expr_stmt|;
+block|}
+specifier|public
+name|Department
+name|getFundingDept
+parameter_list|()
+block|{
+return|return
+name|iFundingDept
+return|;
+block|}
+specifier|public
+name|void
+name|setFundingDept
+parameter_list|(
+name|Department
+name|fundingDept
+parameter_list|)
+block|{
+name|iFundingDept
+operator|=
+name|fundingDept
 expr_stmt|;
 block|}
 specifier|public
@@ -603,6 +629,11 @@ operator|+
 literal|"\n	ExternalUniqueId: "
 operator|+
 name|getExternalUniqueId
+argument_list|()
+operator|+
+literal|"\n	FundingDept: "
+operator|+
+name|getFundingDept
 argument_list|()
 operator|+
 literal|"\n	Session: "

@@ -12590,6 +12590,21 @@ argument_list|(
 literal|"unitime.permissions.courseOfferingAllowExternalEdits"
 argument_list|)
 operator|,
+expr_stmt|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Enable Funding Department Functionality."
+argument_list|)
+name|CoursesFundingDepartmentsEnabled
+argument_list|(
+literal|"unitime.courses.funding_departments_enabled"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
