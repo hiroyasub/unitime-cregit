@@ -3942,6 +3942,19 @@ name|isTrue
 argument_list|()
 return|;
 block|}
+specifier|public
+name|Department
+name|getEffectiveFundingDept
+parameter_list|()
+block|{
+return|return
+name|getControllingCourseOffering
+argument_list|()
+operator|.
+name|getEffectiveFundingDept
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
