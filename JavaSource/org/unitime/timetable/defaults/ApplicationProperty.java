@@ -11440,6 +11440,33 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Advisor Course Recommendations: enable previous notes (ability to select one of the notes that the advisor used before)"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|AdvisorCourseRequestsLastNotes
+argument_list|(
+literal|"unitime.acrf.lastNotes"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"Advisor Course Recommendations: pre-populate Course Requests with advisor recommendations (when student has not made any changes and is allowed to submit)"
 argument_list|)
 expr|@
