@@ -3409,6 +3409,13 @@ argument_list|(
 name|student
 argument_list|)
 expr_stmt|;
+name|acm
+operator|.
+name|setWeight
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|student
 operator|.
 name|getAreaClasfMajors
