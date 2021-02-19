@@ -18884,13 +18884,6 @@ if|if
 condition|(
 name|subpart
 operator|.
-name|getParentSubpart
-argument_list|()
-operator|!=
-literal|null
-operator|||
-name|subpart
-operator|.
 name|getClasses
 argument_list|()
 operator|.
