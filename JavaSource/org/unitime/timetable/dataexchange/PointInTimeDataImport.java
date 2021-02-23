@@ -2474,6 +2474,14 @@ name|weight
 argument_list|)
 argument_list|)
 expr_stmt|;
+else|else
+name|aamc
+operator|.
+name|setWeight
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|aamc
 operator|.
 name|setPitStudent
