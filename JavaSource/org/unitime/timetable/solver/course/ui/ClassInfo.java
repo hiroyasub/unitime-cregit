@@ -1124,7 +1124,7 @@ literal|"from StudentEnrollment e, StudentEnrollment x "
 operator|+
 literal|"where x.clazz.uniqueId = :classId and x.studentId = e.studentId and e.clazz != x.clazz and "
 operator|+
-literal|"e.solution.commited = true and x.solution.commited = true"
+literal|"e.solution.commited = true and x.solution.commited = true and x.solution.owner.session = e.solution.owner.session"
 argument_list|)
 operator|.
 name|setLong
