@@ -1371,9 +1371,9 @@ name|FILTER_ALL
 argument_list|)
 argument_list|)
 block|,
-name|RESHMEN
+name|FRESHMEN
 argument_list|(
-literal|"Frehmen"
+literal|"Freshmen"
 argument_list|,
 operator|new
 name|AndFilter
@@ -1383,7 +1383,7 @@ name|PriorityFilter
 argument_list|(
 name|StudentPriority
 operator|.
-name|Frehmen
+name|Freshmen
 argument_list|)
 argument_list|,
 name|FILTER_ALL
