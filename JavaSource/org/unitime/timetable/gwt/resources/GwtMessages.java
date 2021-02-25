@@ -15188,7 +15188,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special Requests"
+literal|"Approval Requests"
 argument_list|)
 name|String
 name|toggleSpecialRequests

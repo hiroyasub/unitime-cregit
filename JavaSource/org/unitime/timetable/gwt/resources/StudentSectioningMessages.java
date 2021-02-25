@@ -1560,7 +1560,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Sumbit the above enrollment changes to Special Registration."
+literal|"Sumbit the above enrollment changes for approval."
 argument_list|)
 name|String
 name|hintSpecialRegistration
@@ -1758,7 +1758,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special registration failed: {0}"
+literal|"Approval request failed: {0}"
 argument_list|)
 name|String
 name|submitSpecialRegistrationFail
@@ -4327,7 +4327,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special Registration"
+literal|"Approval Requests"
 argument_list|)
 name|String
 name|buttonSpecRegDashboard
@@ -5143,7 +5143,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special Registration:"
+literal|"Approval Requests:"
 argument_list|)
 name|String
 name|propSpecialRegistration
@@ -7233,7 +7233,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special registration is enabled."
+literal|"Requests approval workflow is enabled."
 argument_list|)
 name|String
 name|messageStatusCanSpecialRegistration
@@ -7242,7 +7242,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Special registration is disabled."
+literal|"Requests approval workflow is disabled."
 argument_list|)
 name|String
 name|messageStatusCanNotSpecialRegistration
