@@ -557,6 +557,8 @@ argument_list|,
 literal|"classification"
 argument_list|,
 literal|"major"
+argument_list|,
+literal|"concentration"
 argument_list|)
 condition|?
 literal|"left outer join s.areaClasfMajors m "

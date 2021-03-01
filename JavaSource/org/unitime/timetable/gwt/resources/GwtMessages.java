@@ -18172,6 +18172,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"concentration"
+argument_list|)
+name|String
+name|tagConcentration
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"minor"
 argument_list|)
 name|String

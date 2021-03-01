@@ -811,6 +811,8 @@ argument_list|,
 literal|"classification"
 argument_list|,
 literal|"major"
+argument_list|,
+literal|"concentration"
 argument_list|)
 condition|?
 literal|"left outer join s.areaClasfMajors m "
@@ -4209,6 +4211,27 @@ condition|)
 block|{
 return|return
 literal|"lower(m.major.code) = '"
+operator|+
+name|body
+operator|.
+name|toLowerCase
+argument_list|()
+operator|+
+literal|"'"
+return|;
+block|}
+if|else if
+condition|(
+literal|"concentration"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"lower(m.concentration.code) = '"
 operator|+
 name|body
 operator|.
