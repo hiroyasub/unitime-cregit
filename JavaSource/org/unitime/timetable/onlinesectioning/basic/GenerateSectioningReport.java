@@ -3178,6 +3178,16 @@ argument_list|()
 argument_list|,
 name|acm
 operator|.
+name|getDegree
+argument_list|()
+argument_list|,
+name|acm
+operator|.
+name|getDegreeLabel
+argument_list|()
+argument_list|,
+name|acm
+operator|.
 name|getWeight
 argument_list|()
 argument_list|)

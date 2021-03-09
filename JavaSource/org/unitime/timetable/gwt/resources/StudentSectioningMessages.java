@@ -2516,6 +2516,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Degr"
+argument_list|)
+name|String
+name|colDegree
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Minor"
 argument_list|)
 name|String
