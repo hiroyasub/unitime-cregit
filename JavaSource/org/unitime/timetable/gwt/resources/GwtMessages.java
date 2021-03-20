@@ -17,6 +17,24 @@ name|resources
 package|;
 end_package
 
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|i18n
+operator|.
+name|client
+operator|.
+name|Messages
+operator|.
+name|DefaultMessage
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -965,6 +983,15 @@ literal|"Back"
 argument_list|)
 name|String
 name|opScriptBack
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Send Email"
+argument_list|)
+name|String
+name|opSendEmail
 parameter_list|()
 function_decl|;
 annotation|@
@@ -20867,6 +20894,48 @@ argument_list|)
 name|String
 name|confirmBuildingDelete
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Do you really want to send an email to {0}\u00a0students?"
+argument_list|)
+name|String
+name|confirmSendEmail
+parameter_list|(
+name|int
+name|studentCount
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Sending email..."
+argument_list|)
+name|String
+name|waitSendingEmail
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Email sent."
+argument_list|)
+name|String
+name|emailSent
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Email failed: {0}"
+argument_list|)
+name|String
+name|failureSendingEmail
+parameter_list|(
+name|String
+name|message
+parameter_list|)
 function_decl|;
 block|}
 end_interface

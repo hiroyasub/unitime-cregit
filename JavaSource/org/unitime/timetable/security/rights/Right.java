@@ -2182,6 +2182,13 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|EventDetailEmailStudents
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 name|EventDetailArrangeHourClass
 argument_list|(
 name|Class_

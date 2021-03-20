@@ -16830,6 +16830,11 @@ name|int
 name|getFirstDayOfWeek
 parameter_list|()
 function_decl|;
+specifier|public
+name|boolean
+name|isCanEmailStudents
+parameter_list|()
+function_decl|;
 block|}
 specifier|private
 name|void
