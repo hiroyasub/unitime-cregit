@@ -216,6 +216,16 @@ name|int
 name|index
 parameter_list|)
 block|{
+if|if
+condition|(
+name|index
+operator|<
+name|getTabBar
+argument_list|()
+operator|.
+name|getTabCount
+argument_list|()
+condition|)
 name|super
 operator|.
 name|selectTab

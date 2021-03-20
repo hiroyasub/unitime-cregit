@@ -282,6 +282,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Set by"
+argument_list|)
+name|String
+name|colNoteAuthor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Notes"
 argument_list|)
 name|String
@@ -1716,6 +1725,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>N</u>otes"
+argument_list|)
+name|String
+name|tabNotes
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course requests have been successfully submitted."
 argument_list|)
 name|String
@@ -1894,6 +1912,15 @@ literal|"There is no schedule."
 argument_list|)
 name|String
 name|emptySchedule
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are no notes."
+argument_list|)
+name|String
+name|emptyNotes
 parameter_list|()
 function_decl|;
 comment|/* User Authentication messages 	 */
