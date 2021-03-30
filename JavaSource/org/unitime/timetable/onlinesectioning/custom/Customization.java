@@ -251,6 +251,17 @@ name|ApplicationProperty
 operator|.
 name|CustomizationAdvisorsCourseRequestsValidation
 argument_list|)
+block|,
+name|VariableTitleCourseProvider
+argument_list|(
+name|VariableTitleCourseProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationVariableTitleCourseProvider
+argument_list|)
 block|, 	;
 specifier|private
 name|Holder
