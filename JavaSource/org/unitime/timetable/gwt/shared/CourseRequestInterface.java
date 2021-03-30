@@ -2647,7 +2647,11 @@ operator|+=
 operator|(
 literal|1
 operator|<<
+operator|(
+literal|6
+operator|-
 name|day
+operator|)
 operator|)
 expr_stmt|;
 return|return
