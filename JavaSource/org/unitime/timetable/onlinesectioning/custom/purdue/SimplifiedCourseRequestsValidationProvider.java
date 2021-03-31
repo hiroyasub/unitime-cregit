@@ -9193,7 +9193,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"The Free Time request will be considered a time block during the preregistration process. If the Free Time request is placed higher than a traditional course, you may not receive a full schedule."
+literal|"Free time requests will be considered as time blocks during the pre-registration process. When possible, classes should be avoided during free time. However, if a free time request is placed higher than a course, the course cannot be attended during free time and you may not receive a full schedule."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME
