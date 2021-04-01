@@ -240,6 +240,17 @@ name|ApplicationProperty
 operator|.
 name|CustomizationSpecialRegistrationDashboardUrl
 argument_list|)
+block|,
+name|AdvisorCourseRequestsValidationProvider
+argument_list|(
+name|AdvisorCourseRequestsValidationProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationAdvisorsCourseRequestsValidation
+argument_list|)
 block|, 	;
 specifier|private
 name|Holder

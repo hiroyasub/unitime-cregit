@@ -3618,6 +3618,12 @@ name|clone
 operator|.
 name|iCanRequire
 expr_stmt|;
+name|iAvailableStatuses
+operator|=
+name|clone
+operator|.
+name|iAvailableStatuses
+expr_stmt|;
 block|}
 specifier|public
 name|Long

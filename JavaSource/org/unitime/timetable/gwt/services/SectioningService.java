@@ -1545,6 +1545,17 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|CheckCoursesResponse
+name|checkAdvisingDetails
+parameter_list|(
+name|AdvisingStudentDetails
+name|details
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 name|AdvisorCourseRequestSubmission
 name|submitAdvisingDetails
 parameter_list|(

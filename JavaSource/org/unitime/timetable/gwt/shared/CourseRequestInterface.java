@@ -9595,7 +9595,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|String
-name|getErrorMessaeg
+name|getErrorMessage
 parameter_list|()
 block|{
 return|return

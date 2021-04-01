@@ -5082,7 +5082,7 @@ condition|)
 return|return
 name|iLastCheck
 operator|.
-name|getErrorMessaeg
+name|getErrorMessage
 argument_list|()
 return|;
 if|if

@@ -8806,6 +8806,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Validating..."
+argument_list|)
+name|String
+name|advisorCourseRequestsValidating
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Saving..."
 argument_list|)
 name|String
@@ -8948,6 +8957,18 @@ literal|"Submit failed: {0}"
 argument_list|)
 name|String
 name|advisorRequestsSubmitFailed
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Validation failed: {0}"
+argument_list|)
+name|String
+name|advisorRequestsValidationFailed
 parameter_list|(
 name|String
 name|reason
