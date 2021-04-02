@@ -727,15 +727,8 @@ name|action
 init|=
 name|helper
 operator|.
-name|addAction
-argument_list|(
-name|this
-argument_list|,
-name|server
-operator|.
-name|getAcademicSession
+name|getAction
 argument_list|()
-argument_list|)
 decl_stmt|;
 name|action
 operator|.

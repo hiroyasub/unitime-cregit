@@ -8793,6 +8793,7 @@ specifier|public
 name|void
 name|onSuccess
 parameter_list|(
+specifier|final
 name|CheckCoursesResponse
 name|result
 parameter_list|)
