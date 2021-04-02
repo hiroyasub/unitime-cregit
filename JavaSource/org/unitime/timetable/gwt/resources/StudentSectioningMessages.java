@@ -4420,6 +4420,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Loading change log message..."
+argument_list|)
+name|String
+name|loadingChangeLogMessage
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Operation"
 argument_list|)
 name|String
