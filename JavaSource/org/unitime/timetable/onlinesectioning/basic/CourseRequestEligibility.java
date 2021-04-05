@@ -716,6 +716,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|iCheck
+operator|.
+name|setMaxCredit
+argument_list|(
+name|student
+operator|.
+name|getMaxCredit
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|action
 operator|.
 name|getStudentBuilder

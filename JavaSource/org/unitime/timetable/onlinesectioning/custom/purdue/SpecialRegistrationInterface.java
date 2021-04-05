@@ -265,6 +265,9 @@ comment|// change grade mode
 name|CHGVARCR
 block|,
 comment|// change variable credit
+name|CHGVARTL
+block|,
+comment|// request variable title course
 block|; 	}
 comment|/** Class representing one change (in a signle course) */
 specifier|public
@@ -323,7 +326,7 @@ specifier|public
 name|String
 name|currentGradeMode
 decl_stmt|;
-comment|/** New grade mode (only used when operation = CHGMODE) */
+comment|/** New grade mode (only used when operation = CHGMODE or CHGVARTL) */
 specifier|public
 name|String
 name|selectedGradeMode
@@ -338,10 +341,30 @@ specifier|public
 name|String
 name|currentCreditHour
 decl_stmt|;
-comment|/** Selected credit hours (only used when operation = CHGVARCR) */
+comment|/** Selected credit hours (only used when operation = CHGVARCR or CHGVARTL) */
 specifier|public
 name|String
 name|selectedCreditHour
+decl_stmt|;
+comment|/** Selected course title (only used when operation = CHGVARTL) */
+specifier|public
+name|String
+name|selectedTitle
+decl_stmt|;
+comment|/** Selected instructor (only used when operation = CHGVARTL) */
+specifier|public
+name|String
+name|selectedInstructor
+decl_stmt|;
+comment|/** Selected start date (only used when operation = CHGVARTL, format MM/dd/yy) */
+specifier|public
+name|String
+name|selectedStartDate
+decl_stmt|;
+comment|/** Selected end date (only used when operation = CHGVARTL, format MM/dd/yy) */
+specifier|public
+name|String
+name|selectedEndDate
 decl_stmt|;
 block|}
 comment|/** Registration error for which there needs to be an override */

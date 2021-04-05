@@ -9979,6 +9979,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|""
+argument_list|)
+name|String
+name|propReqVTMaxCredit
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"An example dislaimer here.\nI solemnly swear that i am up to no good."
 argument_list|)
 name|String
