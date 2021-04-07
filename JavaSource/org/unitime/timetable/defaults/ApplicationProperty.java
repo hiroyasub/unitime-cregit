@@ -12254,6 +12254,33 @@ argument_list|(
 literal|"unitime.commit.skipConflictChecking"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructional Offering: wait-list toggle default value"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.6
+argument_list|)
+name|OfferingWaitListDefault
+argument_list|(
+literal|"unitime.offering.waitListDefault"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

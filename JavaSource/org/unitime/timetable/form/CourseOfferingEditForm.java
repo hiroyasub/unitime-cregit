@@ -527,6 +527,10 @@ name|String
 argument_list|>
 name|overrides
 decl_stmt|;
+specifier|private
+name|String
+name|waitList
+decl_stmt|;
 comment|// --------------------------------------------------------- Methods
 comment|/**      * Method validate      * @param mapping      * @param request      * @return ActionErrors      */
 specifier|public
@@ -1218,6 +1222,10 @@ operator|=
 literal|null
 expr_stmt|;
 name|wkDropDefault
+operator|=
+literal|null
+expr_stmt|;
+name|waitList
 operator|=
 literal|null
 expr_stmt|;
@@ -2243,6 +2251,30 @@ operator|.
 name|weekStartDayOfWeek
 operator|=
 name|weekStartDayOfWeek
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getWaitList
+parameter_list|()
+block|{
+return|return
+name|waitList
+return|;
+block|}
+specifier|public
+name|void
+name|setWaitList
+parameter_list|(
+name|String
+name|waitList
+parameter_list|)
+block|{
+name|this
+operator|.
+name|waitList
+operator|=
+name|waitList
 expr_stmt|;
 block|}
 specifier|public

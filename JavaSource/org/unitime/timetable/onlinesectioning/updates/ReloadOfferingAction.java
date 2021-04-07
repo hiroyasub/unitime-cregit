@@ -2958,7 +2958,13 @@ name|server
 argument_list|,
 name|helper
 argument_list|)
+operator|&&
+name|newOffering
+operator|.
+name|isWaitList
+argument_list|()
 condition|)
+block|{
 name|queue
 operator|.
 name|add
