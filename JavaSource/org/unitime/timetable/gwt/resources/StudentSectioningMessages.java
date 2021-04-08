@@ -9907,6 +9907,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Instructor must be provided."
+argument_list|)
+name|String
+name|errorReqVTCourseNoInstructor
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Please put in the instructor name/email in the notes below."
+argument_list|)
+name|String
+name|hintReqVTCourseNoInstructorMatch
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Credit:"
 argument_list|)
 name|String
@@ -9992,6 +10010,15 @@ literal|"An example dislaimer here.\nI solemnly swear that i am up to no good."
 argument_list|)
 name|String
 name|disclaimerRequestVariableTitle
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"None of the above"
+argument_list|)
+name|String
+name|itemReqVTNoInstructor
 parameter_list|()
 function_decl|;
 block|}
