@@ -3149,6 +3149,20 @@ operator|.
 name|class
 argument_list|)
 block|,
+name|ApiVariableTitleSectionLookup
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
+name|ApiVariableTitleSectionCreate
+argument_list|(
+name|Session
+operator|.
+name|class
+argument_list|)
+block|,
 comment|/** People Lookup limitations */
 name|CanLookupStudents
 block|,
