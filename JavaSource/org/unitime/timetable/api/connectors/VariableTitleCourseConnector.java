@@ -963,7 +963,7 @@ operator|.
 name|value
 argument_list|()
 operator|.
-name|strip
+name|trim
 argument_list|()
 operator|.
 name|equals
@@ -998,7 +998,7 @@ operator|.
 name|value
 argument_list|()
 operator|.
-name|strip
+name|trim
 argument_list|()
 operator|.
 name|equals
@@ -1033,7 +1033,7 @@ operator|.
 name|value
 argument_list|()
 operator|.
-name|strip
+name|trim
 argument_list|()
 operator|.
 name|equals
@@ -1426,7 +1426,7 @@ operator|.
 name|value
 argument_list|()
 operator|.
-name|strip
+name|trim
 argument_list|()
 operator|==
 literal|""
