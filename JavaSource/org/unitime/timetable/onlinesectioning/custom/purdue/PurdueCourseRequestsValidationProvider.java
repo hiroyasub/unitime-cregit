@@ -31220,7 +31220,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"One or more of the newly requested courses have no alternatives provided. The student may not be able to get a full schedule."
+literal|"One or more of the recommended courses have no alternatives provided. The student may not be able to get a full schedule."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME
@@ -31295,7 +31295,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"One or more of the newly requested courses have no online-only option at the moment. The student may not be able to get a full schedule."
+literal|"One or more of the recommended courses have no online-only option at the moment. The student may not be able to get a full schedule."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME
@@ -31328,7 +31328,7 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|"One or more of the newly requested courses have no residential option at the moment. The student may not be able to get a full schedule."
+literal|"One or more of the recommended courses have no residential option at the moment. The student may not be able to get a full schedule."
 argument_list|)
 argument_list|,
 name|CONF_UNITIME
