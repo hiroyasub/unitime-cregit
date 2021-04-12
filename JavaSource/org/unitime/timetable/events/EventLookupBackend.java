@@ -3479,7 +3479,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct cc.course.instructionalOffering.uniqueId, (case when g.uniqueId is null then x.uniqueId else g.uniqueId end), z.uniqueId "
 operator|+
-literal|"from CurriculumReservation r left outer join r.configurations g left outer join r.classes z left outer join z.schedulingSubpart.instrOfferingConfig x "
+literal|"from CurriculumReservation r inner join r.areas ra left outer join r.configurations g left outer join r.classes z left outer join z.schedulingSubpart.instrOfferingConfig x "
 operator|+
 literal|"left outer join r.majors rm left outer join r.classifications rc, "
 operator|+
@@ -3487,7 +3487,7 @@ literal|"CurriculumCourse cc inner join cc.classification.curriculum.majors cm "
 operator|+
 literal|"where (cc.classification.curriculum.uniqueId = :resourceId or cc.classification.uniqueId = :resourceId) "
 operator|+
-literal|"and cc.course.instructionalOffering = r.instructionalOffering and r.area = cc.classification.curriculum.academicArea "
+literal|"and cc.course.instructionalOffering = r.instructionalOffering and ra = cc.classification.curriculum.academicArea "
 operator|+
 literal|"and (rm is null or rm = cm) and (rc is null or rc = cc.classification.academicClassification)"
 argument_list|)
@@ -4769,7 +4769,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct r.instructionalOffering.uniqueId, (case when g.uniqueId is null then x.uniqueId else g.uniqueId end), z.uniqueId "
 operator|+
-literal|"from CurriculumReservation r left outer join r.configurations g left outer join r.classes z left outer join z.schedulingSubpart.instrOfferingConfig x "
+literal|"from CurriculumReservation r inner join r.areas ra left outer join r.configurations g left outer join r.classes z left outer join z.schedulingSubpart.instrOfferingConfig x "
 operator|+
 literal|"left outer join r.majors rm left outer join r.classifications rc, "
 operator|+
@@ -4777,7 +4777,7 @@ literal|"CurriculumClassification f inner join f.curriculum c inner join c.major
 operator|+
 literal|"where (f.uniqueId = :resourceId or c.uniqueId = :resourceId) and co.uniqueId in (:courses) "
 operator|+
-literal|"and co.instructionalOffering = r.instructionalOffering and r.area = c.academicArea "
+literal|"and co.instructionalOffering = r.instructionalOffering and ra = c.academicArea "
 operator|+
 literal|"and (rm is null or rm = cm) and (rc is null or rc = f.academicClassification)"
 argument_list|)
