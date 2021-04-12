@@ -12097,6 +12097,28 @@ argument_list|(
 literal|"unitime.variableTitle.defaultExternalSystemWaitTime"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Variable Title: Instructor Id is Required"
+argument_list|)
+name|VariableTitleInstructorIdRequired
+argument_list|(
+literal|"unitime.variableTitle.instructorIdRequired"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
