@@ -2110,7 +2110,7 @@ decl_stmt|;
 name|int
 name|index
 init|=
-literal|0
+literal|1
 decl_stmt|;
 for|for
 control|(
@@ -2122,7 +2122,7 @@ control|)
 block|{
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"Resectioning "
 operator|+
@@ -2188,14 +2188,18 @@ argument_list|)
 operator|.
 name|setValue
 argument_list|(
-name|String
+name|index
+operator|+
+literal|" of "
+operator|+
+name|queue
 operator|.
-name|valueOf
-argument_list|(
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|index
 operator|++
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|XEnrollment
 name|enrollment
@@ -2585,7 +2589,7 @@ continue|continue;
 block|}
 name|helper
 operator|.
-name|info
+name|debug
 argument_list|(
 literal|"New: "
 operator|+

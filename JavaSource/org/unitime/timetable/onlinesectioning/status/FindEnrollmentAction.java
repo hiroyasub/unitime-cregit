@@ -2437,6 +2437,16 @@ name|hasCrossList
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|c
+operator|.
+name|setCanWaitList
+argument_list|(
+name|offering
+operator|.
+name|isWaitList
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|e
 operator|.
 name|setCourse

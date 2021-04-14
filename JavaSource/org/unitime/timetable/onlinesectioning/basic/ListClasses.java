@@ -837,6 +837,16 @@ name|hasCrossList
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|courseAssign
+operator|.
+name|setCanWaitList
+argument_list|(
+name|offering
+operator|.
+name|isWaitList
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|XStudent
 name|student
 init|=

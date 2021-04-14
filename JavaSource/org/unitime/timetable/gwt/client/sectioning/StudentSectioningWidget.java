@@ -14412,6 +14412,11 @@ name|EligibilityFlag
 operator|.
 name|CAN_WAITLIST
 argument_list|)
+operator|&&
+name|course
+operator|.
+name|isCanWaitList
+argument_list|()
 condition|)
 block|{
 name|waitList

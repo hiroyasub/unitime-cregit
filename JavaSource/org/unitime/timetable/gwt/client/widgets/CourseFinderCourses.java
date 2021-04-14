@@ -1706,6 +1706,16 @@ name|guessCreditRange
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|rc
+operator|.
+name|setCanWaitList
+argument_list|(
+name|record
+operator|.
+name|isCanWaitList
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|Map
