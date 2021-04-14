@@ -749,6 +749,17 @@ literal|false
 return|;
 if|if
 condition|(
+operator|!
+name|source
+operator|.
+name|effectiveWaitList
+argument_list|()
+condition|)
+return|return
+literal|false
+return|;
+if|if
+condition|(
 name|ApplicationProperty
 operator|.
 name|ReservationLockCheckWaitList
