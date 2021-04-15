@@ -1605,6 +1605,11 @@ argument_list|()
 operator|.
 name|getNumber
 argument_list|()
+operator|||
+name|message
+operator|.
+name|isEmpty
+argument_list|()
 condition|?
 literal|""
 else|:
@@ -1648,6 +1653,11 @@ name|getLevel
 argument_list|()
 operator|.
 name|getNumber
+argument_list|()
+operator|||
+name|message
+operator|.
+name|isEmpty
 argument_list|()
 condition|?
 literal|""
