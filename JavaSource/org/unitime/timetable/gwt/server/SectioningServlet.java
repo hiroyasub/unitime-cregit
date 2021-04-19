@@ -29225,18 +29225,6 @@ argument_list|,
 name|ret
 argument_list|)
 expr_stmt|;
-comment|// FIXME: this is a hack, do not commit
-name|ret
-operator|.
-name|setFlag
-argument_list|(
-name|EligibilityFlag
-operator|.
-name|CAN_REQUEST_VAR_TITLE_COURSE
-argument_list|,
-literal|true
-argument_list|)
-expr_stmt|;
 return|return
 name|ret
 return|;

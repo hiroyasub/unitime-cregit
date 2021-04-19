@@ -371,6 +371,16 @@ specifier|public
 name|String
 name|selectedEndDate
 decl_stmt|;
+comment|/** UniTime's academic session year (only used when operation = CHGVARTL) */
+specifier|public
+name|String
+name|apiYear
+decl_stmt|;
+comment|/** UniTime's academic session term (only used when operation = CHGVARTL) */
+specifier|public
+name|String
+name|apiTerm
+decl_stmt|;
 block|}
 comment|/** Registration error for which there needs to be an override */
 specifier|public
