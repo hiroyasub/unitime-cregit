@@ -361,6 +361,11 @@ specifier|public
 name|String
 name|selectedInstructorName
 decl_stmt|;
+comment|/** Selected instructor email (only used when operation = CHGVARTL) */
+specifier|public
+name|String
+name|selectedInstructorEmail
+decl_stmt|;
 comment|/** Selected start date (only used when operation = CHGVARTL, format MM/dd/yy) */
 specifier|public
 name|String

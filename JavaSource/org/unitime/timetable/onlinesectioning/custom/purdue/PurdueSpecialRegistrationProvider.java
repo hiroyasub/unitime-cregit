@@ -27543,6 +27543,15 @@ argument_list|(
 name|instructor
 argument_list|)
 expr_stmt|;
+name|change
+operator|.
+name|selectedInstructorEmail
+operator|=
+name|instructor
+operator|.
+name|getEmail
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 name|Formats
