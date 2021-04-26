@@ -51,6 +51,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|unitime
@@ -842,6 +854,23 @@ argument_list|(
 name|SectioningService
 operator|.
 name|class
+argument_list|)
+decl_stmt|;
+specifier|protected
+specifier|static
+name|Logger
+name|sLogger
+init|=
+name|Logger
+operator|.
+name|getLogger
+argument_list|(
+name|RequestVariableTitleCourseDialog
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|private
@@ -1983,6 +2012,19 @@ operator|.
 name|setFocus
 argument_list|(
 literal|true
+argument_list|)
+expr_stmt|;
+name|sLogger
+operator|.
+name|fine
+argument_list|(
+literal|"Current credit: "
+operator|+
+name|currentCredit
+operator|+
+literal|" of "
+operator|+
+name|maxCredit
 argument_list|)
 expr_stmt|;
 block|}
