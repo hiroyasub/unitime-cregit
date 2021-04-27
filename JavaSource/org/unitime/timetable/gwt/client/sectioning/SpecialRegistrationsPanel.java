@@ -2384,6 +2384,11 @@ argument_list|()
 operator|||
 name|reg
 operator|.
+name|isVariableTitleCourseChange
+argument_list|()
+operator|||
+name|reg
+operator|.
 name|isExtended
 argument_list|()
 condition|)

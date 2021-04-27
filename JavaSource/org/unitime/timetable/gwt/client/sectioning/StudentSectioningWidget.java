@@ -7213,6 +7213,7 @@ literal|null
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|specReg
 operator|.
 name|hasChanges
@@ -7229,6 +7230,19 @@ name|specReg
 operator|.
 name|isCreditChange
 argument_list|()
+operator|)
+operator|||
+operator|(
+name|specReg
+operator|.
+name|hasChanges
+argument_list|()
+operator|&&
+name|specReg
+operator|.
+name|isVariableTitleCourseChange
+argument_list|()
+operator|)
 condition|)
 block|{
 specifier|final
