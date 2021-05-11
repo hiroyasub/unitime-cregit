@@ -34894,25 +34894,9 @@ expr_stmt|;
 comment|// put default note when no note is provided
 if|if
 condition|(
-name|ret
+name|student
 operator|.
-name|getRequest
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|ret
-operator|.
-name|getRequest
-argument_list|()
-operator|.
-name|hasCreditNote
-argument_list|()
-operator|&&
-name|ret
-operator|.
-name|getRequest
+name|getAdvisorCourseRequests
 argument_list|()
 operator|.
 name|isEmpty
@@ -36196,7 +36180,7 @@ argument_list|)
 operator|.
 name|setCacheable
 argument_list|(
-literal|true
+literal|false
 argument_list|)
 operator|.
 name|setMaxResults
