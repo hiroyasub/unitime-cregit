@@ -87,15 +87,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|springframework
+name|unitime
 operator|.
-name|security
+name|timetable
 operator|.
-name|authentication
+name|model
 operator|.
-name|encoding
-operator|.
-name|MessageDigestPasswordEncoder
+name|User
 import|;
 end_import
 
@@ -107,9 +105,11 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|model
+name|spring
 operator|.
-name|User
+name|security
+operator|.
+name|MD5PasswordEncoder
 import|;
 end_import
 
@@ -594,19 +594,11 @@ name|clearTextPassword
 parameter_list|)
 block|{
 return|return
-operator|new
-name|MessageDigestPasswordEncoder
-argument_list|(
-literal|"MD5"
-argument_list|,
-literal|true
-argument_list|)
+name|MD5PasswordEncoder
 operator|.
-name|encodePassword
+name|getEncodedPassword
 argument_list|(
 name|clearTextPassword
-argument_list|,
-literal|null
 argument_list|)
 return|;
 block|}

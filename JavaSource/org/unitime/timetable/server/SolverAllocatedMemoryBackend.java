@@ -419,11 +419,15 @@ block|}
 if|if
 condition|(
 name|memUsage
-operator|==
+operator|<=
 literal|0
 condition|)
 return|return
-literal|null
+operator|new
+name|SolverAllocatedMemoryRpcResponse
+argument_list|(
+literal|""
+argument_list|)
 return|;
 else|else
 return|return
