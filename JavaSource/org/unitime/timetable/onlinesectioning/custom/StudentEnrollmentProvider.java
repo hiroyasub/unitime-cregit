@@ -325,6 +325,9 @@ name|lockedCourses
 parameter_list|,
 name|GradeModes
 name|gradeModes
+parameter_list|,
+name|boolean
+name|hasWaitListedCourses
 parameter_list|)
 throws|throws
 name|SectioningException

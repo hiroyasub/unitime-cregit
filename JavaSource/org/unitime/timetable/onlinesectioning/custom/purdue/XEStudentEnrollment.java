@@ -1465,7 +1465,7 @@ name|admin
 condition|)
 block|{
 name|String
-name|conditionalAddDrop
+name|errorWhenNoChange
 init|=
 name|ApplicationProperties
 operator|.
@@ -1476,7 +1476,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|conditionalAddDrop
+name|errorWhenNoChange
 operator|!=
 literal|null
 condition|)
@@ -1485,7 +1485,7 @@ literal|"true"
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|conditionalAddDrop
+name|errorWhenNoChange
 argument_list|)
 return|;
 block|}
@@ -3555,6 +3555,9 @@ name|lockedCourses
 parameter_list|,
 name|GradeModes
 name|gradeModes
+parameter_list|,
+name|boolean
+name|hasWaitListedCourses
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -7554,6 +7557,9 @@ name|throwExceptionWhenNoChange
 argument_list|(
 name|admin
 argument_list|)
+operator|&&
+operator|!
+name|hasWaitListedCourses
 condition|)
 block|{
 name|String
