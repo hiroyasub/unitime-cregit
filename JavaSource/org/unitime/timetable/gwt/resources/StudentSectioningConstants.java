@@ -635,6 +635,12 @@ literal|"Assigned Important"
 block|,
 literal|"Not Assigned Important"
 block|,
+literal|"No-Substitutes"
+block|,
+literal|"Assigned No-Subs"
+block|,
+literal|"Not Assigned No-Subs"
+block|,
 block|}
 argument_list|)
 name|String

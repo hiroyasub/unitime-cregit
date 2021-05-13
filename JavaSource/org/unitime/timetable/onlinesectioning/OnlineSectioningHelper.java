@@ -5015,6 +5015,16 @@ argument_list|)
 expr_stmt|;
 name|request
 operator|.
+name|setNoSubs
+argument_list|(
+name|cr
+operator|.
+name|isNoSub
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|request
+operator|.
 name|setCritical
 argument_list|(
 name|cr

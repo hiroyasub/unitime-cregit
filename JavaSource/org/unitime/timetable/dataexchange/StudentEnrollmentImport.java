@@ -2611,6 +2611,13 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|cd
+operator|.
+name|setNoSub
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|enrollment
 operator|.
 name|getCourseRequest
@@ -2785,6 +2792,13 @@ expr_stmt|;
 name|cd
 operator|.
 name|setWaitlist
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+name|cd
+operator|.
+name|setNoSub
 argument_list|(
 literal|false
 argument_list|)

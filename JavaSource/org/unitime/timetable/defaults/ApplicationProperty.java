@@ -10374,60 +10374,6 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Student Solver Dashboard: allow wait-listing toggle)"
-argument_list|)
-expr|@
-name|Since
-argument_list|(
-literal|4.4
-argument_list|)
-name|SolverDashboardAllowWaitList
-argument_list|(
-literal|"unitime.solverDashboard.allowWaitList"
-argument_list|)
-operator|,
-expr_stmt|@
-name|Type
-argument_list|(
-name|Boolean
-operator|.
-name|class
-argument_list|)
-expr|@
-name|DefaultValue
-argument_list|(
-literal|"false"
-argument_list|)
-expr|@
-name|Description
-argument_list|(
-literal|"Student Solver Dashboard: allow no-subs toggle)"
-argument_list|)
-expr|@
-name|Since
-argument_list|(
-literal|4.5
-argument_list|)
-name|SolverDashboardAllowNoSubs
-argument_list|(
-literal|"unitime.solverDashboard.allowNoSubs"
-argument_list|)
-operator|,
-expr_stmt|@
-name|Type
-argument_list|(
-name|Boolean
-operator|.
-name|class
-argument_list|)
-expr|@
-name|DefaultValue
-argument_list|(
-literal|"false"
-argument_list|)
-expr|@
-name|Description
-argument_list|(
 literal|"Distribution Preferences: show class suffix (external id) next to the class section number"
 argument_list|)
 expr|@
@@ -11888,13 +11834,13 @@ expr|@
 name|Values
 argument_list|(
 block|{
-literal|"None, WaitList, NoSubs"
+literal|"None, WaitList, NoSubs, Student"
 block|}
 argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Advisor Course Recommendation: Allow for wait-lists, no-subs or none of the two."
+literal|"Advisor Course Recommendation: Allow for wait-lists, no-subs or none of the two. It set to Student, use the same setting as on the student (based on the student status)."
 argument_list|)
 name|AdvisorRecommendationsWaitListMode
 argument_list|(

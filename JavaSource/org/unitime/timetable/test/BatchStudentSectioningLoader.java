@@ -3549,10 +3549,12 @@ name|courses
 argument_list|,
 name|cd
 operator|.
-name|isWaitlist
+name|effectiveWaitList
 argument_list|()
+operator|||
+name|cd
 operator|.
-name|booleanValue
+name|effectiveNoSub
 argument_list|()
 argument_list|,
 name|cd

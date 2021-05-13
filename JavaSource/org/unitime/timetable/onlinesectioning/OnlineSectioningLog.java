@@ -23136,6 +23136,16 @@ name|boolean
 name|getCritical
 parameter_list|()
 function_decl|;
+comment|/**      *<code>optional bool no_subs = 11 [default = false];</code>      */
+name|boolean
+name|hasNoSubs
+parameter_list|()
+function_decl|;
+comment|/**      *<code>optional bool no_subs = 11 [default = false];</code>      */
+name|boolean
+name|getNoSubs
+parameter_list|()
+function_decl|;
 block|}
 comment|/**    * Protobuf type {@code Request}    */
 specifier|public
@@ -23706,6 +23716,23 @@ operator||=
 literal|0x00000020
 expr_stmt|;
 name|critical_
+operator|=
+name|input
+operator|.
+name|readBool
+argument_list|()
+expr_stmt|;
+break|break;
+block|}
+case|case
+literal|88
+case|:
+block|{
+name|bitField0_
+operator||=
+literal|0x00000040
+expr_stmt|;
+name|noSubs_
 operator|=
 name|input
 operator|.
@@ -24756,6 +24783,46 @@ return|return
 name|critical_
 return|;
 block|}
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|NO_SUBS_FIELD_NUMBER
+init|=
+literal|11
+decl_stmt|;
+specifier|private
+name|boolean
+name|noSubs_
+decl_stmt|;
+comment|/**      *<code>optional bool no_subs = 11 [default = false];</code>      */
+specifier|public
+name|boolean
+name|hasNoSubs
+parameter_list|()
+block|{
+return|return
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000040
+operator|)
+operator|==
+literal|0x00000040
+operator|)
+return|;
+block|}
+comment|/**      *<code>optional bool no_subs = 11 [default = false];</code>      */
+specifier|public
+name|boolean
+name|getNoSubs
+parameter_list|()
+block|{
+return|return
+name|noSubs_
+return|;
+block|}
 specifier|private
 name|void
 name|initFields
@@ -24815,6 +24882,10 @@ operator|=
 literal|false
 expr_stmt|;
 name|critical_
+operator|=
+literal|false
+expr_stmt|;
+name|noSubs_
 operator|=
 literal|false
 expr_stmt|;
@@ -25249,6 +25320,29 @@ name|critical_
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000040
+operator|)
+operator|==
+literal|0x00000040
+operator|)
+condition|)
+block|{
+name|output
+operator|.
+name|writeBool
+argument_list|(
+literal|11
+argument_list|,
+name|noSubs_
+argument_list|)
+expr_stmt|;
+block|}
 name|getUnknownFields
 argument_list|()
 operator|.
@@ -25595,6 +25689,37 @@ argument_list|(
 literal|10
 argument_list|,
 name|critical_
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000040
+operator|)
+operator|==
+literal|0x00000040
+operator|)
+condition|)
+block|{
+name|size
+operator|+=
+name|com
+operator|.
+name|google
+operator|.
+name|protobuf
+operator|.
+name|CodedOutputStream
+operator|.
+name|computeBoolSize
+argument_list|(
+literal|11
+argument_list|,
+name|noSubs_
 argument_list|)
 expr_stmt|;
 block|}
@@ -26586,6 +26711,19 @@ operator|~
 literal|0x00000100
 operator|)
 expr_stmt|;
+name|noSubs_
+operator|=
+literal|false
+expr_stmt|;
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000200
+operator|)
+expr_stmt|;
 return|return
 name|this
 return|;
@@ -27099,6 +27237,30 @@ operator|.
 name|critical_
 operator|=
 name|critical_
+expr_stmt|;
+if|if
+condition|(
+operator|(
+operator|(
+name|from_bitField0_
+operator|&
+literal|0x00000200
+operator|)
+operator|==
+literal|0x00000200
+operator|)
+condition|)
+block|{
+name|to_bitField0_
+operator||=
+literal|0x00000040
+expr_stmt|;
+block|}
+name|result
+operator|.
+name|noSubs_
+operator|=
+name|noSubs_
 expr_stmt|;
 name|result
 operator|.
@@ -27733,6 +27895,23 @@ argument_list|(
 name|other
 operator|.
 name|getCritical
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|other
+operator|.
+name|hasNoSubs
+argument_list|()
+condition|)
+block|{
+name|setNoSubs
+argument_list|(
+name|other
+operator|.
+name|getNoSubs
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -32155,6 +32334,88 @@ literal|0x00000100
 operator|)
 expr_stmt|;
 name|critical_
+operator|=
+literal|false
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|private
+name|boolean
+name|noSubs_
+decl_stmt|;
+comment|/**        *<code>optional bool no_subs = 11 [default = false];</code>        */
+specifier|public
+name|boolean
+name|hasNoSubs
+parameter_list|()
+block|{
+return|return
+operator|(
+operator|(
+name|bitField0_
+operator|&
+literal|0x00000200
+operator|)
+operator|==
+literal|0x00000200
+operator|)
+return|;
+block|}
+comment|/**        *<code>optional bool no_subs = 11 [default = false];</code>        */
+specifier|public
+name|boolean
+name|getNoSubs
+parameter_list|()
+block|{
+return|return
+name|noSubs_
+return|;
+block|}
+comment|/**        *<code>optional bool no_subs = 11 [default = false];</code>        */
+specifier|public
+name|Builder
+name|setNoSubs
+parameter_list|(
+name|boolean
+name|value
+parameter_list|)
+block|{
+name|bitField0_
+operator||=
+literal|0x00000200
+expr_stmt|;
+name|noSubs_
+operator|=
+name|value
+expr_stmt|;
+name|onChanged
+argument_list|()
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|/**        *<code>optional bool no_subs = 11 [default = false];</code>        */
+specifier|public
+name|Builder
+name|clearNoSubs
+parameter_list|()
+block|{
+name|bitField0_
+operator|=
+operator|(
+name|bitField0_
+operator|&
+operator|~
+literal|0x00000200
+operator|)
+expr_stmt|;
+name|noSubs_
 operator|=
 literal|false
 expr_stmt|;
@@ -81061,7 +81322,7 @@ literal|"\001(\0132\007.Entity\"J\n\nPreference\022\014\n\010REQUIRED\020\000"
 block|,
 literal|"\022\r\n\tPREFERRED\020\001\022\014\n\010SELECTED\020\002\022\007\n\003ADD\020\003\022\010"
 operator|+
-literal|"\n\004DROP\020\004\"\330\001\n\007Request\022\n\n\002id\030\001 \001(\003\022\020\n\010prio"
+literal|"\n\004DROP\020\004\"\360\001\n\007Request\022\n\n\002id\030\001 \001(\003\022\020\n\010prio"
 operator|+
 literal|"rity\030\002 \002(\005\022\032\n\013alternative\030\003 \001(\010:\005false\022\030"
 operator|+
@@ -81071,69 +81332,71 @@ literal|"2\007.Entity\022\031\n\007section\030\006 \003(\0132\010.Section\022\02
 operator|+
 literal|"time_stamp\030\010 \001(\003\022\030\n\twait_list\030\t \001(\010:\005fal"
 operator|+
-literal|"se\022\027\n\010critical\030\n \001(\010:\005false\"\323\001\n\nEnrollme"
+literal|"se\022\027\n\010critical\030\n \001(\010:\005false\022\026\n\007no_subs\030\013"
 operator|+
-literal|"nt\022(\n\004type\030\001 \002(\0162\032.Enrollment.Enrollment"
+literal|" \001(\010:\005false\"\323\001\n\nEnrollment\022(\n\004type\030\001 \002(\016"
 operator|+
-literal|"Type\022\031\n\007section\030\002 \003(\0132\010.Section\022\r\n\005value"
+literal|"2\032.Enrollment.EnrollmentType\022\031\n\007section\030"
 operator|+
-literal|"\030\003 \001(\001\"q\n\016EnrollmentType\022\r\n\tREQUESTED\020\000\022"
+literal|"\002 \003(\0132\010.Section\022\r\n\005value\030\003 \001(\001\"q\n\016Enroll"
 block|,
-literal|"\014\n\010COMPUTED\020\001\022\014\n\010PREVIOUS\020\002\022\n\n\006STORED\020\003\022"
+literal|"mentType\022\r\n\tREQUESTED\020\000\022\014\n\010COMPUTED\020\001\022\014\n"
 operator|+
-literal|"\014\n\010APPROVED\020\004\022\014\n\010REJECTED\020\005\022\014\n\010EXTERNAL\020"
+literal|"\010PREVIOUS\020\002\022\n\n\006STORED\020\003\022\014\n\010APPROVED\020\004\022\014\n"
 operator|+
-literal|"\006\"\327\003\n\006Action\022\021\n\toperation\030\001 \002(\t\022\030\n\007sessi"
+literal|"\010REJECTED\020\005\022\014\n\010EXTERNAL\020\006\"\327\003\n\006Action\022\021\n\t"
 operator|+
-literal|"on\030\002 \002(\0132\007.Entity\022\030\n\007student\030\003 \001(\0132\007.Ent"
+literal|"operation\030\001 \002(\t\022\030\n\007session\030\002 \002(\0132\007.Entit"
 operator|+
-literal|"ity\022\022\n\nstart_time\030\004 \001(\003\022\020\n\010end_time\030\005 \001("
+literal|"y\022\030\n\007student\030\003 \001(\0132\007.Entity\022\022\n\nstart_tim"
 operator|+
-literal|"\003\022\020\n\010cpu_time\030\006 \001(\003\022\031\n\007request\030\007 \003(\0132\010.R"
+literal|"e\030\004 \001(\003\022\020\n\010end_time\030\005 \001(\003\022\020\n\010cpu_time\030\006 "
 operator|+
-literal|"equest\022\037\n\nenrollment\030\010 \003(\0132\013.Enrollment\022"
+literal|"\001(\003\022\031\n\007request\030\007 \003(\0132\010.Request\022\037\n\nenroll"
 operator|+
-literal|"\026\n\005other\030\t \003(\0132\007.Entity\022\031\n\007message\030\n \003(\013"
+literal|"ment\030\010 \003(\0132\013.Enrollment\022\026\n\005other\030\t \003(\0132\007"
 operator|+
-literal|"2\010.Message\022\"\n\006result\030\013 \001(\0162\022.Action.Resu"
+literal|".Entity\022\031\n\007message\030\n \003(\0132\010.Message\022\"\n\006re"
 operator|+
-literal|"ltType\022\025\n\004user\030\014 \001(\0132\007.Entity\022\031\n\006option\030"
+literal|"sult\030\013 \001(\0162\022.Action.ResultType\022\025\n\004user\030\014"
 block|,
-literal|"\r \003(\0132\t.Property\022\024\n\014api_get_time\030\016 \001(\003\022\025"
+literal|" \001(\0132\007.Entity\022\031\n\006option\030\r \003(\0132\t.Property"
 operator|+
-literal|"\n\rapi_post_time\030\017 \001(\003\022\025\n\rapi_exception\030\020"
+literal|"\022\024\n\014api_get_time\030\016 \001(\003\022\025\n\rapi_post_time\030"
 operator|+
-literal|" \001(\t\"E\n\nResultType\022\013\n\007SUCCESS\020\000\022\013\n\007FAILU"
+literal|"\017 \001(\003\022\025\n\rapi_exception\030\020 \001(\t\"E\n\nResultTy"
 operator|+
-literal|"RE\020\001\022\010\n\004TRUE\020\002\022\t\n\005FALSE\020\003\022\010\n\004NULL\020\004\"\233\001\n\007"
+literal|"pe\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020\001\022\010\n\004TRUE\020\002\022\t"
 operator|+
-literal|"Message\022\035\n\005level\030\001 \002(\0162\016.Message.Level\022\014"
+literal|"\n\005FALSE\020\003\022\010\n\004NULL\020\004\"\233\001\n\007Message\022\035\n\005level"
 operator|+
-literal|"\n\004text\030\002 \002(\t\022\021\n\texception\030\003 \001(\t\022\022\n\ntime_"
+literal|"\030\001 \002(\0162\016.Message.Level\022\014\n\004text\030\002 \002(\t\022\021\n\t"
 operator|+
-literal|"stamp\030\004 \001(\003\"<\n\005Level\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020"
+literal|"exception\030\003 \001(\t\022\022\n\ntime_stamp\030\004 \001(\003\"<\n\005L"
 operator|+
-literal|"\001\022\010\n\004WARN\020\002\022\t\n\005ERROR\020\003\022\t\n\005FATAL\020\004\"&\n\010Pro"
+literal|"evel\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020\001\022\010\n\004WARN\020\002\022\t\n\005E"
 operator|+
-literal|"perty\022\013\n\003key\030\001 \002(\t\022\r\n\005value\030\002 \002(\t\"9\n\003Log"
+literal|"RROR\020\003\022\t\n\005FATAL\020\004\"&\n\010Property\022\013\n\003key\030\001 \002"
 operator|+
-literal|"\022\027\n\006action\030\001 \003(\0132\007.Action\022\031\n\007message\030\002 \003"
+literal|"(\t\022\r\n\005value\030\002 \002(\t\"9\n\003Log\022\027\n\006action\030\001 \003(\013"
 block|,
-literal|"(\0132\010.Message\"\304\001\n\023CourseRequestOption\022-\n\004"
+literal|"2\007.Action\022\031\n\007message\030\002 \003(\0132\010.Message\"\304\001\n"
 operator|+
-literal|"type\030\001 \002(\0162\037.CourseRequestOption.OptionT"
+literal|"\023CourseRequestOption\022-\n\004type\030\001 \002(\0162\037.Cou"
 operator|+
-literal|"ype\022\031\n\007section\030\002 \003(\0132\010.Section\022$\n\023instru"
+literal|"rseRequestOption.OptionType\022\031\n\007section\030\002"
 operator|+
-literal|"ctionalMethod\030\003 \003(\0132\007.Entity\"=\n\nOptionTy"
+literal|" \003(\0132\010.Section\022$\n\023instructionalMethod\030\003 "
 operator|+
-literal|"pe\022\027\n\023ORIGINAL_ENROLLMENT\020\000\022\026\n\022REQUEST_P"
+literal|"\003(\0132\007.Entity\"=\n\nOptionType\022\027\n\023ORIGINAL_E"
 operator|+
-literal|"REFERENCE\020\001\"7\n\013ExportedLog\022\017\n\007student\030\001 "
+literal|"NROLLMENT\020\000\022\026\n\022REQUEST_PREFERENCE\020\001\"7\n\013E"
 operator|+
-literal|"\002(\t\022\027\n\006action\030\002 \003(\0132\007.ActionB(\n&org.unit"
+literal|"xportedLog\022\017\n\007student\030\001 \002(\t\022\027\n\006action\030\002 "
 operator|+
-literal|"ime.timetable.onlinesectioning"
+literal|"\003(\0132\007.ActionB(\n&org.unitime.timetable.on"
+operator|+
+literal|"linesectioning"
 block|}
 decl_stmt|;
 name|com
@@ -81430,6 +81693,8 @@ block|,
 literal|"WaitList"
 block|,
 literal|"Critical"
+block|,
+literal|"NoSubs"
 block|, }
 argument_list|)
 expr_stmt|;

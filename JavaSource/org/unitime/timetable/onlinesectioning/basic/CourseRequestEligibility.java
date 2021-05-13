@@ -587,14 +587,6 @@ name|EligibilityFlag
 operator|.
 name|CAN_WAITLIST
 argument_list|,
-name|server
-operator|.
-name|getAcademicSession
-argument_list|()
-operator|.
-name|isSectioningEnabled
-argument_list|()
-operator|&&
 name|CustomStudentEnrollmentHolder
 operator|.
 name|isAllowWaitListing

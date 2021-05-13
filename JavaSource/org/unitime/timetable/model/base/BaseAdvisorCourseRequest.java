@@ -192,6 +192,10 @@ name|Boolean
 name|iWaitlist
 decl_stmt|;
 specifier|private
+name|Boolean
+name|iNoSub
+decl_stmt|;
+specifier|private
 name|Student
 name|iStudent
 decl_stmt|;
@@ -286,6 +290,13 @@ name|String
 name|PROP_WAITLIST
 init|=
 literal|"waitlist"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_NOSUB
+init|=
+literal|"noSub"
 decl_stmt|;
 specifier|public
 name|BaseAdvisorCourseRequest
@@ -578,6 +589,37 @@ name|waitlist
 expr_stmt|;
 block|}
 specifier|public
+name|Boolean
+name|isNoSub
+parameter_list|()
+block|{
+return|return
+name|iNoSub
+return|;
+block|}
+specifier|public
+name|Boolean
+name|getNoSub
+parameter_list|()
+block|{
+return|return
+name|iNoSub
+return|;
+block|}
+specifier|public
+name|void
+name|setNoSub
+parameter_list|(
+name|Boolean
+name|noSub
+parameter_list|)
+block|{
+name|iNoSub
+operator|=
+name|noSub
+expr_stmt|;
+block|}
+specifier|public
 name|Student
 name|getStudent
 parameter_list|()
@@ -847,6 +889,11 @@ operator|+
 literal|"\n	FreeTime: "
 operator|+
 name|getFreeTime
+argument_list|()
+operator|+
+literal|"\n	NoSub: "
+operator|+
+name|getNoSub
 argument_list|()
 operator|+
 literal|"\n	Notes: "

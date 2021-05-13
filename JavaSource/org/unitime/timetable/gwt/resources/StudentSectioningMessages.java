@@ -3991,6 +3991,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<sup><font color='#2066CE'>n)</font></sup>"
+argument_list|)
+name|String
+name|htmlNoSubSign
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|" (r)"
 argument_list|)
 name|String
@@ -4004,6 +4013,15 @@ literal|" (w)"
 argument_list|)
 name|String
 name|csvWaitListSign
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|" (n)"
+argument_list|)
+name|String
+name|csvNoSubSign
 parameter_list|()
 function_decl|;
 annotation|@
@@ -4165,7 +4183,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"r) Space available only with a reservation.<br>w) Wait-listed or No-Subs requests."
+literal|"r) Space available only with a reservation.<br>w) Wait-listed and n) No-Subs requests."
 argument_list|)
 name|String
 name|sectioningStatusReservationHint
@@ -4174,7 +4192,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"(p) denotes priority of the first wait-listed/no-subs course request."
+literal|"(p) denotes priority of the first wait-listed course request."
 argument_list|)
 name|String
 name|sectioningStatusPriorityHint
@@ -7029,10 +7047,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Request is wait-listed or marked as no-subs."
+literal|"Request is wait-listed."
 argument_list|)
 name|String
 name|descriptionRequestWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request is marked as no-subs."
+argument_list|)
+name|String
+name|descriptionRequestNoSubs
 parameter_list|()
 function_decl|;
 annotation|@

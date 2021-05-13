@@ -4649,7 +4649,7 @@ if|if
 condition|(
 name|ar
 operator|.
-name|isWaitList
+name|isWaitListOrNoSub
 argument_list|()
 operator|&&
 operator|!
@@ -6599,7 +6599,7 @@ if|if
 condition|(
 name|ar
 operator|.
-name|isWaitList
+name|isWaitListOrNoSub
 argument_list|()
 operator|&&
 operator|!
