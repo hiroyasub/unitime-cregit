@@ -12119,6 +12119,33 @@ argument_list|(
 literal|"unitime.variableTitle.instructorIdRequired"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Course Timetabling Solution Commit: Skip checking for room and instructor conflicts with other committed problems."
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.5
+argument_list|)
+name|CourseTimetablingCommitSkipChecking
+argument_list|(
+literal|"unitime.commit.skipConflictChecking"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

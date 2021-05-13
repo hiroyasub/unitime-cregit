@@ -2207,6 +2207,18 @@ literal|true
 decl_stmt|;
 if|if
 condition|(
+name|ApplicationProperty
+operator|.
+name|CourseTimetablingCommitSkipChecking
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
+comment|// skip conflict checking
+block|}
+if|else if
+condition|(
 name|ownerIds
 operator|!=
 literal|null
