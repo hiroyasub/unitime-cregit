@@ -11556,7 +11556,7 @@ if|if
 condition|(
 name|rc
 operator|.
-name|isCourse
+name|hasCourseId
 argument_list|()
 operator|&&
 name|getRequestPriority
@@ -11634,7 +11634,7 @@ if|if
 condition|(
 name|rc
 operator|.
-name|isCourse
+name|hasCourseId
 argument_list|()
 operator|&&
 name|getRequestPriority
