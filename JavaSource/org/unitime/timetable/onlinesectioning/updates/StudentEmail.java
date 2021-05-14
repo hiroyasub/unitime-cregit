@@ -4422,6 +4422,11 @@ argument_list|(
 literal|false
 argument_list|)
 operator|.
+name|withWaitListMode
+argument_list|(
+name|wlMode
+argument_list|)
+operator|.
 name|execute
 argument_list|(
 name|server

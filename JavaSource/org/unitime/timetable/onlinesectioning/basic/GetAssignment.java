@@ -7291,6 +7291,13 @@ name|getMaxCredit
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|request
+operator|.
+name|setWaitListMode
+argument_list|(
+name|wlMode
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|student
@@ -8120,7 +8127,9 @@ name|cd
 operator|)
 operator|.
 name|isWaitlist
-argument_list|()
+argument_list|(
+name|wlMode
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|r
@@ -8135,7 +8144,9 @@ name|cd
 operator|)
 operator|.
 name|isNoSub
-argument_list|()
+argument_list|(
+name|wlMode
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|r

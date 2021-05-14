@@ -99,24 +99,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|gwt
-operator|.
-name|shared
-operator|.
-name|ClassAssignmentInterface
-operator|.
-name|ClassAssignment
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|google
@@ -872,6 +854,8 @@ specifier|public
 name|GradeMode
 name|getGradeMode
 parameter_list|(
+name|ClassAssignmentInterface
+operator|.
 name|ClassAssignment
 name|section
 parameter_list|)
@@ -923,6 +907,8 @@ specifier|public
 name|Float
 name|getCreditHour
 parameter_list|(
+name|ClassAssignmentInterface
+operator|.
 name|ClassAssignment
 name|section
 parameter_list|)
@@ -2931,6 +2917,8 @@ specifier|public
 name|GradeMode
 name|getGradeMode
 parameter_list|(
+name|ClassAssignmentInterface
+operator|.
 name|ClassAssignment
 name|a
 parameter_list|)
@@ -3059,6 +3047,8 @@ specifier|public
 name|Float
 name|getCreditHour
 parameter_list|(
+name|ClassAssignmentInterface
+operator|.
 name|ClassAssignment
 name|a
 parameter_list|)
