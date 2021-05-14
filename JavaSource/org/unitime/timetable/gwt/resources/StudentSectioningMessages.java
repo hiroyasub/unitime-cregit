@@ -1533,15 +1533,6 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Submit Approval Requests"
-argument_list|)
-name|String
-name|buttonSubmitSpecReg
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
 literal|"Register for the above schedule."
 argument_list|)
 name|String
@@ -5345,15 +5336,6 @@ literal|"You have made some changes in your course requests. Please click the Su
 argument_list|)
 name|String
 name|warnRequestsChangedOnCourseRequest
-parameter_list|()
-function_decl|;
-annotation|@
-name|DefaultMessage
-argument_list|(
-literal|"You have made some changes in your schedule. Please click the Submit Approval Requests button to validate your changes and request approvals if needed."
-argument_list|)
-name|String
-name|warnSpecialRegistrationChanged
 parameter_list|()
 function_decl|;
 annotation|@

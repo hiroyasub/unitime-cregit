@@ -599,15 +599,6 @@ expr_stmt|;
 block|}
 specifier|public
 name|boolean
-name|isCanSubmit
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
-specifier|public
-name|boolean
 name|isDisclaimerAccepted
 parameter_list|()
 block|{
