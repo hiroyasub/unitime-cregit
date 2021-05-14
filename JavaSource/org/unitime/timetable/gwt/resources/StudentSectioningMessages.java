@@ -5740,6 +5740,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Do you want to wait-list {0}?"
+argument_list|)
+name|String
+name|confirmQuickWaitList
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>D</u>egree Plan"
 argument_list|)
 name|String
