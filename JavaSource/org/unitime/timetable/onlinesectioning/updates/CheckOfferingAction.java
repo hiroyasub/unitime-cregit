@@ -2671,7 +2671,7 @@ name|Action
 operator|.
 name|ResultType
 operator|.
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|r
