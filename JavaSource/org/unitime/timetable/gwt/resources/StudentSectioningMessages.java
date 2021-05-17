@@ -2317,6 +2317,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Wait-listed on {0}."
+argument_list|)
+name|String
+name|conflictWaitListed
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Failed to load the application ({0})."
 argument_list|)
 name|String

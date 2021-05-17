@@ -1144,13 +1144,13 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// Use time stamp
+comment|// Use wait-listed time stamp
 if|if
 condition|(
 name|getRequest
 argument_list|()
 operator|.
-name|getTimeStamp
+name|getWaitListedTimeStamp
 argument_list|()
 operator|!=
 literal|null
@@ -1163,7 +1163,7 @@ operator|.
 name|getRequest
 argument_list|()
 operator|.
-name|getTimeStamp
+name|getWaitListedTimeStamp
 argument_list|()
 operator|!=
 literal|null
@@ -1175,7 +1175,7 @@ init|=
 name|getRequest
 argument_list|()
 operator|.
-name|getTimeStamp
+name|getWaitListedTimeStamp
 argument_list|()
 operator|.
 name|compareTo
@@ -1185,7 +1185,7 @@ operator|.
 name|getRequest
 argument_list|()
 operator|.
-name|getTimeStamp
+name|getWaitListedTimeStamp
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1213,7 +1213,7 @@ operator|.
 name|getRequest
 argument_list|()
 operator|.
-name|getTimeStamp
+name|getWaitListedTimeStamp
 argument_list|()
 operator|!=
 literal|null
@@ -1309,7 +1309,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// Use time stamp
+comment|// Use request time stamp
 if|if
 condition|(
 name|getRequest

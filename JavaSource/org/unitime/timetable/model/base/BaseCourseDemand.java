@@ -180,6 +180,10 @@ name|Integer
 name|iCriticalOverride
 decl_stmt|;
 specifier|private
+name|Date
+name|iWaitlistedTimeStamp
+decl_stmt|;
+specifier|private
 name|String
 name|iChangedBy
 decl_stmt|;
@@ -260,6 +264,13 @@ name|String
 name|PROP_CRITICAL_OVERRIDE
 init|=
 literal|"criticalOverride"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_WAITLIST_TS
+init|=
+literal|"waitlistedTimeStamp"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -499,6 +510,28 @@ block|{
 name|iCriticalOverride
 operator|=
 name|criticalOverride
+expr_stmt|;
+block|}
+specifier|public
+name|Date
+name|getWaitlistedTimeStamp
+parameter_list|()
+block|{
+return|return
+name|iWaitlistedTimeStamp
+return|;
+block|}
+specifier|public
+name|void
+name|setWaitlistedTimeStamp
+parameter_list|(
+name|Date
+name|waitlistedTimeStamp
+parameter_list|)
+block|{
+name|iWaitlistedTimeStamp
+operator|=
+name|waitlistedTimeStamp
 expr_stmt|;
 block|}
 specifier|public
@@ -850,6 +883,11 @@ operator|+
 literal|"\n	Waitlist: "
 operator|+
 name|getWaitlist
+argument_list|()
+operator|+
+literal|"\n	WaitlistedTimeStamp: "
+operator|+
+name|getWaitlistedTimeStamp
 argument_list|()
 operator|+
 literal|"]"
