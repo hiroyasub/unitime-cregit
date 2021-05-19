@@ -1752,6 +1752,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Requested<u>A</u>pprovals"
+argument_list|)
+name|String
+name|tabSpecialRegistrations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course requests have been successfully submitted."
 argument_list|)
 name|String
@@ -9211,7 +9220,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisor Recommendations"
+literal|"Advisor<u>R</u>ecommendations"
 argument_list|)
 name|String
 name|tabAdvisorRequests
