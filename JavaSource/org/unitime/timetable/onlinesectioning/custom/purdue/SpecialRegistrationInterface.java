@@ -243,6 +243,11 @@ specifier|public
 name|CompletionStatus
 name|completionStatus
 decl_stmt|;
+comment|/** Validation request */
+specifier|public
+name|RestrictionsCheckRequest
+name|validation
+decl_stmt|;
 block|}
 comment|/** Possible operations for a change (work order) */
 specifier|public
