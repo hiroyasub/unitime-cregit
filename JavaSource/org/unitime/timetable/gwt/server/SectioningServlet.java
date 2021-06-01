@@ -4463,7 +4463,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select c from CourseOffering c where "
+literal|"select c from CourseOffering c left outer join c.courseType ct where "
 operator|+
 operator|(
 name|excludeNotOffered
@@ -4510,15 +4510,15 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|?
-literal|" and c.courseType is null "
+literal|" and ct is null "
 else|:
-literal|" and (c.courseType is null or c.courseType.reference in ("
+literal|" and (ct is null or ct.reference in ("
 operator|+
 name|types
 operator|+
 literal|")) "
 else|:
-literal|" and c.courseType.reference in ("
+literal|" and ct.reference in ("
 operator|+
 name|types
 operator|+
