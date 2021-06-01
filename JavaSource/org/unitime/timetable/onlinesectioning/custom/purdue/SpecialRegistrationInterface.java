@@ -102,6 +102,9 @@ comment|// pre-registration (Course Requests page is used)
 name|REG
 block|,
 comment|// registration (Scheduling Assistant page is used)
+name|WAITL
+block|,
+comment|// wait-listing (Scheduling Assistant page is used)
 block|; 	}
 comment|/** Possible values for the requestor role */
 specifier|public
@@ -818,6 +821,9 @@ comment|// registration changes
 name|ALT
 block|,
 comment|// alternate changes
+name|WAITL
+block|,
+comment|// wait-list changes
 block|; 	}
 comment|/** Possible values for the validation operation */
 specifier|public

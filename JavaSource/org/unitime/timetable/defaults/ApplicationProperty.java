@@ -863,6 +863,22 @@ name|unitime
 operator|.
 name|timetable
 operator|.
+name|onlinesectioning
+operator|.
+name|custom
+operator|.
+name|WaitListValidationProvider
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
 name|spring
 operator|.
 name|ldap
@@ -3016,7 +3032,7 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Student Scheduling: provide default alternatice course when there is no alternative provided by student"
+literal|"Student Scheduling: provide default alternative course when there is no alternative provided by student"
 argument_list|)
 expr|@
 name|Since
@@ -5269,6 +5285,35 @@ argument_list|)
 name|CustomizationVariableTitleCourseProvider
 argument_list|(
 literal|"unitime.custom.VariableTitleCourseProvider"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Class
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Implements
+argument_list|(
+name|WaitListValidationProvider
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Customization: wait-list validation provider"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.6
+argument_list|)
+name|CustomizationWaitListValidationProvider
+argument_list|(
+literal|"unitime.custom.WaitListValidationProvider"
 argument_list|)
 operator|,
 expr_stmt|@

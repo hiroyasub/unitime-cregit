@@ -283,6 +283,8 @@ block|,
 name|SR_LINK_CONF
 block|,
 name|SR_EXTENDED
+block|,
+name|WAIT_LIST_VALIDATION
 block|, 			;
 specifier|public
 name|int

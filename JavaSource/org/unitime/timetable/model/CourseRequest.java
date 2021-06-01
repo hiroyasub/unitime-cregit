@@ -186,6 +186,8 @@ block|,
 name|REJECTED
 block|,
 name|CANCELLED
+block|,
+name|NOT_CHECKED
 block|, 	}
 specifier|public
 specifier|static
@@ -209,6 +211,9 @@ block|,
 name|EX_CHANGE
 block|,
 comment|// extended registration
+name|WAITLIST
+block|,
+comment|// wait-list
 block|}
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public
@@ -927,6 +932,31 @@ operator|==
 name|CourseRequestOverrideStatus
 operator|.
 name|CANCELLED
+operator|.
+name|ordinal
+argument_list|()
+return|;
+block|}
+specifier|public
+name|boolean
+name|isRequestNeeded
+parameter_list|()
+block|{
+return|return
+name|getOverrideStatus
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getOverrideStatus
+argument_list|()
+operator|.
+name|intValue
+argument_list|()
+operator|==
+name|CourseRequestOverrideStatus
+operator|.
+name|NOT_CHECKED
 operator|.
 name|ordinal
 argument_list|()

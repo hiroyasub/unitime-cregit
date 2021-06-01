@@ -14444,10 +14444,17 @@ if|if
 condition|(
 name|iCheckRequestStatusSkipPending
 operator|&&
+operator|(
 name|cr
 operator|.
 name|isRequestPending
 argument_list|()
+operator|||
+name|cr
+operator|.
+name|isRequestNeeded
+argument_list|()
+operator|)
 operator|&&
 name|cr
 operator|.

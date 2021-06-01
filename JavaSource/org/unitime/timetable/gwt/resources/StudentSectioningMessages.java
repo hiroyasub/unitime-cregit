@@ -6031,6 +6031,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Failed to validate wait-listed courses: {0}"
+argument_list|)
+name|String
+name|failedWaitListValidation
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"This plan is locked."
 argument_list|)
 name|String
@@ -7161,6 +7173,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Not Requested"
+argument_list|)
+name|String
+name|reqStatusNeeded
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are already enrolled in {0}.\nThis course request cannot be modified or deleted."
 argument_list|)
 name|String
@@ -7197,6 +7218,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Registration errors were detected, but no override has been requested."
+argument_list|)
+name|String
+name|overrideNotRequested
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The following issues have been detected:\n{0}"
 argument_list|)
 name|String
@@ -7221,6 +7251,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Requested override for {0} has been denied."
+argument_list|)
+name|String
+name|overrideRejectedWaitList
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"An override has been requested for {0}.\nWaiting for approval..."
 argument_list|)
 name|String
@@ -7237,6 +7279,18 @@ literal|"Requested override for {0} has been cancelled.\nClick the Submit Reques
 argument_list|)
 name|String
 name|overrideCancelled
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested override for {0} has been cancelled."
+argument_list|)
+name|String
+name|overrideCancelledWaitList
 parameter_list|(
 name|String
 name|course
@@ -10062,6 +10116,54 @@ argument_list|)
 name|String
 name|itemReqVTNoInstructor
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-list overrides not requested."
+argument_list|)
+name|String
+name|waitListOverridesNotRequested
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-list overrides have been successfully requested."
+argument_list|)
+name|String
+name|waitListOverridesRequested
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Checking wait-lists..."
+argument_list|)
+name|String
+name|waitValidateWaitLists
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requesting wait-list overrides..."
+argument_list|)
+name|String
+name|waitRequestWaitListOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to request wait-list overrides: {0}"
+argument_list|)
+name|String
+name|failedRequestWaitListOverrides
+parameter_list|(
+name|String
+name|message
+parameter_list|)
 function_decl|;
 block|}
 end_interface

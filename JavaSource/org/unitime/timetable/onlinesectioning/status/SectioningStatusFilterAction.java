@@ -4205,6 +4205,8 @@ name|values
 argument_list|()
 control|)
 block|{
+try|try
+block|{
 name|overrides
 operator|.
 name|add
@@ -4260,6 +4262,14 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|ArrayIndexOutOfBoundsException
+name|e
+parameter_list|)
+block|{
+block|}
 block|}
 for|for
 control|(

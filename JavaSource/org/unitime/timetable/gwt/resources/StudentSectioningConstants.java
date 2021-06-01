@@ -702,6 +702,8 @@ literal|"Rejected"
 block|,
 literal|"Cancelled"
 block|,
+literal|"Not-Requested"
+block|,
 block|}
 argument_list|)
 name|String

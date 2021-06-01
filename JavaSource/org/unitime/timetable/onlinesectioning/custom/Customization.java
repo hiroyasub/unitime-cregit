@@ -262,6 +262,17 @@ name|ApplicationProperty
 operator|.
 name|CustomizationVariableTitleCourseProvider
 argument_list|)
+block|,
+name|WaitListValidationProvider
+argument_list|(
+name|WaitListValidationProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationWaitListValidationProvider
+argument_list|)
 block|, 	;
 specifier|private
 name|Holder
