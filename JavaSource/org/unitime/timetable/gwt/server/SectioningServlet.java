@@ -3807,6 +3807,10 @@ condition|(
 name|server
 operator|==
 literal|null
+operator|||
+name|server
+operator|instanceof
+name|DatabaseServer
 condition|)
 block|{
 name|org
@@ -5752,6 +5756,10 @@ condition|(
 name|server
 operator|==
 literal|null
+operator|||
+name|server
+operator|instanceof
+name|DatabaseServer
 condition|)
 block|{
 if|if
