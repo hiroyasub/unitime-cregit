@@ -27251,9 +27251,10 @@ argument_list|()
 decl_stmt|;
 return|return
 name|status
-operator|==
+operator|!=
 literal|null
-operator|||
+operator|&&
+operator|(
 name|status
 operator|.
 name|hasOption
@@ -27275,6 +27276,7 @@ name|Option
 operator|.
 name|reqval
 argument_list|)
+operator|)
 return|;
 block|}
 specifier|protected
@@ -27361,6 +27363,7 @@ name|dbStatus
 operator|!=
 literal|null
 operator|&&
+operator|(
 name|dbStatus
 operator|.
 name|hasOption
@@ -27382,6 +27385,7 @@ name|Option
 operator|.
 name|reqval
 argument_list|)
+operator|)
 return|;
 block|}
 annotation|@
