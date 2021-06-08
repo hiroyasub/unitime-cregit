@@ -4156,6 +4156,13 @@ argument_list|(
 name|iContext
 argument_list|)
 decl_stmt|;
+name|cr
+operator|.
+name|setWaitListMode
+argument_list|(
+name|iWaitListMode
+argument_list|)
+expr_stmt|;
 name|fillInCourses
 argument_list|(
 name|cr
