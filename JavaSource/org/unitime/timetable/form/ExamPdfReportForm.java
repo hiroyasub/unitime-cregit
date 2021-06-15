@@ -572,6 +572,12 @@ block|,
 literal|"PDF (Ledger)"
 block|,
 literal|"Text"
+block|,
+literal|"CSV"
+block|,
+literal|"PDF (New)"
+block|,
+literal|"XLS"
 block|}
 decl_stmt|;
 specifier|public

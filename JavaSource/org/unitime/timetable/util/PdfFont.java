@@ -251,7 +251,7 @@ argument_list|)
 return|;
 block|}
 block|}
-specifier|private
+specifier|public
 specifier|static
 name|Font
 name|createFont

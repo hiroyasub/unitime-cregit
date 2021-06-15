@@ -3661,9 +3661,7 @@ init|=
 operator|new
 name|InstructorExamReport
 argument_list|(
-name|InstructorExamReport
-operator|.
-name|sModeNormal
+literal|0
 argument_list|,
 name|out
 argument_list|,
@@ -3835,9 +3833,7 @@ init|=
 operator|new
 name|StudentExamReport
 argument_list|(
-name|StudentExamReport
-operator|.
-name|sModeNormal
+literal|0
 argument_list|,
 name|out
 argument_list|,
@@ -3930,9 +3926,7 @@ init|=
 operator|new
 name|InstructorExamReport
 argument_list|(
-name|InstructorExamReport
-operator|.
-name|sModeNormal
+literal|0
 argument_list|,
 name|out
 argument_list|,
@@ -4034,9 +4028,7 @@ init|=
 operator|new
 name|StudentExamReport
 argument_list|(
-name|StudentExamReport
-operator|.
-name|sModeNormal
+literal|0
 argument_list|,
 name|out
 argument_list|,
