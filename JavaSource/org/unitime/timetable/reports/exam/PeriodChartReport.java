@@ -4957,11 +4957,12 @@ argument_list|)
 operator|.
 name|withColSpan
 argument_list|(
-name|iCompact
-condition|?
-literal|15
-else|:
-literal|12
+name|line1
+operator|.
+name|size
+argument_list|()
+operator|*
+literal|3
 argument_list|)
 argument_list|)
 argument_list|,
