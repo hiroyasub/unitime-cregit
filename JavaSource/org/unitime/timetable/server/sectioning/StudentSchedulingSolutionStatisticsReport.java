@@ -7292,12 +7292,11 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|section
 operator|.
-name|getTime
+name|hasTime
 argument_list|()
-operator|==
-literal|null
 condition|)
 name|arrClass
 operator|++
