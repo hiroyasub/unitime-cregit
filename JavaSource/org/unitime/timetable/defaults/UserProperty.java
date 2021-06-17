@@ -225,6 +225,17 @@ literal|"primaryAcademicInitiative"
 argument_list|,
 literal|"Primary academic initiative"
 argument_list|)
+block|,
+name|StudentDashboardShowUnmatchedClasses
+argument_list|(
+literal|"sctdashShowUnmatchedClasses"
+argument_list|,
+name|CommonValues
+operator|.
+name|Yes
+argument_list|,
+literal|"Student Scheduling Dashboard: Show classes not meeting the filter (as grayed out)."
+argument_list|)
 block|, 	;
 name|String
 name|iKey
