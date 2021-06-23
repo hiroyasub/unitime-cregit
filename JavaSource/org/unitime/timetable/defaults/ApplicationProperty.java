@@ -12272,6 +12272,27 @@ argument_list|(
 literal|"unitime.offering.waitListDefault"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Instructional Offering: prohibit over the limit overrides when wait-listing is enabled. When set, this property should contain the reference of the override that must be marked as prohibited when wait-listing is enabled."
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.6
+argument_list|)
+name|OfferingWaitListProhibitedOverride
+argument_list|(
+literal|"unitime.offering.waitList.prohibitedOverride"
+argument_list|)
 expr_stmt|;
 end_expr_stmt
 

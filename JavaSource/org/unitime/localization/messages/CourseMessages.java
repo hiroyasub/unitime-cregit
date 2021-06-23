@@ -6862,6 +6862,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Wait-listing cannot be enabled when {0} is allowed."
+argument_list|)
+name|String
+name|errorWaitListingOverrideMustBeProhibited
+parameter_list|(
+name|String
+name|override
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"This instructor is allowed to teach two back-to-back classes that are too far away."
 argument_list|)
 name|String
