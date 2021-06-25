@@ -475,6 +475,15 @@ name|timeStampFormat
 parameter_list|()
 function_decl|;
 annotation|@
+name|DefaultStringValue
+argument_list|(
+literal|"MM/dd/yyyy hh:mmaa"
+argument_list|)
+name|String
+name|requestWaitListedDateFormat
+parameter_list|()
+function_decl|;
+annotation|@
 name|DefaultBooleanValue
 argument_list|(
 literal|true

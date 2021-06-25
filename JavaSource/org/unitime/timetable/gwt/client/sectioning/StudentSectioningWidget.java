@@ -2144,7 +2144,7 @@ name|getFormat
 argument_list|(
 name|CONSTANTS
 operator|.
-name|timeStampFormat
+name|requestWaitListedDateFormat
 argument_list|()
 argument_list|)
 decl_stmt|;
