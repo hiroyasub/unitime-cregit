@@ -1414,6 +1414,13 @@ name|c
 operator|.
 name|getTitle
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|c
+operator|.
+name|getTitle
+argument_list|()
 operator|.
 name|trim
 argument_list|()
