@@ -5384,6 +5384,7 @@ name|boolean
 name|waitList
 parameter_list|)
 block|{
+comment|// skip inactive first
 for|for
 control|(
 name|CourseRequestLine
@@ -5392,7 +5393,6 @@ range|:
 name|iCourses
 control|)
 block|{
-comment|// skip inactive first
 for|for
 control|(
 name|CourseSelectionBox
@@ -5445,7 +5445,16 @@ expr_stmt|;
 return|return;
 block|}
 block|}
+block|}
 comment|// all courses next
+for|for
+control|(
+name|CourseRequestLine
+name|line
+range|:
+name|iCourses
+control|)
+block|{
 for|for
 control|(
 name|CourseSelectionBox
