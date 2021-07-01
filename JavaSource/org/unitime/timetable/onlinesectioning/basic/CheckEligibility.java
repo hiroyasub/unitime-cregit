@@ -1755,6 +1755,12 @@ operator|.
 name|getProvider
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|wp
+operator|!=
+literal|null
+condition|)
 name|wp
 operator|.
 name|checkEligibility
