@@ -15278,12 +15278,9 @@ block|}
 name|String
 name|msg
 init|=
-name|iCourseRequests
+name|iSavedRequest
 operator|.
-name|getLastCheck
-argument_list|()
-operator|.
-name|getMessage
+name|getConfirmation
 argument_list|(
 name|course
 operator|.
@@ -15512,10 +15509,7 @@ break|break;
 default|default:
 if|if
 condition|(
-name|iCourseRequests
-operator|.
-name|getLastCheck
-argument_list|()
+name|iSavedRequest
 operator|.
 name|isError
 argument_list|(
