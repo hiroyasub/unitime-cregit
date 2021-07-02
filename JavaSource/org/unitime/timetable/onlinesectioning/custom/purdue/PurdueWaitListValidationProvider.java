@@ -9708,24 +9708,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|else if
-condition|(
-name|ch
-operator|.
-name|status
-operator|!=
-name|ChangeStatus
-operator|.
-name|approved
-operator|&&
-name|ch
-operator|.
-name|status
-operator|!=
-name|ChangeStatus
-operator|.
-name|cancelled
-condition|)
+else|else
 block|{
 name|request
 operator|.
