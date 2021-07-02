@@ -507,6 +507,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Requirements"
+argument_list|)
+name|String
+name|colRequirements
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Warnings"
 argument_list|)
 name|String
@@ -1747,6 +1756,15 @@ literal|"Requested<u>A</u>pprovals"
 argument_list|)
 name|String
 name|tabSpecialRegistrations
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"<u>W</u>ait-Listed Courses"
+argument_list|)
+name|String
+name|tabWaitListedCourses
 parameter_list|()
 function_decl|;
 annotation|@
@@ -5902,10 +5920,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Wait-Listed"
+argument_list|)
+name|String
+name|colWaitListedTimeStamp
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Registration Errors"
 argument_list|)
 name|String
 name|colSpecRegErrors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Registration Errors"
+argument_list|)
+name|String
+name|colWaitListErrors
 parameter_list|()
 function_decl|;
 annotation|@
@@ -10163,6 +10199,27 @@ name|failedRequestWaitListOverrides
 parameter_list|(
 name|String
 name|message
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listed Courses"
+argument_list|)
+name|String
+name|panelWaitListedCourses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} will not longer be wait-listed. Do you want to proceed?"
+argument_list|)
+name|String
+name|confirmCourseDropFromWaitList
+parameter_list|(
+name|String
+name|course
 parameter_list|)
 function_decl|;
 block|}
