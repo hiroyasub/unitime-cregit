@@ -273,7 +273,18 @@ name|ApplicationProperty
 operator|.
 name|CustomizationWaitListValidationProvider
 argument_list|)
-block|, 	;
+block|,
+name|WaitListComparatorProvider
+argument_list|(
+name|WaitListComparatorProvider
+operator|.
+name|class
+argument_list|,
+name|ApplicationProperty
+operator|.
+name|CustomizationWaitListComparatorProvider
+argument_list|)
+block|;
 specifier|private
 name|Holder
 argument_list|<
