@@ -983,6 +983,12 @@ name|getStudentId
 argument_list|()
 argument_list|)
 operator|.
+name|fromAction
+argument_list|(
+name|name
+argument_list|()
+argument_list|)
+operator|.
 name|oldEnrollment
 argument_list|(
 name|offering
