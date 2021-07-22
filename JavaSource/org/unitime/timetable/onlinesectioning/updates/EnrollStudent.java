@@ -7644,8 +7644,6 @@ name|WaitListMode
 operator|.
 name|WaitList
 operator|&&
-name|iCheckWaitLists
-operator|&&
 name|hasWaitList
 condition|)
 name|includeRequestInTheReturnMessage

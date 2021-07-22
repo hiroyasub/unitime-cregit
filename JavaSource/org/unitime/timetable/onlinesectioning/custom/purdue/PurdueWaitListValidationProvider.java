@@ -4751,7 +4751,7 @@ operator|.
 name|getCourseName
 argument_list|()
 argument_list|,
-literal|"CREDIT"
+literal|"WL-CREDIT"
 argument_list|,
 name|ApplicationProperties
 operator|.
@@ -4932,7 +4932,7 @@ operator|.
 name|getCourseName
 argument_list|()
 argument_list|,
-literal|"CREDIT"
+literal|"WL-CREDIT"
 argument_list|,
 name|ApplicationProperties
 operator|.
@@ -6956,7 +6956,7 @@ control|)
 block|{
 if|if
 condition|(
-literal|"CREDIT"
+literal|"WL-CREDIT"
 operator|.
 name|equals
 argument_list|(
@@ -6995,7 +6995,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-literal|"OVERLAP"
+literal|"WL-OVERLAP"
 operator|.
 name|equals
 argument_list|(
