@@ -258,7 +258,7 @@ name|JavaMailWrapper
 extends|extends
 name|Email
 block|{
-specifier|private
+specifier|protected
 specifier|static
 name|Log
 name|sLog
@@ -272,7 +272,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|private
+specifier|protected
 name|javax
 operator|.
 name|mail
@@ -282,13 +282,13 @@ name|iMailSession
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|MimeMessage
 name|iMail
 init|=
 literal|null
 decl_stmt|;
-specifier|private
+specifier|protected
 name|Multipart
 name|iBody
 init|=
