@@ -1917,10 +1917,14 @@ condition|)
 block|{
 name|q
 operator|.
-name|setString
+name|setLong
 argument_list|(
 literal|"uniqueId"
 argument_list|,
+name|Long
+operator|.
+name|parseLong
+argument_list|(
 name|frm
 operator|.
 name|getInstructorId
@@ -1928,6 +1932,7 @@ argument_list|()
 operator|.
 name|trim
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
