@@ -10222,6 +10222,39 @@ name|String
 name|course
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} cannot be wait-listed as there is a pending approval requested already."
+argument_list|)
+name|String
+name|errorWaitListApprovalAlreadyRequested
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Please cancel the corresponding approval requests and click the Submit Schedule again."
+argument_list|)
+name|String
+name|errorWaitListApprovalCancelFirst
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} has a pending approval requested already. Cancel the approval request before wait-listing it."
+argument_list|)
+name|String
+name|messageWaitListApprovalAlreadyRequested
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
