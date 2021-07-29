@@ -13671,20 +13671,6 @@ if|if
 condition|(
 name|s
 operator|.
-name|isRequestApproved
-argument_list|()
-condition|)
-name|maxCredit
-operator|=
-name|s
-operator|.
-name|getOverrideMaxCredit
-argument_list|()
-expr_stmt|;
-if|else if
-condition|(
-name|s
-operator|.
 name|isRequestCancelled
 argument_list|()
 operator|&&
