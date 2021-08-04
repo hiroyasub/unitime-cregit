@@ -37655,6 +37655,13 @@ name|iAllowNoRole
 init|=
 literal|false
 decl_stmt|;
+specifier|private
+name|Qualifiable
+index|[]
+name|iFilter
+init|=
+literal|null
+decl_stmt|;
 specifier|protected
 name|StudentAuthority
 parameter_list|(
@@ -37674,6 +37681,10 @@ operator|.
 name|getUser
 argument_list|()
 decl_stmt|;
+name|iFilter
+operator|=
+name|filter
+expr_stmt|;
 if|if
 condition|(
 name|user
@@ -37752,7 +37763,7 @@ condition|)
 block|{
 name|iAllowNoRole
 operator|=
-literal|true
+literal|false
 expr_stmt|;
 break|break
 name|authorities
@@ -37780,6 +37791,27 @@ condition|)
 return|return
 literal|false
 return|;
+for|for
+control|(
+name|Qualifiable
+name|q
+range|:
+name|iFilter
+control|)
+if|if
+condition|(
+operator|!
+name|authority
+operator|.
+name|hasQualifier
+argument_list|(
+name|q
+argument_list|)
+condition|)
+return|return
+literal|false
+return|;
+comment|// allow current role
 if|if
 condition|(
 name|iRole
@@ -37792,11 +37824,10 @@ name|getRole
 argument_list|()
 argument_list|)
 condition|)
-block|{
 return|return
 literal|true
 return|;
-block|}
+comment|// allow student role
 if|if
 condition|(
 name|Roles
@@ -37811,11 +37842,10 @@ name|getRole
 argument_list|()
 argument_list|)
 condition|)
-block|{
 return|return
 literal|true
 return|;
-block|}
+comment|// allow no role (when no matching student role was found)
 if|if
 condition|(
 name|iAllowNoRole
@@ -37832,11 +37862,9 @@ name|getRole
 argument_list|()
 argument_list|)
 condition|)
-block|{
 return|return
 literal|true
 return|;
-block|}
 return|return
 literal|false
 return|;
