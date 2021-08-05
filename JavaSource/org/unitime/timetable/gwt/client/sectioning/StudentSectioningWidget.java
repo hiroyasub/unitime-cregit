@@ -11651,9 +11651,6 @@ operator|.
 name|activate
 argument_list|(
 name|course
-operator|.
-name|getCourseId
-argument_list|()
 argument_list|)
 expr_stmt|;
 for|for
@@ -14035,9 +14032,6 @@ operator|.
 name|isActive
 argument_list|(
 name|course
-operator|.
-name|getCourseId
-argument_list|()
 argument_list|)
 condition|)
 block|{

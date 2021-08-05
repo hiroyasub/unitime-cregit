@@ -5932,9 +5932,6 @@ name|activate
 argument_list|(
 name|getValue
 argument_list|()
-operator|.
-name|getCourseId
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|activate
