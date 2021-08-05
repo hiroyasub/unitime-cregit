@@ -9733,9 +9733,6 @@ operator|.
 name|isActive
 argument_list|(
 name|rc
-operator|.
-name|getCourseId
-argument_list|()
 argument_list|)
 operator|&&
 operator|!
@@ -9791,9 +9788,6 @@ operator|.
 name|isActive
 argument_list|(
 name|rc
-operator|.
-name|getCourseId
-argument_list|()
 argument_list|)
 operator|&&
 operator|!
