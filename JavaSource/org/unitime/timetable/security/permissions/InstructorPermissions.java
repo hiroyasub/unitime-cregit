@@ -1200,7 +1200,7 @@ specifier|static
 class|class
 name|InstructorAttributeAdd
 extends|extends
-name|Instructors
+name|InstructorAdd
 block|{}
 annotation|@
 name|PermissionForRight
@@ -1267,7 +1267,7 @@ name|DepartmentStatusType
 operator|.
 name|Status
 operator|.
-name|OwnerEdit
+name|OwnerLimitedEdit
 argument_list|)
 return|;
 else|else
