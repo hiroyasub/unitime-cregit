@@ -19520,6 +19520,14 @@ name|getOldTime
 argument_list|()
 operator|==
 literal|null
+operator|||
+name|getOldTime
+argument_list|()
+operator|.
+name|getDays
+argument_list|()
+operator|==
+literal|0
 condition|?
 name|MSG
 operator|.
