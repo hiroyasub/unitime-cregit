@@ -1036,6 +1036,10 @@ condition|(
 name|estimate
 operator|>=
 literal|0
+operator|&&
+name|lastLikes
+operator|>
+literal|0
 condition|)
 return|return
 name|estimate
