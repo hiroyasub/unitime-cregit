@@ -12862,13 +12862,8 @@ operator|.
 name|getStudentRequest
 argument_list|()
 operator|.
-name|getCredit
-argument_list|(
-name|iDetails
-operator|.
-name|getAdvisorWaitListedCourseIds
+name|getMaxCredit
 argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
