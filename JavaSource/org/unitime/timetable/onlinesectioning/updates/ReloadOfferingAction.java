@@ -2692,6 +2692,8 @@ name|newOffering
 argument_list|,
 name|newRequest
 argument_list|,
+name|course
+argument_list|,
 name|newStudent
 argument_list|,
 name|getStudentPriority
@@ -2947,6 +2949,8 @@ name|newOffering
 argument_list|,
 name|newRequest
 argument_list|,
+name|course
+argument_list|,
 name|newStudent
 argument_list|,
 name|getStudentPriority
@@ -3095,6 +3099,8 @@ argument_list|(
 name|newOffering
 argument_list|,
 name|newRequest
+argument_list|,
+name|course
 argument_list|,
 name|newStudent
 argument_list|,
@@ -3319,6 +3325,8 @@ argument_list|(
 name|newOffering
 argument_list|,
 name|newRequest
+argument_list|,
+name|course
 argument_list|,
 name|newStudent
 argument_list|,
@@ -3777,6 +3785,8 @@ argument_list|(
 name|newOffering
 argument_list|,
 name|newRequest
+argument_list|,
+name|course
 argument_list|,
 name|newStudent
 argument_list|,

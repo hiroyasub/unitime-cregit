@@ -567,6 +567,15 @@ name|String
 name|colCanAdminChange
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Position"
+argument_list|)
+name|String
+name|colWaitListPosition
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
@@ -10253,6 +10262,21 @@ name|messageWaitListApprovalAlreadyRequested
 parameter_list|(
 name|String
 name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} of {1}"
+argument_list|)
+name|String
+name|waitListPosition
+parameter_list|(
+name|Integer
+name|position
+parameter_list|,
+name|Integer
+name|total
 parameter_list|)
 function_decl|;
 block|}

@@ -517,7 +517,7 @@ operator|.
 name|getRequest
 argument_list|()
 operator|.
-name|getStudentId
+name|getRequestId
 argument_list|()
 argument_list|,
 name|r
@@ -525,7 +525,7 @@ operator|.
 name|getRequest
 argument_list|()
 operator|.
-name|getStudentId
+name|getRequestId
 argument_list|()
 argument_list|)
 return|;
