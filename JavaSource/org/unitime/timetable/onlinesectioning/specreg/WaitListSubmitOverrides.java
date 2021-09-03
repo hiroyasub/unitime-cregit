@@ -469,7 +469,7 @@ literal|null
 decl_stmt|;
 specifier|private
 name|Float
-name|iCurrentCredit
+name|iNeededCredit
 init|=
 literal|null
 decl_stmt|;
@@ -494,12 +494,12 @@ name|WaitListSubmitOverrides
 name|withCredit
 parameter_list|(
 name|Float
-name|currentCredit
+name|neededCredit
 parameter_list|)
 block|{
-name|iCurrentCredit
+name|iNeededCredit
 operator|=
-name|currentCredit
+name|neededCredit
 expr_stmt|;
 return|return
 name|this
@@ -699,7 +699,7 @@ name|helper
 argument_list|,
 name|iRequest
 argument_list|,
-name|iCurrentCredit
+name|iNeededCredit
 argument_list|)
 expr_stmt|;
 for|for

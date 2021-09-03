@@ -38439,7 +38439,7 @@ name|CourseRequestInterface
 name|request
 parameter_list|,
 name|Float
-name|currentCredit
+name|neededCredit
 parameter_list|)
 throws|throws
 name|SectioningException
@@ -38585,7 +38585,7 @@ argument_list|)
 operator|.
 name|withCredit
 argument_list|(
-name|currentCredit
+name|neededCredit
 argument_list|)
 argument_list|,
 name|currentUser

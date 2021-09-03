@@ -1883,7 +1883,7 @@ name|CourseRequestInterface
 name|request
 parameter_list|,
 name|Float
-name|currentCredit
+name|neededCredit
 parameter_list|,
 name|AsyncCallback
 argument_list|<

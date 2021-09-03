@@ -1588,7 +1588,7 @@ name|CourseRequestInterface
 name|request
 parameter_list|,
 name|Float
-name|currentCredit
+name|neededCredit
 parameter_list|)
 throws|throws
 name|SectioningException
