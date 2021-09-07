@@ -1592,6 +1592,12 @@ operator|&&
 operator|!
 name|isSpecialRegistration
 argument_list|()
+operator|&&
+operator|!
+name|course
+operator|.
+name|isCanWaitList
+argument_list|()
 operator|)
 condition|)
 continue|continue;

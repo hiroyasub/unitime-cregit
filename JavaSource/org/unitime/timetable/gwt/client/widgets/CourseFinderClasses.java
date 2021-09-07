@@ -1407,6 +1407,11 @@ argument_list|()
 operator|||
 name|isSpecialRegistration
 argument_list|()
+operator|||
+name|iValue
+operator|.
+name|isCanWaitList
+argument_list|()
 operator|)
 condition|)
 block|{
