@@ -545,16 +545,7 @@ class|class
 name|SubmitRegistrationResponse
 extends|extends
 name|SpecialRegistration
-block|{
-comment|/** 		 * List of special registrations that have been cancelled (to create this request). 		 * (only read, never sent; only used in submitRegistration response during registration) 		 */
-specifier|public
-name|List
-argument_list|<
-name|CancelledRequest
-argument_list|>
-name|cancelledRequests
-decl_stmt|;
-block|}
+block|{ 	}
 comment|/** 	 * Response message for the /submitRegistration call 	 * In pre-registration, a separate special registration request is created for each course (plus one for the max credit increase, if needed). 	 * In registration, a single special registration request  	 */
 specifier|public
 specifier|static
