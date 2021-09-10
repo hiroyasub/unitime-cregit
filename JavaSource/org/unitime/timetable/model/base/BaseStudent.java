@@ -330,6 +330,10 @@ name|Date
 name|iOverrideTimeStamp
 decl_stmt|;
 specifier|private
+name|Integer
+name|iOverrideIntent
+decl_stmt|;
+specifier|private
 name|String
 name|iPin
 decl_stmt|;
@@ -523,6 +527,13 @@ name|String
 name|PROP_REQ_TS
 init|=
 literal|"overrideTimeStamp"
+decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|PROP_REQ_INTENT
+init|=
+literal|"overrideIntent"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -881,6 +892,28 @@ block|{
 name|iOverrideTimeStamp
 operator|=
 name|overrideTimeStamp
+expr_stmt|;
+block|}
+specifier|public
+name|Integer
+name|getOverrideIntent
+parameter_list|()
+block|{
+return|return
+name|iOverrideIntent
+return|;
+block|}
+specifier|public
+name|void
+name|setOverrideIntent
+parameter_list|(
+name|Integer
+name|overrideIntent
+parameter_list|)
+block|{
+name|iOverrideIntent
+operator|=
+name|overrideIntent
 expr_stmt|;
 block|}
 specifier|public
@@ -1806,6 +1839,11 @@ operator|+
 literal|"\n	OverrideExternalId: "
 operator|+
 name|getOverrideExternalId
+argument_list|()
+operator|+
+literal|"\n	OverrideIntent: "
+operator|+
+name|getOverrideIntent
 argument_list|()
 operator|+
 literal|"\n	OverrideMaxCredit: "

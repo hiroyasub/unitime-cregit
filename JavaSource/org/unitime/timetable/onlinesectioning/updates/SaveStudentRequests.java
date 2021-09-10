@@ -4192,6 +4192,13 @@ name|getMaxCreditOverride
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|student
+operator|.
+name|setOverrideIntent
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 name|helper
 operator|.
 name|getHibSession
