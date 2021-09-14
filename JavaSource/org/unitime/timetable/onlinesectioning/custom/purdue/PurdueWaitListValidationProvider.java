@@ -4377,17 +4377,6 @@ control|)
 block|{
 if|if
 condition|(
-name|req
-operator|.
-name|mode
-operator|.
-name|equals
-argument_list|(
-name|r
-operator|.
-name|mode
-argument_list|)
-operator|&&
 name|r
 operator|.
 name|maxCredit
@@ -11605,7 +11594,12 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|req
+operator|!=
+literal|null
+condition|)
 block|{
 name|Integer
 name|oldStatus
@@ -16090,7 +16084,12 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|req
+operator|!=
+literal|null
+condition|)
 block|{
 name|Integer
 name|oldStatus
