@@ -6672,6 +6672,17 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|boolean
+name|hasStatus
+parameter_list|()
+block|{
+return|return
+name|iStatus
+operator|!=
+literal|null
+return|;
+block|}
+specifier|public
 name|void
 name|setStatus
 parameter_list|(
