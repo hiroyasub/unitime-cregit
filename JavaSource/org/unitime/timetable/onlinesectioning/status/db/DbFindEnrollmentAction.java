@@ -2151,6 +2151,14 @@ name|getWaitlistedTimeStamp
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+name|crm
+operator|.
+name|enrollment
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 name|e
 operator|.
