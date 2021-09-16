@@ -2613,6 +2613,16 @@ name|getTimeStamp
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|e
+operator|.
+name|setCritical
+argument_list|(
+name|request
+operator|.
+name|getCritical
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|request
