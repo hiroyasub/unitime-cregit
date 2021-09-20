@@ -818,6 +818,8 @@ operator|.
 name|getProvider
 argument_list|()
 decl_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|wp
@@ -845,6 +847,33 @@ argument_list|(
 name|course
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+name|helper
+operator|.
+name|warn
+argument_list|(
+literal|"Failed to check wait-list status for student "
+operator|+
+name|student
+operator|.
+name|getExternalId
+argument_list|()
+operator|+
+literal|": "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
