@@ -5945,7 +5945,7 @@ name|compareTo
 argument_list|(
 name|n
 argument_list|)
-operator|>
+operator|<
 literal|0
 condition|)
 name|note
