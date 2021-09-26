@@ -7095,6 +7095,65 @@ operator|,
 expr_stmt|@
 name|Description
 argument_list|(
+literal|"People Lookup: default search sources separated by coma (defaults to ldap,students,instructors,staff,managers,events,advisors). This setting can be used to restrict the search to only certain sources and/or define in which order they will be searched."
+argument_list|)
+name|PeopleLookupDefaultSources
+argument_list|(
+literal|"unitime.lookup.source.defaults"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"People Lookup: when searching instructors, prefer instructors with the matching department code in the Staff table"
+argument_list|)
+name|PeopleLookupInstructorsPreferStaffDept
+argument_list|(
+literal|"unitime.lookup.instructors.checkStaffDept"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Parameter
+argument_list|(
+literal|"user role"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"People Lookup: show Email column for given user role (when set to false, emails are not returned -- do not use for roles that can request an event on behalf of someone else)"
+argument_list|)
+name|PeopleLookupShowEmail
+argument_list|(
+literal|"unitime.lookup.showEmail.%"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Description
+argument_list|(
 literal|"Reservations: default reservation expiration date for all reservation types (given either in the number of days relative to the academic session begin date or as a date in yyyy-mm-dd format)"
 argument_list|)
 name|ReservationExpirationDateGlobal
