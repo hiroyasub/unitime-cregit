@@ -1247,7 +1247,7 @@ argument_list|()
 operator|!=
 name|DatePattern
 operator|.
-name|sTypeAlternate
+name|sTypePatternSet
 condition|)
 block|{
 return|return
