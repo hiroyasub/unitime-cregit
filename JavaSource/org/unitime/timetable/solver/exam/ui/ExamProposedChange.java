@@ -1203,6 +1203,15 @@ name|examId
 expr_stmt|;
 block|}
 specifier|public
+name|Long
+name|getSelected
+parameter_list|()
+block|{
+return|return
+name|iSelectedExamId
+return|;
+block|}
+specifier|public
 name|String
 name|getHtmlTable
 parameter_list|()
