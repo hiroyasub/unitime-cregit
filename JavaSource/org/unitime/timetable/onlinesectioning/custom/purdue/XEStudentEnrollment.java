@@ -10476,6 +10476,10 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+name|changed
+operator|=
+literal|true
+expr_stmt|;
 block|}
 block|}
 for|for
