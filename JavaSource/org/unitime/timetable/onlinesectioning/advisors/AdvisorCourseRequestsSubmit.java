@@ -881,7 +881,7 @@ argument_list|)
 control|)
 name|action
 operator|.
-name|addRequest
+name|addRecommendation
 argument_list|(
 name|r
 argument_list|)

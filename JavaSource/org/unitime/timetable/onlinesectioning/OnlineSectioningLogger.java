@@ -788,10 +788,24 @@ operator|.
 name|Request
 name|r
 range|:
+operator|(
+name|action
+operator|.
+name|getRequestCount
+argument_list|()
+operator|>
+literal|0
+condition|?
 name|action
 operator|.
 name|getRequestList
 argument_list|()
+else|:
+name|action
+operator|.
+name|getRecommendationList
+argument_list|()
+operator|)
 control|)
 block|{
 if|if
@@ -967,6 +981,7 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
+block|{
 for|for
 control|(
 name|OnlineSectioningLog
@@ -1051,6 +1066,29 @@ name|e
 operator|.
 name|getName
 argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|r
+operator|.
+name|getWaitList
+argument_list|()
+condition|)
+name|request
+operator|+=
+literal|" (w)"
+expr_stmt|;
+if|else if
+condition|(
+name|r
+operator|.
+name|getNoSubs
+argument_list|()
+condition|)
+name|request
+operator|+=
+literal|" (s)"
 expr_stmt|;
 block|}
 block|}

@@ -1663,7 +1663,7 @@ argument_list|)
 control|)
 name|action
 operator|.
-name|addRequest
+name|addRecommendation
 argument_list|(
 name|log
 argument_list|)
@@ -2857,7 +2857,7 @@ argument_list|)
 control|)
 name|action
 operator|.
-name|addRequest
+name|addRecommendation
 argument_list|(
 name|log
 argument_list|)

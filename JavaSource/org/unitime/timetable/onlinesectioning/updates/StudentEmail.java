@@ -4673,6 +4673,14 @@ condition|(
 name|iIncludeCourseRequests
 condition|)
 block|{
+name|helper
+operator|.
+name|getAction
+argument_list|()
+operator|.
+name|clearRequest
+argument_list|()
+expr_stmt|;
 name|CourseRequestInterface
 name|requests
 init|=
