@@ -1940,6 +1940,8 @@ argument_list|,
 name|iQuery
 argument_list|,
 name|lookup
+argument_list|,
+name|server
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -8693,6 +8695,10 @@ specifier|protected
 name|CourseLookup
 name|iLookup
 decl_stmt|;
+specifier|protected
+name|OnlineSectioningServer
+name|iServer
+decl_stmt|;
 specifier|public
 name|FindEnrollmentInfoCourseMatcher
 parameter_list|(
@@ -8719,6 +8725,9 @@ name|query
 parameter_list|,
 name|CourseLookup
 name|lookup
+parameter_list|,
+name|OnlineSectioningServer
+name|server
 parameter_list|)
 block|{
 name|iCoursesIcoordinate
@@ -8740,6 +8749,10 @@ expr_stmt|;
 name|iLookup
 operator|=
 name|lookup
+expr_stmt|;
+name|iServer
+operator|=
+name|server
 expr_stmt|;
 block|}
 specifier|public
@@ -8886,6 +8899,8 @@ name|course
 argument_list|)
 argument_list|,
 name|iLookup
+argument_list|,
+name|iServer
 argument_list|)
 argument_list|)
 return|;
