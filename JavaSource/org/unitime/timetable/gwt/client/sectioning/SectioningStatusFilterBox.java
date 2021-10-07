@@ -1022,7 +1022,7 @@ name|override
 operator|.
 name|setMultipleSelection
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 name|addFilter
