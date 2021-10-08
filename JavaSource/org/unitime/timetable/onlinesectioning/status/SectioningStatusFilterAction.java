@@ -826,6 +826,18 @@ argument_list|,
 name|helper
 argument_list|)
 decl_stmt|;
+name|CourseQuery
+name|courseQuery
+init|=
+name|getCourseQuery
+argument_list|(
+name|iRequest
+argument_list|,
+name|server
+argument_list|,
+name|helper
+argument_list|)
+decl_stmt|;
 name|Map
 argument_list|<
 name|Long
@@ -4271,6 +4283,16 @@ parameter_list|)
 block|{
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|iRequest
+operator|.
+name|hasOptions
+argument_list|(
+literal|"assignment"
+argument_list|)
+condition|)
 for|for
 control|(
 name|Object
@@ -4376,31 +4398,26 @@ name|Object
 index|[]
 argument_list|>
 operator|)
-name|query
+name|courseQuery
 operator|.
 name|select
 argument_list|(
-literal|"xcr.overrideStatus, count(distinct xcr)"
+literal|"cr.overrideStatus, count(distinct cr)"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"xcr.overrideStatus is not null"
+literal|"cr.overrideStatus is not null"
 argument_list|)
 operator|.
 name|order
 argument_list|(
-literal|"xcr.overrideStatus"
+literal|"cr.overrideStatus"
 argument_list|)
 operator|.
 name|group
 argument_list|(
-literal|"xcr.overrideStatus"
-argument_list|)
-operator|.
-name|from
-argument_list|(
-literal|"inner join s.courseDemands xcd inner join xcd.courseRequests xcr"
+literal|"cr.overrideStatus"
 argument_list|)
 operator|.
 name|exclude
@@ -11215,6 +11232,28 @@ argument_list|,
 literal|"CourseRequest wcr"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|OfferingWaitListDefault
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"assignment"
+argument_list|,
+literal|"wcr.courseDemand.waitlist = true and wcr.courseDemand.student = s and not wcr.courseOffering.instructionalOffering.waitlist = false"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|query
 operator|.
 name|addWhere
@@ -11224,6 +11263,7 @@ argument_list|,
 literal|"wcr.courseDemand.waitlist = true and wcr.courseDemand.student = s and wcr.courseOffering.instructionalOffering.waitlist = true"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -13586,6 +13626,37 @@ condition|)
 block|{
 name|query
 operator|.
+name|addFrom
+argument_list|(
+literal|"assignment"
+argument_list|,
+literal|null
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|OfferingWaitListDefault
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
+name|query
+operator|.
+name|addWhere
+argument_list|(
+literal|"assignment"
+argument_list|,
+literal|"not co.instructionalOffering.waitlist = false and cd.waitlist = true"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|query
+operator|.
 name|addWhere
 argument_list|(
 literal|"assignment"
@@ -13593,6 +13664,7 @@ argument_list|,
 literal|"co.instructionalOffering.waitlist = true and cd.waitlist = true"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
