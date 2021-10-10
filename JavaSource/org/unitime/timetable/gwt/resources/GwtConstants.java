@@ -1393,6 +1393,8 @@ block|,
 literal|"Too Big Rooms"
 block|,
 literal|"Student Groups"
+block|,
+literal|"Instructional Type"
 block|}
 argument_list|)
 name|String

@@ -259,6 +259,8 @@ block|,
 name|TooBigRooms
 block|,
 name|StudentGroups
+block|,
+name|InstructionalType
 block|, 	}
 specifier|public
 specifier|static
