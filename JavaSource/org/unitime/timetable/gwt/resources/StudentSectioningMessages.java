@@ -10285,7 +10285,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Course {0} will not longer be wait-listed. Do you want to proceed?"
+literal|"Course {0} will no longer be wait-listed. Do you want to proceed?"
 argument_list|)
 name|String
 name|confirmCourseDropFromWaitList
