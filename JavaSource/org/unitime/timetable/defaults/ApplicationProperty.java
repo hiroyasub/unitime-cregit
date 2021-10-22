@@ -12371,6 +12371,34 @@ name|OfferingWaitListProhibitedOverride
 argument_list|(
 literal|"unitime.offering.waitList.prohibitedOverride"
 argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Scheduling Assistant: Show the wait-list position to the students. When set to false, the Position culumn would not show in the Wait-Listed Courses table."
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.6
+argument_list|)
+name|OnlineSchedulingShowWaitListPosition
+argument_list|(
+literal|"unitime.enrollment.waitList.showWaitListPosition"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

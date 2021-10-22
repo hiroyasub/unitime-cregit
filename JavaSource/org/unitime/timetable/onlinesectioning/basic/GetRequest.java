@@ -1654,6 +1654,16 @@ name|setInactive
 operator|=
 literal|false
 expr_stmt|;
+name|boolean
+name|showWaitListPosition
+init|=
+name|ApplicationProperty
+operator|.
+name|OnlineSchedulingShowWaitListPosition
+operator|.
+name|isTrue
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|XRequest
@@ -2469,6 +2479,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|showWaitListPosition
+operator|&&
 name|rc
 operator|.
 name|isCanWaitList

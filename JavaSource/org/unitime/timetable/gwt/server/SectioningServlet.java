@@ -18164,6 +18164,11 @@ operator|.
 name|specreg
 argument_list|)
 argument_list|)
+operator|.
+name|withWaitListPosition
+argument_list|(
+literal|true
+argument_list|)
 argument_list|,
 name|currentUser
 argument_list|()
