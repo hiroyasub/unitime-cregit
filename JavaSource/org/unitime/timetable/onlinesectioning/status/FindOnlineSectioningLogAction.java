@@ -3495,7 +3495,7 @@ operator|.
 name|getValue
 argument_list|()
 expr_stmt|;
-if|if
+if|else if
 condition|(
 literal|"credit"
 operator|.
