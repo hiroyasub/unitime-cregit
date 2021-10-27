@@ -9710,6 +9710,21 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} allows for {1}."
+argument_list|)
+name|String
+name|problemWaitListProhibitedOverride
+parameter_list|(
+name|String
+name|course
+parameter_list|,
+name|String
+name|override
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Wait-Listing:"
 argument_list|)
 name|String
