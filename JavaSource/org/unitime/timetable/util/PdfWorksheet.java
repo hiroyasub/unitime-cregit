@@ -1359,6 +1359,9 @@ name|subjectAreas
 parameter_list|,
 name|String
 name|courseNumber
+parameter_list|,
+name|String
+name|filterWaitList
 parameter_list|)
 throws|throws
 name|IOException
@@ -1566,6 +1569,64 @@ operator|+=
 literal|" and co.courseNbr = :courseNbr "
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+literal|"W"
+operator|.
+name|equals
+argument_list|(
+name|filterWaitList
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|OfferingWaitListDefault
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+name|query
+operator|+=
+literal|" and (co.instructionalOffering.waitlist is null or co.instructionalOffering.waitlist = true) and co.instructionalOffering.notOffered = false"
+expr_stmt|;
+else|else
+name|query
+operator|+=
+literal|" and co.instructionalOffering.waitlist = true and co.instructionalOffering.notOffered = false"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+literal|"N"
+operator|.
+name|equals
+argument_list|(
+name|filterWaitList
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|OfferingWaitListDefault
+operator|.
+name|isFalse
+argument_list|()
+condition|)
+name|query
+operator|+=
+literal|" and (co.instructionalOffering.waitlist is null or co.instructionalOffering.waitlist = false) and co.instructionalOffering.notOffered = false"
+expr_stmt|;
+else|else
+name|query
+operator|+=
+literal|" and co.instructionalOffering.waitlist = false and co.instructionalOffering.notOffered = false"
+expr_stmt|;
 block|}
 name|Query
 name|q

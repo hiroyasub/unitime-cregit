@@ -2452,6 +2452,30 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} Wait-Listed Courses"
+argument_list|)
+name|String
+name|labelOfferedWaitListedCourses
+parameter_list|(
+name|String
+name|subjectAreaAbbv
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} Not Wait-Listed Courses"
+argument_list|)
+name|String
+name|labelOfferedNotWaitListedCourses
+parameter_list|(
+name|String
+name|subjectAreaAbbv
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"There are no courses currently offered for {0} subject."
 argument_list|)
 name|String
@@ -9681,6 +9705,42 @@ literal|"Wait-listing is not enabled for this offering."
 argument_list|)
 name|String
 name|descWaitListDisabled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listing:"
+argument_list|)
+name|String
+name|filterWaitlist
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All Courses"
+argument_list|)
+name|String
+name|itemWaitListAllCourses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listed Courses"
+argument_list|)
+name|String
+name|itemWaitListWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not Wait-Listed Courses"
+argument_list|)
+name|String
+name|itemWaitListNotWaitListed
 parameter_list|()
 function_decl|;
 block|}
