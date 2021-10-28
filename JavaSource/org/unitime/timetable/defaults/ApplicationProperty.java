@@ -2939,6 +2939,33 @@ argument_list|(
 literal|"false"
 argument_list|)
 expr|@
+name|Parameter
+argument_list|(
+literal|"operation"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Online Student Scheduling: CC advisors in the student email confirmation from a particular operation %"
+argument_list|)
+name|OnlineSchedulingEmailCCAdvisors
+argument_list|(
+literal|"unitime.enrollment.email.%.ccAdvisors"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
 name|Description
 argument_list|(
 literal|"Online Student Scheduling: check for gradable itypes when checking on which subpart course credit information should be shown"
