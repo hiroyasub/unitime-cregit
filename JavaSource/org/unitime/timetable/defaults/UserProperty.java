@@ -236,6 +236,17 @@ name|Yes
 argument_list|,
 literal|"Student Scheduling Dashboard: Show classes not meeting the filter (as grayed out)."
 argument_list|)
+block|,
+name|StudentDashboardShowUnmatchedCourses
+argument_list|(
+literal|"sctdashShowUnmatchedCourses"
+argument_list|,
+name|CommonValues
+operator|.
+name|No
+argument_list|,
+literal|"Student Scheduling Dashboard: Show courses that have no students meeting the filter (as grayed out)."
+argument_list|)
 block|, 	;
 name|String
 name|iKey
