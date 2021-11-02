@@ -12453,6 +12453,33 @@ argument_list|(
 literal|"unitime.enrollment.waitList.showWaitListPosition"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Integer
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"300"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Wait-Listing: skip wait-list processing for student-course pairs that failed during the last given number of seconds."
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.6
+argument_list|)
+name|FailedWaitListDelayInSeconds
+argument_list|(
+literal|"unitime.enrollment.waitList.failedWaitListsDelay"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

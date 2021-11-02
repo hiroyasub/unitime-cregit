@@ -664,6 +664,28 @@ return|return
 literal|false
 return|;
 block|}
+comment|// Check recent failed wait-lists
+if|if
+condition|(
+name|student
+operator|.
+name|isFailedWaitlist
+argument_list|(
+name|request
+operator|.
+name|getCourseIdByOfferingId
+argument_list|(
+name|offering
+operator|.
+name|getOfferingId
+argument_list|()
+argument_list|)
+argument_list|)
+condition|)
+return|return
+literal|false
+return|;
+comment|// 5 minutes
 comment|// Check wait-list overrides, when configured
 if|if
 condition|(
