@@ -28820,7 +28820,7 @@ argument_list|)
 expr_stmt|;
 name|sLog
 operator|.
-name|warn
+name|info
 argument_list|(
 literal|"ContextCheck: session "
 operator|+
@@ -28863,7 +28863,7 @@ argument_list|)
 expr_stmt|;
 name|sLog
 operator|.
-name|warn
+name|info
 argument_list|(
 literal|"ContextCheck: no session id, using last/current session instead ("
 operator|+
@@ -28982,7 +28982,7 @@ condition|)
 block|{
 name|sLog
 operator|.
-name|warn
+name|info
 argument_list|(
 literal|"ContextCheck: different student id, permission check: "
 operator|+
