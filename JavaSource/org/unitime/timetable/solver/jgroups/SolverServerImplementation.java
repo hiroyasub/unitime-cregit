@@ -3956,6 +3956,16 @@ name|isMaster
 argument_list|()
 condition|)
 block|{
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|OnlineSchedulingReloadAfterMerge
+operator|.
+name|isTrue
+argument_list|()
+condition|)
+block|{
 name|sLog
 operator|.
 name|info
@@ -3992,6 +4002,7 @@ operator|.
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 name|sLog
 operator|.
 name|info

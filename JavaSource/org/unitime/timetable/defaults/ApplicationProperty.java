@@ -12480,6 +12480,28 @@ argument_list|(
 literal|"unitime.enrollment.waitList.failedWaitListsDelay"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Online Student Scheduling: automatically reload the online student scheduling server(s) when two clusters are merged together."
+argument_list|)
+name|OnlineSchedulingReloadAfterMerge
+argument_list|(
+literal|"unitime.sectioning.reloadAfterMerge"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
