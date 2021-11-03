@@ -648,6 +648,15 @@ literal|""
 decl_stmt|;
 if|if
 condition|(
+name|element
+operator|==
+literal|null
+condition|)
+block|{
+comment|// do nothing
+block|}
+if|else if
+condition|(
 literal|"select"
 operator|.
 name|equalsIgnoreCase
