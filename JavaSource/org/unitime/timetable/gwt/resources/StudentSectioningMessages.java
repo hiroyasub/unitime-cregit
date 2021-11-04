@@ -7383,6 +7383,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"An override has been requested for {0}."
+argument_list|)
+name|String
+name|overridePendingShort
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Requested override for {0} has been cancelled.\nClick the Submit Requests button to re-validate this request and request a new override if it is still needed."
 argument_list|)
 name|String
@@ -7875,10 +7887,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"A max credit hours override has been requested."
+argument_list|)
+name|String
+name|creditStatusPendingShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The request to increase the maximum credit hours has been cancelled.\nClick the Submit Requests button to re-validate this request and request a new override if it is still needed."
 argument_list|)
 name|String
 name|creditStatusCancelled
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"The request to increase the maximum credit hours has been cancelled."
+argument_list|)
+name|String
+name|creditStatusCancelledWaitList
 parameter_list|()
 function_decl|;
 annotation|@
