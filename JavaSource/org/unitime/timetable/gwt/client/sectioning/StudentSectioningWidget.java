@@ -15092,7 +15092,7 @@ argument_list|)
 condition|?
 literal|""
 else|:
-literal|" "
+literal|"\n"
 operator|+
 name|unassignedMessage
 operator|)
@@ -15397,6 +15397,22 @@ literal|".</span>"
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|course
+operator|.
+name|hasEnrollmentMessage
+argument_list|()
+condition|)
+name|unassignedMessage
+operator|+=
+literal|"\n"
+operator|+
+name|course
+operator|.
+name|getEnrollmentMessage
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|w
