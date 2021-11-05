@@ -5532,7 +5532,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct s), m.code, f.code from "
+literal|"select count(distinct x.student), m.code, f.code from "
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMajors a inner join a.major m "
 operator|+
@@ -5735,7 +5735,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct s), m.code, f.code from "
+literal|"select count(distinct x.student), m.code, f.code from "
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.areaClasfMinors a inner join a.minor m "
 operator|+
@@ -5750,7 +5750,7 @@ operator|+
 literal|"and r.academicAreaAbbreviation = :areaAbbv"
 operator|+
 operator|(
-name|mnIds
+name|mnCodes
 operator|.
 name|isEmpty
 argument_list|()
@@ -5759,7 +5759,7 @@ literal|""
 else|:
 literal|" and m.code in ("
 operator|+
-name|mnIds
+name|mnCodes
 operator|+
 literal|")"
 operator|)
@@ -5839,6 +5839,10 @@ name|intValue
 argument_list|()
 decl_stmt|;
 name|lastLike
+operator|+=
+name|nrStudents
+expr_stmt|;
+name|projection
 operator|+=
 name|nrStudents
 expr_stmt|;
@@ -6131,7 +6135,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct s) from "
+literal|"select count(distinct x.student) from "
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.groups g, CourseOffering co left outer join co.demandOffering do where "
 operator|+
@@ -6375,7 +6379,7 @@ name|hibSession
 operator|.
 name|createQuery
 argument_list|(
-literal|"select count(distinct s) from "
+literal|"select count(distinct x.student) from "
 operator|+
 literal|"LastLikeCourseDemand x inner join x.student s inner join s.groups g, CourseOffering co left outer join co.demandOffering do where "
 operator|+
