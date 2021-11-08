@@ -1233,7 +1233,7 @@ expr_stmt|;
 for|for
 control|(
 name|String
-name|name
+name|prop
 range|:
 name|gen
 operator|.
@@ -1242,13 +1242,13 @@ argument_list|()
 control|)
 block|{
 name|String
-name|prop
+name|name
 init|=
 name|gen
 operator|.
-name|name2property
+name|property2name
 argument_list|(
-name|name
+name|prop
 argument_list|)
 decl_stmt|;
 name|out
@@ -1257,7 +1257,7 @@ name|println
 argument_list|(
 literal|"# "
 operator|+
-name|prop
+name|name
 argument_list|)
 expr_stmt|;
 name|out

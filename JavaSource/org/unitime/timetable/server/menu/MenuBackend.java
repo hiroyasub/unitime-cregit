@@ -1751,7 +1751,7 @@ name|replace
 argument_list|(
 literal|' '
 argument_list|,
-literal|'_'
+literal|'-'
 argument_list|)
 operator|.
 name|replace
@@ -1772,8 +1772,11 @@ name|replace
 argument_list|(
 literal|':'
 argument_list|,
-literal|'_'
+literal|'-'
 argument_list|)
+operator|.
+name|toLowerCase
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)
