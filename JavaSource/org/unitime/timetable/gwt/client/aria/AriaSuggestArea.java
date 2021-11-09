@@ -2796,6 +2796,24 @@ operator|.
 name|toLowerCase
 argument_list|()
 argument_list|)
+operator|||
+name|suggestion
+operator|.
+name|toLowerCase
+argument_list|()
+operator|.
+name|contains
+argument_list|(
+literal|" "
+operator|+
+name|request
+operator|.
+name|getQuery
+argument_list|()
+operator|.
+name|toLowerCase
+argument_list|()
+argument_list|)
 condition|)
 name|suggestions
 operator|.
