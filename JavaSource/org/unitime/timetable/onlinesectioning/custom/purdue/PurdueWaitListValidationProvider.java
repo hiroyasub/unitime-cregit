@@ -9987,6 +9987,8 @@ name|er
 operator|.
 name|code
 argument_list|,
+literal|"Approved "
+operator|+
 name|er
 operator|.
 name|message
@@ -10194,6 +10196,52 @@ literal|"purdue.specreg.messages.waitlist.deniedOverrideError"
 argument_list|,
 literal|"One or more wait-listed courses require registration overrides which have been denied.\nYou cannot wait-list these courses."
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|ch
+operator|.
+name|status
+operator|==
+name|ChangeStatus
+operator|.
+name|approved
+condition|)
+block|{
+name|request
+operator|.
+name|addConfirmationMessage
+argument_list|(
+name|rc
+operator|.
+name|getCourseId
+argument_list|()
+argument_list|,
+name|rc
+operator|.
+name|getCourseName
+argument_list|()
+argument_list|,
+name|er
+operator|.
+name|code
+argument_list|,
+literal|"Approved "
+operator|+
+name|er
+operator|.
+name|message
+argument_list|,
+name|status
+argument_list|(
+name|ch
+operator|.
+name|status
+argument_list|)
+argument_list|,
+name|ORD_BANNER
 argument_list|)
 expr_stmt|;
 block|}
