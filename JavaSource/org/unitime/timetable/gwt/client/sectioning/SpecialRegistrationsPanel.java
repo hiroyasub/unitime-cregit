@@ -6311,6 +6311,15 @@ operator|==
 name|SpecialRegistrationOperation
 operator|.
 name|Add
+operator|&&
+name|ca
+operator|.
+name|getSpecRegStatus
+argument_list|()
+operator|==
+name|SpecialRegistrationStatus
+operator|.
+name|Pending
 condition|)
 return|return
 literal|false
