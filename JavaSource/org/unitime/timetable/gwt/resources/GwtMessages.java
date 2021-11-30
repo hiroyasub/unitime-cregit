@@ -21296,6 +21296,46 @@ name|String
 name|utilSqlUtilizationTypeSpecialEvent
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Subject Area"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageSubjectArea
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Subject Areas"
+argument_list|)
+annotation|@
+name|DoNotTranslate
+name|String
+name|pageSubjectAreas
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Funding Department"
+argument_list|)
+name|String
+name|fieldFundingDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No external funding department"
+argument_list|)
+name|String
+name|noFundingDepartment
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
