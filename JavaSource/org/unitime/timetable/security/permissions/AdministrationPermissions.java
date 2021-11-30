@@ -1079,9 +1079,9 @@ annotation|@
 name|Autowired
 name|Permission
 argument_list|<
-name|Session
+name|Department
 argument_list|>
-name|permissionSession
+name|permissionDepartment
 decl_stmt|;
 annotation|@
 name|Override
@@ -1097,7 +1097,7 @@ name|source
 parameter_list|)
 block|{
 return|return
-name|permissionSession
+name|permissionDepartment
 operator|.
 name|check
 argument_list|(
@@ -1105,7 +1105,7 @@ name|user
 argument_list|,
 name|source
 operator|.
-name|getSession
+name|getDepartment
 argument_list|()
 argument_list|)
 return|;

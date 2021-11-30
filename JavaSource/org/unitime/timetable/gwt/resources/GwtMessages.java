@@ -21330,11 +21330,44 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Managers"
+argument_list|)
+name|String
+name|fieldManagers
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Last Change"
+argument_list|)
+name|String
+name|fieldLastChange
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"No external funding department"
 argument_list|)
 name|String
 name|noFundingDepartment
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"{0} by {1}"
+argument_list|)
+name|String
+name|lastChange
+parameter_list|(
+name|String
+name|date
+parameter_list|,
+name|String
+name|manager
+parameter_list|)
 function_decl|;
 block|}
 end_interface

@@ -193,6 +193,8 @@ block|,
 name|LAZY
 block|,
 name|NO_CYCLE
+block|,
+name|NO_DETAIL
 block|, 		;
 specifier|public
 name|int
@@ -2830,6 +2832,22 @@ return|return
 name|Flag
 operator|.
 name|NO_CYCLE
+operator|.
+name|has
+argument_list|(
+name|iFlags
+argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|isNoDetail
+parameter_list|()
+block|{
+return|return
+name|Flag
+operator|.
+name|NO_DETAIL
 operator|.
 name|has
 argument_list|(
