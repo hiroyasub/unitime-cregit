@@ -891,6 +891,21 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+block|,
+name|BTB_NO_BREAKS
+argument_list|(
+name|SCT_MSG
+operator|.
+name|reportBackToBacksNoBreak
+argument_list|()
+argument_list|,
+name|ZeroBreakTimeBackToBacksReport
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 block|, 		;
 name|String
 name|iName

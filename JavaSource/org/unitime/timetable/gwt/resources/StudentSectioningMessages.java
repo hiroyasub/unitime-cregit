@@ -7057,6 +7057,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"No Break Time Back-to-Backs"
+argument_list|)
+name|String
+name|reportBackToBacksNoBreak
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} (TA)"
 argument_list|)
 name|String
