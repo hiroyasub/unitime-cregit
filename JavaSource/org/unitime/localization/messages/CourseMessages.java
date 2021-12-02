@@ -2271,6 +2271,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Funding Dept"
+argument_list|)
+name|String
+name|columnFundingDept
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Funding Dept:"
+argument_list|)
+name|String
+name|propertyFundingDept
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Total"
 argument_list|)
 name|String

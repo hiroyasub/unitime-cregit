@@ -479,6 +479,10 @@ specifier|private
 name|String
 name|lms
 decl_stmt|;
+specifier|private
+name|String
+name|fundingDept
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Instructors */
 specifier|protected
@@ -1195,6 +1199,10 @@ argument_list|()
 operator|)
 expr_stmt|;
 name|lms
+operator|=
+literal|null
+expr_stmt|;
+name|fundingDept
 operator|=
 literal|null
 expr_stmt|;
@@ -2844,6 +2852,30 @@ operator|.
 name|lms
 operator|=
 name|lms
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getFundingDept
+parameter_list|()
+block|{
+return|return
+name|fundingDept
+return|;
+block|}
+specifier|public
+name|void
+name|setFundingDept
+parameter_list|(
+name|String
+name|fundingDept
+parameter_list|)
+block|{
+name|this
+operator|.
+name|fundingDept
+operator|=
+name|fundingDept
 expr_stmt|;
 block|}
 block|}
