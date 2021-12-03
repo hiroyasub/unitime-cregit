@@ -3719,7 +3719,10 @@ name|token
 operator|.
 name|substring
 argument_list|(
-literal|2
+name|am
+operator|.
+name|length
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|hasAmOrPm
@@ -3769,7 +3772,10 @@ name|token
 operator|.
 name|substring
 argument_list|(
-literal|2
+name|pm
+operator|.
+name|length
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|hasAmOrPm
