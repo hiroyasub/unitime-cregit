@@ -2306,7 +2306,7 @@ argument_list|)
 operator|!=
 name|Calendar
 operator|.
-name|MONDAY
+name|SUNDAY
 condition|)
 name|c
 operator|.
@@ -2346,7 +2346,7 @@ argument_list|)
 operator|!=
 name|Calendar
 operator|.
-name|SUNDAY
+name|SATURDAY
 condition|)
 name|c
 operator|.
@@ -3614,6 +3614,7 @@ name|getExamBeginDate
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|/*         if (c.get(Calendar.YEAR)> ec.get(Calendar.YEAR)) {         	return c.get(Calendar.DAY_OF_YEAR)-ec.get(Calendar.DAY_OF_YEAR) + c.getActualMaximum(Calendar.DAY_OF_YEAR);         } if (c.get(Calendar.YEAR)< ec.get(Calendar.YEAR)) {         	return c.get(Calendar.DAY_OF_YEAR)-ec.get(Calendar.DAY_OF_YEAR) - c.getActualMaximum(Calendar.DAY_OF_YEAR);         } else {         	return c.get(Calendar.DAY_OF_YEAR)-ec.get(Calendar.DAY_OF_YEAR);         }*/
 return|return
 name|c
 operator|.

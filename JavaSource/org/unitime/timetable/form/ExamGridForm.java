@@ -1890,7 +1890,7 @@ argument_list|)
 operator|!=
 name|Calendar
 operator|.
-name|MONDAY
+name|SUNDAY
 condition|)
 name|cal
 operator|.
@@ -1930,7 +1930,7 @@ argument_list|)
 operator|!=
 name|Calendar
 operator|.
-name|SUNDAY
+name|SATURDAY
 condition|)
 name|cal
 operator|.
