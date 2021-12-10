@@ -1322,6 +1322,7 @@ name|request
 continue|;
 for|for
 control|(
+specifier|final
 name|RequestedCourse
 name|rc
 range|:
