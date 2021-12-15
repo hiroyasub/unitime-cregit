@@ -417,7 +417,7 @@ name|FieldType
 operator|.
 name|text
 argument_list|,
-literal|120
+literal|240
 argument_list|,
 literal|40
 argument_list|,
@@ -440,7 +440,7 @@ name|text
 argument_list|,
 literal|120
 argument_list|,
-literal|40
+literal|20
 argument_list|,
 name|Flag
 operator|.
@@ -463,9 +463,9 @@ name|FieldType
 operator|.
 name|text
 argument_list|,
-literal|300
+literal|360
 argument_list|,
-literal|100
+literal|60
 argument_list|,
 name|Flag
 operator|.
