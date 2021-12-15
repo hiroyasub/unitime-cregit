@@ -2609,6 +2609,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Program"
+argument_list|)
+name|String
+name|colProgram
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Minor"
 argument_list|)
 name|String

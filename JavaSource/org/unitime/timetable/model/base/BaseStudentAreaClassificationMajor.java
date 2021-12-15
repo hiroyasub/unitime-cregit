@@ -107,6 +107,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|Program
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|Student
 import|;
 end_import
@@ -176,6 +190,10 @@ decl_stmt|;
 specifier|private
 name|Degree
 name|iDegree
+decl_stmt|;
+specifier|private
+name|Program
+name|iProgram
 decl_stmt|;
 specifier|public
 specifier|static
@@ -398,6 +416,28 @@ name|degree
 expr_stmt|;
 block|}
 specifier|public
+name|Program
+name|getProgram
+parameter_list|()
+block|{
+return|return
+name|iProgram
+return|;
+block|}
+specifier|public
+name|void
+name|setProgram
+parameter_list|(
+name|Program
+name|program
+parameter_list|)
+block|{
+name|iProgram
+operator|=
+name|program
+expr_stmt|;
+block|}
+specifier|public
 name|boolean
 name|equals
 parameter_list|(
@@ -532,6 +572,11 @@ operator|+
 literal|"\n	Major: "
 operator|+
 name|getMajor
+argument_list|()
+operator|+
+literal|"\n	Program: "
+operator|+
+name|getProgram
 argument_list|()
 operator|+
 literal|"\n	Student: "
