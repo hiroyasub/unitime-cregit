@@ -5153,6 +5153,14 @@ name|withMatcher
 argument_list|(
 name|matcher
 argument_list|)
+operator|.
+name|forStudent
+argument_list|(
+name|cx
+operator|.
+name|getStudentId
+argument_list|()
+argument_list|)
 argument_list|,
 name|currentUser
 argument_list|(
