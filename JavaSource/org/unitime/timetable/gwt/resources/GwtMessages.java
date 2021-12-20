@@ -8986,6 +8986,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Dept Code is required."
+argument_list|)
+name|String
+name|errorDeptCodeIsEmpty
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Dept Code must be unique."
+argument_list|)
+name|String
+name|errorDeptCodeMustBeUnique
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Attribute type must be selected."
 argument_list|)
 name|String
@@ -13346,7 +13364,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>dd Department..."
+literal|"<u>A</u>dd Department"
 argument_list|)
 name|String
 name|buttonAddDepartment
@@ -13763,11 +13781,14 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Status for classes managed by:"
+literal|"Status for classes managed by: {0}"
 argument_list|)
 name|String
 name|propStatusManagedBy
-parameter_list|()
+parameter_list|(
+name|String
+name|managedBy
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
@@ -21555,6 +21576,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Number"
+argument_list|)
+name|String
+name|colNumber
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Abbv"
 argument_list|)
 name|String
@@ -21591,10 +21621,37 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"External Manager Abbreviation should only be used when the department is marked as External Manager"
+argument_list|)
+name|String
+name|errorExternalManagerAbbreviationUse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"External Manager Name:"
 argument_list|)
 name|String
 name|propExternalManagerName
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"External Manager Name should only be used when the department is marked as External Manager"
+argument_list|)
+name|String
+name|errorExternalManagerNameUse
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Show all departments (including departments with no manager and no subject area)"
+argument_list|)
+name|String
+name|checkShowAllDepartments
 parameter_list|()
 function_decl|;
 annotation|@
@@ -21726,10 +21783,28 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Add Status"
+argument_list|)
+name|String
+name|buttonDependentAddStatus
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Delete All"
+argument_list|)
+name|String
+name|buttonDependentDeleteAll
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Department/Session Default"
 argument_list|)
 name|String
-name|defaultDependentStatus
+name|propDefaultDependentStatus
 parameter_list|()
 function_decl|;
 annotation|@
@@ -21738,7 +21813,7 @@ argument_list|(
 literal|"Session Default"
 argument_list|)
 name|String
-name|departmentStatusDefault
+name|propDepartmentStatusDefault
 parameter_list|()
 function_decl|;
 annotation|@
@@ -21747,7 +21822,7 @@ argument_list|(
 literal|"-"
 argument_list|)
 name|String
-name|defaultDependentDepartment
+name|propDefaultDependentDepartment
 parameter_list|()
 function_decl|;
 annotation|@
@@ -21767,6 +21842,18 @@ argument_list|)
 name|String
 name|propStudentScheduling
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department List - {0}"
+argument_list|)
+name|String
+name|propDepartmentlist
+parameter_list|(
+name|String
+name|name
+parameter_list|)
 function_decl|;
 block|}
 end_interface

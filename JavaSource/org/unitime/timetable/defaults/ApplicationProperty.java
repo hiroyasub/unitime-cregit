@@ -12591,6 +12591,13 @@ literal|"unitime.permissions.courseOfferingAllowExternalEdits"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
 name|DefaultValue
 argument_list|(
 literal|"false"

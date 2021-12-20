@@ -193,7 +193,39 @@ name|gwt
 operator|.
 name|shared
 operator|.
+name|CurriculaException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
 name|DepartmentInterface
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|gwt
+operator|.
+name|shared
+operator|.
+name|PageAccessException
 import|;
 end_import
 
@@ -465,10 +497,6 @@ name|HibernateException
 import|;
 end_import
 
-begin_comment
-comment|//import org.hibernate.Transaction;
-end_comment
-
 begin_import
 import|import
 name|org
@@ -509,10 +537,6 @@ name|Debug
 import|;
 end_import
 
-begin_comment
-comment|//import org.unitime.commons.hibernate.util.HibernateUtil;
-end_comment
-
 begin_import
 import|import
 name|org
@@ -526,10 +550,6 @@ operator|.
 name|DepartmentEditForm
 import|;
 end_import
-
-begin_comment
-comment|//import org.unitime.timetable.model.ChangeLog;
-end_comment
 
 begin_import
 import|import
@@ -545,10 +565,6 @@ name|Class_
 import|;
 end_import
 
-begin_comment
-comment|//import org.unitime.timetable.model.Department;
-end_comment
-
 begin_import
 import|import
 name|org
@@ -562,18 +578,6 @@ operator|.
 name|TimePref
 import|;
 end_import
-
-begin_comment
-comment|//import org.unitime.timetable.model.dao.DepartmentDAO;
-end_comment
-
-begin_comment
-comment|//import org.unitime.timetable.security.SessionContext;
-end_comment
-
-begin_comment
-comment|//import org.unitime.timetable.security.rights.Right;
-end_comment
 
 begin_import
 import|import
@@ -872,20 +876,13 @@ parameter_list|)
 throws|throws
 name|GwtRpcException
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"saveOrUpdate"
-argument_list|)
-expr_stmt|;
-name|Transaction
-name|tx
+name|Department
+name|department
 init|=
 literal|null
 decl_stmt|;
+try|try
+block|{
 name|org
 operator|.
 name|unitime
@@ -899,13 +896,6 @@ name|acadSession
 init|=
 literal|null
 decl_stmt|;
-name|Department
-name|department
-init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
 name|org
 operator|.
 name|hibernate
@@ -921,31 +911,8 @@ operator|.
 name|getSession
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|hibSession
-operator|.
-name|getTransaction
-argument_list|()
-operator|==
-literal|null
-operator|||
-operator|!
-name|hibSession
-operator|.
-name|getTransaction
-argument_list|()
-operator|.
-name|isActive
-argument_list|()
-condition|)
-name|tx
-operator|=
-name|hibSession
-operator|.
-name|beginTransaction
-argument_list|()
-expr_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|departmentInterface
@@ -1558,7 +1525,30 @@ name|department
 argument_list|)
 expr_stmt|;
 block|}
-comment|//HibernateUtil.clearCache();
+block|}
+finally|finally
+block|{
+name|hibSession
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
+name|hibSession
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|PageAccessException
+name|e
+parameter_list|)
+block|{
+throw|throw
+name|e
+throw|;
 block|}
 catch|catch
 parameter_list|(
@@ -1566,17 +1556,6 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|tx
-operator|!=
-literal|null
-condition|)
-name|tx
-operator|.
-name|rollback
-argument_list|()
-expr_stmt|;
 throw|throw
 operator|new
 name|GwtRpcException
@@ -1670,7 +1649,6 @@ argument_list|,
 name|hibSession
 argument_list|)
 decl_stmt|;
-comment|//if (hibSession.getTransaction()==null || !hibSession.getTransaction().isActive())
 if|if
 condition|(
 name|department
