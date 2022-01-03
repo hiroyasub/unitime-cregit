@@ -1736,7 +1736,7 @@ name|String
 operator|.
 name|class
 block|,
-name|Integer
+name|String
 operator|.
 name|class
 block|}
