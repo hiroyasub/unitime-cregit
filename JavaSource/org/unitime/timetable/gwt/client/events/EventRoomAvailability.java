@@ -2553,6 +2553,13 @@ argument_list|)
 expr_stmt|;
 name|grid
 operator|.
+name|setVerticalSplitByWeek
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+name|grid
+operator|.
 name|setSelectedWeeks
 argument_list|(
 name|weeks
@@ -8134,6 +8141,13 @@ argument_list|(
 name|ResourceType
 operator|.
 name|ROOM
+argument_list|)
+expr_stmt|;
+name|grid
+operator|.
+name|setVerticalSplitByWeek
+argument_list|(
+literal|false
 argument_list|)
 expr_stmt|;
 name|grid
