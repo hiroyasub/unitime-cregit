@@ -483,8 +483,9 @@ name|ids
 operator|.
 name|addElement
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|stk
 operator|.

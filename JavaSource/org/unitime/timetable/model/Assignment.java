@@ -514,8 +514,9 @@ name|ret
 operator|.
 name|addElement
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getStartSlot
 argument_list|()

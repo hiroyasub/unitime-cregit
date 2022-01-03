@@ -471,8 +471,9 @@ literal|null
 expr_stmt|;
 name|unlimited
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -1038,8 +1039,9 @@ name|getCourseOfferingCount
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|this
 operator|.

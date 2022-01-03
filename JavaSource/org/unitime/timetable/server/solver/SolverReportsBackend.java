@@ -5717,8 +5717,9 @@ operator|.
 name|isDistance
 argument_list|()
 condition|?
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|g
 operator|.

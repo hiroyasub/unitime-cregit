@@ -3210,8 +3210,9 @@ condition|?
 name|getId
 argument_list|()
 else|:
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -3229,8 +3230,9 @@ operator|.
 name|getId
 argument_list|()
 else|:
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

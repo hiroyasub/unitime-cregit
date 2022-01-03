@@ -806,8 +806,9 @@ argument_list|(
 literal|"assigned"
 argument_list|)
 condition|?
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|"true"
 operator|.

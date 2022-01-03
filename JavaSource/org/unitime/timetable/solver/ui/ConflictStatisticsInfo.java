@@ -1903,8 +1903,9 @@ name|iVariables
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|var
 operator|.
@@ -2271,8 +2272,9 @@ parameter_list|()
 block|{
 return|return
 operator|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|iClassId
 argument_list|)
@@ -2334,8 +2336,9 @@ name|ret
 init|=
 operator|-
 operator|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|iCounter
 argument_list|)
@@ -3417,8 +3420,9 @@ name|ret
 init|=
 operator|-
 operator|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|iCounter
 argument_list|)
@@ -4124,8 +4128,9 @@ name|ret
 init|=
 operator|-
 operator|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|iCounter
 argument_list|)
@@ -5278,8 +5283,9 @@ name|ret
 init|=
 operator|-
 operator|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|iCounter
 argument_list|)

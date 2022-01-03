@@ -1601,8 +1601,9 @@ operator|)
 expr_stmt|;
 name|lastChangeCmp
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|lastChange
 operator|==

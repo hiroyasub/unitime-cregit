@@ -2447,8 +2447,9 @@ name|put
 argument_list|(
 name|commitedPlacement
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|1
 operator|+
@@ -2868,8 +2869,9 @@ name|put
 argument_list|(
 name|commitedPlacement
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|1
 operator|+
@@ -5226,8 +5228,9 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|i1
 argument_list|)
@@ -5235,8 +5238,9 @@ operator|)
 operator|.
 name|compareTo
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|i2
 argument_list|)

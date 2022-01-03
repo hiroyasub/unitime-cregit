@@ -3252,8 +3252,9 @@ operator|.
 name|hasSortBy
 argument_list|()
 condition|?
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|iRoomsTable
 operator|.

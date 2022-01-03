@@ -918,8 +918,9 @@ name|idao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|instructorId
 argument_list|)
@@ -1539,8 +1540,9 @@ argument_list|(
 operator|new
 name|TimePattern
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

@@ -864,8 +864,9 @@ operator|)
 expr_stmt|;
 name|lastChangeCmp
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|lastChange
 operator|==
@@ -1381,8 +1382,9 @@ else|:
 literal|""
 operator|)
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.
@@ -1393,8 +1395,9 @@ name|size
 argument_list|()
 argument_list|)
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.
@@ -1418,8 +1421,9 @@ operator|.
 name|getDistributionPrefPriority
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|allowReqOrd
 argument_list|)
@@ -1839,8 +1843,9 @@ operator|)
 expr_stmt|;
 name|lastChangeCmp
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|lastChange
 operator|==
@@ -2450,8 +2455,9 @@ else|:
 literal|""
 operator|)
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.
@@ -2462,8 +2468,9 @@ name|size
 argument_list|()
 argument_list|)
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.
@@ -2487,8 +2494,9 @@ operator|.
 name|getDistributionPrefPriority
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|allowReqOrd
 argument_list|)

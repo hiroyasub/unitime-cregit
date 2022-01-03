@@ -1955,8 +1955,9 @@ name|slots
 operator|.
 name|addElement
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|s
 operator|+
@@ -2066,8 +2067,9 @@ name|slots
 operator|.
 name|addElement
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|slot
 operator|+
@@ -6607,8 +6609,9 @@ argument_list|)
 decl_stmt|;
 name|use
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|use

@@ -567,8 +567,9 @@ block|{
 name|Integer
 name|num
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|externalId
 argument_list|)
@@ -641,8 +642,9 @@ name|student
 operator|.
 name|setFreeTimeCategory
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -652,8 +654,9 @@ name|student
 operator|.
 name|setSchedulePreference
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

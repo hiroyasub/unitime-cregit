@@ -529,8 +529,9 @@ literal|0
 condition|?
 literal|null
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|status
 argument_list|)
@@ -544,8 +545,9 @@ operator|.
 name|readBoolean
 argument_list|()
 condition|?
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|in
 operator|.

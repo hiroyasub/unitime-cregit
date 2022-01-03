@@ -2713,8 +2713,9 @@ block|{
 name|int
 name|cmp
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|t1
 operator|.

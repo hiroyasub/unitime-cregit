@@ -2128,8 +2128,9 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -2171,8 +2172,9 @@ name|department
 operator|.
 name|setDistributionPrefPriority
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -2290,8 +2292,9 @@ name|department
 operator|.
 name|setDistributionPrefPriority
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getDistPrefPriority
 argument_list|()
@@ -2302,8 +2305,9 @@ name|department
 operator|.
 name|setExternalManager
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getIsExternal
 argument_list|()
@@ -2330,8 +2334,9 @@ name|department
 operator|.
 name|setAllowReqRoom
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getAllowReqRoom
 argument_list|()
@@ -2342,8 +2347,9 @@ name|department
 operator|.
 name|setAllowReqTime
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getAllowReqTime
 argument_list|()
@@ -2354,8 +2360,9 @@ name|department
 operator|.
 name|setAllowReqDistribution
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getAllowReqDist
 argument_list|()
@@ -2665,8 +2672,9 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

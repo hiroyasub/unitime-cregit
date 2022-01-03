@@ -847,8 +847,9 @@ name|roomDept
 operator|.
 name|setControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|ExternalRoomDepartment
 operator|.
@@ -1379,8 +1380,9 @@ name|r
 operator|.
 name|setIgnoreRoomCheck
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -1390,8 +1392,9 @@ name|r
 operator|.
 name|setIgnoreTooFar
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)

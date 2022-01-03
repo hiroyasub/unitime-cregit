@@ -3306,6 +3306,9 @@ name|value
 argument_list|()
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -3392,6 +3395,9 @@ operator|.
 name|value
 argument_list|()
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -5790,8 +5796,9 @@ name|p
 operator|.
 name|setAssignmentId
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|iMakeupAssignmentId
 operator|++

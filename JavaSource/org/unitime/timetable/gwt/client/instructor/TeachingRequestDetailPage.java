@@ -7230,8 +7230,9 @@ literal|null
 condition|?
 literal|null
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|instructor
 operator|.

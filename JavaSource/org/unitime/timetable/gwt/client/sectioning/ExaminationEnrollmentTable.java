@@ -2858,8 +2858,9 @@ operator|.
 name|getDayOfYear
 argument_list|()
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -2878,8 +2879,9 @@ operator|.
 name|getDayOfYear
 argument_list|()
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -2911,8 +2913,9 @@ operator|.
 name|getStartSlot
 argument_list|()
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -2931,8 +2934,9 @@ operator|.
 name|getStartSlot
 argument_list|()
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -2960,8 +2964,9 @@ operator|.
 name|getEndSlot
 argument_list|()
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -2980,8 +2985,9 @@ operator|.
 name|getEndSlot
 argument_list|()
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

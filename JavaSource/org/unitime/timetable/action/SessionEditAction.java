@@ -685,8 +685,9 @@ decl_stmt|;
 name|Long
 name|id
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|Long
 operator|.
@@ -1141,8 +1142,9 @@ block|{
 name|Long
 name|id
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|Long
 operator|.
@@ -1702,8 +1704,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|sessionEditForm
 operator|.

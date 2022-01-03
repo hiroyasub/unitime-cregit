@@ -87,9 +87,11 @@ name|org
 operator|.
 name|apache
 operator|.
+name|logging
+operator|.
 name|log4j
 operator|.
-name|Logger
+name|LogManager
 import|;
 end_import
 
@@ -1246,7 +1248,7 @@ name|isDebugEnabled
 parameter_list|()
 block|{
 return|return
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1288,7 +1290,7 @@ name|isInfoEnabled
 parameter_list|()
 block|{
 return|return
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1308,7 +1310,7 @@ name|isTraceEnabled
 parameter_list|()
 block|{
 return|return
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1341,7 +1343,7 @@ name|Object
 name|message
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1391,7 +1393,7 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1442,7 +1444,7 @@ name|Object
 name|message
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1492,7 +1494,7 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1543,7 +1545,7 @@ name|Object
 name|message
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1593,7 +1595,7 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1644,7 +1646,7 @@ name|Object
 name|message
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1694,7 +1696,7 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1745,7 +1747,7 @@ name|Object
 name|message
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1795,7 +1797,7 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1846,7 +1848,7 @@ name|Object
 name|message
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(
@@ -1896,7 +1898,7 @@ name|Throwable
 name|t
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(

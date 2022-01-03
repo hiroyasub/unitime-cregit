@@ -1233,8 +1233,9 @@ name|cdao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|classId
 argument_list|)
@@ -2897,8 +2898,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -3665,8 +3667,9 @@ name|frm
 operator|.
 name|setIsCrosslisted
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|cco
 operator|.
@@ -3752,8 +3755,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

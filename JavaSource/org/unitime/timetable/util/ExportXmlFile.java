@@ -31,9 +31,11 @@ name|org
 operator|.
 name|apache
 operator|.
+name|logging
+operator|.
 name|log4j
 operator|.
-name|Logger
+name|LogManager
 import|;
 end_import
 
@@ -164,18 +166,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-comment|// Configure logging
-name|org
-operator|.
-name|apache
-operator|.
-name|log4j
-operator|.
-name|BasicConfigurator
-operator|.
-name|configure
-argument_list|()
-expr_stmt|;
 comment|// Configure hibernate
 name|HibernateUtil
 operator|.
@@ -329,7 +319,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Logger
+name|LogManager
 operator|.
 name|getLogger
 argument_list|(

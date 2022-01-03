@@ -1598,8 +1598,9 @@ operator|.
 name|getAbbv
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|rg
 operator|.
@@ -2824,8 +2825,9 @@ operator|.
 name|getAbbv
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|rg
 operator|.

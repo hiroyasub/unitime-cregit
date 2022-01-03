@@ -863,8 +863,9 @@ operator|.
 name|getLabel
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.
@@ -884,8 +885,9 @@ operator|.
 name|isVisible
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.
@@ -900,8 +902,9 @@ else|:
 literal|0
 argument_list|)
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|d
 operator|.

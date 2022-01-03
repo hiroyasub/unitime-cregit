@@ -1006,8 +1006,9 @@ argument_list|(
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 operator|(
@@ -1166,8 +1167,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|i
 argument_list|)

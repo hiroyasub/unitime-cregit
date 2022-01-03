@@ -2128,8 +2128,9 @@ operator|>=
 literal|0
 condition|)
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|iPeriodIdx
 argument_list|)

@@ -6238,7 +6238,7 @@ return|return
 operator|-
 literal|1
 return|;
-comment|//int cmp = -(new Long(getSize())).compareTo(new Long(((RoomInfo)o).getSize()));
+comment|//int cmp = -(Long.valueOf(getSize())).compareTo(Long.valueOf(((RoomInfo)o).getSize()));
 comment|//if (cmp!=0) return cmp;
 return|return
 name|getName
@@ -10911,8 +10911,9 @@ name|getPertPenaltyCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11232,8 +11233,9 @@ name|getNrStudentConflictsCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11309,8 +11311,9 @@ name|getTimePreferenceCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11386,8 +11389,9 @@ name|getRoomPreferenceCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11463,8 +11467,9 @@ name|getBtbInstructorPreferenceCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11540,8 +11545,9 @@ name|getIsTooBigCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11617,8 +11623,9 @@ name|getUselessHalfHoursCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11694,8 +11701,9 @@ name|getDeptBalancPenaltyCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11771,8 +11779,9 @@ name|getSpreadPenaltyCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo
@@ -11848,8 +11857,9 @@ name|getGroupConstraintPrefCmp
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|iAssignmentInfo

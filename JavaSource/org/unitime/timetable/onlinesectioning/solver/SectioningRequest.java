@@ -1265,8 +1265,9 @@ name|hashCode
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|getRequest
 argument_list|()

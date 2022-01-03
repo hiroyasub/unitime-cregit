@@ -796,8 +796,9 @@ name|sdao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|subpartId
 argument_list|)
@@ -1803,8 +1804,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1899,8 +1901,9 @@ name|frm
 operator|.
 name|setSameItypeAsParent
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -1913,8 +1916,9 @@ name|frm
 operator|.
 name|setSameItypeAsParent
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)

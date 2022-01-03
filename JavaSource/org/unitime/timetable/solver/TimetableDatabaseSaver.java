@@ -1127,8 +1127,9 @@ argument_list|)
 expr_stmt|;
 name|iSessionId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|getModel
 argument_list|()
@@ -1786,6 +1787,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -2575,6 +2579,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -3591,8 +3598,9 @@ name|assignment
 operator|.
 name|setDays
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|placement
 operator|.
@@ -3608,8 +3616,9 @@ name|assignment
 operator|.
 name|setStartSlot
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|placement
 operator|.
@@ -3980,7 +3989,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/**  // is this needed?     		setPhase("Saving joint enrollments ...", getModel().getJenrlConstraints().size());     		for (Enumeration e1=getModel().getJenrlConstraints().elements();e1.hasMoreElements();) {     			JenrlConstraint jenrlConstraint = (JenrlConstraint)e1.nextElement();     			     			Class_ clazz1 = (new Class_DAO()).get(((Lecture)jenrlConstraint.first()).getClassId());     			Class_ clazz2 = (new Class_DAO()).get(((Lecture)jenrlConstraint.second()).getClassId());     			     			JointEnrollment jenrl = new JointEnrollment();     			jenrl.setJenrl(new Double(jenrlConstraint.getJenrl()));     			jenrl.setClass1(clazz1);     			jenrl.setClass2(clazz2);     			jenrl.setSolution(solution);     			hibSession.save(jenrl);     			     			incProgress();     		}     		*/
+comment|/**  // is this needed?     		setPhase("Saving joint enrollments ...", getModel().getJenrlConstraints().size());     		for (Enumeration e1=getModel().getJenrlConstraints().elements();e1.hasMoreElements();) {     			JenrlConstraint jenrlConstraint = (JenrlConstraint)e1.nextElement();     			     			Class_ clazz1 = (new Class_DAO()).get(((Lecture)jenrlConstraint.first()).getClassId());     			Class_ clazz2 = (new Class_DAO()).get(((Lecture)jenrlConstraint.second()).getClassId());     			     			JointEnrollment jenrl = new JointEnrollment();     			jenrl.setJenrl(Double.valueOf(jenrlConstraint.getJenrl()));     			jenrl.setClass1(clazz1);     			jenrl.setClass2(clazz2);     			jenrl.setSolution(solution);     			hibSession.save(jenrl);     			     			incProgress();     		}     		*/
 name|SolverInfoDef
 name|defGlobalInfo
 init|=

@@ -834,8 +834,9 @@ name|room
 operator|.
 name|setExamCapacity
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1189,8 +1190,9 @@ name|dept
 operator|.
 name|setPercent
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|100
 argument_list|)

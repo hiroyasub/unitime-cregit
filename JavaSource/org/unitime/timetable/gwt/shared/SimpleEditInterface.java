@@ -1169,8 +1169,9 @@ case|case
 name|students
 case|:
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|s1
 operator|.

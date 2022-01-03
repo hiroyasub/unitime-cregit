@@ -7349,8 +7349,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -7383,8 +7384,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -7415,8 +7417,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -7442,8 +7445,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -7929,8 +7933,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -7961,8 +7966,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -7988,8 +7994,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -8471,8 +8478,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -8503,8 +8511,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -8530,8 +8539,9 @@ name|takenDivNums
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|divNum
 argument_list|)
@@ -8631,7 +8641,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*         lastSubpart = null;         TreeSet otherClasses = new TreeSet(new ClassComparator(ClassComparator.COMPARE_BY_HIERARCHY));         otherClasses.addAll(new SolutionDAO().getSession().createQuery(                 "select distinct c from Class_ c, Solution s inner join s.owner.departments d "+                 "where s.uniqueId = :solutionId and c.managingDept=d and "+                 "c.uniqueId not in (select a.clazz.uniqueId from s.assignments a) order by c.schedulingSubpart.uniqueId, c.sectionNumberCache").                 setLong("solutionId", getUniqueId().longValue()).                 list());                  for (Iterator i=otherClasses.iterator();i.hasNext();) {             Class_ clazz = (Class_)i.next();                          if (clazz.getParentClass()!=null&& clazz.getSchedulingSubpart().getItype().equals(clazz.getParentClass().getSchedulingSubpart().getItype()))                 continue;              if (clazz.getClassSuffix()!=null) {                 sLog.warn("This is odd, class "+clazz.getClassLabel()+" already has a div-sec number "+clazz.getClassSuffix()+".");                 continue;             }                          if (lastSubpart==null || !lastSubpart.equals(clazz.getSchedulingSubpart())) {                 takenDivNums = takenDivisionNumbers(clazz.getSchedulingSubpart());             }             divNum = 1;             while (takenDivNums.contains(new Integer(divNum)))                 divNum++;             if (divNum==100) {                 messages.add("Division number exceeded 99 for scheduling subpart "+clazz.getSchedulingSubpart().getSchedulingSubpartLabel()+".");             }             clazz.setClassSuffix(sSufixFormat.format(divNum)+sSufixFormat.format(1));             takenDivNums.add(new Integer(divNum));             lastSubpart = clazz.getSchedulingSubpart();             hibSession.update(clazz);         }         */
+comment|/*         lastSubpart = null;         TreeSet otherClasses = new TreeSet(new ClassComparator(ClassComparator.COMPARE_BY_HIERARCHY));         otherClasses.addAll(new SolutionDAO().getSession().createQuery(                 "select distinct c from Class_ c, Solution s inner join s.owner.departments d "+                 "where s.uniqueId = :solutionId and c.managingDept=d and "+                 "c.uniqueId not in (select a.clazz.uniqueId from s.assignments a) order by c.schedulingSubpart.uniqueId, c.sectionNumberCache").                 setLong("solutionId", getUniqueId().longValue()).                 list());                  for (Iterator i=otherClasses.iterator();i.hasNext();) {             Class_ clazz = (Class_)i.next();                          if (clazz.getParentClass()!=null&& clazz.getSchedulingSubpart().getItype().equals(clazz.getParentClass().getSchedulingSubpart().getItype()))                 continue;              if (clazz.getClassSuffix()!=null) {                 sLog.warn("This is odd, class "+clazz.getClassLabel()+" already has a div-sec number "+clazz.getClassSuffix()+".");                 continue;             }                          if (lastSubpart==null || !lastSubpart.equals(clazz.getSchedulingSubpart())) {                 takenDivNums = takenDivisionNumbers(clazz.getSchedulingSubpart());             }             divNum = 1;             while (takenDivNums.contains(Integer.valueOf(divNum)))                 divNum++;             if (divNum==100) {                 messages.add("Division number exceeded 99 for scheduling subpart "+clazz.getSchedulingSubpart().getSchedulingSubpartLabel()+".");             }             clazz.setClassSuffix(sSufixFormat.format(divNum)+sSufixFormat.format(1));             takenDivNums.add(Integer.valueOf(divNum));             lastSubpart = clazz.getSchedulingSubpart();             hibSession.update(clazz);         }         */
 block|}
 specifier|public
 name|void

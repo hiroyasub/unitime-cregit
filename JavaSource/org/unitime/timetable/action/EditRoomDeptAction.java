@@ -705,8 +705,9 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|editRoomDeptForm
 operator|.
@@ -835,8 +836,9 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|editRoomDeptForm
 operator|.
@@ -1298,8 +1300,9 @@ name|ldao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|editRoomDeptForm
 operator|.

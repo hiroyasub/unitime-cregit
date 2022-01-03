@@ -8598,8 +8598,9 @@ name|s0
 operator|==
 literal|null
 condition|?
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -8613,8 +8614,9 @@ name|s1
 operator|==
 literal|null
 condition|?
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -8755,8 +8757,9 @@ name|i0
 operator|==
 literal|null
 condition|?
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -8770,8 +8773,9 @@ name|i1
 operator|==
 literal|null
 condition|?
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -12298,8 +12302,9 @@ operator|.
 name|getCurriculaCoursesPercent
 argument_list|()
 operator|||
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -12407,8 +12412,9 @@ operator|.
 name|getCurriculaCoursesPercent
 argument_list|()
 operator|||
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

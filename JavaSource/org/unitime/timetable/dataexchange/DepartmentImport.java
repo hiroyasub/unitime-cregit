@@ -450,8 +450,9 @@ name|department
 operator|.
 name|setDistributionPrefPriority
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

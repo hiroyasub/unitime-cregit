@@ -1496,8 +1496,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|100
@@ -1665,8 +1666,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|week
 argument_list|)

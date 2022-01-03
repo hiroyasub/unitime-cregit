@@ -862,8 +862,9 @@ name|co
 operator|.
 name|setProjectedDemand
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -873,8 +874,9 @@ name|co
 operator|.
 name|setDemand
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -884,8 +886,9 @@ name|co
 operator|.
 name|setNbrExpectedStudents
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -895,8 +898,9 @@ name|co
 operator|.
 name|setIsControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -956,8 +960,9 @@ name|io
 operator|.
 name|setNotOffered
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -979,8 +984,9 @@ name|io
 operator|.
 name|setLimit
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1091,6 +1097,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -2026,8 +2035,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

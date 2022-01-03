@@ -530,8 +530,9 @@ block|{
 name|Integer
 name|num
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|externalId
 argument_list|)

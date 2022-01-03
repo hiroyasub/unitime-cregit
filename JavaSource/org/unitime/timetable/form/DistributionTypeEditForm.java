@@ -493,8 +493,9 @@ operator|)
 operator|.
 name|setInstructorPref
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|instructorPref
 argument_list|)
@@ -554,8 +555,9 @@ operator|)
 operator|.
 name|setExamPref
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|examPref
 argument_list|)

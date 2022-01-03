@@ -910,8 +910,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|depts
 index|[
@@ -968,8 +969,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|prnts
 index|[
@@ -2314,8 +2316,9 @@ operator|)
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -2335,8 +2338,9 @@ name|Navigation
 operator|.
 name|sInstructionalOfferingLevel
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -2357,8 +2361,9 @@ name|Navigation
 operator|.
 name|sInstructionalOfferingLevel
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -3097,8 +3102,9 @@ name|days
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|x
 operator|+
@@ -3225,8 +3231,9 @@ name|xdays
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|x
 operator|+

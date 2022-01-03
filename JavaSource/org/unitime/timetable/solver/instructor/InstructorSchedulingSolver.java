@@ -1811,8 +1811,9 @@ init|=
 operator|new
 name|PreferenceInfo
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|p
 operator|.

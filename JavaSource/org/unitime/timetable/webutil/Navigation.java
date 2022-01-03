@@ -221,8 +221,9 @@ name|e
 parameter_list|)
 block|{
 return|return
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -321,8 +322,9 @@ name|e
 parameter_list|)
 block|{
 return|return
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

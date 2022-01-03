@@ -449,8 +449,9 @@ name|findChildren
 argument_list|()
 control|)
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.
@@ -467,8 +468,9 @@ argument_list|)
 return|;
 block|}
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.

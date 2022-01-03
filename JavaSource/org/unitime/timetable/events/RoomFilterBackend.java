@@ -3471,8 +3471,9 @@ block|{
 name|int
 name|cmp
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.
@@ -3510,8 +3511,9 @@ block|{
 name|int
 name|cmp
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|l1
 operator|.

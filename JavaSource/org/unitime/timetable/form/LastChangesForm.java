@@ -147,8 +147,9 @@ literal|100
 expr_stmt|;
 name|iDepartmentId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -156,8 +157,9 @@ argument_list|)
 expr_stmt|;
 name|iSubjAreaId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -165,8 +167,9 @@ argument_list|)
 expr_stmt|;
 name|iManagerId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -387,8 +390,9 @@ name|setAttribute
 argument_list|(
 literal|"LastChanges.N"
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getN
 argument_list|()

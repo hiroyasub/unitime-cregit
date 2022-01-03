@@ -159,9 +159,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|log4j
+name|commons
 operator|.
-name|BasicConfigurator
+name|logging
+operator|.
+name|Log
 import|;
 end_import
 
@@ -171,9 +173,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|log4j
+name|commons
 operator|.
-name|Logger
+name|logging
+operator|.
+name|LogFactory
 import|;
 end_import
 
@@ -386,12 +390,12 @@ name|CourseUrlProvider
 block|{
 specifier|private
 specifier|static
-name|Logger
+name|Log
 name|sLog
 init|=
-name|Logger
+name|LogFactory
 operator|.
-name|getLogger
+name|getLog
 argument_list|(
 name|DefaultCourseDetailsProvider
 operator|.
@@ -1442,11 +1446,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|BasicConfigurator
-operator|.
-name|configure
-argument_list|()
-expr_stmt|;
 name|ApplicationProperties
 operator|.
 name|getDefaultProperties

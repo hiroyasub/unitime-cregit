@@ -37,6 +37,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|lang
+operator|.
+name|reflect
+operator|.
+name|InvocationTargetException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|dom4j
@@ -72,6 +84,10 @@ throws|,
 name|IllegalAccessException
 throws|,
 name|DocumentException
+throws|,
+name|InvocationTargetException
+throws|,
+name|NoSuchMethodException
 function_decl|;
 block|}
 end_interface

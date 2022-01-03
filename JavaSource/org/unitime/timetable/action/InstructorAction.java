@@ -542,8 +542,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|frm
 operator|.
@@ -858,8 +859,9 @@ name|frm
 operator|.
 name|setMatchFound
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -982,8 +984,9 @@ name|frm
 operator|.
 name|setMatchFound
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -1057,6 +1060,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -1160,8 +1166,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|instrId
 argument_list|)
@@ -1468,8 +1475,9 @@ name|PositionType
 operator|.
 name|findById
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|frm
 operator|.
@@ -1608,8 +1616,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|deptId
 argument_list|)
@@ -1645,8 +1654,9 @@ name|inst
 operator|.
 name|setIgnoreToFar
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|frm
 operator|.

@@ -551,8 +551,9 @@ literal|"List"
 expr_stmt|;
 name|iUniqueId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -848,8 +849,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|DepartmentStatusType
 operator|.
@@ -872,8 +874,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|DepartmentStatusType
 operator|.
@@ -896,8 +899,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|DepartmentStatusType
 operator|.
@@ -920,8 +924,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|DepartmentStatusType
 operator|.
@@ -953,8 +958,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|DepartmentStatusType
 operator|.

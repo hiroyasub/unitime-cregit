@@ -6756,8 +6756,9 @@ name|m2
 parameter_list|)
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|m1
 operator|.
@@ -6767,8 +6768,9 @@ argument_list|)
 operator|.
 name|compareTo
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|m2
 operator|.

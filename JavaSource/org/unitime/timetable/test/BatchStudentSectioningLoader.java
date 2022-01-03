@@ -1898,8 +1898,9 @@ name|p
 operator|.
 name|setAssignmentId
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|iMakeupAssignmentId
 operator|++
@@ -3774,8 +3775,9 @@ name|put
 argument_list|(
 name|course
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|cnt

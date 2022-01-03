@@ -928,8 +928,9 @@ name|create
 parameter_list|()
 block|{
 return|return
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1688,8 +1689,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1701,8 +1703,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1714,8 +1717,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1727,8 +1731,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1889,8 +1894,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1954,8 +1960,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -2027,8 +2034,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

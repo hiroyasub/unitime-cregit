@@ -638,14 +638,15 @@ operator|.
 name|getSourceTitle
 argument_list|()
 block|,
-comment|//new Integer(lastChange.getSource().ordinal()),
+comment|//Integer.valueOf(lastChange.getSource().ordinal()),
 name|lastChange
 operator|.
 name|getObjectTitle
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|lastChange
 operator|.

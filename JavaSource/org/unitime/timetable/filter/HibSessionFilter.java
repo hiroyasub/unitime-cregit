@@ -210,8 +210,9 @@ name|setAttribute
 argument_list|(
 literal|"TimeStamp"
 argument_list|,
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|JProf
 operator|.

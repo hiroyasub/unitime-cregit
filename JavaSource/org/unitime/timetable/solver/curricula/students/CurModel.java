@@ -173,6 +173,8 @@ name|org
 operator|.
 name|apache
 operator|.
+name|logging
+operator|.
 name|log4j
 operator|.
 name|Level
@@ -185,9 +187,15 @@ name|org
 operator|.
 name|apache
 operator|.
+name|logging
+operator|.
 name|log4j
 operator|.
-name|Logger
+name|core
+operator|.
+name|config
+operator|.
+name|Configurator
 import|;
 end_import
 
@@ -4933,12 +4941,9 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|Logger
+name|Configurator
 operator|.
-name|getRootLogger
-argument_list|()
-operator|.
-name|setLevel
+name|setRootLevel
 argument_list|(
 name|Level
 operator|.
@@ -4979,8 +4984,9 @@ argument_list|(
 operator|new
 name|CurStudent
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|1
 operator|+

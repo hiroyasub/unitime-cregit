@@ -770,8 +770,9 @@ name|cmp
 return|;
 name|cmp
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getPriority
 argument_list|()

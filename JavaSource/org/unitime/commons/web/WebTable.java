@@ -3424,8 +3424,9 @@ name|put
 argument_list|(
 name|code
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|defOrder
 argument_list|)

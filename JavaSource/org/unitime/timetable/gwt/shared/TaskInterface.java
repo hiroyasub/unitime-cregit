@@ -902,8 +902,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1644,8 +1645,9 @@ name|cmp
 return|;
 name|cmp
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getSlot
 argument_list|()

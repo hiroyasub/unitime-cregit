@@ -1379,8 +1379,9 @@ name|meeting
 operator|.
 name|setClassCanOverride
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -1390,8 +1391,9 @@ name|meeting
 operator|.
 name|setStartOffset
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1411,8 +1413,9 @@ name|meeting
 operator|.
 name|setStopOffset
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

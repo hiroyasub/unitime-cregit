@@ -3300,8 +3300,9 @@ name|rd
 operator|.
 name|setControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|newControl
 argument_list|)

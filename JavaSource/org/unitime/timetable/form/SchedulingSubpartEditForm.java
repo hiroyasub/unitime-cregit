@@ -247,8 +247,9 @@ literal|null
 expr_stmt|;
 name|fractionalIncrementsAllowed
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)

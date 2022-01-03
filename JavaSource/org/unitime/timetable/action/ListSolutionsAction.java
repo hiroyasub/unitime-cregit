@@ -1661,6 +1661,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -1752,6 +1755,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -2121,6 +2127,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -2609,8 +2618,9 @@ operator|)
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -4375,8 +4385,9 @@ operator|.
 name|booleanValue
 argument_list|()
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|solution
 operator|.
@@ -4387,8 +4398,9 @@ name|getTime
 argument_list|()
 argument_list|)
 else|:
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

@@ -6315,8 +6315,9 @@ return|return
 name|cmp
 return|;
 return|return
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|s1
 operator|.

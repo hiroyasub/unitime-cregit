@@ -940,8 +940,9 @@ name|helper
 operator|.
 name|setResponse
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|item
 operator|.

@@ -1507,8 +1507,9 @@ try|try
 block|{
 name|configId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|request
 operator|.
@@ -1686,7 +1687,7 @@ expr_stmt|;
 block|}
 comment|// For duplication set configID to 0
 comment|//            if(op.equalsIgnoreCase(rsc.getMessage("button.duplicateConfig"))) {
-comment|//                frm.setConfigId(new Long(0));
+comment|//                frm.setConfigId(Long.valueOf(0));
 comment|//                frm.setName(InstrOfferingConfig.getGeneratedName(
 comment|//                        ( new InstrOfferingConfigDAO().get(configId)).getInstructionalOffering() ));
 comment|//            }
@@ -1795,8 +1796,9 @@ name|loadDetailFromCourseOffering
 argument_list|(
 name|frm
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|courseOfferingId
 argument_list|)
@@ -1918,8 +1920,9 @@ name|loadDetailFromCourseOffering
 argument_list|(
 name|frm
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|courseOfferingId
 argument_list|)
@@ -3435,8 +3438,9 @@ name|frm
 operator|.
 name|setConfigCount
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|configs
 operator|.
@@ -3491,6 +3495,9 @@ name|forName
 argument_list|(
 name|linkLookupClass
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -3789,8 +3796,9 @@ name|itypeDao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|frm
 operator|.
@@ -5178,8 +5186,9 @@ name|io
 operator|.
 name|setLimit
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|io
 operator|.
@@ -5318,6 +5327,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -5547,8 +5559,9 @@ name|ioDao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|frm
 operator|.
@@ -5577,8 +5590,9 @@ operator|==
 literal|null
 operator|)
 condition|?
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -5701,8 +5715,9 @@ name|ioc
 operator|.
 name|setLimit
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|limit
 argument_list|)
@@ -5783,8 +5798,9 @@ name|ioc
 operator|.
 name|setLimit
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|limit
 argument_list|)
@@ -6034,6 +6050,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -7799,8 +7818,9 @@ name|sic
 operator|.
 name|setDisabled
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|request
 operator|.
@@ -7985,8 +8005,9 @@ name|subpart
 operator|.
 name|setMinutesPerWk
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|mpw
 argument_list|)
@@ -8162,8 +8183,9 @@ name|notDeletedSubparts
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|sid
 argument_list|)
@@ -8187,8 +8209,9 @@ name|notDeletedSubparts
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|sid
 argument_list|)
@@ -8322,8 +8345,9 @@ name|subpart
 operator|.
 name|setMinutesPerWk
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|mpw
 argument_list|)
@@ -8709,8 +8733,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|mdId
 argument_list|)
@@ -8899,8 +8924,9 @@ name|c
 operator|.
 name|setExpectedCapacity
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|mnlpc
 argument_list|)
@@ -8910,8 +8936,9 @@ name|c
 operator|.
 name|setMaxExpectedCapacity
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|mxlpc
 argument_list|)
@@ -8921,8 +8948,9 @@ name|c
 operator|.
 name|setRoomRatio
 argument_list|(
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|rr
 argument_list|)
@@ -8932,8 +8960,9 @@ name|c
 operator|.
 name|setNbrRooms
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|nr
 argument_list|)
@@ -8953,8 +8982,9 @@ name|c
 operator|.
 name|setDisplayInstructor
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -8975,8 +9005,9 @@ name|c
 operator|.
 name|setEnabledForStudentScheduling
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -9022,8 +9053,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|mdId
 argument_list|)
@@ -10394,8 +10426,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|1
 argument_list|)
@@ -10414,8 +10447,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|classCount
 operator|.
@@ -10912,8 +10946,9 @@ name|c
 operator|.
 name|setExpectedCapacity
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|mnlpc
 argument_list|)
@@ -10923,8 +10958,9 @@ name|c
 operator|.
 name|setMaxExpectedCapacity
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|mxlpc
 argument_list|)
@@ -10934,8 +10970,9 @@ name|c
 operator|.
 name|setRoomRatio
 argument_list|(
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|rr
 argument_list|)
@@ -10945,8 +10982,9 @@ name|c
 operator|.
 name|setNbrRooms
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|nr
 argument_list|)
@@ -10956,8 +10994,9 @@ name|c
 operator|.
 name|setDisplayInstructor
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -10967,8 +11006,9 @@ name|c
 operator|.
 name|setEnabledForStudentScheduling
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -10999,8 +11039,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|md
 argument_list|)
@@ -11276,8 +11317,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|1
 argument_list|)
@@ -11296,8 +11338,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|classCount
 operator|.
@@ -12018,8 +12061,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|childClassCount
 argument_list|)

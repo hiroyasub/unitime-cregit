@@ -9369,11 +9369,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-operator|new
-name|Float
-argument_list|(
-literal|1.0
-argument_list|)
+literal|1f
 argument_list|)
 condition|)
 block|{

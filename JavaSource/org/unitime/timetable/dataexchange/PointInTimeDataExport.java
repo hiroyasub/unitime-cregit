@@ -9405,8 +9405,9 @@ name|int
 name|lastPeriod
 init|=
 operator|(
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.
@@ -9509,8 +9510,9 @@ name|int
 name|totalTimePeriodsNeeded
 init|=
 operator|(
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.
@@ -9622,8 +9624,9 @@ name|int
 name|numIncorporatedBreaks
 init|=
 operator|(
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.
@@ -9677,8 +9680,9 @@ name|int
 name|numPeriodsPerStandardHour
 init|=
 operator|(
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.

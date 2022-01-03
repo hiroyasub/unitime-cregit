@@ -1115,8 +1115,9 @@ name|put
 argument_list|(
 literal|"PROGRESS"
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|p
 operator|.
@@ -1131,8 +1132,9 @@ name|put
 argument_list|(
 literal|"MAX_PROGRESS"
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|p
 operator|.

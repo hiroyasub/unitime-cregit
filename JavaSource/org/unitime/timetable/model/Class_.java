@@ -5234,8 +5234,9 @@ expr_stmt|;
 block|}
 name|sectionNumber
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getSchedulingSubpart
 argument_list|()
@@ -6978,8 +6979,9 @@ name|dObj
 operator|.
 name|setSequenceNumber
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|dObj
 operator|.
@@ -7077,8 +7079,9 @@ argument_list|()
 operator|)
 decl_stmt|;
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.
@@ -8252,8 +8255,9 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|DatePattern
 operator|.
@@ -9719,6 +9723,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -10739,6 +10746,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()

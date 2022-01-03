@@ -258,8 +258,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

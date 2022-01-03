@@ -687,8 +687,9 @@ operator|)
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -2381,8 +2382,9 @@ name|setAttribute
 argument_list|(
 literal|"DeptStatusType.last"
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|statuses
 operator|.

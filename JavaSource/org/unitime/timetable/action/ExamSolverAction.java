@@ -1276,8 +1276,9 @@ name|put
 argument_list|(
 literal|"General.StartSolver"
 argument_list|,
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|start
 argument_list|)

@@ -1699,7 +1699,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|//Collection prefs = DistributionPref.getPreferences(instructionalOffering.getSessionId(), null, false, new Long(instructionalOffering.getUniqueId().intValue()));
+comment|//Collection prefs = DistributionPref.getPreferences(instructionalOffering.getSessionId(), null, false, Long.valueOf(instructionalOffering.getUniqueId().intValue()));
 name|Set
 name|leadInstructors
 init|=

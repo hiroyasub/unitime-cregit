@@ -7705,8 +7705,9 @@ name|assignment
 operator|.
 name|setDays
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|placement
 operator|.
@@ -7722,8 +7723,9 @@ name|assignment
 operator|.
 name|setStartSlot
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|placement
 operator|.

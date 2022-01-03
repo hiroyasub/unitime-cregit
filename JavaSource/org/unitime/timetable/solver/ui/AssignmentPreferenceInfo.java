@@ -2009,8 +2009,9 @@ name|put
 argument_list|(
 name|roomId
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|roomPreference
 argument_list|)

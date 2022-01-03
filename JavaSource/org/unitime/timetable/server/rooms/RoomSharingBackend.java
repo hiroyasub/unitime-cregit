@@ -1735,8 +1735,9 @@ name|char2dept
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|pref
 operator|++
@@ -2395,8 +2396,9 @@ operator|.
 name|getId
 argument_list|()
 argument_list|,
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|pref
 operator|++

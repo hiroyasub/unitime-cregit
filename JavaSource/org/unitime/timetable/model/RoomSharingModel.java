@@ -707,8 +707,9 @@ name|oldDeptPrefs
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|pref
 operator|++
@@ -1050,8 +1051,9 @@ operator|.
 name|getUniqueId
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|idx
 argument_list|)
@@ -1331,8 +1333,9 @@ name|oldDeptPrefs
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|pref
 argument_list|)

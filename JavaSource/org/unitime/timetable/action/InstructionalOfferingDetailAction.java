@@ -2160,6 +2160,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -2446,8 +2449,9 @@ comment|// Load Instr Offering
 name|Long
 name|instrOfferingId
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|instrOfferingIdStr
 argument_list|)
@@ -3869,6 +3873,9 @@ argument_list|(
 name|linkLookupClass
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -4287,8 +4294,9 @@ name|io
 operator|.
 name|setNotOffered
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -4414,6 +4422,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -4533,8 +4544,9 @@ name|io
 operator|.
 name|setNotOffered
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -4657,6 +4669,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()

@@ -41,9 +41,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|log4j
+name|commons
 operator|.
-name|Logger
+name|logging
+operator|.
+name|LogFactory
 import|;
 end_import
 
@@ -532,9 +534,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Logger
+name|LogFactory
 operator|.
-name|getLogger
+name|getLog
 argument_list|(
 name|cls
 argument_list|)
@@ -668,14 +670,16 @@ name|elapseTimeLog
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|printPct
 argument_list|)
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|previousElapsedTime
 argument_list|)
@@ -1663,9 +1667,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Logger
+name|LogFactory
 operator|.
-name|getLogger
+name|getLog
 argument_list|(
 name|cls
 argument_list|)

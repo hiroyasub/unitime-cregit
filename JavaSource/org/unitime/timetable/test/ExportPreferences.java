@@ -4835,8 +4835,9 @@ operator|)
 operator|.
 name|exportAll
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|args
 index|[

@@ -5817,8 +5817,9 @@ argument_list|()
 condition|?
 literal|null
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getText
 argument_list|()

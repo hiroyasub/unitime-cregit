@@ -10280,8 +10280,9 @@ block|{
 name|int
 name|cmp
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|e1
 operator|.
@@ -10320,8 +10321,9 @@ name|cmp
 return|;
 name|cmp
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|e1
 operator|.

@@ -1111,8 +1111,9 @@ literal|0
 condition|?
 literal|null
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Math
 operator|.

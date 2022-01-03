@@ -1745,8 +1745,9 @@ argument_list|(
 operator|new
 name|IdValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|state
 operator|.

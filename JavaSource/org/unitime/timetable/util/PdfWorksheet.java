@@ -3424,8 +3424,9 @@ operator|.
 name|getItype
 argument_list|()
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|credit

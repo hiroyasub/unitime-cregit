@@ -540,8 +540,9 @@ operator|)
 operator|.
 name|setMinsPerMtgMin
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|minsPerMtgMin
 argument_list|)
@@ -573,8 +574,9 @@ operator|)
 operator|.
 name|setMinsPerMtgMax
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|minsPerMtgMax
 argument_list|)
@@ -606,8 +608,9 @@ operator|)
 operator|.
 name|setNrSlots
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|nrTimeSlots
 argument_list|)
@@ -639,8 +642,9 @@ operator|)
 operator|.
 name|setBreakTime
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|breakTime
 argument_list|)

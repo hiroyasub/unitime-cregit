@@ -2772,8 +2772,9 @@ literal|null
 condition|?
 literal|null
 else|:
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|number
 operator|.
@@ -2840,8 +2841,9 @@ literal|null
 condition|?
 literal|null
 else|:
-operator|new
 name|Double
+operator|.
+name|valueOf
 argument_list|(
 name|number
 operator|.

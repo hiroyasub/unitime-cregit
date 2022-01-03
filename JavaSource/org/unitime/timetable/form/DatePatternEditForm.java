@@ -748,8 +748,9 @@ literal|null
 expr_stmt|;
 name|iUniqueId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1107,8 +1108,9 @@ name|dp
 operator|.
 name|setVisible
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getVisible
 argument_list|()
@@ -1119,8 +1121,9 @@ name|dp
 operator|.
 name|setType
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getTypeInt
 argument_list|()
@@ -1577,8 +1580,9 @@ name|dp
 operator|.
 name|setVisible
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getVisible
 argument_list|()
@@ -1589,8 +1593,9 @@ name|dp
 operator|.
 name|setType
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getTypeInt
 argument_list|()
@@ -2698,8 +2703,9 @@ name|dp
 operator|.
 name|setVisible
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|getVisible
 argument_list|()
@@ -2710,8 +2716,9 @@ name|dp
 operator|.
 name|setType
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|getTypeInt
 argument_list|()

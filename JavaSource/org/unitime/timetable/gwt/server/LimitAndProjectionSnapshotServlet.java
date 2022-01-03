@@ -251,7 +251,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|//	private static Logger sLog = Logger.getLogger(LimitAndProjectionSnapshotServlet.class);
+comment|//	private static Log sLog = LogFactory.getLog(LimitAndProjectionSnapshotServlet.class);
 specifier|private
 annotation|@
 name|Autowired

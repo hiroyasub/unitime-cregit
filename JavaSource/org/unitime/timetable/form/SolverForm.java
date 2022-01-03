@@ -384,8 +384,9 @@ specifier|static
 name|Long
 name|sEmpty
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -396,8 +397,9 @@ specifier|static
 name|Long
 name|sDefault
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|2
@@ -408,8 +410,9 @@ specifier|static
 name|Long
 name|sSolver
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|3
@@ -2240,8 +2243,9 @@ block|{
 return|return
 name|getParameterValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -2259,8 +2263,9 @@ block|{
 return|return
 name|getParameterValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -2280,8 +2285,9 @@ parameter_list|)
 block|{
 name|setParameterValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -2303,8 +2309,9 @@ parameter_list|)
 block|{
 name|setParameterValue
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)

@@ -637,8 +637,9 @@ comment|//get roomFeature from request
 name|Long
 name|id
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|Long
 operator|.
@@ -1113,8 +1114,9 @@ decl_stmt|;
 name|Long
 name|id
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|roomFeatureEditForm
 operator|.
@@ -1581,8 +1583,9 @@ block|{
 name|Long
 name|id
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|roomFeatureEditForm
 operator|.

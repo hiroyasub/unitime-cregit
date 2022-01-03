@@ -1530,8 +1530,9 @@ name|frm
 operator|.
 name|setReadOnlyCrsOfferingId
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|cid
 argument_list|)
@@ -1755,8 +1756,9 @@ name|cdao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|origCrs
 operator|.
@@ -1801,8 +1803,9 @@ name|io1
 operator|.
 name|setNotOffered
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -1844,8 +1847,9 @@ name|co2
 operator|.
 name|setIsControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -2194,6 +2198,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -2324,6 +2331,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -2359,8 +2369,9 @@ name|cdao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|origCrs
 argument_list|)
@@ -2385,8 +2396,9 @@ name|co
 operator|.
 name|setIsControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -2397,8 +2409,9 @@ name|co
 operator|.
 name|setIsControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -2568,8 +2581,9 @@ name|cdao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|course
 operator|.
@@ -2673,8 +2687,9 @@ name|co3
 operator|.
 name|setIsControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -2685,8 +2700,9 @@ name|co3
 operator|.
 name|setIsControl
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -3028,6 +3044,9 @@ name|forName
 argument_list|(
 name|className
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -3638,6 +3657,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 operator|)
@@ -3869,7 +3891,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|//?? new Boolean(io.isEditableBy(user)));
+comment|//?? Boolean.valueOf(io.isEditableBy(user)));
 name|frm
 operator|.
 name|setIoLimit

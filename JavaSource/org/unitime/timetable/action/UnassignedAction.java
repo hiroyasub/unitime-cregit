@@ -1401,8 +1401,9 @@ operator|.
 name|getInstructor
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|row
 operator|.
@@ -1928,8 +1929,9 @@ operator|.
 name|getInstructor
 argument_list|()
 block|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|row
 operator|.

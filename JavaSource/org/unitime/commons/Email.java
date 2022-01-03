@@ -145,6 +145,9 @@ name|value
 argument_list|()
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 return|;

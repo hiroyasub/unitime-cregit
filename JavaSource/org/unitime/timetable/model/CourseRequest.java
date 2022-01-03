@@ -306,8 +306,9 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -797,8 +798,9 @@ literal|null
 condition|?
 literal|null
 else|:
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|status
 operator|.

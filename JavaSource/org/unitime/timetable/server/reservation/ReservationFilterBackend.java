@@ -954,8 +954,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1041,8 +1042,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1128,8 +1130,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1187,8 +1190,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1274,8 +1278,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -1324,8 +1329,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)
@@ -2297,8 +2303,9 @@ init|=
 operator|new
 name|Entity
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|type
 operator|.

@@ -385,8 +385,9 @@ literal|null
 expr_stmt|;
 name|canRetrieveAllExamForAllSubjects
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -484,8 +485,9 @@ block|{
 name|Boolean
 name|displayAll
 init|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -547,8 +549,9 @@ condition|)
 block|{
 name|displayAll
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)

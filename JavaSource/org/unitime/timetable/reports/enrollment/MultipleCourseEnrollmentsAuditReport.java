@@ -953,8 +953,9 @@ name|this
 operator|.
 name|studentUniqueId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|result
 index|[
@@ -978,8 +979,9 @@ name|this
 operator|.
 name|subpartId
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|result
 index|[

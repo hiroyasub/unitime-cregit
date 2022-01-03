@@ -491,8 +491,9 @@ name|catalog
 operator|.
 name|setFixedMinimumCredit
 argument_list|(
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|MIN_CREDIT
 argument_list|)
@@ -531,8 +532,9 @@ name|catalog
 operator|.
 name|setMaximumCredit
 argument_list|(
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|MAX_CREDIT
 argument_list|)
@@ -771,8 +773,9 @@ name|credit
 operator|.
 name|setFixedMinimumCredit
 argument_list|(
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|MIN_CREDIT
 argument_list|)
@@ -815,8 +818,9 @@ name|credit
 operator|.
 name|setMaximumCredit
 argument_list|(
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|MAX_CREDIT
 argument_list|)

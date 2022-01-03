@@ -6135,8 +6135,9 @@ argument_list|()
 operator|!=
 literal|null
 condition|?
-operator|new
 name|Float
+operator|.
+name|valueOf
 argument_list|(
 name|iClass
 operator|.

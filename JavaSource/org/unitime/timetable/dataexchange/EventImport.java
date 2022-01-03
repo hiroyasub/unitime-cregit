@@ -448,6 +448,9 @@ argument_list|(
 name|className
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
@@ -1325,8 +1328,9 @@ condition|)
 block|{
 name|requiredAttendance
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|false
 argument_list|)
@@ -1794,8 +1798,9 @@ condition|)
 block|{
 name|classCanOverride
 operator|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 literal|true
 argument_list|)
@@ -2637,8 +2642,9 @@ block|{
 name|Long
 name|numId
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|externalId
 argument_list|)

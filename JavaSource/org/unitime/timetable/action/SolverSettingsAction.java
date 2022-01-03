@@ -933,8 +933,9 @@ name|setting
 operator|.
 name|setAppearance
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|myForm
 operator|.
@@ -1417,8 +1418,9 @@ name|dao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)
@@ -1783,8 +1785,9 @@ name|dao
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|id
 argument_list|)

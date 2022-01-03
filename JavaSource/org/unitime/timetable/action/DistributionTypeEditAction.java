@@ -497,8 +497,9 @@ block|{
 name|Long
 name|id
 init|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|Long
 operator|.
@@ -578,8 +579,9 @@ argument_list|()
 operator|.
 name|add
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|depts
 index|[

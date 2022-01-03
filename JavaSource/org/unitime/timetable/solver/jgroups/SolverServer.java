@@ -414,7 +414,7 @@ parameter_list|(
 name|String
 name|name
 parameter_list|,
-name|Integer
+name|String
 name|level
 parameter_list|)
 function_decl|;

@@ -14487,8 +14487,9 @@ name|PRIORITY
 case|:
 name|cmp
 operator|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|e1
 operator|.
@@ -14555,8 +14556,9 @@ return|return
 name|cmp
 return|;
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|e1
 operator|.

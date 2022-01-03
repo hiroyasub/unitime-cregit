@@ -782,8 +782,9 @@ name|map
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1

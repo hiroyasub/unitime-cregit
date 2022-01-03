@@ -193,8 +193,9 @@ block|{
 name|Integer
 name|l1
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -222,8 +223,9 @@ expr_stmt|;
 name|Integer
 name|l2
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
