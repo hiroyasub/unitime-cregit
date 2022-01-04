@@ -486,6 +486,9 @@ argument_list|(
 name|OnlineStudentSchedulingUpdater
 operator|.
 name|class
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|".updater["
 operator|+

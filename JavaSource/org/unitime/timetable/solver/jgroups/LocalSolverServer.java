@@ -703,6 +703,9 @@ argument_list|(
 name|OnlineStudentSchedulingGenericUpdater
 operator|.
 name|class
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|".updater[generic]"
 argument_list|)
