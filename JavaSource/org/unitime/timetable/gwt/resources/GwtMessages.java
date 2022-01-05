@@ -3139,6 +3139,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Distribution"
+argument_list|)
+name|String
+name|colDistribution
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Time"
 argument_list|)
 name|String
@@ -13736,7 +13745,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"External Id:"
+literal|"External ID:"
 argument_list|)
 name|String
 name|propExternalId
@@ -21558,7 +21567,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"DeptCode"
+literal|"Code:"
 argument_list|)
 name|String
 name|propDeptCode
@@ -21585,10 +21594,19 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Abbv"
+literal|"Abbreviation"
 argument_list|)
 name|String
 name|colAbbv
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Department Status:"
+argument_list|)
+name|String
+name|propDepartmentStatus
 parameter_list|()
 function_decl|;
 annotation|@
@@ -21666,7 +21684,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Dist Pref Priority"
+literal|"Distribution Preference Priority:"
 argument_list|)
 name|String
 name|propPrefPriority
@@ -21684,7 +21702,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Allow<br> Required Time"
+literal|"Allow<br> Required Time:"
 argument_list|)
 name|String
 name|propAllowReqTime
@@ -21693,7 +21711,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Instructor<br> Pref"
+literal|"Instructor<br> Preferences"
 argument_list|)
 name|String
 name|colInstructorPref
@@ -21702,7 +21720,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Instructor<br> Pref"
+literal|"Instructor<br> Preferences"
 argument_list|)
 name|String
 name|propInstructorPref
@@ -21711,7 +21729,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Inherit Instructor<br> Prefs"
+literal|"Inherit Instructor<br> Preferences:"
 argument_list|)
 name|String
 name|propInheritInstructorPref
@@ -21720,7 +21738,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Allow  Required Room"
+literal|"Allow  Required Room:"
 argument_list|)
 name|String
 name|propAllowReqRoom
@@ -21729,7 +21747,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Allow  Required Distribution"
+literal|"Allow  Required Distribution:"
 argument_list|)
 name|String
 name|propAllowReqDist
@@ -21738,7 +21756,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Allow Student Scheduling"
+literal|"Allow Student Scheduling:"
 argument_list|)
 name|String
 name|propAllowStudentScheduling
@@ -21747,7 +21765,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"External Funding Dept"
+literal|"External Funding Deptartment:"
 argument_list|)
 name|String
 name|propExternalFundingDept
@@ -21756,7 +21774,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"External<br> Funding Dept"
+literal|"External<br> Funding Deptartment"
 argument_list|)
 name|String
 name|colExternalFundingDept
@@ -21765,7 +21783,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Event Management"
+literal|"Event Management:"
 argument_list|)
 name|String
 name|propAllowEvents

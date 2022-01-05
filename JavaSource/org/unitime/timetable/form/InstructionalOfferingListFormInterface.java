@@ -144,6 +144,11 @@ name|String
 name|getSortBy
 parameter_list|()
 function_decl|;
+specifier|public
+name|Boolean
+name|getFundingDepartment
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

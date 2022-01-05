@@ -410,6 +410,10 @@ specifier|private
 name|String
 name|waitlist
 decl_stmt|;
+specifier|private
+name|Boolean
+name|fundingDepartment
+decl_stmt|;
 comment|/** 	 * @return Returns the ctrlInstrOfferingId. 	 */
 specifier|public
 name|String
@@ -1893,6 +1897,17 @@ argument_list|(
 name|getWaitlist
 argument_list|()
 argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|Boolean
+name|getFundingDepartment
+parameter_list|()
+block|{
+return|return
+name|fundingDepartment
 return|;
 block|}
 block|}

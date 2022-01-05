@@ -438,35 +438,8 @@ name|isTrue
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|DistanceMetric
-operator|.
-name|Ellipsoid
-name|ellipsoid
-init|=
-name|DistanceMetric
-operator|.
-name|Ellipsoid
-operator|.
-name|valueOf
-argument_list|(
-name|ApplicationProperty
-operator|.
-name|DistanceEllipsoid
-operator|.
-name|value
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|response
-operator|.
-name|setEllipsoid
-argument_list|(
-name|ellipsoid
-operator|.
-name|getEclipsoindName
-argument_list|()
-argument_list|)
-expr_stmt|;
+comment|//DistanceMetric.Ellipsoid ellipsoid = DistanceMetric.Ellipsoid.valueOf(ApplicationProperty.DistanceEllipsoid.value());
+comment|//response.setEllipsoid(ellipsoid.getEclipsoindName());
 comment|/*department list */
 for|for
 control|(
