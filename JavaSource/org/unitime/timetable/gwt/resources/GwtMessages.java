@@ -13382,6 +13382,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>A</u>dd Department..."
+argument_list|)
+name|String
+name|buttonRoomSharingAddDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"<u>R</u>emove All"
 argument_list|)
 name|String
@@ -13745,7 +13754,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"External ID:"
+literal|"External Id:"
 argument_list|)
 name|String
 name|propExternalId
@@ -18771,6 +18780,15 @@ literal|"All"
 argument_list|)
 name|String
 name|departmentsAllLabel
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"All"
+argument_list|)
+name|String
+name|colAll
 parameter_list|()
 function_decl|;
 annotation|@

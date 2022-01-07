@@ -4815,7 +4815,7 @@ name|Button
 argument_list|(
 name|MESSAGES
 operator|.
-name|buttonAddDepartment
+name|buttonRoomSharingAddDepartment
 argument_list|()
 argument_list|,
 operator|new
@@ -5661,7 +5661,7 @@ name|guessAccessKey
 argument_list|(
 name|MESSAGES
 operator|.
-name|buttonAddDepartment
+name|buttonRoomSharingAddDepartment
 argument_list|()
 argument_list|)
 decl_stmt|;

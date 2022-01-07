@@ -1123,7 +1123,7 @@ name|allowReq
 operator|+=
 name|MESSAGES
 operator|.
-name|colTimeStamp
+name|colTime
 argument_list|()
 expr_stmt|;
 name|allowReqOrd
@@ -1181,7 +1181,10 @@ literal|7
 condition|)
 name|allowReq
 operator|=
-literal|"all"
+name|MESSAGES
+operator|.
+name|colAll
+argument_list|()
 expr_stmt|;
 name|String
 name|dependentStatuses

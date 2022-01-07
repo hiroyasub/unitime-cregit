@@ -3567,7 +3567,6 @@ name|cell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*	if (isShowFundingDepartment()) {     		cell = this.headerCell(MSG.columnFundingDepartment(), 2, 1);     		row.addContent(cell);      	}*/
 if|if
 condition|(
 name|isShowTitle

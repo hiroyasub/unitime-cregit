@@ -414,20 +414,6 @@ argument_list|)
 expr_stmt|;
 name|response
 operator|.
-name|setCanUpdate
-argument_list|(
-name|context
-operator|.
-name|hasPermission
-argument_list|(
-name|Right
-operator|.
-name|DepartmentEdit
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|response
-operator|.
 name|setFundingDeptEnabled
 argument_list|(
 name|ApplicationProperty
@@ -438,8 +424,6 @@ name|isTrue
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//DistanceMetric.Ellipsoid ellipsoid = DistanceMetric.Ellipsoid.valueOf(ApplicationProperty.DistanceEllipsoid.value());
-comment|//response.setEllipsoid(ellipsoid.getEclipsoindName());
 comment|/*department list */
 for|for
 control|(
@@ -883,6 +867,16 @@ name|getAllDependentDepartmentOptions
 argument_list|(
 name|context
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|d
+operator|.
+name|setExternalId
+argument_list|(
+name|dept
+operator|.
+name|getExternalUniqueId
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|d
