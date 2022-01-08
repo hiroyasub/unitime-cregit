@@ -195,6 +195,22 @@ name|MessageLogDAO
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
+name|dao
+operator|.
+name|_RootDAO
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -963,7 +979,7 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|createNewSession
+name|getSession
 argument_list|()
 decl_stmt|;
 name|hibSession
@@ -1043,14 +1059,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-name|hibSession
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -1078,6 +1086,14 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
+expr_stmt|;
+block|}
+finally|finally
+block|{
+name|_RootDAO
+operator|.
+name|closeCurrentThreadSessions
+argument_list|()
 expr_stmt|;
 block|}
 block|}
