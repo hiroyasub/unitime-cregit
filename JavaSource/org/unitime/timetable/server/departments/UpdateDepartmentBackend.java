@@ -367,11 +367,6 @@ name|SessionContext
 name|context
 parameter_list|)
 block|{
-name|Transaction
-name|tx
-init|=
-literal|null
-decl_stmt|;
 name|org
 operator|.
 name|hibernate
@@ -739,11 +734,7 @@ name|department
 operator|.
 name|setDistributionPrefPriority
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|acadSession

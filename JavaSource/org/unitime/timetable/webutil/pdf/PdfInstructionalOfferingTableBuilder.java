@@ -1549,7 +1549,7 @@ literal|1
 expr_stmt|;
 if|if
 condition|(
-name|isShowFundingDepartment
+name|isShowManager
 argument_list|()
 condition|)
 name|ret
@@ -1558,7 +1558,7 @@ literal|1
 expr_stmt|;
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 name|ret
@@ -1833,7 +1833,7 @@ literal|50f
 expr_stmt|;
 if|if
 condition|(
-name|isShowFundingDepartment
+name|isShowManager
 argument_list|()
 condition|)
 name|width
@@ -1846,7 +1846,7 @@ literal|75f
 expr_stmt|;
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 name|width
@@ -2477,7 +2477,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowFundingDepartment
+name|isShowManager
 argument_list|()
 condition|)
 block|{
@@ -2493,7 +2493,7 @@ name|c
 argument_list|,
 name|MSG
 operator|.
-name|columnFundingDepartment
+name|columnManager
 argument_list|()
 argument_list|,
 literal|true
@@ -2513,7 +2513,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 block|{
@@ -2529,7 +2529,7 @@ name|c
 argument_list|,
 name|MSG
 operator|.
-name|columnManager
+name|columnFundingDepartment
 argument_list|()
 argument_list|,
 literal|true
@@ -3320,7 +3320,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowFundingDepartment
+name|isShowManager
 argument_list|()
 condition|)
 block|{
@@ -3347,7 +3347,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 block|{
@@ -10244,7 +10244,7 @@ name|iPdfTable
 operator|.
 name|addCell
 argument_list|(
-name|pdfBuildFundingDepartment
+name|pdfBuildManager
 argument_list|(
 name|prefGroup
 argument_list|,
@@ -10255,7 +10255,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 block|{
@@ -10263,7 +10263,7 @@ name|iPdfTable
 operator|.
 name|addCell
 argument_list|(
-name|pdfBuildManager
+name|pdfBuildFundingDepartment
 argument_list|(
 name|prefGroup
 argument_list|,
@@ -11538,7 +11538,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowFundingDepartment
+name|isShowManager
 argument_list|()
 condition|)
 block|{
@@ -11553,7 +11553,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 block|{
@@ -12820,7 +12820,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowFundingDepartment
+name|isShowManager
 argument_list|()
 condition|)
 block|{
@@ -12830,7 +12830,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|isShowManager
+name|isShowFundingDepartment
 argument_list|()
 condition|)
 block|{
