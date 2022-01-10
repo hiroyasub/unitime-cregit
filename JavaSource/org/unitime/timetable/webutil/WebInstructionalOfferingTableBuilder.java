@@ -9033,7 +9033,7 @@ name|cell
 operator|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|TableCell
 name|buildFundingDepartment
 parameter_list|(
