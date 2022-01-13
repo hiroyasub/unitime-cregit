@@ -576,6 +576,15 @@ name|String
 name|colWaitListPosition
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"WL/Ovrd"
+argument_list|)
+name|String
+name|colWaitListAndAllowedOverrides
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
@@ -2253,6 +2262,27 @@ argument_list|)
 name|String
 name|courseWaitListed
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listing"
+argument_list|)
+name|String
+name|courseAllowsForWaitListing
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course {0} allows to be wait-listed."
+argument_list|)
+name|String
+name|courseAllowsForWaitListingTitle
+parameter_list|(
+name|String
+name|course
+parameter_list|)
 function_decl|;
 annotation|@
 name|DefaultMessage
