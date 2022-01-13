@@ -4629,7 +4629,9 @@ else|:
 literal|""
 operator|)
 operator|+
-literal|") "
+literal|" or lower(c.subjectArea.subjectAreaAbbreviation || ' ' || c.courseNbr) like '% - ' || :q || '%'"
+operator|+
+literal|" or lower(c.courseNbr) like :q || '%') "
 operator|+
 operator|(
 name|matcher

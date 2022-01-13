@@ -1435,9 +1435,7 @@ argument_list|,
 name|course
 operator|.
 name|courseDiscipline
-operator|+
-literal|" "
-operator|+
+argument_list|,
 name|course
 operator|.
 name|courseNumber

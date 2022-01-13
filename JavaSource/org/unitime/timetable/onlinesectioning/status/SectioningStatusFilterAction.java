@@ -14346,13 +14346,17 @@ operator|.
 name|longValue
 argument_list|()
 argument_list|,
+operator|(
+name|String
+operator|)
 name|line
 index|[
 literal|2
 index|]
-operator|+
-literal|" "
-operator|+
+argument_list|,
+operator|(
+name|String
+operator|)
 name|line
 index|[
 literal|3

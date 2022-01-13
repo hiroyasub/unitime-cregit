@@ -577,7 +577,15 @@ operator|.
 name|getCourse
 argument_list|()
 operator|.
-name|getName
+name|getSubjectArea
+argument_list|()
+argument_list|,
+name|enrollment
+operator|.
+name|getCourse
+argument_list|()
+operator|.
+name|getCourseNumber
 argument_list|()
 argument_list|)
 expr_stmt|;

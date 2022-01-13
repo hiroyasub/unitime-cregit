@@ -1603,7 +1603,7 @@ if|if
 condition|(
 name|course
 operator|.
-name|matchCourseName
+name|matchCourse
 argument_list|(
 name|rc
 operator|.
@@ -9058,7 +9058,12 @@ argument_list|()
 argument_list|,
 name|course
 operator|.
-name|getCourseName
+name|getSubject
+argument_list|()
+argument_list|,
+name|course
+operator|.
+name|getCourseNbr
 argument_list|()
 argument_list|)
 argument_list|)
