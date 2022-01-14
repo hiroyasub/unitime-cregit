@@ -3766,6 +3766,8 @@ argument_list|,
 name|distributions
 argument_list|,
 name|hasAssignment
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 comment|// if (student.getRequests().isEmpty()) return;
@@ -3806,6 +3808,8 @@ argument_list|,
 name|distributions
 argument_list|,
 name|hasAssignment
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|Set
@@ -27469,6 +27473,8 @@ argument_list|,
 name|distributions
 argument_list|,
 name|hasAssignment
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 comment|// if (student.getRequests().isEmpty()) return;
@@ -27509,6 +27515,8 @@ argument_list|,
 name|distributions
 argument_list|,
 name|hasAssignment
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|Set
