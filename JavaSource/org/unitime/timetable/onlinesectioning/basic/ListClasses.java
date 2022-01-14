@@ -719,15 +719,6 @@ name|XEnrollment
 name|enrollment
 parameter_list|)
 block|{
-if|if
-condition|(
-name|student
-operator|==
-literal|null
-condition|)
-return|return
-literal|true
-return|;
 name|boolean
 name|hasMustBeUsed
 init|=
@@ -756,6 +747,10 @@ control|)
 block|{
 if|if
 condition|(
+name|student
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|r
 operator|.
