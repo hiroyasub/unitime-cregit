@@ -552,6 +552,20 @@ argument_list|)
 return|;
 block|}
 comment|/* getPrefHtmlForPrefType()      * @parameter prefName - the Name of the Class of the Preference Type you want to see html for      * @return - a String of HTML to display the Preference      */
+specifier|public
+name|Set
+name|getDatePatternPreferences
+parameter_list|()
+block|{
+return|return
+name|getPreferences
+argument_list|(
+name|DatePatternPref
+operator|.
+name|class
+argument_list|)
+return|;
+block|}
 specifier|private
 name|String
 name|htmlForPrefs
