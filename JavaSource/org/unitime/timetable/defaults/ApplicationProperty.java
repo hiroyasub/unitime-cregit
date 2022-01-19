@@ -12502,6 +12502,28 @@ argument_list|(
 literal|"unitime.sectioning.reloadAfterMerge"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Wait-Listing: log wait-list changes into the WaitList table."
+argument_list|)
+name|WaitListLogging
+argument_list|(
+literal|"unitime.enrollment.waitList.logging"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
