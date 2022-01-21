@@ -65,6 +65,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|Campus
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|Degree
 import|;
 end_import
@@ -194,6 +208,10 @@ decl_stmt|;
 specifier|private
 name|Program
 name|iProgram
+decl_stmt|;
+specifier|private
+name|Campus
+name|iCampus
 decl_stmt|;
 specifier|public
 specifier|static
@@ -438,6 +456,28 @@ name|program
 expr_stmt|;
 block|}
 specifier|public
+name|Campus
+name|getCampus
+parameter_list|()
+block|{
+return|return
+name|iCampus
+return|;
+block|}
+specifier|public
+name|void
+name|setCampus
+parameter_list|(
+name|Campus
+name|campus
+parameter_list|)
+block|{
+name|iCampus
+operator|=
+name|campus
+expr_stmt|;
+block|}
+specifier|public
 name|boolean
 name|equals
 parameter_list|(
@@ -557,6 +597,11 @@ operator|+
 literal|"\n	AcademicClassification: "
 operator|+
 name|getAcademicClassification
+argument_list|()
+operator|+
+literal|"\n	Campus: "
+operator|+
+name|getCampus
 argument_list|()
 operator|+
 literal|"\n	Concentration: "

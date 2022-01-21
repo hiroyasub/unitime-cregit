@@ -793,6 +793,10 @@ argument_list|,
 literal|"major"
 argument_list|,
 literal|"concentration"
+argument_list|,
+literal|"campus"
+argument_list|,
+literal|"program"
 argument_list|)
 condition|?
 literal|"left outer join s.areaClasfMajors m "
@@ -1203,7 +1207,35 @@ name|getProgramLabel
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|st
+operator|.
+name|addCampus
+argument_list|(
+name|acm
+operator|.
+name|getCampus
+argument_list|()
+argument_list|,
+name|acm
+operator|.
+name|getCampusLabel
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
+name|st
+operator|.
+name|setDefaultCampus
+argument_list|(
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getCampus
+argument_list|()
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|XAreaClassificationMajor
@@ -6082,6 +6114,48 @@ condition|)
 block|{
 return|return
 literal|"lower(m.concentration.code) = '"
+operator|+
+name|body
+operator|.
+name|toLowerCase
+argument_list|()
+operator|+
+literal|"'"
+return|;
+block|}
+if|else if
+condition|(
+literal|"program"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"lower(m.program.reference) = '"
+operator|+
+name|body
+operator|.
+name|toLowerCase
+argument_list|()
+operator|+
+literal|"'"
+return|;
+block|}
+if|else if
+condition|(
+literal|"campus"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|attr
+argument_list|)
+condition|)
+block|{
+return|return
+literal|"lower(m.campus.reference) = '"
 operator|+
 name|body
 operator|.
