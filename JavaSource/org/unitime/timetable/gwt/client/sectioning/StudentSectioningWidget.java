@@ -23894,7 +23894,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|MESSAGES
 operator|.
 name|exceptionNoStudent
@@ -23907,12 +23906,12 @@ operator|.
 name|getMessage
 argument_list|()
 argument_list|)
-operator|||
+operator|&&
 name|iEligibilityCheck
-operator|==
+operator|!=
 literal|null
-operator|||
-operator|!
+operator|&&
+operator|(
 name|iEligibilityCheck
 operator|.
 name|hasFlag
@@ -23925,7 +23924,18 @@ name|EligibilityFlag
 operator|.
 name|IS_ADVISOR
 argument_list|)
+operator|||
+name|iEligibilityCheck
+operator|.
+name|hasMessage
+argument_list|()
+operator|)
 condition|)
+block|{
+comment|// do not show "No student." error for advisors and admins, or when the eligibility check already returned some other message
+block|}
+else|else
+block|{
 name|iStatus
 operator|.
 name|error
@@ -23938,6 +23948,7 @@ argument_list|,
 name|caught
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
