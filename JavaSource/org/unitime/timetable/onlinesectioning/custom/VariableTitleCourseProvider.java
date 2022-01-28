@@ -95,6 +95,9 @@ parameter_list|,
 name|int
 name|limit
 parameter_list|,
+name|Long
+name|studentId
+parameter_list|,
 name|OnlineSectioningServer
 name|server
 parameter_list|,
@@ -108,6 +111,9 @@ name|getVariableTitleCourse
 parameter_list|(
 name|String
 name|course
+parameter_list|,
+name|Long
+name|studentId
 parameter_list|,
 name|OnlineSectioningServer
 name|server

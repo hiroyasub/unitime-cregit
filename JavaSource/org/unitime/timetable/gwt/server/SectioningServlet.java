@@ -38750,6 +38750,11 @@ name|query
 argument_list|,
 name|limit
 argument_list|,
+name|cx
+operator|.
+name|getStudentId
+argument_list|()
+argument_list|,
 name|server
 argument_list|,
 name|helper
@@ -38927,6 +38932,11 @@ operator|.
 name|getVariableTitleCourse
 argument_list|(
 name|course
+argument_list|,
+name|cx
+operator|.
+name|getStudentId
+argument_list|()
 argument_list|,
 name|server
 argument_list|,

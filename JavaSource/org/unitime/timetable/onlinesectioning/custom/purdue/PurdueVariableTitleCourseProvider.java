@@ -183,6 +183,20 @@ name|timetable
 operator|.
 name|onlinesectioning
 operator|.
+name|AcademicSessionInfo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
 name|OnlineSectioningHelper
 import|;
 end_import
@@ -387,9 +401,23 @@ block|}
 specifier|protected
 name|String
 name|getVariableTitleCourseSQL
-parameter_list|()
+parameter_list|(
+name|AcademicSessionInfo
+name|session
+parameter_list|)
 block|{
 return|return
+name|ApplicationProperties
+operator|.
+name|getProperty
+argument_list|(
+literal|"purdue.vt.variableTitleCourseSQL."
+operator|+
+name|session
+operator|.
+name|getCampus
+argument_list|()
+argument_list|,
 name|ApplicationProperties
 operator|.
 name|getProperty
@@ -400,7 +428,9 @@ literal|"select c.subj_code, c.crse_numb, c.crse_title, c.credit_hr_ind, c.credi
 operator|+
 literal|"from timetable.szgv_reg_vartl_course c, timetable.subject_area sa where "
 operator|+
-literal|"concat(concat(c.subj_code, ' '), c.crse_numb) like :query and c.attr_code = 'VART' and "
+literal|"(concat(concat(c.subj_code, ' '), c.crse_numb) like :query or concat(concat(c.subj_code, ' '), concat(c.crse_numb, concat(' - ', c.crse_title))) like :query) and "
+operator|+
+literal|"c.attr_code = 'VART' and "
 operator|+
 literal|"c.course_effective_term<= :term and :term< c.course_end_term and "
 operator|+
@@ -408,9 +438,12 @@ literal|"c.attr_effective_term<= :term and :term< c.attr_end_term and "
 operator|+
 literal|"c.gmod_effective_term<= :term and :term< c.gmod_end_term and "
 operator|+
-literal|"c.subj_code = sa.subject_area_abbreviation and sa.session_id = :sessionId "
+literal|"c.subj_code = sa.subject_area_abbreviation and sa.session_id = :sessionId and "
+operator|+
+literal|":studentId is not null "
 operator|+
 literal|"order by c.subj_code, c.crse_numb, c.gmod_code"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -461,6 +494,9 @@ parameter_list|,
 name|int
 name|limit
 parameter_list|,
+name|Long
+name|studentId
+parameter_list|,
 name|OnlineSectioningServer
 name|server
 parameter_list|,
@@ -483,40 +519,14 @@ operator|.
 name|createSQLQuery
 argument_list|(
 name|getVariableTitleCourseSQL
+argument_list|(
+name|server
+operator|.
+name|getAcademicSession
 argument_list|()
 argument_list|)
+argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|query
-operator|!=
-literal|null
-operator|&&
-name|query
-operator|.
-name|indexOf
-argument_list|(
-literal|" - "
-argument_list|)
-operator|>=
-literal|0
-condition|)
-name|query
-operator|=
-name|query
-operator|.
-name|substring
-argument_list|(
-literal|0
-argument_list|,
-name|query
-operator|.
-name|indexOf
-argument_list|(
-literal|" - "
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|q
 operator|.
 name|setText
@@ -567,6 +577,15 @@ argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|q
+operator|.
+name|setLong
+argument_list|(
+literal|"studentId"
+argument_list|,
+name|studentId
 argument_list|)
 expr_stmt|;
 if|if
@@ -1040,6 +1059,9 @@ parameter_list|(
 name|String
 name|query
 parameter_list|,
+name|Long
+name|studentId
+parameter_list|,
 name|OnlineSectioningServer
 name|server
 parameter_list|,
@@ -1062,40 +1084,14 @@ operator|.
 name|createSQLQuery
 argument_list|(
 name|getVariableTitleCourseSQL
+argument_list|(
+name|server
+operator|.
+name|getAcademicSession
 argument_list|()
 argument_list|)
+argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|query
-operator|!=
-literal|null
-operator|&&
-name|query
-operator|.
-name|indexOf
-argument_list|(
-literal|" - "
-argument_list|)
-operator|>=
-literal|0
-condition|)
-name|query
-operator|=
-name|query
-operator|.
-name|substring
-argument_list|(
-literal|0
-argument_list|,
-name|query
-operator|.
-name|indexOf
-argument_list|(
-literal|" - "
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|q
 operator|.
 name|setText
@@ -1138,6 +1134,15 @@ argument_list|()
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|q
+operator|.
+name|setLong
+argument_list|(
+literal|"studentId"
+argument_list|,
+name|studentId
 argument_list|)
 expr_stmt|;
 name|NameFormat
