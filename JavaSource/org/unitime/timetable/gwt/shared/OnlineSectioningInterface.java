@@ -285,6 +285,8 @@ block|,
 name|SR_EXTENDED
 block|,
 name|WAIT_LIST_VALIDATION
+block|,
+name|SHOW_SCHEDULING_PREFS
 block|, 			;
 specifier|public
 name|int
