@@ -81,6 +81,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|CourseOffering
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|CourseRequest
 import|;
 end_import
@@ -190,6 +204,10 @@ decl_stmt|;
 specifier|private
 name|Student
 name|iStudent
+decl_stmt|;
+specifier|private
+name|CourseOffering
+name|iWaitListSwapWithCourseOffering
 decl_stmt|;
 specifier|private
 name|FreeTime
@@ -579,6 +597,28 @@ name|student
 expr_stmt|;
 block|}
 specifier|public
+name|CourseOffering
+name|getWaitListSwapWithCourseOffering
+parameter_list|()
+block|{
+return|return
+name|iWaitListSwapWithCourseOffering
+return|;
+block|}
+specifier|public
+name|void
+name|setWaitListSwapWithCourseOffering
+parameter_list|(
+name|CourseOffering
+name|waitListSwapWithCourseOffering
+parameter_list|)
+block|{
+name|iWaitListSwapWithCourseOffering
+operator|=
+name|waitListSwapWithCourseOffering
+expr_stmt|;
+block|}
+specifier|public
 name|FreeTime
 name|getFreeTime
 parameter_list|()
@@ -878,6 +918,11 @@ operator|+
 literal|"\n	UniqueId: "
 operator|+
 name|getUniqueId
+argument_list|()
+operator|+
+literal|"\n	WaitListSwapWithCourseOffering: "
+operator|+
+name|getWaitListSwapWithCourseOffering
 argument_list|()
 operator|+
 literal|"\n	Waitlist: "

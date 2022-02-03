@@ -400,6 +400,7 @@ name|void
 name|onSetValue
 parameter_list|(
 name|RequestedCourse
+modifier|...
 name|course
 parameter_list|)
 block|{

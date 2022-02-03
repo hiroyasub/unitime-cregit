@@ -1776,6 +1776,27 @@ name|SectioningException
 throws|,
 name|PageAccessException
 function_decl|;
+name|Collection
+argument_list|<
+name|ClassAssignmentInterface
+operator|.
+name|CourseAssignment
+argument_list|>
+name|getCoursesFromRequest
+parameter_list|(
+name|StudentSectioningContext
+name|cx
+parameter_list|,
+name|CourseRequestInterface
+operator|.
+name|Request
+name|query
+parameter_list|)
+throws|throws
+name|SectioningException
+throws|,
+name|PageAccessException
+function_decl|;
 block|}
 end_interface
 

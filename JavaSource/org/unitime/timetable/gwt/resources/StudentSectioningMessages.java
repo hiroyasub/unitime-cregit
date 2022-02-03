@@ -10441,6 +10441,123 @@ name|Integer
 name|total
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-List Preferences"
+argument_list|)
+name|String
+name|dialogWaitListedRequestPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update Preferences"
+argument_list|)
+name|String
+name|buttonSubmitWaitListedRequestPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Close Dialog"
+argument_list|)
+name|String
+name|buttonCloseWaitListedRequestPreferences
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Update wait-list preferences for {0}"
+argument_list|)
+name|String
+name|iconWaitListedRequestPreferences
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-Listed:"
+argument_list|)
+name|String
+name|propWaitListSwapWithWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"New wait-list"
+argument_list|)
+name|String
+name|checkWaitListSwapWithNewWaitList
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Swap with course:"
+argument_list|)
+name|String
+name|propWaitListSwapWithCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"When a course is selected, it will be automatically swapped with the wait-listed course. This means that it will be only dropped when you can get the wait-listed course instead."
+argument_list|)
+name|String
+name|descWaitListSwapWithCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"No swap course selected."
+argument_list|)
+name|String
+name|itemWaitListSwapWithNoCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Replaces {0}."
+argument_list|)
+name|String
+name|conflictWaitListSwapWithNoCourseOffering
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requires {0}."
+argument_list|)
+name|String
+name|conflictRequiredPreferences
+parameter_list|(
+name|String
+name|prefs
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Replaces"
+argument_list|)
+name|String
+name|colWaitListSwapWithCourseOffering
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

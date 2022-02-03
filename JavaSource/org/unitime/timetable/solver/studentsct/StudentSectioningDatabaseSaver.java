@@ -1410,6 +1410,7 @@ name|getWaitlist
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|cd
 operator|.
 name|setWaitlistedTimeStamp
@@ -1417,6 +1418,14 @@ argument_list|(
 name|ts
 argument_list|)
 expr_stmt|;
+name|cd
+operator|.
+name|setWaitListSwapWithCourseOffering
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
 name|cd
 operator|.
 name|setWaitlist
@@ -1817,6 +1826,7 @@ name|getWaitlist
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|cd
 operator|.
 name|setWaitlistedTimeStamp
@@ -1824,6 +1834,14 @@ argument_list|(
 name|ts
 argument_list|)
 expr_stmt|;
+name|cd
+operator|.
+name|setWaitListSwapWithCourseOffering
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
 name|cd
 operator|.
 name|setWaitlist
