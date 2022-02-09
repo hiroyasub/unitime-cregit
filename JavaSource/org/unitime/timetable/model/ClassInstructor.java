@@ -43,6 +43,9 @@ extends|extends
 name|BaseClassInstructor
 implements|implements
 name|Comparable
+argument_list|<
+name|ClassInstructor
+argument_list|>
 block|{
 specifier|private
 specifier|static
@@ -160,7 +163,7 @@ specifier|public
 name|int
 name|compareTo
 parameter_list|(
-name|Object
+name|ClassInstructor
 name|o
 parameter_list|)
 block|{

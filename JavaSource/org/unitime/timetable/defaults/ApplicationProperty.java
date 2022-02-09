@@ -12612,6 +12612,28 @@ argument_list|(
 literal|"unitime.courses.funding_departments_enabled"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Course Assign Instructors: switch the user interface back to the old (Struts-based) assign instructor page"
+argument_list|)
+name|LegacyCourseAssignInstructors
+argument_list|(
+literal|"unitime.legacy.course.assign_instructors"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

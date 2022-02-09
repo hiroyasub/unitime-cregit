@@ -691,7 +691,7 @@ operator|.
 name|titleEditConfiguration
 argument_list|()
 operator|+
-literal|"' class='btn'>"
+literal|"' class='gwt-Button'>"
 argument_list|)
 expr_stmt|;
 name|btnTable
@@ -772,7 +772,7 @@ operator|.
 name|titleClassSetup
 argument_list|()
 operator|+
-literal|"' class='btn'> "
+literal|"' class='gwt-Button'> "
 argument_list|)
 expr_stmt|;
 name|btnTable
@@ -792,6 +792,13 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|ApplicationProperty
+operator|.
+name|LegacyCourseAssignInstructors
+operator|.
+name|isTrue
+argument_list|()
+operator|&&
 name|context
 operator|.
 name|hasPermission
@@ -853,7 +860,7 @@ operator|.
 name|titleAssignInstructors
 argument_list|()
 operator|+
-literal|"' class='btn'> "
+literal|"' class='gwt-Button'> "
 argument_list|)
 expr_stmt|;
 name|btnTable
@@ -861,6 +868,69 @@ operator|.
 name|append
 argument_list|(
 literal|"</form>"
+argument_list|)
+expr_stmt|;
+name|btnTable
+operator|.
+name|append
+argument_list|(
+literal|"</td>"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|ApplicationProperty
+operator|.
+name|LegacyCourseAssignInstructors
+operator|.
+name|isFalse
+argument_list|()
+operator|&&
+name|context
+operator|.
+name|hasPermission
+argument_list|(
+name|ioc
+argument_list|,
+name|Right
+operator|.
+name|AssignInstructors
+argument_list|)
+condition|)
+block|{
+name|btnTable
+operator|.
+name|append
+argument_list|(
+literal|"<td>"
+argument_list|)
+expr_stmt|;
+name|btnTable
+operator|.
+name|append
+argument_list|(
+literal|"<div id='UniTimeGWT:AssignInstructorsButton' style=\"display: none;\">"
+argument_list|)
+expr_stmt|;
+name|btnTable
+operator|.
+name|append
+argument_list|(
+name|ioc
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|btnTable
+operator|.
+name|append
+argument_list|(
+literal|"</div>"
 argument_list|)
 expr_stmt|;
 name|btnTable
