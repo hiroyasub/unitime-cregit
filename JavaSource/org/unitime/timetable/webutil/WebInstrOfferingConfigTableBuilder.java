@@ -910,7 +910,17 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"<div id='UniTimeGWT:AssignInstructorsButton' style=\"display: none;\">"
+literal|"<span id='"
+operator|+
+name|ioc
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+operator|+
+literal|"' name='UniTimeGWT:AssignInstructorsButton' style=\"display: none;\">"
 argument_list|)
 expr_stmt|;
 name|btnTable
@@ -930,7 +940,7 @@ name|btnTable
 operator|.
 name|append
 argument_list|(
-literal|"</div>"
+literal|"</span>"
 argument_list|)
 expr_stmt|;
 name|btnTable

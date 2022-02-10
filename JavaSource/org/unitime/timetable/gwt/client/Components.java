@@ -1416,6 +1416,8 @@ name|assignClassInstructors
 argument_list|(
 literal|"UniTimeGWT:AssignInstructorsButton"
 argument_list|,
+literal|true
+argument_list|,
 operator|new
 name|ComponentFactory
 argument_list|()
