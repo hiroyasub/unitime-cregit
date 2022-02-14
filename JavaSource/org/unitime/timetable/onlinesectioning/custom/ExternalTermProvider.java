@@ -84,6 +84,20 @@ name|String
 name|courseNumber
 parameter_list|)
 function_decl|;
+specifier|public
+name|String
+name|getExternalCourseCampus
+parameter_list|(
+name|AcademicSessionInfo
+name|session
+parameter_list|,
+name|String
+name|subjectArea
+parameter_list|,
+name|String
+name|courseNumber
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
