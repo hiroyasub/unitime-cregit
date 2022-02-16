@@ -3906,7 +3906,7 @@ literal|"<td class='unitime-TableHeader'>"
 operator|+
 name|MSG
 operator|.
-name|colSubject
+name|colSubpart
 argument_list|()
 operator|+
 literal|"</td>"
