@@ -1547,7 +1547,7 @@ name|CanLookupStaff
 argument_list|)
 operator|)
 condition|)
-name|findPeopleFromInstructors
+name|findPeopleFromStaff
 argument_list|(
 name|cx
 argument_list|)
@@ -1576,7 +1576,7 @@ name|CanLookupManagers
 argument_list|)
 operator|)
 condition|)
-name|findPeopleFromStaff
+name|findPeopleFromTimetableManagers
 argument_list|(
 name|cx
 argument_list|)
@@ -1605,7 +1605,7 @@ name|CanLookupEventContacts
 argument_list|)
 operator|)
 condition|)
-name|findPeopleFromTimetableManagers
+name|findPeopleFromEventContact
 argument_list|(
 name|cx
 argument_list|)
@@ -1634,7 +1634,7 @@ name|CanLookupInstructors
 argument_list|)
 operator|)
 condition|)
-name|findPeopleFromEventContact
+name|findPeopleFromInstructors
 argument_list|(
 name|cx
 argument_list|)
