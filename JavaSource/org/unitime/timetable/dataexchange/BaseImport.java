@@ -694,7 +694,7 @@ return|return
 operator|(
 name|Boolean
 operator|.
-name|getBoolean
+name|parseBoolean
 argument_list|(
 name|attributeStr
 argument_list|)
@@ -733,7 +733,7 @@ return|return
 operator|(
 name|Boolean
 operator|.
-name|getBoolean
+name|parseBoolean
 argument_list|(
 name|attributeStr
 argument_list|)
