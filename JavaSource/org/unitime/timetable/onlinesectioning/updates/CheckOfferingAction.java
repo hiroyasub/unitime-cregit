@@ -2855,6 +2855,10 @@ condition|(
 name|dropEnrollment
 operator|!=
 literal|null
+operator|&&
+name|enrollment
+operator|!=
+literal|null
 condition|)
 name|server
 operator|.
