@@ -2248,6 +2248,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"To be wait-listed."
+argument_list|)
+name|String
+name|courseToBeWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Not Enrolled"
 argument_list|)
 name|String
@@ -5851,6 +5860,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"<u>W</u>ait-List {0}"
+argument_list|)
+name|String
+name|buttonWaitList
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Do you want to drop {0} from your schedule?"
 argument_list|)
 name|String
@@ -7392,6 +7413,24 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Enrolled in a course higher in the list of alternatives."
+argument_list|)
+name|String
+name|waitListLowPriority
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Current enrollment meets the requirements."
+argument_list|)
+name|String
+name|waitListRequirementsMet
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"The following issues have been detected:\n{0}"
 argument_list|)
 name|String
@@ -7507,6 +7546,18 @@ name|requestedWarnings
 parameter_list|(
 name|String
 name|errors
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Wait-list for {0} is not active."
+argument_list|)
+name|String
+name|waitListInactive
+parameter_list|(
+name|String
+name|course
 parameter_list|)
 function_decl|;
 annotation|@

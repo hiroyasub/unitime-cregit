@@ -24480,6 +24480,13 @@ name|getTimestamp
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|r
+operator|.
+name|isWaitList
+argument_list|()
+condition|)
 name|r
 operator|.
 name|setWaitListedTimeStamp
