@@ -12002,7 +12002,7 @@ name|addWhere
 argument_list|(
 literal|"assignment"
 argument_list|,
-literal|"wcr.courseDemand.waitlist = true and wcr.courseDemand.student = s and not wcr.courseOffering.instructionalOffering.waitlist = false"
+literal|"wcr.courseDemand.waitlist = true and wcr.courseDemand.student = s and (wcr.courseOffering.instructionalOffering.waitlist is null or wcr.courseOffering.instructionalOffering.waitlist = true)"
 argument_list|)
 expr_stmt|;
 block|}
@@ -13340,6 +13340,18 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"Q: "
+operator|+
+name|query
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|org
 operator|.
 name|hibernate
@@ -14403,7 +14415,7 @@ name|addWhere
 argument_list|(
 literal|"assignment"
 argument_list|,
-literal|"not co.instructionalOffering.waitlist = false and cd.waitlist = true"
+literal|"(co.instructionalOffering.waitlist is null or co.instructionalOffering.waitlist = true) and cd.waitlist = true"
 argument_list|)
 expr_stmt|;
 block|}

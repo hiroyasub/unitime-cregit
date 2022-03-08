@@ -13825,15 +13825,6 @@ name|rc
 operator|.
 name|isCanWaitList
 argument_list|()
-operator|&&
-name|rc
-operator|.
-name|getStatus
-argument_list|()
-operator|!=
-name|RequestedCourseStatus
-operator|.
-name|ENROLLED
 condition|)
 block|{
 name|P

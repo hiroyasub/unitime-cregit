@@ -2454,12 +2454,9 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
-name|crm
+name|e
 operator|.
-name|enrollment
-argument_list|()
-operator|.
-name|isEmpty
+name|isWaitList
 argument_list|()
 condition|)
 name|e
