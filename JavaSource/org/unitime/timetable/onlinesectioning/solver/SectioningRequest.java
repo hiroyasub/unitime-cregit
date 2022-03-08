@@ -700,6 +700,10 @@ name|iDropCourseId
 init|=
 literal|null
 decl_stmt|;
+specifier|private
+name|boolean
+name|iRescheduling
+decl_stmt|;
 specifier|public
 name|SectioningRequest
 parameter_list|(
@@ -714,6 +718,9 @@ name|courseId
 parameter_list|,
 name|XStudent
 name|student
+parameter_list|,
+name|boolean
+name|rescheduling
 parameter_list|,
 name|StudentPriority
 name|priority
@@ -741,6 +748,10 @@ expr_stmt|;
 name|iCourseId
 operator|=
 name|courseId
+expr_stmt|;
+name|iRescheduling
+operator|=
+name|rescheduling
 expr_stmt|;
 if|if
 condition|(
@@ -1021,6 +1032,15 @@ operator|.
 name|getOfferingId
 argument_list|()
 argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|isRescheduling
+parameter_list|()
+block|{
+return|return
+name|iRescheduling
 return|;
 block|}
 specifier|public
