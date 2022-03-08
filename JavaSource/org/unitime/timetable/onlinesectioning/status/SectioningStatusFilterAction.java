@@ -13340,18 +13340,6 @@ name|Session
 name|hibSession
 parameter_list|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Q: "
-operator|+
-name|query
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|org
 operator|.
 name|hibernate

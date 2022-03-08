@@ -7368,6 +7368,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Wait-Listed"
+argument_list|)
+name|String
+name|reqStatusWaitListed
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are already enrolled in {0}.\nThis course request cannot be modified or deleted."
 argument_list|)
 name|String
