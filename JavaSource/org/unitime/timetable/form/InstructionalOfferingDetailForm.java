@@ -360,6 +360,10 @@ specifier|private
 name|boolean
 name|teachingRequests
 decl_stmt|;
+specifier|private
+name|String
+name|fundingDepartment
+decl_stmt|;
 comment|// --------------------------------------------------------- Classes
 comment|/** Factory to create dynamic list element for Course Offerings */
 specifier|protected
@@ -560,6 +564,10 @@ expr_stmt|;
 name|teachingRequests
 operator|=
 literal|false
+expr_stmt|;
+name|fundingDepartment
+operator|=
+literal|null
 expr_stmt|;
 block|}
 specifier|public
@@ -2044,6 +2052,30 @@ operator|.
 name|teachingRequests
 operator|=
 name|teachingRequests
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getFundingDepartment
+parameter_list|()
+block|{
+return|return
+name|fundingDepartment
+return|;
+block|}
+specifier|public
+name|void
+name|setFundingDepartment
+parameter_list|(
+name|String
+name|fundingDepartment
+parameter_list|)
+block|{
+name|this
+operator|.
+name|fundingDepartment
+operator|=
+name|fundingDepartment
 expr_stmt|;
 block|}
 block|}

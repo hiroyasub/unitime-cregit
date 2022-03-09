@@ -314,6 +314,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Funding Department:"
+argument_list|)
+name|String
+name|propertyFundingDepartment
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Instructors:"
 argument_list|)
 name|String
@@ -5659,6 +5668,15 @@ literal|"Edit Course Offering"
 argument_list|)
 name|String
 name|titleEditCourseOffering
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Add Course Offering"
+argument_list|)
+name|String
+name|titleAddCourseOffering
 parameter_list|()
 function_decl|;
 annotation|@

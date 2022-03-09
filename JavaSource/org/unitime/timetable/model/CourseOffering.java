@@ -1672,6 +1672,17 @@ name|getIsControl
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|co
+operator|.
+name|setFundingDept
+argument_list|(
+name|this
+operator|.
+name|getFundingDept
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|//TODO Get effective?
 return|return
 name|co
 return|;

@@ -701,6 +701,14 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|fundingDepartment
+operator|=
+operator|new
+name|Boolean
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|includeCancelledClasses
 operator|=
 literal|false
