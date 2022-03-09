@@ -3943,6 +3943,28 @@ argument_list|(
 literal|"unitime.external.variable_title_data_lookup.class"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"select crs_dpt.dept_code from %SCHEMA%.department crs_dpt where crs_dpt.uniqueid = sa.department_uniqueid"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Query to determine the department code for a course based on data from an external database. Use 'sess' to reference the UniTime Academic Session data,  'sa' to reference the UniTime Subject Area data and 'co' to reference the UniTime CourseOffering data"
+argument_list|)
+name|ExternalCourseDepartmentCodeLookupSQL
+argument_list|(
+literal|"unitime.external.course.department_code_lookup_sql"
+argument_list|)
+operator|,
 comment|/** 	 * Use {@link SpringLdapExternalUidTranslation} when LDAP authentication is enabled. 	 * See http://help.unitime.org/LDAP for more details. 	 */
 expr_stmt|@
 name|Type
