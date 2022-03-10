@@ -4759,7 +4759,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"(select c.expected_capacity from class_ c where c.uniqueid = e.class_id)"
+literal|"(select c.expected_capacity from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".class_ c where c.uniqueid = e.class_id)"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -4944,7 +4955,29 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"from related_course_info rci, student s "
+literal|"from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".related_course_info rci, "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student s "
 argument_list|)
 expr_stmt|;
 name|newline
@@ -4958,7 +4991,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join student_class_enrl sce on sce.student_id = s.uniqueid"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student_class_enrl sce on sce.student_id = s.uniqueid"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -4972,7 +5016,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join class_ c on c.uniqueid = sce.class_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".class_ c on c.uniqueid = sce.class_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -4986,7 +5041,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join scheduling_subpart ss on ss.uniqueid = c.subpart_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".scheduling_subpart ss on ss.uniqueid = c.subpart_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5000,7 +5066,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join instr_offering_config ioc on ioc.uniqueid = ss.config_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".instr_offering_config ioc on ioc.uniqueid = ss.config_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5014,7 +5091,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join course_offering co on co.uniqueid = sce.course_offering_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".course_offering co on co.uniqueid = sce.course_offering_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5028,7 +5116,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join instructional_offering io on io.uniqueid = co.instr_offr_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".instructional_offering io on io.uniqueid = co.instr_offr_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5290,7 +5389,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"from exam ex"
+literal|"from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".exam ex"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5304,7 +5414,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join exam_owner eo on eo.exam_id = ex.uniqueid, "
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".exam_owner eo on eo.exam_id = ex.uniqueid, "
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5318,7 +5439,13 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"student s "
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student s "
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5332,7 +5459,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join student_class_enrl sce on sce.student_id = s.uniqueid"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student_class_enrl sce on sce.student_id = s.uniqueid"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5346,7 +5484,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join class_ c on c.uniqueid = sce.class_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".class_ c on c.uniqueid = sce.class_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5360,7 +5509,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join scheduling_subpart ss on ss.uniqueid = c.subpart_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".scheduling_subpart ss on ss.uniqueid = c.subpart_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5374,7 +5534,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join instr_offering_config ioc on ioc.uniqueid = ss.config_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".instr_offering_config ioc on ioc.uniqueid = ss.config_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5388,7 +5559,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join course_offering co on co.uniqueid = sce.course_offering_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".course_offering co on co.uniqueid = sce.course_offering_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5402,7 +5584,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join instructional_offering io on io.uniqueid = co.instr_offr_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".instructional_offering io on io.uniqueid = co.instr_offr_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5562,7 +5755,29 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"(select count (distinct stu.uniqueid) from student stu inner join student_class_enrl stu_enrl on stu_enrl.student_id = stu.uniqueid and stu_enrl.class_id = e.class_id)"
+literal|"(select count (distinct stu.uniqueid) from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student stu inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student_class_enrl stu_enrl on stu_enrl.student_id = stu.uniqueid and stu_enrl.class_id = e.class_id)"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5658,7 +5873,29 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"from related_course_info rci, student s "
+literal|"from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".related_course_info rci, "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student s "
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5672,7 +5909,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join student_class_enrl sce on sce.student_id = s.uniqueid"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student_class_enrl sce on sce.student_id = s.uniqueid"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5686,7 +5934,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join class_ c on c.uniqueid = sce.class_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".class_ c on c.uniqueid = sce.class_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5700,7 +5959,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join scheduling_subpart ss on ss.uniqueid = c.subpart_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".scheduling_subpart ss on ss.uniqueid = c.subpart_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5714,7 +5984,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join instr_offering_config ioc on ioc.uniqueid = ss.config_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".instr_offering_config ioc on ioc.uniqueid = ss.config_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5728,7 +6009,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join course_offering co on co.uniqueid = sce.course_offering_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".course_offering co on co.uniqueid = sce.course_offering_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -5742,7 +6034,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join instructional_offering io on io.uniqueid = co.instr_offr_id"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".instructional_offering io on io.uniqueid = co.instr_offr_id"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -6007,7 +6310,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"from timetable.meeting om"
+literal|"from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".meeting om"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -6021,7 +6335,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join timetable.room oth_r on oth_r.session_id = sess.uniqueid"
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".room oth_r on oth_r.session_id = sess.uniqueid"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -7285,7 +7610,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|" and (c.uniqueId is null or (c.expected_capacity> 0 or 0< (select count(cstu_enrl.uniqueid) from student_class_enrl cstu_enrl where cstu_enrl.class_id = c.uniqueid)))"
+literal|" and (c.uniqueId is null or (c.expected_capacity> 0 or 0< (select count(cstu_enrl.uniqueid) from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".student_class_enrl cstu_enrl where cstu_enrl.class_id = c.uniqueid)))"
 argument_list|)
 expr_stmt|;
 name|newline

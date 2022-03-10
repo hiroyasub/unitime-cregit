@@ -313,7 +313,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"from timetable.meeting om"
+literal|"from "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".meeting om"
 argument_list|)
 expr_stmt|;
 name|newline
@@ -327,7 +338,18 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"inner join timetable.room oth_r on oth_r.session_id = sess.uniqueid "
+literal|"inner join "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|getSchema
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|".room oth_r on oth_r.session_id = sess.uniqueid "
 argument_list|)
 expr_stmt|;
 name|newline
