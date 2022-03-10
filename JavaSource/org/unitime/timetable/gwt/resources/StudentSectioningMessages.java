@@ -579,7 +579,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"WL/Ovrd"
+literal|"WL/Override"
 argument_list|)
 name|String
 name|colWaitListAndAllowedOverrides
