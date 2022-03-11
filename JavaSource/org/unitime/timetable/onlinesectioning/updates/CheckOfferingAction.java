@@ -3804,6 +3804,13 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|cd
+operator|.
+name|setWaitlistedTimeStamp
+argument_list|(
+name|ts
+argument_list|)
+expr_stmt|;
 name|helper
 operator|.
 name|getHibSession
