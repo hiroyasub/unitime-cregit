@@ -4401,10 +4401,7 @@ argument_list|)
 operator|.
 name|dropEnrollment
 argument_list|(
-name|r
-operator|.
-name|getDropEnrollment
-argument_list|()
+name|dropEnrollment
 argument_list|)
 argument_list|,
 name|helper
@@ -5647,10 +5644,7 @@ argument_list|)
 operator|.
 name|dropEnrollment
 argument_list|(
-name|r
-operator|.
-name|getDropEnrollment
-argument_list|()
+name|dropEnrollment
 argument_list|)
 argument_list|,
 name|helper
