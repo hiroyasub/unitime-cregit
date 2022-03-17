@@ -10828,7 +10828,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"<u>A</u>pply"
+literal|"<u>S</u>ave"
 argument_list|)
 name|String
 name|buttonSchedulingPrefApply
@@ -10842,6 +10842,30 @@ argument_list|)
 name|String
 name|buttonSchedulingPrefClose
 parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to update preferences: {0}"
+argument_list|)
+name|String
+name|failedToUpdatePreferences
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Failed to load preferences: {0}"
+argument_list|)
+name|String
+name|failedToLoadPreferences
+parameter_list|(
+name|String
+name|reason
+parameter_list|)
 function_decl|;
 block|}
 end_interface
