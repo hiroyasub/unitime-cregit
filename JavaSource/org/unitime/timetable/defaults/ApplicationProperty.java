@@ -12634,6 +12634,28 @@ argument_list|(
 literal|"unitime.legacy.course.assign_instructors"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Edit Course Offering: switch the user interface back to the old (Struts-based) edit course offering page"
+argument_list|)
+name|LegacyCourseEdit
+argument_list|(
+literal|"unitime.legacy.course_edit"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 

@@ -8402,7 +8402,6 @@ name|getFundingDept
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//TODO Effective?
 return|return
 operator|(
 name|newClass

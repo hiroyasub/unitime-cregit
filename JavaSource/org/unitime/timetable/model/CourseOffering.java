@@ -1682,7 +1682,6 @@ name|getFundingDept
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//TODO Get effective?
 return|return
 name|co
 return|;

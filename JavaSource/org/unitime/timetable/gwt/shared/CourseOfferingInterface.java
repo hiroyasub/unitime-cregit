@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * Licensed to The Apereo Foundation under one or more contributor license  * agreements. See the NOTICE file distributed with this work for  * additional information regarding copyright ownership.  *  * The Apereo Foundation licenses this file to you under the Apache License,  * Version 2.0 (the "License"); you may not use this file except in  * compliance with the License. You may obtain a copy of the License at:  *  * http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  * See the License for the specific language governing permissions and  * limitations under the License.  *  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -148,7 +152,6 @@ specifier|private
 name|String
 name|iName
 decl_stmt|;
-comment|//private Double iX, iY;
 specifier|private
 name|String
 name|iExternalId
@@ -213,9 +216,6 @@ specifier|private
 name|String
 name|iExternalUniqueId
 decl_stmt|;
-comment|//private Long iUniqueIdRolledForwardFrom;
-comment|//private Integer iSnapshotProjectedDemand;
-comment|//private Date iSnapshotProjectedDemandDate;
 specifier|private
 name|String
 name|iLabel
@@ -334,6 +334,10 @@ name|String
 name|iCatalogLinkLabel
 decl_stmt|;
 specifier|private
+name|String
+name|iErrorMessage
+decl_stmt|;
+specifier|private
 name|List
 argument_list|<
 name|CoordinatorInterface
@@ -374,6 +378,21 @@ block|{
 return|return
 name|iSendCoordinators
 return|;
+block|}
+specifier|public
+name|void
+name|clearInstructors
+parameter_list|()
+block|{
+name|iSendCoordinators
+operator|=
+operator|new
+name|ArrayList
+argument_list|<
+name|CoordinatorInterface
+argument_list|>
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -420,47 +439,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|String
-name|getCourseOverride
-parameter_list|(
-name|String
-name|id
-parameter_list|)
-block|{
-return|return
-name|String
-operator|.
-name|valueOf
-argument_list|(
-name|iOverrides
-operator|.
-name|contains
-argument_list|(
-name|id
-argument_list|)
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setCourseOverride
-parameter_list|(
-name|String
-name|id
-parameter_list|,
-name|String
-name|value
-parameter_list|)
-block|{
-name|iOverrides
-operator|.
-name|add
-argument_list|(
-name|id
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
 name|Set
 argument_list|<
 name|String
@@ -485,6 +463,28 @@ argument_list|<
 name|String
 argument_list|>
 argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getErrorMessage
+parameter_list|()
+block|{
+return|return
+name|iErrorMessage
+return|;
+block|}
+specifier|public
+name|void
+name|setErrorMessage
+parameter_list|(
+name|String
+name|errorMessage
+parameter_list|)
+block|{
+name|iErrorMessage
+operator|=
+name|errorMessage
 expr_stmt|;
 block|}
 specifier|public
@@ -905,7 +905,6 @@ operator|=
 name|waitList
 expr_stmt|;
 block|}
-comment|//Remove this? TODO
 specifier|private
 name|Long
 name|iSubjectAreaId
@@ -1390,58 +1389,10 @@ operator|=
 name|iExternalUniqueId
 expr_stmt|;
 block|}
-comment|//	public Long getUniqueIdRolledForwardFrom() {
-comment|//		return iUniqueIdRolledForwardFrom;
-comment|//	}
-comment|//
-comment|//	public void setUniqueIdRolledForwardFrom(Long iUniqueIdRolledForwardFrom) {
-comment|//		this.iUniqueIdRolledForwardFrom = iUniqueIdRolledForwardFrom;
-comment|//	}
-comment|//
-comment|//	public Integer getSnapshotProjectedDemand() {
-comment|//		return iSnapshotProjectedDemand;
-comment|//	}
-comment|//	public void setSnapshotProjectedDemand(Integer iSnapshotProjectedDemand) {
-comment|//		this.iSnapshotProjectedDemand = iSnapshotProjectedDemand;
-comment|//	}
-comment|//
-comment|//	public Date getSnapshotProjectedDemandDate() {
-comment|//		return iSnapshotProjectedDemandDate;
-comment|//	}
-comment|//
-comment|//	public void setSnapshotProjectedDemandDate(Date iSnapshotProjectedDemandDate) {
-comment|//		this.iSnapshotProjectedDemandDate = iSnapshotProjectedDemandDate;
-comment|//	}
 specifier|public
 name|CourseOfferingInterface
 parameter_list|()
 block|{
-block|}
-specifier|public
-name|CourseOfferingInterface
-parameter_list|(
-name|Long
-name|id
-parameter_list|,
-name|String
-name|abbreviation
-parameter_list|,
-name|String
-name|name
-parameter_list|)
-block|{
-name|iId
-operator|=
-name|id
-expr_stmt|;
-name|iAbbreviation
-operator|=
-name|abbreviation
-expr_stmt|;
-name|iName
-operator|=
-name|name
-expr_stmt|;
 block|}
 specifier|public
 name|Boolean
@@ -1531,12 +1482,6 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|//	public boolean hasCoordinates() { return iX != null&& iY != null; }
-comment|//	public Double getX() { return iX; }
-comment|//	public void setX(Double x) { iX = x; }
-comment|//
-comment|//	public Double getY() { return iY; }
-comment|//	public void setY(Double y) { iY = y; }
 specifier|public
 name|boolean
 name|hasExternalId
@@ -1605,20 +1550,6 @@ name|booleanValue
 argument_list|()
 return|;
 block|}
-comment|//	@Override
-comment|//	public int hashCode() { return getId().hashCode(); }
-comment|//	@Override
-comment|//	public boolean equals(Object object) {
-comment|//		//if (object == null || !(object instanceof BuildingInterface)) return false;
-comment|//		//return getId().equals(((BuildingInterface)object).getId());
-comment|//		return true;
-comment|//	}
-comment|//	private Integer iLimit = null;
-comment|//	private Long iParentId = null;
-comment|//	public Integer getLimit() { return iLimit; }
-comment|//	public void setLimit(Integer limit) { iLimit = limit; }
-comment|//	public Long getParentId() { return iParentId; }
-comment|//	public void setParentId(Long id) { iParentId = id; }
 specifier|public
 name|String
 name|toString
@@ -1996,7 +1927,7 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|Long
+name|String
 name|iCourseNumber
 init|=
 literal|null
@@ -2034,7 +1965,7 @@ parameter_list|,
 name|Long
 name|subjAreaId
 parameter_list|,
-name|Long
+name|String
 name|courseOfferingId
 parameter_list|)
 block|{
@@ -2053,7 +1984,12 @@ else|else
 block|{
 name|iCourseOfferingId
 operator|=
+name|Long
+operator|.
+name|valueOf
+argument_list|(
 name|courseOfferingId
+argument_list|)
 expr_stmt|;
 block|}
 name|iIsEdit
@@ -2064,7 +2000,6 @@ name|iSubjAreaId
 operator|=
 name|subjAreaId
 expr_stmt|;
-comment|//iCourseOfferingId = courseOfferingId;
 block|}
 specifier|public
 name|boolean
@@ -2144,7 +2079,7 @@ name|courseOfferingId
 expr_stmt|;
 block|}
 specifier|public
-name|Long
+name|String
 name|getCourseNumber
 parameter_list|()
 block|{
@@ -2156,7 +2091,7 @@ specifier|public
 name|void
 name|setCourseNumber
 parameter_list|(
-name|Long
+name|String
 name|courseNumber
 parameter_list|)
 block|{
@@ -2242,51 +2177,6 @@ specifier|public
 name|CourseOfferingConstantsRequest
 parameter_list|()
 block|{
-block|}
-specifier|public
-name|CourseOfferingConstantsRequest
-parameter_list|(
-name|Boolean
-name|isEdit
-parameter_list|,
-name|Long
-name|subjAreaId
-parameter_list|)
-block|{
-name|iIsEdit
-operator|=
-name|isEdit
-expr_stmt|;
-name|iSubjAreaId
-operator|=
-name|subjAreaId
-expr_stmt|;
-block|}
-specifier|public
-name|CourseOfferingConstantsRequest
-parameter_list|(
-name|Boolean
-name|isEdit
-parameter_list|,
-name|Long
-name|subjAreaId
-parameter_list|,
-name|Long
-name|courseOfferingId
-parameter_list|)
-block|{
-name|iIsEdit
-operator|=
-name|isEdit
-expr_stmt|;
-name|iSubjAreaId
-operator|=
-name|subjAreaId
-expr_stmt|;
-name|iCourseOfferingId
-operator|=
-name|courseOfferingId
-expr_stmt|;
 block|}
 specifier|public
 name|Long
@@ -2601,6 +2491,10 @@ name|String
 name|iInstructionalOfferingId
 decl_stmt|;
 specifier|private
+name|String
+name|iDefaultTeachingResponsibilityId
+decl_stmt|;
+specifier|private
 name|List
 argument_list|<
 name|InstructorInterface
@@ -2729,40 +2623,6 @@ name|iSubjectAreas
 operator|=
 name|subjectAreas
 expr_stmt|;
-block|}
-specifier|public
-name|SubjectAreaInterface
-name|getRoomType
-parameter_list|(
-name|Long
-name|id
-parameter_list|)
-block|{
-for|for
-control|(
-name|SubjectAreaInterface
-name|subjectArea
-range|:
-name|iSubjectAreas
-control|)
-if|if
-condition|(
-name|id
-operator|.
-name|equals
-argument_list|(
-name|subjectArea
-operator|.
-name|getId
-argument_list|()
-argument_list|)
-condition|)
-return|return
-name|subjectArea
-return|;
-return|return
-literal|null
-return|;
 block|}
 specifier|public
 name|void
@@ -3466,6 +3326,28 @@ block|{
 name|iInstructionalOfferingId
 operator|=
 name|instructionalOfferingId
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getDefaultTeachingResponsibilityId
+parameter_list|()
+block|{
+return|return
+name|iDefaultTeachingResponsibilityId
+return|;
+block|}
+specifier|public
+name|void
+name|setDefaultTeachingResponsibilityId
+parameter_list|(
+name|String
+name|defaultTeachingResponsibilityId
+parameter_list|)
+block|{
+name|iDefaultTeachingResponsibilityId
+operator|=
+name|defaultTeachingResponsibilityId
 expr_stmt|;
 block|}
 block|}
@@ -4526,9 +4408,7 @@ block|{
 name|CREATE
 block|,
 name|UPDATE
-block|;
-comment|//, DELETE, UPDATE_DATA;
-block|}
+block|; 	}
 specifier|public
 specifier|static
 class|class
@@ -4974,32 +4854,6 @@ specifier|public
 name|CourseOfferingCheckExists
 parameter_list|()
 block|{
-block|}
-specifier|public
-name|CourseOfferingCheckExists
-parameter_list|(
-name|Long
-name|subjectAreaId
-parameter_list|,
-name|String
-name|courseNumber
-parameter_list|,
-name|Boolean
-name|isEdit
-parameter_list|)
-block|{
-name|iSubjectAreaId
-operator|=
-name|subjectAreaId
-expr_stmt|;
-name|iCourseNumber
-operator|=
-name|courseNumber
-expr_stmt|;
-name|iIsEdit
-operator|=
-name|isEdit
-expr_stmt|;
 block|}
 specifier|public
 name|Long

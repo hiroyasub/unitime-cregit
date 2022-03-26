@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*  * Licensed to The Apereo Foundation under one or more contributor license  * agreements. See the NOTICE file distributed with this work for  * additional information regarding copyright ownership.  *  * The Apereo Foundation licenses this file to you under the Apache License,  * Version 2.0 (the "License"); you may not use this file except in  * compliance with the License. You may obtain a copy of the License at:  *  * http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  * See the License for the specific language governing permissions and  * limitations under the License.  *  */
+end_comment
+
 begin_package
 package|package
 name|org
@@ -147,11 +151,11 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|timetable
+name|localization
 operator|.
-name|defaults
+name|messages
 operator|.
-name|ApplicationProperty
+name|CourseMessages
 import|;
 end_import
 
@@ -161,11 +165,11 @@ name|org
 operator|.
 name|unitime
 operator|.
-name|localization
+name|timetable
 operator|.
-name|messages
+name|defaults
 operator|.
-name|CourseMessages
+name|ApplicationProperty
 import|;
 end_import
 
@@ -1134,19 +1138,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|List
-argument_list|<
-name|CourseOffering
-argument_list|>
-name|list
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|CourseOffering
-argument_list|>
-argument_list|()
-decl_stmt|;
 name|int
 name|j
 init|=
@@ -1161,7 +1152,6 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|//Does this still work?
 for|for
 control|(
 name|SubjectArea
@@ -1505,6 +1495,45 @@ name|responsibility
 argument_list|)
 expr_stmt|;
 block|}
+name|TeachingResponsibility
+name|tr
+init|=
+name|TeachingResponsibility
+operator|.
+name|getDefaultCoordinatorTeachingResponsibility
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|tr
+operator|!=
+literal|null
+condition|)
+block|{
+name|response
+operator|.
+name|setDefaultTeachingResponsibilityId
+argument_list|(
+name|tr
+operator|.
+name|getUniqueId
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|response
+operator|.
+name|setDefaultTeachingResponsibilityId
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|request
@@ -1781,7 +1810,6 @@ name|instructorObject
 argument_list|)
 expr_stmt|;
 block|}
-comment|//Funding department stuff
 name|HashMap
 argument_list|<
 name|Long
@@ -1835,15 +1863,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|subjectFundingDepartment
 operator|.
 name|getUniqueId
 argument_list|()
-operator|!=
+operator|.
+name|equals
+argument_list|(
 name|subjectDepartment
 operator|.
 name|getUniqueId
 argument_list|()
+argument_list|)
 condition|)
 block|{
 name|fundingDeptMap
@@ -1973,7 +2005,6 @@ operator|.
 name|getFundingDept
 argument_list|()
 decl_stmt|;
-comment|//TODO do we need to get effective if this is null?
 if|if
 condition|(
 name|fundingDept
@@ -2325,9 +2356,6 @@ name|request
 operator|.
 name|getCourseNumber
 argument_list|()
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -2423,7 +2451,6 @@ operator|.
 name|isTrue
 argument_list|()
 decl_stmt|;
-comment|//true;
 name|response
 operator|.
 name|setAllowAlternativeCourseOfferings
@@ -2523,7 +2550,6 @@ range|:
 name|courseOfferingsDemand
 control|)
 block|{
-comment|//TODO
 name|CourseOfferingInterface
 name|courseOffering
 init|=
@@ -2598,7 +2624,6 @@ operator|.
 name|isNotOffered
 argument_list|()
 return|;
-comment|//&& !course.equals(co); TODO
 block|}
 block|}
 argument_list|)
@@ -2611,7 +2636,6 @@ range|:
 name|altCourseOfferings
 control|)
 block|{
-comment|//TODO
 name|CourseOfferingInterface
 name|courseOffering
 init|=
@@ -2629,7 +2653,6 @@ name|getUniqueId
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//courseOffering.setAbbreviation(co.get);
 name|courseOffering
 operator|.
 name|setLabel
@@ -2705,7 +2728,6 @@ name|courseTypeObject
 argument_list|)
 expr_stmt|;
 block|}
-comment|//Override Types
 for|for
 control|(
 name|OverrideType
