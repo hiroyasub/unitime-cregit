@@ -585,6 +585,15 @@ name|String
 name|colWaitListAndAllowedOverrides
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Preference"
+argument_list|)
+name|String
+name|colSchedulingPreference
+parameter_list|()
+function_decl|;
 comment|/* Academic Session Selector messages 	 */
 annotation|@
 name|DefaultMessage
@@ -10865,6 +10874,45 @@ name|failedToLoadPreferences
 parameter_list|(
 name|String
 name|reason
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"From {0}"
+argument_list|)
+name|String
+name|schedulingPrefClassesFrom
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"To {0}"
+argument_list|)
+name|String
+name|schedulingPrefClassesTo
+parameter_list|(
+name|String
+name|date
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Between {0} and {1}"
+argument_list|)
+name|String
+name|schedulingPrefClassesBetween
+parameter_list|(
+name|String
+name|fromDate
+parameter_list|,
+name|String
+name|toDate
 parameter_list|)
 function_decl|;
 block|}

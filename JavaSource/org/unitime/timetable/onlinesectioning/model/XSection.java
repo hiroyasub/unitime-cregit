@@ -3376,14 +3376,6 @@ name|getTime
 argument_list|()
 operator|==
 literal|null
-operator|||
-name|getTime
-argument_list|()
-operator|.
-name|getDays
-argument_list|()
-operator|==
-literal|0
 condition|)
 return|return
 literal|null

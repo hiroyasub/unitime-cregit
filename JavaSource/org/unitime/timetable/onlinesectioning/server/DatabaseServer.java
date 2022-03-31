@@ -998,6 +998,12 @@ argument_list|()
 operator|.
 name|getFreeTimePattern
 argument_list|()
+argument_list|,
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getDatePatternFirstDate
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -1203,6 +1209,12 @@ name|getAcademicSession
 argument_list|()
 operator|.
 name|getFreeTimePattern
+argument_list|()
+argument_list|,
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getDatePatternFirstDate
 argument_list|()
 argument_list|)
 return|;

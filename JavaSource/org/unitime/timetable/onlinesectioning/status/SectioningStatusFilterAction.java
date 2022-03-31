@@ -13968,6 +13968,14 @@ argument_list|()
 operator|.
 name|getFreeTimePattern
 argument_list|()
+argument_list|,
+name|server
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getDatePatternFirstDate
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

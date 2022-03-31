@@ -2656,6 +2656,11 @@ operator|.
 name|getCreditWarning
 argument_list|()
 else|:
+name|iSavedRequest
+operator|.
+name|hasMaxCredit
+argument_list|()
+condition|?
 name|MESSAGES
 operator|.
 name|creditWarning
@@ -2665,6 +2670,8 @@ operator|.
 name|getMaxCredit
 argument_list|()
 argument_list|)
+else|:
+literal|null
 operator|)
 decl_stmt|;
 name|String

@@ -300,13 +300,13 @@ name|IsSerializable
 implements|,
 name|Serializable
 block|{
+name|NoPreference
+block|,
 name|DiscouragedOnline
 block|,
 name|PreferredOnline
 block|,
 name|RequiredOnline
-block|,
-name|NoPreference
 block|, 		; 	}
 specifier|public
 specifier|static

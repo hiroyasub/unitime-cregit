@@ -1848,6 +1848,15 @@ argument_list|()
 operator|.
 name|getFreeTimePattern
 argument_list|()
+argument_list|,
+name|getServer
+argument_list|()
+operator|.
+name|getAcademicSession
+argument_list|()
+operator|.
+name|getDatePatternFirstDate
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
