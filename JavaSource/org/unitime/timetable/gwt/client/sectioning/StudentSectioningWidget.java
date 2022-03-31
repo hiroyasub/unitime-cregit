@@ -4614,6 +4614,16 @@ name|Boolean
 name|result
 parameter_list|)
 block|{
+name|iStatus
+operator|.
+name|info
+argument_list|(
+name|MESSAGES
+operator|.
+name|infoSchedulingPreferencesUpdated
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Override

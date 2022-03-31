@@ -10879,6 +10879,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Student scheduling preferences have been updated."
+argument_list|)
+name|String
+name|infoSchedulingPreferencesUpdated
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"From {0}"
 argument_list|)
 name|String
