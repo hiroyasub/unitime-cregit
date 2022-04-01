@@ -358,6 +358,11 @@ name|Status
 operator|.
 name|OwnerLimitedEdit
 argument_list|,
+name|source
+operator|.
+name|getManagingDept
+argument_list|()
+argument_list|,
 name|DepartmentStatusType
 operator|.
 name|Status

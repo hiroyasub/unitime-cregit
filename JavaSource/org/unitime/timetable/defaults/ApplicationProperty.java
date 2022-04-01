@@ -12568,6 +12568,28 @@ argument_list|(
 literal|"unitime.enrollment.waitList.logging"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Edit Course Offering: external managers can edit course offerings."
+argument_list|)
+name|PermissionCourseOfferingAllowsExternalEdit
+argument_list|(
+literal|"unitime.permissions.courseOfferingAllowExternalEdits"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
