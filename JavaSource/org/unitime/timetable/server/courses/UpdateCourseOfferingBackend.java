@@ -2289,6 +2289,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|courseOffering
+operator|.
+name|setConsentType
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
 comment|// Update credit
 if|if
 condition|(
