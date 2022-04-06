@@ -7338,6 +7338,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Overrride Not Needed"
+argument_list|)
+name|String
+name|reqStatusNotNeeded
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You are already enrolled in {0}.\nThis course request cannot be modified or deleted."
 argument_list|)
 name|String
@@ -7471,6 +7480,18 @@ literal|"Requested override for {0} has been approved."
 argument_list|)
 name|String
 name|overrideApproved
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Requested override for {0} is not needed."
+argument_list|)
+name|String
+name|overrideNotNeeded
 parameter_list|(
 name|String
 name|course

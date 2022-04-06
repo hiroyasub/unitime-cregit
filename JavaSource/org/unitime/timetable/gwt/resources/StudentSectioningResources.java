@@ -720,6 +720,15 @@ function_decl|;
 annotation|@
 name|Source
 argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/stop_gray.png"
+argument_list|)
+name|ImageResource
+name|requestNotNeeded
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
 literal|"org/unitime/timetable/gwt/resources/icons/stop.png"
 argument_list|)
 name|ImageResource

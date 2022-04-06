@@ -1095,6 +1095,13 @@ argument_list|)
 decl_stmt|;
 name|suggest
 operator|.
+name|addStyleName
+argument_list|(
+literal|"request-note"
+argument_list|)
+expr_stmt|;
+name|suggest
+operator|.
 name|addSelectionHandler
 argument_list|(
 operator|new

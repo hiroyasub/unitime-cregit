@@ -1353,6 +1353,11 @@ specifier|public
 name|ApiMode
 name|mode
 decl_stmt|;
+comment|/** Denied note */
+specifier|public
+name|String
+name|notes
+decl_stmt|;
 block|}
 comment|/** Max credit override that have been denied for the student */
 specifier|public
