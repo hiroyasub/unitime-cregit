@@ -6457,6 +6457,11 @@ argument_list|(
 literal|5
 argument_list|,
 name|hasCrit
+operator|&&
+name|CONSTANTS
+operator|.
+name|advisorCourseRequestsShowCritical
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|iAdvReqs
