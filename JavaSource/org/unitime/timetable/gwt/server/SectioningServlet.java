@@ -29811,12 +29811,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|sLog
-operator|.
-name|info
-argument_list|(
-literal|"ContextCheck: different student id, permission check: "
-operator|+
+name|boolean
+name|check
+init|=
 name|getSessionContext
 argument_list|()
 operator|.
@@ -29831,6 +29828,28 @@ name|Right
 operator|.
 name|StudentSchedulingAdvisor
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|check
+condition|)
+name|sLog
+operator|.
+name|debug
+argument_list|(
+literal|"ContextCheck: different student id, permission check: "
+operator|+
+name|check
+argument_list|)
+expr_stmt|;
+else|else
+name|sLog
+operator|.
+name|warn
+argument_list|(
+literal|"ContextCheck: different student id, permission check: "
+operator|+
+name|check
 argument_list|)
 expr_stmt|;
 block|}
