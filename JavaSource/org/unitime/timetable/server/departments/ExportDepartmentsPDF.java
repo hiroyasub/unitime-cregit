@@ -471,6 +471,9 @@ name|departments
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Department
+argument_list|>
 argument_list|(
 name|Department
 operator|.
@@ -623,9 +626,8 @@ block|{
 comment|/*             	 * Header             	 */
 if|if
 condition|(
+operator|!
 name|printHeaderText
-operator|==
-literal|false
 condition|)
 block|{
 name|ArrayList
@@ -949,6 +951,9 @@ name|dispLastChanges
 condition|)
 block|{
 name|List
+argument_list|<
+name|ChangeLog
+argument_list|>
 name|changes
 init|=
 name|ChangeLog

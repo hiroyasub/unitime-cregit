@@ -22255,7 +22255,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"External Funding Deptartment:"
+literal|"External Funding Department:"
 argument_list|)
 name|String
 name|propExternalFundingDept
@@ -22264,7 +22264,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"External<br> Funding Deptartment"
+literal|"External<br> Funding Department"
 argument_list|)
 name|String
 name|colExternalFundingDept
