@@ -1782,6 +1782,11 @@ name|enrolled
 init|=
 literal|null
 decl_stmt|;
+name|ClassAssignmentInterface
+name|unavailabilities
+init|=
+literal|null
+decl_stmt|;
 name|Lock
 name|readLock
 init|=
@@ -1790,11 +1795,8 @@ operator|.
 name|readLock
 argument_list|()
 decl_stmt|;
-name|ClassAssignmentInterface
-name|unavailabilities
-init|=
-literal|null
-decl_stmt|;
+try|try
+block|{
 name|boolean
 name|checkDeadlines
 init|=
@@ -1925,8 +1927,6 @@ name|onlineOnlyFilter
 operator|=
 literal|false
 expr_stmt|;
-try|try
-block|{
 name|XStudent
 name|original
 init|=
