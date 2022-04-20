@@ -467,6 +467,22 @@ name|user
 operator|.
 name|client
 operator|.
+name|Window
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|google
+operator|.
+name|gwt
+operator|.
+name|user
+operator|.
+name|client
+operator|.
 name|rpc
 operator|.
 name|AsyncCallback
@@ -5274,7 +5290,15 @@ name|void
 name|show
 parameter_list|()
 block|{
-comment|// TODO Auto-generated method stub
+name|Window
+operator|.
+name|scrollTo
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* 	 * execute add, update, delete 	 */
 specifier|public

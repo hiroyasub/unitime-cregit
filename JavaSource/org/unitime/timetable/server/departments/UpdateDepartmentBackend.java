@@ -604,6 +604,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|hibSession
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 return|return
 name|request
 operator|.
