@@ -606,8 +606,9 @@ name|cof
 operator|.
 name|setConsent
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 operator|-
 literal|1
@@ -1152,8 +1153,6 @@ name|cof
 operator|.
 name|getIsControl
 argument_list|()
-operator|==
-literal|true
 condition|)
 block|{
 annotation|@
@@ -1201,6 +1200,9 @@ name|forName
 argument_list|(
 name|linkLookupClass
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()

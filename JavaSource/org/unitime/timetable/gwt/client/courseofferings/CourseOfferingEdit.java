@@ -10097,8 +10097,6 @@ name|courseOffering
 operator|.
 name|getIsControl
 argument_list|()
-operator|==
-literal|true
 condition|)
 block|{
 if|if
@@ -10335,8 +10333,6 @@ name|courseOffering
 operator|.
 name|getIsControl
 argument_list|()
-operator|==
-literal|true
 condition|)
 block|{
 if|if
@@ -10669,8 +10665,6 @@ name|courseOffering
 operator|.
 name|getByReservationOnly
 argument_list|()
-operator|==
-literal|true
 condition|)
 block|{
 name|iPanel
@@ -13431,8 +13425,6 @@ name|courseOffering
 operator|.
 name|getIsControl
 argument_list|()
-operator|==
-literal|true
 condition|)
 block|{
 if|if
@@ -15654,8 +15646,6 @@ name|overrideCheckBox
 operator|.
 name|getValue
 argument_list|()
-operator|==
-literal|true
 condition|)
 block|{
 name|String
@@ -16021,6 +16011,17 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|instructorId
+operator|==
+literal|null
+operator|||
+name|instructorId
+operator|.
+name|length
+argument_list|()
+operator|==
+literal|0
+operator|||
 name|instructorId
 operator|.
 name|equals
