@@ -22737,6 +22737,30 @@ name|String
 name|labelCampus
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Import of {0}"
+argument_list|)
+name|String
+name|itemImportActionName
+parameter_list|(
+name|String
+name|type
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Export of {0}"
+argument_list|)
+name|String
+name|itemExportActionName
+parameter_list|(
+name|String
+name|type
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
