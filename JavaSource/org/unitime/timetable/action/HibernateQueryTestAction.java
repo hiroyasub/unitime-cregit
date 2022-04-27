@@ -2821,7 +2821,7 @@ name|s
 operator|.
 name|append
 argument_list|(
-literal|"<table width='100%' border='0' cellspacing='0' cellpadding='3'>"
+literal|"<table width='100%' border='0' cellspacing='0' cellpadding='3' class='unitime-HQLTable'>"
 argument_list|)
 expr_stmt|;
 name|s

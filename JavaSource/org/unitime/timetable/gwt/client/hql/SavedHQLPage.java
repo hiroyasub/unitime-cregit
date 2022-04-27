@@ -5391,6 +5391,13 @@ argument_list|(
 name|iTableHeader
 argument_list|)
 expr_stmt|;
+name|iTable
+operator|.
+name|addStyleName
+argument_list|(
+literal|"unitime-HQLTable"
+argument_list|)
+expr_stmt|;
 name|iForm
 operator|.
 name|addRow
