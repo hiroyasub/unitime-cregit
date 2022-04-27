@@ -161,6 +161,10 @@ specifier|private
 name|CourseDemand
 name|iCourseDemand
 decl_stmt|;
+specifier|private
+name|CourseOffering
+name|iSwapCourseOffering
+decl_stmt|;
 specifier|public
 specifier|static
 name|String
@@ -521,6 +525,28 @@ name|courseDemand
 expr_stmt|;
 block|}
 specifier|public
+name|CourseOffering
+name|getSwapCourseOffering
+parameter_list|()
+block|{
+return|return
+name|iSwapCourseOffering
+return|;
+block|}
+specifier|public
+name|void
+name|setSwapCourseOffering
+parameter_list|(
+name|CourseOffering
+name|swapCourseOffering
+parameter_list|)
+block|{
+name|iSwapCourseOffering
+operator|=
+name|swapCourseOffering
+expr_stmt|;
+block|}
+specifier|public
 name|boolean
 name|equals
 parameter_list|(
@@ -665,6 +691,11 @@ operator|+
 literal|"\n	Student: "
 operator|+
 name|getStudent
+argument_list|()
+operator|+
+literal|"\n	SwapCourseOffering: "
+operator|+
+name|getSwapCourseOffering
 argument_list|()
 operator|+
 literal|"\n	Timestamp: "

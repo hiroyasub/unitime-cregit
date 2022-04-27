@@ -743,7 +743,9 @@ operator|||
 name|cd
 operator|.
 name|isEnrolled
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 condition|)
 block|{
 for|for
