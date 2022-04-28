@@ -2664,6 +2664,19 @@ return|return
 name|iWaitListSwapWithCourseOffering
 return|;
 block|}
+specifier|public
+name|void
+name|setWaitListSwapWithCourseOffering
+parameter_list|(
+name|XCourseId
+name|courseId
+parameter_list|)
+block|{
+name|iWaitListSwapWithCourseOffering
+operator|=
+name|courseId
+expr_stmt|;
+block|}
 comment|/**      * If the course request contains two or more courses that are cross-listed with each other,      * return true for the second and later course of the same offering.      * @param id course id      * @return true if there is a higher alternativity course with of the same offering      */
 specifier|public
 name|boolean
@@ -3213,6 +3226,19 @@ block|{
 return|return
 name|iWaitListedTimeStamp
 return|;
+block|}
+specifier|public
+name|void
+name|setWaitListedTimeStamp
+parameter_list|(
+name|Date
+name|ts
+parameter_list|)
+block|{
+name|iWaitListedTimeStamp
+operator|=
+name|ts
+expr_stmt|;
 block|}
 comment|/** Return enrollment, if enrolled */
 specifier|public

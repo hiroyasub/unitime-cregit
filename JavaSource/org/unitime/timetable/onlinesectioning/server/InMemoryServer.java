@@ -2634,6 +2634,26 @@ argument_list|(
 name|waitlist
 argument_list|)
 expr_stmt|;
+name|cr
+operator|.
+name|setWaitListedTimeStamp
+argument_list|(
+name|request
+operator|.
+name|getWaitListedTimeStamp
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|cr
+operator|.
+name|setWaitListSwapWithCourseOffering
+argument_list|(
+name|request
+operator|.
+name|getWaitListSwapWithCourseOffering
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// put new requests
 for|for
 control|(
