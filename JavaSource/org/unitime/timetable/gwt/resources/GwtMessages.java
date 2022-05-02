@@ -22665,6 +22665,15 @@ name|String
 name|descWaitListDisabled
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course Offering"
+argument_list|)
+name|String
+name|sectCourseOffering
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
