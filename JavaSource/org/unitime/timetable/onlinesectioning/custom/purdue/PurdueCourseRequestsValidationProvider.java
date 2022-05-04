@@ -8272,7 +8272,7 @@ name|notNeededOverrides
 operator|.
 name|contains
 argument_list|(
-name|course
+name|bc
 argument_list|)
 condition|)
 block|{
@@ -12389,7 +12389,7 @@ argument_list|()
 argument_list|,
 name|course
 operator|.
-name|getSubjectArea
+name|getCourseNumber
 argument_list|()
 argument_list|,
 name|iExternalTermProvider
@@ -12467,7 +12467,7 @@ argument_list|()
 argument_list|,
 name|course
 operator|.
-name|getSubjectArea
+name|getCourseNumber
 argument_list|()
 argument_list|,
 name|iExternalTermProvider
@@ -23767,7 +23767,7 @@ argument_list|()
 argument_list|,
 name|course
 operator|.
-name|getSubjectArea
+name|getCourseNumber
 argument_list|()
 argument_list|,
 name|iExternalTermProvider
@@ -23845,7 +23845,7 @@ argument_list|()
 argument_list|,
 name|course
 operator|.
-name|getSubjectArea
+name|getCourseNumber
 argument_list|()
 argument_list|,
 name|iExternalTermProvider
