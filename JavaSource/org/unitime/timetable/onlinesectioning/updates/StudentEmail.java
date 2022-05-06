@@ -7692,6 +7692,14 @@ name|getDropEnrollment
 argument_list|()
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|oldCourse
+operator|.
+name|equals
+argument_list|(
+name|course
+argument_list|)
 condition|)
 block|{
 name|XOffering
