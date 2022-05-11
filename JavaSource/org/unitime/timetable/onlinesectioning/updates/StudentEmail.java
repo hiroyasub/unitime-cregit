@@ -7694,11 +7694,12 @@ operator|!=
 literal|null
 operator|&&
 operator|!
-name|oldCourse
+name|course
 operator|.
 name|equals
 argument_list|(
-name|course
+name|getDropEnrollment
+argument_list|()
 argument_list|)
 condition|)
 block|{
