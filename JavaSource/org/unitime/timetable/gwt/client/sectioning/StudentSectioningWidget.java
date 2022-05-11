@@ -15714,6 +15714,10 @@ decl_stmt|;
 if|if
 condition|(
 name|line
+operator|!=
+literal|null
+operator|&&
+name|line
 operator|.
 name|getWaitList
 argument_list|()
