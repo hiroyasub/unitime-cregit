@@ -8007,6 +8007,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"The request to increase the maximum credit hours has been denied."
+argument_list|)
+name|String
+name|creditStatusDeniedShort
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"You may not be able to get a full schedule."
 argument_list|)
 name|String

@@ -2615,6 +2615,15 @@ name|CourseOffering
 name|co
 parameter_list|)
 block|{
+if|if
+condition|(
+name|co
+operator|==
+literal|null
+condition|)
+return|return
+literal|false
+return|;
 for|for
 control|(
 name|StudentClassEnrollment

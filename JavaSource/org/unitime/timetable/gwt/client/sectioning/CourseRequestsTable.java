@@ -2941,7 +2941,7 @@ literal|"\n"
 operator|+
 name|MESSAGES
 operator|.
-name|creditStatusTooHigh
+name|creditStatusDeniedShort
 argument_list|()
 expr_stmt|;
 break|break;
