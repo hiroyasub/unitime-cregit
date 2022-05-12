@@ -1905,7 +1905,7 @@ name|getOfferingId
 argument_list|()
 argument_list|)
 operator|&&
-name|request
+name|cr
 operator|.
 name|isRequired
 argument_list|(
@@ -1952,7 +1952,7 @@ name|isWaitListedAssumeApproved
 argument_list|(
 name|s
 argument_list|,
-name|request
+name|cr
 argument_list|,
 name|offering
 argument_list|,
