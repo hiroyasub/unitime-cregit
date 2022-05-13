@@ -2491,6 +2491,24 @@ operator|==
 literal|null
 condition|)
 continue|continue;
+if|if
+condition|(
+operator|!
+name|hasWaitListingStatus
+argument_list|(
+name|newStudent
+operator|==
+literal|null
+condition|?
+name|oldStudent
+else|:
+name|newStudent
+argument_list|,
+name|server
+argument_list|)
+condition|)
+continue|continue;
+comment|// no changes for students that cannot be wait-listed
 name|OnlineSectioningLog
 operator|.
 name|Action
