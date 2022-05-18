@@ -9927,7 +9927,7 @@ literal|"purdue.specreg.messages.requestOverrides"
 argument_list|,
 literal|"\nIf you have already discussed these courses with your advisor and were advised to request "
 operator|+
-literal|"registration in them please select Request Overrides& Submit. If you arenât sure, click Cancel Submit and "
+literal|"registration in them please select Request Overrides& Submit. If you aren\u2019t sure, click Cancel Submit and "
 operator|+
 literal|"consult with your advisor before coming back to your Course Request page."
 argument_list|)

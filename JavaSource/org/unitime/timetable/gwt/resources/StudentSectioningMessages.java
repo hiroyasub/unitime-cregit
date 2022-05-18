@@ -8334,7 +8334,7 @@ literal|"It is possible to request approvals for all of the above registration e
 operator|+
 literal|"If you have already discussed these courses with your advisor and were advised to request registration in them, please select<b>Request Approvals</b>. "
 operator|+
-literal|"If you arenât sure, click<b>Close Dialog</b> and consult with your advisor before registering for these courses."
+literal|"If you aren\u2019t sure, click<b>Close Dialog</b> and consult with your advisor before registering for these courses."
 argument_list|)
 name|String
 name|messageCanRequestOverridesAll
@@ -8347,7 +8347,7 @@ literal|"It is possible to request approvals for some of the above registration 
 operator|+
 literal|"If you have already discussed these courses with your advisor and were advised to request registration in them, please select<b>Request Approvals</b>. "
 operator|+
-literal|"If you arenât sure, click<b>Close Dialog</b> and consult with your advisor before registering for these courses."
+literal|"If you aren\u2019t sure, click<b>Close Dialog</b> and consult with your advisor before registering for these courses."
 argument_list|)
 name|String
 name|messageCanRequestOverridesSome
@@ -9139,7 +9139,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Studentâs Name:"
+literal|"Student\u2019s Name:"
 argument_list|)
 name|String
 name|propStudentName
@@ -9319,7 +9319,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Advisorâs Signature:     _____________________________________________"
+literal|"Advisor\u2019s Signature:     _____________________________________________"
 argument_list|)
 name|String
 name|pdfAdvisorSignature
@@ -9328,7 +9328,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Studentâs Signature:     _____________________________________________"
+literal|"Student\u2019s Signature:     _____________________________________________"
 argument_list|)
 name|String
 name|pdfStudentSignature
