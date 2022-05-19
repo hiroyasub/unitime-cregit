@@ -17794,6 +17794,15 @@ name|XCourseRequest
 operator|)
 name|r
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|cr
+operator|.
+name|hasOverrides
+argument_list|()
+condition|)
+continue|continue;
 for|for
 control|(
 name|Map
