@@ -497,6 +497,22 @@ name|StudentSectioningReport
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|custom
+operator|.
+name|CustomCourseLookup
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -2236,6 +2252,8 @@ block|,
 literal|"- 3rd choice"
 block|,
 literal|"- 4th+ choice"
+block|,
+literal|"- substitute"
 block|}
 argument_list|,
 operator|new
@@ -2251,7 +2269,15 @@ block|,
 literal|"Percentage of all course requests satisfied"
 block|,
 literal|"Out of the above, the percentage of cases where the 1st choice course was given"
-block|}
+block|,
+literal|"2nd choice (1st alternative) course was given"
+block|,
+literal|"3rd choice course was given"
+block|,
+literal|"4th or later choice was given"
+block|,
+literal|"a substitute course was given instead"
+block|,         		}
 argument_list|,
 operator|new
 name|Statistic
@@ -2317,6 +2343,11 @@ literal|0
 block|,
 literal|0
 block|}
+decl_stmt|;
+name|int
+name|assignedSubst
+init|=
+literal|0
 decl_stmt|;
 name|int
 name|assignedChoiceTotal
@@ -2444,6 +2475,17 @@ block|{
 name|assigned
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|r
+operator|.
+name|isAlternative
+argument_list|()
+condition|)
+name|assignedSubst
+operator|++
+expr_stmt|;
+else|else
 name|assignedChoice
 index|[
 name|Math
@@ -2501,6 +2543,8 @@ name|format
 argument_list|(
 name|requests
 argument_list|)
+block|,
+literal|""
 block|,
 literal|""
 block|,
@@ -2635,6 +2679,19 @@ name|assignedChoice
 index|[
 literal|3
 index|]
+operator|/
+name|assignedChoiceTotal
+argument_list|)
+operator|+
+literal|"%"
+block|,
+name|sPercentFormat
+operator|.
+name|format
+argument_list|(
+literal|100.0
+operator|*
+name|assignedSubst
 operator|/
 name|assignedChoiceTotal
 argument_list|)
@@ -3016,7 +3073,19 @@ block|,
 literal|"SCLA 10200"
 block|,
 literal|"SPAN 33000"
-block|}
+block|,
+literal|"EDCI 49600"
+block|,
+literal|"EDCI 49800"
+block|,
+literal|"EDPS 49800"
+block|,
+literal|"ENGL 30400"
+block|,
+literal|"ENGL 38000"
+block|,
+literal|"HDFS 45000"
+block|,             }
 decl_stmt|;
 specifier|private
 name|boolean
