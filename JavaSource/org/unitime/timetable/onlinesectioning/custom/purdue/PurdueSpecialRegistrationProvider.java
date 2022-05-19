@@ -9717,9 +9717,11 @@ argument_list|)
 expr_stmt|;
 name|dbStudent
 operator|.
-name|setOverrideIntent
+name|setMaxCreditOverrideIntent
 argument_list|(
-literal|null
+name|CourseRequestOverrideIntent
+operator|.
+name|ADD
 argument_list|)
 expr_stmt|;
 name|helper

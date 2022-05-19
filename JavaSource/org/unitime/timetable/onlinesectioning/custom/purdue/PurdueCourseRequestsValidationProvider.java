@@ -25114,9 +25114,11 @@ argument_list|)
 expr_stmt|;
 name|student
 operator|.
-name|setOverrideIntent
+name|setMaxCreditOverrideIntent
 argument_list|(
-literal|null
+name|CourseRequestOverrideIntent
+operator|.
+name|REGISTER
 argument_list|)
 expr_stmt|;
 break|break;
