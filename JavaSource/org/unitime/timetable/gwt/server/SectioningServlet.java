@@ -30467,6 +30467,13 @@ name|OnlineSchedulingStudentPreferencesEnabled
 operator|.
 name|isTrue
 argument_list|()
+operator|&&
+name|cx
+operator|.
+name|getStudentId
+argument_list|()
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 name|check
