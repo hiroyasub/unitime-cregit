@@ -247,6 +247,13 @@ name|RequestPriority
 operator|.
 name|Important
 argument_list|)
+block|,
+name|VITAL
+argument_list|(
+name|RequestPriority
+operator|.
+name|Vital
+argument_list|)
 block|, 		;
 name|RequestPriority
 name|iPriority
@@ -1120,6 +1127,12 @@ literal|true
 return|;
 case|case
 name|IMPORTANT
+case|:
+return|return
+literal|true
+return|;
+case|case
+name|VITAL
 case|:
 return|return
 literal|true

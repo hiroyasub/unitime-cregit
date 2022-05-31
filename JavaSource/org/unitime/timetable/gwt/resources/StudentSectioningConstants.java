@@ -650,6 +650,12 @@ literal|"Assigned No-Subs"
 block|,
 literal|"Not Assigned No-Subs"
 block|,
+literal|"Vital"
+block|,
+literal|"Assigned Vital"
+block|,
+literal|"Not Assigned Vital"
+block|,
 block|}
 argument_list|)
 name|String

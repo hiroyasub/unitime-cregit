@@ -28027,6 +28027,15 @@ argument_list|()
 operator|.
 name|isImportant
 argument_list|()
+operator|&&
+operator|!
+name|rp
+operator|.
+name|getRequest
+argument_list|()
+operator|.
+name|isVital
+argument_list|()
 operator|)
 condition|)
 continue|continue;

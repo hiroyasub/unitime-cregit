@@ -7287,6 +7287,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Course request is vital."
+argument_list|)
+name|String
+name|descriptionRequestVital
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Course request is not critical."
 argument_list|)
 name|String
@@ -8960,6 +8969,15 @@ literal|"Important"
 argument_list|)
 name|String
 name|opSetImportant
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Vital"
+argument_list|)
+name|String
+name|opSetVital
 parameter_list|()
 function_decl|;
 annotation|@

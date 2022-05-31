@@ -657,6 +657,15 @@ function_decl|;
 annotation|@
 name|Source
 argument_list|(
+literal|"org/unitime/timetable/gwt/resources/icons/action_check_gold.png"
+argument_list|)
+name|ImageResource
+name|requestsVital
+parameter_list|()
+function_decl|;
+annotation|@
+name|Source
+argument_list|(
 literal|"org/unitime/timetable/gwt/resources/icons/action_delete.png"
 argument_list|)
 name|ImageResource

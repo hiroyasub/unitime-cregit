@@ -2808,6 +2808,16 @@ operator|.
 name|opSetImportant
 argument_list|()
 else|:
+name|enrollment
+operator|.
+name|isVital
+argument_list|()
+condition|?
+name|MESSAGES
+operator|.
+name|opSetVital
+argument_list|()
+else|:
 name|MESSAGES
 operator|.
 name|opSetNotCritical

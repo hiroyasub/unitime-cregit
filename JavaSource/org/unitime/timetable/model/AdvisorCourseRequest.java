@@ -1116,6 +1116,12 @@ case|:
 return|return
 literal|true
 return|;
+case|case
+name|VITAL
+case|:
+return|return
+literal|true
+return|;
 default|default:
 return|return
 literal|false
