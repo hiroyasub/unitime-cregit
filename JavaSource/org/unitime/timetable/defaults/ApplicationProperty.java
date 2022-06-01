@@ -12060,6 +12060,48 @@ literal|"unitime.acrf.showingRecommendationsPopup"
 argument_list|)
 operator|,
 expr_stmt|@
+name|Type
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Advisor Course Recommendations: show critical course check with the given course request preference level:\n"
+operator|+
+literal|"- Critical ... critical course check does show and have the Critical value\n"
+operator|+
+literal|"- Vital ... critical course check does show and have the Vital value\n"
+operator|+
+literal|"- Important ... critical course check does show and have the Important value\n"
+operator|+
+literal|"- None ... critical course check does not show / cannot be set by advisors"
+argument_list|)
+expr|@
+name|Since
+argument_list|(
+literal|4.7
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"None"
+argument_list|)
+expr|@
+name|Values
+argument_list|(
+block|{
+literal|"None, Critical, Vital, Important"
+block|}
+argument_list|)
+name|AdvisorCourseRequestsAllowCritical
+argument_list|(
+literal|"unitime.acrf.setCriticalCourses"
+argument_list|)
+operator|,
+expr_stmt|@
 name|DefaultValue
 argument_list|(
 literal|"Preferences"

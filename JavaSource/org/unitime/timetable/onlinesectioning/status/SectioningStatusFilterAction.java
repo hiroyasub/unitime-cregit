@@ -3865,15 +3865,6 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|crit2count
-argument_list|)
-expr_stmt|;
 name|List
 argument_list|<
 name|Entity
