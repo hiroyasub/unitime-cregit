@@ -5052,6 +5052,11 @@ operator|.
 name|class
 argument_list|)
 expr|@
+name|DefaultValue
+argument_list|(
+literal|"org.unitime.timetable.onlinesectioning.custom.DefaultCriticalCourses"
+argument_list|)
+expr|@
 name|Description
 argument_list|(
 literal|"Customization: student critical courses provider (interface CriticalCoursesProvider, used by Course Requests and/or batch scheduling solver to identify critical courses)"
