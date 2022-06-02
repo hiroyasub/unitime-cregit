@@ -3695,22 +3695,22 @@ name|courseQuery
 operator|.
 name|select
 argument_list|(
-literal|"cr.courseDemand.critical, count(distinct cr.courseDemand)"
+literal|"cd.critical, count(distinct cd)"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cr.courseDemand.critical is not null and cr.courseDemand.criticalOverride is null"
+literal|"cd.critical is not null and cd.criticalOverride is null"
 argument_list|)
 operator|.
 name|order
 argument_list|(
-literal|"cr.courseDemand.critical"
+literal|"cd.critical"
 argument_list|)
 operator|.
 name|group
 argument_list|(
-literal|"cr.courseDemand.critical"
+literal|"cd.critical"
 argument_list|)
 operator|.
 name|exclude
@@ -3774,22 +3774,22 @@ name|courseQuery
 operator|.
 name|select
 argument_list|(
-literal|"cr.courseDemand.criticalOverride, count(distinct cr.courseDemand)"
+literal|"cd.criticalOverride, count(distinct cd)"
 argument_list|)
 operator|.
 name|where
 argument_list|(
-literal|"cr.courseDemand.criticalOverride is not null"
+literal|"cd.criticalOverride is not null"
 argument_list|)
 operator|.
 name|order
 argument_list|(
-literal|"cr.courseDemand.criticalOverride"
+literal|"cd.criticalOverride"
 argument_list|)
 operator|.
 name|group
 argument_list|(
-literal|"cr.courseDemand.criticalOverride"
+literal|"cd.criticalOverride"
 argument_list|)
 operator|.
 name|exclude
