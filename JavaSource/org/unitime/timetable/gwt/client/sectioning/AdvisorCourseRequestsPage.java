@@ -2661,7 +2661,7 @@ operator|.
 name|opSetCritical
 argument_list|()
 operator|+
-literal|" / "
+literal|"&nbsp;&nbsp;"
 operator|+
 name|wlHeader
 operator|)
@@ -2692,7 +2692,7 @@ operator|.
 name|opSetImportant
 argument_list|()
 operator|+
-literal|" / "
+literal|"&nbsp;&nbsp;"
 operator|+
 name|wlHeader
 operator|)
@@ -2723,7 +2723,7 @@ operator|.
 name|opSetVital
 argument_list|()
 operator|+
-literal|" / "
+literal|"&nbsp;&nbsp;"
 operator|+
 name|wlHeader
 operator|)
