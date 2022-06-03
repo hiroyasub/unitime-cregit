@@ -44,6 +44,11 @@ name|String
 name|getAcademicTitle
 parameter_list|()
 function_decl|;
+specifier|public
+name|String
+name|getExternalUniqueId
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
