@@ -287,9 +287,15 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|gwt
 operator|.
-name|ListSolutionsForm
+name|client
+operator|.
+name|sectioning
+operator|.
+name|PublishedSectioningSolutionsTable
+operator|.
+name|InfoComparator
 import|;
 end_import
 
@@ -4377,8 +4383,6 @@ name|String
 argument_list|>
 argument_list|(
 operator|new
-name|ListSolutionsForm
-operator|.
 name|InfoComparator
 argument_list|()
 argument_list|)
@@ -4511,8 +4515,6 @@ name|String
 argument_list|>
 argument_list|(
 operator|new
-name|ListSolutionsForm
-operator|.
 name|InfoComparator
 argument_list|()
 argument_list|)
@@ -5071,8 +5073,6 @@ name|String
 argument_list|>
 argument_list|(
 operator|new
-name|ListSolutionsForm
-operator|.
 name|InfoComparator
 argument_list|()
 argument_list|)
@@ -6886,7 +6886,7 @@ argument_list|)
 argument_list|,
 name|interactive
 condition|?
-literal|"listSolutions.do"
+literal|"gwt.jsp?page=listSolutions"
 else|:
 literal|"gwt.jsp?page=solver&type=course"
 argument_list|)
@@ -7411,7 +7411,7 @@ argument_list|)
 argument_list|)
 operator|)
 argument_list|,
-literal|"listSolutions.do"
+literal|"gwt.jsp?page=listSolutions"
 argument_list|)
 argument_list|)
 expr_stmt|;

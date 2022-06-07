@@ -10798,28 +10798,6 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
-literal|"Solver: switch the user interface back to the old (Struts-based) solver pages"
-argument_list|)
-name|LegacySolver
-argument_list|(
-literal|"unitime.legacy.solver"
-argument_list|)
-operator|,
-expr_stmt|@
-name|Type
-argument_list|(
-name|Boolean
-operator|.
-name|class
-argument_list|)
-expr|@
-name|DefaultValue
-argument_list|(
-literal|"false"
-argument_list|)
-expr|@
-name|Description
-argument_list|(
 literal|"Examinations: switch the user interface back to the old period preferences"
 argument_list|)
 name|LegacyPeriodPreferences

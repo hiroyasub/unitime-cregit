@@ -389,9 +389,13 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|gwt
 operator|.
-name|ListSolutionsForm
+name|client
+operator|.
+name|sectioning
+operator|.
+name|PublishedSectioningSolutionsTable
 operator|.
 name|InfoComparator
 import|;

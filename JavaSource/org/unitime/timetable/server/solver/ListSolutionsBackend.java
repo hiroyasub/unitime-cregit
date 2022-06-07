@@ -737,9 +737,15 @@ name|unitime
 operator|.
 name|timetable
 operator|.
-name|form
+name|gwt
 operator|.
-name|ListSolutionsForm
+name|client
+operator|.
+name|sectioning
+operator|.
+name|PublishedSectioningSolutionsTable
+operator|.
+name|InfoComparator
 import|;
 end_import
 
@@ -4515,8 +4521,6 @@ name|String
 argument_list|>
 argument_list|(
 operator|new
-name|ListSolutionsForm
-operator|.
 name|InfoComparator
 argument_list|()
 argument_list|)
@@ -5562,8 +5566,6 @@ name|String
 argument_list|>
 argument_list|(
 operator|new
-name|ListSolutionsForm
-operator|.
 name|InfoComparator
 argument_list|()
 argument_list|)
