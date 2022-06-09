@@ -5598,7 +5598,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -6316,7 +6316,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -7226,7 +7226,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -8002,7 +8002,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -11564,7 +11564,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -12125,7 +12125,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -14011,7 +14011,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -14244,7 +14244,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -14581,7 +14581,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -15315,7 +15315,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -15541,7 +15541,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -16326,7 +16326,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -16660,7 +16660,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -17230,7 +17230,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -17633,7 +17633,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -17984,7 +17984,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -18287,7 +18287,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -18947,7 +18947,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -19323,7 +19323,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -20712,7 +20712,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|examsThisConf
 operator|.
@@ -20914,7 +20914,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exams
 operator|.
@@ -21962,7 +21962,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -22230,7 +22230,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -22521,7 +22521,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.
@@ -22751,7 +22751,7 @@ name|table
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.

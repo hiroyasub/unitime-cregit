@@ -1391,7 +1391,7 @@ if|if
 condition|(
 name|request
 operator|.
-name|getAttribute
+name|getParameter
 argument_list|(
 literal|"examId"
 argument_list|)
@@ -1414,13 +1414,10 @@ name|valueOf
 argument_list|(
 name|request
 operator|.
-name|getAttribute
+name|getParameter
 argument_list|(
 literal|"examId"
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;

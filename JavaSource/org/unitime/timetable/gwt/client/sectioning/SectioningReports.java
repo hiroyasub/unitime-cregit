@@ -3020,7 +3020,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"examDetail.do?examId="
+literal|"examDetail.action?examId="
 operator|+
 name|event
 operator|.

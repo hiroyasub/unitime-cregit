@@ -2047,7 +2047,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|//response.sendRedirect(response.encodeURL("examDetail.do?examId="+examId));
+comment|//response.sendRedirect(response.encodeURL("examDetail.action?examId="+examId));
 if|if
 condition|(
 name|op
@@ -2439,7 +2439,7 @@ name|markForBack
 argument_list|(
 name|request
 argument_list|,
-literal|"examDetail.do?examId="
+literal|"examDetail.action?examId="
 operator|+
 name|frm
 operator|.

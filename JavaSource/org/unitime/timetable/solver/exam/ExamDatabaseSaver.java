@@ -783,7 +783,7 @@ name|exam
 parameter_list|)
 block|{
 return|return
-literal|"<A href='examDetail.do?examId="
+literal|"<A href='examDetail.action?examId="
 operator|+
 name|exam
 operator|.

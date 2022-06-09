@@ -2299,7 +2299,7 @@ argument_list|(
 operator|(
 name|view
 condition|?
-literal|"onClick=\"document.location='examDetail.do?examId="
+literal|"onClick=\"document.location='examDetail.action?examId="
 operator|+
 name|exam
 operator|.

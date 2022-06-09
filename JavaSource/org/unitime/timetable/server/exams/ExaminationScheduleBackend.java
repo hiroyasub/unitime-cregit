@@ -1380,7 +1380,7 @@ name|related
 operator|.
 name|setDetailPage
 argument_list|(
-literal|"examDetail.do?examId="
+literal|"examDetail.action?examId="
 operator|+
 name|x
 operator|.

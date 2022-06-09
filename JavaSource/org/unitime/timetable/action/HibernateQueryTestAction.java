@@ -3689,7 +3689,7 @@ argument_list|)
 condition|)
 name|link
 operator|=
-literal|"examDetail.do?examId="
+literal|"examDetail.action?examId="
 operator|+
 operator|(
 operator|(
