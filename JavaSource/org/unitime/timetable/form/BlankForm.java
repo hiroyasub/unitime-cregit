@@ -40,6 +40,15 @@ name|BlankForm
 implements|implements
 name|UniTimeForm
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|3774859862084469864L
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public

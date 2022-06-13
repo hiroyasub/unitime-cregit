@@ -23,10 +23,13 @@ begin_interface
 specifier|public
 interface|interface
 name|DynamicListObjectFactory
+parameter_list|<
+name|T
+parameter_list|>
 block|{
 comment|/**          * creates a new instance of a class          * @return Object          */
 specifier|public
-name|Object
+name|T
 name|create
 parameter_list|()
 function_decl|;

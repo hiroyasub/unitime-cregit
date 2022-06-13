@@ -917,7 +917,7 @@ literal|"</DIV>"
 operator|+
 literal|"</td><td style='padding-bottom: 2px'>"
 operator|+
-literal|"<input type=\"button\" onclick=\"document.location='examEdit.do?firstType="
+literal|"<input type=\"button\" onclick=\"document.location='examEdit.action?firstType="
 operator|+
 name|getType
 argument_list|()

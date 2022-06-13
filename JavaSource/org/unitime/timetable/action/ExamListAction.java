@@ -764,7 +764,7 @@ literal|"redirect"
 argument_list|,
 name|location
 operator|=
-literal|"/examEdit.do"
+literal|"/examEdit.action"
 argument_list|)
 block|}
 argument_list|)

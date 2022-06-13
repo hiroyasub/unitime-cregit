@@ -63,29 +63,53 @@ begin_class
 specifier|public
 class|class
 name|DynamicList
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|List
+argument_list|<
+name|T
+argument_list|>
 block|{
 comment|/**      * The factory creating new instances of the class       * which are included in the list      */
 specifier|private
 name|DynamicListObjectFactory
+argument_list|<
+name|T
+argument_list|>
 name|objectFactory
 decl_stmt|;
 comment|/** list holding the values */
 specifier|private
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|list
 decl_stmt|;
 comment|/**      * function to be used to get a new instance from the decorator      * @param list List      * @param objectFactory object factory to create elements in the list      */
 specifier|public
 specifier|static
+parameter_list|<
+name|T
+parameter_list|>
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|getInstance
 parameter_list|(
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|list
 parameter_list|,
 name|DynamicListObjectFactory
+argument_list|<
+name|T
+argument_list|>
 name|objectFactory
 parameter_list|)
 block|{
@@ -104,9 +128,15 @@ specifier|private
 name|DynamicList
 parameter_list|(
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|list
 parameter_list|,
 name|DynamicListObjectFactory
+argument_list|<
+name|T
+argument_list|>
 name|objectFactory
 parameter_list|)
 block|{
@@ -155,7 +185,7 @@ expr_stmt|;
 block|}
 comment|/**      * If the list size is less than the index      * expand the list to the given index by creating new entries      * and initializing them       * @param index Index      */
 specifier|public
-name|Object
+name|T
 name|get
 parameter_list|(
 name|int
@@ -178,7 +208,7 @@ operator|<
 name|size
 condition|)
 block|{
-name|Object
+name|T
 name|object
 init|=
 name|list
@@ -251,7 +281,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// Create the last object, set and return
-name|Object
+name|T
 name|object
 init|=
 name|objectFactory
@@ -273,13 +303,13 @@ block|}
 block|}
 comment|/**      * Sets the list at index with the object      * If the index is out of bounds the list is expanded to the index      * @param index Index      * @object element Object to set at index      */
 specifier|public
-name|Object
+name|T
 name|set
 parameter_list|(
 name|int
 name|index
 parameter_list|,
-name|Object
+name|T
 name|element
 parameter_list|)
 block|{
@@ -342,7 +372,7 @@ parameter_list|(
 name|int
 name|index
 parameter_list|,
-name|Object
+name|T
 name|element
 parameter_list|)
 block|{
@@ -360,7 +390,7 @@ specifier|public
 name|boolean
 name|add
 parameter_list|(
-name|Object
+name|T
 name|o
 parameter_list|)
 block|{
@@ -381,6 +411,11 @@ name|int
 name|index
 parameter_list|,
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|T
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -400,6 +435,11 @@ name|boolean
 name|addAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|T
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -445,6 +485,9 @@ name|boolean
 name|containsAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -517,6 +560,9 @@ return|;
 block|}
 specifier|public
 name|Iterator
+argument_list|<
+name|T
+argument_list|>
 name|iterator
 parameter_list|()
 block|{
@@ -546,6 +592,9 @@ return|;
 block|}
 specifier|public
 name|ListIterator
+argument_list|<
+name|T
+argument_list|>
 name|listIterator
 parameter_list|()
 block|{
@@ -558,6 +607,9 @@ return|;
 block|}
 specifier|public
 name|ListIterator
+argument_list|<
+name|T
+argument_list|>
 name|listIterator
 parameter_list|(
 name|int
@@ -574,7 +626,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|Object
+name|T
 name|remove
 parameter_list|(
 name|int
@@ -655,6 +707,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|subList
 parameter_list|(
 name|int
@@ -689,11 +744,14 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Object
+parameter_list|<
+name|X
+parameter_list|>
+name|X
 index|[]
 name|toArray
 parameter_list|(
-name|Object
+name|X
 index|[]
 name|a
 parameter_list|)
