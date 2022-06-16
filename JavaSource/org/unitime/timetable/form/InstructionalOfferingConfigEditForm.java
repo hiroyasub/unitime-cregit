@@ -409,6 +409,10 @@ specifier|private
 name|String
 name|instructionalMethodDefault
 decl_stmt|;
+specifier|private
+name|boolean
+name|instructionalMethodEditable
+decl_stmt|;
 comment|// Error Codes
 specifier|private
 specifier|final
@@ -1920,6 +1924,10 @@ name|instructionalMethodDefault
 operator|=
 literal|null
 expr_stmt|;
+name|instructionalMethodEditable
+operator|=
+literal|false
+expr_stmt|;
 block|}
 comment|/**      * Get the no. of configs for the course offering      * @return      */
 specifier|public
@@ -2595,6 +2603,30 @@ expr_stmt|;
 return|return
 name|ret
 return|;
+block|}
+specifier|public
+name|boolean
+name|isInstructionalMethodEditable
+parameter_list|()
+block|{
+return|return
+name|instructionalMethodEditable
+return|;
+block|}
+specifier|public
+name|void
+name|setInstructionalMethodEditable
+parameter_list|(
+name|boolean
+name|instructionalMethodEditable
+parameter_list|)
+block|{
+name|this
+operator|.
+name|instructionalMethodEditable
+operator|=
+name|instructionalMethodEditable
+expr_stmt|;
 block|}
 block|}
 end_class
