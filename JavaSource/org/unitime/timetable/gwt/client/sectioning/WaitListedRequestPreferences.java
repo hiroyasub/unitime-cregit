@@ -1848,7 +1848,7 @@ name|Cookies
 operator|.
 name|setCookie
 argument_list|(
-literal|"UniTime:CourseFinderCourses"
+literal|"UniTime:WLPrefsTab"
 argument_list|,
 name|String
 operator|.
@@ -2214,9 +2214,9 @@ argument_list|)
 expr_stmt|;
 name|setCourseDetails
 argument_list|(
-name|details
-argument_list|,
 name|classes
+argument_list|,
+name|details
 argument_list|)
 expr_stmt|;
 name|sinkEvents
@@ -2568,7 +2568,7 @@ name|Cookies
 operator|.
 name|getCookie
 argument_list|(
-literal|"UniTime:CourseFinderCourses"
+literal|"UniTime:WLPrefsTab"
 argument_list|)
 argument_list|)
 decl_stmt|;

@@ -712,7 +712,7 @@ condition|)
 block|{
 name|iRequest
 operator|.
-name|setConfirmations
+name|addConfirmations
 argument_list|(
 name|response
 operator|.

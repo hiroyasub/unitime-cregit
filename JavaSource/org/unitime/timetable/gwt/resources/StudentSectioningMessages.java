@@ -2257,7 +2257,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"To be wait-listed."
+literal|"To be wait-listed - click this line to configure additional wait-list preferences."
 argument_list|)
 name|String
 name|courseToBeWaitListed
@@ -7440,7 +7440,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Enrolled in a course higher in the list of alternatives."
+literal|"Enrolled in a course higher in the list of alternatives. Wait-list not active."
 argument_list|)
 name|String
 name|waitListLowPriority
@@ -7449,7 +7449,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"Current enrollment meets the requirements."
+literal|"Current enrollment meets the requirements. Wait-list not active."
 argument_list|)
 name|String
 name|waitListRequirementsMet
@@ -11361,6 +11361,18 @@ name|advisedNotAssignedImportant
 parameter_list|(
 name|int
 name|important
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"You are trying to wait-list for a different section of {0} without indicating which section(s) you need. The wait-list for {0} will not be active. Do you want to proceed?"
+argument_list|)
+name|String
+name|confirmSectionSwapNoPrefs
+parameter_list|(
+name|String
+name|course
 parameter_list|)
 function_decl|;
 block|}
