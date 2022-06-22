@@ -267,9 +267,16 @@ name|Float
 name|maxCredit
 decl_stmt|;
 comment|/** Student message provided with the request */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|requestorNotes
+decl_stmt|;
+comment|/** Student message probided with the max credit increase request */
+specifier|public
+name|String
+name|maxCreditRequestorNotes
 decl_stmt|;
 comment|/** Request completion status (only read, never sent) */
 specifier|public
@@ -438,6 +445,11 @@ comment|/** UniTime's academic session term (only used when operation = CHGVARTL
 specifier|public
 name|String
 name|apiTerm
+decl_stmt|;
+comment|/** Student message provided with the request */
+specifier|public
+name|String
+name|requestorNotes
 decl_stmt|;
 specifier|public
 name|void

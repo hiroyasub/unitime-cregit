@@ -287,6 +287,8 @@ block|,
 name|WAIT_LIST_VALIDATION
 block|,
 name|SHOW_SCHEDULING_PREFS
+block|,
+name|SR_NOTE_PER_COURSE
 block|, 			;
 specifier|public
 name|int

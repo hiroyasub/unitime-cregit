@@ -11375,6 +11375,15 @@ name|String
 name|course
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Max Credit"
+argument_list|)
+name|String
+name|tabRequestNoteMaxCredit
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
