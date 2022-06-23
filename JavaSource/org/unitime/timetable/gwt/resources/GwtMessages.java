@@ -9835,6 +9835,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Please confirm you wish to remove all instructors from this course configuration."
+argument_list|)
+name|String
+name|confirmRemoveClassInstructors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"One email per line please."
 argument_list|)
 name|String
