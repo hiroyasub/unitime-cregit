@@ -5329,6 +5329,21 @@ operator|.
 name|getRequests
 argument_list|()
 control|)
+block|{
+if|if
+condition|(
+name|request
+operator|.
+name|getPriority
+argument_list|()
+operator|<=
+name|r
+operator|.
+name|getPriority
+argument_list|()
+condition|)
+continue|continue;
+comment|// only check time conflicts with courses of higher priority
 if|if
 condition|(
 name|r
@@ -5452,6 +5467,7 @@ block|{
 return|return
 literal|false
 return|;
+block|}
 block|}
 block|}
 block|}
