@@ -2983,7 +2983,9 @@ operator|.
 name|getRole
 argument_list|()
 else|:
-literal|null
+name|Roles
+operator|.
+name|ROLE_ANONYMOUS
 operator|)
 decl_stmt|;
 return|return
