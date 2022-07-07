@@ -1946,6 +1946,9 @@ argument_list|,
 name|currentDateIndex
 argument_list|,
 name|onlineOnlyFilter
+argument_list|,
+name|isCanRequirePreferences
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -2018,6 +2021,9 @@ argument_list|,
 name|currentDateIndex
 argument_list|,
 name|onlineOnlyFilter
+argument_list|,
+name|isCanRequirePreferences
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
