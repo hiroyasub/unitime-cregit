@@ -2594,6 +2594,13 @@ name|iRequests
 operator|.
 name|hasMaxCreditOverride
 argument_list|()
+operator|&&
+name|iRequests
+operator|.
+name|getRequestId
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|P
