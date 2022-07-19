@@ -12904,6 +12904,28 @@ argument_list|(
 literal|"unitime.legacy.admin.subjectAreas"
 argument_list|)
 operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"true"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
+literal|"Manage Solvers: compute solver memory usage"
+argument_list|)
+name|ManageSolversComputeMemoryUses
+argument_list|(
+literal|"unitime.solvers.memory"
+argument_list|)
+operator|,
 expr_stmt|;
 end_expr_stmt
 
