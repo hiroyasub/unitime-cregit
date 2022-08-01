@@ -475,8 +475,6 @@ parameter_list|,
 name|String
 name|backId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|boolean
 name|timeVertical
@@ -1201,7 +1199,7 @@ name|length
 argument_list|,
 literal|""
 argument_list|,
-literal|"instructorList.do?order=%%&deptId="
+literal|"instructorList.action?order=%%&deptId="
 operator|+
 name|deptId
 argument_list|,
@@ -2865,8 +2863,6 @@ parameter_list|,
 name|boolean
 name|canHaveImages
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|boolean
 name|timeVertical

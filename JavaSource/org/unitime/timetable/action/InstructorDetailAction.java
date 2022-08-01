@@ -1420,7 +1420,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"instructorList.do"
+literal|"instructorSearch.action"
 argument_list|)
 argument_list|)
 expr_stmt|;

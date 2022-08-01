@@ -1504,8 +1504,6 @@ parameter_list|(
 name|Long
 name|departmentId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 operator|(
@@ -1554,8 +1552,6 @@ parameter_list|(
 name|Long
 name|sessionId
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 return|return
 operator|(
