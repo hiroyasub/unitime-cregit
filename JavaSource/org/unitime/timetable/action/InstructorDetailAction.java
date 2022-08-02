@@ -1459,7 +1459,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"instructorInfoEdit.do?instructorId="
+literal|"instructorInfoEdit.action?instructorId="
 operator|+
 name|instructorId
 argument_list|)

@@ -387,7 +387,7 @@ literal|"redirect"
 argument_list|,
 name|location
 operator|=
-literal|"/instructorAdd.do"
+literal|"/instructorAdd.action"
 argument_list|)
 block|}
 argument_list|)
