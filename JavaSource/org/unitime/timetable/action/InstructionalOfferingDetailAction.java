@@ -3327,7 +3327,7 @@ literal|"<br>"
 expr_stmt|;
 name|coordinators
 operator|+=
-literal|"<a href='instructorDetail.do?instructorId="
+literal|"<a href='instructorDetail.action?instructorId="
 operator|+
 name|coordinator
 operator|.

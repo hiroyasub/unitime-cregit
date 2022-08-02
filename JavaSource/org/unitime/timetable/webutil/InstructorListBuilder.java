@@ -2816,7 +2816,7 @@ name|webTable
 operator|.
 name|addLine
 argument_list|(
-literal|"onClick=\"document.location='instructorDetail.do?instructorId="
+literal|"onClick=\"document.location='instructorDetail.action?instructorId="
 operator|+
 name|di
 operator|.

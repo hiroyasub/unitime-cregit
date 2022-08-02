@@ -3662,7 +3662,7 @@ argument_list|)
 condition|)
 name|link
 operator|=
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 operator|(
 operator|(

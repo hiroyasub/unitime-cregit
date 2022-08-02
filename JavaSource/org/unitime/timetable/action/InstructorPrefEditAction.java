@@ -1789,7 +1789,7 @@ name|markForBack
 argument_list|(
 name|request
 argument_list|,
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 name|frm
 operator|.
@@ -1906,7 +1906,7 @@ name|request
 operator|.
 name|setAttribute
 argument_list|(
-literal|"UnavailableDays.pattern"
+literal|"unavailableDaysPattern"
 argument_list|,
 name|inst
 operator|.

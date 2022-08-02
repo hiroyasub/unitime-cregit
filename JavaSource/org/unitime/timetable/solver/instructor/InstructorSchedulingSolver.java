@@ -3656,7 +3656,7 @@ name|assignment
 parameter_list|)
 block|{
 return|return
-literal|"<a href='instructorDetail.do?instructorId="
+literal|"<a href='instructorDetail.action?instructorId="
 operator|+
 name|assignment
 operator|.

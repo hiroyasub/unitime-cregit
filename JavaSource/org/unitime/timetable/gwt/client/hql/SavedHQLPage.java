@@ -5636,7 +5636,7 @@ operator|.
 name|getHostPageBaseURL
 argument_list|()
 operator|+
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 name|event
 operator|.

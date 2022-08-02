@@ -1572,7 +1572,7 @@ name|ToolBox
 operator|.
 name|open
 argument_list|(
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 name|instructor
 operator|.

@@ -633,7 +633,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 name|instructorId
 argument_list|)
@@ -1081,7 +1081,7 @@ name|markForBack
 argument_list|(
 name|request
 argument_list|,
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 name|frm
 operator|.

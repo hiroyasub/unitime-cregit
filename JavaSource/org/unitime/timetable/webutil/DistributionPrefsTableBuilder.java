@@ -2581,7 +2581,7 @@ argument_list|)
 condition|)
 name|onClick
 operator|=
-literal|"onClick=\"document.location='instructorDetail.do"
+literal|"onClick=\"document.location='instructorDetail.action"
 operator|+
 literal|"?instructorId="
 operator|+

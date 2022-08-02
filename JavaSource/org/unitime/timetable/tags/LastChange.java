@@ -1591,7 +1591,7 @@ literal|5
 argument_list|,
 literal|"Last Changes"
 argument_list|,
-literal|"instructorDetail.do?instructorId="
+literal|"instructorDetail.action?instructorId="
 operator|+
 name|inst
 operator|.

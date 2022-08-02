@@ -10466,6 +10466,33 @@ name|String
 name|error
 parameter_list|)
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Instructor id not provided."
+argument_list|)
+name|String
+name|errorNoInstructorId
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There are the following errors:"
+argument_list|)
+name|String
+name|formValidationErrors
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"ENABLED"
+argument_list|)
+name|String
+name|enabled
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
