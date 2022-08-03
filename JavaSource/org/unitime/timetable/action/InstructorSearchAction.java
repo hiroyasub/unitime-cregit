@@ -371,7 +371,7 @@ literal|"redirect"
 argument_list|,
 name|location
 operator|=
-literal|"/instructorListUpdate.do"
+literal|"/instructorListUpdate.action"
 argument_list|)
 block|,
 annotation|@

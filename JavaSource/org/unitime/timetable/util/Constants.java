@@ -976,12 +976,6 @@ condition|(
 name|array
 operator|==
 literal|null
-operator|||
-name|array
-operator|.
-name|length
-operator|==
-literal|0
 condition|)
 throw|throw
 operator|new
