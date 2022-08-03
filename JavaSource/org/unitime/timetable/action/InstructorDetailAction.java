@@ -1009,13 +1009,6 @@ operator|new
 name|InstructorEditForm
 argument_list|()
 expr_stmt|;
-name|form
-operator|.
-name|setPosType
-argument_list|(
-name|request
-argument_list|)
-expr_stmt|;
 name|super
 operator|.
 name|execute
@@ -1504,7 +1497,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"instructorPrefEdit.do?instructorId="
+literal|"instructorPrefEdit.action?instructorId="
 operator|+
 name|instructorId
 argument_list|)
@@ -1549,7 +1542,7 @@ name|response
 operator|.
 name|encodeURL
 argument_list|(
-literal|"instructorAssignmentPref.do?instructorId="
+literal|"instructorAssignmentPref.action?instructorId="
 operator|+
 name|instructorId
 argument_list|)
