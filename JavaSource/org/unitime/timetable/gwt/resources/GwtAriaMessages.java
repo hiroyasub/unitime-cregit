@@ -2211,6 +2211,18 @@ name|String
 name|altCancelOverrideRequest
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Request note for {0}"
+argument_list|)
+name|String
+name|requestNoteFor
+parameter_list|(
+name|String
+name|course
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
