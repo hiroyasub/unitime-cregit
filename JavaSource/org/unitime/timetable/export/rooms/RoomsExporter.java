@@ -1989,6 +1989,15 @@ operator|.
 name|colAvailableServices
 argument_list|()
 return|;
+case|case
+name|PARTITION
+case|:
+return|return
+name|MESSAGES
+operator|.
+name|colPartitionOf
+argument_list|()
+return|;
 default|default:
 return|return
 name|column

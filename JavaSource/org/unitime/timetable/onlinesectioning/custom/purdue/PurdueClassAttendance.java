@@ -4251,6 +4251,16 @@ name|getDisplayName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|onl
+operator|.
+name|setPartitionParentId
+argument_list|(
+name|online
+operator|.
+name|getPartitionParentId
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 name|String
 name|note

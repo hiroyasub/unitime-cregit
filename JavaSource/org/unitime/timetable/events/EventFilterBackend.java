@@ -4457,13 +4457,14 @@ name|mode
 argument_list|)
 condition|)
 block|{
+comment|/* 				query.addFrom("mode", "Meeting Xm, Location Xl"); 				query.addWhere("mode", "Xm.uniqueId != m.uniqueId and m.meetingDate = Xm.meetingDate and m.startPeriod< Xm.stopPeriod and m.stopPeriod> Xm.startPeriod and m.locationPermanentId = Xm.locationPermanentId and m.approvalStatus<= 1 and Xm.approvalStatus<= 1" + 						" and Xl.permanentId = m.locationPermanentId and Xl.session.uniqueId = :sessionId and Xl.ignoreRoomCheck = false"); 				*/
 name|query
 operator|.
 name|addFrom
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"Meeting Xm, Location Xl"
+literal|"Meeting Xm, Location Xl1, Location Xl2"
 argument_list|)
 expr_stmt|;
 name|query
@@ -4472,9 +4473,11 @@ name|addWhere
 argument_list|(
 literal|"mode"
 argument_list|,
-literal|"Xm.uniqueId != m.uniqueId and m.meetingDate = Xm.meetingDate and m.startPeriod< Xm.stopPeriod and m.stopPeriod> Xm.startPeriod and m.locationPermanentId = Xm.locationPermanentId and m.approvalStatus<= 1 and Xm.approvalStatus<= 1"
+literal|"Xm.uniqueId != m.uniqueId and m.meetingDate = Xm.meetingDate and m.startPeriod< Xm.stopPeriod and m.stopPeriod> Xm.startPeriod and (Xl1.uniqueId = Xl2.uniqueId or Xl1.parentRoom.uniqueId = Xl2.uniqueId or Xl1.uniqueId = Xl2.parentRoom.uniqueId) and m.approvalStatus<= 1 and Xm.approvalStatus<= 1"
 operator|+
-literal|" and Xl.permanentId = m.locationPermanentId and Xl.session.uniqueId = :sessionId and Xl.ignoreRoomCheck = false"
+literal|" and Xl1.permanentId = m.locationPermanentId and Xl1.session.uniqueId = :sessionId and Xl1.ignoreRoomCheck = false"
+operator|+
+literal|" and Xl2.permanentId = Xm.locationPermanentId and Xl2.session.uniqueId = :sessionId and Xl2.ignoreRoomCheck = false"
 argument_list|)
 expr_stmt|;
 block|}

@@ -22683,6 +22683,33 @@ name|String
 name|sectCourseOffering
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Partition of:"
+argument_list|)
+name|String
+name|propPartitionOf
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Partition of"
+argument_list|)
+name|String
+name|colPartitionOf
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not a Partition"
+argument_list|)
+name|String
+name|itemNoParition
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
