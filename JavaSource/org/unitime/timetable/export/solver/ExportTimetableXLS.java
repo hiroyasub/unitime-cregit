@@ -1805,7 +1805,7 @@ return|return
 literal|false
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|print
 parameter_list|(
@@ -2927,7 +2927,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|protected
+specifier|public
 specifier|static
 class|class
 name|TimetableGrid
@@ -7465,6 +7465,19 @@ block|}
 block|}
 block|}
 block|}
+specifier|public
+name|boolean
+name|hasMeetings
+parameter_list|()
+block|{
+return|return
+operator|!
+name|iMeetings
+operator|.
+name|isEmpty
+argument_list|()
+return|;
+block|}
 block|}
 specifier|protected
 specifier|static
@@ -10643,7 +10656,7 @@ return|return
 name|style
 return|;
 block|}
-specifier|protected
+specifier|public
 name|Sheet
 name|createSheet
 parameter_list|(
@@ -10816,7 +10829,7 @@ return|return
 name|sheet
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|write
 parameter_list|(
