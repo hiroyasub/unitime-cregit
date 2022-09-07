@@ -11273,6 +11273,28 @@ argument_list|)
 expr|@
 name|Description
 argument_list|(
+literal|"Time Grid: display class filter"
+argument_list|)
+name|TimeGridClassFilter
+argument_list|(
+literal|"unitime.timeGrid.classFilter"
+argument_list|)
+operator|,
+expr_stmt|@
+name|Type
+argument_list|(
+name|Boolean
+operator|.
+name|class
+argument_list|)
+expr|@
+name|DefaultValue
+argument_list|(
+literal|"false"
+argument_list|)
+expr|@
+name|Description
+argument_list|(
 literal|"Events: show academic sessions in the reverse order (latest first)"
 argument_list|)
 name|ListSessionsReverse

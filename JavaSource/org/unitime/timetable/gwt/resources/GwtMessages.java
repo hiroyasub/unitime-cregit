@@ -14445,6 +14445,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Class Filter:"
+argument_list|)
+name|String
+name|propTimeGridClassFilter
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Days:"
 argument_list|)
 name|String
