@@ -15673,6 +15673,21 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+name|courseNumber
+operator|!=
+literal|null
+condition|)
+block|{
+name|iCourseOffering
+operator|.
+name|setCourseNbr
+argument_list|(
+name|courseNumber
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|iIsAdd
