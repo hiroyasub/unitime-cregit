@@ -588,7 +588,7 @@ name|encode
 argument_list|(
 name|iExternalTermProvider
 operator|.
-name|getExternalTerm
+name|getExternalCampus
 argument_list|(
 name|session
 argument_list|)
