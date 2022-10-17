@@ -497,22 +497,6 @@ name|StudentSectioningReport
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|unitime
-operator|.
-name|timetable
-operator|.
-name|onlinesectioning
-operator|.
-name|custom
-operator|.
-name|CustomCourseLookup
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -3504,7 +3488,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"Number of course requests marked as vital (~ course/group/placeholder vital in degree plan)"
+literal|"Number of course requests marked as vital by advisors"
 block|}
 argument_list|,
 operator|new
