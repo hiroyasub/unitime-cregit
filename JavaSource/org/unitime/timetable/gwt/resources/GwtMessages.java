@@ -22728,6 +22728,15 @@ name|String
 name|itemNoParition
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Campus"
+argument_list|)
+name|String
+name|labelCampus
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
