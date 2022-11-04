@@ -467,7 +467,7 @@ operator|)
 operator|.
 name|createQuery
 argument_list|(
-literal|"from Building where session.uniqueId=:sessionId and b.abbreviation=:bldgAbbv"
+literal|"from Building b where session.uniqueId=:sessionId and b.abbreviation=:bldgAbbv"
 argument_list|)
 operator|.
 name|setLong
@@ -1211,6 +1211,19 @@ name|Long
 name|sessionId
 parameter_list|)
 block|{
+if|if
+condition|(
+name|externalId
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+operator|(
+literal|null
+operator|)
+return|;
+block|}
 name|BuildingDAO
 name|bDao
 init|=
