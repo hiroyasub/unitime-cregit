@@ -629,6 +629,20 @@ condition|)
 return|return
 literal|true
 return|;
+if|if
+condition|(
+operator|!
+name|hasWaitListingStatus
+argument_list|(
+name|student
+argument_list|,
+name|server
+argument_list|)
+condition|)
+return|return
+literal|true
+return|;
+comment|// no changes for students that cannot be wait-listed
 name|List
 argument_list|<
 name|XSection
