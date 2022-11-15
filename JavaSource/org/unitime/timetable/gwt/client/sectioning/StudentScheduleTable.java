@@ -2243,6 +2243,20 @@ operator|.
 name|courseIsFull
 argument_list|()
 expr_stmt|;
+if|else if
+condition|(
+name|course
+operator|.
+name|hasHasIncompReqs
+argument_list|()
+condition|)
+name|unassignedMessage
+operator|=
+name|MESSAGES
+operator|.
+name|classNotAvailableDueToStudentPrefs
+argument_list|()
+expr_stmt|;
 else|else
 name|unassignedMessage
 operator|=

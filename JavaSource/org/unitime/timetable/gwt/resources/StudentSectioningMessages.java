@@ -1366,6 +1366,18 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"{0} is not available (due to preferences selected)."
+argument_list|)
+name|String
+name|suggestionsNoChoicesDueToStudentPrefs
+parameter_list|(
+name|String
+name|source
+parameter_list|)
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"{0} conflicts with {1}."
 argument_list|)
 name|String
@@ -2234,6 +2246,15 @@ literal|"Not available."
 argument_list|)
 name|String
 name|classNotAvailable
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Not available (due to preferences selected)."
+argument_list|)
+name|String
+name|classNotAvailableDueToStudentPrefs
 parameter_list|()
 function_decl|;
 annotation|@

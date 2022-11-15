@@ -373,6 +373,22 @@ name|OnlineSectioningHelper
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|onlinesectioning
+operator|.
+name|solver
+operator|.
+name|SectioningRequest
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Tomas Muller  */
 end_comment
@@ -1198,6 +1214,33 @@ argument_list|(
 name|MSG
 operator|.
 name|courseIsFull
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|SectioningRequest
+operator|.
+name|hasInconsistentRequirements
+argument_list|(
+name|courseRequest
+argument_list|,
+literal|null
+argument_list|)
+condition|)
+name|line
+operator|.
+name|add
+argument_list|(
+operator|new
+name|CSVFile
+operator|.
+name|CSVField
+argument_list|(
+name|MSG
+operator|.
+name|classNotAvailableDueToStudentPrefs
 argument_list|()
 argument_list|)
 argument_list|)
