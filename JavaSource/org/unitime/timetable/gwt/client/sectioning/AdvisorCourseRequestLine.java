@@ -5741,6 +5741,8 @@ name|courseFinderShowRequired
 argument_list|()
 argument_list|,
 name|iSpecReg
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|iCourseFinderMultipleCourses

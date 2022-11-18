@@ -588,6 +588,15 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
+literal|"Override"
+argument_list|)
+name|String
+name|colAllowedOverrides
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
 literal|"Preference"
 argument_list|)
 name|String
