@@ -2373,7 +2373,7 @@ function_decl|;
 annotation|@
 name|DefaultMessage
 argument_list|(
-literal|"room or instructor not avaiable"
+literal|"room or instructor not available"
 argument_list|)
 name|String
 name|reasonNotKnown

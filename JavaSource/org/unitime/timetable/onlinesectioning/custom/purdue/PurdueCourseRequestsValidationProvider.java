@@ -4879,7 +4879,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.inconsistentStudPref"
 argument_list|,
-literal|"Not avaiable due to preferences selected."
+literal|"Not available due to preferences selected."
 argument_list|)
 operator|.
 name|replace
@@ -18202,7 +18202,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.inconsistentStudPref"
 argument_list|,
-literal|"Not avaiable due to preferences selected."
+literal|"Not available due to preferences selected."
 argument_list|)
 operator|.
 name|replace
@@ -30240,7 +30240,7 @@ name|getProperty
 argument_list|(
 literal|"purdue.specreg.messages.inconsistentStudPref"
 argument_list|,
-literal|"Not avaiable due to preferences selected."
+literal|"Not available due to preferences selected."
 argument_list|)
 operator|.
 name|replace
