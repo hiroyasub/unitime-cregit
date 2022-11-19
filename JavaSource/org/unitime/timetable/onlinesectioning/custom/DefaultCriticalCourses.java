@@ -436,6 +436,11 @@ name|alt
 operator|.
 name|isSubstitute
 argument_list|()
+operator|&&
+name|alt
+operator|.
+name|hasCourseId
+argument_list|()
 condition|)
 block|{
 name|cc
