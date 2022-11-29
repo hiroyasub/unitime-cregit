@@ -4760,7 +4760,10 @@ operator|&&
 name|timeCrns
 operator|!=
 literal|null
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|timeCrns
 operator|.
 name|contains
@@ -4775,6 +4778,56 @@ name|grantedOverride
 operator|=
 literal|"TIME-CNFLT"
 expr_stmt|;
+block|}
+if|else if
+condition|(
+name|p
+operator|.
+name|message
+operator|!=
+literal|null
+operator|&&
+name|p
+operator|.
+name|message
+operator|.
+name|startsWith
+argument_list|(
+literal|"Time conflict with CRN "
+argument_list|)
+condition|)
+block|{
+name|String
+name|crn
+init|=
+name|p
+operator|.
+name|message
+operator|.
+name|substring
+argument_list|(
+literal|"Time conflict with CRN "
+operator|.
+name|length
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|timeCrns
+operator|.
+name|contains
+argument_list|(
+name|crn
+argument_list|)
+condition|)
+name|grantedOverride
+operator|=
+literal|"TIME-CNFLT for "
+operator|+
+name|crn
+expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
