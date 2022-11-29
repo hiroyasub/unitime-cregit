@@ -562,7 +562,12 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" where sce1.clazz.schedulingSubpart.uniqueId = ss.uniqueId and sce1.student.uniqueId = s.uniqueId ) "
+literal|" where sce1.clazz.schedulingSubpart.uniqueId = ss.uniqueId and sce1.student.uniqueId = s.uniqueId and sce1.courseOffering = sce.courseOffering) "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|", sce.courseOffering.uniqueId"
 argument_list|)
 operator|.
 name|append
@@ -592,7 +597,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" where sce1.clazz.schedulingSubpart.uniqueId = ss.uniqueId and sce1.student.uniqueId = s.uniqueId )"
+literal|" where sce1.clazz.schedulingSubpart.uniqueId = ss.uniqueId and sce1.student.uniqueId = s.uniqueId and sce1.courseOffering = sce.courseOffering)"
 argument_list|)
 operator|.
 name|append
@@ -906,6 +911,10 @@ name|Long
 name|subpartId
 decl_stmt|;
 specifier|private
+name|Long
+name|courseId
+decl_stmt|;
+specifier|private
 name|java
 operator|.
 name|util
@@ -992,6 +1001,32 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|result
+index|[
+literal|11
+index|]
+operator|!=
+literal|null
+condition|)
+name|this
+operator|.
+name|courseId
+operator|=
+name|Long
+operator|.
+name|valueOf
+argument_list|(
+name|result
+index|[
+literal|11
+index|]
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|findClasses
 argument_list|()
 expr_stmt|;
@@ -1017,7 +1052,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" from StudentClassEnrollment sce where sce.student.uniqueId = :studId and sce.clazz.schedulingSubpart.uniqueId = :subpartId"
+literal|" from StudentClassEnrollment sce where sce.student.uniqueId = :studId and sce.clazz.schedulingSubpart.uniqueId = :subpartId and sce.courseOffering.uniqueId = :courseId"
 argument_list|)
 operator|.
 name|append
@@ -1046,9 +1081,6 @@ argument_list|(
 literal|"studId"
 argument_list|,
 name|studentUniqueId
-operator|.
-name|longValue
-argument_list|()
 argument_list|)
 operator|.
 name|setLong
@@ -1056,9 +1088,13 @@ argument_list|(
 literal|"subpartId"
 argument_list|,
 name|subpartId
+argument_list|)
 operator|.
-name|longValue
-argument_list|()
+name|setLong
+argument_list|(
+literal|"courseId"
+argument_list|,
+name|courseId
 argument_list|)
 operator|.
 name|iterate
