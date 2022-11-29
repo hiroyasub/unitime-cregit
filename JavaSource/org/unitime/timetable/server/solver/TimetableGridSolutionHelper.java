@@ -853,7 +853,7 @@ argument_list|(
 literal|"0.0"
 argument_list|)
 decl_stmt|;
-specifier|protected
+specifier|public
 specifier|static
 name|void
 name|createCells
@@ -899,7 +899,7 @@ name|hibSession
 argument_list|,
 name|context
 argument_list|,
-literal|false
+name|notAvailable
 argument_list|)
 expr_stmt|;
 block|}
@@ -4042,7 +4042,7 @@ return|return
 name|cell
 return|;
 block|}
-specifier|protected
+specifier|public
 specifier|static
 name|double
 name|countUtilization
