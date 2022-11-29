@@ -201,6 +201,22 @@ name|reports
 operator|.
 name|enrollment
 operator|.
+name|MultipleConfigEnrollmentsAuditReport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|reports
+operator|.
+name|enrollment
+operator|.
 name|MultipleCourseEnrollmentsAuditReport
 import|;
 end_import
@@ -419,9 +435,20 @@ name|sRegisteredReports
 operator|.
 name|put
 argument_list|(
-literal|"Multiple Course Enrollments"
+literal|"Multiple Course Enrollments (Same Config)"
 argument_list|,
 name|MultipleCourseEnrollmentsAuditReport
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|sRegisteredReports
+operator|.
+name|put
+argument_list|(
+literal|"Multiple Course Enrollments (Different Configs)"
+argument_list|,
+name|MultipleConfigEnrollmentsAuditReport
 operator|.
 name|class
 argument_list|)

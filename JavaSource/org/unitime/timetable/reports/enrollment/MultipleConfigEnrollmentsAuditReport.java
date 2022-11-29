@@ -99,6 +99,20 @@ name|timetable
 operator|.
 name|model
 operator|.
+name|InstrOfferingConfig
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|unitime
+operator|.
+name|timetable
+operator|.
+name|model
+operator|.
 name|Session
 import|;
 end_import
@@ -152,12 +166,12 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|MultipleCourseEnrollmentsAuditReport
+name|MultipleConfigEnrollmentsAuditReport
 extends|extends
 name|PdfEnrollmentAuditReport
 block|{
 specifier|public
-name|MultipleCourseEnrollmentsAuditReport
+name|MultipleConfigEnrollmentsAuditReport
 parameter_list|(
 name|int
 name|mode
@@ -200,7 +214,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|MultipleCourseEnrollmentsAuditReport
+name|MultipleConfigEnrollmentsAuditReport
 parameter_list|(
 name|int
 name|mode
@@ -282,11 +296,11 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|MultipleCourseEnrollmentsAuditResult
+name|MultipleConfigEnrollmentsAuditResult
 name|result
 init|=
 operator|new
-name|MultipleCourseEnrollmentsAuditResult
+name|MultipleConfigEnrollmentsAuditResult
 argument_list|(
 operator|(
 name|Object
@@ -509,7 +523,7 @@ parameter_list|()
 block|{
 return|return
 operator|(
-literal|"Multiple Course Enrollments (Same Configuration)"
+literal|"Multiple Course Enrollments (Different Configurations)"
 operator|)
 return|;
 block|}
@@ -552,37 +566,17 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" s.uniqueId, ss.itype.abbv, ss.uniqueId,"
+literal|" s.uniqueId, sce.courseOffering.uniqueId"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" ( select count(sce1) from StudentClassEnrollment sce1"
+literal|" from Student s inner join s.classEnrollments as sce"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" where sce1.clazz.schedulingSubpart.uniqueId = ss.uniqueId and sce1.student.uniqueId = s.uniqueId and sce1.courseOffering = sce.courseOffering) "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|", sce.courseOffering.uniqueId"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" from Student s inner join s.classEnrollments as sce, SchedulingSubpart ss"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" where  ss.instrOfferingConfig.uniqueId = sce.clazz.schedulingSubpart.instrOfferingConfig.uniqueId"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" and s.session.uniqueId = :sessId"
+literal|" where s.session.uniqueId = :sessId"
 argument_list|)
 operator|.
 name|append
@@ -592,12 +586,17 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" and 1< ( select count(sce1) from StudentClassEnrollment sce1"
+literal|" and 1< ( select count(distinct cfg1) from StudentClassEnrollment sce1"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" where sce1.clazz.schedulingSubpart.uniqueId = ss.uniqueId and sce1.student.uniqueId = s.uniqueId and sce1.courseOffering = sce.courseOffering)"
+literal|" inner join sce1.clazz.schedulingSubpart.instrOfferingConfig cfg1"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" where sce1.courseOffering = sce.courseOffering and sce1.student = sce.student)"
 argument_list|)
 operator|.
 name|append
@@ -607,7 +606,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" sce.courseOffering.title, ss.itype.abbv"
+literal|" sce.courseOffering.title"
 argument_list|)
 expr_stmt|;
 if|if
@@ -651,7 +650,7 @@ specifier|private
 name|String
 name|buildLineString
 parameter_list|(
-name|MultipleCourseEnrollmentsAuditResult
+name|MultipleConfigEnrollmentsAuditResult
 name|result
 parameter_list|)
 block|{
@@ -690,7 +689,7 @@ name|rpad
 argument_list|(
 name|result
 operator|.
-name|classesListStr
+name|configsListStr
 argument_list|()
 argument_list|,
 literal|' '
@@ -814,7 +813,7 @@ name|append
 argument_list|(
 name|rpad
 argument_list|(
-literal|"Multiple Classes"
+literal|"Multiple Configs"
 argument_list|,
 literal|' '
 argument_list|,
@@ -833,7 +832,7 @@ name|append
 argument_list|(
 name|rpad
 argument_list|(
-literal|"of Same Subpart"
+literal|"of Same Course"
 argument_list|,
 literal|' '
 argument_list|,
@@ -898,7 +897,7 @@ return|;
 block|}
 specifier|private
 class|class
-name|MultipleCourseEnrollmentsAuditResult
+name|MultipleConfigEnrollmentsAuditResult
 extends|extends
 name|EnrollmentAuditResult
 block|{
@@ -908,36 +907,24 @@ name|studentUniqueId
 decl_stmt|;
 specifier|private
 name|Long
-name|subpartId
-decl_stmt|;
-specifier|private
-name|Long
 name|courseId
 decl_stmt|;
 specifier|private
-name|java
-operator|.
-name|util
-operator|.
-name|Vector
+name|TreeSet
 argument_list|<
 name|String
 argument_list|>
-name|classes
+name|configs
 init|=
 operator|new
-name|java
-operator|.
-name|util
-operator|.
-name|Vector
+name|TreeSet
 argument_list|<
 name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
-name|MultipleCourseEnrollmentsAuditResult
+name|MultipleConfigEnrollmentsAuditResult
 parameter_list|(
 name|Object
 index|[]
@@ -979,33 +966,7 @@ if|if
 condition|(
 name|result
 index|[
-literal|9
-index|]
-operator|!=
-literal|null
-condition|)
-name|this
-operator|.
-name|subpartId
-operator|=
-name|Long
-operator|.
-name|valueOf
-argument_list|(
-name|result
-index|[
-literal|9
-index|]
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|result
-index|[
-literal|11
+literal|8
 index|]
 operator|!=
 literal|null
@@ -1020,20 +981,20 @@ name|valueOf
 argument_list|(
 name|result
 index|[
-literal|11
+literal|8
 index|]
 operator|.
 name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|findClasses
+name|findConfigs
 argument_list|()
 expr_stmt|;
 block|}
 specifier|private
 name|void
-name|findClasses
+name|findConfigs
 parameter_list|()
 block|{
 name|StringBuilder
@@ -1047,17 +1008,12 @@ name|sb
 operator|.
 name|append
 argument_list|(
-literal|"select sce.clazz.schedulingSubpart.itype.abbv, sce.clazz.sectionNumberCache,  sce.clazz.schedulingSubpart.schedulingSubpartSuffixCache"
+literal|"select distinct sce.clazz.schedulingSubpart.instrOfferingConfig"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" from StudentClassEnrollment sce where sce.student.uniqueId = :studId and sce.clazz.schedulingSubpart.uniqueId = :subpartId and sce.courseOffering.uniqueId = :courseId"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" order by sce.clazz.sectionNumberCache,  sce.clazz.schedulingSubpart.schedulingSubpartSuffixCache"
+literal|" from StudentClassEnrollment sce where sce.student.uniqueId = :studId and sce.courseOffering.uniqueId = :courseId"
 argument_list|)
 expr_stmt|;
 name|Iterator
@@ -1085,13 +1041,6 @@ argument_list|)
 operator|.
 name|setLong
 argument_list|(
-literal|"subpartId"
-argument_list|,
-name|subpartId
-argument_list|)
-operator|.
-name|setLong
-argument_list|(
 literal|"courseId"
 argument_list|,
 name|courseId
@@ -1108,61 +1057,32 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Object
-index|[]
+name|InstrOfferingConfig
 name|result
 init|=
 operator|(
-name|Object
-index|[]
+name|InstrOfferingConfig
 operator|)
 name|it
 operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|String
-name|className
-init|=
-name|createClassString
-argument_list|(
-name|result
-index|[
-literal|0
-index|]
-operator|.
-name|toString
-argument_list|()
-argument_list|,
-name|result
-index|[
-literal|1
-index|]
-operator|.
-name|toString
-argument_list|()
-argument_list|,
-name|result
-index|[
-literal|2
-index|]
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|classes
+name|configs
 operator|.
 name|add
 argument_list|(
-name|className
+name|result
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 specifier|public
 name|String
-name|classesListStr
+name|configsListStr
 parameter_list|()
 block|{
 name|StringBuilder
@@ -1180,9 +1100,9 @@ decl_stmt|;
 for|for
 control|(
 name|String
-name|clazz
+name|config
 range|:
-name|classes
+name|configs
 control|)
 block|{
 if|if
@@ -1209,7 +1129,7 @@ name|sb
 operator|.
 name|append
 argument_list|(
-name|clazz
+name|config
 argument_list|)
 expr_stmt|;
 block|}
