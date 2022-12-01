@@ -1684,6 +1684,14 @@ name|box
 range|:
 name|iCourses
 control|)
+if|if
+condition|(
+name|box
+operator|.
+name|iCourseFinderMultipleCourses
+operator|!=
+literal|null
+condition|)
 name|box
 operator|.
 name|iCourseFinderMultipleCourses
