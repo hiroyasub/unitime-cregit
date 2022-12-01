@@ -1161,6 +1161,16 @@ return|;
 block|}
 catch|catch
 parameter_list|(
+name|NullPointerException
+name|e
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
