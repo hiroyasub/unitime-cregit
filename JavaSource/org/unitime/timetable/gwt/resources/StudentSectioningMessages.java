@@ -11414,6 +11414,78 @@ name|String
 name|tabRequestNoteMaxCredit
 parameter_list|()
 function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There has been a change"
+argument_list|)
+name|String
+name|emailReschedulingReason
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"One or more classes have been cancelled."
+argument_list|)
+name|String
+name|reschedulingReasonCancelledClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"There is a time conflict without an override."
+argument_list|)
+name|String
+name|reschedulingReasonTimeConflict
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrolled in a class combination that is not allowed."
+argument_list|)
+name|String
+name|reschedulingReasonClassLink
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Missing a class."
+argument_list|)
+name|String
+name|reschedulingReasonMissingClass
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrolled in classes from two or more configurations."
+argument_list|)
+name|String
+name|reschedulingReasonMultipleConfigs
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Enrolled in multiple classes of the same type."
+argument_list|)
+name|String
+name|reschedulingReasonMultipleClasses
+parameter_list|()
+function_decl|;
+annotation|@
+name|DefaultMessage
+argument_list|(
+literal|"Course is no longer requested."
+argument_list|)
+name|String
+name|reschedulingReasonNoRequest
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

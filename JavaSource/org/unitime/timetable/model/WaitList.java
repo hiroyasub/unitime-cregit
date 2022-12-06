@@ -87,6 +87,10 @@ block|,
 name|RELOAD
 block|,
 name|OTHER
+block|,
+name|RE_BATCH_ON_RELOAD
+block|,
+name|RE_BATCH_ON_CHECK
 block|, 		; 		 	}
 comment|/*[CONSTRUCTOR MARKER BEGIN]*/
 specifier|public

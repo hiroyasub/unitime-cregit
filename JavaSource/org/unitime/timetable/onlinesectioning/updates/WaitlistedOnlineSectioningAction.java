@@ -1761,7 +1761,7 @@ name|courseId
 argument_list|,
 name|student
 argument_list|,
-literal|false
+literal|null
 argument_list|,
 name|getStudentPriority
 argument_list|(
@@ -1957,7 +1957,7 @@ name|c
 argument_list|,
 name|s
 argument_list|,
-literal|false
+literal|null
 argument_list|,
 name|getStudentPriority
 argument_list|(
