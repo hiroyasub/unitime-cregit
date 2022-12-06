@@ -1419,7 +1419,7 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|" and rg.global = 0"
+literal|" and rg.global = false"
 argument_list|)
 operator|.
 name|list
@@ -5404,7 +5404,7 @@ argument_list|()
 operator|.
 name|getQuery
 argument_list|(
-literal|"select tr from TeachingRequest tr inner join tr.offering.courseOfferings co where co.isControl = true and co.subjectArea.uniqueId in :subjectIds"
+literal|"select tr from TeachingRequest tr inner join tr.offering.courseOfferings co where co.isControl = true and cast(co.subjectArea.uniqueId as string) in :subjectIds"
 argument_list|)
 operator|.
 name|setParameterList
