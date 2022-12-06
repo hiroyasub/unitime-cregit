@@ -6006,7 +6006,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|"lower(l.operation) = '"
+literal|"l.operation = '"
 operator|+
 name|body
 operator|.

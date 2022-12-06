@@ -4673,7 +4673,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct operation from OnlineSectioningLog where "
 operator|+
-literal|"lower(operation) like :q || '%' and session.uniqueId = :sessionId order by operation"
+literal|"operation like :q || '%' and session.uniqueId = :sessionId order by operation"
 argument_list|)
 operator|.
 name|setString
@@ -4791,7 +4791,7 @@ name|createQuery
 argument_list|(
 literal|"select distinct operation from OnlineSectioningLog where "
 operator|+
-literal|"lower(operation) like :q || '%' and session.uniqueId = :sessionId order by operation"
+literal|"operation like :q || '%' and session.uniqueId = :sessionId order by operation"
 argument_list|)
 operator|.
 name|setString
